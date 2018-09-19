@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "interpret",
+      "quote": "μεθερμηνευόμενον",
+      "strong": [
+        "G31770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

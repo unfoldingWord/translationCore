@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "messenger",
+      "quote": "ἄγγελόν",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

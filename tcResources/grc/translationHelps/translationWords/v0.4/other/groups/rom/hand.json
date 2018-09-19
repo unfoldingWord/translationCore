@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "hand",
+      "quote": "χεῖράς",
+      "strong": [
+        "G54950"
+      ],
+      "occurrence": 1
+    }
+  }
+]

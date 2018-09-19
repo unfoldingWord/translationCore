@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "ἐρρύσατο",
+      "strong": [
+        "G45060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "ῥύσεται",
+      "strong": [
+        "G45060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "ῥύσεται",
+      "strong": [
+        "G45060"
+      ],
+      "occurrence": 2
+    }
+  }
+]

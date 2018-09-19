@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "submit",
+      "quote": "ὑπετάγησαν",
+      "strong": [
+        "G52930"
+      ],
+      "occurrence": 1
+    }
+  }
+]

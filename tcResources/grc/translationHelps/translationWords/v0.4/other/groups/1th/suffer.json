@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "suffer",
+      "quote": "προπαθόντες",
+      "strong": [
+        "G43100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "suffer",
+      "quote": "ἐπάθετε",
+      "strong": [
+        "G39580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "suffer",
+      "quote": "θλίβεσθαι",
+      "strong": [
+        "G23460"
+      ],
+      "occurrence": 1
+    }
+  }
+]

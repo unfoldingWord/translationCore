@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "soul",
+      "quote": "ψυχὴν",
+      "strong": [
+        "G55900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "soul",
+      "quote": "ψυχὴ",
+      "strong": [
+        "G55900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "precious",
+      "quote": "τιμίους",
+      "strong": [
+        "G50930"
+      ],
+      "occurrence": 1
+    }
+  }
+]

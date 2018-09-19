@@ -1,0 +1,611 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἐδέξατο",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λαβεῖν",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἀπολάβωσιν",
+      "strong": [
+        "G06180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέχονται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέχωνται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἀποδεξάμενος",
+      "strong": [
+        "G05880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέξηται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέχεται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέξηται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέχεται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἐδέξαντο",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέχωνται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέχωνται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ὑπεδέξατο",
+      "strong": [
+        "G52640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λαμβάνει",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "προσδέχεται",
+      "strong": [
+        "G43270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἀπέλαβεν",
+      "strong": [
+        "G06180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέξωνταί",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέξωνται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἀπέλαβες",
+      "strong": [
+        "G06180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δέξηται",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἀπολάβῃ",
+      "strong": [
+        "G06180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ὑπεδέξατο",
+      "strong": [
+        "G52640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λαβεῖν",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λαβόντα",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λαμβάνεις",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λήμψονται",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "δεξάμενος",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἀπολαμβάνομεν",
+      "strong": [
+        "G06180"
+      ],
+      "occurrence": 1
+    }
+  }
+]

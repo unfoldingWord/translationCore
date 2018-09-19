@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "waste",
+      "quote": "καταργεῖ",
+      "strong": [
+        "G26730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "waste",
+      "quote": "διεσκόρπισεν",
+      "strong": [
+        "G12870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "waste",
+      "quote": "διασκορπίζων",
+      "strong": [
+        "G12870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

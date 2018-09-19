@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "παρελάβετε",
+      "strong": [
+        "G38800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "παρέλαβον",
+      "strong": [
+        "G38800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λαμβάνει",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἐλάβετε",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λάβωμεν",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἀπολάβωμεν",
+      "strong": [
+        "G06180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἐδέξασθέ",
+      "strong": [
+        "G12090"
+      ],
+      "occurrence": 1
+    }
+  }
+]

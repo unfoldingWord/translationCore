@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "ἀλαζόνες",
+      "strong": [
+        "G02130"
+      ],
+      "occurrence": 1
+    }
+  }
+]

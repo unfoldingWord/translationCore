@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "messenger",
+      "quote": "ἀγγέλων",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "messenger",
+      "quote": "ἄγγελόν",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "messenger",
+      "quote": "ἀγγέλους",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

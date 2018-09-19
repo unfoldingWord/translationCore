@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "zacchaeus",
+      "quote": "Ζακχαῖος",
+      "strong": [
+        "G21950"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "zacchaeus",
+      "quote": "Ζακχαῖε",
+      "strong": [
+        "G21950"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "zacchaeus",
+      "quote": "Ζακχαῖος",
+      "strong": [
+        "G21950"
+      ],
+      "occurrence": 1
+    }
+  }
+]

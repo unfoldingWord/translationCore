@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "death",
+      "quote": "τέθνηκεν",
+      "strong": [
+        "G23480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

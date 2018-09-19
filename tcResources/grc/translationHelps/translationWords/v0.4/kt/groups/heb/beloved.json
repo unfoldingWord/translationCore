@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "beloved",
+      "quote": "ἀγαπητοί",
+      "strong": [
+        "G00270"
+      ],
+      "occurrence": 1
+    }
+  }
+]

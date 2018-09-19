@@ -1,0 +1,46 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "sonofgod",
+      "quote": "Υἱὸς τοῦ Θεοῦ",
+      "strong": [
+        "G52070",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "sonofgod",
+      "quote": "Υἱός",
+      "strong": [
+        "G52070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

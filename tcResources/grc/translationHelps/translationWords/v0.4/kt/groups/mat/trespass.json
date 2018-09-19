@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "trespass",
+      "quote": "παραπτώματα",
+      "strong": [
+        "G39000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "trespass",
+      "quote": "παραπτώματα",
+      "strong": [
+        "G39000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "trespass",
+      "quote": "σκάνδαλα",
+      "strong": [
+        "G46250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

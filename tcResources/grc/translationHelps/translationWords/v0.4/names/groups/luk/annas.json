@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "annas",
+      "quote": "Ἅννα",
+      "strong": [
+        "G04520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

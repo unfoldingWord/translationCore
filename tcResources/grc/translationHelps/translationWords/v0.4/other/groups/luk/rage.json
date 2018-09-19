@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "rage",
+      "quote": "ἀνοίας",
+      "strong": [
+        "G04540"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "rage",
+      "quote": "κλύδωνι",
+      "strong": [
+        "G28300"
+      ],
+      "occurrence": 1
+    }
+  }
+]

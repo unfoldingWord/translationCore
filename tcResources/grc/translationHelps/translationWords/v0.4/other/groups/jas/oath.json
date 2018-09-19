@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "oath",
+      "quote": "ὀμνύετε",
+      "strong": [
+        "G36600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "oath",
+      "quote": "ὅρκον",
+      "strong": [
+        "G37270"
+      ],
+      "occurrence": 1
+    }
+  }
+]

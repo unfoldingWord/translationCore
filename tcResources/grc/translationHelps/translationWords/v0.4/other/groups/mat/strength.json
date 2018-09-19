@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχύει",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχύειν",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχύοντες",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχυροῦ",
+      "strong": [
+        "G24780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχυρόν",
+      "strong": [
+        "G24780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχυρὸν",
+      "strong": [
+        "G24780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "σταθῇ",
+      "strong": [
+        "G24760"
+      ],
+      "occurrence": 1
+    }
+  }
+]

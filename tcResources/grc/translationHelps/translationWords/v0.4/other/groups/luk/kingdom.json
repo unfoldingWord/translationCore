@@ -1,0 +1,821 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείᾳ",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 60
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 62
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείᾳ",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείᾳ",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείᾳ",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείᾳ",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείᾳ",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

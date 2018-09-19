@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "pastor",
+      "quote": "ποιμένας",
+      "strong": [
+        "G41660"
+      ],
+      "occurrence": 1
+    }
+  }
+]

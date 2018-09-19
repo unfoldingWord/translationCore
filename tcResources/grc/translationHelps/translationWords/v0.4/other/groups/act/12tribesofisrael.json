@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "12tribesofisrael",
+      "quote": "δωδεκάφυλον",
+      "strong": [
+        "G14290"
+      ],
+      "occurrence": 1
+    }
+  }
+]

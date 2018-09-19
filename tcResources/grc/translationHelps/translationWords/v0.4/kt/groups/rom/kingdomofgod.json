@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλεία τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

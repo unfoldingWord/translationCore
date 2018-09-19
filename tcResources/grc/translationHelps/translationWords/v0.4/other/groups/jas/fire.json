@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "fire",
+      "quote": "πῦρ",
+      "strong": [
+        "G44420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "fire",
+      "quote": "πῦρ",
+      "strong": [
+        "G44420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "fire",
+      "quote": "φλογίζουσα",
+      "strong": [
+        "G53940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "fire",
+      "quote": "φλογιζομένη",
+      "strong": [
+        "G53940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "fire",
+      "quote": "πῦρ",
+      "strong": [
+        "G44420"
+      ],
+      "occurrence": 1
+    }
+  }
+]

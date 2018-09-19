@@ -1,0 +1,254 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἐλάβομεν",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἀπολαμβάνοντες",
+      "strong": [
+        "G06180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἔλαβεν",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἐλάβομεν",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "λαμβάνοντες",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἐλάβετε",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "ἐλάβετε",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "προσλαμβάνεσθε",
+      "strong": [
+        "G43550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "προσελάβετο",
+      "strong": [
+        "G43550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "προσλαμβάνεσθε",
+      "strong": [
+        "G43550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "προσελάβετο",
+      "strong": [
+        "G43550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "receive",
+      "quote": "προσδέξησθε",
+      "strong": [
+        "G43270"
+      ],
+      "occurrence": 1
+    }
+  }
+]

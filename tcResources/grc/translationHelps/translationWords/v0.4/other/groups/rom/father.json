@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "προπάτορα",
+      "strong": [
+        "G43105"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατέρα",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατέρα",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατρὸς",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατὴρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατέρα",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατέρα",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατρὸς",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

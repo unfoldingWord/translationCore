@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "sanctify",
+      "quote": "ἡγιασμένοις",
+      "strong": [
+        "G00370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "sanctify",
+      "quote": "ἡγιασμένοις",
+      "strong": [
+        "G00370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

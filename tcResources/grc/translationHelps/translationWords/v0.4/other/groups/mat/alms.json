@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "alms",
+      "quote": "ἐλεημοσύνην",
+      "strong": [
+        "G16540"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "alms",
+      "quote": "ἐλεημοσύνην",
+      "strong": [
+        "G16540"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "alms",
+      "quote": "ἐλεημοσύνη",
+      "strong": [
+        "G16540"
+      ],
+      "occurrence": 1
+    }
+  }
+]

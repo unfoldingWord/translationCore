@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κλήσεως",
+      "strong": [
+        "G28210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενοι",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγομένης",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κλήσεως",
+      "strong": [
+        "G28210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐκλήθητε",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐκλήθητε",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κλήσεως",
+      "strong": [
+        "G28210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

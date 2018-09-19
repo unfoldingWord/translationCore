@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "mind",
+      "quote": "δίψυχος",
+      "strong": [
+        "G13740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "mind",
+      "quote": "δίψυχοι",
+      "strong": [
+        "G13740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

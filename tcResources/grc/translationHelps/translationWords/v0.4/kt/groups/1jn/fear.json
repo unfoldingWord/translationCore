@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φόβος",
+      "strong": [
+        "G54010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φόβον",
+      "strong": [
+        "G54010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φόβος",
+      "strong": [
+        "G54010"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φοβούμενος",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  }
+]
