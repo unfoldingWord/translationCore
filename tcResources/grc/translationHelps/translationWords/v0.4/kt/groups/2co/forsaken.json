@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "forsaken",
+      "quote": "ἐνκαταλειπόμενοι",
+      "strong": [
+        "G14590"
+      ],
+      "occurrence": 1
+    }
+  }
+]

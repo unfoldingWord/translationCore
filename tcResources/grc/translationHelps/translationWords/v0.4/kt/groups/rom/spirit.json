@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύματί",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνευματικὸν",
+      "strong": [
+        "G41520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "Πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "Πνεύματος",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνευματικός",
+      "strong": [
+        "G41520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "Πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "Πνεύματος",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνευματικοῖς",
+      "strong": [
+        "G41520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

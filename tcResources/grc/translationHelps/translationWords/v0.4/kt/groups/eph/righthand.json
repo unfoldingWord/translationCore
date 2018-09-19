@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "δεξιᾷ",
+      "strong": [
+        "G11880"
+      ],
+      "occurrence": 1
+    }
+  }
+]

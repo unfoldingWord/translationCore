@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "boey",
+      "quote": "πειθαρχεῖν",
+      "strong": [
+        "G39800"
+      ],
+      "occurrence": 1
+    }
+  }
+]

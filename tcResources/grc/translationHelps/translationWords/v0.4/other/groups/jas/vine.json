@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "vine",
+      "quote": "ἄμπελος",
+      "strong": [
+        "G02880"
+      ],
+      "occurrence": 1
+    }
+  }
+]

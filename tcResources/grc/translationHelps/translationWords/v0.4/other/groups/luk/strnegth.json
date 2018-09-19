@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "strnegth",
+      "quote": "κατισχύσητε",
+      "strong": [
+        "G27290"
+      ],
+      "occurrence": 1
+    }
+  }
+]

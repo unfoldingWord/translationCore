@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "watch",
+      "quote": "σκοπεῖτε",
+      "strong": [
+        "G46480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

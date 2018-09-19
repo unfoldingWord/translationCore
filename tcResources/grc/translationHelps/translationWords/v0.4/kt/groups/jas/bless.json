@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριος",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριος",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογοῦμεν",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογία",
+      "strong": [
+        "G21290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακαρίζομεν",
+      "strong": [
+        "G31060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

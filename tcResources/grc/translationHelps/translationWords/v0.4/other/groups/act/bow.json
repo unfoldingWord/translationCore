@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 60
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "θεὶς",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "θεὶς",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "πεσὼν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "προσέπεσεν",
+      "strong": [
+        "G43630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "θεὶς",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "θέντες",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

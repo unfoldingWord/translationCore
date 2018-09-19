@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "στήρισον",
+      "strong": [
+        "G47410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχὺν",
+      "strong": [
+        "G24790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχυροὶ",
+      "strong": [
+        "G24780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχὺς",
+      "strong": [
+        "G24790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἴσχυσαν",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχυρά",
+      "strong": [
+        "G24780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τέλειον",
+      "strong": [
+        "G50460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τέλειοι",
+      "strong": [
+        "G50460"
+      ],
+      "occurrence": 1
+    }
+  }
+]

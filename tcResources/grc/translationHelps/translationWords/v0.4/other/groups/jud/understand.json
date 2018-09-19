@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "ἐπίστανται",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

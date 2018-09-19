@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "deceive",
+      "quote": "παραλογιζόμενοι",
+      "strong": [
+        "G38840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "deceive",
+      "quote": "ἀπατῶν",
+      "strong": [
+        "G05380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "deceive",
+      "quote": "πλάνης",
+      "strong": [
+        "G41060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

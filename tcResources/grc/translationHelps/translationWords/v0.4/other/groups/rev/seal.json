@@ -1,0 +1,444 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "κατεσφραγισμένον σφραγῖσιν",
+      "strong": [
+        "G26960",
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδας",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδας",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδας",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγίδων",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδα",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδα",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδα",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδα",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδα",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδα",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγίσωμεν",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "ἐσφραγισμένων",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "ἐσφραγισμένοι",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "ἐσφραγισμένοι",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "ἐσφραγισμένοι",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδα",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγῖδα",
+      "strong": [
+        "G49730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφράγισον",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "ἐσφράγισεν",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγίσῃς",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  }
+]

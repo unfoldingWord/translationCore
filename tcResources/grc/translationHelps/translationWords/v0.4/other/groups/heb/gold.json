@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦν",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσίῳ",
+      "strong": [
+        "G55530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσῆ",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

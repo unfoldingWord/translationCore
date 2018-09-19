@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "disgrace",
+      "quote": "ὀνειδισμὸν",
+      "strong": [
+        "G36800"
+      ],
+      "occurrence": 1
+    }
+  }
+]

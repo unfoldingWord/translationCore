@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "pierce",
+      "quote": "ἔνυξεν",
+      "strong": [
+        "G35720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "pierce",
+      "quote": "ἐξεκέντησαν",
+      "strong": [
+        "G15740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

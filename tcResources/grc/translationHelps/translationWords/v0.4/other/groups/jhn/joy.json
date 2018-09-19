@@ -1,0 +1,360 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρει",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρᾷ χαίρει",
+      "strong": [
+        "G54790",
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰ",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρῃ",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐχάρη",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρω",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐχάρητε",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰ",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰ",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρήσεται",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰν",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰν",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρήσεται",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰν",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰ",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰν",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐχάρησαν",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  }
+]

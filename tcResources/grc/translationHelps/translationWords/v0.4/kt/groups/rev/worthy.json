@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιοί",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιος",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιος",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιος",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιος",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιόν",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιοί",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  }
+]

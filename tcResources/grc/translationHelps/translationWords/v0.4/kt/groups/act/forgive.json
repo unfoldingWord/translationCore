@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "ἄφεσιν",
+      "strong": [
+        "G08590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "ἄφεσιν",
+      "strong": [
+        "G08590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "ἀφεθήσεταί",
+      "strong": [
+        "G08630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "ἄφεσιν",
+      "strong": [
+        "G08590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "ἄφεσις",
+      "strong": [
+        "G08590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "ἄφεσιν",
+      "strong": [
+        "G08590"
+      ],
+      "occurrence": 1
+    }
+  }
+]

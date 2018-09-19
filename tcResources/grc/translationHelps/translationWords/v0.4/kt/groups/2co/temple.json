@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναῷ",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναὸς",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

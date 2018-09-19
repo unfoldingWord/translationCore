@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "luke",
+      "quote": "Λουκᾶς",
+      "strong": [
+        "G30650"
+      ],
+      "occurrence": 1
+    }
+  }
+]

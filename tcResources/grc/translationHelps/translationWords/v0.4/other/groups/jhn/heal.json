@@ -1,0 +1,108 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "heal",
+      "quote": "ἰάσηται",
+      "strong": [
+        "G23900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "heal",
+      "quote": "τεθεραπευμένῳ",
+      "strong": [
+        "G23230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "heal",
+      "quote": "ἰαθεὶς",
+      "strong": [
+        "G23900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "heal",
+      "quote": "ὑγιῆ ἐποίησα",
+      "strong": [
+        "G51990",
+        "G41600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "heal",
+      "quote": "ἰάσομαι",
+      "strong": [
+        "G23900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

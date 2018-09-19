@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐχάρην",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαράν",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

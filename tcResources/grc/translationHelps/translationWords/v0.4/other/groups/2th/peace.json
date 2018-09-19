@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "εἰρήνη",
+      "strong": [
+        "G15150"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "εἰρήνης",
+      "strong": [
+        "G15150"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "εἰρήνην",
+      "strong": [
+        "G15150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

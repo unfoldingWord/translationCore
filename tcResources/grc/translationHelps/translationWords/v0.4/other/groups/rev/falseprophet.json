@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "falseprophet",
+      "quote": "ψευδοπροφήτου",
+      "strong": [
+        "G55780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "falseprophet",
+      "quote": "ψευδοπροφήτης",
+      "strong": [
+        "G55780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "falseprophet",
+      "quote": "ψευδοπροφήτης",
+      "strong": [
+        "G55780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

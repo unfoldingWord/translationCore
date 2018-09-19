@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "righthand",
+      "quote": "δεξιῶν",
+      "strong": [
+        "G11880"
+      ],
+      "occurrence": 1
+    }
+  }
+]

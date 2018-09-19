@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "forsake",
+      "quote": "ἀφέντες",
+      "strong": [
+        "G08630"
+      ],
+      "occurrence": 1
+    }
+  }
+]

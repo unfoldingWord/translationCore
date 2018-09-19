@@ -1,0 +1,66 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματος ὀνομαζομένου",
+      "strong": [
+        "G36860",
+        "G36870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνομάζεται",
+      "strong": [
+        "G36870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

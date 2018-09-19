@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "overseer",
+      "quote": "ἐπισκόπους",
+      "strong": [
+        "G19850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "abel",
+      "quote": "Ἂβελ",
+      "strong": [
+        "G00060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

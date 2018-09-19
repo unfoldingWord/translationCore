@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "hypocrite",
+      "quote": "ὑποκριτά",
+      "strong": [
+        "G52730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "hypocrite",
+      "quote": "ὑπόκρισις",
+      "strong": [
+        "G52720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "hypocrite",
+      "quote": "ὑποκριταί",
+      "strong": [
+        "G52730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "hypocrite",
+      "quote": "ὑποκριταί",
+      "strong": [
+        "G52730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "snare",
+      "quote": "ἐνώπιον",
+      "strong": [
+        "G17990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

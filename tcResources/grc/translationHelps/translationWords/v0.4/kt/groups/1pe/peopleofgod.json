@@ -1,0 +1,45 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "peopleofgod",
+      "quote": "λαὸς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "peopleofgod",
+      "quote": "λαὸς Θεοῦ",
+      "strong": [
+        "G29920",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

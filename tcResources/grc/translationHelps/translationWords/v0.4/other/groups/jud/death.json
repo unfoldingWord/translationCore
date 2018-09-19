@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "death",
+      "quote": "ἀποθανόντα",
+      "strong": [
+        "G05990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

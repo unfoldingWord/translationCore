@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "tenth",
+      "quote": "δεκάτην",
+      "strong": [
+        "G11820"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "tenth",
+      "quote": "δεκάτην",
+      "strong": [
+        "G11820"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "tenth",
+      "quote": "ἀποδεκατοῦν",
+      "strong": [
+        "G05860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "tenth",
+      "quote": "δεδεκάτωκεν",
+      "strong": [
+        "G11830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "tenth",
+      "quote": "δεκάτας",
+      "strong": [
+        "G11820"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "tenth",
+      "quote": "δεκάτας",
+      "strong": [
+        "G11820"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "tenth",
+      "quote": "δεδεκάτωται",
+      "strong": [
+        "G11830"
+      ],
+      "occurrence": 1
+    }
+  }
+]

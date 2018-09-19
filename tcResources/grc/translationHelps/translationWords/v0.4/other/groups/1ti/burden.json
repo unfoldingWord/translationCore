@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "burden",
+      "quote": "βαρείσθω",
+      "strong": [
+        "G09160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

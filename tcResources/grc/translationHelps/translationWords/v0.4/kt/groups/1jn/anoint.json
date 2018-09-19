@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "anoint",
+      "quote": "χρῖσμα",
+      "strong": [
+        "G55450"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "anoint",
+      "quote": "χρῖσμα",
+      "strong": [
+        "G55450"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "anoint",
+      "quote": "χρῖσμα",
+      "strong": [
+        "G55450"
+      ],
+      "occurrence": 2
+    }
+  }
+]

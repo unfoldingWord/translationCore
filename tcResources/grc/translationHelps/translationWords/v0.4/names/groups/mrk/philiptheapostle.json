@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "philiptheapostle",
+      "quote": "Φίλιππον",
+      "strong": [
+        "G53760"
+      ],
+      "occurrence": 1
+    }
+  }
+]

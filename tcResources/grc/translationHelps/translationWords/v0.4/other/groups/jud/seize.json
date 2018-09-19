@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "ἁρπάζοντες",
+      "strong": [
+        "G07260"
+      ],
+      "occurrence": 1
+    }
+  }
+]

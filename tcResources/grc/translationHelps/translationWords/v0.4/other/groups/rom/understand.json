@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "νοούμενα",
+      "strong": [
+        "G35390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "ἐπιγνόντες",
+      "strong": [
+        "G19210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "συνίων",
+      "strong": [
+        "G49200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "γινώσκω",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "συνήσουσιν",
+      "strong": [
+        "G49200"
+      ],
+      "occurrence": 1
+    }
+  }
+]

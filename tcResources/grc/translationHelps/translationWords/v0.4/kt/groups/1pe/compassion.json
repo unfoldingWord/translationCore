@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "συνπαθεῖς",
+      "strong": [
+        "G48350"
+      ],
+      "occurrence": 1
+    }
+  }
+]

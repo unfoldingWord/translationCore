@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "godly",
+      "quote": "ἀσεβὴς",
+      "strong": [
+        "G07650"
+      ],
+      "occurrence": 1
+    }
+  }
+]

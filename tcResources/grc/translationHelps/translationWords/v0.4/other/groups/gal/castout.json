@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἔκβαλε",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

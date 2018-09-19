@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "prison",
+      "quote": "φυλακὴν",
+      "strong": [
+        "G54380"
+      ],
+      "occurrence": 1
+    }
+  }
+]

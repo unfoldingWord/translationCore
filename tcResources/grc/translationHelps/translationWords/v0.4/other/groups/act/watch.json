@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "watch",
+      "quote": "παρετηροῦντο",
+      "strong": [
+        "G39060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "watch",
+      "quote": "ἐτήρουν",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "watch",
+      "quote": "τηρεῖν",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "watch",
+      "quote": "γρηγορεῖτε",
+      "strong": [
+        "G11270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "watch",
+      "quote": "φυλάσσων",
+      "strong": [
+        "G54420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "watch",
+      "quote": "προσδοκῶντες",
+      "strong": [
+        "G43280"
+      ],
+      "occurrence": 1
+    }
+  }
+]

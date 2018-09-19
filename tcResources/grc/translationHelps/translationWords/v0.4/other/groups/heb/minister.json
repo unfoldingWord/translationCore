@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διακονήσαντες",
+      "strong": [
+        "G12470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διακονοῦντες",
+      "strong": [
+        "G12470"
+      ],
+      "occurrence": 1
+    }
+  }
+]

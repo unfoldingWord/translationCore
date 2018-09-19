@@ -1,0 +1,464 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσᾶς",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσᾶν",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσᾶς",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσῶν",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσίον",
+      "strong": [
+        "G55530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦς",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσᾶς",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦν",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦν",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσῷ",
+      "strong": [
+        "G55570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦ",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσᾶ",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦν",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσᾶς",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσᾶς",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσῷ",
+      "strong": [
+        "G55570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦν",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦ",
+      "strong": [
+        "G55570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσίῳ",
+      "strong": [
+        "G55530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσοῦν",
+      "strong": [
+        "G55520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσίον",
+      "strong": [
+        "G55530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "gold",
+      "quote": "χρυσίον",
+      "strong": [
+        "G55530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

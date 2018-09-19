@@ -1,0 +1,499 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης ὁ Βαπτιστὴς",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G09100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννην",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννου",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννῃ",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννου",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννου τοῦ Βαπτιστοῦ",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G09100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννου τοῦ Βαπτιστοῦ",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G09100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννου",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης ὁ Βαπτιστής",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G09100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννην",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννου τοῦ Βαπτιστοῦ",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G09100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννην",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννην τὸν Βαπτιστήν",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G09100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννου τοῦ Βαπτιστοῦ",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G09100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννου",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννην",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "johnthebaptist",
+      "quote": "Ἰωάννης",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

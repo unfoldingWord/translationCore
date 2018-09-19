@@ -1,0 +1,113 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "αὐτοῦ θέλησιν",
+      "strong": [
+        "G08460",
+        "G23080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "θέλημά σου",
+      "strong": [
+        "G23070",
+        "G47710"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "θέλημά σου",
+      "strong": [
+        "G23070",
+        "G47710"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "θέλημα τοῦ Θεοῦ",
+      "strong": [
+        "G23070",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "θέλημα αὐτοῦ",
+      "strong": [
+        "G23070",
+        "G08460"
+      ],
+      "occurrence": 1
+    }
+  }
+]

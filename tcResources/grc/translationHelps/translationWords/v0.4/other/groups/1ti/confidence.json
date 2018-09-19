@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "confidence",
+      "quote": "παρρησίαν",
+      "strong": [
+        "G39540"
+      ],
+      "occurrence": 1
+    }
+  }
+]

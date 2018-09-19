@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διωκόμενοι",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "ἐδίωξα",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

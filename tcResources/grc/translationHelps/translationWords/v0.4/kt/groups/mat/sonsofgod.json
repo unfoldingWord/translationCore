@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "sonsofgod",
+      "quote": "υἱοὶ Θεοῦ",
+      "strong": [
+        "G52070",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "sonsofgod",
+      "quote": "υἱοὶ τοῦ Πατρὸς",
+      "strong": [
+        "G52070",
+        "G35880",
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

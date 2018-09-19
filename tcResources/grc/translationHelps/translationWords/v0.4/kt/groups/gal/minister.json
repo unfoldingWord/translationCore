@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διάκονος",
+      "strong": [
+        "G12490"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,296 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλληνιστῶν",
+      "strong": [
+        "G16750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλληνιστάς",
+      "strong": [
+        "G16750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλληνιστάς",
+      "strong": [
+        "G16750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλλήνων",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλληνος",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλλην",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλλήνων",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλληνίδων",
+      "strong": [
+        "G16740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλληνας",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλληνας",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλλησιν",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλλησιν",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλληνας",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλληνιστὶ",
+      "strong": [
+        "G16760"
+      ],
+      "occurrence": 1
+    }
+  }
+]

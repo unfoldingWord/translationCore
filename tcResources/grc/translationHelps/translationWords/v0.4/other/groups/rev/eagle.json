@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "eagle",
+      "quote": "ἀετῷ",
+      "strong": [
+        "G01050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "eagle",
+      "quote": "ἀετοῦ",
+      "strong": [
+        "G01050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "eagle",
+      "quote": "ἀετοῦ",
+      "strong": [
+        "G01050"
+      ],
+      "occurrence": 1
+    }
+  }
+]

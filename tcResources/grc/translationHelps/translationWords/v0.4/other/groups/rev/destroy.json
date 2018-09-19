@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "destroy",
+      "quote": "διαφθεῖραι",
+      "strong": [
+        "G13110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "destroy",
+      "quote": "διαφθείροντας",
+      "strong": [
+        "G13110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

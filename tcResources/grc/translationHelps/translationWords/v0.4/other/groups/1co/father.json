@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατέρας",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "ἐγέννησα",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατρὸς",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "father",
+      "quote": "πατέρες",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "foreordain",
+      "quote": "προγνώσει",
+      "strong": [
+        "G42680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

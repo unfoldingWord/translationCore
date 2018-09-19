@@ -1,0 +1,611 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτήσασιν",
+      "strong": [
+        "G02640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτωλῶν",
+      "strong": [
+        "G02680"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτανόντων",
+      "strong": [
+        "G02640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτιῶν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίαν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτωλῶν",
+      "strong": [
+        "G02680"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίαν",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "sin",
+      "quote": "ἁμαρτίας",
+      "strong": [
+        "G02660"
+      ],
+      "occurrence": 1
+    }
+  }
+]

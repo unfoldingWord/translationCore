@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατον",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  }
+]

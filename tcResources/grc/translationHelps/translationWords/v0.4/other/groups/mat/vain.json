@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "vain",
+      "quote": "μάτην",
+      "strong": [
+        "G31550"
+      ],
+      "occurrence": 1
+    }
+  }
+]

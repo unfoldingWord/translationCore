@@ -1,0 +1,254 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαροὶ",
+      "strong": [
+        "G25130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίσαι",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίσθητι",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἐκαθαρίσθη",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκαθάρτων",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίζετε",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίζονται",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκάθαρτον",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίζετε",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθάρισον",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρόν",
+      "strong": [
+        "G25130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 59
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρᾷ",
+      "strong": [
+        "G25130"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "tabernacle",
+      "quote": "σκηνὴν",
+      "strong": [
+        "G46330"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "tabernacle",
+      "quote": "σκηνὴ",
+      "strong": [
+        "G46330"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "tabernacle",
+      "quote": "σκηνὴν",
+      "strong": [
+        "G46330"
+      ],
+      "occurrence": 1
+    }
+  }
+]

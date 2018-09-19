@@ -1,0 +1,87 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 78
+      },
+      "tool": "translationWords",
+      "groupId": "onhigh",
+      "quote": "ὕψους",
+      "strong": [
+        "G53110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "onhigh",
+      "quote": "ἐν ὑψίστοις",
+      "strong": [
+        "G17220",
+        "G53100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "onhigh",
+      "quote": "ὑψίστοις",
+      "strong": [
+        "G53100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "onhigh",
+      "quote": "ὕψους",
+      "strong": [
+        "G53110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

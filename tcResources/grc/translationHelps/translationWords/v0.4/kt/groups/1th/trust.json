@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "trust",
+      "quote": "πιστευθῆναι",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  }
+]

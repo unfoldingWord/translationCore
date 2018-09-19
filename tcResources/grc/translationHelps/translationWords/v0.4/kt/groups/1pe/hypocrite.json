@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "hypocrite",
+      "quote": "ὑποκρίσεις",
+      "strong": [
+        "G52720"
+      ],
+      "occurrence": 1
+    }
+  }
+]

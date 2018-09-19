@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "majesty",
+      "quote": "Μεγαλωσύνης",
+      "strong": [
+        "G31720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "majesty",
+      "quote": "Μεγαλωσύνης",
+      "strong": [
+        "G31720"
+      ],
+      "occurrence": 1
+    }
+  }
+]

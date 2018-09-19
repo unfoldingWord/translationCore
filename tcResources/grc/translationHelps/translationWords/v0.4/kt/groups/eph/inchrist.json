@@ -1,0 +1,523 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ",
+      "strong": [
+        "G17220",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν τῷ Χριστῷ",
+      "strong": [
+        "G17220",
+        "G35880",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν τῷ Χριστῷ",
+      "strong": [
+        "G17220",
+        "G35880",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν τῷ Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G35880",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν τῷ Χριστῷ",
+      "strong": [
+        "G17220",
+        "G35880",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ",
+      "strong": [
+        "G17220",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Κυρίῳ",
+      "strong": [
+        "G17220",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν τῷ Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G35880",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Κυρίῳ",
+      "strong": [
+        "G17220",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Κυρίῳ",
+      "strong": [
+        "G17220",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν τῷ Ἰησοῦ",
+      "strong": [
+        "G17220",
+        "G35880",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Χριστῷ",
+      "strong": [
+        "G17220",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Κυρίῳ",
+      "strong": [
+        "G17220",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Κυρίῳ",
+      "strong": [
+        "G17220",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Κυρίῳ",
+      "strong": [
+        "G17220",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "ἐν Κυρίῳ",
+      "strong": [
+        "G17220",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  }
+]
