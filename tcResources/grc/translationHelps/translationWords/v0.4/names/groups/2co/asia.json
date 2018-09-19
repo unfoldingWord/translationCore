@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "asia",
+      "quote": "Ἀσίᾳ",
+      "strong": [
+        "G07730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

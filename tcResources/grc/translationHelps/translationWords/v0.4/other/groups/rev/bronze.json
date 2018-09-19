@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "bronze",
+      "quote": "χαλκολιβάνῳ",
+      "strong": [
+        "G54740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "bronze",
+      "quote": "χαλκολιβάνῳ",
+      "strong": [
+        "G54740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "bronze",
+      "quote": "χαλκᾶ",
+      "strong": [
+        "G54700"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "bronze",
+      "quote": "χαλκοῦ",
+      "strong": [
+        "G54750"
+      ],
+      "occurrence": 1
+    }
+  }
+]

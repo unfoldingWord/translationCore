@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "israel",
+      "quote": "Ἰσραήλ",
+      "strong": [
+        "G24740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

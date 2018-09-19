@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πλανηθῇ",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πλανώμενον",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πεπλανημένοις",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πλανᾶσθε",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πλανήσῃ",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πλανήσουσιν",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πλανήσουσιν",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πλανῆσαι",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  }
+]

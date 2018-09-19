@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "criminal",
+      "quote": "κακοῦργοι",
+      "strong": [
+        "G25570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "criminal",
+      "quote": "κακούργους",
+      "strong": [
+        "G25570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "criminal",
+      "quote": "κακούργων",
+      "strong": [
+        "G25570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

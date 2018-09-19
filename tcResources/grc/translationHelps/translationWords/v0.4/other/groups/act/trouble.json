@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "παρενοχλεῖν",
+      "strong": [
+        "G39260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "ἐτάραξαν",
+      "strong": [
+        "G50150"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "ἐκταράσσουσιν",
+      "strong": [
+        "G16130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "ἐτάραξαν",
+      "strong": [
+        "G50150"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "ταράσσοντες",
+      "strong": [
+        "G50150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

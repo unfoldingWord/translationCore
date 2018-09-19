@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "esau",
+      "quote": "Ἠσαῦ",
+      "strong": [
+        "G22690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "esau",
+      "quote": "Ἠσαῦ",
+      "strong": [
+        "G22690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

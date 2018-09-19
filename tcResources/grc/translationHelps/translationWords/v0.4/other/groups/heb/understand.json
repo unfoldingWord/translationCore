@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "νοοῦμεν",
+      "strong": [
+        "G35390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "exhort",
+      "quote": "παρακαλῶν",
+      "strong": [
+        "G38700"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "exhort",
+      "quote": "παρεκάλει",
+      "strong": [
+        "G38700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

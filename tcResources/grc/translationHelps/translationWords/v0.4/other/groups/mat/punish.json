@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "punish",
+      "quote": "κόλασιν",
+      "strong": [
+        "G28510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

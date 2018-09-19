@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "divine",
+      "quote": "ἐχρηματίσθη",
+      "strong": [
+        "G55370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "divine",
+      "quote": "θεῖον",
+      "strong": [
+        "G23040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

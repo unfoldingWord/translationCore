@@ -1,0 +1,318 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "δειλοί",
+      "strong": [
+        "G11690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβήθησαν",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φόβον",
+      "strong": [
+        "G54010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβήθησαν φόβον",
+      "strong": [
+        "G53990",
+        "G54010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβήθησαν",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φοβηθεῖσα",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φοβοῦ",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβεῖτο",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φοβεῖσθε",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβοῦντο",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβοῦντο",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβοῦντο",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβοῦντο",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβήθησαν",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "ἐφοβοῦντο",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "counselor",
+      "quote": "συμβούλιον",
+      "strong": [
+        "G48240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "counselor",
+      "quote": "συμβούλιον",
+      "strong": [
+        "G48240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "counselor",
+      "quote": "συμβούλιον",
+      "strong": [
+        "G48240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "counselor",
+      "quote": "συμβούλιον",
+      "strong": [
+        "G48240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "counselor",
+      "quote": "συμβούλιόν",
+      "strong": [
+        "G48240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

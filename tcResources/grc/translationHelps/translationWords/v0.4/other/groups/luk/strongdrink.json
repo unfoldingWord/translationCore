@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "strongdrink",
+      "quote": "σίκερα",
+      "strong": [
+        "G46080"
+      ],
+      "occurrence": 1
+    }
+  }
+]

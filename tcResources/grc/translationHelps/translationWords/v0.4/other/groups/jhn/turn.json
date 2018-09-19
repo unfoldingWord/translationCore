@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "στραφεὶς",
+      "strong": [
+        "G47620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "στραφῶσιν",
+      "strong": [
+        "G47620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐστράφη",
+      "strong": [
+        "G47620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "στραφεῖσα",
+      "strong": [
+        "G47620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστραφεὶς",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  }
+]

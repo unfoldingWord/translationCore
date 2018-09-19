@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "anguish",
+      "quote": "συνοχῆς",
+      "strong": [
+        "G49280"
+      ],
+      "occurrence": 1
+    }
+  }
+]

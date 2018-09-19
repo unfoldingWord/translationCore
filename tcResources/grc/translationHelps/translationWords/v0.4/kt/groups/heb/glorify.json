@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "glorify",
+      "quote": "ἐδόξασεν",
+      "strong": [
+        "G13920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

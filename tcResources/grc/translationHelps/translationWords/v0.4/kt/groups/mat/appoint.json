@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "τασσόμενος",
+      "strong": [
+        "G50210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "κατέστησεν",
+      "strong": [
+        "G25250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "καταστήσει",
+      "strong": [
+        "G25250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "θήσει",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "καταστήσω",
+      "strong": [
+        "G25250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "καταστήσω",
+      "strong": [
+        "G25250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

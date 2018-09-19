@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "wrath",
+      "quote": "ὀργῆς",
+      "strong": [
+        "G37090"
+      ],
+      "occurrence": 1
+    }
+  }
+]

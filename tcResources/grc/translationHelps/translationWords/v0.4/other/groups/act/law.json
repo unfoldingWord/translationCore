@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νόμον",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

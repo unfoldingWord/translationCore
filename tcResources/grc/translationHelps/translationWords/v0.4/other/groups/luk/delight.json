@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "delight",
+      "quote": "εὐδοκίας",
+      "strong": [
+        "G21070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "delight",
+      "quote": "εὐδόκησα",
+      "strong": [
+        "G21060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "delight",
+      "quote": "εὐδόκησεν",
+      "strong": [
+        "G21060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

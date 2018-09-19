@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "guilt",
+      "quote": "αἰτίαν",
+      "strong": [
+        "G01560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

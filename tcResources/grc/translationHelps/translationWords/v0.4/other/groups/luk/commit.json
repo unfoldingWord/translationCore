@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 66
+      },
+      "tool": "translationWords",
+      "groupId": "commit",
+      "quote": "ἔθεντο",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "commit",
+      "quote": "ποιήσας",
+      "strong": [
+        "G41600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "commit",
+      "quote": "παρέθεντο",
+      "strong": [
+        "G39080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "commit",
+      "quote": "ἐποίησεν",
+      "strong": [
+        "G41600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "commit",
+      "quote": "παρατίθεμαι",
+      "strong": [
+        "G39080"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχοὺς",
+      "strong": [
+        "G34320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

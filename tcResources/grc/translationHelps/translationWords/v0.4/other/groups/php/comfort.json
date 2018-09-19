@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "comfort",
+      "quote": "παραμύθιον",
+      "strong": [
+        "G38900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "abijah",
+      "quote": "Ἀβιά",
+      "strong": [
+        "G00070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

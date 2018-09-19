@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "admonish",
+      "quote": "νουθετεῖτε",
+      "strong": [
+        "G35600"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "jesus",
+      "quote": "Ἰησοῦ Χριστοῦ",
+      "strong": [
+        "G24240",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "jesus",
+      "quote": "Ἰησοῦν Χριστὸν ἐρχόμενον",
+      "strong": [
+        "G24240",
+        "G55470",
+        "G20640"
+      ],
+      "occurrence": 1
+    }
+  }
+]

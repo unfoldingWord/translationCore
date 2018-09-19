@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "curse",
+      "quote": "ἐπάρατοί",
+      "strong": [
+        "G18835"
+      ],
+      "occurrence": 1
+    }
+  }
+]

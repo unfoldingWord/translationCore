@@ -1,0 +1,45 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": "ῥήματι",
+      "strong": [
+        "G44870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": "ῥῆμα Θεοῦ",
+      "strong": [
+        "G44870",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

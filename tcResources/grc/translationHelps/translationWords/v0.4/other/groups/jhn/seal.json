@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "ἐσφράγισεν",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "ἐσφράγισεν",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  }
+]
