@@ -1,0 +1,1283 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνῶναι",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἴδατε",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐγνώρισάς",
+      "strong": [
+        "G11070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "εἰδὼς",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γινωσκέτω",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπεγίνωσκον",
+      "strong": [
+        "G19210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἴδατε",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἶδα",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνωστὸν",
+      "strong": [
+        "G11100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "εἰδυῖα",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἀνεγνωρίσθη",
+      "strong": [
+        "G03190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ᾔδει",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἴδαμεν",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐγνώσθη",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπιγνόντες",
+      "strong": [
+        "G19210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνωστὸν",
+      "strong": [
+        "G11100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπίστασθε",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἴδατε",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ᾔδει",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἶδα",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπιγνοῦσα",
+      "strong": [
+        "G19210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἀγνοήσαντες",
+      "strong": [
+        "G00500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνωστὸν",
+      "strong": [
+        "G11100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπίστασθε",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνωστὰ",
+      "strong": [
+        "G11100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ᾔδεισαν",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἔγνωσαν",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνῶναι",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνῶναι",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἀγνοοῦντες",
+      "strong": [
+        "G00500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπιστάμενος",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γινώσκω",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπίσταμαι",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνωστὸν",
+      "strong": [
+        "G11100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπίστασθε",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ᾔδεισαν",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γινώσκει",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπίστασθε",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "εἰδώς",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἶδα",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἶδα",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γινώσκετε",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνώσονται",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνῶναι",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γινώσκεις",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνῶναι",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπίστανται",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπιγνῷ",
+      "strong": [
+        "G19210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνῶναι",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ᾔδειν",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνοὺς",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπιγνῶναι",
+      "strong": [
+        "G19210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπιστάμενος",
+      "strong": [
+        "G19870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπιγνῶναι",
+      "strong": [
+        "G19210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "εἰδὼς",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἐπιγινώσκεις",
+      "strong": [
+        "G19210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "ἴσασι",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "προγινώσκοντές",
+      "strong": [
+        "G42670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "οἶδα",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνωστὸν",
+      "strong": [
+        "G11100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "know",
+      "quote": "γνωστὸν",
+      "strong": [
+        "G11100"
+      ],
+      "occurrence": 1
+    }
+  }
+]

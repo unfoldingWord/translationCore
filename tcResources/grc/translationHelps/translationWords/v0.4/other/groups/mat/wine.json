@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "wine",
+      "quote": "οἶνον",
+      "strong": [
+        "G36310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "wine",
+      "quote": "ἀσκοὺς",
+      "strong": [
+        "G07790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "wine",
+      "quote": "ἀσκοί",
+      "strong": [
+        "G07790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "wine",
+      "quote": "οἶνος",
+      "strong": [
+        "G36310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "wine",
+      "quote": "ἀσκοὶ",
+      "strong": [
+        "G07790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "wine",
+      "quote": "οἶνον",
+      "strong": [
+        "G36310"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "wine",
+      "quote": "ἀσκοὺς",
+      "strong": [
+        "G07790"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "wine",
+      "quote": "οἶνον",
+      "strong": [
+        "G36310"
+      ],
+      "occurrence": 1
+    }
+  }
+]

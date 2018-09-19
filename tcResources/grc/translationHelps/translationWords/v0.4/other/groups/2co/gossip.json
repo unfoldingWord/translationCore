@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "gossip",
+      "quote": "καταλαλιαί",
+      "strong": [
+        "G26360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

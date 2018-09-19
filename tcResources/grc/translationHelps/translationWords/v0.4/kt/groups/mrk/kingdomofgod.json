@@ -1,0 +1,324 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλεία τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείας τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλεία τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλεία τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείας τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείᾳ τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

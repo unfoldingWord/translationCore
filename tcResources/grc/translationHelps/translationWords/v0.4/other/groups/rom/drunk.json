@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "drunk",
+      "quote": "μέθαις",
+      "strong": [
+        "G31780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

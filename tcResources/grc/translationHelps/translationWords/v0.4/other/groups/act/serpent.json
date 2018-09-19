@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "serpent",
+      "quote": "ἔχιδνα",
+      "strong": [
+        "G21910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "serpent",
+      "quote": "θηρίον",
+      "strong": [
+        "G23420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "serpent",
+      "quote": "θηρίον",
+      "strong": [
+        "G23420"
+      ],
+      "occurrence": 1
+    }
+  }
+]

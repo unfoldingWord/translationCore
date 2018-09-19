@@ -1,0 +1,422 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "Προβατικῇ",
+      "strong": [
+        "G42620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτων",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτων",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτων",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτων",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτων",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτων",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτων",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατα",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "πρόβατά",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτια",
+      "strong": [
+        "G42625"
+      ],
+      "occurrence": 1
+    }
+  }
+]

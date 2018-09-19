@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "prophet",
+      "quote": "προφήτῃ",
+      "strong": [
+        "G43960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "prophet",
+      "quote": "προφήτης",
+      "strong": [
+        "G43960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "prophet",
+      "quote": "προφήτης",
+      "strong": [
+        "G43960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "prophet",
+      "quote": "προφητῶν",
+      "strong": [
+        "G43960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "prophet",
+      "quote": "ἐπροφήτευσεν",
+      "strong": [
+        "G43950"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "prophet",
+      "quote": "προφητῶν",
+      "strong": [
+        "G43960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "prophet",
+      "quote": "προφήτης",
+      "strong": [
+        "G43960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 65
+      },
+      "tool": "translationWords",
+      "groupId": "prophet",
+      "quote": "προφήτευσον",
+      "strong": [
+        "G43950"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "strong": [
+        "G20780",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "strong": [
+        "G20780",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "strong": [
+        "G20780",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "strong": [
+        "G20780",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "strong": [
+        "G20780",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "strong": [
+        "G20780",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχοὶ",
+      "strong": [
+        "G34320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

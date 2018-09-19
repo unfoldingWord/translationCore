@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "leprosy",
+      "quote": "λεπρὸς",
+      "strong": [
+        "G30150"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "leprosy",
+      "quote": "λέπρα",
+      "strong": [
+        "G30140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "leprosy",
+      "quote": "λεπροῦ",
+      "strong": [
+        "G30150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

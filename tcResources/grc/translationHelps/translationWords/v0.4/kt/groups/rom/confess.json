@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "confess",
+      "quote": "ὁμολογήσῃς",
+      "strong": [
+        "G36700"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "confess",
+      "quote": "ὁμολογεῖται",
+      "strong": [
+        "G36700"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "confess",
+      "quote": "ἐξομολογήσεται",
+      "strong": [
+        "G18430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

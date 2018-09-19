@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "partial",
+      "quote": "προσωπολήμπτης",
+      "strong": [
+        "G43810"
+      ],
+      "occurrence": 1
+    }
+  }
+]

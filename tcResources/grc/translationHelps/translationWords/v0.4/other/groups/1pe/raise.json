@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείραντα",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "tempt",
+      "quote": "πειράζῃ",
+      "strong": [
+        "G39850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "tempt",
+      "quote": "πειρασμὸς",
+      "strong": [
+        "G39860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "tempt",
+      "quote": "πειρασθῆναι",
+      "strong": [
+        "G39850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "tempt",
+      "quote": "πειρασμῷ",
+      "strong": [
+        "G39860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "lust",
+      "quote": "ἐπιθυμίας",
+      "strong": [
+        "G19390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "lust",
+      "quote": "πάθει ἐπιθυμίας",
+      "strong": [
+        "G38060",
+        "G19390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

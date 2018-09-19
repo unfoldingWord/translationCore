@@ -1,0 +1,380 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "πονηρίᾳ",
+      "strong": [
+        "G41890"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακίᾳ",
+      "strong": [
+        "G25490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακῶν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακόν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακὰ",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακὸν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακὸν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "φαῦλον",
+      "strong": [
+        "G53370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "πονηρόν",
+      "strong": [
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακὸν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακοῦ",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακοῦ",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακόν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακῷ",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακὸν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακὸν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακὸν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακόν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

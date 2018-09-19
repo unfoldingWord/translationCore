@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "bear",
+      "quote": "βαστάσαι",
+      "strong": [
+        "G09410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "bear",
+      "quote": "βαστάζοντος",
+      "strong": [
+        "G09410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

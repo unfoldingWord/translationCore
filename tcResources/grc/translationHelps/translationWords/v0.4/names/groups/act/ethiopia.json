@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "ethiopia",
+      "quote": "Αἰθίοψ",
+      "strong": [
+        "G01280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "ethiopia",
+      "quote": "Αἰθιόπων",
+      "strong": [
+        "G01280"
+      ],
+      "occurrence": 1
+    }
+  }
+]

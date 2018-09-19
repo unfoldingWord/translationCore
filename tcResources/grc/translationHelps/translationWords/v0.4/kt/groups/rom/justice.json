@@ -1,0 +1,380 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιωθήσονται",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιωθῇς",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "ἔνδικόν",
+      "strong": [
+        "G17380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιωθήσεται",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιούμενοι",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιοῦντα",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιοῦσθαι",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιώσει",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "ἐδικαιώθη",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιοῦντα",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαίωσιν",
+      "strong": [
+        "G13470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιωθέντες",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιωθέντες",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαίωμα",
+      "strong": [
+        "G13450"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαίωσιν",
+      "strong": [
+        "G13470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "ἐδικαίωσεν",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "ἐδικαίωσεν",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "justice",
+      "quote": "δικαιῶν",
+      "strong": [
+        "G13440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

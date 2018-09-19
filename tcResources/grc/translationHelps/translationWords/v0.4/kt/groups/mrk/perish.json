@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπόλλυται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολλύμεθα",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσει",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσει",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσῃ",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσῃ",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσωσιν",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

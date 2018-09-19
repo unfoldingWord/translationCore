@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἀπίστοις",
+      "strong": [
+        "G05710"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πεπιστευκότες",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  }
+]

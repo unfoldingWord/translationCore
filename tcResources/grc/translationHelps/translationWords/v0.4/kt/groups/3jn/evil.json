@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "πονηροῖς",
+      "strong": [
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακὸν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακοποιῶν",
+      "strong": [
+        "G25540"
+      ],
+      "occurrence": 1
+    }
+  }
+]

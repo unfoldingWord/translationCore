@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "ἀθετοῦσιν",
+      "strong": [
+        "G01140"
+      ],
+      "occurrence": 1
+    }
+  }
+]

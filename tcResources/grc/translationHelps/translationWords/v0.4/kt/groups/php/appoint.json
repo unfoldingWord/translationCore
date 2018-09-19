@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "κεῖμαι",
+      "strong": [
+        "G27490"
+      ],
+      "occurrence": 1
+    }
+  }
+]

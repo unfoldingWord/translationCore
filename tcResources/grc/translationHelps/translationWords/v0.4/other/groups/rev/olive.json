@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "olive",
+      "quote": "ἐλαῖαι",
+      "strong": [
+        "G16360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

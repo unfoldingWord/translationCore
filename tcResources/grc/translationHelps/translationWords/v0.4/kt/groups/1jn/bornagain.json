@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεγέννηται",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεγεννημένος",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεγέννηται",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεγέννηται",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεγέννηται",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεννήσαντα",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεγεννημένον",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεγεννημένον",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεγεννημένος",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "bornagain",
+      "quote": "γεννηθεὶς",
+      "strong": [
+        "G10800"
+      ],
+      "occurrence": 1
+    }
+  }
+]

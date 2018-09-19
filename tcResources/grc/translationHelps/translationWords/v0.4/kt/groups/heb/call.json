@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλεῖν",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κλήσεως",
+      "strong": [
+        "G28210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλεῖται",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλούμενος",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λέγεται",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγομένη",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κεκλημένοι",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλούμενος",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐπικαλεῖσθαι",
+      "strong": [
+        "G19410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λέγεσθαι",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

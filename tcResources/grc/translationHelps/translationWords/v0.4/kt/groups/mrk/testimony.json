@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτύριον",
+      "strong": [
+        "G31420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτύριον",
+      "strong": [
+        "G31420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτύριον",
+      "strong": [
+        "G31420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτυρίαν",
+      "strong": [
+        "G31410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτυρίαι",
+      "strong": [
+        "G31410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 59
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτυρία",
+      "strong": [
+        "G31410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 60
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "καταμαρτυροῦσιν",
+      "strong": [
+        "G26490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 63
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτύρων",
+      "strong": [
+        "G31440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

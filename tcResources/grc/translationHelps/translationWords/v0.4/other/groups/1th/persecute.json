@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώκετε",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

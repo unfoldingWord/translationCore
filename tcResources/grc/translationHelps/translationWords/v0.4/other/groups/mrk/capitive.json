@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "capitive",
+      "quote": "συνλαβεῖν",
+      "strong": [
+        "G48150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

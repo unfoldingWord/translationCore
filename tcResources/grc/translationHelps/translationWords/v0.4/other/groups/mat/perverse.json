@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "διεστραμμένη",
+      "strong": [
+        "G12940"
+      ],
+      "occurrence": 1
+    }
+  }
+]

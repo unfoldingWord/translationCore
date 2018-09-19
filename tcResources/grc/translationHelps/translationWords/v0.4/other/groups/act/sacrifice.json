@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "θυσίαν",
+      "strong": [
+        "G23780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "θυσίας",
+      "strong": [
+        "G23780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "θύειν",
+      "strong": [
+        "G23800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "θύειν",
+      "strong": [
+        "G23800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "προσφορά",
+      "strong": [
+        "G43760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "προσφοράς",
+      "strong": [
+        "G43760"
+      ],
+      "occurrence": 1
+    }
+  }
+]

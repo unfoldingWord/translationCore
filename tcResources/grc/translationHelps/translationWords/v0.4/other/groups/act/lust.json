@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "lust",
+      "quote": "ἐπεθύμησα",
+      "strong": [
+        "G19370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "ἀλαζόνας",
+      "strong": [
+        "G02130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "καυχᾶσαι",
+      "strong": [
+        "G27440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "καυχᾶσαι",
+      "strong": [
+        "G27440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "καύχησις",
+      "strong": [
+        "G27460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "καύχημα",
+      "strong": [
+        "G27450"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "καυχώμεθα",
+      "strong": [
+        "G27440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "κατακαυχῶ",
+      "strong": [
+        "G26200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "κατακαυχᾶσαι",
+      "strong": [
+        "G26200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "καύχησιν",
+      "strong": [
+        "G27460"
+      ],
+      "occurrence": 1
+    }
+  }
+]

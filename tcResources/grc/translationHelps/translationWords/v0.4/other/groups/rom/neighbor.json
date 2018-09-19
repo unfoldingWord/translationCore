@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "neighbor",
+      "quote": "πλησίον",
+      "strong": [
+        "G41390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "neighbor",
+      "quote": "πλησίον",
+      "strong": [
+        "G41390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "neighbor",
+      "quote": "πλησίον",
+      "strong": [
+        "G41390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

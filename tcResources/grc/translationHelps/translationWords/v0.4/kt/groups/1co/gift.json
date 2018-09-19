@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "χαρίσματι",
+      "strong": [
+        "G54860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "χάρισμα",
+      "strong": [
+        "G54860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "χαρισμάτων",
+      "strong": [
+        "G54860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "χαρίσματα",
+      "strong": [
+        "G54860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "χαρίσματα",
+      "strong": [
+        "G54860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "χαρίσματα",
+      "strong": [
+        "G54860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "χαρίσματα",
+      "strong": [
+        "G54860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

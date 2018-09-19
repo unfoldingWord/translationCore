@@ -1,0 +1,275 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ηὐφράνθη",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφροσύνης",
+      "strong": [
+        "G21670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίροντες",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφραίνοντο",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰ",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρων",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐχάρη",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρᾶς",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἔχαιρον",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρᾶς",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰν",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρειν",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐχάρησαν",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  }
+]

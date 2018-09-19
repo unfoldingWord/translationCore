@@ -1,0 +1,24 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάταις ἡμέραις",
+      "strong": [
+        "G20780",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

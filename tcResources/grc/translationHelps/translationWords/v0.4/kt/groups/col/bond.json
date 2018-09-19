@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "σύνδεσμος",
+      "strong": [
+        "G48860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "δέδεμαι",
+      "strong": [
+        "G12100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "δεσμῶν",
+      "strong": [
+        "G11990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

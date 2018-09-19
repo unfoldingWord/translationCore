@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "son",
+      "quote": "υἱῶν",
+      "strong": [
+        "G52070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "son",
+      "quote": "υἱῶν",
+      "strong": [
+        "G52070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "son",
+      "quote": "υἱόν",
+      "strong": [
+        "G52070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "son",
+      "quote": "υἱός",
+      "strong": [
+        "G52070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "son",
+      "quote": "υἱῶν",
+      "strong": [
+        "G52070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

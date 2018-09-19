@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "holyplace",
+      "quote": "τόπου τοῦ ἁγίου",
+      "strong": [
+        "G51170",
+        "G35880",
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "holyplace",
+      "quote": "ἅγιον τόπον",
+      "strong": [
+        "G00400",
+        "G51170"
+      ],
+      "occurrence": 1
+    }
+  }
+]

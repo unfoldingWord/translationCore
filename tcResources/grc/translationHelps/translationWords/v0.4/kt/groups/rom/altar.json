@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "altar",
+      "quote": "θυσιαστήριά",
+      "strong": [
+        "G23790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

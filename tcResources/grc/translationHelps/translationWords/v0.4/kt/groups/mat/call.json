@@ -1,0 +1,1010 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλέσεις",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλέσουσιν",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐκάλεσεν",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλέσας",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐκάλεσα",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγομένην",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κληθήσεται",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενον",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐκάλεσεν",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κληθήσονται",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κληθήσεται",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κληθήσεται",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλέσαι",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "προσκαλεσάμενος",
+      "strong": [
+        "G43410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐπεκάλεσαν",
+      "strong": [
+        "G19410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "προσφωνοῦντα",
+      "strong": [
+        "G43770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λέγεται",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "προσκαλεσάμενος",
+      "strong": [
+        "G43410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "εἶπεν",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "προσκαλεσάμενος",
+      "strong": [
+        "G43410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "προσκαλεσάμενος",
+      "strong": [
+        "G43410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "προσκαλεσάμενος",
+      "strong": [
+        "G43410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κάλεσον",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "προσκαλεσάμενος",
+      "strong": [
+        "G43410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐφώνησεν",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κληθήσεται",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλέσαι",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κεκλημένους",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κλητοὶ",
+      "strong": [
+        "G28220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλεῖ",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλεῖ",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλεῖσθαι",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κληθῆτε",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "καλέσητε",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κληθῆτε",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐκάλεσεν",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγομένου",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενον",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐκλήθη",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενον",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενον",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενον",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενον",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "φωνεῖ",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  }
+]

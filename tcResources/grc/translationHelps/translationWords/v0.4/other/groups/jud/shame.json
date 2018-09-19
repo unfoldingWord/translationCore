@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "shame",
+      "quote": "αἰσχύνας",
+      "strong": [
+        "G01520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

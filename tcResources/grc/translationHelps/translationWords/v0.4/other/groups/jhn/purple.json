@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "purple",
+      "quote": "πορφυροῦν",
+      "strong": [
+        "G42100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "purple",
+      "quote": "πορφυροῦν",
+      "strong": [
+        "G42100"
+      ],
+      "occurrence": 1
+    }
+  }
+]

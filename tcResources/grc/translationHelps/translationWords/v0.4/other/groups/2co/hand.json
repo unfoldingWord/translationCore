@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "hand",
+      "quote": "χεῖρας",
+      "strong": [
+        "G54950"
+      ],
+      "occurrence": 1
+    }
+  }
+]

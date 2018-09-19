@@ -6,7 +6,7 @@
     "format": "text/usfm3",
     "identifier": "irv",
     "title": "Indian Revised Version - Hindi",
-    "subject": "Bible",
+    "subject": "Aligned Bible",
     "description": "",
     "language": {
       "identifier": "hi",
@@ -72,7 +72,7 @@
       "format": "text/usfm3",
       "identifier": "irv",
       "title": "Indian Revised Version - Hindi",
-      "subject": "Bible",
+      "subject": "Aligned Bible",
       "description": "",
       "language": {
         "identifier": "hi",
@@ -134,9 +134,9 @@
   "language_id": "hi",
   "language_name": "हिन्दी",
   "direction": "ltr",
-  "subject": "Bible",
+  "subject": "Aligned Bible",
   "resource_id": "irv",
   "resource_title": "Indian Revised Version - Hindi",
   "description": "Gateway Language",
-  "catalog_modified_time": "2018-09-18T13:12:17+00:00"
+  "catalog_modified_time": "2018-09-19T12:13:22+00:00"
 }

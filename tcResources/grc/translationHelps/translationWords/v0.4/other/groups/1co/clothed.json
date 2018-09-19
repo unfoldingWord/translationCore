@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύσασθαι",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύσασθαι",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύσηται",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύσηται",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 2
+    }
+  }
+]

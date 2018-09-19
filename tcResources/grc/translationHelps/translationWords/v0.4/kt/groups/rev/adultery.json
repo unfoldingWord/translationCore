@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχεύοντας",
+      "strong": [
+        "G34310"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "armor",
+      "quote": "πανοπλίαν",
+      "strong": [
+        "G38330"
+      ],
+      "occurrence": 1
+    }
+  }
+]

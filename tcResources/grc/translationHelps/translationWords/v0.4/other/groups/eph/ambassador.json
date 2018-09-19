@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "ambassador",
+      "quote": "πρεσβεύω",
+      "strong": [
+        "G42430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

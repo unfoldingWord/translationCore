@@ -1,0 +1,91 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 68
+      },
+      "tool": "translationWords",
+      "groupId": "peopleofgod",
+      "quote": "λαῷ αὐτοῦ",
+      "strong": [
+        "G29920",
+        "G08460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 77
+      },
+      "tool": "translationWords",
+      "groupId": "peopleofgod",
+      "quote": "λαῷ αὐτοῦ",
+      "strong": [
+        "G29920",
+        "G08460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "peopleofgod",
+      "quote": "λαοῦ σου Ἰσραήλ",
+      "strong": [
+        "G29920",
+        "G47710",
+        "G24740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "peopleofgod",
+      "quote": "λαὸν αὐτοῦ",
+      "strong": [
+        "G29920",
+        "G08460"
+      ],
+      "occurrence": 1
+    }
+  }
+]

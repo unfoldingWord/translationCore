@@ -1,0 +1,26 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "laborpains",
+      "quote": "ὠδίνουσα καὶ βασανιζομένη τεκεῖν",
+      "strong": [
+        "G56050",
+        "G25320",
+        "G09280",
+        "G50880"
+      ],
+      "occurrence": 1
+    }
+  }
+]
