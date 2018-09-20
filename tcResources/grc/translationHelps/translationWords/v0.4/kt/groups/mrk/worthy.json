@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἱκανὸς",
+      "strong": [
+        "G24250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

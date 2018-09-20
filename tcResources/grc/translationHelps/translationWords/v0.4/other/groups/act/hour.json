@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "hour",
+      "quote": "ὥρᾳ",
+      "strong": [
+        "G56100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "hour",
+      "quote": "ὥρᾳ",
+      "strong": [
+        "G56100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "hour",
+      "quote": "ὥρᾳ",
+      "strong": [
+        "G56100"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,569 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἀνεφώνησεν",
+      "strong": [
+        "G04000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "βοῶντος",
+      "strong": [
+        "G09940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἀνέκραξεν",
+      "strong": [
+        "G03490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κραυγάζοντα",
+      "strong": [
+        "G29050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίοντες",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαύσετε",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαῖε",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐκλαύσατε",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίουσα",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἀνακράξας",
+      "strong": [
+        "G03490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκλαιον",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίετε",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐφώνησεν",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐβόησεν",
+      "strong": [
+        "G09940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κράζει",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "φωνήσας",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "βοώντων",
+      "strong": [
+        "G09940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐβόησεν",
+      "strong": [
+        "G09940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραζεν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κράξουσιν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκλαυσεν",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 62
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκλαυσεν",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἀνέκραγον",
+      "strong": [
+        "G03490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐπεφώνουν",
+      "strong": [
+        "G20190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίετε",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίετε",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "φωνήσας",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  }
+]

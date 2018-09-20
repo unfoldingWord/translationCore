@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "messenger",
+      "quote": "ἀπόστολος",
+      "strong": [
+        "G06520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

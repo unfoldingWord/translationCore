@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "setapart",
+      "quote": "ἀφοριεῖ",
+      "strong": [
+        "G08730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "setapart",
+      "quote": "ἀφορίζει",
+      "strong": [
+        "G08730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

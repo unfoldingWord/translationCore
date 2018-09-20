@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μαχαιρῶν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μάχαιραν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μαχαιρῶν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νομικὸς",
+      "strong": [
+        "G35440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

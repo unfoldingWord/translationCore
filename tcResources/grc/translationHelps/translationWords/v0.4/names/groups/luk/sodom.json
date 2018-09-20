@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "sodom",
+      "quote": "Σοδόμοις",
+      "strong": [
+        "G46700"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "sodom",
+      "quote": "Σοδόμων",
+      "strong": [
+        "G46700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "elam",
+      "quote": "Ἐλαμεῖται",
+      "strong": [
+        "G16390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

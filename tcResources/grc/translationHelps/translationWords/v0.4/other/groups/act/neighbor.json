@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "neighbor",
+      "quote": "πλησίον",
+      "strong": [
+        "G41390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "punish",
+      "quote": "ἐπιτιμία",
+      "strong": [
+        "G20090"
+      ],
+      "occurrence": 1
+    }
+  }
+]

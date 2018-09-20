@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "shame",
+      "quote": "αἰσχυνθῶμεν",
+      "strong": [
+        "G01530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

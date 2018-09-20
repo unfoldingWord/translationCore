@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "priscilla",
+      "quote": "Πρίσκιλλαν",
+      "strong": [
+        "G42520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "priscilla",
+      "quote": "Πρίσκιλλα",
+      "strong": [
+        "G42520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "priscilla",
+      "quote": "Πρίσκιλλα",
+      "strong": [
+        "G42520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

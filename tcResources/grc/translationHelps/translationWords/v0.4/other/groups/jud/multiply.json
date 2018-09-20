@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "multiply",
+      "quote": "πληθυνθείη",
+      "strong": [
+        "G41290"
+      ],
+      "occurrence": 1
+    }
+  }
+]

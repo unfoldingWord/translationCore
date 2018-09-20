@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "κατεγνωσμένος",
+      "strong": [
+        "G26070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

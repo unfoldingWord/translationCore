@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "tenth",
+      "quote": "ἀποδεκατοῦτε",
+      "strong": [
+        "G05860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

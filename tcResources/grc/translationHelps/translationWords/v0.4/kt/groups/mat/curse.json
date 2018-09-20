@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "curse",
+      "quote": "κατηραμένοι",
+      "strong": [
+        "G26720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 74
+      },
+      "tool": "translationWords",
+      "groupId": "curse",
+      "quote": "καταθεματίζειν",
+      "strong": [
+        "G26530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

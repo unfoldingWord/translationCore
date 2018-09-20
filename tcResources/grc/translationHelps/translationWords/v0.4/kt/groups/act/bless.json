@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "ἐνευλογηθήσονται",
+      "strong": [
+        "G17570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογοῦντα",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριόν",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριον",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "σκολιοῖς",
+      "strong": [
+        "G46460"
+      ],
+      "occurrence": 1
+    }
+  }
+]

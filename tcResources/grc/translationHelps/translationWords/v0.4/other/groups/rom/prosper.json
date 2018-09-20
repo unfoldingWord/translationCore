@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "prosper",
+      "quote": "εὐοδωθήσομαι",
+      "strong": [
+        "G21370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

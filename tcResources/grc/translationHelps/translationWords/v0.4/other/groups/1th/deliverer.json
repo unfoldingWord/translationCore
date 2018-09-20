@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "ῥυόμενον",
+      "strong": [
+        "G45060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

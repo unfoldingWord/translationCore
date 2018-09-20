@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "quench",
+      "quote": "ἔσβεσαν",
+      "strong": [
+        "G45700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

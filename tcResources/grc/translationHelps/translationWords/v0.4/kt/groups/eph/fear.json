@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φοβῆται",
+      "strong": [
+        "G53990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φόβου",
+      "strong": [
+        "G54010"
+      ],
+      "occurrence": 1
+    }
+  }
+]

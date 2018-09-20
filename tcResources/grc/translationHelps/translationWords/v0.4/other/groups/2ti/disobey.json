@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "disobey",
+      "quote": "ἀπειθεῖς",
+      "strong": [
+        "G05450"
+      ],
+      "occurrence": 1
+    }
+  }
+]

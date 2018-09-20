@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "nineveh",
+      "quote": "Νινευεῖται",
+      "strong": [
+        "G35360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

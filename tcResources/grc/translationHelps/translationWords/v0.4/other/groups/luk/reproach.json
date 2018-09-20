@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "ὀνειδίσωσιν",
+      "strong": [
+        "G36790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

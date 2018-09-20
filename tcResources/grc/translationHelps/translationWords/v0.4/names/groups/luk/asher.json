@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "asher",
+      "quote": "Ἀσήρ",
+      "strong": [
+        "G07680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "footstool",
+      "quote": "ποδῶν",
+      "strong": [
+        "G42280"
+      ],
+      "occurrence": 1
+    }
+  }
+]
