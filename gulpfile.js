@@ -10,17 +10,20 @@ const rimraf = require('rimraf');
 const CrowdinApi = require('./scripts/CrowdinApi');
 const ncp = require('ncp').ncp;
 
-const copy = (src, dest) => {
+function copy(src, dest) {
   return new Promise((resolve, reject) => {
+    console.log(`copying ${src} to ${dest}...`);
     ncp(src, dest, (err) => {
       if(err) {
+        console.log(`failed copying ${src}`);
         reject(err);
       } else {
+        console.log(`finished copying ${src}`);
         resolve();
       }
     });
   });
-};
+}
 
 const BUILD_DIR = './out/';
 const RELEASE_DIR = './release/';
@@ -180,7 +183,6 @@ gulp.task('build_binaries', done => {
  */
 gulp.task('release-linux', () => {
   const p = require('./package');
-  // const archiver = require('archiver');
 
   const outPath = argv.out;
   if (!outPath || typeof outPath !== 'string') {
@@ -193,18 +195,18 @@ gulp.task('release-linux', () => {
     throw new Error(`The build path "${buildPath}" does not exist`);
   }
 
-  // return new Promise((resolve, reject) => {
-
   // build .deb
   const tmp = buildPath.replace(/\/+$/, '') + '.deb.stage';
   const optDir = path.join(tmp, 'opt/translationcore');
   mkdirp.sync(tmp);
-  // const debDir = path.join(tmp, 'DEBIAN');
 
+  console.log('copying scripts');
   return copy('./scripts/deb', tmp)
     .then(() => {
+      console.log('copying build');
       return copy(buildPath, optDir);
     }).then(() => {
+      console.log('compiling');
       // compile
       return new Promise((resolve, reject) => {
         const exec = require('child_process').exec;
