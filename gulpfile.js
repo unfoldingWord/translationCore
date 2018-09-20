@@ -12,7 +12,7 @@ const ncp = require('ncp').ncp;
 
 function copy(src, dest) {
   return new Promise((resolve, reject) => {
-    console.log(`copying ${src} to ${dest}...`);
+    console.log(`copying ${src} to ${dest}`);
     ncp(src, dest, (err) => {
       if(err) {
         console.log(`failed copying ${src}`);
@@ -200,10 +200,8 @@ gulp.task('release-linux', () => {
   const optDir = path.join(tmp, 'opt/translationcore');
   mkdirp.sync(tmp);
 
-  console.log('copying scripts');
   return copy('./scripts/deb', tmp)
     .then(() => {
-      console.log('copying build');
       return copy(buildPath, optDir);
     }).then(() => {
       console.log('compiling');
