@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "jusdasiscariot",
+      "quote": "Ἰσκαριώτης",
+      "strong": [
+        "G24690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

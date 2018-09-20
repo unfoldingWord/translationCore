@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "κρατῆσαι",
+      "strong": [
+        "G29020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "ἐκράτησεν",
+      "strong": [
+        "G29020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "καταλάβῃ",
+      "strong": [
+        "G26380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "κρατῆσαι",
+      "strong": [
+        "G29020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "κρατήσαντες",
+      "strong": [
+        "G29020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "κρατήσατε",
+      "strong": [
+        "G29020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "ἐκράτησαν",
+      "strong": [
+        "G29020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "ἐκρατήσατέ",
+      "strong": [
+        "G29020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "κρατοῦσιν",
+      "strong": [
+        "G29020"
+      ],
+      "occurrence": 1
+    }
+  }
+]

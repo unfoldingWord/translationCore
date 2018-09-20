@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀνάστασις",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀνάστασις",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀνάστασις",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀνάστασις",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

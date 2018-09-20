@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μάχαιραν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μαχαιρῶν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μάχαιραν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μάχαιράν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μάχαιραν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μαχαίρῃ",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "sword",
+      "quote": "μαχαιρῶν",
+      "strong": [
+        "G31620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

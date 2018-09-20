@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "unleavenedbread",
+      "quote": "Ἀζύμων",
+      "strong": [
+        "G01060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

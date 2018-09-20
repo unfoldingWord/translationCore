@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "περιέσχεν",
+      "strong": [
+        "G40230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "ἔλαβεν",
+      "strong": [
+        "G29830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "συνηρπάκει",
+      "strong": [
+        "G48840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "συνείχοντο",
+      "strong": [
+        "G49120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "συνλαβόντες",
+      "strong": [
+        "G48150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

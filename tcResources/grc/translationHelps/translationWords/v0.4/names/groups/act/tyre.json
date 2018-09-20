@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "tyre",
+      "quote": "Τυρίοις",
+      "strong": [
+        "G51830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "tyre",
+      "quote": "Τύρον",
+      "strong": [
+        "G51840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "tyre",
+      "quote": "Τύρου",
+      "strong": [
+        "G51840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

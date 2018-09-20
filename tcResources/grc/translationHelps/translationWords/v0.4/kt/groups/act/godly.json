@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "godly",
+      "quote": "εὐσεβείᾳ",
+      "strong": [
+        "G21500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

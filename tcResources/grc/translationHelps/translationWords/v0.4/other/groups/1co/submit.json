@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "submit",
+      "quote": "ὑποτασσέσθωσαν",
+      "strong": [
+        "G52930"
+      ],
+      "occurrence": 1
+    }
+  }
+]

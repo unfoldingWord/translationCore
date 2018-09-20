@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "harp",
+      "quote": "κιθάραν",
+      "strong": [
+        "G27880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "harp",
+      "quote": "κιθάραις",
+      "strong": [
+        "G27880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "harp",
+      "quote": "κιθάρας",
+      "strong": [
+        "G27880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "harp",
+      "quote": "κιθαρῳδῶν",
+      "strong": [
+        "G27900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

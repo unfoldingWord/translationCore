@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "descendant",
+      "quote": "σπέρματι",
+      "strong": [
+        "G46900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

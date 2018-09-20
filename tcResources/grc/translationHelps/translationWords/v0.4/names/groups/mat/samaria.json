@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "samaria",
+      "quote": "Σαμαρειτῶν",
+      "strong": [
+        "G45410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

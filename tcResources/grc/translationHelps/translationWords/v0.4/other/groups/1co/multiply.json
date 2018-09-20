@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "multiply",
+      "quote": "περισσεύομεν",
+      "strong": [
+        "G40520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "multiply",
+      "quote": "περισσεύητε",
+      "strong": [
+        "G40520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 58
+      },
+      "tool": "translationWords",
+      "groupId": "multiply",
+      "quote": "περισσεύοντες",
+      "strong": [
+        "G40520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

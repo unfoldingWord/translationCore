@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "sonofgod",
+      "quote": "Υἱοῦ",
+      "strong": [
+        "G52070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "sonofgod",
+      "quote": "Υἱὸς",
+      "strong": [
+        "G52070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "ordain",
+      "quote": "διαταγὰς",
+      "strong": [
+        "G12960"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "ἐσπλαγχνίσθη",
+      "strong": [
+        "G46970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "ἐσπλαγχνίσθη",
+      "strong": [
+        "G46970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "σπλαγχνίζομαι",
+      "strong": [
+        "G46970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "σπλαγχνισθεὶς",
+      "strong": [
+        "G46970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "σπλαγχνισθεὶς",
+      "strong": [
+        "G46970"
+      ],
+      "occurrence": 1
+    }
+  }
+]

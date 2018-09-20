@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "punish",
+      "quote": "κολάσωνται",
+      "strong": [
+        "G28490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "punish",
+      "quote": "τιμωρηθῶσιν",
+      "strong": [
+        "G50970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "punish",
+      "quote": "τιμωρῶν",
+      "strong": [
+        "G50970"
+      ],
+      "occurrence": 1
+    }
+  }
+]

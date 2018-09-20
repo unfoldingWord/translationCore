@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "holyone",
+      "quote": "Ὅσιόν",
+      "strong": [
+        "G37410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "holyone",
+      "quote": "Ὅσιόν",
+      "strong": [
+        "G37410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

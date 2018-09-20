@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "δωρεὰν",
+      "strong": [
+        "G14320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθερωθέντες",
+      "strong": [
+        "G16590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλεύθεροι",
+      "strong": [
+        "G16580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθερωθέντες",
+      "strong": [
+        "G16590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθέρα",
+      "strong": [
+        "G16580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἠλευθέρωσέν",
+      "strong": [
+        "G16590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθερωθήσεται",
+      "strong": [
+        "G16590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθερίαν",
+      "strong": [
+        "G16570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 71
+      },
+      "tool": "translationWords",
+      "groupId": "judasiscariot",
+      "quote": "Ἰούδαν Σίμωνος Ἰσκαριώτου",
+      "strong": [
+        "G24550",
+        "G46130",
+        "G24690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "judasiscariot",
+      "quote": "Ἰούδας ὁ Ἰσκαριώτης",
+      "strong": [
+        "G24550",
+        "G35880",
+        "G24690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "judasiscariot",
+      "quote": "Ἰούδας Σίμωνος Ἰσκαριώτης",
+      "strong": [
+        "G24550",
+        "G46130",
+        "G24690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "judasiscariot",
+      "quote": "Ἰούδᾳ Σίμωνος Ἰσκαριώτη",
+      "strong": [
+        "G24550",
+        "G46130",
+        "G24690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "judasiscariot",
+      "quote": "Ἰούδας",
+      "strong": [
+        "G24550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "judasiscariot",
+      "quote": "Ἰούδας",
+      "strong": [
+        "G24550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "judasiscariot",
+      "quote": "Ἰούδας",
+      "strong": [
+        "G24550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "judasiscariot",
+      "quote": "Ἰούδας",
+      "strong": [
+        "G24550"
+      ],
+      "occurrence": 1
+    }
+  }
+]

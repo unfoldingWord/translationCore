@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "courage",
+      "quote": "θαρσεῖτε",
+      "strong": [
+        "G22930"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "courage",
+      "quote": "θάρσει",
+      "strong": [
+        "G22930"
+      ],
+      "occurrence": 1
+    }
+  }
+]

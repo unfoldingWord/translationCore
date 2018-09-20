@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλάτῳ",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλᾶτος",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλᾶτος",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλᾶτος",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλᾶτος",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 58
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλάτῳ",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 58
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλᾶτος",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 62
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλᾶτον",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 65
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": "Πειλᾶτος",
+      "strong": [
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

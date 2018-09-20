@@ -1,0 +1,275 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "γινώσκεις",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "ἔγνωσαν",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "γινώσκετε",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "ἔγνωσαν",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "γνῶτε",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "γινώσκητε",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "ἔγνωσαν",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "νοήσωσιν",
+      "strong": [
+        "G35390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "οἶδας",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "γνώσῃ",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "γινώσκετε",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "ἔγνω",
+      "strong": [
+        "G10970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "ᾔδεισαν",
+      "strong": [
+        "G14920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

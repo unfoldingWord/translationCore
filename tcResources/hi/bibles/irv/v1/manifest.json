@@ -1,0 +1,142 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "comment": "",
+    "format": "text/usfm3",
+    "identifier": "irv",
+    "title": "Indian Revised Version - Hindi",
+    "subject": "Aligned Bible",
+    "description": "",
+    "language": {
+      "identifier": "hi",
+      "title": "हिन्दी",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "Holy Bible in Hindi: 1950",
+        "language": "hi",
+        "version": "1"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Acsah Jacob",
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Christopher",
+      "Dr. Bobby Chellapan",
+      "Dr. Chander Sekhar",
+      "Dr. Ghir",
+      "Hinal Prakash",
+      "Jobby Prasannan",
+      "Merlyn Easa",
+      "Rinu John",
+      "Shojo John",
+      "Door43 World Missions Community",
+      "BCS"
+    ],
+    "relation": [],
+    "publisher": "BCS",
+    "issued": "2018-08-18",
+    "modified": "2018-08-18",
+    "version": "1"
+  },
+  "checking": {
+    "checking_entity": [
+      "Jobby Prasannan",
+      "Dr. Bobby Chellapan",
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "तीतुस ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "comment": "",
+      "format": "text/usfm3",
+      "identifier": "irv",
+      "title": "Indian Revised Version - Hindi",
+      "subject": "Aligned Bible",
+      "description": "",
+      "language": {
+        "identifier": "hi",
+        "title": "हिन्दी",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "Holy Bible in Hindi: 1950",
+          "language": "hi",
+          "version": "1"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Acsah Jacob",
+        "Antoney Raj",
+        "Cdr. Thomas Mathew",
+        "Christopher",
+        "Dr. Bobby Chellapan",
+        "Dr. Chander Sekhar",
+        "Dr. Ghir",
+        "Hinal Prakash",
+        "Jobby Prasannan",
+        "Merlyn Easa",
+        "Rinu John",
+        "Shojo John",
+        "Door43 World Missions Community",
+        "BCS"
+      ],
+      "relation": [],
+      "publisher": "BCS",
+      "issued": "2018-08-18",
+      "modified": "2018-08-18",
+      "version": "1"
+    },
+    "checking": {
+      "checking_entity": [
+        "Jobby Prasannan",
+        "Dr. Bobby Chellapan",
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "तीतुस ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "hi",
+  "language_name": "हिन्दी",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "irv",
+  "resource_title": "Indian Revised Version - Hindi",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2018-09-19T12:13:22+00:00"
+}

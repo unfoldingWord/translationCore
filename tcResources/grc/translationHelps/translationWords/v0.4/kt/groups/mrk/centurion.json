@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "centurion",
+      "quote": "κεντυρίων",
+      "strong": [
+        "G27600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "centurion",
+      "quote": "κεντυρίωνα",
+      "strong": [
+        "G27600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "centurion",
+      "quote": "κεντυρίωνος",
+      "strong": [
+        "G27600"
+      ],
+      "occurrence": 1
+    }
+  }
+]

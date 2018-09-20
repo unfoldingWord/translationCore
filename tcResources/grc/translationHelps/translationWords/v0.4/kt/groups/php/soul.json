@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "soul",
+      "quote": "σύνψυχοι",
+      "strong": [
+        "G48610"
+      ],
+      "occurrence": 1
+    }
+  }
+]

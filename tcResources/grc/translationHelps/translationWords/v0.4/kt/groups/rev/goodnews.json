@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "goodnews",
+      "quote": "εὐαγγέλιον",
+      "strong": [
+        "G20980"
+      ],
+      "occurrence": 1
+    }
+  }
+]

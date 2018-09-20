@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "foreordain",
+      "quote": "προγινώσκοντες",
+      "strong": [
+        "G42670"
+      ],
+      "occurrence": 1
+    }
+  }
+]

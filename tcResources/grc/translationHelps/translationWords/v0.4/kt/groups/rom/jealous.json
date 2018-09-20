@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "jealous",
+      "quote": "ζήλῳ",
+      "strong": [
+        "G22050"
+      ],
+      "occurrence": 1
+    }
+  }
+]

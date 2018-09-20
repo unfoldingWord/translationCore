@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "Ἁγίῳ",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 69
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "Ἅγιος",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "Ἅγιον",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "Ἅγιε",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "Ἅγιον",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "report",
+      "quote": "ἀναγγέλλων",
+      "strong": [
+        "G03120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακούς",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "πονηρὸν",
+      "strong": [
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

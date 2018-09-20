@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "favor",
+      "quote": "εὐπρόσδεκτος",
+      "strong": [
+        "G21440"
+      ],
+      "occurrence": 1
+    }
+  }
+]
