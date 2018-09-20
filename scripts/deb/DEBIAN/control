@@ -1,0 +1,12 @@
+Package: translationCore
+Version: 1.0.0
+Maintainer: unfoldingWord <info@unfoldingword.org>
+Section: editors
+Architecture: all
+Installed-Size: 484454
+Vcs-Git: https://github.com/unfoldingWord-dev/translationCore
+Description: translationCore (tC) is an open source platform for checking and managing Bible translation projects.
+ tC provides an extensible interface that enables, among other things,
+ systematic and comprehensive checking of Bible translations against multiple
+ sources and the original languages with just-in-time training modules that
+ provide guidelines and instruction for translators.
