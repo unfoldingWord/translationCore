@@ -65,6 +65,8 @@ class ToolContainer extends Component {
     this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
     this.onProjectDataPathExistsSync = this.onProjectDataPathExistsSync.bind(this);
     this.onProjectDataPathExists = this.onProjectDataPathExists.bind(this);
+    this.onReadProjectDir = this.onReadProjectDir.bind(this);
+    this.onReadProjectDirSync = this.onReadProjectDirSync.bind(this);
   }
 
   componentWillMount() {
@@ -128,6 +130,30 @@ class ToolContainer extends Component {
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     return fs.outputFile(writePath, data);
+  }
+
+  /**
+   * Handles reading a project directory
+   * @param {string} dir - the relative path to read
+   * @return {Promise<String[]>}
+   */
+  onReadProjectDir(dir) {
+    const {projectSaveLocation} = this.props;
+    const dirPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', dir);
+    return fs.readdir(dirPath);
+  }
+
+  /**
+   * Handles reading a project directory synchronously
+   * @param {string} dir - the relative path to read
+   * @return {*}
+   */
+  onReadProjectDirSync(dir) {
+    const {projectSaveLocation} = this.props;
+    const dirPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', dir);
+    return fs.readdirSync(dirPath);
   }
 
   /**
@@ -271,6 +297,8 @@ class ToolContainer extends Component {
       sourceChapter
     } = nextProps;
     return {
+      readProjectDir: this.onReadProjectDir,
+      readProjectDirSync: this.onReadProjectDirSync,
       writeProjectData: this.onWriteProjectData,
       readProjectData: this.onReadProjectData,
       readProjectDataSync: this.onReadProjectDataSync,
