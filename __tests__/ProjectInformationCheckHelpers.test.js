@@ -209,6 +209,37 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
     expect(valid).toEqual(expectedValid);
   });
 
+  test('with OT bookId should be invalid when not in developer mode', () => {
+    // given
+    const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
+    state.projectInformationCheckReducer.bookId = 'jon';
+    const expectedValid = false;
+
+    // when
+    const valid = ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(state);
+
+    // then
+    expect(valid).toEqual(expectedValid);
+  });
+
+  test('with OT bookId should be valid when in developer mode', () => {
+    // given
+    const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
+    state.projectInformationCheckReducer.bookId = 'jon';
+    state.settingsReducer = {
+      currentSettings: {
+        developerMode: true
+      }
+    };
+    const expectedValid = true;
+
+    // when
+    const valid = ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(state);
+
+    // then
+    expect(valid).toEqual(expectedValid);
+  });
+
   test('with missing resourceId should be invalid', () => {
     // given
     const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
