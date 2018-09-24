@@ -147,10 +147,13 @@ function verifyThisIsTCoreOrTStudioProject(projectPath, errorMessage) {
   if (!valid) { // check standard manifest.json
     if (fs.existsSync(projectManifestPath)) {
       const manifest = fs.readJsonSync(projectManifestPath);
-      const generatorName = manifest && manifest.generator && manifest.generator.name;
-      const isTStudioProject = (generatorName && (generatorName.indexOf("ts-") === 0)); // could be ts-desktop or ts-android
-      const isTCoreProject = (generatorName && (generatorName === "tc-desktop")) || (manifest.tc_version);
-      valid = (isTStudioProject || isTCoreProject);
+      if (manifest) {
+        const generatorName = manifest.generator && manifest.generator.name;
+        const isTStudioProject = (generatorName && (generatorName.indexOf("ts-") === 0)); // could be ts-desktop or ts-android
+        const isTCoreProject = (generatorName && (generatorName === "tc-desktop")) ||
+          (manifest.tc_version) || (manifest.tcInitialized);
+        valid = (isTStudioProject || isTCoreProject);
+      }
     }
   }
   if (!valid) {
