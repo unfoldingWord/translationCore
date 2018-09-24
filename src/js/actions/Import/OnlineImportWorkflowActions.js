@@ -56,6 +56,8 @@ export const onlineImport = () => {
           const updatedImportPath = getProjectSaveLocation(getState());
           ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
+            const errorMessage = translate('projects.online_import_error', {project_url: link, toPath: importProjectPath});
+            verifyThisIsTStudioProject(manifest, errorMessage);
             dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
             dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
@@ -129,4 +131,20 @@ function delay(ms) {
   return new Promise((resolve) =>
     setTimeout(resolve, ms)
   );
+}
+
+/**
+ * make sure this is a tStudio Project before we try to migrate it
+ * @param manifest
+ * @param {String} errorMessage
+ * @return {Boolean} true if tStudio Project
+ */
+function verifyThisIsTStudioProject(manifest, errorMessage) {
+  const generatorName = manifest && manifest.generator && manifest.generator.name;
+  const isTStudioProject = (generatorName && (generatorName.indexOf("ts-") === 0)); // could be ts-desktop or ts-android
+  if (!isTStudioProject) {
+    console.warn("This is not a valid tStudio project we can migrate: ", errorMessage);
+    throw errorMessage;
+  }
+  return true;
 }
