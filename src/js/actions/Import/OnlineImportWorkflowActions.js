@@ -21,6 +21,7 @@ import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
+import fs from "fs-extra";
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -45,6 +46,8 @@ export const onlineImport = () => {
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+          const errorMessage = translate('projects.online_import_error', {project_url: link, toPath: importProjectPath});
+          verifyThisIsTCoreOrTStudioProject(importProjectPath, errorMessage);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
           const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
           migrateProject(importProjectPath, link);
@@ -56,8 +59,6 @@ export const onlineImport = () => {
           const updatedImportPath = getProjectSaveLocation(getState());
           ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
-            const errorMessage = translate('projects.online_import_error', {project_url: link, toPath: importProjectPath});
-            verifyThisIsTStudioProject(manifest, errorMessage);
             dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
             dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
@@ -134,17 +135,27 @@ function delay(ms) {
 }
 
 /**
- * make sure this is a tStudio Project before we try to migrate it
- * @param manifest
- * @param {String} errorMessage
- * @return {Boolean} true if tStudio Project
+ * make sure this is a tStudio or tCore Project before we try to import it
+ * @param {String} projectPath - path to project project
+ * @param {String} errorMessage - translated message to show on error
+ * @return {Boolean} true if tStudio or tCore Project
  */
-function verifyThisIsTStudioProject(manifest, errorMessage) {
-  const generatorName = manifest && manifest.generator && manifest.generator.name;
-  const isTStudioProject = (generatorName && (generatorName.indexOf("ts-") === 0)); // could be ts-desktop or ts-android
-  if (!isTStudioProject) {
-    console.warn("This is not a valid tStudio project we can migrate: ", errorMessage);
+function verifyThisIsTCoreOrTStudioProject(projectPath, errorMessage) {
+  const projectManifestPath = path.join(projectPath, "manifest.json");
+  const projectTCManifestPath = path.join(projectPath, "tc-manifest.json");
+  let valid = fs.existsSync(projectTCManifestPath); // if we have tc-manifest.json, then need no more checking
+  if (!valid) { // check standard manifest.json
+    if (fs.existsSync(projectManifestPath)) {
+      const manifest = fs.readJsonSync(projectManifestPath);
+      const generatorName = manifest && manifest.generator && manifest.generator.name;
+      const isTStudioProject = (generatorName && (generatorName.indexOf("ts-") === 0)); // could be ts-desktop or ts-android
+      const isTCoreProject = (generatorName && (generatorName === "tc-desktop")) || (manifest.tc_version);
+      valid = (isTStudioProject || isTCoreProject);
+    }
+  }
+  if (!valid) {
+    console.warn("This is not a valid tStudio or tCore project we can migrate: ", errorMessage);
     throw errorMessage;
   }
-  return true;
+  return valid;
 }
