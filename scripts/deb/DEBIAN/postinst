@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# install desktop launcher
+xdg-desktop-menu install /opt/translationcore/unfoldingword-translationcore.desktop
+
+# install icon
+xdg-icon-resource install --size 128 /opt/translationcore/translationcore-128.png unfoldingword-translationcore
+xdg-icon-resource install --size 64 /opt/translationcore/translationcore-64.png unfoldingword-translationcore
+xdg-icon-resource install --size 48 /opt/translationcore/translationcore-48.png unfoldingword-translationcore
+xdg-icon-resource install --size 32 /opt/translationcore/translationcore-32.png unfoldingword-translationcore
+xdg-icon-resource install --size 22 /opt/translationcore/translationcore-22.png unfoldingword-translationcore
+xdg-icon-resource install --size 16 /opt/translationcore/translationcore-16.png unfoldingword-translationcore
