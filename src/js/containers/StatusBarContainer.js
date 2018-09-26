@@ -42,7 +42,7 @@ class StatusBarContainer extends React.Component {
     } = this.props;
 
     return (
-      <MuiThemeProvider>
+      <div>
         {homeIsVisible ? null :
           <StatusBar
             goToStep={this._HandleGoToStep}
@@ -53,7 +53,7 @@ class StatusBarContainer extends React.Component {
             currentUser={username}
           />
         }
-      </MuiThemeProvider>
+      </div>
     );
   }
 }

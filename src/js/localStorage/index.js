@@ -66,8 +66,10 @@ export const saveState = (prevState, newState) => {
         saveTargetLanguage(newState);
       }
     }
-    // TODO: only save groupsIndex and groupsData if project and tool have not changed
+
     if (
+      // make sure that groupsData has changed
+      !isEqual(prevState.groupsDataReducer.groupsData, newState.groupsDataReducer.groupsData) &&
       // make sure project has not changed
       isEqual(prevState.projectDetailsReducer.manifest, newState.projectDetailsReducer.manifest) &&
       // make sure tool has not changed

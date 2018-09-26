@@ -25,9 +25,7 @@ class PopoverContainer extends React.Component {
   render() {
     return (
       <div>
-        <MuiThemeProvider>
-          <Popover {...this.props}/>
-        </MuiThemeProvider>
+        <Popover {...this.props}/>
       </div>
     );
   }
