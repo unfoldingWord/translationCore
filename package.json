@@ -132,6 +132,7 @@
     "json-stringify-safe": "5.0.1",
     "konami-code-js": "0.8.0",
     "lodash": "4.17.4",
+    "lodash.throttle": "^4.1.1",
     "material-ui": "0.20.0",
     "mkdirp": "0.5.1",
     "moment": "2.19.2",

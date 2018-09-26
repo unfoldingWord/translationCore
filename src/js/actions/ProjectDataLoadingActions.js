@@ -13,6 +13,7 @@ import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import { loadCurrentContextId } from './ContextIdActions';
+import throttle from 'lodash.throttle';
 /**
  * @description function that handles both getGroupsIndex and
  * getGroupsData with promises.
@@ -127,7 +128,9 @@ export function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch
     if (groupData) {
       allGroupsData[groupName] = groupData;
     }
-    dispatch(LoaderActions.sendProgressForKey(currentToolName, i / total * 100));
+    throttle(() => {
+      dispatch(LoaderActions.sendProgressForKey(currentToolName, i / total * 100));
+    }, 500);
     i++;
   }
   // load groupsData to reducer
