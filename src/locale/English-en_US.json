@@ -11,6 +11,8 @@
   "supported_file_types": "Supported File Types",
   "select_project": "Select a Project",
   "select_tool": "Select a Tool",
+  "select_all": "Select all",
+  "unselect_all": "Unselect all",
   "launch": "Launch",
   "current_user": "Current User",
   "please_log_in": "Please log in to continue",
@@ -62,6 +64,15 @@
   "include_app_logs": "Include application logs",
   "updates": {
     "check_for_newer_app": "Check for software updates",
+    "check_for_content_updates": "Check for content updates",
+    "update_gateway_language_content": "Update Gateway Language Content",
+    "checking_for_source_content_updates": "Checking for source content updates...",
+    "failed_checking_for_source_content_updates": "Unable to finish checking for source content updates.",
+    "downloading_source_content_updates": "Downloading source content updates...",
+    "source_content_updates_successful_download": "Source content updates downloaded successfully!",
+    "source_content_updates_unsuccessful_download": "Failed to download source content updates.",
+    "source_content_up_to_date": "All source content is up to date.",
+    "select_the_gateway_language_content_to_download": "Select the Gateway Language content you would like to download and update.",
     "unable_to_check": "Unable to check for updates",
     "update_available": "There is a new version of ${app}.<br/>You are running version ${old_version}. Version ${new_version} is now available.",
     "checking_for_app": "Checking for software updates...",
@@ -69,7 +80,10 @@
     "download": "Download",
     "downloading": "Downloading Update",
     "downloading_version": "Downloading version ${version}",
-    "download_error": "Unable to download update."
+    "download_error": "Unable to download update.",
+    "source_label": "Source:",
+    "local_timestamp": "Local:",
+    "online_timestamp": "Online:"
   },
   "users": {
     "category": "Category:",
@@ -132,7 +146,7 @@
     "import_local_project": "Import Local Project",
     "import_online_project": "Import Online Project",
     "searching_alert": "Searching, please wait...",
-    "books_available": "In this version of ${app}, translationWords only supports Titus projects. The alignment tool only supports New Testament projects.",
+    "books_available": "In this version of ${app}, the translationWords tool and the Word Alignment tool support New Testament projects.",
     "enter_url": "Enter URL",
     "or": "Or",
     "language_code": "Language Code",
@@ -213,7 +227,7 @@
     "merge_conflicts": "Merge Conflicts",
     "merge_conflict": "Merge Conflict ${conflict_number}",
     "conflict_reference": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
-    "missing_verses_instructions": "Some verses are missing from your project. You can fix these in ${tstudio} or ${autographa}.",
+    "missing_verses_instructions": "Some verses are missing from your project.",
     "only_nt_supported": "This version of ${app} only supports New Testament projects.",
     "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
     "resource_id": {
@@ -303,7 +317,8 @@
     "no_selection": "No selection",
     "verse_edit": "Verse edit",
     "comments": "Comments",
-    "menu": "Menu"
+    "menu": "Menu",
+    "no_gl_available": "None available"
   },
   "buttons": {
     "back_button": "Go Back",

@@ -127,9 +127,10 @@ describe('UsfmFileConversionHelpers', () => {
       }
     };
     const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph');
+    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
     //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(validUsfmString, mockManifest, 'project_folder_name');
+    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
     //then
     expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -163,9 +164,10 @@ describe('UsfmFileConversionHelpers', () => {
     const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph');
     const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','59-HEB.usfm');
     const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
     //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(validUsfmString, mockManifest, 'project_folder_name');
+    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
     //then
     expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -197,11 +199,12 @@ describe('UsfmFileConversionHelpers', () => {
     const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
     const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
     const resourcePath = path.join(__dirname, 'fixtures/resources');
-    const copyFiles = ['grc/bibles/ugnt/v0'];
+    const copyFiles = ['grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
     //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(validUsfmString, mockManifest, 'project_folder_name');
+    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
     //then
     expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -240,11 +243,12 @@ describe('UsfmFileConversionHelpers', () => {
     const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
     const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
     const resourcePath = path.join(__dirname, 'fixtures/resources');
-    const copyFiles = ['grc/bibles/ugnt/v0'];
+    const copyFiles = ['grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
     //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(validUsfmString, mockManifest, 'project_folder_name');
+    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
     //then
     expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();

@@ -11,6 +11,7 @@ class Alert extends Component {
       alertDialogVisibility,
       alertDialogLoading,
       callback,
+      callback2,
       button1,
       button2,
       buttonLink
@@ -26,18 +27,19 @@ class Alert extends Component {
         disabled={alertDialogLoading}
         autoFocus
         onClick={callback
-          ? () => { callback(button1 || 'OK') }
+          ? () => { callback(button1 || translate('buttons.ok_button')) }
           : closeAlertDialog}
-      > {this.props.alertModalReducer.button1 || 'OK'}
+      > {this.props.alertModalReducer.button1 || translate('buttons.ok_button')}
       </button>
     ];
     if (this.props.alertModalReducer.button1 && button2) {
+      const callback_ = callback2 || callback;
       buttonActions.unshift(
         <button
           label={translate('buttons.cancel_button')}
           className="btn-second"
           disabled={alertDialogLoading}
-          onClick={callback ? () => { callback(button2) } : closeAlertDialog}
+          onClick={callback_ ? () => { callback_(button2) } : closeAlertDialog}
         > {this.props.alertModalReducer.button2}
         </button>
       );
@@ -59,7 +61,7 @@ class Alert extends Component {
         <span>{translate('alert')}</span>
         {
           alertDialogLoading || !button2 ? null : <Glyphicon
-            onClick={closeAlertDialog}
+            onClick={callback2 || closeAlertDialog}
             glyph={'remove'}
             style={{
               color: 'var(--reverse-color)',

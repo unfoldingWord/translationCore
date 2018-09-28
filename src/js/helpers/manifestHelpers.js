@@ -117,7 +117,7 @@ export function checkIfValidBetaProject(manifest) {
 
 /**
  * @description Sets up a USFM project manifest according to tC standards.
- * @param {object} parsedUSFM - The object containing usfm parsed by chapters
+ * @param {object} parsedUSFM - The object containing usfm parsed by header/chapters
  */
 export function generateManifestForUsfmProject(parsedUSFM) {
   let usfmDetails = usfmHelpers.getUSFMDetails(parsedUSFM);

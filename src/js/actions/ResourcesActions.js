@@ -11,6 +11,9 @@ import { DEFAULT_GATEWAY_LANGUAGE } from '../helpers/gatewayLanguageHelpers';
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 import _ from 'lodash';
+import {getContext} from "../selectors";
+import * as BibleHelpers from "../helpers/bibleHelpers";
+
 
 /**
  * Adds a bible to the resources reducer.
@@ -171,29 +174,72 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
 };
 
 /**
- * Loads book data for each of the languages
- * @param contextId
+ * load a book of the bible into resources
+ * @param bibleId
+ * @param bookId
+ * @param languageId
+ * @return {Function}
  */
-export const loadBooks = contextId => dispatch => {
+export const loadBibleBook = (bibleId, bookId, languageId) => (dispatch) => {
+  const bibleData = loadBookResource(bibleId, bookId, languageId);
+  if (bibleData) {
+    dispatch(addNewBible(languageId, bibleId, bibleData));
+  }
+};
+
+/**
+ * remove bible from resources
+ * @param {Array} resources
+ * @param {String} bibleId
+ * @param {String} languageId
+ */
+function removeBibleFromList(resources, bibleId, languageId) {
+  let pos = resources.findIndex(paneSetting =>
+    ((paneSetting.bibleId === bibleId) && (paneSetting.languageId === languageId)));
+  if (pos >= 0) {
+    resources.splice(pos, 1); // remove entry already loaded
+  }
+}
+
+/**
+ * make sure required bible books for current tool are loaded into resources
+ */
+export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
+  const state = getState();
+  const { bibles } = state.resourcesReducer;
+  const contextId = getContext(state);
+  const bookId = contextId && contextId.reference.bookId;
+  const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId);
+  // remove bibles from resources list that are already loaded into resources reducer
+  if (bookId && bibles && Array.isArray(resources)) {
+    for (let languageId of Object.keys(bibles)) {
+      if (bibles[languageId]) {
+        for (let bibleId of Object.keys(bibles[languageId])) {
+          const lang = (languageId === "originalLanguage") ?
+            BibleHelpers.isOldTestament(bookId) ? 'he' : 'grc' : languageId;
+          removeBibleFromList(resources, bibleId, lang);
+        }
+      }
+    }
+  }
+  // load resources not in resources reducer
+  if (Array.isArray(resources)) {
+    removeBibleFromList(resources, "targetBible", "targetLanguage");
+    resources.forEach(paneSetting => dispatch(loadBibleBook(paneSetting.bibleId, bookId, paneSetting.languageId)));
+  }
+};
+
+/**
+ * Loads book data for each of the languages
+ * @param {Object} contextId
+ */
+export const loadBooks = contextId => (dispatch, getState) => {
   try {
     let bookId = contextId.reference.bookId;
-    const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
-
     // load source bibles
-    languagesIds.forEach((languageId) => {
-      const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
-      if(fs.existsSync(biblesPath)) {
-        let biblesFolders = fs.readdirSync(biblesPath)
-          .filter(folder => folder !== '.DS_Store');
-        biblesFolders.forEach((bibleId) => {
-          const bibleData = loadBookResource(bibleId, bookId, languageId);
-          if (bibleData) {
-            dispatch(addNewBible(languageId, bibleId, bibleData));
-          }
-        });
-      } else {
-        console.log('Directory not found, ' + biblesPath);
-      }
+    const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
+    resources.forEach((resource) => {
+      dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
     });
     // load target bible
     dispatch(TargetLanguageActions.loadTargetLanguageBible());
@@ -202,40 +248,38 @@ export const loadBooks = contextId => dispatch => {
   }
 };
 
-
 /**
  * @description loads a bibles chapter based on contextId
  * @deprecated use {@link loadBooks} instead
  * @param {object} contextId - object with all data for current check.
  */
 export const loadBiblesChapter = (contextId) => {
-  return (dispatch) => {
-    try {
-      let bookId = contextId.reference.bookId; // bible book abbreviation.
-      let chapter = contextId.reference.chapter;
-      const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
-
-      languagesIds.forEach((languageId) => {
-        const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
-        if(fs.existsSync(biblesPath)) {
-          let biblesFolders = fs.readdirSync(biblesPath)
-            .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
-          biblesFolders.forEach((bibleId) => { // bibleId = ult, udt, ugnt.
-            const bibleData = loadChapterResource(bibleId, bookId, languageId, chapter);
+  return (dispatch, getState) => {
+    return new Promise((resolve, reject) => {
+      try {
+        let bookId = contextId.reference.bookId; // bible book abbreviation.
+        let chapter = contextId.reference.chapter;
+        const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
+        resources.forEach((resource) => {
+          const biblesPath = path.join(USER_RESOURCES_PATH, resource.languageId, 'bibles');
+          if(fs.existsSync(biblesPath)) {
+            const bibleData = loadChapterResource(resource.bibleId, bookId, resource.languageId, chapter);
             if (bibleData) {
               // TODO: load the entire bible
-              dispatch(addNewBible(languageId, bibleId, bibleData));
+              dispatch(addNewBible(resource.languageId, resource.bibleId, bibleData));
             }
-          });
-        } else {
-          console.log('Directory not found, ' + biblesPath);
-        }
-      });
-      // Then load target language bible
-      dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
-    } catch(err) {
-      console.warn(err);
-    }
+          } else {
+            console.log('Directory not found, ' + biblesPath);
+          }
+        });
+        // Then load target language bible
+        dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
+        resolve();
+      } catch(err) {
+        console.warn(err);
+        reject(err);
+      }
+    });
   };
 };
 

@@ -1,0 +1,1390 @@
+[
+  {
+    "id": "jamesbrotherofjesus",
+    "name": "* याकूब (यीशु का भाई)"
+  },
+  {
+    "id": "aquila",
+    "name": "अक्विला"
+  },
+  {
+    "id": "azariah",
+    "name": "अजर्याह"
+  },
+  {
+    "id": "athaliah",
+    "name": "अतल्याह"
+  },
+  {
+    "id": "eden",
+    "name": "अदन, अदन की वाटिका"
+  },
+  {
+    "id": "adonijah",
+    "name": "अदोनिय्याह"
+  },
+  {
+    "id": "antioch",
+    "name": "अन्ताकिया"
+  },
+  {
+    "id": "andrew",
+    "name": "अन्द्रियास"
+  },
+  {
+    "id": "apollos",
+    "name": "अप्पुल्लोस"
+  },
+  {
+    "id": "absalom",
+    "name": "अबशालोम"
+  },
+  {
+    "id": "abijah",
+    "name": "अबिय्याह"
+  },
+  {
+    "id": "abimelech",
+    "name": "अबीमेलेक"
+  },
+  {
+    "id": "abner",
+    "name": "अब्नेर"
+  },
+  {
+    "id": "abraham",
+    "name": "अब्राहम, अब्राम"
+  },
+  {
+    "id": "amaziah",
+    "name": "अमस्याह"
+  },
+  {
+    "id": "amalekite",
+    "name": "अमालेक, अमालेकी, अमालेकियों"
+  },
+  {
+    "id": "gomorrah",
+    "name": "अमोरा"
+  },
+  {
+    "id": "amnon",
+    "name": "अम्नोन"
+  },
+  {
+    "id": "ammon",
+    "name": "अम्मोन, अम्मोनी, अम्मोनियों"
+  },
+  {
+    "id": "job",
+    "name": "अय्यूब"
+  },
+  {
+    "id": "arabia",
+    "name": "अरब, अरबी, अरबियों"
+  },
+  {
+    "id": "arabah",
+    "name": "अराबा"
+  },
+  {
+    "id": "aram",
+    "name": "अराम, अरामी, अरामियों, अरामी भाषा"
+  },
+  {
+    "id": "ararat",
+    "name": "अरारात"
+  },
+  {
+    "id": "artaxerxes",
+    "name": "अर्तक्षत्र"
+  },
+  {
+    "id": "asher",
+    "name": "अशेर"
+  },
+  {
+    "id": "asherim",
+    "name": "अशेरा, अशेरा के लिए मूरत, अशेरा नामक मूर्तियों, अश्तोरेत"
+  },
+  {
+    "id": "ashkelon",
+    "name": "अश्कलोन"
+  },
+  {
+    "id": "ashdod",
+    "name": "अश्दोद, अज़ोतस"
+  },
+  {
+    "id": "assyria",
+    "name": "अश्शूर, अश्शूरी, अश्शूरियों, अश्शूर राज्य"
+  },
+  {
+    "id": "ahaziah",
+    "name": "अहज्याह"
+  },
+  {
+    "id": "ahaz",
+    "name": "अहाज"
+  },
+  {
+    "id": "ahijah",
+    "name": "अहिय्याह"
+  },
+  {
+    "id": "ai",
+    "name": "आई"
+  },
+  {
+    "id": "adam",
+    "name": "आदम"
+  },
+  {
+    "id": "amos",
+    "name": "आमोस"
+  },
+  {
+    "id": "amoz",
+    "name": "आमोस"
+  },
+  {
+    "id": "asa",
+    "name": "आसा"
+  },
+  {
+    "id": "asaph",
+    "name": "आसाप"
+  },
+  {
+    "id": "asia",
+    "name": "आसिया"
+  },
+  {
+    "id": "ahab",
+    "name": "आहाब"
+  },
+  {
+    "id": "iconium",
+    "name": "इकुनियुम"
+  },
+  {
+    "id": "ephesus",
+    "name": "इफिसुस, इफिसुस वासी, इफिसियों"
+  },
+  {
+    "id": "ishmael",
+    "name": "इश्माएल, इश्माएली, इश्माएलियों"
+  },
+  {
+    "id": "isaac",
+    "name": "इसहाक"
+  },
+  {
+    "id": "jacob",
+    "name": "इस्राएल, इस्राएली, इस्राएलियों, याकूब"
+  },
+  {
+    "id": "kingdomofisrael",
+    "name": "इस्राएल के राज्य"
+  },
+  {
+    "id": "issachar",
+    "name": "इस्साकार"
+  },
+  {
+    "id": "jezebel",
+    "name": "ईजेबेल"
+  },
+  {
+    "id": "uzziah",
+    "name": "उज्जियाह, अजर्याह"
+  },
+  {
+    "id": "ur",
+    "name": "ऊर"
+  },
+  {
+    "id": "uriah",
+    "name": "ऊरिय्याह"
+  },
+  {
+    "id": "ekron",
+    "name": "एक्रोन, एक्रोनी"
+  },
+  {
+    "id": "ezra",
+    "name": "एज्रा"
+  },
+  {
+    "id": "edom",
+    "name": "एदोम, एदोमी, एदोमियों, इदूमिया"
+  },
+  {
+    "id": "engedi",
+    "name": "एनगदी"
+  },
+  {
+    "id": "ephrathah",
+    "name": "एप्रात, एप्रात, एप्राती, एप्राती"
+  },
+  {
+    "id": "ephraim",
+    "name": "एप्रैम, एप्रैमी, एप्रैमियों"
+  },
+  {
+    "id": "abiathar",
+    "name": "एब्यातार"
+  },
+  {
+    "id": "amorite",
+    "name": "एमोरी, एमोरियों"
+  },
+  {
+    "id": "eliakim",
+    "name": "एलयाकीम"
+  },
+  {
+    "id": "elam",
+    "name": "एलाम, एलाम लोग"
+  },
+  {
+    "id": "elijah",
+    "name": "एलिय्याह"
+  },
+  {
+    "id": "eleazar",
+    "name": "एलीआजार"
+  },
+  {
+    "id": "elisha",
+    "name": "एलीशा"
+  },
+  {
+    "id": "elizabeth",
+    "name": "एलीशिबा"
+  },
+  {
+    "id": "esau",
+    "name": "एसाव"
+  },
+  {
+    "id": "esther",
+    "name": "एस्तेर"
+  },
+  {
+    "id": "obadiah",
+    "name": "ओबद्याह"
+  },
+  {
+    "id": "omri",
+    "name": "ओम्री"
+  },
+  {
+    "id": "canaan",
+    "name": "कनान, कनानी, कनानियों"
+  },
+  {
+    "id": "capernaum",
+    "name": "कफरनहूम"
+  },
+  {
+    "id": "cherethites",
+    "name": "करेतियों"
+  },
+  {
+    "id": "carmel",
+    "name": "कर्मेल, कर्मेल पहाड़"
+  },
+  {
+    "id": "chaldeans",
+    "name": "कसदी, कसदी, कसदियों"
+  },
+  {
+    "id": "kadesh",
+    "name": "कादेश, कादेशबर्ने, कादेश के मरीबोत"
+  },
+  {
+    "id": "cana",
+    "name": "काना"
+  },
+  {
+    "id": "caleb",
+    "name": "कालेब"
+  },
+  {
+    "id": "kidronvalley",
+    "name": "किद्रोन नाले"
+  },
+  {
+    "id": "cilicia",
+    "name": "किलिकिया"
+  },
+  {
+    "id": "cornelius",
+    "name": "कुरनेलियुस"
+  },
+  {
+    "id": "corinth",
+    "name": "कुरिन्थुस, कुरिन्थवासी"
+  },
+  {
+    "id": "cyrene",
+    "name": "कुरेनी"
+  },
+  {
+    "id": "colossae",
+    "name": "कुलुस्से, कुलुस्सियों"
+  },
+  {
+    "id": "cyrus",
+    "name": "कुस्रू"
+  },
+  {
+    "id": "cush",
+    "name": "कूश"
+  },
+  {
+    "id": "ethiopia",
+    "name": "कूश, कूशी"
+  },
+  {
+    "id": "kedar",
+    "name": "केदार"
+  },
+  {
+    "id": "kedesh",
+    "name": "केदेश"
+  },
+  {
+    "id": "cain",
+    "name": "कैन"
+  },
+  {
+    "id": "caiaphas",
+    "name": "कैफा"
+  },
+  {
+    "id": "caesar",
+    "name": "कैसर"
+  },
+  {
+    "id": "caesarea",
+    "name": "कैसरिया, कैसरिया फिलिप्पी"
+  },
+  {
+    "id": "korah",
+    "name": "कोरह, कोरे, कोरहियों"
+  },
+  {
+    "id": "crete",
+    "name": "क्रेते, क्रेतेवासी, क्रेतेवासियों"
+  },
+  {
+    "id": "ahasuerus",
+    "name": "क्षयर्ष"
+  },
+  {
+    "id": "saltsea",
+    "name": "खारा ताल, मृत सागर"
+  },
+  {
+    "id": "gath",
+    "name": "गत, गतवासी, गती"
+  },
+  {
+    "id": "gethsemane",
+    "name": "गतसमनी"
+  },
+  {
+    "id": "gerar",
+    "name": "गरार"
+  },
+  {
+    "id": "galatia",
+    "name": "गलातिया, गलातियों"
+  },
+  {
+    "id": "galilee",
+    "name": "गलील, गलीली, गलीलियों"
+  },
+  {
+    "id": "seaofgalilee",
+    "name": "गलील सागर, किन्नेरेत की सागर, गन्नेसरत की झील, तिबिरियुस की झील"
+  },
+  {
+    "id": "geshur",
+    "name": "गशूर, गशूरियों"
+  },
+  {
+    "id": "gad",
+    "name": "गाद"
+  },
+  {
+    "id": "gaza",
+    "name": "गाज़ा"
+  },
+  {
+    "id": "gideon",
+    "name": "गिदोन"
+  },
+  {
+    "id": "gibeah",
+    "name": "गिबा"
+  },
+  {
+    "id": "gibeon",
+    "name": "गिबोन, गिबोनी, गिबोनियों"
+  },
+  {
+    "id": "girgashites",
+    "name": "गिर्गाशियों"
+  },
+  {
+    "id": "gilgal",
+    "name": "गिलगाल"
+  },
+  {
+    "id": "gilead",
+    "name": "गिलाद, गिलादी, गिलादियों"
+  },
+  {
+    "id": "golgotha",
+    "name": "गुलगुता"
+  },
+  {
+    "id": "goliath",
+    "name": "गोलियत"
+  },
+  {
+    "id": "goshen",
+    "name": "गोशेन"
+  },
+  {
+    "id": "zechariahnt",
+    "name": "जकर्याह (नया नियम)"
+  },
+  {
+    "id": "zechariahot",
+    "name": "जकर्याह (पुराना नियम)"
+  },
+  {
+    "id": "zacchaeus",
+    "name": "जक्कई"
+  },
+  {
+    "id": "zebulun",
+    "name": "जबूलून"
+  },
+  {
+    "id": "zebedee",
+    "name": "जब्दी"
+  },
+  {
+    "id": "zerubbabel",
+    "name": "जरुब्बाबेल"
+  },
+  {
+    "id": "gabriel",
+    "name": "जिब्राईल"
+  },
+  {
+    "id": "mountofolives",
+    "name": "जैतून के पहाड़"
+  },
+  {
+    "id": "tarsus",
+    "name": "तरसुस"
+  },
+  {
+    "id": "tarshish",
+    "name": "तर्शीश"
+  },
+  {
+    "id": "tamar",
+    "name": "तामार"
+  },
+  {
+    "id": "tirzah",
+    "name": "तिर्सा"
+  },
+  {
+    "id": "titus",
+    "name": "तीतुस"
+  },
+  {
+    "id": "timothy",
+    "name": "तीमुथियुस"
+  },
+  {
+    "id": "tychicus",
+    "name": "तुखिकुस"
+  },
+  {
+    "id": "tubal",
+    "name": "तूबल"
+  },
+  {
+    "id": "terah",
+    "name": "तेरह"
+  },
+  {
+    "id": "troas",
+    "name": "त्रोआस"
+  },
+  {
+    "id": "thessalonica",
+    "name": "थिस्सलुनीके, थिस्सलुनीकियों, थिस्सलुनीकियों"
+  },
+  {
+    "id": "thomas",
+    "name": "थोमा"
+  },
+  {
+    "id": "negev",
+    "name": "दक्षिण देश"
+  },
+  {
+    "id": "damascus",
+    "name": "दमिश्क"
+  },
+  {
+    "id": "delilah",
+    "name": "दलीला"
+  },
+  {
+    "id": "david",
+    "name": "दाऊद"
+  },
+  {
+    "id": "houseofdavid",
+    "name": "दाऊद के घराने"
+  },
+  {
+    "id": "cityofdavid",
+    "name": "दाऊद के नगर"
+  },
+  {
+    "id": "dan",
+    "name": "दान"
+  },
+  {
+    "id": "daniel",
+    "name": "दानिय्येल"
+  },
+  {
+    "id": "darius",
+    "name": "दारा"
+  },
+  {
+    "id": "naphtali",
+    "name": "नप्ताली"
+  },
+  {
+    "id": "nebuchadnezzar",
+    "name": "नबूकदनेस्सर"
+  },
+  {
+    "id": "nahum",
+    "name": "नहूम"
+  },
+  {
+    "id": "nehemiah",
+    "name": "नहेम्याह"
+  },
+  {
+    "id": "nathan",
+    "name": "नातान"
+  },
+  {
+    "id": "naaman",
+    "name": "नामान"
+  },
+  {
+    "id": "nazareth",
+    "name": "नासरत, नासरियों"
+  },
+  {
+    "id": "nahor",
+    "name": "नाहोर"
+  },
+  {
+    "id": "nineveh",
+    "name": "नीनवे, नीनवे के लोगों"
+  },
+  {
+    "id": "nileriver",
+    "name": "नील नदी, मिस्र की नदी, नील नदी"
+  },
+  {
+    "id": "noah",
+    "name": "नूह"
+  },
+  {
+    "id": "memphis",
+    "name": "नोप"
+  },
+  {
+    "id": "redsea",
+    "name": "नड़ सागर, लाल समुद्र"
+  },
+  {
+    "id": "peter",
+    "name": "पतरस, शमौन पतरस, कैफा"
+  },
+  {
+    "id": "paddanaram",
+    "name": "पद्दनराम"
+  },
+  {
+    "id": "manofgod",
+    "name": "परमेश्वर का जन"
+  },
+  {
+    "id": "perizzite",
+    "name": "परिज्जी"
+  },
+  {
+    "id": "philistines",
+    "name": "पलिश्तियों"
+  },
+  {
+    "id": "philistia",
+    "name": "पलिश्तीन"
+  },
+  {
+    "id": "paran",
+    "name": "पारान"
+  },
+  {
+    "id": "pilate",
+    "name": "पिलातुस"
+  },
+  {
+    "id": "phinehas",
+    "name": "पीनहास"
+  },
+  {
+    "id": "pontus",
+    "name": "पुन्तुस"
+  },
+  {
+    "id": "potiphar",
+    "name": "पोतीपर"
+  },
+  {
+    "id": "peor",
+    "name": "पोर, पोर पर्वत, बालपोर"
+  },
+  {
+    "id": "paul",
+    "name": "पौलुस, शाऊल"
+  },
+  {
+    "id": "priscilla",
+    "name": "प्रिस्किल्ला"
+  },
+  {
+    "id": "euphrates",
+    "name": "फरात महानद, महानद"
+  },
+  {
+    "id": "pharaoh",
+    "name": "फ़िरौन, मिस्र के राजा"
+  },
+  {
+    "id": "persia",
+    "name": "फारस, फारसियों"
+  },
+  {
+    "id": "philippi",
+    "name": "फिलिप्पी, फिलिप्पियों"
+  },
+  {
+    "id": "philiptheapostle",
+    "name": "फिलिप्पुस, प्रेरित"
+  },
+  {
+    "id": "philip",
+    "name": "फिलिप्पुस, सुसमाचार प्रचारक"
+  },
+  {
+    "id": "phonecia",
+    "name": "फीनीके"
+  },
+  {
+    "id": "bathsheba",
+    "name": "बतशेबा"
+  },
+  {
+    "id": "bethuel",
+    "name": "बतूएल"
+  },
+  {
+    "id": "benaiah",
+    "name": "बनायाह"
+  },
+  {
+    "id": "barabbas",
+    "name": "बरअब्बा"
+  },
+  {
+    "id": "bartholomew",
+    "name": "बरतुल्मै"
+  },
+  {
+    "id": "barnabas",
+    "name": "बरनबास"
+  },
+  {
+    "id": "babel",
+    "name": "बाबेल"
+  },
+  {
+    "id": "babylon",
+    "name": "बाबेल, बाबेल, बाबेल, बाबेली"
+  },
+  {
+    "id": "baruch",
+    "name": "बारूक"
+  },
+  {
+    "id": "baal",
+    "name": "बाल"
+  },
+  {
+    "id": "beelzebul",
+    "name": "बालजबूल(शैतान)"
+  },
+  {
+    "id": "baasha",
+    "name": "बाशा"
+  },
+  {
+    "id": "bashan",
+    "name": "बाशान"
+  },
+  {
+    "id": "benjamin",
+    "name": "बिन्यामीन, बिन्यामीनी, बिन्यामीनियों"
+  },
+  {
+    "id": "berea",
+    "name": "बिरीया"
+  },
+  {
+    "id": "balaam",
+    "name": "बिलाम"
+  },
+  {
+    "id": "bethshemesh",
+    "name": "बेतशेमेश"
+  },
+  {
+    "id": "bethel",
+    "name": "बेतेल"
+  },
+  {
+    "id": "beersheba",
+    "name": "बेर्शेबा"
+  },
+  {
+    "id": "bethany",
+    "name": "बैतनिय्याह"
+  },
+  {
+    "id": "bethlehem",
+    "name": "बैतलहम, एप्रात"
+  },
+  {
+    "id": "boaz",
+    "name": "बोआज़"
+  },
+  {
+    "id": "macedonia",
+    "name": "मकिदुनिया"
+  },
+  {
+    "id": "matthew",
+    "name": "मत्ती, लेवी"
+  },
+  {
+    "id": "manasseh",
+    "name": "मनश्शे"
+  },
+  {
+    "id": "mary",
+    "name": "मरियम, यीशु की माता"
+  },
+  {
+    "id": "marysisterofmartha",
+    "name": "मरियम (मार्था की बहन)"
+  },
+  {
+    "id": "marymagdalene",
+    "name": "मरियम मगदलीनी"
+  },
+  {
+    "id": "malachi",
+    "name": "मलाकी"
+  },
+  {
+    "id": "maacah",
+    "name": "माका"
+  },
+  {
+    "id": "mede",
+    "name": "मादियों, मादे"
+  },
+  {
+    "id": "martha",
+    "name": "मार्था"
+  },
+  {
+    "id": "midian",
+    "name": "मिद्यान, मिद्यानी, मिद्यानियों"
+  },
+  {
+    "id": "miriam",
+    "name": "मिर्याम"
+  },
+  {
+    "id": "mizpah",
+    "name": "मिस्पा"
+  },
+  {
+    "id": "egypt",
+    "name": "मिस्र, मिस्री, मिस्रियों"
+  },
+  {
+    "id": "micah",
+    "name": "मीका"
+  },
+  {
+    "id": "michael",
+    "name": "मीकाएल"
+  },
+  {
+    "id": "mishael",
+    "name": "मीशाएल"
+  },
+  {
+    "id": "moses",
+    "name": "मूसा"
+  },
+  {
+    "id": "melchizedek",
+    "name": "मेलिकिसिदक"
+  },
+  {
+    "id": "meshech",
+    "name": "मेशेक"
+  },
+  {
+    "id": "mesopotamia",
+    "name": "मेसोपोटामिया,अरम्नहरैम"
+  },
+  {
+    "id": "moab",
+    "name": "मोआब, मोआबी, मोआबिन"
+  },
+  {
+    "id": "mordecai",
+    "name": "मोर्दकै"
+  },
+  {
+    "id": "molech",
+    "name": "मोलेक, Moloch"
+  },
+  {
+    "id": "jebusites",
+    "name": "यबूस, यबूसी, यबूसियों"
+  },
+  {
+    "id": "jordanriver",
+    "name": "यरदन नदी, यरदन"
+  },
+  {
+    "id": "jericho",
+    "name": "यरीहो"
+  },
+  {
+    "id": "jerusalem",
+    "name": "यरूशलेम"
+  },
+  {
+    "id": "isaiah",
+    "name": "यशायाह"
+  },
+  {
+    "id": "judah",
+    "name": "यहूदा"
+  },
+  {
+    "id": "kingdomofjudah",
+    "name": "यहूदा, यहूदा का राज्य"
+  },
+  {
+    "id": "judasiscariot",
+    "name": "यहूदा इस्करियोती"
+  },
+  {
+    "id": "judea",
+    "name": "यहूदिया"
+  },
+  {
+    "id": "ezekiel",
+    "name": "यहेजकेल"
+  },
+  {
+    "id": "jehoiachin",
+    "name": "यहोयाकीन"
+  },
+  {
+    "id": "jehoiakim",
+    "name": "यहोयाकीम"
+  },
+  {
+    "id": "jehoiada",
+    "name": "यहोयादा"
+  },
+  {
+    "id": "jehoram",
+    "name": "यहोराम, योराम"
+  },
+  {
+    "id": "jehoshaphat",
+    "name": "यहोशापात"
+  },
+  {
+    "id": "joshua",
+    "name": "यहोशू"
+  },
+  {
+    "id": "jamessonofzebedee",
+    "name": "याकूब (जब्दी का पुत्र)"
+  },
+  {
+    "id": "judassonofjames",
+    "name": "याकूब का पुत्र यहूदा"
+  },
+  {
+    "id": "jamessonofalphaeus",
+    "name": "याकूब(हलफईस का पुत्र)"
+  },
+  {
+    "id": "joppa",
+    "name": "याफा"
+  },
+  {
+    "id": "jeroboam",
+    "name": "यारोबाम"
+  },
+  {
+    "id": "jezreel",
+    "name": "यिज्रैल, यिज्रैली"
+  },
+  {
+    "id": "jethro",
+    "name": "यित्रो, रूएल"
+  },
+  {
+    "id": "jephthah",
+    "name": "यिप्तह"
+  },
+  {
+    "id": "jeremiah",
+    "name": "यिर्मयाह"
+  },
+  {
+    "id": "jesse",
+    "name": "यिशै"
+  },
+  {
+    "id": "greece",
+    "name": "यूनान, यूनानी"
+  },
+  {
+    "id": "greek",
+    "name": "यूनानी, यूनानी"
+  },
+  {
+    "id": "josephnt",
+    "name": "यूसुफ (नया नियम)"
+  },
+  {
+    "id": "josephot",
+    "name": "यूसुफ (पुराना नियम)"
+  },
+  {
+    "id": "johntheapostle",
+    "name": "यूहन्ना (प्रेरित)"
+  },
+  {
+    "id": "johnthebaptist",
+    "name": "यूहन्ना (बपतिस्मा देनेवाला)"
+  },
+  {
+    "id": "johnmark",
+    "name": "यूहन्ना मरकुस"
+  },
+  {
+    "id": "japheth",
+    "name": "येपेत"
+  },
+  {
+    "id": "jehu",
+    "name": "येहू"
+  },
+  {
+    "id": "joab",
+    "name": "योआब"
+  },
+  {
+    "id": "joash",
+    "name": "योआश"
+  },
+  {
+    "id": "joel",
+    "name": "योएल"
+  },
+  {
+    "id": "jotham",
+    "name": "योताम"
+  },
+  {
+    "id": "jonah",
+    "name": "योना"
+  },
+  {
+    "id": "jonathan",
+    "name": "योनातान"
+  },
+  {
+    "id": "joram",
+    "name": "योराम"
+  },
+  {
+    "id": "josiah",
+    "name": "योशिय्याह"
+  },
+  {
+    "id": "rabbah",
+    "name": "रब्बा"
+  },
+  {
+    "id": "rehoboam",
+    "name": "रहूबियाम"
+  },
+  {
+    "id": "ramah",
+    "name": "रामाह"
+  },
+  {
+    "id": "ramoth",
+    "name": "रामोत"
+  },
+  {
+    "id": "rahab",
+    "name": "राहाब"
+  },
+  {
+    "id": "rachel",
+    "name": "राहेल"
+  },
+  {
+    "id": "rebekah",
+    "name": "रिबका"
+  },
+  {
+    "id": "rimmon",
+    "name": "रिम्मोन"
+  },
+  {
+    "id": "ruth",
+    "name": "रूत"
+  },
+  {
+    "id": "reuben",
+    "name": "रूबेन"
+  },
+  {
+    "id": "rome",
+    "name": "रोम, रोमी"
+  },
+  {
+    "id": "lebanon",
+    "name": "लबानोन"
+  },
+  {
+    "id": "laban",
+    "name": "लाबान"
+  },
+  {
+    "id": "lazarus",
+    "name": "लाज़र"
+  },
+  {
+    "id": "leah",
+    "name": "लिआ:"
+  },
+  {
+    "id": "leviathan",
+    "name": "लिव्यातान"
+  },
+  {
+    "id": "lystra",
+    "name": "लुस्त्रा"
+  },
+  {
+    "id": "luke",
+    "name": "लूका"
+  },
+  {
+    "id": "lot",
+    "name": "लूत"
+  },
+  {
+    "id": "lamech",
+    "name": "लेमेक"
+  },
+  {
+    "id": "levite",
+    "name": "लेवी, लेवीय, लेवियों, लेवीय"
+  },
+  {
+    "id": "vashti",
+    "name": "वशती"
+  },
+  {
+    "id": "samuel",
+    "name": "शमूएल"
+  },
+  {
+    "id": "simeon",
+    "name": "शमौन"
+  },
+  {
+    "id": "simonthezealot",
+    "name": "शमौन कनानी"
+  },
+  {
+    "id": "saul",
+    "name": "शाऊल (पुराना नियम)"
+  },
+  {
+    "id": "sharon",
+    "name": "शारोन, शारोन का मैदान"
+  },
+  {
+    "id": "shinar",
+    "name": "शिनार"
+  },
+  {
+    "id": "samson",
+    "name": "शिमशोन"
+  },
+  {
+    "id": "shimei",
+    "name": "शिमी"
+  },
+  {
+    "id": "sheba",
+    "name": "शीबा"
+  },
+  {
+    "id": "shiloh",
+    "name": "शीलो"
+  },
+  {
+    "id": "shechem",
+    "name": "शेकेम"
+  },
+  {
+    "id": "seth",
+    "name": "शेत"
+  },
+  {
+    "id": "shem",
+    "name": "शेम"
+  },
+  {
+    "id": "sodom",
+    "name": "सदोम"
+  },
+  {
+    "id": "sennacherib",
+    "name": "सन्हेरीब"
+  },
+  {
+    "id": "zephaniah",
+    "name": "सपन्याह"
+  },
+  {
+    "id": "mediterranean",
+    "name": "समुद्र, महासमुद्र, पश्चिम के समुद्र, भूमध्य सागर"
+  },
+  {
+    "id": "cyprus",
+    "name": "साइप्रस"
+  },
+  {
+    "id": "zadok",
+    "name": "सादोक"
+  },
+  {
+    "id": "samaria",
+    "name": "सामरिया, सामरी"
+  },
+  {
+    "id": "sarah",
+    "name": "सारा, सारै"
+  },
+  {
+    "id": "zedekiah",
+    "name": "सिदकिय्याह"
+  },
+  {
+    "id": "sidon",
+    "name": "सीदोन, सीदोनियों"
+  },
+  {
+    "id": "sinai",
+    "name": "सीनै, सीनै पर्वत"
+  },
+  {
+    "id": "syria",
+    "name": "सीरिया"
+  },
+  {
+    "id": "silas",
+    "name": "सीलास, सिल्वानुस"
+  },
+  {
+    "id": "succoth",
+    "name": "सुक्कोत"
+  },
+  {
+    "id": "solomon",
+    "name": "सुलैमान"
+  },
+  {
+    "id": "maker",
+    "name": "सृजनहार"
+  },
+  {
+    "id": "zoar",
+    "name": "सोअर"
+  },
+  {
+    "id": "tyre",
+    "name": "सोर, सोर के लोग"
+  },
+  {
+    "id": "stephen",
+    "name": "स्तिफनुस"
+  },
+  {
+    "id": "hananiah",
+    "name": "हनन्याह"
+  },
+  {
+    "id": "enoch",
+    "name": "हनोक"
+  },
+  {
+    "id": "annas",
+    "name": "हन्ना"
+  },
+  {
+    "id": "hannah",
+    "name": "हन्ना"
+  },
+  {
+    "id": "habakkuk",
+    "name": "हबक्कूक"
+  },
+  {
+    "id": "eve",
+    "name": "हव्वा"
+  },
+  {
+    "id": "haggai",
+    "name": "हाग्गै"
+  },
+  {
+    "id": "hagar",
+    "name": "हाजिरा"
+  },
+  {
+    "id": "abel",
+    "name": "हाबिल"
+  },
+  {
+    "id": "ham",
+    "name": "हाम"
+  },
+  {
+    "id": "hamath",
+    "name": "हामात, हमाती, लीबो हामात"
+  },
+  {
+    "id": "hamor",
+    "name": "हामोर"
+  },
+  {
+    "id": "haran",
+    "name": "हारान"
+  },
+  {
+    "id": "aaron",
+    "name": "हारून"
+  },
+  {
+    "id": "hezekiah",
+    "name": "हिजकिय्याह"
+  },
+  {
+    "id": "hittite",
+    "name": "हित्ती, हित्तियों"
+  },
+  {
+    "id": "hilkiah",
+    "name": "हिल्किय्याह"
+  },
+  {
+    "id": "hivite",
+    "name": "हिव्वी, हिव्वियों"
+  },
+  {
+    "id": "hebron",
+    "name": "हेब्रोन"
+  },
+  {
+    "id": "herodias",
+    "name": "हेरोदियास"
+  },
+  {
+    "id": "herodantipas",
+    "name": "हेरोदेस अन्तिपास"
+  },
+  {
+    "id": "herodthegreat",
+    "name": "हेरोदेस महान"
+  },
+  {
+    "id": "mounthermon",
+    "name": "हेर्मोन पर्वत"
+  },
+  {
+    "id": "horeb",
+    "name": "होरेब"
+  },
+  {
+    "id": "hosea",
+    "name": "होशे"
+  },
+  {
+    "id": "hoshea",
+    "name": "होशे"
+  }
+]

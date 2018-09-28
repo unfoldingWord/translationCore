@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "thessalonica",
+      "quote": "Θεσσαλονίκην",
+      "strong": [
+        "G23320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "thessalonica",
+      "quote": "Θεσσαλονίκῃ",
+      "strong": [
+        "G23320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "thessalonica",
+      "quote": "Θεσσαλονίκης",
+      "strong": [
+        "G23320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "thessalonica",
+      "quote": "Θεσσαλονικέως",
+      "strong": [
+        "G23310"
+      ],
+      "occurrence": 1
+    }
+  }
+]

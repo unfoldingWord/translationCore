@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "adversary",
+      "quote": "ἐχθροὺς",
+      "strong": [
+        "G21900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "adversary",
+      "quote": "ἐχθροὶ",
+      "strong": [
+        "G21900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

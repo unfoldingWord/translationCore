@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπάρχοντα",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

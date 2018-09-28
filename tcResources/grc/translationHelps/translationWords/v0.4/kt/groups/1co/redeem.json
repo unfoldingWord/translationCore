@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "redeem",
+      "quote": "ἀπολύτρωσις",
+      "strong": [
+        "G06290"
+      ],
+      "occurrence": 1
+    }
+  }
+]

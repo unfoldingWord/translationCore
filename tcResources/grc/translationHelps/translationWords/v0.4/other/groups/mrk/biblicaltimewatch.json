@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimewatch",
+      "quote": "φυλακὴν",
+      "strong": [
+        "G54380"
+      ],
+      "occurrence": 1
+    }
+  }
+]

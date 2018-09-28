@@ -5,10 +5,10 @@ import {getTranslate} from '../../selectors';
 //helpers
 import * as usfmHelpers from '../usfmHelpers';
 //static
-import books from '../../../../tC_resources/resources/books';
+import books from '../../../../tcResources/books';
 //common
 import BooksOfTheBible from '../../common/BooksOfTheBible';
-import * as manifestHelpers from "../manifestHelpers";
+import {getProjectManifest} from "../manifestHelpers";
 
 
 /**
@@ -132,19 +132,18 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
   let newIDs = [...bookIDs];
   for (let file of fs.readdirSync(projectPath)) {
     if (['.', '..', '.git'].indexOf(file) > -1) continue;
-    let filePath = path.join(projectPath, file);
+    const filePath = path.join(projectPath, file);
     if (fs.lstatSync(filePath).isDirectory()) {
       newIDs = getUniqueBookIds(filePath, limit, newIDs);
     } else {
-      let usfmPath = isUSFMProject(filePath);
+      const usfmPath = isUSFMProject(filePath);
       if (usfmPath) {
-        let usfmData = usfmHelpers.loadUSFMFile(usfmPath);
+        const usfmData = usfmHelpers.loadUSFMFile(usfmPath);
         if (!usfmData.includes('\\id') && !usfmData.includes('\\h')) {
           //This is not a usfm file, so we are not adding it to detected usfm files
           break;
         }
-        let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
-        let id = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
+        const id = usfmHelpers.parseUsfmDetails(usfmData).book.id;
         if (newIDs.indexOf(id) === -1 && books[id]) {
           newIDs.push(id);
         }
@@ -205,22 +204,41 @@ export function verifyValidBetaProject(state) {
 }
 
 /**
- * ensures that this project can be openned in this app version
+ * Checks if the project is supported by this version of tC.
+ * @param {string} projectDir - the path to the project directory
+ * @return {Promise<boolean>} - Promise resolves true if the project is supported, otherwise false.
+ */
+export function isProjectSupported(projectDir) {
+  return new Promise(resolve => {
+    const manifest = getProjectManifest(projectDir);
+    // TRICKY: versions before 0.8.1 did not have a tc_version key
+    let greaterThanVersion_0_8_0 = !!manifest.tc_version;
+    if (!greaterThanVersion_0_8_0) {
+      // TRICKY: added license in 0.8.0
+      greaterThanVersion_0_8_0 = !!manifest.license;
+    }
+    if (!greaterThanVersion_0_8_0 && testForCheckingData(projectDir)) {
+      // if old and has some checking data, it cannot be opened
+      resolve(false);
+    } else {
+      resolve(true);
+    }
+  });
+}
+
+/**
+ * @deprecated This is deprecated. Use {@link isProjectSupported} instead.
+ *
+ * ensures that this project can be opened in this app version
  * @param {String} projectPath
  * @param {Function} translate
  */
 export function ensureSupportedVersion(projectPath, translate) {
-  return new Promise((resolve, reject) => {
-    const manifest = manifestHelpers.getProjectManifest(projectPath);
-
-    let greaterThanVersion_0_8_0 = !!manifest.tc_version; // if true than 0.8.1 or greater
-    if (!greaterThanVersion_0_8_0) {
-      greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
-    }
-    if (!greaterThanVersion_0_8_0 && testForCheckingData(projectPath)) { // if old and has some checking data, it cannot be opened
-      reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
+  return isProjectSupported(projectPath).then(isSupported => {
+    if(isSupported) {
+      return Promise.resolve();
     } else {
-      resolve();
+      return Promise.reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     }
   });
 }

@@ -1,0 +1,254 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 3
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 3
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖα",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖον",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

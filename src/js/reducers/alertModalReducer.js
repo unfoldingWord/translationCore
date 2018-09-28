@@ -7,7 +7,8 @@ const initialState = {
   button1: null,
   button2: null,
   buttonLink: null,
-  callback: null
+  callback: null,
+  callback2: null
 };
 
 const alertModalReducer = (state = initialState, action) => {
@@ -32,7 +33,8 @@ const alertModalReducer = (state = initialState, action) => {
         button1: action.button1Text,
         button2: action.button2Text,
         buttonLink: action.buttonLinkText,
-        callback: action.callback
+        callback: action.callback,
+        callback2: action.callback2
       };
     case consts.CLOSE_ALERT_DIALOG:
       return initialState;

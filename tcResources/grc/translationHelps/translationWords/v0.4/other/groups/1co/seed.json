@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "seed",
+      "quote": "σπερμάτων",
+      "strong": [
+        "G46900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

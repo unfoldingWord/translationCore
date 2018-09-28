@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "wrong",
+      "quote": "ἀδικῶ",
+      "strong": [
+        "G00910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

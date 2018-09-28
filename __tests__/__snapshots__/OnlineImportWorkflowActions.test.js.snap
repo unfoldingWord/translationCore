@@ -117,6 +117,7 @@ Array [
     "button2Text": undefined,
     "buttonLinkText": null,
     "callback": [Function],
+    "callback2": null,
     "type": "OPEN_OPTION_DIALOG",
   },
   Object {

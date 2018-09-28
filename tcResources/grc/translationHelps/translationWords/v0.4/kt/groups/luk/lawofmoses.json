@@ -1,0 +1,196 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμον Μωϋσέως",
+      "strong": [
+        "G35510",
+        "G34750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμῳ Κυρίου",
+      "strong": [
+        "G35510",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμῳ Κυρίου",
+      "strong": [
+        "G35510",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμου",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμον Κυρίου",
+      "strong": [
+        "G35510",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμῳ",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμος",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμου",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμῳ Μωϋσέως",
+      "strong": [
+        "G35510",
+        "G34750"
+      ],
+      "occurrence": 1
+    }
+  }
+]

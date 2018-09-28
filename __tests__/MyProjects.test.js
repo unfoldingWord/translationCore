@@ -1,8 +1,8 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
 import MyProjects from '../src/js/components/home/projectsManagement/MyProjects';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {shallow} from 'enzyme';
 
 // Tests for MyProjects React Component
 describe('MyProjects component renders correctly', () => {
@@ -10,7 +10,7 @@ describe('MyProjects component renders correctly', () => {
     const myProjects = [
       {
         projectName: 'en_1co_ulb',
-        projectSaveLocation: '/tmp/en_1co_ulb',
+        projectSaveLocation: '<TEMP_DIR>/en_1co_ulb',
         accessTimeAgo: '5 days ago',
         bookAbbr: '1co',
         bookName: '1 Corinthians',
@@ -22,7 +22,7 @@ describe('MyProjects component renders correctly', () => {
       },
       {
         projectName: 'hi_tit',
-        projectSaveLocation: '/tmp/hi_tit',
+        projectSaveLocation: '<TEMP_DIR>/hi_tit',
         accessTimeAgo: '6 days ago',
         bookAbbr: 'tit',
         bookName: 'Titus',
@@ -36,21 +36,17 @@ describe('MyProjects component renders correctly', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const actions = {
-      selectProject: () => jest.fn()
-    };
-
-    const tree = renderer.create(
+    const renderedValue = shallow(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
           myProjects={myProjects}
           user={userdata}
-          actions={actions} />
+          onSelect={() => jest.fn()} />
       </MuiThemeProvider>
-    ).toJSON();
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(renderedValue).toMatchSnapshot();
   });
 });
 
@@ -60,19 +56,15 @@ describe('MyProjects shows instruction if no projects', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const actions = {
-      selectProject: () => jest.fn()
-    };
-
-    const blank = renderer.create(
+    const blank = shallow(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
           myProjects={myProjects}
           user={userdata}
-          actions={actions} />
+          onSelect={() => jest.fn()} />
       </MuiThemeProvider>
-    ).toJSON();
+    );
 
     expect(blank).toMatchSnapshot();
   });

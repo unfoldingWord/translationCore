@@ -57,10 +57,15 @@ export function displayAlignmentErrorsPrompt() {
     return new Promise((resolve) => {
       const alignmentErrorsPrompt = 'Some alignments have been invalidated! To fix the invalidated alignment,\
 open the project in the Word Alignment Tool. If you proceed with the export, the alignment for these verses will be reset.';
-      dispatch(AlertModalActions.openOptionDialog(alignmentErrorsPrompt, (res) => {
-        dispatch(AlertModalActions.closeAlertDialog());
-        resolve(res);
-      }, 'Export', 'Cancel'));
+      dispatch(AlertModalActions.openOptionDialog(
+        alignmentErrorsPrompt,
+        (res) => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          resolve(res);
+        },
+        'Export',
+        'Cancel'
+      ));
     });
   });
 }

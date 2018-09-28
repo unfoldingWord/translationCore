@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "neighbor",
+      "quote": "ἑτέρου",
+      "strong": [
+        "G20870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

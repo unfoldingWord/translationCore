@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "jamesbrotherofjesus",
+      "quote": "Ἰάκωβος",
+      "strong": [
+        "G23850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

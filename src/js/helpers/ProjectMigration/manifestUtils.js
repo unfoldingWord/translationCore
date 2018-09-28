@@ -129,7 +129,7 @@ export function fixManifestVerThree(oldManifest) {
 /**
  * @description Sets up a USFM project manifest according to tC standards.
  *
- * @param {object} parsedUSFM - The object containing usfm parsed by chapters
+ * @param {object} parsedUSFM - The object containing usfm parsed by header/chapters
  */
 export function setUpDefaultUSFMManifest(parsedUSFM) {
   let usfmDetails = usfmHelpers.getUSFMDetails(parsedUSFM);

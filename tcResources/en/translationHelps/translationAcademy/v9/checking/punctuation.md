@@ -1,0 +1,7 @@
+# Consistent Punctuation #
+
+"Punctuation" refers to the marks that indicate how a sentence is to be read or understood. Examples include the indicators of pauses such as the comma or period and the quotation marks that surround the exact words of a speaker. In order for the reader to be able to read and understand the translation correctly, it is important that you use punctuation consistently.
+
+Before translating, the translation team will need to decide on the methods of punctuation that you will use in the translation. It may be easiest to adopt the method of punctuation that the national language uses, or that a national language Bible or related language Bible uses. Once the team decides on a method, make sure that everyone follows it. It may be helpful to distribute a guide sheet to each of the team members with examples on it of the correct way to use the different punctuation marks.
+
+Even with the guide sheet, it is common for translators to make mistakes in punctuation. Because of this, after a book has been translated, we recommend importing it into ParaTExt. You can enter the rules for punctuation in the target language into ParaTExt, then run the different punctuation checks that it has. ParaTExt will list all of the places where it finds punctuation errors and show them to you. You can then review these places and see if there is an error there or not. If there is an error, you can fix the error. After running these punctuation checks, you can be confident that your translation is using punctuation correctly.

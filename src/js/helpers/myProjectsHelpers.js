@@ -2,7 +2,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 import moment from 'moment';
-import usfmJS from 'usfm-js';
 // helpers
 import * as usfmHelpers from './usfmHelpers';
 import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
@@ -90,8 +89,7 @@ export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocat
         bookName = manifest.project.name;
       } else {
         const usfmText = fs.readFileSync(projectFolders[projectName].usfmPath).toString();
-        const usfmObject = usfmJS.toJSON(usfmText);
-        let usfmHeadersObject = usfmHelpers.getUSFMDetails(usfmObject);
+        let usfmHeadersObject = usfmHelpers.parseUsfmDetails(usfmText);
         bookName = usfmHeadersObject.book.name;
         target_language.id = usfmHeadersObject.language.id;
         target_language.name = usfmHeadersObject.language.name;

@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "beloved",
+      "quote": "ἀγαπητός",
+      "strong": [
+        "G00270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "beloved",
+      "quote": "ἀγαπητός",
+      "strong": [
+        "G00270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "beloved",
+      "quote": "ἀγαπητός",
+      "strong": [
+        "G00270"
+      ],
+      "occurrence": 1
+    }
+  }
+]

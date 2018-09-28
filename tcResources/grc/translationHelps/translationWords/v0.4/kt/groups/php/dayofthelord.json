@@ -1,0 +1,69 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "dayofthelord",
+      "quote": "ἡμέρας Χριστοῦ Ἰησοῦ",
+      "strong": [
+        "G22500",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "dayofthelord",
+      "quote": "ἡμέραν Χριστοῦ",
+      "strong": [
+        "G22500",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "dayofthelord",
+      "quote": "ἡμέραν Χριστοῦ",
+      "strong": [
+        "G22500",
+        "G55470"
+      ],
+      "occurrence": 1
+    }
+  }
+]

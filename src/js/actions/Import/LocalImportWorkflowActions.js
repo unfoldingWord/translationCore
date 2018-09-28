@@ -6,7 +6,6 @@ import consts from '../ActionTypes';
 // actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as AlertModalActions from '../AlertModalActions';
-import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
 import * as ProjectImportFilesystemActions from './ProjectImportFilesystemActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
@@ -20,6 +19,7 @@ import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
+import migrateProject from '../../helpers/ProjectMigration';
 
 // constants
 export const ALERT_MESSAGE = (
@@ -51,9 +51,9 @@ export const localImport = () => {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
-      ProjectMigrationActions.migrate(importProjectPath);
+      migrateProject(importProjectPath);
       dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
-      await dispatch(ProjectValidationActions.validate(importProjectPath));
+      await dispatch(ProjectValidationActions.validateProject(importProjectPath));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());
       ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
@@ -63,7 +63,7 @@ export const localImport = () => {
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await delay(200);
         dispatch(AlertModalActions.closeAlertDialog());
-        await dispatch(ProjectValidationActions.validate(updatedImportPath));
+        await dispatch(ProjectValidationActions.validateProject(updatedImportPath));
       }
       await delay(200); // to make sure project details have been saved
       const renamingResults = {};

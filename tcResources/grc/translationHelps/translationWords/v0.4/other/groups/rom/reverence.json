@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "reverence",
+      "quote": "ἐσεβάσθησαν",
+      "strong": [
+        "G45730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

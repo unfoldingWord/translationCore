@@ -1,51 +1,283 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test ProjectCard component Comparing ProjectCard Component render should match snapshot 1`] = `
-<div
-  style={
-    Object {
-      "flex": 1,
-    }
-  }
->
-  <span />
-  <div
-    style={
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ProjectCard
+    onSelect={[Function]}
+    projectDetails={
       Object {
-        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-        "background": "white",
-        "backgroundColor": "#ffffff",
-        "borderRadius": 2,
-        "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-         0 1px 4px rgba(0, 0, 0, 0.12)",
-        "boxSizing": "border-box",
-        "color": "rgba(0, 0, 0, 0.87)",
-        "fontFamily": "Roboto, sans-serif",
-        "marginTop": "5px",
-        "muiPrepared": true,
-        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-        "zIndex": 1,
+        "accessTimeAgo": "5 days ago",
+        "bookAbbr": "1co",
+        "bookName": "1 Corinthians",
+        "isSelected": false,
+        "projectName": "en_1co_ulb",
+        "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+        "target_language": Object {
+          "id": "en",
+          "name": "English",
+        },
       }
     }
-  >
-    <div
-      style={
-        Object {
-          "paddingBottom": 8,
-        }
-      }
-    >
-      <div
+    translate={[Function]}
+    user="johndoe"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "content": <div
         style={
           Object {
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 14,
-            "muiPrepared": true,
-            "padding": 16,
+            "display": "flex",
+            "justifyContent": "space-between",
+            "marginTop": "-10px",
           }
         }
       >
         <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Hint
+            label="en_1co_ulb"
+            position="bottom"
+          >
+            <strong
+              style={
+                Object {
+                  "display": "block",
+                  "fontSize": "x-large",
+                  "maxWidth": 400,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               
+              en_1co_ulb
+               
+            </strong>
+          </Hint>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "justifyContent": "space-between",
+                "marginBottom": "6px",
+                "width": "410px",
+              }
+            }
+          >
+            <table
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <tbody>
+                <tr>
+                  <td
+                    style={
+                      Object {
+                        "verticalAlign": "top",
+                        "width": "30%",
+                      }
+                    }
+                  >
+                    <table
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "display": "flex",
+                              }
+                            }
+                          >
+                            <Glyphicon
+                              bsClass="glyphicon"
+                              glyph="time"
+                              style={
+                                Object {
+                                  "marginRight": "5px",
+                                  "top": "2px",
+                                }
+                              }
+                            />
+                             
+                            5 days ago
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td
+                    style={
+                      Object {
+                        "verticalAlign": "top",
+                        "width": "30%",
+                      }
+                    }
+                  >
+                    <table
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "display": "flex",
+                              }
+                            }
+                          >
+                            <Glyphicon
+                              bsClass="glyphicon"
+                              glyph="book"
+                              style={
+                                Object {
+                                  "marginRight": "5px",
+                                  "top": "2px",
+                                }
+                              }
+                            />
+                             
+                            <span>
+                               
+                              (1co) 1 Corinthians
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td
+                    style={
+                      Object {
+                        "verticalAlign": "top",
+                        "width": "30%",
+                      }
+                    }
+                  >
+                    <table
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "display": "flex",
+                              }
+                            }
+                          >
+                            <ActionTranslate
+                              style={
+                                Object {
+                                  "alignSelf": "flex-start",
+                                  "color": "#000000",
+                                  "marginBottom": "5px",
+                                  "marginRight": "5px",
+                                  "minWidth": 22,
+                                  "width": 22,
+                                }
+                              }
+                            />
+                             
+                            <span>
+                               
+                              (en) English
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "justifyContent": "space-between",
+              "marginRight": "-6px",
+              "textAlign": "right",
+            }
+          }
+        >
+          <Connect(ProjectCardMenu)
+            projectSaveLocation="<TEMP_DIR>/en_1co_ulb"
+            translate={[Function]}
+            user="johndoe"
+          />
+          <div>
+            <button
+              className="btn-prime"
+              disabled={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "marginBottom": "0",
+                  "width": "90px",
+                }
+              }
+            >
+              buttons.select_button
+            </button>
+          </div>
+        </div>
+      </div>,
+      "heading": <span />,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "content": <div
           style={
             Object {
               "display": "flex",
@@ -63,9 +295,9 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
               }
             }
           >
-            <span
-              aria-label="en_1co_ulb"
-              className="hint--bottom hint--medium"
+            <Hint
+              label="en_1co_ulb"
+              position="bottom"
             >
               <strong
                 style={
@@ -83,7 +315,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
                 en_1co_ulb
                  
               </strong>
-            </span>
+            </Hint>
             <div
               style={
                 Object {
@@ -128,8 +360,9 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
                                 }
                               }
                             >
-                              <span
-                                className="glyphicon glyphicon-time"
+                              <Glyphicon
+                                bsClass="glyphicon"
+                                glyph="time"
                                 style={
                                   Object {
                                     "marginRight": "5px",
@@ -169,8 +402,9 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
                                 }
                               }
                             >
-                              <span
-                                className="glyphicon glyphicon-book"
+                              <Glyphicon
+                                bsClass="glyphicon"
+                                glyph="book"
                                 style={
                                   Object {
                                     "marginRight": "5px",
@@ -213,31 +447,18 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
                                 }
                               }
                             >
-                              <svg
-                                onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
+                              <ActionTranslate
                                 style={
                                   Object {
                                     "alignSelf": "flex-start",
                                     "color": "#000000",
-                                    "display": "inline-block",
-                                    "fill": "currentColor",
-                                    "height": 24,
                                     "marginBottom": "5px",
                                     "marginRight": "5px",
                                     "minWidth": 22,
-                                    "muiPrepared": true,
-                                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                    "userSelect": "none",
                                     "width": 22,
                                   }
                                 }
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
-                                />
-                              </svg>
+                              />
                                
                               <span>
                                  
@@ -264,33 +485,11 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
               }
             }
           >
-            <div
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div
-                onTouchTap={[Function]}
-              >
-                <span
-                  className="glyphicon glyphicon-option-vertical"
-                  style={
-                    Object {
-                      "fontSize": "large",
-                    }
-                  }
-                />
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
-            </div>
+            <Connect(ProjectCardMenu)
+              projectSaveLocation="<TEMP_DIR>/en_1co_ulb"
+              translate={[Function]}
+              user="johndoe"
+            />
             <div>
               <button
                 className="btn-prime"
@@ -307,11 +506,22 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
               </button>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>,
+        "heading": <span />,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;
 
 exports[`Test ProjectCard component Truncate long items. 1`] = `

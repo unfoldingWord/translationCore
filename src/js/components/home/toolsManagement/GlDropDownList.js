@@ -13,16 +13,26 @@ const GlDropDownList = ({
   selectedGL,
   selectionChange,
   bookID,
-  translate
+  translate,
+  toolName
 }) => {
   const GLs = [];
-  getGatewayLanguageList(bookID).forEach(item => {
-    const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
-    const primaryText= <span style={{ height: '18px'}}>{languageLocalized}</span>;
-    GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText} />);
-  });
-  if (!selectedGL) {
-    selectedGL = DEFAULT_GATEWAY_LANGUAGE;
+  let disabled = false;
+  const gatewayLanguageList = getGatewayLanguageList(bookID, toolName);
+  if (gatewayLanguageList && gatewayLanguageList.length) {
+    gatewayLanguageList.forEach(item => {
+      const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
+      const primaryText = <span style={{height: '18px'}}>{languageLocalized}</span>;
+      GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText}/>);
+    });
+    if (!selectedGL) {
+      selectedGL = DEFAULT_GATEWAY_LANGUAGE;
+    }
+  } else { // no valid languages
+    const invalidCode = '  ';
+    GLs.push(<MenuItem value={invalidCode} key={invalidCode} primaryText={translate('tools.no_gl_available')}/>);
+    selectedGL = invalidCode;
+    disabled = true;
   }
   return (
     <SelectField
@@ -32,6 +42,7 @@ const GlDropDownList = ({
       onChange={ (event, index, value) => selectionChange(value) }
       maxHeight={150}
       id='glddl'
+      disabled={disabled}
     >
       {GLs}
     </SelectField>
@@ -42,7 +53,8 @@ GlDropDownList.propTypes = {
   selectedGL: PropTypes.string,
   selectionChange: PropTypes.func.isRequired,
   bookID: PropTypes.string,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  toolName: PropTypes.string
 };
 
 export default GlDropDownList;

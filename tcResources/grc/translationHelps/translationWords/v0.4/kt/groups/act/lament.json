@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "lament",
+      "quote": "κοπετὸν",
+      "strong": [
+        "G28700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

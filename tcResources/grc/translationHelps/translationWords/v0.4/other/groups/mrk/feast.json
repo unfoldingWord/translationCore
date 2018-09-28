@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δεῖπνον",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δείπνοις",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

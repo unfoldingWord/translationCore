@@ -1,10 +1,11 @@
+import React from 'react';
 import types from './ActionTypes';
 // components
 import OnlineDialog from '../components/dialogComponents/OnlineDialog';
-import {getTranslate} from '../selectors';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import React from 'react';
+// selectors
+import {getTranslate} from '../selectors';
 
 /**
  * Displays a confirmation dialog before users access the internet.
@@ -17,12 +18,14 @@ export function confirmOnlineAction(onConfirm, onCancel) {
     const translate = getTranslate(getState());
     const cancelText = translate('buttons.cancel_button');
     const onlineMode = getState().settingsReducer.onlineMode;
+
     if (!onlineMode) {
       const onConfirmCheckCallback = (val) => {
         dispatch(checkBox(val));
       };
       // TODO: this is a very bad idea. We should not be storing react components in the state
-      dispatch(AlertModalActions.openOptionDialog(<OnlineDialog onChecked={onConfirmCheckCallback}/>,
+      dispatch(AlertModalActions.openOptionDialog(
+        <OnlineDialog onChecked={onConfirmCheckCallback}/>,
         (result) => {
           if (result !== cancelText) {
             dispatch(AlertModalActions.closeAlertDialog());

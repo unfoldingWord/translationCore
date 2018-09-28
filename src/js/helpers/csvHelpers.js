@@ -6,7 +6,7 @@ import csv from 'csv';
 import { getLatestVersionInPath } from './ResourcesHelpers';
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 
-const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tC_resources', 'resources', 'en', 'translationHelps');
+const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tcResources', 'en', 'translationHelps');
 let tWIndex = [];
 let tNIndex = [];
 
@@ -38,10 +38,10 @@ function cacheIndicies() {
   tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
 
   // load tN index
-  const tNpath = path.join(tHelpsPath, 'translationNotes');
-  let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
-  const tNIndexPath = path.join(tNversionPath, 'index.json');
-  tNIndex = fs.readJsonSync(tNIndexPath);
+  // const tNpath = path.join(tHelpsPath, 'translationNotes');
+  // let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
+  // const tNIndexPath = path.join(tNversionPath, 'index.json');
+  // tNIndex = fs.readJsonSync(tNIndexPath);
 }
 
 /**
@@ -97,9 +97,9 @@ export const groupName = (contextId) => {
   let indexArray;
   let {tool, groupId} = contextId;
   switch (tool) {
-    case 'translationNotes':
-      indexArray = tNIndex;
-      break;
+    // case 'translationNotes':
+    //   indexArray = tNIndex;
+    //   break;
     case 'translationWords':
       indexArray = tWIndex;
       break;

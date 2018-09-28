@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test ToolCard component Comparing ToolCard Component render with snapshot taken 11/07/2017 in __snapshots__ should match 1`] = `
+exports[`Test ToolCard component Comparing ToolCard Component render for translationWords 1`] = `
 <div
   style={
     Object {
@@ -143,6 +143,176 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
         bookID="tit"
         selectedGL="en"
         selectionChange={[Function]}
+        toolName="translationWords"
+        translate={[Function]}
+      />
+      <span
+        aria-label="tools.book_not_supported"
+        className="hint--left hint--medium"
+      >
+        <button
+          className="btn-prime"
+          disabled={true}
+          onClick={[Function]}
+          style={
+            Object {
+              "margin": "10px",
+              "width": "90px",
+            }
+          }
+        >
+          buttons.launch_button
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test ToolCard component Comparing ToolCard Component render for wordAlignment 1`] = `
+<div
+  style={
+    Object {
+      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+      "backgroundColor": "#ffffff",
+      "borderRadius": 2,
+      "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+         0 1px 4px rgba(0, 0, 0, 0.12)",
+      "boxSizing": "border-box",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontFamily": "Roboto, sans-serif",
+      "margin": "6px 0px 10px",
+      "muiPrepared": true,
+      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "paddingBottom": 0,
+      }
+    }
+  >
+    <img
+      src={undefined}
+      style={
+        Object {
+          "float": "left",
+          "height": "90px",
+          "margin": "10px",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "display": "flex",
+          "fontWeight": 500,
+          "justifyContent": "space-between",
+          "muiPrepared": true,
+          "padding": 16,
+          "position": "relative",
+          "whiteSpace": "nowrap",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "inline-block",
+            "muiPrepared": true,
+            "paddingRight": "90px",
+            "verticalAlign": "top",
+            "whiteSpace": "normal",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "display": "block",
+              "fontSize": 15,
+              "fontWeight": "bold",
+              "muiPrepared": true,
+            }
+          }
+        />
+        <span
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.54)",
+              "display": "block",
+              "fontSize": 14,
+              "muiPrepared": true,
+            }
+          }
+        />
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "float": "right",
+          }
+        }
+      />
+    </div>
+    <br />
+    <ToolCardProgress
+      progress={0.5}
+    />
+    <div />
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+              "fontSize": "18px",
+              "padding": "10px 10px 0px",
+            }
+          }
+        >
+          <span>
+            tools.see_more
+          </span>
+          <span
+            className="glyphicon glyphicon-chevron-down"
+            style={
+              Object {
+                "fontSize": "18px",
+                "margin": "0px 0px 0px 6px",
+              }
+            }
+          />
+        </div>
+      </div>
+      <GlDropDownList
+        bookID="tit"
+        selectedGL="en"
+        selectionChange={[Function]}
+        toolName="wordAlignment"
         translate={[Function]}
       />
       <span>

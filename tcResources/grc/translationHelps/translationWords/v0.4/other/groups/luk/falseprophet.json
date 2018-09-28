@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "falseprophet",
+      "quote": "ψευδοπροφήταις",
+      "strong": [
+        "G55780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

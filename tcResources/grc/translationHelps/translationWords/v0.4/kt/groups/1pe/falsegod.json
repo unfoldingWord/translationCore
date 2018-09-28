@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "falsegod",
+      "quote": "εἰδωλολατρίαις",
+      "strong": [
+        "G14950"
+      ],
+      "occurrence": 1
+    }
+  }
+]

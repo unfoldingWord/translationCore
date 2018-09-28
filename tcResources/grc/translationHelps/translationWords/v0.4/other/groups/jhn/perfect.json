@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τελειώσω",
+      "strong": [
+        "G50480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τελειώσω",
+      "strong": [
+        "G50480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τελειώσας",
+      "strong": [
+        "G50480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τετελειωμένοι",
+      "strong": [
+        "G50480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τετέλεσται",
+      "strong": [
+        "G50550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τελειωθῇ",
+      "strong": [
+        "G50480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

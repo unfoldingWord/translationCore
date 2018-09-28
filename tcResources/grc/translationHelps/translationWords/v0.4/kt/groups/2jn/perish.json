@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσητε",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

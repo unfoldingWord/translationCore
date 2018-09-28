@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "οἰκτιρμῶν",
+      "strong": [
+        "G36280"
+      ],
+      "occurrence": 1
+    }
+  }
+]

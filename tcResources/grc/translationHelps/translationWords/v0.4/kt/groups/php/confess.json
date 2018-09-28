@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "confess",
+      "quote": "ἐξομολογήσηται",
+      "strong": [
+        "G18430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

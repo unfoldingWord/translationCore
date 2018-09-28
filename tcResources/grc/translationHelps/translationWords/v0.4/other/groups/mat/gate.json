@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πύλης",
+      "strong": [
+        "G44390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πύλη",
+      "strong": [
+        "G44390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πύλη",
+      "strong": [
+        "G44390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 71
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πυλῶνα",
+      "strong": [
+        "G44400"
+      ],
+      "occurrence": 1
+    }
+  }
+]

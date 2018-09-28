@@ -12,7 +12,7 @@ import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as WordAlignmentActions from './WordAlignmentActions';
 import {setSetting} from '../actions/SettingsActions';
-import * as ProjectMigrationActions from './Import/ProjectMigrationActions';
+import migrateProject from '../helpers/ProjectMigration';
 //helpers
 import * as exportHelpers from '../helpers/exportHelpers';
 import {getTranslate} from '../selectors';
@@ -35,7 +35,7 @@ export function exportToUSFM(projectPath) {
         /** Will be 'usfm2' if no alignments else takes users choice */
         const exportType = await dispatch(getExportType(projectPath));
         //Running migrations before exporting to attempt to fix any invalid alignments/usfm
-        ProjectMigrationActions.migrate(projectPath);
+        migrateProject(projectPath);
         dispatch(BodyUIActions.dimScreen(true));
         let usfmExportFile;
         dispatch(displayLoadingUSFMAlert(manifest));
@@ -119,7 +119,8 @@ export function getExportType(projectPath) {
       if (!projectHasAlignments) return resolve('usfm2');
       else {
         const onSelect = (choice) => dispatch(setSetting('usfmExportType', choice));
-        dispatch(AlertModalActions.openOptionDialog(<USFMExportDialog onSelect={onSelect} />, (res) => {
+        dispatch(AlertModalActions.openOptionDialog(
+          <USFMExportDialog onSelect={onSelect} />, (res) => {
           if (res === 'Export') {
             const {usfmExportType} = getState().settingsReducer.currentSettings;
             resolve(usfmExportType);

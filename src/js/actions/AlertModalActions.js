@@ -21,17 +21,19 @@ export function openAlertDialog(alertMessage, loading) {
 /**
  * @description opens the option dialog with the specified alert message, and options.
  * @param {String} alertMessage - message to be displayed inside the alert dialog.
- * @param {function} callback - message to be displayed inside the alert dialog.
+ * @param {function} callback - callback function that is called when clicking on button.  First parameter is text on button. Exception is when callback2 is given.
  * @param {String} button1Text - button text to show right button.
  * @param {String} button2Text - button text to show left of right button. (optional - if not present button is not added)
  * @param {String} buttonLinkText - button text to show on left link button. (optional - if not present button is not added)
+ * @param {function} callback2 - optional callback function that is called user clicks on button2Text.
  * @return {Object} action content.
  */
-export function openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText = null) {
+export function openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null) {
   return {
     type: consts.OPEN_OPTION_DIALOG,
     alertMessage,
     callback,
+    callback2,
     button1Text,
     button2Text,
     buttonLinkText

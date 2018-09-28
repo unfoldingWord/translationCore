@@ -21,8 +21,9 @@ describe('ResourcesActions', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
   });
-  // given
+
   it('loadBiblesChapter() gal', () => {
+    // given
     const bookId = 'gal';
     const expectedFirstWord = {
       "text": "Παῦλος",
@@ -32,14 +33,6 @@ describe('ResourcesActions', () => {
       "strong": "G39720",
       "morph": "Gr,N,,,,,NMS,",
       "tw": "rc://*/tw/dict/bible/names/paul"
-    };
-    const expectedFirstTopWord = {
-      "word": "Παῦλος",
-      "occurrence": 1,
-      "occurrences": 1,
-      "lemma": "Παῦλος",
-      "strong": "G39720",
-      "morph": "Gr,N,,,,,NMS,"
     };
     const expectedResources = ['en', 'originalLanguage', 'targetLanguage'];
 
@@ -87,6 +80,9 @@ describe('ResourcesActions', () => {
             chapter:1
           }
         }
+      },
+      settingsReducer: {
+        toolsSettings: {}
       }
     });
     const contextId = {
@@ -128,6 +124,71 @@ describe('ResourcesActions', () => {
     // let firstAlignment = firstVerse.alignments[0];
     // firstWord = firstAlignment.topWords[0];
     // expect(firstWord).toEqual(expectedFirstTopWord);
+  });
+
+  it('makeSureBiblesLoadedForTool() should work', () => {
+    // given
+    const bookId = 'gal';
+    const expectedResources = ['ult', 'ust'];
+
+    loadMockFsWithProjectAndResources();
+    fs.copySync(path.join(RESOURCE_PATH, "grc/bibles/ugnt"), path.join(RESOURCE_PATH, "hi/bibles/uhb"));
+
+    const ugnt = require("./fixtures/project/en_gal/bibleData.json");
+
+    const store = mockStore({
+      actions: {},
+      toolsReducer: {
+        currentToolName: 'wordAlignment'
+      },
+      resourcesReducer: {
+        bibles: {
+          originalLanguage: {
+            ugnt
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: {
+          reference: {
+            bookId: bookId,
+            chapter:1
+          }
+        }
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: "targetBible",
+                languageId: "targetLanguage"
+              }, {
+                bibleId: "ugnt",
+                languageId: "originalLanguage"
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      }
+    });
+
+    // when
+    store.dispatch(
+      ResourcesActions.makeSureBiblesLoadedForTool()
+    );
+
+    // then
+    const actions = store.getActions();
+    validateExpectedResources(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "bibleId", expectedResources);
   });
 
   it('findArticleFilePath for abel in en', () => {
@@ -335,10 +396,11 @@ function loadMockFsWithProjectAndResources() {
   const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
   const resourcesPath = RESOURCE_PATH;
   const copyResourceFiles = [
-    'en/bibles/ult/v11/index.json', 'en/bibles/ult/v11/manifest.json', 'en/bibles/ult/v11/gal',
-    'en/bibles/ust/v10/index.json', 'en/bibles/ust/v10/manifest.json', 'en/bibles/ust/v10/gal',
-    'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal',
-    'en/translationHelps/translationWords/v8', 'en/translationHelps/translationAcademy/v9',
-    'hi/translationHelps/translationWords/v8.1'];
+    'en/bibles/ult',
+    'en/bibles/ust',
+    'grc/bibles/ugnt',
+    'en/translationHelps/translationWords',
+    'en/translationHelps/translationAcademy',
+    'hi/translationHelps/translationWords'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
 }

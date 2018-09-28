@@ -39,7 +39,7 @@ const testOutputPath = path.join(__dirname, 'output');
 
 const fixtures = path.join(__dirname, 'fixtures/project');
 const resourcesDir = path.join(__dirname,
-  '../tC_resources/resources/en/translationHelps');
+  '../tcResources/en/translationHelps');
 const outDir = path.join(testOutputPath, '1');
 
 beforeAll(() =>

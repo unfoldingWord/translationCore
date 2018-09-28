@@ -12,6 +12,7 @@ import Hint from '../../Hint';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
+import {getGatewayLanguageList} from "../../../helpers/gatewayLanguageHelpers";
 
 export default class ToolCard extends Component {
   constructor(props) {
@@ -33,8 +34,10 @@ export default class ToolCard extends Component {
   }
 
   selectionChange(selectedGL){
-    this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
-    this.setState({selectedGL});
+    if (selectedGL && selectedGL.trim()) {
+      this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
+      this.setState({selectedGL});
+    }
   }
 
   render() {
@@ -56,7 +59,11 @@ export default class ToolCard extends Component {
             developerMode
           } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    const launchStatus = ToolCardHelpers.getToolCardLaunchStatus(name, this.state.selectedGL, id, developerMode, translate);
+    let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
+    if (!launchDisableMessage && !developerMode) {
+      const gatewayLanguageList = getGatewayLanguageList(id, name);
+      launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
+    }
     let desc_key = null;
     switch (name) {
       case 'wordAlignment':
@@ -116,15 +123,16 @@ export default class ToolCard extends Component {
               selectedGL={this.state.selectedGL}
               selectionChange={this.selectionChange}
               bookID={id}
+              toolName={name}
             />
             <Hint
                 position={'left'}
                 size='medium'
-                label={launchStatus}
-                enabled={launchStatus?true:false}
+                label={launchDisableMessage}
+                enabled={launchDisableMessage?true:false}
             >
               <button
-                disabled={launchStatus?true:false}
+                disabled={launchDisableMessage?true:false}
                 className='btn-prime'
                 onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
                 style={{ width: '90px', margin: '10px' }}

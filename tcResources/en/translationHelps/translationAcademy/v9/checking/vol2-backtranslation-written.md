@@ -1,0 +1,11 @@
+# Kinds of Written Back Translations #
+
+There are two kinds of written back translations.
+
+### Interlinear Back Translation
+
+An interlinear back translation is one in which the back translator puts a translation for each word of the target language translation underneath that word. This results in a text in which each line of the target language translation is followed by a line in the language of wider communication. The advantage of this kind of back translation is that the checker can easily see how the translation team is translating each word of the target language. He can more easily see the range of meaning of each target language word and can compare how it is used in different contexts. The disadvantage of this kind of back translation is that the line of text in the language of wider communication is made up of translations of individual words. This makes the text difficult to read and understand, and may create more questions and misunderstandings in the mind of the translation checker than the other method of back translation. This is the same reason we do not recommend the word-for-word method for translation of the Bible!
+
+### Free Back Translation
+
+A free back translation is one in which the back translator makes a translation in the language of wider communication in a separate space from the target language translation. The disadvantage of this method is that the back translation is not related as closely to the target language translation. The back translator can overcome this disadvantage when back translating the Bible, however, by including the verse numbers with the back translation. By referring to the verse numbers in both translations, the translation checker can keep track of which part of the back translation represents which part of the target language translation. The advantage of this method is that the back translation can use the grammar and word order of the language of wider communication, and so it is much easier for the translation checker to read and understand. Even while using the grammar and word order of the language of wider communication, however, the back translator should remember to translate the words in a literal way. We recommend that the back translator use the method of free back translation.

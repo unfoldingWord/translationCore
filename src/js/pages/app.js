@@ -18,7 +18,6 @@ import PopoverContainer from '../containers/PopoverContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 import ProjectValidationContainer from '../containers/projectValidation/ProjectValidationContainer';
 // actions
-import {getResourcesFromStaticPackage} from '../helpers/ResourcesHelpers';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
@@ -50,14 +49,13 @@ class Main extends Component {
       getAnchorTags
     } = this.props;
 
-    if (localStorage.getItem('version') !== packageJson.version) {
+    const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
+    if (localStorage.getItem('version') !== packageJson.version || !fs.existsSync(tcResourcesPath)) {
       localStorage.setItem('version', packageJson.version);
-      // the users resources folder will be deleted for every new app version and then regenerated.
       migrateResourcesFolder();
     }
     // migration logic for toolsSettings in settings.json
     migrateToolsSettings();
-    getResourcesFromStaticPackage();
     getAnchorTags();
   }
 
