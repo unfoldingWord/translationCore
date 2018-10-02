@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import {generateTimestamp} from './index';
 
 /**
  * @description Copies existing project checks from the old project path to the new project path
@@ -7,7 +8,7 @@ import path from 'path-extra';
  * @param {String} newProjectPath
  * @param {function} translate
  */
-export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath) => {
+export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, userName) => {
   // if project path doesn't exist, it must have been deleted after tC was started. We throw an error and tell them to import the project again
   if (fs.existsSync(oldProjectPath) && fs.existsSync(newProjectPath)) {
     let oldAppsPath = path.join(oldProjectPath, '.apps');
@@ -30,6 +31,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath) => {
           // Now we overwrite any alignment data of the old project path from the new project path
           copyAlignmentData(path.join(tempAlignmentPath, bookId), path.join(alignmentPath, bookId));
           fs.removeSync(tempAlignmentPath); // Done with the temp alignment dir
+          createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName);
         }
       }
     }
@@ -83,3 +85,54 @@ export const getBookId = (projectPath) => {
 export const getProjectName = (projectPath) => {
   return path.basename(projectPath);
 };
+
+export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => {
+  const bookId = getBookId(newProjectPath);
+  const oldBiblePath = path.join(oldProjectPath, bookId);
+  const newBiblePath = path.join(newProjectPath, bookId);
+  if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
+    return;
+  const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
+  chapterFiles.forEach(filename => {
+    try {
+      const chapter = parseInt(path.basename(filename));
+      const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
+      const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
+      Object.keys(newChapterVerses).forEach(verse => {
+        let verseBefore = oldChapterVerses[verse];
+        let verseAfter = newChapterVerses[verse];
+        verse = parseInt(verse);
+        if (verseBefore != verseAfter) {
+          const modifiedTimestamp = generateTimestamp();
+          const verseEdit = {
+            verseBefore,
+            verseAfter,
+            tags: 'other',
+            userName,
+            activeBook: bookId,
+            activeChapter: chapter,
+            activeVerse: verse,
+            modifiedTimestamp: modifiedTimestamp,
+            gatewayLanguageCode: 'en',
+            gatewayLanguageQuote: 'Chapter ' + chapter,
+            contextId: {
+              reference: {
+                bookId,
+                chapter,
+                verse
+              },
+              tool: 'wordAlignment',
+              groupId: 'chapter_' + chapter
+            },
+          };
+          const newFilename = modifiedTimestamp + '.json';
+          const verseEditsPath = path.join(newProjectPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
+          fs.outputJsonSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  });
+};
+
