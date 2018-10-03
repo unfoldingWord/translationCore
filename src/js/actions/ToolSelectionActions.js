@@ -32,7 +32,7 @@ export function selectTool(moduleFolderName, currentToolName) {
           type: consts.SET_CURRENT_TOOL_TITLE,
           currentToolTitle: dataObject.title
         });
-        dispatch(saveToolViews(checkArray));
+        dispatch(saveToolViews(checkArray, dataObject));
         dispatch(loadSupportingToolApis(currentToolName));
         // load project data
         dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
@@ -72,12 +72,15 @@ function loadSupportingToolApis(currentToolName) {
       try {
         let tool = require(
           path.join(toolMeta.folderName, toolMeta.main)).default;
+
         // TRICKY: compatibility for older tools
         if ('container' in tool.container && 'name' in tool.container) {
           tool = tool.container;
         }
+        // end compatability
+
         if (tool.api) {
-          dispatch(registerToolApi(tool.name, tool.api));
+          dispatch(registerToolApi(toolMeta.name, tool.api));
         }
       } catch (e) {
         console.error(`Failed to load tool api for ${toolMeta.name}`, toolMeta, e);
@@ -103,22 +106,25 @@ const registerToolApi = (name, api) => ({
  * @param {Array} checkArray - Array of the checks that the views should be loaded.
  * @return {object} action object.
  */
-export function saveToolViews(checkArray) {
+export function saveToolViews(checkArray, toolPackage) {
   return (dispatch => {
     for (let module of checkArray) {
       try {
-        let tool = require(path.join(module.location, 'index')).default;
+        let tool = require(path.join(module.location, toolPackage.main)).default;
+
         // TRICKY: compatibility for older tools
         if('container' in tool.container && 'name' in tool.container) {
           tool = tool.container;
         }
+        // end compatibility fix
+
         dispatch({
           type: consts.SAVE_TOOL_VIEW,
           identifier: module.name,
           module: tool.container
         });
         if(tool.api) {
-          dispatch(registerToolApi(tool.name, tool.api));
+          dispatch(registerToolApi(module.name, tool.api));
         }
       } catch (e) {
         console.error(`Failed to load ${module.name} tool`, e);

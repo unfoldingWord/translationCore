@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
-import BooksOfTheBible from '../common/BooksOfTheBible';
+import {isNewTestament} from "./bibleHelpers";
 
 /**
  * Gets the status for the Tool Card launch button. The string returned informs the user why it can't be launched
- * @param {String} toolName
  * @param {String} language
  * @param {String} bookId
  * @param {bool} developerMode
@@ -21,20 +20,11 @@ export function getToolCardLaunchStatus(language, bookId, developerMode, transla
 }
 
 /**
- * tests if book is a New Testament book
- * @param bookId
- * @return {boolean}
- */
-export function isNtBook(bookId) {
-  return bookId in BooksOfTheBible.newTestament;
-}
-
-/**
  * Checks if a tool is supported.
  * @param {string} bookId
  * @param {bool} developerMode
  * @return {boolean}
  */
 export function isToolSupported(bookId, developerMode) {
-  return developerMode || isNtBook(bookId);
+  return developerMode || isNewTestament(bookId);
 }

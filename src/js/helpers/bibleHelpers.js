@@ -3,6 +3,7 @@ import Path from 'path-extra';
 import fs from 'fs-extra';
 import BooksOfBible from '../../../tcResources/books';
 import {getLatestVersionInPath} from "./ResourcesHelpers";
+import BooksOfTheBible from '../common/BooksOfTheBible';
 
 /**
  *
@@ -14,18 +15,34 @@ export function convertToFullBookName(bookAbbr) {
 }
 
 /**
- *
- * @param {string} projectBook - Book abbreviation
+ * tests if book is a Old Testament book
+ * @param bookId
+ * @return {boolean}
  */
-export function isOldTestament(projectBook) {
-  var passedBook = false;
-  for (var book in BooksOfBible) {
-    if (book == projectBook) passedBook = true;
-    if (BooksOfBible[book] == 'Malachi' && passedBook) {
-      return true;
-    }
-  }
-  return false;
+export function isOldTestament(bookId) {
+  return bookId in BooksOfTheBible.oldTestament;
+}
+
+/**
+ * tests if book is a New Testament book
+ * @param bookId
+ * @return {boolean}
+ */
+export function isNewTestament(bookId) {
+  return bookId in BooksOfTheBible.newTestament;
+}
+
+
+/**
+ * determine
+ * @param bookId
+ * @return {{resourceLanguage: string, bibleID: string}}
+ */
+export function getOLforBook(bookId) {
+  const isOT = isOldTestament(bookId);
+  const languageId = (isOT) ? 'he' : 'grc';
+  const bibleId = (isOT) ? 'uhb' : 'ugnt';
+  return {languageId, bibleId};
 }
 
 /**

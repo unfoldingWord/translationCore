@@ -96,7 +96,7 @@ export const getTargetBible = state => {
 };
 
 export const getSourceBible = state => {
-  return state.bibles.originalLanguage.ugnt;
+  return state.bibles.originalLanguage && (state.bibles.originalLanguage.ugnt || state.bibles.originalLanguage.uhb);
 };
 
 /**
@@ -122,5 +122,6 @@ export const getOriginalVerse = (state, chapter, verse) => {
  * @return {*}
  */
 export const getOriginalChapter = (state, chapter) => {
-  return state.bibles.originalLanguage.ugnt[chapter + ''];
+  const sourceBible = getSourceBible(state);
+  return sourceBible && sourceBible[chapter + ''];
 };
