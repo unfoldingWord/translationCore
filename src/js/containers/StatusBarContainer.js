@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import path from "path-extra";
 // Components
 import StatusBar from "../components/StatusBar";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 // Actions
 import * as BodyUIActions from "../actions/BodyUIActions";
 import {
