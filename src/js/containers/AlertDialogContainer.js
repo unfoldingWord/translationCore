@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getTranslate } from '../selectors/';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import Alert from '../components/dialogComponents/Alert';
 // actions
@@ -14,10 +13,7 @@ class AlertDialogContainer extends Component {
     const {translate} = this.props;
     return (
       <div>
-        <MuiThemeProvider>
-          <Alert translate={translate}
-                 {...this.props}/>
-        </MuiThemeProvider>
+        <Alert translate={translate} {...this.props}/>
       </div>
     );
   }
