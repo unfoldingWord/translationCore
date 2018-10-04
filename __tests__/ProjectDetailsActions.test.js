@@ -11,7 +11,7 @@ import ospath from "ospath";
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+const PROJECTS_PATH = path.join('user', 'translationCore', 'projects');
 
 it('setSaveLocation() creates an action to update contributors', () => {
   const store = mockStore({});
