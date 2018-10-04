@@ -341,7 +341,6 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
     // when
     await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
-    console.log(cleanupPaths(store.getActions()));
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
