@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import path from "path-extra";
 // Components
 import StatusBar from "../components/StatusBar";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 // Actions
 import * as BodyUIActions from "../actions/BodyUIActions";
 import {
@@ -42,7 +41,7 @@ class StatusBarContainer extends React.Component {
     } = this.props;
 
     return (
-      <MuiThemeProvider>
+      <div>
         {homeIsVisible ? null :
           <StatusBar
             goToStep={this._HandleGoToStep}
@@ -53,7 +52,7 @@ class StatusBarContainer extends React.Component {
             currentUser={username}
           />
         }
-      </MuiThemeProvider>
+      </div>
     );
   }
 }
