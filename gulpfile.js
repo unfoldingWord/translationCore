@@ -8,6 +8,22 @@ const change = require('gulp-change');
 const path = require('path');
 const rimraf = require('rimraf');
 const CrowdinApi = require('./scripts/CrowdinApi');
+const ncp = require('ncp').ncp;
+
+function copy(src, dest) {
+  return new Promise((resolve, reject) => {
+    console.log(`copying ${src} to ${dest}`);
+    ncp(src, dest, (err) => {
+      if(err) {
+        console.log(`failed copying ${src}`);
+        reject(err);
+      } else {
+        console.log(`finished copying ${src}`);
+        resolve();
+      }
+    });
+  });
+}
 
 const BUILD_DIR = './out/';
 const RELEASE_DIR = './release/';
@@ -195,6 +211,51 @@ gulp.task('release-linux', () => {
       reject(e);
     }
   });
+});
+
+/**
+ * Compiles a .deb package
+ * @param out - the path to which the release will be saved
+ */
+gulp.task('release-linux-deb', () => {
+  const p = require('./package');
+
+  const outPath = argv.out;
+  if (!outPath || typeof outPath !== 'string') {
+    throw new Error('The --out argument is required.');
+  }
+
+  mkdirp.sync('release');
+  const buildPath = BUILD_DIR + p.name + '-linux-x64/';
+  if (!fs.existsSync(buildPath)) {
+    throw new Error(`The build path "${buildPath}" does not exist`);
+  }
+
+  // build .deb
+  const tmp = buildPath.replace(/\/+$/, '') + '.deb.stage';
+  const optDir = path.join(tmp, 'opt/translationcore');
+  mkdirp.sync(tmp);
+
+  return copy('./scripts/deb', tmp)
+    .then(() => {
+      return copy(buildPath, optDir);
+    }).then(() => {
+      console.log('compiling');
+      // compile
+      return new Promise((resolve, reject) => {
+        const exec = require('child_process').exec;
+        const dest = path.normalize(outPath);
+        mkdirp.sync(path.dirname(dest));
+        let cmd = `dpkg-deb --build ${tmp} ${dest}`;
+        exec(cmd, function(err) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve();
+          }
+        });
+      });
+    });
 });
 
 /**

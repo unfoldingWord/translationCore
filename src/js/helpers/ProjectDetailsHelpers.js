@@ -12,6 +12,7 @@ import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers'
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
 import BooksOfTheBible from "../common/BooksOfTheBible";
+import * as BibleHelpers from "./bibleHelpers";
 
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -388,13 +389,20 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   const groupsObject = {};
   let checked = 0;
   let totalChecks = 0;
-  const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
-  if (fs.existsSync(pathToWordAlignmentData)) {
+  const {languageId, bibleId} = BibleHelpers.getOLforBook(bookId);
+  const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, languageId, bibleId);
+  if (expectedVerses && fs.existsSync(pathToWordAlignmentData)) {
     let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
       return path.extname(file) === '.json';
     });
     groupDataFiles.forEach((chapterFileName) => {
-      groupsObject[path.parse(chapterFileName).name] = fs.readJsonSync(path.join(pathToWordAlignmentData, chapterFileName));
+      const chapterPath = path.join(pathToWordAlignmentData, chapterFileName);
+      try {
+        groupsObject[path.parse(chapterFileName).name] = fs.readJsonSync(
+          chapterPath);
+      } catch (e) {
+        console.error(`Failed to read alignment data from ${chapterPath}. This will be fixed by #4884`, e);
+      }
     });
     for (let chapterNumber in groupsObject) {
       for (let verseNumber in groupsObject[chapterNumber]) {

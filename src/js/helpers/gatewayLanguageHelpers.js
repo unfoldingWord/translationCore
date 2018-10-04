@@ -4,8 +4,8 @@ import _ from 'lodash';
 
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./LanguageHelpers";
-import {isNtBook} from "./ToolCardHelpers";
 import * as ResourcesHelpers from "./ResourcesHelpers";
+import * as BibleHelpers from "./bibleHelpers";
 
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
@@ -181,6 +181,30 @@ function getValidResourcePath(langPath, subpath) {
 }
 
 /**
+ * get path for OL of book
+ * @param {String} bookId - book to look up
+ * @return {String}
+ */
+export function getOlBookPath(bookId) {
+  const {languageId, bibleId} = BibleHelpers.getOLforBook(bookId);
+  const originalSubPath = `${languageId}/bibles/${bibleId}`;
+  const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
+  return origPath;
+}
+
+/**
+ * test to make sure book has valid OL
+ * @param {String} bookId - book to look up
+ * @param checkingHelps
+ * @return {Boolean}
+ */
+export function hasValidOL(bookId, checkingHelps = true) {
+  const origPath = getOlBookPath(bookId);
+  const isValidOrig = origPath && isValidResource(origPath, bookId, checkingHelps ? 2 : 0);
+  return isValidOrig;
+}
+
+/**
  * Returns a list of Gateway Languages bibles supported for book.  This list is determined by iterating through each
  *          bible in the language to make sure that at least one bible is supported.
  *          Supported books meet the following requirements
@@ -248,9 +272,7 @@ export function getValidGatewayBibles(langCode, bookId, helpsChecks=null) {
       }
       if (isBibleValidSource) {
         if (bookId) { // if filtering by book
-          const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
-          const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
-          const isValidOrig = origPath && isValidResource(origPath, bookId, checkingHelps ? 2 : 0);
+          const isValidOrig = hasValidOL(bookId, checkingHelps);
           isBibleValidSource = isBibleValidSource && isValidOrig;
 
           // make sure resource for book is present and has the right checking level

@@ -3,6 +3,7 @@ import ospath from 'ospath';
 import * as LangHelpers from "./LanguageHelpers";
 import * as ProjectImportFilesystemHelpers from "./Import/ProjectImportFilesystemHelpers";
 import {getIsOverwritePermitted} from "../selectors";
+import * as bibleHelpers from './bibleHelpers';
 
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -124,6 +125,22 @@ export function checkCheckers(manifest) {
 }
 
 /**
+ * make sure book is supported by tool
+ * @param {object} state - current app state.
+ * @param {string} bookId
+ * @return {Boolean}
+ */
+export function validateBookId(state, bookId) {
+  if (bibleHelpers.isNewTestament(bookId)) {
+    return true;
+  }
+
+  // TODO: in future accept OT books as well in all modes
+  const developerMode = state.settingsReducer && state.settingsReducer.currentSettings && state.settingsReducer.currentSettings.developerMode;
+  return (developerMode && bibleHelpers.isOldTestament(bookId));
+}
+
+/**
  * verifies if all required fields in the project information reducer are completed.
  * @param {object} state - current app state.
  */
@@ -138,7 +155,7 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     checkers
   } = state.projectInformationCheckReducer;
 
-  let valid = (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
+  let valid = (validateBookId(state, bookId) && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
     languageName && languageDirection && !contributors.includes("") && !checkers.includes(""));
 
   if (valid && !getIsOverwritePermitted(state) ){ // if overwrite is not permitted, make sure there is not a project with conflicting name

@@ -170,7 +170,7 @@
     "simple-git": "1.43.0",
     "string-punctuation-tokenizer": "0.8.0",
     "sudo-prompt": "6.2.1",
-    "tc-source-content-updater": "^0.2.13",
+    "tc-source-content-updater": "0.2.16",
     "tc-strings": "0.1.7",
     "tc-tool": "^2.0.0-rc.1",
     "tc-ui-toolkit": "github:translationCoreApps/tc-ui-toolkit#bugfix-mannycolon-5092",
@@ -179,7 +179,8 @@
     "usfm-js": "1.0.3",
     "uuid": "3.2.1",
     "word-aligner": "^0.1.4",
-    "word-map": "0.1.9",
+    "wordmap": "^0.4.0",
+    "wordmap-lexer": "^0.3.2",
     "xregexp": "3.2.0",
     "yamljs": "0.3.0",
     "zip-folder": "1.0.0"
