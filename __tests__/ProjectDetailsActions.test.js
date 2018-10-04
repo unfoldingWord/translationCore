@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
+jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import types from '../src/js/actions/ActionTypes';
@@ -341,6 +341,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
     // when
     await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
+    console.log(cleanupPaths(store.getActions()));
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
