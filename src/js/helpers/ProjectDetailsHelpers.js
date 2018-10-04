@@ -396,7 +396,13 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
       return path.extname(file) === '.json';
     });
     groupDataFiles.forEach((chapterFileName) => {
-      groupsObject[path.parse(chapterFileName).name] = fs.readJsonSync(path.join(pathToWordAlignmentData, chapterFileName));
+      const chapterPath = path.join(pathToWordAlignmentData, chapterFileName);
+      try {
+        groupsObject[path.parse(chapterFileName).name] = fs.readJsonSync(
+          chapterPath);
+      } catch (e) {
+        console.error(`Failed to read alignment data from ${chapterPath}. This will be fixed by #4884`, e);
+      }
     });
     for (let chapterNumber in groupsObject) {
       for (let verseNumber in groupsObject[chapterNumber]) {

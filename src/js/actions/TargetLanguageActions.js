@@ -45,7 +45,10 @@ export function loadTargetLanguageBible () {
 
     if (fs.existsSync(targetBiblePath)) {
       const bibleData = {};
-      fs.readdirSync(targetBiblePath).forEach(file => {
+      const files = fs.readdirSync(targetBiblePath);
+
+      for (let i = 0, len = files.length; i < len; i++) {
+        const file = files[i];
         const chapterNumber = path.basename(file, ".json");
         if (!isNaN(chapterNumber)) {
           // load chapter
@@ -59,7 +62,8 @@ export function loadTargetLanguageBible () {
         } else {
           console.warn("Unexpected file in target bible", file);
         }
-      });
+      }
+
       dispatch(ResourcesActions.addNewBible(resourceId, bibleId, bibleData));
     } else {
       console.warn("Target Bible was not found in the project root folder");
