@@ -225,10 +225,14 @@ export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
   let selectionsArray = [];
 
   if (selectionsObject) {
-    selectionsObject.selections.forEach((selection) => {
+    const selections = selectionsObject.selections;
+
+    for (let i = 0, len = selections.length; i < len; i++) {
+      const selection = selections[i];
       selectionsArray.push(selection.text);
-    });
+    }
   }
+
   return selectionsArray.join(" ");
 };
 

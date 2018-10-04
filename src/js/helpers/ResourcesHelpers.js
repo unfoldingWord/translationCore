@@ -248,7 +248,7 @@ export function sortVersions(versions) {
     return versions;
   }
   // Only sort of all items are strings
-  for(let i = 0; i < versions.length; ++i) {
+  for(let i = 0, len = versions.length; i < len; ++i) {
     if (typeof versions[i] !== 'string') {
       return versions;
     }

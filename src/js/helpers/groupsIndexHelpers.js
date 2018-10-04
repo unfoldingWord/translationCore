@@ -11,7 +11,14 @@ import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
  */
 export function getGroupFromGroupsIndex(groupsIndex, groupIdToFind) {
   try {
-    return groupsIndex.find((group) => group.id === groupIdToFind);
+    let foundGroupId = undefined;
+
+    for (let i = 0, len = groupsIndex.length; i < len; i++) {
+      const group = groupsIndex[i];
+      if (group.id === groupIdToFind) foundGroupId = group;
+    }
+
+    return foundGroupId;
   } catch (error) {
     console.error(error);
   }
