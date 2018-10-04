@@ -22,7 +22,7 @@ export function selectTool(moduleFolderName, currentToolName) {
       try {
         const modulePath = path.join(moduleFolderName, 'package.json');
         const dataObject = fs.readJsonSync(modulePath);
-        const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+        // const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
         dispatch(resetReducersData());
         dispatch({
           type: consts. SET_CURRENT_TOOL_NAME,
@@ -32,7 +32,7 @@ export function selectTool(moduleFolderName, currentToolName) {
           type: consts.SET_CURRENT_TOOL_TITLE,
           currentToolTitle: dataObject.title
         });
-        dispatch(saveToolViews(checkArray));
+        //dispatch(saveToolViews(checkArray));
         dispatch(loadSupportingToolApis(currentToolName));
         // load project data
         dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
@@ -46,7 +46,7 @@ export function selectTool(moduleFolderName, currentToolName) {
 
 export function resetReducersData() {
   return (dispatch => {
-    dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
+    //dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
     dispatch({ type: consts.CLEAR_CONTEXT_ID });

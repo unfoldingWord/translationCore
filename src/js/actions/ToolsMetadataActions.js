@@ -1,6 +1,8 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
+import * as LoadHelpers from '../helpers/LoadHelpers';
+import {saveToolViews} from './ToolSelectionActions';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 const TOOLS_TO_SHOW = ['wordAlignment', 'translationWords'];
@@ -14,9 +16,21 @@ export function getToolsMetadatas() {
           type: consts.SET_TOOLS_METADATA,
           val: metadatas
         });
+        moduleFolderPathList.forEach((moduleFolderName) => {
+          dispatch(saveToolViewsEarly(moduleFolderName.split('package.json')[0]));
+        });
       });
     });
   });
+}
+
+export function saveToolViewsEarly(moduleFolderName) {
+  return dispatch => {
+    const modulePath = path.join(moduleFolderName, 'package.json');
+    const dataObject = fs.readJsonSync(modulePath);
+    const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+    dispatch(saveToolViews(checkArray));
+  };
 }
 
 const getDefaultTools = (callback) => {
