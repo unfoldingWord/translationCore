@@ -24,15 +24,6 @@ Array [
 ]
 `;
 
-exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if project id changed 1`] = `
-Array [
-  Object {
-    "pathLocation": "fr_ult_tit_book",
-    "type": "SET_SAVE_PATH_LOCATION",
-  },
-]
-`;
-
 exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if resource.id (resourceId) changed 1`] = `
 Array [
   Object {
