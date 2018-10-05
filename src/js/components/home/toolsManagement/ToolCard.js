@@ -12,7 +12,7 @@ import Hint from '../../Hint';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
-import {getGatewayLanguageList} from "../../../helpers/gatewayLanguageHelpers";
+import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
 
 export default class ToolCard extends Component {
   constructor(props) {
@@ -60,9 +60,16 @@ export default class ToolCard extends Component {
           } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
     let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
-    if (!launchDisableMessage && !developerMode) {
-      const gatewayLanguageList = getGatewayLanguageList(id, name);
-      launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
+    if (!launchDisableMessage) {
+      if (!developerMode) {
+        const gatewayLanguageList = getGatewayLanguageList(id, name);
+        launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
+      } else { // developer mode, make sure we have original language
+        const olBookPath = hasValidOL(id);
+        if (!olBookPath) {
+          launchDisableMessage = translate('tools.book_not_supported');
+        }
+      }
     }
     let desc_key = null;
     switch (name) {

@@ -86,7 +86,8 @@ const mapStateToProps = (state) => {
       copyrightCheckReducer: state.copyrightCheckReducer,
       projectInformationCheckReducer: state.projectInformationCheckReducer,
       mergeConflictReducer: state.mergeConflictReducer,
-      missingVersesReducer: state.missingVersesReducer
+      missingVersesReducer: state.missingVersesReducer,
+      settingsReducer: state.settingsReducer
     }
   };
 };
@@ -190,7 +191,8 @@ ProjectValidationContainer.propTypes = {
       showProjectValidationStepper:PropTypes.bool.isRequired
     }),
     mergeConflictReducer: PropTypes.object.isRequired,
-    missingVersesReducer: PropTypes.object.isRequired
+    missingVersesReducer: PropTypes.object.isRequired,
+    settingsReducer: PropTypes.object.isRequired
   })
 };
 

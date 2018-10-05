@@ -32,6 +32,11 @@ describe('ProjectInformationCheck', () => {
         },
         projectDetailsReducer: {
           projectSaveLocation: 'dummy'
+        },
+        settingsReducer: {
+          currentSettings: {
+            developerMode: false
+          }
         }
       },
       translate: key => key

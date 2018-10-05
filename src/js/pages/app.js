@@ -6,6 +6,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import { Grid, Row } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
 // container
@@ -65,20 +66,22 @@ class Main extends Component {
       const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
       const LocalizedLoader = withLocale(LoaderContainer);
       return (
-        <div className="fill-height">
-          <ScreenDimmerContainer/>
-          <ProjectValidationContainer/>
-          <AlertDialogContainer/>
-          <KonamiContainer/>
-          <PopoverContainer/>
-          <LocalizedLoader/>
-          <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
-            <Row style={{margin: 0}}>
-              <LocalizedStatusBarContainer/>
-            </Row>
-            <BodyContainer/>
-          </Grid>
-        </div>
+        <MuiThemeProvider>
+          <div className="fill-height">
+            <ScreenDimmerContainer/>
+            <ProjectValidationContainer/>
+            <AlertDialogContainer/>
+            <KonamiContainer/>
+            <PopoverContainer/>
+            <LocalizedLoader/>
+            <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
+              <Row style={{margin: 0}}>
+                <LocalizedStatusBarContainer/>
+              </Row>
+              <BodyContainer/>
+            </Grid>
+          </div>
+        </MuiThemeProvider>
       );
     } else {
       // wait for locale to finish loading.

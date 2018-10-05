@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=translationCore
+Comment=Platform for checking and managing Bible translation projects
+Type=Application
+TryExec=/opt/translationcore/translationCore
+Exec=/opt/translationcore/translationCore
+Icon=unfoldingword-translationcore
+Terminal=false
+Categories=Office;
+MimeType=x-scheme-handler/tg;

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# uninstall desktop launcher
+xdg-desktop-menu uninstall /opt/translationcore/unfoldingword-translationcore.desktop
+
+# uninstall icon
+xdg-icon-resource uninstall --size 128 unfoldingword-translationcore
+xdg-icon-resource uninstall --size 64 unfoldingword-translationcore
+xdg-icon-resource uninstall --size 48 unfoldingword-translationcore
+xdg-icon-resource uninstall --size 32 unfoldingword-translationcore
+xdg-icon-resource uninstall --size 22 unfoldingword-translationcore
+xdg-icon-resource uninstall --size 16 unfoldingword-translationcore

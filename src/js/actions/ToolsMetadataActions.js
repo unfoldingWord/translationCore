@@ -3,7 +3,6 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
-const TOOLS_TO_SHOW = ['wordAlignment', 'translationWords'];
 
 export function getToolsMetadatas() {
   return ((dispatch) => {
@@ -29,14 +28,9 @@ const getDefaultTools = (callback) => {
   });
   if (folders) {
     for (let folder of folders) {
-      try {
-        let manifestPath = path.join(moduleBasePath, folder, 'package.json');
-        let packageJson = require(manifestPath);
-        if (packageJson.display === 'app' && TOOLS_TO_SHOW.includes(packageJson.name)) {
-          defaultTools.push(manifestPath);
-        }
-      } catch (e) {
-        console.log(e);
+      let manifestPath = path.join(moduleBasePath, folder, 'package.json');
+      if(fs.pathExists(manifestPath)) {
+        defaultTools.push(manifestPath);
       }
     }
   }
@@ -56,7 +50,7 @@ const fillDefaultTools = (moduleFilePathList, callback) => {
   let doneFiles = 0;
   function onComplete() {
     doneFiles++;
-    if (doneFiles == totalFiles) {
+    if (doneFiles === totalFiles) {
       callback(tempMetadatas);
     }
   }
