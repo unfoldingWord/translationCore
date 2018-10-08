@@ -179,7 +179,7 @@
     "usfm-js": "1.0.3",
     "uuid": "3.2.1",
     "word-aligner": "0.1.3",
-    "word-map": "0.1.9",
+    "word-map": "^0.1.9",
     "xregexp": "3.2.0",
     "yamljs": "0.3.0",
     "zip-folder": "1.0.0"
