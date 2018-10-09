@@ -2,9 +2,7 @@
 
 exports[`MergeConflictsComponents.MergeConflictsCard should show merge conflicts versions if open 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): ShallowWrapper {
-    "length": 1,
     Symbol(enzyme.__root__): [Circular],
     Symbol(enzyme.__unrendered__): <MergeConflictsCheck
       chapter="1"
@@ -1549,14 +1547,313 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__rootNodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "padding": "15px 15px 0px 15px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                    "paddingBottom": 5,
+                  }
+                }
+              >
+                project_validation.merge_conflict
+              </div>
+              <div>
+                project_validation.conflict_reference
+              </div>
+            </div>
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "border": "2px solid black",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "height": 40,
+                  "justifyContent": "center",
+                  "margin": "15px 15px 0px auto",
+                  "width": 40,
+                }
+              }
+            >
+              <HardwareKeyboardArrowRight
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 60,
+                  }
+                }
+              />
+            </div>
+          </div>,
+          Array [
+            <VersionCard
+              checked={false}
+              index="0"
+              mergeConflictIndex="0"
+              onCheck={[Function]}
+              textData={
+                Object {
+                  "5": "This verse has been changed by another user",
+                  "6": "Some other verse",
+                }
+              }
+              translate={[Function]}
+            />,
+            <VersionCard
+              checked={true}
+              index="1"
+              mergeConflictIndex="0"
+              onCheck={[Function]}
+              textData={
+                Object {
+                  "5": "Some verse",
+                  "6": "Some other verse",
+                }
+              }
+              translate={[Function]}
+            />,
+          ],
+        ],
+        "style": Object {
+          "borderBottom": "none",
+          "paddingBottom": 20,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                style={
+                  Object {
+                    "padding": "15px 15px 0px 15px",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "fontWeight": "bold",
+                      "paddingBottom": 5,
+                    }
+                  }
+                >
+                  project_validation.merge_conflict
+                </div>
+                <div>
+                  project_validation.conflict_reference
+                </div>
+              </div>,
+              <div
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "border": "2px solid black",
+                    "borderRadius": "50%",
+                    "cursor": "pointer",
+                    "display": "flex",
+                    "height": 40,
+                    "justifyContent": "center",
+                    "margin": "15px 15px 0px auto",
+                    "width": 40,
+                  }
+                }
+              >
+                <HardwareKeyboardArrowRight
+                  style={
+                    Object {
+                      "height": 60,
+                      "width": 60,
+                    }
+                  }
+                />
+              </div>,
+            ],
+            "style": Object {
+              "alignItems": "center",
+              "display": "flex",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    style={
+                      Object {
+                        "fontWeight": "bold",
+                        "paddingBottom": 5,
+                      }
+                    }
+                  >
+                    project_validation.merge_conflict
+                  </div>,
+                  <div>
+                    project_validation.conflict_reference
+                  </div>,
+                ],
+                "style": Object {
+                  "padding": "15px 15px 0px 15px",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "project_validation.merge_conflict",
+                    "style": Object {
+                      "fontWeight": "bold",
+                      "paddingBottom": 5,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "project_validation.merge_conflict",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "project_validation.conflict_reference",
+                  },
+                  "ref": null,
+                  "rendered": "project_validation.conflict_reference",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <HardwareKeyboardArrowRight
+                  style={
+                    Object {
+                      "height": 60,
+                      "width": 60,
+                    }
+                  }
+                />,
+                "onClick": [Function],
+                "style": Object {
+                  "alignItems": "center",
+                  "border": "2px solid black",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "height": 40,
+                  "justifyContent": "center",
+                  "margin": "15px 15px 0px auto",
+                  "width": 40,
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "style": Object {
+                    "height": 60,
+                    "width": 60,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "0-0",
+          "nodeType": "class",
+          "props": Object {
+            "checked": false,
+            "index": "0",
+            "mergeConflictIndex": "0",
+            "onCheck": [Function],
+            "textData": Object {
+              "5": "This verse has been changed by another user",
+              "6": "Some other verse",
+            },
+            "translate": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "0-1",
+          "nodeType": "class",
+          "props": Object {
+            "checked": true,
+            "index": "1",
+            "mergeConflictIndex": "0",
+            "onCheck": [Function],
+            "textData": Object {
+              "5": "Some verse",
+              "6": "Some other verse",
+            },
+            "translate": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
 }
 `;
 
 exports[`MergeConflictsComponents.MergeConflictsCard should show merge conflicts versions if open 2`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): ShallowWrapper {
-    "length": 1,
     Symbol(enzyme.__root__): [Circular],
     Symbol(enzyme.__unrendered__): <MergeConflictsCheck
       chapter="1"
@@ -3101,6 +3398,307 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__rootNodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "padding": "15px 15px 0px 15px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                    "paddingBottom": 5,
+                  }
+                }
+              >
+                project_validation.merge_conflict
+              </div>
+              <div>
+                project_validation.conflict_reference
+              </div>
+            </div>
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "border": "2px solid black",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "height": 40,
+                  "justifyContent": "center",
+                  "margin": "15px 15px 0px auto",
+                  "width": 40,
+                }
+              }
+            >
+              <HardwareKeyboardArrowRight
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 60,
+                  }
+                }
+              />
+            </div>
+          </div>,
+          Array [
+            <VersionCard
+              checked={false}
+              index="0"
+              mergeConflictIndex="0"
+              onCheck={[Function]}
+              textData={
+                Object {
+                  "5": "This verse has been changed by another user",
+                  "6": "Some other verse",
+                }
+              }
+              translate={[Function]}
+            />,
+            <VersionCard
+              checked={true}
+              index="1"
+              mergeConflictIndex="0"
+              onCheck={[Function]}
+              textData={
+                Object {
+                  "5": "Some verse",
+                  "6": "Some other verse",
+                }
+              }
+              translate={[Function]}
+            />,
+          ],
+        ],
+        "style": Object {
+          "borderBottom": "none",
+          "paddingBottom": 20,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                style={
+                  Object {
+                    "padding": "15px 15px 0px 15px",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "fontWeight": "bold",
+                      "paddingBottom": 5,
+                    }
+                  }
+                >
+                  project_validation.merge_conflict
+                </div>
+                <div>
+                  project_validation.conflict_reference
+                </div>
+              </div>,
+              <div
+                onClick={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "border": "2px solid black",
+                    "borderRadius": "50%",
+                    "cursor": "pointer",
+                    "display": "flex",
+                    "height": 40,
+                    "justifyContent": "center",
+                    "margin": "15px 15px 0px auto",
+                    "width": 40,
+                  }
+                }
+              >
+                <HardwareKeyboardArrowRight
+                  style={
+                    Object {
+                      "height": 60,
+                      "width": 60,
+                    }
+                  }
+                />
+              </div>,
+            ],
+            "style": Object {
+              "alignItems": "center",
+              "display": "flex",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    style={
+                      Object {
+                        "fontWeight": "bold",
+                        "paddingBottom": 5,
+                      }
+                    }
+                  >
+                    project_validation.merge_conflict
+                  </div>,
+                  <div>
+                    project_validation.conflict_reference
+                  </div>,
+                ],
+                "style": Object {
+                  "padding": "15px 15px 0px 15px",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "project_validation.merge_conflict",
+                    "style": Object {
+                      "fontWeight": "bold",
+                      "paddingBottom": 5,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "project_validation.merge_conflict",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "project_validation.conflict_reference",
+                  },
+                  "ref": null,
+                  "rendered": "project_validation.conflict_reference",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <HardwareKeyboardArrowRight
+                  style={
+                    Object {
+                      "height": 60,
+                      "width": 60,
+                    }
+                  }
+                />,
+                "onClick": [Function],
+                "style": Object {
+                  "alignItems": "center",
+                  "border": "2px solid black",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "height": 40,
+                  "justifyContent": "center",
+                  "margin": "15px 15px 0px auto",
+                  "width": 40,
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "style": Object {
+                    "height": 60,
+                    "width": 60,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "0-0",
+          "nodeType": "class",
+          "props": Object {
+            "checked": false,
+            "index": "0",
+            "mergeConflictIndex": "0",
+            "onCheck": [Function],
+            "textData": Object {
+              "5": "This verse has been changed by another user",
+              "6": "Some other verse",
+            },
+            "translate": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "0-1",
+          "nodeType": "class",
+          "props": Object {
+            "checked": true,
+            "index": "1",
+            "mergeConflictIndex": "0",
+            "onCheck": [Function],
+            "textData": Object {
+              "5": "Some verse",
+              "6": "Some other verse",
+            },
+            "translate": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
 }
 `;
 
