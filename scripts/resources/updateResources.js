@@ -7,6 +7,28 @@ const fs = require('fs-extra');
 const sourceContentUpdater = require('tc-source-content-updater').default;
 const updateResourcesHelpers = require('./updateResourcesHelpers');
 
+const path = require('path-extra');
+const AdmZip = require('adm-zip');
+
+function zipBibles(resourcesPath, languageId) {
+  const biblesPath = path.join(resourcesPath, languageId, 'bibles');
+  const bibleIds = fs.readdirSync(biblesPath).filter(item => item !== '.DS_Store');
+  const zip = new AdmZip();
+  bibleIds.forEach(bibleId => {
+    const bibleIdPath = path.join(biblesPath, bibleId);
+    const bibleLatestVersionPath = updateResourcesHelpers.getLatestVersionInPath(bibleIdPath);
+    const biblesContentPath = path.join(bibleLatestVersionPath);
+    const excludedItems = ['index.json', 'manifest.json'];
+    const books = fs.readdirSync(biblesContentPath).filter(item => !excludedItems.includes(item));
+console.log(biblesContentPath, '----------');
+    books.forEach((book) => {
+      zip.addLocalFolder(path.join(biblesContentPath, book));
+    });
+    console.log('aa----------', path.join(biblesContentPath, 'bibles.zip'));
+    zip.writeZip('test.zip');
+  });
+}
+
 const updateResources = async (languages, resourcesPath) => {
   const SourceContentUpdater = new sourceContentUpdater();
   const localResourceList = updateResourcesHelpers.getLocalResourceList(resourcesPath);
@@ -37,4 +59,6 @@ if(require.main === module) {
     return 1;
   }
   updateResources(languages, resourcesPath);
+
+  // zipBibles(resourcesPath, 'en');
 }
