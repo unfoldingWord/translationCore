@@ -9,6 +9,8 @@ import ospath from 'ospath';
 import * as UsfmFileConversionHelpers from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+const testResourcePath = path.join(__dirname, 'fixtures/resources');
 const usfmFilePath = path.join('path', 'to', 'project', 'eph.usfm');
 const invalidUsfmRejectionMessage = (
   <div>
@@ -180,6 +182,43 @@ describe('UsfmFileConversionHelpers', () => {
     expect(chapter1_data[3]).toEqual("He is the brightness of God's glory, the exact representation of his being. He even holds everything together by the word of his power. After he had made cleansing for sins, he sat down at the right hand of the Majesty on high.");
     // test quotes
     expect(chapter1_data[5]).toEqual("For to which of the angels did God ever say, \"You are my son, today I have become your father\"? Or to which of the angels did God ever say, \"I will be a father to him, and he will be a son to me\"?");
+  });
+
+  test('generateTargetLanguageBibleFromUsfm with spanned milestones should succeed', async () => {
+    // given
+    fs.__setMockFS({
+    });
+    let mockManifest = {
+      project: {
+        id: 'act'
+      },
+      target_language: {
+        id: "en"
+      }
+    };
+    const copyFiles = ['grc/bibles/ugnt/v0.2/act'];
+    fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
+    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'act');
+    const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','acts_1_milestone.usfm');
+    const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
+
+    //when
+    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+
+    //then
+    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+
+    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+
+    expect(Object.keys(chapter1_data).length).toEqual(6);
+    expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach,");
+    // test \s5
+    expect(chapter1_data[3]).toEqual("After his suffering, he also presented himself alive to them with many convincing proofs. For forty days he appeared to them, and he spoke things concerning the kingdom of God.\\s5");
+    // test \qt-s
+    expect(chapter1_data[4]).toEqual("When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said,\\qt-s |who=\"Jesus\"\\*\"You heard from me");
+    // test \qt-e
+    expect(chapter1_data[5]).toEqual("that John indeed baptized with water, but you shall be baptized in the Holy Spirit after not many days.\"\\qt-e\\*\n\\s5");
   });
 
   test('generateTargetLanguageBibleFromUsfm with aligned USFM and UGNT with milestones should succeed', async () => {

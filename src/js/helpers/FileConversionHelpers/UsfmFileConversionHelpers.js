@@ -211,6 +211,47 @@ const parseMilestone = function (verseObject) {
 };
 
 /**
+ * get text from word and milestone markers
+ * @param verseObject
+ * @param wordSpacing
+ * @return {*}
+ */
+const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
+  let text = '';
+  if (verseObject.type === 'word') {
+    text = wordSpacing + verseObject.text;
+  } else if (verseObject.type === 'milestone') {
+    text = wordSpacing + parseMilestone(verseObject);
+  }
+  if (text) { // replace with text object
+    verseObject = {
+      type: "text",
+      text
+    };
+    wordSpacing = ' ';
+  } else {
+    wordSpacing = ' ';
+    if (verseObject.type === 'text') {
+      const lastChar = verseObject.text.substr(-1);
+      if ((lastChar === "'") || (lastChar === '"') || (lastChar === '-')) { // special case: no extra spacing after quotes or apostrophes before words
+        wordSpacing = '';
+      }
+    } else {
+      if (verseObject.children) {
+        let wordSpacing_ = '';
+        const length = verseObject.children.length;
+        for (let i = 0; i < length; i++) {
+          const flattened = replaceWordsAndMilestones(verseObject.children[i], wordSpacing_);
+          wordSpacing_ = flattened.wordSpacing;
+          verseObject.children[i] = flattened.verseObject;
+        }
+      }
+    }
+  }
+  return {verseObject, wordSpacing};
+};
+
+/**
  * @description merge verse data into a string - flatten milestones and words and then save as USFM string
  * @param {Object|Array} verseData
  * @return {String}
@@ -219,28 +260,9 @@ export const getUsfmForVerseContent = (verseData) => {
   if (verseData.verseObjects) {
     let wordSpacing = '';
     const flattenedData = verseData.verseObjects.map(verseObject => {
-      let text = '';
-      if (verseObject.type === 'word') {
-        text = wordSpacing + verseObject.text;
-      } else if (verseObject.type === 'milestone') {
-        text = wordSpacing + parseMilestone(verseObject);
-      }
-      if (text) { // replace with text object
-        verseObject = {
-          type: "text",
-          text
-        };
-        wordSpacing = ' ';
-      } else {
-        wordSpacing = ' ';
-        if (verseObject.type === 'text') {
-          const lastChar = verseObject.text.substr(-1);
-          if ((lastChar === "'") || (lastChar === '"') || (lastChar === '-')) { // special case: no extra spacing after quotes or apostrophes before words
-            wordSpacing = '';
-          }
-        }
-      }
-      return verseObject;
+      const flattened = replaceWordsAndMilestones(verseObject, wordSpacing);
+      wordSpacing = flattened.wordSpacing;
+      return flattened.verseObject;
     });
     verseData = { // use flattened data
       verseObjects: flattenedData
