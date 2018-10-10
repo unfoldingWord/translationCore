@@ -95,6 +95,7 @@ export const getUserDoor43Url = (user, projectName) => {
  */
 export const renameRepo = async (newName, projectPath, user) => {
   try {
+    debugger;
     const {name: repoName, user: originalUser} = await git.getRepoNameInfo(projectPath);
 
     /** If new repo name exits already then we can not change to that */

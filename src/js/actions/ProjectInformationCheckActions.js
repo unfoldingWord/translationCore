@@ -163,7 +163,7 @@ export function setBookIDInProjectInformationReducer(bookId, inStepper) {
       const {manifest: {project: {id: originalBook}}} = getState().projectDetailsReducer;
       const translate = getTranslate(getState());
       if (bookId !== originalBook) {
-        dispatch(AlertModalActions.openOptionDialog(translate('projects.project_already_identified', {originalBook: BooksOfBible[originalBook], suggestedBook: originalBook[bookId]}), (res) => {
+        dispatch(AlertModalActions.openOptionDialog(translate('projects.project_already_identified', {originalBook: BooksOfBible[originalBook], suggestedBook: BooksOfBible[bookId]}), (res) => {
           if (res === translate('buttons.ok_button')) {
             dispatch({
               type: consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER,
