@@ -4,7 +4,6 @@ import ospath from 'ospath';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
-import * as ToolsMetadataActions from '../ToolsMetadataActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
 import {openAlertDialog, closeAlertDialog} from '../AlertModalActions';
@@ -106,7 +105,6 @@ export function displayTools() {
         const { currentSettings } = getState().settingsReducer;
         const { manifest } = getState().projectDetailsReducer;
         if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
-          dispatch(ToolsMetadataActions.getToolsMetadatas());
           // Go to toolsCards page
           dispatch(BodyUIActions.goToStep(3));
         } else {
