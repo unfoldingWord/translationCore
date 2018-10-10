@@ -15,6 +15,7 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
+import {getTranslate} from '../selectors';
 
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
@@ -155,13 +156,30 @@ function setProjectDetailsInProjectInformationReducer(manifest) {
  * Sets the book id and book name in the project information check reducer.
  * @param {String} bookId - book abbreviation.
  */
-export function setBookIDInProjectInformationReducer(bookId) {
-  return ((dispatch) => {
-    dispatch({
-      type: consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER,
-      bookId
-    });
-    dispatch(toggleProjectInformationCheckSaveButton());
+export function setBookIDInProjectInformationReducer(bookId, inStepper) {
+  return ((dispatch, getState) => {
+    if (inStepper) {
+      const {manifest: {project: {id: originalBook}}} = getState().projectDetailsReducer;
+      const translate = getTranslate(getState());
+      if (bookId !== originalBook) {
+        dispatch(AlertModalActions.openOptionDialog(translate('projects.project_already_identified', {originalBook, suggestedBook: bookId}), (res) => {
+          if (res === translate('buttons.ok_button')) {
+            dispatch({
+              type: consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER,
+              bookId
+            });
+            dispatch(toggleProjectInformationCheckSaveButton());
+          }
+          dispatch(AlertModalActions.closeAlertDialog());
+        }, translate('buttons.ok_button'), translate('buttons.cancel_button')));
+      }
+    } else {
+      dispatch({
+        type: consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER,
+        bookId
+      });
+      dispatch(toggleProjectInformationCheckSaveButton());
+    }
   });
 }
 
