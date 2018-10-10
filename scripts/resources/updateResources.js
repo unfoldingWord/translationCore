@@ -8,24 +8,49 @@ const sourceContentUpdater = require('tc-source-content-updater').default;
 const updateResourcesHelpers = require('./updateResourcesHelpers');
 
 const path = require('path-extra');
-const AdmZip = require('adm-zip');
+const archiver = require('archiver');
 
 function zipBibles(resourcesPath, languageId) {
   const biblesPath = path.join(resourcesPath, languageId, 'bibles');
   const bibleIds = fs.readdirSync(biblesPath).filter(item => item !== '.DS_Store');
-  const zip = new AdmZip();
   bibleIds.forEach(bibleId => {
-    const bibleIdPath = path.join(biblesPath, bibleId);
-    const bibleLatestVersionPath = updateResourcesHelpers.getLatestVersionInPath(bibleIdPath);
-    const biblesContentPath = path.join(bibleLatestVersionPath);
-    const excludedItems = ['index.json', 'manifest.json'];
-    const books = fs.readdirSync(biblesContentPath).filter(item => !excludedItems.includes(item));
-console.log(biblesContentPath, '----------');
-    books.forEach((book) => {
-      zip.addLocalFolder(path.join(biblesContentPath, book));
-    });
-    console.log('aa----------', path.join(biblesContentPath, 'bibles.zip'));
-    zip.writeZip('test.zip');
+    try {
+      const bibleIdPath = path.join(biblesPath, bibleId);
+      const bibleLatestVersionPath = updateResourcesHelpers.getLatestVersionInPath(bibleIdPath);
+      const biblesContentPath = path.join(bibleLatestVersionPath);
+      const excludedItems = ['index.json', 'manifest.json', 'books'];
+      const books = fs.readdirSync(biblesContentPath)
+        .filter(item => !excludedItems.includes(item))
+        .filter(item => item !== '.DS_Store');
+      fs.ensureDirSync(path.join(biblesContentPath, 'books'));
+      const booksPath = path.join(biblesContentPath, 'books');
+
+      books.forEach((book) => {
+        const bookPath = path.join(biblesContentPath, book);
+        const destinationPath = path.join(booksPath, book);
+        fs.copySync(bookPath, destinationPath);
+      });
+      // creating a file to stream archive data to.
+      const output = fs.createWriteStream(__dirname + '/example.zip');
+      const archive = archiver('zip', {
+        zlib: { level: 9 } // Sets the compression level.
+      });
+
+      output.on('close', function () {
+        console.log(archive.pointer() + ' total bytes');
+        console.log('archiver has been finalized and the output file descriptor has closed.');
+      });
+
+      archive.on('error', error => console.error(error));
+      archive.pipe(output);
+      archive.file('h.txt', { name: 'h.txt' });
+
+      // archive.directory(booksPath, 'books');
+      archive.finalize();
+
+    } catch (error) {
+      console.error(error);
+    }
   });
 }
 
@@ -58,7 +83,7 @@ if(require.main === module) {
     console.error('Directory does not exist: ' + resourcesPath);
     return 1;
   }
-  updateResources(languages, resourcesPath);
+  // updateResources(languages, resourcesPath);
 
-  // zipBibles(resourcesPath, 'en');
+  zipBibles(resourcesPath, 'en');
 }
