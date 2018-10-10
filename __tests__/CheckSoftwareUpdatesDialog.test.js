@@ -52,41 +52,41 @@ describe('Get update asset', () => {
     expect(update).toEqual(expectedUpdate);
   });
 
-  it('finds a legacy windows update', () => {
+  it('finds an x32 update', () => {
     const response = {
       extra_info: 'foo',
-      tag_name: 'v0.7.0',
+      tag_name: '2.0.0',
       assets: [{
         extra_info: 'bar',
-        name: 'translationCoreSetup.exe'
+        name: 'translationCore-win-x32-2.0.0.exe'
       }]
     };
     const expectedUpdate = {
       extra_info: 'bar',
-      installed_version: '0.6.0',
-      name: 'translationCoreSetup.exe',
-      latest_version: 'v0.7.0'
+      installed_version: '1.0.0',
+      name: 'translationCore-win-x32-2.0.0.exe',
+      latest_version: '2.0.0'
     };
-    const update = getUpdateAsset(response, '0.6.0', 'x64', 'win32');
+    const update = getUpdateAsset(response, '1.0.0', 'x32', 'win32');
     expect(update).toEqual(expectedUpdate);
   });
 
-  it('finds a legacy macOS update', () => {
+  it('finds an ia32 update', () => {
     const response = {
       extra_info: 'foo',
-      tag_name: 'v0.7.0',
+      tag_name: '2.0.0',
       assets: [{
         extra_info: 'bar',
-        name: 'translationCore-0.7.0.dmg'
+        name: 'translationCore-win-x32-2.0.0.exe'
       }]
     };
     const expectedUpdate = {
       extra_info: 'bar',
-      installed_version: '0.6.0',
-      name: 'translationCore-0.7.0.dmg',
-      latest_version: 'v0.7.0'
+      installed_version: '1.0.0',
+      name: 'translationCore-win-x32-2.0.0.exe',
+      latest_version: '2.0.0'
     };
-    const update = getUpdateAsset(response, '0.6.0', 'x64', 'darwin');
+    const update = getUpdateAsset(response, '1.0.0', 'ia32', 'win32');
     expect(update).toEqual(expectedUpdate);
   });
 });

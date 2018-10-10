@@ -32,6 +32,10 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
     'sunos': 'linux',
     'win32': 'win'
   };
+  // TRICKY: some architecture will return ia32 instead of x32
+  if(osArch === 'ia32') {
+    osArch = 'x32';
+  }
   const platform = `${platformNames[osPlatform]}-${osArch}`;
   let update = null;
   for (const asset of response.assets) {
