@@ -32,17 +32,10 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
     'sunos': 'linux',
     'win32': 'win'
   };
-  let extension = null;
-  if(osPlatform === 'darwin') {
-    extension = '.dmg';
-  } else if(osPlatform === 'win32') {
-    extension = '.exe';
-  }
   const platform = `${platformNames[osPlatform]}-${osArch}`;
   let update = null;
   for (const asset of response.assets) {
-    const matchesExtension = extension != null && asset.name.endsWith(extension);
-    if (asset.name.includes(platform) || matchesExtension) {
+    if (asset.name.includes(platform)) {
       update = {
         ...asset,
         latest_version: response.tag_name,
