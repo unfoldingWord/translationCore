@@ -54,9 +54,9 @@ export function getBibleFromStaticPackage(force = false) {
           }
           const versionPath = getLatestVersionInPath(bibleDestinationPath);
           const booksZipPath = path.join(versionPath, 'books.zip');
-          console.log(booksZipPath, fs.existsSync(booksZipPath));
           const zip = new AdmZip(booksZipPath);
-          zip.extractAllTo(bibleDestinationPath, /*overwrite*/true);
+          zip.extractAllTo(versionPath, /*overwrite*/true);
+          fs.removeSync(booksZipPath);
         });
       }
     });
