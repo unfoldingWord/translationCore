@@ -40,11 +40,7 @@ export const openProject = (name) => {
         openAlertDialog(translate('projects.loading_project_alert'), true));
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
-      const isSupported = await isProjectSupported(projectDir);
-      if(!isSupported) {
-        const errorMessage = translate('project_validation.old_project_unsupported', {app: translate('_.app_name')});
-        throw new Error(errorMessage);
-      }
+      await isProjectSupported(projectDir, translate);
       migrateProject(projectDir);
       await dispatch(validateProject(projectDir));
       // TODO: load the project data here
