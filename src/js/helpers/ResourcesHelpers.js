@@ -52,11 +52,7 @@ export function getBibleFromStaticPackage(force = false) {
           if (!fs.existsSync(bibleDestinationPath) || force) {
             fs.copySync(bibleSourcePath, bibleDestinationPath);
           }
-          const versionPath = getLatestVersionInPath(bibleDestinationPath);
-          const booksZipPath = path.join(versionPath, 'books.zip');
-          const zip = new AdmZip(booksZipPath);
-          zip.extractAllTo(versionPath, /*overwrite*/true);
-          fs.removeSync(booksZipPath);
+          extractZippedBooks(bibleDestinationPath);
         });
       }
     });
@@ -64,6 +60,14 @@ export function getBibleFromStaticPackage(force = false) {
     console.error(error);
   }
 }
+
+export const extractZippedBooks = (bibleDestinationPath) => {
+  const versionPath = getLatestVersionInPath(bibleDestinationPath);
+  const booksZipPath = path.join(versionPath, 'books.zip');
+  const zip = new AdmZip(booksZipPath);
+  zip.extractAllTo(versionPath, /*overwrite*/true);
+  fs.removeSync(booksZipPath);
+};
 
 /**
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
