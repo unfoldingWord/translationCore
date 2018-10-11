@@ -202,6 +202,7 @@ describe('UsfmFileConversionHelpers', () => {
     const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','acts_1_milestone.usfm');
     const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
     const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
+    const expectedVerses = 6;
 
     //when
     await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
@@ -210,8 +211,16 @@ describe('UsfmFileConversionHelpers', () => {
     expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
 
     const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+    const chapter1_alignments = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '../.apps/translationCore/alignmentData/act/1.json'));
 
-    expect(Object.keys(chapter1_data).length).toEqual(6);
+    // make sure we got nested alignment
+    expect(Object.keys(chapter1_alignments).length).toEqual(expectedVerses);
+    const vs4 = chapter1_alignments[4];
+    let alignment = vs4.alignments[vs4.alignments.length - 1];
+    expect(alignment.bottomWords.length).toEqual(1);
+    expect(alignment.bottomWords[0].word).toEqual("You");
+
+    expect(Object.keys(chapter1_data).length).toEqual(expectedVerses);
     expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach,");
     // test \s5
     expect(chapter1_data[3]).toEqual("After his suffering, he also presented himself alive to them with many convincing proofs. For forty days he appeared to them, and he spoke things concerning the kingdom of God.\\s5");

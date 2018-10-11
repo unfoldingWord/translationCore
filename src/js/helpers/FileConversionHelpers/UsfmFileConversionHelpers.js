@@ -10,6 +10,7 @@ import wordaligner from 'word-aligner';
 import * as BibleHelpers from "../bibleHelpers";
 // actions
 import * as ResourcesActions from "../../actions/ResourcesActions";
+import _ from "lodash";
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -237,14 +238,16 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
         wordSpacing = '';
       }
     } else {
-      if (verseObject.children) {
+      if (verseObject.children) { // handle nested
+        const verseObject_ = _.cloneDeep(verseObject);
         let wordSpacing_ = '';
         const length = verseObject.children.length;
         for (let i = 0; i < length; i++) {
           const flattened = replaceWordsAndMilestones(verseObject.children[i], wordSpacing_);
           wordSpacing_ = flattened.wordSpacing;
-          verseObject.children[i] = flattened.verseObject;
+          verseObject_.children[i] = flattened.verseObject;
         }
+        verseObject = verseObject_;
       }
     }
   }
