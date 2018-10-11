@@ -221,7 +221,7 @@ export function isProjectSupported(projectDir, translate) {
       // if old and has some checking data, it cannot be opened
       reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     } else {
-      resolve();
+      resolve(true);
     }
   });
 }
@@ -234,7 +234,7 @@ export function isProjectSupported(projectDir, translate) {
  * @param {Function} translate
  */
 export function ensureSupportedVersion(projectPath, translate) {
-  return isProjectSupported(projectPath).then(isSupported => {
+  return isProjectSupported(projectPath, translate).then(isSupported => {
     if(isSupported) {
       return Promise.resolve();
     } else {
