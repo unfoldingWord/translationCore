@@ -31,6 +31,7 @@
       "src/**/*.{js,jsx}",
       "!**/node_modules/**",
       "!**/vendor/**",
+      "!scripts/resources",
       "!src/main.js",
       "!src/locale"
     ],
