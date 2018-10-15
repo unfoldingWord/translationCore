@@ -6,6 +6,7 @@ require("babel-polyfill"); // required for async/await
 const fs = require('fs-extra');
 const sourceContentUpdater = require('tc-source-content-updater').default;
 const updateResourcesHelpers = require('./updateResourcesHelpers');
+const zipBibles = require('./zipHelpers').zipBibles;
 
 const updateResources = async (languages, resourcesPath) => {
   const SourceContentUpdater = new sourceContentUpdater();
@@ -24,6 +25,12 @@ const updateResources = async (languages, resourcesPath) => {
     });
 };
 
+const executeResourcesUpdate = async (languages, resourcesPath) => {
+  await updateResources(languages, resourcesPath);
+
+  languages.forEach(async (languageId) => await zipBibles(resourcesPath, languageId));
+};
+
 // run as main
 if(require.main === module) {
   if (process.argv.length < 4) {
@@ -36,5 +43,7 @@ if(require.main === module) {
     console.error('Directory does not exist: ' + resourcesPath);
     return 1;
   }
-  updateResources(languages, resourcesPath);
+
+  executeResourcesUpdate(languages, resourcesPath);
 }
+

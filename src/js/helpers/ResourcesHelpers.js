@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
+import AdmZip from 'adm-zip';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
 import {getTranslation} from "./localizationHelpers";
@@ -39,18 +40,19 @@ export const copySourceContentUpdaterManifest = () => {
  */
 export function getBibleFromStaticPackage(force = false) {
   try {
-    let languagesIds = getAllLanguageIdsFromResourceFolder(false);
-    languagesIds.forEach((languagesId) => {
-      const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
+    const languagesIds = getAllLanguageIdsFromResourceFolder(false);
+    languagesIds.forEach((languageId) => {
+      const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languageId, 'bibles');
       if (fs.existsSync(STATIC_RESOURCES_BIBLES_PATH)) {
-        const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
-        let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
-        bibleNames.forEach((bibleName) => {
-          let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
-          let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
+        const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
+        const bibleIds = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH).filter(folder => folder !== '.DS_Store');
+        bibleIds.forEach((bibleId) => {
+          let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId);
+          let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleId);
           if (!fs.existsSync(bibleDestinationPath) || force) {
             fs.copySync(bibleSourcePath, bibleDestinationPath);
           }
+          extractZippedBooks(bibleDestinationPath);
         });
       }
     });
@@ -58,6 +60,14 @@ export function getBibleFromStaticPackage(force = false) {
     console.error(error);
   }
 }
+
+export const extractZippedBooks = (bibleDestinationPath) => {
+  const versionPath = getLatestVersionInPath(bibleDestinationPath);
+  const booksZipPath = path.join(versionPath, 'books.zip');
+  const zip = new AdmZip(booksZipPath);
+  zip.extractAllTo(versionPath, /*overwrite*/true);
+  fs.removeSync(booksZipPath);
+};
 
 /**
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
