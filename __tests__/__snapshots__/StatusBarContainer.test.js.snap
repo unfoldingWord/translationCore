@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test StatusBarContainer component StatusBarContainer Component on current system should match snapshot 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "var(--background-color-dark)",
+        "display": "flex",
+        "flexDirection": "row",
+        "height": "30px",
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "flexGrow": 1,
+          "height": "100%",
+          "overflow": "hidden",
+        }
+      }
+    >
+      <button
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "backgroundColor": "var(--background-color-dark)",
+            "border": 0,
+            "color": "var(--reverse-color)",
+            "float": "left",
+            "height": "100%",
+            "minWidth": "200px",
+            "outline": "none",
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "width": "auto",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-home"
+          style={
+            Object {
+              "fontSize": 15,
+              "paddingRight": 8,
+              "paddingTop": 3,
+            }
+          }
+        />
+        <span
+          id="menu-text-root"
+        >
+          home
+        </span>
+      </button>
+      <button
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "backgroundColor": "var(--background-color-dark)",
+            "border": 0,
+            "color": "var(--reverse-color)",
+            "float": "left",
+            "height": "100%",
+            "minWidth": "200px",
+            "outline": "none",
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "width": "auto",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-user"
+          style={
+            Object {
+              "fontSize": 15,
+              "paddingRight": 5,
+              "paddingTop": 3,
+            }
+          }
+        />
+        <span
+          id="menu-text-root"
+        >
+          Local User
+        </span>
+      </button>
+      <button
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "backgroundColor": "var(--background-color-dark)",
+            "border": 0,
+            "color": "var(--reverse-color)",
+            "float": "left",
+            "height": "100%",
+            "minWidth": "200px",
+            "outline": "none",
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "width": "auto",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-folder-open"
+          style={
+            Object {
+              "fontSize": 15,
+              "paddingRight": 8,
+              "paddingTop": 3,
+            }
+          }
+        />
+        <span
+          id="menu-text-root"
+        >
+          en_tit_ulb
+        </span>
+      </button>
+      <button
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "backgroundColor": "var(--background-color-dark)",
+            "border": 0,
+            "color": "var(--reverse-color)",
+            "float": "left",
+            "height": "100%",
+            "minWidth": "200px",
+            "outline": "none",
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "width": "auto",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-wrench"
+          style={
+            Object {
+              "float": "left",
+              "fontSize": 15,
+              "paddingRight": 5,
+              "paddingTop": 3,
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "float": "left",
+            }
+          }
+        >
+          <span
+            id="menu-text-root"
+          >
+            Miracle Tool
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "margin": "auto 0",
+          "padding": "0 50px",
+        }
+      }
+    >
+      <div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test StatusBarContainer component StatusBarContainer Component on current system should render button text correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(StatusBarContainer)
+    translate={[Function]}
+  />
+</Provider>
+`;
