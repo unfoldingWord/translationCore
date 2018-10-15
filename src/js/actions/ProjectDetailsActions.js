@@ -113,19 +113,26 @@ export function addObjectPropertyToManifest(propertyName, value) {
 
 export function setProjectBookIdAndBookName() {
   return ((dispatch, getState) => {
-    const {bookId} = getState().projectInformationCheckReducer;
-    const {manifest: {project: {id: originalBookId}}, projectSaveLocation} = getState().projectDetailsReducer;
-    const {userdata} = getState().loginReducer;
-    const bookName = bibleHelpers.convertToFullBookName(bookId);
-    dispatch({
-      type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
-      bookId,
-      bookName
+    return new Promise((resolve, reject) => {
+      const {bookId} = getState().projectInformationCheckReducer;
+      const {manifest: {project: {id: originalBookId}}, projectSaveLocation} = getState().projectDetailsReducer;
+      const {userdata} = getState().loginReducer;
+      const bookName = bibleHelpers.convertToFullBookName(bookId);
+      dispatch({
+        type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
+        bookId,
+        bookName
+      });
+      if (bookId !== originalBookId) {
+        git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation, (err)=>{
+          if (!err) {
+          resolve();
+          } else {
+            reject(err);
+          }
+        });
+      }
     });
-    debugger;
-    if (bookId !== originalBookId) {
-      git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation);
-    }
   });
 }
 

@@ -2,6 +2,7 @@
 
 exports[`Test ProjectCard component Comparing ProjectCard Component render should match snapshot 1`] = `
 ShallowWrapper {
+  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ProjectCard
     onSelect={[Function]}

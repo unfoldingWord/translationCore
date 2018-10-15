@@ -104,7 +104,7 @@ export function finalize() {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
         dispatch(ProjectDetailsActions.updateProjectTargetLanguageBookFolderName());
-        dispatch(saveCheckingDetailsToProjectInformationReducer());
+        await dispatch(saveCheckingDetailsToProjectInformationReducer());
         dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
         dispatch(ProjectImportStepperActions.updateStepperIndex());
         dispatch(MissingVersesActions.validate());
@@ -122,8 +122,8 @@ export function finalize() {
  *   project information reducer.
  */
 function saveCheckingDetailsToProjectInformationReducer() {
-  return ((dispatch) => {
-    dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+  return (async (dispatch) => {
+    await dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
     dispatch(ProjectDetailsActions.setProjectResourceId());
     dispatch(ProjectDetailsActions.setProjectNickname());
     dispatch(ProjectDetailsActions.setLanguageDetails());
@@ -474,9 +474,9 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
  * to the project details reducer under the manifest property.
  */
 export function saveAndCloseProjectInformationCheckIfValid() {
-  return ((dispatch, getState) => {
+  return (async (dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
-      dispatch(saveCheckingDetailsToProjectInformationReducer());
+      await dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false});
