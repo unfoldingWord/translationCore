@@ -260,7 +260,7 @@ describe('UsfmFileConversionHelpers', () => {
     // test \qt-s
     expect(chapter1_data[4]).toEqual("When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said,\\qt-s |who=\"Jesus\"\\*\"You heard from me");
     // test \qt-e
-    expect(chapter1_data[5]).toEqual("that John indeed baptized with water, but you shall be baptized in the Holy Spirit after not many days.\"\\qt-e\\*\n\\s5");
+    expect(chapter1_data[5]).toEqual("that John indeed baptized with water, but you shall be baptized in the Holy Spirit after not many days.\"\\qt-e\\*\n\\s5\n\\p");
   });
 
   test('generateTargetLanguageBibleFromUsfm with aligned USFM and UGNT with milestones should succeed', async () => {

@@ -314,7 +314,8 @@
 \w days|x-occurrence="1" x-occurrences="1"\w*
 \zaln-e\*
 \zaln-e\*."\qt-e\*
-\s5 
+\s5
+\p
 \v 6
 \zaln-s | x-strong="G33030" x-lemma="μέν" x-morph="Gr,D,,,,,,,,," x-occurrence="1" x-occurrences="1" x-content="μὲν"
 \w When|x-occurrence="1" x-occurrences="1"\w*
@@ -378,4 +379,5 @@
 \zaln-e\*
 \zaln-s | x-strong="G24740" x-lemma="Ἰσραήλ" x-morph="Gr,N,,,,,DMSI" x-occurrence="1" x-occurrences="1" x-content="Ἰσραήλ"
 \w Israel|x-occurrence="1" x-occurrences="1"\w*
-\zaln-e\*?" 
+\zaln-e\*?"
+
