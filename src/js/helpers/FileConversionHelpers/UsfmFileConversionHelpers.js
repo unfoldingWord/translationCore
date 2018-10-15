@@ -201,11 +201,28 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
 
 const parseMilestone = function (verseObject) {
   let text = "";
+  let wordSpacing = '';
   for (let child of verseObject.children) {
-    if (child.type === 'word') {
-      text += (text ? ' ' : '') + child.text;
-    } else if (child.type === 'milestone') {
-      text += (text ? ' ' : '') + parseMilestone(child);
+    switch (child.type) {
+      case 'word':
+        text += (wordSpacing ? ' ' : '') + child.text;
+        wordSpacing = ' ';
+        break;
+
+      case 'milestone':
+        text += (wordSpacing ? ' ' : '') + parseMilestone(child);
+        wordSpacing = ' ';
+        break;
+
+      default:
+        if (verseObject.text) {
+          text += verseObject.text;
+          const lastChar = text.substr(-1);
+          if ((lastChar !== ",") && (lastChar !== '.') && (lastChar !== '?') && (lastChar !== ';')) { // legacy support, make sure padding before word
+            wordSpacing = '';
+          }
+        }
+        break;
     }
   }
   return text;
@@ -234,7 +251,7 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
     wordSpacing = ' ';
     if (verseObject.type === 'text') {
       const lastChar = verseObject.text.substr(-1);
-      if ((lastChar === "'") || (lastChar === '"') || (lastChar === '-')) { // special case: no extra spacing after quotes or apostrophes before words
+      if ((lastChar !== ",") && (lastChar !== '.') && (lastChar !== '?') && (lastChar !== ';')) { // legacy support, make sure padding before word
         wordSpacing = '';
       }
     } else {

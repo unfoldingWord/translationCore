@@ -235,8 +235,8 @@ export const getGreekVerse = (ugntVerse) => {
  */
 export const getTargetLanguageVerse = (targetLanguageVerse) => {
   if (targetLanguageVerse) {
-    const verseObjects = VerseObjectUtils.getOrderedVerseObjectsFromString(targetLanguageVerse);
-    const verseObjectsCleaned = VerseObjectUtils.getWordList(verseObjects);
+    const {newVerseObjects} = VerseObjectUtils.getOrderedVerseObjectsFromString(targetLanguageVerse);
+    const verseObjectsCleaned = VerseObjectUtils.getWordList(newVerseObjects);
     return VerseObjectUtils.combineVerseArray(verseObjectsCleaned);
   }
 };
