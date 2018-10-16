@@ -208,8 +208,8 @@ export function verifyValidBetaProject(state) {
  * @param {string} projectDir - the path to the project directory
  * @return {Promise<boolean>} - Promise resolves true if the project is supported, otherwise false.
  */
-export function isProjectSupported(projectDir) {
-  return new Promise(resolve => {
+export function isProjectSupported(projectDir, translate) {
+  return new Promise((resolve, reject) => {
     const manifest = getProjectManifest(projectDir);
     // TRICKY: versions before 0.8.1 did not have a tc_version key
     let greaterThanVersion_0_8_0 = !!manifest.tc_version;
@@ -219,7 +219,7 @@ export function isProjectSupported(projectDir) {
     }
     if (!greaterThanVersion_0_8_0 && testForCheckingData(projectDir)) {
       // if old and has some checking data, it cannot be opened
-      resolve(false);
+      reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     } else {
       resolve(true);
     }
@@ -234,7 +234,7 @@ export function isProjectSupported(projectDir) {
  * @param {Function} translate
  */
 export function ensureSupportedVersion(projectPath, translate) {
-  return isProjectSupported(projectPath).then(isSupported => {
+  return isProjectSupported(projectPath, translate).then(isSupported => {
     if(isSupported) {
       return Promise.resolve();
     } else {
