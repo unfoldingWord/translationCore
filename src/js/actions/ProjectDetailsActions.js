@@ -131,6 +131,8 @@ export function setProjectBookIdAndBookName() {
             reject(err);
           }
         });
+      } else {
+        resolve();
       }
     });
   });
