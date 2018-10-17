@@ -85,7 +85,7 @@ export function getValidGitUrl(link) {
     match = gitDoor43Url.exec(link);
     if (match) {
       const extra = link.substr(match.index + match[0].length);
-      if (extra && (extra !== '/')) { // make sure not trying to point into repo
+      if (extra && (extra !== '/')) { // make sure not trying to point into contents of repo
         match = null;
       }
     }
