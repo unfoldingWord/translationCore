@@ -54,13 +54,6 @@ describe('OnlineImportWorkflowHelpers.getValidGitUrl', () => {
     expect(gitUrl).toEqual(expectedUrl);
   });
 
-  it('should return an empty string for a bad git link', () => {
-    let url = 'https://bad.door43.org/richmahn/en_tit_ulb';
-    let gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(url);
-    let expectedUrl = '';
-    expect(gitUrl).toEqual(expectedUrl);
-  });
-
   it('should return an empty string for an invalid project link', () => {
     let url = 'https://git.door43.org/richmahn/en_tit_ulb/stuff';
     let gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(url);

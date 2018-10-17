@@ -62,7 +62,7 @@ export function runGitCommand(savePath, link, gitHandler) {
     gitHandler(savePath).mirror(link, savePath, function (err) {
       if (err) {
         fs.removeSync(savePath);
-        reject(convertGitErrorMessage(err));
+        reject(convertGitErrorMessage(err, link));
       } else {
         resolve();
       }
