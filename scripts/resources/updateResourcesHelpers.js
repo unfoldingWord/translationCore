@@ -107,5 +107,6 @@ const getLocalResourceList = resourcesPath => {
 };
 
 module.exports = {
-  getLocalResourceList
+  getLocalResourceList,
+  getLatestVersionInPath
 };

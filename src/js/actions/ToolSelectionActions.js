@@ -4,7 +4,6 @@ import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectDataLoadingActions from './ProjectDataLoadingActions';
 import * as ModalActions from './ModalActions';
-import * as LoadHelpers from '../helpers/LoadHelpers';
 import {getTranslate, getToolsMeta} from '../selectors';
 
 /**
@@ -22,7 +21,6 @@ export function selectTool(moduleFolderName, currentToolName) {
       try {
         const modulePath = path.join(moduleFolderName, 'package.json');
         const dataObject = fs.readJsonSync(modulePath);
-        const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
         dispatch(resetReducersData());
         dispatch({
           type: consts. SET_CURRENT_TOOL_NAME,
@@ -32,7 +30,6 @@ export function selectTool(moduleFolderName, currentToolName) {
           type: consts.SET_CURRENT_TOOL_TITLE,
           currentToolTitle: dataObject.title
         });
-        dispatch(saveToolViews(checkArray, dataObject));
         dispatch(loadSupportingToolApis(currentToolName));
         // load project data
         dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
@@ -46,7 +43,6 @@ export function selectTool(moduleFolderName, currentToolName) {
 
 export function resetReducersData() {
   return (dispatch => {
-    dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
@@ -61,7 +57,7 @@ export function resetReducersData() {
  * For now this is just every tool except for the current one.
  * @param {string} currentToolName - the current tool name
  */
-function loadSupportingToolApis(currentToolName) {
+export function loadSupportingToolApis(currentToolName) {
   return (dispatch, getState) => {
     const state = getState();
     const meta = getToolsMeta(state);
