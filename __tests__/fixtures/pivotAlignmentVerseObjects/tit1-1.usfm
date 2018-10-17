@@ -1,6 +1,7 @@
 \v 1 \zanl-s | x-strongs="G39720" x-lemma="Παῦλος" x-morph="Gr,N,,,,,NMS," x-occurrence="1" x-occurrences="1" x-content="Παῦλος"
 \w Paul|x-occurrence="1" x-occurrences="1"\w*
-\zanl-e\*,\zanl-s | x-strongs="G14010" x-lemma="δοῦλος" x-morph="Gr,N,,,,,NMS," x-occurrence="1" x-occurrences="1" x-content="δοῦλος"
+\zanl-e\*,
+\zanl-s | x-strongs="G14010" x-lemma="δοῦλος" x-morph="Gr,N,,,,,NMS," x-occurrence="1" x-occurrences="1" x-content="δοῦλος"
 \w a|x-occurrence="1" x-occurrences="1"\w*
 \w servant|x-occurrence="1" x-occurrences="1"\w*
 \zanl-e\*
@@ -21,7 +22,8 @@
 \zanl-e\*
 \zanl-s | x-strongs="G55470" x-lemma="χριστός" x-morph="Gr,N,,,,,GMS," x-occurrence="1" x-occurrences="1" x-content="Χριστοῦ"
 \w Christ|x-occurrence="1" x-occurrences="1"\w*
-\zanl-e\*,\zanl-s | x-strongs="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατὰ"
+\zanl-e\*,
+\zanl-s | x-strongs="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατὰ"
 \w for|x-occurrence="1" x-occurrences="1"\w*
 \zanl-e\*
 \zanl-s | x-strongs="G41020" x-lemma="πίστις" x-morph="Gr,N,,,,,AFS," x-occurrence="1" x-occurrences="1" x-content="πίστιν"
