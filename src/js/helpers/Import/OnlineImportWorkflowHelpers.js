@@ -79,7 +79,7 @@ export function getValidGitUrl(link) {
   if (!link || !link.trim) return '';
   link = link.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
   const liveDoor43Url = new RegExp(/^https?:\/\/((live\.|www\.)?door43.org\/u)\/([^/]+)\/([^/]+)/);
-  const gitDoor43Url = new RegExp(/^https?:\/\/((live\.|www\.)?git.door43.org)\/([^/]+)\/([^/]+)/);
+  const gitDoor43Url = new RegExp(/^https?:\/\/((git.)door43.org)\/([^/]+)\/([^/]+)/);
   let match = liveDoor43Url.exec(link);
   if (!match) {
     match = gitDoor43Url.exec(link);
@@ -94,7 +94,7 @@ export function getValidGitUrl(link) {
     // Return a proper git.door43.org URL from the match
     let userName = match[3];
     let repoName = match[4];
-    repoName = repoName.replace('.git', '');
+    repoName = (repoName && repoName.replace('.git', '')) || '';
     return 'https://git.door43.org/' + userName + '/' + repoName + '.git';
   }
   return '';
