@@ -44,10 +44,8 @@ const toolsReducer = (state = initialState, action) => {
     case types.CLEAR_CURRENT_TOOL_DATA:
       return {
         ...state,
-        currentToolViews: initialState.currentToolViews,
         currentToolName: initialState.currentToolName,
         currentToolTitle: initialState.currentToolTitle,
-        apis: initialState.apis
       };
     default:
       return state;
