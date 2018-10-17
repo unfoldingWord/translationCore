@@ -10,6 +10,7 @@ import wordaligner from 'word-aligner';
 import * as BibleHelpers from "../bibleHelpers";
 // actions
 import * as ResourcesActions from "../../actions/ResourcesActions";
+import _ from "lodash";
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -200,14 +201,74 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
 
 const parseMilestone = function (verseObject) {
   let text = "";
+  let wordSpacing = '';
   for (let child of verseObject.children) {
-    if (child.type === 'word') {
-      text += (text ? ' ' : '') + child.text;
-    } else if (child.type === 'milestone') {
-      text += (text ? ' ' : '') + parseMilestone(child);
+    switch (child.type) {
+      case 'word':
+        text += (wordSpacing ? ' ' : '') + child.text;
+        wordSpacing = ' ';
+        break;
+
+      case 'milestone':
+        text += (wordSpacing ? ' ' : '') + parseMilestone(child);
+        wordSpacing = ' ';
+        break;
+
+      default:
+        if (verseObject.text) {
+          text += verseObject.text;
+          const lastChar = text.substr(-1);
+          if ((lastChar !== ",") && (lastChar !== '.') && (lastChar !== '?') && (lastChar !== ';')) { // legacy support, make sure padding before word
+            wordSpacing = '';
+          }
+        }
+        break;
     }
   }
   return text;
+};
+
+/**
+ * get text from word and milestone markers
+ * @param verseObject
+ * @param wordSpacing
+ * @return {*}
+ */
+const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
+  let text = '';
+  if (verseObject.type === 'word') {
+    text = wordSpacing + verseObject.text;
+  } else if (verseObject.type === 'milestone') {
+    text = wordSpacing + parseMilestone(verseObject);
+  }
+  if (text) { // replace with text object
+    verseObject = {
+      type: "text",
+      text
+    };
+    wordSpacing = ' ';
+  } else {
+    wordSpacing = ' ';
+    if (verseObject.type === 'text') {
+      const lastChar = verseObject.text.substr(-1);
+      if ((lastChar !== ",") && (lastChar !== '.') && (lastChar !== '?') && (lastChar !== ';')) { // legacy support, make sure padding before word
+        wordSpacing = '';
+      }
+    } else {
+      if (verseObject.children) { // handle nested
+        const verseObject_ = _.cloneDeep(verseObject);
+        let wordSpacing_ = '';
+        const length = verseObject.children.length;
+        for (let i = 0; i < length; i++) {
+          const flattened = replaceWordsAndMilestones(verseObject.children[i], wordSpacing_);
+          wordSpacing_ = flattened.wordSpacing;
+          verseObject_.children[i] = flattened.verseObject;
+        }
+        verseObject = verseObject_;
+      }
+    }
+  }
+  return {verseObject, wordSpacing};
 };
 
 /**
@@ -219,28 +280,9 @@ export const getUsfmForVerseContent = (verseData) => {
   if (verseData.verseObjects) {
     let wordSpacing = '';
     const flattenedData = verseData.verseObjects.map(verseObject => {
-      let text = '';
-      if (verseObject.type === 'word') {
-        text = wordSpacing + verseObject.text;
-      } else if (verseObject.type === 'milestone') {
-        text = wordSpacing + parseMilestone(verseObject);
-      }
-      if (text) { // replace with text object
-        verseObject = {
-          type: "text",
-          text
-        };
-        wordSpacing = ' ';
-      } else {
-        wordSpacing = ' ';
-        if (verseObject.type === 'text') {
-          const lastChar = verseObject.text.substr(-1);
-          if ((lastChar === "'") || (lastChar === '"') || (lastChar === '-')) { // special case: no extra spacing after quotes or apostrophes before words
-            wordSpacing = '';
-          }
-        }
-      }
-      return verseObject;
+      const flattened = replaceWordsAndMilestones(verseObject, wordSpacing);
+      wordSpacing = flattened.wordSpacing;
+      return flattened.verseObject;
     });
     verseData = { // use flattened data
       verseObjects: flattenedData
