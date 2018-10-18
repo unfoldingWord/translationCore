@@ -148,9 +148,10 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
       const versionNumber = versionNumbers[versionNumbers.length - 1];
       const bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleId, versionNumber);
       const bookPath = path.join(bibleVersionPath, bookId);
+      const cacheKey = 'book:' + bookPath;
 
       if(fs.existsSync(bookPath)) {
-        let bibleData = bookCache.get(bookPath);
+        let bibleData = bookCache.get(cacheKey);
         if(!bibleData) {
           // load bible
           bibleData = {};
@@ -168,7 +169,7 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
           bibleData["manifest"] = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleId);
 
           // cache it
-          bookCache.set(bookPath, bibleData);
+          bookCache.set(cacheKey, bibleData);
         }
 
         return bibleData;
