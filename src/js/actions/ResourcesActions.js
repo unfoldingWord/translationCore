@@ -13,7 +13,9 @@ const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources'
 import _ from 'lodash';
 import {getContext} from "../selectors";
 import * as BibleHelpers from "../helpers/bibleHelpers";
+import SimpleCache from "../helpers/SimpleCache";
 
+const bookCache = new SimpleCache();
 
 /**
  * Adds a bible to the resources reducer.
@@ -148,22 +150,27 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
       const bookPath = path.join(bibleVersionPath, bookId);
 
       if(fs.existsSync(bookPath)) {
-        const bibleData = {};
-        const files = fs.readdirSync(bookPath);
+        let bibleData = bookCache.get(bookPath);
+        if(!bibleData) {
+          // load bible
+          bibleData = {};
+          const files = fs.readdirSync(bookPath);
 
-        for (let i = 0, len = files.length; i < len; i++) {
-          const file = files[i];
-          const chapterNumber = path.basename(file, '.json');
-          if (!isNaN(chapterNumber)) {
-            // load chapter
-            const chapterData = fs.readJsonSync(path.join(bookPath, file));
-            bibleData[chapterNumber] = migrateChapterToVerseObjects(chapterData);
-          } else {
-            console.warn(`Unexpected file in bible ${bibleId}`, file);
+          for (let i = 0, len = files.length; i < len; i++) {
+            const file = files[i];
+            const chapterNumber = path.basename(file, '.json');
+            if (!isNaN(chapterNumber)) {
+              // load chapter
+              const chapterData = fs.readJsonSync(path.join(bookPath, file));
+              bibleData[chapterNumber] = migrateChapterToVerseObjects(chapterData);
+            }
           }
+          bibleData["manifest"] = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleId);
+
+          // cache it
+          bookCache.set(bookPath, bibleData);
         }
 
-        bibleData["manifest"] = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleId);
         return bibleData;
       } else {
         console.warn(`Bible path not found: ${bookPath}`);
