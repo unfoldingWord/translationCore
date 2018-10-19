@@ -7,6 +7,9 @@ import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
 import * as UsfmFileConversionHelpers from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
+import usfm from "usfm-js";
+import wordaligner from "word-aligner";
+import {getUsfmForVerseContent} from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
@@ -60,331 +63,373 @@ describe('UsfmFileConversionHelpers', () => {
     fs.__resetMockFS();
   });
 
-  test('UsfmFileConversionHelpers.verifyIsValidUsfmFile promise rejects with an error if invalid arguments are passed to the function.', () => {
-    fs.__setMockFS({
-      [usfmFilePath]: 'Not a valid usfm string'
+  describe('verifyIsValidUsfmFile()', () => {
+    test('promise rejects with an error if invalid arguments are passed to the function.', () => {
+      fs.__setMockFS({
+        [usfmFilePath]: 'Not a valid usfm string'
+      });
+      expect.assertions(1);
+      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).rejects.toEqual(invalidUsfmRejectionMessage);
     });
-    expect.assertions(1);
-    return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).rejects.toEqual(invalidUsfmRejectionMessage);
-  });
 
-  test('UsfmFileConversionHelpers.verifyIsValidUsfmFile promise resolves with the usfm file.', () => {
-    fs.__setMockFS({
-      [usfmFilePath]: validUsfmString
+    test('promise resolves with the usfm file.', () => {
+      fs.__setMockFS({
+        [usfmFilePath]: validUsfmString
+      });
+      expect.assertions(1);
+      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).resolves.toEqual(validUsfmString);
     });
-    expect.assertions(1);
-    return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).resolves.toEqual(validUsfmString);
   });
 
-  test('UsfmFileConversionHelpers.generateManifestForUsfm promise rejects with an error if invalid arguments are passed to the function.', () => {
-    expect.assertions(1);
-    return expect(
-      UsfmFileConversionHelpers.generateManifestForUsfm(null, usfmFilePath, 'project_folder_name')
-    ).rejects.toEqual(generateUsfmRejectionMessage);
-  });
-
-  test('UsfmFileConversionHelpers.generateManifestForUsfm resolves with the project manifest file', async () => {
-    const manifestPath = path.join(IMPORTS_PATH, 'project_folder_name', 'manifest.json');
-
-    expect.assertions(2);
-    const results = await UsfmFileConversionHelpers.generateManifestForUsfm(validUsfmString, usfmFilePath, 'project_folder_name');
-    // normalize JSONs since dates in manifest are converted to strings.
-    const normalized = JSON.parse(JSON.stringify(results));
-    expect(normalized).toEqual(fs.readJsonSync(manifestPath));
-    expect(fs.existsSync(manifestPath)).toBeTruthy();
-  });
-
-  test('UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports rejects with an error if invalid arguments are passed to the function', () => {
-    expect.assertions(1);
-    return expect(
-      UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports(null, {}, 'project_folder_name')
-    ).rejects.toEqual(moveUsfmRejectionMessage);
-  });
-
-  test('UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports resolves by moving an usfm file to imports folder and name it using project id', async () => {
-    fs.__setMockFS({
-      [usfmFilePath]: validUsfmString
+  describe('generateManifestForUsfm()', () => {
+    test('promise rejects with an error if invalid arguments are passed to the function.', () => {
+      expect.assertions(1);
+      return expect(
+        UsfmFileConversionHelpers.generateManifestForUsfm(null, usfmFilePath, 'project_folder_name')
+      ).rejects.toEqual(generateUsfmRejectionMessage);
     });
-    let mockManifest = {
-      project: {
-        id: 'eph'
-      }
-    };
-    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph.usfm');
-    expect.assertions(1);
-    await UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports(path.join('path', 'to', 'project', 'eph.usfm'), mockManifest, 'project_folder_name');
-    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
-  });
 
-  test('generateTargetLanguageBibleFromUsfm with valid USFM should succeed', async () => {
-    // given
-    fs.__setMockFS({
+    test('resolves with the project manifest file', async () => {
+      const manifestPath = path.join(IMPORTS_PATH, 'project_folder_name', 'manifest.json');
+
+      expect.assertions(2);
+      const results = await UsfmFileConversionHelpers.generateManifestForUsfm(validUsfmString, usfmFilePath, 'project_folder_name');
+      // normalize JSONs since dates in manifest are converted to strings.
+      const normalized = JSON.parse(JSON.stringify(results));
+      expect(normalized).toEqual(fs.readJsonSync(manifestPath));
+      expect(fs.existsSync(manifestPath)).toBeTruthy();
     });
-    let mockManifest = {
-      project: {
-        id: 'eph'
-      },
-      target_language: {
-        id: "en"
-      }
-    };
-    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph');
-    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
-
-    //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
-
-    //then
-    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
-
-    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
-    expect(Object.keys(chapter1_data).length - 1).toEqual(16);
-
-    const chapter2_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '2.json'));
-    expect(Object.keys(chapter2_data).length - 1).toEqual(0);
-
-    // verify header info is preserved
-    const header_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, 'headers.json'));
-    validateUsfmTag(header_data, 'id');
-    validateUsfmTag(header_data, 'h');
-    validateUsfmTag(header_data, 'mt');
-    validateUsfmTag(header_data, 's5');
   });
 
-  test('generateTargetLanguageBibleFromUsfm with aligned USFM should succeed', async () => {
-    // given
-    fs.__setMockFS({
+  describe('moveUsfmFileFromSourceToImports()', () => {
+    test('rejects with an error if invalid arguments are passed to the function', () => {
+      expect.assertions(1);
+      return expect(
+        UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports(null, {}, 'project_folder_name')
+      ).rejects.toEqual(moveUsfmRejectionMessage);
     });
-    let mockManifest = {
-      project: {
-        id: 'eph'
-      },
-      target_language: {
-        id: "en"
-      }
-    };
-    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph');
-    const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','59-HEB.usfm');
-    const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
-    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
-    //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
-
-    //then
-    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
-
-    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
-
-    expect(Object.keys(chapter1_data).length - 1).toEqual(13);
-    expect(chapter1_data[1]).toEqual("Long ago God spoke to our ancestors through the prophets at many times and in many ways.");
-    // test apostrophe
-    expect(chapter1_data[3]).toEqual("He is the brightness of God's glory, the exact representation of his being. He even holds everything together by the word of his power. After he had made cleansing for sins, he sat down at the right hand of the Majesty on high.");
-    // test quotes
-    expect(chapter1_data[5]).toEqual("For to which of the angels did God ever say, \"You are my son, today I have become your father\"? Or to which of the angels did God ever say, \"I will be a father to him, and he will be a son to me\"?");
-  });
-
-  test('generateTargetLanguageBibleFromUsfm with aligned USFM and punctuation should succeed', async () => {
-    // given
-    fs.__setMockFS({
+    test('resolves by moving an usfm file to imports folder and name it using project id', async () => {
+      fs.__setMockFS({
+        [usfmFilePath]: validUsfmString
+      });
+      let mockManifest = {
+        project: {
+          id: 'eph'
+        }
+      };
+      const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph.usfm');
+      expect.assertions(1);
+      await UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports(path.join('path', 'to', 'project', 'eph.usfm'), mockManifest, 'project_folder_name');
+      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
     });
-    let mockManifest = {
-      project: {
-        id: 'act'
-      },
-      target_language: {
-        id: "en"
-      }
-    };
-    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'act');
-    const testDataPath = path.join('__tests__','fixtures/project/acts1_aligned/acts1.usfm');
-    const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
-    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
-
-    //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
-
-    //then
-    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
-
-    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
-
-    expect(Object.keys(chapter1_data).length).toEqual(26);
-    expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach,");
-    // test apostrophe
-    expect(chapter1_data[4]).toEqual("When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said, \\qt-s |who=\"Jesus\"\\*\"You heard from me");
-    // test quotes
-    expect(chapter1_data[5]).toEqual("that John indeed baptized with water, but you shall be baptized in the Holy Spirit after not many days.\"\\qt-e\\*\n\\s5");
   });
 
-  test('generateTargetLanguageBibleFromUsfm with spanned milestones should succeed', async () => {
-    // given
-    fs.__setMockFS({
+  describe('generateTargetLanguageBibleFromUsfm()', () => {
+    test('valid USFM should succeed', async () => {
+      // given
+      fs.__setMockFS({});
+      let mockManifest = {
+        project: {
+          id: 'eph'
+        },
+        target_language: {
+          id: "en"
+        }
+      };
+      const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph');
+      const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
+
+      //when
+      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+
+      //then
+      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+
+      const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+      expect(Object.keys(chapter1_data).length - 1).toEqual(16);
+
+      const chapter2_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '2.json'));
+      expect(Object.keys(chapter2_data).length - 1).toEqual(0);
+
+      // verify header info is preserved
+      const header_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, 'headers.json'));
+      validateUsfmTag(header_data, 'id');
+      validateUsfmTag(header_data, 'h');
+      validateUsfmTag(header_data, 'mt');
+      validateUsfmTag(header_data, 's5');
     });
-    let mockManifest = {
-      project: {
-        id: 'act'
-      },
-      target_language: {
-        id: "en"
-      }
-    };
-    const copyFiles = ['grc/bibles/ugnt/v0.2/act'];
-    fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'act');
-    const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','acts_1_milestone.usfm');
-    const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
-    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
-    const expectedVerses = 6;
 
-    //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+    test('aligned USFM should succeed', async () => {
+      // given
+      fs.__setMockFS({});
+      let mockManifest = {
+        project: {
+          id: 'eph'
+        },
+        target_language: {
+          id: "en"
+        }
+      };
+      const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph');
+      const testDataPath = path.join('__tests__', 'fixtures', 'project', 'alignmentUsfmImport', '59-HEB.usfm');
+      const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+      const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
-    //then
-    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+      //when
+      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
-    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
-    const chapter1_alignments = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '../.apps/translationCore/alignmentData/act/1.json'));
+      //then
+      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
 
-    // make sure we got nested alignment
-    expect(Object.keys(chapter1_alignments).length).toEqual(expectedVerses);
-    const vs4 = chapter1_alignments[4];
-    let alignment = vs4.alignments[vs4.alignments.length - 1];
-    expect(alignment.bottomWords.length).toEqual(1);
-    expect(alignment.bottomWords[0].word).toEqual("You");
+      const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
 
-    expect(Object.keys(chapter1_data).length).toEqual(expectedVerses);
-    expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach,");
-    // test \s5
-    expect(chapter1_data[3]).toEqual("After his suffering, he also presented himself alive to them with many convincing proofs. For forty days he appeared to them, and he spoke things concerning the kingdom of God.\\s5");
-    // test \qt-s
-    expect(chapter1_data[4]).toEqual("When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said,\\qt-s |who=\"Jesus\"\\*\"You heard from me");
-    // test \qt-e
-    expect(chapter1_data[5]).toEqual("that John indeed baptized with water, but you shall be baptized in the Holy Spirit after not many days.\"\\qt-e\\*\n\\s5\n\\p");
-  });
-
-  test('generateTargetLanguageBibleFromUsfm with aligned USFM and UGNT with milestones should succeed', async () => {
-    // given
-    fs.__setMockFS({
+      expect(Object.keys(chapter1_data).length - 1).toEqual(13);
+      expect(chapter1_data[1]).toEqual("Long ago God spoke to our ancestors through the prophets at many times and in many ways.");
+      // test apostrophe
+      expect(chapter1_data[3]).toEqual("He is the brightness of God's glory, the exact representation of his being. He even holds everything together by the word of his power. After he had made cleansing for sins, he sat down at the right hand of the Majesty on high.");
+      // test quotes
+      expect(chapter1_data[5]).toEqual("For to which of the angels did God ever say, \"You are my son, today I have become your father\"? Or to which of the angels did God ever say, \"I will be a father to him, and he will be a son to me\"?");
     });
-    let mockManifest = {
-      project: {
-        id: 'tit'
-      },
-      target_language: {
-        id: "en"
-      }
-    };
-    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'tit');
-    const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','57-TIT.usfm');
-    const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
-    const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-    const resourcePath = path.join(__dirname, 'fixtures/resources');
-    const copyFiles = ['grc/bibles/ugnt'];
-    fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
-    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
-    //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+    test('aligned USFM and punctuation should succeed', async () => {
+      // given
+      fs.__setMockFS({});
+      let mockManifest = {
+        project: {
+          id: 'act'
+        },
+        target_language: {
+          id: "en"
+        }
+      };
+      const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'act');
+      const testDataPath = path.join('__tests__', 'fixtures/project/acts1_aligned/acts1.usfm');
+      const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+      const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
-    //then
-    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+      //when
+      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
-    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
-    expect(Object.keys(chapter1_data).length).toEqual(16);
-    expect(chapter1_data[1]).toEqual("Pablo, un siervo de Dios y apóstol de Jesucristo, por la fe del pueblo escogido de Dios y el conocimiento de la verdad que concuerda con la piedad. TEST");
+      //then
+      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
 
-    // test alignments
-    const wordAlignmentDataPath = path.join(IMPORTS_PATH, 'project_folder_name', '.apps', 'translationCore', 'alignmentData', 'tit');
-    const chapter1_alignment = fs.readJSONSync(path.join(wordAlignmentDataPath, '1.json'));
-    expect(Object.keys(chapter1_alignment).length).toEqual(16);
+      const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
 
-    const verse1_alignment = chapter1_alignment[1];
-    expect(verse1_alignment.alignments.length).toEqual(14);
-
-    const firstAlignment = verse1_alignment.alignments[0];
-    expect(firstAlignment.topWords[0].word).toEqual("Παῦλος");
-    expect(firstAlignment.bottomWords[0].word).toEqual("Pablo");
-  });
-
-  test('generateTargetLanguageBibleFromUsfm with partial-aligned USFM and UGNT with milestones should succeed', async () => {
-    // given
-    fs.__setMockFS({
+      expect(Object.keys(chapter1_data).length).toEqual(26);
+      expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach,");
+      // test apostrophe
+      expect(chapter1_data[4]).toEqual("When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said, \\qt-s |who=\"Jesus\"\\*\"You heard from me");
+      // test quotes
+      expect(chapter1_data[5]).toEqual("that John indeed baptized with water, but you shall be baptized in the Holy Spirit after not many days.\"\\qt-e\\*\n\\s5");
     });
-    let mockManifest = {
-      project: {
-        id: 'tit'
-      },
-      target_language: {
-        id: "en"
-      }
-    };
-    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'tit');
-    const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','57-TIT.partial.usfm');
-    const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
-    const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-    const resourcePath = path.join(__dirname, 'fixtures/resources');
-    const copyFiles = ['grc/bibles/ugnt'];
-    fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
-    const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
-    //when
-    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+    test('spanned milestones should succeed', async () => {
+      // given
+      fs.__setMockFS({});
+      let mockManifest = {
+        project: {
+          id: 'act'
+        },
+        target_language: {
+          id: "en"
+        }
+      };
+      const copyFiles = ['grc/bibles/ugnt/v0.2/act'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
+      const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'act');
+      const testDataPath = path.join('__tests__', 'fixtures', 'project', 'alignmentUsfmImport', 'acts_1_milestone.usfm');
+      const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+      const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
+      const expectedVerses = 6;
 
-    //then
-    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+      //when
+      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
-    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
-    expect(Object.keys(chapter1_data).length).toEqual(16);
-    expect(chapter1_data[1]).toEqual("Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,");
+      //then
+      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
 
-    // test alignments
-    const wordAlignmentDataPath = path.join(IMPORTS_PATH, 'project_folder_name', '.apps', 'translationCore', 'alignmentData', 'tit');
-    const chapter1_alignment = fs.readJSONSync(path.join(wordAlignmentDataPath, '1.json'));
-    expect(Object.keys(chapter1_alignment).length).toEqual(16);
+      const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+      const chapter1_alignments = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '../.apps/translationCore/alignmentData/act/1.json'));
 
-    const verse1_alignment = chapter1_alignment[1];
-    expect(verse1_alignment.alignments.length).toEqual(17);
-    expect(verse1_alignment.wordBank.length).toEqual(18);
+      // make sure we got nested alignment
+      expect(Object.keys(chapter1_alignments).length).toEqual(expectedVerses);
+      const vs4 = chapter1_alignments[4];
+      let alignment = vs4.alignments[vs4.alignments.length - 1];
+      expect(alignment.bottomWords.length).toEqual(1);
+      expect(alignment.bottomWords[0].word).toEqual("You");
 
-    const firstAlignment = verse1_alignment.alignments[0];
-    expect(firstAlignment.topWords[0].word).toEqual("Παῦλος");
-    expect(firstAlignment.bottomWords[0].word).toEqual("Paul");
+      expect(Object.keys(chapter1_data).length).toEqual(expectedVerses);
+      expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach,");
+      // test \s5
+      expect(chapter1_data[3]).toEqual("After his suffering, he also presented himself alive to them with many convincing proofs. For forty days he appeared to them, and he spoke things concerning the kingdom of God.\\s5");
+      // test \qt-s
+      expect(chapter1_data[4]).toEqual("When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said,\\qt-s |who=\"Jesus\"\\*\"You heard from me");
+      // test \qt-e
+      expect(chapter1_data[5]).toEqual("that John indeed baptized with water, but you shall be baptized in the Holy Spirit after not many days.\"\\qt-e\\*\n\\s5\n\\p");
+    });
 
-    // expect blank alignments
-    const verse2_alignment = chapter1_alignment[2];
-    expect(verse2_alignment.alignments.length).toEqual(12);
-    expect(verse2_alignment.alignments[0].topWords.length).toEqual(1);
-    expect(verse2_alignment.alignments[0].bottomWords.length).toEqual(0);
-    expect(verse2_alignment.wordBank.length).toEqual(20);
+    test('aligned USFM and UGNT with milestones should succeed', async () => {
+      // given
+      fs.__setMockFS({});
+      let mockManifest = {
+        project: {
+          id: 'tit'
+        },
+        target_language: {
+          id: "en"
+        }
+      };
+      const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'tit');
+      const testDataPath = path.join('__tests__', 'fixtures', 'project', 'alignmentUsfmImport', '57-TIT.usfm');
+      const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+      const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+      const resourcePath = path.join(__dirname, 'fixtures/resources');
+      const copyFiles = ['grc/bibles/ugnt'];
+      fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+      const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
-    // expect empty verse
-    const verse3_alignment = chapter1_alignment[3];
-    expect(verse3_alignment.alignments.length).toEqual(18);
-    expect(verse3_alignment.alignments[0].topWords.length).toEqual(1);
-    expect(verse3_alignment.alignments[0].bottomWords.length).toEqual(0);
-    expect(verse3_alignment.wordBank.length).toEqual(0);
+      //when
+      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
-    // expect empty verse
-    const verse14_alignment = chapter1_alignment[14];
-    expect(verse14_alignment.alignments.length).toEqual(10);
-    expect(verse14_alignment.alignments[0].topWords.length).toEqual(1);
-    expect(verse14_alignment.alignments[0].bottomWords.length).toEqual(0);
-    expect(verse14_alignment.wordBank.length).toEqual(0);
+      //then
+      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
 
-    // expect blank alignments
-    const verse16_alignment = chapter1_alignment[16];
-    expect(verse16_alignment.alignments.length).toEqual(17);
-    expect(verse16_alignment.alignments[0].topWords.length).toEqual(1);
-    expect(verse16_alignment.alignments[0].bottomWords.length).toEqual(0);
-    expect(verse16_alignment.wordBank.length).toEqual(23);
+      const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+      expect(Object.keys(chapter1_data).length).toEqual(16);
+      expect(chapter1_data[1]).toEqual("Pablo, un siervo de Dios y apóstol de Jesucristo, por la fe del pueblo escogido de Dios y el conocimiento de la verdad que concuerda con la piedad. TEST");
 
-    const chapter2_alignment = fs.existsSync(path.join(wordAlignmentDataPath, '2.json'));
-    expect(chapter2_alignment).toBeFalsy();
+      // test alignments
+      const wordAlignmentDataPath = path.join(IMPORTS_PATH, 'project_folder_name', '.apps', 'translationCore', 'alignmentData', 'tit');
+      const chapter1_alignment = fs.readJSONSync(path.join(wordAlignmentDataPath, '1.json'));
+      expect(Object.keys(chapter1_alignment).length).toEqual(16);
 
-    const chapter3_alignment = fs.existsSync(path.join(wordAlignmentDataPath, '3.json'));
-    expect(chapter3_alignment).toBeFalsy();
+      const verse1_alignment = chapter1_alignment[1];
+      expect(verse1_alignment.alignments.length).toEqual(14);
+
+      const firstAlignment = verse1_alignment.alignments[0];
+      expect(firstAlignment.topWords[0].word).toEqual("Παῦλος");
+      expect(firstAlignment.bottomWords[0].word).toEqual("Pablo");
+    });
+
+    test('partial-aligned USFM and UGNT with milestones should succeed', async () => {
+      // given
+      fs.__setMockFS({});
+      let mockManifest = {
+        project: {
+          id: 'tit'
+        },
+        target_language: {
+          id: "en"
+        }
+      };
+      const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'tit');
+      const testDataPath = path.join('__tests__', 'fixtures', 'project', 'alignmentUsfmImport', '57-TIT.partial.usfm');
+      const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+      const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+      const resourcePath = path.join(__dirname, 'fixtures/resources');
+      const copyFiles = ['grc/bibles/ugnt'];
+      fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+      const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
+
+      //when
+      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+
+      //then
+      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+
+      const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+      expect(Object.keys(chapter1_data).length).toEqual(16);
+      expect(chapter1_data[1]).toEqual("Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,");
+
+      // test alignments
+      const wordAlignmentDataPath = path.join(IMPORTS_PATH, 'project_folder_name', '.apps', 'translationCore', 'alignmentData', 'tit');
+      const chapter1_alignment = fs.readJSONSync(path.join(wordAlignmentDataPath, '1.json'));
+      expect(Object.keys(chapter1_alignment).length).toEqual(16);
+
+      const verse1_alignment = chapter1_alignment[1];
+      expect(verse1_alignment.alignments.length).toEqual(17);
+      expect(verse1_alignment.wordBank.length).toEqual(18);
+
+      const firstAlignment = verse1_alignment.alignments[0];
+      expect(firstAlignment.topWords[0].word).toEqual("Παῦλος");
+      expect(firstAlignment.bottomWords[0].word).toEqual("Paul");
+
+      // expect blank alignments
+      const verse2_alignment = chapter1_alignment[2];
+      expect(verse2_alignment.alignments.length).toEqual(12);
+      expect(verse2_alignment.alignments[0].topWords.length).toEqual(1);
+      expect(verse2_alignment.alignments[0].bottomWords.length).toEqual(0);
+      expect(verse2_alignment.wordBank.length).toEqual(20);
+
+      // expect empty verse
+      const verse3_alignment = chapter1_alignment[3];
+      expect(verse3_alignment.alignments.length).toEqual(18);
+      expect(verse3_alignment.alignments[0].topWords.length).toEqual(1);
+      expect(verse3_alignment.alignments[0].bottomWords.length).toEqual(0);
+      expect(verse3_alignment.wordBank.length).toEqual(0);
+
+      // expect empty verse
+      const verse14_alignment = chapter1_alignment[14];
+      expect(verse14_alignment.alignments.length).toEqual(10);
+      expect(verse14_alignment.alignments[0].topWords.length).toEqual(1);
+      expect(verse14_alignment.alignments[0].bottomWords.length).toEqual(0);
+      expect(verse14_alignment.wordBank.length).toEqual(0);
+
+      // expect blank alignments
+      const verse16_alignment = chapter1_alignment[16];
+      expect(verse16_alignment.alignments.length).toEqual(17);
+      expect(verse16_alignment.alignments[0].topWords.length).toEqual(1);
+      expect(verse16_alignment.alignments[0].bottomWords.length).toEqual(0);
+      expect(verse16_alignment.wordBank.length).toEqual(23);
+
+      const chapter2_alignment = fs.existsSync(path.join(wordAlignmentDataPath, '2.json'));
+      expect(chapter2_alignment).toBeFalsy();
+
+      const chapter3_alignment = fs.existsSync(path.join(wordAlignmentDataPath, '3.json'));
+      expect(chapter3_alignment).toBeFalsy();
+    });
   });
+
+  describe('verifyIsValidUsfmFile()', () => {
+    test('promise rejects with an error if invalid arguments are passed to the function.', () => {
+      fs.__setMockFS({
+        [usfmFilePath]: 'Not a valid usfm string'
+      });
+      expect.assertions(1);
+      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).rejects.toEqual(invalidUsfmRejectionMessage);
+    });
+
+    test('promise resolves with the usfm file.', () => {
+      fs.__setMockFS({
+        [usfmFilePath]: validUsfmString
+      });
+      expect.assertions(1);
+      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).resolves.toEqual(validUsfmString);
+    });
+  });
+
+  describe('getUsfmForVerseContent()', () => {
+    const testResourcePath = path.join(__dirname, 'fixtures');
+
+    test('acts-1-20 should succeed', () => {
+      // given
+      const testFile = path.join(testResourcePath, "usfm3/acts-1-20.usfm");
+      const usfmData = fs.__actual.readFileSync(testFile, 'utf8').toString();
+      const json = usfm.toJSON(usfmData, {chunk: true, convertToInt: ["occurrence", "occurrences"]});
+      const verseNum = 20;
+      const verseParts = json.verses[verseNum];
+      const expectedBibleVerse = "\"For it is written in the Book of Psalms,\\q 'Let his field be made desolate,\\q and do not let even one person live there';\\q 'And let someone else take his position of leadership.'\\m\n\n\\s5";
+
+      // when
+      const bibleVerse = getUsfmForVerseContent(verseParts).trim();
+      const object = wordaligner.unmerge(verseParts, bibleVerse);
+
+      // then
+      expect(bibleVerse).toEqual(expectedBibleVerse);
+    });
+  });
+
 });
 
 //

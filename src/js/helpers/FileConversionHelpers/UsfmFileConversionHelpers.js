@@ -249,23 +249,25 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
     wordSpacing = ' ';
   } else {
     wordSpacing = ' ';
-    if (verseObject.type === 'text') {
+    if (verseObject.nextChar) {
+      wordSpacing = ''; // no need for spacing before next word if this item has it
+    }
+    else if(verseObject.text) {
       const lastChar = verseObject.text.substr(-1);
-      if ((lastChar !== ",") && (lastChar !== '.') && (lastChar !== '?') && (lastChar !== ';')) { // legacy support, make sure padding before word
+      if (![',', '.', '?', ';'].includes(lastChar)) { // legacy support, make sure padding before next word if punctuation
         wordSpacing = '';
       }
-    } else {
-      if (verseObject.children) { // handle nested
-        const verseObject_ = _.cloneDeep(verseObject);
-        let wordSpacing_ = '';
-        const length = verseObject.children.length;
-        for (let i = 0; i < length; i++) {
-          const flattened = replaceWordsAndMilestones(verseObject.children[i], wordSpacing_);
-          wordSpacing_ = flattened.wordSpacing;
-          verseObject_.children[i] = flattened.verseObject;
-        }
-        verseObject = verseObject_;
+    }
+    if (verseObject.children) { // handle nested
+      const verseObject_ = _.cloneDeep(verseObject);
+      let wordSpacing_ = '';
+      const length = verseObject.children.length;
+      for (let i = 0; i < length; i++) {
+        const flattened = replaceWordsAndMilestones(verseObject.children[i], wordSpacing_);
+        wordSpacing_ = flattened.wordSpacing;
+        verseObject_.children[i] = flattened.verseObject;
       }
+      verseObject = verseObject_;
     }
   }
   return {verseObject, wordSpacing};
@@ -279,11 +281,14 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
 export const getUsfmForVerseContent = (verseData) => {
   if (verseData.verseObjects) {
     let wordSpacing = '';
-    const flattenedData = verseData.verseObjects.map(verseObject => {
+    const flattenedData = [];
+    const length = verseData.verseObjects.length;
+    for (let i = 0; i < length; i++) {
+      const verseObject = verseData.verseObjects[i];
       const flattened = replaceWordsAndMilestones(verseObject, wordSpacing);
       wordSpacing = flattened.wordSpacing;
-      return flattened.verseObject;
-    });
+      flattenedData.push(flattened.verseObject);
+    }
     verseData = { // use flattened data
       verseObjects: flattenedData
     };
