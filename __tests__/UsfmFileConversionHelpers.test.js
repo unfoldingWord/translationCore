@@ -410,11 +410,11 @@ describe('UsfmFileConversionHelpers', () => {
   });
 
   describe('getUsfmForVerseContent()', () => {
-    const testResourcePath = path.join(__dirname, 'fixtures');
+    const testResourcePath_ = path.join(__dirname, 'fixtures');
 
     test('acts-1-20 should succeed', () => {
       // given
-      const testFile = path.join(testResourcePath, "usfm3/acts-1-20.usfm");
+      const testFile = path.join(testResourcePath_, "usfm3/acts-1-20.usfm");
       const usfmData = fs.__actual.readFileSync(testFile, 'utf8').toString();
       const json = usfm.toJSON(usfmData, {chunk: true, convertToInt: ["occurrence", "occurrences"]});
       const verseNum = 20;
@@ -423,13 +423,29 @@ describe('UsfmFileConversionHelpers', () => {
 
       // when
       const bibleVerse = getUsfmForVerseContent(verseParts).trim();
-      const object = wordaligner.unmerge(verseParts, bibleVerse);
+      // const object = wordaligner.unmerge(verseParts, bibleVerse);
+
+      // then
+      expect(bibleVerse).toEqual(expectedBibleVerse);
+    });
+
+    test('mat-4-6 should succeed', () => {
+      // given
+      const testFile = path.join(testResourcePath_, "usfm3/mat-4-6.usfm");
+      const usfmData = fs.__actual.readFileSync(testFile, 'utf8').toString();
+      const json = usfm.toJSON(usfmData, {chunk: true, convertToInt: ["occurrence", "occurrences"]});
+      const verseNum = 6;
+      const verseParts = json.verses[verseNum];
+      const expectedBibleVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written,\\q 'He will command his angels to take care of you,'\\m and,\n\\q 'They will lift you up in their hands,\\q so that you will not hit your foot against a stone.'\"\\m\n\n\\s5";
+
+      // when
+      const bibleVerse = getUsfmForVerseContent(verseParts).trim();
+      // const object = wordaligner.unmerge(verseParts, bibleVerse);
 
       // then
       expect(bibleVerse).toEqual(expectedBibleVerse);
     });
   });
-
 });
 
 //
