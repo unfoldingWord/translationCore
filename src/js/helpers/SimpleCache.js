@@ -94,10 +94,9 @@ export const INSTANCE_STORAGE = 'instanceStorage';
 
 /**
  * This is a simplistic key value cache.
- * It allows you to use localStorage, sessionStorage, or a simple instance storage.
+ * It allows you to use localStorage, sessionStorage, or a simple instanceStorage.
  *
- * An interesting characteristic of this cache is if you force it
- * to use an instance store (see `forceInstance` prop) you can store objects
+ * An interesting characteristic of the instanceStore is you can store objects
  * instead of just strings. This can boost performance since you don't have to
  * stringify things.
  */
@@ -105,7 +104,7 @@ export default class SimpleCache {
 
   /**
    * Initializes a new simple cache.
-   * @param {string} [storageType=`INSTANCE_STORAGE`] - The type of storage to use behind the cache.
+   * @param {string} [storageType="instanceStorage"] - The type of storage to use behind the cache. Can be one of (LOCAL_STORAGE|SESSION_STORAGE|INSTANCE_STORAGE)
    */
   constructor (storageType = INSTANCE_STORAGE) {
     this.storageType = storageType;
@@ -135,6 +134,14 @@ export default class SimpleCache {
         fallback();
       }
     }
+  }
+
+  /**
+   * Returns the type of storage being used internally
+   * @return {string}
+   */
+  type() {
+    return this.storageType;
   }
 
   /**
