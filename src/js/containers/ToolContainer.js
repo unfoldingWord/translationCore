@@ -57,6 +57,7 @@ class ToolContainer extends Component {
     this.onWriteProjectData = this.onWriteProjectData.bind(this);
     this.onReadProjectData = this.onReadProjectData.bind(this);
     this.onShowDialog = this.onShowDialog.bind(this);
+    this.onShowIgnorableDialog = this.onShowIgnorableDialog.bind(this);
     this.onShowLoading = this.onShowLoading.bind(this);
     this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
@@ -236,11 +237,39 @@ class ToolContainer extends Component {
    * Displays an options dialog as a promise.
    *
    * @param {string} message - the message to display
-   * @param {string} [confirmText] - the confirm button text
+   * @param {string} [confirmText="ok"] - the confirm button text
    * @param {string} [cancelText] - the cancel button text
    * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
    */
   onShowDialog(message, confirmText = null, cancelText = null) {
+    const {actions: {openOptionDialog, closeAlertDialog}, translate} = this.props;
+    let confirmButtonText = confirmText;
+    if (confirmButtonText === null) {
+      confirmButtonText = translate('buttons.ok_button');
+    }
+    return new Promise((resolve, reject) => {
+      openOptionDialog(message, (action) => {
+        closeAlertDialog();
+        if (action === confirmButtonText) {
+          resolve();
+        } else {
+          reject();
+        }
+      }, confirmButtonText, cancelText);
+    });
+  }
+
+  /**
+   * Similar to @{link onShowDialog} with the addition of it being ignorable.
+   *
+   * @param {string} id - The id that can be ignored. Messages that share an id will all be ignored.
+   * @param {string} message - the message to display
+   * @param {string} [confirmText="ok"] - the confirm button text
+   * @param {string} [cancelText] - the cancel button text
+   * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
+   */
+  onShowIgnorableDialog(id, message, confirmText = null, cancelText = null) {
+    // TODO: display the ignorable dialog instead of the regular dialog.
     const {actions: {openOptionDialog, closeAlertDialog}, translate} = this.props;
     let confirmButtonText = confirmText;
     if (confirmButtonText === null) {
