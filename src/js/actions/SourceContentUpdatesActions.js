@@ -5,7 +5,7 @@ import sourceContentUpdater from 'tc-source-content-updater';
 import consts from './ActionTypes';
 import {getTranslate, getContext, getCurrentToolName} from '../selectors';
 import {openAlertDialog, closeAlertDialog, openOptionDialog} from './AlertModalActions';
-import { loadBiblesChapter } from './ResourcesActions';
+import { loadBooks } from './ResourcesActions';
 // helpers
 import { generateTimestamp } from '../helpers/TimestampGenerator';
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
@@ -97,7 +97,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
           fs.writeJsonSync(sourceContentManifestPath, { modified: generateTimestamp() });
 
           // if tool currently opened then load new bible resources
-          if (currentToolName) await dispatch(loadBiblesChapter(contextId));
+          if (currentToolName) await dispatch(loadBooks(contextId));
           dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         })
         .catch((err) => {

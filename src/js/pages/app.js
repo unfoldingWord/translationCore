@@ -6,6 +6,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import { Grid, Row } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
 // container
@@ -22,6 +23,7 @@ import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
+import { getToolsMetadatas } from '../actions/ToolsMetadataActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
 
 import packageJson from '../../../package.json';
@@ -46,7 +48,8 @@ class Main extends Component {
     const {
       migrateResourcesFolder,
       migrateToolsSettings,
-      getAnchorTags
+      getAnchorTags,
+      getToolsMetadatas
     } = this.props;
 
     const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
@@ -57,6 +60,7 @@ class Main extends Component {
     // migration logic for toolsSettings in settings.json
     migrateToolsSettings();
     getAnchorTags();
+    getToolsMetadatas();
   }
 
   render() {
@@ -65,20 +69,22 @@ class Main extends Component {
       const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
       const LocalizedLoader = withLocale(LoaderContainer);
       return (
-        <div className="fill-height">
-          <ScreenDimmerContainer/>
-          <ProjectValidationContainer/>
-          <AlertDialogContainer/>
-          <KonamiContainer/>
-          <PopoverContainer/>
-          <LocalizedLoader/>
-          <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
-            <Row style={{margin: 0}}>
-              <LocalizedStatusBarContainer/>
-            </Row>
-            <BodyContainer/>
-          </Grid>
-        </div>
+        <MuiThemeProvider>
+          <div className="fill-height">
+            <ScreenDimmerContainer/>
+            <ProjectValidationContainer/>
+            <AlertDialogContainer/>
+            <KonamiContainer/>
+            <PopoverContainer/>
+            <LocalizedLoader/>
+            <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
+              <Row style={{margin: 0}}>
+                <LocalizedStatusBarContainer/>
+              </Row>
+              <BodyContainer/>
+            </Grid>
+          </div>
+        </MuiThemeProvider>
       );
     } else {
       // wait for locale to finish loading.
@@ -94,7 +100,8 @@ Main.propTypes = {
   migrateToolsSettings: PropTypes.func.isRequired,
   getAnchorTags: PropTypes.func.isRequired,
   isLocaleLoaded: PropTypes.bool,
-  appLanguage: PropTypes.any
+  appLanguage: PropTypes.any,
+  getToolsMetadatas: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -108,7 +115,8 @@ const mapDispatchToProps = {
   getAnchorTags: OnlineModeActions.getAnchorTags,
   migrateToolsSettings: SettingsMigrationActions.migrateToolsSettings,
   migrateResourcesFolder: MigrationActions.migrateResourcesFolder,
-  loadLocalization
+  loadLocalization,
+  getToolsMetadatas
 };
 
 export default connect(

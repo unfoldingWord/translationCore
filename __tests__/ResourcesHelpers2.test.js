@@ -1,15 +1,14 @@
 /* eslint-env jest */
+jest.mock('fs-extra');
+jest.mock('adm-zip');
 import path from 'path';
-
-// helpers
-import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 import ospath from "ospath";
 import fs from "fs-extra";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import _ from "lodash";
-import * as SettingsHelpers from "../src/js/helpers/SettingsHelpers";
-
+// helpers
+import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -147,3 +146,20 @@ function loadMockFsWithProjectAndResources() {
     'hi/translationHelps/translationWords'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
 }
+
+describe('ResourcesHelpers.extractZippedBooks', () => {
+  it('works as expected', () => {
+    const EN_ULB_PATH = path.join(RESOURCE_PATH, 'en', 'ult');
+    const versionPath = path.join(RESOURCE_PATH, 'en', 'ult', 'v11');
+    const zippedBooks = path.join(EN_ULB_PATH, 'v11', 'books.zip');
+
+    fs.__setMockFS({
+      [EN_ULB_PATH]: ['v11'],
+      [versionPath]: [],
+      [zippedBooks]: []
+    });
+
+    ResourcesHelpers.extractZippedBooks(EN_ULB_PATH);
+    expect(fs.existsSync(zippedBooks)).toBeFalsy();
+  });
+});

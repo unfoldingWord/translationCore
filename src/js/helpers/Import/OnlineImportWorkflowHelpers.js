@@ -14,7 +14,7 @@ export function clone (link) {
     if (!projectName) {
       return reject('The URL ' + link + ' does not reference a valid project');
     }
-    let savePath = path.join(ospath.home(), 'translationCore', 'imports', projectName);  
+    let savePath = path.join(ospath.home(), 'translationCore', 'imports', projectName);
     if (!fs.existsSync(savePath)) {
       fs.ensureDirSync(savePath);
     } else {
@@ -62,7 +62,7 @@ export function runGitCommand(savePath, link, gitHandler) {
     gitHandler(savePath).mirror(link, savePath, function (err) {
       if (err) {
         fs.removeSync(savePath);
-        reject(convertGitErrorMessage(err));
+        reject(convertGitErrorMessage(err, link));
       } else {
         resolve();
       }
@@ -78,17 +78,26 @@ export function runGitCommand(savePath, link, gitHandler) {
 export function getValidGitUrl(link) {
   if (!link || !link.trim) return '';
   link = link.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
-  const validUrlRE = new RegExp(/^https?:\/\/((live\.|www\.){0,1}door43.org\/u|git.door43.org)\/([^/]+)\/([^/]+)/);
-  let match = validUrlRE.exec(link);
+  const liveDoor43Url = new RegExp(/^https?:\/\/((live\.|www\.)?door43.org\/u)\/([^/]+)\/([^/]+)/);
+  const gitDoor43Url = new RegExp(/^https?:\/\/((git.)door43.org)\/([^/]+)\/([^/]+)/);
+  let match = liveDoor43Url.exec(link);
   if (!match) {
-    return '';
-  } else {
+    match = gitDoor43Url.exec(link);
+    if (match) {
+      const extra = link.substr(match.index + match[0].length);
+      if (extra && (extra !== '/')) { // make sure not trying to point into contents of repo
+        match = null;
+      }
+    }
+  }
+  if (match) {
     // Return a proper git.door43.org URL from the match
     let userName = match[3];
     let repoName = match[4];
-    repoName = repoName.replace('.git', '');
+    repoName = (repoName && repoName.replace('.git', '')) || '';
     return 'https://git.door43.org/' + userName + '/' + repoName + '.git';
   }
+  return '';
 }
 
 /**

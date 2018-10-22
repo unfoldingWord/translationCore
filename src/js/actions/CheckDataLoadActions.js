@@ -48,7 +48,7 @@ export function generateLoadPath(projectDetailsReducer, contextIdReducer, checkD
 
 /**
  * @description loads checkdata beased on given.
- * @param {string} loadPath - load path.
+ * @param {String} loadPath - load path.
  * @param {object} contextId - groupData unique context Id.
  * @return {object} returns the object loaded from the file system.
  */
@@ -62,17 +62,21 @@ export function loadCheckData(loadPath, contextId) {
       return path.extname(file) === '.json';
     });
     let sorted = files.sort().reverse(); // sort the files to use latest
-    let checkDataObjects = sorted.map(file => {
+    let checkDataObjects = [];
+
+    for (let i = 0, len = sorted.length; i < len; i++) {
+      const file = sorted[i];
       // get the json of all files to later filter by contextId
       try {
         let readPath = path.join(loadPath, file);
         let _checkDataObject = fs.readJsonSync(readPath);
-        return _checkDataObject;
+        checkDataObjects.push(_checkDataObject);
       } catch (err) {
         console.warn('File exists but could not be loaded \n', err);
-        return undefined;
+        checkDataObjects.push(undefined);
       }
-    });
+    }
+
     checkDataObjects = checkDataObjects.filter(_checkDataObject => {
       // filter the checkDataObjects to only use the ones that match the current contextId
       let keep = _checkDataObject &&

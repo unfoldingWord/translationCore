@@ -13,7 +13,9 @@ const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources'
 import _ from 'lodash';
 import {getContext} from "../selectors";
 import * as BibleHelpers from "../helpers/bibleHelpers";
+import SimpleCache from "../helpers/SimpleCache";
 
+const bookCache = new SimpleCache();
 
 /**
  * Adds a bible to the resources reducer.
@@ -59,8 +61,9 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
         bibleData = {};
         let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
 
-        for (let verseNum of Object.keys(bibleChapterData)) {
-          const verse = bibleChapterData[verseNum];
+        for (let i = 0, len = Object.keys(bibleChapterData).length; i < len; i++) {
+          const verse = Object.keys(bibleChapterData)[i];
+
           if (typeof verse !== 'string') {
             if (!verse.verseObjects) { // using old format so convert
               let newVerse = [];
@@ -77,7 +80,7 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
                   }
                 }
               }
-              bibleChapterData[verseNum] = newVerse;
+              bibleChapterData[i] = newVerse;
             }
           }
         }
@@ -145,21 +148,30 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
       const versionNumber = versionNumbers[versionNumbers.length - 1];
       const bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleId, versionNumber);
       const bookPath = path.join(bibleVersionPath, bookId);
+      const cacheKey = 'book:' + bookPath;
 
       if(fs.existsSync(bookPath)) {
-        const bibleData = {};
-        fs.readdirSync(bookPath).forEach(file => {
-          const chapterNumber = path.basename(file, '.json');
-          if (!isNaN(chapterNumber)) {
-            // load chapter
-            const chapterData = fs.readJsonSync(path.join(bookPath, file));
-            bibleData[chapterNumber] = migrateChapterToVerseObjects(chapterData);
-          } else {
-            console.warn(`Unexpected file in bible ${bibleId}`, file);
-          }
-        });
+        let bibleData = bookCache.get(cacheKey);
+        if(!bibleData) {
+          // load bible
+          bibleData = {};
+          const files = fs.readdirSync(bookPath);
 
-        bibleData["manifest"] = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleId);
+          for (let i = 0, len = files.length; i < len; i++) {
+            const file = files[i];
+            const chapterNumber = path.basename(file, '.json');
+            if (!isNaN(chapterNumber)) {
+              // load chapter
+              const chapterData = fs.readJsonSync(path.join(bookPath, file));
+              bibleData[chapterNumber] = migrateChapterToVerseObjects(chapterData);
+            }
+          }
+          bibleData["manifest"] = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleId);
+
+          // cache it
+          bookCache.set(cacheKey, bibleData);
+        }
+
         return bibleData;
       } else {
         console.warn(`Bible path not found: ${bookPath}`);
@@ -234,53 +246,24 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
  * @param {Object} contextId
  */
 export const loadBooks = contextId => (dispatch, getState) => {
-  try {
-    let bookId = contextId.reference.bookId;
-    // load source bibles
-    const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
-    resources.forEach((resource) => {
-      dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
-    });
-    // load target bible
-    dispatch(TargetLanguageActions.loadTargetLanguageBible());
-  } catch(err) {
-    console.warn(err);
-  }
-};
+  return new Promise((resolve, reject) => {
+    try {
+      let bookId = contextId.reference.bookId;
+      // load source bibles
+      const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
 
-/**
- * @description loads a bibles chapter based on contextId
- * @deprecated use {@link loadBooks} instead
- * @param {object} contextId - object with all data for current check.
- */
-export const loadBiblesChapter = (contextId) => {
-  return (dispatch, getState) => {
-    return new Promise((resolve, reject) => {
-      try {
-        let bookId = contextId.reference.bookId; // bible book abbreviation.
-        let chapter = contextId.reference.chapter;
-        const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
-        resources.forEach((resource) => {
-          const biblesPath = path.join(USER_RESOURCES_PATH, resource.languageId, 'bibles');
-          if(fs.existsSync(biblesPath)) {
-            const bibleData = loadChapterResource(resource.bibleId, bookId, resource.languageId, chapter);
-            if (bibleData) {
-              // TODO: load the entire bible
-              dispatch(addNewBible(resource.languageId, resource.bibleId, bibleData));
-            }
-          } else {
-            console.log('Directory not found, ' + biblesPath);
-          }
-        });
-        // Then load target language bible
-        dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
-        resolve();
-      } catch(err) {
-        console.warn(err);
-        reject(err);
+      for (let i = 0, len = resources.length; i < len; i++) {
+        const resource = resources[i];
+        dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
       }
-    });
-  };
+      // load target bible
+      dispatch(TargetLanguageActions.loadTargetLanguageBible());
+      resolve();
+    } catch(err) {
+      console.warn(err);
+      reject(err);
+    }
+  });
 };
 
 /**
@@ -350,11 +333,11 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
     categories.push(category);
   }
   const articleFile = articleId + '.md';
-  for(let i = 0; i < languageDirs.length; ++i) {
+  for(let i = 0, len = languageDirs.length; i < len; ++i) {
     let languageDir = languageDirs[i];
     let typePath = path.join(USER_RESOURCES_PATH, languageDir, 'translationHelps', resourceType);
     let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath) || typePath;
-    for(let j = 0; j < categories.length; ++j) {
+    for(let j = 0, jLen = categories.length; j < jLen; ++j) {
       let categoryDir = categories[j];
       if (resourceType === 'translationWords') {
         categoryDir = path.join(categoryDir, 'articles');
