@@ -60,7 +60,7 @@ class Main extends Component {
     // migration logic for toolsSettings in settings.json
     migrateToolsSettings();
     getAnchorTags();
-    getToolsMetadatas();
+    // getToolsMetadatas();
   }
 
   render() {

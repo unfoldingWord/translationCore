@@ -8,17 +8,15 @@ const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 
 export function getToolsMetadatas() {
   return ((dispatch) => {
-    getDefaultTools((moduleFolderPathList) => {
-      fillDefaultTools(moduleFolderPathList, (metadatas) => {
-        sortMetadatas(metadatas);
-        dispatch({
-          type: consts.SET_TOOLS_METADATA,
-          val: metadatas
-        });
-        moduleFolderPathList.forEach((moduleFolderName) => {
-          dispatch(saveToolViewsEarly(moduleFolderName.split('package.json')[0]));
-        });
-      });
+    const moduleFolderPathList = getDefaultTools();
+    const metadatas = fillDefaultTools(moduleFolderPathList);
+    sortMetadatas(metadatas);
+    dispatch({
+      type: consts.SET_TOOLS_METADATA,
+      val: metadatas
+    });
+    moduleFolderPathList.forEach((moduleFolderName) => {
+      dispatch(saveToolViewsEarly(moduleFolderName.split('package.json')[0]));
     });
   });
 }
@@ -32,7 +30,7 @@ export function saveToolViewsEarly(moduleFolderName) {
   };
 }
 
-const getDefaultTools = (callback) => {
+export const getDefaultTools = () => {
   let defaultTools = [];
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
   let moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
@@ -48,26 +46,18 @@ const getDefaultTools = (callback) => {
       }
     }
   }
-  callback(defaultTools);
+  return defaultTools;
 };
 
-const sortMetadatas = (metadatas) => {
+export const sortMetadatas = (metadatas) => {
   metadatas.sort((a, b) => {
     return a.title < b.title ? -1 : 1;
   });
 };
 
-const fillDefaultTools = (moduleFilePathList, callback) => {
+export const fillDefaultTools = (moduleFilePathList) => {
   let tempMetadatas = [];
   // This makes sure we're done with all the files first before we call the callback
-  let totalFiles = moduleFilePathList.length;
-  let doneFiles = 0;
-  function onComplete() {
-    doneFiles++;
-    if (doneFiles === totalFiles) {
-      callback(tempMetadatas);
-    }
-  }
   for (let filePath of moduleFilePathList) {
     fs.readJson(filePath, (error, metadata) => {
       if (error) {
@@ -79,7 +69,7 @@ const fillDefaultTools = (moduleFilePathList, callback) => {
         metadata.badgeImagePath = path.resolve(filePath, '../badge.png');
         tempMetadatas.push(metadata);
       }
-      onComplete();
     });
   }
+  return tempMetadatas;
 };

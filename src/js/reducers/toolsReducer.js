@@ -1,11 +1,13 @@
 import types from "../actions/ActionTypes";
+import path from 'path-extra';
+import fs from 'fs-extra';
+import { getDefaultTools, fillDefaultTools, sortMetadatas} from '../actions/ToolsMetadataActions';
+import * as LoadHelpers from '../helpers/LoadHelpers';
 
 const initialState = {
-  currentToolViews: {},
   currentToolName: null,
   currentToolTitle: null,
-  toolsMetadata: [],
-  apis: {}
+  ...getToolViewsAndAPIInitialState()
 };
 
 const toolsReducer = (state = initialState, action) => {
@@ -27,14 +29,6 @@ const toolsReducer = (state = initialState, action) => {
       return {
         ...state,
         currentToolTitle: action.currentToolTitle
-      };
-    case types.ADD_TOOL_API:
-      return {
-        ...state,
-        apis: {
-          ...state.apis,
-          [action.name]: action.api
-        }
       };
     case types.SET_TOOLS_METADATA:
       return {
@@ -128,3 +122,36 @@ export const getSupportingToolApis = state => {
 export const getToolsMeta = state => {
   return state.toolsMetadata;
 };
+
+function getToolViewsAndAPIInitialState()  {
+  let moduleFolderPathList = getDefaultTools();
+  const toolsMetadata = fillDefaultTools(moduleFolderPathList);
+  sortMetadatas(toolsMetadata);
+  
+  const currentToolViews = {};
+  const apis = {};
+  moduleFolderPathList.forEach((fullPathName) => {
+   const moduleFolderName = fullPathName.split('package.json')[0];
+   const modulePath = path.join(moduleFolderName, 'package.json');
+   const dataObject = fs.readJsonSync(modulePath);
+   const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+   for (let module of checkArray) {
+    try {
+      let tool = require(path.join(module.location, dataObject.main)).default;
+
+      // TRICKY: compatibility for older tools
+      if('container' in tool.container && 'name' in tool.container) {
+        tool = tool.container;
+      }
+      // end compatibility fix
+      currentToolViews[module.name] = tool.container;
+      if(tool.api) {
+        apis[module.name] = tool.api;
+      }
+    } catch (e) {
+      console.error(`Failed to load ${module.name} tool`, e);
+    }
+  }
+  });
+  return {apis, currentToolViews, toolsMetadata};
+}
