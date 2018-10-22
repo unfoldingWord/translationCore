@@ -8,7 +8,6 @@ import ospath from 'ospath';
 // helpers
 import * as UsfmFileConversionHelpers from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
 import usfm from "usfm-js";
-import wordaligner from "word-aligner";
 import {getUsfmForVerseContent} from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -420,13 +419,16 @@ describe('UsfmFileConversionHelpers', () => {
       const verseNum = 20;
       const verseParts = json.verses[verseNum];
       const expectedBibleVerse = "\"For it is written in the Book of Psalms,\\q 'Let his field be made desolate,\\q and do not let even one person live there';\\q 'And let someone else take his position of leadership.'\\m\n\n\\s5";
+      const expectedCleanedVerse = "\"For it is written in the Book of Psalms, 'Let his field be made desolate, and do not let even one person live there'; 'And let someone else take his position of leadership.'\n\n";
 
       // when
       const bibleVerse = getUsfmForVerseContent(verseParts).trim();
+      const cleaned = usfm.removeMarker(bibleVerse); // remove USFM markers
       // const object = wordaligner.unmerge(verseParts, bibleVerse);
 
       // then
       expect(bibleVerse).toEqual(expectedBibleVerse);
+      expect(cleaned).toEqual(expectedCleanedVerse);
     });
 
     test('mat-4-6 should succeed', () => {
@@ -436,15 +438,48 @@ describe('UsfmFileConversionHelpers', () => {
       const json = usfm.toJSON(usfmData, {chunk: true, convertToInt: ["occurrence", "occurrences"]});
       const verseNum = 6;
       const verseParts = json.verses[verseNum];
-      const expectedBibleVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written,\\q 'He will command his angels to take care of you,'\\m and,\n\\q 'They will lift you up in their hands,\\q so that you will not hit your foot against a stone.'\"\\m\n\n\\s5";
+      const expectedBibleVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written,\\q 'He will command his angels to take care of you,'\\m and,\n\\q 'They will lift you up in their hands,\\q so that you will not hit your foot against a stone.'\"\\m";
+      const expectedCleanedVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written, 'He will command his angels to take care of you,' and,\n'They will lift you up in their hands, so that you will not hit your foot against a stone.'\"";
 
       // when
       const bibleVerse = getUsfmForVerseContent(verseParts).trim();
+      const cleaned = usfm.removeMarker(bibleVerse); // remove USFM markers
       // const object = wordaligner.unmerge(verseParts, bibleVerse);
 
       // then
       expect(bibleVerse).toEqual(expectedBibleVerse);
+      expect(cleaned).toEqual(expectedCleanedVerse);
     });
+  });
+});
+
+describe('removeMarker', () => {
+  const testResourcePath_ = path.join(__dirname, 'fixtures');
+  test('heb-12-27 should succeed', () => {
+    // given
+    const testFile = path.join(testResourcePath_, "removeMarkers/heb-12-27.usfm");
+    const usfmData = fs.__actual.readFileSync(testFile, 'utf8').toString();
+    const expectedCleanedVerse = "These words, \"One more time,\" mean the removal of those things that can be shaken, that is, of the things that have been created, so that the things that cannot be shaken will remain.\n";
+
+    // when
+    const cleaned = usfm.removeMarker(usfmData); // remove USFM markers
+
+    // then
+    expect(cleaned).toEqual(expectedCleanedVerse);
+  });
+
+  test('heb-12-27 Greek should succeed', () => {
+    // given
+    const testFile = path.join(testResourcePath_, "removeMarkers/heb-12-27.grc.json");
+    const verseData = fs.__actual.readJSONSync(testFile);
+    const usfmData = getUsfmFromJson(verseData);
+    const expectedCleanedVerse = "τὸ δὲ,\n“ἔτι ἅπαξ”, δηλοῖ τῶν σαλευομένων μετάθεσιν, ὡς πεποιημένων, ἵνα μείνῃ τὰ μὴ σαλευόμενα.\n\n";
+
+    // when
+    const cleaned = usfm.removeMarker(usfmData); // remove USFM markers
+
+    // then
+    expect(cleaned).toEqual(expectedCleanedVerse);
   });
 });
 
@@ -462,3 +497,19 @@ function validateUsfmTag(header_data, tag) {
   const found = (index >= 0);
   expect(found).toBeTruthy();
 }
+
+export const getUsfmFromJson = (verseData) => {
+  const outputData = {
+    "chapters": {},
+    "headers": [],
+    "verses": {
+      "1": verseData
+    }
+  };
+  const USFM = usfm.toUSFM(outputData, {chunk: true});
+  let split = USFM.split("\\v 1 ");
+  if (split.length <= 1) {
+    split = USFM.split("\\v 1");
+  }
+  return split.length > 1 ? split[1] : "";
+};

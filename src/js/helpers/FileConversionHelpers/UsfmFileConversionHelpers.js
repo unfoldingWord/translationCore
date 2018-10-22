@@ -199,24 +199,31 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
   });
 };
 
-const parseMilestone = function (verseObject) {
-  let text = "";
+/**
+ * dive down into milestone to extract words and text
+ * @param {Object} verseObject - milestone to parse
+ * @return {string} text content of milestone
+ */
+const parseMilestone = verseObject => {
+  let text = verseObject.text || "";
   let wordSpacing = '';
-  for (let child of verseObject.children) {
+  const length = verseObject.children.length;
+  for (let i = 0; i < length; i++) {
+    let child = verseObject.children[i];
     switch (child.type) {
       case 'word':
-        text += (wordSpacing ? ' ' : '') + child.text;
+        text += wordSpacing + child.text;
         wordSpacing = ' ';
         break;
 
       case 'milestone':
-        text += (wordSpacing ? ' ' : '') + parseMilestone(child);
+        text += wordSpacing + parseMilestone(child);
         wordSpacing = ' ';
         break;
 
       default:
-        if (verseObject.text) {
-          text += verseObject.text;
+        if (child.text) {
+          text += child.text;
           const lastChar = text.substr(-1);
           if ((lastChar !== ",") && (lastChar !== '.') && (lastChar !== '?') && (lastChar !== ';')) { // legacy support, make sure padding before word
             wordSpacing = '';
@@ -230,9 +237,9 @@ const parseMilestone = function (verseObject) {
 
 /**
  * get text from word and milestone markers
- * @param verseObject
- * @param wordSpacing
- * @return {*}
+ * @param {Object} verseObject - to parse
+ * @param {String} wordSpacing - spacing to use before next word
+ * @return {*} new verseObject and word spacing
  */
 const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
   let text = '';
@@ -252,7 +259,7 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
     if (verseObject.nextChar) {
       wordSpacing = ''; // no need for spacing before next word if this item has it
     }
-    else if(verseObject.text) {
+    else if (verseObject.text) {
       const lastChar = verseObject.text.substr(-1);
       if (![',', '.', '?', ';'].includes(lastChar)) { // legacy support, make sure padding before next word if punctuation
         wordSpacing = '';
@@ -263,7 +270,8 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
       let wordSpacing_ = '';
       const length = verseObject.children.length;
       for (let i = 0; i < length; i++) {
-        const flattened = replaceWordsAndMilestones(verseObject.children[i], wordSpacing_);
+        const flattened =
+          replaceWordsAndMilestones(verseObject.children[i], wordSpacing_);
         wordSpacing_ = flattened.wordSpacing;
         verseObject_.children[i] = flattened.verseObject;
       }
