@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername} from '../selectors';
+import {getTranslate, getUsername} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';

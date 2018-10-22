@@ -31,7 +31,6 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
           // Now we overwrite any alignment data of the old project path from the new project path
           copyAlignmentData(path.join(tempAlignmentPath, bookId), path.join(alignmentPath, bookId));
           fs.removeSync(tempAlignmentPath); // Done with the temp alignment dir
-          createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName);
         }
       }
     }
@@ -41,6 +40,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
     if (! fs.existsSync(newGitPath) && fs.existsSync(oldGitPath)) {
       fs.copySync(oldGitPath, newGitPath);
     }
+    createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName);
   }
 };
 
