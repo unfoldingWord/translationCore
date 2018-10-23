@@ -16,7 +16,10 @@ describe('ProjectOverwriteHelpers.mergeOldProjectToNewProject() tests', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
-    fs.__setMockFS({}); // initialize to empty
+  });
+
+  afterEach(() => {
+    fs.__resetMockFS();
   });
 
   it('mergeOldProjectToNewProject() test usfm2 import preserves all checks and alignments', () => {
