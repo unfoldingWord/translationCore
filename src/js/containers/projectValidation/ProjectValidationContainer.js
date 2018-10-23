@@ -113,8 +113,8 @@ const mapDispatchToProps = (dispatch) => {
       loadProjectLicenseMarkdownFile: (licenseId) => {
         dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
       },
-      setBookIDInProjectInformationReducer: (bookId) => {
-        dispatch(ProjectInformationCheckActions.setBookIDInProjectInformationReducer(bookId));
+      setBookIDInProjectInformationReducer: (bookId, inStepper) => {
+        dispatch(ProjectInformationCheckActions.setBookIDInProjectInformationReducer(bookId, inStepper));
       },
       setResourceIDInProjectInformationReducer: (resourceId) => {
         dispatch(ProjectInformationCheckActions.setResourceIDInProjectInformationReducer(resourceId));

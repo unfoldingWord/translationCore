@@ -5,13 +5,14 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate} from "../selectors";
+import {getTranslate, getUsername} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+import git from '../helpers/GitApi.js';
 
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
@@ -23,7 +24,7 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * @return {object} action object.
  */
 export const setSaveLocation = pathLocation => {
-  return((dispatch) => {
+  return ((dispatch) => {
     dispatch({
       type: consts.SET_SAVE_PATH_LOCATION,
       pathLocation
@@ -39,7 +40,7 @@ export const resetProjectDetail = () => {
 
 export function setProjectToolGL(toolName, selectedGL) {
   return (dispatch) => {
-    if(typeof toolName !== 'string') {
+    if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
     dispatch({
@@ -60,7 +61,7 @@ export function getProjectProgressForTools(toolName) {
     } = getState();
     const bookId = manifest.project.id;
     let progress = 0;
-    if(typeof toolName !== 'string') {
+    if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
     const pathToCheckDataFiles = path.join(projectSaveLocation, INDEX_FOLDER_PATH, toolName, bookId);
@@ -112,19 +113,34 @@ export function addObjectPropertyToManifest(propertyName, value) {
 
 export function setProjectBookIdAndBookName() {
   return ((dispatch, getState) => {
-    const { bookId } = getState().projectInformationCheckReducer;
-    const bookName = bibleHelpers.convertToFullBookName(bookId);
-    dispatch({
-      type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
-      bookId,
-      bookName
+    return new Promise((resolve, reject) => {
+      const {bookId} = getState().projectInformationCheckReducer;
+      const {manifest: {project: {id: originalBookId}}, projectSaveLocation} = getState().projectDetailsReducer;
+      const {userdata} = getState().loginReducer;
+      const bookName = bibleHelpers.convertToFullBookName(bookId);
+      dispatch({
+        type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
+        bookId,
+        bookName
+      });
+      if (bookId !== originalBookId) {
+        git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation, (err)=>{
+          if (!err) {
+          resolve();
+          } else {
+            reject(err);
+          }
+        });
+      } else {
+        resolve();
+      }
     });
   });
 }
 
 export function setProjectResourceId() {
   return ((dispatch, getState) => {
-    const { resourceId } = getState().projectInformationCheckReducer;
+    const {resourceId} = getState().projectInformationCheckReducer;
     dispatch({
       type: consts.SAVE_RESOURCE_ID_IN_MANIFEST,
       resourceId
@@ -134,7 +150,7 @@ export function setProjectResourceId() {
 
 export function setProjectNickname() {
   return ((dispatch, getState) => {
-    const { nickname } = getState().projectInformationCheckReducer;
+    const {nickname} = getState().projectInformationCheckReducer;
     dispatch({
       type: consts.SAVE_NICKNAME_IN_MANIFEST,
       nickname
@@ -144,7 +160,7 @@ export function setProjectNickname() {
 
 export function setLanguageDetails() {
   return ((dispatch, getState) => {
-    const { languageDirection, languageId, languageName } = getState().projectInformationCheckReducer;
+    const {languageDirection, languageId, languageName} = getState().projectInformationCheckReducer;
     dispatch({
       type: consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST,
       languageDirection,
@@ -156,7 +172,7 @@ export function setLanguageDetails() {
 
 export function updateContributors() {
   return ((dispatch, getState) => {
-    const { contributors } = getState().projectInformationCheckReducer;
+    const {contributors} = getState().projectInformationCheckReducer;
     dispatch({
       type: consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST,
       translators: contributors
@@ -166,7 +182,7 @@ export function updateContributors() {
 
 export function updateCheckers() {
   return ((dispatch, getState) => {
-    const { checkers } = getState().projectInformationCheckReducer;
+    const {checkers} = getState().projectInformationCheckReducer;
     dispatch({
       type: consts.SAVE_CHECKERS_LIST_IN_MANIFEST,
       checkers
@@ -224,7 +240,7 @@ export function renameProject(projectSaveLocation, newProjectName) {
  */
 export function doRenamePrompting() {
   return (async (dispatch, getState) => {
-    const { projectDetailsReducer: {projectSaveLocation}, loginReducer: login} = getState();
+    const {projectDetailsReducer: {projectSaveLocation}, loginReducer: login} = getState();
     const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
     if (pointsToCurrentUsersRepo) {
       dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
@@ -247,7 +263,7 @@ export function updateProjectNameIfNecessary(results) {
     const {
       projectDetailsReducer: {manifest, projectSaveLocation}
     } = getState();
-    const { repoNeedsRenaming, newRepoExists, newProjectName } = ProjectDetailsHelpers.shouldProjectNameBeUpdated(manifest, projectSaveLocation);
+    const {repoNeedsRenaming, newRepoExists, newProjectName} = ProjectDetailsHelpers.shouldProjectNameBeUpdated(manifest, projectSaveLocation);
     results.newRepoName = newProjectName;
     if (repoNeedsRenaming) {
       if (newRepoExists) {
@@ -285,7 +301,7 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
       const confirmText = translate('buttons.overwrite_project');
       const cancelText = translate('buttons.cancel_import_button');
       let overwriteMessage = translate('projects.project_overwrite_has_alignment_message');
-      if (! fs.existsSync(path.join(newProjectPath, '.apps'))) {
+      if (!fs.existsSync(path.join(newProjectPath, '.apps'))) {
         overwriteMessage = (
           <div>
             <p>{translate('projects.project_already_exists', {'project_name': projectName})}</p>
@@ -299,7 +315,7 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
             if (result === confirmText) {
               dispatch(AlertModalActions.closeAlertDialog());
               const oldProjectPath = path.join(PROJECTS_PATH, projectName);
-              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
+              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()));
               fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
               fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
               dispatch(setSaveLocation(oldProjectPath));
@@ -320,9 +336,9 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
 export function updateProjectTargetLanguageBookFolderName() {
   return ((dispatch, getState) => {
     const {
-      projectInformationCheckReducer: { bookId },
-      projectDetailsReducer: { projectSaveLocation },
-      localImportReducer: { oldSelectedProjectFileName }
+      projectInformationCheckReducer: {bookId},
+      projectDetailsReducer: {projectSaveLocation},
+      localImportReducer: {oldSelectedProjectFileName}
     } = getState();
     if (!oldSelectedProjectFileName) {
       console.log("no old selected project File Name");

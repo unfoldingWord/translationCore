@@ -156,6 +156,7 @@
     "importing_local_alert": "Importing local project...",
     "importing_project_alert": "Importing ${project_url}. Please wait...",
     "cancel_import_alert": "Canceling now will abort the import process and the project will need to be re-imported before it can be used.",
+    "project_already_identified": "This project has been identified as a ${originalBook} project. Are you sure you want to change it to a ${suggestedBook} project?",
     "loading_project_alert": "Loading your project data.",
     "exported_alert": "${project_name} has been successfully exported to ${file_path}.",
     "must_be_logged_in_alert": "You must be logged in with a ${door43} account to upload projects. Please log out and then back in with a ${door43} user account.",

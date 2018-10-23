@@ -126,9 +126,10 @@ it('setProjectBookIdAndBookName() creates an action to set the project book id a
     bookId: 'gen',
     bookName: 'Genesis'
   }];
-  store.dispatch(actions.setProjectBookIdAndBookName());
-  const receivedActions = store.getActions();
-  expect(receivedActions).toEqual(expectedActions);
+  store.dispatch(actions.setProjectBookIdAndBookName()).then(()=>{
+    const receivedActions = store.getActions();
+    expect(receivedActions).toEqual(expectedActions);
+  });
 });
 
 it('setProjectResourceId() creates an action to set the resourceId', () => {
