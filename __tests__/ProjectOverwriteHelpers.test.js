@@ -2,7 +2,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 import * as ProjectOverwriteHelpers from '../src/js/helpers/ProjectOverwriteHelpers';
-import { AvMicNone } from 'material-ui/svg-icons';
 
 const BOOK_ID = 'tit';
 const PROJECT_NAME = 'en_ulb_'+BOOK_ID+'_text';
