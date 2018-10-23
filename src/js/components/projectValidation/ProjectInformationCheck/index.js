@@ -239,7 +239,7 @@ class ProjectInformationCheck extends Component {
                   <BookDropdownMenu
                     translate={translate}
                     bookId={bookId}
-                    updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
+                    updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId, true)}
                     developerMode={developerMode}
                   />
                 </td>

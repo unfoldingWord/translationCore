@@ -13,7 +13,7 @@ import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 class ToolsManagementContainer extends Component {
 
   componentWillMount() {
-    this.props.actions.getToolsMetadatas();
+    //this.props.actions.getToolsMetadatas();
   }
 
   render() {
