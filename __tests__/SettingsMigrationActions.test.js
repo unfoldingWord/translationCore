@@ -26,7 +26,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings1', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings1());
@@ -54,7 +54,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings2', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings2());
@@ -95,7 +95,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings3', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings3());
@@ -180,7 +180,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
@@ -232,7 +232,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
@@ -336,7 +336,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
