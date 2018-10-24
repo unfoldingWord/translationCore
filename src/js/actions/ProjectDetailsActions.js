@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate} from "../selectors";
+import {getTranslate, getUsername} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
@@ -315,7 +315,7 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
             if (result === confirmText) {
               dispatch(AlertModalActions.closeAlertDialog());
               const oldProjectPath = path.join(PROJECTS_PATH, projectName);
-              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
+              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()));
               fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
               fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
               dispatch(setSaveLocation(oldProjectPath));

@@ -16,7 +16,10 @@ describe('ProjectOverwriteHelpers.mergeOldProjectToNewProject() tests', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
-    fs.__setMockFS({}); // initialize to empty
+  });
+
+  afterEach(() => {
+    fs.__resetMockFS();
   });
 
   it('mergeOldProjectToNewProject() test usfm2 import preserves all checks and alignments', () => {
@@ -69,5 +72,29 @@ describe('ProjectOverwriteHelpers.mergeOldProjectToNewProject() tests', () => {
         });
       });
     });
+  });
+});
+
+describe('ProjectOverwriteHelpers.createVerseEditsForAllChangedVerses() tests', () => {
+  beforeEach(() => {
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+  });
+
+  it('createVerseEditsForAllChangedVerses() with one verse edit', () => {
+    const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
+    const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm2', PROJECT_NAME);
+    fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
+    fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
+    ProjectOverwriteHelpers.createVerseEditsForAllChangedVerses(PROJECT_PATH, IMPORT_PATH);
+    const expectedVerseEditsCount = 1;
+    const expectedVerseBefore = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,";
+    const expectedVerseAfter = "Paul, a slave of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,";
+    const verseEditsPath = path.join(IMPORT_PATH, '.apps', 'translationCore', 'checkData', 'verseEdits', 'tit', '1', '1');
+    const verseEditFiles = fs.readdirSync(verseEditsPath);
+    expect(verseEditFiles.length).toEqual(expectedVerseEditsCount);
+    const verseEdit = fs.readJsonSync(path.join(verseEditsPath, verseEditFiles[0]));
+    expect(verseEdit['verseBefore']).toEqual(expectedVerseBefore);
+    expect(verseEdit['verseAfter']).toEqual(expectedVerseAfter);
   });
 });
