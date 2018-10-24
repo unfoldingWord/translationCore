@@ -10,6 +10,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
 // container
+import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
 import KonamiContainer from '../containers/KonamiContainer';
 import StatusBarContainer from '../containers/StatusBarContainer';
@@ -25,9 +26,12 @@ import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import { getToolsMetadatas } from '../actions/ToolsMetadataActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
+// testing
+import {openAlert, closeAlert} from '../actions/AlertActions';
 
 import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
+
 
 class Main extends Component {
 
@@ -52,6 +56,9 @@ class Main extends Component {
       getToolsMetadatas
     } = this.props;
 
+    window.openAlert = this.props.openAlert;
+    window.closeAlert = this.props.closeAlert;
+
     const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
     if (localStorage.getItem('version') !== packageJson.version || !fs.existsSync(tcResourcesPath)) {
       localStorage.setItem('version', packageJson.version);
@@ -73,6 +80,7 @@ class Main extends Component {
           <div className="fill-height">
             <ScreenDimmerContainer/>
             <ProjectValidationContainer/>
+            <AlertContainer/>
             <AlertDialogContainer/>
             <KonamiContainer/>
             <PopoverContainer/>
@@ -112,6 +120,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
+  openAlert,
+  closeAlert,
   getAnchorTags: OnlineModeActions.getAnchorTags,
   migrateToolsSettings: SettingsMigrationActions.migrateToolsSettings,
   migrateResourcesFolder: MigrationActions.migrateResourcesFolder,
