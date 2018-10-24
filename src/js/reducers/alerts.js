@@ -1,8 +1,7 @@
 import types from '../actions/ActionTypes';
 
 const initialState = {
-  byProps: [],
-  byId: [],
+  props: [],
   ignored: []
 };
 
@@ -31,15 +30,17 @@ const alert = (state = {}, action) => {
 const alerts = (state = initialState, action) => {
   switch (action.type) {
     case types.OPEN_ALERT: {
-      const newState = removeAlert(state, action.id);
+      // TRICKY: short circuit if alert is ignored
+      if(state.ignored.indexOf(action.id) >= 0) {
+        return state;
+      }
+
+      // add alert
+      const oldProps = state.props.filter(item => item.id !== action.id);
       return {
-        ...newState,
-        byId: [
-          ...newState.byId,
-          action.id
-        ],
-        byProps: [
-          ...newState.byProps,
+        ...state,
+        props: [
+          ...oldProps,
           alert(null, action)
         ]
       };
@@ -57,7 +58,10 @@ const alerts = (state = initialState, action) => {
       };
     }
     case types.CLOSE_ALERT:
-      return removeAlert(state, action.id);
+      return {
+        ...state,
+        props: state.props.filter(item => item.id !== action.id)
+      };
     default:
       return state;
   }
@@ -65,18 +69,6 @@ const alerts = (state = initialState, action) => {
 
 export default alerts;
 
-const removeAlert = (state, id) => {
-  const index = state.byId.indexOf(id);
-  if (index >= 0) {
-    return {
-      byProps: state.byProps.splice(index, 1),
-      byId: state.byId.splice(index, 1)
-    };
-  } else {
-    return state;
-  }
-};
-
 export const getAlerts = (state) => {
-  return [...state.byProps];
+  return [...state.props];
 };

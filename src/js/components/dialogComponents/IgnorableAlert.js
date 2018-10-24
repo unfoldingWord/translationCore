@@ -78,13 +78,13 @@ class IgnorableAlert extends React.Component {
 
 IgnorableAlert.propTypes = {
   open: PropTypes.bool.isRequired,
-  onIgnore: PropTypes.func.isRequired,
-  ignoreText: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   confirmText: PropTypes.string.isRequired,
   onConfirm: PropTypes.func.isRequired,
   cancelText: PropTypes.string,
   onCancel: PropTypes.func,
+  onIgnore: PropTypes.func,
+  ignoreText: PropTypes.string,
   children: PropTypes.any
 };
 

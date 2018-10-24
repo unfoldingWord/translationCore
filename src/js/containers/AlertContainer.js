@@ -6,6 +6,9 @@ import { getAlerts } from '../selectors';
 import { closeAlert, ignoreAlert } from '../actions/AlertActions';
 import Alert from './dialogs/Alert';
 
+/**
+ * Helper component to manage dom portals.
+ */
 class AlertPortal extends React.PureComponent {
   constructor (props) {
     super(props);
@@ -29,18 +32,45 @@ AlertPortal.propTypes = {
   children: PropTypes.any.isRequired
 };
 
+/**
+ * Manages the display of alerts within the application.
+ * This is a new alert system that may eventually replace the existing alert system.
+ */
 class Alerts extends React.Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.handleOnIgnore = this.handleOnIgnore.bind(this);
     this.handleOnCancel = this.handleOnCancel.bind(this);
     this.handleOnConfirm = this.handleOnConfirm.bind(this);
   }
 
-  handleOnCancel(alert) {
-    const {closeAlert} = this.props;
-    if(typeof alert.onCancel === 'function') {
+  /**
+   * Handles confirming.
+   * This is required and will always produce a callback even if none is specified on the alert.
+   * @param {object} alert - the alert properties
+   * @return {Function}
+   */
+  handleOnConfirm (alert) {
+    const { closeAlert } = this.props;
+    return () => {
+      closeAlert(alert.id);
+      // propagate callback
+      if (typeof alert.onConfirm === 'function') {
+        alert.onConfirm();
+      }
+    };
+  }
+
+  /**
+   * Handles canceling.
+   * This is optional and will only produce a callback if one is specified on the alert.
+   * @param {object} alert - the alert properties
+   * @return {Function}
+   */
+  handleOnCancel (alert) {
+    const { closeAlert } = this.props;
+    if (typeof alert.onCancel === 'function') {
       return () => {
         closeAlert(alert.id);
         // propagate callback
@@ -49,26 +79,21 @@ class Alerts extends React.Component {
     }
   }
 
-  handleOnConfirm(alert) {
-    const {closeAlert} = this.props;
-    return () => {
-      closeAlert();
-      // propagate callback
-      if(typeof alert.onConfirm === 'function') {
-        alert.onConfirm();
-      }
-    };
-  }
-
-  handleOnIgnore(alert) {
-    const {ignoreAlert} = this.props;
-    return ignored => {
-      ignoreAlert(alert.id, ignored);
-      // propagate callback
-      if(typeof alert.onIgnore === 'function') {
+  /**
+   * Handles ignoring the alert for the rest of the session.
+   * This is optional and will only produce a callback if one is specified on the alert.
+   * @param {object} alert - the alert properties
+   * @return {Function}
+   */
+  handleOnIgnore (alert) {
+    const { ignoreAlert } = this.props;
+    if (typeof alert.onIgnore === 'function') {
+      return ignored => {
+        ignoreAlert(alert.id, ignored);
+        // propagate callback
         alert.onIgnore(ignored);
-      }
-    };
+      };
+    }
   }
 
   render () {

@@ -7,11 +7,19 @@ export const closeAlert = (id) => {
   };
 };
 
-export const openAlert = (id, message) => {
+/**
+ * Opens a new alert
+ * @param {string} id - the alert id
+ * @param {*} message - the message to display in the alert
+ * @param {boolean} ignorable - makes the alert id ignorable.
+ * @return {*}
+ */
+export const openAlert = (id, message, ignorable=false) => {
   return {
     type: types.OPEN_ALERT,
     id,
-    message
+    message,
+    onIgnore : ignorable ? () => {} : null
   };
 };
 
