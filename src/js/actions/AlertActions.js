@@ -8,19 +8,45 @@ export const closeAlert = (id) => {
 };
 
 /**
- * Opens a new alert
+ * Opens a new alert.
  * @param {string} id - the alert id
  * @param {*} message - the message to display in the alert
- * @param {boolean} ignorable - a convenience property to make the alert ignorable handling the ignore callback.
- * @param {func} onConfirm - custom confirm handler.
- * @param {func} onCancel - custom cancel handler.
- * @param {func} onIgnore - custom ignore handler. This overrides `ignorable`.
+ * @param {func} onConfirm - custom confirm handler
+ * @param {func} onCancel - custom cancel handler
+ * @param {string} confirmText - the confirm button text
+ * @param {string} cancelText - the cancel button text
+ * @return {*}
+ */
+export const openAlert = (id, message, {
+  onConfirm = null,
+  onCancel = null,
+  confirmText = null,
+  cancelText = null,
+} = {}) => {
+  return {
+    type: types.OPEN_ALERT,
+    id,
+    message,
+    onConfirm,
+    confirmText,
+    onCancel,
+    cancelText
+  };
+};
+
+/**
+ * Opens a new alert that can be ignored.
+ * @param {string} id - the alert id
+ * @param {*} message
+ * @param {func} onConfirm - custom confirm handler
+ * @param {func} onCancel - custom cancel handler
+ * @param {func} onIgnore - custom ignore handler
  * @param {string} confirmText - the confirm button text
  * @param {string} cancelText - the cancel button text
  * @param {string} ignoreText - the ignore checkbox text
  * @return {*}
  */
-export const openAlert = (id, message, ignorable = false, {
+export const openIgnorableAlert = (id, message, {
   onConfirm = null,
   onCancel = null,
   onIgnore = null,
@@ -28,13 +54,6 @@ export const openAlert = (id, message, ignorable = false, {
   cancelText = null,
   ignoreText = null
 } = {}) => {
-
-  // generate convenience ignore fallback
-  let ignoreFallback = null;
-  if (ignorable) {
-    ignoreFallback = () => {};
-  }
-
   return {
     type: types.OPEN_ALERT,
     id,
@@ -43,7 +62,7 @@ export const openAlert = (id, message, ignorable = false, {
     confirmText,
     onCancel,
     cancelText,
-    onIgnore: onIgnore ? onIgnore : ignoreFallback,
+    onIgnore: typeof onIgnore === 'function' ? onIgnore : () => {},
     ignoreText
   };
 };

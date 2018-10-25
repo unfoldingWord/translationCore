@@ -26,8 +26,6 @@ import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import { getToolsMetadatas } from '../actions/ToolsMetadataActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
-// testing
-import {openAlert, closeAlert} from '../actions/AlertActions';
 
 import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
@@ -55,9 +53,6 @@ class Main extends Component {
       getAnchorTags,
       getToolsMetadatas
     } = this.props;
-
-    window.openAlert = this.props.openAlert;
-    window.closeAlert = this.props.closeAlert;
 
     const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
     if (localStorage.getItem('version') !== packageJson.version || !fs.existsSync(tcResourcesPath)) {
@@ -120,8 +115,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  openAlert,
-  closeAlert,
   getAnchorTags: OnlineModeActions.getAnchorTags,
   migrateToolsSettings: SettingsMigrationActions.migrateToolsSettings,
   migrateResourcesFolder: MigrationActions.migrateResourcesFolder,

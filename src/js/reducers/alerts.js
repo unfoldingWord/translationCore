@@ -31,7 +31,8 @@ const alerts = (state = initialState, action) => {
   switch (action.type) {
     case types.OPEN_ALERT: {
       // TRICKY: short circuit if alert is ignored
-      if(state.ignored.indexOf(action.id) >= 0) {
+      const hasIgnore = typeof action.onIgnore === 'function';
+      if(hasIgnore && state.ignored.indexOf(action.id) >= 0) {
         return state;
       }
 
