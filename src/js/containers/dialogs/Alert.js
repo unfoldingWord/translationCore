@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import IgnorableAlert from '../../components/dialogComponents/IgnorableAlert';
 import { withLocale } from '../Locale';
 
+/**
+ * A generic alert container that injects some default localization.
+ */
 class Alert extends React.Component {
 
   render () {

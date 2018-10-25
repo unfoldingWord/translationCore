@@ -7,13 +7,18 @@ const initialState = {
 
 const alert = (state = {}, action) => {
   switch (action.type) {
-    case types.OPEN_ALERT:
+    case types.OPEN_ALERT: {
       // TRICKY: most of the fields are optional
+      const alert = { ...action };
+      delete alert.message;
+      delete alert.type;
+
       return {
-        ...action,
+        ...alert,
         id: action.id,
         children: action.children ? action.children : action.message
       };
+    }
     default:
       return state;
   }
