@@ -68,22 +68,32 @@ let addHeader = function (headers, add, overWrite) {
 export function getHeaderTags(projectSaveLocation) {
   const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
   const bookName = manifest.project.id;
-  /**Has fields such as "language_id": "en" and "resource_id": "ult" and "direction":"ltr"*/
+
+  /**Has fields such as "language_id": "en" and "resource_id": "ult" and 
+   * "direction":"ltr" manifest.resource is for target id which is 
+   * "Translation Id" and name which contains "nickname" */
   let sourceTranslation = manifest.source_translations[0];
-  let resourceName = sourceTranslation && sourceTranslation.language_id && sourceTranslation.resource_id ?
-    `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}` :
-    'N/A';
+  let targetResource = manifest.resource;
+  let resourceName = sourceTranslation && sourceTranslation.language_id && 
+      targetResource.id ?
+      `${sourceTranslation.language_id.toUpperCase()}_${targetResource.id.toUpperCase()}` :
+      'N/A';
+      
   /**This will look like: EN_ULB sw_Kiswahili_ltr to be included in the usfm id.
    * This will make it easier to read for tC later on */
   let targetLanguageCode = manifest.target_language ?
-    `${manifest.target_language.id}_${manifest.target_language.name.split(' ').join('⋅')}_${manifest.target_language.direction}` :
+    `${manifest.target_language.id}_${manifest.target_language.name
+        .split(' ')
+        .join('⋅')}_${manifest.target_language.direction}` :
     'N/A';
+   
   /**Date object when project was las changed in FS */
   let lastEdited = fs.statSync(path.join(projectSaveLocation), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
-  let headers = LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 'headers.json');
+  let headers = LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 
+      'headers.json');
   headers = headers || [];
-  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
+  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/ 
   const id = {
     "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`,
     "tag": "id"

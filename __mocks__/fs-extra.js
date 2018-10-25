@@ -132,6 +132,7 @@ function Stats(path, exists, isDir) {
   this.path = path;
   this.exists = exists;
   this.isDir = isDir;
+  this.atime = "Not-a-real-date";
   this.isDirectory = () => {
     const isDir = this.exists && this.isDir;
     return isDir;
