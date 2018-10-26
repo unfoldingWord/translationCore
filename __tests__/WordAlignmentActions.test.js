@@ -34,16 +34,16 @@ describe('WordAlignmentActions.getUsfm3ExportFile', () => {
   afterAll(() => {
     fs.__resetMockFS();
   });
-  it('should export a usfm file given a correct path to the project', async () => {
-    jest.setTimeout(30000);
+  it('should export a usfm file given a correct path to the project', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     let reset_spy = jest.spyOn(WordAlignmentHelpers,
       'resetAlignmentsForVerse');
     let convert_spy = jest.spyOn(WordAlignmentHelpers,
       'convertAlignmentDataToUSFM');
-    const res = await store.dispatch(actions.getUsfm3ExportFile(projectPath, false, true));
-    expect(reset_spy).toHaveBeenCalledTimes(8);
-    expect(convert_spy).toHaveBeenCalledTimes(9);
-    expect(res.split('zaln-s').length).toBe(121);
-  }, 10000);
+    return store.dispatch(actions.getUsfm3ExportFile(projectPath, false, true)).then(res => {
+      expect(reset_spy).toHaveBeenCalledTimes(8);
+      expect(convert_spy).toHaveBeenCalledTimes(9);
+      expect(res.split('zaln-s').length).toBe(121);
+    });
+  });
 });
