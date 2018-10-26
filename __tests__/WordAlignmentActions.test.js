@@ -35,6 +35,7 @@ describe('WordAlignmentActions.getUsfm3ExportFile', () => {
     fs.__resetMockFS();
   });
   it('should export a usfm file given a correct path to the project', async () => {
+    jest.setTimeout(30000);
     const projectPath = path.join(PROJECTS_PATH, projectName);
     let reset_spy = jest.spyOn(WordAlignmentHelpers,
       'resetAlignmentsForVerse');
