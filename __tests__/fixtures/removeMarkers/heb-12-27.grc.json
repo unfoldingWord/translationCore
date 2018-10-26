@@ -1,0 +1,145 @@
+{
+  "verseObjects": [
+    {
+      "text": "τὸ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ὁ",
+      "strong": "G35880",
+      "morph": "Gr,RD,,,,NNS,"
+    },
+    {
+      "text": "δὲ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "δέ",
+      "strong": "G11610",
+      "morph": "Gr,CC,,,,,,,,"
+    },
+    {
+      "type": "text",
+      "text": ",\n“"
+    },
+    {
+      "text": "ἔτι",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ἔτι",
+      "strong": "G20890",
+      "morph": "Gr,D,,,,,,,,,"
+    },
+    {
+      "text": "ἅπαξ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ἅπαξ",
+      "strong": "G05300",
+      "morph": "Gr,D,,,,,,,,,"
+    },
+    {
+      "type": "text",
+      "text": "”,"
+    },
+    {
+      "text": "δηλοῖ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "δηλόω",
+      "strong": "G12130",
+      "morph": "Gr,V,IPA3,,S,"
+    },
+    {
+      "text": "τῶν",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ὁ",
+      "strong": "G35880",
+      "morph": "Gr,RD,,,,GNP,"
+    },
+    {
+      "text": "σαλευομένων",
+      "tag": "w",
+      "type": "word",
+      "lemma": "σαλεύω",
+      "strong": "G45310",
+      "morph": "Gr,V,PPP,GNP,"
+    },
+    {
+      "text": "μετάθεσιν",
+      "tag": "w",
+      "type": "word",
+      "lemma": "μετάθεσις",
+      "strong": "G33310",
+      "morph": "Gr,N,,,,,AFS,"
+    },
+    {
+      "type": "text",
+      "text": ","
+    },
+    {
+      "text": "ὡς",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ὡς",
+      "strong": "G56130",
+      "morph": "Gr,CS,,,,,,,,",
+      "tw": "rc://*/tw/dict/bible/other/like"
+    },
+    {
+      "text": "πεποιημένων",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ποιέω",
+      "strong": "G41600",
+      "morph": "Gr,V,PEP,GNP,"
+    },
+    {
+      "type": "text",
+      "text": ","
+    },
+    {
+      "text": "ἵνα",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ἵνα",
+      "strong": "G24430",
+      "morph": "Gr,CS,,,,,,,,"
+    },
+    {
+      "text": "μείνῃ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "μένω",
+      "strong": "G33060",
+      "morph": "Gr,V,SAA3,,S,"
+    },
+    {
+      "text": "τὰ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ὁ",
+      "strong": "G35880",
+      "morph": "Gr,RD,,,,NNP,"
+    },
+    {
+      "text": "μὴ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "μή",
+      "strong": "G33610",
+      "morph": "Gr,D,,,,,,,,,"
+    },
+    {
+      "text": "σαλευόμενα",
+      "tag": "w",
+      "type": "word",
+      "lemma": "σαλεύω",
+      "strong": "G45310",
+      "morph": "Gr,V,PPP,NNP,"
+    },
+    {
+      "type": "text",
+      "text": ".\n\n"
+    }
+  ]
+}
