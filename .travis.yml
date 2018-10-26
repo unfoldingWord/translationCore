@@ -7,6 +7,7 @@ os:
 before_install:
   - npm i -g npm@6.0.1
   - npm --version
+  - if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then openssl aes-256-cbc -K $encrypted_293be1ae0d92_key -iv $encrypted_293be1ae0d92_iv -in .env.enc -out .env -d; fi
 install:
   - npm ci
   - npm run load-apps
