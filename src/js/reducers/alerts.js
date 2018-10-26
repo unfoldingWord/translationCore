@@ -68,6 +68,8 @@ const alerts = (state = initialState, action) => {
         ...state,
         props: state.props.filter(item => item.id !== action.id)
       };
+    case types.LOGOUT_USER:
+      return initialState;
     default:
       return state;
   }
