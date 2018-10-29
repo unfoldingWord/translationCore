@@ -5,8 +5,9 @@
 
 import fs from 'fs-extra';
 import path from 'path-extra';
+import isEqual from "deep-equal";
 import {getEditedVerse, getProjectSaveLocation} from '../selectors';
- import {generateTimestamp} from "../helpers";
+import {generateTimestamp} from "../helpers";
 
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
@@ -219,20 +220,22 @@ export const saveReminders = state => {
 /**
  * @description saves the groups data by groupId name.
  * @param {object} state - store state object.
+ * @param {object} prevState - previous store state object.
  */
-export const saveGroupsData = state => {
+export const saveGroupsData = (state, prevState) => {
   try {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let currentToolName = state.contextIdReducer.contextId ?
+    const currentToolName = state.contextIdReducer.contextId ?
                state.contextIdReducer.contextId.tool : undefined;
-    let bookAbbreviation = state.contextIdReducer.contextId ?
+    const bookAbbreviation = state.contextIdReducer.contextId ?
                            state.contextIdReducer.contextId.reference.bookId : undefined;
     if (PROJECT_SAVE_LOCATION && currentToolName && bookAbbreviation) {
-      let groupsData = state.groupsDataReducer.groupsData;
+      const groupsData = state.groupsDataReducer.groupsData;
+      const oldGroupsData = prevState.groupsDataReducer.groupsData;
       for (let groupID in groupsData) {
-        let fileName = groupID + ".json";
-        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, bookAbbreviation, fileName);
-        if (groupsData[groupID]) {
+        const fileName = groupID + ".json";
+        const savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, bookAbbreviation, fileName);
+        if (groupsData[groupID] && !isEqual(groupsData[groupID], oldGroupsData[groupID])) {
           fs.outputJsonSync(savePath, groupsData[groupID]);
         }
       }
