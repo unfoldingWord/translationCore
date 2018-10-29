@@ -31,9 +31,12 @@ import localImportReducer from './localImportReducer';
 import sourceContentUpdatesReducer from './sourceContentUpdatesReducer';
 import { localeReducer as locale } from 'react-localize-redux';
 import localeSettings from './localeSettings';
+import alerts from './alerts';
+
 // combining reducers
 const rootReducers = combineReducers({
   locale,
+  alerts,
   localeSettings,
   toolsReducer,
   modalReducer,
