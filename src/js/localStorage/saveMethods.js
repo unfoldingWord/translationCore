@@ -233,9 +233,9 @@ export const saveGroupsData = (state, prevState) => {
       const groupsData = state.groupsDataReducer.groupsData;
       const oldGroupsData = prevState.groupsDataReducer.groupsData;
       for (let groupID in groupsData) {
-        const fileName = groupID + ".json";
-        const savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, bookAbbreviation, fileName);
         if (groupsData[groupID] && !isEqual(groupsData[groupID], oldGroupsData[groupID])) {
+          const fileName = groupID + ".json";
+          const savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, bookAbbreviation, fileName);
           fs.outputJsonSync(savePath, groupsData[groupID]);
         }
       }
