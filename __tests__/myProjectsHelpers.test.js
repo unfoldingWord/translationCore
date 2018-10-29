@@ -53,6 +53,7 @@ describe('myProjectsHelpers.getProjectsFromFS 2', () => {
         });
     });
     test('should get all projects in a test home directory with a manifest.json or usfm', () => {
+        jest.setTimeout(30000);
         let projects = myProjectsHelpers.getProjectsFromFS('', out);
         expect(projects).toHaveLength(5);
         expect(projects).toContainEqual(expect.objectContaining({
