@@ -2,7 +2,6 @@
 
 exports[`MyProjects component renders correctly MyProjects component render should match snapshot 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MuiThemeProvider>
     <MyProjects
@@ -146,7 +145,6 @@ ShallowWrapper {
 
 exports[`MyProjects shows instruction if no projects MyProjects component render should match snapshot 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MuiThemeProvider>
     <MyProjects

@@ -4,7 +4,6 @@ import ospath from 'ospath';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
-import * as ToolsMetadataActions from '../ToolsMetadataActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
 import {openAlertDialog, closeAlertDialog} from '../AlertModalActions';
@@ -40,11 +39,7 @@ export const openProject = (name) => {
         openAlertDialog(translate('projects.loading_project_alert'), true));
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
-      const isSupported = await isProjectSupported(projectDir);
-      if(!isSupported) {
-        const errorMessage = translate('project_validation.old_project_unsupported', {app: translate('_.app_name')});
-        throw new Error(errorMessage);
-      }
+      await isProjectSupported(projectDir, translate);
       migrateProject(projectDir);
       await dispatch(validateProject(projectDir));
       // TODO: load the project data here
@@ -106,7 +101,6 @@ export function displayTools() {
         const { currentSettings } = getState().settingsReducer;
         const { manifest } = getState().projectDetailsReducer;
         if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
-          dispatch(ToolsMetadataActions.getToolsMetadatas());
           // Go to toolsCards page
           dispatch(BodyUIActions.goToStep(3));
         } else {

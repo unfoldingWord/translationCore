@@ -26,7 +26,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings1', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings1());
@@ -54,7 +54,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings2', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings2());
@@ -95,7 +95,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings3', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings3());
@@ -113,7 +113,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
       toolSettingsData: [
         {
           languageId: 'en',
-          bibleId: 'ult'
+          bibleId: 'ulb'
         },
         {
           languageId: 'hi',
@@ -126,7 +126,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
       ]
     }
   ];
-  test('Migrates scriptrue pane settings from ulb bible id to ult bible id only for English', () => {
+  test('Does not migrate scripture pane settings for ulb bible id in English', () => {
     const initialState = {
       settingsReducer: {
         toolsSettings: {
@@ -149,7 +149,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
@@ -157,7 +157,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  test('Migrates scriptrue pane settings from ult bible id to ulb bible id only for Hindi', () => {
+  test('Migrates scripture pane settings from ult bible id to ulb bible id only for Hindi', () => {
     const initialState = {
       settingsReducer: {
         toolsSettings: {
@@ -165,7 +165,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             currentPaneSettings: [
               {
                 languageId: 'en',
-                bibleId: 'ult'
+                bibleId: 'ulb'
               },
               {
                 languageId: 'hi',
@@ -180,11 +180,168 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
         }
       }
     };
-    // set up mok store
+    // set up mock store
     const store = mockStore(initialState);
     // dispatch action
     store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
 
     expect(store.getActions()).toEqual(expectedActions);
   });
+
+  test('Migrates scripture pane settings from udb bible id to udt bible id only for Hindi', () => {
+    const expectedActions = [
+      {
+        type: ActionTypes.UPDATE_TOOL_SETTINGS,
+        moduleNamespace: "ScripturePane",
+        settingsPropertyName: "currentPaneSettings",
+        toolSettingsData: [
+          {
+            languageId: 'en',
+            bibleId: 'ust'
+          },
+          {
+            languageId: 'hi',
+            bibleId: 'udt'
+          },
+          {
+            languageId: 'targetLanguage',
+            bibleId: 'targetBible'
+          }
+        ]
+      }
+    ];
+    const initialState = {
+      settingsReducer: {
+        toolsSettings: {
+          'ScripturePane': {
+            currentPaneSettings: [
+              {
+                languageId: 'en',
+                bibleId: 'ust'
+              },
+              {
+                languageId: 'hi',
+                bibleId: 'udb'
+              },
+              {
+                languageId: 'targetLanguage',
+                bibleId: 'targetBible'
+              }
+            ]
+          }
+        }
+      }
+    };
+    // set up mock store
+    const store = mockStore(initialState);
+    // dispatch action
+    store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
+
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  test('Does not migrate scripture pane settings for udb bible id in English', () => {
+    const expectedActions = [
+      {
+        type: ActionTypes.UPDATE_TOOL_SETTINGS,
+        moduleNamespace: "ScripturePane",
+        settingsPropertyName: "currentPaneSettings",
+        toolSettingsData: [
+          {
+            languageId: 'en',
+            bibleId: 'udb'
+          },
+          {
+            languageId: 'hi',
+            bibleId: 'ulb'
+          },
+          {
+            languageId: 'targetLanguage',
+            bibleId: 'targetBible'
+          }
+        ]
+      }
+    ];
+    const initialState = {
+      settingsReducer: {
+        toolsSettings: {
+          'ScripturePane': {
+            currentPaneSettings: [
+              {
+                languageId: 'en',
+                bibleId: 'udb'
+              },
+              {
+                languageId: 'hi',
+                bibleId: 'ulb'
+              },
+              {
+                languageId: 'targetLanguage',
+                bibleId: 'targetBible'
+              }
+            ]
+          }
+        }
+      }
+    };
+    // set up mock store
+    const store = mockStore(initialState);
+    // dispatch action
+    store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
+
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  test('Migrates scripture pane settings from udt bible id to ust bible id only for English', () => {
+    const expectedActions = [
+      {
+        type: ActionTypes.UPDATE_TOOL_SETTINGS,
+        moduleNamespace: "ScripturePane",
+        settingsPropertyName: "currentPaneSettings",
+        toolSettingsData: [
+          {
+            languageId: 'en',
+            bibleId: 'ust'
+          },
+          {
+            languageId: 'hi',
+            bibleId: 'ulb'
+          },
+          {
+            languageId: 'targetLanguage',
+            bibleId: 'targetBible'
+          }
+        ]
+      }
+    ];
+    const initialState = {
+      settingsReducer: {
+        toolsSettings: {
+          'ScripturePane': {
+            currentPaneSettings: [
+              {
+                languageId: 'en',
+                bibleId: 'udt'
+              },
+              {
+                languageId: 'hi',
+                bibleId: 'ult'
+              },
+              {
+                languageId: 'targetLanguage',
+                bibleId: 'targetBible'
+              }
+            ]
+          }
+        }
+      }
+    };
+    // set up mock store
+    const store = mockStore(initialState);
+    // dispatch action
+    store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
+
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
 });

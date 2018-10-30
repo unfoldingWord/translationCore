@@ -10,6 +10,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
 // container
+import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
 import KonamiContainer from '../containers/KonamiContainer';
 import StatusBarContainer from '../containers/StatusBarContainer';
@@ -27,6 +28,7 @@ import {getLocaleLoaded, getSetting} from '../selectors';
 
 import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
+
 
 class Main extends Component {
 
@@ -70,6 +72,7 @@ class Main extends Component {
           <div className="fill-height">
             <ScreenDimmerContainer/>
             <ProjectValidationContainer/>
+            <AlertContainer/>
             <AlertDialogContainer/>
             <KonamiContainer/>
             <PopoverContainer/>

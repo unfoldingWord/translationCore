@@ -6,15 +6,10 @@ import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
 import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
 // actions
 import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
-import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 
 class ToolsManagementContainer extends Component {
-
-  componentWillMount() {
-    this.props.actions.getToolsMetadatas();
-  }
 
   render() {
     const {
@@ -86,9 +81,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      getToolsMetadatas: () => {
-        dispatch(ToolsMetadataActions.getToolsMetadatas());
-      },
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
       },
