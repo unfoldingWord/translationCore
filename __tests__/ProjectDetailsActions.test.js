@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
+jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import types from '../src/js/actions/ActionTypes';
@@ -11,7 +11,7 @@ import ospath from "ospath";
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+const PROJECTS_PATH = path.join('user', 'translationCore', 'projects');
 
 it('setSaveLocation() creates an action to update contributors', () => {
   const store = mockStore({});
