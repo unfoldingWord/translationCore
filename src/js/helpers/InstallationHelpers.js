@@ -45,7 +45,9 @@ module.exports.downloadWinGit = downloadWinGit;
  */
 const isGitInstalled = () => {
   return new Promise((resolve) => {
+    console.log('PATH = \n' + process.env.PATH);
     exec('git', (err, data) => {
+      console.log('err = ' + err);
       resolve(!!data);
     });
   });
@@ -90,11 +92,12 @@ const getArchBits = () => {
  * @return {Promise} resolves with affirmative, rejects with cancel
  */
 const showElectronGitDialog = (dialog) => {
+  console.log('PATH = \n' + process.env.PATH);
   return new Promise((resolve, reject) => {
     dialog.showMessageBox({
       'title': 'Install Git',
       'message': 'You must install Git before using translationCore.\n' +
-      'Please install Git and try again.',
+      'Please install Git and try again.  PATH='  + process.env.PATH,
       'buttons': [
         'Download Git',
         'Close translationCore'
