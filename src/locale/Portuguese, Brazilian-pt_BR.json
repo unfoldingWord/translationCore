@@ -270,9 +270,9 @@
     }
   },
   "tools": {
-    "book_not_supported": "Book not supported",
-    "select_tool_from_list": "Select a tool and a gateway language from the list.",
-    "tools": "Tools",
+    "book_not_supported": "Livro não suportado",
+    "select_tool_from_list": "Selecione uma ferramenta e uma LÍNGUA PORTÃO a partir da lista.",
+    "tools": "Ferramentas",
     "no_tools": "No ${app} default tools found.",
     "tw_part1": "translationWords (Part 1)",
     "see_more": "See more",
