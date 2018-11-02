@@ -103,31 +103,7 @@ export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPa
         let verseAfter = newChapterVerses[verse];
         verse = parseInt(verse);
         if (verseBefore != verseAfter) {
-          const modifiedTimestamp = generateTimestamp();
-          const verseEdit = {
-            verseBefore,
-            verseAfter,
-            tags: 'other',
-            userName,
-            activeBook: bookId,
-            activeChapter: chapter,
-            activeVerse: verse,
-            modifiedTimestamp: modifiedTimestamp,
-            gatewayLanguageCode: 'en',
-            gatewayLanguageQuote: 'Chapter ' + chapter,
-            contextId: {
-              reference: {
-                bookId,
-                chapter,
-                verse
-              },
-              tool: 'wordAlignment',
-              groupId: 'chapter_' + chapter
-            },
-          };
-          const newFilename = modifiedTimestamp + '.json';
-          const verseEditsPath = path.join(newProjectPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
-          fs.outputJsonSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
+          createVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName, generateTimestamp());
         }
       });
     } catch (error) {
@@ -136,3 +112,29 @@ export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPa
   });
 };
 
+export const createVerseEdit = (projectPath, verseBefore, verseAfter, bookId, chapter, verse, userName, modifiedTimestamp) => {
+  const verseEdit = {
+    verseBefore,
+    verseAfter,
+    tags: 'other',
+    userName,
+    activeBook: bookId,
+    activeChapter: chapter,
+    activeVerse: verse,
+    modifiedTimestamp: modifiedTimestamp,
+    gatewayLanguageCode: 'en',
+    gatewayLanguageQuote: 'Chapter ' + chapter,
+    contextId: {
+      reference: {
+        bookId,
+        chapter,
+        verse
+      },
+      tool: 'wordAlignment',
+      groupId: 'chapter_' + chapter
+    },
+  };
+  const newFilename = modifiedTimestamp + '.json';
+  const verseEditsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
+  fs.outputJsonSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
+};
