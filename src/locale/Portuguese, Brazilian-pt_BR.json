@@ -232,11 +232,11 @@
     "only_nt_supported": "Esta versão de ${app} só suporta os projetos do Novo Testamento.",
     "old_project_unsupported": "Infelizmente, este Projeto contém dados de uma versão velha de ${app} que não se suporta agora nesta versão. Para logar abrir este projeto ou para reiniciar a verificação que se fazia antes, entre em contato com: help@door43.org.",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
-      "field_invalid_length": "Must be 3-4 letters long",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "info": "(código de identificação de 3 ou 4 letras<br />por exemplo, NVI, JFA, e tal.)",
+      "field_invalid_length": "Deve ter pelo menos 3 ou 4 letras",
+      "invalid_characters": "Só se soportam as letras básicas de Latin"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book"
+    "conflicting_project": "Já existe um projeto com este identificador para este idioma e este livro"
   },
   "book_list": {
     "nt": {
