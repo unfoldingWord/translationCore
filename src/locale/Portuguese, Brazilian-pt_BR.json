@@ -39,7 +39,7 @@
   "project_information": "Informações do Projeto",
   "missing_verses": "Versos faltando",
   "dev_mode_disabled": "O Modo De Desenvolvimento Desativado",
-  "dev_mode_enabled": "O Modo De Desenvolvedor Habilitado. Sem o suporte técnico é fornecido para ${app} no modo de desenvolvedor!",
+  "dev_mode_enabled": "O Modo De Desenvolvimento Habilitado. Não há suporte técnico para ${app} neste modo!",
   "no_internet": "Impossível contatar o servidor. Por favor, verifique sua conexão com a internet.",
   "alert": "Alerta",
   "using_internet": "Você está prestes a transmitir dados pela Internet. Você tem certeza que deseja fazer isso?",
