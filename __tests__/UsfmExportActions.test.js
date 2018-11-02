@@ -338,7 +338,7 @@ describe('USFMExportActions.setUpUSFMJSONObject', () => {
     fs.__resetMockFS();
   });
   it('should get a verseObjects JSON from a valid project', () => {
-    const expectedString = `Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,`;
+    const expectedString = `Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,\n`;
     const projectSaveLocation = path.join(PROJECTS_PATH, projectName);
     const res = USFMExportActions.setUpUSFMJSONObject(projectSaveLocation);
     expect(res).toEqual(
