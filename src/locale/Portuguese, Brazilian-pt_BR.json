@@ -155,7 +155,7 @@
     "no_search_results": "Não encontrou-se nenhum projecto que corresponda ao seu critério de pesquisa.",
     "importing_local_alert": "Importando o Projeto Local...",
     "importing_project_alert": "Importando ${project_url}. Espere, por gentileza...",
-    "cancel_import_alert": "Canceling now will abort the import process and the project will need to be re-imported before it can be used.",
+    "cancel_import_alert": "Se for cancelado agora, o processo de importação do seu projeto se abortará e o processo de importação precisará reiniciado depois.",
     "project_already_identified": "This project has been identified as a ${originalBook} project. Are you sure you want to change it to a ${suggestedBook} project?",
     "loading_project_alert": "Loading your project data.",
     "exported_alert": "${project_name} has been successfully exported to ${file_path}.",
