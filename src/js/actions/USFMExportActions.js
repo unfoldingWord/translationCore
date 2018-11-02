@@ -166,7 +166,7 @@ export function setUpUSFMJSONObject(projectPath) {
     Object.keys(currentChapterObject).forEach((verseNumber) => {
       verseObjects[verseNumber] = {verseObjects: []};
       verseObjects[verseNumber].verseObjects.push({
-        "text": currentChapterObject[verseNumber],
+        "text": currentChapterObject[verseNumber] + '\n',
         "type": "text"
       });
     });
