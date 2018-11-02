@@ -96,6 +96,11 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       localImportReducer: {
         selectedProjectFilename:'path'
       },
+      loginReducer: {
+        userdata: {
+          userName: 'johndoe'
+        }
+      },
       projectInformationCheckReducer: {},
       projectValidationReducer: {}
     };

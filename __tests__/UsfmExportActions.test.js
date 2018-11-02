@@ -76,6 +76,9 @@ jest.mock('../src/js/selectors', () => ({
     return jest.fn((code) => {
       return code;
     });
+  },
+  getUsername: () => {
+    return 'johndoe';
   }
 }));
 
