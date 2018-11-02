@@ -130,7 +130,7 @@
     "select_project_from_list": "Selecione um Projeto na lista.",
     "to_import_project": "Para importar um Projeto, clique em",
     "to_export_project": "Para fazer o Upload ou exportar um projeto ou também para editar os detalhes do projeto, clique",
-    "supported_projects": "USFM projects and ${tstudio} projects (saved in version 11 or greater) are supported.",
+    "supported_projects": "Soportam-se projetos USFM e projetos ${tstudio} guardados sob a versão 11 e em adiante.",
     "projects": "Projects",
     "no_projects_found": "No projects have been found. Follow instructions at left to import a project.",
     "seconds_ago": "A few seconds ago",
