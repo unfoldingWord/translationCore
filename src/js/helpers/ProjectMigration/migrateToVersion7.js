@@ -72,7 +72,7 @@ const migrateToVersion7 = (projectPath, userName) => {
             const lastVerse = latestVerseEdit['verseAfter'];
             const currentVerse = chapterData[verse];
             if (lastVerse != currentVerse) {
-              let modifiedTimestamp = fs.statSync(verseEditFilePath).mtime;
+              let modifiedTimestamp = generateTimestamp(fs.statSync(verseEditFilePath).mtime);
               if (modifiedTimestamp < verseEditFileName.split('.').slice(0, -1).join('.')) {
                 modifiedTimestamp = generateTimestamp();
               }
