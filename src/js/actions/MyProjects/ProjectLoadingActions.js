@@ -11,7 +11,7 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { getTranslate } from '../../selectors';
+import { getTranslate, getUsername } from '../../selectors';
 import {isProjectSupported, ensureSupportedVersion} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 
 // constants
@@ -40,7 +40,7 @@ export const openProject = (name) => {
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
       await isProjectSupported(projectDir, translate);
-      migrateProject(projectDir);
+      migrateProject(projectDir, null, getUsername(getState()));
       await dispatch(validateProject(projectDir));
       // TODO: load the project data here
       dispatch(closeAlertDialog());
@@ -73,7 +73,7 @@ export const migrateValidateLoadProject = (projectName) => {
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, projectName);
       await ensureSupportedVersion(projectPath, translate);
-      migrateProject(projectPath);
+      migrateProject(projectPath, null, getUsername(getState()));
       dispatch(closeAlertDialog());
       await dispatch(validateProject(projectPath));
       await dispatch(displayTools());
