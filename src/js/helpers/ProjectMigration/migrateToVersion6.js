@@ -2,7 +2,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import * as Version from './VersionUtils';
 
-
 export const MIGRATE_MANIFEST_VERSION = 6;
 
 /**
