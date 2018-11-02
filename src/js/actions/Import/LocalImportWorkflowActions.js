@@ -16,7 +16,7 @@ import * as ProjectInformationCheckActions from "../ProjectInformationCheckActio
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
+import {getTranslate, getProjectManifest, getProjectSaveLocation, getUsername} from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
@@ -51,7 +51,7 @@ export const localImport = () => {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
-      migrateProject(importProjectPath);
+      migrateProject(importProjectPath, null, getUsername(getState()));
       dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validateProject(importProjectPath));
       const manifest = getProjectManifest(getState());
