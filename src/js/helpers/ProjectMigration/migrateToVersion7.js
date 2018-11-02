@@ -56,23 +56,24 @@ const migrateToVersion7 = (projectPath, userName) => {
         return fs.lstatSync(fullPath).isDirectory() && name.match(/^\d/i);
       };
       fs.readdirSync(verseEditsPath).filter(isChapterDirectory).forEach(chapter => {
-        const chapterPath = path.join(verseEditsPath, chapter);
-        const chapterData = fs.readJsonSync(path.join(projectPath, bookId, chapter+'.json'));
+        const chapterPath = path.join(projectPath, bookId, chapter+'.json');
+        const chapterData = fs.readJsonSync(chapterPath);
+        const verseEditsChapterPath = path.join(verseEditsPath, chapter);
         const isVerseDirectory = name => {
-          const fullPath = path.join(chapterPath, name);
+          const fullPath = path.join(verseEditsChapterPath, name);
           return fs.lstatSync(fullPath).isDirectory() && name.match(/^\d/i);
         };
-        fs.readdirSync(chapterPath).filter(isVerseDirectory).forEach(verse => {
-          const versePath = path.join(chapterPath, verse);
-          const verseEdits = fs.readdirSync(versePath).filter(name => path.extname(name) === '.json');
+        fs.readdirSync(verseEditsChapterPath).filter(isVerseDirectory).forEach(verse => {
+          const verseEditsVersePath = path.join(verseEditsChapterPath, verse);
+          const verseEdits = fs.readdirSync(verseEditsVersePath).filter(name => path.extname(name) === '.json');
           if (verseEdits.length) {
             const verseEditFileName = verseEdits.sort().pop();
-            const verseEditFilePath = path.join(versePath, verseEditFileName);
+            const verseEditFilePath = path.join(verseEditsVersePath, verseEditFileName);
             const latestVerseEdit = fs.readJSONSync(verseEditFilePath);
             const lastVerse = latestVerseEdit['verseAfter'];
             const currentVerse = chapterData[verse];
             if (lastVerse != currentVerse) {
-              let modifiedTimestamp = generateTimestamp(fs.statSync(verseEditFilePath).mtime);
+              let modifiedTimestamp = generateTimestamp(fs.statSync(chapterPath).mtime);
               if (modifiedTimestamp < verseEditFileName.split('.').slice(0, -1).join('.')) {
                 modifiedTimestamp = generateTimestamp();
               }
