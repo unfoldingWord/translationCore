@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import * as Version from './VersionUtils';
 import * as ProjectOverwriteHelpers from '../ProjectOverwriteHelpers';
-import { generateTimestamp } from '..';
+import { generateTimestamp } from '../index';
 
 export const MIGRATE_MANIFEST_VERSION = 7;
 
