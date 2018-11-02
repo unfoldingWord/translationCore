@@ -34,6 +34,9 @@ jest.mock('../src/js/selectors', () => ({
     const isProjectLoaded = state.projectDetailsReducer.projectSaveLocation;
     const availableSteps = [true, true, isLoggedIn, isProjectLoaded];
     return availableSteps;
+  },
+  getUsername: () => {
+    return 'johndoe';
   }
 }));
 
