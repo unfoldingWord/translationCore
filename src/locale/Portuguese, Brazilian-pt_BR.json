@@ -38,7 +38,7 @@
   "copyright_check": "Verificação de direitos autorais",
   "project_information": "Informações do Projeto",
   "missing_verses": "Versos faltando",
-  "dev_mode_disabled": "O Modo De Desenvolvimento Desativado",
+  "dev_mode_disabled": "Modo de desenvolvedor desativado",
   "dev_mode_enabled": "O Modo De Desenvolvimento Habilitado. Não há suporte técnico para ${app} neste modo!",
   "no_internet": "Impossível conectar com o servidor. Favor verificar sua conexão com a internet.",
   "alert": "Alerta",
