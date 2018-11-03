@@ -49,7 +49,7 @@
   "actions": "Ações",
   "running_latest_version": "Você está executando a versão mais recente do ${app}.",
   "user_locale": "Idioma de Interface do usuário",
-  "changing_locale_effects": "Alterar o idioma da interface do usuário afetará o idioma encontrado nos menus, diálogos e configuração do projeto.",
+  "changing_locale_effects": "Alteração do idioma de interface do usuário afetará o idioma encontrado nos menus, diálogos e configuração do projeto.",
   "changing_locale_note": "Nota: Para alterar o idioma das verificações e traduções ajuda dentro de uma ferramenta, por favor, selecione um idioma de gateway diferente ao selecionar uma ferramenta.",
   "user_feedback_comments": "Feedback e Comentários.",
   "user_feedback": "Comentários Do Usuário",
