@@ -115,16 +115,16 @@
     "session_invalid": "Su login se ha vuelto inválido. Por favor, cierre la sesión y vuelva a iniciarsela.",
     "terms_and_conditions": "Términos y Condiciones",
     "by_continuing": "Al continuar, se afirma que usted ha leído y comprende los términos y condiciones, y los acepta: ",
-    "not_infringe": "Only add content that does not infringe on someone else's copyright.",
-    "not_conflict": "Only add content that does not conflict with the Statement of Faith.",
+    "not_infringe": "Sólo añadir contenido que no infringe los derechos de autór de otra persona.",
+    "not_conflict": "Sólo añadir contenido que no esté en conflicto con nuestra Declaración de Fe.",
     "statement_of_faith": "Declaración de Fe.",
-    "release_contributions": "Release your contributions to the content under a Creative Commons Attribution-ShareAlike 4.0 International License.",
-    "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International License."
+    "release_contributions": "Libere sus contribuciones de contenido bajo la licencia internacional Creative Commons Atribución-CompartirIgual 4.0.",
+    "cc_by_sa": "Licencia internacional Creative Commons Atribución-ComptartirIgual 4.0."
   },
   "projects": {
-    "zip_files": "Zip Files",
-    "error_setting_up_project": "Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (${email}) for assistance.",
-    "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
+    "zip_files": "Los Archivos Zip",
+    "error_setting_up_project": "¡Uy! Hemos encontrado un problema en el configurar de su proyecto para ser cargado. Póngase en contacto con el Help Desk (${email}) para obtener ayuda, por favor.",
+    "error_loading": "¡Uy! Hemos encontrado un problema al cargar su proyecto. Póngase en contacto con el Help Desk (${email}) para obtener ayuda, por favor.",
     "no_project": "No project was selected",
     "import_from_d43": "Import from ${door43}",
     "select_project_from_list": "Select a project from the list.",
