@@ -108,7 +108,7 @@
     "read_and_agree": "Eu li e aceito os termos e condições do serviço.",
     "attention": "Atenção",
     "known_as_username": "Você escolheu ser conhecido como <strong>${username}</strong>. Este nome de usuário será visível publicamente.",
-    "known_not_comfortable": "Se você não se sentir bem em ser conhecido como <strong>${username}</strong>, indique <strong>{Cancel</strong> e inserir um novo nome.",
+    "known_not_comfortable": "Se você não se sentir bem em ser conhecido como <strong>${username}</strong>, <strong>{Cancelar</strong> e inserir um novo nome.",
     "logged_in_as": "Você está conectado como: <strong>${username}</strong>.",
     "how_to_proceed": "Como você gostaria de continuar?",
     "login_error": "Ocorreu um erro ao tentar iniciar esta sessão.",
