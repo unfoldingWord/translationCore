@@ -115,14 +115,14 @@
     "session_invalid": "Seu Log In tornou-se inválido por alguma razão. Por favor, faça o Sair e tentar novamente o seu Log In.",
     "terms_and_conditions": "Os Termos e Condições de Uso",
     "by_continuing": "Ao continuar, você afirma que leu e entendeu os termos e as condições de uso, e concorda com: ",
-    "not_infringe": "Favor só adicionar conteúdo que não infringa nos direitos autorais de alguém.",
-    "not_conflict": "Favor só adicionar conteúdo que não esteja em conflito com a nossa Declaração de Fé.",
+    "not_infringe": "Por favor, só adicionar conteúdo que \"não infrinja\" nos direitos autorais de outra pessoa ou organização.",
+    "not_conflict": "Por favor,  não adicione conteúdo que esteja em conflito com a nossa Declaração de Fé.",
     "statement_of_faith": "Declaração de Fé.",
-    "release_contributions": "Libere suas contribuições de conteúdo sob a Licença Internacional Creative Commons Attribution-ShareAlike 4.0.",
-    "cc_by_sa": "Licença Internacional Creative Commons Attribution-ShareAlike 4.0."
+    "release_contributions": "Libere suas contribuições de conteúdo sob a Licença \"Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)\".",
+    "cc_by_sa": "Licença \"Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)\". "
   },
   "projects": {
-    "zip_files": "Ficheiro ZIP",
+    "zip_files": "Arquivo ZIP",
     "error_setting_up_project": "Puxa! Encontrou-se um probleminha na configuração do seu projeto para fazer o Upload. Favor entrar-se em contato com o Help-Desk (${email}) para conseguir assistência. Obrigado.",
     "error_loading": "Puxa! Encontrou-se um probleminha no Upload do seu projeto. Favor entrar-se em contato com o Help-Desk (${email}) para conseguir assistência. Obrigado.",
     "no_project": "Nenhum Projeto foi selecionado",
