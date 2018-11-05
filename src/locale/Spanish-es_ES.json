@@ -196,7 +196,7 @@
     "renamed_project": "Su proyecto local ha sido nombrado<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "Su proyecto ha sido renombrado<br/><b>${project}</b><br/>¿Qué le gustaría hacer con el repositorio existente de Door43 de este proyecto?",
     "dcs_rename_success": "El repositorio de Door43 para el proyecto fue actualizado con exito.<br/>${project}",
-    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
+    "dcs_rename_failed": "El repositorio Door43 no fue renombrado.<br/><br/>¿Quieres intentar nuevamente renombrar el repositorio Door43 o continuar sin renombrar?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
   },
   "project_validation": {
