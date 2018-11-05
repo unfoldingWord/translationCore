@@ -197,13 +197,13 @@
     "dcs_rename_project": "Su proyecto ha sido renombrado<br/><b>${project}</b><br/>¿Qué le gustaría hacer con el repositorio existente de Door43 de este proyecto?",
     "dcs_rename_success": "El repositorio de Door43 para el proyecto fue actualizado con exito.<br/>${project}",
     "dcs_rename_failed": "El repositorio Door43 no fue renombrado.<br/><br/>¿Quieres intentar nuevamente renombrar el repositorio Door43 o continuar sin renombrar?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
+    "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a Door43, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto Door43."
   },
   "project_validation": {
     "language_mismatch": "El nombre del idioma no es válido para el Código",
     "creative_commons": "Creative Commons",
     "attention": "Atención",
-    "select_copyright": "Please select the copyright status for this project.",
+    "select_copyright": "Por favor seleccione el estado del copyright para este proyecto.",
     "cc0": "CC0 / Dominio Público",
     "cc_by": "Creative Commons Atribución (CC BY)",
     "cc_by_sa": "Creative Commons Attribution-ShareAlike (CC BY-SA)",
