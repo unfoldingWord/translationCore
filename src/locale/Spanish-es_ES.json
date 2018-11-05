@@ -178,7 +178,7 @@
     "not_usfm_file_error": "El proyecto que usted seleccionó (${project_path}) no es un proyecto válido de USFM. ",
     "local_import_error": "Ocurrió un error al importar su proyecto.<br />No se pudo mover el proyecto de ${fromPath} a ${toPath}",
     "online_import_error": "Ocurrió un error al importar su proyecto.<br />No se pudo descargar el proyecto de ${project_url} a ${toPath}",
-    "export_failed_error": "La exportación falló. Error ${error}",
+    "export_failed_error": "La exportación falló con error ${error}.",
     "loading_ellipsis": "Cargando...",
     "fatal_errors": "¡Advertencia! En este proyecto se encuentran errores fatales y asi no se puede cargar.",
     "loading_error": "Se encontró un problema al cargar su proyecto. Póngase en contacto con el HelpDesk (${email}) para obtener ayuda.",
@@ -232,7 +232,7 @@
     "only_nt_supported": "Esta versión de ${app} solo admite proyectos del Nuevo Testamento.",
     "old_project_unsupported": "Este proyecto contiene datos de una versión antigua de ${app} la cual no se admite en esta versión. Para obtener ayuda para abrir este proyecto o para reiniciar la verificación, por favor contáctese con help@door43.org.",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
+      "info": "(Código de identificación de 3 o 4 letras por ejemplo, NVI, RVR, etc.)",
       "field_invalid_length": "Debe tener 3-4 letras de largo",
       "invalid_characters": "Sólo se soportan las letras básicas de Latin"
     },
@@ -271,7 +271,7 @@
   },
   "tools": {
     "book_not_supported": "El libro no se soporta",
-    "select_tool_from_list": "Select a tool and a gateway language from the list.",
+    "select_tool_from_list": "Seleccione una herramienta y un idioma de entrada de la lista.",
     "tools": "Herramientas",
     "no_tools": "No ${app} default tools found.",
     "tw_part1": "translationWords (Parte 1)",
