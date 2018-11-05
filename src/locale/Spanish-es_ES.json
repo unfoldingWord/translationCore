@@ -160,7 +160,7 @@
     "loading_project_alert": "Cargando los datos de su proyecto.",
     "exported_alert": "${project_name} ha sido exportado con éxito a ${file_path}.",
     "must_be_logged_in_alert": "Se debe iniciar sesión con una cuenta de ${door43} para cargar Proyectos. Por favor, cierre la sesión y hacerla de nuevo con una cuenta de usuario ${door43}.",
-    "uploading_alert": "Uploading ${project_name} to ${door43}. Please wait...",
+    "uploading_alert": "Cargando el ${project_name} para ${door43}. Gracias por esperar...",
     "upload_successful_alert": "${username}, your project was successfully uploaded.",
     "upload_modified_error": "${project_name} cannot be uploaded because there have been changes to the translation of that project on your ${door43} account.",
     "merge_export_error": "This project has merge conflicts and cannot be exported. Select the project to resolve the merge conflicts, then try again.",
