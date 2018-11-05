@@ -194,9 +194,9 @@
     "nickname": "Apelido do Projeto",
     "current_project": "Projeto: ${project}",
     "renamed_project": "Seu Projeto local foi nomeado<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Seu projeto foi renomeado<br/><b>${project}</b><br/>o O que você gostaria de fazer com o repositório deste Proyeto que já existe na Door43?",
+    "dcs_rename_project": "Seu projeto foi renomeado<br/><b>${project}</b><br/>. O que você gostaria de fazer com o repositório deste Projeto que já existe na Door43?",
     "dcs_rename_success": "O repositório deste Projeto na Door43 já foi atualizado. Parabens!<br/>${project}",
-    "dcs_rename_failed": "O repositório deste Projeto na Door43 não foi renomeado.<br/><br/>Você quer tentar renomear aquele repositório na Door43, ou continuar sem renomear?",
+    "dcs_rename_failed": "O repositório deste Projeto na Door43 não foi renomeado.<br/><br/>Você quer tentar renomear este repositório na Door43, ou continuar sem renomear?",
     "dcs_rename_conflict": "O renomear deste repositório não se fez devido a um repositório com este nome que já existe.<br/><br/>Para lograr fazer o Upload deste projeto para Door43, ou precisa-se renomear o seu projeto local ou renomear o seu Projeto já na Door43."
   },
   "project_validation": {
