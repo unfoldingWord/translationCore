@@ -123,7 +123,7 @@
   },
   "projects": {
     "zip_files": "Arquivo ZIP",
-    "error_setting_up_project": "Desculpe! Nós encontramos um problema na configuração do seu projeto ao carregar. Por favor, entre em contato com o SUPORTE no e-mail (${email}) para conseguir assistência.",
+    "error_setting_up_project": "Opa! Encontramos um problema ao configurar seu projeto para ser carregado. Entre em contato com o Suporte (${email}) para obter assistência.",
     "error_loading": "Desculpe! Nós encontramos um problema ao carregar o seu projeto. Por favor, entrar em contato com o SUPORTE no (${email}) para conseguir assistência.",
     "no_project": "Nenhum Projeto foi selecionado",
     "import_from_d43": "Importar do ${door43}",
