@@ -179,12 +179,12 @@
     "local_import_error": "Error occurred while importing your project.<br />Could not move the project from ${fromPath} to ${toPath}",
     "online_import_error": "Error occurred while importing your project.<br />Could not download the project from ${project_url} to ${toPath}",
     "export_failed_error": "Export failed with error ${error}.",
-    "loading_ellipsis": "Loading...",
+    "loading_ellipsis": "Cargando...",
     "fatal_errors": "¡Advertencia! En este proyecto se encuentran errores fatales y asi no se puede cargar.",
     "loading_error": "Se encontró un problema al cargar su proyecto. Póngase en contacto con el HelpDesk (${email}) para obtener ayuda.",
-    "uploading_error": "Error uploading: \"${error}\".",
-    "uploading_unknown_error": "Error uploading. Unknown error.",
-    "saving_error": "Error saving project: \"${error}\".",
+    "uploading_error": "Error al cargar: \"${error}\".",
+    "uploading_unknown_error": "Error en el cargar. Error desconocido.",
+    "saving_error": "Error al guardar el proyecto: \"${error}\".",
     "project_exists": "El proyecto que se seleccionó (${project_path}) ya existe.",
     "reimporting_not_supported": "Reimporting existing projects is not currently supported.",
     "project_does_not_exist": "La carpeta para el proyecto que se seleccionó, (${project_path}), no existe.",
@@ -205,12 +205,12 @@
     "attention": "Atención",
     "select_copyright": "Please select the copyright status for this project.",
     "cc0": "CC0 / Dominio Público",
-    "cc_by": "Creative Commons Attribution (CC BY)",
+    "cc_by": "Creative Commons Atribución (CC BY)",
     "cc_by_sa": "Creative Commons Attribution-ShareAlike (CC BY-SA)",
     "none_of_above": "Ninguna de las anteriores",
     "cc_license_link": "licencia",
     "publicity_link": "publicidad o privacidad",
-    "endorsement_link": "endorsement",
+    "endorsement_link": "respaldo",
     "other_license": "Any project whose copyright status or license is something other than Public Domain, CC0, Creative Commons Attribution, or Creative Commons Attribution-ShareAlike.",
     "project_information_missing": "Some project information may be missing. Please review and fill out all of the required fields.",
     "publicly_available": "Those listed as contributors or checkers will be made publicly available.",
@@ -234,7 +234,7 @@
     "resource_id": {
       "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
       "field_invalid_length": "Debe tener 3-4 letras de largo",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "invalid_characters": "Sólo se soportan las letras básicas de Latin"
     },
     "conflicting_project": "Ya existe un proyecto con este identificador para este idioma y libro"
   },
@@ -270,7 +270,7 @@
     }
   },
   "tools": {
-    "book_not_supported": "Book not supported",
+    "book_not_supported": "El libro no se soporta",
     "select_tool_from_list": "Select a tool and a gateway language from the list.",
     "tools": "Herramientas",
     "no_tools": "No ${app} default tools found.",
