@@ -122,7 +122,7 @@
     "cc_by_sa": "Licencia internacional Creative Commons Atribución-ComptartirIgual 4.0."
   },
   "projects": {
-    "zip_files": "Los Archivos Zip",
+    "zip_files": "Archivos comprimidos .zip",
     "error_setting_up_project": "¡Uy! Hemos encontrado un problema en el configurar de su proyecto para ser cargado. Póngase en contacto con el Help Desk (${email}) para obtener ayuda, por favor.",
     "error_loading": "¡Uy! Hemos encontrado un problema al cargar su proyecto. Póngase en contacto con el Help Desk (${email}) para obtener ayuda, por favor.",
     "no_project": "No se seleccionó ningún proyecto",
@@ -359,6 +359,6 @@
     "rename_local": "Rename Local Project",
     "do_not_rename": "No Cambie el Nombre",
     "contact_helpdesk": "Póngase en contacto con el Helpdesk",
-    "retry": "Intentalo de nuevo"
+    "retry": "Intente de nuevo"
   }
 }
