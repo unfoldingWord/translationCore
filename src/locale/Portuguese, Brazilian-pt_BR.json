@@ -229,12 +229,12 @@
     "merge_conflict": "Conflito de Fusão ${conflict_number}",
     "conflict_reference": "Este é um conflito de fusão no capítulo ${chapter}, e no versículo ${verse}.",
     "missing_verses_instructions": "Alguns versículos não se encontram no seu projeto.",
-    "only_nt_supported": "Esta versão do ${app} só suporta os projetos do Novo Testamento.",
+    "only_nt_supported": "Esta versão do ${app} suporta apenas projetos do Novo Testamento.",
     "old_project_unsupported": "Infelizmente, este Projeto contém dados de uma versão antiga do ${app} que não se suporta agora nesta versão. Para ajuda de como abrir este projeto ou para reiniciar a verificação que se fazia antes, entre em contato com: help@door43.org.",
     "resource_id": {
       "info": "(código de identificação de 3 ou 4 letras<br />por exemplo, NVI, JFA, e tal.)",
       "field_invalid_length": "Deve ter de 3 a 4 letras",
-      "invalid_characters": "Só é suportado as letras básicas do Latin."
+      "invalid_characters": "Só se suportam as letras básicas de Latin"
     },
     "conflicting_project": "Já existe um projeto com este identificador para este idioma e este livro"
   },
