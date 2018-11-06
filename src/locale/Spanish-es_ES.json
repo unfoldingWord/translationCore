@@ -357,8 +357,8 @@
     "create_new_repo": "Create New Repository",
     "rename_repo": "Rename Repository",
     "rename_local": "Rename Local Project",
-    "do_not_rename": "Do Not Rename",
-    "contact_helpdesk": "Contact Helpdesk",
-    "retry": "Retry"
+    "do_not_rename": "No Cambie el Nombre",
+    "contact_helpdesk": "Póngase en contacto con el Helpdesk",
+    "retry": "Intentalo de nuevo"
   }
 }
