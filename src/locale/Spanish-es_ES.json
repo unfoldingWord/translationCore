@@ -200,7 +200,7 @@
     "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a Door43, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto Door43."
   },
   "project_validation": {
-    "language_mismatch": "El nombre del idioma no es válido para el Código",
+    "language_mismatch": "Código no valido para nombre de idioma",
     "creative_commons": "Creative Commons",
     "attention": "Atención",
     "select_copyright": "Por favor seleccione el estado del copyright para este proyecto.",
@@ -210,7 +210,7 @@
     "none_of_above": "Ninguna de las anteriores",
     "cc_license_link": "licencia",
     "publicity_link": "publicidad o privacidad",
-    "endorsement_link": "respaldo",
+    "endorsement_link": "endoso",
     "other_license": "Cualquier proyecto cuyo estado de copyright o licencia sea diferente al Dominio Público, CC0, Creative Commons Attribution o Creative Commons Attribution-ShareAlike.",
     "project_information_missing": "Puede faltar alguna información del proyecto. Por favor revise y rellene todos los campos requeridos.",
     "publicly_available": "Aquellos que figuran como colaboradores o verificadores estarán públicamente disponibles.",
