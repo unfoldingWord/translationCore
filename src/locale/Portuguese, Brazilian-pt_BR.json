@@ -105,7 +105,7 @@
     "password": "Senha",
     "new_guest": "Novo convidado",
     "visible": "Isto é visível ao público",
-    "read_and_agree": "Eu li e aceito os termos e condições do serviço.",
+    "read_and_agree": "Eu li e concordo com os termos e as condições.",
     "attention": "Atenção",
     "known_as_username": "Você escolheu ser conhecido como <strong>${username}</strong>. Este nome de usuário será visível publicamente.",
     "known_not_comfortable": "Se você não se sentir bem em ser conhecido como <strong>${username}</strong>, <strong>{Cancelar</strong> e inserir um novo nome.",
