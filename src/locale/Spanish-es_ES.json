@@ -194,7 +194,7 @@
     "nickname": "Apodo del Proyecto",
     "current_project": "Proyecto: ${project}",
     "renamed_project": "Su proyecto local ha sido nombrado<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Su proyecto ha sido renombrado<br/><b>${project}</b><br/>¿Qué le gustaría hacer con el repositorio existente de Door43 de este proyecto?",
+    "dcs_rename_project": "Su proyecto ha sido renombrado<br/><b>${project}</b><br/>¿Qué le gustaría hacer con el repositorio Door43 del proyecto existente?",
     "dcs_rename_success": "El repositorio de Door43 para el proyecto fue actualizado con exito.<br/>${project}",
     "dcs_rename_failed": "El repositorio Door43 no fue renombrado.<br/><br/>¿Quieres intentar nuevamente renombrar el repositorio Door43 o continuar sin renombrar?",
     "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a Door43, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto Door43."
