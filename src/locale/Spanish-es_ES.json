@@ -228,21 +228,21 @@
     "merge_conflicts": "Conflictos de unión",
     "merge_conflict": "Conflicto de unión ${conflict_number}",
     "conflict_reference": "Este es un conflicto de unión para el capítulo ${chapter}, versículo ${verse}.",
-    "missing_verses_instructions": "Se le faltan algunos versos de su proyecto.",
+    "missing_verses_instructions": "Algunos versículos están faltando en su proyecto.",
     "only_nt_supported": "Esta versión de ${app} solo admite proyectos del Nuevo Testamento.",
     "old_project_unsupported": "Este proyecto contiene datos de una versión antigua de ${app} la cual no se admite en esta versión. Para obtener ayuda para abrir este proyecto o para reiniciar la verificación, por favor contáctese con help@door43.org.",
     "resource_id": {
       "info": "(Código de identificación de 3 o 4 letras por ejemplo, NVI, RVR, etc.)",
       "field_invalid_length": "Debe tener 3-4 letras de largo",
-      "invalid_characters": "Sólo se soportan las letras básicas de Latin"
+      "invalid_characters": "Sólo soporta las letras básicas del Latín"
     },
     "conflicting_project": "Ya existe un proyecto con este identificador para este idioma y libro"
   },
   "book_list": {
     "nt": {
       "mat": "San Mateo (${book_id})",
-      "mrk": "San Marcos (${book_id})",
-      "luk": "San Lucas (${book_id})",
+      "mrk": "Marcos (${book_id})",
+      "luk": "Lucas (${book_id})",
       "jhn": "San Juan (${book_id})",
       "act": "Hechos (${book_id})",
       "rom": "Romanos (${book_id})",
