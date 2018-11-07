@@ -184,11 +184,11 @@ describe('UsfmFileConversionHelpers', () => {
       const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
 
       expect(Object.keys(chapter1_data).length - 1).toEqual(13);
-      expect(chapter1_data[1]).toEqual("Long ago God spoke to our ancestors through the prophets at many times and in many ways.");
+      expect(chapter1_data[1]).toEqual("Long ago God spoke to our ancestors through the prophets at many times and in many ways. ");
       // test apostrophe
-      expect(chapter1_data[3]).toEqual("He is the brightness of God's glory, the exact representation of his being. He even holds everything together by the word of his power. After he had made cleansing for sins, he sat down at the right hand of the Majesty on high.");
+      expect(chapter1_data[3]).toEqual("He is the brightness of God's glory, the exact representation of his being. He even holds everything together by the word of his power. After he had made cleansing for sins, he sat down at the right hand of the Majesty on high. ");
       // test quotes
-      expect(chapter1_data[5]).toEqual("For to which of the angels did God ever say, \"You are my son, today I have become your father\"? Or to which of the angels did God ever say, \"I will be a father to him, and he will be a son to me\"?");
+      expect(chapter1_data[5]).toEqual("For to which of the angels did God ever say, \"You are my son, today I have become your father\"? Or to which of the angels did God ever say, \"I will be a father to him, and he will be a son to me\"? ");
     });
 
     test('aligned USFM and punctuation should succeed', async () => {
@@ -216,7 +216,7 @@ describe('UsfmFileConversionHelpers', () => {
       const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
 
       expect(Object.keys(chapter1_data).length).toEqual(26);
-      expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach,");
+      expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach, ");
       // test apostrophe
       expect(chapter1_data[4]).toEqual("When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said, \\qt-s |who=\"Jesus\"\\*\"You heard from me");
       // test quotes
@@ -259,9 +259,9 @@ describe('UsfmFileConversionHelpers', () => {
       expect(alignment.bottomWords[0].word).toEqual("You");
 
       expect(Object.keys(chapter1_data).length).toEqual(expectedVerses);
-      expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach,");
+      expect(chapter1_data[1]).toEqual("The former book I wrote, Theophilus, concerning all that Jesus began both to do and to teach, ");
       // test \s5
-      expect(chapter1_data[3]).toEqual("After his suffering, he also presented himself alive to them with many convincing proofs. For forty days he appeared to them, and he spoke things concerning the kingdom of God.\\s5");
+      expect(chapter1_data[3]).toEqual("After his suffering, he also presented himself alive to them with many convincing proofs. For forty days he appeared to them, and he spoke things concerning the kingdom of God.\\s5 ");
       // test \qt-s
       expect(chapter1_data[4]).toEqual("When he was meeting together with them, he commanded them not to leave Jerusalem, but to wait for the promise of the Father, about which, he said,\\qt-s |who=\"Jesus\"\\*\"You heard from me");
       // test \qt-e
@@ -339,7 +339,7 @@ describe('UsfmFileConversionHelpers', () => {
 
       const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
       expect(Object.keys(chapter1_data).length).toEqual(16);
-      expect(chapter1_data[1]).toEqual("Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,");
+      expect(chapter1_data[1]).toEqual("Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ");
 
       // test alignments
       const wordAlignmentDataPath = path.join(IMPORTS_PATH, 'project_folder_name', '.apps', 'translationCore', 'alignmentData', 'tit');
@@ -418,7 +418,7 @@ describe('UsfmFileConversionHelpers', () => {
       const json = usfm.toJSON(usfmData, {chunk: true, convertToInt: ["occurrence", "occurrences"]});
       const verseNum = 20;
       const verseParts = json.verses[verseNum];
-      const expectedBibleVerse = "\"For it is written in the Book of Psalms,\\q 'Let his field be made desolate,\\q and do not let even one person live there';\\q 'And let someone else take his position of leadership.'\\m\n\n\\s5";
+      const expectedBibleVerse = "\"For it is written in the Book of Psalms,\\q 'Let his field be made desolate,\\q  and do not let even one person live there';\\q 'And let someone else take his position of leadership.'\\m\n\n\\s5";
       const expectedCleanedVerse = "\"For it is written in the Book of Psalms, 'Let his field be made desolate, and do not let even one person live there'; 'And let someone else take his position of leadership.'\n\n";
 
       // when
@@ -438,7 +438,7 @@ describe('UsfmFileConversionHelpers', () => {
       const json = usfm.toJSON(usfmData, {chunk: true, convertToInt: ["occurrence", "occurrences"]});
       const verseNum = 6;
       const verseParts = json.verses[verseNum];
-      const expectedBibleVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written,\\q 'He will command his angels to take care of you,'\\m and,\n\\q 'They will lift you up in their hands,\\q so that you will not hit your foot against a stone.'\"\\m";
+      const expectedBibleVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written,\\q 'He will command his angels to take care of you,'\\m and,\n\\q 'They will lift you up in their hands,\\q  so that you will not hit your foot against a stone.'\"\\m";
       const expectedCleanedVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written, 'He will command his angels to take care of you,' and,\n'They will lift you up in their hands, so that you will not hit your foot against a stone.'\"";
 
       // when
