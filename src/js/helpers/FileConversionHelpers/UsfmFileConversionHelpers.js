@@ -107,6 +107,20 @@ export const getOriginalLanguageChapterResources = function (projectBibleID, cha
 };
 
 /**
+ * remove single trailing newline from end of string
+ * @param text
+ */
+const trimNewLine = function (text) {
+  if (text && text.length) {
+    let lastChar = text.substr(-1);
+    if (lastChar === '\n') {
+      text = text.substr(0, text.length - 1);
+    }
+  }
+  return text;
+};
+
+/**
  * generate the target language bible from parsed USFM and manifest data
  * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
  * @param {Object} manifest
@@ -144,7 +158,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
 
         verses.forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
-          bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
+          bibleChapter[verse] = trimNewLine(getUsfmForVerseContent(verseParts));
           if (alignmentData && bibleData && bibleData[chapter]) {
             const bibleVerse = bibleData[chapter][verse];
             const object = wordaligner.unmerge(verseParts, bibleVerse);
@@ -207,7 +221,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
 const parseMilestone = verseObject => {
   let text = verseObject.text || "";
   let wordSpacing = '';
-  const length = verseObject.children.length;
+  const length = verseObject.children ? verseObject.children.length : 0;
   for (let i = 0; i < length; i++) {
     let child = verseObject.children[i];
     switch (child.type) {

@@ -255,3 +255,5 @@ coverage/
 
 #Mr Developer
 .mr.developer.cfg
+
+find-duplicate-dependencies.log
