@@ -178,7 +178,7 @@
     "tc-source-content-updater": "0.2.16",
     "tc-strings": "0.1.7",
     "tc-tool": "^2.0.0",
-    "tc-ui-toolkit": "0.11.11",
+    "tc-ui-toolkit": "^0.12.0",
     "telnet-client": "0.15.5",
     "truncate-utf8-bytes": "1.0.2",
     "usfm-js": "1.0.9",
