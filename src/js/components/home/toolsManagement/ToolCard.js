@@ -96,12 +96,14 @@ export default class ToolCard extends Component {
       }
     }
     let desc_key = null;
+    let showCheckBoxes = false;
     switch (name) {
       case 'wordAlignment':
         desc_key = 'tools.alignment_description';
         break;
 
       case 'translationWords':
+        showCheckBoxes = true;
         desc_key = 'tools.tw_part1_description';
         break;
 
@@ -128,7 +130,7 @@ export default class ToolCard extends Component {
             <ToolCardNotificationBadges toolName={name} invalidatedReducer={invalidatedReducer} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          <ToolCardBoxes checks={this.state.checks} onChecked={this.updateCheckSelection} />
+          {showCheckBoxes && <ToolCardBoxes checks={this.state.checks} onChecked={this.updateCheckSelection} />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
