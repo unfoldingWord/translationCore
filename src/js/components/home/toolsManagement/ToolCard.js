@@ -36,7 +36,7 @@ export default class ToolCard extends Component {
         }
       ]
     };
-    this.updateCheckSelection = this.updateCheckSelection.bind(this)
+    this.updateCheckSelection = this.updateCheckSelection.bind(this);
   }
 
   componentWillMount() {
