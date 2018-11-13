@@ -96,6 +96,53 @@ exports[`Test ToolCard component Comparing ToolCard Component render for transla
     <ToolCardProgress
       progress={0.5}
     />
+    <div
+      style={
+        Object {
+          "marginLeft": "6%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "marginBottom": 5,
+          }
+        }
+      >
+        <div>
+          Key Terms
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "marginBottom": 5,
+          }
+        }
+      >
+        <div>
+          Other Terms
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "marginBottom": 5,
+          }
+        }
+      >
+        <div>
+          Names
+        </div>
+      </div>
+    </div>
     <div />
     <div
       style={
