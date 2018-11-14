@@ -14,6 +14,21 @@ import _ from "lodash";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 
+export const getAvailableToolCategories = (currentProjectToolsSelectedGL) => {
+  const availableCategories = {};
+  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
+    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] ? currentProjectToolsSelectedGL[toolName] : 'en';
+    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
+    const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
+    if (fs.existsSync(versionDirectory))
+      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
+        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
+      );
+    else availableCategories[toolName] = [];
+  });
+  return availableCategories;
+};
+
 /**
  * @description gets the resources from the static folder located in the tC codebase.
  */

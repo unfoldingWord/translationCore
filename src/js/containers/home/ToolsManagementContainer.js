@@ -9,6 +9,8 @@ import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
+//helpers
+import * as ResourcesHelpers from '../../helpers/ResourcesHelpers';
 
 class ToolsManagementContainer extends Component {
 
@@ -19,13 +21,12 @@ class ToolsManagementContainer extends Component {
   render() {
     const {
       reducers: {
-        toolsReducer: { toolsMetadata },
+        toolsReducer: { toolsMetadata, currentToolName },
         loginReducer: { loggedInUser },
         settingsReducer: {
           currentSettings: { developerMode }
         },
         projectDetailsReducer: {
-          availableCategories,
           selectedCategories,
           manifest,
           projectSaveLocation,
@@ -42,7 +43,7 @@ class ToolsManagementContainer extends Component {
         <p>{translate('projects.books_available', {app: translate('_.app_name')})}</p>
       </div>
     );
-
+    const availableCategories = ResourcesHelpers.getAvailableToolCategories(currentProjectToolsSelectedGL, currentToolName);
     return (
       <HomeContainerContentWrapper
         translate={translate}

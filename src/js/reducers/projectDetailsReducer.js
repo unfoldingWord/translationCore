@@ -10,8 +10,7 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  selectedCategories: ['kt'],
-  availableCategories: []
+  selectedCategories: ['kt']
 };
 
 const projectDetailsReducer = (state = initialState, action) => {

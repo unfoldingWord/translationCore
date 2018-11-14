@@ -17,7 +17,8 @@ const ToolsCards = ({
   manifest,
   invalidatedReducer,
   developerMode,
-  selectedCategories
+  selectedCategories,
+  availableCategories
 }) => {
   if (toolsMetadata.length == 0 || !toolsMetadata) {
     return (
@@ -52,6 +53,7 @@ const ToolsCards = ({
           toolsMetadata.map((metadata, i) => {
             return (
               <ToolCard
+                availableCategories={availableCategories[metadata.name] || []}
                 selectedCategories={selectedCategories}
                 translate={translate}
                 key={i}
@@ -85,6 +87,7 @@ ToolsCards.propTypes = {
   invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,
   selectedCategories: PropTypes.array.isRequired,
+  availableCategories: PropTypes.object.isRequired,
 };
 
 export default ToolsCards;

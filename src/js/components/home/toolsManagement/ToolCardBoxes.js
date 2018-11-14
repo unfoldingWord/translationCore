@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
+const checkBoxNames = {
+  'kt':'Key Terms',
+  'other': 'Other Terms',
+  'names': 'Names'
+};
 
 const ToolCardBoxes = ({checks, onChecked, selectedCategories}) => {
   return (
     <div style={{marginLeft: '6%'}}>
       {
-        checks.map(({name, id}, index) => (
+        checks.map((id, index) => (
           <div style={{display: 'flex', alignItems: 'center', marginBottom: 5}} key={index}>
             <Checkbox
               style={{width: 'unset'}}
@@ -16,7 +21,7 @@ const ToolCardBoxes = ({checks, onChecked, selectedCategories}) => {
                 onChecked(id, e.target.checked);
               }}
             />
-            <div>{name}</div>
+            <div>{checkBoxNames[id]}</div>
           </div>
         ))
       }
