@@ -21,7 +21,7 @@ const ToolCardBoxes = ({checks, onChecked, selectedCategories}) => {
                 onChecked(id, e.target.checked);
               }}
             />
-            <div>{checkBoxNames[id]}</div>
+            <div>{checkBoxNames[id] || id}</div>
           </div>
         ))
       }
