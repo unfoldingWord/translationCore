@@ -25,7 +25,8 @@ class ToolsManagementContainer extends Component {
           currentSettings: { developerMode }
         },
         projectDetailsReducer: {
-          categories:enabledCategories,
+          availableCategories,
+          selectedCategories,
           manifest,
           projectSaveLocation,
           currentProjectToolsProgress,
@@ -50,7 +51,8 @@ class ToolsManagementContainer extends Component {
         <div style={{ height: '100%' }}>
           {translate('tools.tools')}
           <ToolsCards
-            enabledCategories={enabledCategories}
+            availableCategories={availableCategories}
+            selectedCategories={selectedCategories}
             manifest={manifest}
             translate={translate}
             bookName={name}

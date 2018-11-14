@@ -75,7 +75,7 @@ export default class ToolCard extends Component {
       actions: {
         updateCheckSelection
       },
-      enabledCategories
+      selectedCategories
     } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
     let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
@@ -125,7 +125,7 @@ export default class ToolCard extends Component {
             <ToolCardNotificationBadges toolName={name} invalidatedReducer={invalidatedReducer} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes enabledCategories={enabledCategories} checks={this.state.checks} onChecked={updateCheckSelection} />}
+          {showCheckBoxes && <ToolCardBoxes selectedCategories={selectedCategories} checks={this.state.checks} onChecked={updateCheckSelection} />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -190,5 +190,5 @@ ToolCard.propTypes = {
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,
-  enabledCategories: PropTypes.array.isRequired
+  selectedCategories: PropTypes.array.isRequired
 };

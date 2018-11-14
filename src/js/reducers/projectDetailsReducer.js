@@ -10,7 +10,8 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  categories: ['kt']
+  selectedCategories: ['kt'],
+  availableCategories: []
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
@@ -28,7 +29,7 @@ const projectDetailsReducer = (state = initialState, action) => {
       };
       return {
         ...state,
-        categories: update(state.categories)
+        selectedCategories: update(state.selectedCategories)
       };
     }
     case consts.SET_SAVE_PATH_LOCATION:
