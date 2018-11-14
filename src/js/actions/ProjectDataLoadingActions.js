@@ -94,7 +94,12 @@ function getGroupsIndex(dispatch, dataDirectory, translate) {
 export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation, category, index) {
   return new Promise((resolve) => {
     let groupsDataDirectory = path.join(dataDirectory, bookAbbreviation);
-    if (fs.existsSync(groupsDataDirectory) && index === 0) {
+    const groupsDataLoadedIndex = path.join(groupsDataDirectory, '.index.json');
+    let groupsDataAlreadyLoaded = [];
+    if (fs.existsSync(groupsDataLoadedIndex)) {
+      groupsDataAlreadyLoaded = fs.readJSONSync(groupsDataLoadedIndex);
+    }
+    if (groupsDataAlreadyLoaded.includes(category)) {
       // read in the groupsData files and load groupsData to reducer
       loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch, index);
       resolve(true);
@@ -105,6 +110,8 @@ export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbr
       // read in the groupsData files and load groupsData to reducer
       //TODO: Read in the groups data object from above rather than from the FS
       loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch, index);
+      groupsDataAlreadyLoaded.push(category);
+      fs.writeJSONSync(path.join(groupsDataDirectory, '.index.json'), groupsDataAlreadyLoaded);
       console.log('Generated and Loaded group data data from fs');
       resolve(true);
     }
@@ -126,7 +133,7 @@ export function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch
   let total = groupDataFolderObjs.length;
   let i = 0;
   for (let groupId in groupDataFolderObjs) {
-    if (path.extname(groupDataFolderObjs[groupId]) !== '.json') {
+    if (path.extname(groupDataFolderObjs[groupId]) !== '.json' || groupDataFolderObjs[groupId][0] === '.') {
       total--;
       continue;
     }
@@ -136,7 +143,7 @@ export function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch
       allGroupsData[groupName] = groupData;
     }
     throttle(() => {
-      dispatch(LoaderActions.sendProgressForKey(currentToolName, i / total * 100 * index + 1));
+      dispatch(LoaderActions.sendProgressForKey(currentToolName, i / total * 100 * (index + 1)));
     }, 500);
     i++;
   }
