@@ -40,7 +40,7 @@ export function isNewTestament(bookId) {
  */
 export function getOLforBook(bookId) {
   const isOT = isOldTestament(bookId);
-  const languageId = (isOT) ? 'he' : 'grc';
+  const languageId = (isOT) ? 'hbo' : 'grc';
   const bibleId = (isOT) ? 'uhb' : 'ugnt';
   return {languageId, bibleId};
 }

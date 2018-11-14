@@ -76,7 +76,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     test('should return English for Joel', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-      setupDummyHelps('he');
+      setupDummyHelps('hbo');
 
       // fake the book of Joel
       fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
