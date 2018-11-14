@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
 
-const ToolCardBoxes = ({checks, onChecked}) => {
+const ToolCardBoxes = ({checks, onChecked, enabledCategories}) => {
   return (
     <div style={{marginLeft: '6%'}}>
       {
-        checks.map(({name, enabled}, index) => (
+        checks.map(({name, id}, index) => (
           <div style={{display: 'flex', alignItems: 'center', marginBottom: 5}} key={index}>
             <Checkbox
               style={{width: 'unset'}}
               iconStyle={{fill: 'black', marginRight: 12}}
-              checked={enabled}
+              checked={enabledCategories.includes(id)}
               onCheck={(e) => {
-                onChecked(index, e.target.checked);
+                onChecked(id, e.target.checked);
               }}
             />
             <div>{name}</div>
@@ -26,7 +26,8 @@ const ToolCardBoxes = ({checks, onChecked}) => {
 
 ToolCardBoxes.propTypes = {
   checks: PropTypes.array.isRequired,
-  onChecked: PropTypes.func
+  onChecked: PropTypes.func,
+  enabledCategories: PropTypes.array.isRequired
 };
 
 export default ToolCardBoxes;

@@ -25,6 +25,7 @@ class ToolsManagementContainer extends Component {
           currentSettings: { developerMode }
         },
         projectDetailsReducer: {
+          categories:enabledCategories,
           manifest,
           projectSaveLocation,
           currentProjectToolsProgress,
@@ -49,6 +50,7 @@ class ToolsManagementContainer extends Component {
         <div style={{ height: '100%' }}>
           {translate('tools.tools')}
           <ToolsCards
+            enabledCategories={enabledCategories}
             manifest={manifest}
             translate={translate}
             bookName={name}
@@ -103,6 +105,9 @@ const mapDispatchToProps = (dispatch) => {
           }
           dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
         };
+      },
+      updateCheckSelection: (id, value) => {
+        dispatch(ProjectDetailsActions.updateCheckSelection(id, value));
       }
     }
   };

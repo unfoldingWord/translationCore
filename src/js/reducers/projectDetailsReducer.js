@@ -15,11 +15,22 @@ const initialState = {
 
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.SET_PROJECT_CATEGORIES:
+    case consts.SET_PROJECT_CATEGORIES: {
+      const update = (array) => {
+        const exists = array.indexOf(action.id) >= 0;
+        if (exists && action.value === true) return;
+        else if (exists && action.value === false) {
+          return array.filter((el) => el !== action.id);
+        }
+        else if (!exists && action.value === true)
+          return array.concat(action.id);
+        else return array;
+      };
       return {
         ...state,
-        categories: action.categories
+        categories: update(state.categories)
       };
+    }
     case consts.SET_SAVE_PATH_LOCATION:
       return {
         ...state,
@@ -155,7 +166,7 @@ export const getName = state => {
  */
 export const getNickname = state => {
   const manifest = getManifest(state);
-  if(manifest && manifest.resource && manifest.resource.name) {
+  if (manifest && manifest.resource && manifest.resource.name) {
     return manifest.resource.name;
   } else {
     return '';
