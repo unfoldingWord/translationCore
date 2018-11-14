@@ -8,6 +8,7 @@ import { shallow } from 'enzyme';
 
 jest.mock('../src/js/components/home/toolsManagement/ToolCardProgress', () => 'ToolCardProgress');
 jest.mock('../src/js/components/home/toolsManagement/GlDropDownList', () => 'GlDropDownList');
+jest.mock('material-ui/Checkbox');
 
 // Tests for ToolCard React Component
 describe('Test ToolCard component',()=>{
