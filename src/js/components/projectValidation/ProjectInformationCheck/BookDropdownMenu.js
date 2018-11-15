@@ -8,11 +8,10 @@ import * as BooksOfTheBible from '../../../common/BooksOfTheBible';
 const BookDropdownMenu = ({
   bookId,
   updateBookId,
-  translate,
-  developerMode
+  translate
 }) => {
   // TODO: in future accept all bible books in all modes
-  const bibleBooks = developerMode ? BooksOfTheBible.getAllBibleBooks() : BooksOfTheBible.BIBLE_BOOKS.newTestament;
+  const bibleBooks = BooksOfTheBible.getAllBibleBooks();
   return (
     <div>
       <SelectField
