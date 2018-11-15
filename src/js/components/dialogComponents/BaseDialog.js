@@ -12,7 +12,14 @@ import Dialog from 'material-ui/Dialog';
  * @param {func} onSecondaryClick the click callback of the secondary button
  * @return {*}
  */
-const makeDialogActions = ({primaryActionEnabled, secondaryActionEnabled, primaryLabel, secondaryLabel, onPrimaryClick, onSecondaryClick}) => {
+const makeDialogActions = ({
+                             primaryActionEnabled,
+                             secondaryActionEnabled,
+                             primaryLabel,
+                             secondaryLabel,
+                             onPrimaryClick,
+                             onSecondaryClick
+                           }) => {
   const hasPrimaryLabel = Boolean(primaryLabel);
   const hasSecondaryLabel = Boolean(secondaryLabel);
   const hasPrimaryCallback = Boolean(onPrimaryClick);
@@ -20,25 +27,29 @@ const makeDialogActions = ({primaryActionEnabled, secondaryActionEnabled, primar
   const actions = [];
 
   const primaryButton = (
-    <button className="btn-prime"
-            disabled={!primaryActionEnabled}
-            onClick={onPrimaryClick}>
+    <button
+      className="btn-prime"
+      disabled={!primaryActionEnabled}
+      onClick={onPrimaryClick}
+    >
       {primaryLabel}
     </button>
   );
   const secondaryButton = (
-    <button className="btn-second"
-            disabled={!secondaryActionEnabled}
-            onClick={onSecondaryClick}>
+    <button
+      className="btn-second"
+      disabled={!secondaryActionEnabled}
+      onClick={onSecondaryClick}
+    >
       {secondaryLabel}
     </button>
   );
 
-  if(hasSecondaryLabel && hasSecondaryCallback) {
+  if (hasSecondaryLabel && hasSecondaryCallback) {
     actions.push(secondaryButton);
   }
 
-  if(hasPrimaryLabel && hasPrimaryCallback) {
+  if (hasPrimaryLabel && hasPrimaryCallback) {
     actions.push(primaryButton);
   }
   return actions;
@@ -63,8 +74,7 @@ const makeDialogActions = ({primaryActionEnabled, secondaryActionEnabled, primar
  * @property {func} [onSubmit] - callback when the primary button is triggered. Overridden by `actions`
  */
 class BaseDialog extends React.Component {
-
-  componentDidCatch(error, info) {
+  componentDidCatch (error, info) {
     console.error(error);
     console.warn(info);
   }
@@ -75,6 +85,8 @@ class BaseDialog extends React.Component {
       secondaryActionEnabled,
       modal,
       title,
+      bodyStyle,
+      titleStyle,
       secondaryLabel,
       primaryLabel,
       onClose,
@@ -82,39 +94,43 @@ class BaseDialog extends React.Component {
       open,
       children,
       actions,
-      scrollableContent,
-      titleStyle
+      scrollableContent
     } = this.props;
 
-    let dialogActions = actions ? actions : makeDialogActions({
+    let dialogActions = actions
+      ? actions
+      : makeDialogActions({
         primaryActionEnabled,
         secondaryActionEnabled,
         primaryLabel,
         secondaryLabel,
         onPrimaryClick: onSubmit,
         onSecondaryClick: onClose
-    });
+      });
 
     let isModal = dialogActions.length !== 0;
-    if(typeof modal !== 'undefined') {
+    if (typeof modal !== 'undefined') {
       isModal = modal;
     }
 
     return (
       <MuiThemeProvider>
-        <Dialog open={open}
-                modal={isModal}
-                title={title}
-                titleStyle={{
-                  color: 'var(--reverse-color)',
-                  backgroundColor: 'var(--accent-color-dark)',
-                  padding: '15px',
-                  marginBottom: '15px',
-                  ...titleStyle
-                }}
-                autoScrollBodyContent={scrollableContent}
-                onRequestClose={onClose}
-                actions={dialogActions}>
+        <Dialog
+          open={open}
+          modal={isModal}
+          title={title}
+          bodyStyle={bodyStyle}
+          titleStyle={{
+            color: 'var(--reverse-color)',
+            backgroundColor: 'var(--accent-color-dark)',
+            padding: '15px',
+            marginBottom: '15px',
+            ...titleStyle
+          }}
+          autoScrollBodyContent={scrollableContent}
+          onRequestClose={onClose}
+          actions={dialogActions}
+        >
           {children}
         </Dialog>
       </MuiThemeProvider>
@@ -135,7 +151,8 @@ BaseDialog.propTypes = {
   onSubmit: PropTypes.func,
   scrollableContent: PropTypes.bool,
   titleStyle: PropTypes.object,
-  children: PropTypes.any
+  children: PropTypes.any,
+  bodyStyle: PropTypes.object
 };
 
 BaseDialog.defaultProps = {

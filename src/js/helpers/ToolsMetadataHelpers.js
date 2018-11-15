@@ -1,38 +1,44 @@
-import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import * as LoadHelpers from '../helpers/LoadHelpers';
-import {saveToolViews} from './ToolSelectionActions';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 
-export function getToolsMetadatas() {
-  return ((dispatch) => {
-    getDefaultTools((moduleFolderPathList) => {
-      fillDefaultTools(moduleFolderPathList, (metadatas) => {
-        sortMetadatas(metadatas);
-        dispatch({
-          type: consts.SET_TOOLS_METADATA,
-          val: metadatas
-        });
-        moduleFolderPathList.forEach((moduleFolderName) => {
-          dispatch(saveToolViewsEarly(moduleFolderName.split('package.json')[0]));
-        });
-      });
-    });
+
+export function getToolViewsAndAPIInitialState()  {
+  let moduleFolderPathList = getDefaultTools();
+  const toolsMetadata = fillDefaultTools(moduleFolderPathList);
+  sortMetadatas(toolsMetadata);
+  
+  const currentToolViews = {};
+  const apis = {};
+  moduleFolderPathList.forEach((fullPathName) => {
+   const moduleFolderName = fullPathName.split('package.json')[0];
+   const modulePath = path.join(moduleFolderName, 'package.json');
+   const dataObject = fs.readJsonSync(modulePath);
+   const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
+   for (let module of checkArray) {
+    try {
+      let tool = require(path.join(module.location, dataObject.main)).default;
+
+      // TRICKY: compatibility for older tools
+      if('container' in tool.container && 'name' in tool.container) {
+        tool = tool.container;
+      }
+      // end compatibility fix
+      currentToolViews[module.name] = tool.container;
+      if(tool.api) {
+        apis[module.name] = tool.api;
+      }
+    } catch (e) {
+      console.error(`Failed to load ${module.name} tool`, e);
+    }
+  }
   });
+  return {apis, currentToolViews, toolsMetadata};
 }
 
-export function saveToolViewsEarly(moduleFolderName) {
-  return dispatch => {
-    const modulePath = path.join(moduleFolderName, 'package.json');
-    const dataObject = fs.readJsonSync(modulePath);
-    const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
-    dispatch(saveToolViews(checkArray, dataObject));
-  };
-}
-
-const getDefaultTools = (callback) => {
+const getDefaultTools = () => {
   let defaultTools = [];
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
   let moduleBasePath = PACKAGE_SUBMODULE_LOCATION;
@@ -48,7 +54,7 @@ const getDefaultTools = (callback) => {
       }
     }
   }
-  callback(defaultTools);
+  return defaultTools;
 };
 
 const sortMetadatas = (metadatas) => {
@@ -57,17 +63,9 @@ const sortMetadatas = (metadatas) => {
   });
 };
 
-const fillDefaultTools = (moduleFilePathList, callback) => {
+const fillDefaultTools = (moduleFilePathList) => {
   let tempMetadatas = [];
   // This makes sure we're done with all the files first before we call the callback
-  let totalFiles = moduleFilePathList.length;
-  let doneFiles = 0;
-  function onComplete() {
-    doneFiles++;
-    if (doneFiles === totalFiles) {
-      callback(tempMetadatas);
-    }
-  }
   for (let filePath of moduleFilePathList) {
     fs.readJson(filePath, (error, metadata) => {
       if (error) {
@@ -79,7 +77,7 @@ const fillDefaultTools = (moduleFilePathList, callback) => {
         metadata.badgeImagePath = path.resolve(filePath, '../badge.png');
         tempMetadatas.push(metadata);
       }
-      onComplete();
     });
   }
+  return tempMetadatas;
 };
