@@ -74,7 +74,7 @@ export const sortByNamesCaseInsensitive = (languageListByName=> {
  */
 export const getLanguageCodes = () => {
   if (!languageCodes) {
-    const langList = require('../../assets/langnames');
+    let langList = require('../../assets/langnames');
     languageNamePrompts = {};
     languageIdPrompts = {};
     const localCodes = {};
@@ -104,7 +104,9 @@ export const getLanguageCodes = () => {
         }
       }
     }
+    langList = null;
   }
+
   return languageCodes;
 };
 
