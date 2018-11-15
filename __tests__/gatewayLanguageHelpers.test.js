@@ -74,7 +74,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return English for Joel', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
       setupDummyHelps('hbo');
 
