@@ -6,7 +6,6 @@ import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import ospath from "ospath";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);

@@ -1,76 +1,53 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import path from 'path';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 // actions
-import {showPopover} from '../actions/PopoverActions';
-import {addComment} from '../actions/CommentsActions';
-import {editTargetVerse} from '../actions/VerseEditActions';
-import {toggleReminder} from '../actions/RemindersActions';
-import {
-  changeSelections,
-  validateSelections,
-  getSelectionsFromContextId
-} from '../actions/SelectionsActions';
-import {
-  changeCurrentContextId,
-  changeToNextContextId,
-  changeToPreviousContextId,
-  loadCurrentContextId
-} from '../actions/ContextIdActions';
-import {addGroupData} from '../actions/GroupsDataActions';
+import { showPopover } from '../actions/PopoverActions';
+import { addComment } from '../actions/CommentsActions';
+import { editTargetVerse } from '../actions/VerseEditActions';
+import { toggleReminder } from '../actions/RemindersActions';
+import { changeSelections, getSelectionsFromContextId, validateSelections } from '../actions/SelectionsActions';
+import { changeCurrentContextId, changeToNextContextId, changeToPreviousContextId, loadCurrentContextId } from '../actions/ContextIdActions';
+import { addGroupData } from '../actions/GroupsDataActions';
 import { loadGroupsIndex, updateRefreshCount } from '../actions/GroupsIndexActions';
-import {setToolSettings} from '../actions/SettingsActions';
-import {
-  closeAlertDialog,
-  openAlertDialog,
-  openOptionDialog
-} from '../actions/AlertModalActions';
-import {selectModalTab} from '../actions/ModalActions';
+import { setToolSettings } from '../actions/SettingsActions';
+import { closeAlertDialog, openAlertDialog, openOptionDialog } from '../actions/AlertModalActions';
+import { closeAlert, openIgnorableAlert } from '../actions/AlertActions';
+import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
-import { expandSubMenu, setFilter, changeGroup } from '../actions/GroupMenuActions.js';
+import { changeGroup, expandSubMenu, setFilter } from '../actions/GroupMenuActions.js';
 //helpers
-import { getGLQuote, getAvailableScripturePaneSelections } from '../helpers/ResourcesHelpers';
-import {VerseObjectUtils} from 'word-aligner';
+import { getAvailableScripturePaneSelections, getGLQuote } from '../helpers/ResourcesHelpers';
+import { VerseObjectUtils } from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
-import {
-  getContext,
-  getCurrentToolApi,
-  getCurrentToolContainer,
-  getProjectSaveLocation,
-  getSelectedSourceChapter,
-  getSelectedSourceVerse,
-  getSelectedTargetChapter,
-  getSelectedTargetVerse,
-  getSupportingToolApis,
-  getSourceBible,
-  getTargetBible,
-  getUsername
-} from '../selectors';
-import {getValidGatewayBiblesForTool} from "../helpers/gatewayLanguageHelpers";
+import { getContext, getCurrentToolApi, getCurrentToolContainer, getProjectSaveLocation, getSelectedSourceChapter, getSelectedSourceVerse, getSelectedTargetChapter, getSelectedTargetVerse, getSourceBible, getSupportingToolApis, getTargetBible, getUsername } from '../selectors';
+import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
 
 class ToolContainer extends Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.onWriteProjectData = this.onWriteProjectData.bind(this);
     this.onReadProjectData = this.onReadProjectData.bind(this);
     this.onShowDialog = this.onShowDialog.bind(this);
+    this.onShowIgnorableDialog = this.onShowIgnorableDialog.bind(this);
     this.onShowLoading = this.onShowLoading.bind(this);
     this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
     this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
     this.onDeleteProjectFile = this.onDeleteProjectFile.bind(this);
     this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
-    this.onProjectDataPathExistsSync = this.onProjectDataPathExistsSync.bind(this);
+    this.onProjectDataPathExistsSync = this.onProjectDataPathExistsSync.bind(
+      this);
     this.onProjectDataPathExists = this.onProjectDataPathExists.bind(this);
     this.onReadProjectDir = this.onReadProjectDir.bind(this);
     this.onReadProjectDirSync = this.onReadProjectDirSync.bind(this);
   }
 
-  componentWillMount() {
-    const {toolApi, supportingToolApis} = this.props;
+  componentWillMount () {
+    const { toolApi, supportingToolApis } = this.props;
 
     // connect to APIs
     const toolProps = this.makeToolProps();
@@ -86,8 +63,8 @@ class ToolContainer extends Component {
     }
   }
 
-  componentWillUnmount() {
-    const {toolApi, supportingToolApis} = this.props;
+  componentWillUnmount () {
+    const { toolApi, supportingToolApis } = this.props;
     for (const key of Object.keys(supportingToolApis)) {
       supportingToolApis[key].triggerWillDisconnect();
     }
@@ -96,9 +73,9 @@ class ToolContainer extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    const {contextId: nextContext, toolApi, supportingToolApis} = nextProps;
-    let {currentToolName} = nextProps.toolsReducer;
+  componentWillReceiveProps (nextProps) {
+    const { contextId: nextContext, toolApi, supportingToolApis } = nextProps;
+    let { currentToolName } = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
     if (nextContext && nextContext.tool !== currentToolName) {
       nextProps.actions.changeCurrentContextId(undefined);
@@ -126,7 +103,7 @@ class ToolContainer extends Component {
    * @return {Promise}
    */
   onWriteProjectData (filePath, data) {
-    const {projectSaveLocation} = this.props;
+    const { projectSaveLocation } = this.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     return fs.outputFile(writePath, data);
@@ -137,8 +114,8 @@ class ToolContainer extends Component {
    * @param {string} dir - the relative path to read
    * @return {Promise<String[]>}
    */
-  onReadProjectDir(dir) {
-    const {projectSaveLocation} = this.props;
+  onReadProjectDir (dir) {
+    const { projectSaveLocation } = this.props;
     const dirPath = path.join(projectSaveLocation,
       '.apps/translationCore/', dir);
     return fs.readdir(dirPath);
@@ -149,8 +126,8 @@ class ToolContainer extends Component {
    * @param {string} dir - the relative path to read
    * @return {*}
    */
-  onReadProjectDirSync(dir) {
-    const {projectSaveLocation} = this.props;
+  onReadProjectDirSync (dir) {
+    const { projectSaveLocation } = this.props;
     const dirPath = path.join(projectSaveLocation,
       '.apps/translationCore/', dir);
     return fs.readdirSync(dirPath);
@@ -162,8 +139,8 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path to read
    * @return {Promise<string>}
    */
-  async onReadProjectData(filePath) {
-    const {projectSaveLocation} = this.props;
+  async onReadProjectData (filePath) {
+    const { projectSaveLocation } = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     const data = await fs.readFile(readPath);
@@ -175,8 +152,8 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path to read
    * @return {string}
    */
-  onReadProjectDataSync(filePath) {
-    const {projectSaveLocation} = this.props;
+  onReadProjectDataSync (filePath) {
+    const { projectSaveLocation } = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     const data = fs.readFileSync(readPath);
@@ -189,7 +166,7 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path who's existence will be checked
    * @return {*}
    */
-  onProjectFileExistsSync(filePath) {
+  onProjectFileExistsSync (filePath) {
     return this.onProjectDataPathExistsSync(filePath);
   }
 
@@ -198,8 +175,8 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path who's existence will be checked
    * @return {*}
    */
-  onProjectDataPathExistsSync(filePath) {
-    const {projectSaveLocation} = this.props;
+  onProjectDataPathExistsSync (filePath) {
+    const { projectSaveLocation } = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     return fs.pathExistsSync(readPath);
@@ -210,8 +187,8 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path who's existence will be checked
    * @return {boolean}
    */
-  onProjectDataPathExists(filePath) {
-    const {projectSaveLocation} = this.props;
+  onProjectDataPathExists (filePath) {
+    const { projectSaveLocation } = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     return fs.pathExists(readPath);
@@ -223,7 +200,7 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path to delete
    * @return {Promise}
    */
-  onDeleteProjectFile(filePath) {
+  onDeleteProjectFile (filePath) {
     const {
       projectSaveLocation
     } = this.props;
@@ -236,12 +213,12 @@ class ToolContainer extends Component {
    * Displays an options dialog as a promise.
    *
    * @param {string} message - the message to display
-   * @param {string} [confirmText] - the confirm button text
+   * @param {string} [confirmText="ok"] - the confirm button text
    * @param {string} [cancelText] - the cancel button text
    * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
    */
-  onShowDialog(message, confirmText = null, cancelText = null) {
-    const {actions: {openOptionDialog, closeAlertDialog}, translate} = this.props;
+  onShowDialog (message, confirmText = null, cancelText = null) {
+    const { actions: { openOptionDialog, closeAlertDialog }, translate } = this.props;
     let confirmButtonText = confirmText;
     if (confirmButtonText === null) {
       confirmButtonText = translate('buttons.ok_button');
@@ -259,11 +236,36 @@ class ToolContainer extends Component {
   }
 
   /**
+   * Similar to @{link onShowDialog} with the addition of it being ignorable.
+   *
+   * @param {string} id - The id that can be ignored. Messages that share an id will all be ignored.
+   * @param {string} message - the message to display
+   * @param {string} [confirmText] - confirm button text
+   * @param {string} [cancelText] - cancel button text
+   * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
+   */
+  onShowIgnorableDialog (id, message, confirmText = null, cancelText = null) {
+    const { openIgnorableAlert } = this.props;
+    return new Promise((resolve, reject) => {
+      openIgnorableAlert(id, message, {
+        confirmText,
+        cancelText,
+        onConfirm: () => {
+          resolve();
+        },
+        onCancel: () => {
+          reject();
+        }
+      });
+    });
+  }
+
+  /**
    * Displays a loading dialog.
    * @param {string} message - the message to display while loading
    */
-  onShowLoading(message) {
-    const {actions: {openAlertDialog}} = this.props;
+  onShowLoading (message) {
+    const { actions: { openAlertDialog } } = this.props;
     openAlertDialog(message, true);
   }
 
@@ -272,8 +274,8 @@ class ToolContainer extends Component {
    * TRICKY: this actually closes all dialogs right now.
    * Ideally that could change in the future.
    */
-  onCloseLoading() {
-    const {actions: {closeAlertDialog}} = this.props;
+  onCloseLoading () {
+    const { actions: { closeAlertDialog } } = this.props;
     closeAlertDialog();
   }
 
@@ -282,12 +284,12 @@ class ToolContainer extends Component {
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
    */
-  makeToolProps(nextProps = undefined) {
+  makeToolProps (nextProps = undefined) {
     if (!nextProps) {
       nextProps = this.props;
     }
     const {
-      currentLanguage: {code},
+      currentLanguage: { code },
       contextId,
       targetVerseText,
       targetBible,
@@ -309,6 +311,7 @@ class ToolContainer extends Component {
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
+      showIgnorableDialog: this.onShowIgnorableDialog,
       contextId,
       targetVerseText,
       sourceVerse,
@@ -322,14 +325,14 @@ class ToolContainer extends Component {
     };
   }
 
-  render() {
+  render () {
     const {
       supportingToolApis,
       Tool
     } = this.props;
-    let {currentToolViews} = this.props.toolsReducer;
+    let { currentToolViews } = this.props.toolsReducer;
 
-    const props = {...this.props};
+    const props = { ...this.props };
     delete props.translate;
 
     const activeToolProps = {
@@ -339,8 +342,8 @@ class ToolContainer extends Component {
 
     return (
       <div
-        style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
-        <div style={{flex: 'auto', display: 'flex'}}>
+        style={{ display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)' }}>
+        <div style={{ flex: 'auto', display: 'flex' }}>
           <Tool
             {...props}
             currentToolViews={currentToolViews}
@@ -365,6 +368,8 @@ ToolContainer.propTypes = {
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,
   currentLanguage: PropTypes.object.isRequired,
+  openIgnorableAlert: PropTypes.func.isRequired,
+  closeAlert: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired
 };
 
@@ -402,6 +407,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    openIgnorableAlert: (id, message, ignorable) => dispatch(
+      openIgnorableAlert(id, message, ignorable)),
+    closeAlert: id => dispatch(closeAlert(id)),
     actions: {
       goToNext: () => {
         dispatch(changeToNextContextId());

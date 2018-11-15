@@ -102,6 +102,7 @@ describe('GogsApiHelpers.renameRepo', () => {
     token: '12345678910'
   };
   it('should not fail in renaming repo with a valid name', function() {
+    jest.setTimeout(30000);
     expect.assertions(1);
     return expect(GogsApiHelpers.renameRepo(newRepoName, project_path, user))
     .resolves.toEqual();
@@ -116,6 +117,7 @@ describe('GogsApiHelpers.createNewRepo', () => {
     token: '12345678910'
   };
   it('should not fail in creating repo with a valid name', async () => {
+    jest.setTimeout(30000);
     const results = await GogsApiHelpers.createNewRepo(newRepoName, project_path, user);
     expect(results).toEqual();
   });
