@@ -26,7 +26,6 @@ exports[`ToolsManagementCotnainer container tests Check ToolsManagementContainer
       actions={
         Object {
           "getProjectProgressForTools": [Function],
-          "getToolsMetadatas": [Function],
           "launchTool": [Function],
           "setProjectToolGL": [Function],
         }

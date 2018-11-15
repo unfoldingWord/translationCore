@@ -75,7 +75,7 @@ export const saveState = (prevState, newState) => {
       // make sure tool has not changed
       isEqual(prevState.toolsReducer.currentToolName, newState.toolsReducer.currentToolName)
     ) {
-      saveGroupsData(newState);
+      saveGroupsData(newState, prevState);
     }
   } catch (err) {
     console.warn(err);
