@@ -15,7 +15,7 @@ import * as ProjectInformationCheckActions from "../ProjectInformationCheckActio
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
-import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
+import { getTranslate, getProjectManifest, getProjectSaveLocation, getUsername } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
@@ -50,7 +50,7 @@ export const onlineImport = () => {
           verifyThisIsTCoreOrTStudioProject(importProjectPath, errorMessage);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
           const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
-          migrateProject(importProjectPath, link);
+          migrateProject(importProjectPath, link, getUsername(getState()));
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
           dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
