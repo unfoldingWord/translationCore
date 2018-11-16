@@ -198,7 +198,7 @@ export function verifyValidBetaProject(state) {
     else if (manifest && manifest.project && isValidBibleBook(manifest.project.id)) return resolve();
     else {
       const translate = getTranslate(state);
-      return reject(translate("project_validation.only_nt_supported", {'app': translate('_.app_name')}));
+      return reject(translate("tools.book_not_supported", {'app': translate('_.app_name')}));
     }
   });
 }
