@@ -8,12 +8,13 @@ import * as ProjectInformationCheckActions from "../actions/ProjectInformationCh
 import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
 import {getTranslate} from "../selectors";
+import * as ResourceHelpers from './ResourcesHelpers';
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
 import BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
-
+export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
@@ -346,11 +347,23 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
  * Gets a tool's progress
  * @param {String} pathToCheckDataFiles
  */
-export function getToolProgress(pathToCheckDataFiles) {
+export function getToolProgress(pathToCheckDataFiles, currentToolName, categories = ['kt'], bookAbbreviation) {
+  debugger;
+  let availableChecks = [];
+  const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
+  const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+  const versionPath = ResourceHelpers.getLatestVersionInPath(toolResourcePath) || toolResourcePath;
+  categories.forEach((category)=> {
+    const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
+    const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
+    if (fs.existsSync(groupsDataSourcePath)) {
+      availableChecks = availableChecks.concat(fs.readdirSync(groupsDataSourcePath));
+    }
+  });
   let progress = 0;
   if (fs.existsSync(pathToCheckDataFiles)) {
     let groupDataFiles = fs.readdirSync(pathToCheckDataFiles).filter(file => { // filter out .DS_Store
-      return file !== '.DS_Store' && path.extname(file) === '.json';
+      return file !== '.DS_Store' && path.extname(file) === '.json' && availableChecks.includes(file);
     });
     let allGroupDataObjects = {};
     groupDataFiles.map((groupDataFileName) => {
