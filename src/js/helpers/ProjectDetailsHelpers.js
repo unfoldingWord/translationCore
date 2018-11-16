@@ -345,31 +345,61 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
 
 /**
  * Gets a tool's progress
- * @param {String} pathToCheckDataFiles
+ * @param {String} pathToProjectGroupsDataFiles
  */
-export function getToolProgress(pathToCheckDataFiles, currentToolName, categories = ['kt'], bookAbbreviation) {
-  let availableChecks = [];
-  const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
-  const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
-  const versionPath = ResourceHelpers.getLatestVersionInPath(toolResourcePath) || toolResourcePath;
-  categories.forEach((category)=> {
-    const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
-    const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
-    if (fs.existsSync(groupsDataSourcePath)) {
-      availableChecks = availableChecks.concat(fs.readdirSync(groupsDataSourcePath));
-    }
-  });
+export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, userSelectedCategories, bookAbbreviation) {
   let progress = 0;
-  if (fs.existsSync(pathToCheckDataFiles)) {
-    let groupDataFiles = fs.readdirSync(pathToCheckDataFiles).filter(file => { // filter out .DS_Store
-      return file !== '.DS_Store' && path.extname(file) === '.json' && availableChecks.includes(file);
+  if (fs.existsSync(pathToProjectGroupsDataFiles)) {
+    //Getting all the groups data that exist in the project
+    //Note: Not all of these may be used for the counting because
+    //Some groups here are not apart of the currently selected categories 
+    let projectGroupsData = fs.readdirSync(pathToProjectGroupsDataFiles).filter(file => {
+      return file !== '.DS_Store' && path.extname(file) === '.json';
     });
-    let allGroupDataObjects = {};
-    groupDataFiles.map((groupDataFileName) => {
-      const groupData = fs.readJsonSync(path.join(pathToCheckDataFiles, groupDataFileName));
-      allGroupDataObjects[groupDataFileName.replace('.json', '')] = groupData;
+
+    let availableCheckCategories = [];
+    const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
+    //Note: translationWords only uses checks that are also available in the greek (OL)
+    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+    const versionPath = ResourceHelpers.getLatestVersionInPath(toolResourcePath) || toolResourcePath;
+    userSelectedCategories.forEach((category) => {
+      const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
+      const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
+      if (fs.existsSync(groupsDataSourcePath)) {
+        //Here we are categorizing the checks in the OL by their respective category i.e. "kt"
+        //Note: All checks here need to be accounted for in the progress because the
+        //user selected these categories and it exist in the greek
+        availableCheckCategories = availableCheckCategories.concat({
+          category,
+          checksToBeCounted: fs.readdirSync(groupsDataSourcePath)
+        });
+      }
     });
-    progress = calculateProgress(allGroupDataObjects);
+
+    //Here we are setting up the object to be calculated for progress
+    //The data is either going to come from the users local project groupsData
+    //Or if the user has not explicitly opened the project yet then it will come from
+    //the greek source path because that groupsData only gets copied to the project
+    //groupsData after being selected and opened.
+    let groupsDataToBeCounted = {};
+    availableCheckCategories.forEach(({checksToBeCounted, category}) => {
+      checksToBeCounted.forEach((groupDataFileName) => {
+        if (projectGroupsData.includes(groupDataFileName)) {
+          //This means that the user has opened the tool with these checks selected before and
+          //They are avialable to read from the project folder
+            const groupData = fs.readJsonSync(path.join(pathToProjectGroupsDataFiles, groupDataFileName));
+            groupsDataToBeCounted[groupDataFileName.replace('.json', '')] = groupData;
+        } else {
+          //This means that the check needs to be accounted for in the progress but the user
+          //has not opened that check category yet so it is not in the local project folder
+          //Grabbing the default groupObject from the OL resource which will have no selections
+          const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
+          const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
+          groupsDataToBeCounted[groupDataFileName.replace('.json', '')] = fs.readJsonSync(path.join(groupsDataSourcePath, groupDataFileName));
+        }
+      });
+    });
+    progress = calculateProgress(groupsDataToBeCounted);
   }
   return progress;
 }
