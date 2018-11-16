@@ -7,6 +7,7 @@ import ospath from 'ospath';
 import * as TargetLanguageActions from './TargetLanguageActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
+import * as SettingsHelpers from '../helpers/SettingsHelpers';
 import { DEFAULT_GATEWAY_LANGUAGE } from '../helpers/gatewayLanguageHelpers';
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
@@ -14,6 +15,7 @@ import _ from 'lodash';
 import {getContext} from "../selectors";
 import * as BibleHelpers from "../helpers/bibleHelpers";
 import SimpleCache from "../helpers/SimpleCache";
+import * as SettingsActions from "./SettingsActions";
 
 const bookCache = new SimpleCache();
 
@@ -25,7 +27,7 @@ const bookCache = new SimpleCache();
  */
 export function addNewBible(languageId, bibleId, bibleData) {
   return ((dispatch) => {
-    if (languageId.toLowerCase() === 'grc' || languageId.toLowerCase() === 'he') {
+    if (languageId.toLowerCase() === 'grc' || languageId.toLowerCase() === 'hbo') {
       languageId = 'originalLanguage';
     }
     dispatch({
@@ -214,6 +216,32 @@ function removeBibleFromList(resources, bibleId, languageId) {
 }
 
 /**
+ * make sure we have selected the correct OL bible for testament that book is in.
+ * @param {String} bookId
+ * @return {Array} array of resource in scripture panel
+ */
+export const updateOlPaneSettings = (bookId) => (dispatch, getState) => {
+  const isOT = BibleHelpers.isOldTestament(bookId);
+  const olBibleId = isOT ? 'uhb' : 'ugnt';
+  const newCurrentPaneSettings = SettingsHelpers.getCurrentPaneSetting(getState());
+  let changed = false;
+  if (Array.isArray(newCurrentPaneSettings)) {
+    for (let setting of newCurrentPaneSettings) {
+      let languageId = setting.languageId;
+      if (languageId === "originalLanguage") {
+        if (setting.bibleId !== olBibleId) { // if we have switched testaments
+          changed = true;
+          setting.bibleId = olBibleId;
+        }
+      }
+    }
+    if (changed) {
+      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+    }
+  }
+};
+
+/**
  * make sure required bible books for current tool are loaded into resources
  */
 export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
@@ -221,6 +249,7 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
   const { bibles } = state.resourcesReducer;
   const contextId = getContext(state);
   const bookId = contextId && contextId.reference.bookId;
+  dispatch(updateOlPaneSettings(bookId));
   const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId);
   // remove bibles from resources list that are already loaded into resources reducer
   if (bookId && bibles && Array.isArray(resources)) {
@@ -228,7 +257,7 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
       if (bibles[languageId]) {
         for (let bibleId of Object.keys(bibles[languageId])) {
           const lang = (languageId === "originalLanguage") ?
-            BibleHelpers.isOldTestament(bookId) ? 'he' : 'grc' : languageId;
+            BibleHelpers.isOldTestament(bookId) ? 'hbo' : 'grc' : languageId;
           removeBibleFromList(resources, bibleId, lang);
         }
       }
@@ -249,6 +278,7 @@ export const loadBooks = contextId => (dispatch, getState) => {
   return new Promise((resolve, reject) => {
     try {
       let bookId = contextId.reference.bookId;
+      dispatch(updateOlPaneSettings(bookId));
       // load source bibles
       const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
 
