@@ -78,7 +78,6 @@ export function getProjectProgressForTools(toolName) {
       const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     } else {
-      debugger;
       progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, selectedCategories, bookId);
     }
 

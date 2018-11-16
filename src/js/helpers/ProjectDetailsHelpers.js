@@ -348,7 +348,6 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
  * @param {String} pathToCheckDataFiles
  */
 export function getToolProgress(pathToCheckDataFiles, currentToolName, categories = ['kt'], bookAbbreviation) {
-  debugger;
   let availableChecks = [];
   const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
   const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
