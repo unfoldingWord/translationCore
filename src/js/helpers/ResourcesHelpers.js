@@ -287,7 +287,7 @@ export function getLanguageIdsFromResourceFolder(bookId) {
     if (BibleHelpers.isOldTestament(bookId)) {
       languageIds = languageIds.filter(languageId => languageId !== 'grc');
     } else { // else if its a new testament project remove hebrew from languageIds.
-      languageIds = languageIds.filter(languageId => languageId !== 'he');
+      languageIds = languageIds.filter(languageId => languageId !== 'hbo');
     }
     languageIds = languageIds.filter(languageID => {
       let valid = (fs.lstatSync(path.join(USER_RESOURCES_PATH, languageID)).isDirectory());
@@ -388,7 +388,8 @@ export function getAvailableScripturePaneSelections(resourceList) {
  */
 export function getResourcesNeededByTool(state, bookId) {
   const resources = [];
-  const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'he' : 'grc';
+  const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'hbo' : 'grc';
+  const olBibleId = BibleHelpers.isOldTestament(bookId) ? 'uhb' : 'ugnt';
   const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
   if (Array.isArray(currentPaneSettings)) {
     for (let setting of currentPaneSettings) {
@@ -409,7 +410,7 @@ export function getResourcesNeededByTool(state, bookId) {
   } else {
     console.log("No Scripture Pane Configuration");
   }
-  addResource(resources, olLanguageID, BibleHelpers.isOldTestament(bookId) ? 'uhb' : 'ugnt');
+  addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
   const gatewayLangId = getGatewayLanguageCode(state) || 'en'; // default to English
   const currentToolName = state.toolsReducer && state.toolsReducer.currentToolName;
   const validBibles = getValidGatewayBiblesForTool(currentToolName, gatewayLangId, bookId);
