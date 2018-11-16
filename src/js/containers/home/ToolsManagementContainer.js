@@ -9,6 +9,8 @@ import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
+//helpers
+import * as ResourcesHelpers from '../../helpers/ResourcesHelpers';
 
 class ToolsManagementContainer extends Component {
 
@@ -19,12 +21,13 @@ class ToolsManagementContainer extends Component {
   render() {
     const {
       reducers: {
-        toolsReducer: { toolsMetadata },
+        toolsReducer: { toolsMetadata, currentToolName },
         loginReducer: { loggedInUser },
         settingsReducer: {
           currentSettings: { developerMode }
         },
         projectDetailsReducer: {
+          selectedCategories,
           manifest,
           projectSaveLocation,
           currentProjectToolsProgress,
@@ -40,7 +43,7 @@ class ToolsManagementContainer extends Component {
         <p>{translate('projects.books_available', {app: translate('_.app_name')})}</p>
       </div>
     );
-
+    const availableCategories = ResourcesHelpers.getAvailableToolCategories(currentProjectToolsSelectedGL, currentToolName);
     return (
       <HomeContainerContentWrapper
         translate={translate}
@@ -49,6 +52,8 @@ class ToolsManagementContainer extends Component {
         <div style={{ height: '100%' }}>
           {translate('tools.tools')}
           <ToolsCards
+            availableCategories={availableCategories}
+            selectedCategories={selectedCategories}
             manifest={manifest}
             translate={translate}
             bookName={name}
@@ -103,6 +108,9 @@ const mapDispatchToProps = (dispatch) => {
           }
           dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
         };
+      },
+      updateCheckSelection: (id, value, toolName) => {
+        dispatch(ProjectDetailsActions.updateCheckSelection(id, value, toolName));
       }
     }
   };

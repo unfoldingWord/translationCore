@@ -6,7 +6,8 @@ import isEqual from 'deep-equal';
  * @param {string} key - object key. ex. "comments", "reminders", "selections" or "verseEdits".
  * @return {object} returns the group data object which the key boolean toggled.
  */
-export const getToggledGroupData = (state, action, key) => {
+export const getToggledGroupData = (old_state, action, key) => {
+  const state = JSON.parse(JSON.stringify(old_state));
   let groupData = state.groupsData[action.contextId.groupId];
   if (groupData == undefined) return groupData;
   let groupObject = groupData.find(groupObject => {

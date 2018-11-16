@@ -20,23 +20,8 @@ export default class ToolCard extends Component {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
     this.state = {
-      showDescription: false,
-      checks: [
-        {
-          name: 'Key Terms',
-          enabled: true
-        },
-        {
-          name: 'Other Terms',
-          enabled: false
-        },
-        {
-          name: 'Names',
-          enabled: false
-        }
-      ]
+      showDescription: false
     };
-    this.updateCheckSelection = this.updateCheckSelection.bind(this);
   }
 
   componentWillMount() {
@@ -56,14 +41,6 @@ export default class ToolCard extends Component {
     }
   }
 
-  updateCheckSelection(index, value) {
-    const newChecks = this.state.checks.splice(0);
-    newChecks[index].enabled = value;
-    this.setState({
-      checks: newChecks
-    });
-  }
-
   render() {
     const {metadata: {
       title,
@@ -80,7 +57,12 @@ export default class ToolCard extends Component {
       currentProjectToolsProgress,
       translate,
       invalidatedReducer,
-      developerMode
+      developerMode,
+      actions: {
+        updateCheckSelection
+      },
+      selectedCategories,
+      availableCategories
     } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
     let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
@@ -130,7 +112,7 @@ export default class ToolCard extends Component {
             <ToolCardNotificationBadges toolName={name} invalidatedReducer={invalidatedReducer} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes checks={this.state.checks} onChecked={this.updateCheckSelection} />}
+          {showCheckBoxes && <ToolCardBoxes toolName={name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -194,5 +176,7 @@ ToolCard.propTypes = {
   metadata: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
-  developerMode: PropTypes.bool.isRequired
+  developerMode: PropTypes.bool.isRequired,
+  selectedCategories: PropTypes.array.isRequired,
+  availableCategories: PropTypes.array.isRequired
 };
