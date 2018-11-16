@@ -109,8 +109,8 @@ const mapDispatchToProps = (dispatch) => {
           dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
         };
       },
-      updateCheckSelection: (id, value) => {
-        dispatch(ProjectDetailsActions.updateCheckSelection(id, value));
+      updateCheckSelection: (id, value, toolName) => {
+        dispatch(ProjectDetailsActions.updateCheckSelection(id, value, toolName));
       }
     }
   };

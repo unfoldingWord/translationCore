@@ -18,11 +18,14 @@ import git from '../helpers/GitApi.js';
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
-export const updateCheckSelection = (id, value) => {
-  return {
-    type: consts.SET_PROJECT_CATEGORIES,
-    id,
-    value
+export const updateCheckSelection = (id, value, toolName) => {
+  return dispatch => {
+    dispatch({
+      type: consts.SET_PROJECT_CATEGORIES,
+      id,
+      value
+    });
+    dispatch(getProjectProgressForTools(toolName));
   };
 };
 

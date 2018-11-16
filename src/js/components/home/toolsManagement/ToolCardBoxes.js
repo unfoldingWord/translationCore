@@ -7,7 +7,7 @@ const checkBoxNames = {
   'names': 'Names'
 };
 
-const ToolCardBoxes = ({checks, onChecked, selectedCategories}) => {
+const ToolCardBoxes = ({checks, onChecked, selectedCategories, toolName}) => {
   return (
     <div style={{marginLeft: '6%'}}>
       {
@@ -18,7 +18,7 @@ const ToolCardBoxes = ({checks, onChecked, selectedCategories}) => {
               iconStyle={{fill: 'black', marginRight: 12}}
               checked={selectedCategories.includes(id)}
               onCheck={(e) => {
-                onChecked(id, e.target.checked);
+                onChecked(id, e.target.checked, toolName);
               }}
             />
             <div>{checkBoxNames[id] || id}</div>
