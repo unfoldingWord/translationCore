@@ -158,7 +158,13 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
 
         verses.forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
-          bibleChapter[verse] = trimNewLine(getUsfmForVerseContent(verseParts));
+          let verseText;
+          if (alignmentData) {
+            verseText = getUsfmForVerseContent(verseParts);
+          } else {
+            verseText = convertVerseDataToUSFM(verseParts);
+          }
+          bibleChapter[verse] = trimNewLine(verseText);
           if (alignmentData && bibleData && bibleData[chapter]) {
             const bibleVerse = bibleData[chapter][verse];
             const object = wordaligner.unmerge(verseParts, bibleVerse);
@@ -296,6 +302,24 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
 };
 
 /**
+ * converts USFM verse data into string
+ * @param verseData
+ * @return {string}
+ */
+function convertVerseDataToUSFM(verseData) {
+  const outputData = {
+    "chapters": {},
+    "headers": [],
+    "verses": {
+      "1": verseData
+    }
+  };
+  const USFM = usfmjs.toUSFM(outputData, {chunk: true});
+  const split = USFM.split("\\v 1 ");
+  return split.length > 1 ? split[1] : "";
+}
+
+/**
  * @description merge verse data into a string - flatten milestones and words and then save as USFM string
  * @param {Object|Array} verseData
  * @return {String}
@@ -315,14 +339,5 @@ export const getUsfmForVerseContent = (verseData) => {
       verseObjects: flattenedData
     };
   }
-  const outputData = {
-    "chapters": {},
-    "headers": [],
-    "verses": {
-      "1": verseData
-    }
-  };
-  const USFM = usfmjs.toUSFM(outputData, {chunk: true});
-  const split = USFM.split("\\v 1 ");
-  return split.length > 1 ? split[1] : "";
+  return convertVerseDataToUSFM(verseData);
 };
