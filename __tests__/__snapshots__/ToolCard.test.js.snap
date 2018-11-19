@@ -167,10 +167,13 @@ exports[`Test ToolCard component Comparing ToolCard Component render for transla
         toolName="translationWords"
         translate={[Function]}
       />
-      <span>
+      <span
+        aria-label="tools.no_checks_selected"
+        className="hint--left hint--medium"
+      >
         <button
           className="btn-prime"
-          disabled={false}
+          disabled={true}
           onClick={[Function]}
           style={
             Object {
