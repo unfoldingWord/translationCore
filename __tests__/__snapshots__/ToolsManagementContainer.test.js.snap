@@ -28,8 +28,10 @@ exports[`ToolsManagementCotnainer container tests Check ToolsManagementContainer
           "getProjectProgressForTools": [Function],
           "launchTool": [Function],
           "setProjectToolGL": [Function],
+          "updateCheckSelection": [Function],
         }
       }
+      availableCategories={Object {}}
       bookName="nodejs"
       currentProjectToolsProgress={Object {}}
       currentProjectToolsSelectedGL={Object {}}

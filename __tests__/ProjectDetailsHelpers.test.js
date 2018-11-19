@@ -19,6 +19,7 @@ const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported in dependency
+jest.mock('material-ui/Checkbox');
 
 let mock_repoExists = false;
 let mock_repoError = false;
