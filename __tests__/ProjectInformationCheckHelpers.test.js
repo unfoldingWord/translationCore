@@ -209,11 +209,11 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
     expect(valid).toEqual(expectedValid);
   });
 
-  test('with OT bookId should be invalid when not in developer mode', () => {
+  test('with OT bookId should be valid when not in developer mode', () => {
     // given
     const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
     state.projectInformationCheckReducer.bookId = 'jon';
-    const expectedValid = false;
+    const expectedValid = true;
 
     // when
     const valid = ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(state);

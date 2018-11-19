@@ -74,9 +74,9 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return English for Joel', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-      setupDummyHelps('he');
+      setupDummyHelps('hbo');
 
       // fake the book of Joel
       fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
@@ -145,7 +145,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return an empty list for Genesis (OT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('gen');
@@ -190,7 +190,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should return English for Joel', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       // fake the book of joel
@@ -288,7 +288,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should default to english for Genesis (OT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('gen', toolName);
@@ -297,7 +297,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should default to english for Joel (OT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol', toolName);

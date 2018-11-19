@@ -10,6 +10,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
 // container
+import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
 import KonamiContainer from '../containers/KonamiContainer';
 import StatusBarContainer from '../containers/StatusBarContainer';
@@ -23,11 +24,11 @@ import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
-import { getToolsMetadatas } from '../actions/ToolsMetadataActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
 
 import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
+
 
 class Main extends Component {
 
@@ -48,8 +49,7 @@ class Main extends Component {
     const {
       migrateResourcesFolder,
       migrateToolsSettings,
-      getAnchorTags,
-      getToolsMetadatas
+      getAnchorTags
     } = this.props;
 
     const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
@@ -60,7 +60,6 @@ class Main extends Component {
     // migration logic for toolsSettings in settings.json
     migrateToolsSettings();
     getAnchorTags();
-    getToolsMetadatas();
   }
 
   render() {
@@ -73,6 +72,7 @@ class Main extends Component {
           <div className="fill-height">
             <ScreenDimmerContainer/>
             <ProjectValidationContainer/>
+            <AlertContainer/>
             <AlertDialogContainer/>
             <KonamiContainer/>
             <PopoverContainer/>
@@ -100,8 +100,7 @@ Main.propTypes = {
   migrateToolsSettings: PropTypes.func.isRequired,
   getAnchorTags: PropTypes.func.isRequired,
   isLocaleLoaded: PropTypes.bool,
-  appLanguage: PropTypes.any,
-  getToolsMetadatas: PropTypes.func.isRequired
+  appLanguage: PropTypes.any
 };
 
 const mapStateToProps = state => {
@@ -115,8 +114,7 @@ const mapDispatchToProps = {
   getAnchorTags: OnlineModeActions.getAnchorTags,
   migrateToolsSettings: SettingsMigrationActions.migrateToolsSettings,
   migrateResourcesFolder: MigrationActions.migrateResourcesFolder,
-  loadLocalization,
-  getToolsMetadatas
+  loadLocalization
 };
 
 export default connect(

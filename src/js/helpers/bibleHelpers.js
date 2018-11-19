@@ -32,6 +32,14 @@ export function isNewTestament(bookId) {
   return bookId in BooksOfTheBible.newTestament;
 }
 
+/**
+ * tests if book is in Old or New Testament
+ * @param bookId
+ * @return {boolean}
+ */
+export function isValidBibleBook(bookId) {
+  return (isNewTestament(bookId) || isOldTestament(bookId)) ;
+}
 
 /**
  * determine
@@ -40,7 +48,7 @@ export function isNewTestament(bookId) {
  */
 export function getOLforBook(bookId) {
   const isOT = isOldTestament(bookId);
-  const languageId = (isOT) ? 'he' : 'grc';
+  const languageId = (isOT) ? 'hbo' : 'grc';
   const bibleId = (isOT) ? 'uhb' : 'ugnt';
   return {languageId, bibleId};
 }

@@ -193,13 +193,10 @@ exports[`Test ToolCard component Comparing ToolCard Component render for transla
         toolName="translationWords"
         translate={[Function]}
       />
-      <span
-        aria-label="tools.book_not_supported"
-        className="hint--left hint--medium"
-      >
+      <span>
         <button
           className="btn-prime"
-          disabled={true}
+          disabled={false}
           onClick={[Function]}
           style={
             Object {
