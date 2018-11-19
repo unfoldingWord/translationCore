@@ -174,7 +174,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       }
       for (let verseNum in targetLanguageChapterJSON) { // look for extra verses in target translation not in OL
         if (!parseInt(verseNum)) continue; // only look at numbered verses
-        if (!chapterAlignmentJSON[verseNum]) { // if this is an extre verse
+        if (!chapterAlignmentJSON[verseNum]) { // if this is an extra verse
           saveUsfmVerse(usfmToJSONObject, targetLanguageChapterJSON, chapterNumber, verseNum); // add verse to output
         }
       }
@@ -184,7 +184,8 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       for (let verseNumber in chapterAlignmentJSON) {
         if (!parseInt(verseNumber)) continue; // only import integer based verses
         const verseAlignments = chapterAlignmentJSON[verseNumber];
-        const verseString = targetLanguageChapterJSON[verseNumber];
+        const verseString = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(
+                                targetLanguageChapterJSON[verseNumber]);
         let verseObjects;
         try {
           verseObjects = wordaligner.merge(

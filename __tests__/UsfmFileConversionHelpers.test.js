@@ -483,9 +483,55 @@ describe('removeMarker', () => {
   });
 });
 
+describe('cleanAlignmentMarkersFromString', () => {
+  test('without alignment markers should succeed', () => {
+    // given
+    const verse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness";
+    const expected = verse;
+
+    // when
+    const cleaned = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(verse);
+
+    // then
+    expect(cleaned).toEqual(expected);
+  });
+
+  test('with word markers should succeed', () => {
+    // given
+    let verse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness";
+    const expected = verse;
+    verse = wrapWithUSFM(verse, ' ', '\\w ', '\\w*');
+
+    // when
+    const cleaned = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(verse);
+
+    // then
+    expect(cleaned).toEqual(expected);
+  });
+
+  test('with alignment markers should succeed', () => {
+    // given
+    let verse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness";
+    const expected = verse;
+    verse = wrapWithUSFM(verse, ' ', '\\zaln-s |\n', '\n\\zaln-e\\*');
+
+    // when
+    const cleaned = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(verse);
+
+    // then
+    expect(cleaned).toEqual(expected);
+  });
+});
+
 //
 // helpers
 //
+
+function wrapWithUSFM(text, splitAt, beginMarker, endMarker) {
+  const parts = text.split(splitAt);
+  const wrapped = beginMarker + parts.join(endMarker + splitAt + beginMarker) + endMarker;
+  return wrapped;
+}
 
 function validateUsfmTag(header_data, tag) {
   const data = UsfmHelpers.getHeaderTag(header_data, tag);

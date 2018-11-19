@@ -302,7 +302,31 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
 };
 
 /**
- * converts USFM verse data into string
+ * check if string has alignment markers
+ * @param {String} usfmData
+ * @return {Boolean} true if string has alignment markers
+ */
+export const hasAlignments = usfmData => {
+  const hasAlignment = usfmData.includes("\\zaln-s") || usfmData.includes("\\w");
+  return hasAlignment;
+};
+
+/**
+ * @description verseObjects with occurrences via string
+ * @param {String} usfmData - The string to search in
+ * @return {String} - cleaned USFM
+ */
+export const cleanAlignmentMarkersFromString = usfmData => {
+  if (hasAlignments(usfmData)) {
+    // convert string using usfm to JSON
+    const verseObjects = usfmjs.toJSON('\\v 1 ' + usfmData, {chunk: true}).verses["1"];
+    return getUsfmForVerseContent(verseObjects);
+  }
+  return usfmData;
+};
+
+/**
+ * converts verse from verse objects to USFM string
  * @param verseData
  * @return {string}
  */
@@ -320,7 +344,7 @@ function convertVerseDataToUSFM(verseData) {
 }
 
 /**
- * @description merge verse data into a string - flatten milestones and words and then save as USFM string
+ * @description convert verse from verse objects to USFM string, removing milestones and word markers
  * @param {Object|Array} verseData
  * @return {String}
  */
