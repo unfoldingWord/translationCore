@@ -40,6 +40,21 @@ export default class ToolCard extends Component {
     }
   }
 
+  getLaunchDisableMessage(id, developerMode, translate, name) {
+    let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
+    if (!launchDisableMessage) { // if no errors, make sure we have original language
+      const olBookPath = hasValidOL(id);
+      if (!olBookPath) {
+        launchDisableMessage = translate('tools.book_not_supported');
+      }
+    }
+    if (!launchDisableMessage && !developerMode) { // if no errors and not developer mode , make sure we have a gateway language
+      const gatewayLanguageList = getGatewayLanguageList(id, name);
+      launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
+    }
+    return launchDisableMessage;
+  }
+
   render() {
     const { metadata: {
               title,
@@ -59,18 +74,7 @@ export default class ToolCard extends Component {
             developerMode
           } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
-    if (!launchDisableMessage) {
-      if (!developerMode) {
-        const gatewayLanguageList = getGatewayLanguageList(id, name);
-        launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
-      } else { // developer mode, make sure we have original language
-        const olBookPath = hasValidOL(id);
-        if (!olBookPath) {
-          launchDisableMessage = translate('tools.book_not_supported');
-        }
-      }
-    }
+    const launchDisableMessage = this.getLaunchDisableMessage(id, developerMode, translate, name);
     let desc_key = null;
     switch (name) {
       case 'wordAlignment':
