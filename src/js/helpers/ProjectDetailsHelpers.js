@@ -356,7 +356,6 @@ export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, u
     let projectGroupsData = fs.readdirSync(pathToProjectGroupsDataFiles).filter(file => {
       return file !== '.DS_Store' && path.extname(file) === '.json';
     });
-
     let availableCheckCategories = [];
     const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
     //Note: translationWords only uses checks that are also available in the greek (OL)
@@ -399,7 +398,9 @@ export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, u
         }
       });
     });
-    progress = calculateProgress(groupsDataToBeCounted);
+    if (availableCheckCategories.length) {
+      progress = calculateProgress(groupsDataToBeCounted);
+    }
   }
   return progress;
 }
