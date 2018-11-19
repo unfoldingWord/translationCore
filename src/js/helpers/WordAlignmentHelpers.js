@@ -203,7 +203,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
     usfmToJSONObject.headers = exportHelpers.getHeaderTags(projectSaveLocation);
     //Have iterated through all chapters and verses and stored verse objects from alignment data
     //converting from verseObjects to usfm and returning string
-    resolve(usfmjs.toUSFM(usfmToJSONObject));
+    resolve(usfmjs.toUSFM(usfmToJSONObject, {forcedNewLines: true}));
   });
 };
 

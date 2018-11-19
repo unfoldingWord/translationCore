@@ -509,7 +509,7 @@ describe('cleanAlignmentMarkersFromString', () => {
     expect(cleaned).toEqual(expected);
   });
 
-  test('with alignment markers should succeed', () => {
+  test('with alignments should succeed', () => {
     // given
     let verse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness";
     const expected = verse;
