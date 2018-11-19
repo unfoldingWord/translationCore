@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import {isNewTestament} from "./bibleHelpers";
+import {isValidBibleBook} from "./bibleHelpers";
 
 /**
  * Gets the status for the Tool Card launch button. The string returned informs the user why it can't be launched
@@ -26,5 +26,5 @@ export function getToolCardLaunchStatus(language, bookId, developerMode, transla
  * @return {boolean}
  */
 export function isToolSupported(bookId, developerMode) {
-  return developerMode || isNewTestament(bookId);
+  return developerMode || isValidBibleBook(bookId);
 }

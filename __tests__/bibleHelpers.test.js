@@ -6,7 +6,7 @@ describe('test isOldTestament(), isNewTestament() and getOLforBook()', () => {
     const bookID = 'jon';
     const expectOT = true;
     const expectNT = false;
-    const expectLanguageId = 'he';
+    const expectLanguageId = 'hbo';
     const expectBibleId = 'uhb';
 
     // when
