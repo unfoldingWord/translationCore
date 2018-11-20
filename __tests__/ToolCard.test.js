@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import ToolCard from '../src/js/components/home/toolsManagement/ToolCard';
+import ToolCardBoxes from '../src/js/components/home/toolsManagement/ToolCardBoxes';
 import { DEFAULT_GATEWAY_LANGUAGE } from '../src/js/helpers/gatewayLanguageHelpers';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -95,6 +96,8 @@ describe('Test ToolCard component',()=>{
       </MuiThemeProvider>
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
+    const wrapper = shallow(<ToolCard {...props} />);
+    expect(wrapper.find(ToolCardBoxes)).toHaveLength(1);
   });
 
   test('Test GL Selection Change', () => {
