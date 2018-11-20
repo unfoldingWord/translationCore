@@ -201,7 +201,7 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
     let bookId = 'tit';
     let userSelectedCategories = ['kt'];
     const pathToCheckDataFiles = path.join(translationWordsProject, INDEX_FOLDER_PATH, toolName, bookId);
-    expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, userSelectedCategories, bookId)).toBe(0.05);
+    expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, userSelectedCategories, bookId)).toBe(0.5);
   });
 });
 
