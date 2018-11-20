@@ -282,7 +282,7 @@ export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
  * @param projectName
  * @return {{bookId: string, languageId: *}}
  */
-export function getDetailsFromProjectName(projectName) {
+export function getDetailsFromProjectName(projectName, translate) {
   let bookId = "";
   let bookName = "";
   let languageId = "";
@@ -292,7 +292,7 @@ export function getDetailsFromProjectName(projectName) {
     // we can have a bunch of old formats (e.g. en_act, aaw_php_text_reg) and new format (en_ult_tit_book)
     for (let i = 1; i < parts.length; i++) { // iteratively try the fields to see if valid book ids
       const possibleBookId = parts[i].toLowerCase();
-      const allBooks = BooksOfTheBible.getAllBibleBooks();
+      const allBooks = BooksOfTheBible.getAllBibleBooks(translate);
       bookName = allBooks[possibleBookId];
       if (bookName) {
         bookId = possibleBookId; // if valid bookName use this book id
@@ -300,7 +300,7 @@ export function getDetailsFromProjectName(projectName) {
       }
     }
   }
-  return { bookId, languageId, bookName};
+  return {bookId, languageId, bookName};
 }
 /**
  * generate new project name to match spec

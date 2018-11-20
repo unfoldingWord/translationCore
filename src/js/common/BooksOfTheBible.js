@@ -145,11 +145,16 @@ export const BIBLES_ABBRV_INDEX = {
   'rev': '67'
 };
 
-export function getAllBibleBooks() {
-  const bibleBooks = _.cloneDeep(BIBLE_BOOKS.oldTestament);
-  for(let book of Object.keys(BIBLE_BOOKS.newTestament)) {
-    bibleBooks[book] = BIBLE_BOOKS.newTestament[book];
-  }
+export function getAllBibleBooks(translate=null) {
+  if (!translate)
+    translate = k => k;
+  const bibleBooks = {};
+  Object.keys(BIBLE_BOOKS.oldTestament).forEach(key => {
+    bibleBooks[key] = translate('book_list.ot.'+key, {book_id: key});
+  });
+  Object.keys(BIBLE_BOOKS.newTestament).forEach(key => {
+    bibleBooks[key] = translate('book_list.nt.'+key, {book_id: key});
+  });
   return bibleBooks;
 }
 

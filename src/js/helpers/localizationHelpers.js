@@ -17,7 +17,9 @@ export const getTranslation = function (translate, text, deflt, params = {}) {
   }
   let translation = nonTranslatable[key]; // check for static translation
   if (!translation && translate) { // if not found, try translation lookup
+    console.log("here");
     const shouldHaveTranslation = getNestedKey(translatable, key); // if we should have a dynamic translation
+    console.log(shouldHaveTranslation);
     if (shouldHaveTranslation) {
       translation = translate(key, params);
     }
@@ -79,8 +81,14 @@ export const getBookTranslation = (translate, bookName, bookCode) => {
 
   let translation = null;
   if (bookCode) {
-    translation = getTranslation(translate, "book_list.nt." + bookCode, null, {book_id: bookCode});
+    let keyPrefix = 'book_list.';
+    if (BooksOfTheBible.BIBLE_BOOKS.newTestament[bookCode])
+      keyPrefix += 'nt.';
+    else
+      keyPrefix += 'ot.';
+    translation = getTranslation(translate, keyPrefix + bookCode, null, {book_id: bookCode});
   }
+
   if (!translation) { // if no translation, make default
     if (!bookName && bookCode) { // we need to lookup book name
       bookName = allBooks[bookCode];

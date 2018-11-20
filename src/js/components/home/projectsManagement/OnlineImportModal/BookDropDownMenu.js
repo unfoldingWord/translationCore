@@ -9,7 +9,7 @@ const BookDropdownMenu = ({
   updateBookIdValue,
   translate
 }) => {
-  const allBooks = BooksOfTheBible.getAllBibleBooks();
+  const allBooks = BooksOfTheBible.getAllBibleBooks(translate);
   return (
     <div>
       <SelectField
@@ -23,9 +23,8 @@ const BookDropdownMenu = ({
       {
         Object.keys(allBooks).map((key, index) => {
           const BookName = allBooks[key];
-          const BookNameLocalized = getBookTranslation(translate, BookName, key);
           return (
-            <MenuItem key={index} value={key} primaryText={BookNameLocalized} />
+            <MenuItem key={index} value={key} primaryText={BookName} />
           );
         })
       }
