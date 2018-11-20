@@ -11,7 +11,7 @@ import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
-import BooksOfTheBible from "../common/BooksOfTheBible";
+import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
 
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -292,7 +292,8 @@ export function getDetailsFromProjectName(projectName) {
     // we can have a bunch of old formats (e.g. en_act, aaw_php_text_reg) and new format (en_ult_tit_book)
     for (let i = 1; i < parts.length; i++) { // iteratively try the fields to see if valid book ids
       const possibleBookId = parts[i].toLowerCase();
-      bookName = BooksOfTheBible.newTestament[possibleBookId];
+      const allBooks = BooksOfTheBible.getAllBibleBooks();
+      bookName = allBooks[possibleBookId];
       if (bookName) {
         bookId = possibleBookId; // if valid bookName use this book id
         break;

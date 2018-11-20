@@ -10,7 +10,6 @@ const BookDropdownMenu = ({
   updateBookId,
   translate
 }) => {
-  // TODO: in future accept all bible books in all modes
   const bibleBooks = BooksOfTheBible.getAllBibleBooks();
   return (
     <div>

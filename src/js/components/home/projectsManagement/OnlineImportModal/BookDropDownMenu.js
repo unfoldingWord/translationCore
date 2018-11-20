@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { SelectField, MenuItem } from 'material-ui';
-import BooksOfTheBible from '../../../../common/BooksOfTheBible';
+import * as BooksOfTheBible from '../../../../common/BooksOfTheBible';
 import { getBookTranslation } from '../../../../helpers/localizationHelpers';
 
 const BookDropdownMenu = ({
@@ -9,6 +9,7 @@ const BookDropdownMenu = ({
   updateBookIdValue,
   translate
 }) => {
+  const allBooks = BooksOfTheBible.getAllBibleBooks();
   return (
     <div>
       <SelectField
@@ -20,8 +21,8 @@ const BookDropdownMenu = ({
       >
       <MenuItem value={""} primaryText={""} />
       {
-        Object.keys(BooksOfTheBible.newTestament).map((key, index) => {
-          const BookName = BooksOfTheBible.newTestament[key];
+        Object.keys(allBooks).map((key, index) => {
+          const BookName = allBooks[key];
           const BookNameLocalized = getBookTranslation(translate, BookName, key);
           return (
             <MenuItem key={index} value={key} primaryText={BookNameLocalized} />

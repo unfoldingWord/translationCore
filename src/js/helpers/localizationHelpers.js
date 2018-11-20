@@ -1,5 +1,5 @@
 import * as nonTranslatable from '../../locale/nonTranslatable';
-import BooksOfTheBible from "../common/BooksOfTheBible";
+import * as BooksOfTheBible from "../common/BooksOfTheBible";
 const translatable = require('../../locale/English-en_US.json');
 
 /**
@@ -67,9 +67,10 @@ export const getLanguageTranslation = (translate, languageName, languageCode) =>
  * @return {String}
  */
 export const getBookTranslation = (translate, bookName, bookCode) => {
+  const allBooks = BooksOfTheBible.getAllBibleBooks();
   if (!bookCode && bookName) { // we need to lookup book code
-    for (let key of Object.keys(BooksOfTheBible.newTestament)) {
-      if (BooksOfTheBible.newTestament[key].toLowerCase() === bookName.toLowerCase()) {
+    for (let key of Object.keys(allBooks)) {
+      if (allBooks[key].toLowerCase() === bookName.toLowerCase()) {
         bookCode = key;
         break;
       }
@@ -82,7 +83,7 @@ export const getBookTranslation = (translate, bookName, bookCode) => {
   }
   if (!translation) { // if no translation, make default
     if (!bookName && bookCode) { // we need to lookup book name
-      bookName = BooksOfTheBible.newTestament[bookCode];
+      bookName = allBooks[bookCode];
     }
     if (bookName) {
       translation = bookName;
