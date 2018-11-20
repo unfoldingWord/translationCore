@@ -95,7 +95,7 @@ export const migrateValidateLoadProject = (projectName) => {
  */
 export function displayTools() {
   return (dispatch, getState) => {
-    const state = getState()
+    const state = getState();
     const translate = getTranslate(state);
     return new Promise ((resolve, reject) => {
       try {

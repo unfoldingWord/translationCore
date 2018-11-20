@@ -19,6 +19,7 @@ const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported in dependency
+jest.mock('material-ui/Checkbox');
 
 let mock_repoExists = false;
 let mock_repoError = false;
@@ -191,15 +192,16 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const resourcesPath = RESOURCE_PATH;
-    const copyResourceFiles = ['grc/bibles/ugnt'];
+    const copyResourceFiles = ['grc'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
 
   test('should get the progress for a non alignment tool', () => {
     let toolName = 'translationWords';
     let bookId = 'tit';
+    let userSelectedCategories = ['kt'];
     const pathToCheckDataFiles = path.join(translationWordsProject, INDEX_FOLDER_PATH, toolName, bookId);
-    expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles)).toBe(0.06);
+    expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, userSelectedCategories, bookId)).toBe(0.05);
   });
 });
 

@@ -85,7 +85,9 @@ describe('Test ToolCard component',()=>{
         setProjectToolGL: () => jest.fn(),
         launchTool: () => jest.fn()
       },
-      developerMode: false
+      developerMode: false,
+      selectedCategories: [],
+      availableCategories: ['kt']
     };
     const renderedValue = renderer.create(
       <MuiThemeProvider>

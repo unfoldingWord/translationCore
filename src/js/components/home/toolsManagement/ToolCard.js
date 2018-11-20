@@ -41,7 +41,7 @@ export default class ToolCard extends Component {
     }
   }
 
-  getLaunchDisableMessage(id, developerMode, translate, name) {
+  getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories) {
     let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
     if (!launchDisableMessage) { // if no errors, make sure we have original language
       const olBookPath = hasValidOL(id);
@@ -52,6 +52,9 @@ export default class ToolCard extends Component {
     if (!launchDisableMessage && !developerMode) { // if no errors and not developer mode , make sure we have a gateway language
       const gatewayLanguageList = getGatewayLanguageList(id, name);
       launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
+    }
+    if (!launchDisableMessage && (name === 'translationWords' && selectedCategories.length === 0)) {
+      launchDisableMessage = translate('tools.no_checks_selected');
     }
     return launchDisableMessage;
   }
@@ -80,7 +83,7 @@ export default class ToolCard extends Component {
       availableCategories
     } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    const launchDisableMessage = this.getLaunchDisableMessage(id, developerMode, translate, name);
+    const launchDisableMessage = this.getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories);
     let desc_key = null;
     let showCheckBoxes = false;
     switch (name) {

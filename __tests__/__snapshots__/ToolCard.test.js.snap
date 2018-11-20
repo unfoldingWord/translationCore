@@ -116,32 +116,6 @@ exports[`Test ToolCard component Comparing ToolCard Component render for transla
           Key Terms
         </div>
       </div>
-      <div
-        style={
-          Object {
-            "alignItems": "center",
-            "display": "flex",
-            "marginBottom": 5,
-          }
-        }
-      >
-        <div>
-          Other Terms
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "alignItems": "center",
-            "display": "flex",
-            "marginBottom": 5,
-          }
-        }
-      >
-        <div>
-          Names
-        </div>
-      </div>
     </div>
     <div />
     <div
@@ -193,10 +167,13 @@ exports[`Test ToolCard component Comparing ToolCard Component render for transla
         toolName="translationWords"
         translate={[Function]}
       />
-      <span>
+      <span
+        aria-label="tools.no_checks_selected"
+        className="hint--left hint--medium"
+      >
         <button
           className="btn-prime"
-          disabled={false}
+          disabled={true}
           onClick={[Function]}
           style={
             Object {
