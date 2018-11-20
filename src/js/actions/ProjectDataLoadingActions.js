@@ -23,7 +23,7 @@ import {throttle} from 'lodash';
 export function loadProjectData(currentToolName) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
-    return new Promise(() => {
+    return new Promise((resolve, reject) => {
       let { projectDetailsReducer } = getState();
       let { projectSaveLocation, manifest, selectedCategories } = projectDetailsReducer;
       let bookAbbreviation = manifest.project.id;
@@ -41,7 +41,8 @@ export function loadProjectData(currentToolName) {
             getGroupsIndex(dispatch, glDataDirectory, translate)
               .then(
                 () => getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation, category, index)
-              ).then(resolve);
+              ).then(resolve)
+              .catch(reject);
           })
         );
       });
@@ -50,7 +51,8 @@ export function loadProjectData(currentToolName) {
         dispatch(loadCurrentContextId());
         dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
         dispatch(BodyUIActions.toggleHomeView(false));
-      });
+        resolve();
+      }).catch(reject);
     })
       .catch(err => {
         console.warn(err);
@@ -66,7 +68,7 @@ export function loadProjectData(currentToolName) {
  * @param {function} translate
  * @return {object} object action / Promises.
  */
-function getGroupsIndex(dispatch, dataDirectory, translate) {
+export function getGroupsIndex(dispatch, dataDirectory, translate) {
   return new Promise((resolve) => {    
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');
     let groupIndexData;
@@ -161,7 +163,7 @@ export function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch
  * @param {string} groupDataFolderPath - group data save location in the filesystem.
  * @return {object} object action / Promises.
  */
-function loadGroupData(groupName, groupDataFolderPath) {
+export function loadGroupData(groupName, groupDataFolderPath) {
   const groupPath = path.join(groupDataFolderPath, groupName + '.json');
   let groupData;
   try {
