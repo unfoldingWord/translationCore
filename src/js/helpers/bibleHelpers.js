@@ -32,6 +32,14 @@ export function isNewTestament(bookId) {
   return bookId in BooksOfTheBible.newTestament;
 }
 
+/**
+ * tests if book is in Old or New Testament
+ * @param bookId
+ * @return {boolean}
+ */
+export function isValidBibleBook(bookId) {
+  return (isNewTestament(bookId) || isOldTestament(bookId)) ;
+}
 
 /**
  * determine

@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import path from "path-extra";
 import ospath from "ospath";
+import _ from "lodash";
 // helpers
 import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
@@ -248,7 +249,7 @@ describe('projectHasMultipleBooks', () => {
 });
 
 describe('verifyValidBetaProject', () => {
-    var state = {
+    var state_ = {
         settingsReducer: {
             currentSettings: {
                 developerMode: true
@@ -263,24 +264,30 @@ describe('verifyValidBetaProject', () => {
         }
     };
     test('valid beta project with developer mode', () => {
-       return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).resolves.toBe();
+        const state = _.cloneDeep(state_);
+        return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).resolves.toBe();
     });
     test('valid beta project without developer mode', () => {
+        const state = _.cloneDeep(state_);
         state.settingsReducer.currentSettings.developerMode = false;
         return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).resolves.toBe();
-     });
-     test('valid beta project without developer mode and not old testament', () => {
+    });
+    test('is not valid beta project without developer mode and not old or new testament', () => {
+        const state = _.cloneDeep(state_);
+        state.settingsReducer.currentSettings.developerMode = false;
         state.projectDetailsReducer.manifest.project.id = 'fakebook';
-        return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).resolves.toBe();
-     });
-     test('not valid beta project without developer mode and old testament', () => {
+        return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).rejects.toBe("tools.book_not_supported");
+    });
+    test('valid beta project without developer mode and old testament', () => {
+        const state = _.cloneDeep(state_);
+        state.settingsReducer.currentSettings.developerMode = false;
         state.projectDetailsReducer.manifest.project.id = '1ki';
-        return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).rejects.toBe('project_validation.only_nt_supported');
-     });
-     test('valid beta project with developer mode and old testament', () => {
-        state.settingsReducer.currentSettings.developerMode = true;
         return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).resolves.toBe();
-     });
+    });
+    test('valid beta project with developer mode and old testament', () => {
+        const state = _.cloneDeep(state_);
+        return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).resolves.toBe();
+    });
 });
 
 //

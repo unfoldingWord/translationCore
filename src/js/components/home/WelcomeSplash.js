@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import packagefile from '../../../../package.json';
 
 const WelcomeSplash = ({
-  actions: {
-    toggleWelcomeSplash
-  },
+  toggleWelcomeSplash,
   translate
 }) => (
   <div style={{height: '90vh', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
@@ -21,8 +19,7 @@ const WelcomeSplash = ({
 );
 
 WelcomeSplash.propTypes = {
-  reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired,
+  toggleWelcomeSplash: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired
 };
 
