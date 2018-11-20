@@ -17,7 +17,7 @@ export const BIBLE_BOOKS = {
     '2sa': '2 Samuel',
     '1ki': '1 Kings',
     '2ki': '2 Kings',
-    '1ch':'1 Chronicles',
+    '1ch': '1 Chronicles',
     '2ch': '2 Chronicles',
     ezr: 'Ezra',
     neh: 'Nehemiah',
@@ -43,7 +43,7 @@ export const BIBLE_BOOKS = {
     zep: 'Zephaniah',
     hag: 'Haggai',
     zec: 'Zechariah',
-    mal:'Malachi'
+    mal: 'Malachi'
   },
   newTestament: {
     mat: 'Matthew',
