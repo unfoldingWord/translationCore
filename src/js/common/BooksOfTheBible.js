@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 /**
  * Nested version of the books of the bible object.
  */
