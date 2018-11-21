@@ -62,6 +62,8 @@
   "email_address_optional": "Endereço de E-mail (opcional):",
   "invalid_email": "Endereço de email inválido",
   "include_app_logs": "Incluir Logs da aplicação",
+  "alignment_prompt": "Would you like to export the alignment data with your text?",
+  "include_alignment_check": "Include alignment data",
   "updates": {
     "check_for_newer_app": "Verifique se há atualizações de software",
     "check_for_content_updates": "Verificar atualizações de conteúdo",
