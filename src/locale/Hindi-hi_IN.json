@@ -272,6 +272,7 @@
     }
   },
   "tools": {
+    "no_checks_selected": "You must select a category to launch this tool",
     "book_not_supported": "पुस्तक समर्थित नहीं है",
     "select_tool_from_list": "सूची से किसी उपकरण और गेटवे भाषा का चयन करें ।",
     "tools": "उपकरण",
