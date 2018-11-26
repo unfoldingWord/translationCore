@@ -126,22 +126,24 @@ export function loadCurrentContextId() {
   return (dispatch, getState) => {
     let state = getState();
     let { projectSaveLocation, manifest } = state.projectDetailsReducer;
+    let { groupsIndex } = state.groupsIndexReducer;
     let { currentToolName } = state.toolsReducer;
     let bookId = manifest.project.id ? manifest.project.id : undefined;
     let fileName = "contextId.json";
 
     if (projectSaveLocation && currentToolName && bookId) {
-      let contextId;
+      let contextId = {};
       try {
         let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, currentToolName, bookId, "currentContextId", fileName);
         if (fs.existsSync(loadPath)) {
           contextId = fs.readJsonSync(loadPath);
-        } else {
-          contextId = firstContextId(state);
+          const contextIdExistInGroups = groupsIndex.indexOf(({id}) => id === contextId.groupId) >= 0;
+          if (contextId && contextIdExistInGroups) {
+            return dispatch(changeCurrentContextId(contextId));
+          }
         }
-        if (contextId) {
-          dispatch(changeCurrentContextId(contextId));
-        }
+        contextId = firstContextId(state);
+        dispatch(changeCurrentContextId(contextId));
       } catch (err) {
         // The object is undefined because the file wasn't found in the directory
         console.warn(err);

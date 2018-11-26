@@ -105,6 +105,7 @@ export const getLanguageCodes = () => {
       }
     }
   }
+
   return languageCodes;
 };
 

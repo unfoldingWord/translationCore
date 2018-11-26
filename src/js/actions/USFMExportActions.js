@@ -120,15 +120,20 @@ export function getExportType(projectPath) {
       else {
         const onSelect = (choice) => dispatch(setSetting('usfmExportType', choice));
         dispatch(AlertModalActions.openOptionDialog(
-          <USFMExportDialog onSelect={onSelect} />, (res) => {
-          if (res === 'Export') {
-            const {usfmExportType} = getState().settingsReducer.currentSettings;
-            resolve(usfmExportType);
-          } else {
-            //used to cancel the entire process
-            reject();
-          }
-          dispatch(AlertModalActions.closeAlertDialog());
+          <USFMExportDialog
+            onSelect={onSelect}
+            translate={getTranslate(getState())}
+            selected={projectHasAlignments ? 'usfm3' : 'usfm2'}
+          />,
+          (res) => {
+            if (res === 'Export') {
+              const {usfmExportType} = getState().settingsReducer.currentSettings;
+              resolve(usfmExportType);
+            } else {
+              //used to cancel the entire process
+              reject();
+            }
+            dispatch(AlertModalActions.closeAlertDialog());
         }, 'Export', 'Cancel'));
       }
     });
@@ -151,9 +156,9 @@ export function getUsfm2ExportFile(projectPath) {
 export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let bookName = manifest.project.id;
-  if (!fs.existsSync(path.join(projectPath, bookName)))
+  if (!fs.existsSync(path.join(projectPath, bookName))) {
     TargetLanguageActions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
-
+  }
   let usfmJSONObject = {};
   let currentFolderChapters = fs.readdirSync(path.join(projectPath, bookName));
   for (let currentChapterFile of currentFolderChapters) {

@@ -27,7 +27,7 @@ const usfmDetails = (usfmFile) => {
   return usfmHelpers.getUSFMDetails(usfm);
 };
 
-describe('USFM Details', () => {
+describe('usfmDetails', () => {
   test('should handle translationStudio usfm export', () => {
     // parse valid usfm file
     const usfmFile = translationStudioExport;
@@ -104,7 +104,9 @@ describe('USFM Details', () => {
     expect(details.language.name).toBeUndefined();
     expect(details.language.direction).toEqual('ltr');
   });
+});
 
+describe('getParsedUSFM', () => {
   test('should handle missing verse markers', () => {
     // parse valid usfm file
     const usfmFile = missingVerseMarkers;
@@ -206,39 +208,40 @@ describe('USFM Details', () => {
     expect(getVerses(usfm[4])).toHaveLength(23);
     expect(getVerseString(usfm,4,4)).toEqual('Rejoice in the Lord always; again I will say, rejoice.');
   });
-
-  //
-  // helpers
-  //
-
-  const getVerses = (verses) => {
-    if (verses.front) {
-      delete verses.front;
-    }
-    return Object.keys(verses);
-  };
-
-  const getVerseString = (chapters, chapterNum, verseNum) => {
-    let verse = chapters[chapterNum][verseNum];
-    if (verse) {
-      if (typeof verse === 'string') {
-        return verse.trim();
-      }
-      if (Array.isArray(verse)) {
-        return verse.join(' ').trim();
-      } else {
-        let retValue = '';
-        for (let object of verse.verseObjects) {
-          if ((object.type === 'text') || (object.type === 'quote')) {
-            if (retValue) {
-              retValue += ' ';
-            }
-            retValue += object.text.trim();
-          }
-        }
-        return retValue.trim();
-      }
-    }
-    return verse;
-  };
 });
+
+//
+// helpers
+//
+
+const getVerses = (verses) => {
+  if (verses.front) {
+    delete verses.front;
+  }
+  return Object.keys(verses);
+};
+
+const getVerseString = (chapters, chapterNum, verseNum) => {
+  let verse = chapters[chapterNum][verseNum];
+  if (verse) {
+    if (typeof verse === 'string') {
+      return verse.trim();
+    }
+    if (Array.isArray(verse)) {
+      return verse.join(' ').trim();
+    } else {
+      let retValue = '';
+      for (let object of verse.verseObjects) {
+        if ((object.type === 'text') || (object.type === 'quote')) {
+          if (retValue) {
+            retValue += ' ';
+          }
+          retValue += object.text.trim();
+        }
+      }
+      return retValue.trim();
+    }
+  }
+  return verse;
+};
+
