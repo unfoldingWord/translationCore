@@ -16,7 +16,9 @@ const ToolsCards = ({
   currentProjectToolsSelectedGL,
   manifest,
   invalidatedReducer,
-  developerMode
+  developerMode,
+  selectedCategories,
+  availableCategories
 }) => {
   if (toolsMetadata.length == 0 || !toolsMetadata) {
     return (
@@ -51,6 +53,8 @@ const ToolsCards = ({
           toolsMetadata.map((metadata, i) => {
             return (
               <ToolCard
+                availableCategories={availableCategories[metadata.name] || []}
+                selectedCategories={selectedCategories}
                 translate={translate}
                 key={i}
                 actions={actions}
@@ -81,7 +85,9 @@ ToolsCards.propTypes = {
   currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
-  developerMode: PropTypes.bool.isRequired
+  developerMode: PropTypes.bool.isRequired,
+  selectedCategories: PropTypes.array.isRequired,
+  availableCategories: PropTypes.object.isRequired,
 };
 
 export default ToolsCards;
