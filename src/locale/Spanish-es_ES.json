@@ -272,6 +272,7 @@
     }
   },
   "tools": {
+    "no_checks_selected": "You must select a category to launch this tool",
     "book_not_supported": "El libro no se admite",
     "select_tool_from_list": "Seleccione una herramienta y un idioma de entrada de la lista.",
     "tools": "Herramientas",
