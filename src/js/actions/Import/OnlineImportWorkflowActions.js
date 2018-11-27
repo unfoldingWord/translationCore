@@ -13,7 +13,7 @@ import * as ProjectDetailsActions from "../ProjectDetailsActions";
 import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
-import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
+import {generateImportPath} from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation, getUsername } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
@@ -26,6 +26,7 @@ import Repo from '../../helpers/Repo';
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+
 
 /**
  * @description Action that dispatches other actions to wrap up online importing
@@ -44,7 +45,11 @@ export const onlineImport = () => {
           dispatch(clearLink());
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
-          const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
+
+          const importPath = await generateImportPath(link);
+          await fs.ensureDir(importPath);
+          const selectedProjectFilename = await Repo.clone(link, importPath);
+
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           const errorMessage = translate('projects.online_import_error', {project_url: link, toPath: importProjectPath});

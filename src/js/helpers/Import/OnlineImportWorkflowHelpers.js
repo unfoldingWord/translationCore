@@ -2,30 +2,25 @@ import Repo from '../Repo';
 import path from 'path-extra';
 import ospath from 'ospath';
 import fs from 'fs-extra';
+
 /**
-* @description Clones the project of either a DCS or Door43 URL into the imports directory
-* @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
-* @returns {Promise}
-*/
-export function clone (link) {
-  return new Promise((resolve, reject) => {
-    const gitUrl = Repo.sanitizeRemoteUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
-    if(gitUrl === null) {
-      return reject('The URL ' + link + ' does not reference a valid project');
-    }
+ * Generates the import path from a git url
+ * @param {string} url - a remote git url
+ * @returns {Promise<string>} the import path
+ */
+export async function generateImportPath(url) {
+  const cleanedUrl = Repo.sanitizeRemoteUrl(url);
+  let project = Repo.parseRemoteUrl(cleanedUrl);
 
-    let project = Repo.parseRemoteUrl(gitUrl);
-    let savePath = path.join(ospath.home(), 'translationCore', 'imports', project.name);
-    if (!fs.existsSync(savePath)) {
-      fs.ensureDirSync(savePath);
-    } else {
-      return reject("Project has already been imported.");
-    }
+  if(project === null) {
+    throw new Error(`The URL ${url} does not reference a valid project`);
+  }
 
-    return Repo.clone(gitUrl, savePath).then(() => {
-      resolve(project.name);
-    }).catch((e) => {
-      reject(e);
-    });
-  });
+  let importPath = path.join(ospath.home(), 'translationCore', 'imports', project.name);
+  const exists = await fs.pathExists(importPath);
+  if (exists) {
+    throw new Error(`Project ${project.name} has already been imported.`);
+  }
+
+  return importPath;
 }

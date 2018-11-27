@@ -91,7 +91,7 @@ export default class Repo {
    * @returns {object|null}
    */
   static parseRemoteUrl(url) {
-    if(url === null) return null;
+    if(!url) return null;
 
     let matches = projectRegExp.exec(url);
     if (!matches) {
