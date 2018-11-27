@@ -6,7 +6,7 @@ git.plugins.set("fs", fs);
 
 /**
  * Generates credentials from the user object
- * @param user
+ * @param {object} user
  * @returns {*}
  */
 function makeCredentials(user) {
@@ -44,7 +44,7 @@ export default class Repo {
 
   /**
    * @param {string} dir - the file path to the local repository
-   * @param {object} [user] - the git user
+   * @param {object} [user] - the user object that contains names, passwords, and tokens
    */
   constructor(dir, user = {}) {
     this.dir = dir;
