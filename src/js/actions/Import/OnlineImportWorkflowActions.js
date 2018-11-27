@@ -47,8 +47,10 @@ export const onlineImport = () => {
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
 
           const importPath = await generateImportPath(link);
+
           await fs.ensureDir(importPath);
-          const selectedProjectFilename = await Repo.clone(link, importPath);
+          await Repo.clone(link, importPath);
+          const selectedProjectFilename = Repo.parseRemoteUrl(Repo.sanitizeRemoteUrl(link)).name;
 
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
