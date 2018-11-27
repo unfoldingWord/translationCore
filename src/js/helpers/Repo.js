@@ -4,6 +4,8 @@ import globby from "globby";
 
 git.plugins.set("fs", fs);
 
+const projectRegExp = new RegExp(/^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
+
 /**
  * Generates credentials from the user object
  * @param {object} user
@@ -49,6 +51,59 @@ export default class Repo {
   constructor(dir, user = {}) {
     this.dir = dir;
     this.user = user;
+  }
+
+  /**
+   * Determines if a url is a DCS or Door43 URL and returns the proper git URL for cloning
+   * @param {string} url - The url of the git.door43.org repo or rendered Door43 HTML page
+   * @returns {string|null} - The sanitized url or else null if invalid
+   */
+  static sanitizeRemoteUrl(url) {
+    if (!url || !url.trim) return null;
+
+    url = url.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
+    const liveDoor43Url = new RegExp(/^https?:\/\/((live\.|www\.)?door43.org\/u)\/([^/]+)\/([^/]+)/);
+    const gitDoor43Url = new RegExp(/^https?:\/\/((git.)door43.org)\/([^/]+)\/([^/]+)/);
+    let match = liveDoor43Url.exec(url);
+    if (!match) {
+      match = gitDoor43Url.exec(url);
+      if (match) {
+        const extra = url.substr(match.index + match[0].length);
+        if (extra && (extra !== '/')) { // make sure not trying to point into contents of repo
+          match = null;
+        }
+      }
+    }
+    if (match) {
+      // Return a proper git.door43.org URL from the match
+      let userName = match[3];
+      let repoName = match[4];
+      repoName = (repoName && repoName.replace('.git', '')) || '';
+      return 'https://git.door43.org/' + userName + '/' + repoName + '.git';
+    }
+    return null;
+  }
+
+  /**
+   * Parses a remote url and returns a object of information about the project.
+   * The url must be a properly formatted git url.
+   * @param {string} url
+   * @returns {object|null}
+   */
+  static parseRemoteUrl(url) {
+    if(url === null) return null;
+
+    let matches = projectRegExp.exec(url);
+    if (!matches) {
+      return null;
+    } else {
+      return {
+        owner: matches[1],
+        name: matches[2],
+        full_name: `${matches[1]}/${matches[2]}`,
+        host: 'https://git.door43.org/'
+      };
+    }
   }
 
   /**

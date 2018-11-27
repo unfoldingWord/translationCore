@@ -22,6 +22,7 @@ import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFil
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
 import fs from "fs-extra";
+import Repo from '../../helpers/Repo';
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -105,10 +106,10 @@ export function deleteImportProjectForLink() {
   return ((dispatch, getState) => {
     const link = getState().importOnlineReducer.importLink;
     if (link) {
-      const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
-      let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
-      if (projectName) {
-        dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
+      const gitUrl = Repo.sanitizeRemoteUrl(link);
+      let project = Repo.parseRemoteUrl(gitUrl);
+      if (project) {
+        dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(project.name));
       }
     }
   });
