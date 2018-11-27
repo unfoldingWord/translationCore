@@ -27,13 +27,13 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
         resolve();
       } else if (!user.localUser) {
         dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
+          const projectName = projectPath.split(path.sep).pop();
           try {
             if (!user.token) {
               const message = translate("users.session_invalid");
               return dispatch(
                 AlertModalActions.openAlertDialog(message, false));
             }
-            const projectName = projectPath.split(path.sep).pop();
             const filePath = path.join(projectPath, projectName + ".usfm");
             await dispatch(
               WordAlignmentActions.getUsfm3ExportFile(projectPath, filePath));
@@ -42,41 +42,21 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             dispatch(AlertModalActions.openAlertDialog(message, true));
             const remoteRepo = await GogsApiHelpers.createRepo(user,
               projectName);
-            const remoteUrl = GogsApiHelpers.getUserTokenDoor43Url(user,
-              remoteRepo.full_name);
+            const remoteUrl = GogsApiHelpers.getRepoOwnerUrl(user,
+              remoteRepo.name);
 
             const repo = new Repo(projectPath, user);
             await repo.addRemote(remoteUrl, "origin");
             await repo.save("Commit before upload");
 
-            await GogsApiHelpers.updateGitRemotes(projectPath, user, null);
+            const response = await repo.push("origin");
+            if (response.errors && response.errors.length) {
+              // Handle innocuous errors.
+              console.error(response);
+              dispatch(AlertModalActions.openAlertDialog(
+                translate("projects.uploading_error",
+                  { error: response.errors })));
 
-            const err = await repo.push("origin");
-
-            if (err) {
-              if (err.status === 401 || err.code === "ENOTFOUND" ||
-                err.toString().includes("connect ETIMEDOUT") ||
-                err.toString().includes("INTERNET_DISCONNECTED") ||
-                err.toString().includes("unable to access") ||
-                err.toString().includes("The remote end hung up")) {
-                const message = translate("no_internet");
-                dispatch(AlertModalActions.openAlertDialog(message));
-              } else if (err.toString().
-                includes("rejected because the remote contains work")) {
-                const message = translate("projects.upload_modified_error",
-                  { project_name: projectName, door43: translate("_.door43") });
-                dispatch(AlertModalActions.openAlertDialog(message));
-              } else if (err.hasOwnProperty("message")) {
-                dispatch(AlertModalActions.openAlertDialog(
-                  translate("projects.uploading_error",
-                    { error: err.message })));
-              } else if (err.hasOwnProperty("data") && err.data) {
-                dispatch(AlertModalActions.openAlertDialog(
-                  translate("projects.uploading_error", { error: err.data })));
-              } else {
-                dispatch(AlertModalActions.openAlertDialog(
-                  translate("projects.uploading_unknown_error")));
-              }
             } else {
               const userDcsUrl = GogsApiHelpers.getUserDoor43Url(user,
                 projectName);
@@ -102,9 +82,31 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
               );
             }
           } catch (err) {
+            // handle server and networking errors
             console.error(err);
-            if (err) dispatch(
-              AlertModalActions.openAlertDialog(err.message || err, false));
+            if (err.status === 401 || err.code === "ENOTFOUND" ||
+              err.toString().includes("connect ETIMEDOUT") ||
+              err.toString().includes("INTERNET_DISCONNECTED") ||
+              err.toString().includes("unable to access") ||
+              err.toString().includes("The remote end hung up")) {
+              const message = translate("no_internet");
+              dispatch(AlertModalActions.openAlertDialog(message));
+            } else if (err.toString().includes(
+              "not a simple fast-forward")) {
+              const message = translate("projects.upload_modified_error",
+                { project_name: projectName, door43: translate("_.door43") });
+              dispatch(AlertModalActions.openAlertDialog(message));
+            } else if (err.hasOwnProperty("message")) {
+              dispatch(AlertModalActions.openAlertDialog(
+                translate("projects.uploading_error",
+                  { error: err.message })));
+            } else if (err.hasOwnProperty("data") && err.data) {
+              dispatch(AlertModalActions.openAlertDialog(
+                translate("projects.uploading_error", { error: err.data })));
+            } else {
+              dispatch(
+                AlertModalActions.openAlertDialog(err.message || err, false));
+            }
             resolve();
           }
         }));

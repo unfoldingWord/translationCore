@@ -166,7 +166,7 @@ export default class Repo {
   /**
    * Saves all pending changes to the repo
    * @param {string} message - the commit message
-   * @return {Promise<>}
+   * @return {Promise<void>}
    */
   async save(message) {
     await this.addAll();
