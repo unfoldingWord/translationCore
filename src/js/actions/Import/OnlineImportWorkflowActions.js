@@ -2,8 +2,8 @@ import consts from "../../actions/ActionTypes";
 import path from "path-extra";
 import ospath from "ospath";
 // actions
-import * as ProjectValidationActions from "../Import/ProjectValidationActions";
-import {deleteProjectFromImportsFolder, moveProject} from "../../helpers/Import/ProjectImportFilesystemHelpers";
+import * as ProjectValidationActions from "./ProjectValidationActions";
+import {deleteProjectFromImportsFolder} from "../../helpers/Import/ProjectImportFilesystemHelpers";
 import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as OnlineModeConfirmActions
   from "../../actions/OnlineModeConfirmActions";
@@ -13,6 +13,7 @@ import * as ProjectLoadingActions from "../MyProjects/ProjectLoadingActions";
 import * as ProjectDetailsActions from "../ProjectDetailsActions";
 import * as ProjectInformationCheckActions
   from "../ProjectInformationCheckActions";
+import * as ProjectImportFilesystemActions from "./ProjectImportFilesystemActions";
 // helpers
 import * as TargetLanguageHelpers from "../../helpers/TargetLanguageHelpers";
 import {
@@ -101,7 +102,7 @@ export const onlineImport = () => {
             dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName});
             await delay(200);
           }
-          await moveProject();
+          await dispatch(ProjectImportFilesystemActions.move());
           if (renamingResults.repoRenamed) {
             await dispatch(ProjectDetailsActions.doRenamePrompting());
           }
