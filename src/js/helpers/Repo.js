@@ -4,7 +4,8 @@ import globby from "globby";
 
 git.plugins.set("fs", fs);
 
-const projectRegExp = new RegExp(/^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
+const projectRegExp = new RegExp(
+  /^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
 
 /**
  * Generates credentials from the user object
@@ -61,15 +62,17 @@ export default class Repo {
   static sanitizeRemoteUrl(url) {
     if (!url || !url.trim) return null;
 
-    url = url.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
-    const liveDoor43Url = new RegExp(/^https?:\/\/((live\.|www\.)?door43.org\/u)\/([^/]+)\/([^/]+)/);
-    const gitDoor43Url = new RegExp(/^https?:\/\/((git.)door43.org)\/([^/]+)\/([^/]+)/);
+    url = url.trim().replace(/\/?$/, ""); // remove white space and right trailing /'s
+    const liveDoor43Url = new RegExp(
+      /^https?:\/\/((live\.|www\.)?door43.org\/u)\/([^/]+)\/([^/]+)/);
+    const gitDoor43Url = new RegExp(
+      /^https?:\/\/((git.)door43.org)\/([^/]+)\/([^/]+)/);
     let match = liveDoor43Url.exec(url);
     if (!match) {
       match = gitDoor43Url.exec(url);
       if (match) {
         const extra = url.substr(match.index + match[0].length);
-        if (extra && (extra !== '/')) { // make sure not trying to point into contents of repo
+        if (extra && (extra !== "/")) { // make sure not trying to point into contents of repo
           match = null;
         }
       }
@@ -78,8 +81,8 @@ export default class Repo {
       // Return a proper git.door43.org URL from the match
       let userName = match[3];
       let repoName = match[4];
-      repoName = (repoName && repoName.replace('.git', '')) || '';
-      return 'https://git.door43.org/' + userName + '/' + repoName + '.git';
+      repoName = (repoName && repoName.replace(".git", "")) || "";
+      return "https://git.door43.org/" + userName + "/" + repoName + ".git";
     }
     return null;
   }
@@ -91,7 +94,7 @@ export default class Repo {
    * @returns {object|null}
    */
   static parseRemoteUrl(url) {
-    if(!url) return null;
+    if (!url) return null;
 
     let matches = projectRegExp.exec(url);
     if (!matches) {
@@ -101,9 +104,23 @@ export default class Repo {
         owner: matches[1],
         name: matches[2],
         full_name: `${matches[1]}/${matches[2]}`,
-        host: 'https://git.door43.org/'
+        host: "https://git.door43.org/"
       };
     }
+  }
+
+  /**
+   * List a remote servers branches, tags, and capabilities.
+   * @param {string} url - the remote repo url
+   * @returns {Promise<object>}
+   */
+  static async getRemoteInfo(url) {
+    if(!url) return null;
+
+    return await git.getRemoteInfo({
+      url,
+      ...makeCredentials(this.user)
+    });
   }
 
   /**
@@ -135,14 +152,14 @@ export default class Repo {
 
   /**
    * Pushes commits to a remote repository
-   * @param {string} remoteName - the name of the remote
+   * @param {string} [remote="origin"] - the name of the remote
    * @param {string} [branch="master"] - the branch to push
    * @return {Promise<PushResponse>} - the error code if there is one
    */
-  async push(remoteName, branch = "master") {
+  async push(remote = "origin", branch = "master") {
     return await git.push({
       dir: this.dir,
-      remote: remoteName,
+      remote,
       ref: branch,
       ...makeCredentials(this.user)
     });
@@ -166,14 +183,34 @@ export default class Repo {
 
   /**
    * Removes a named remote from this repo.
-   * @param {string} name - the locale remote alias
+   * @param {string} [name="origin"] - the locale remote alias
    * @return {Promise<void>}
    */
-  async removeRemote(name) {
+  async removeRemote(name = "origin") {
     await git.deleteRemote({
       dir: this.dir,
       remote: name
     });
+  }
+
+  /**
+   * Returns information regarding the registered remote
+   * @param {string} [name="origin"] - the name of the remote
+   * @returns {Promise<object>} the url of the remote
+   */
+  async getRemote(name = "origin") {
+    const remotes = await git.listRemotes({
+      dir: this.dir
+    });
+    for (const r of remotes) {
+      if (r.remote === name) {
+        return {
+          ...r,
+          ...Repo.parseRemoteUrl(r.url)
+        };
+      }
+    }
+    return null;
   }
 
   /**
