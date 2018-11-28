@@ -5,6 +5,23 @@ const p = require('../package.json');
 const {download} = require('@neutrinog/electron-dl');
 const DownloadManager = require('./js/DownloadManager');
 
+const LRU = require('lru-cache');
+const lru = new LRU({max: 256, maxAge: 250/*ms*/});
+
+const fs = require('fs');
+const origLstat = fs.lstatSync.bind(fs);
+
+// NB: The biggest offender of thrashing lstatSync is the node module system
+// itself, which we can't get into via any sane means.
+require('fs').lstatSync = function(p) {
+  let r = lru.get(p);
+  if (r) return r;
+
+  r = origLstat(p);
+  lru.set(p, r);
+  return r;
+};
+
 const ipcMain = electron.ipcMain;
 // Module to control application life.
 const app = electron.app;
