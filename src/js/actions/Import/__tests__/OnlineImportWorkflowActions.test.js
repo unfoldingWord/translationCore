@@ -6,9 +6,8 @@ jest.mock('isomorphic-git');
 
 import fs from 'fs-extra';
 import path from 'path-extra';
-import * as OnlineImportWorkflowActions from '../src/js/actions/Import/OnlineImportWorkflowActions';
+import {recoverFailedOnlineImport} from '../OnlineImportWorkflowActions';
 import ospath from "ospath";
-import _ from 'lodash';
 
 
 const middlewares = [thunk];
@@ -18,23 +17,23 @@ const STANDARD_PROJECT = 'https://git.door43.org/royalsix/' + importProjectName 
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const projectSaveLocation = IMPORTS_PATH;
 
-let mock_cloneManifest = null;
+// let mock_cloneManifest = null;
 
 //mocking functions that are relevant to OnlineImportWorkflowActions but not required
-jest.mock('../src/js/helpers/Import/OnlineImportWorkflowHelpers', () => (
-  {
-    ...require.requireActual('../src/js/helpers/Import/OnlineImportWorkflowHelpers'),
-    clone: async () => {
-      return mock_saveJson(mock_cloneManifest);
-    }
-  }));
+// jest.mock('../src/js/helpers/Import/OnlineImportWorkflowHelpers', () => (
+//   {
+//     ...require.requireActual('../src/js/helpers/Import/OnlineImportWorkflowHelpers'),
+//     clone: async () => {
+//       return mock_saveJson(mock_cloneManifest);
+//     }
+//   }));
 
-jest.mock('../src/js/helpers/ProjectMigration', () => jest.fn());
-jest.mock('../src/js/actions/Import/ProjectValidationActions', () => (
+jest.mock('../../../helpers/ProjectMigration', () => jest.fn());
+jest.mock('../ProjectValidationActions', () => (
   {
-    ...require.requireActual('../src/js/actions/Import/ProjectValidationActions'),
+    ...require.requireActual('../ProjectValidationActions'),
     validateProject: () => ({ type: 'VALIDATE' }) }));
-jest.mock('../src/js/actions/Import/ProjectImportFilesystemActions', () => ({
+jest.mock('../ProjectImportFilesystemActions', () => ({
   deleteProjectFromImportsFolder: () => ({type: 'DELETE_PROJECT_FROM_IMORTS'}),
   move: () => {
     return ((dispatch) => {
@@ -45,16 +44,16 @@ jest.mock('../src/js/actions/Import/ProjectImportFilesystemActions', () => ({
     });
   }
 }));
-jest.mock('../src/js/actions/MyProjects/MyProjectsActions', () => ({ getMyProjects: () => ({ type: 'GET_MY_PROJECTS' }) }));
-jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
+jest.mock('../../MyProjects/MyProjectsActions', () => ({ getMyProjects: () => ({ type: 'GET_MY_PROJECTS' }) }));
+jest.mock('../../MyProjects/ProjectLoadingActions', () => ({
   clearLastProject: () => ({ type: 'CLEAR_LAST_PROJECT' }),
   displayTools: jest.fn(() => ({ type: 'DISPLAY_TOOLS' }))
 }));
-jest.mock('../src/js/helpers/TargetLanguageHelpers', ()=> ({
+jest.mock('../../../helpers/TargetLanguageHelpers', ()=> ({
   generateTargetBibleFromTstudioProjectPath: () => {},
   targetBibleExists:() => false
 }));
-jest.mock('../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({
+jest.mock('../../../helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({
   ensureSupportedVersion: () => {}
 }));
 
@@ -115,23 +114,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
     fs.writeJSONSync(path.join(cloneToPath, "manifest.json"), manifest_);
 
     const store = mockStore(initialState);
-    await store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((error) => {
-      expect(error).toEqual('Project has already been imported.');
-      expect(store.getActions()).toMatchSnapshot();
-    });
+    store.dispatch(recoverFailedOnlineImport("import failed"));
+    expect(store.getActions()).toMatchSnapshot();
   });
 });
-
-//
-// helper functions
-//
-
-function mock_saveJson(mock_cloneManifest) {
-  if(mock_cloneManifest) {
-    for (let filePath of Object.keys(mock_cloneManifest)) {
-      let data = mock_cloneManifest[filePath];
-      fs.outputJsonSync(filePath, _.cloneDeep(data));
-    }
-  }
-  return importProjectName;
-}

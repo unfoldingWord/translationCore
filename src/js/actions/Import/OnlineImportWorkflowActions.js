@@ -3,8 +3,7 @@ import path from "path-extra";
 import ospath from "ospath";
 // actions
 import * as ProjectValidationActions from "../Import/ProjectValidationActions";
-import * as ProjectImportFilesystemActions
-  from "./ProjectImportFilesystemActions";
+import {deleteProjectFromImportsFolder, moveProject} from "../../helpers/Import/ProjectImportFilesystemHelpers";
 import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as OnlineModeConfirmActions
   from "../../actions/OnlineModeConfirmActions";
@@ -102,7 +101,7 @@ export const onlineImport = () => {
             dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName});
             await delay(200);
           }
-          await dispatch(ProjectImportFilesystemActions.move());
+          await moveProject();
           if (renamingResults.repoRenamed) {
             await dispatch(ProjectDetailsActions.doRenamePrompting());
           }
@@ -111,14 +110,7 @@ export const onlineImport = () => {
           resolve();
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.online_import_error', {project_url: link, toPath: importProjectPath}));
-          // clear last project must be called before any other action.
-          // to avoid troggering autosaving.
-          dispatch(ProjectLoadingActions.clearLastProject());
-          dispatch(AlertModalActions.openAlertDialog(errorMessage));
-          dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-          dispatch({ type: "LOADED_ONLINE_FAILED" });
-          // remove failed project import
-          dispatch(deleteImportProjectForLink());
+          dispatch(recoverFailedOnlineImport(errorMessage));
           reject(errorMessage);
         }
       }));
@@ -127,6 +119,21 @@ export const onlineImport = () => {
 };
 
 /**
+ * Performs recovery actions to cleanup after a failed online import
+ * @param {string} errorMessage - A localized error message to show the user.
+ * @returns {Function}
+ */
+export const recoverFailedOnlineImport = (errorMessage) => (dispatch) => {
+  // TRICKY: clear last project first to avoid triggering autos-saving.
+  dispatch(ProjectLoadingActions.clearLastProject());
+  dispatch(AlertModalActions.openAlertDialog(errorMessage));
+  dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+  dispatch({ type: "LOADED_ONLINE_FAILED" });
+  dispatch(deleteImportProjectForLink());
+};
+
+/**
+ * TODO: this does not need to be an action.
  * @description - delete project (for link) from import folder
  */
 export function deleteImportProjectForLink() {
@@ -136,7 +143,7 @@ export function deleteImportProjectForLink() {
       const gitUrl = Repo.sanitizeRemoteUrl(link);
       let project = Repo.parseRemoteUrl(gitUrl);
       if (project) {
-        dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(project.name));
+        deleteProjectFromImportsFolder(project.name);
       }
     }
   });
