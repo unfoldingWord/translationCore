@@ -143,9 +143,7 @@ export const BIBLES_ABBRV_INDEX = {
   'rev': '67'
 };
 
-export function getAllBibleBooks(translate=null) {
-  if (!translate)
-    translate = k => k;
+export function getAllBibleBooks(translate=k=>k) {
   const bibleBooks = {};
   Object.keys(BIBLE_BOOKS.oldTestament).forEach(key => {
     bibleBooks[key] = translate('book_list.ot.'+key, {book_id: key});

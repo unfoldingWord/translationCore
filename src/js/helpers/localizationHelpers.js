@@ -17,7 +17,6 @@ export const getTranslation = function (translate, text, deflt, params = {}) {
   }
   let translation = nonTranslatable[key]; // check for static translation
   if (!translation && translate) { // if not found, try translation lookup
-    console.log("here");
     const shouldHaveTranslation = getNestedKey(translatable, key); // if we should have a dynamic translation
     console.log(shouldHaveTranslation);
     if (shouldHaveTranslation) {
