@@ -197,6 +197,7 @@ class ProjectInformationCheck extends Component {
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <TextPrompt
+                    id={'resource_id'}
                     getErrorMessage={(text) => getResourceIdWarning.call(this, text)}
                     text={resourceId}
                     title={translate('projects.resource_id')}
@@ -218,6 +219,7 @@ class ProjectInformationCheck extends Component {
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <TextPrompt
+                    id={'nickname'}
                     getErrorMessage={() => null}
                     text={nickname}
                     title={translate('projects.nickname')}

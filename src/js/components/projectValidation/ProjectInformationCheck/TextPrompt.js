@@ -7,6 +7,7 @@ import { Glyphicon } from 'react-bootstrap';
 import { TextField } from 'material-ui';
 
 const TextPrompt = ({
+  id,
   text,
   title,
   updateText,
@@ -43,27 +44,25 @@ const TextPrompt = ({
   }
 
   return (
-    <div>
-      <div style={{
-        width: '240px',
-        height: '10px',
-        marginTop: '12px',
-        paddingTop: 0,
-        paddingBottom: '2px',
-        paddingLeft: 0,
-        paddingRight: 0,
-        color: '#000',
-        fontSize: '16px',
-        fontWeight: 'bold'
-      }}>
+    <div style={{
+      width: '240px',
+      marginTop: '12px',
+      paddingTop: 0,
+      paddingBottom: 0,
+      paddingLeft: 0,
+      paddingRight: 0,
+      color: '#000',
+      fontSize: '16px',
+      fontWeight: 'bold'
+    }}>
+      <label for={id}>
         <Glyphicon glyph={"book"} style={{color: "#000000", fontSize: '16px'}}/>&nbsp;
-        <span>{title}
-          {getInfoIcon()}
-          {getRequiredIcon()}
-          </span>
-      </div>
+        {title}
+        {getInfoIcon()}
+        {getRequiredIcon()}
+      </label>
       <TextField
-        id="resource-id-textfield"
+        id={id}
         value={text}
         style={{width: '230px', height: '40px'}}
         errorText={getErrorMessage(text)}
@@ -79,6 +78,7 @@ const TextPrompt = ({
 };
 
 TextPrompt.propTypes = {
+  id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   updateText: PropTypes.func.isRequired,
