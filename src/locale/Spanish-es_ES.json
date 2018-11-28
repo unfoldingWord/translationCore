@@ -62,8 +62,8 @@
   "email_address_optional": "Correo electrónico (opcional):",
   "invalid_email": "Correo electrónico no válido",
   "include_app_logs": "Adjuntar los Registros de Aplicación",
-  "alignment_prompt": "Would you like to export the alignment data with your text?",
-  "include_alignment_check": "Include alignment data",
+  "alignment_prompt": "Usted le gustaría exportar los datos de alineamiento con el texto?",
+  "include_alignment_check": "Incluir datos de alineación",
   "updates": {
     "check_for_newer_app": "Compruebe si hay actualizaciones de software",
     "check_for_content_updates": "Compruebe si hay actualizaciones de contenido",
@@ -272,7 +272,7 @@
     }
   },
   "tools": {
-    "no_checks_selected": "You must select a category to launch this tool",
+    "no_checks_selected": "Debe seleccionar una categoría para el lanzamiento de esta herramienta",
     "book_not_supported": "El libro no se admite",
     "select_tool_from_list": "Seleccione una herramienta y un idioma de entrada de la lista.",
     "tools": "Herramientas",
