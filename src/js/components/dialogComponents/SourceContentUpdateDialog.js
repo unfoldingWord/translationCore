@@ -56,28 +56,33 @@ const styles = {
     padding: '10px 5px'
   }
 };
-
+//console.log( "getLanguageCodes", JSON.stringify( getLanguageCodes() ) );
 const ResourceListItem = ({resource, checked, handleItemOnCheck}) => {
   const languageCodeDetails = getLanguageCodes().local[resource.languageId];
   const languageName = languageCodeDetails ? languageCodeDetails.name : resource.languageId;
 
-  return (
-    <tr style={styles.tr}>
-      <td style={styles.firstTd}>
-        <Checkbox checked={checked}
-                  onCheck={(event) => {
-                    event.preventDefault();
-                    handleItemOnCheck(resource.languageId);
-                  }}
-                  label={`${languageName} (${resource.languageId})`}
-                  style={styles.checkbox}
-                  iconStyle={styles.checkboxIconStyle}
-                  labelStyle={styles.checkboxLabelStyle} />
-      </td>
-      <td style={styles.td}>{`${resource.localModifiedTime.substring(0, 10)}`}</td>
-      <td style={styles.td}>{`${resource.remoteModifiedTime.substring(0, 10)}`}</td>
-    </tr>
-  );
+  if( languageCodeDetails ) {
+    return (
+      <tr style={styles.tr}>
+        <td style={styles.firstTd}>
+          <Checkbox checked={checked}
+                    onCheck={(event) => {
+                      event.preventDefault();
+                      handleItemOnCheck(resource.languageId);
+                    }}
+                    label={`${languageName} (${resource.languageId})`}
+                    style={styles.checkbox}
+                    iconStyle={styles.checkboxIconStyle}
+                    labelStyle={styles.checkboxLabelStyle} />
+        </td>
+        <td style={styles.td}>{`${resource.localModifiedTime.substring(0, 10)}`}</td>
+        <td style={styles.td}>{`${resource.remoteModifiedTime.substring(0, 10)}`}</td>
+      </tr>
+    );
+  } else { 
+    // no details for this language so it is unsupported
+    return null; 
+  }
 };
 
 ResourceListItem.propTypes = {
