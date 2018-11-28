@@ -1,13 +1,15 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+
+jest.mock('fs-extra');
+jest.mock('isomorphic-git');
+
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as OnlineImportWorkflowActions from '../src/js/actions/Import/OnlineImportWorkflowActions';
 import ospath from "ospath";
 import _ from 'lodash';
 
-jest.mock('fs-extra');
-jest.mock('isomorphic-git');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -82,7 +84,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
-    mock_cloneManifest = null;
+    // mock_cloneManifest = null;
     initialState = {
       importOnlineReducer: {
         importLink: STANDARD_PROJECT
@@ -107,20 +109,11 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
     };
   });
 
-  it('should fail a project without manifest', async () => {
-    const store = mockStore(initialState);
-    await store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((error) => {
-      expect(error).toEqual('projects.online_import_error');
-      expect(error).toBeTruthy();
-    });
-  });
-
   it('on import errors should call required actions', async () => {
     const fileName = "manifest.json";
     const cloneToPath = path.join(IMPORTS_PATH, importProjectName, fileName);
-    mock_cloneManifest = {
-      [cloneToPath]: manifest_
-    };
+    fs.writeJSONSync(path.join(cloneToPath, "manifest.json"), manifest_);
+
     const store = mockStore(initialState);
     await store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((error) => {
       expect(error).toEqual('Project has already been imported.');
