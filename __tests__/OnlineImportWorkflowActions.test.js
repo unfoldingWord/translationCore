@@ -7,6 +7,7 @@ import ospath from "ospath";
 import _ from 'lodash';
 
 jest.mock('fs-extra');
+jest.mock('isomorphic-git');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -125,81 +126,6 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       expect(error).toEqual('Project has already been imported.');
       expect(store.getActions()).toMatchSnapshot();
     });
-  });
-
-  it('should import a ts-desktop generated project', async () => {
-    const fileName = "manifest.json";
-    const manifest = _.cloneDeep(manifest_);
-    delete manifest.tcInitialized;
-    delete manifest.tc_version;
-    const cloneToPath = path.join(IMPORTS_PATH, importProjectName, fileName);
-    mock_cloneManifest = {
-      [cloneToPath]: manifest
-    };
-    const store = mockStore(initialState);
-    await store.dispatch(OnlineImportWorkflowActions.onlineImport());
-    expect(store.getActions()).toMatchSnapshot();
-  });
-
-  it('should import a ts-android generated project', async () => {
-    const fileName = "manifest.json";
-    const manifest = _.cloneDeep(manifest_);
-    delete manifest.tcInitialized;
-    delete manifest.tc_version;
-    manifest.generator.name = "ts-android";
-    const cloneToPath = path.join(IMPORTS_PATH, importProjectName, fileName);
-    mock_cloneManifest = {
-      [cloneToPath]: manifest
-    };
-    const store = mockStore(initialState);
-    await store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((error) => {
-      expect(error).toEqual('Project has already been imported.');
-      // expect(store.getActions()).toMatchSnapshot();
-    });
-    expect(store.getActions()).toMatchSnapshot();
-  });
-
-  it('should import a tc-desktop generated project', async () => {
-    const fileName = "manifest.json";
-    const manifest = _.cloneDeep(manifest_);
-    delete manifest.tcInitialized;
-    delete manifest.tc_version;
-    manifest.generator.name = "tc-desktop";
-    const cloneToPath = path.join(IMPORTS_PATH, importProjectName, fileName);
-    mock_cloneManifest = {
-      [cloneToPath]: manifest
-    };
-    const store = mockStore(initialState);
-    await store.dispatch(OnlineImportWorkflowActions.onlineImport());
-    expect(store.getActions()).toMatchSnapshot();
-  });
-
-  it('should import a tcInitialized project', async () => {
-    const fileName = "manifest.json";
-    const manifest = _.cloneDeep(manifest_);
-    delete manifest.tc_version;
-    delete manifest.generator;
-    const cloneToPath = path.join(IMPORTS_PATH, importProjectName, fileName);
-    mock_cloneManifest = {
-      [cloneToPath]: manifest
-    };
-    const store = mockStore(initialState);
-    await store.dispatch(OnlineImportWorkflowActions.onlineImport());
-    expect(store.getActions()).toMatchSnapshot();
-  });
-
-  it('should import a tc_version project', async () => {
-    const fileName = "manifest.json";
-    const manifest = _.cloneDeep(manifest_);
-    delete manifest.tcInitialized;
-    delete manifest.generator;
-    const cloneToPath = path.join(IMPORTS_PATH, importProjectName, fileName);
-    mock_cloneManifest = {
-      [cloneToPath]: manifest
-    };
-    const store = mockStore(initialState);
-    await store.dispatch(OnlineImportWorkflowActions.onlineImport());
-    expect(store.getActions()).toMatchSnapshot();
   });
 });
 

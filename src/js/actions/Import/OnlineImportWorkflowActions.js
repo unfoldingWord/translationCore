@@ -1,28 +1,41 @@
-import consts from '../../actions/ActionTypes';
-import path from 'path-extra';
-import ospath from 'ospath';
+import consts from "../../actions/ActionTypes";
+import path from "path-extra";
+import ospath from "ospath";
 // actions
-import * as ProjectValidationActions from '../Import/ProjectValidationActions';
-import * as ProjectImportFilesystemActions from './ProjectImportFilesystemActions';
-import * as AlertModalActions from '../../actions/AlertModalActions';
-import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
-import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
-import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
-import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as ProjectValidationActions from "../Import/ProjectValidationActions";
+import * as ProjectImportFilesystemActions
+  from "./ProjectImportFilesystemActions";
+import * as AlertModalActions from "../../actions/AlertModalActions";
+import * as OnlineModeConfirmActions
+  from "../../actions/OnlineModeConfirmActions";
+import * as ProjectImportStepperActions from "../ProjectImportStepperActions";
+import * as MyProjectsActions from "../MyProjects/MyProjectsActions";
+import * as ProjectLoadingActions from "../MyProjects/ProjectLoadingActions";
 import * as ProjectDetailsActions from "../ProjectDetailsActions";
-import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
+import * as ProjectInformationCheckActions
+  from "../ProjectInformationCheckActions";
 // helpers
-import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
-import {generateImportPath} from '../../helpers/Import/OnlineImportWorkflowHelpers';
-import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
-import { getTranslate, getProjectManifest, getProjectSaveLocation, getUsername } from '../../selectors';
-import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
-import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
-import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
-import migrateProject from '../../helpers/ProjectMigration';
+import * as TargetLanguageHelpers from "../../helpers/TargetLanguageHelpers";
+import {
+  generateImportPath,
+  verifyThisIsTCoreOrTStudioProject
+} from "../../helpers/Import/OnlineImportWorkflowHelpers";
+import * as CopyrightCheckHelpers from "../../helpers/CopyrightCheckHelpers";
+import {
+  getProjectManifest,
+  getProjectSaveLocation,
+  getTranslate,
+  getUsername
+} from "../../selectors";
+import * as ProjectStructureValidationHelpers
+  from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
+import * as FileConversionHelpers from "../../helpers/FileConversionHelpers";
+import * as ProjectFilesystemHelpers
+  from "../../helpers/Import/ProjectImportFilesystemHelpers";
+import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
+import migrateProject from "../../helpers/ProjectMigration";
 import fs from "fs-extra";
-import Repo from '../../helpers/Repo';
+import Repo from "../../helpers/Repo";
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -54,8 +67,15 @@ export const onlineImport = () => {
 
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+
+          // check if we can import the project
           const errorMessage = translate('projects.online_import_error', {project_url: link, toPath: importProjectPath});
-          verifyThisIsTCoreOrTStudioProject(importProjectPath, errorMessage);
+          const isValid = verifyThisIsTCoreOrTStudioProject(importProjectPath, errorMessage);
+          if (!isValid) {
+            console.warn("This is not a valid tStudio or tCore project we can migrate: ", errorMessage);
+            throw errorMessage;
+          }
+
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
           const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
           migrateProject(importProjectPath, link, getUsername(getState()));
@@ -142,31 +162,3 @@ function delay(ms) {
   );
 }
 
-/**
- * make sure this is a tStudio or tCore Project before we try to import it
- * @param {String} projectPath - path to project project
- * @param {String} errorMessage - translated message to show on error
- * @return {Boolean} true if tStudio or tCore Project
- */
-function verifyThisIsTCoreOrTStudioProject(projectPath, errorMessage) {
-  const projectManifestPath = path.join(projectPath, "manifest.json");
-  const projectTCManifestPath = path.join(projectPath, "tc-manifest.json");
-  let valid = fs.existsSync(projectTCManifestPath); // if we have tc-manifest.json, then need no more checking
-  if (!valid) { // check standard manifest.json
-    if (fs.existsSync(projectManifestPath)) {
-      const manifest = fs.readJsonSync(projectManifestPath);
-      if (manifest) {
-        const generatorName = manifest.generator && manifest.generator.name;
-        const isTStudioProject = (generatorName && (generatorName.indexOf("ts-") === 0)); // could be ts-desktop or ts-android
-        const isTCoreProject = (generatorName && (generatorName === "tc-desktop")) ||
-          (manifest.tc_version) || (manifest.tcInitialized);
-        valid = (isTStudioProject || isTCoreProject);
-      }
-    }
-  }
-  if (!valid) {
-    console.warn("This is not a valid tStudio or tCore project we can migrate: ", errorMessage);
-    throw errorMessage;
-  }
-  return valid;
-}
