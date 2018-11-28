@@ -136,7 +136,6 @@ export const createNewRepo = async (newName, projectPath, user) => {
     const newRemoteURL = getUserDoor43Url(user, newName);
     const repo = new Repo(projectPath);
     await repo.removeRemote(TC_OLD_ORIGIN_KEY);// clear old connection since we are renaming
-    // TODO: do we need to delete the old repo, not just the legacy key?
 
     await createRepo(user, newName);
     await repo.addRemote(newRemoteURL);
@@ -200,15 +199,17 @@ export const findRepo = (user, reponame) => {
 
 /**
  * find saved remote for name, ignores errors
- * @param {String} projectPath
- * @param {String} remoteName
- * @return {Promise<any>}
+ * @param {String} projectPath - the project path
+ * @param {String} remoteName - the name of the remote
+ * @return {Promise<string|null>} The remote url or null if not found
  */
 export const getSavedRemote = async (projectPath, remoteName) => {
   const repo = new Repo(projectPath);
   const remote = await repo.getRemote(remoteName);
   if (remote) {
     return remote.url;
+  } else {
+    return null;
   }
 };
 
@@ -271,7 +272,6 @@ export const changeGitToPointToNewRepo = async (
     await updateGitRemotes(projectSaveLocation, userdata, saveUrl);
     return true;
   } catch (e) {
-    console.log(e);
     throw(e);
   }
 };
@@ -314,8 +314,11 @@ export const hasGitHistoryForCurrentUser = async (
     if (login && login.userdata && login.loggedInUser) {
       if (fs.pathExistsSync(path.join(projectSaveLocation, ".git"))) {
         const remoteUrl = await getSavedRemote(projectSaveLocation, "origin");
-        let { owner: user } = Repo.parseRemoteUrl(remoteUrl);
-        return (user === login.userdata.username);
+        const info = Repo.parseRemoteUrl(remoteUrl);
+        if(info) {
+          let { owner: user } = info;
+          return (user === login.userdata.username);
+        }
       }
     }
   } catch (e) {

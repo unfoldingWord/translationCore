@@ -36,8 +36,8 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
           if (res === 'Export') {
             //The user chose to continue and reset the alignments
             await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
-            usfm = await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
-            resolve(usfm);
+            const exported_usfm = await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
+            resolve(exported_usfm);
           } else {
             reject();
           }
