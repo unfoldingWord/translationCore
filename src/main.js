@@ -25,7 +25,16 @@ const downloadManager = new DownloadManager();
  * Creates the main browser window
  */
 function createMainWindow () {
-  mainWindow = new BrowserWindow({icon: './images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
+  mainWindow = new BrowserWindow({
+    icon: './images/TC_Icon.png',
+    title: 'translationCore',
+    autoHideMenuBar: true,
+    minWidth: 1200,
+    minHeight: 650,
+    center: true,
+    useContentSize: true,
+    show: false,
+  });
 
   if('developer_mode' in p && p.developer_mode) {
     mainWindow.webContents.openDevTools();
