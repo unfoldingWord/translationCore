@@ -5,23 +5,6 @@ const p = require('../package.json');
 const {download} = require('@neutrinog/electron-dl');
 const DownloadManager = require('./js/DownloadManager');
 
-const LRU = require('lru-cache');
-const lru = new LRU({max: 256, maxAge: 250/*ms*/});
-
-const fs = require('fs');
-const origLstat = fs.lstatSync.bind(fs);
-
-// NB: The biggest offender of thrashing lstatSync is the node module system
-// itself, which we can't get into via any sane means.
-require('fs').lstatSync = function(p) {
-  let r = lru.get(p);
-  if (r) return r;
-
-  r = origLstat(p);
-  lru.set(p, r);
-  return r;
-};
-
 const ipcMain = electron.ipcMain;
 // Module to control application life.
 const app = electron.app;
@@ -33,7 +16,6 @@ const dialog = electron.dialog;
 // be closed automatically when the JavaScript object is garbage collected.
 
 let mainWindow;
-let helperWindow;
 let splashScreen;
 
 const downloadManager = new DownloadManager();
@@ -111,40 +93,12 @@ function createMainSplash() {
     show: false
   });
 
-  //splashScreen.webContents.openDevTools();
+  // splashScreen.webContents.openDevTools();
 
   splashScreen.loadURL(`file://${__dirname}/html/splash.html`);
 
   splashScreen.on('closed', function() {
     splashScreen = null;
-  });
-}
-
-function createHelperWindow(url) {
-  helperWindow = new BrowserWindow({
-    width: 950,
-    height: 660,
-    minWidth: 950,
-    minHeight: 580,
-    useContentSize: true,
-    center: true,
-    autoHideMenuBar: true,
-    show: true,
-    frame: true
-  });
-
-  helperWindow.loadURL(url);
-
-  helperWindow.on('closed', () => {
-    helperWindow = null;
-  });
-
-  helperWindow.on('maximize', () => {
-    helperWindow.webContents.send('maximize');
-  });
-
-  helperWindow.on('unmaximize', () => {
-    helperWindow.webContents.send('unmaximize');
   });
 }
 
@@ -212,13 +166,4 @@ ipcMain.on('download', function(event, args) {
 ipcMain.on('load-local', function (event, arg) {
   const input = dialog.showOpenDialog(mainWindow, arg.options);
   event.returnValue = input || false;
-});
-
-ipcMain.on('open-helper', (event, url = "http://git.door43.org/") => {
-    if (helperWindow) {
-        helperWindow.show();
-        helperWindow.loadURL(url);
-    } else {
-        createHelperWindow(url);
-    }
 });
