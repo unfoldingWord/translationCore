@@ -62,8 +62,8 @@
   "email_address_optional": "ईमेल पता (वैकल्पिक):",
   "invalid_email": "अमान्य ईमेल पता",
   "include_app_logs": "एप्लिकेशन लॉग शामिल करें",
-  "alignment_prompt": "Would you like to export the alignment data with your text?",
-  "include_alignment_check": "Include alignment data",
+  "alignment_prompt": "क्या आप अपने पाठ के साथ संरेखण डेटा निर्यात करना चाहते हैं?",
+  "include_alignment_check": "संरेखण डेटा शामिल करें",
   "updates": {
     "check_for_newer_app": "सॉफ्टवेयर अपडेट की जांच करें",
     "check_for_content_updates": "सामग्री अद्यतनों के लिए जाँच करें",
@@ -272,7 +272,7 @@
     }
   },
   "tools": {
-    "no_checks_selected": "You must select a category to launch this tool",
+    "no_checks_selected": "इस उपकरण को लॉन्च करने के लिए आपको एक श्रेणी का चयन करना होगा",
     "book_not_supported": "पुस्तक समर्थित नहीं है",
     "select_tool_from_list": "सूची से किसी उपकरण और गेटवे भाषा का चयन करें ।",
     "tools": "उपकरण",
