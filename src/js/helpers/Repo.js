@@ -49,7 +49,7 @@ function makeAuthor(user) {
  * This is not the fastest implementation but it should be good enough for for our use case.
  * Also this does not support nested .gitignores
  * @param {string} dir - the directory being read
- * @return {Promise<string[]>} an array of file paths
+ * @return {Promise<string[]>} an array of relative file paths within the directory
  */
 export function readGitDir(dir) {
   return new Promise((resolve, reject) => {
@@ -70,13 +70,13 @@ export function readGitDir(dir) {
 
     // scan directory
     klaw(dir, { filter }).
-      on("data", item => paths.push(item.path)).
+      on("data", item => paths.push(path.relative(dir, item.path))).
       on("error", (err, item) => {
         reject(err.message, item.path);
       }).
       on("end", () => {
         // remove directories from list
-        resolve(paths.filter(file => !fs.statSync(file).isDirectory()));
+        resolve(paths.filter(file => !fs.statSync(path.join(dir, file)).isDirectory()));
       });
   });
 }

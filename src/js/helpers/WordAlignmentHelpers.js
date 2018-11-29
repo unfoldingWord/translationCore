@@ -33,7 +33,8 @@ export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) 
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
 export const getAlignmentPathsFromProject = (projectSaveLocation) => {
-  let chapters, wordAlignmentDataPath, projectTargetLanguagePath;
+  let chapters = [];
+  let wordAlignmentDataPath, projectTargetLanguagePath;
   //Retrieve project manifest, and paths for reading
   const {project} = manifestHelpers.getProjectManifest(projectSaveLocation);
   if (project && project.id) {

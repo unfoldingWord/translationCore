@@ -23,10 +23,17 @@ describe("readGitDir", () => {
     const files = await readGitDir(readPath);
     expect(files.length > 0).toBeTruthy();
     for (const f of files) {
-      expect(fs.statSync(f).isDirectory()).toBeFalsy();
-      expect(f).not.toEqual(readPath);
+      const abs_path = path.join(__dirname, f);
+      // must be relative
+      expect(f).not.toEqual(expect.stringContaining(__dirname));
+      // must not be dir
+      expect(fs.statSync(abs_path).isDirectory()).toBeFalsy();
+      // must not be the input path
+      expect(abs_path).not.toEqual(readPath);
     }
   });
+
+
 });
 
 describe("sanitize remote url", () => {
