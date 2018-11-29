@@ -1,6 +1,8 @@
 import * as git from "isomorphic-git";
 import fs from "fs-extra";
-import globby from "globby";
+import path from "path-extra";
+import klaw from "klaw";
+import ignore from "ignore";
 
 git.plugins.set("fs", fs);
 
@@ -38,6 +40,45 @@ function makeAuthor(user) {
   return {
     name, email
   };
+}
+
+/**
+ * Recursively returns an array of file paths within the directory.
+ * .gitignore is obeyed and the .git dir is always ignored.
+ *
+ * This is not the fastest implementation but it should be good enough for for our use case.
+ * Also this does not support nested .gitignores
+ * @param {string} dir - the directory being read
+ * @return {Promise<string[]>} an array of file paths
+ */
+export function readGitDir(dir) {
+  return new Promise((resolve, reject) => {
+    const paths = [];
+    const ig = ignore().add(['.git']);
+
+    // load .gitignore
+    const ignorePath = path.join(dir, '.gitignore');
+    if(fs.pathExistsSync(ignorePath)) {
+      ig.add(fs.readFileSync(ignorePath).toString());
+    }
+
+    // filter files
+    const filter = item => {
+      const file = path.relative(dir, item);
+      return !ig.ignores(file);
+    };
+
+    // scan directory
+    klaw(dir, { filter }).
+      on("data", item => paths.push(item.path)).
+      on("error", (err, item) => {
+        reject(err.message, item.path);
+      }).
+      on("end", () => {
+        // remove directories from list
+        resolve(paths.filter(file => !fs.statSync(file).isDirectory()));
+      });
+  });
 }
 
 /**
@@ -115,7 +156,7 @@ export default class Repo {
    * @returns {Promise<object>}
    */
   static async getRemoteInfo(url) {
-    if(!url) return null;
+    if (!url) return null;
 
     return await git.getRemoteInfo({
       url,
@@ -230,12 +271,7 @@ export default class Repo {
    * @returns {Promise<void>}
    */
   async addAll() {
-    const paths = await globby(["./**", "./**/*"], {
-      cwd: this.dir,
-      gitignore: true,
-      dot: true,
-      ignore: [".git"]
-    });
+    const paths = await readGitDir(this.dir);
     for (let i = 0, size = paths.length; i < size; i++) {
       await this.add(paths[i]);
     }
