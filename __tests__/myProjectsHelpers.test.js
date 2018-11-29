@@ -19,8 +19,8 @@ describe('myProjectsHelpers.getProjectsFromFS', () => {
     beforeAll(() => {
         return new Promise((resolve, reject) => {
             cleanOutput();
-            let src = path.join(__dirname, 'fixtures/project/missingVerses');
-            out = path.join(__dirname, 'output/my_projects_fs');
+            let src = path.join(__dirname, 'fixtures', 'project', 'missingVerses');
+            out = path.join(__dirname, 'output','my_projects_fs');
             ncp(src, out, (err) => {
                 if (err) {
                     reject(err);
@@ -41,8 +41,8 @@ describe('myProjectsHelpers.getProjectsFromFS 2', () => {
     beforeAll(() => {
         return new Promise((resolve, reject) => {
             cleanOutput();
-            let src = path.join(__dirname, 'fixtures/project/projectVerification');
-            out = path.join(__dirname, 'output/my_projects_fs');
+            let src = path.join(__dirname, 'fixtures', 'project', 'projectVerification');
+            out = path.join(__dirname, 'output', 'my_projects_fs');
             ncp(src, out, (err) => {
                 if (err) {
                     reject(err);
