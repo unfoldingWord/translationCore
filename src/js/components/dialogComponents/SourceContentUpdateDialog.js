@@ -56,7 +56,7 @@ const styles = {
     padding: '10px 5px'
   }
 };
-//console.log( "getLanguageCodes", JSON.stringify( getLanguageCodes() ) );
+
 const ResourceListItem = ({resource, checked, handleItemOnCheck}) => {
   const languageCodeDetails = getLanguageCodes().local[resource.languageId];
   const languageName = languageCodeDetails ? languageCodeDetails.name : resource.languageId;
