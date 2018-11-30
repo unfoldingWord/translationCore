@@ -7,6 +7,7 @@ import * as USFMExportActions from './USFMExportActions';
 
 /**
  * Wrapper for exporting project alignment data to usfm.
+ * TODO: the alignment to usfm conversion will eventually get abstracted to a separate module.
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  * @param {boolean} output - Flag to set whether export will write to fs
  * @param {boolean} resetAlignments - Flag to set whether export will reset alignments
@@ -18,7 +19,7 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       //Get path for alignment conversion
       const {wordAlignmentDataPath, projectTargetLanguagePath, chapters} = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
       const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
-      /** Convert alignments from the filesystem under then project alignments folder */
+      /** Convert alignments from the filesystem under the project alignments folder */
       let usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
       ).catch(async (e) => {
