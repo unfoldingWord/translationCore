@@ -11,7 +11,10 @@ const groupsIndexReducer = (state = initialState, action) => {
     case consts.LOAD_GROUPS_INDEX: {
       return {
         ...state,
-        groupsIndex: action.groupsIndex,
+        groupsIndex: [
+          ...state.groupsIndex,
+          ...action.groupsIndex,
+        ].sort(sortIndexBasedOnId),
         loadedFromFileSystem: true
       };
     }
@@ -27,5 +30,13 @@ const groupsIndexReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+function sortIndexBasedOnId(a, b) {
+  if (a.id < b.id)
+    return -1;
+  if (a.id > b.id)
+    return 1;
+  return 0;
+}
 
 export default groupsIndexReducer;
