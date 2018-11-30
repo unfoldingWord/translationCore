@@ -26,8 +26,8 @@
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
     "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tcResources/**/*.json'",
     "doc": "jsdoc -c jsdoc/jsdoc.json",
-    "update-resources": "node scripts/resources/updateResources.js tcResources en hi grc",
-    "install-resources": "rm -rf tcResources/en/bibles tcResources/en/translationHelps tcResources/grc tcResources/hi && npm run update-resources"
+    "update-resources": "node scripts/resources/updateResources.js tcResources en hi grc hbo",
+    "overwrite-resources": "rm -rf tcResources/en/bibles tcResources/en/translationHelps tcResources/grc tcResources/hi && npm run update-resources"
   },
   "jest": {
     "collectCoverageFrom": [
