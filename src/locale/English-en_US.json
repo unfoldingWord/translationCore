@@ -62,6 +62,8 @@
   "email_address_optional": "Email address (optional):",
   "invalid_email": "Invalid email address",
   "include_app_logs": "Include application logs",
+  "alignment_prompt": "Would you like to export the alignment data with your text?",
+  "include_alignment_check": "Include alignment data",
   "updates": {
     "check_for_newer_app": "Check for software updates",
     "check_for_content_updates": "Check for content updates",
@@ -270,6 +272,7 @@
     }
   },
   "tools": {
+    "no_checks_selected": "You must select a category to launch this tool",
     "book_not_supported": "Book not supported",
     "select_tool_from_list": "Select a tool and a gateway language from the list.",
     "tools": "Tools",
