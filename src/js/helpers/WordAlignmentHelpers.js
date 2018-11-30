@@ -52,9 +52,7 @@ export const getAlignmentPathsFromProject = (projectSaveLocation) => {
       };
     }
   }
-  return {
-    chapters: []
-  };
+  return {};
 };
 
 /**
@@ -135,6 +133,10 @@ function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) 
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
   chapters, projectSaveLocation, projectID) => {
+  if(!chapters) {
+    chapters = [];
+  }
+
   return new Promise((resolve, reject) => {
     let usfmToJSONObject = {headers: {}, chapters: {}};
     let expectedChapters = 0;
