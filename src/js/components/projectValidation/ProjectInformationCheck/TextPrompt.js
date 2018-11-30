@@ -44,7 +44,9 @@ const TextPrompt = ({
   }
 
   return (
-    <div style={{
+    <div
+      className={'project-info-text-field-area'}
+      style={{
       width: '240px',
       marginTop: '12px',
       paddingTop: 0,
@@ -55,14 +57,18 @@ const TextPrompt = ({
       fontSize: '16px',
       fontWeight: 'bold'
     }}>
-      <label for={id}>
-        <Glyphicon glyph={"book"} style={{color: "#000000", fontSize: '16px'}}/>&nbsp;
+      <label
+        htmlFor={id}
+        className={'project-info-label'}
+      >
+        <Glyphicon glyph={'book'} style={{color: '#000000', fontSize: '16px'}}/>&nbsp;
         {title}
         {getInfoIcon()}
         {getRequiredIcon()}
       </label>
       <TextField
         id={id}
+        className={'project-info-text-field'}
         value={text}
         style={{width: '230px', height: '40px'}}
         errorText={getErrorMessage(text)}
