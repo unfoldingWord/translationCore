@@ -314,10 +314,8 @@ export const saveSelectionsToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = [];
         array.forEach(data => {
-          const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
-          const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
-            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';
-          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
+          const gatewayLanguageQuote = data.contextId.quote ? data.contextId.quote : '';
+
           data.selections.forEach(selection => {
             const _data = {
               text: selection.text,
