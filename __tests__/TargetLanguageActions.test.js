@@ -109,7 +109,7 @@ describe('loadTargetLanguageChapter', () => {
             id: 'normal_project'
           }
         },
-        projectSaveLocation: path.join(__dirname, 'fixtures/project/manifest')
+        projectSaveLocation: path.join(__dirname, 'fixtures', 'project', 'manifest')
       }
     };
     const store = mockStore(initialState);
@@ -127,7 +127,7 @@ describe('loadTargetLanguageChapter', () => {
             id: 'missing_project'
           }
         },
-        projectSaveLocation: path.join(__dirname, 'fixtures/project/manifest')
+        projectSaveLocation: path.join(__dirname, 'fixtures', 'project', 'manifest')
       }
     };
     const store = mockStore(initialState);
@@ -145,7 +145,7 @@ describe('loadTargetLanguageChapter', () => {
             id: 'normal_project'
           }
         },
-        projectSaveLocation: path.join(__dirname, 'fixtures/project/manifest')
+        projectSaveLocation: path.join(__dirname, 'fixtures', 'project', 'manifest')
       }
     };
     const store = mockStore(initialState);
@@ -163,7 +163,7 @@ describe('loadTargetLanguageChapter', () => {
             id: 'missing_manifest'
           }
         },
-        projectSaveLocation: path.join(__dirname, 'fixtures/project/manifest')
+        projectSaveLocation: path.join(__dirname, 'fixtures', 'project', 'manifest')
       }
     };
     const store = mockStore(initialState);
@@ -175,8 +175,8 @@ describe('loadTargetLanguageChapter', () => {
 
 describe('generateTargetBibleFromUSFMPath', () => {
   it('generates a target bible', () => {
-    const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/id_tit_text_reg.usfm');
-    const projectPath = path.join(__dirname, 'output/tit_from_usfm');
+    const usfmPath = path.join(__dirname, 'fixtures', 'usfm', 'valid', 'id_tit_text_reg.usfm');
+    const projectPath = path.join(__dirname, 'output', 'tit_from_usfm');
     const manifest = {
       'project': {
         'id': 'tit'
@@ -197,8 +197,8 @@ describe('generateTargetBibleFromUSFMPath', () => {
   });
 
   it('fails to generate from missing usfm', () => {
-    const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/missing_file.usfm');
-    const projectPath = path.join(__dirname, 'output/missing_output');
+    const usfmPath = path.join(__dirname, 'fixtures', 'usfm', 'valid', 'missing_file.usfm');
+    const projectPath = path.join(__dirname, 'output', 'missing_output');
     const manifest = {
       'project': {
         'id': 'tit'
@@ -217,8 +217,8 @@ describe('generateTargetBibleFromUSFMPath', () => {
 
 describe('generateTargetBibleFromTstudioProjectPath', () => {
   it('generates a Bible', () => {
-    const srcPath = path.join(__dirname, 'fixtures/project/full_project');
-    const projectPath = path.join(__dirname, 'output/generate_from_project');
+    const srcPath = path.join(__dirname, 'fixtures', 'project', 'full_project');
+    const projectPath = path.join(__dirname, 'output', 'generate_from_project');
     return new Promise((resolve, reject) => {
       // copy source to output for manipulation
       ncp(srcPath, projectPath, (err) => {
@@ -249,8 +249,8 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
   });
 
   it('generates a Bible w/ single chunks', () => {
-    const srcPath = path.join(__dirname, 'fixtures/project/single_chunks');
-    const projectPath = path.join(__dirname, 'output/single_chunks');
+    const srcPath = path.join(__dirname, 'fixtures', 'project', 'single_chunks');
+    const projectPath = path.join(__dirname, 'output', 'single_chunks');
     return new Promise((resolve, reject) => {
       // copy source to output for manipulation
       ncp(srcPath, projectPath, (err) => {
@@ -285,7 +285,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
 
   it('generates a Bible from tstudio project with 00 folder', () => {
     const projectName = 'aaa_php_text_ulb';
-    const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
+    const srcPath = path.join(__dirname, 'fixtures', 'project', 'tstudio_project', projectName + '.tstudio');
     const unzipPath = path.join(__dirname, 'output', projectName);
     const projectPath = path.join(unzipPath, projectName);
     const zip = new AdmZip(srcPath);
@@ -310,7 +310,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
 
   it('generates a Bible from tstudio project with front folder', () => {
     const projectName = 'en_php_text_reg';
-    const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
+    const srcPath = path.join(__dirname, 'fixtures', 'project', 'tstudio_project', projectName + '.tstudio');
     const unzipPath = path.join(__dirname, 'output', projectName);
     const projectPath = path.join(unzipPath, projectName);
     const zip = new AdmZip(srcPath);
