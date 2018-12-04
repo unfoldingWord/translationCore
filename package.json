@@ -15,7 +15,7 @@
     "locale-key-comparison": "node ./scripts/locale_key_comparison.js",
     "find-duplicate-dependencies": "find-duplicate-dependencies > find-duplicate-dependencies.log",
     "show-duplicate-dependencies": "npm run find-duplicate-dependencies; cat find-duplicate-dependencies.log; echo \"\n\n\nSee full list at: \\033[34m\\033[4mfind-duplicate-dependencies.log\\033[0m\n\nTo install node packages same as concourse builds do: '\\033[34mnpm ci\\033[0m'\n\n\"",
-    "npm-clean-up": "rm -rf node_modules && rm -rf tC_apps/*/node_modules && rm package-lock.json && npm i && npm dedupe && npm run show-duplicate-dependencies",
+    "npm-clean-up": "rm -rf node_modules && rm -rf tC_apps/*/node_modules && rm package-lock.json && npm i && npm run show-duplicate-dependencies",
     "lint": "eslint ./src",
     "test": "eslint ./src && jest",
     "ci-test": "eslint ./src && jest --coverage",
