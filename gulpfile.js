@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const mkdirp = require('mkdirp');
 const argv = require('yargs').argv;
 const fs = require('fs-extra');
-const request = require('./scripts/request');
 const packager = require('electron-packager');
 const change = require('gulp-change');
 const path = require('path');
@@ -347,7 +346,6 @@ const releaseWindows = (arch, src, dest) => {
   const p = require('./package');
   const exec = require('child_process').exec;
 
-  const gitVersion = '2.9.2';
   const isLinux = /^linux/.test(process.platform);
   const isWindows = /^win/.test(process.platform);
 
@@ -376,41 +374,19 @@ const releaseWindows = (arch, src, dest) => {
   const file = path.basename(dest, '.exe');
   let cmd = `${isccPath} scripts/win_installer.iss /DArch=${arch === '64'
     ? 'x64'
-    : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
+    : 'x86'} /DRootPath=../ /DVersion=${p.version} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
 
-  return downloadWinGit(gitVersion, arch).then(() => {
-    return new Promise(function (resolve, reject) {
-      console.log(`Generating ${arch} bit windows installer`);
-      console.log(`executing: \n${cmd}\n`);
-      exec(cmd, function (err) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve();
-        }
-      });
+  return new Promise(function (resolve, reject) {
+    console.log(`Generating ${arch} bit windows installer`);
+    console.log(`executing: \n${cmd}\n`);
+    exec(cmd, function (err) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
     });
   });
-};
-
-/**
- * Downloads git for windows
- * @param version
- * @param arch
- * @return {*}
- */
-const downloadWinGit = function (version, arch) {
-  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
-  let dir = './vendor';
-  let dest = dir + `/Git-${version}-${arch}-bit.exe`;
-  mkdirp.sync(dir);
-  if (!fs.existsSync(dest)) {
-    console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
-    return request.download(url, dest);
-  } else {
-    console.log(`Cache hit: ${dest}`);
-    return Promise.resolve();
-  }
 };
 
 gulp.task('release', done => {
@@ -422,7 +398,6 @@ gulp.task('release', done => {
 
   let promises = [];
   let platforms = [];
-  const gitVersion = '2.9.2';
 
   if (argv.win) platforms.push('win32', 'win64');
   if (argv.win32) platforms.push('win32');
@@ -431,26 +406,6 @@ gulp.task('release', done => {
   if (argv.macos) platforms.push('darwin');
   if (argv.linux) platforms.push('linux');
   if (!platforms.length) platforms.push('win32', 'win64', 'darwin', 'linux');
-
-  /**
-   *
-   * @param version 2.9.2
-   * @param arch 64|32
-   * @returns {Promise}
-   */
-  const downloadGit = function (version, arch) {
-    let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
-    let dir = './vendor';
-    let dest = dir + `/Git-${version}-${arch}-bit.exe`;
-    mkdirp.sync(dir);
-    if (!fs.existsSync(dest)) {
-      console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
-      return request.download(url, dest);
-    } else {
-      console.log('Using cached git installer');
-      return Promise.resolve();
-    }
-  };
 
   /**
    * This depends on first installing InnoSetup. On linux run ./scripts/innosetup/setup.sh
@@ -484,7 +439,7 @@ gulp.task('release', done => {
     mkdirp(destDir);
     let cmd = `${isccPath} scripts/win_installer.iss /DArch=${arch === '64'
       ? 'x64'
-      : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
+      : 'x86'} /DRootPath=../ /DVersion=${p.version} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
     return new Promise(function (resolve, reject) {
       console.log(`Generating ${arch} bit windows installer`);
       console.log(`executing: \n${cmd}\n`);
@@ -513,8 +468,7 @@ gulp.task('release', done => {
       switch (os) {
         case 'win32':
           if (fs.existsSync(BUILD_DIR + p.name + '-win32-ia32/')) {
-            promises.push(downloadGit(gitVersion, '32')
-              .then(releaseWin.bind(undefined, '32', os)));
+            promises.push(releaseWin.bind(undefined, '32', os));
           } else {
             promises.push(Promise.resolve({
               os: os,
@@ -525,8 +479,7 @@ gulp.task('release', done => {
           break;
         case 'win64':
           if (fs.existsSync(BUILD_DIR + p.name + '-win32-x64/')) {
-            promises.push(downloadGit(gitVersion, '64')
-              .then(releaseWin.bind(undefined, '64', os)));
+            promises.push(releaseWin.bind(undefined, '64', os));
           } else {
             promises.push(Promise.resolve({
               os: os,

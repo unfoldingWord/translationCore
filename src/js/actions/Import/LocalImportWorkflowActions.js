@@ -18,7 +18,7 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation, getUsername} from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
-import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
+import {deleteImportsFolder, deleteProjectFromImportsFolder} from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
 
 // constants
@@ -46,7 +46,7 @@ export const localImport = () => {
     } = getState().localImportReducer;
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
 
-    ProjectFilesystemHelpers.deleteImportsFolder();
+    deleteImportsFolder();
     try {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
@@ -100,9 +100,10 @@ export const localImport = () => {
     dispatch(ProjectLoadingActions.clearLastProject());
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     // remove failed project import
-    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+    const projectName = getState().localImportReducer.selectedProjectFilename;
+    deleteProjectFromImportsFolder(projectName);
     const { projectDetailsReducer: {projectSaveLocation} } = getState();
-    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectSaveLocation));
+    deleteProjectFromImportsFolder(projectSaveLocation);
   };
 };
 

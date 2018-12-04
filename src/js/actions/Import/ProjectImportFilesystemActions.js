@@ -18,7 +18,7 @@ export const move = () => {
       const translate = getTranslate(getState());
       try {
         const projectName = getState().localImportReducer.selectedProjectFilename;
-        const projectPath = await ProjectImportFilesystemHelpers.move(projectName, translate);
+        const projectPath = await ProjectImportFilesystemHelpers.moveProject(projectName, translate);
         dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
         fs.removeSync(path.join(IMPORTS_PATH, projectName));
         resolve();
@@ -31,17 +31,4 @@ export const move = () => {
     });
   });
 };
-
-/**
- * Deletes a project from the imports folder
- */
-export const deleteProjectFromImportsFolder = (projectName) => (dispatch, getState) => {
-  projectName = projectName || getState().localImportReducer.selectedProjectFilename;
-  const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
-  if (fs.existsSync(projectImportsLocation)) {
-    fs.removeSync(projectImportsLocation);
-  }
-};
-
-
 

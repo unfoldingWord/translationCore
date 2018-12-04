@@ -11,7 +11,7 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const STATIC_RESOURCE_PATH = path.join(__dirname, '../tcResources');
 const USER_RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
-jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported by dependency
+jest.mock('../src/js/helpers/Repo');
 
 describe('WordAlignmentActions.getUsfm3ExportFile', () => {
   let store;
