@@ -1,6 +1,4 @@
 const electron = require('electron');
-const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
-const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const p = require('../package.json');
 const {download} = require('@neutrinog/electron-dl');
 const DownloadManager = require('./js/DownloadManager');
@@ -39,19 +37,7 @@ function createMainWindow () {
     mainWindow.webContents.openDevTools();
   }
 
-  isGitInstalled().then(installed => {
-    if(installed) {
-      mainWindow.loadURL(`file://${__dirname}/index.html`);
-    } else {
-      console.warn('Git is not installed. Prompting user.');
-      splashScreen.hide();
-      return showElectronGitSetup(dialog).then(() => {
-        app.quit();
-      }).catch(() => {
-        app.quit();
-      });
-    }
-  });
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   //Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
