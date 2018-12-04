@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnlineImportWorkflowActions.onlineImport on import errors should call required actions 1`] = `
+Array [
+  Object {
+    "type": "CLEAR_LAST_PROJECT",
+  },
+  Object {
+    "alertMessage": "import failed",
+    "loading": undefined,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "showProjectValidationStepper": false,
+    "type": "TOGGLE_PROJECT_VALIDATION_STEPPER",
+  },
+  Object {
+    "type": "CLEAR_LAST_PROJECT",
+  },
+  Object {
+    "type": "CLEAR_COPYRIGHT_CHECK_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_MERGE_CONFLICTS_REDUCER",
+  },
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "type": "LOADED_ONLINE_FAILED",
+  },
+]
+`;

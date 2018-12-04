@@ -169,6 +169,7 @@ export function doDcsRenamePrompting() {
 }
 
 /**
+ * TODO: this is an action and should be moved to the correct location.
  * perform selected action create new or rename project on DCS to match new name
  * @param {boolean} createNew - if true then create new DCS project with current name
  * @param {string} projectSaveLocation
@@ -353,7 +354,7 @@ export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, u
   if (fs.existsSync(pathToProjectGroupsDataFiles)) {
     //Getting all the groups data that exist in the project
     //Note: Not all of these may be used for the counting because
-    //Some groups here are not apart of the currently selected categories 
+    //Some groups here are not apart of the currently selected categories
     let projectGroupsData = fs.readdirSync(pathToProjectGroupsDataFiles).filter(file => {
       return file !== '.DS_Store' && path.extname(file) === '.json';
     });
