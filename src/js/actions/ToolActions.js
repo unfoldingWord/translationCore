@@ -16,9 +16,12 @@ export const registerTool = tool => ({
  * @param {string} toolsDir - path to the tools directory
  * @returns {Function}
  */
-export const loadTools = (toolsDir) => async (dispatch) => {
-  const tools = await loadToolsInDir(toolsDir);
-  for(let i = 0, len = tools.length; i < len; i ++) {
-    dispatch(registerTool(tools[i]));
-  }
+export const loadTools = (toolsDir) => (dispatch) => {
+  setTimeout(() => {
+    loadToolsInDir(toolsDir).then((tools) => {
+      for(let i = 0, len = tools.length; i < len; i ++) {
+        dispatch(registerTool(tools[i]));
+      }
+    });
+  }, 500);
 };

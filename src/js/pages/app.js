@@ -35,8 +35,7 @@ class Main extends Component {
   componentWillMount() {
     const {
       appLanguage,
-      loadLocalization,
-      loadTools
+      loadLocalization
     } = this.props;
     const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
@@ -44,17 +43,17 @@ class Main extends Component {
     // load app locale
     const localeDir = path.join(__dirname, '../../locale');
     loadLocalization(localeDir, appLanguage);
-    // TRICKY: tools load fast so we trigger this and forget it.
-    loadTools(path.join(__dirname, '../../../tC_apps'));
   }
 
   componentDidMount() {
     const {
       migrateResourcesFolder,
       migrateToolsSettings,
-      getAnchorTags
+      getAnchorTags,
+      loadTools
     } = this.props;
 
+    loadTools(path.join(__dirname, '../../../tC_apps'));
     const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
     if (localStorage.getItem('version') !== packageJson.version || !fs.existsSync(tcResourcesPath)) {
       localStorage.setItem('version', packageJson.version);
