@@ -1,8 +1,6 @@
 import types from "../actions/ActionTypes";
 
 const initialState = {
-  // currentToolName: null,
-  // currentToolTitle: null,
   selectedTool: null,
   tools: { byName: {}, byObject: [] }
 };
@@ -52,16 +50,6 @@ const toolsReducer = (state = initialState, action) => {
         ...state,
         selectedTool: action.name
       };
-    // case types.SET_CURRENT_TOOL_NAME:
-    //   return {
-    //     ...state,
-    //     currentToolName: action.currentToolName
-    //   };
-    // case types.SET_CURRENT_TOOL_TITLE:
-    //   return {
-    //     ...state,
-    //     currentToolTitle: action.currentToolTitle
-    //   };
     case types.CLOSE_TOOL:
       return {
         ...state,
