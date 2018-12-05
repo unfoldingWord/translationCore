@@ -1,11 +1,9 @@
 import types from "../actions/ActionTypes";
-// import { getToolViewsAndAPIInitialState } from "../helpers/ToolsMetadataHelpers";
 
 const initialState = {
   currentToolName: null,
   currentToolTitle: null,
   tools: { byName: {}, byObject: [] }
-  // ...getToolViewsAndAPIInitialState()
 };
 
 /**
@@ -48,14 +46,6 @@ const toolsReducer = (state = initialState, action) => {
         ...state,
         tools: tools(state.tools, action)
       };
-    // case types.SAVE_TOOL_VIEW:
-    //   return {
-    //     ...state,
-        // currentToolViews: {
-        //   ...state.currentToolViews,
-        //   [action.identifier]: action.module
-        // }
-      // };
     case types.SET_CURRENT_TOOL_NAME:
       return {
         ...state,
@@ -66,11 +56,6 @@ const toolsReducer = (state = initialState, action) => {
         ...state,
         currentToolTitle: action.currentToolTitle
       };
-    // case types.SET_TOOLS_METADATA:
-    //   return {
-    //     ...state,
-        // toolsMetadata: action.val
-      // };
     case types.CLEAR_CURRENT_TOOL_DATA:
       return {
         ...state,

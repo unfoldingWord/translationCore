@@ -308,14 +308,6 @@ export const getSupportingToolApis = state =>
   fromToolsReducer.getSupportingToolApis(state.toolsReducer);
 
 /**
- * Returns an array of metadata for the tools
- * @param state
- * @return {object[]}
- */
-export const getToolsMeta = state =>
-  fromToolsReducer.getToolsMeta(state.toolsReducer);
-
-/**
  * Return the selected tool's view
  * @param state
  * @return {*}

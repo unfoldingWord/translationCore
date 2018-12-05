@@ -4,7 +4,7 @@ import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectDataLoadingActions from './ProjectDataLoadingActions';
 import * as ModalActions from './ModalActions';
-import {getTranslate, getToolsMeta} from '../selectors';
+import {getTranslate} from '../selectors';
 
 /**
  * @description Loads the tool into the main app view, and initiates the tool Container component.
@@ -30,7 +30,6 @@ export function selectTool(moduleFolderName, currentToolName) {
           type: consts.SET_CURRENT_TOOL_TITLE,
           currentToolTitle: dataObject.title
         });
-        dispatch(loadSupportingToolApis(currentToolName));
         // load project data
         dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
       } catch (e) {
@@ -49,83 +48,5 @@ export function resetReducersData() {
     dispatch({ type: consts.CLEAR_ALIGNMENT_DATA });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
     dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
-  });
-}
-
-/**
- * @deprecated
- * Loads APIs for the supporting tools.
- * For now this is just every tool except for the current one.
- * @param {string} currentToolName - the current tool name
- */
-export function loadSupportingToolApis(currentToolName) {
-  return (dispatch, getState) => {
-    // const state = getState();
-    // const meta = getToolsMeta(state);
-    // for(const toolMeta of meta) {
-    //   if(toolMeta.name === currentToolName) {
-    //     continue;
-    //   }
-    //   try {
-    //     let tool = require(
-    //       path.join(toolMeta.folderName, toolMeta.main)).default;
-    //
-    //     // TRICKY: compatibility for older tools
-    //     if ('container' in tool.container && 'name' in tool.container) {
-    //       tool = tool.container;
-    //     }
-    //     // end compatability
-    //
-    //     if (tool.api) {
-    //       dispatch(registerToolApi(toolMeta.name, tool.api));
-    //     }
-    //   } catch (e) {
-    //     console.error(`Failed to load tool api for ${toolMeta.name}`, toolMeta, e);
-    //   }
-    // }
-  };
-}
-
-/**
- * Stores a tool's api
- * @param {string} name - the name of the tool
- * @param {ApiController} api - the tool's api
- * @return {{type: *, name: *, api: *}}
- */
-const registerToolApi = (name, api) => ({
-  type: consts.ADD_TOOL_API,
-  name,
-  api
-});
-
-/**
- * @description Saves tools included module Containers in the store
- * @param {Array} checkArray - Array of the checks that the views should be loaded.
- * @return {object} action object.
- */
-export function saveToolViews(checkArray, toolPackage) {
-  return (dispatch => {
-    for (let module of checkArray) {
-      try {
-        let tool = require(path.join(module.location, toolPackage.main)).default;
-
-        // TRICKY: compatibility for older tools
-        if('container' in tool.container && 'name' in tool.container) {
-          tool = tool.container;
-        }
-        // end compatibility fix
-
-        dispatch({
-          type: consts.SAVE_TOOL_VIEW,
-          identifier: module.name,
-          module: tool.container
-        });
-        if(tool.api) {
-          dispatch(registerToolApi(module.name, tool.api));
-        }
-      } catch (e) {
-        console.error(`Failed to load ${module.name} tool`, e);
-      }
-    }
   });
 }
