@@ -110,7 +110,8 @@ export function fixManifestVerThree(oldManifest) {
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function checkIfValidBetaProject(manifest) {
-  if (manifest && manifest.project) return (!!getAllBibleBooks()[manifest.project.id]);
+  const allBooks = getAllBibleBooks();
+  if (manifest && manifest.project) return (!!allBooks[manifest.project.id]);
   else return false;
 }
 

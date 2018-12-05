@@ -22,7 +22,7 @@ const SearchResults = ({
           </tr>
         :
           repos.map((project, index) => {
-            const { bookId, bookName, languageId} = getDetailsFromProjectName(project.name);
+            const { bookId, bookName, languageId} = getDetailsFromProjectName(project.name, translate);
             const BookNameLocalized = getBookTranslationShort(translate, bookName, bookId) || '';
             let disabledCheckBox = false;
             if (project.html_url === importLink) {
