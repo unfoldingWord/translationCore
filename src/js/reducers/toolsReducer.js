@@ -156,11 +156,11 @@ export const getCurrentApi = state => {
  */
 export const getSupportingToolApis = state => {
   const name = getCurrentName(state);
-  const apis = [];
+  const apis = {};
   for(let i = 0, len = state.tools.byObject.length; i < len; i ++) {
     const tool = state.tools.byObject[i];
     if(tool.name !== name) {
-      apis.push(tool.api);
+      apis[tool.name] = tool.api;
     }
   }
   return apis;
