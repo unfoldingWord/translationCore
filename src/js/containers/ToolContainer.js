@@ -22,7 +22,21 @@ import { changeGroup, expandSubMenu, setFilter } from '../actions/GroupMenuActio
 import { getAvailableScripturePaneSelections, getGLQuote } from '../helpers/ResourcesHelpers';
 import { VerseObjectUtils } from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
-import { getContext, getCurrentToolApi, getCurrentToolContainer, getProjectSaveLocation, getSelectedSourceChapter, getSelectedSourceVerse, getSelectedTargetChapter, getSelectedTargetVerse, getSourceBible, getSupportingToolApis, getTargetBible, getUsername } from '../selectors';
+import {
+  getContext,
+  getCurrentToolApi,
+  getCurrentToolContainer,
+  getProjectSaveLocation,
+  getSelectedSourceChapter,
+  getSelectedSourceVerse,
+  getSelectedTargetChapter,
+  getSelectedTargetVerse,
+  getSelectedToolName,
+  getSourceBible,
+  getSupportingToolApis,
+  getTargetBible,
+  getUsername
+} from "../selectors";
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
 
 class ToolContainer extends Component {
@@ -75,7 +89,9 @@ class ToolContainer extends Component {
 
   componentWillReceiveProps (nextProps) {
     const { contextId: nextContext, toolApi, supportingToolApis } = nextProps;
-    let { currentToolName } = nextProps.toolsReducer;
+    const {store} = this.context;
+    const currentToolName = getSelectedToolName(store.getState());
+    // let { currentToolName } = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
     if (nextContext && nextContext.tool !== currentToolName) {
       nextProps.actions.changeCurrentContextId(undefined);
@@ -370,6 +386,10 @@ ToolContainer.propTypes = {
   openIgnorableAlert: PropTypes.func.isRequired,
   closeAlert: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired
+};
+
+ToolContainer.contextTypes = {
+  store: PropTypes.any
 };
 
 const mapStateToProps = state => {

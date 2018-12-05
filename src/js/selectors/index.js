@@ -53,13 +53,14 @@ export const getAlertIsOpen = state =>
 export const getEditedVerse = (state, toolName) =>
   fromVerseEditReducer.getSaveStructure(state.verseEditReducer, toolName);
 
+
 /**
  * Returns the title of the currently selected tool.
  * @param state
  * @return {string}
  */
-export const getCurrentToolTitle = state =>
-  fromToolsReducer.getCurrentTitle(state.toolsReducer);
+export const getSelectedToolTitle = state =>
+  fromToolsReducer.getSelectedToolTitle(state.toolsReducer);
 
 /**
  * Returns an array of tools that can be used in the app
@@ -286,8 +287,16 @@ export const getIsOverwritePermitted = (state) =>
  * @param {Object} state
  * @return {String | undefined}
  */
-export const getCurrentToolName = state =>
-  fromToolsReducer.getCurrentName(state.toolsReducer);
+export const getSelectedToolName = state =>
+  fromToolsReducer.getSelectedToolName(state.toolsReducer);
+
+/**
+ * Returns the tool selected by the user
+ * @param state
+ * @returns {*}
+ */
+export const getSelectedTool = state =>
+  fromToolsReducer.getSelectedTool(state.toolsReducer);
 
 /**
  * Returns an api for the current tool if it has one.

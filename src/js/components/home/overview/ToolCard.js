@@ -5,12 +5,22 @@ import PropTypes from 'prop-types';
 // components
 import TemplateCard from '../TemplateCard';
 import ToolCardProgress from '../toolsManagement/ToolCardProgress';
+import { getSelectedTool, getSelectedToolName } from "../../../selectors";
+import { connect } from "react-redux";
 
 class ToolCard extends Component {
 
+  constructor(props) {
+    super(props);
+    this.content = this.content.bind(this);
+  }
+
   componentWillMount() {
-    if(this.props.reducers.toolsReducer.currentToolName) {
-      this.props.actions.getProjectProgressForTools(this.props.reducers.toolsReducer.currentToolName);
+    // TODO: this should be in a container
+    const {store} = this.context;
+    const selectedToolName = getSelectedToolName(store.getState());
+    if(selectedToolName) {
+      this.props.actions.getProjectProgressForTools(selectedToolName);
     }
   }
 
@@ -32,19 +42,23 @@ class ToolCard extends Component {
   * @return {component} - component returned
   */
   content() {
+    const {store} = this.context;
+    const state = store.getState();
+    const tool = getSelectedTool(state);
+
     let content; // content can be empty to fallback to empty button/message
-    const { currentToolTitle, currentToolName } = this.props.reducers.toolsReducer;
+    // const { currentToolTitle, currentToolName } = this.props.reducers.toolsReducer;
     const { currentProjectToolsProgress } = this.props.reducers.projectDetailsReducer;
 
-    if (currentToolTitle) { // once currentToolTitle is there then we can get groupsData
-      let progress = currentProjectToolsProgress[currentToolName];
+    if (tool) { // once currentToolTitle is there then we can get groupsData
+      let progress = currentProjectToolsProgress[tool.name];
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
           <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
             <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px'}} />
           </div>
           <div style={{ width: '400px' }}>
-            <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
+            <strong style={{ fontSize: 'x-large' }}>{tool.title}</strong>
             <ToolCardProgress progress={progress} />
           </div>
         </div>
@@ -85,5 +99,8 @@ ToolCard.propTypes = {
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func
 };
+ToolCard.contextTypes = {
+  store: PropTypes.any
+};
 
-export default ToolCard;
+export default connect()(ToolCard);

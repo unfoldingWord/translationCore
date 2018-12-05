@@ -10,15 +10,15 @@ import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 //helpers
 import * as ResourcesHelpers from '../../helpers/ResourcesHelpers';
-import { getTools } from "../../selectors";
+import { getSelectedToolName, getTools } from "../../selectors";
 
 class ToolsManagementContainer extends Component {
 
   render() {
     const {
       tools,
+      selectedToolName,
       reducers: {
-        toolsReducer: { toolsMetadata, currentToolName },
         loginReducer: { loggedInUser },
         settingsReducer: {
           currentSettings: { developerMode }
@@ -40,7 +40,7 @@ class ToolsManagementContainer extends Component {
         <p>{translate('projects.books_available', {app: translate('_.app_name')})}</p>
       </div>
     );
-    const availableCategories = ResourcesHelpers.getAvailableToolCategories(currentProjectToolsSelectedGL, currentToolName);
+    const availableCategories = ResourcesHelpers.getAvailableToolCategories(currentProjectToolsSelectedGL, selectedToolName);
     return (
       <HomeContainerContentWrapper
         translate={translate}
@@ -61,7 +61,7 @@ class ToolsManagementContainer extends Component {
               launchTool: this.props.actions.launchTool(translate('please_log_in'))
             }}
             developerMode={developerMode}
-            toolsMetadata={toolsMetadata}
+            // toolsMetadata={toolsMetadata}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
@@ -75,10 +75,10 @@ class ToolsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    selectedToolName: getSelectedToolName(state),
     tools: getTools(state),
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
-      toolsReducer: state.toolsReducer,
       settingsReducer: state.settingsReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       loginReducer: state.loginReducer,
@@ -113,11 +113,9 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
+  selectedToolName: PropTypes.string,
   tools: PropTypes.array.isRequired,
   reducers: PropTypes.shape({
-    toolsReducer: PropTypes.shape({
-      toolsMetadata: PropTypes.array
-    }).isRequired,
     settingsReducer: PropTypes.shape({
       currentSettings: PropTypes.shape({
         developerMode: PropTypes.bool

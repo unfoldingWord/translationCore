@@ -8,7 +8,7 @@ import * as BibleHelpers from './bibleHelpers';
 import {getTranslation} from "./localizationHelpers";
 import {getGatewayLanguageCode, getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from './SettingsHelpers';
-import {getContext} from "../selectors";
+import { getContext, getSelectedToolName } from "../selectors";
 import _ from "lodash";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
@@ -435,7 +435,7 @@ export function getResourcesNeededByTool(state, bookId) {
   }
   addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
   const gatewayLangId = getGatewayLanguageCode(state) || 'en'; // default to English
-  const currentToolName = state.toolsReducer && state.toolsReducer.currentToolName;
+  const currentToolName = getSelectedToolName(state);
   const validBibles = getValidGatewayBiblesForTool(currentToolName, gatewayLangId, bookId);
   if (Array.isArray(validBibles)) {
     for (let bible of validBibles) {

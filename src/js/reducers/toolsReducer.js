@@ -1,8 +1,9 @@
 import types from "../actions/ActionTypes";
 
 const initialState = {
-  currentToolName: null,
-  currentToolTitle: null,
+  // currentToolName: null,
+  // currentToolTitle: null,
+  selectedTool: null,
   tools: { byName: {}, byObject: [] }
 };
 
@@ -46,21 +47,25 @@ const toolsReducer = (state = initialState, action) => {
         ...state,
         tools: tools(state.tools, action)
       };
-    case types.SET_CURRENT_TOOL_NAME:
+    case types.OPEN_TOOL:
       return {
         ...state,
-        currentToolName: action.currentToolName
+        selectedTool: action.name
       };
-    case types.SET_CURRENT_TOOL_TITLE:
+    // case types.SET_CURRENT_TOOL_NAME:
+    //   return {
+    //     ...state,
+    //     currentToolName: action.currentToolName
+    //   };
+    // case types.SET_CURRENT_TOOL_TITLE:
+    //   return {
+    //     ...state,
+    //     currentToolTitle: action.currentToolTitle
+    //   };
+    case types.CLOSE_TOOL:
       return {
         ...state,
-        currentToolTitle: action.currentToolTitle
-      };
-    case types.CLEAR_CURRENT_TOOL_DATA:
-      return {
-        ...state,
-        currentToolName: initialState.currentToolName,
-        currentToolTitle: initialState.currentToolTitle
+        selectedTool: initialState.selectedTool,
       };
     default:
       return state;
@@ -83,9 +88,9 @@ export const getTools = state => {
  * @param state
  * @return {string | undefined}
  */
-export const getCurrentName = (state) => {
-  if (state && state.currentToolName) {
-    return state.currentToolName;
+export const getSelectedToolName = (state) => {
+  if (state && state.selectedTool) {
+    return state.selectedTool;
   } else {
     return undefined;
   }
@@ -96,11 +101,40 @@ export const getCurrentName = (state) => {
  * @param state
  * @return {string}
  */
-export const getCurrentTitle = state => {
-  if (state && state.currentToolTitle) {
-    return state.currentToolTitle;
+export const getSelectedToolTitle = state => {
+  const tool = getSelectedTool(state);
+  if(tool) {
+    return tool.title;
   } else {
     return "";
+  }
+};
+
+/**
+ * Returns the selected tool
+ * @param state
+ * @returns {*}
+ */
+export const getSelectedTool = state => {
+  if(state && state.selectedTool) {
+    return getTool(state, state.selectedTool);
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Returns a tool by it's name
+ * @param state
+ * @param {string} name - the name of the tool
+ * @returns {*}
+ */
+export const getTool = (state, name) => {
+  if(state && state.tools.byName[name]) {
+    const index = state.tools.byName[name];
+    return state.tools.byObject[index];
+  } else {
+    return null;
   }
 };
 
@@ -110,12 +144,12 @@ export const getCurrentTitle = state => {
  * @return {*}
  */
 export const getCurrentContainer = state => {
-  const name = getCurrentName(state);
-  if (name && name in state.tools.byName) {
-    const index = state.tools.byName[name];
-    return state.tools.byObject[index].container;
+  const tool = getSelectedTool(state);
+  if(tool) {
+    return tool.container;
+  } else {
+    return null;
   }
-  return null;
 };
 
 /**
@@ -124,12 +158,12 @@ export const getCurrentContainer = state => {
  * @return {ApiController}
  */
 export const getCurrentApi = state => {
-  const name = getCurrentName(state);
-  if (name && name in state.tools.byName) {
-    const index = state.tools.byName[name];
-    return state.tools.byObject[index].api;
+  const tool = getSelectedTool(state);
+  if(tool) {
+    return tool.api;
+  } else {
+    return null;
   }
-  return null;
 };
 
 /**
@@ -140,7 +174,7 @@ export const getCurrentApi = state => {
  * @return {ApiController[]}
  */
 export const getSupportingToolApis = state => {
-  const name = getCurrentName(state);
+  const name = getSelectedToolName(state);
   const apis = {};
   for(let i = 0, len = state.tools.byObject.length; i < len; i ++) {
     const tool = state.tools.byObject[i];

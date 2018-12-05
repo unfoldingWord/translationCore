@@ -25,3 +25,8 @@ export const loadTools = (toolsDir) => (dispatch) => {
     });
   }, 500);
 };
+
+
+export const openTool = (toolName) => (dispatch) => {
+  // TODO: set the tool as open and then open it!
+};

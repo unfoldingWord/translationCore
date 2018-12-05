@@ -11,6 +11,7 @@ import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpe
 import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
 import { saveContextId } from '../helpers/contextIdHelpers';
 import * as ResourcesActions from './ResourcesActions';
+import { getSelectedToolName } from "../selectors";
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
@@ -127,7 +128,7 @@ export function loadCurrentContextId() {
     let state = getState();
     let { projectSaveLocation, manifest } = state.projectDetailsReducer;
     let { groupsIndex } = state.groupsIndexReducer;
-    let { currentToolName } = state.toolsReducer;
+    const currentToolName = getSelectedToolName(state);
     let bookId = manifest.project.id ? manifest.project.id : undefined;
     let fileName = "contextId.json";
 

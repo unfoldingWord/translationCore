@@ -120,10 +120,11 @@ test('StatusBarContainer Component on current system should render button text c
   function setupStore(projectPath, toolTitle, username) {
     store.dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     store.dispatch(BodyUIActions.toggleHomeView(false));
-    store.dispatch({
-      type: consts.SET_CURRENT_TOOL_TITLE,
-      currentToolTitle: toolTitle
-    });
+    // TODO: this will break. need to fix
+    // store.dispatch({
+    //   type: consts.SET_CURRENT_TOOL_TITLE,
+    //   currentToolTitle: toolTitle
+    // });
     const local = true;
     const userData = {
       username: username
