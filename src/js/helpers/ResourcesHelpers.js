@@ -21,7 +21,7 @@ export const getAvailableToolCategories = (currentProjectToolsSelectedGL) => {
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
     const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
     if (fs.existsSync(versionDirectory))
-      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
+      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName) =>
         fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
       );
     else availableCategories[toolName] = [];
@@ -120,7 +120,7 @@ export function getLexiconsFromStaticPackage(force = false) {
     folders.forEach((folder) => {
       let sourcePath = path.join(staticPath, folder);
       let destinationPath = path.join(userPath, folder);
-      if(!fs.existsSync(destinationPath) || force) {
+      if (!fs.existsSync(destinationPath) || force) {
         fs.copySync(sourcePath, destinationPath);
       }
     });
@@ -160,7 +160,22 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
     const versionPath = getLatestVersionInPath(toolResourcePath) || toolResourcePath;
     const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
     if (fs.existsSync(groupsDataSourcePath)) {
-      fs.copySync(groupsDataSourcePath, groupsDataDirectory);
+      if (fs.existsSync(groupsDataDirectory)) {
+        //The user already has a groups data folder created
+        //Need to only copy what the user doesn't have
+        let groupsPreviouslyLoaded = fs.readdirSync(groupsDataDirectory);
+        groupsPreviouslyLoaded = groupsPreviouslyLoaded.filter((fileName) =>
+          path.extname(fileName) === '.json' && fileName[0] !== '.');
+        const groupsFromSourceFolder = fs.readdirSync(groupsDataSourcePath).filter((folderName) => folderName[0] !== '.');
+        groupsFromSourceFolder.forEach((groupToLoad) => {
+          if (!groupsPreviouslyLoaded.includes(groupToLoad)) {
+            fs.copySync(path.join(groupsDataSourcePath, groupToLoad), path.join(groupsDataDirectory, groupToLoad));
+          }
+      });
+      } else {
+        //Copying the entire groups data folder from the resources
+        fs.copySync(groupsDataSourcePath, groupsDataDirectory);
+      }
     } else {
       const groupsData = chapterGroupsData(bookAbbreviation, currentToolName);
       groupsData.forEach(groupData => {
@@ -218,7 +233,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
   let bibleManifestPath = path.join(bibleVersionPath, fileName);
   let manifest;
 
-  if(fs.existsSync(bibleManifestPath)) {
+  if (fs.existsSync(bibleManifestPath)) {
     manifest = fs.readJsonSync(bibleManifestPath);
   } else {
     console.error(`Could not find manifest for ${bibleID} at ${bibleManifestPath}`);
@@ -246,7 +261,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
   }
   let index;
 
-  if(fs.existsSync(bibleIndexPath)) {
+  if (fs.existsSync(bibleIndexPath)) {
     index = fs.readJsonSync(bibleIndexPath);
   } else {
     console.error("Could not find index for " + bibleId + ' ' + bibleVersion);
@@ -260,7 +275,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
  * @return {Array} - array of versions, e.g. ['v1', 'v10', 'v1.1']
  */
 export function getVersionsInPath(resourcePath) {
-  if (! resourcePath || ! fs.pathExistsSync(resourcePath)) {
+  if (!resourcePath || !fs.pathExistsSync(resourcePath)) {
     return null;
   }
   const isVersionDirectory = name => {
@@ -277,16 +292,16 @@ export function getVersionsInPath(resourcePath) {
  */
 export function sortVersions(versions) {
   // Don't sort if null, empty or not an array
-  if (! versions || ! Array.isArray(versions)) {
+  if (!versions || !Array.isArray(versions)) {
     return versions;
   }
   // Only sort of all items are strings
-  for(let i = 0, len = versions.length; i < len; ++i) {
+  for (let i = 0, len = versions.length; i < len; ++i) {
     if (typeof versions[i] !== 'string') {
       return versions;
     }
   }
-  versions.sort( (a, b) => String(a).localeCompare(b, undefined, { numeric:true }) );
+  versions.sort((a, b) => String(a).localeCompare(b, undefined, {numeric: true}));
   return versions;
 }
 
@@ -298,7 +313,7 @@ export function sortVersions(versions) {
 export function getLatestVersionInPath(resourcePath) {
   const versions = sortVersions(getVersionsInPath(resourcePath));
   if (versions && versions.length) {
-    return path.join(resourcePath, versions[versions.length-1]);
+    return path.join(resourcePath, versions[versions.length - 1]);
   }
   return null; // return illegal path
 }
@@ -344,7 +359,7 @@ export function addResource(resources, languageId, bibleId) {
     ((resource.languageId === languageId) && (resource.bibleId === bibleId))
   );
   if (pos < 0) { // if we don't have resource
-    resources.push({ bibleId, languageId});
+    resources.push({bibleId, languageId});
   }
 }
 
@@ -356,7 +371,7 @@ export function addResource(resources, languageId, bibleId) {
 export function getAvailableScripturePaneSelections(resourceList) {
   return ((dispatch, getState) => {
     try {
-      resourceList.splice(0,resourceList.length); // remove any pre-existing elements
+      resourceList.splice(0, resourceList.length); // remove any pre-existing elements
       const contextId = getContext(getState());
       const bookId = contextId && contextId.reference.bookId;
       const languagesIds = getLanguageIdsFromResourceFolder(bookId);
@@ -364,7 +379,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
       // load source bibles
       languagesIds.forEach((languageId) => {
         const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
-        if(fs.existsSync(biblesPath)) {
+        if (fs.existsSync(biblesPath)) {
           const biblesFolders = fs.readdirSync(biblesPath)
             .filter(folder => folder !== '.DS_Store');
           biblesFolders.forEach(bibleId => {
@@ -396,7 +411,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
           console.log('Directory not found, ' + biblesPath);
         }
       });
-    } catch(err) {
+    } catch (err) {
       console.warn(err);
     }
   });
@@ -451,8 +466,8 @@ export function getGLQuote(languageId, groupId, currentToolName) {
     const versionDirectory = getLatestVersionInPath(GLQuotePathWithoutVersion);
     const GLQuotePathIndex = path.join(versionDirectory, 'kt', 'index.json');
     const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);
-    return resourceIndexArray.find(({ id }) => id === groupId).name;
-  } catch (e) { return null }
+    return resourceIndexArray.find(({id}) => id === groupId).name;
+  } catch (e) {return null}
 }
 
 /**
@@ -472,7 +487,7 @@ export function getAllLanguageIdsFromResourceFolder(user) {
 export function getFoldersInResourceFolder(resourcePath) {
   try {
     let folders = fs.readdirSync(resourcePath)
-      .filter(folder => fs.lstatSync(path.join(resourcePath, folder)).isDirectory() ); // filter out anything not a folder
+      .filter(folder => fs.lstatSync(path.join(resourcePath, folder)).isDirectory()); // filter out anything not a folder
     return folders;
   } catch (error) {
     console.error(error);
