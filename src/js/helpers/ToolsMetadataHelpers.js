@@ -4,12 +4,15 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 
-
+/**
+ * @deprecated
+ * @returns {{apis, currentToolViews, toolsMetadata: Array}}
+ */
 export function getToolViewsAndAPIInitialState()  {
   let moduleFolderPathList = getDefaultTools();
   const toolsMetadata = fillDefaultTools(moduleFolderPathList);
   sortMetadatas(toolsMetadata);
-  
+
   const currentToolViews = {};
   const apis = {};
   moduleFolderPathList.forEach((fullPathName) => {
@@ -38,6 +41,10 @@ export function getToolViewsAndAPIInitialState()  {
   return {apis, currentToolViews, toolsMetadata};
 }
 
+/**
+ * @deprecated
+ * @returns {Array}
+ */
 const getDefaultTools = () => {
   let defaultTools = [];
   fs.ensureDirSync(PACKAGE_SUBMODULE_LOCATION);
@@ -57,12 +64,21 @@ const getDefaultTools = () => {
   return defaultTools;
 };
 
+/**
+ * @deprecated
+ * @param metadatas
+ */
 const sortMetadatas = (metadatas) => {
   metadatas.sort((a, b) => {
     return a.title < b.title ? -1 : 1;
   });
 };
 
+/**
+ * @deprecated
+ * @param moduleFilePathList
+ * @returns {Array}
+ */
 const fillDefaultTools = (moduleFilePathList) => {
   let tempMetadatas = [];
   // This makes sure we're done with all the files first before we call the callback
