@@ -349,7 +349,7 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
  * Gets a tool's progress
  * @param {String} pathToProjectGroupsDataFiles
  */
-export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, userSelectedCategories, bookAbbreviation) {
+export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, userSelectedCategories = [], bookAbbreviation) {
   let progress = 0;
   if (fs.existsSync(pathToProjectGroupsDataFiles)) {
     //Getting all the groups data that exist in the project

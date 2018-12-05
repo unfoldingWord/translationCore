@@ -42,6 +42,9 @@ describe('getProjectProgressForTools() should create an action to get the projec
           id: ''
         }
       }
+    },
+    settingsReducer: {
+      currentSettings: { }
     }
   };
   fs.__setMockFS({

@@ -46,7 +46,8 @@ describe('reducers', () => {
         developerMode: false,
         csvSaveLocation: null,
         online: true,
-        onlineMode: false
+        onlineMode: false,
+        selectedCategories: ['kt', 'other', 'names']
       },
       toolsSettings: {}
     });
