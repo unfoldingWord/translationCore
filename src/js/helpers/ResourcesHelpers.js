@@ -498,3 +498,29 @@ export function getFilesInResourcePath(resourcePath, ext) {
   }
   return [];
 }
+
+export function getMissingResources() {
+  // resources files packaged with tc executable
+  const tcResourcesFiles = fs.readdirSync(STATIC_RESOURCES_PATH)
+    .filter(file => fs.lstatSync(path.join(STATIC_RESOURCES_PATH, file)).isDirectory());
+
+  // resources files found in the user's resources directory
+  const userResources = fs.readdirSync(USER_RESOURCES_PATH)
+    .filter(file => fs.lstatSync(path.join(STATIC_RESOURCES_PATH, file)).isDirectory());
+
+  tcResourcesFiles.forEach((languageId) => {
+    // if a resource package with tC executable file is missing in the user resource directory
+    if (!userResources.includes(languageId)) {
+      const STATIC_RESOURCES = path.join(STATIC_RESOURCES_PATH, languageId);
+      const destinationPath = path.join(USER_RESOURCES_PATH, languageId);
+      fs.copySync(STATIC_RESOURCES, destinationPath);
+      const BIBLE_RESOURCES_PATH = path.join(destinationPath, 'bibles');
+
+      const bibleIds = fs.readdirSync(BIBLE_RESOURCES_PATH).filter(folder => folder !== '.DS_Store');
+      bibleIds.forEach(bibleId => {
+        let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleId);
+        extractZippedBooks(bibleDestinationPath);
+      });
+    }
+  });
+}

@@ -52,11 +52,10 @@ class Main extends Component {
       getAnchorTags
     } = this.props;
 
-    const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
-    if (localStorage.getItem('version') !== packageJson.version || !fs.existsSync(tcResourcesPath)) {
+    if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
-      migrateResourcesFolder();
     }
+    migrateResourcesFolder();
     // migration logic for toolsSettings in settings.json
     migrateToolsSettings();
     getAnchorTags();
