@@ -13,9 +13,9 @@ import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
-import git from '../helpers/GitApi.js';
 //reducers
 import {getSetting} from '../reducers/settingsReducer';
+import Repo from '../helpers/Repo.js';
 
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
@@ -150,13 +150,8 @@ export function setProjectBookIdAndBookName() {
         bookName
       });
       if (bookId !== originalBookId) {
-        git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation, (err) => {
-          if (!err) {
-            resolve();
-          } else {
-            reject(err);
-          }
-        });
+        const repo = new Repo(projectSaveLocation, userdata);
+        repo.save("Saving new book id").then(resolve, reject);
       } else {
         resolve();
       }
