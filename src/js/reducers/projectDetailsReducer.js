@@ -10,27 +10,10 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  selectedCategories: ['kt']
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.SET_PROJECT_CATEGORIES: {
-      const update = (array) => {
-        const exists = array.indexOf(action.id) >= 0;
-        if (exists && action.value === true) return;
-        else if (exists && action.value === false) {
-          return array.filter((el) => el !== action.id);
-        }
-        else if (!exists && action.value === true)
-          return array.concat(action.id);
-        else return array;
-      };
-      return {
-        ...state,
-        selectedCategories: update(state.selectedCategories)
-      };
-    }
     case consts.SET_SAVE_PATH_LOCATION:
       return {
         ...state,

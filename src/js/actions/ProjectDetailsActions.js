@@ -7,24 +7,36 @@ import ospath from 'ospath';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate, getUsername} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
+import {setSetting} from "./SettingsActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 import git from '../helpers/GitApi.js';
+//reducers
+import {getSetting} from '../reducers/settingsReducer';
 
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 export const updateCheckSelection = (id, value, toolName) => {
-  return dispatch => {
-    dispatch({
-      type: consts.SET_PROJECT_CATEGORIES,
-      id,
-      value
-    });
+  return (dispatch, getState) => {
+    const update = (array) => {
+      const exists = array.indexOf(id) >= 0;
+      if (exists && value === true) return;
+      else if (exists && value === false) {
+        return array.filter((el) => el !== id);
+      }
+      else if (!exists && value === true)
+        return array.concat(id);
+      else return array;
+    };
+    const state = getState();
+    const previousSelectedCategories = getSetting(state.settingsReducer, 'selectedCategories');
+    const selectedCategories = update(previousSelectedCategories);
+    dispatch(setSetting('selectedCategories', selectedCategories));
     dispatch(getProjectProgressForTools(toolName));
   };
 };
@@ -67,8 +79,10 @@ export function getProjectProgressForTools(toolName) {
     const {
       projectDetailsReducer: {
         projectSaveLocation,
-        manifest,
-        selectedCategories
+        manifest
+      },
+      settingsReducer:{
+        currentSettings: { selectedCategories }
       }
     } = getState();
     const bookId = manifest.project.id;
@@ -136,9 +150,9 @@ export function setProjectBookIdAndBookName() {
         bookName
       });
       if (bookId !== originalBookId) {
-        git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation, (err)=>{
+        git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation, (err) => {
           if (!err) {
-          resolve();
+            resolve();
           } else {
             reject(err);
           }
