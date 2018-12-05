@@ -707,7 +707,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('short name should succeed', () => {
     const projectName = "en_tit";
-    const expectedResults = {"bookId": "tit", "bookName": "Titus", "languageId": "en"};
+    const expectedResults = {"bookId": "tit", "bookName": "book_list.nt.tit", "languageId": "en"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
@@ -715,7 +715,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('old tStudio format name should succeed', () => {
     const projectName = "aaw_php_text_reg";
-    const expectedResults = {"bookId": "php", "bookName": "Philippians", "languageId": "aaw"};
+    const expectedResults = {"bookId": "php", "bookName": "book_list.nt.php", "languageId": "aaw"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
@@ -723,7 +723,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('new format name should succeed', () => {
     const projectName = "el_ult_tit_book";
-    const expectedResults = {"bookId": "tit", "bookName": "Titus", "languageId": "el"};
+    const expectedResults = {"bookId": "tit", "bookName": "book_list.nt.tit", "languageId": "el"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
