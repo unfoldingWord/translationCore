@@ -330,7 +330,6 @@ class ToolContainer extends Component {
       supportingToolApis,
       Tool
     } = this.props;
-    let { currentToolViews } = this.props.toolsReducer;
 
     const props = { ...this.props };
     delete props.translate;
@@ -346,7 +345,7 @@ class ToolContainer extends Component {
         <div style={{ flex: 'auto', display: 'flex' }}>
           <Tool
             {...props}
-            currentToolViews={currentToolViews}
+            currentToolViews={{}}
             {...activeToolProps} />
         </div>
       </div>
