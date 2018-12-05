@@ -18,7 +18,7 @@ const translationWordsProject = path.join(__dirname, 'fixtures/project/translati
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
-jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported in dependency
+jest.mock('../src/js/helpers/Repo');
 jest.mock('material-ui/Checkbox');
 
 let mock_repoExists = false;
@@ -707,7 +707,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('short name should succeed', () => {
     const projectName = "en_tit";
-    const expectedResults = {"bookId": "tit", "bookName": "Titus", "languageId": "en"};
+    const expectedResults = {"bookId": "tit", "bookName": "book_list.nt.tit", "languageId": "en"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
@@ -715,7 +715,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('old tStudio format name should succeed', () => {
     const projectName = "aaw_php_text_reg";
-    const expectedResults = {"bookId": "php", "bookName": "Philippians", "languageId": "aaw"};
+    const expectedResults = {"bookId": "php", "bookName": "book_list.nt.php", "languageId": "aaw"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
@@ -723,7 +723,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('new format name should succeed', () => {
     const projectName = "el_ult_tit_book";
-    const expectedResults = {"bookId": "tit", "bookName": "Titus", "languageId": "el"};
+    const expectedResults = {"bookId": "tit", "bookName": "book_list.nt.tit", "languageId": "el"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
