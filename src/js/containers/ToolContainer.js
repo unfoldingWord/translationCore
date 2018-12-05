@@ -25,7 +25,7 @@ import * as LexiconHelpers from '../helpers/LexiconHelpers';
 import {
   getContext,
   getCurrentToolApi,
-  getCurrentToolContainer,
+  getSelectedToolContainer,
   getProjectSaveLocation,
   getSelectedSourceChapter,
   getSelectedSourceVerse,
@@ -58,6 +58,7 @@ class ToolContainer extends Component {
     this.onProjectDataPathExists = this.onProjectDataPathExists.bind(this);
     this.onReadProjectDir = this.onReadProjectDir.bind(this);
     this.onReadProjectDirSync = this.onReadProjectDirSync.bind(this);
+    this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
   componentWillMount () {
@@ -88,12 +89,9 @@ class ToolContainer extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    const { contextId: nextContext, toolApi, supportingToolApis } = nextProps;
-    const {store} = this.context;
-    const currentToolName = getSelectedToolName(store.getState());
-    // let { currentToolName } = nextProps.toolsReducer;
+    const { contextId: nextContext, toolApi, supportingToolApis, selectedToolName } = nextProps;
     // if contextId does not match current tool, then remove contextId
-    if (nextContext && nextContext.tool !== currentToolName) {
+    if (nextContext && nextContext.tool !== selectedToolName) {
       nextProps.actions.changeCurrentContextId(undefined);
     }
 
@@ -312,7 +310,8 @@ class ToolContainer extends Component {
       sourceBible,
       sourceVerse,
       targetChapter,
-      sourceChapter
+      sourceChapter,
+      selectedToolName
     } = nextProps;
     return {
       readProjectDir: this.onReadProjectDir,
@@ -337,7 +336,21 @@ class ToolContainer extends Component {
       targetBook: targetBible,
       sourceBible, // TODO: deprecate
       sourceBook: sourceBible,
-      appLanguage: code
+      appLanguage: code,
+      selectedToolName,
+      toolsReducer: this.legacyToolsReducer() // TRICKY: temporary hack for tW
+    };
+  }
+
+  /**
+   * Builds a legacy tool reducer for tW.
+   * This is a temporary hack
+   */
+  legacyToolsReducer() {
+    const {selectedToolName, supportingToolApis} = this.props;
+    return {
+      currentToolName: selectedToolName,
+      apis: supportingToolApis
     };
   }
 
@@ -362,7 +375,8 @@ class ToolContainer extends Component {
           <Tool
             {...props}
             currentToolViews={{}}
-            {...activeToolProps} />
+            {...activeToolProps}
+          />
         </div>
       </div>
     );
@@ -379,13 +393,13 @@ ToolContainer.propTypes = {
   sourceVerse: PropTypes.object,
   sourceChapter: PropTypes.object,
   targetChapter: PropTypes.object,
-  toolsReducer: PropTypes.any.isRequired,
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,
   currentLanguage: PropTypes.object.isRequired,
   openIgnorableAlert: PropTypes.func.isRequired,
   closeAlert: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  selectedToolName: PropTypes.string.isRequired
 };
 
 ToolContainer.contextTypes = {
@@ -394,7 +408,8 @@ ToolContainer.contextTypes = {
 
 const mapStateToProps = state => {
   return {
-    Tool: getCurrentToolContainer(state),
+    selectedToolName: getSelectedToolName(state),
+    Tool: getSelectedToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getCurrentToolApi(state),
     targetBible: getTargetBible(state),
@@ -406,7 +421,6 @@ const mapStateToProps = state => {
     contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
     username: getUsername(state),
-    toolsReducer: state.toolsReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
     loaderReducer: state.loaderReducer,

@@ -1,5 +1,3 @@
-import fs from 'fs-extra';
-import path from 'path-extra';
 import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectDataLoadingActions from './ProjectDataLoadingActions';

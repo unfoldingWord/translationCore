@@ -118,7 +118,7 @@ export const getSelectedTool = state => {
  * @returns {*}
  */
 export const getTool = (state, name) => {
-  if(state && state.tools.byName[name]) {
+  if(state && state.tools.byName.hasOwnProperty(name)) {
     const index = state.tools.byName[name];
     return state.tools.byObject[index];
   } else {
@@ -131,7 +131,7 @@ export const getTool = (state, name) => {
  * @param state
  * @return {*}
  */
-export const getCurrentContainer = state => {
+export const getSelectedToolContainer = state => {
   const tool = getSelectedTool(state);
   if(tool) {
     return tool.container;

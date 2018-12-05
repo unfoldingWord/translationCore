@@ -321,8 +321,8 @@ export const getSupportingToolApis = state =>
  * @param state
  * @return {*}
  */
-export const getCurrentToolContainer = state =>
-  fromToolsReducer.getCurrentContainer(state.toolsReducer);
+export const getSelectedToolContainer = state =>
+  fromToolsReducer.getSelectedToolContainer(state.toolsReducer);
 
 /**
  * Returns the current context id.
