@@ -6,6 +6,7 @@ import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui';
 
 const ToolsCards = ({
+  tools,
   actions,
   translate,
   bookName,
@@ -20,7 +21,7 @@ const ToolsCards = ({
   selectedCategories,
   availableCategories
 }) => {
-  if (toolsMetadata.length == 0 || !toolsMetadata) {
+  if (!tools || tools.length === 0) {
     return (
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
@@ -30,7 +31,7 @@ const ToolsCards = ({
         </Card>
       </MuiThemeProvider>
     );
-  } else if (bookName.length == 0 && projectSaveLocation == 0) {
+  } else if (bookName.length === 0 && projectSaveLocation === 0) {
     return (
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
@@ -50,16 +51,23 @@ const ToolsCards = ({
     return (
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
-          toolsMetadata.map((metadata, i) => {
+          tools.map((tool, i) => {
             return (
               <ToolCard
-                availableCategories={availableCategories[metadata.name] || []}
+                availableCategories={availableCategories[tool.name] || []}
                 selectedCategories={selectedCategories}
                 translate={translate}
                 key={i}
                 actions={actions}
                 loggedInUser={loggedInUser}
-                metadata={metadata}
+                metadata={{
+                  title: tool.title,
+                  version: tool.version,
+                  description: tool.description,
+                  badgeImagePath: tool.badge,
+                  folderName: tool.path,
+                  name: tool.name
+                }}
                 invalidatedReducer={invalidatedReducer}
                 currentProjectToolsProgress={currentProjectToolsProgress}
                 currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
@@ -75,6 +83,7 @@ const ToolsCards = ({
 };
 
 ToolsCards.propTypes = {
+  tools: PropTypes.array,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,

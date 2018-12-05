@@ -53,35 +53,36 @@ export function resetReducersData() {
 }
 
 /**
+ * @deprecated
  * Loads APIs for the supporting tools.
  * For now this is just every tool except for the current one.
  * @param {string} currentToolName - the current tool name
  */
 export function loadSupportingToolApis(currentToolName) {
   return (dispatch, getState) => {
-    const state = getState();
-    const meta = getToolsMeta(state);
-    for(const toolMeta of meta) {
-      if(toolMeta.name === currentToolName) {
-        continue;
-      }
-      try {
-        let tool = require(
-          path.join(toolMeta.folderName, toolMeta.main)).default;
-
-        // TRICKY: compatibility for older tools
-        if ('container' in tool.container && 'name' in tool.container) {
-          tool = tool.container;
-        }
-        // end compatability
-
-        if (tool.api) {
-          dispatch(registerToolApi(toolMeta.name, tool.api));
-        }
-      } catch (e) {
-        console.error(`Failed to load tool api for ${toolMeta.name}`, toolMeta, e);
-      }
-    }
+    // const state = getState();
+    // const meta = getToolsMeta(state);
+    // for(const toolMeta of meta) {
+    //   if(toolMeta.name === currentToolName) {
+    //     continue;
+    //   }
+    //   try {
+    //     let tool = require(
+    //       path.join(toolMeta.folderName, toolMeta.main)).default;
+    //
+    //     // TRICKY: compatibility for older tools
+    //     if ('container' in tool.container && 'name' in tool.container) {
+    //       tool = tool.container;
+    //     }
+    //     // end compatability
+    //
+    //     if (tool.api) {
+    //       dispatch(registerToolApi(toolMeta.name, tool.api));
+    //     }
+    //   } catch (e) {
+    //     console.error(`Failed to load tool api for ${toolMeta.name}`, toolMeta, e);
+    //   }
+    // }
   };
 }
 

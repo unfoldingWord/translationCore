@@ -72,5 +72,8 @@ export const loadTool = async toolDir => {
   // patch in some extra props
   tool.badge = badgePath;
   tool.version = meta.version;
+  tool.title = meta.title;
+  tool.description = meta.description;
+  tool.path = toolDir;
   return tool;
 };

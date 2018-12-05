@@ -10,11 +10,13 @@ import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 //helpers
 import * as ResourcesHelpers from '../../helpers/ResourcesHelpers';
+import { getTools } from "../../selectors";
 
 class ToolsManagementContainer extends Component {
 
   render() {
     const {
+      tools,
       reducers: {
         toolsReducer: { toolsMetadata, currentToolName },
         loginReducer: { loggedInUser },
@@ -47,6 +49,7 @@ class ToolsManagementContainer extends Component {
         <div style={{ height: '100%' }}>
           {translate('tools.tools')}
           <ToolsCards
+            tools={tools}
             availableCategories={availableCategories}
             selectedCategories={selectedCategories}
             manifest={manifest}
@@ -72,6 +75,7 @@ class ToolsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    tools: getTools(state),
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
       toolsReducer: state.toolsReducer,
@@ -109,6 +113,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
+  tools: PropTypes.array.isRequired,
   reducers: PropTypes.shape({
     toolsReducer: PropTypes.shape({
       toolsMetadata: PropTypes.array

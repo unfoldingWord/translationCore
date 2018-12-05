@@ -1,21 +1,61 @@
 import types from "../actions/ActionTypes";
-import { getToolViewsAndAPIInitialState } from '../helpers/ToolsMetadataHelpers';
+// import { getToolViewsAndAPIInitialState } from "../helpers/ToolsMetadataHelpers";
+
 const initialState = {
   currentToolName: null,
   currentToolTitle: null,
-  ...getToolViewsAndAPIInitialState()
+  tools: { byName: {}, byObject: [] }
+  // ...getToolViewsAndAPIInitialState()
 };
 
+/**
+ * Reducers the list of tools
+ * @param state
+ * @param action
+ * @returns {object}
+ */
+const tools = (state = { byName: {}, byObject: [] }, action) => {
+  switch (action.type) {
+    case types.ADD_TOOL: {
+      const index = state.byObject.length;
+
+      return {
+        byName: {
+          ...state.byName,
+          [action.tool.name]: index
+        },
+        byObject: [
+          ...state.byObject,
+          action.tool
+        ]
+      };
+    }
+    default:
+      return state;
+  }
+};
+
+/**
+ * Reduces the entire state of tools
+ * @param state
+ * @param action
+ * @returns {object}
+ */
 const toolsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SAVE_TOOL_VIEW:
+    case types.ADD_TOOL:
       return {
         ...state,
-        currentToolViews: {
-          ...state.currentToolViews,
-          [action.identifier]: action.module
-        }
+        tools: tools(state.tools, action)
       };
+    // case types.SAVE_TOOL_VIEW:
+    //   return {
+    //     ...state,
+        // currentToolViews: {
+        //   ...state.currentToolViews,
+        //   [action.identifier]: action.module
+        // }
+      // };
     case types.SET_CURRENT_TOOL_NAME:
       return {
         ...state,
@@ -26,16 +66,16 @@ const toolsReducer = (state = initialState, action) => {
         ...state,
         currentToolTitle: action.currentToolTitle
       };
-    case types.SET_TOOLS_METADATA:
-      return {
-        ...state,
-        toolsMetadata: action.val
-      };
+    // case types.SET_TOOLS_METADATA:
+    //   return {
+    //     ...state,
+        // toolsMetadata: action.val
+      // };
     case types.CLEAR_CURRENT_TOOL_DATA:
       return {
         ...state,
         currentToolName: initialState.currentToolName,
-        currentToolTitle: initialState.currentToolTitle,
+        currentToolTitle: initialState.currentToolTitle
       };
     default:
       return state;
@@ -43,6 +83,15 @@ const toolsReducer = (state = initialState, action) => {
 };
 
 export default toolsReducer;
+
+/**
+ * Returns the loaded tools
+ * @param state
+ * @returns {[]}
+ */
+export const getTools = state => {
+  return [...state.tools.byObject];
+};
 
 /**
  * Returns the name of the currently selected tool
@@ -66,7 +115,7 @@ export const getCurrentTitle = state => {
   if (state && state.currentToolTitle) {
     return state.currentToolTitle;
   } else {
-    return '';
+    return "";
   }
 };
 
@@ -77,8 +126,9 @@ export const getCurrentTitle = state => {
  */
 export const getCurrentContainer = state => {
   const name = getCurrentName(state);
-  if (name && name in state.currentToolViews) {
-    return state.currentToolViews[name];
+  if (name && name in state.tools.byName) {
+    const index = state.tools.byName[name];
+    return state.tools.byObject[index].container;
   }
   return null;
 };
@@ -90,8 +140,9 @@ export const getCurrentContainer = state => {
  */
 export const getCurrentApi = state => {
   const name = getCurrentName(state);
-  if (name && name in state.apis) {
-    return state.apis[name];
+  if (name && name in state.tools.byName) {
+    const index = state.tools.byName[name];
+    return state.tools.byObject[index].api;
   }
   return null;
 };
@@ -105,16 +156,12 @@ export const getCurrentApi = state => {
  */
 export const getSupportingToolApis = state => {
   const name = getCurrentName(state);
-  const supportingApis = { ...state.apis };
-  delete supportingApis[name];
-  return supportingApis;
-};
-
-/**
- * Returns an array of metadata for the tools
- * @param state
- * @return {object[]}
- */
-export const getToolsMeta = state => {
-  return state.toolsMetadata;
+  const apis = [];
+  for(let i = 0, len = state.tools.byObject.length; i < len; i ++) {
+    const tool = state.tools.byObject[i];
+    if(tool.name !== name) {
+      apis.push(tool.api);
+    }
+  }
+  return apis;
 };
