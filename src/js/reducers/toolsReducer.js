@@ -19,7 +19,7 @@ const tools = (state = { byName: {}, byObject: [] }, action) => {
       return {
         byName: {
           ...state.byName,
-          [action.tool.name]: index
+          [action.name]: index
         },
         byObject: [
           ...state.byObject,
@@ -68,7 +68,11 @@ export default toolsReducer;
  * @returns {[]}
  */
 export const getTools = state => {
-  return [...state.tools.byObject];
+  if(state) {
+    return [...state.tools.byObject];
+  } else {
+    return [];
+  }
 };
 
 /**
@@ -145,7 +149,7 @@ export const getSelectedToolContainer = state => {
  * @param state
  * @return {ApiController}
  */
-export const getCurrentApi = state => {
+export const getSelectedToolApi = state => {
   const tool = getSelectedTool(state);
   if(tool) {
     return tool.api;

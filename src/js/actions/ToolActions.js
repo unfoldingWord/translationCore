@@ -7,6 +7,7 @@ import { loadToolsInDir } from "../helpers/toolHelper";
  */
 export const registerTool = tool => ({
   type: types.ADD_TOOL,
+  name: tool.name,
   tool
 });
 

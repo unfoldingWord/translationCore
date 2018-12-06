@@ -123,9 +123,9 @@ test('StatusBarContainer Component on current system should render button text c
     // TODO: this will break. need to fix
     store.dispatch({
       type: consts.ADD_TOOL,
+      name: 'default',
       tool: {
-        title: toolTitle,
-        name: 'default'
+        title: toolTitle
       }
     });
     store.dispatch({

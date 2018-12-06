@@ -303,13 +303,13 @@ export const getSelectedTool = state =>
  * @param state
  * @return {ApiController|null}
  */
-export const getCurrentToolApi = state =>
-  fromToolsReducer.getCurrentApi(state.toolsReducer);
+export const getSelectedToolApi = state =>
+  fromToolsReducer.getSelectedToolApi(state.toolsReducer);
 
 /**
  * Returns supporting tool apis.
  * This will not include the api for the current tool.
- * For the current tool's api use {@link getCurrentToolApi}
+ * For the current tool's api use {@link getSelectedToolApi}
  * @param state
  * @return {ApiController[]}
  */

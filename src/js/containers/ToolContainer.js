@@ -24,7 +24,7 @@ import { VerseObjectUtils } from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
 import {
   getContext,
-  getCurrentToolApi,
+  getSelectedToolApi,
   getSelectedToolContainer,
   getProjectSaveLocation,
   getSelectedSourceChapter,
@@ -411,7 +411,7 @@ const mapStateToProps = state => {
     selectedToolName: getSelectedToolName(state),
     Tool: getSelectedToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
-    toolApi: getCurrentToolApi(state),
+    toolApi: getSelectedToolApi(state),
     targetBible: getTargetBible(state),
     sourceBible: getSourceBible(state),
     sourceVerse: getSelectedSourceVerse(state),
