@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
 import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
 // actions
-import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 //helpers
 import * as ResourcesHelpers from '../../helpers/ResourcesHelpers';
 import { getSelectedToolName, getTools } from "../../selectors";
+import {openTool} from "../../actions/ToolActions";
 
 class ToolsManagementContainer extends Component {
 
@@ -101,7 +101,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(AlertModalActions.openAlertDialog(loginMessage));
             return;
           }
-          dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
+          dispatch(openTool(currentToolName));
         };
       },
       updateCheckSelection: (id, value, toolName) => {
