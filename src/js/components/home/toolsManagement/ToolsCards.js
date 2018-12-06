@@ -13,7 +13,6 @@ const ToolsCards = ({
   loggedInUser,
   projectSaveLocation,
   currentProjectToolsProgress,
-  currentProjectToolsSelectedGL,
   manifest,
   invalidatedReducer,
   developerMode,
@@ -69,7 +68,6 @@ const ToolsCards = ({
                 }}
                 invalidatedReducer={invalidatedReducer}
                 currentProjectToolsProgress={currentProjectToolsProgress}
-                currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
                 manifest={manifest}
                 developerMode={developerMode}
               />
@@ -89,7 +87,6 @@ ToolsCards.propTypes = {
   loggedInUser: PropTypes.bool.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,

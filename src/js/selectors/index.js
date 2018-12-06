@@ -198,6 +198,15 @@ export const getUserEmail = (state) =>
   fromLoginReducer.getEmail(state.loginReducer);
 
 /**
+ * Returns the gateway language selected for the given tool.
+ * @param state
+ * @param {string} toolName - the name of the tool
+ * @returns {*}
+ */
+export const getToolGatewayLanguage = (state, toolName) =>
+  fromProjectDetailsReducer.getToolGatewayLanguage(state.projectDetailsReducer, toolName);
+
+/**
  * Returns the save location of the project
  * @param {object} state
  * @return {string}

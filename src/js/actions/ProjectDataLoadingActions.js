@@ -2,7 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import types from './ActionTypes';
-import {getTranslate} from '../selectors';
+import { getToolGatewayLanguage, getTranslate } from "../selectors";
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from './AlertModalActions';
@@ -21,12 +21,13 @@ import { loadCurrentContextId } from './ContextIdActions';
  */
 export function loadProjectData(toolName) {
   return ((dispatch, getState) => {
-    const translate = getTranslate(getState());
+    const state = getState();
+    const translate = getTranslate(state);
     return new Promise((resolve, reject) => {
-      let { projectDetailsReducer } = getState();
+      let { projectDetailsReducer } = state;
       let { projectSaveLocation, manifest, selectedCategories } = projectDetailsReducer;
       let bookAbbreviation = manifest.project.id;
-      const gatewayLanguage = projectDetailsReducer.currentProjectToolsSelectedGL[toolName]?projectDetailsReducer.currentProjectToolsSelectedGL[toolName]:'en';
+      const gatewayLanguage = getToolGatewayLanguage(state, toolName);
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
       const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
       const versionDirectory = ResourcesHelpers.getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;

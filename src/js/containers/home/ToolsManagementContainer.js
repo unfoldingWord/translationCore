@@ -64,7 +64,6 @@ class ToolsManagementContainer extends Component {
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
-            currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
           />
         </div>
       </HomeContainerContentWrapper>

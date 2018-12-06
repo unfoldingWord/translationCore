@@ -18,13 +18,15 @@ const projectDetailsReducer = (state = initialState, action) => {
     case consts.SET_PROJECT_CATEGORIES: {
       const update = (array) => {
         const exists = array.indexOf(action.id) >= 0;
-        if (exists && action.value === true) return;
-        else if (exists && action.value === false) {
+        if (exists && action.value === true) {
+          return;
+        } else if (exists && action.value === false) {
           return array.filter((el) => el !== action.id);
-        }
-        else if (!exists && action.value === true)
+        } else if (!exists && action.value === true) {
           return array.concat(action.id);
-        else return array;
+        } else {
+          return array;
+        }
       };
       return {
         ...state,
@@ -143,8 +145,22 @@ const projectDetailsReducer = (state = initialState, action) => {
 export default projectDetailsReducer;
 
 /**
- * Returns the save location of the current project
- * @param {object} state the project details slice of the state
+ * Returns the gateway language selected for the given tool.
+ * @param state
+ * @param {string} toolName - the name of the tool to look up
+ * @returns {string} - the gateway language code. Default value is "en".
+ */
+export const getToolGatewayLanguage = (state, toolName) => {
+  if(state && state.currentProjectToolsSelectedGL.hasOwnProperty(toolName)) {
+    return state.currentProjectToolsSelectedGL[toolName];
+  } else {
+    return "en";
+  }
+};
+
+/**
+ * Returns the file path where the project is saved
+ * @param {object} state - the project details slice of the state
  */
 export const getSaveLocation = (state) =>
   state.projectSaveLocation;
