@@ -18,6 +18,7 @@ export const registerTool = tool => ({
  * @returns {Function}
  */
 export const loadTools = (toolsDir) => (dispatch) => {
+  // TRICKY: push this off the render thread just for a moment to simulate threading.
   setTimeout(() => {
     loadToolsInDir(toolsDir).then((tools) => {
       for(let i = 0, len = tools.length; i < len; i ++) {
