@@ -18,7 +18,7 @@ export const DEFAULT_GATEWAY_LANGUAGE = 'en';
  */
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const { currentProjectToolsSelectedGL } = state.projectDetailsReducer;
-  const toolName= getSelectedToolName(state);
+  const toolName = getSelectedToolName(state);
   const { groupsIndex } = state.groupsIndexReducer;
   const { groupId } = contextId || state.contextIdReducer.contextId;
   const gatewayLanguageCode = currentProjectToolsSelectedGL[toolName];
