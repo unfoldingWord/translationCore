@@ -8,12 +8,11 @@ import ospath from 'ospath';
 import * as AlertModalActions from './AlertModalActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
-import * as LoaderActions from './LoaderActions';
 import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import { loadCurrentContextId } from './ContextIdActions';
-import {throttle} from 'lodash';
+
 /**
  * @description function that handles both getGroupsIndex and
  * getGroupsData with promises.
@@ -144,9 +143,6 @@ export function loadAllGroupsData(groupsDataDirectory, toolName, dispatch, index
     if (groupData) {
       allGroupsData[groupName] = groupData;
     }
-    throttle(() => {
-      dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100 * (index + 1)));
-    }, 500);
     i++;
   }
   // load groupsData to reducer
