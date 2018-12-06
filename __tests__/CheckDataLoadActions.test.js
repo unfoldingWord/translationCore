@@ -173,7 +173,7 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
       projectDetailsReducer,
       contextIdReducer
     });
-
+//console.log(": ", );
     store.dispatch(CheckDataLoadActions.loadReminders());
     expect(store.getActions()).toEqual(expectedActions);
   });

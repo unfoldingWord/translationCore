@@ -249,10 +249,6 @@ export const saveVerseEditsToCSV = (projectPath) => {
     loadProjectDataByType(projectPath, 'verseEdits')
       .then((array) => {
         const objectArray = array.map(data => {
-          const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
-          const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
-            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';
-          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           const _data = {
             after: data.verseAfter,
             before: data.verseBefore,
@@ -261,7 +257,7 @@ export const saveVerseEditsToCSV = (projectPath) => {
             activeChapter: data.activeChapter,
             activeVerse: data.activeVerse,
             'gateway Language Code': data.gatewayLanguageCode || 'en',
-            'gateway Language Quote': gatewayLanguageQuote
+            'gateway Language Quote': data.gatewayLanguageQuote
           };
           return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp, true);
         });
@@ -314,15 +310,13 @@ export const saveSelectionsToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = [];
         array.forEach(data => {
-          const gatewayLanguageQuote = data.contextId.quote ? data.contextId.quote : '';
-
           data.selections.forEach(selection => {
             const _data = {
               text: selection.text,
               'selection/occurrence': selection.occurrence,
               'selection/occurrences': selection.occurrences,
               'gateway Language Code': data.gatewayLanguageCode || 'en',
-              'gateway Language Quote': gatewayLanguageQuote
+              'gateway Language Quote': data.gatewayLanguageQuote
             };
             const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
             objectArray.push(newObject);
