@@ -12,11 +12,22 @@ import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
-import git from '../helpers/GitApi.js';
+import Repo from '../helpers/Repo.js';
 
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+
+export const updateCheckSelection = (id, value, toolName) => {
+  return dispatch => {
+    dispatch({
+      type: consts.SET_PROJECT_CATEGORIES,
+      id,
+      value
+    });
+    dispatch(getProjectProgressForTools(toolName));
+  };
+};
 
 /**
  * @description sets the project save location in the projectDetailReducer.
@@ -56,7 +67,8 @@ export function getProjectProgressForTools(toolName) {
     const {
       projectDetailsReducer: {
         projectSaveLocation,
-        manifest
+        manifest,
+        selectedCategories
       }
     } = getState();
     const bookId = manifest.project.id;
@@ -69,7 +81,7 @@ export function getProjectProgressForTools(toolName) {
       const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     } else {
-      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles);
+      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, selectedCategories, bookId);
     }
 
     dispatch({
@@ -124,13 +136,8 @@ export function setProjectBookIdAndBookName() {
         bookName
       });
       if (bookId !== originalBookId) {
-        git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation, (err)=>{
-          if (!err) {
-          resolve();
-          } else {
-            reject(err);
-          }
-        });
+        const repo = new Repo(projectSaveLocation, userdata);
+        repo.save("Saving new book id").then(resolve, reject);
       } else {
         resolve();
       }

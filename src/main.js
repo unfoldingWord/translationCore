@@ -1,6 +1,4 @@
 const electron = require('electron');
-const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
-const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const p = require('../package.json');
 const {download} = require('@neutrinog/electron-dl');
 const DownloadManager = require('./js/DownloadManager');
@@ -25,25 +23,22 @@ const downloadManager = new DownloadManager();
  * Creates the main browser window
  */
 function createMainWindow () {
-  mainWindow = new BrowserWindow({icon: './images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
+  mainWindow = new BrowserWindow({
+    icon: './images/TC_Icon.png',
+    title: 'translationCore',
+    autoHideMenuBar: true,
+    minWidth: 1200,
+    minHeight: 650,
+    center: true,
+    useContentSize: true,
+    show: false,
+  });
 
   if('developer_mode' in p && p.developer_mode) {
     mainWindow.webContents.openDevTools();
   }
 
-  isGitInstalled().then(installed => {
-    if(installed) {
-      mainWindow.loadURL(`file://${__dirname}/index.html`);
-    } else {
-      console.warn('Git is not installed. Prompting user.');
-      splashScreen.hide();
-      return showElectronGitSetup(dialog).then(() => {
-        app.quit();
-      }).catch(() => {
-        app.quit();
-      });
-    }
-  });
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   //Doesn't display until ready
   mainWindow.once('ready-to-show', () => {

@@ -158,7 +158,13 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
 
         verses.forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
-          bibleChapter[verse] = trimNewLine(getUsfmForVerseContent(verseParts));
+          let verseText;
+          if (alignmentData) {
+            verseText = getUsfmForVerseContent(verseParts);
+          } else {
+            verseText = convertVerseDataToUSFM(verseParts);
+          }
+          bibleChapter[verse] = trimNewLine(verseText);
           if (alignmentData && bibleData && bibleData[chapter]) {
             const bibleVerse = bibleData[chapter][verse];
             const object = wordaligner.unmerge(verseParts, bibleVerse);
@@ -296,7 +302,49 @@ const replaceWordsAndMilestones = (verseObject, wordSpacing) => {
 };
 
 /**
- * @description merge verse data into a string - flatten milestones and words and then save as USFM string
+ * check if string has alignment markers
+ * @param {String} usfmData
+ * @return {Boolean} true if string has alignment markers
+ */
+export const hasAlignments = usfmData => {
+  const hasAlignment = usfmData.includes("\\zaln-s") || usfmData.includes("\\w");
+  return hasAlignment;
+};
+
+/**
+ * @description verseObjects with occurrences via string
+ * @param {String} usfmData - The string to search in
+ * @return {String} - cleaned USFM
+ */
+export const cleanAlignmentMarkersFromString = usfmData => {
+  if (hasAlignments(usfmData)) {
+    // convert string using usfm to JSON
+    const verseObjects = usfmjs.toJSON('\\v 1 ' + usfmData, {chunk: true}).verses["1"];
+    return getUsfmForVerseContent(verseObjects);
+  }
+  return usfmData;
+};
+
+/**
+ * converts verse from verse objects to USFM string
+ * @param verseData
+ * @return {string}
+ */
+function convertVerseDataToUSFM(verseData) {
+  const outputData = {
+    "chapters": {},
+    "headers": [],
+    "verses": {
+      "1": verseData
+    }
+  };
+  const USFM = usfmjs.toUSFM(outputData, {chunk: true});
+  const split = USFM.split("\\v 1 ");
+  return split.length > 1 ? split[1] : "";
+}
+
+/**
+ * @description convert verse from verse objects to USFM string, removing milestones and word markers
  * @param {Object|Array} verseData
  * @return {String}
  */
@@ -315,14 +363,5 @@ export const getUsfmForVerseContent = (verseData) => {
       verseObjects: flattenedData
     };
   }
-  const outputData = {
-    "chapters": {},
-    "headers": [],
-    "verses": {
-      "1": verseData
-    }
-  };
-  const USFM = usfmjs.toUSFM(outputData, {chunk: true});
-  const split = USFM.split("\\v 1 ");
-  return split.length > 1 ? split[1] : "";
+  return convertVerseDataToUSFM(verseData);
 };

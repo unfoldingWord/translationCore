@@ -96,6 +96,27 @@ exports[`Test ToolCard component Comparing ToolCard Component render for transla
     <ToolCardProgress
       progress={0.5}
     />
+    <div
+      style={
+        Object {
+          "marginLeft": "6%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "marginBottom": 5,
+          }
+        }
+      >
+        <div>
+          Key Terms
+        </div>
+      </div>
+    </div>
     <div />
     <div
       style={
@@ -147,7 +168,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render for transla
         translate={[Function]}
       />
       <span
-        aria-label="tools.book_not_supported"
+        aria-label="tools.no_checks_selected"
         className="hint--left hint--medium"
       >
         <button

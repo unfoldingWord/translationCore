@@ -18,7 +18,8 @@ const translationWordsProject = path.join(__dirname, 'fixtures/project/translati
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
-jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported in dependency
+jest.mock('../src/js/helpers/Repo');
+jest.mock('material-ui/Checkbox');
 
 let mock_repoExists = false;
 let mock_repoError = false;
@@ -191,15 +192,16 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const resourcesPath = RESOURCE_PATH;
-    const copyResourceFiles = ['grc/bibles/ugnt'];
+    const copyResourceFiles = ['grc'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
 
   test('should get the progress for a non alignment tool', () => {
     let toolName = 'translationWords';
     let bookId = 'tit';
+    let userSelectedCategories = ['kt'];
     const pathToCheckDataFiles = path.join(translationWordsProject, INDEX_FOLDER_PATH, toolName, bookId);
-    expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles)).toBe(0.06);
+    expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, userSelectedCategories, bookId)).toBe(0.5);
   });
 });
 
@@ -705,7 +707,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('short name should succeed', () => {
     const projectName = "en_tit";
-    const expectedResults = {"bookId": "tit", "bookName": "Titus", "languageId": "en"};
+    const expectedResults = {"bookId": "tit", "bookName": "book_list.nt.tit", "languageId": "en"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
@@ -713,7 +715,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('old tStudio format name should succeed', () => {
     const projectName = "aaw_php_text_reg";
-    const expectedResults = {"bookId": "php", "bookName": "Philippians", "languageId": "aaw"};
+    const expectedResults = {"bookId": "php", "bookName": "book_list.nt.php", "languageId": "aaw"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
@@ -721,7 +723,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 
   test('new format name should succeed', () => {
     const projectName = "el_ult_tit_book";
-    const expectedResults = {"bookId": "tit", "bookName": "Titus", "languageId": "el"};
+    const expectedResults = {"bookId": "tit", "bookName": "book_list.nt.tit", "languageId": "el"};
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);

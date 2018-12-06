@@ -14,6 +14,21 @@ import _ from "lodash";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 
+export const getAvailableToolCategories = (currentProjectToolsSelectedGL) => {
+  const availableCategories = {};
+  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
+    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] ? currentProjectToolsSelectedGL[toolName] : 'en';
+    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
+    const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
+    if (fs.existsSync(versionDirectory))
+      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
+        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
+      );
+    else availableCategories[toolName] = [];
+  });
+  return availableCategories;
+};
+
 /**
  * @description gets the resources from the static folder located in the tC codebase.
  */
@@ -130,23 +145,31 @@ export const chapterGroupsIndex = (translate) => {
   return groupsIndex;
 };
 
-export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
-  const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
-  const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
-  const versionPath = getLatestVersionInPath(toolResourcePath) || toolResourcePath;
-  const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
-  const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
-
-  if(fs.existsSync(groupsDataSourcePath)) {
-    fs.copySync(groupsDataSourcePath, groupsDataDirectory);
+export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation, category = 'kt') {
+  if (currentToolName === 'translationWords') {
+    const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
+    writeGroupsDataToFS(groupsFolderPath);
   } else {
-    const groupsData = chapterGroupsData(bookAbbreviation, currentToolName);
-    groupsData.forEach(groupData => {
-      const groupId = groupData[0].contextId.groupId;
-      const chapterIndexPath = path.join(groupsDataDirectory, groupId + '.json');
-      fs.outputFileSync(chapterIndexPath, JSON.stringify(groupData, null, 2));
-    });
-    console.log("Chapter Groups Data generated. translationHelps resources path was not found, " + groupsDataSourcePath);
+    const groupsFolderPath = path.join('groups', bookAbbreviation);
+    writeGroupsDataToFS(groupsFolderPath);
+  }
+
+  function writeGroupsDataToFS(groupsFolderPath) {
+    const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
+    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+    const versionPath = getLatestVersionInPath(toolResourcePath) || toolResourcePath;
+    const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
+    if (fs.existsSync(groupsDataSourcePath)) {
+      fs.copySync(groupsDataSourcePath, groupsDataDirectory);
+    } else {
+      const groupsData = chapterGroupsData(bookAbbreviation, currentToolName);
+      groupsData.forEach(groupData => {
+        const groupId = groupData[0].contextId.groupId;
+        const chapterIndexPath = path.join(groupsDataDirectory, groupId + '.json');
+        fs.outputFileSync(chapterIndexPath, JSON.stringify(groupData, null, 2));
+      });
+      console.log("Chapter Groups Data generated. translationHelps resources path was not found, " + groupsDataSourcePath);
+    }
   }
 }
 /**
@@ -287,7 +310,7 @@ export function getLanguageIdsFromResourceFolder(bookId) {
     if (BibleHelpers.isOldTestament(bookId)) {
       languageIds = languageIds.filter(languageId => languageId !== 'grc');
     } else { // else if its a new testament project remove hebrew from languageIds.
-      languageIds = languageIds.filter(languageId => languageId !== 'he');
+      languageIds = languageIds.filter(languageId => languageId !== 'hbo');
     }
     languageIds = languageIds.filter(languageID => {
       let valid = (fs.lstatSync(path.join(USER_RESOURCES_PATH, languageID)).isDirectory());
@@ -388,7 +411,8 @@ export function getAvailableScripturePaneSelections(resourceList) {
  */
 export function getResourcesNeededByTool(state, bookId) {
   const resources = [];
-  const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'he' : 'grc';
+  const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'hbo' : 'grc';
+  const olBibleId = BibleHelpers.isOldTestament(bookId) ? 'uhb' : 'ugnt';
   const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
   if (Array.isArray(currentPaneSettings)) {
     for (let setting of currentPaneSettings) {
@@ -409,7 +433,7 @@ export function getResourcesNeededByTool(state, bookId) {
   } else {
     console.log("No Scripture Pane Configuration");
   }
-  addResource(resources, olLanguageID, BibleHelpers.isOldTestament(bookId) ? 'uhb' : 'ugnt');
+  addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
   const gatewayLangId = getGatewayLanguageCode(state) || 'en'; // default to English
   const currentToolName = state.toolsReducer && state.toolsReducer.currentToolName;
   const validBibles = getValidGatewayBiblesForTool(currentToolName, gatewayLangId, bookId);

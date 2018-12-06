@@ -92,7 +92,7 @@ export const getTargetChapter = (state, chapter) => {
 };
 
 export const getTargetBible = state => {
-  return state.bibles.targetLanguage.targetBible;
+  return state.bibles.targetLanguage && state.bibles.targetLanguage.targetBible;
 };
 
 export const getSourceBible = state => {

@@ -1269,7 +1269,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                               }
                             }
                           >
-                            Titus (tit)
+                            book_list.nt.tit
                           </div>
                           <button
                             disabled={false}

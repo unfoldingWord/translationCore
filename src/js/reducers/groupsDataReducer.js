@@ -19,7 +19,10 @@ const groupsDataReducer = (state = initialState, action) => {
     case consts.LOAD_GROUPS_DATA_FROM_FS:
       return {
         ...state,
-        groupsData: action.allGroupsData,
+        groupsData: {
+          ...state.groupsData,
+          ...action.allGroupsData,
+        },
         loadedFromFileSystem: true
       };
     case consts.TOGGLE_REMINDERS_IN_GROUPDATA:

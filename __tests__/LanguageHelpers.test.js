@@ -55,4 +55,26 @@ describe('Test LanguageHelpers',()=>{
       expect(langB.ltr !== undefined).toBeTruthy();
     }
   });
+
+  test('getLanguageCodes() verify no dups among language codes.', () => {
+    let languageCodes = LanguageHelpers.getLanguageCodes();
+    let localLanguageCodes = languageCodes.local;
+    let localAry = [];
+
+    for (var key in localLanguageCodes) {
+      localAry.push( localLanguageCodes[key].code );
+    }
+  
+    const sorted = localAry.sort();
+    let dupsFound = 0;
+
+    for( let idx = 1; idx < sorted.length; idx++ ) {
+      if( sorted[idx] == sorted[idx-1]) {
+        dupsFound++;
+      }
+    }
+
+    expect(dupsFound).toBeLessThan(1);
+    expect(sorted.length).toBeGreaterThan(2000);
+  });
 });

@@ -95,11 +95,12 @@ export const migrateValidateLoadProject = (projectName) => {
  */
 export function displayTools() {
   return (dispatch, getState) => {
-    const translate = getTranslate(getState());
+    const state = getState();
+    const translate = getTranslate(state);
     return new Promise ((resolve, reject) => {
       try {
-        const { currentSettings } = getState().settingsReducer;
-        const { manifest } = getState().projectDetailsReducer;
+        const { currentSettings } = state.settingsReducer;
+        const { manifest } = state.projectDetailsReducer;
         if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
           // Go to toolsCards page
           dispatch(BodyUIActions.goToStep(3));

@@ -1,16 +1,33 @@
 /* eslint-env jest */
 import React from 'react';
 import ToolCard from '../src/js/components/home/toolsManagement/ToolCard';
+import ToolCardBoxes from '../src/js/components/home/toolsManagement/ToolCardBoxes';
 import { DEFAULT_GATEWAY_LANGUAGE } from '../src/js/helpers/gatewayLanguageHelpers';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { shallow } from 'enzyme';
+import fs from "../__mocks__/fs-extra";
+import path from "path-extra";
+import {USER_RESOURCES_PATH} from "../src/js/helpers/ResourcesHelpers";
 
 jest.mock('../src/js/components/home/toolsManagement/ToolCardProgress', () => 'ToolCardProgress');
 jest.mock('../src/js/components/home/toolsManagement/GlDropDownList', () => 'GlDropDownList');
+jest.mock('material-ui/Checkbox');
 
 // Tests for ToolCard React Component
 describe('Test ToolCard component',()=>{
+  beforeAll(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    const sourcePath = path.join(__dirname, 'fixtures/resources');
+    let copyFiles = ['en', 'grc'];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, USER_RESOURCES_PATH);
+  });
+  afterAll(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+
   test('Comparing ToolCard Component render for wordAlignment', () => {
     const props = {
       loggedInUser: true,
@@ -69,7 +86,9 @@ describe('Test ToolCard component',()=>{
         setProjectToolGL: () => jest.fn(),
         launchTool: () => jest.fn()
       },
-      developerMode: false
+      developerMode: false,
+      selectedCategories: [],
+      availableCategories: ['kt']
     };
     const renderedValue = renderer.create(
       <MuiThemeProvider>
@@ -77,6 +96,8 @@ describe('Test ToolCard component',()=>{
       </MuiThemeProvider>
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
+    const wrapper = shallow(<ToolCard {...props} />);
+    expect(wrapper.find(ToolCardBoxes)).toHaveLength(1);
   });
 
   test('Test GL Selection Change', () => {
