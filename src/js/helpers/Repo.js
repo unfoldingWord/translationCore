@@ -95,12 +95,6 @@ export default class Repo {
   constructor(dir, user = {}) {
     this.dir = dir;
     this.user = user;
-
-    // require repo to be initialized
-    if (!Repo.isRepo(dir)) {
-      throw new Error(
-        `ERROR: Git not initialized in "${dir}". Use Repo.init to initialize it.`);
-    }
   }
 
   /**
@@ -113,7 +107,8 @@ export default class Repo {
    * @returns {Promise<Repo>}
    */
   static async open(dir, user={}) {
-    if (!Repo.isRepo(dir)) {
+    const ok = await Repo.isRepo(dir);
+    if (!ok) {
       await Repo.init(dir);
     }
     return new Repo(dir, user);
@@ -122,6 +117,7 @@ export default class Repo {
   /**
    * Checks if the directory is an initialized git repository.
    * @param {string} dir - the directory to inspect
+   * @return {boolean} true if the repo has been initialized.
    */
   static async isRepo(dir) {
     const gitPath = path.join(dir, ".git");
