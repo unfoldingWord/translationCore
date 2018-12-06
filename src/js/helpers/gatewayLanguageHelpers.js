@@ -30,18 +30,6 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
 };
 
 /**
- * @deprecated use the selector instead
- * get the gateway language code for current tool.  Returns null if error
- * @param {Object} state - current state
- * @return {String|null} current gateway language code
- */
-export const getGatewayLanguageCode = (state) => {
-  const currentProjectToolsSelectedGL = state.projectDetailsReducer && state.projectDetailsReducer.currentProjectToolsSelectedGL;
-  const toolName = getSelectedToolName(state);
-  return currentProjectToolsSelectedGL && currentProjectToolsSelectedGL[toolName];
-};
-
-/**
  * lookup required helps for tool
  * @param toolName
  * @return {*}

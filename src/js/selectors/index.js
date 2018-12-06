@@ -71,6 +71,14 @@ export const getTools = state =>
   fromToolsReducer.getTools(state.toolsReducer);
 
 /**
+ * Returns an array of tool names
+ * @param state
+ * @returns {*}
+ */
+export const getToolNames = state =>
+  fromToolsReducer.getNames(state.toolsReducer);
+
+/**
  * Retrieves an application setting
  * @param {object} state
  * @param key

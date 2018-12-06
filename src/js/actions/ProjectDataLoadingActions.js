@@ -121,22 +121,18 @@ export function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviatio
 }
 
 /**
- * @description loads all the groups data files from filesystem.
- * @param {array} groupDataFolderObjs -
+ * Loads all the groups data files from filesystem.
  * @param {string} groupsDataDirectory - groups data save location in the filesystem.
  * @param {string} toolName - name of the current tool being selected/used.
  * @param {function} dispatch - redux dispatch function.
  * @return {object} object action / Promises.
  */
-export function loadAllGroupsData(groupsDataDirectory, toolName, dispatch, index) {
+export function loadAllGroupsData(groupsDataDirectory, toolName, dispatch) {
   // read in the groupsData files
   let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
   let allGroupsData = {};
-  let total = groupDataFolderObjs.length;
-  let i = 0;
   for (let groupId in groupDataFolderObjs) {
     if (path.extname(groupDataFolderObjs[groupId]) !== '.json' || groupDataFolderObjs[groupId][0] === '.') {
-      total--;
       continue;
     }
     let groupName = groupDataFolderObjs[groupId].split('.')[0];
@@ -144,7 +140,6 @@ export function loadAllGroupsData(groupsDataDirectory, toolName, dispatch, index
     if (groupData) {
       allGroupsData[groupName] = groupData;
     }
-    i++;
   }
   // load groupsData to reducer
   dispatch({

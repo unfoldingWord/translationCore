@@ -1,23 +1,51 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// components
 import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
 import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
-// actions
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
-//helpers
-import * as ResourcesHelpers from '../../helpers/ResourcesHelpers';
-import { getSelectedToolName, getTools } from "../../selectors";
+import {
+  getSelectedToolName,
+  getToolGatewayLanguage,
+  getTools
+} from "../../selectors";
 import {openTool} from "../../actions/ToolActions";
+import path from "path-extra";
+import ospath from "ospath";
+import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
+import fs from "fs-extra";
 
 class ToolsManagementContainer extends Component {
+
+  constructor(props) {
+    super(props);
+    this.buildCategories = this.buildCategories.bind(this);
+  }
+
+  buildCategories() {
+    const {tools} = this.props;
+    const categories = [];
+    for(let t of tools) {
+      const language = getToolGatewayLanguage(t.name);
+      const resourceDir = path.join(ospath.home(), 'translationCore', 'resources', language, 'translationHelps', t.name);
+      const versionDir = getLatestVersionInPath(resourceDir) || resourceDir;
+
+      if (fs.existsSync(versionDir)) {
+        categories[t.name] = fs.readdirSync(versionDir).
+          filter((dirName) =>
+            fs.lstatSync(path.join(versionDir, dirName)).isDirectory()
+          );
+      } else {
+        categories[t.name] = [];
+      }
+    }
+    return categories;
+  }
 
   render() {
     const {
       tools,
-      selectedToolName,
       reducers: {
         loginReducer: { loggedInUser },
         settingsReducer: {
@@ -27,8 +55,7 @@ class ToolsManagementContainer extends Component {
           selectedCategories,
           manifest,
           projectSaveLocation,
-          currentProjectToolsProgress,
-          currentProjectToolsSelectedGL
+          currentProjectToolsProgress
         },
         invalidatedReducer,
       },
@@ -40,7 +67,7 @@ class ToolsManagementContainer extends Component {
         <p>{translate('projects.books_available', {app: translate('_.app_name')})}</p>
       </div>
     );
-    const availableCategories = ResourcesHelpers.getAvailableToolCategories(currentProjectToolsSelectedGL, selectedToolName);
+    const availableCategories = this.buildCategories();
     return (
       <HomeContainerContentWrapper
         translate={translate}

@@ -6,28 +6,17 @@ import AdmZip from 'adm-zip';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
 import {getTranslation} from "./localizationHelpers";
-import {getGatewayLanguageCode, getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
+import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from './SettingsHelpers';
-import { getContext, getSelectedToolName } from "../selectors";
+import {
+  getContext,
+  getSelectedToolName,
+  getToolGatewayLanguage
+} from "../selectors";
 import _ from "lodash";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
-
-export const getAvailableToolCategories = (currentProjectToolsSelectedGL) => {
-  const availableCategories = {};
-  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] ? currentProjectToolsSelectedGL[toolName] : 'en';
-    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-    const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
-    if (fs.existsSync(versionDirectory))
-      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
-        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
-      );
-    else availableCategories[toolName] = [];
-  });
-  return availableCategories;
-};
 
 /**
  * @description gets the resources from the static folder located in the tC codebase.
@@ -410,6 +399,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
  * @return {Array} array of resource in scripture panel
  */
 export function getResourcesNeededByTool(state, bookId) {
+  const toolName = getSelectedToolName(state);
   const resources = [];
   const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'hbo' : 'grc';
   const olBibleId = BibleHelpers.isOldTestament(bookId) ? 'uhb' : 'ugnt';
@@ -434,8 +424,7 @@ export function getResourcesNeededByTool(state, bookId) {
     console.log("No Scripture Pane Configuration");
   }
   addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
-  const gatewayLangId = getGatewayLanguageCode(state) || 'en'; // default to English
-  const toolName = getSelectedToolName(state);
+  const gatewayLangId = getToolGatewayLanguage(state, toolName);
   const validBibles = getValidGatewayBiblesForTool(toolName, gatewayLangId, bookId);
   if (Array.isArray(validBibles)) {
     for (let bible of validBibles) {

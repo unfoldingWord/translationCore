@@ -76,6 +76,19 @@ export const getTools = state => {
 };
 
 /**
+ * Returns an array of tool names
+ * @param state
+ * @returns {*}
+ */
+export const getNames = state => {
+  if(state) {
+    return [...state.tools.byName];
+  } else {
+    return [];
+  }
+};
+
+/**
  * Returns the name of the currently selected tool
  * @param state
  * @return {string | undefined}
