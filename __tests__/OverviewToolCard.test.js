@@ -49,8 +49,7 @@ describe('Tool Card component Tests', () => {
     const props = {
       reducers: {
         toolsReducer: {
-          currentToolTitle: '',
-          currentToolName: ''
+          selectedTool: null
         },
         projectDetailsReducer: {
           currentProjectToolsProgress: '',
@@ -81,8 +80,13 @@ describe('Tool Card component Tests', () => {
     const props = {
       reducers: {
         toolsReducer: {
-          currentToolTitle: title,
-          currentToolName: name
+          tools: {
+            byName: {
+              [name]: 0
+            },
+            byObject: [{title}]
+          },
+          selectedTool: name
         },
         projectDetailsReducer: {
           currentProjectToolsProgress: {

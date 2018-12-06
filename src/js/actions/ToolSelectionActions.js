@@ -5,6 +5,7 @@ import * as ModalActions from './ModalActions';
 import {getTranslate} from '../selectors';
 
 /**
+ * TODO: rename this to openTool and move to ToolActions.js
  * @description Loads the tool into the main app view, and initiates the tool Container component.
  * @param {string} moduleFolderName - Folder path of the tool being loaded.
  * @param {string} currentToolName - name of the current tool being loaded.
