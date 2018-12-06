@@ -14,10 +14,15 @@ import _ from "lodash";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 
+/**
+ * 
+ * @param {Object} currentProjectToolsSelectedGL Specifys which tools are using which gateway language
+ * i.e. {"translationWords":"en"}
+ */
 export const getAvailableToolCategories = (currentProjectToolsSelectedGL) => {
   const availableCategories = {};
   Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] ? currentProjectToolsSelectedGL[toolName] : 'en';
+    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
     const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
     if (fs.existsSync(versionDirectory))
