@@ -500,9 +500,10 @@ export function getFilesInResourcePath(resourcePath, ext) {
 }
 
 export function getMissingResources() {
+  const excludedItems = ['imports_processed', 'imports', '.DS_Store'];
   // resources files packaged with tc executable
   const tcResourcesFiles = fs.readdirSync(STATIC_RESOURCES_PATH)
-    .filter(file => file !== '.DS_Store')
+    .filter(item => !excludedItems.includes(item))
     .filter(file => fs.lstatSync(path.join(STATIC_RESOURCES_PATH, file)).isDirectory());
 
   // resources files found in the user's resources directory
