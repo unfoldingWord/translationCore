@@ -18,10 +18,10 @@ export const DEFAULT_GATEWAY_LANGUAGE = 'en';
  */
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const { currentProjectToolsSelectedGL } = state.projectDetailsReducer;
-  const currentToolName= getSelectedToolName(state);
+  const toolName= getSelectedToolName(state);
   const { groupsIndex } = state.groupsIndexReducer;
   const { groupId } = contextId || state.contextIdReducer.contextId;
-  const gatewayLanguageCode = currentProjectToolsSelectedGL[currentToolName];
+  const gatewayLanguageCode = currentProjectToolsSelectedGL[toolName];
   const gatewayLanguageQuote = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, groupId).name;
 
   return {
@@ -37,9 +37,8 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
  */
 export const getGatewayLanguageCode = (state) => {
   const currentProjectToolsSelectedGL = state.projectDetailsReducer && state.projectDetailsReducer.currentProjectToolsSelectedGL;
-  const currentToolName = getSelectedToolName(state);
-  const gatewayLanguageCode = currentProjectToolsSelectedGL && currentProjectToolsSelectedGL[currentToolName];
-  return gatewayLanguageCode;
+  const toolName = getSelectedToolName(state);
+  return currentProjectToolsSelectedGL && currentProjectToolsSelectedGL[toolName];
 };
 
 /**

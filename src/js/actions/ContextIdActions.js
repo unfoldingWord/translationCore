@@ -128,14 +128,14 @@ export function loadCurrentContextId() {
     let state = getState();
     let { projectSaveLocation, manifest } = state.projectDetailsReducer;
     let { groupsIndex } = state.groupsIndexReducer;
-    const currentToolName = getSelectedToolName(state);
+    const toolName = getSelectedToolName(state);
     let bookId = manifest.project.id ? manifest.project.id : undefined;
     let fileName = "contextId.json";
 
-    if (projectSaveLocation && currentToolName && bookId) {
+    if (projectSaveLocation && toolName && bookId) {
       let contextId = {};
       try {
-        let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, currentToolName, bookId, "currentContextId", fileName);
+        let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName);
         if (fs.existsSync(loadPath)) {
           contextId = fs.readJsonSync(loadPath);
           const contextIdExistInGroups = groupsIndex.indexOf(({id}) => id === contextId.groupId) >= 0;

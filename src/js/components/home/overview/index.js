@@ -35,8 +35,8 @@ class OverviewContainer extends Component {
   render() {
     const {translate} = this.props;
     const {store} = this.context;
-    const currentToolTitle = getSelectedToolTitle(store.getState());
-    const launchButtonDisabled = !currentToolTitle;
+    const toolTitle = getSelectedToolTitle(store.getState());
+    const launchButtonDisabled = !toolTitle;
 
     const instructions = (
       <div>

@@ -96,12 +96,12 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
       },
       launchTool: (loginMessage) => {
-        return (toolFolderPath, loggedInUser, currentToolName) => {
+        return (toolFolderPath, loggedInUser, toolName) => {
           if (!loggedInUser) {
             dispatch(AlertModalActions.openAlertDialog(loginMessage));
             return;
           }
-          dispatch(openTool(currentToolName));
+          dispatch(openTool(toolName));
         };
       },
       updateCheckSelection: (id, value, toolName) => {

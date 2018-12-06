@@ -47,10 +47,9 @@ class ToolCard extends Component {
     const tool = getSelectedTool(state);
 
     let content; // content can be empty to fallback to empty button/message
-    // const { currentToolTitle, currentToolName } = this.props.reducers.toolsReducer;
     const { currentProjectToolsProgress } = this.props.reducers.projectDetailsReducer;
 
-    if (tool) { // once currentToolTitle is there then we can get groupsData
+    if (tool) {
       let progress = currentProjectToolsProgress[tool.name];
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
