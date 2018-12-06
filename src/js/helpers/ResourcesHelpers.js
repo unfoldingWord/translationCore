@@ -502,10 +502,12 @@ export function getFilesInResourcePath(resourcePath, ext) {
 export function getMissingResources() {
   // resources files packaged with tc executable
   const tcResourcesFiles = fs.readdirSync(STATIC_RESOURCES_PATH)
+    .filter(file => file !== '.DS_Store')
     .filter(file => fs.lstatSync(path.join(STATIC_RESOURCES_PATH, file)).isDirectory());
 
   // resources files found in the user's resources directory
   const userResources = fs.readdirSync(USER_RESOURCES_PATH)
+    .filter(file => file !== '.DS_Store')
     .filter(file => fs.lstatSync(path.join(STATIC_RESOURCES_PATH, file)).isDirectory());
 
   tcResourcesFiles.forEach((languageId) => {
