@@ -21,8 +21,21 @@ import Repo from '../helpers/Repo.js';
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
+/**
+ * @description sets the categories to be used in the project.
+ * Note: This preference is persisted in the settings
+ * @param {String} id - The category to be toggled e.i. "kt"
+ * @param {Boolean} value - The value of the category to be updated to
+ * @param {String} toolName - The tool that has been toggled on. This
+ * is used to update the tool progress with the the updated selected
+ * categories
+ */
 export const updateCheckSelection = (id, value, toolName) => {
   return (dispatch, getState) => {
+    /** function to make the change in the array based on the passed params
+     * i.e. If the value is present in the array and you pass the value of 
+     * false it will be deleted from the array
+    */
     const update = (array) => {
       const exists = array.indexOf(id) >= 0;
       if (exists && value === true) return;

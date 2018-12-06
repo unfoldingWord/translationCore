@@ -163,3 +163,12 @@ describe('ResourcesHelpers.extractZippedBooks', () => {
     expect(fs.existsSync(zippedBooks)).toBeFalsy();
   });
 });
+
+describe('ResourceHelpers.copyGroupsDataToProjectResources', () => {
+  it('should copy the entire resources groups to the user project directory', ()=> {
+    expect(true).toBeFalsy();
+  });
+  it('should only copy checks not already present to the user project directory', ()=> {
+    expect(true).toBeFalsy();
+  });
+});
