@@ -18,18 +18,11 @@ export function selectTool(moduleFolderName, currentToolName) {
     dispatch({ type: consts.START_LOADING });
     setTimeout(() => {
       try {
-        // const modulePath = path.join(moduleFolderName, 'package.json');
-        // const dataObject = fs.readJsonSync(modulePath);
         dispatch(resetReducersData());
         dispatch({
           type: consts.OPEN_TOOL,
           name: currentToolName
         });
-        // dispatch({
-        //   type: consts.SET_CURRENT_TOOL_TITLE,
-        //   currentToolTitle: dataObject.title
-        // });
-        // load project data
         dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
       } catch (e) {
         console.warn(e);

@@ -2,14 +2,6 @@ import path from "path-extra";
 import fs from "fs-extra";
 
 /**
- * Legacy wrapper to load all tools in the app
- * @returns {Promise<void>}
- */
-export const loadAllTools = async () => {
-  return loadToolsInDir(path.join(__dirname, "../../../tC_apps"));
-};
-
-/**
  * Loads all of the tools found in a directory
  * @ {string} dir - the directory containing tools to load
  * @returns {Array}

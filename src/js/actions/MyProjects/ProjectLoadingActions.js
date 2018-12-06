@@ -137,10 +137,6 @@ export function clearLastProject() {
     dispatch({ type: consts.CLOSE_TOOL });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
     dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
-    // dispatch({
-    //   type: consts.SET_CURRENT_TOOL_TITLE,
-    //   currentToolTitle: ""
-    // });
   };
 }
 

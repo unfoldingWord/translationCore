@@ -61,7 +61,6 @@ class ToolsManagementContainer extends Component {
               launchTool: this.props.actions.launchTool(translate('please_log_in'))
             }}
             developerMode={developerMode}
-            // toolsMetadata={toolsMetadata}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
