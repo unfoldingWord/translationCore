@@ -508,7 +508,7 @@ export function getMissingResources() {
   // resources files found in the user's resources directory
   const userResources = fs.readdirSync(USER_RESOURCES_PATH)
     .filter(file => file !== '.DS_Store')
-    .filter(file => fs.lstatSync(path.join(STATIC_RESOURCES_PATH, file)).isDirectory());
+    .filter(file => fs.lstatSync(path.join(USER_RESOURCES_PATH, file)).isDirectory());
 
   tcResourcesFiles.forEach((languageId) => {
     // if a resource package with tC executable file is missing in the user resource directory
