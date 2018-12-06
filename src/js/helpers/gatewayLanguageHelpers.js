@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from "path-extra";
 import _ from 'lodash';
 
-//bms import * as groupsIndexHelpers from './groupsIndexHelpers';
+// import * as groupsIndexHelpers from './groupsIndexHelpers';
 import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./LanguageHelpers";
 import * as ResourcesHelpers from "./ResourcesHelpers";
 import * as BibleHelpers from "./bibleHelpers";
@@ -18,17 +18,17 @@ export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const { currentProjectToolsSelectedGL } = state.projectDetailsReducer;
   const { currentToolName } = state.toolsReducer;
-  const { groupsIndex } = state.groupsIndexReducer;
-  const { groupId } = contextId || state.contextIdReducer.contextId;
+  // const { groupsIndex } = state.groupsIndexReducer;
+  // const { groupId } = contextId || state.contextIdReducer.contextId;
   const gatewayLanguageCode = currentProjectToolsSelectedGL[currentToolName];
-  const gatewayLanguageQuotes = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, groupId).name;
-console.log("state: ", state );
-console.log("groupsIndex: ", groupsIndex );
-console.log("groupId: ", groupId );
-console.log("gatewayLanguageQuotes: ", gatewayLanguageQuotes );
+  // const gatewayLanguageQuotes = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, groupId).name;
+// console.log("state: ", state );
+// console.log("groupsIndex: ", groupsIndex );
+// console.log("groupId: ", groupId );
+// console.log("gatewayLanguageQuotes: ", gatewayLanguageQuotes );
   const gatewayLanguageQuote = getAlignedGLText(
       state.projectDetailsReducer.currentProjectToolsSelectedGL,
-      contextId || state.contextIdReducer.contextId, 
+      contextId || state.contextIdReducer.contextId,
       state.resourcesReducer.bibles, state.toolsReducer.currentToolName);
 
   return {
