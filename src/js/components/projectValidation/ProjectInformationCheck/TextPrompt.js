@@ -47,15 +47,15 @@ const TextPrompt = ({
     <div
       className={'project-info-text-field-area'}
       style={{
-      width: '240px',
-      marginTop: '12px',
+      marginTop: '24px',
       paddingTop: 0,
       paddingBottom: 0,
       paddingLeft: 0,
       paddingRight: 0,
       color: '#000',
       fontSize: '16px',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      lineHeight: 0
     }}>
       <label
         htmlFor={id}
@@ -70,7 +70,7 @@ const TextPrompt = ({
         id={id}
         className={'project-info-text-field'}
         value={text}
-        style={{width: '230px', height: '40px'}}
+        style={{width: '256px', height: '40px'}}
         errorText={getErrorMessage(text)}
         errorStyle={{color: '#cd0033', height: '6px', bottom: 0}}
         underlineFocusStyle={{borderColor: "var(--accent-color-dark)"}}

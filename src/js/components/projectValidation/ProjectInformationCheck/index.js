@@ -172,108 +172,100 @@ class ProjectInformationCheck extends Component {
     return (
       <ProjectValidationContentWrapper translate={translate}
                                        instructions={instructions}>
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
           {translate('project_information')}
           <Card
             id="project-information-card"
             style={{ width: '100%', height: '100%' }}
             containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
           >
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <div style={{ textAlign: 'right' }}>
               <span style={{ color: '#cd0033', margin: '10px 10px 0px' }}>* {translate('required')}</span>
             </div>
-            <table style={{ display: 'flex', justifyContent: 'center', marginLeft: '-15px' }}>
-              <tbody>
-              <tr>
-                <td>
-                  <LanguageNameTextBox
-                    translate={translate}
-                    languageName={languageName}
-                    languageId={languageId}
-                    updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
-                    updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
-                    updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
-                  />
-                </td>
-                <td style={{ padding: '0px 0px 0px 120px' }}>
-                  <TextPrompt
-                    id={'resource_id'}
-                    getErrorMessage={(text) => getResourceIdWarning.call(this, text)}
-                    text={resourceId}
-                    title={translate('projects.resource_id')}
-                    updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(this.limitStringLength(resourceId, maxResourceIdLength))}
-                    required={true}
-                    infoText={getResourceInfoHint()}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <LanguageIdTextBox
-                    translate={translate}
-                    languageId={languageId}
-                    updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
-                    updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
-                    updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
-                  />
-                </td>
-                <td style={{ padding: '0px 0px 0px 120px' }}>
-                  <TextPrompt
-                    id={'nickname'}
-                    getErrorMessage={() => null}
-                    text={nickname}
-                    title={translate('projects.nickname')}
-                    updateText={(nickname) => this.props.actions.setNicknameInProjectInformationReducer(nickname)}
-                    required={false}
-                    infoText={''}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <LanguageDirectionDropdownMenu
-                    translate={translate}
-                    languageDirection={languageDirection}
-                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
-                  />
-                </td>
-                <td style={{ padding: '0px 0px 0px 120px' }}>
-                  <BookDropdownMenu
-                    translate={translate}
-                    bookId={bookId}
-                    updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId, true)}
-                    developerMode={developerMode}
-                  />
-                </td>
-              </tr>
-              </tbody>
-            </table>
-            <div style={{ display: 'flex', marginLeft: '-40px' }}>
-              <ContributorsArea
-                translate={translate}
-                contributors={contributors}
-                addContributor={this.addContributor.bind(this)}
-                removeContributor={this.removeContributor.bind(this)}
-                contributorsRequiredFieldMessage={this.state.contributorsRequiredFieldMessage}
-                updateContributorName={(contributorName, index) => {
-                    this.setState({ contributorsRequiredFieldMessage: false });
-                    this.props.actions.updateContributorName(contributorName, index);
-                }}
-              />
-              <CheckersArea
-                translate={translate}
-                checkers={checkers}
-                addChecker={this.addChecker.bind(this)}
-                removeChecker={this.removeChecker.bind(this)}
-                checkersRequiredFieldMessage={this.state.checkersRequiredFieldMessage}
-                updateCheckerName={(checkerName, index) => {
-                  this.setState({ checkersRequiredFieldMessage: false });
-                  this.props.actions.updateCheckerName(checkerName, index);
-                }}
-              />
+            <div style={{maxWidth: '600px', margin: '0 auto', display: "flex", flexWrap: "wrap", flexBasic: "50%"}}>
+              <div style={{flex: '1 1', margin: '10px', minWidth:'260px'}}>
+                <LanguageNameTextBox
+                  translate={translate}
+                  languageName={languageName}
+                  languageId={languageId}
+                  updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
+                  updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
+                  updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
+                />
+              </div>
+              <div style={{flex: '1 1', margin: '10px', minWidth:'260px'}}>
+                <TextPrompt
+                  id={'resource_id'}
+                  getErrorMessage={(text) => getResourceIdWarning.call(this, text)}
+                  text={resourceId}
+                  title={translate('projects.resource_id')}
+                  updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(this.limitStringLength(resourceId, maxResourceIdLength))}
+                  required={true}
+                  infoText={getResourceInfoHint()}
+                />
+              </div>
+              <div style={{flex: '1 1', margin: '10px', minWidth:'260px'}}>
+                <LanguageIdTextBox
+                  translate={translate}
+                  languageId={languageId}
+                  updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
+                  updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
+                  updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
+                />
+              </div>
+              <div style={{flex: '1 1', margin: '10px', minWidth:'260px'}}>
+                <TextPrompt
+                  id={'nickname'}
+                  getErrorMessage={() => null}
+                  text={nickname}
+                  title={translate('projects.nickname')}
+                  updateText={(nickname) => this.props.actions.setNicknameInProjectInformationReducer(nickname)}
+                  required={false}
+                  infoText={''}
+                />
+              </div>
+              <div style={{flex: '1 1', margin: '10px', minWidth:'260px'}}>
+                <LanguageDirectionDropdownMenu
+                  translate={translate}
+                  languageDirection={languageDirection}
+                  updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
+                />
+              </div>
+              <div style={{flex: '1 1', margin: '10px', minWidth:'260px'}}>
+                <BookDropdownMenu
+                  translate={translate}
+                  bookId={bookId}
+                  updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId, true)}
+                  developerMode={developerMode}
+                />
+              </div>
+              <div style={{flex: '1 1', margin: '10px', minWidth:'260px'}}>
+                <ContributorsArea
+                  translate={translate}
+                  contributors={contributors}
+                  addContributor={this.addContributor.bind(this)}
+                  removeContributor={this.removeContributor.bind(this)}
+                  contributorsRequiredFieldMessage={this.state.contributorsRequiredFieldMessage}
+                  updateContributorName={(contributorName, index) => {
+                      this.setState({ contributorsRequiredFieldMessage: false });
+                      this.props.actions.updateContributorName(contributorName, index);
+                  }}
+                />
+              </div>
+              <div style={{flex: '1 1', margin: '10px', minWidth:'260px'}}>
+                <CheckersArea
+                  translate={translate}
+                  checkers={checkers}
+                  addChecker={this.addChecker.bind(this)}
+                  removeChecker={this.removeChecker.bind(this)}
+                  checkersRequiredFieldMessage={this.state.checkersRequiredFieldMessage}
+                  updateCheckerName={(checkerName, index) => {
+                    this.setState({ checkersRequiredFieldMessage: false });
+                    this.props.actions.updateCheckerName(checkerName, index);
+                  }}
+                />
+              </div>
             </div>
           </Card>
-        </div>
       </ProjectValidationContentWrapper>
     );
   }

@@ -15,8 +15,8 @@ const CheckersArea = ({
   translate
 }) => {
   return (
-    <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
+    <div>
+      <div>
         <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
         <span style={{ fontWeight: 'bold' }}>{translate('project_validation.checkers')}</span>
       </div>
@@ -30,12 +30,12 @@ const CheckersArea = ({
         />&nbsp;
         <span>{translate('project_validation.add_checker')}</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div>
         {
           checkers.map((checkerName, index) => {
             const showRequiredFieldError = checkersRequiredFieldMessage && index === 0;
             return (
-              <div key={index} style={{ display: 'flex', alignItems: 'center', marginLeft: '30px' }}>
+              <div key={index} style={{marginLeft: '30px' }}>
                 <TextField
                   id={index.toString()}
                   value={checkerName}
