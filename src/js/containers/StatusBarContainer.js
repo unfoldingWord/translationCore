@@ -7,7 +7,7 @@ import StatusBar from "../components/StatusBar";
 // Actions
 import * as BodyUIActions from "../actions/BodyUIActions";
 import {
-  getCurrentToolTitle,
+  getSelectedToolTitle,
   getIsHomeVisible,
   getProjectName,
   getProjectNickname,
@@ -81,7 +81,7 @@ StatusBarContainer.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    toolTitle: getCurrentToolTitle(state),
+    toolTitle: getSelectedToolTitle(state),
     projectName: getProjectName(state),
     projectNickname: getProjectNickname(state),
     username: getUsername(state),

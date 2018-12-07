@@ -6,6 +6,7 @@ import * as groupsIndexHelpers from './groupsIndexHelpers';
 import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./LanguageHelpers";
 import * as ResourcesHelpers from "./ResourcesHelpers";
 import * as BibleHelpers from "./bibleHelpers";
+import { getSelectedToolName } from "../selectors";
 
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
@@ -17,10 +18,10 @@ export const DEFAULT_GATEWAY_LANGUAGE = 'en';
  */
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const { currentProjectToolsSelectedGL } = state.projectDetailsReducer;
-  const { currentToolName } = state.toolsReducer;
+  const toolName = getSelectedToolName(state);
   const { groupsIndex } = state.groupsIndexReducer;
   const { groupId } = contextId || state.contextIdReducer.contextId;
-  const gatewayLanguageCode = currentProjectToolsSelectedGL[currentToolName];
+  const gatewayLanguageCode = currentProjectToolsSelectedGL[toolName];
   const gatewayLanguageQuote = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, groupId).name;
 
   return {
@@ -36,9 +37,8 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
  */
 export const getGatewayLanguageCode = (state) => {
   const currentProjectToolsSelectedGL = state.projectDetailsReducer && state.projectDetailsReducer.currentProjectToolsSelectedGL;
-  const currentToolName = state.toolsReducer && state.toolsReducer.currentToolName;
-  const gatewayLanguageCode = currentProjectToolsSelectedGL && currentProjectToolsSelectedGL[currentToolName];
-  return gatewayLanguageCode;
+  const toolName = getSelectedToolName(state);
+  return currentProjectToolsSelectedGL && currentProjectToolsSelectedGL[toolName];
 };
 
 /**

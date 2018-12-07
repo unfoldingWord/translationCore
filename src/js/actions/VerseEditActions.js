@@ -3,7 +3,7 @@ import types from './ActionTypes';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import {
-  getCurrentToolApi,
+  getSelectedToolApi,
   getSupportingToolApis,
   getUsername
 } from '../selectors';
@@ -81,7 +81,7 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       apis['wordAlignment'].trigger('validateVerse', chapter, verse);
     } else {
       // for wA
-      const api = getCurrentToolApi(newState);
+      const api = getSelectedToolApi(newState);
       if(api !== null && (currentChapter !== chapter || currentVerse !== verse)) {
         api.trigger('validateVerse', chapter, verse);
       }
