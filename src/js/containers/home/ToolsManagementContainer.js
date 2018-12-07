@@ -25,7 +25,7 @@ class ToolsManagementContainer extends Component {
 
   buildCategories() {
     const {tools} = this.props;
-    const categories = [];
+    const categories = {};
     for(let t of tools) {
       const language = getToolGatewayLanguage(t.name);
       const resourceDir = path.join(ospath.home(), 'translationCore', 'resources', language, 'translationHelps', t.name);
