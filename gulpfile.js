@@ -143,7 +143,7 @@ gulp.task('build_binaries', done => {
     BUILD_DIR,
     RELEASE_DIR,
     'scripts',
-    '\\.(?!env)' // TRICKY: exclude hidden files except for .env files
+    '\\.(?!env|compilerc|babelrc)' // TRICKY: exclude hidden files except for .env files
   ]).map(name => {
     return new RegExp('(^/' + name + '|' + '^/node_modules/' + name + ')');
   });
