@@ -2,7 +2,6 @@ import fs from 'fs-extra';
 import path from "path-extra";
 import ospath from "ospath";
 import _ from "lodash";
-// helpers
 import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
 
@@ -41,30 +40,15 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
   });
-  test('(legacy) should allow import of 0.8.1 project with checking', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath)).resolves.toBeUndefined();
-  });
   test('should allow import of 0.8.0 project with checking', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProject_0_8_0(projectPath);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
   });
-  test('(legacy) should allow import of 0.8.0 project with checking', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    makeProject_0_8_0(projectPath);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath)).resolves.toBeUndefined();
-  });
   test('should not allow import of 0.7.0 project with checking', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProject_0_7_0(projectPath);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).rejects.toEqual(expectedRejection);
-  });
-  test('(legacy) should not allow import of 0.7.0 project with checking', () => {
-
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    makeProject_0_7_0(projectPath);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, k=>k)).rejects.toEqual(expectedRejection);
   });
   test('should allow import of 0.7.0 project without checking', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
@@ -72,21 +56,10 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     makeProject_0_7_0(projectPath);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
   });
-  test('(legacy) should allow import of 0.7.0 project without checking', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    fs.removeSync(path.join(projectPath, ".apps/translationCore/checkData/selections"));
-    makeProject_0_7_0(projectPath);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath)).resolves.toBeUndefined();
-  });
   test('should allow import of 0.9.0 project with checking', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProject_0_9_0(projectPath);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
-  });
-  test('(legacy) should allow import of 0.9.0 project with checking', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    makeProject_0_9_0(projectPath);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath)).resolves.toBeUndefined();
   });
   test('should allow import of 0.9.0 project without checking', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
@@ -94,51 +67,25 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     makeProject_0_9_0(projectPath);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
   });
-  test('(legacy) should allow import of 0.9.0 project without checking', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    fs.removeSync(path.join(projectPath, ".apps/translationCore/checkData/selections"));
-    makeProject_0_9_0(projectPath);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath)).resolves.toBeUndefined();
-  });
   test('should allow import of pre-0.7.0 project without checking', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectPre_0_7_0(projectPath);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
-  });
-  test('(legacy) should allow import of pre-0.7.0 project without checking', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    makeProjectPre_0_7_0(projectPath);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath)).resolves.toBeUndefined();
   });
   test('should not allow import of pre-0.7.0 project with notes checking', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectPre_0_7_0(projectPath, true, false);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).rejects.toEqual(expectedRejection);
   });
-  test('(legacy) should not allow import of pre-0.7.0 project with notes checking', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    makeProjectPre_0_7_0(projectPath, true, false);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, k=>k)).rejects.toEqual(expectedRejection);
-  });
   test('should not allow import of pre-0.7.0 project with word checking', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectPre_0_7_0(projectPath, false, true);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).rejects.toEqual(expectedRejection);
   });
-  test('(legacy) should not allow import of pre-0.7.0 project with word checking', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    makeProjectPre_0_7_0(projectPath, false, true);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, k=>k)).rejects.toEqual(expectedRejection);
-  });
   test('should allow import of tStudio project', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectTstudio(projectPath);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
-  });
-  test('(legacy) should allow import of tStudio project', () => {
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    makeProjectTstudio(projectPath);
-    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath)).resolves.toBeUndefined();
   });
 });
 

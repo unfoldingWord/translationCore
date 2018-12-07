@@ -21,9 +21,6 @@ Array [
     "type": "CLOSE_ALERT_DIALOG",
   },
   Object {
-    "type": "CLOSE_ALERT_DIALOG",
-  },
-  Object {
     "type": "RESET_PROJECT_DETAIL",
   },
   Object {
@@ -170,6 +167,9 @@ Array [
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
     "stepIndex": 3,
     "type": "GO_TO_STEP",
   },
@@ -192,9 +192,6 @@ Array [
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
-  },
-  Object {
-    "type": "CLOSE_ALERT_DIALOG",
   },
   Object {
     "type": "CLOSE_ALERT_DIALOG",
@@ -496,6 +493,9 @@ Array [
   Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
   },
   Object {
     "stepIndex": 3,

@@ -12,7 +12,7 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate, getUsername } from '../../selectors';
-import {isProjectSupported, ensureSupportedVersion} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -42,7 +42,6 @@ export const openProject = (name) => {
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
       await dispatch(validateProject(projectDir));
-      // TODO: load the project data here
       dispatch(closeAlertDialog());
       await dispatch(displayTools());
     } catch (e) {
@@ -53,38 +52,6 @@ export const openProject = (name) => {
       dispatch(clearLastProject());
       dispatch(openAlertDialog(e));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-    }
-  };
-};
-
-/**
- * @deprecated This action is deprecated. Use {@link openProject} instead.
- * This thunk migrates, validates, then loads a project.
- * This may seem redundant to run migrations and validations each time
- * But the helpers called from each action test to only run when needed
- * @param {string} projectName - the name of the project
- */
-export const migrateValidateLoadProject = (projectName) => {
-  return async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    try {
-      dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
-      await delay(200);
-      const projectPath = path.join(PROJECTS_PATH, projectName);
-      await ensureSupportedVersion(projectPath, translate);
-      migrateProject(projectPath, null, getUsername(getState()));
-      dispatch(closeAlertDialog());
-      await dispatch(validateProject(projectPath));
-      await dispatch(displayTools());
-    } catch (error) {
-      if (error.type !== 'div') console.warn(error);
-      // clear last project must be called before any other action.
-      // to avoid triggering autosaving.
-      dispatch(clearLastProject());
-      dispatch(openAlertDialog(error));
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
   };
 };
