@@ -45,7 +45,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             const remoteUrl = GogsApiHelpers.getRepoOwnerUrl(user,
               remoteRepo.name);
 
-            const repo = new Repo(projectPath, user);
+            const repo = await Repo.open(projectPath, user);
             await repo.addRemote(remoteUrl, "origin");
             await repo.save("Commit before upload");
 

@@ -54,11 +54,11 @@ function makeAuthor(user) {
 export function readGitDir(dir) {
   return new Promise((resolve, reject) => {
     const paths = [];
-    const ig = ignore().add(['.git']);
+    const ig = ignore().add([".git"]);
 
     // load .gitignore
-    const ignorePath = path.join(dir, '.gitignore');
-    if(fs.pathExistsSync(ignorePath)) {
+    const ignorePath = path.join(dir, ".gitignore");
+    if (fs.pathExistsSync(ignorePath)) {
       ig.add(fs.readFileSync(ignorePath).toString());
     }
 
@@ -76,7 +76,8 @@ export function readGitDir(dir) {
       }).
       on("end", () => {
         // remove directories from list
-        resolve(paths.filter(file => !fs.statSync(path.join(dir, file)).isDirectory()));
+        resolve(paths.filter(
+          file => !fs.statSync(path.join(dir, file)).isDirectory()));
       });
   });
 }
@@ -87,12 +88,40 @@ export function readGitDir(dir) {
 export default class Repo {
 
   /**
+   * Initializes a new repo handler. If you don't know what you are doing use {@link open} instead.
    * @param {string} dir - the file path to the local repository
    * @param {object} [user] - the user object that contains names, passwords, and tokens
    */
   constructor(dir, user = {}) {
     this.dir = dir;
     this.user = user;
+  }
+
+  /**
+   * Returns an init'd instance of {@link Repo}.
+   * Use this to safely open directories that will receive git operations.
+   * An {@link init} will be performed on plain directories.
+   *
+   * @param {string} dir - the directory to open
+   * @param {object} [user] - the user object that contains names, passwords. and tokens
+   * @returns {Promise<Repo>}
+   */
+  static async open(dir, user={}) {
+    const ok = await Repo.isRepo(dir);
+    if (!ok) {
+      await Repo.init(dir);
+    }
+    return new Repo(dir, user);
+  }
+
+  /**
+   * Checks if the directory is an initialized git repository.
+   * @param {string} dir - the directory to inspect
+   * @return {boolean} true if the repo has been initialized.
+   */
+  static async isRepo(dir) {
+    const gitPath = path.join(dir, ".git");
+    return await fs.pathExists(gitPath);
   }
 
   /**
