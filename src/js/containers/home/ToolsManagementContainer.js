@@ -23,6 +23,14 @@ class ToolsManagementContainer extends Component {
     this.buildCategories = this.buildCategories.bind(this);
   }
 
+  componentDidMount() {
+    // TODO: move the tool connecting into {@link ToolsCards}
+    // TODO: connect tools here
+  }
+
+  /**
+   * TODO: move this into {@link ToolsCards}
+   */
   buildCategories() {
     const {tools} = this.props;
     const categories = {};

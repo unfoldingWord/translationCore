@@ -52,7 +52,6 @@ class ToolContainer extends Component {
     this.makeToolProps = this.makeToolProps.bind(this);
     this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
     this.onDeleteProjectFile = this.onDeleteProjectFile.bind(this);
-    this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
     this.onProjectDataPathExistsSync = this.onProjectDataPathExistsSync.bind(
       this);
     this.onProjectDataPathExists = this.onProjectDataPathExists.bind(this);
@@ -172,16 +171,6 @@ class ToolContainer extends Component {
       '.apps/translationCore/', filePath);
     const data = fs.readFileSync(readPath);
     return data.toString();
-  }
-
-  /**
-   * Synchronously checks if a file exists in the project data path.
-   * @deprecated use {@link onProjectDataPathExistsSync} instead
-   * @param {string} filePath - the relative path who's existence will be checked
-   * @return {*}
-   */
-  onProjectFileExistsSync (filePath) {
-    return this.onProjectDataPathExistsSync(filePath);
   }
 
   /**
@@ -314,12 +303,13 @@ class ToolContainer extends Component {
       selectedToolName
     } = nextProps;
     return {
+      // tC api
       readProjectDir: this.onReadProjectDir,
       readProjectDirSync: this.onReadProjectDirSync,
       writeProjectData: this.onWriteProjectData,
       readProjectData: this.onReadProjectData,
       readProjectDataSync: this.onReadProjectDataSync,
-      projectFileExistsSync: this.onProjectFileExistsSync,
+      projectFileExistsSync: this.onProjectDataPathExistsSync, // TODO: this is deprecated
       projectDataPathExists: this.onProjectDataPathExists,
       projectDataPathExistsSync: this.onProjectDataPathExistsSync,
       deleteProjectFile: this.onDeleteProjectFile,
@@ -327,18 +317,22 @@ class ToolContainer extends Component {
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
       showIgnorableDialog: this.onShowIgnorableDialog,
+      appLanguage: code,
+      toolsReducer: this.legacyToolsReducer(), // TODO: deprecated
+
+      // menu location
       contextId,
+
+      // project data
       targetVerseText,
       sourceVerse,
       targetChapter,
       sourceChapter,
-      targetBible, // TODO: deprecate
+      targetBible, // TODO: deprecated
       targetBook: targetBible,
-      sourceBible, // TODO: deprecate
+      sourceBible, // TODO: deprecated
       sourceBook: sourceBible,
-      appLanguage: code,
-      selectedToolName,
-      toolsReducer: this.legacyToolsReducer() // TRICKY: temporary hack for tW
+      selectedToolName
     };
   }
 

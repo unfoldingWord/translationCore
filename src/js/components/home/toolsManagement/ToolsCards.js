@@ -5,6 +5,24 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui';
 
+/**
+ * Renders a list of tools.
+ * TODO: rename this to ToolsList and make it a self contained container with supporting components
+ * @param tools
+ * @param actions
+ * @param translate
+ * @param bookName
+ * @param loggedInUser
+ * @param projectSaveLocation
+ * @param currentProjectToolsProgress
+ * @param manifest
+ * @param invalidatedReducer
+ * @param developerMode
+ * @param selectedCategories
+ * @param availableCategories
+ * @returns {*}
+ * @constructor
+ */
 const ToolsCards = ({
   tools,
   actions,
