@@ -1,12 +1,13 @@
-import Gogs from 'gogs-client';
-import CryptoJS from 'crypto-js';
-import * as git from './GitApi';
-import fs from 'fs-extra';
+import Gogs from "gogs-client";
+import CryptoJS from "crypto-js";
+import Repo from "./Repo";
+import fs from "fs-extra";
 import path from "path-extra";
 // constants
-const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'translation-core'};
+const api = new Gogs("https://git.door43.org/api/v1"),
+  tokenStub = { name: "translation-core" };
 const SECRET = "tc-core";
-export const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
+export const TC_OLD_ORIGIN_KEY = "tc_oldOrigin";
 
 /**
  * @description - Login a user and get a user object with token back.
@@ -15,25 +16,20 @@ export const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
  */
 export const login = (userObj) => {
   return api.getUser(userObj).then(user => {
-    return api.listTokens(userObj)
-      .then(function(tokens) {
-        return tokens.find((el) => el.name === tokenStub.name);
-      })
-
-      .then(function(token) {
-        return token ? token : api.createToken(tokenStub, userObj);
-      })
-
-      .then(function(token) {
-        user.token = token.sha1;
-        let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), SECRET);
-        try {
-          localStorage.setItem('user', encryptedToken);
-        } catch (e) {
-          //
-        }
-        return user;
-      });
+    return api.listTokens(userObj).then(function(tokens) {
+      return tokens.find((el) => el.name === tokenStub.name);
+    }).then(function(token) {
+      return token ? token : api.createToken(tokenStub, userObj);
+    }).then(function(token) {
+      user.token = token.sha1;
+      let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), SECRET);
+      try {
+        localStorage.setItem("user", encryptedToken);
+      } catch (e) {
+        //
+      }
+      return user;
+    });
   });
 };
 
@@ -46,11 +42,11 @@ export const login = (userObj) => {
  */
 export const createRepo = (user, reponame) => {
   return api.listRepos(user).then(function(repos) {
-    return repos.find((el) => el.full_name === user.username + '/' + reponame);
+    return repos.find((el) => el.full_name === user.username + "/" + reponame);
   }).then(function(repo) {
     return repo ? repo : api.createRepo({
       name: reponame,
-      description: 'tc-desktop: ' + reponame,
+      description: "tc-desktop: " + reponame,
       private: false
     }, user);
   });
@@ -73,7 +69,7 @@ export const getRepoOwnerUrl = (user, projectName) => {
  * @return {string}
  */
 export const getUserTokenDoor43Url = (user, repoName) => {
-  return 'https://' + user.token + '@git.door43.org/' + repoName + '.git';
+  return "https://" + user.token + "@git.door43.org/" + repoName + ".git";
 };
 
 /**
@@ -95,32 +91,33 @@ export const getUserDoor43Url = (user, projectName) => {
  */
 export const renameRepo = async (newName, projectPath, user) => {
   try {
-    const {name: repoName, user: originalUser} = await git.getRepoNameInfo(projectPath);
+    const repo = new Repo(projectPath);
+    const remote = await repo.getRemote();
+    const newRemoteURL = getRepoOwnerUrl(user, newName);
 
-    /** If new repo name exits already then we can not change to that */
-    await throwIfRemoteRepoExists(getRepoOwnerUrl(user, newName));
+    // cannot rename to existing remote repo
+    await throwIfRemoteRepoExists(newRemoteURL);
 
-    if (originalUser === user.username) { // only try to delete a repo from same user
-      /** Deleting remote repo */
-      await api.deleteRepo({name: repoName}, user).catch(() => {});
+    if (remote.owner === user.username) {
+      // delete current repo
+      await api.deleteRepo({ name: remote.name }, user).catch(() => {
+      });
 
-      /** Deleting old saved repo if exists */
-      const oldRepoUlr = await getSavedRemote(projectPath, TC_OLD_ORIGIN_KEY);
-      if (oldRepoUlr) {
-        const {name: oldRepo} = git.parseRepoUrl(oldRepoUlr);
-        if (oldRepo !== repoName) { // if the saved old origin is different, then remove it
-          await api.deleteRepo({name: oldRepo}, user).catch(() => {});
-        }
+      // delete legacy remote repo
+      const legacyRemote = await repo.getRemote(TC_OLD_ORIGIN_KEY);
+      if (legacyRemote && legacyRemote.name !== remote.name) {
+        await api.deleteRepo({ name: legacyRemote.name }, user).catch(() => {
+        });
       }
     }
 
-    await git.clearRemote(projectPath, TC_OLD_ORIGIN_KEY).catch(() => {}); // clear after deletion
+    // remove legacy key
+    await repo.removeRemote(TC_OLD_ORIGIN_KEY);
 
-    /** Creating repo on remote */
+    // create new repo
     await createRepo(user, newName);
-    await git.renameRepoLocally(user, newName, projectPath);
-    /** Pushing renamed repo */
-    await git.pushNewRepo(projectPath, user, newName);
+    await repo.addRemote(newRemoteURL);
+    await repo.push();
   } catch (e) {
     console.error(e);
     throw e;
@@ -136,12 +133,13 @@ export const renameRepo = async (newName, projectPath, user) => {
  */
 export const createNewRepo = async (newName, projectPath, user) => {
   try {
-    await git.clearRemote(projectPath, TC_OLD_ORIGIN_KEY).catch(() => {}); // clear old connection since we are renaming
-    /** Creating repo on remote */
+    const newRemoteURL = getUserDoor43Url(user, newName);
+    const repo = new Repo(projectPath);
+    await repo.removeRemote(TC_OLD_ORIGIN_KEY);// clear old connection since we are renaming
+
     await createRepo(user, newName);
-    await git.renameRepoLocally(user, newName, projectPath);
-    /** Pushing renamed repo */
-    await git.pushNewRepo(projectPath, user, newName);
+    await repo.addRemote(newRemoteURL);
+    await repo.push();
   } catch (e) {
     console.error(e);
     throw e;
@@ -152,15 +150,16 @@ export const createNewRepo = async (newName, projectPath, user) => {
  * @description Rejects if the given repo url exists
  * @param {string} repoOwnerUrl - The git url of the repo
  * i.e. https://github.com/unfoldingWord-dev/translationCore
- * @returns {Promise} - resolves if the remote does not exist
+ * @returns {Promise<boolean>} - resolves if the remote does not exist
  */
-export const throwIfRemoteRepoExists = (repoOwnerUrl) => {
-  return new Promise((resolve, reject) => {
-    //This will throw if the repo does not exist;
-    git.getRemoteRepoHead(repoOwnerUrl).then(() => {
-      reject('Remote repository already exists.');
-    }).catch(resolve);
-  });
+export const throwIfRemoteRepoExists = async (repoOwnerUrl) => {
+  try {
+    await Repo.getRemoteInfo(repoOwnerUrl);
+  } catch (e) {
+    return true;
+  }
+
+  throw new Error(`Remote repo ${repoOwnerUrl} already exists.`);
 };
 
 /**
@@ -170,7 +169,7 @@ export const throwIfRemoteRepoExists = (repoOwnerUrl) => {
  * from localstorage
  */
 export const getLocalUser = () => {
-  let loggedInUserEncrypted = localStorage.getItem('user');
+  let loggedInUserEncrypted = localStorage.getItem("user");
   const bytes = CryptoJS.AES.decrypt(loggedInUserEncrypted.toString(), SECRET);
   const plaintext = bytes.toString(CryptoJS.enc.Utf8);
   return JSON.parse(plaintext);
@@ -184,9 +183,9 @@ export const getLocalUser = () => {
  * @return {Promise} - Returns a promise with a repo object.
  */
 export const findRepo = (user, reponame) => {
-  const matchName = user.username + '/' + reponame;
-  return new Promise((resolve,reject) => {
-    api.listRepos(user).then(function (repos) {
+  const matchName = user.username + "/" + reponame;
+  return new Promise((resolve, reject) => {
+    api.listRepos(user).then(function(repos) {
       resolve(repos.find((el) => {
         const foundMatch = el.full_name === matchName;
         return (foundMatch);
@@ -200,21 +199,18 @@ export const findRepo = (user, reponame) => {
 
 /**
  * find saved remote for name, ignores errors
- * @param {String} projectPath
- * @param {String} remoteName
- * @return {Promise<any>}
+ * @param {String} projectPath - the project path
+ * @param {String} remoteName - the name of the remote
+ * @return {Promise<string|null>} The remote url or null if not found
  */
-export const getSavedRemote = (projectPath, remoteName) => {
-  return new Promise((resolve) => {
-    git.getSavedRemote(projectPath, remoteName).then((remote) => {
-      if (remote) { // if found get url from remote object
-        remote = remote.refs.push || remote.refs.fetch;
-      }
-      resolve(remote);
-    }).catch(() => {
-      resolve(null);
-    });
-  });
+export const getSavedRemote = async (projectPath, remoteName) => {
+  const repo = new Repo(projectPath);
+  const remote = await repo.getRemote(remoteName);
+  if (remote) {
+    return remote.url;
+  } else {
+    return null;
+  }
 };
 
 /**
@@ -223,19 +219,20 @@ export const getSavedRemote = (projectPath, remoteName) => {
  * @param userdata
  * @param {string} oldOrigin - url to save as old
  */
-export const updateGitRemotes = async (projectSaveLocation, userdata, oldOrigin) => {
+export const updateGitRemotes = async (
+  projectSaveLocation, userdata, oldOrigin) => {
   const projectName = path.basename(projectSaveLocation);
   const newOriginUrl = getRepoOwnerUrl(userdata, projectName);
   if (oldOrigin) {
     try {
       await saveRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY, oldOrigin);
-    } catch(e) {
+    } catch (e) {
       console.log(e);
     }
   }
   if (newOriginUrl) {
     try {
-      await saveRemote(projectSaveLocation, 'origin', newOriginUrl);
+      await saveRemote(projectSaveLocation, "origin", newOriginUrl);
     } catch (e) {
       console.log(e);
     }
@@ -251,14 +248,12 @@ export const updateGitRemotes = async (projectSaveLocation, userdata, oldOrigin)
  */
 export const saveRemote = async (projectPath, remoteName, url) => {
   try {
-    const oldUrl = await getSavedRemote(projectPath, remoteName);
-    if (oldUrl) {
-      await git.clearRemote(projectPath, remoteName).catch(() => {}); // clear after deletion
-    }
-    await git.saveRemote(projectPath, remoteName, url);
+    const repo = new Repo(projectPath);
+    await repo.addRemote(url, remoteName);
   } catch (e) {
     console.log(e);
-  }};
+  }
+};
 
 /**
  * display prompt that project as been renamed
@@ -266,17 +261,17 @@ export const saveRemote = async (projectPath, remoteName, url) => {
  * @param {Object} userdata
  * @return {Promise} - Returns a promise
  */
-export const changeGitToPointToNewRepo = async (projectSaveLocation, userdata) => {
-  let saveUrl = '';
+export const changeGitToPointToNewRepo = async (
+  projectSaveLocation, userdata) => {
+  let saveUrl = "";
   try {
     const oldUrl = await getSavedRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY);
     if (!oldUrl) { // if old origin not saved, we need to save current
-      saveUrl = await getSavedRemote(projectSaveLocation, 'origin');
+      saveUrl = await getSavedRemote(projectSaveLocation, "origin");
     }
     await updateGitRemotes(projectSaveLocation, userdata, saveUrl);
     return true;
-  } catch(e) {
-    console.log(e);
+  } catch (e) {
     throw(e);
   }
 };
@@ -291,20 +286,20 @@ export const getProjectInfo = async (projectSaveLocation, userData) => {
   const new_repo_name = path.basename(projectSaveLocation);
   let oldUrl = await getSavedRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY);
   if (!oldUrl) { // if old origin not saved, we use current
-    oldUrl = await getSavedRemote(projectSaveLocation, 'origin');
+    oldUrl = await getSavedRemote(projectSaveLocation, "origin");
   }
-  let old_repo_name = '(unknown)';
-  let user_name = '(unknown)';
+  let old_repo_name = "(unknown)";
+  let user_name = "(unknown)";
   try {
-    let {name, user} = git.parseRepoUrl(oldUrl);
+    let { name, owner: user } = Repo.parseRemoteUrl(oldUrl);
     old_repo_name = name;
     user_name = user;
-  } catch(e) {
+  } catch (e) {
     if (userData) {
       user_name = userData.username;
     }
   }
-  return {new_repo_name, old_repo_name, user_name };
+  return { new_repo_name, old_repo_name, user_name };
 };
 
 /**
@@ -313,16 +308,20 @@ export const getProjectInfo = async (projectSaveLocation, userData) => {
  * @param {Object} login data
  * @return {*}
  */
-export const hasGitHistoryForCurrentUser = async (projectSaveLocation, login) => {
+export const hasGitHistoryForCurrentUser = async (
+  projectSaveLocation, login) => {
   try {
     if (login && login.userdata && login.loggedInUser) {
-      if (fs.pathExistsSync(path.join(projectSaveLocation, '.git'))) {
-        const remoteUrl = await getSavedRemote(projectSaveLocation, 'origin');
-        let {user} = git.parseRepoUrl(remoteUrl);
-        return (user === login.userdata.username);
+      if (fs.pathExistsSync(path.join(projectSaveLocation, ".git"))) {
+        const remoteUrl = await getSavedRemote(projectSaveLocation, "origin");
+        const info = Repo.parseRemoteUrl(remoteUrl);
+        if(info) {
+          let { owner: user } = info;
+          return (user === login.userdata.username);
+        }
       }
     }
-  } catch(e) {
+  } catch (e) {
     console.log(e);
   }
   return false;

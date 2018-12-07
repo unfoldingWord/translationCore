@@ -1,5 +1,5 @@
 import * as nonTranslatable from '../../locale/nonTranslatable';
-import BooksOfTheBible from "../common/BooksOfTheBible";
+import * as BooksOfTheBible from "../common/BooksOfTheBible";
 const translatable = require('../../locale/English-en_US.json');
 
 /**
@@ -18,6 +18,7 @@ export const getTranslation = function (translate, text, deflt, params = {}) {
   let translation = nonTranslatable[key]; // check for static translation
   if (!translation && translate) { // if not found, try translation lookup
     const shouldHaveTranslation = getNestedKey(translatable, key); // if we should have a dynamic translation
+    console.log(shouldHaveTranslation);
     if (shouldHaveTranslation) {
       translation = translate(key, params);
     }
@@ -67,9 +68,10 @@ export const getLanguageTranslation = (translate, languageName, languageCode) =>
  * @return {String}
  */
 export const getBookTranslation = (translate, bookName, bookCode) => {
+  const allBooks = BooksOfTheBible.getAllBibleBooks();
   if (!bookCode && bookName) { // we need to lookup book code
-    for (let key of Object.keys(BooksOfTheBible.newTestament)) {
-      if (BooksOfTheBible.newTestament[key].toLowerCase() === bookName.toLowerCase()) {
+    for (let key of Object.keys(allBooks)) {
+      if (allBooks[key].toLowerCase() === bookName.toLowerCase()) {
         bookCode = key;
         break;
       }
@@ -78,11 +80,17 @@ export const getBookTranslation = (translate, bookName, bookCode) => {
 
   let translation = null;
   if (bookCode) {
-    translation = getTranslation(translate, "book_list.nt." + bookCode, null, {book_id: bookCode});
+    let keyPrefix = 'book_list.';
+    if (BooksOfTheBible.BIBLE_BOOKS.newTestament[bookCode])
+      keyPrefix += 'nt.';
+    else
+      keyPrefix += 'ot.';
+    translation = getTranslation(translate, keyPrefix + bookCode, null, {book_id: bookCode});
   }
+
   if (!translation) { // if no translation, make default
     if (!bookName && bookCode) { // we need to lookup book name
-      bookName = BooksOfTheBible.newTestament[bookCode];
+      bookName = allBooks[bookCode];
     }
     if (bookName) {
       translation = bookName;

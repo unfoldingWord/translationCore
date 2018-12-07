@@ -14,8 +14,9 @@ const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 /**
  * Helper method to retrieve the greek chapter object according to specified book/chapter
  *
- * @param {string} bookId  - Abbreviation of book name
+ * @param projectSaveLocation
  * @param {number} chapter  - Current chapter from the contextId
+ * @param verse
  * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
  */
 export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) => {
@@ -29,25 +30,29 @@ export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) 
 };
 
 /**
+ * Returns paths to the alignment data if it exits.
  *
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
 export const getAlignmentPathsFromProject = (projectSaveLocation) => {
-  let chapters, wordAlignmentDataPath, projectTargetLanguagePath;
+  let chapters = [];
   //Retrieve project manifest, and paths for reading
   const {project} = manifestHelpers.getProjectManifest(projectSaveLocation);
   if (project && project.id) {
-    wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
-    projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
+    const wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
+    const projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
     if (fs.existsSync(wordAlignmentDataPath) && fs.existsSync(projectTargetLanguagePath)) {
       chapters = fs.readdirSync(wordAlignmentDataPath);
       //get integer based chapter files
       chapters = chapters.filter((chapterFile) => !!parseInt(path.parse(chapterFile).name));
       return {
-        chapters, wordAlignmentDataPath, projectTargetLanguagePath,
+        chapters,
+        wordAlignmentDataPath,
+        projectTargetLanguagePath
       };
     }
-  } return {};
+  }
+  return {};
 };
 
 /**
@@ -118,6 +123,7 @@ function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) 
 
 /**
  * Method to retrieve project alignment data and perform conversion in usfm 3
+ * TODO: this will eventually become deprecated in favor of a separate conversion tool either imported dirrectly or accessed through the tool api.
  * @param {string} wordAlignmentDataPath
  * @param {string} projectTargetLanguagePath
  * @param {array} chapters aligned
@@ -127,6 +133,10 @@ function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) 
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
   chapters, projectSaveLocation, projectID) => {
+  if(!chapters) {
+    chapters = [];
+  }
+
   return new Promise((resolve, reject) => {
     let usfmToJSONObject = {headers: {}, chapters: {}};
     let expectedChapters = 0;
@@ -375,7 +385,7 @@ export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
  */
 export function checkProjectForAlignments(wordAlignmentDataPath, chapters) {
   let hasAlignments = false;
-  if (fs.existsSync(wordAlignmentDataPath)) {
+  if (wordAlignmentDataPath && fs.existsSync(wordAlignmentDataPath)) {
     for (var chapterFile of chapters) {
       const wordAlignmentJSON = fs.readJSONSync(path.join(wordAlignmentDataPath, chapterFile));
       hasAlignments = Object.keys(wordAlignmentJSON).filter((chapterNumber) => {
