@@ -17,7 +17,7 @@ const CheckersArea = ({
   return (
     <div>
       <div>
-        <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
+        <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000", verticalAlign: "top" }} />&nbsp;
         <span style={{ fontWeight: 'bold' }}>{translate('project_validation.checkers')}</span>
       </div>
       <div

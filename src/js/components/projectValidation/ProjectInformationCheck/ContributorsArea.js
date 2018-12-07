@@ -17,7 +17,7 @@ const ContributorsArea = ({
   return (
     <div>
       <div>
-        <GroupIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
+        <GroupIcon style={{ height: "28px", width: "28px", color: "#000000", verticalAlign: "top" }} />&nbsp;
         <span style={{ fontWeight: 'bold' }}>{translate('project_validation.contributors')}</span>
       </div>
       <div
