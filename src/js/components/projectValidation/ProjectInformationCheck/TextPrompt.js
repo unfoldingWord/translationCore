@@ -46,16 +46,17 @@ const TextPrompt = ({
   return (
     <div
       style={{
-      marginTop: '20px',
-      paddingTop: 0,
-      paddingBottom: 0,
-      paddingLeft: 0,
-      paddingRight: 0,
-      color: '#000',
-      fontSize: '16px',
-      fontWeight: 'bold',
-      lineHeight: '16px'
-    }}>
+        marginTop: '20px',
+        paddingTop: 0,
+        paddingBottom: 0,
+        paddingLeft: 0,
+        paddingRight: 0,
+        color: '#000',
+        fontSize: '16px',
+        fontWeight: 'bold',
+        lineHeight: '16px'
+      }}
+    >
       <label htmlFor={id} style={{margin: 0}}>
         <Glyphicon glyph={'book'} style={{color: '#000000', fontSize: '16px'}}/>
         &nbsp;
