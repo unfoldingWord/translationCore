@@ -188,6 +188,10 @@ describe('ResourcesHelpers.copyGroupsDataToProjectResources', () => {
       'grc/translationHelps'
     ];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, RESOURCE_PATH);
+    const copyTCresourceFiles = [
+      'en'
+    ];
+    fs.__loadFilesIntoMockFs(copyTCresourceFiles, sourceResourcesPath,  path.join(__dirname, '../tcResources'));
   });
   it('should copy the entire resources groups to the user project directory', ()=> {
     fs.removeSync(groupsDataDirectory);
@@ -197,5 +201,11 @@ describe('ResourcesHelpers.copyGroupsDataToProjectResources', () => {
   it('should only copy checks not already present to the user project directory', ()=> {
     ResourcesHelpers.copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation, category);
     expect(fs.readdirSync(groupsDataDirectory)).toContain('clean.json');
+  });
+  it.only('should only copy checks not already present to the user project directory', ()=> {
+    currentToolName = 'wordAlignment';
+    fs.removeSync(groupsDataDirectory);
+    ResourcesHelpers.copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation, category);
+    expect(fs.readdirSync(groupsDataDirectory)).toMatchObject(["chapter_1.json", "chapter_2.json", "chapter_3.json"]);
   });
 });

@@ -38,7 +38,7 @@ export const updateCheckSelection = (id, value, toolName) => {
     */
     const update = (array) => {
       const exists = array.indexOf(id) >= 0;
-      if (exists && value === true) return;
+      if (exists && value === true) return array;
       else if (exists && value === false) {
         return array.filter((el) => el !== id);
       }
