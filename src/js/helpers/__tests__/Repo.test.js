@@ -4,7 +4,7 @@ import fs from "fs-extra";
 
 jest.unmock("fs-extra");
 
-describe("parse remote url", () => {
+describe("static methods", () => {
   it("should return the project name of a git.door43.org link", () => {
     let url = "https://git.door43.org/richmahn/en_tit_ulb.git";
     let projectName = Repo.parseRemoteUrl(url);
@@ -15,9 +15,7 @@ describe("parse remote url", () => {
       "owner": "richmahn"
     });
   });
-});
 
-describe("readGitDir", () => {
   it("lists files in a directory", async () => {
     const readPath = path.normalize(__dirname);
     const files = await readGitDir(readPath);
@@ -33,7 +31,11 @@ describe("readGitDir", () => {
     }
   });
 
-
+  it("check if the directory is a git repo", async () => {
+    const dir = path.join(__dirname, "../../../../"); // use this repo as a benchmark
+    expect(await Repo.isRepo(dir)).toEqual(true);
+    expect(await Repo.isRepo("missing")).toEqual(false);
+  });
 });
 
 describe("sanitize remote url", () => {
