@@ -65,7 +65,7 @@ export default toolsReducer;
 /**
  * Returns the loaded tools
  * @param state
- * @returns {[]}
+ * @returns {object[]}
  */
 export const getTools = state => {
   if(state) {
