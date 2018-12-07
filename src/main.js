@@ -14,7 +14,7 @@ const dialog = electron.dialog;
 // be closed automatically when the JavaScript object is garbage collected.
 
 let mainWindow;
-// let helperWindow;
+let helperWindow;
 let splashScreen;
 
 const downloadManager = new DownloadManager();
@@ -89,33 +89,33 @@ function createMainSplash() {
   });
 }
 
-// function createHelperWindow(url) {
-//   helperWindow = new BrowserWindow({
-//     width: 950,
-//     height: 660,
-//     minWidth: 950,
-//     minHeight: 580,
-//     useContentSize: true,
-//     center: true,
-//     autoHideMenuBar: true,
-//     show: true,
-//     frame: true
-//   });
+function createHelperWindow(url) {
+  helperWindow = new BrowserWindow({
+    width: 950,
+    height: 660,
+    minWidth: 950,
+    minHeight: 580,
+    useContentSize: true,
+    center: true,
+    autoHideMenuBar: true,
+    show: true,
+    frame: true
+  });
 
-//   helperWindow.loadURL(url);
+  helperWindow.loadURL(url);
 
-//   helperWindow.on('closed', () => {
-//     helperWindow = null;
-//   });
+  helperWindow.on('closed', () => {
+    helperWindow = null;
+  });
 
-//   helperWindow.on('maximize', () => {
-//     helperWindow.webContents.send('maximize');
-//   });
+  helperWindow.on('maximize', () => {
+    helperWindow.webContents.send('maximize');
+  });
 
-//   helperWindow.on('unmaximize', () => {
-//     helperWindow.webContents.send('unmaximize');
-//   });
-// }
+  helperWindow.on('unmaximize', () => {
+    helperWindow.webContents.send('unmaximize');
+  });
+}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -183,11 +183,11 @@ ipcMain.on('load-local', function (event, arg) {
   event.returnValue = input || false;
 });
 
-// ipcMain.on('open-helper', (event, url = "http://git.door43.org/") => {
-//     if (helperWindow) {
-//         helperWindow.show();
-//         helperWindow.loadURL(url);
-//     } else {
-//         createHelperWindow(url);
-//     }
-// });
+ipcMain.on('open-helper', (event, url = "http://git.door43.org/") => {
+    if (helperWindow) {
+        helperWindow.show();
+        helperWindow.loadURL(url);
+    } else {
+        createHelperWindow(url);
+    }
+});
