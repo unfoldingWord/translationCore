@@ -225,17 +225,17 @@ export const saveReminders = state => {
 export const saveGroupsData = (state, prevState) => {
   try {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    const currentToolName = state.contextIdReducer.contextId ?
+    const toolName = state.contextIdReducer.contextId ?
                state.contextIdReducer.contextId.tool : undefined;
     const bookAbbreviation = state.contextIdReducer.contextId ?
                            state.contextIdReducer.contextId.reference.bookId : undefined;
-    if (PROJECT_SAVE_LOCATION && currentToolName && bookAbbreviation) {
+    if (PROJECT_SAVE_LOCATION && toolName && bookAbbreviation) {
       const groupsData = state.groupsDataReducer.groupsData;
       const oldGroupsData = prevState.groupsDataReducer.groupsData;
       for (let groupID in groupsData) {
         if (groupsData[groupID] && !isEqual(groupsData[groupID], oldGroupsData[groupID])) {
           const fileName = groupID + ".json";
-          const savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, bookAbbreviation, fileName);
+          const savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, bookAbbreviation, fileName);
           fs.outputJsonSync(savePath, groupsData[groupID]);
         }
       }

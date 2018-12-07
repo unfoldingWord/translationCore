@@ -43,17 +43,13 @@ Array [
     "type": "CLEAR_CONTEXT_ID",
   },
   Object {
-    "type": "CLEAR_CURRENT_TOOL_DATA",
+    "type": "CLOSE_TOOL",
   },
   Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
     "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
-    "currentToolTitle": "",
-    "type": "SET_CURRENT_TOOL_TITLE",
   },
   Object {
     "pathLocation": "en_ult_tit_book",
@@ -223,17 +219,13 @@ Array [
     "type": "CLEAR_CONTEXT_ID",
   },
   Object {
-    "type": "CLEAR_CURRENT_TOOL_DATA",
+    "type": "CLOSE_TOOL",
   },
   Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
     "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
-    "currentToolTitle": "",
-    "type": "SET_CURRENT_TOOL_TITLE",
   },
   Object {
     "pathLocation": "en_tit",
@@ -552,17 +544,13 @@ Array [
     "type": "CLEAR_CONTEXT_ID",
   },
   Object {
-    "type": "CLEAR_CURRENT_TOOL_DATA",
+    "type": "CLOSE_TOOL",
   },
   Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
     "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
-    "currentToolTitle": "",
-    "type": "SET_CURRENT_TOOL_TITLE",
   },
   Object {
     "pathLocation": "en_tit",
@@ -884,17 +872,13 @@ Array [
     "type": "CLEAR_CONTEXT_ID",
   },
   Object {
-    "type": "CLEAR_CURRENT_TOOL_DATA",
+    "type": "CLOSE_TOOL",
   },
   Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
     "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
-    "currentToolTitle": "",
-    "type": "SET_CURRENT_TOOL_TITLE",
   },
   Object {
     "pathLocation": "en_ult_tit_book",

@@ -8,7 +8,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {getTranslate, getUsername, getCurrentToolName} from '../selectors';
+import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
@@ -25,7 +25,7 @@ import * as saveMethods from "../localStorage/saveMethods";
 export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
     let state = getState();
-    if (getCurrentToolName(state) === 'translationWords') {
+    if (getSelectedToolName(state) === 'translationWords') {
       const currentContextId = state.contextIdReducer.contextId;
       contextId = contextId || currentContextId; // use current if contextId is not passed
       const {
@@ -88,7 +88,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
     const { bookId, chapter, verse } = contextId.reference;
 
-    if (getCurrentToolName(state) === 'translationWords') {
+    if (getSelectedToolName(state) === 'translationWords') {
       const username = getUsername(state);
       const selections = getSelectionsFromChapterAndVerseCombo(
         bookId,
@@ -103,7 +103,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       }
       const results = {selectionsChanged: selectionsChanged};
       dispatch(validateAllSelectionsForVerse(targetVerse, results, true, contextId, true));
-    } else if (getCurrentToolName(state) === 'wordAlignment') {
+    } else if (getSelectedToolName(state) === 'wordAlignment') {
       const bibleId = project.id;
       const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
 
