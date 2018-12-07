@@ -65,7 +65,7 @@ export const getSelectedToolTitle = state =>
 /**
  * Returns an array of tools that can be used in the app
  * @param state
- * @returns {*[]}
+ * @returns {object[]}
  */
 export const getTools = state =>
   fromToolsReducer.getTools(state.toolsReducer);
