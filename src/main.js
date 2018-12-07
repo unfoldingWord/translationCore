@@ -14,7 +14,7 @@ const dialog = electron.dialog;
 // be closed automatically when the JavaScript object is garbage collected.
 
 let mainWindow;
-let helperWindow;
+// let helperWindow;
 let splashScreen;
 
 const downloadManager = new DownloadManager();
