@@ -69,7 +69,7 @@ const TextPrompt = ({
         style={{width: '256px', height: '35px', fontWeight: 'normal'}}
         inputStyle={{height: '25px'}}
         errorText={getErrorMessage(text)}
-        errorStyle={{color: '#cd0033', height: '6px', bottom: 0}}
+        errorStyle={{color: '#cd0033', height: '6px', bottom: 0, paddingTop: '5px'}}
         underlineFocusStyle={{borderColor: "var(--accent-color-dark)"}}
         onChange={(event, value) => {
           updateText(value);
