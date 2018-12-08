@@ -3,7 +3,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
 import consts from './ActionTypes';
-import {getTranslate, getContext, getCurrentToolName} from '../selectors';
+import {getTranslate, getContext, getSelectedToolName} from '../selectors';
 import {openAlertDialog, closeAlertDialog, openOptionDialog} from './AlertModalActions';
 import { loadBooks } from './ResourcesActions';
 // helpers
@@ -84,7 +84,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
     const contextId = getContext(getState());
-    const currentToolName = getCurrentToolName(getState());
+    const toolName = getSelectedToolName(getState());
 
     dispatch(resetSourceContentUpdatesReducer());
 
@@ -97,7 +97,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
           fs.writeJsonSync(sourceContentManifestPath, { modified: generateTimestamp() });
 
           // if tool currently opened then load new bible resources
-          if (currentToolName) await dispatch(loadBooks(contextId));
+          if (toolName) await dispatch(loadBooks(contextId));
           dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         })
         .catch((err) => {

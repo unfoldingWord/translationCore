@@ -1,17 +1,17 @@
 /* eslint-env jest */
 import React from 'react';
-import ToolCard from '../src/js/components/home/toolsManagement/ToolCard';
-import ToolCardBoxes from '../src/js/components/home/toolsManagement/ToolCardBoxes';
-import { DEFAULT_GATEWAY_LANGUAGE } from '../src/js/helpers/gatewayLanguageHelpers';
+import ToolCard from '../ToolCard';
+import ToolCardBoxes from '../ToolCardBoxes';
+import { DEFAULT_GATEWAY_LANGUAGE } from '../../../../helpers/gatewayLanguageHelpers';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { shallow } from 'enzyme';
-import fs from "../__mocks__/fs-extra";
+import fs from "../../../../../../__mocks__/fs-extra";
 import path from "path-extra";
-import {USER_RESOURCES_PATH} from "../src/js/helpers/ResourcesHelpers";
+import {USER_RESOURCES_PATH} from "../../../../helpers/ResourcesHelpers";
 
-jest.mock('../src/js/components/home/toolsManagement/ToolCardProgress', () => 'ToolCardProgress');
-jest.mock('../src/js/components/home/toolsManagement/GlDropDownList', () => 'GlDropDownList');
+jest.mock('../ToolCardProgress', () => 'ToolCardProgress');
+jest.mock('../GlDropDownList', () => 'GlDropDownList');
 jest.mock('material-ui/Checkbox');
 
 // Tests for ToolCard React Component
@@ -19,7 +19,7 @@ describe('Test ToolCard component',()=>{
   beforeAll(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
-    const sourcePath = path.join(__dirname, 'fixtures/resources');
+    const sourcePath = path.join(__dirname, '../../../../../../__tests__/fixtures/resources');
     let copyFiles = ['en', 'grc'];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, USER_RESOURCES_PATH);
   });
