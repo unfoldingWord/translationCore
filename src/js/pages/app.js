@@ -54,11 +54,10 @@ class Main extends Component {
     } = this.props;
 
     loadTools(path.join(__dirname, '../../../tC_apps'));
-
-    if (localStorage.getItem('version') !== packageJson.version) {
+    const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
+    if (localStorage.getItem('version') !== packageJson.version || !fs.existsSync(tcResourcesPath)) {
       localStorage.setItem('version', packageJson.version);
     }
-
     migrateResourcesFolder();
     // migration logic for toolsSettings in settings.json
     migrateToolsSettings();
