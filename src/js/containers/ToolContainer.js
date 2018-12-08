@@ -38,30 +38,23 @@ import {
   getUsername
 } from "../selectors";
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
+import ProjectAPI from "../helpers/ProjectAPI";
 
 class ToolContainer extends Component {
 
   constructor (props) {
     super(props);
-    this.onWriteProjectData = this.onWriteProjectData.bind(this);
-    this.onReadProjectData = this.onReadProjectData.bind(this);
     this.onShowDialog = this.onShowDialog.bind(this);
     this.onShowIgnorableDialog = this.onShowIgnorableDialog.bind(this);
     this.onShowLoading = this.onShowLoading.bind(this);
     this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
-    this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
-    this.onDeleteProjectFile = this.onDeleteProjectFile.bind(this);
-    this.onProjectDataPathExistsSync = this.onProjectDataPathExistsSync.bind(
-      this);
-    this.onProjectDataPathExists = this.onProjectDataPathExists.bind(this);
-    this.onReadProjectDir = this.onReadProjectDir.bind(this);
-    this.onReadProjectDirSync = this.onReadProjectDirSync.bind(this);
     this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
   componentWillMount () {
-    const { toolApi, supportingToolApis } = this.props;
+    const { toolApi, supportingToolApis, projectSaveLocation } = this.props;
+    this.projectApi = new ProjectAPI(projectSaveLocation);
 
     // connect to APIs
     const toolProps = this.makeToolProps();
@@ -106,110 +99,6 @@ class ToolContainer extends Component {
       };
       toolApi.triggerWillReceiveProps(activeToolProps);
     }
-  }
-
-  /**
-   * Handles writing global project data
-   *
-   * @param {string} filePath - the relative path to be written
-   * @param {string} data - the data to write
-   * @return {Promise}
-   */
-  onWriteProjectData (filePath, data) {
-    const { projectSaveLocation } = this.props;
-    const writePath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.outputFile(writePath, data);
-  }
-
-  /**
-   * Handles reading a project directory
-   * @param {string} dir - the relative path to read
-   * @return {Promise<String[]>}
-   */
-  onReadProjectDir (dir) {
-    const { projectSaveLocation } = this.props;
-    const dirPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', dir);
-    return fs.readdir(dirPath);
-  }
-
-  /**
-   * Handles reading a project directory synchronously
-   * @param {string} dir - the relative path to read
-   * @return {*}
-   */
-  onReadProjectDirSync (dir) {
-    const { projectSaveLocation } = this.props;
-    const dirPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', dir);
-    return fs.readdirSync(dirPath);
-  }
-
-  /**
-   * Handles reading global project data
-   *
-   * @param {string} filePath - the relative path to read
-   * @return {Promise<string>}
-   */
-  async onReadProjectData (filePath) {
-    const { projectSaveLocation } = this.props;
-    const readPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    const data = await fs.readFile(readPath);
-    return data.toString();
-  }
-
-  /**
-   * Handles reading global project data synchronously
-   * @param {string} filePath - the relative path to read
-   * @return {string}
-   */
-  onReadProjectDataSync (filePath) {
-    const { projectSaveLocation } = this.props;
-    const readPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    const data = fs.readFileSync(readPath);
-    return data.toString();
-  }
-
-  /**
-   * Synchronously checks if a path exists in the project
-   * @param {string} filePath - the relative path who's existence will be checked
-   * @return {*}
-   */
-  onProjectDataPathExistsSync (filePath) {
-    const { projectSaveLocation } = this.props;
-    const readPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.pathExistsSync(readPath);
-  }
-
-  /**
-   * Checks if the path exists in the project
-   * @param {string} filePath - the relative path who's existence will be checked
-   * @return {boolean}
-   */
-  onProjectDataPathExists (filePath) {
-    const { projectSaveLocation } = this.props;
-    const readPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.pathExists(readPath);
-  }
-
-  /**
-   * Handles deleting global project data files
-   *
-   * @param {string} filePath - the relative path to delete
-   * @return {Promise}
-   */
-  onDeleteProjectFile (filePath) {
-    const {
-      projectSaveLocation
-    } = this.props;
-    const fullPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.remove(fullPath);
   }
 
   /**
@@ -303,16 +192,19 @@ class ToolContainer extends Component {
       selectedToolName
     } = nextProps;
     return {
+      // project api
+      readProjectDir: this.projectApi.readDir,
+      readProjectDirSync: this.projectApi.readDirSync,
+      writeProjectData: this.projectApi.writeData,
+      writeProjectDataSync: this.projectApi.writeDataSync,
+      readProjectData: this.projectApi.readData,
+      readProjectDataSync: this.projectApi.readDataSync,
+      projectFileExistsSync: this.projectApi.pathExistsSync, // TODO: this is deprecated
+      projectDataPathExists: this.projectApi.pathExists,
+      projectDataPathExistsSync: this.projectApi.pathExistsSync,
+      deleteProjectFile: this.projectApi.deleteFile,
+
       // tC api
-      readProjectDir: this.onReadProjectDir,
-      readProjectDirSync: this.onReadProjectDirSync,
-      writeProjectData: this.onWriteProjectData,
-      readProjectData: this.onReadProjectData,
-      readProjectDataSync: this.onReadProjectDataSync,
-      projectFileExistsSync: this.onProjectDataPathExistsSync, // TODO: this is deprecated
-      projectDataPathExists: this.onProjectDataPathExists,
-      projectDataPathExistsSync: this.onProjectDataPathExistsSync,
-      deleteProjectFile: this.onDeleteProjectFile,
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,

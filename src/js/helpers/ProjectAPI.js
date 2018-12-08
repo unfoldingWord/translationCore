@@ -12,6 +12,17 @@ export default class ProjectAPI {
   constructor(projectDir) {
     this.projectPath = projectDir;
     this.dataPath = path.join(projectDir, PROJECT_TC_DIR);
+
+    this.writeData = this.writeData.bind(this);
+    this.writeDataSync = this.writeDataSync.bind(this);
+    this.readDir = this.readDir.bind(this);
+    this.readDirSync = this.readDirSync.bind(this);
+    this.readData = this.readData.bind(this);
+    this.readDataSync = this.readDataSync.bind(this);
+    this.pathExists = this.pathExists.bind(this);
+    this.pathExistsSync = this.pathExistsSync.bind(this);
+    this.deleteFile = this.deleteFile.bind(this);
+    this.deleteFileSync = this.deleteFileSync.bind(this);
   }
 
   /**
@@ -80,16 +91,6 @@ export default class ProjectAPI {
   }
 
   /**
-   * Synchronously checks if a path exists in the project
-   * @param {string} filePath - the relative path who's existence will be checked
-   * @return {boolean}
-   */
-  pathExistsSync(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
-    return fs.pathExistsSync(readPath);
-  }
-
-  /**
    * Checks if the path exists in the project
    * @param {string} filePath - the relative path who's existence will be checked
    * @return {Promise<boolean>}
@@ -97,6 +98,16 @@ export default class ProjectAPI {
   pathExists(filePath) {
     const readPath = path.join(this.dataPath, filePath);
     return fs.pathExists(readPath);
+  }
+
+  /**
+   * Synchronously checks if a path exists in the project
+   * @param {string} filePath - the relative path who's existence will be checked
+   * @return {boolean}
+   */
+  pathExistsSync(filePath) {
+    const readPath = path.join(this.dataPath, filePath);
+    return fs.pathExistsSync(readPath);
   }
 
   /**
@@ -108,5 +119,15 @@ export default class ProjectAPI {
   deleteFile(filePath) {
     const fullPath = path.join(this.dataPath, filePath);
     return fs.remove(fullPath);
+  }
+
+  /**
+   * Handles deleting global project data files synchronously
+   *
+   * @param {string} filePath - the relative path to delete
+   */
+  deleteFileSync(filePath) {
+    const fullPath = path.join(this.dataPath, filePath);
+    fs.removeSync(fullPath);
   }
 }
