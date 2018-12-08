@@ -9,6 +9,10 @@ const PROJECT_TC_DIR = ".apps/translationCore/";
  */
 export default class ProjectAPI {
 
+  /**
+   * Creates a new project api
+   * @param {string} projectDir - the absolute path to the project directory
+   */
   constructor(projectDir) {
     this.projectPath = projectDir;
     this.dataPath = path.join(projectDir, PROJECT_TC_DIR);
