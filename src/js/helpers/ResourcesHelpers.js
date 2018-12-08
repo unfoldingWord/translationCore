@@ -526,4 +526,38 @@ export function getMissingResources() {
       });
     }
   });
+  getMissingUnzippedResources('en/lexicons'); // TODO: this is temporary - eventually this will be packaged in catalog
+}
+
+/**
+ * copy an unzipped folder if it does not exist
+ * @param {string} subPath - resource subpath to copy
+ */
+export function getMissingUnzippedResources(subPath) {
+  const excludedItems = ['.DS_Store'];
+  // resources files packaged with tc executable
+  const tcResourcesPath = path.join(STATIC_RESOURCES_PATH, subPath);
+  const userResourcesPath = path.join(USER_RESOURCES_PATH, subPath);
+  if (fs.existsSync(tcResourcesPath)) {
+    if (!fs.existsSync(userResourcesPath)) {
+      fs.ensureDirSync(userResourcesPath);
+    }
+    const tcResourcesFiles = fs.readdirSync(tcResourcesPath)
+      .filter(item => !excludedItems.includes(item))
+      .filter(file => fs.lstatSync(path.join(tcResourcesPath, file)).isDirectory());
+
+    // resources files found in the user's resources directory
+    const userResources = fs.readdirSync(userResourcesPath)
+      .filter(item => !excludedItems.includes(item))
+      .filter(file => fs.lstatSync(path.join(userResourcesPath, file)).isDirectory());
+
+    tcResourcesFiles.forEach((languageId) => {
+      // if a resource package with tC executable file is missing in the user resource directory
+      if (!userResources.includes(languageId)) {
+        const sourceResources = path.join(tcResourcesPath, languageId);
+        const destinationPath = path.join(userResourcesPath, languageId);
+        fs.copySync(sourceResources, destinationPath);
+      }
+    });
+  }
 }
