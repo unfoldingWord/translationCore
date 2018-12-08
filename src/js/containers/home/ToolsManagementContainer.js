@@ -24,8 +24,11 @@ class ToolsManagementContainer extends Component {
   }
 
   componentDidMount() {
+    const {tools} = this.props;
     // TODO: move the tool connecting into {@link ToolsCards}
-    // TODO: connect tools here
+    for(const t of tools) {
+      t.triggerWillConnect({});
+    }
   }
 
   /**

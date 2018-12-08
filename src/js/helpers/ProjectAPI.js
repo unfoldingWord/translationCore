@@ -1,0 +1,112 @@
+import path from "path-extra";
+import fs from "fs-extra";
+
+const PROJECT_TC_DIR = ".apps/translationCore/";
+
+/**
+ * Represents an api to a project.
+ * This is used by tools to manage data in the project.
+ */
+export default class ProjectAPI {
+
+  constructor(projectDir) {
+    this.projectPath = projectDir;
+    this.dataPath = path.join(projectDir, PROJECT_TC_DIR);
+  }
+
+  /**
+   * Handles writing global project data
+   *
+   * @param {string} filePath - the relative path to be written
+   * @param {string} data - the data to write
+   * @return {Promise}
+   */
+  writeData(filePath, data) {
+    const writePath = path.join(this.dataPath, filePath);
+    return fs.outputFile(writePath, data);
+  }
+
+  /**
+   * Handles writing global project data synchronously
+   * @param {string} filePath - the relative path to be written
+   * @param {string} data - the data to write
+   */
+  writeDataSync(filePath, data) {
+    const writePath = path.join(this.dataPath, filePath);
+    fs.outputFileSync(writePath, data);
+  }
+
+  /**
+   * Reads the contents of the project directory
+   * @param {string} dir - the relative path to read
+   * @return {Promise<string[]>}
+   */
+  readDir(dir) {
+    const dirPath = path.join(this.dataPath, dir);
+    return fs.readdir(dirPath);
+  }
+
+  /**
+   * Handles reading a project directory synchronously
+   * @param {string} dir - the relative path to read
+   * @return {string[]}
+   */
+  readDirSync(dir) {
+    const dirPath = path.join(this.dataPath, dir);
+    return fs.readdirSync(dirPath);
+  }
+
+  /**
+   * Handles reading global project data
+   *
+   * @param {string} filePath - the relative path to read
+   * @return {Promise<string>}
+   */
+  async readData(filePath) {
+    const readPath = path.join(this.dataPath, filePath);
+    const data = await fs.readFile(readPath);
+    return data.toString();
+  }
+
+  /**
+   * Handles reading global project data synchronously
+   * @param {string} filePath - the relative path to read
+   * @return {string}
+   */
+  readDataSync(filePath) {
+    const readPath = path.join(this.dataPath, filePath);
+    const data = fs.readFileSync(readPath);
+    return data.toString();
+  }
+
+  /**
+   * Synchronously checks if a path exists in the project
+   * @param {string} filePath - the relative path who's existence will be checked
+   * @return {boolean}
+   */
+  pathExistsSync(filePath) {
+    const readPath = path.join(this.dataPath, filePath);
+    return fs.pathExistsSync(readPath);
+  }
+
+  /**
+   * Checks if the path exists in the project
+   * @param {string} filePath - the relative path who's existence will be checked
+   * @return {Promise<boolean>}
+   */
+  pathExists(filePath) {
+    const readPath = path.join(this.dataPath, filePath);
+    return fs.pathExists(readPath);
+  }
+
+  /**
+   * Handles deleting global project data files
+   *
+   * @param {string} filePath - the relative path to delete
+   * @return {Promise}
+   */
+  deleteFile(filePath) {
+    const fullPath = path.join(this.dataPath, filePath);
+    return fs.remove(fullPath);
+  }
+}
