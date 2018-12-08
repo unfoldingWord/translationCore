@@ -82,7 +82,6 @@ export function initializeProjectGroups(toolName) {
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
       const categoryGroupsLoadActions = [];
 
-      // TODO: the groups can be loaded when the tool is opened so this will just be moved into the tool actions
       // populate group indices
       const gatewayLanguage = getToolGatewayLanguage(state, toolName);
       const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);

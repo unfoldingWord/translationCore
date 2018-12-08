@@ -11,8 +11,9 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { getTranslate, getUsername } from '../../selectors';
+import { getProjectManifest, getTranslate, getUsername } from "../../selectors";
 import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import { loadBookTranslations } from "../ResourcesActions";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -42,6 +43,11 @@ export const openProject = (name) => {
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
       await dispatch(validateProject(projectDir));
+
+      // load the book data
+      const manifest = getProjectManifest(getState());
+      await dispatch(loadBookTranslations(manifest.project.id));
+
       dispatch(closeAlertDialog());
       await dispatch(displayTools());
     } catch (e) {
