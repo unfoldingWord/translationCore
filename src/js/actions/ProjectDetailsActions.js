@@ -36,19 +36,9 @@ export const updateCheckSelection = (id, value, toolName) => {
      * i.e. If the value is present in the array and you pass the value of 
      * false it will be deleted from the array
     */
-    const update = (array) => {
-      const exists = array.indexOf(id) >= 0;
-      if (exists && value === true) return array;
-      else if (exists && value === false) {
-        return array.filter((el) => el !== id);
-      }
-      else if (!exists && value === true)
-        return array.concat(id);
-      else return array;
-    };
     const state = getState();
     const previousSelectedCategories = getSetting(state.settingsReducer, 'selectedCategories');
-    const selectedCategories = update(previousSelectedCategories);
+    const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
     dispatch(setSetting('selectedCategories', selectedCategories));
     dispatch(getProjectProgressForTools(toolName));
   };
