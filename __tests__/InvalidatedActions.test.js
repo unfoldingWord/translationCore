@@ -15,7 +15,7 @@ describe('InvalidatedActions.set', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'translationWords'
+        selectedTool: 'translationWords'
       },
       groupsIndexReducer: {
         groupsIndex: [
@@ -49,7 +49,7 @@ describe('InvalidatedActions.set', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'translationWords'
+        selectedTool: 'translationWords'
       },
       groupsIndexReducer: {
         groupsIndex: [
@@ -85,7 +85,7 @@ describe('InvalidatedActions.setInvalidated', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'translationWords'
+        selectedTool: 'translationWords'
       },
       groupsIndexReducer: {
         groupsIndex: [
@@ -119,7 +119,7 @@ describe('InvalidatedActions.setInvalidated', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'translationWords'
+        selectedTool: 'translationWords'
       },
       groupsIndexReducer: {
         groupsIndex: [
