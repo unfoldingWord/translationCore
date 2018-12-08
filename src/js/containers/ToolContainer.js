@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import path from 'path';
-import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // actions
@@ -39,22 +37,18 @@ import {
 } from "../selectors";
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
 import ProjectAPI from "../helpers/ProjectAPI";
+import CoreAPI from "../helpers/CoreAPI";
 
 class ToolContainer extends Component {
 
   constructor (props) {
     super(props);
-    this.onShowDialog = this.onShowDialog.bind(this);
-    this.onShowIgnorableDialog = this.onShowIgnorableDialog.bind(this);
-    this.onShowLoading = this.onShowLoading.bind(this);
-    this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
     this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
   componentWillMount () {
-    const { toolApi, supportingToolApis, projectSaveLocation } = this.props;
-    this.projectApi = new ProjectAPI(projectSaveLocation);
+    const { toolApi, supportingToolApis } = this.props;
 
     // connect to APIs
     const toolProps = this.makeToolProps();
@@ -102,76 +96,6 @@ class ToolContainer extends Component {
   }
 
   /**
-   * Displays an options dialog as a promise.
-   *
-   * @param {string} message - the message to display
-   * @param {string} [confirmText="ok"] - the confirm button text
-   * @param {string} [cancelText] - the cancel button text
-   * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
-   */
-  onShowDialog (message, confirmText = null, cancelText = null) {
-    const { actions: { openOptionDialog, closeAlertDialog }, translate } = this.props;
-    let confirmButtonText = confirmText;
-    if (confirmButtonText === null) {
-      confirmButtonText = translate('buttons.ok_button');
-    }
-    return new Promise((resolve, reject) => {
-      openOptionDialog(message, (action) => {
-        closeAlertDialog();
-        if (action === confirmButtonText) {
-          resolve();
-        } else {
-          reject();
-        }
-      }, confirmButtonText, cancelText);
-    });
-  }
-
-  /**
-   * Similar to @{link onShowDialog} with the addition of it being ignorable.
-   *
-   * @param {string} id - The id that can be ignored. Messages that share an id will all be ignored.
-   * @param {string} message - the message to display
-   * @param {string} [confirmText] - confirm button text
-   * @param {string} [cancelText] - cancel button text
-   * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
-   */
-  onShowIgnorableDialog (id, message, confirmText = null, cancelText = null) {
-    const { openIgnorableAlert } = this.props;
-    return new Promise((resolve, reject) => {
-      openIgnorableAlert(id, message, {
-        confirmText,
-        cancelText,
-        onConfirm: () => {
-          resolve();
-        },
-        onCancel: () => {
-          reject();
-        }
-      });
-    });
-  }
-
-  /**
-   * Displays a loading dialog.
-   * @param {string} message - the message to display while loading
-   */
-  onShowLoading (message) {
-    const { actions: { openAlertDialog } } = this.props;
-    openAlertDialog(message, true);
-  }
-
-  /**
-   * Closes the loading dialog.
-   * TRICKY: this actually closes all dialogs right now.
-   * Ideally that could change in the future.
-   */
-  onCloseLoading () {
-    const { actions: { closeAlertDialog } } = this.props;
-    closeAlertDialog();
-  }
-
-  /**
    * Builds the tC api for use in the tool
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
@@ -189,26 +113,28 @@ class ToolContainer extends Component {
       sourceVerse,
       targetChapter,
       sourceChapter,
-      selectedToolName
+      selectedToolName,
+      projectApi,
+      coreApi
     } = nextProps;
     return {
       // project api
-      readProjectDir: this.projectApi.readDir,
-      readProjectDirSync: this.projectApi.readDirSync,
-      writeProjectData: this.projectApi.writeData,
-      writeProjectDataSync: this.projectApi.writeDataSync,
-      readProjectData: this.projectApi.readData,
-      readProjectDataSync: this.projectApi.readDataSync,
-      projectFileExistsSync: this.projectApi.pathExistsSync, // TODO: this is deprecated
-      projectDataPathExists: this.projectApi.pathExists,
-      projectDataPathExistsSync: this.projectApi.pathExistsSync,
-      deleteProjectFile: this.projectApi.deleteFile,
+      readProjectDir: projectApi.readDir,
+      readProjectDirSync: projectApi.readDirSync,
+      writeProjectData: projectApi.writeData,
+      writeProjectDataSync: projectApi.writeDataSync,
+      readProjectData: projectApi.readData,
+      readProjectDataSync: projectApi.readDataSync,
+      projectFileExistsSync: projectApi.pathExistsSync, // TODO: this is deprecated
+      projectDataPathExists: projectApi.pathExists,
+      projectDataPathExistsSync: projectApi.pathExistsSync,
+      deleteProjectFile: projectApi.deleteFile,
 
       // tC api
-      showDialog: this.onShowDialog,
-      showLoading: this.onShowLoading,
-      closeLoading: this.onCloseLoading,
-      showIgnorableDialog: this.onShowIgnorableDialog,
+      showDialog: coreApi.showDialog,
+      showLoading: coreApi.showLoading,
+      closeLoading: coreApi.closeLoading,
+      showIgnorableDialog: coreApi.showIgnorableDialog,
       appLanguage: code,
       toolsReducer: this.legacyToolsReducer(), // TODO: deprecated
 
@@ -293,7 +219,9 @@ ToolContainer.contextTypes = {
 };
 
 const mapStateToProps = state => {
+  const projectPath = getProjectSaveLocation(state);
   return {
+    projectApi: new ProjectAPI(projectPath),
     selectedToolName: getSelectedToolName(state),
     Tool: getSelectedToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
@@ -305,7 +233,7 @@ const mapStateToProps = state => {
     sourceChapter: getSelectedSourceChapter(state),
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
-    projectSaveLocation: getProjectSaveLocation(state),
+    projectSaveLocation: projectPath,
     username: getUsername(state),
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -326,6 +254,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    coreApi: new CoreAPI(dispatch),
     openIgnorableAlert: (id, message, ignorable) => dispatch(
       openIgnorableAlert(id, message, ignorable)),
     closeAlert: id => dispatch(closeAlert(id)),

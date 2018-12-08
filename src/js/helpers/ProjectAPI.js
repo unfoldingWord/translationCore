@@ -4,7 +4,7 @@ import fs from "fs-extra";
 const PROJECT_TC_DIR = ".apps/translationCore/";
 
 /**
- * Represents an api to a project.
+ * Provides an interface for interacting with project files.
  * This is used by tools to manage data in the project.
  */
 export default class ProjectAPI {
