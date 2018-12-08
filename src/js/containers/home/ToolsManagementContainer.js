@@ -7,8 +7,6 @@ import HomeContainerContentWrapper
 import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import {
-  getProjectSaveLocation,
-  getSelectedToolName, getSourceBible, getTargetBible,
   getToolGatewayLanguage,
   getTools
 } from "../../selectors";
@@ -17,65 +15,12 @@ import path from "path-extra";
 import ospath from "ospath";
 import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
 import fs from "fs-extra";
-import CoreAPI from "../../helpers/CoreAPI";
-import ProjectAPI from "../../helpers/ProjectAPI";
 
 class ToolsManagementContainer extends Component {
 
   constructor(props) {
     super(props);
     this.buildCategories = this.buildCategories.bind(this);
-    this.makeToolProps = this.makeToolProps.bind(this);
-  }
-
-  componentDidMount() {
-    const { tools } = this.props;
-    // TODO: move the tool connecting into {@link ToolsCards}
-    for (const t of tools) {
-      const toolProps = this.makeToolProps();
-      t.api.triggerWillConnect(toolProps);
-    }
-  }
-
-  /**
-   * Builds props for the tools.
-   * TODO: this is basically the same as what's found in {@link ToolContainer}. These should be abstracted
-   */
-  makeToolProps() {
-    const {
-      coreApi,
-      projectApi,
-      currentLanguage: { code },
-      targetBook,
-      sourceBook
-    } = this.props;
-
-    return {
-      // project api
-      readProjectDir: projectApi.readDir,
-      readProjectDirSync: projectApi.readDirSync,
-      writeProjectData: projectApi.writeData,
-      writeProjectDataSync: projectApi.writeDataSync,
-      readProjectData: projectApi.readData,
-      readProjectDataSync: projectApi.readDataSync,
-      projectFileExistsSync: projectApi.pathExistsSync, // TODO: this is deprecated
-      projectDataPathExists: projectApi.pathExists,
-      projectDataPathExistsSync: projectApi.pathExistsSync,
-      deleteProjectFile: projectApi.deleteFile,
-
-      // tC api
-      showDialog: coreApi.showDialog,
-      showLoading: coreApi.showLoading,
-      closeLoading: coreApi.closeLoading,
-      showIgnorableDialog: coreApi.showIgnorableDialog,
-      appLanguage: code,
-
-      // project data
-      sourceBook,
-      targetBook
-
-      // TODO: this will break tW because it's expecting the toolsReducer
-    };
   }
 
   /**
@@ -161,10 +106,6 @@ class ToolsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    sourceBook: getSourceBible(state),
-    targetBook: getTargetBible(state),
-    projectApi: new ProjectAPI(getProjectSaveLocation(state)),
-    selectedToolName: getSelectedToolName(state),
     tools: getTools(state),
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
@@ -178,7 +119,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    coreApi: new CoreAPI(dispatch),
     actions: {
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
@@ -204,11 +144,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
-  sourceBook: PropTypes.object.isRequired,
-  targetBook: PropTypes.object.isRequired,
-  coreApi: PropTypes.instanceOf(CoreAPI).isRequired,
-  projectApi: PropTypes.instanceOf(ProjectAPI).isRequired,
-  selectedToolName: PropTypes.string,
   tools: PropTypes.array.isRequired,
   reducers: PropTypes.shape({
     settingsReducer: PropTypes.shape({
@@ -222,8 +157,7 @@ ToolsManagementContainer.propTypes = {
     }).isRequired
   }).isRequired,
   actions: PropTypes.object.isRequired,
-  translate: PropTypes.func.isRequired,
-  currentLanguage: PropTypes.object.isRequired
+  translate: PropTypes.func.isRequired
 };
 
 export default connect(

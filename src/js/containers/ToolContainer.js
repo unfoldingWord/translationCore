@@ -30,9 +30,9 @@ import {
   getSelectedTargetChapter,
   getSelectedTargetVerse,
   getSelectedToolName,
-  getSourceBible,
+  getSourceBook,
   getSupportingToolApis,
-  getTargetBible,
+  getTargetBook,
   getUsername
 } from "../selectors";
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
@@ -48,20 +48,20 @@ class ToolContainer extends Component {
   }
 
   componentWillMount () {
-    const { toolApi, supportingToolApis } = this.props;
+    // const { toolApi, supportingToolApis } = this.props;
 
     // connect to APIs
-    const toolProps = this.makeToolProps();
-    for (const key of Object.keys(supportingToolApis)) {
-      supportingToolApis[key].triggerWillConnect(toolProps);
-    }
-    if (toolApi) {
-      const activeToolProps = {
-        ...toolProps,
-        tools: supportingToolApis
-      };
-      toolApi.triggerWillConnect(activeToolProps);
-    }
+    // const toolProps = this.makeToolProps();
+    // for (const key of Object.keys(supportingToolApis)) {
+    //   supportingToolApis[key].triggerWillConnect(toolProps);
+    // }
+    // if (toolApi) {
+    //   const activeToolProps = {
+    //     ...toolProps,
+    //     tools: supportingToolApis
+    //   };
+    //   toolApi.triggerWillConnect(activeToolProps);
+    // }
   }
 
   componentWillUnmount () {
@@ -108,8 +108,8 @@ class ToolContainer extends Component {
       currentLanguage: { code },
       contextId,
       targetVerseText,
-      targetBible,
-      sourceBible,
+      targetBook,
+      sourceBook,
       sourceVerse,
       targetChapter,
       sourceChapter,
@@ -146,10 +146,10 @@ class ToolContainer extends Component {
       sourceVerse,
       targetChapter,
       sourceChapter,
-      targetBible, // TODO: deprecated
-      targetBook: targetBible,
-      sourceBible, // TODO: deprecated
-      sourceBook: sourceBible,
+      targetBible: targetBook, // TODO: deprecated
+      targetBook,
+      sourceBible: sourceBook, // TODO: deprecated
+      sourceBook,
       selectedToolName
     };
   }
@@ -226,8 +226,8 @@ const mapStateToProps = state => {
     Tool: getSelectedToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getSelectedToolApi(state),
-    targetBible: getTargetBible(state),
-    sourceBible: getSourceBible(state),
+    targetBook: getTargetBook(state),
+    sourceBook: getSourceBook(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),

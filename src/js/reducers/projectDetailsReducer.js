@@ -190,6 +190,20 @@ export const getNickname = state => {
 };
 
 /**
+ * Returns the book id
+ * @param state
+ * @returns {string|null} the book id or null if not found
+ */
+export const getBookId = state => {
+  const manifest = getManifest(state);
+  if(manifest && manifest.project) {
+    return manifest.project.id;
+  } else {
+    return null;
+  }
+};
+
+/**
  * Returns the project manifest
  * @param {object} state the project details slice of the state
  */

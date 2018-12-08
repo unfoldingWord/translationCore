@@ -206,6 +206,14 @@ export const getUserEmail = (state) =>
   fromLoginReducer.getEmail(state.loginReducer);
 
 /**
+ * Returns the book id of the selected project
+ * @param state
+ * @returns {string}
+ */
+export const getProjectBookId = state =>
+  fromProjectDetailsReducer.getBookId(state.projectDetailsReducer);
+
+/**
  * Returns the gateway language selected for the given tool.
  * @param state
  * @param {string} toolName - the name of the tool
@@ -381,20 +389,20 @@ export const getSelectedTargetChapter = (state) => {
 };
 
 /**
- * Returns the target language bible
+ * Returns the target language book
  * @param state
  * @return {*}
  */
-export const getTargetBible = state =>
-  fromResourcesReducer.getTargetBible(state.resourcesReducer);
+export const getTargetBook = state =>
+  fromResourcesReducer.getTargetBook(state.resourcesReducer);
 
 /**
- * Returns the source language bible
+ * Returns the source language book
  * @param state
  * @return {*}
  */
-export const getSourceBible = state =>
-  fromResourcesReducer.getSourceBible(state.resourcesReducer);
+export const getSourceBook = state =>
+  fromResourcesReducer.getSourceBook(state.resourcesReducer);
 
 /**
  * Returns the currently selected verse in the original language bible

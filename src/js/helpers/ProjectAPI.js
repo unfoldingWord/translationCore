@@ -5,7 +5,7 @@ const PROJECT_TC_DIR = ".apps/translationCore/";
 
 /**
  * Provides an interface for interacting with project files.
- * This is used by tools to manage data in the project.
+ * TODO: this could eventually be used to handle all project manipulation in tC not use used with the tools
  */
 export default class ProjectAPI {
 
@@ -16,6 +16,7 @@ export default class ProjectAPI {
   constructor(projectDir) {
     this.projectPath = projectDir;
     this.dataPath = path.join(projectDir, PROJECT_TC_DIR);
+    this.manifest = null;
 
     this.writeData = this.writeData.bind(this);
     this.writeDataSync = this.writeDataSync.bind(this);
@@ -27,6 +28,28 @@ export default class ProjectAPI {
     this.pathExistsSync = this.pathExistsSync.bind(this);
     this.deleteFile = this.deleteFile.bind(this);
     this.deleteFileSync = this.deleteFileSync.bind(this);
+  }
+
+  /**
+   * Loads the project manifest from the disk.
+   * Subsequent calls are cached.
+   * @returns {Promise<JSON>} the manifest json object
+   * @private
+   */
+  async _loadManifest() {
+    if (this.manifest === null) {
+      const data = this.readData("manifest.json");
+      this.manifest = JSON.parse(data);
+    }
+    return this.manifest;
+  }
+
+  /**
+   * Returns the project's book id
+   * @returns {Promise<string>}
+   */
+  getBookId() {
+    return this._loadManifest().project.id;
   }
 
   /**

@@ -11,9 +11,17 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { getProjectManifest, getTranslate, getUsername } from "../../selectors";
+import {
+  getActiveLocaleLanguage,
+  getProjectManifest, getSourceBook, getTargetBook,
+  getTools,
+  getTranslate,
+  getUsername
+} from "../../selectors";
 import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import { loadBookTranslations } from "../ResourcesActions";
+import ProjectAPI from "../../helpers/ProjectAPI";
+import CoreAPI from "../../helpers/CoreAPI";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -48,6 +56,13 @@ export const openProject = (name) => {
       const manifest = getProjectManifest(getState());
       await dispatch(loadBookTranslations(manifest.project.id));
 
+      // connect the tools
+      const tools = getTools(getState());
+      for (const t of tools) {
+        const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
+        t.api.triggerWillConnect(toolProps);
+      }
+
       dispatch(closeAlertDialog());
       await dispatch(displayTools());
     } catch (e) {
@@ -61,6 +76,50 @@ export const openProject = (name) => {
     }
   };
 };
+
+function makeToolProps(dispatch, state, projectDir, bookId) {
+  const projectApi = new ProjectAPI(projectDir);
+  const coreApi = new CoreAPI(dispatch);
+  const {code} = getActiveLocaleLanguage(state);
+  const sourceBook = getSourceBook(state);
+  const targetBook = getTargetBook(state);
+
+  return {
+    // project api
+    readProjectDir: projectApi.readDir,
+    readProjectDirSync: projectApi.readDirSync,
+    writeProjectData: projectApi.writeData,
+    writeProjectDataSync: projectApi.writeDataSync,
+    readProjectData: projectApi.readData,
+    readProjectDataSync: projectApi.readDataSync,
+    projectFileExistsSync: projectApi.pathExistsSync, // TODO: this is deprecated
+    projectDataPathExists: projectApi.pathExists,
+    projectDataPathExistsSync: projectApi.pathExistsSync,
+    deleteProjectFile: projectApi.deleteFile,
+
+    // tC api
+    showDialog: coreApi.showDialog,
+    showLoading: coreApi.showLoading,
+    closeLoading: coreApi.closeLoading,
+    showIgnorableDialog: coreApi.showIgnorableDialog,
+    appLanguage: code,
+
+    // project data
+    sourceBook,
+    targetBook,
+    targetBible: targetBook, // TODO: deprecated
+    sourceBible: sourceBook, // TODO: deprecated
+
+    contextId: {
+      reference: {
+        bookId,
+        chapter: "1", // TRICKY: just some dummy values at first
+        verse: "1"
+      }
+    }
+    // TODO: this will break tW because it's expecting the toolsReducer
+  };
+}
 
 /**
  * @description - Opening the tools screen upon making sure the project is
