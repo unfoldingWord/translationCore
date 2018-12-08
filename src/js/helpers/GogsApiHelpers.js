@@ -91,7 +91,7 @@ export const getUserDoor43Url = (user, projectName) => {
  */
 export const renameRepo = async (newName, projectPath, user) => {
   try {
-    const repo = new Repo(projectPath);
+    const repo = await Repo.open(projectPath);
     const remote = await repo.getRemote();
     const newRemoteURL = getRepoOwnerUrl(user, newName);
 
@@ -134,7 +134,7 @@ export const renameRepo = async (newName, projectPath, user) => {
 export const createNewRepo = async (newName, projectPath, user) => {
   try {
     const newRemoteURL = getUserDoor43Url(user, newName);
-    const repo = new Repo(projectPath);
+    const repo = await Repo.open(projectPath);
     await repo.removeRemote(TC_OLD_ORIGIN_KEY);// clear old connection since we are renaming
 
     await createRepo(user, newName);
@@ -204,7 +204,7 @@ export const findRepo = (user, reponame) => {
  * @return {Promise<string|null>} The remote url or null if not found
  */
 export const getSavedRemote = async (projectPath, remoteName) => {
-  const repo = new Repo(projectPath);
+  const repo = await Repo.open(projectPath);
   const remote = await repo.getRemote(remoteName);
   if (remote) {
     return remote.url;
@@ -248,7 +248,7 @@ export const updateGitRemotes = async (
  */
 export const saveRemote = async (projectPath, remoteName, url) => {
   try {
-    const repo = new Repo(projectPath);
+    const repo = await Repo.open(projectPath);
     await repo.addRemote(url, remoteName);
   } catch (e) {
     console.log(e);

@@ -5,18 +5,20 @@ import { connect } from 'react-redux';
 import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
 import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
 // actions
-import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 //helpers
 import * as ResourcesHelpers from '../../helpers/ResourcesHelpers';
+import { getSelectedToolName, getTools } from "../../selectors";
+import {openTool} from "../../actions/ToolActions";
 
 class ToolsManagementContainer extends Component {
 
   render() {
     const {
+      tools,
+      selectedToolName,
       reducers: {
-        toolsReducer: { toolsMetadata, currentToolName },
         loginReducer: { loggedInUser },
         settingsReducer: {
           currentSettings: { developerMode }
@@ -38,7 +40,7 @@ class ToolsManagementContainer extends Component {
         <p>{translate('projects.books_available', {app: translate('_.app_name')})}</p>
       </div>
     );
-    const availableCategories = ResourcesHelpers.getAvailableToolCategories(currentProjectToolsSelectedGL, currentToolName);
+    const availableCategories = ResourcesHelpers.getAvailableToolCategories(currentProjectToolsSelectedGL, selectedToolName);
     return (
       <HomeContainerContentWrapper
         translate={translate}
@@ -47,6 +49,7 @@ class ToolsManagementContainer extends Component {
         <div style={{ height: '100%' }}>
           {translate('tools.tools')}
           <ToolsCards
+            tools={tools}
             availableCategories={availableCategories}
             selectedCategories={selectedCategories}
             manifest={manifest}
@@ -58,7 +61,6 @@ class ToolsManagementContainer extends Component {
               launchTool: this.props.actions.launchTool(translate('please_log_in'))
             }}
             developerMode={developerMode}
-            toolsMetadata={toolsMetadata}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
@@ -72,9 +74,10 @@ class ToolsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    selectedToolName: getSelectedToolName(state),
+    tools: getTools(state),
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
-      toolsReducer: state.toolsReducer,
       settingsReducer: state.settingsReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       loginReducer: state.loginReducer,
@@ -93,12 +96,12 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
       },
       launchTool: (loginMessage) => {
-        return (toolFolderPath, loggedInUser, currentToolName) => {
+        return (toolFolderPath, loggedInUser, toolName) => {
           if (!loggedInUser) {
             dispatch(AlertModalActions.openAlertDialog(loginMessage));
             return;
           }
-          dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
+          dispatch(openTool(toolName));
         };
       },
       updateCheckSelection: (id, value, toolName) => {
@@ -109,10 +112,9 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
+  selectedToolName: PropTypes.string,
+  tools: PropTypes.array.isRequired,
   reducers: PropTypes.shape({
-    toolsReducer: PropTypes.shape({
-      toolsMetadata: PropTypes.array
-    }).isRequired,
     settingsReducer: PropTypes.shape({
       currentSettings: PropTypes.shape({
         developerMode: PropTypes.bool

@@ -3,15 +3,15 @@ import fs from 'fs-extra';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
 import ospath from 'ospath';
-import * as ProjectLoadingActions from "../src/js/actions/MyProjects/ProjectLoadingActions";
-import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
+import * as ProjectLoadingActions from "../MyProjects/ProjectLoadingActions";
+import * as manifestUtils from "../../helpers/ProjectMigration/manifestUtils";
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 jest.mock('fs-extra');
 
-jest.mock('../src/js/selectors', () => ({
+jest.mock('../../selectors', () => ({
   getActiveLocaleLanguage: () => {
     return {code: 'en'};
   },
@@ -43,7 +43,7 @@ jest.mock('../src/js/selectors', () => ({
 describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
-  const sourcePath = path.join(__dirname, 'fixtures/project');
+  const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
   const projectPath = path.join(PROJECTS_PATH, projectName);
   beforeEach(() => {
     // reset mock filesystem data
@@ -119,7 +119,7 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
 describe('loadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
-  const sourcePath = path.join(__dirname, 'fixtures/project');
+  const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
   const projectPath = path.join(PROJECTS_PATH, projectName);
   beforeEach(() => {
     // reset mock filesystem data

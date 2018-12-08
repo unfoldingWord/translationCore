@@ -347,9 +347,12 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
 
 /**
  * Gets a tool's progress
- * @param {String} pathToProjectGroupsDataFiles
+ * @param {string} pathToProjectGroupsDataFiles
+ * @param toolName
+ * @param userSelectedCategories
+ * @param bookAbbreviation
  */
-export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, userSelectedCategories, bookAbbreviation) {
+export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSelectedCategories, bookAbbreviation) {
   let progress = 0;
   if (fs.existsSync(pathToProjectGroupsDataFiles)) {
     //Getting all the groups data that exist in the project
@@ -359,9 +362,9 @@ export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, u
       return file !== '.DS_Store' && path.extname(file) === '.json';
     });
     let availableCheckCategories = [];
-    const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
+    const languageId = toolName === 'translationWords' ? 'grc' : 'en';
     //Note: translationWords only uses checks that are also available in the greek (OL)
-    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', toolName);
     const versionPath = ResourceHelpers.getLatestVersionInPath(toolResourcePath) || toolResourcePath;
     userSelectedCategories.forEach((category) => {
       const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);

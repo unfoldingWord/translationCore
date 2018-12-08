@@ -17,19 +17,19 @@ import {throttle} from 'lodash';
 /**
  * @description function that handles both getGroupsIndex and
  * getGroupsData with promises.
- * @param {string} currentToolName - name of the tool being loaded.
+ * @param {string} toolName - name of the tool being loaded.
  * @return {object} object action.
  */
-export function loadProjectData(currentToolName) {
+export function loadProjectData(toolName) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     return new Promise((resolve, reject) => {
       let { projectDetailsReducer } = getState();
       let { projectSaveLocation, manifest, selectedCategories } = projectDetailsReducer;
       let bookAbbreviation = manifest.project.id;
-      const gatewayLanguage = projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]?projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]:'en';
-      const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
-      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', currentToolName);
+      const gatewayLanguage = projectDetailsReducer.currentProjectToolsSelectedGL[toolName]?projectDetailsReducer.currentProjectToolsSelectedGL[toolName]:'en';
+      const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
+      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
       const versionDirectory = ResourcesHelpers.getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
       const categoryGroupsLoadActions = [];
       selectedCategories.forEach((category, index) => {
@@ -40,7 +40,7 @@ export function loadProjectData(currentToolName) {
           new Promise((resolve) => {
             getGroupsIndex(dispatch, glDataDirectory, translate)
               .then(
-                () => getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation, category, index)
+                () => getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviation, category, index)
               ).then(resolve)
               .catch(reject);
           })
@@ -69,7 +69,7 @@ export function loadProjectData(currentToolName) {
  * @return {object} object action / Promises.
  */
 export function getGroupsIndex(dispatch, dataDirectory, translate) {
-  return new Promise((resolve) => {    
+  return new Promise((resolve) => {
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');
     let groupIndexData;
     try {
@@ -89,11 +89,11 @@ export function getGroupsIndex(dispatch, dataDirectory, translate) {
  * @description loads the group index from the filesystem.
  * @param {function} dispatch - redux action dispatcher.
  * @param {String} dataDirectory - group data path or save location in the filesystem.
- * @param {String} currentToolName - name if the tool being loaded.
+ * @param {String} toolName - name if the tool being loaded.
  * @param {String} bookAbbreviation - book abbreviation stinrg.
  * @return {object} object action / Promises.
  */
-export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation, category, index) {
+export function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviation, category, index) {
   return new Promise((resolve) => {
     let groupsDataDirectory = path.join(dataDirectory, bookAbbreviation);
     const groupsDataLoadedIndex = path.join(groupsDataDirectory, '.index');
@@ -103,15 +103,15 @@ export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbr
     }
     if (groupsDataAlreadyLoaded.includes(category)) {
       // read in the groupsData files and load groupsData to reducer
-      loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch, index);
+      loadAllGroupsData(groupsDataDirectory, toolName, dispatch, index);
       resolve(true);
     } else {
       // The groups data files were not found in the directory thus copy
       // them from User resources folder to project resources folder.
-      ResourcesHelpers.copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation, category);
+      ResourcesHelpers.copyGroupsDataToProjectResources(toolName, groupsDataDirectory, bookAbbreviation, category);
       // read in the groupsData files and load groupsData to reducer
       //TODO: Read in the groups data object from above rather than from the FS
-      loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch, index);
+      loadAllGroupsData(groupsDataDirectory, toolName, dispatch, index);
       groupsDataAlreadyLoaded  = groupsDataAlreadyLoaded + ' ' + category;
       fs.writeFileSync(path.join(groupsDataDirectory, '.index'), groupsDataAlreadyLoaded);
       console.log('Generated and Loaded group data data from fs');
@@ -124,11 +124,11 @@ export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbr
  * @description loads all the groups data files from filesystem.
  * @param {array} groupDataFolderObjs -
  * @param {string} groupsDataDirectory - groups data save location in the filesystem.
- * @param {string} currentToolName - name of the current tool being selected/used.
+ * @param {string} toolName - name of the current tool being selected/used.
  * @param {function} dispatch - redux dispatch function.
  * @return {object} object action / Promises.
  */
-export function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch, index) {
+export function loadAllGroupsData(groupsDataDirectory, toolName, dispatch, index) {
   // read in the groupsData files
   let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
   let allGroupsData = {};
@@ -145,7 +145,7 @@ export function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch
       allGroupsData[groupName] = groupData;
     }
     throttle(() => {
-      dispatch(LoaderActions.sendProgressForKey(currentToolName, i / total * 100 * (index + 1)));
+      dispatch(LoaderActions.sendProgressForKey(toolName, i / total * 100 * (index + 1)));
     }, 500);
     i++;
   }

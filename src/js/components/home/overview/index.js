@@ -5,8 +5,10 @@ import UserCard from './UserCard';
 import ProjectCard from './ProjectCard';
 import ToolCard from './ToolCard';
 import HomeContainerContentWrapper from '../HomeContainerContentWrapper';
+import { connect } from "react-redux";
+import { getSelectedToolTitle } from "../../../selectors";
 
-export default class OverviewContainer extends Component {
+class OverviewContainer extends Component {
 
   constructor(props) {
     super(props);
@@ -32,8 +34,9 @@ export default class OverviewContainer extends Component {
 
   render() {
     const {translate} = this.props;
-    const { currentToolTitle } = this.props.reducers.toolsReducer;
-    const launchButtonDisabled = !currentToolTitle;
+    const {store} = this.context;
+    const toolTitle = getSelectedToolTitle(store.getState());
+    const launchButtonDisabled = !toolTitle;
 
     const instructions = (
       <div>
@@ -70,3 +73,8 @@ OverviewContainer.propTypes = {
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func
 };
+OverviewContainer.contextTypes = {
+  store: PropTypes.any
+};
+
+export default connect()(OverviewContainer);
