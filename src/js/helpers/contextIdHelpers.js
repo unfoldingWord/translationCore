@@ -31,11 +31,11 @@ export const validateContextIdQuote = (state, contextId, bibleId) => {
 export const saveContextId = (state, contextId) => {
   try {
     let {projectSaveLocation} = state.projectDetailsReducer;
-    let currentToolName = contextId ? contextId.tool : undefined;
+    let toolName = contextId ? contextId.tool : undefined;
     let bookId = contextId ? contextId.reference.bookId : undefined;
-    if (projectSaveLocation && currentToolName && bookId) {
+    if (projectSaveLocation && toolName && bookId) {
       let fileName = "contextId.json";
-      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, currentToolName, bookId, "currentContextId", fileName);
+      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName);
       fs.outputJsonSync(savePath, contextId);
     } else {
       // saveCurrentContextId: missing required data

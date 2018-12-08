@@ -22,7 +22,7 @@ describe('RemindersActions.toggleReminder', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'translationWords'
+        selectedTool: 'translationWords'
       },
       groupsIndexReducer: {
         groupsIndex: [
