@@ -501,7 +501,7 @@ export function getFilesInResourcePath(resourcePath, ext) {
 
 /**
  * gets the sub folders of folder if it exists and filters out hidden and temp folder names
- * @param folderPath
+ * @param {String} folderPath
  * @return {*}
  */
 function getFilteredSubFolders(folderPath) {
@@ -516,16 +516,16 @@ function getFilteredSubFolders(folderPath) {
 
 /**
  * copies missing subfolders from source to destination
- * @param tcResourcesLexiconPath
- * @param userResourcesLexiconPath
+ * @param {String} sourcePath
+ * @param {String} destinationPath
  */
-function copyMissingSubfolders(tcResourcesLexiconPath, userResourcesLexiconPath) {
-  const tcResourcesLexicons = getFilteredSubFolders(tcResourcesLexiconPath);
-  const userResourcesLexicons = getFilteredSubFolders(userResourcesLexiconPath);
+function copyMissingSubfolders(sourcePath, destinationPath) {
+  const tcResourcesLexicons = getFilteredSubFolders(sourcePath);
+  const userResourcesLexicons = getFilteredSubFolders(destinationPath);
   tcResourcesLexicons.forEach((lexicon) => {
     if (!userResourcesLexicons.includes(lexicon)) {
-      const sourceResources = path.join(tcResourcesLexiconPath, lexicon);
-      const destinationPath = path.join(userResourcesLexiconPath, lexicon);
+      const sourceResources = path.join(sourcePath, lexicon);
+      const destinationPath = path.join(destinationPath, lexicon);
       fs.copySync(sourceResources, destinationPath);
     }
   });
