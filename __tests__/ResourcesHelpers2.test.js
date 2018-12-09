@@ -117,68 +117,58 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
   });
 });
 
-describe('ResourcesHelpers.getMissingUnzippedResources', () => {
-  beforeAll(() => {
-    fs.__resetMockFS();
-    loadMockFsWithlexicons();
-    fs.ensureDirSync(RESOURCE_PATH);
-  });
+describe('ResourcesHelpers.getMissingResources', () => {
+  describe('restore lexicons', () => {
+    beforeAll(() => {
+      fs.__resetMockFS();
+      loadMockFsWithlexicons();
+      fs.ensureDirSync(path.join(RESOURCE_PATH, 'en'));
+    });
 
-  beforeEach(() => {
-    const lexiconsPath = 'en/lexicons';
-    const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
-    fs.removeSync(lexiconResourcePath);
-  });
+    beforeEach(() => {
+      const lexiconsPath = 'en/lexicons';
+      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
+      fs.removeSync(lexiconResourcePath);
+    });
 
-  it('getMissingUnzippedResources() should work with missing uhl and ugl lexicons', () => {
-    const lexiconsPath = 'en/lexicons';
-    const expectedLexicons = ['ugl', 'uhl'];
-    const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
+    it('should copy missing uhl and ugl lexicons', () => {
+      const lexiconsPath = 'en/lexicons';
+      const expectedLexicons = ['ugl', 'uhl'];
+      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
 
-    // when
-    ResourcesHelpers.getMissingUnzippedResources(lexiconsPath);
+      // when
+      ResourcesHelpers.getMissingResources();
 
-    // then
-    for (let lexicon of expectedLexicons) {
-      const folderPath = path.join(lexiconResourcePath, lexicon);
-      const folderExists = fs.lstatSync(folderPath).isDirectory();
-      expect(folderExists).toBeTruthy();
-    }
-  });
+      // then
+      verifyLexicons(expectedLexicons, lexiconResourcePath);
+    });
 
-  it('getMissingUnzippedResources() should work with missing uhl lexicon', () => {
-    const lexiconsPath = 'en/lexicons';
-    const expectedLexicons = ['ugl', 'uhl'];
-    const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
-    fs.ensureDirSync(path.join(lexiconResourcePath, 'ugl'));
+    it('should copy missing uhl lexicon', () => {
+      const lexiconsPath = 'en/lexicons';
+      const expectedLexicons = ['ugl', 'uhl'];
+      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
+      fs.ensureDirSync(path.join(lexiconResourcePath, 'ugl'));
 
-    // when
-    ResourcesHelpers.getMissingUnzippedResources(lexiconsPath);
+      // when
+      ResourcesHelpers.getMissingResources();
 
-    // then
-    for (let lexicon of expectedLexicons) {
-      const folderPath = path.join(lexiconResourcePath, lexicon);
-      const folderExists = fs.lstatSync(folderPath).isDirectory();
-      expect(folderExists).toBeTruthy();
-    }
-  });
+      // then
+      verifyLexicons(expectedLexicons, lexiconResourcePath);
+    });
 
-  it('getMissingUnzippedResources() should work with no missing lexicons', () => {
-    const lexiconsPath = 'en/lexicons';
-    const expectedLexicons = ['ugl', 'uhl'];
-    const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
-    fs.ensureDirSync(path.join(lexiconResourcePath, 'ugl'));
-    fs.ensureDirSync(path.join(lexiconResourcePath, 'uhl'));
+    it('should work with no missing lexicons', () => {
+      const lexiconsPath = 'en/lexicons';
+      const expectedLexicons = ['ugl', 'uhl'];
+      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
+      fs.ensureDirSync(path.join(lexiconResourcePath, 'ugl'));
+      fs.ensureDirSync(path.join(lexiconResourcePath, 'uhl'));
 
-    // when
-    ResourcesHelpers.getMissingUnzippedResources(lexiconsPath);
+      // when
+      ResourcesHelpers.getMissingResources();
 
-    // then
-    for (let lexicon of expectedLexicons) {
-      const folderPath = path.join(lexiconResourcePath, lexicon);
-      const folderExists = fs.lstatSync(folderPath).isDirectory();
-      expect(folderExists).toBeTruthy();
-    }
+      // then
+      verifyLexicons(expectedLexicons, lexiconResourcePath);
+    });
   });
 });
 
@@ -236,4 +226,12 @@ function loadMockFsWithlexicons() {
   const resourcesPath = STATIC_RESOURCES_PATH;
   const copyResourceFiles = ['en/lexicons'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
+}
+
+function verifyLexicons(expectedLexicons, lexiconResourcePath) {
+  for (let lexicon of expectedLexicons) {
+    const folderPath = path.join(lexiconResourcePath, lexicon);
+    const folderExists = fs.lstatSync(folderPath).isDirectory();
+    expect(folderExists).toBeTruthy();
+  }
 }
