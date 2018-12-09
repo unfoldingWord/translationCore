@@ -520,10 +520,10 @@ function getFilteredSubFolders(folderPath) {
  * @param {String} destination
  */
 function copyMissingSubfolders(source, destination) {
-  const tcResourcesLexicons = getFilteredSubFolders(source);
-  const userResourcesLexicons = getFilteredSubFolders(destination);
-  tcResourcesLexicons.forEach((lexicon) => {
-    if (!userResourcesLexicons.includes(lexicon)) {
+  const sourceSubFolders = getFilteredSubFolders(source);
+  const destinationSubFolders = getFilteredSubFolders(destination);
+  sourceSubFolders.forEach((lexicon) => {
+    if (!destinationSubFolders.includes(lexicon)) {
       const sourcePath = path.join(source, lexicon);
       const destinationPath = path.join(destination, lexicon);
       fs.copySync(sourcePath, destinationPath);
