@@ -516,17 +516,17 @@ function getFilteredSubFolders(folderPath) {
 
 /**
  * copies missing subfolders from source to destination
- * @param {String} sourcePath
- * @param {String} destinationPath
+ * @param {String} source
+ * @param {String} destination
  */
-function copyMissingSubfolders(sourcePath, destinationPath) {
-  const tcResourcesLexicons = getFilteredSubFolders(sourcePath);
-  const userResourcesLexicons = getFilteredSubFolders(destinationPath);
+function copyMissingSubfolders(source, destination) {
+  const tcResourcesLexicons = getFilteredSubFolders(source);
+  const userResourcesLexicons = getFilteredSubFolders(destination);
   tcResourcesLexicons.forEach((lexicon) => {
     if (!userResourcesLexicons.includes(lexicon)) {
-      const sourceResources = path.join(sourcePath, lexicon);
-      const destinationPath = path.join(destinationPath, lexicon);
-      fs.copySync(sourceResources, destinationPath);
+      const sourcePath = path.join(source, lexicon);
+      const destinationPath = path.join(destination, lexicon);
+      fs.copySync(sourcePath, destinationPath);
     }
   });
 }
