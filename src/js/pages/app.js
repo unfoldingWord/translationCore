@@ -53,7 +53,8 @@ class Main extends Component {
       loadTools
     } = this.props;
 
-    loadTools(path.join(__dirname, '../../../tC_apps'));
+    const appRootPath = location.pathname.replace('src/index.html', '');
+    loadTools(path.join(appRootPath, '/tC_apps'));
 
     if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
