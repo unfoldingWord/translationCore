@@ -11,7 +11,7 @@ const mockStore = configureMockStore(middlewares);
 import * as CheckDataLoadActions from '../src/js/actions/CheckDataLoadActions';
 const projectSaveLocation = path.join(__dirname, 'fixtures/project/checkDataProject');
 const toolsReducer = {
-  currentToolName: 'translationWords'
+  selectedTool: 'translationWords'
 };
 const groupsIndexReducer = {
   groupsIndex: [

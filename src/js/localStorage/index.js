@@ -12,6 +12,7 @@ import {
   saveLocalUserdata,
   saveProjectManifest
 } from './saveMethods';
+import { getSelectedToolName } from "../selectors";
 
 /**
  * @description loads state needed to set up reducers with preloaded data
@@ -73,7 +74,7 @@ export const saveState = (prevState, newState) => {
       // make sure project has not changed
       isEqual(prevState.projectDetailsReducer.manifest, newState.projectDetailsReducer.manifest) &&
       // make sure tool has not changed
-      isEqual(prevState.toolsReducer.currentToolName, newState.toolsReducer.currentToolName)
+      isEqual(getSelectedToolName(prevState), getSelectedToolName(newState))
     ) {
       saveGroupsData(newState, prevState);
     }

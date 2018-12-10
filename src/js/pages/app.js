@@ -25,7 +25,7 @@ import * as MigrationActions from '../actions/MigrationActions';
 import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
-
+import {loadTools} from "../actions/ToolActions";
 import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
 
@@ -49,14 +49,17 @@ class Main extends Component {
     const {
       migrateResourcesFolder,
       migrateToolsSettings,
-      getAnchorTags
+      getAnchorTags,
+      loadTools
     } = this.props;
 
-    const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
-    if (localStorage.getItem('version') !== packageJson.version || !fs.existsSync(tcResourcesPath)) {
+    loadTools(path.join(__dirname, '../../../tC_apps'));
+
+    if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
-      migrateResourcesFolder();
     }
+
+    migrateResourcesFolder();
     // migration logic for toolsSettings in settings.json
     migrateToolsSettings();
     getAnchorTags();
@@ -100,7 +103,8 @@ Main.propTypes = {
   migrateToolsSettings: PropTypes.func.isRequired,
   getAnchorTags: PropTypes.func.isRequired,
   isLocaleLoaded: PropTypes.bool,
-  appLanguage: PropTypes.any
+  appLanguage: PropTypes.any,
+  loadTools: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -114,7 +118,8 @@ const mapDispatchToProps = {
   getAnchorTags: OnlineModeActions.getAnchorTags,
   migrateToolsSettings: SettingsMigrationActions.migrateToolsSettings,
   migrateResourcesFolder: MigrationActions.migrateResourcesFolder,
-  loadLocalization
+  loadLocalization,
+  loadTools
 };
 
 export default connect(
