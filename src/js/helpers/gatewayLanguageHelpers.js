@@ -18,14 +18,7 @@ export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const { currentProjectToolsSelectedGL } = state.projectDetailsReducer;
   const { currentToolName } = state.toolsReducer;
-  // const { groupsIndex } = state.groupsIndexReducer;
-  // const { groupId } = contextId || state.contextIdReducer.contextId;
   const gatewayLanguageCode = currentProjectToolsSelectedGL[currentToolName];
-  // const gatewayLanguageQuotes = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, groupId).name;
-// console.log("state: ", state );
-// console.log("groupsIndex: ", groupsIndex );
-// console.log("groupId: ", groupId );
-// console.log("gatewayLanguageQuotes: ", gatewayLanguageQuotes );
   const gatewayLanguageQuote = getAlignedGLText(
       state.projectDetailsReducer.currentProjectToolsSelectedGL,
       contextId || state.contextIdReducer.contextId,

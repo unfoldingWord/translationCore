@@ -662,7 +662,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     }
   ];
 
-  it('should return text from ult and NOT the ulb', () => {
+  test('should return text from ult and NOT the ulb', () => {
     // given
     const currentProjectToolsSelectedGL = {
       translationWords: 'en',
@@ -702,7 +702,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     expect(alignedGLText).toEqual(expectedAlignedGLText);
   });
 
-  it('should return text from ulb', () => {
+  test('should return text from ulb', () => {
     // given
     const currentProjectToolsSelectedGL = {
       translationWords: 'en',
@@ -743,7 +743,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
 });
 
 describe('checkAreayHelpers.bibleIdSort', () => {
-  it('Test ordering of Bible IDs', () => {
+  test('Test ordering of Bible IDs', () => {
     // given
     const bibleIds = ['asv', 'esv', 'ulb', 'ust', 'ult', 'udb', 'irv', 'aaa', 'zzz'];
     const expectedSortedBibleIds = ['irv', 'ult', 'ulb', 'ust', 'udb', 'aaa', 'asv', 'esv', 'zzz'];
