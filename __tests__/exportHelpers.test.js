@@ -3,6 +3,9 @@
 import * as exportHelpers from '../src/js/helpers/exportHelpers';
 import * as manifestHelpers from '../src/js/helpers/manifestHelpers';
 import path from 'path-extra';
+import ospath from "ospath";
+import fs from "fs-extra";
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 describe('exportHelpers.getUsfmExportName', () => {
   it('should get the name of a titus project according to the standard', () => {
@@ -58,6 +61,19 @@ describe('exportHelpers.getHeaderTags', () => {
     const expectedResult = "2PE EN_XYZ en_English_ltr Not-a-real-date tc";
     const header = exportHelpers.getHeaderTags(projectSaveLocation);
     expect(header[0].content).toBe(expectedResult);
+  });
+
+  it('should preserve old header id tag', () => {
+    const preservedIDContent = 'unfoldingWord Literal Text';
+    const bookName = 'tit';
+    const project_name = `en_${bookName}`;
+    const sourcePath = path.join('__tests__', 'fixtures', 'project');
+    const copyFiles = [project_name];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+    const projectSaveLocation = path.join(PROJECTS_PATH, project_name);
+    fs.writeJSONSync(path.join(projectSaveLocation, bookName, 'headers.json'), [{"tag":"id", "content":`2TI ${preservedIDContent}`}]);
+    const headers = exportHelpers.getHeaderTags(projectSaveLocation);
+    expect(headers[0].content.includes(preservedIDContent)).toBeTruthy();
   });
 });
 
