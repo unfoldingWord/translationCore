@@ -26,7 +26,7 @@ export function updateArray (array, id, value) {
   else if (!exists && value === true)
     return array.concat(id);
   else return array;
-};
+}
 
 /**
  * display prompt that project as been renamed

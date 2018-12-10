@@ -529,18 +529,44 @@ export function getFilesInResourcePath(resourcePath, ext) {
   return [];
 }
 
-export function getMissingResources() {
+/**
+ * gets the sub folders of folder if it exists and filters out hidden and temp folder names
+ * @param {String} folderPath
+ * @return {*}
+ */
+function getFilteredSubFolders(folderPath) {
   const excludedItems = ['imports_processed', 'imports', '.DS_Store'];
-  // resources files packaged with tc executable
-  const tcResourcesFiles = fs.readdirSync(STATIC_RESOURCES_PATH)
-    .filter(item => !excludedItems.includes(item))
-    .filter(file => fs.lstatSync(path.join(STATIC_RESOURCES_PATH, file)).isDirectory());
+  if (fs.existsSync(folderPath)) {
+    return fs.readdirSync(folderPath)
+      .filter(item => !excludedItems.includes(item))
+      .filter(file => fs.lstatSync(path.join(folderPath, file)).isDirectory());
+  }
+  return [];
+}
 
-  // resources files found in the user's resources directory
-  const userResources = fs.readdirSync(USER_RESOURCES_PATH)
-    .filter(item => !excludedItems.includes(item))
-    .filter(file => fs.lstatSync(path.join(USER_RESOURCES_PATH, file)).isDirectory());
+/**
+ * copies missing subfolders from source to destination
+ * @param {String} source
+ * @param {String} destination
+ */
+function copyMissingSubfolders(source, destination) {
+  const sourceSubFolders = getFilteredSubFolders(source);
+  const destinationSubFolders = getFilteredSubFolders(destination);
+  sourceSubFolders.forEach((lexicon) => {
+    if (!destinationSubFolders.includes(lexicon)) {
+      const sourcePath = path.join(source, lexicon);
+      const destinationPath = path.join(destination, lexicon);
+      fs.copySync(sourcePath, destinationPath);
+    }
+  });
+}
 
+/**
+ * restores missing resources by language and bible and lexicon
+ */
+export function getMissingResources() {
+  const tcResourcesFiles = getFilteredSubFolders(STATIC_RESOURCES_PATH);
+  const userResources = getFilteredSubFolders(USER_RESOURCES_PATH);
   tcResourcesFiles.forEach((languageId) => {
     // if a resource package with tC executable file is missing in the user resource directory
     if (!userResources.includes(languageId)) {
@@ -548,12 +574,18 @@ export function getMissingResources() {
       const destinationPath = path.join(USER_RESOURCES_PATH, languageId);
       fs.copySync(STATIC_RESOURCES, destinationPath);
       const BIBLE_RESOURCES_PATH = path.join(destinationPath, 'bibles');
-
       const bibleIds = fs.readdirSync(BIBLE_RESOURCES_PATH).filter(folder => folder !== '.DS_Store');
       bibleIds.forEach(bibleId => {
         let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleId);
         extractZippedBooks(bibleDestinationPath);
       });
+    }
+    // TODO: this is temporary - eventually this will be packaged in catalog
+    // check for lexicons packaged with tc executable
+    const tcResourcesLexiconPath = path.join(STATIC_RESOURCES_PATH, languageId, 'lexicons');
+    if (fs.existsSync(tcResourcesLexiconPath)) {
+      const userResourcesLexiconPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons');
+      copyMissingSubfolders(tcResourcesLexiconPath, userResourcesLexiconPath);
     }
   });
 }
