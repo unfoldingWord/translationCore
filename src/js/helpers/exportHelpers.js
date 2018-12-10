@@ -94,13 +94,13 @@ export function getHeaderTags(projectSaveLocation) {
     'headers.json');
   headers = headers || [];
   const idHeaderTag = headers.find(({tag}) => tag === 'id');
-  let preservedIDTag = idHeaderTag.content;
+  let preservedIDTag = idHeaderTag && idHeaderTag.content ? idHeaderTag.content : '';
   let tcField = preservedIDTag.substr(preservedIDTag.length - 2, preservedIDTag.length - 1);
   if (tcField === 'tc') {
     //If the usfm id header has already been created with the tc
     //flag then the original preserved contnet has already bee included
     preservedIDTag = '';
-  } else {
+  } else if (preservedIDTag) {
     preservedIDTag = ' ' + preservedIDTag.replace(new RegExp(bookNameUppercase, 'i'), '').trim();
   }
 
