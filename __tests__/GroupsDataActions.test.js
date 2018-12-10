@@ -140,7 +140,7 @@ function getInitialStateData (bookId, checkPath, projectPath) {
     },
     resourcesReducer: {bibles: {targetLanguage: {targetBible}}},
     toolsReducer: {
-      currentToolName: 'translationWords'
+      selectedTool: 'translationWords'
     },
     loginReducer: {
       loggedInUser: false,

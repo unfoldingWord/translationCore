@@ -561,3 +561,17 @@ main modal. They basically override bootstrap styling for these components
 #groups-menu-filter .filter-bubble .filter-text {
   vertical-align: text-bottom;
 }
+
+.project-info-text-field-area label {
+  margin: 0 !important;
+}
+
+.project-info-text-field-area .project-info-text-field {
+  height: auto !important;
+  font-weight: normal !important;
+  display: block !important;
+}
+
+.project-info-text-field-area .project-info-text-field hr {
+  position: initial !important;
+}

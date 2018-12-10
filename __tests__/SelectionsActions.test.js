@@ -324,7 +324,7 @@ function getInitialStateData(bookId, projectPath) {
     groupsDataReducer,
     groupsIndexReducer,
     toolsReducer: {
-      currentToolName: 'translationWords'
+      selectedTool: 'translationWords'
     },
     loginReducer: {
       loggedInUser: false,

@@ -35,7 +35,7 @@ describe('CommentsActions.addComment', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'translationWords'
+        selectedTool: 'translationWords'
       },
       groupsIndexReducer: {
         groupsIndex: [

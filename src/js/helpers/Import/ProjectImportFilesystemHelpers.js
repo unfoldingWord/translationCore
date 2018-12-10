@@ -11,8 +11,9 @@ const TEMP_DIR = IMPORTS_PATH + "-old";
  * @description Import Helpers for moving projects to `~/translationCore/imports` while importing
  * and to `~/translationCore/projects` after migrations and validation.
  * @param {String} projectName
+ * @param translate
  */
-export const move = (projectName, translate) => {
+export const moveProject = (projectName, translate) => {
   return new Promise((resolve, reject) => {
     const fromPath = path.join(IMPORTS_PATH, projectName);
     const toPath = path.join(PROJECTS_PATH, projectName);
@@ -108,5 +109,16 @@ export const deleteImportsFolder = () => {
   if (fs.existsSync(IMPORTS_PATH)) {
     fs.renameSync(IMPORTS_PATH, TEMP_DIR);
     fs.removeSync(TEMP_DIR);
+  }
+};
+
+/**
+ * Deletes a project from the imports folder
+ * @param projectName - the name of the project to be deleted
+ */
+export const deleteProjectFromImportsFolder = (projectName) => {
+  const projectPath = path.join(IMPORTS_PATH, projectName);
+  if (fs.existsSync(projectPath)) {
+    fs.removeSync(projectPath);
   }
 };
