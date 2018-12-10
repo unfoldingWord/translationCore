@@ -17,6 +17,17 @@ import * as BibleHelpers from "./bibleHelpers";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
+export function updateArray (array, id, value) {
+  const exists = array.indexOf(id) >= 0;
+  if (exists && value === true) return array;
+  else if (exists && value === false) {
+    return array.filter((el) => el !== id);
+  }
+  else if (!exists && value === true)
+    return array.concat(id);
+  else return array;
+}
+
 /**
  * display prompt that project as been renamed
  * @return {Promise} - Returns a promise
@@ -352,7 +363,7 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
  * @param userSelectedCategories
  * @param bookAbbreviation
  */
-export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSelectedCategories, bookAbbreviation) {
+export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSelectedCategories = [], bookAbbreviation) {
   let progress = 0;
   if (fs.existsSync(pathToProjectGroupsDataFiles)) {
     //Getting all the groups data that exist in the project
