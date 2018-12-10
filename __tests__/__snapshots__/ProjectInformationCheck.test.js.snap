@@ -94,1362 +94,1357 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
       }
     }
   >
+    project_information
     <div
+      id="project-information-card"
       style={
         Object {
-          "display": "flex",
-          "flexDirection": "column",
+          "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+          "backgroundColor": "#ffffff",
+          "borderRadius": 2,
+          "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+         0 1px 4px rgba(0, 0, 0, 0.12)",
+          "boxSizing": "border-box",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "fontFamily": "Roboto, sans-serif",
           "height": "100%",
+          "muiPrepared": true,
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+          "zIndex": 1,
         }
       }
     >
-      project_information
       <div
-        id="project-information-card"
         style={
           Object {
-            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-            "backgroundColor": "#ffffff",
-            "borderRadius": 2,
-            "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-         0 1px 4px rgba(0, 0, 0, 0.12)",
-            "boxSizing": "border-box",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontFamily": "Roboto, sans-serif",
             "height": "100%",
-            "muiPrepared": true,
-            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-            "width": "100%",
-            "zIndex": 1,
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "paddingBottom": 0,
           }
         }
       >
         <div
           style={
             Object {
-              "height": "100%",
-              "overflowX": "hidden",
-              "overflowY": "auto",
-              "paddingBottom": 0,
+              "textAlign": "right",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "color": "#cd0033",
+                "margin": "10px 10px 0px",
+              }
+            }
+          >
+            * 
+            required
+          </span>
+        </div>
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexBasic": "50%",
+              "flexWrap": "wrap",
+              "margin": "0 auto",
+              "maxWidth": "600px",
             }
           }
         >
           <div
             style={
               Object {
-                "display": "flex",
-                "justifyContent": "flex-end",
+                "flex": "1 1",
+                "margin": "10px",
+                "minWidth": "260px",
               }
             }
           >
-            <span
-              style={
-                Object {
-                  "color": "#cd0033",
-                  "margin": "10px 10px 0px",
+            <div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "80px",
+                    "marginTop": "",
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "width": "100%",
+                  }
                 }
-              }
-            >
-              * 
-              required
-            </span>
+              >
+                <div
+                  className={undefined}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "cursor": "auto",
+                      "display": "inline-block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "height": 72,
+                      "lineHeight": "24px",
+                      "muiPrepared": true,
+                      "position": "relative",
+                      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "width": 256,
+                    }
+                  }
+                >
+                  <label
+                    className={undefined}
+                    htmlFor="Language-Name-TextBox-AutoComplete"
+                    onClick={undefined}
+                    style={
+                      Object {
+                        "color": "var(--text-color-dark)",
+                        "fontSize": "22px",
+                        "fontWeight": "bold",
+                        "lineHeight": "22px",
+                        "muiPrepared": true,
+                        "pointerEvents": "none",
+                        "position": "absolute",
+                        "top": 38,
+                        "transform": "scale(0.75) translate(0, -28px)",
+                        "transformOrigin": "left top",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                        "zIndex": 1,
+                      }
+                    }
+                  >
+                    <div>
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "#000000",
+                            "display": "inline-block",
+                            "fill": "currentColor",
+                            "height": "28px",
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": "28px",
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
+                        />
+                      </svg>
+                       
+                      <span>
+                        projects.language_name
+                      </span>
+                       
+                      <span
+                        style={
+                          Object {
+                            "color": "#cd0033",
+                          }
+                        }
+                      >
+                        *
+                      </span>
+                    </div>
+                  </label>
+                  <input
+                    autoComplete="off"
+                    disabled={false}
+                    id="Language-Name-TextBox-AutoComplete"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    style={
+                      Object {
+                        "WebkitOpacity": 1,
+                        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                        "appearance": "textfield",
+                        "backgroundColor": "rgba(0,0,0,0)",
+                        "border": "none",
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "inherit",
+                        "font": "inherit",
+                        "height": "100%",
+                        "marginTop": 14,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                    type="text"
+                    value="english"
+                  />
+                  <div>
+                    <hr
+                      aria-hidden="true"
+                      style={
+                        Object {
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": 1,
+                          "borderColor": "#e0e0e0",
+                          "borderLeft": "none",
+                          "borderRight": "none",
+                          "borderTop": "none",
+                          "bottom": 8,
+                          "boxSizing": "content-box",
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "width": "100%",
+                        }
+                      }
+                    />
+                    <hr
+                      aria-hidden="true"
+                      style={
+                        Object {
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": 2,
+                          "borderColor": "var(--accent-color-dark)",
+                          "borderLeft": "none",
+                          "borderRight": "none",
+                          "borderTop": "none",
+                          "bottom": 8,
+                          "boxSizing": "content-box",
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "transform": "scaleX(0)",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </div>
+                  
+                </div>
+                <div
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                />
+              </div>
+            </div>
           </div>
-          <table
-            style={
-              Object {
-                "display": "flex",
-                "justifyContent": "center",
-                "marginLeft": "-15px",
-              }
-            }
-          >
-            <tbody>
-              <tr>
-                <td>
-                  <div>
-                    <div
-                      style={
-                        Object {
-                          "display": "inline-block",
-                          "height": "80px",
-                          "marginTop": "",
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "width": "200px",
-                        }
-                      }
-                    >
-                      <div
-                        className={undefined}
-                        style={
-                          Object {
-                            "backgroundColor": "transparent",
-                            "cursor": "auto",
-                            "display": "inline-block",
-                            "fontFamily": "Roboto, sans-serif",
-                            "fontSize": 16,
-                            "height": 72,
-                            "lineHeight": "24px",
-                            "muiPrepared": true,
-                            "position": "relative",
-                            "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "width": 256,
-                          }
-                        }
-                      >
-                        <label
-                          className={undefined}
-                          htmlFor="Language-Name-TextBox-AutoComplete"
-                          onClick={undefined}
-                          style={
-                            Object {
-                              "color": "var(--text-color-dark)",
-                              "fontSize": "22px",
-                              "fontWeight": "bold",
-                              "lineHeight": "22px",
-                              "muiPrepared": true,
-                              "pointerEvents": "none",
-                              "position": "absolute",
-                              "top": 38,
-                              "transform": "scale(0.75) translate(0, -28px)",
-                              "transformOrigin": "left top",
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "zIndex": 1,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "width": "260px",
-                              }
-                            }
-                          >
-                            <svg
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              style={
-                                Object {
-                                  "color": "#000000",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": "28px",
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": "28px",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
-                              />
-                            </svg>
-                             
-                            <span>
-                              projects.language_name
-                            </span>
-                             
-                            <span
-                              style={
-                                Object {
-                                  "color": "#cd0033",
-                                }
-                              }
-                            >
-                              *
-                            </span>
-                          </div>
-                        </label>
-                        <input
-                          autoComplete="off"
-                          disabled={false}
-                          id="Language-Name-TextBox-AutoComplete"
-                          onBlur={[Function]}
-                          onChange={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          open={false}
-                          style={
-                            Object {
-                              "WebkitOpacity": 1,
-                              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "appearance": "textfield",
-                              "backgroundColor": "rgba(0,0,0,0)",
-                              "border": "none",
-                              "boxSizing": "border-box",
-                              "color": "rgba(0, 0, 0, 0.87)",
-                              "cursor": "inherit",
-                              "font": "inherit",
-                              "height": "100%",
-                              "marginTop": 14,
-                              "muiPrepared": true,
-                              "outline": "none",
-                              "padding": 0,
-                              "position": "relative",
-                              "width": "100%",
-                            }
-                          }
-                          type="text"
-                          value="english"
-                        />
-                        <div>
-                          <hr
-                            aria-hidden="true"
-                            style={
-                              Object {
-                                "borderBottomStyle": "solid",
-                                "borderBottomWidth": 1,
-                                "borderColor": "#e0e0e0",
-                                "borderLeft": "none",
-                                "borderRight": "none",
-                                "borderTop": "none",
-                                "bottom": 8,
-                                "boxSizing": "content-box",
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "position": "absolute",
-                                "width": "100%",
-                              }
-                            }
-                          />
-                          <hr
-                            aria-hidden="true"
-                            style={
-                              Object {
-                                "borderBottomStyle": "solid",
-                                "borderBottomWidth": 2,
-                                "borderColor": "var(--accent-color-dark)",
-                                "borderLeft": "none",
-                                "borderRight": "none",
-                                "borderTop": "none",
-                                "bottom": 8,
-                                "boxSizing": "content-box",
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "position": "absolute",
-                                "transform": "scaleX(0)",
-                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                "width": "100%",
-                              }
-                            }
-                          />
-                        </div>
-                        
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "display": "none",
-                          }
-                        }
-                      />
-                    </div>
-                  </div>
-                </td>
-                <td
-                  style={
-                    Object {
-                      "padding": "0px 0px 0px 120px",
-                    }
-                  }
-                >
-                  <div>
-                    <div
-                      style={
-                        Object {
-                          "color": "#000",
-                          "fontSize": "16px",
-                          "fontWeight": "bold",
-                          "height": "10px",
-                          "marginTop": "12px",
-                          "paddingBottom": "2px",
-                          "paddingLeft": 0,
-                          "paddingRight": 0,
-                          "paddingTop": 0,
-                          "width": "240px",
-                        }
-                      }
-                    >
-                      <span
-                        className="glyphicon glyphicon-book"
-                        style={
-                          Object {
-                            "color": "#000000",
-                            "fontSize": "16px",
-                          }
-                        }
-                      />
-                       
-                      <span>
-                        projects.resource_id
-                        <span>
-                          <span
-                            data-class="selection-tooltip"
-                            data-delay-hide="100"
-                            data-effect="float"
-                            data-place="bottom"
-                            data-tip="project_validation.resource_id.info"
-                            data-type="dark"
-                          >
-                            <span
-                              className="glyphicon glyphicon-info-sign"
-                              style={
-                                Object {
-                                  "cursor": "pointer",
-                                  "fontSize": "16px",
-                                  "marginLeft": "5px",
-                                }
-                              }
-                            />
-                          </span>
-                          <div
-                            className="__react_component_tooltip place-top type-dark "
-                            data-id="tooltip"
-                            id={undefined}
-                          />
-                        </span>
-                        <span
-                          style={
-                            Object {
-                              "color": "#cd0033",
-                            }
-                          }
-                        >
-                          *
-                        </span>
-                      </span>
-                    </div>
-                    <div
-                      className={undefined}
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "cursor": "auto",
-                          "display": "inline-block",
-                          "fontFamily": "Roboto, sans-serif",
-                          "fontSize": 16,
-                          "height": "40px",
-                          "lineHeight": "24px",
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "width": "230px",
-                        }
-                      }
-                    >
-                      <input
-                        disabled={false}
-                        id="resource-id-textfield"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        style={
-                          Object {
-                            "WebkitOpacity": 1,
-                            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "appearance": "textfield",
-                            "backgroundColor": "rgba(0,0,0,0)",
-                            "border": "none",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "cursor": "inherit",
-                            "font": "inherit",
-                            "height": "100%",
-                            "muiPrepared": true,
-                            "outline": "none",
-                            "padding": 0,
-                            "position": "relative",
-                            "width": "100%",
-                          }
-                        }
-                        type="text"
-                        value="ult"
-                      />
-                      <div>
-                        <hr
-                          aria-hidden="true"
-                          style={
-                            Object {
-                              "borderBottomStyle": "solid",
-                              "borderBottomWidth": 1,
-                              "borderColor": "#e0e0e0",
-                              "borderLeft": "none",
-                              "borderRight": "none",
-                              "borderTop": "none",
-                              "bottom": 8,
-                              "boxSizing": "content-box",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "width": "100%",
-                            }
-                          }
-                        />
-                        <hr
-                          aria-hidden="true"
-                          style={
-                            Object {
-                              "borderBottomStyle": "solid",
-                              "borderBottomWidth": 2,
-                              "borderColor": "var(--accent-color-dark)",
-                              "borderLeft": "none",
-                              "borderRight": "none",
-                              "borderTop": "none",
-                              "bottom": 8,
-                              "boxSizing": "content-box",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "transform": "scaleX(0)",
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "width": "100%",
-                            }
-                          }
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>
-                    <div
-                      style={
-                        Object {
-                          "display": "inline-block",
-                          "height": "80px",
-                          "marginTop": "",
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "width": "200px",
-                        }
-                      }
-                    >
-                      <div
-                        className={undefined}
-                        style={
-                          Object {
-                            "backgroundColor": "transparent",
-                            "cursor": "auto",
-                            "display": "inline-block",
-                            "fontFamily": "Roboto, sans-serif",
-                            "fontSize": 16,
-                            "height": 72,
-                            "lineHeight": "24px",
-                            "muiPrepared": true,
-                            "position": "relative",
-                            "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "width": 256,
-                          }
-                        }
-                      >
-                        <label
-                          className={undefined}
-                          htmlFor="Language-Id-TextBox-AutoComplete"
-                          onClick={undefined}
-                          style={
-                            Object {
-                              "color": "var(--text-color-dark)",
-                              "fontSize": "22px",
-                              "fontWeight": "bold",
-                              "lineHeight": "22px",
-                              "muiPrepared": true,
-                              "pointerEvents": "none",
-                              "position": "absolute",
-                              "top": 38,
-                              "transform": "scale(0.75) translate(0, -28px)",
-                              "transformOrigin": "left top",
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "zIndex": 1,
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "width": "260px",
-                              }
-                            }
-                          >
-                            <svg
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              style={
-                                Object {
-                                  "color": "#000000",
-                                  "display": "inline-block",
-                                  "fill": "currentColor",
-                                  "height": "28px",
-                                  "muiPrepared": true,
-                                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                  "userSelect": "none",
-                                  "width": "28px",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
-                              />
-                            </svg>
-                             
-                            <span>
-                              projects.language_code
-                            </span>
-                             
-                            <span
-                              style={
-                                Object {
-                                  "color": "#cd0033",
-                                }
-                              }
-                            >
-                              *
-                            </span>
-                          </div>
-                        </label>
-                        <input
-                          autoComplete="off"
-                          disabled={false}
-                          id="Language-Id-TextBox-AutoComplete"
-                          onBlur={[Function]}
-                          onChange={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          open={false}
-                          style={
-                            Object {
-                              "WebkitOpacity": 1,
-                              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "appearance": "textfield",
-                              "backgroundColor": "rgba(0,0,0,0)",
-                              "border": "none",
-                              "boxSizing": "border-box",
-                              "color": "rgba(0, 0, 0, 0.87)",
-                              "cursor": "inherit",
-                              "font": "inherit",
-                              "height": "100%",
-                              "marginTop": 14,
-                              "muiPrepared": true,
-                              "outline": "none",
-                              "padding": 0,
-                              "position": "relative",
-                              "width": "100%",
-                            }
-                          }
-                          type="text"
-                          value="en"
-                        />
-                        <div>
-                          <hr
-                            aria-hidden="true"
-                            style={
-                              Object {
-                                "borderBottomStyle": "solid",
-                                "borderBottomWidth": 1,
-                                "borderColor": "#e0e0e0",
-                                "borderLeft": "none",
-                                "borderRight": "none",
-                                "borderTop": "none",
-                                "bottom": 8,
-                                "boxSizing": "content-box",
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "position": "absolute",
-                                "width": "100%",
-                              }
-                            }
-                          />
-                          <hr
-                            aria-hidden="true"
-                            style={
-                              Object {
-                                "borderBottomStyle": "solid",
-                                "borderBottomWidth": 2,
-                                "borderColor": "var(--accent-color-dark)",
-                                "borderLeft": "none",
-                                "borderRight": "none",
-                                "borderTop": "none",
-                                "bottom": 8,
-                                "boxSizing": "content-box",
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "position": "absolute",
-                                "transform": "scaleX(0)",
-                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                "width": "100%",
-                              }
-                            }
-                          />
-                        </div>
-                        
-                      </div>
-                      <div
-                        style={
-                          Object {
-                            "display": "none",
-                          }
-                        }
-                      />
-                    </div>
-                  </div>
-                </td>
-                <td
-                  style={
-                    Object {
-                      "padding": "0px 0px 0px 120px",
-                    }
-                  }
-                >
-                  <div>
-                    <div
-                      style={
-                        Object {
-                          "color": "#000",
-                          "fontSize": "16px",
-                          "fontWeight": "bold",
-                          "height": "10px",
-                          "marginTop": "12px",
-                          "paddingBottom": "2px",
-                          "paddingLeft": 0,
-                          "paddingRight": 0,
-                          "paddingTop": 0,
-                          "width": "240px",
-                        }
-                      }
-                    >
-                      <span
-                        className="glyphicon glyphicon-book"
-                        style={
-                          Object {
-                            "color": "#000000",
-                            "fontSize": "16px",
-                          }
-                        }
-                      />
-                       
-                      <span>
-                        projects.nickname
-                      </span>
-                    </div>
-                    <div
-                      className={undefined}
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "cursor": "auto",
-                          "display": "inline-block",
-                          "fontFamily": "Roboto, sans-serif",
-                          "fontSize": 16,
-                          "height": "40px",
-                          "lineHeight": "24px",
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "width": "230px",
-                        }
-                      }
-                    >
-                      <input
-                        disabled={false}
-                        id="resource-id-textfield"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        style={
-                          Object {
-                            "WebkitOpacity": 1,
-                            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "appearance": "textfield",
-                            "backgroundColor": "rgba(0,0,0,0)",
-                            "border": "none",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "cursor": "inherit",
-                            "font": "inherit",
-                            "height": "100%",
-                            "muiPrepared": true,
-                            "outline": "none",
-                            "padding": 0,
-                            "position": "relative",
-                            "width": "100%",
-                          }
-                        }
-                        type="text"
-                        value="My Project"
-                      />
-                      <div>
-                        <hr
-                          aria-hidden="true"
-                          style={
-                            Object {
-                              "borderBottomStyle": "solid",
-                              "borderBottomWidth": 1,
-                              "borderColor": "#e0e0e0",
-                              "borderLeft": "none",
-                              "borderRight": "none",
-                              "borderTop": "none",
-                              "bottom": 8,
-                              "boxSizing": "content-box",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "width": "100%",
-                            }
-                          }
-                        />
-                        <hr
-                          aria-hidden="true"
-                          style={
-                            Object {
-                              "borderBottomStyle": "solid",
-                              "borderBottomWidth": 2,
-                              "borderColor": "var(--accent-color-dark)",
-                              "borderLeft": "none",
-                              "borderRight": "none",
-                              "borderTop": "none",
-                              "bottom": 8,
-                              "boxSizing": "content-box",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "transform": "scaleX(0)",
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "width": "100%",
-                            }
-                          }
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div>
-                    <div
-                      className={undefined}
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "cursor": "auto",
-                          "display": "inline-block",
-                          "fontFamily": "Roboto, sans-serif",
-                          "fontSize": 16,
-                          "height": 72,
-                          "lineHeight": "24px",
-                          "marginTop": "",
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "width": "200px",
-                        }
-                      }
-                    >
-                      <label
-                        className={undefined}
-                        htmlFor="language-direction-SelectField"
-                        onClick={undefined}
-                        style={
-                          Object {
-                            "color": "var(--text-color-dark)",
-                            "fontSize": "22px",
-                            "fontWeight": "bold",
-                            "lineHeight": "22px",
-                            "muiPrepared": true,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "top": "32px",
-                            "transform": "scale(0.75) translate(0, -28px)",
-                            "transformOrigin": "left top",
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "zIndex": 1,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "width": "270px",
-                            }
-                          }
-                        >
-                          <span
-                            className="glyphicon glyphicon-eye-open"
-                            style={
-                              Object {
-                                "color": "#000000",
-                                "fontSize": "28px",
-                              }
-                            }
-                          />
-                           
-                          <span>
-                            project_validation.language_direction
-                          </span>
-                           
-                          <span
-                            style={
-                              Object {
-                                "color": "#cd0033",
-                              }
-                            }
-                          >
-                            *
-                          </span>
-                        </div>
-                      </label>
-                      <div
-                        className={undefined}
-                        id="language-direction-SelectField"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        style={
-                          Object {
-                            "WebkitOpacity": 1,
-                            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "backgroundColor": "rgba(0,0,0,0)",
-                            "border": "none",
-                            "boxSizing": "border-box",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "cursor": "inherit",
-                            "display": "block",
-                            "font": "inherit",
-                            "fontFamily": "Roboto, sans-serif",
-                            "fontSize": 15,
-                            "height": "100%",
-                            "marginTop": 14,
-                            "muiPrepared": true,
-                            "outline": "none",
-                            "padding": 0,
-                            "position": "relative",
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "width": "100%",
-                          }
-                        }
-                      >
-                        <div
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "cursor": "pointer",
-                              "height": "100%",
-                              "muiPrepared": true,
-                              "position": "relative",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "boxSizing": "border-box",
-                                "content": "' '",
-                                "display": "table",
-                                "muiPrepared": true,
-                              }
-                            }
-                          />
-                          <div
-                            style={
-                              Object {
-                                "color": "rgba(0, 0, 0, 0.87)",
-                                "height": "56px",
-                                "lineHeight": "56px",
-                                "muiPrepared": true,
-                                "opacity": 1,
-                                "overflow": "hidden",
-                                "paddingLeft": 0,
-                                "paddingRight": 56,
-                                "position": "relative",
-                                "textOverflow": "ellipsis",
-                                "top": 6,
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            project_validation.ltr
-                          </div>
-                          <button
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            onMouseOut={[Function]}
-                            onTouchStart={[Function]}
-                            style={
-                              Object {
-                                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                "background": "none",
-                                "border": 10,
-                                "boxSizing": "border-box",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                                "fill": "#e0e0e0",
-                                "fontFamily": "Roboto, sans-serif",
-                                "fontSize": 0,
-                                "fontWeight": "inherit",
-                                "height": 48,
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "outline": "none",
-                                "overflow": "visible",
-                                "padding": 12,
-                                "position": "absolute",
-                                "right": 0,
-                                "textDecoration": "none",
-                                "top": 8,
-                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                "verticalAlign": null,
-                                "width": 48,
-                              }
-                            }
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <div
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchStart={[Function]}
-                            >
-                              <svg
-                                onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                style={
-                                  Object {
-                                    "color": "rgba(0, 0, 0, 0.87)",
-                                    "display": "inline-block",
-                                    "fill": "inherit",
-                                    "height": 24,
-                                    "muiPrepared": true,
-                                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                    "userSelect": "none",
-                                    "width": 24,
-                                  }
-                                }
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  d="M7 10l5 5 5-5z"
-                                />
-                              </svg>
-                            </div>
-                          </button>
-                          <div
-                            style={
-                              Object {
-                                "borderTop": "none",
-                                "bottom": 1,
-                                "left": 0,
-                                "margin": "-1px 24px",
-                                "muiPrepared": true,
-                                "position": "absolute",
-                                "right": 0,
-                              }
-                            }
-                          />
-                          <div
-                            style={
-                              Object {
-                                "boxSizing": "border-box",
-                                "clear": "both",
-                                "content": "' '",
-                                "display": "table",
-                                "muiPrepared": true,
-                              }
-                            }
-                          />
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "display": "none",
-                            }
-                          }
-                        />
-                      </div>
-                      <div>
-                        <hr
-                          aria-hidden="true"
-                          style={
-                            Object {
-                              "borderBottomStyle": "solid",
-                              "borderBottomWidth": 1,
-                              "borderColor": "#e0e0e0",
-                              "borderLeft": "none",
-                              "borderRight": "none",
-                              "borderTop": "none",
-                              "bottom": 8,
-                              "boxSizing": "content-box",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "width": "100%",
-                            }
-                          }
-                        />
-                        <hr
-                          aria-hidden="true"
-                          style={
-                            Object {
-                              "borderBottomStyle": "solid",
-                              "borderBottomWidth": 2,
-                              "borderColor": "var(--accent-color-dark)",
-                              "borderLeft": "none",
-                              "borderRight": "none",
-                              "borderTop": "none",
-                              "bottom": 8,
-                              "boxSizing": "content-box",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "transform": "scaleX(0)",
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "width": "100%",
-                            }
-                          }
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td
-                  style={
-                    Object {
-                      "padding": "0px 0px 0px 120px",
-                    }
-                  }
-                >
-                  <div>
-                    <div
-                      className={undefined}
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "cursor": "auto",
-                          "display": "inline-block",
-                          "fontFamily": "Roboto, sans-serif",
-                          "fontSize": 16,
-                          "height": 72,
-                          "lineHeight": "24px",
-                          "marginTop": "",
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "width": "200px",
-                        }
-                      }
-                    >
-                      <label
-                        className={undefined}
-                        htmlFor="book-dropdown-menu-selectField"
-                        onClick={undefined}
-                        style={
-                          Object {
-                            "color": "#000",
-                            "fontSize": "22px",
-                            "fontWeight": "bold",
-                            "lineHeight": "22px",
-                            "muiPrepared": true,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "top": 38,
-                            "transform": "scale(0.75) translate(0, -28px)",
-                            "transformOrigin": "left top",
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "zIndex": 1,
-                          }
-                        }
-                      >
-                        <div>
-                          <span
-                            className="glyphicon glyphicon-book"
-                            style={
-                              Object {
-                                "color": "#000000",
-                                "fontSize": "22px",
-                              }
-                            }
-                          />
-                           
-                          <span>
-                            projects.book
-                          </span>
-                           
-                          <span
-                            style={
-                              Object {
-                                "color": "#cd0033",
-                              }
-                            }
-                          >
-                            *
-                          </span>
-                        </div>
-                      </label>
-                      <div
-                        className={undefined}
-                        id="book-dropdown-menu-selectField"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        style={
-                          Object {
-                            "WebkitOpacity": 1,
-                            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "backgroundColor": "rgba(0,0,0,0)",
-                            "border": "none",
-                            "boxSizing": "border-box",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "cursor": "inherit",
-                            "display": "block",
-                            "font": "inherit",
-                            "fontFamily": "Roboto, sans-serif",
-                            "fontSize": 15,
-                            "height": "100%",
-                            "marginTop": 14,
-                            "muiPrepared": true,
-                            "outline": "none",
-                            "padding": 0,
-                            "position": "relative",
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "width": "100%",
-                          }
-                        }
-                      >
-                        <div
-                          onClick={[Function]}
-                          style={
-                            Object {
-                              "cursor": "pointer",
-                              "height": "100%",
-                              "muiPrepared": true,
-                              "position": "relative",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "boxSizing": "border-box",
-                                "content": "' '",
-                                "display": "table",
-                                "muiPrepared": true,
-                              }
-                            }
-                          />
-                          <div
-                            style={
-                              Object {
-                                "color": "rgba(0, 0, 0, 0.87)",
-                                "height": "56px",
-                                "lineHeight": "56px",
-                                "muiPrepared": true,
-                                "opacity": 1,
-                                "overflow": "hidden",
-                                "paddingLeft": 0,
-                                "paddingRight": 56,
-                                "position": "relative",
-                                "textOverflow": "ellipsis",
-                                "top": 6,
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                          >
-                            book_list.nt.tit
-                          </div>
-                          <button
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            onMouseOut={[Function]}
-                            onTouchStart={[Function]}
-                            style={
-                              Object {
-                                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                                "background": "none",
-                                "border": 10,
-                                "boxSizing": "border-box",
-                                "cursor": "pointer",
-                                "display": "inline-block",
-                                "fill": "#e0e0e0",
-                                "fontFamily": "Roboto, sans-serif",
-                                "fontSize": 0,
-                                "fontWeight": "inherit",
-                                "height": 48,
-                                "margin": 0,
-                                "muiPrepared": true,
-                                "outline": "none",
-                                "overflow": "visible",
-                                "padding": 12,
-                                "position": "absolute",
-                                "right": 0,
-                                "textDecoration": "none",
-                                "top": 8,
-                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                "verticalAlign": null,
-                                "width": 48,
-                              }
-                            }
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <div
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchStart={[Function]}
-                            >
-                              <svg
-                                onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                style={
-                                  Object {
-                                    "color": "rgba(0, 0, 0, 0.87)",
-                                    "display": "inline-block",
-                                    "fill": "inherit",
-                                    "height": 24,
-                                    "muiPrepared": true,
-                                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                    "userSelect": "none",
-                                    "width": 24,
-                                  }
-                                }
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  d="M7 10l5 5 5-5z"
-                                />
-                              </svg>
-                            </div>
-                          </button>
-                          <div
-                            style={
-                              Object {
-                                "borderTop": "none",
-                                "bottom": 1,
-                                "left": 0,
-                                "margin": "-1px 24px",
-                                "muiPrepared": true,
-                                "position": "absolute",
-                                "right": 0,
-                              }
-                            }
-                          />
-                          <div
-                            style={
-                              Object {
-                                "boxSizing": "border-box",
-                                "clear": "both",
-                                "content": "' '",
-                                "display": "table",
-                                "muiPrepared": true,
-                              }
-                            }
-                          />
-                        </div>
-                        <div
-                          style={
-                            Object {
-                              "display": "none",
-                            }
-                          }
-                        />
-                      </div>
-                      <div>
-                        <hr
-                          aria-hidden="true"
-                          style={
-                            Object {
-                              "borderBottomStyle": "solid",
-                              "borderBottomWidth": 1,
-                              "borderColor": "#e0e0e0",
-                              "borderLeft": "none",
-                              "borderRight": "none",
-                              "borderTop": "none",
-                              "bottom": 8,
-                              "boxSizing": "content-box",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "width": "100%",
-                            }
-                          }
-                        />
-                        <hr
-                          aria-hidden="true"
-                          style={
-                            Object {
-                              "borderBottomStyle": "solid",
-                              "borderBottomWidth": 2,
-                              "borderColor": "var(--accent-color-dark)",
-                              "borderLeft": "none",
-                              "borderRight": "none",
-                              "borderTop": "none",
-                              "bottom": 8,
-                              "boxSizing": "content-box",
-                              "margin": 0,
-                              "muiPrepared": true,
-                              "position": "absolute",
-                              "transform": "scaleX(0)",
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "width": "100%",
-                            }
-                          }
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
           <div
             style={
               Object {
-                "display": "flex",
-                "marginLeft": "-40px",
+                "flex": "1 1",
+                "margin": "10px",
+                "minWidth": "260px",
               }
             }
           >
             <div
               style={
                 Object {
-                  "alignItems": "center",
-                  "display": "flex",
-                  "flex": "1",
-                  "flexDirection": "column",
+                  "color": "#000",
+                  "fontSize": "16px",
+                  "fontWeight": "bold",
+                  "lineHeight": "16px",
+                  "marginTop": "20px",
+                  "paddingBottom": 0,
+                  "paddingLeft": 0,
+                  "paddingRight": 0,
+                  "paddingTop": 0,
                 }
               }
             >
-              <div
+              <label
+                htmlFor="resource_id"
                 style={
                   Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                    "margin": "10px",
+                    "margin": 0,
                   }
                 }
               >
+                <span
+                  className="glyphicon glyphicon-book"
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": "16px",
+                    }
+                  }
+                />
+                 
+                projects.resource_id
+                <span>
+                  <span
+                    data-class="selection-tooltip"
+                    data-delay-hide="100"
+                    data-effect="float"
+                    data-place="bottom"
+                    data-tip="project_validation.resource_id.info"
+                    data-type="dark"
+                  >
+                    <span
+                      className="glyphicon glyphicon-info-sign"
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                          "fontSize": "16px",
+                          "marginLeft": "5px",
+                        }
+                      }
+                    />
+                  </span>
+                  <div
+                    className="__react_component_tooltip place-top type-dark "
+                    data-id="tooltip"
+                    id={undefined}
+                  />
+                </span>
+                <span
+                  style={
+                    Object {
+                      "color": "#cd0033",
+                    }
+                  }
+                >
+                  *
+                </span>
+              </label>
+              <div
+                className={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "cursor": "auto",
+                    "display": "inline-block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "height": "35px",
+                    "lineHeight": "24px",
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "256px",
+                  }
+                }
+              >
+                <input
+                  disabled={false}
+                  id="resource_id"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "WebkitOpacity": 1,
+                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                      "appearance": "textfield",
+                      "backgroundColor": "rgba(0,0,0,0)",
+                      "border": "none",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "inherit",
+                      "font": "inherit",
+                      "height": "25px",
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "width": "100%",
+                    }
+                  }
+                  type="text"
+                  value="ult"
+                />
+                <div>
+                  <hr
+                    aria-hidden="true"
+                    style={
+                      Object {
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": 1,
+                        "borderColor": "#e0e0e0",
+                        "borderLeft": "none",
+                        "borderRight": "none",
+                        "borderTop": "none",
+                        "bottom": 8,
+                        "boxSizing": "content-box",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                  <hr
+                    aria-hidden="true"
+                    style={
+                      Object {
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": 2,
+                        "borderColor": "var(--accent-color-dark)",
+                        "borderLeft": "none",
+                        "borderRight": "none",
+                        "borderTop": "none",
+                        "bottom": 8,
+                        "boxSizing": "content-box",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "transform": "scaleX(0)",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "flex": "1 1",
+                "margin": "10px",
+                "minWidth": "260px",
+              }
+            }
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "80px",
+                    "marginTop": "",
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "width": 256,
+                  }
+                }
+              >
+                <div
+                  className={undefined}
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "cursor": "auto",
+                      "display": "inline-block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 16,
+                      "height": 72,
+                      "lineHeight": "24px",
+                      "muiPrepared": true,
+                      "position": "relative",
+                      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "width": 256,
+                    }
+                  }
+                >
+                  <label
+                    className={undefined}
+                    htmlFor="Language-Id-TextBox-AutoComplete"
+                    onClick={undefined}
+                    style={
+                      Object {
+                        "color": "var(--text-color-dark)",
+                        "fontSize": "22px",
+                        "fontWeight": "bold",
+                        "lineHeight": "22px",
+                        "muiPrepared": true,
+                        "pointerEvents": "none",
+                        "position": "absolute",
+                        "top": 38,
+                        "transform": "scale(0.75) translate(0, -28px)",
+                        "transformOrigin": "left top",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                        "zIndex": 1,
+                      }
+                    }
+                  >
+                    <div>
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "#000000",
+                            "display": "inline-block",
+                            "fill": "currentColor",
+                            "height": "28px",
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "width": "28px",
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
+                        />
+                      </svg>
+                       
+                      <span>
+                        projects.language_code
+                      </span>
+                       
+                      <span
+                        style={
+                          Object {
+                            "color": "#cd0033",
+                          }
+                        }
+                      >
+                        *
+                      </span>
+                    </div>
+                  </label>
+                  <input
+                    autoComplete="off"
+                    disabled={false}
+                    id="Language-Id-TextBox-AutoComplete"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    style={
+                      Object {
+                        "WebkitOpacity": 1,
+                        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                        "appearance": "textfield",
+                        "backgroundColor": "rgba(0,0,0,0)",
+                        "border": "none",
+                        "boxSizing": "border-box",
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "cursor": "inherit",
+                        "font": "inherit",
+                        "height": "100%",
+                        "marginTop": 14,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "padding": 0,
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                    type="text"
+                    value="en"
+                  />
+                  <div>
+                    <hr
+                      aria-hidden="true"
+                      style={
+                        Object {
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": 1,
+                          "borderColor": "#e0e0e0",
+                          "borderLeft": "none",
+                          "borderRight": "none",
+                          "borderTop": "none",
+                          "bottom": 8,
+                          "boxSizing": "content-box",
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "width": "100%",
+                        }
+                      }
+                    />
+                    <hr
+                      aria-hidden="true"
+                      style={
+                        Object {
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": 2,
+                          "borderColor": "var(--accent-color-dark)",
+                          "borderLeft": "none",
+                          "borderRight": "none",
+                          "borderTop": "none",
+                          "bottom": 8,
+                          "boxSizing": "content-box",
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "transform": "scaleX(0)",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </div>
+                  
+                </div>
+                <div
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "flex": "1 1",
+                "margin": "10px",
+                "minWidth": "260px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "color": "#000",
+                  "fontSize": "16px",
+                  "fontWeight": "bold",
+                  "lineHeight": "16px",
+                  "marginTop": "20px",
+                  "paddingBottom": 0,
+                  "paddingLeft": 0,
+                  "paddingRight": 0,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              <label
+                htmlFor="nickname"
+                style={
+                  Object {
+                    "margin": 0,
+                  }
+                }
+              >
+                <span
+                  className="glyphicon glyphicon-book"
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": "16px",
+                    }
+                  }
+                />
+                 
+                projects.nickname
+              </label>
+              <div
+                className={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "cursor": "auto",
+                    "display": "inline-block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "height": "35px",
+                    "lineHeight": "24px",
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "256px",
+                  }
+                }
+              >
+                <input
+                  disabled={false}
+                  id="nickname"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "WebkitOpacity": 1,
+                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                      "appearance": "textfield",
+                      "backgroundColor": "rgba(0,0,0,0)",
+                      "border": "none",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "inherit",
+                      "font": "inherit",
+                      "height": "25px",
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "width": "100%",
+                    }
+                  }
+                  type="text"
+                  value="My Project"
+                />
+                <div>
+                  <hr
+                    aria-hidden="true"
+                    style={
+                      Object {
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": 1,
+                        "borderColor": "#e0e0e0",
+                        "borderLeft": "none",
+                        "borderRight": "none",
+                        "borderTop": "none",
+                        "bottom": 8,
+                        "boxSizing": "content-box",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                  <hr
+                    aria-hidden="true"
+                    style={
+                      Object {
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": 2,
+                        "borderColor": "var(--accent-color-dark)",
+                        "borderLeft": "none",
+                        "borderRight": "none",
+                        "borderTop": "none",
+                        "bottom": 8,
+                        "boxSizing": "content-box",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "transform": "scaleX(0)",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "flex": "1 1",
+                "margin": "10px",
+                "minWidth": "260px",
+              }
+            }
+          >
+            <div>
+              <div
+                className={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "cursor": "auto",
+                    "display": "inline-block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "height": 72,
+                    "lineHeight": "24px",
+                    "marginTop": "",
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "200px",
+                  }
+                }
+              >
+                <label
+                  className={undefined}
+                  htmlFor="language-direction-SelectField"
+                  onClick={undefined}
+                  style={
+                    Object {
+                      "color": "var(--text-color-dark)",
+                      "fontSize": "22px",
+                      "fontWeight": "bold",
+                      "lineHeight": "22px",
+                      "muiPrepared": true,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "top": "32px",
+                      "transform": "scale(0.75) translate(0, -28px)",
+                      "transformOrigin": "left top",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                      "zIndex": 1,
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "width": "270px",
+                      }
+                    }
+                  >
+                    <span
+                      className="glyphicon glyphicon-eye-open"
+                      style={
+                        Object {
+                          "color": "#000000",
+                          "fontSize": "28px",
+                        }
+                      }
+                    />
+                     
+                    <span>
+                      project_validation.language_direction
+                    </span>
+                     
+                    <span
+                      style={
+                        Object {
+                          "color": "#cd0033",
+                        }
+                      }
+                    >
+                      *
+                    </span>
+                  </div>
+                </label>
+                <div
+                  className={undefined}
+                  id="language-direction-SelectField"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "WebkitOpacity": 1,
+                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                      "backgroundColor": "rgba(0,0,0,0)",
+                      "border": "none",
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "inherit",
+                      "display": "block",
+                      "font": "inherit",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 15,
+                      "height": "100%",
+                      "marginTop": 14,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "height": "100%",
+                        "muiPrepared": true,
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "boxSizing": "border-box",
+                          "content": "' '",
+                          "display": "table",
+                          "muiPrepared": true,
+                        }
+                      }
+                    />
+                    <div
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "height": "56px",
+                          "lineHeight": "56px",
+                          "muiPrepared": true,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "paddingLeft": 0,
+                          "paddingRight": 56,
+                          "position": "relative",
+                          "textOverflow": "ellipsis",
+                          "top": 6,
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      project_validation.ltr
+                    </div>
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "inline-block",
+                          "fill": "#e0e0e0",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 0,
+                          "textDecoration": "none",
+                          "top": 8,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "inherit",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M7 10l5 5 5-5z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "borderTop": "none",
+                          "bottom": 1,
+                          "left": 0,
+                          "margin": "-1px 24px",
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "right": 0,
+                        }
+                      }
+                    />
+                    <div
+                      style={
+                        Object {
+                          "boxSizing": "border-box",
+                          "clear": "both",
+                          "content": "' '",
+                          "display": "table",
+                          "muiPrepared": true,
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "display": "none",
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <hr
+                    aria-hidden="true"
+                    style={
+                      Object {
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": 1,
+                        "borderColor": "#e0e0e0",
+                        "borderLeft": "none",
+                        "borderRight": "none",
+                        "borderTop": "none",
+                        "bottom": 8,
+                        "boxSizing": "content-box",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                  <hr
+                    aria-hidden="true"
+                    style={
+                      Object {
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": 2,
+                        "borderColor": "var(--accent-color-dark)",
+                        "borderLeft": "none",
+                        "borderRight": "none",
+                        "borderTop": "none",
+                        "bottom": 8,
+                        "boxSizing": "content-box",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "transform": "scaleX(0)",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "flex": "1 1",
+                "margin": "10px",
+                "minWidth": "260px",
+              }
+            }
+          >
+            <div>
+              <div
+                className={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "cursor": "auto",
+                    "display": "inline-block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 16,
+                    "height": 72,
+                    "lineHeight": "24px",
+                    "marginTop": "",
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": "200px",
+                  }
+                }
+              >
+                <label
+                  className={undefined}
+                  htmlFor="book-dropdown-menu-selectField"
+                  onClick={undefined}
+                  style={
+                    Object {
+                      "color": "#000",
+                      "fontSize": "22px",
+                      "fontWeight": "bold",
+                      "lineHeight": "22px",
+                      "muiPrepared": true,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "top": 38,
+                      "transform": "scale(0.75) translate(0, -28px)",
+                      "transformOrigin": "left top",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                      "zIndex": 1,
+                    }
+                  }
+                >
+                  <div>
+                    <span
+                      className="glyphicon glyphicon-book"
+                      style={
+                        Object {
+                          "color": "#000000",
+                          "fontSize": "22px",
+                        }
+                      }
+                    />
+                     
+                    <span>
+                      projects.book
+                    </span>
+                     
+                    <span
+                      style={
+                        Object {
+                          "color": "#cd0033",
+                        }
+                      }
+                    >
+                      *
+                    </span>
+                  </div>
+                </label>
+                <div
+                  className={undefined}
+                  id="book-dropdown-menu-selectField"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "WebkitOpacity": 1,
+                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+                      "backgroundColor": "rgba(0,0,0,0)",
+                      "border": "none",
+                      "boxSizing": "border-box",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "cursor": "inherit",
+                      "display": "block",
+                      "font": "inherit",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 15,
+                      "height": "100%",
+                      "marginTop": 14,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "padding": 0,
+                      "position": "relative",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                        "height": "100%",
+                        "muiPrepared": true,
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "boxSizing": "border-box",
+                          "content": "' '",
+                          "display": "table",
+                          "muiPrepared": true,
+                        }
+                      }
+                    />
+                    <div
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "height": "56px",
+                          "lineHeight": "56px",
+                          "muiPrepared": true,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "paddingLeft": 0,
+                          "paddingRight": 56,
+                          "position": "relative",
+                          "textOverflow": "ellipsis",
+                          "top": 6,
+                          "whiteSpace": "nowrap",
+                        }
+                      }
+                    >
+                      book_list.nt.tit
+                    </div>
+                    <button
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "cursor": "pointer",
+                          "display": "inline-block",
+                          "fill": "#e0e0e0",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 0,
+                          "fontWeight": "inherit",
+                          "height": 48,
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "overflow": "visible",
+                          "padding": 12,
+                          "position": "absolute",
+                          "right": 0,
+                          "textDecoration": "none",
+                          "top": 8,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": 48,
+                        }
+                      }
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <svg
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fill": "inherit",
+                              "height": 24,
+                              "muiPrepared": true,
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "width": 24,
+                            }
+                          }
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M7 10l5 5 5-5z"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                    <div
+                      style={
+                        Object {
+                          "borderTop": "none",
+                          "bottom": 1,
+                          "left": 0,
+                          "margin": "-1px 24px",
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "right": 0,
+                        }
+                      }
+                    />
+                    <div
+                      style={
+                        Object {
+                          "boxSizing": "border-box",
+                          "clear": "both",
+                          "content": "' '",
+                          "display": "table",
+                          "muiPrepared": true,
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "display": "none",
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <hr
+                    aria-hidden="true"
+                    style={
+                      Object {
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": 1,
+                        "borderColor": "#e0e0e0",
+                        "borderLeft": "none",
+                        "borderRight": "none",
+                        "borderTop": "none",
+                        "bottom": 8,
+                        "boxSizing": "content-box",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                  <hr
+                    aria-hidden="true"
+                    style={
+                      Object {
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": 2,
+                        "borderColor": "var(--accent-color-dark)",
+                        "borderLeft": "none",
+                        "borderRight": "none",
+                        "borderTop": "none",
+                        "bottom": 8,
+                        "boxSizing": "content-box",
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "transform": "scaleX(0)",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "flex": "1 1",
+                "margin": "10px",
+                "minWidth": "260px",
+              }
+            }
+          >
+            <div>
+              <div>
                 <svg
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
@@ -1462,6 +1457,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       "muiPrepared": true,
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
+                      "verticalAlign": "top",
                       "width": "28px",
                     }
                   }
@@ -1506,19 +1502,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                   project_validation.add_contributor
                 </span>
               </div>
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                  }
-                }
-              >
+              <div>
                 <div
                   style={
                     Object {
-                      "alignItems": "center",
-                      "display": "flex",
                       "marginLeft": "30px",
                     }
                   }
@@ -1627,8 +1614,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                 <div
                   style={
                     Object {
-                      "alignItems": "center",
-                      "display": "flex",
                       "marginLeft": "30px",
                     }
                   }
@@ -1736,25 +1721,18 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                 </div>
               </div>
             </div>
-            <div
-              style={
-                Object {
-                  "alignItems": "center",
-                  "display": "flex",
-                  "flex": "1",
-                  "flexDirection": "column",
-                }
+          </div>
+          <div
+            style={
+              Object {
+                "flex": "1 1",
+                "margin": "10px",
+                "minWidth": "260px",
               }
-            >
-              <div
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "display": "flex",
-                    "margin": "10px",
-                  }
-                }
-              >
+            }
+          >
+            <div>
+              <div>
                 <svg
                   onMouseEnter={[Function]}
                   onMouseLeave={[Function]}
@@ -1767,6 +1745,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       "muiPrepared": true,
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
+                      "verticalAlign": "top",
                       "width": "28px",
                     }
                   }
@@ -1811,19 +1790,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                   project_validation.add_checker
                 </span>
               </div>
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                  }
-                }
-              >
+              <div>
                 <div
                   style={
                     Object {
-                      "alignItems": "center",
-                      "display": "flex",
                       "marginLeft": "30px",
                     }
                   }
@@ -1932,8 +1902,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                 <div
                   style={
                     Object {
-                      "alignItems": "center",
-                      "display": "flex",
                       "marginLeft": "30px",
                     }
                   }
