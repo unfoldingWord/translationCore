@@ -110,7 +110,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     showDialog: coreApi.showDialog,
     showLoading: coreApi.showLoading,
     closeLoading: coreApi.closeLoading,
-    showIgnorableDialog: coreApi.showIgnorableDialog,
+    showIgnorableAlert: coreApi.showIgnorableAlert,
     appLanguage: code,
 
     // project data
@@ -126,6 +126,14 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     },
 
     // deprecated props
+    showIgnorableDialog: (...args) => {
+      console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
+      return coreApi.showIgnorableAlert(...args);
+    },
+    get toolsReducer () {
+      console.warn(`DEPRECATED: toolsReducer is deprecated.`);
+      return {};
+    },
     projectFileExistsSync: (...args) => {
       console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
       return projectApi.pathExistsSync(...args);

@@ -132,10 +132,12 @@ class ToolContainer extends Component {
       deleteProjectFile: projectApi.deleteFile,
 
       // tC api
+      showAlert: coreApi.showAlert,
       showDialog: coreApi.showDialog,
       showLoading: coreApi.showLoading,
       closeLoading: coreApi.closeLoading,
-      showIgnorableDialog: coreApi.showIgnorableDialog,
+      showIgnorableAlert: coreApi.showIgnorableAlert,
+      closeAlert: coreApi.closeAlert,
       appLanguage: code,
 
 
@@ -152,6 +154,10 @@ class ToolContainer extends Component {
       selectedToolName,
 
       // deprecated props
+      showIgnorableDialog: (...args) => {
+        console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
+        return coreApi.showIgnorableAlert(...args);
+      },
       get toolsReducer () {
         console.warn(`DEPRECATED: toolsReducer is deprecated.`);
         return legacyToolsReducer;
@@ -190,7 +196,10 @@ class ToolContainer extends Component {
     } = this.props;
 
     const props = { ...this.props };
+
     delete props.translate;
+    delete props.openIgnorableAlert;
+    delete props.coreApi;
 
     const activeToolProps = {
       ...this.makeToolProps(),
@@ -202,8 +211,8 @@ class ToolContainer extends Component {
         style={{ display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)' }}>
         <div style={{ flex: 'auto', display: 'flex' }}>
           <Tool
-            {...props}
-            currentToolViews={{}}
+            {...props} // TODO: this is deprecated
+            currentToolViews={{}} // TODO: this is deprecated
             {...activeToolProps}
           />
         </div>
@@ -228,6 +237,7 @@ ToolContainer.propTypes = {
   openIgnorableAlert: PropTypes.func.isRequired,
   closeAlert: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
+
   selectedToolName: PropTypes.string.isRequired
 };
 
@@ -272,9 +282,13 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   return {
     coreApi: new CoreAPI(dispatch),
-    openIgnorableAlert: (id, message, ignorable) => dispatch(
-      openIgnorableAlert(id, message, ignorable)),
-    closeAlert: id => dispatch(closeAlert(id)),
+    openIgnorableAlert: (id, message, ignorable) => {
+      dispatch(openIgnorableAlert(id, message, ignorable));
+    },
+    closeAlert: id => {
+      console.warn('DEPRECATED: closeAlert is deprecated. Use tc.closeAlert instead');
+      dispatch(closeAlert(id));
+    },
     actions: {
       goToNext: () => {
         dispatch(changeToNextContextId());
@@ -331,13 +345,16 @@ const mapDispatchToProps = (dispatch) => {
           setToolSettings(NAMESPACE, settingsPropertyName, toolSettingsData));
       },
       openAlertDialog: (message) => {
+        console.warn('DEPRECATED: openAlertDialog is deprecated. Use tc.showAlert instead');
         dispatch(openAlertDialog(message));
       },
       openOptionDialog: (alertMessage, callback, button1Text, button2Text) => {
+        console.warn('DEPRECATED: openOptionsDialog is deprecated. Use  tc.showDialog instead.');
         dispatch(
           openOptionDialog(alertMessage, callback, button1Text, button2Text));
       },
       closeAlertDialog: () => {
+        console.warn('DEPRECATED: closeAlertDialog is deprecated. use tc.closeAlert instead');
         dispatch(closeAlertDialog());
       },
       groupMenuChangeGroup: contextId => {

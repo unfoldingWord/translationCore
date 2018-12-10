@@ -47,7 +47,7 @@ export default class CoreAPI {
    * @param {string} [cancelText] - cancel button text
    * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
    */
-  showIgnorableDialog(id, message, confirmText = null, cancelText = null) {
+  showIgnorableAlert(id, message, confirmText = null, cancelText = null) {
     return new Promise((resolve, reject) => {
       this.dispatch(openIgnorableAlert(id, message, {
         confirmText,
@@ -63,6 +63,16 @@ export default class CoreAPI {
   }
 
   /**
+   * @deprecated use {@link showIgnorableAlert} instead
+   * @param args
+   * @returns {Promise}
+   */
+  showIgnorableDialog(...args) {
+    console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
+    return this.showIgnorableAlert(...args);
+  }
+
+  /**
    * Displays a loading dialog.
    * @param {string} message - the message to display while loading
    */
@@ -71,11 +81,26 @@ export default class CoreAPI {
   }
 
   /**
+   * Display an alert
+   * @param {string} message - the message to display
+   */
+  showAlert(message) {
+    this.dispatch(openAlertDialog(message));
+  }
+
+  /**
    * Closes the loading dialog.
+   */
+  closeLoading() {
+    this.closeAlert();
+  }
+
+  /**
+   * Closes the current alert dialog.
    * TRICKY: this actually closes all dialogs right now.
    * Ideally that could change in the future.
    */
-  closeLoading() {
+  closeAlert() {
     this.dispatch(closeAlertDialog());
   }
 }
