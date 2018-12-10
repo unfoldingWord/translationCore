@@ -9,7 +9,7 @@ import fs from "fs-extra";
 export const loadToolsInDir = async toolsDir => {
   const tools = [];
 
-  // https://github.com/electron/electron/issues/6555 fs.access is broken
+  // TRICKY: fs.access does not work on asar directories so we cannot use `fs.access`
   if(!fs.existsSync(toolsDir)) {
     console.warn(`No tools found in missing directory ${toolsDir}.`);
     return [];
