@@ -53,10 +53,9 @@ class ToolsManagementContainer extends Component {
       reducers: {
         loginReducer: { loggedInUser },
         settingsReducer: {
-          currentSettings: { developerMode }
+          currentSettings: { developerMode, selectedCategories }
         },
         projectDetailsReducer: {
-          selectedCategories,
           manifest,
           projectSaveLocation,
           currentProjectToolsProgress

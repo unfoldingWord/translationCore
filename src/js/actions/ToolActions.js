@@ -76,11 +76,14 @@ export function initializeProjectGroups(toolName) {
     const state = getState();
     const translate = getTranslate(state);
     return new Promise((resolve, reject) => {
-      let { projectDetailsReducer } = state;
-      let { projectSaveLocation, manifest, selectedCategories } = projectDetailsReducer;
+      let { projectDetailsReducer, settingsReducer: {currentSettings: {selectedCategories}} } = getState();
+      let { projectSaveLocation, manifest } = projectDetailsReducer;
       let bookAbbreviation = manifest.project.id;
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
       const categoryGroupsLoadActions = [];
+      if (toolName === 'wordAlignment') {
+        selectedCategories = ['default'];
+      }
 
       // populate group indices
       const gatewayLanguage = getToolGatewayLanguage(state, toolName);

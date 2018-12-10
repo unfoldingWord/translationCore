@@ -40,9 +40,13 @@ describe('', () => {
             id: 'tit'
           }
         },
-        selectedCategories: ['kt'],
         currentProjectToolsSelectedGL: {
           'translationWords': 'en'
+        }
+      },
+      settingsReducer: {
+        currentSettings: {
+          selectedCategories: ['kt']
         }
       }
     });
