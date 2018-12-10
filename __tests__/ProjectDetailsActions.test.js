@@ -2,6 +2,7 @@
 jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
 import thunk from 'redux-thunk';
@@ -11,6 +12,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 const PROJECTS_PATH = path.join('user', 'translationCore', 'projects');
+const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 it('setSaveLocation() creates an action to update contributors', () => {
   const store = mockStore({});
@@ -42,6 +44,9 @@ describe('getProjectProgressForTools() should create an action to get the projec
           id: ''
         }
       }
+    },
+    settingsReducer: {
+      currentSettings: { }
     }
   };
   fs.__setMockFS({
@@ -365,6 +370,55 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
+  });
+});
+
+describe('ProjectDetailsActions.updateCheckSelection', () => {
+  const project_name = 'normal_project';
+  beforeAll(()=>{
+    // Make resource
+    fs.__resetMockFS();
+    const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'translationWords');
+    const copyFiles = [project_name];
+    fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
+    const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
+    const resourcesPath = RESOURCE_PATH;
+    const copyResourceFiles = ['grc'];
+    fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
+  });
+
+  afterAll(() => {
+    fs.__resetMockFS();
+  });
+  test('should set the check category from the user selection', () => {
+    const initialState = {
+      settingsReducer: {
+        currentSettings: {
+          selectedCategories: ['kt']
+        }
+      },
+      projectDetailsReducer: {
+        projectSaveLocation: path.join(PROJECTS_PATH, project_name),
+        manifest: {
+          project: {
+            id: 'tit'
+          }
+        }
+      }
+    };
+    const expectedActions = [{
+      type: 'SET_SETTING',
+      key: 'selectedCategories',
+      value: ['kt']
+    },
+    {
+      type: 'SET_PROJECT_PROGRESS_FOR_TOOL',
+      toolName: 'translationWords',
+      progress: 0.25
+    }];
+    const store = mockStore(initialState);
+    store.dispatch(actions.updateCheckSelection('kt', true, 'translationWords'));
+    expect(store.getActions()).toMatchObject(expectedActions);
   });
 });
 
