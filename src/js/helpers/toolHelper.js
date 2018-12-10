@@ -8,14 +8,16 @@ import fs from "fs-extra";
  */
 export const loadToolsInDir = async toolsDir => {
   const tools = [];
+  let files = [];
 
-  const toolsExist = await fs.pathExists(toolsDir);
-  if(!toolsExist) {
-    console.warn(`No tools found in missing directory ${toolsDir}`);
+  // TRICKY: fs.pathExists does not work on directories within an asar so we perform in a try catch
+  try {
+    files = await fs.readdir(toolsDir);
+  } catch (e) {
+    console.warn(`No tools found in missing directory ${toolsDir}.`);
     return [];
   }
 
-  const files = await fs.readdir(toolsDir);
   for(const f of files) {
     const toolPath = path.join(toolsDir, f);
     const stat = await fs.stat(toolPath);
