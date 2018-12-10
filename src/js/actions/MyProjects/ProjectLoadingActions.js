@@ -77,6 +77,16 @@ export const openProject = (name) => {
   };
 };
 
+//
+/**
+ * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
+ * This is just a temporary prop generator until we can properly abstract the tc api.
+ * @param dispatch
+ * @param state
+ * @param projectDir
+ * @param bookId
+ * @returns {*}
+ */
 function makeToolProps(dispatch, state, projectDir, bookId) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
@@ -92,7 +102,6 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     writeProjectDataSync: projectApi.writeDataSync,
     readProjectData: projectApi.readData,
     readProjectDataSync: projectApi.readDataSync,
-    projectFileExistsSync: projectApi.pathExistsSync, // TODO: this is deprecated
     projectDataPathExists: projectApi.pathExists,
     projectDataPathExistsSync: projectApi.pathExistsSync,
     deleteProjectFile: projectApi.deleteFile,
@@ -107,8 +116,6 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     // project data
     sourceBook,
     targetBook,
-    targetBible: targetBook, // TODO: deprecated
-    sourceBible: sourceBook, // TODO: deprecated
 
     contextId: {
       reference: {
@@ -116,8 +123,21 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
         chapter: "1", // TRICKY: just some dummy values at first
         verse: "1"
       }
-    }
-    // TODO: this will break tW because it's expecting the toolsReducer
+    },
+
+    // deprecated props
+    projectFileExistsSync: (...args) => {
+      console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
+      return projectApi.pathExistsSync(...args);
+    },
+    get targetBible() {
+      console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');
+      return targetBook;
+    },
+    get sourceBible() {
+      console.warn('DEPRECATED: sourceBible is deprecated. Use sourceBook instead');
+      return sourceBook;
+    },
   };
 }
 

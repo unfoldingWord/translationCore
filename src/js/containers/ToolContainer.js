@@ -101,6 +101,8 @@ class ToolContainer extends Component {
    * @return {*}
    */
   makeToolProps (nextProps = undefined) {
+    const legacyToolsReducer = this.legacyToolsReducer();
+
     if (!nextProps) {
       nextProps = this.props;
     }
@@ -125,7 +127,6 @@ class ToolContainer extends Component {
       writeProjectDataSync: projectApi.writeDataSync,
       readProjectData: projectApi.readData,
       readProjectDataSync: projectApi.readDataSync,
-      projectFileExistsSync: projectApi.pathExistsSync, // TODO: this is deprecated
       projectDataPathExists: projectApi.pathExists,
       projectDataPathExistsSync: projectApi.pathExistsSync,
       deleteProjectFile: projectApi.deleteFile,
@@ -136,7 +137,7 @@ class ToolContainer extends Component {
       closeLoading: coreApi.closeLoading,
       showIgnorableDialog: coreApi.showIgnorableDialog,
       appLanguage: code,
-      toolsReducer: this.legacyToolsReducer(), // TODO: deprecated
+
 
       // menu location
       contextId,
@@ -146,11 +147,27 @@ class ToolContainer extends Component {
       sourceVerse,
       targetChapter,
       sourceChapter,
-      targetBible: targetBook, // TODO: deprecated
       targetBook,
-      sourceBible: sourceBook, // TODO: deprecated
       sourceBook,
-      selectedToolName
+      selectedToolName,
+
+      // deprecated props
+      get toolsReducer () {
+        console.warn(`DEPRECATED: toolsReducer is deprecated.`);
+        return legacyToolsReducer;
+      },
+      projectFileExistsSync: (...args) => {
+        console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
+        return projectApi.pathExistsSync(...args);
+      },
+      get targetBible() {
+        console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');
+        return targetBook;
+      },
+      get sourceBible() {
+        console.warn('DEPRECATED: sourceBible is deprecated. Use sourceBook instead');
+        return sourceBook;
+      },
     };
   }
 
