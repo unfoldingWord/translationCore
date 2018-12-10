@@ -7,7 +7,8 @@ const initialState = {
     csvSaveLocation: null,
     online: true,
     onlineMode: false,
-    usfmExportType: 'usfm2'
+    usfmExportType: 'usfm2',
+    selectedCategories: ['kt', 'other', 'names']
   },
   toolsSettings: {}
 };
