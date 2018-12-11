@@ -15,12 +15,16 @@ const initialState = {
     bookId: null,
     chapter: null,
     verse: null
-  }
+  },
+  quote: null,
+  groupId: null,
+  occurrence: null
 };
 
 const verseEditReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_VERSE_EDIT:
+    debugger;
       return {
         ...state,
         verseBefore: action.before,
@@ -37,7 +41,10 @@ const verseEditReducer = (state = initialState, action) => {
           bookId: action.reference.bookId,
           chapter: action.reference.chapter,
           verse: action.reference.verse
-        }
+        },
+        quote: action.quote,
+        groupId: action.groupId,
+        occurrence: action.occurrence
       };
     default:
       return state;
@@ -53,12 +60,13 @@ export default verseEditReducer;
  * @return {*}
  */
 export const getSaveStructure = (state, toolName) => {
+  debugger;
   const obj = {
     ...state,
     contextId: {
       reference: state.reference,
       tool: toolName,
-      groupId: `chapter_${state.reference.chapter}`
+      // groupId: `chapter_${state.reference.chapter}`
     }
   };
   delete obj.reference;

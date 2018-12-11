@@ -249,6 +249,7 @@ export const saveVerseEditsToCSV = (projectPath) => {
     loadProjectDataByType(projectPath, 'verseEdits')
       .then((array) => {
         const objectArray = array.map(data => {
+          debugger;
           const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
           const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
             groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';

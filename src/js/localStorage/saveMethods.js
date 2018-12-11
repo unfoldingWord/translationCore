@@ -162,6 +162,7 @@ export const saveSelections = state => {
  */
 export const saveVerseEdit = state => {
   try {
+    debugger;
     const projectSaveDir = getProjectSaveLocation(state);
     const verseEditPayload = getEditedVerse(state, state.contextIdReducer.contextId.tool);
     const {bookId, chapter, verse} = verseEditPayload.contextId.reference;
