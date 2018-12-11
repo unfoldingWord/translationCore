@@ -19,7 +19,7 @@ const LanguageNameTextBox = ({
       <AutoComplete
         id="Language-Name-TextBox-AutoComplete"
         searchText={languageName}
-        style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
+        style={{ width: '100%', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
         listStyle={{ maxHeight: 300, width: '500px', overflow: 'auto' }}
         errorText={getErrorMessage(translate, languageName, languageId)}
         errorStyle={{ color: '#cd0033' }}
@@ -27,7 +27,7 @@ const LanguageNameTextBox = ({
         floatingLabelFixed={true}
         floatingLabelStyle={{ color: "var(--text-color-dark)", fontSize: '22px', fontWeight: 'bold' }}
         floatingLabelText={
-          <div style={{ width: '260px' }}>
+          <div>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
             <span>{translate('projects.language_name')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
