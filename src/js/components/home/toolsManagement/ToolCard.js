@@ -191,7 +191,8 @@ ToolCard.propTypes = {
   developerMode: PropTypes.bool.isRequired,
 
   actions: PropTypes.shape({
-    setProjectToolGL: PropTypes.func.isRequired
+    setProjectToolGL: PropTypes.func.isRequired,
+    updateCheckSelection: PropTypes.func.isRequired
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.array.isRequired

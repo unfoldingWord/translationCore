@@ -18,6 +18,7 @@ import ospath from "ospath";
 import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
 import fs from "fs-extra";
 import { openAlertDialog } from "../../actions/AlertModalActions";
+import { goToStep } from "../../actions/BodyUIActions";
 
 class ToolsManagementContainer extends Component {
 
@@ -46,6 +47,11 @@ class ToolsManagementContainer extends Component {
       }
     }
     return categories;
+  }
+
+  handleGoBack() {
+    const {goToStep} = this.props;
+    goToStep(2);
   }
 
   handleSelectTool(toolName) {
@@ -81,6 +87,7 @@ class ToolsManagementContainer extends Component {
           {translate("tools.tools")}
           <ToolsCards
             tools={tools}
+            onGoBack={this.handleGoBack}
             onSelectTool={this.handleSelectTool}
             availableCategories={availableCategories}
             selectedCategories={selectedCategories}
@@ -110,6 +117,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     openTool: name => dispatch(openTool(name)),
     openAlertDialog: message => dispatch(openAlertDialog(message)),
+    goToStep: step => dispatch(goToStep(step)),
 
     actions: {
       setProjectToolGL: (toolName, selectedGL) => {
@@ -124,6 +132,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
+  goToStep: PropTypes.func.isRequired,
   isUserLoggedIn: PropTypes.bool.isRequired,
   openTool: PropTypes.func.isRequired,
   openAlertDialog: PropTypes.func.isRequired,

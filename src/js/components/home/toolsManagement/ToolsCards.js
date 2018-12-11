@@ -13,6 +13,8 @@ import { Card, CardText } from 'material-ui';
  * @param translate
  * @param bookName
  * @param projectPath
+ * @param onGoBack
+ * @param onSelectTool
  * @param selectedCategories
  * @param availableCategories
  * @returns {*}
@@ -24,6 +26,7 @@ const ToolsCards = ({
   translate,
   bookName,
   projectPath,
+  onGoBack,
   onSelectTool,
   selectedCategories,
   availableCategories
@@ -46,7 +49,7 @@ const ToolsCards = ({
             {translate('projects.no_project')}
             <span
               style={{ color: "var(--accent-color-dark)", cursor: "pointer" }}
-              onClick={() => this.props.actions.goToStep(2)}
+              onClick={onGoBack}
             >
               &nbsp;{translate('select_project')}&nbsp;
             </span>
@@ -78,6 +81,7 @@ const ToolsCards = ({
 };
 
 ToolsCards.propTypes = {
+  onGoBack: PropTypes.func.isRequired,
   tools: PropTypes.array,
   onSelectTool: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
