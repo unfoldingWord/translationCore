@@ -51,16 +51,13 @@ class ToolsManagementContainer extends Component {
     const {
       tools,
       reducers: {
-        loginReducer: { loggedInUser },
         settingsReducer: {
-          currentSettings: { developerMode, selectedCategories }
+          currentSettings: { selectedCategories }
         },
         projectDetailsReducer: {
-          manifest,
           projectSaveLocation,
           currentProjectToolsProgress
-        },
-        invalidatedReducer
+        }
       },
       translate
     } = this.props;
@@ -83,17 +80,13 @@ class ToolsManagementContainer extends Component {
             tools={tools}
             availableCategories={availableCategories}
             selectedCategories={selectedCategories}
-            manifest={manifest}
             translate={translate}
             bookName={name}
-            loggedInUser={loggedInUser}
             actions={{
               ...this.props.actions,
               launchTool: this.props.actions.launchTool(
                 translate("please_log_in"))
             }}
-            developerMode={developerMode}
-            invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
           />
@@ -110,8 +103,7 @@ const mapStateToProps = (state) => {
       homeScreenReducer: state.homeScreenReducer,
       settingsReducer: state.settingsReducer,
       projectDetailsReducer: state.projectDetailsReducer,
-      loginReducer: state.loginReducer,
-      invalidatedReducer: state.invalidatedReducer
+      loginReducer: state.loginReducer
     }
   };
 };
@@ -126,8 +118,8 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
       },
       launchTool: (loginMessage) => {
-        return (toolFolderPath, loggedInUser, toolName) => {
-          if (!loggedInUser) {
+        return (toolFolderPath, isUserLoggedIn, toolName) => {
+          if (!isUserLoggedIn) {
             dispatch(AlertModalActions.openAlertDialog(loginMessage));
             return;
           }
@@ -150,10 +142,7 @@ ToolsManagementContainer.propTypes = {
         developerMode: PropTypes.bool
       }).isRequired
     }).isRequired,
-    projectDetailsReducer: PropTypes.object.isRequired,
-    loginReducer: PropTypes.shape({
-      loggedInUser: PropTypes.bool
-    }).isRequired
+    projectDetailsReducer: PropTypes.object.isRequired
   }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired

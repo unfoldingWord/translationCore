@@ -13,8 +13,13 @@ import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
-import { getToolGatewayLanguage } from "../../../selectors";
+import {
+  getIsUserLoggedIn,
+  getProjectBookId, getSetting,
+  getToolGatewayLanguage
+} from "../../../selectors";
 import { connect } from "react-redux";
+import { withLocale } from "../../../containers/Locale";
 
 class ToolCard extends Component {
   constructor(props) {
@@ -27,7 +32,7 @@ class ToolCard extends Component {
 
   componentWillMount() {
     const {store} = this.context;
-    const name = this.props.metadata.name;
+    const name = this.props.tool.name;
     this.props.actions.getProjectProgressForTools(name);
     const gatewayLanguage = getToolGatewayLanguage(store.getState(), name);
 
@@ -38,7 +43,7 @@ class ToolCard extends Component {
 
   selectionChange(selectedGL) {
     if (selectedGL && selectedGL.trim()) {
-      this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
+      this.props.actions.setProjectToolGL(this.props.tool.name, selectedGL);
       this.setState({selectedGL});
     }
   }
@@ -62,21 +67,12 @@ class ToolCard extends Component {
   }
 
   render() {
-    const {metadata: {
-      title,
-      version,
-      description,
-      badgeImagePath,
-      folderName,
-      name
-    },
-      manifest: {
-        project: {id}
-      },
-      loggedInUser,
+    const {
+      tool,
+      bookId,
+      isUserLoggedIn,
       currentProjectToolsProgress,
       translate,
-      invalidatedReducer,
       developerMode,
       actions: {
         updateCheckSelection
@@ -84,11 +80,11 @@ class ToolCard extends Component {
       selectedCategories,
       availableCategories
     } = this.props;
-    const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    const launchDisableMessage = this.getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories);
+    const progress = currentProjectToolsProgress[tool.name] ? currentProjectToolsProgress[tool.name] : 0;
+    const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
     let showCheckBoxes = false;
-    switch (name) {
+    switch (tool.name) {
       case 'wordAlignment':
         desc_key = 'tools.alignment_description';
         break;
@@ -101,9 +97,9 @@ class ToolCard extends Component {
       default:
         break;
     }
-    let descriptionLocalized = description;
+    let descriptionLocalized = tool.description;
     if (desc_key) {
-      descriptionLocalized = getTranslation(translate, desc_key, description);
+      descriptionLocalized = getTranslation(translate, desc_key, tool.description);
     }
 
     return (
@@ -111,17 +107,17 @@ class ToolCard extends Component {
         <Card style={{margin: "6px 0px 10px"}}>
           <img
             style={{float: "left", height: "90px", margin: "10px"}}
-            src={badgeImagePath}
+            src={tool.badge}
           />
           <CardHeader
-            title={title}
+            title={tool.title}
             titleStyle={{fontWeight: "bold"}}
-            subtitle={version}
+            subtitle={tool.version}
             style={{display: 'flex', justifyContent: 'space-between'}}>
-            <ToolCardNotificationBadges toolName={name} invalidatedReducer={invalidatedReducer} />
+            <ToolCardNotificationBadges tool={tool} translate={translate} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes toolName={name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
+          {showCheckBoxes && <ToolCardBoxes toolName={tool.name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -147,8 +143,8 @@ class ToolCard extends Component {
               translate={translate}
               selectedGL={this.state.selectedGL}
               selectionChange={this.selectionChange}
-              bookID={id}
-              toolName={name}
+              bookID={bookId}
+              toolName={tool.name}
             />
             <Hint
               position={'left'}
@@ -159,7 +155,7 @@ class ToolCard extends Component {
               <button
                 disabled={launchDisableMessage ? true : false}
                 className='btn-prime'
-                onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
+                onClick={() => {this.props.actions.launchTool(tool.path, isUserLoggedIn, tool.name)}}
                 style={{width: '90px', margin: '10px'}}
               >
                 {translate('buttons.launch_button')}
@@ -174,16 +170,16 @@ class ToolCard extends Component {
 
 ToolCard.propTypes = {
   translate: PropTypes.func.isRequired,
+  bookId: PropTypes.string.isRequired,
+  isUserLoggedIn: PropTypes.bool.isRequired,
+  tool: PropTypes.object.isRequired,
+
   actions: PropTypes.shape({
     getProjectProgressForTools: PropTypes.func.isRequired,
     setProjectToolGL: PropTypes.func.isRequired,
     launchTool: PropTypes.func.isRequired
   }),
-  loggedInUser: PropTypes.bool.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
-  metadata: PropTypes.object.isRequired,
-  manifest: PropTypes.object.isRequired,
-  invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.array.isRequired
@@ -193,4 +189,10 @@ ToolCard.contextTypes = {
   store: PropTypes.any
 };
 
-export default connect()(ToolCard);
+const mapStateToProps = state => ({
+  bookId: getProjectBookId(state),
+  isUserLoggedIn: getIsUserLoggedIn(state),
+  developerMode: getSetting(state, 'developerMode')
+});
+
+export default withLocale(connect(mapStateToProps)(ToolCard));

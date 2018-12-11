@@ -12,12 +12,8 @@ import { Card, CardText } from 'material-ui';
  * @param actions
  * @param translate
  * @param bookName
- * @param loggedInUser
  * @param projectSaveLocation
  * @param currentProjectToolsProgress
- * @param manifest
- * @param invalidatedReducer
- * @param developerMode
  * @param selectedCategories
  * @param availableCategories
  * @returns {*}
@@ -28,12 +24,8 @@ const ToolsCards = ({
   actions,
   translate,
   bookName,
-  loggedInUser,
   projectSaveLocation,
   currentProjectToolsProgress,
-  manifest,
-  invalidatedReducer,
-  developerMode,
   selectedCategories,
   availableCategories
 }) => {
@@ -74,20 +66,9 @@ const ToolsCards = ({
                 selectedCategories={selectedCategories}
                 translate={translate}
                 key={i}
+                tool={tool}
                 actions={actions}
-                loggedInUser={loggedInUser}
-                metadata={{
-                  title: tool.title,
-                  version: tool.version,
-                  description: tool.description,
-                  badgeImagePath: tool.badge,
-                  folderName: tool.path,
-                  name: tool.name
-                }}
-                invalidatedReducer={invalidatedReducer}
                 currentProjectToolsProgress={currentProjectToolsProgress}
-                manifest={manifest}
-                developerMode={developerMode}
               />
             );
           })
@@ -102,12 +83,8 @@ ToolsCards.propTypes = {
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
-  loggedInUser: PropTypes.bool.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
-  manifest: PropTypes.object.isRequired,
-  invalidatedReducer: PropTypes.object.isRequired,
-  developerMode: PropTypes.bool.isRequired,
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
 };
