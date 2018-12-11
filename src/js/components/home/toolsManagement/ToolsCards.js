@@ -12,8 +12,7 @@ import { Card, CardText } from 'material-ui';
  * @param actions
  * @param translate
  * @param bookName
- * @param projectSaveLocation
- * @param currentProjectToolsProgress
+ * @param projectPath
  * @param selectedCategories
  * @param availableCategories
  * @returns {*}
@@ -24,8 +23,8 @@ const ToolsCards = ({
   actions,
   translate,
   bookName,
-  projectSaveLocation,
-  currentProjectToolsProgress,
+  projectPath,
+  onSelectTool,
   selectedCategories,
   availableCategories
 }) => {
@@ -39,7 +38,7 @@ const ToolsCards = ({
         </Card>
       </MuiThemeProvider>
     );
-  } else if (bookName.length === 0 && projectSaveLocation === 0) {
+  } else if (bookName.length === 0 && projectPath === 0) {
     return (
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
@@ -67,8 +66,8 @@ const ToolsCards = ({
                 translate={translate}
                 key={i}
                 tool={tool}
+                onSelect={onSelectTool}
                 actions={actions}
-                currentProjectToolsProgress={currentProjectToolsProgress}
               />
             );
           })
@@ -80,11 +79,11 @@ const ToolsCards = ({
 
 ToolsCards.propTypes = {
   tools: PropTypes.array,
+  onSelectTool: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
-  projectSaveLocation: PropTypes.string.isRequired,
-  currentProjectToolsProgress: PropTypes.object.isRequired,
+  projectPath: PropTypes.string.isRequired,
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
 };

@@ -7,6 +7,8 @@ import HomeContainerContentWrapper
 import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import {
+  getIsUserLoggedIn,
+  getProjectSaveLocation, getSetting,
   getToolGatewayLanguage,
   getTools
 } from "../../selectors";
@@ -15,17 +17,16 @@ import path from "path-extra";
 import ospath from "ospath";
 import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
 import fs from "fs-extra";
+import { openAlertDialog } from "../../actions/AlertModalActions";
 
 class ToolsManagementContainer extends Component {
 
   constructor(props) {
     super(props);
     this.buildCategories = this.buildCategories.bind(this);
+    this.handleSelectTool = this.handleSelectTool.bind(this);
   }
 
-  /**
-   * TODO: move this into {@link ToolsCards}
-   */
   buildCategories() {
     const { tools } = this.props;
     const categories = {};
@@ -47,18 +48,20 @@ class ToolsManagementContainer extends Component {
     return categories;
   }
 
+  handleSelectTool(toolName) {
+    const {isUserLoggedIn, openTool, translate, openAlertDialog} = this.props;
+    if(isUserLoggedIn) {
+      openTool(toolName);
+    } else {
+      openAlertDialog(translate("please_log_in"));
+    }
+  }
+
   render() {
     const {
       tools,
-      reducers: {
-        settingsReducer: {
-          currentSettings: { selectedCategories }
-        },
-        projectDetailsReducer: {
-          projectSaveLocation,
-          currentProjectToolsProgress
-        }
-      },
+      projectPath,
+      selectedCategories,
       translate
     } = this.props;
     const instructions = (
@@ -78,17 +81,15 @@ class ToolsManagementContainer extends Component {
           {translate("tools.tools")}
           <ToolsCards
             tools={tools}
+            onSelectTool={this.handleSelectTool}
             availableCategories={availableCategories}
             selectedCategories={selectedCategories}
             translate={translate}
             bookName={name}
             actions={{
-              ...this.props.actions,
-              launchTool: this.props.actions.launchTool(
-                translate("please_log_in"))
+              ...this.props.actions
             }}
-            projectSaveLocation={projectSaveLocation}
-            currentProjectToolsProgress={currentProjectToolsProgress}
+            projectPath={projectPath}
           />
         </div>
       </HomeContainerContentWrapper>
@@ -98,33 +99,21 @@ class ToolsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    isUserLoggedIn: getIsUserLoggedIn(state),
+    projectPath: getProjectSaveLocation(state),
     tools: getTools(state),
-    reducers: {
-      homeScreenReducer: state.homeScreenReducer,
-      settingsReducer: state.settingsReducer,
-      projectDetailsReducer: state.projectDetailsReducer,
-      loginReducer: state.loginReducer
-    }
+    selectedCategories: getSetting(state, 'selectedCategories')
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    openTool: name => dispatch(openTool(name)),
+    openAlertDialog: message => dispatch(openAlertDialog(message)),
+
     actions: {
-      getProjectProgressForTools: (toolName) => {
-        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
-      },
       setProjectToolGL: (toolName, selectedGL) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
-      },
-      launchTool: (loginMessage) => {
-        return (toolFolderPath, isUserLoggedIn, toolName) => {
-          if (!isUserLoggedIn) {
-            dispatch(AlertModalActions.openAlertDialog(loginMessage));
-            return;
-          }
-          dispatch(openTool(toolName));
-        };
       },
       updateCheckSelection: (id, value, toolName) => {
         dispatch(
@@ -135,15 +124,12 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
+  isUserLoggedIn: PropTypes.bool.isRequired,
+  openTool: PropTypes.func.isRequired,
+  openAlertDialog: PropTypes.func.isRequired,
   tools: PropTypes.array.isRequired,
-  reducers: PropTypes.shape({
-    settingsReducer: PropTypes.shape({
-      currentSettings: PropTypes.shape({
-        developerMode: PropTypes.bool
-      }).isRequired
-    }).isRequired,
-    projectDetailsReducer: PropTypes.object.isRequired
-  }).isRequired,
+  projectPath: PropTypes.string.isRequired,
+  selectedCategories: PropTypes.any.isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired
 };

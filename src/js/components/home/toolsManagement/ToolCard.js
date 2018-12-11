@@ -14,7 +14,6 @@ import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
 import {
-  getIsUserLoggedIn,
   getProjectBookId, getSetting,
   getToolGatewayLanguage
 } from "../../../selectors";
@@ -25,15 +24,24 @@ class ToolCard extends Component {
   constructor(props) {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
     this.state = {
-      showDescription: false
+      showDescription: false,
+      progress: 0
     };
+  }
+
+  componentDidMount() {
+    const {tool} = this.props;
+    const toolProgress = tool.api.trigger("getProgress");
+    this.setState({
+      progress: toolProgress ? toolProgress : 0
+    });
   }
 
   componentWillMount() {
     const {store} = this.context;
     const name = this.props.tool.name;
-    this.props.actions.getProjectProgressForTools(name);
     const gatewayLanguage = getToolGatewayLanguage(store.getState(), name);
 
     this.setState({
@@ -66,12 +74,18 @@ class ToolCard extends Component {
     return launchDisableMessage;
   }
 
+  /**
+   * Handles selecting the tool
+   */
+  handleSelect() {
+    const {onSelect, tool} = this.props;
+    onSelect(tool.name);
+  }
+
   render() {
     const {
       tool,
       bookId,
-      isUserLoggedIn,
-      currentProjectToolsProgress,
       translate,
       developerMode,
       actions: {
@@ -80,7 +94,7 @@ class ToolCard extends Component {
       selectedCategories,
       availableCategories
     } = this.props;
-    const progress = currentProjectToolsProgress[tool.name] ? currentProjectToolsProgress[tool.name] : 0;
+    const {progress} = this.state;
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
     let showCheckBoxes = false;
@@ -106,6 +120,7 @@ class ToolCard extends Component {
       <MuiThemeProvider>
         <Card style={{margin: "6px 0px 10px"}}>
           <img
+            alt={tool.name}
             style={{float: "left", height: "90px", margin: "10px"}}
             src={tool.badge}
           />
@@ -155,7 +170,7 @@ class ToolCard extends Component {
               <button
                 disabled={launchDisableMessage ? true : false}
                 className='btn-prime'
-                onClick={() => {this.props.actions.launchTool(tool.path, isUserLoggedIn, tool.name)}}
+                onClick={this.handleSelect}
                 style={{width: '90px', margin: '10px'}}
               >
                 {translate('buttons.launch_button')}
@@ -169,18 +184,15 @@ class ToolCard extends Component {
 }
 
 ToolCard.propTypes = {
+  onSelect: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   bookId: PropTypes.string.isRequired,
-  isUserLoggedIn: PropTypes.bool.isRequired,
   tool: PropTypes.object.isRequired,
+  developerMode: PropTypes.bool.isRequired,
 
   actions: PropTypes.shape({
-    getProjectProgressForTools: PropTypes.func.isRequired,
-    setProjectToolGL: PropTypes.func.isRequired,
-    launchTool: PropTypes.func.isRequired
+    setProjectToolGL: PropTypes.func.isRequired
   }),
-  currentProjectToolsProgress: PropTypes.object.isRequired,
-  developerMode: PropTypes.bool.isRequired,
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.array.isRequired
 };
@@ -191,7 +203,6 @@ ToolCard.contextTypes = {
 
 const mapStateToProps = state => ({
   bookId: getProjectBookId(state),
-  isUserLoggedIn: getIsUserLoggedIn(state),
   developerMode: getSetting(state, 'developerMode')
 });
 

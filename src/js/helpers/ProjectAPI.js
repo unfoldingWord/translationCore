@@ -14,9 +14,9 @@ export default class ProjectAPI {
    * @param {string} projectDir - the absolute path to the project directory
    */
   constructor(projectDir) {
-    this.projectPath = projectDir;
-    this.dataPath = path.join(projectDir, PROJECT_TC_DIR);
-    this.manifest = null;
+    this._projectPath = projectDir;
+    this._dataPath = path.join(projectDir, PROJECT_TC_DIR);
+    this._manifest = null;
 
     this.writeData = this.writeData.bind(this);
     this.writeDataSync = this.writeDataSync.bind(this);
@@ -31,17 +31,33 @@ export default class ProjectAPI {
   }
 
   /**
+   * Returns the path to the project directory
+   * @returns {string}
+   */
+  get path() {
+    return this._projectPath;
+  }
+
+  /**
+   * Returns the path to the project data directory
+   * @returns {*}
+   */
+  get dataPath() {
+    return this._dataPath;
+  }
+
+  /**
    * Loads the project manifest from the disk.
    * Subsequent calls are cached.
    * @returns {Promise<JSON>} the manifest json object
    * @private
    */
-  async _loadManifest() {
-    if (this.manifest === null) {
+  async getManifest() {
+    if (this._manifest === null) {
       const data = this.readData("manifest.json");
-      this.manifest = JSON.parse(data);
+      this._manifest = JSON.parse(data);
     }
-    return this.manifest;
+    return this._manifest;
   }
 
   /**
@@ -49,7 +65,7 @@ export default class ProjectAPI {
    * @returns {Promise<string>}
    */
   getBookId() {
-    return this._loadManifest().project.id;
+    return this.getManifest().project.id;
   }
 
   /**
@@ -60,7 +76,7 @@ export default class ProjectAPI {
    * @return {Promise}
    */
   writeData(filePath, data) {
-    const writePath = path.join(this.dataPath, filePath);
+    const writePath = path.join(this._dataPath, filePath);
     return fs.outputFile(writePath, data);
   }
 
@@ -70,7 +86,7 @@ export default class ProjectAPI {
    * @param {string} data - the data to write
    */
   writeDataSync(filePath, data) {
-    const writePath = path.join(this.dataPath, filePath);
+    const writePath = path.join(this._dataPath, filePath);
     fs.outputFileSync(writePath, data);
   }
 
@@ -80,7 +96,7 @@ export default class ProjectAPI {
    * @return {Promise<string[]>}
    */
   readDir(dir) {
-    const dirPath = path.join(this.dataPath, dir);
+    const dirPath = path.join(this._dataPath, dir);
     return fs.readdir(dirPath);
   }
 
@@ -90,7 +106,7 @@ export default class ProjectAPI {
    * @return {string[]}
    */
   readDirSync(dir) {
-    const dirPath = path.join(this.dataPath, dir);
+    const dirPath = path.join(this._dataPath, dir);
     return fs.readdirSync(dirPath);
   }
 
@@ -101,7 +117,7 @@ export default class ProjectAPI {
    * @return {Promise<string>}
    */
   async readData(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
+    const readPath = path.join(this._dataPath, filePath);
     const data = await fs.readFile(readPath);
     return data.toString();
   }
@@ -112,7 +128,7 @@ export default class ProjectAPI {
    * @return {string}
    */
   readDataSync(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
+    const readPath = path.join(this._dataPath, filePath);
     const data = fs.readFileSync(readPath);
     return data.toString();
   }
@@ -123,7 +139,7 @@ export default class ProjectAPI {
    * @return {Promise<boolean>}
    */
   pathExists(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
+    const readPath = path.join(this._dataPath, filePath);
     return fs.pathExists(readPath);
   }
 
@@ -133,7 +149,7 @@ export default class ProjectAPI {
    * @return {boolean}
    */
   pathExistsSync(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
+    const readPath = path.join(this._dataPath, filePath);
     return fs.pathExistsSync(readPath);
   }
 
@@ -144,7 +160,7 @@ export default class ProjectAPI {
    * @return {Promise}
    */
   deleteFile(filePath) {
-    const fullPath = path.join(this.dataPath, filePath);
+    const fullPath = path.join(this._dataPath, filePath);
     return fs.remove(fullPath);
   }
 
@@ -154,7 +170,7 @@ export default class ProjectAPI {
    * @param {string} filePath - the relative path to delete
    */
   deleteFileSync(filePath) {
-    const fullPath = path.join(this.dataPath, filePath);
+    const fullPath = path.join(this._dataPath, filePath);
     fs.removeSync(fullPath);
   }
 }
