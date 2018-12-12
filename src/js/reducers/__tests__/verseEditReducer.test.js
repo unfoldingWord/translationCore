@@ -6,23 +6,26 @@ describe('verse edit reducer',  () => {
 
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
-      verseBefore: null,
-      verseAfter: null,
-      tags: null,
-      userName: null,
-      activeBook: null,
-      activeChapter: null,
-      activeVerse: null,
-      modifiedTimestamp: null,
-      gatewayLanguageCode: null,
-      gatewayLanguageQuote: null,
+      activeBook: null, 
+      activeChapter: null, 
+      activeVerse: null, 
+      gatewayLanguageCode: null, 
+      gatewayLanguageQuote: null, 
+      modifiedTimestamp: null, 
+      occurrence: null, quote: null, 
       reference: {
-        bookId: null,
-        chapter: null,
+        bookId: null, 
+        chapter: null, 
+        groupId: null, 
         verse: null
-      }
+      }, 
+      tags: null, 
+      userName: null, 
+      verseAfter: null, 
+      verseBefore: null
     });
   });
+
 
   it('should handle ADD_VERSE_EDIT with empty data', () => {
     expect(
@@ -120,8 +123,11 @@ describe('verse edit selectors', () => {
       reference: {
         bookId: 'book',
         chapter: 1,
-        verse: 2
-      }
+        verse: 2,
+        groupId:'group'
+      },
+      quote:'quote',
+      occurrence: 1
     };
     const saveState = getSaveStructure(state, 'wordAlignment');
     expect(saveState).toEqual({
@@ -132,14 +138,19 @@ describe('verse edit selectors', () => {
       modifiedTimestamp: timestamp,
       gatewayLanguageCode: 'code',
       gatewayLanguageQuote: 'quote',
+      occurrence: 1,
+      quote: "quote",
       contextId: {
         reference: {
           bookId: 'book',
           chapter: 1,
-          verse: 2
+          verse: 2,
+          groupId: "group"
         },
+        occurrence: 1,
+        quote: "quote",
         tool: 'wordAlignment',
-        groupId: 'chapter_1'
+        groupId: "group"
       }
     });
   });

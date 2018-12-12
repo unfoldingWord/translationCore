@@ -9,7 +9,6 @@ import path from 'path-extra';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
-import {recordTargetVerseEdit} from './VerseEditActions';
 
 /**
  * Generates the output directory.
@@ -218,28 +217,6 @@ export function loadSelections() {
         selections: [],
         userName: ""
       });
-    }
-  };
-}
-/**
- * Loads the latest verseEdit file from the file system for the specific
- * contextID.
- * @deprecated there is no reason to load the verse edits.
- * @return {object} Dispatches an action that loads the verseEditReducer with data.
- */
-export function loadVerseEdit() {
-  return (dispatch, getState) => {
-    const {projectDetailsReducer, contextIdReducer} = getState();
-    let loadPath = generateLoadPath(projectDetailsReducer, contextIdReducer, 'verseEdits');
-    let verseEditsObject = loadCheckData(loadPath, contextIdReducer.contextId);
-    if (verseEditsObject) {
-      const {verseBefore, verseAfter, userName, tags, modifiedTimestamp} = verseEditsObject;
-      const {bookId, chapter, verse} = contextIdReducer.contextId.reference;
-      dispatch(recordTargetVerseEdit(bookId, chapter, verse, verseBefore, verseAfter, tags, userName, modifiedTimestamp, null, null, chapter, verse));
-    } else {
-      debugger;
-      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-      dispatch(recordTargetVerseEdit('', '', '', '', '', [], [], '', null, null));
     }
   };
 }
