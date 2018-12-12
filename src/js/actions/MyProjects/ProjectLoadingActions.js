@@ -22,6 +22,7 @@ import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructu
 import { loadBookTranslations } from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
+import { initializeProjectGroups } from "../ToolActions";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -59,7 +60,9 @@ export const openProject = (name) => {
       // connect the tools
       const tools = getTools(getState());
       for (const t of tools) {
+        // await dispatch(initializeProjectGroups(t.name));
         const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
+        console.warn(`generated tool props for ${t.name}`, toolProps);
         t.api.triggerWillConnect(toolProps);
       }
 

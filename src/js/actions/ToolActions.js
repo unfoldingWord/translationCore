@@ -58,7 +58,10 @@ export const openTool = (name) => (dispatch, getData) => {
         type: types.OPEN_TOOL,
         name
       });
-      dispatch(initializeProjectGroups(name));
+      // dispatch(initializeProjectGroups(name)).then(() => {
+      dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
+      dispatch(BodyUIActions.toggleHomeView(false));
+      // });
     } catch (e) {
       console.warn(e);
       AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));
@@ -106,8 +109,6 @@ export function initializeProjectGroups(toolName) {
       Promise.all(categoryGroupsLoadActions).then(() => {
         dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
         dispatch(loadCurrentContextId());
-        dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
-        dispatch(BodyUIActions.toggleHomeView(false));
         resolve();
       }).catch(reject);
     })

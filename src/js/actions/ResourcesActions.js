@@ -183,7 +183,7 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
     }
     return null;
   } catch (error) {
-    console.error(error);
+    console.error(`Failed to load book. Bible: ${bibleId} Book: ${bookId} Language: ${languageId}`, error);
   }
 };
 
