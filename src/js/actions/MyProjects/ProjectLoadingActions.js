@@ -55,7 +55,7 @@ export const openProject = (name) => {
 
       // load the book data
       const manifest = getProjectManifest(getState());
-      await dispatch(loadBookTranslations(manifest.project.id));
+      await dispatch(loadBookTranslations(manifest.project.id, name));
 
       // connect the tools
       const tools = getTools(getState());

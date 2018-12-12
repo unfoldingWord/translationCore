@@ -12,7 +12,7 @@ import { DEFAULT_GATEWAY_LANGUAGE } from '../helpers/gatewayLanguageHelpers';
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 import _ from 'lodash';
-import {getContext} from "../selectors";
+import { getContext, getSelectedToolName } from "../selectors";
 import * as BibleHelpers from "../helpers/bibleHelpers";
 import SimpleCache from "../helpers/SimpleCache";
 import * as SettingsActions from "./SettingsActions";
@@ -245,12 +245,13 @@ export const updateOlPaneSettings = (bookId) => (dispatch, getState) => {
  * make sure required bible books for current tool are loaded into resources
  */
 export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
+  const toolName = getSelectedToolName(getState());
   const state = getState();
   const { bibles } = state.resourcesReducer;
   const contextId = getContext(state);
   const bookId = contextId && contextId.reference.bookId;
   dispatch(updateOlPaneSettings(bookId));
-  const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId);
+  const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId, toolName);
   // remove bibles from resources list that are already loaded into resources reducer
   if (bookId && bibles && Array.isArray(resources)) {
     for (let languageId of Object.keys(bibles)) {
@@ -307,13 +308,18 @@ export const loadBooks = contextId => dispatch => {
 /**
  * Loads book data for each of the languages.
  * @param {string} bookId - the id of the book to load
+ * @param {string} [toolName] - the tool name for which books will be loaded. If null the currently selected tool name is used.
  * @returns {Function}
  */
-export const loadBookTranslations = bookId => async (dispatch, getState) => {
+export const loadBookTranslations = (bookId, toolName=null) => async (dispatch, getState) => {
+  if(toolName === null) {
+    toolName = getSelectedToolName(getState());
+  }
+
   dispatch(updateOlPaneSettings(bookId));
 
   // source bibles
-  const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
+  const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);
   for (let i = 0, len = resources.length; i < len; i++) {
     const resource = resources[i];
     dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));

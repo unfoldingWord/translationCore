@@ -150,11 +150,13 @@ export default projectDetailsReducer;
  * @returns {string} - the gateway language code. Default value is "en".
  */
 export const getToolGatewayLanguage = (state, toolName) => {
-  if(state && state.currentProjectToolsSelectedGL.hasOwnProperty(toolName)) {
-    return state.currentProjectToolsSelectedGL[toolName];
-  } else {
-    return "en";
+  if(state) {
+    const languages = state.currentProjectToolsSelectedGL;
+    if(languages.hasOwnProperty(toolName) && languages[toolName]) {
+      return languages[toolName];
+    }
   }
+  return "en";
 };
 
 /**
