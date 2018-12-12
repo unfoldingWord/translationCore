@@ -23,7 +23,7 @@ const LanguageIdTextBox = ({
       <AutoComplete
         id="Language-Id-TextBox-AutoComplete"
         searchText={languageId}
-        style={{ width: '200px', height: '80px', marginTop: languageId === "" ? '30px' : '' }}
+        style={{ height: '80px', marginTop: languageId === "" ? '30px' : '' }}
         listStyle={{ maxHeight: 300, overflow: 'auto' }}
         errorText={getErrorMessage(translate, languageId)}
         errorStyle={{ color: '#cd0033' }}
@@ -31,7 +31,7 @@ const LanguageIdTextBox = ({
         floatingLabelFixed={true}
         floatingLabelStyle={{ color: "var(--text-color-dark)", fontSize: '22px', fontWeight: 'bold' }}
         floatingLabelText={
-          <div style={{ width: '260px' }}>
+          <div>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
             <span>{translate('projects.language_code')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>

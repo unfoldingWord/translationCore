@@ -9,9 +9,9 @@ import fs from "fs-extra";
 export const loadToolsInDir = async toolsDir => {
   const tools = [];
 
-  const toolsExist = await fs.pathExists(toolsDir);
-  if(!toolsExist) {
-    console.warn(`No tools found in missing directory ${toolsDir}`);
+  // TRICKY: fs.access does not work on asar directories so we cannot use `fs.access`
+  if(!fs.existsSync(toolsDir)) {
+    console.warn(`No tools found in missing directory ${toolsDir}.`);
     return [];
   }
 
