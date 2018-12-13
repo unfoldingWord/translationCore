@@ -158,7 +158,7 @@
     "importing_local_alert": "Importando projeto local...",
     "importing_project_alert": "Importando ${project_url}. Favor aguardar...",
     "cancel_import_alert": "Cancelar agora abortará a importação. Será preciso importar novamente o projeto para usá-lo.",
-    "project_already_identified": "Este projeto foi identificado como um projeto ${originalBook} . Tem certeza que deseja alterá-lo para um projeto ${suggestedBook}?",
+    "project_already_identified": "Este projeto foi identificado como um projeto ${originalBook}. Deseja mesmo alterá-lo para um projeto ${suggestedBook}?",
     "loading_project_alert": "Carregando dados do seu projeto.",
     "exported_alert": "${project_name} foi exportado com sucesso para ${file_path}.",
     "must_be_logged_in_alert": "Você deve estar conectado com uma conta do ${door43} para fazer upload de projetos. Por favor, Logout e depois volte com uma conta de usuário do ${door43}.",
