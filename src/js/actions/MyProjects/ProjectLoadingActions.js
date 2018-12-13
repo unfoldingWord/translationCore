@@ -22,7 +22,7 @@ import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructu
 import { loadBookTranslations } from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
-import { initializeProjectGroups } from "../ToolActions";
+import { initializeProjectGroups, resetReducersData } from "../ToolActions";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -43,7 +43,7 @@ export const openProject = (name) => {
     const translate = getTranslate(getState());
 
     try {
-      // TODO: refactor project reducers
+      dispatch(resetReducersData());
       dispatch(initializeReducersForProjectOpenValidation());
       dispatch(
         openAlertDialog(translate('projects.loading_project_alert'), true));

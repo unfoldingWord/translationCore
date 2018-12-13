@@ -53,14 +53,15 @@ export const openTool = (name) => (dispatch, getData) => {
   dispatch({ type: types.START_LOADING });
   setTimeout(() => {
     try {
-      dispatch(resetReducersData());
       dispatch({
         type: types.OPEN_TOOL,
         name
       });
       dispatch(initializeProjectGroups(name)).then(() => {
+        dispatch(loadCurrentContextId());
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));
+
       });
     } catch (e) {
       console.warn(e);
@@ -108,7 +109,7 @@ export function initializeProjectGroups(toolName) {
       });
       Promise.all(categoryGroupsLoadActions).then(() => {
         dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-        dispatch(loadCurrentContextId());
+        // dispatch(loadCurrentContextId());
         resolve();
       }).catch(reject);
     })

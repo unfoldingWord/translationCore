@@ -4,7 +4,7 @@ import fs from "fs-extra";
 const PROJECT_TC_DIR = ".apps/translationCore/";
 
 /**
- * Provides an interface for interacting with project files.
+ * Provides an interface with which tools can interact with a project
  * TODO: this could eventually be used to handle all project manipulation in tC not use used with the tools
  */
 export default class ProjectAPI {
