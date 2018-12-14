@@ -127,7 +127,7 @@
     "zip_files": "Arquivos compactados em ZIP",
     "error_setting_up_project": "Opa! Surgiu um problema ao configurar seu projeto para ser carregado. Entre em contato com o Suporte (${email}) para obter assistência.",
     "error_loading": "Opa! Surgiu um problema ao configurar seu projeto para ser carregado. Favor contactar Suporte (${email}) para obter assistência.",
-    "no_project": "Nenhum Projeto foi selecionado",
+    "no_project": "Nenhum projeto foi selecionado",
     "import_from_d43": "Importar do ${door43}",
     "select_project_from_list": "Selecione um Projeto na lista.",
     "to_import_project": "Para importar um Projeto, clique em",
