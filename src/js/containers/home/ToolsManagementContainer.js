@@ -21,13 +21,14 @@ class ToolsManagementContainer extends Component {
       reducers: {
         loginReducer: { loggedInUser },
         settingsReducer: {
-          currentSettings: { developerMode, selectedCategories }
+          currentSettings: { developerMode }
         },
         projectDetailsReducer: {
           manifest,
           projectSaveLocation,
           currentProjectToolsProgress,
-          currentProjectToolsSelectedGL
+          currentProjectToolsSelectedGL,
+          toolsCategories
         },
         invalidatedReducer,
       },
@@ -50,7 +51,7 @@ class ToolsManagementContainer extends Component {
           <ToolsCards
             tools={tools}
             availableCategories={availableCategories}
-            selectedCategories={selectedCategories}
+            toolsCategories={toolsCategories}
             manifest={manifest}
             translate={translate}
             bookName={name}

@@ -10,10 +10,21 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
+  toolsCategories: { 
+    translationWords: ['kt', 'other', 'names']
+  }
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case consts.SET_CHECK_CATEGORIES:
+    return {
+      ...state,
+      toolsCategories: {
+        ...state.toolsCategories,
+        [action.toolName]: action.selectedCategories
+      }
+    };
     case consts.SET_SAVE_PATH_LOCATION:
       return {
         ...state,

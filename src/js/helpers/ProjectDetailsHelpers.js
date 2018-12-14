@@ -16,7 +16,29 @@ import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+const TOOL_DATA_PATH = path.join('.apps', 'translationCore', 'index');
 
+export function setCategoriesForProjectInFS(categories, toolName, bookName, projectSaveLocation) {
+  const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
+  let categoriesIndexObject = {
+    current:categories,
+    loaded: []
+  };
+  if (fs.existsSync(currentCategoriesLoadedPath)) {
+    try {
+      categoriesIndexObject = fs.readJSONSync(currentCategoriesLoadedPath);
+      categoriesIndexObject.current = categories;
+    } catch (e) {
+      //
+    }
+  }
+  fs.writeJSONSync(currentCategoriesLoadedPath, categoriesIndexObject);
+}
+
+  /** function to make the change in the array based on the passed params
+   * i.e. If the value is present in the array and you pass the value of 
+   * false it will be deleted from the array
+  */
 export function updateArray (array, id, value) {
   const exists = array.indexOf(id) >= 0;
   if (exists && value === true) return array;

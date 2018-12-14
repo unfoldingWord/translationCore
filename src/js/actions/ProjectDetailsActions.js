@@ -7,14 +7,12 @@ import ospath from 'ospath';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate, getUsername} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
-import {setSetting} from "./SettingsActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 //reducers
-import {getSetting} from '../reducers/settingsReducer';
 import Repo from '../helpers/Repo.js';
 
 // constants
@@ -32,31 +30,31 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  */
 export const updateCheckSelection = (id, value, toolName) => {
   return (dispatch, getState) => {
-    /** function to make the change in the array based on the passed params
-     * i.e. If the value is present in the array and you pass the value of 
-     * false it will be deleted from the array
-    */
     const state = getState();
-    const previousSelectedCategories = getSetting(state.settingsReducer, 'selectedCategories');
+    const {projectDetailsReducer: {toolsCategories, projectSaveLocation, manifest: {project = {}}}  } = state;
+    const previousSelectedCategories = [...toolsCategories[toolName]];
     const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
-    dispatch(setSetting('selectedCategories', selectedCategories));
+    dispatch(setCategories(selectedCategories, toolName));
     dispatch(getProjectProgressForTools(toolName));
+    ProjectDetailsHelpers.setCategoriesForProjectInFS(selectedCategories, toolName, project.id, projectSaveLocation);
   };
 };
+
+export const setCategories = (selectedCategories, toolName) => ({
+  type: consts.SET_CHECK_CATEGORIES,
+  selectedCategories,
+  toolName
+});
 
 /**
  * @description sets the project save location in the projectDetailReducer.
  * @param {String} pathLocation - project save location and/or directory.
  * @return {object} action object.
  */
-export const setSaveLocation = pathLocation => {
-  return ((dispatch) => {
-    dispatch({
+export const setSaveLocation = pathLocation => ({
       type: consts.SET_SAVE_PATH_LOCATION,
       pathLocation
     });
-  });
-};
 
 export const resetProjectDetail = () => {
   return {
@@ -82,10 +80,8 @@ export function getProjectProgressForTools(toolName) {
     const {
       projectDetailsReducer: {
         projectSaveLocation,
-        manifest
-      },
-      settingsReducer:{
-        currentSettings: { selectedCategories }
+        manifest,
+        toolsCategories
       }
     } = getState();
     const bookId = manifest.project.id;
@@ -98,7 +94,7 @@ export function getProjectProgressForTools(toolName) {
       const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     } else {
-      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, selectedCategories, bookId);
+      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
     }
 
     dispatch({
