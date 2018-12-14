@@ -232,7 +232,7 @@
     "conflict_reference": "Este é um conflito de fusão no capítulo ${chapter}, e no versículo ${verse}.",
     "missing_verses_instructions": "Faltam alguns versículos no seu projeto.",
     "only_nt_supported": "Esta versão do ${app} suporta apenas projetos do Novo Testamento.",
-    "old_project_unsupported": "Infelizmente, este Projeto contém dados de uma versão antiga do ${app} que não se suporta agora nesta versão. Para ajuda de como abrir este projeto ou para reiniciar a verificação que se fazia antes, entre em contato com: help@door43.org.",
+    "old_project_unsupported": "Este projeto, infelizmente, contém dados de uma versão antiga do ${app}, não suportada na versão atual. Por favor, procure: help@door43.org para saber como abrir este projeto ou reiniciar a verificação.",
     "resource_id": {
       "info": "(código de identificação de 3 ou 4 letras<br />por exemplo, NVI, JFA, etc.)",
       "field_invalid_length": "Deve ter de 3 a 4 letras",
