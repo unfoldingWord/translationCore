@@ -161,9 +161,7 @@ describe('csv export actions', () => {
 
           // verify that gatewayLanguageQuote might exist if test files were created correctly
           let csvData = fs.readFileSync(filePath, 'utf8' );
-          expect(csvData).toContain('klappy'); // Should be replaced with known quote. 
-                                               // Current test quote is same as groupName ie bad
-
+          expect(csvData).toContain('1,adoption,eph'); // quote is between instance and bookid in csv data 
           expect(fs.existsSync(filePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         })
