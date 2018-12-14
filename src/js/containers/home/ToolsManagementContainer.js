@@ -13,7 +13,14 @@ import { getSelectedToolName, getTools } from "../../selectors";
 import {openTool} from "../../actions/ToolActions";
 
 class ToolsManagementContainer extends Component {
-
+  componentWillMount() {
+    const {tools, reducers: {projectDetailsReducer: {projectSaveLocation, manifest: {project = {}}}}} = this.props;
+    if (projectSaveLocation && project.id) {
+      tools.forEach(({name}) => {
+        this.props.actions.loadCurrentCheckCategories(name, project.id, projectSaveLocation);
+      });
+    }
+  }
   render() {
     const {
       tools,
@@ -89,6 +96,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
+      loadCurrentCheckCategories: (toolName, bookName, projectSaveLocation) => {
+        dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      },
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
       },

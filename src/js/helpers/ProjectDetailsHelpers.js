@@ -18,6 +18,15 @@ export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', '
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const TOOL_DATA_PATH = path.join('.apps', 'translationCore', 'index');
 
+export function getCategoriesForProjectFromFS(toolName, bookName, projectSaveLocation) {
+  const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
+  let categoriesIndexObject = {};
+  if (fs.existsSync(currentCategoriesLoadedPath)) {
+    categoriesIndexObject = fs.readJSONSync(currentCategoriesLoadedPath, categoriesIndexObject) || {};
+  }
+  return categoriesIndexObject.current || [] ;
+}
+
 export function setCategoriesForProjectInFS(categories, toolName, bookName, projectSaveLocation) {
   const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
   let categoriesIndexObject = {

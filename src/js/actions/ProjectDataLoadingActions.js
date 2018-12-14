@@ -27,7 +27,6 @@ export function loadProjectData(toolName) {
       let {projectDetailsReducer} = getState();
       let { projectSaveLocation, manifest, toolsCategories } = projectDetailsReducer;
       let selectedCategories = [ ...toolsCategories[toolName] ];
-      debugger;
       let bookAbbreviation = manifest.project.id;
       const gatewayLanguage = projectDetailsReducer.currentProjectToolsSelectedGL[toolName]?projectDetailsReducer.currentProjectToolsSelectedGL[toolName]:'en';
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
@@ -103,7 +102,6 @@ export function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviatio
     const groupsDataLoadedIndex = path.join(groupsDataDirectory, '.categories');
     let groupsDataAlreadyLoaded = [];
     let categoriesIndexObject = {};
-    debugger;
     if (fs.existsSync(groupsDataLoadedIndex)) {
       try {
         categoriesIndexObject = fs.readJSONSync(groupsDataLoadedIndex);

@@ -19,6 +19,13 @@ import Repo from '../helpers/Repo.js';
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
+export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
+  return dispatch => {
+    const selectedCategories = ProjectDetailsHelpers.getCategoriesForProjectFromFS(toolName, bookName, projectSaveLocation);
+    dispatch(setCategories(selectedCategories, toolName));
+  };
+};
+
 /**
  * @description sets the categories to be used in the project.
  * Note: This preference is persisted in the settings
