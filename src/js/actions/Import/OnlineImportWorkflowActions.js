@@ -27,8 +27,6 @@ import {
   getTranslate,
   getUsername
 } from "../../selectors";
-import * as ProjectStructureValidationHelpers
-  from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from "../../helpers/FileConversionHelpers";
 import * as ProjectFilesystemHelpers
   from "../../helpers/Import/ProjectImportFilesystemHelpers";
@@ -36,6 +34,7 @@ import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import migrateProject from "../../helpers/ProjectMigration";
 import fs from "fs-extra";
 import Repo from "../../helpers/Repo";
+import { isProjectSupported } from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -76,7 +75,7 @@ export const onlineImport = () => {
             throw errorMessage;
           }
 
-          await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
+          await isProjectSupported(importProjectPath, translate);
           const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
           migrateProject(importProjectPath, link, getUsername(getState()));
           // assign CC BY-SA license to projects imported from door43

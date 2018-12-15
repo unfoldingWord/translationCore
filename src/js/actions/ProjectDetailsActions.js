@@ -14,7 +14,7 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 //reducers
-import {getSetting} from '../reducers/settingsReducer';
+import {getSetting} from "../selectors";
 import Repo from '../helpers/Repo.js';
 
 // constants
@@ -33,11 +33,11 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 export const updateCheckSelection = (id, value, toolName) => {
   return (dispatch, getState) => {
     /** function to make the change in the array based on the passed params
-     * i.e. If the value is present in the array and you pass the value of 
+     * i.e. If the value is present in the array and you pass the value of
      * false it will be deleted from the array
     */
     const state = getState();
-    const previousSelectedCategories = getSetting(state.settingsReducer, 'selectedCategories');
+    const previousSelectedCategories = getSetting(state, 'selectedCategories');
     const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
     dispatch(setSetting('selectedCategories', selectedCategories));
     dispatch(getProjectProgressForTools(toolName));

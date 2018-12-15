@@ -19,7 +19,7 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
-import {migrateValidateLoadProject, openProject} from '../../actions/MyProjects/ProjectLoadingActions';
+import {openProject} from '../../actions/MyProjects/ProjectLoadingActions';
 import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
 
 class ProjectsManagementContainer extends Component {
@@ -102,7 +102,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     openProject: (name) => dispatch(openProject(name)),
     selectProject: (projectName) => {
-      dispatch(migrateValidateLoadProject(projectName));
+      dispatch(openProject(projectName));
     },
     // TODO: these are deprecated
     actions: {
@@ -116,7 +116,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(MyProjectsActions.getMyProjects());
       },
       selectProject: (projectName) => {
-        dispatch(migrateValidateLoadProject(projectName));
+        dispatch(openProject(projectName));
       },
       selectLocalProject: () => {
         dispatch(LocalImportWorkflowActions.selectLocalProject());

@@ -93,7 +93,7 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
     const selectedProjectFilename = projectName;
 
     // when
-    await store.dispatch(ProjectLoadingActions.migrateValidateLoadProject(selectedProjectFilename));
+    await store.dispatch(ProjectLoadingActions.openProject(selectedProjectFilename));
 
     //then
     expect(cleanupActions(store.getActions())).toMatchSnapshot();
@@ -109,7 +109,7 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
     const store = mockStore(initialState);
 
     // when
-    await store.dispatch(ProjectLoadingActions.migrateValidateLoadProject(selectedProjectFilename));
+    await store.dispatch(ProjectLoadingActions.openProject(selectedProjectFilename));
 
     //then
     expect(cleanupActions(store.getActions())).toMatchSnapshot();
