@@ -47,7 +47,7 @@
   "quit_app": "Sair ${app}",
   "toggle_developer_tools": "Alternar ferramentas de desenvolvimento",
   "actions": "Ações",
-  "running_latest_version": "Você está executando a versão mais recente do ${app}.",
+  "running_latest_version": "Você já possui a versão mais recente do ${app}.",
   "user_locale": "Idioma da interface de usuário",
   "changing_locale_effects": "Mudar o idioma da interface de usuário alterará o idioma dos menus, diálogos e configuração do projeto.",
   "changing_locale_note": "Nota: Para mudar o idioma de verificações e auxílios à tradução na ferramenta, favor selecionar outro Idioma Ponte ao selecionar a ferramenta.",
@@ -235,8 +235,8 @@
     "old_project_unsupported": "Este projeto, infelizmente, contém dados de uma versão antiga do ${app}, não suportada na versão atual. Por favor, procure: help@door43.org para saber como abrir este projeto ou reiniciar a verificação.",
     "resource_id": {
       "info": "(código de identificação de 3 ou 4 letras<br />por exemplo, NVI, JFA, etc.)",
-      "field_invalid_length": "Deve ter de 3 a 4 letras",
-      "invalid_characters": "Só se suportam as letras básicas de Latin"
+      "field_invalid_length": "São precisos, no mínimo, 3 ou 4 letras",
+      "invalid_characters": "Apenas as letras básicas do Latim são suportadas"
     },
     "conflicting_project": "Já existe um projeto com este identificador para este idioma e este livro"
   },
