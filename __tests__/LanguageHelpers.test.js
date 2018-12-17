@@ -6,6 +6,15 @@ import * as LanguageHelpers from "../src/js/helpers/LanguageHelpers";
 describe('Test LanguageHelpers',()=>{
   const minimumLangCount = 8020;
 
+  test('getLanguageByCode() should work with mixed and lower case', () => {
+    const codes = ['sr-latn', 'sr-Latn', 'ur-deva', 'ur-Deva'];
+    for (let code of codes) {
+      const languageData = LanguageHelpers.getLanguageByCode(code);
+      expect(languageData).toBeTruthy();
+      expect(languageData.code.toLowerCase()).toEqual(code.toLowerCase());
+    }
+  });
+
   test('getLanguagesSortedByCode() should work', () => {
     const languages = LanguageHelpers.getLanguagesSortedByCode();
     const langCount = languages.length;
@@ -64,7 +73,7 @@ describe('Test LanguageHelpers',()=>{
     for (var key in localLanguageCodes) {
       localAry.push( localLanguageCodes[key].code );
     }
-  
+
     const sorted = localAry.sort();
     let dupsFound = 0;
 
