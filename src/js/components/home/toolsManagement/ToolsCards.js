@@ -68,7 +68,6 @@ const ToolsCards = ({
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
           tools.map((tool, i) => {
-            debugger;
             return (
               <ToolCard
                 availableCategories={availableCategories[tool.name] || []}

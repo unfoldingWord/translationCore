@@ -30,7 +30,7 @@ class ToolCard extends Component {
     const name = this.props.metadata.name;
     this.props.actions.getProjectProgressForTools(name);
     const gatewayLanguage = getToolGatewayLanguage(store.getState(), name);
-
+    this.selectionChange(gatewayLanguage);
     this.setState({
       selectedGL: gatewayLanguage
     });

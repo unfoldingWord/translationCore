@@ -79,7 +79,6 @@ class ToolsManagementContainer extends Component {
       </div>
     );
     const availableCategories = this.buildCategories(currentProjectToolsSelectedGL);
-    debugger;
     return (
       <HomeContainerContentWrapper
         translate={translate}
