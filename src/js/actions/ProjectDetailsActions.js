@@ -7,24 +7,39 @@ import ospath from 'ospath';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate, getUsername} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
+import {setSetting} from "./SettingsActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
-import git from '../helpers/GitApi.js';
+//reducers
+import {getSetting} from "../selectors";
+import Repo from '../helpers/Repo.js';
 
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
+/**
+ * @description sets the categories to be used in the project.
+ * Note: This preference is persisted in the settings
+ * @param {String} id - The category to be toggled e.i. "kt"
+ * @param {Boolean} value - The value of the category to be updated to
+ * @param {String} toolName - The tool that has been toggled on. This
+ * is used to update the tool progress with the the updated selected
+ * categories
+ */
 export const updateCheckSelection = (id, value, toolName) => {
-  return dispatch => {
-    dispatch({
-      type: consts.SET_PROJECT_CATEGORIES,
-      id,
-      value
-    });
+  return (dispatch, getState) => {
+    /** function to make the change in the array based on the passed params
+     * i.e. If the value is present in the array and you pass the value of
+     * false it will be deleted from the array
+    */
+    const state = getState();
+    const previousSelectedCategories = getSetting(state, 'selectedCategories');
+    const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
+    dispatch(setSetting('selectedCategories', selectedCategories));
     dispatch(getProjectProgressForTools(toolName));
   };
 };
@@ -67,8 +82,10 @@ export function getProjectProgressForTools(toolName) {
     const {
       projectDetailsReducer: {
         projectSaveLocation,
-        manifest,
-        selectedCategories
+        manifest
+      },
+      settingsReducer:{
+        currentSettings: { selectedCategories }
       }
     } = getState();
     const bookId = manifest.project.id;
@@ -124,29 +141,20 @@ export function addObjectPropertyToManifest(propertyName, value) {
 }
 
 export function setProjectBookIdAndBookName() {
-  return ((dispatch, getState) => {
-    return new Promise((resolve, reject) => {
-      const {bookId} = getState().projectInformationCheckReducer;
-      const {manifest: {project: {id: originalBookId}}, projectSaveLocation} = getState().projectDetailsReducer;
-      const {userdata} = getState().loginReducer;
-      const bookName = bibleHelpers.convertToFullBookName(bookId);
-      dispatch({
-        type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
-        bookId,
-        bookName
-      });
-      if (bookId !== originalBookId) {
-        git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation, (err)=>{
-          if (!err) {
-          resolve();
-          } else {
-            reject(err);
-          }
-        });
-      } else {
-        resolve();
-      }
+  return (async (dispatch, getState) => {
+    const {bookId} = getState().projectInformationCheckReducer;
+    const {manifest: {project: {id: originalBookId}}, projectSaveLocation} = getState().projectDetailsReducer;
+    const {userdata} = getState().loginReducer;
+    const bookName = bibleHelpers.convertToFullBookName(bookId);
+    dispatch({
+      type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
+      bookId,
+      bookName
     });
+    if (bookId !== originalBookId) {
+      const repo = await Repo.open(projectSaveLocation, userdata);
+      await repo.save("Saving new book id");
+    }
   });
 }
 

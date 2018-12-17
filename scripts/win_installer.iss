@@ -4,9 +4,6 @@
 ;You must define Version by adding the command line argument /DVersion=x.x
 ;#define Version
 
-; You must define the GitVersion by adding the command line argument /DGitVersion=version
-;#define GitVersion
-
 ; You must define DestFile by adding the command line argument /DDestFile=destinationfile (without the .exe)
 ;#define DestFile
 
@@ -26,13 +23,9 @@
   #define Arch "x64"
 #endif
 #if Arch == "x86"
-  #define GitExecutable "Git-" + GitVersion + "-32-bit.exe"
   #define BuildPath RootPath + BuildDir + "translationCore-win32-ia32\*.*"
-  #define GitInstaller "win32_git_installer.iss"
 #else
-  #define GitExecutable "Git-" + GitVersion + "-64-bit.exe"
   #define BuildPath RootPath + BuildDir + "translationCore-win32-x64\*.*"
-  #define GitInstaller "win64_git_installer.iss"
 #endif
 
 #define MyAppName "translationCore"
@@ -78,8 +71,6 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "{#RootPath}vendor\{#GitExecutable}"; DestDir: "{app}\vendor"; Components: git; Flags: ignoreversion recursesubdirs deleteafterinstall
-Source: "{#RootPath}scripts\git\{#GitInstaller}"; DestDir: "{app}\vendor"; Components: git; Flags: ignoreversion recursesubdirs deleteafterinstall
 Source: "{#BuildPath}"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 
 [Icons]
@@ -89,52 +80,4 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
 
 [Run]
-Filename: "{app}\vendor\{#GitExecutable}"; Parameters: "/SILENT /LOADINF=""{app}\vendor\{#GitInstaller}"""; Components: git;
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: postinstall skipifsilent nowait shellexec
-
-[Components]
-Name: "git"; Description: "Install Git"; Types: full
-
-[Code]
-function IsGitInstalled: boolean;
-begin
-  result := False;
-  if RegKeyExists(HKLM, 'SOFTWARE\GitForWindows') then
-  begin
-    result := True;
-  end
-end;
-
-procedure CurPageChanged(CurPageID: Integer);
-begin
-  if CurPageID = wpSelectComponents then
-  begin
-    WizardForm.ComponentsList.Checked[0] := not IsGitInstalled;
-  end;
-end;
-{
-function InitializeSetup(): Boolean;
-var
-  ErrorMsg :String;
-  ErrorCode :Integer;
-  MS, LS :Cardinal;
-  MajorVerNo, MinorVerNo :Word;
-  NetSPVer :DWord;
-  InstallMSI :Boolean;
-  WindowsVersion :TWindowsVersion;
-// if we want to simplify this some more we should look into inno tools downloader.
-// it's a dll and iss file that can be included to add download capabilities. 
-// then we can install the downloaded file.
-  begin
-  // TODO: check if git is installed
-    if MsgBox('This application requires Git. ' +
-              'You must download and install Git before running this application. ' +
-              'Would you like to download Git now?', mbConfirmation, MB_YESNO) = IDYES then
-    begin
-      if not ShellExec('open', 'https://github.com/git-for-windows/git/releases/download/v{#GitVersion}.windows.1/Git-{#GitVersion}-{#OSBITS}-bit.exe', '', '', SW_SHOWNORMAL, ewNoWait, ErrorCode) then
-        MsgBox(ErrorMsg + SysErrorMessage(ErrorCode), mbError, MB_OK);
-    end else
-        MsgBOX('You have chosen not to install Git. ' +
-               'Installation aborted.', mbInformation, MB_OK);
-  end;
-}

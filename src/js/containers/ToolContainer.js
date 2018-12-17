@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import path from 'path';
-import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // actions
@@ -22,45 +20,48 @@ import { changeGroup, expandSubMenu, setFilter } from '../actions/GroupMenuActio
 import { getAvailableScripturePaneSelections, getGLQuote } from '../helpers/ResourcesHelpers';
 import { VerseObjectUtils } from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
-import { getContext, getCurrentToolApi, getCurrentToolContainer, getProjectSaveLocation, getSelectedSourceChapter, getSelectedSourceVerse, getSelectedTargetChapter, getSelectedTargetVerse, getSourceBible, getSupportingToolApis, getTargetBible, getUsername } from '../selectors';
+import {
+  getContext,
+  getSelectedToolApi,
+  getSelectedToolContainer,
+  getProjectSaveLocation,
+  getSelectedSourceChapter,
+  getSelectedSourceVerse,
+  getSelectedTargetChapter,
+  getSelectedTargetVerse,
+  getSelectedToolName,
+  getSourceBook,
+  getSupportingToolApis,
+  getTargetBook,
+  getUsername
+} from "../selectors";
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
+import ProjectAPI from "../helpers/ProjectAPI";
+import CoreAPI from "../helpers/CoreAPI";
 
 class ToolContainer extends Component {
 
   constructor (props) {
     super(props);
-    this.onWriteProjectData = this.onWriteProjectData.bind(this);
-    this.onReadProjectData = this.onReadProjectData.bind(this);
-    this.onShowDialog = this.onShowDialog.bind(this);
-    this.onShowIgnorableDialog = this.onShowIgnorableDialog.bind(this);
-    this.onShowLoading = this.onShowLoading.bind(this);
-    this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
-    this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
-    this.onDeleteProjectFile = this.onDeleteProjectFile.bind(this);
-    this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
-    this.onProjectDataPathExistsSync = this.onProjectDataPathExistsSync.bind(
-      this);
-    this.onProjectDataPathExists = this.onProjectDataPathExists.bind(this);
-    this.onReadProjectDir = this.onReadProjectDir.bind(this);
-    this.onReadProjectDirSync = this.onReadProjectDirSync.bind(this);
+    this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
   componentWillMount () {
-    const { toolApi, supportingToolApis } = this.props;
+    // const { toolApi, supportingToolApis } = this.props;
 
     // connect to APIs
-    const toolProps = this.makeToolProps();
-    for (const key of Object.keys(supportingToolApis)) {
-      supportingToolApis[key].triggerWillConnect(toolProps);
-    }
-    if (toolApi) {
-      const activeToolProps = {
-        ...toolProps,
-        tools: supportingToolApis
-      };
-      toolApi.triggerWillConnect(activeToolProps);
-    }
+    // const toolProps = this.makeToolProps();
+    // for (const key of Object.keys(supportingToolApis)) {
+    //   supportingToolApis[key].triggerWillConnect(toolProps);
+    // }
+    // if (toolApi) {
+    //   const activeToolProps = {
+    //     ...toolProps,
+    //     tools: supportingToolApis
+    //   };
+    //   toolApi.triggerWillConnect(activeToolProps);
+    // }
   }
 
   componentWillUnmount () {
@@ -74,10 +75,9 @@ class ToolContainer extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    const { contextId: nextContext, toolApi, supportingToolApis } = nextProps;
-    let { currentToolName } = nextProps.toolsReducer;
+    const { contextId: nextContext, toolApi, supportingToolApis, selectedToolName } = nextProps;
     // if contextId does not match current tool, then remove contextId
-    if (nextContext && nextContext.tool !== currentToolName) {
+    if (nextContext && nextContext.tool !== selectedToolName) {
       nextProps.actions.changeCurrentContextId(undefined);
     }
 
@@ -96,195 +96,13 @@ class ToolContainer extends Component {
   }
 
   /**
-   * Handles writing global project data
-   *
-   * @param {string} filePath - the relative path to be written
-   * @param {string} data - the data to write
-   * @return {Promise}
-   */
-  onWriteProjectData (filePath, data) {
-    const { projectSaveLocation } = this.props;
-    const writePath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.outputFile(writePath, data);
-  }
-
-  /**
-   * Handles reading a project directory
-   * @param {string} dir - the relative path to read
-   * @return {Promise<String[]>}
-   */
-  onReadProjectDir (dir) {
-    const { projectSaveLocation } = this.props;
-    const dirPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', dir);
-    return fs.readdir(dirPath);
-  }
-
-  /**
-   * Handles reading a project directory synchronously
-   * @param {string} dir - the relative path to read
-   * @return {*}
-   */
-  onReadProjectDirSync (dir) {
-    const { projectSaveLocation } = this.props;
-    const dirPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', dir);
-    return fs.readdirSync(dirPath);
-  }
-
-  /**
-   * Handles reading global project data
-   *
-   * @param {string} filePath - the relative path to read
-   * @return {Promise<string>}
-   */
-  async onReadProjectData (filePath) {
-    const { projectSaveLocation } = this.props;
-    const readPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    const data = await fs.readFile(readPath);
-    return data.toString();
-  }
-
-  /**
-   * Handles reading global project data synchronously
-   * @param {string} filePath - the relative path to read
-   * @return {string}
-   */
-  onReadProjectDataSync (filePath) {
-    const { projectSaveLocation } = this.props;
-    const readPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    const data = fs.readFileSync(readPath);
-    return data.toString();
-  }
-
-  /**
-   * Synchronously checks if a file exists in the project data path.
-   * @deprecated use {@link onProjectDataPathExistsSync} instead
-   * @param {string} filePath - the relative path who's existence will be checked
-   * @return {*}
-   */
-  onProjectFileExistsSync (filePath) {
-    return this.onProjectDataPathExistsSync(filePath);
-  }
-
-  /**
-   * Synchronously checks if a path exists in the project
-   * @param {string} filePath - the relative path who's existence will be checked
-   * @return {*}
-   */
-  onProjectDataPathExistsSync (filePath) {
-    const { projectSaveLocation } = this.props;
-    const readPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.pathExistsSync(readPath);
-  }
-
-  /**
-   * Checks if the path exists in the project
-   * @param {string} filePath - the relative path who's existence will be checked
-   * @return {boolean}
-   */
-  onProjectDataPathExists (filePath) {
-    const { projectSaveLocation } = this.props;
-    const readPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.pathExists(readPath);
-  }
-
-  /**
-   * Handles deleting global project data files
-   *
-   * @param {string} filePath - the relative path to delete
-   * @return {Promise}
-   */
-  onDeleteProjectFile (filePath) {
-    const {
-      projectSaveLocation
-    } = this.props;
-    const fullPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.remove(fullPath);
-  }
-
-  /**
-   * Displays an options dialog as a promise.
-   *
-   * @param {string} message - the message to display
-   * @param {string} [confirmText="ok"] - the confirm button text
-   * @param {string} [cancelText] - the cancel button text
-   * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
-   */
-  onShowDialog (message, confirmText = null, cancelText = null) {
-    const { actions: { openOptionDialog, closeAlertDialog }, translate } = this.props;
-    let confirmButtonText = confirmText;
-    if (confirmButtonText === null) {
-      confirmButtonText = translate('buttons.ok_button');
-    }
-    return new Promise((resolve, reject) => {
-      openOptionDialog(message, (action) => {
-        closeAlertDialog();
-        if (action === confirmButtonText) {
-          resolve();
-        } else {
-          reject();
-        }
-      }, confirmButtonText, cancelText);
-    });
-  }
-
-  /**
-   * Similar to @{link onShowDialog} with the addition of it being ignorable.
-   *
-   * @param {string} id - The id that can be ignored. Messages that share an id will all be ignored.
-   * @param {string} message - the message to display
-   * @param {string} [confirmText] - confirm button text
-   * @param {string} [cancelText] - cancel button text
-   * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
-   */
-  onShowIgnorableDialog (id, message, confirmText = null, cancelText = null) {
-    const { openIgnorableAlert } = this.props;
-    return new Promise((resolve, reject) => {
-      openIgnorableAlert(id, message, {
-        confirmText,
-        cancelText,
-        onConfirm: () => {
-          resolve();
-        },
-        onCancel: () => {
-          reject();
-        }
-      });
-    });
-  }
-
-  /**
-   * Displays a loading dialog.
-   * @param {string} message - the message to display while loading
-   */
-  onShowLoading (message) {
-    const { actions: { openAlertDialog } } = this.props;
-    openAlertDialog(message, true);
-  }
-
-  /**
-   * Closes the loading dialog.
-   * TRICKY: this actually closes all dialogs right now.
-   * Ideally that could change in the future.
-   */
-  onCloseLoading () {
-    const { actions: { closeAlertDialog } } = this.props;
-    closeAlertDialog();
-  }
-
-  /**
    * Builds the tC api for use in the tool
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
    */
   makeToolProps (nextProps = undefined) {
+    const legacyToolsReducer = this.legacyToolsReducer();
+
     if (!nextProps) {
       nextProps = this.props;
     }
@@ -292,36 +110,82 @@ class ToolContainer extends Component {
       currentLanguage: { code },
       contextId,
       targetVerseText,
-      targetBible,
-      sourceBible,
+      targetBook,
+      sourceBook,
       sourceVerse,
       targetChapter,
-      sourceChapter
+      sourceChapter,
+      selectedToolName,
+      projectApi,
+      coreApi
     } = nextProps;
     return {
-      readProjectDir: this.onReadProjectDir,
-      readProjectDirSync: this.onReadProjectDirSync,
-      writeProjectData: this.onWriteProjectData,
-      readProjectData: this.onReadProjectData,
-      readProjectDataSync: this.onReadProjectDataSync,
-      projectFileExistsSync: this.onProjectFileExistsSync,
-      projectDataPathExists: this.onProjectDataPathExists,
-      projectDataPathExistsSync: this.onProjectDataPathExistsSync,
-      deleteProjectFile: this.onDeleteProjectFile,
-      showDialog: this.onShowDialog,
-      showLoading: this.onShowLoading,
-      closeLoading: this.onCloseLoading,
-      showIgnorableDialog: this.onShowIgnorableDialog,
+      // project api
+      readProjectDir: projectApi.readDir,
+      readProjectDirSync: projectApi.readDirSync,
+      writeProjectData: projectApi.writeData,
+      writeProjectDataSync: projectApi.writeDataSync,
+      readProjectData: projectApi.readData,
+      readProjectDataSync: projectApi.readDataSync,
+      projectDataPathExists: projectApi.pathExists,
+      projectDataPathExistsSync: projectApi.pathExistsSync,
+      deleteProjectFile: projectApi.deleteFile,
+
+      // tC api
+      showAlert: coreApi.showAlert,
+      showDialog: coreApi.showDialog,
+      showLoading: coreApi.showLoading,
+      closeLoading: coreApi.closeLoading,
+      showIgnorableAlert: coreApi.showIgnorableAlert,
+      closeAlert: coreApi.closeAlert,
+      appLanguage: code,
+
+
+      // menu location
       contextId,
+
+      // project data
       targetVerseText,
       sourceVerse,
       targetChapter,
       sourceChapter,
-      targetBible, // TODO: deprecate
-      targetBook: targetBible,
-      sourceBible, // TODO: deprecate
-      sourceBook: sourceBible,
-      appLanguage: code
+      targetBook,
+      sourceBook,
+      selectedToolName,
+
+      // deprecated props
+      showIgnorableDialog: (...args) => {
+        console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
+        return coreApi.showIgnorableAlert(...args);
+      },
+      get toolsReducer () {
+        console.warn(`DEPRECATED: toolsReducer is deprecated.`);
+        return legacyToolsReducer;
+      },
+      projectFileExistsSync: (...args) => {
+        console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
+        return projectApi.pathExistsSync(...args);
+      },
+      get targetBible() {
+        console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');
+        return targetBook;
+      },
+      get sourceBible() {
+        console.warn('DEPRECATED: sourceBible is deprecated. Use sourceBook instead');
+        return sourceBook;
+      },
+    };
+  }
+
+  /**
+   * Builds a legacy tool reducer for tW.
+   * This is a temporary hack
+   */
+  legacyToolsReducer() {
+    const {selectedToolName, supportingToolApis} = this.props;
+    return {
+      currentToolName: selectedToolName,
+      apis: supportingToolApis
     };
   }
 
@@ -330,10 +194,12 @@ class ToolContainer extends Component {
       supportingToolApis,
       Tool
     } = this.props;
-    let { currentToolViews } = this.props.toolsReducer;
 
     const props = { ...this.props };
+
     delete props.translate;
+    delete props.openIgnorableAlert;
+    delete props.coreApi;
 
     const activeToolProps = {
       ...this.makeToolProps(),
@@ -345,9 +211,10 @@ class ToolContainer extends Component {
         style={{ display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)' }}>
         <div style={{ flex: 'auto', display: 'flex' }}>
           <Tool
-            {...props}
-            currentToolViews={currentToolViews}
-            {...activeToolProps} />
+            {...props} // TODO: this is deprecated
+            currentToolViews={{}} // TODO: this is deprecated
+            {...activeToolProps}
+          />
         </div>
       </div>
     );
@@ -364,30 +231,37 @@ ToolContainer.propTypes = {
   sourceVerse: PropTypes.object,
   sourceChapter: PropTypes.object,
   targetChapter: PropTypes.object,
-  toolsReducer: PropTypes.any.isRequired,
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,
   currentLanguage: PropTypes.object.isRequired,
   openIgnorableAlert: PropTypes.func.isRequired,
   closeAlert: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+
+  selectedToolName: PropTypes.string.isRequired
+};
+
+ToolContainer.contextTypes = {
+  store: PropTypes.any
 };
 
 const mapStateToProps = state => {
+  const projectPath = getProjectSaveLocation(state);
   return {
-    Tool: getCurrentToolContainer(state),
+    projectApi: new ProjectAPI(projectPath),
+    selectedToolName: getSelectedToolName(state),
+    Tool: getSelectedToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
-    toolApi: getCurrentToolApi(state),
-    targetBible: getTargetBible(state),
-    sourceBible: getSourceBible(state),
+    toolApi: getSelectedToolApi(state),
+    targetBook: getTargetBook(state),
+    sourceBook: getSourceBook(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
-    projectSaveLocation: getProjectSaveLocation(state),
+    projectSaveLocation: projectPath,
     username: getUsername(state),
-    toolsReducer: state.toolsReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
     loaderReducer: state.loaderReducer,
@@ -407,9 +281,14 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    openIgnorableAlert: (id, message, ignorable) => dispatch(
-      openIgnorableAlert(id, message, ignorable)),
-    closeAlert: id => dispatch(closeAlert(id)),
+    coreApi: new CoreAPI(dispatch),
+    openIgnorableAlert: (id, message, ignorable) => {
+      dispatch(openIgnorableAlert(id, message, ignorable));
+    },
+    closeAlert: id => {
+      console.warn('DEPRECATED: closeAlert is deprecated. Use tc.closeAlert instead');
+      dispatch(closeAlert(id));
+    },
     actions: {
       goToNext: () => {
         dispatch(changeToNextContextId());
@@ -466,13 +345,16 @@ const mapDispatchToProps = (dispatch) => {
           setToolSettings(NAMESPACE, settingsPropertyName, toolSettingsData));
       },
       openAlertDialog: (message) => {
+        console.warn('DEPRECATED: openAlertDialog is deprecated. Use tc.showAlert instead');
         dispatch(openAlertDialog(message));
       },
       openOptionDialog: (alertMessage, callback, button1Text, button2Text) => {
+        console.warn('DEPRECATED: openOptionsDialog is deprecated. Use  tc.showDialog instead.');
         dispatch(
           openOptionDialog(alertMessage, callback, button1Text, button2Text));
       },
       closeAlertDialog: () => {
+        console.warn('DEPRECATED: closeAlertDialog is deprecated. use tc.closeAlert instead');
         dispatch(closeAlertDialog());
       },
       groupMenuChangeGroup: contextId => {

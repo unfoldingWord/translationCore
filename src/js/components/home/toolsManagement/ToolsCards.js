@@ -5,22 +5,39 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui';
 
+/**
+ * Renders a list of tools.
+ * TODO: rename this to ToolsList and make it a self contained container with supporting components
+ * @param tools
+ * @param actions
+ * @param translate
+ * @param bookName
+ * @param loggedInUser
+ * @param projectSaveLocation
+ * @param currentProjectToolsProgress
+ * @param manifest
+ * @param invalidatedReducer
+ * @param developerMode
+ * @param selectedCategories
+ * @param availableCategories
+ * @returns {*}
+ * @constructor
+ */
 const ToolsCards = ({
+  tools,
   actions,
   translate,
   bookName,
   loggedInUser,
-  toolsMetadata,
   projectSaveLocation,
   currentProjectToolsProgress,
-  currentProjectToolsSelectedGL,
   manifest,
   invalidatedReducer,
   developerMode,
   selectedCategories,
   availableCategories
 }) => {
-  if (toolsMetadata.length == 0 || !toolsMetadata) {
+  if (!tools || tools.length === 0) {
     return (
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
@@ -30,7 +47,7 @@ const ToolsCards = ({
         </Card>
       </MuiThemeProvider>
     );
-  } else if (bookName.length == 0 && projectSaveLocation == 0) {
+  } else if (bookName.length === 0 && projectSaveLocation === 0) {
     return (
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
@@ -50,19 +67,25 @@ const ToolsCards = ({
     return (
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
-          toolsMetadata.map((metadata, i) => {
+          tools.map((tool, i) => {
             return (
               <ToolCard
-                availableCategories={availableCategories[metadata.name] || []}
+                availableCategories={availableCategories[tool.name] || []}
                 selectedCategories={selectedCategories}
                 translate={translate}
                 key={i}
                 actions={actions}
                 loggedInUser={loggedInUser}
-                metadata={metadata}
+                metadata={{
+                  title: tool.title,
+                  version: tool.version,
+                  description: tool.description,
+                  badgeImagePath: tool.badge,
+                  folderName: tool.path,
+                  name: tool.name
+                }}
                 invalidatedReducer={invalidatedReducer}
                 currentProjectToolsProgress={currentProjectToolsProgress}
-                currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
                 manifest={manifest}
                 developerMode={developerMode}
               />
@@ -75,14 +98,13 @@ const ToolsCards = ({
 };
 
 ToolsCards.propTypes = {
+  tools: PropTypes.array,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
-  toolsMetadata: PropTypes.array.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,

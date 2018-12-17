@@ -53,13 +53,30 @@ export const getAlertIsOpen = state =>
 export const getEditedVerse = (state, toolName) =>
   fromVerseEditReducer.getSaveStructure(state.verseEditReducer, toolName);
 
+
 /**
  * Returns the title of the currently selected tool.
  * @param state
  * @return {string}
  */
-export const getCurrentToolTitle = state =>
-  fromToolsReducer.getCurrentTitle(state.toolsReducer);
+export const getSelectedToolTitle = state =>
+  fromToolsReducer.getSelectedToolTitle(state.toolsReducer);
+
+/**
+ * Returns an array of tools that can be used in the app
+ * @param state
+ * @returns {object[]}
+ */
+export const getTools = state =>
+  fromToolsReducer.getTools(state.toolsReducer);
+
+/**
+ * Returns an array of tool names
+ * @param state
+ * @returns {*}
+ */
+export const getToolNames = state =>
+  fromToolsReducer.getNames(state.toolsReducer);
 
 /**
  * Retrieves an application setting
@@ -189,6 +206,23 @@ export const getUserEmail = (state) =>
   fromLoginReducer.getEmail(state.loginReducer);
 
 /**
+ * Returns the book id of the selected project
+ * @param state
+ * @returns {string}
+ */
+export const getProjectBookId = state =>
+  fromProjectDetailsReducer.getBookId(state.projectDetailsReducer);
+
+/**
+ * Returns the gateway language selected for the given tool.
+ * @param state
+ * @param {string} toolName - the name of the tool
+ * @returns {*}
+ */
+export const getToolGatewayLanguage = (state, toolName) =>
+  fromProjectDetailsReducer.getToolGatewayLanguage(state.projectDetailsReducer, toolName);
+
+/**
  * Returns the save location of the project
  * @param {object} state
  * @return {string}
@@ -278,21 +312,29 @@ export const getIsOverwritePermitted = (state) =>
  * @param {Object} state
  * @return {String | undefined}
  */
-export const getCurrentToolName = state =>
-  fromToolsReducer.getCurrentName(state.toolsReducer);
+export const getSelectedToolName = state =>
+  fromToolsReducer.getSelectedToolName(state.toolsReducer);
+
+/**
+ * Returns the tool selected by the user
+ * @param state
+ * @returns {*}
+ */
+export const getSelectedTool = state =>
+  fromToolsReducer.getSelectedTool(state.toolsReducer);
 
 /**
  * Returns an api for the current tool if it has one.
  * @param state
  * @return {ApiController|null}
  */
-export const getCurrentToolApi = state =>
-  fromToolsReducer.getCurrentApi(state.toolsReducer);
+export const getSelectedToolApi = state =>
+  fromToolsReducer.getSelectedToolApi(state.toolsReducer);
 
 /**
  * Returns supporting tool apis.
  * This will not include the api for the current tool.
- * For the current tool's api use {@link getCurrentToolApi}
+ * For the current tool's api use {@link getSelectedToolApi}
  * @param state
  * @return {ApiController[]}
  */
@@ -300,20 +342,12 @@ export const getSupportingToolApis = state =>
   fromToolsReducer.getSupportingToolApis(state.toolsReducer);
 
 /**
- * Returns an array of metadata for the tools
- * @param state
- * @return {object[]}
- */
-export const getToolsMeta = state =>
-  fromToolsReducer.getToolsMeta(state.toolsReducer);
-
-/**
  * Return the selected tool's view
  * @param state
  * @return {*}
  */
-export const getCurrentToolContainer = state =>
-  fromToolsReducer.getCurrentContainer(state.toolsReducer);
+export const getSelectedToolContainer = state =>
+  fromToolsReducer.getSelectedToolContainer(state.toolsReducer);
 
 /**
  * Returns the current context id.
@@ -355,20 +389,20 @@ export const getSelectedTargetChapter = (state) => {
 };
 
 /**
- * Returns the target language bible
+ * Returns the target language book
  * @param state
  * @return {*}
  */
-export const getTargetBible = state =>
-  fromResourcesReducer.getTargetBible(state.resourcesReducer);
+export const getTargetBook = state =>
+  fromResourcesReducer.getTargetBook(state.resourcesReducer);
 
 /**
- * Returns the source language bible
+ * Returns the source language book
  * @param state
  * @return {*}
  */
-export const getSourceBible = state =>
-  fromResourcesReducer.getSourceBible(state.resourcesReducer);
+export const getSourceBook = state =>
+  fromResourcesReducer.getSourceBook(state.resourcesReducer);
 
 /**
  * Returns the currently selected verse in the original language bible

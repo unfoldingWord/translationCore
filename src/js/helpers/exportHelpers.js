@@ -91,11 +91,22 @@ export function getHeaderTags(projectSaveLocation) {
   let lastEdited = fs.statSync(path.join(projectSaveLocation), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
   let headers = LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 
-      'headers.json');
+    'headers.json');
   headers = headers || [];
+  const idHeaderTag = headers.find(({tag}) => tag === 'id');
+  let preservedIDTag = idHeaderTag && idHeaderTag.content ? idHeaderTag.content : '';
+  let tcField = preservedIDTag.substr(preservedIDTag.length - 2, preservedIDTag.length - 1);
+  if (tcField === 'tc') {
+    //If the usfm id header has already been created with the tc
+    //flag then the original preserved contnet has already bee included
+    preservedIDTag = '';
+  } else if (preservedIDTag) {
+    preservedIDTag = ' ' + preservedIDTag.replace(new RegExp(bookNameUppercase, 'i'), '').trim();
+  }
+
   /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/ 
   const id = {
-    "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`,
+    "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode}${preservedIDTag} ${lastEdited} tc`,
     "tag": "id"
   };
   addHeader(headers, id, true);

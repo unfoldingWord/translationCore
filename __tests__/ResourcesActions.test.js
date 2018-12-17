@@ -35,7 +35,7 @@ describe('ResourcesActions', () => {
     const store = mockStore({
       actions: {},
       toolsReducer: {
-        currentToolName: 'wordAlignment'
+        selectedTool: 'wordAlignment'
       },
       resourcesReducer: {
         bibles: {
@@ -191,7 +191,7 @@ describe('ResourcesActions', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'wordAlignment'
+        selectedTool: 'wordAlignment'
       },
       projectDetailsReducer: {
         manifest: {
@@ -199,7 +199,8 @@ describe('ResourcesActions', () => {
             id: bookId
           }
         },
-        projectSaveLocation: path.resolve(projectPath)
+        projectSaveLocation: path.resolve(projectPath),
+        currentProjectToolsSelectedGL: {}
       },
       resourcesReducer: {
         bibles: {

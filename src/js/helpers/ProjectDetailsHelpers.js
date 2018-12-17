@@ -12,10 +12,21 @@ import * as ResourceHelpers from './ResourcesHelpers';
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
-import BooksOfTheBible from "../common/BooksOfTheBible";
+import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+
+export function updateArray (array, id, value) {
+  const exists = array.indexOf(id) >= 0;
+  if (exists && value === true) return array;
+  else if (exists && value === false) {
+    return array.filter((el) => el !== id);
+  }
+  else if (!exists && value === true)
+    return array.concat(id);
+  else return array;
+}
 
 /**
  * display prompt that project as been renamed
@@ -169,6 +180,7 @@ export function doDcsRenamePrompting() {
 }
 
 /**
+ * TODO: this is an action and should be moved to the correct location.
  * perform selected action create new or rename project on DCS to match new name
  * @param {boolean} createNew - if true then create new DCS project with current name
  * @param {string} projectSaveLocation
@@ -283,7 +295,7 @@ export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
  * @param projectName
  * @return {{bookId: string, languageId: *}}
  */
-export function getDetailsFromProjectName(projectName) {
+export function getDetailsFromProjectName(projectName, translate) {
   let bookId = "";
   let bookName = "";
   let languageId = "";
@@ -293,14 +305,15 @@ export function getDetailsFromProjectName(projectName) {
     // we can have a bunch of old formats (e.g. en_act, aaw_php_text_reg) and new format (en_ult_tit_book)
     for (let i = 1; i < parts.length; i++) { // iteratively try the fields to see if valid book ids
       const possibleBookId = parts[i].toLowerCase();
-      bookName = BooksOfTheBible.newTestament[possibleBookId];
+      const allBooks = BooksOfTheBible.getAllBibleBooks(translate);
+      bookName = allBooks[possibleBookId];
       if (bookName) {
         bookId = possibleBookId; // if valid bookName use this book id
         break;
       }
     }
   }
-  return { bookId, languageId, bookName};
+  return {bookId, languageId, bookName};
 }
 /**
  * generate new project name to match spec
@@ -345,21 +358,24 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
 
 /**
  * Gets a tool's progress
- * @param {String} pathToProjectGroupsDataFiles
+ * @param {string} pathToProjectGroupsDataFiles
+ * @param toolName
+ * @param userSelectedCategories
+ * @param bookAbbreviation
  */
-export function getToolProgress(pathToProjectGroupsDataFiles, currentToolName, userSelectedCategories, bookAbbreviation) {
+export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSelectedCategories = [], bookAbbreviation) {
   let progress = 0;
   if (fs.existsSync(pathToProjectGroupsDataFiles)) {
     //Getting all the groups data that exist in the project
     //Note: Not all of these may be used for the counting because
-    //Some groups here are not apart of the currently selected categories 
+    //Some groups here are not apart of the currently selected categories
     let projectGroupsData = fs.readdirSync(pathToProjectGroupsDataFiles).filter(file => {
       return file !== '.DS_Store' && path.extname(file) === '.json';
     });
     let availableCheckCategories = [];
-    const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
+    const languageId = toolName === 'translationWords' ? 'grc' : 'en';
     //Note: translationWords only uses checks that are also available in the greek (OL)
-    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', toolName);
     const versionPath = ResourceHelpers.getLatestVersionInPath(toolResourcePath) || toolResourcePath;
     userSelectedCategories.forEach((category) => {
       const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
