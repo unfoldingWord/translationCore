@@ -15,7 +15,7 @@ export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', '
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 
 /**
- * 
+ *
  * @param {Object} currentProjectToolsSelectedGL Specifys which tools are using which gateway language
  * i.e. {"translationWords":"en"}
  */
