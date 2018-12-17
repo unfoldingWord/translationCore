@@ -79,7 +79,7 @@
     "update_available": "Existe uma nova versão do ${app}.<br/>. Você está executando a versão ${old_version}. A Versão ${new_version} já está disponível.",
     "checking_for_app": "Procurando atualizações do programa...",
     "file_size": "Tamanho do download: ${file_size}",
-    "download": "Download",
+    "download": "Fazer download",
     "downloading": "Baixando a atualização",
     "downloading_version": "Baixando a versão ${version}",
     "download_error": "Não foi possível baixar a atualização.",
