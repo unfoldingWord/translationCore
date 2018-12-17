@@ -60,8 +60,8 @@ const styles = {
 const ResourceListItem = ({resource, checked, handleItemOnCheck}) => {
   const languageCodeDetails = getLanguageCodes().local[resource.languageId];
   const languageName = languageCodeDetails ? languageCodeDetails.name : resource.languageId;
-
-  if( languageCodeDetails ) {
+  const languageId = languageCodeDetails ? languageCodeDetails.code : resource.languageId;
+  if( languageName ) {
     return (
       <tr style={styles.tr}>
         <td style={styles.firstTd}>
@@ -70,7 +70,7 @@ const ResourceListItem = ({resource, checked, handleItemOnCheck}) => {
                       event.preventDefault();
                       handleItemOnCheck(resource.languageId);
                     }}
-                    label={`${languageName} (${resource.languageId})`}
+                    label={`${languageName} (${languageId})`}
                     style={styles.checkbox}
                     iconStyle={styles.checkboxIconStyle}
                     labelStyle={styles.checkboxLabelStyle} />
