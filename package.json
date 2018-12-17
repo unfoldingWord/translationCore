@@ -178,7 +178,7 @@
     "semver": "5.5.0",
     "string-punctuation-tokenizer": "0.9.3",
     "sudo-prompt": "6.2.1",
-    "tc-source-content-updater": "0.3.1",
+    "tc-source-content-updater": "github:translationCoreApps/tc-source-content-updater#bugfix-bspidel-5437",
     "tc-strings": "0.1.7",
     "tc-tool": "2.0.0",
     "tc-ui-toolkit": "0.12.7",

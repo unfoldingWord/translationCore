@@ -110,14 +110,24 @@ export const getLanguageCodes = () => {
 };
 
 /**
- * @description - searches language array to match language code.
+ * @description - searches language array to match language code.  Case insensitive.
  * @param {string} code
  * @return {object} language entry matched or null if no match
  */
 export const getLanguageByCode = (code) => {
   if (code) {
     getLanguagesSortedByCode(); // make sure initialized
-    return languageCodes.local[code];
+    let langData = languageCodes.local[code];
+    if (!langData) {
+      // do case insensitive search
+      const codeLc = code.toLowerCase();
+      const langKey = Object.keys(languageCodes.local).find(langCode =>
+        (langCode.toLowerCase() === codeLc));
+      if (langKey) {
+        langData = languageCodes.local[langKey];
+      }
+    }
+    return langData;
   }
   return null;
 };
