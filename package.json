@@ -169,7 +169,7 @@
     "redux": "3.7.2",
     "redux-batched-actions": "^0.3.0",
     "redux-logger": "3.0.6",
-    "redux-promise": "0.5.3",
+    "redux-promise": "0.6.0",
     "redux-subscriptions": "0.2.0",
     "redux-thunk": "2.2.0",
     "reselect": "3.0.1",
