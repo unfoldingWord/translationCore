@@ -67,7 +67,8 @@ class BodyContainer extends Component {
     } else if (displayHomeView) {
       return (
         <div style={styles.root}>
-          <HomeContainer translate={translate}/>
+          <HomeContainer translate={translate}
+                         currentLanguage={currentLanguage}/>
         </div>
       );
     } else {

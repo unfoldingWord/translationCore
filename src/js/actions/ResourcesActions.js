@@ -271,29 +271,56 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
 };
 
 /**
- * Loads book data for each of the languages
+ * Loads book data for each of the languages.
+ * @deprecated This is deprecated. use {@link loadBookTranslations} instead.
  * @param {Object} contextId
  */
-export const loadBooks = contextId => (dispatch, getState) => {
-  return new Promise((resolve, reject) => {
-    try {
-      let bookId = contextId.reference.bookId;
-      dispatch(updateOlPaneSettings(bookId));
-      // load source bibles
-      const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
+export const loadBooks = contextId => dispatch => {
+  if(contextId && contextId.reference) {
+    return dispatch(loadBookTranslations(contextId.reference.bookId));
+  } else {
+    return Promise.reject("Invalid context received in action");
+  }
 
-      for (let i = 0, len = resources.length; i < len; i++) {
-        const resource = resources[i];
-        dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
-      }
-      // load target bible
-      dispatch(TargetLanguageActions.loadTargetLanguageBible());
-      resolve();
-    } catch(err) {
-      console.warn(err);
-      reject(err);
-    }
-  });
+  // return loadBookTranslations()
+  // return new Promise((resolve, reject) => {
+  //   try {
+  //     let bookId = contextId.reference.bookId;
+  //     dispatch(updateOlPaneSettings(bookId));
+  //     // load source bibles
+  //     const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
+  //
+  //     for (let i = 0, len = resources.length; i < len; i++) {
+  //       const resource = resources[i];
+  //       dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
+  //     }
+  //     // load target bible
+  //     dispatch(TargetLanguageActions.loadTargetLanguageBible());
+  //     resolve();
+  //   } catch(err) {
+  //     console.warn(err);
+  //     reject(err);
+  //   }
+  // });
+};
+
+/**
+ * Loads book data for each of the languages.
+ * @param {string} bookId - the id of the book to load
+ * @returns {Function}
+ */
+export const loadBookTranslations = bookId => async (dispatch, getState) => {
+  dispatch(updateOlPaneSettings(bookId));
+
+  // source bibles
+  const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
+  for (let i = 0, len = resources.length; i < len; i++) {
+    const resource = resources[i];
+    dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
+  }
+
+  // target bible
+  dispatch(TargetLanguageActions.loadTargetLanguageBible());
 };
 
 /**

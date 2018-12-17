@@ -11,8 +11,17 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { getTranslate, getUsername } from '../../selectors';
-import {isProjectSupported, ensureSupportedVersion} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {
+  getActiveLocaleLanguage,
+  getProjectManifest, getSourceBook, getTargetBook,
+  getTools,
+  getTranslate,
+  getUsername
+} from "../../selectors";
+import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import { loadBookTranslations } from "../ResourcesActions";
+import ProjectAPI from "../../helpers/ProjectAPI";
+import CoreAPI from "../../helpers/CoreAPI";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -42,7 +51,18 @@ export const openProject = (name) => {
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
       await dispatch(validateProject(projectDir));
-      // TODO: load the project data here
+
+      // load the book data
+      const manifest = getProjectManifest(getState());
+      await dispatch(loadBookTranslations(manifest.project.id));
+
+      // connect the tools
+      const tools = getTools(getState());
+      for (const t of tools) {
+        const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
+        t.api.triggerWillConnect(toolProps);
+      }
+
       dispatch(closeAlertDialog());
       await dispatch(displayTools());
     } catch (e) {
@@ -57,37 +77,77 @@ export const openProject = (name) => {
   };
 };
 
+//
 /**
- * @deprecated This action is deprecated. Use {@link openProject} instead.
- * This thunk migrates, validates, then loads a project.
- * This may seem redundant to run migrations and validations each time
- * But the helpers called from each action test to only run when needed
- * @param {string} projectName - the name of the project
+ * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
+ * This is just a temporary prop generator until we can properly abstract the tc api.
+ * @param dispatch
+ * @param state
+ * @param projectDir
+ * @param bookId
+ * @returns {*}
  */
-export const migrateValidateLoadProject = (projectName) => {
-  return async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    try {
-      dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
-      await delay(200);
-      const projectPath = path.join(PROJECTS_PATH, projectName);
-      await ensureSupportedVersion(projectPath, translate);
-      migrateProject(projectPath, null, getUsername(getState()));
-      dispatch(closeAlertDialog());
-      await dispatch(validateProject(projectPath));
-      await dispatch(displayTools());
-    } catch (error) {
-      if (error.type !== 'div') console.warn(error);
-      // clear last project must be called before any other action.
-      // to avoid triggering autosaving.
-      dispatch(clearLastProject());
-      dispatch(openAlertDialog(error));
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      dispatch({ type: "LOADED_ONLINE_FAILED" });
-    }
+function makeToolProps(dispatch, state, projectDir, bookId) {
+  const projectApi = new ProjectAPI(projectDir);
+  const coreApi = new CoreAPI(dispatch);
+  const {code} = getActiveLocaleLanguage(state);
+  const sourceBook = getSourceBook(state);
+  const targetBook = getTargetBook(state);
+
+  return {
+    // project api
+    readProjectDir: projectApi.readDir,
+    readProjectDirSync: projectApi.readDirSync,
+    writeProjectData: projectApi.writeData,
+    writeProjectDataSync: projectApi.writeDataSync,
+    readProjectData: projectApi.readData,
+    readProjectDataSync: projectApi.readDataSync,
+    projectDataPathExists: projectApi.pathExists,
+    projectDataPathExistsSync: projectApi.pathExistsSync,
+    deleteProjectFile: projectApi.deleteFile,
+
+    // tC api
+    showDialog: coreApi.showDialog,
+    showLoading: coreApi.showLoading,
+    closeLoading: coreApi.closeLoading,
+    showIgnorableAlert: coreApi.showIgnorableAlert,
+    appLanguage: code,
+
+    // project data
+    sourceBook,
+    targetBook,
+
+    contextId: {
+      reference: {
+        bookId,
+        chapter: "1", // TRICKY: just some dummy values at first
+        verse: "1"
+      }
+    },
+
+    // deprecated props
+    showIgnorableDialog: (...args) => {
+      console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
+      return coreApi.showIgnorableAlert(...args);
+    },
+    get toolsReducer () {
+      console.warn(`DEPRECATED: toolsReducer is deprecated.`);
+      return {};
+    },
+    projectFileExistsSync: (...args) => {
+      console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
+      return projectApi.pathExistsSync(...args);
+    },
+    get targetBible() {
+      console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');
+      return targetBook;
+    },
+    get sourceBible() {
+      console.warn('DEPRECATED: sourceBible is deprecated. Use sourceBook instead');
+      return sourceBook;
+    },
   };
-};
+}
 
 /**
  * @description - Opening the tools screen upon making sure the project is
