@@ -52,6 +52,7 @@ class BodyContainer extends Component {
     const {currentLanguage, translate} = this.props;
     const {displayHomeView} = this.props.reducers.homeScreenReducer;
     const { error, errorInfo } = this.state;
+
     if(error !== null) {
       return (
         <div style={styles.errorRoot}>
