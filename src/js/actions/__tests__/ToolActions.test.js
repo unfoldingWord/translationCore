@@ -1,8 +1,7 @@
 import fs from 'fs-extra';
 import ospath from 'ospath';
-import types from '../src/js/actions/ActionTypes';
 import path from 'path-extra';
-import * as actions from '../src/js/actions/ProjectDataLoadingActions';
+import * as actions from '../ToolActions';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 
@@ -10,10 +9,10 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join('user', 'translationCore', 'projects');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-jest.mock('../src/js/actions/ContextIdActions', () => ({
+jest.mock('../ContextIdActions', () => ({
   loadCurrentContextId: () => ({type: 'LOAD_CURRENT_CONTEXT_ID'})
 }));
-jest.mock('../src/js/actions/GroupsDataActions', () => ({
+jest.mock('../GroupsDataActions', () => ({
   verifyGroupDataMatchesWithFs: () => ({type: 'VERIFY_GROUP_DATA'})
 }));
 
@@ -21,7 +20,7 @@ describe('', () => {
   beforeEach(() => {
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = path.join(__dirname, 'fixtures/project');
+    const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
     const destinationPath = PROJECTS_PATH;
     const copyFiles = ['translationWords'];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
@@ -59,7 +58,7 @@ describe('', () => {
       {type: 'TOGGLE_LOADER_MODAL', show: false},
       {type: 'TOGGLE_HOME_VIEW', boolean: false}
     ];
-    store.dispatch(actions.loadProjectData('translationWords')).then(() => {
+    store.dispatch(actions.initializeProjectGroups('translationWords')).then(() => {
       const receivedActions = store.getActions();
       expect(receivedActions).toEqual(expectedActions);
     });

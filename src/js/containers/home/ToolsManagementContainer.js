@@ -1,18 +1,26 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-// components
-import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
-import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
-// actions
-import * as AlertModalActions from '../../actions/AlertModalActions';
-import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
-//helpers
-import * as ResourcesHelpers from '../../helpers/ResourcesHelpers';
-import { getSelectedToolName, getTools } from "../../selectors";
-import {openTool} from "../../actions/ToolActions";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import ToolsCards from "../../components/home/toolsManagement/ToolsCards";
+import HomeContainerContentWrapper
+  from "../../components/home/HomeContainerContentWrapper";
+import * as AlertModalActions from "../../actions/AlertModalActions";
+import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
+import {
+  getTools
+} from "../../selectors";
+import { openTool } from "../../actions/ToolActions";
+import path from "path-extra";
+import ospath from "ospath";
+import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
+import fs from "fs-extra";
 
 class ToolsManagementContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.buildCategories = this.buildCategories.bind(this);
+  }
+
   componentWillMount() {
     const {tools, reducers: {projectDetailsReducer: {projectSaveLocation, manifest: {project = {}}}}} = this.props;
     if (projectSaveLocation && project.id) {
@@ -21,10 +29,32 @@ class ToolsManagementContainer extends Component {
       });
     }
   }
+
+  /**
+   * TODO: move this into {@link ToolsCards}
+   */
+  buildCategories(currentProjectToolsSelectedGL) {
+    const availableCategories = {};
+    Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
+      const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
+      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
+      const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
+      if (fs.existsSync(versionDirectory))
+        availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
+          fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
+        );
+        if (availableCategories[toolName] && availableCategories[toolName].indexOf('other') === availableCategories[toolName].length - 1) {
+         var otherCat = availableCategories[toolName].splice(availableCategories[toolName].length - 1, availableCategories[toolName].length );
+         availableCategories[toolName].splice(1, 0, ...otherCat);
+        }
+      else availableCategories[toolName] = [];
+    });
+    return availableCategories;
+  }
+
   render() {
     const {
       tools,
-      selectedToolName,
       reducers: {
         loginReducer: { loggedInUser },
         settingsReducer: {
@@ -37,24 +67,26 @@ class ToolsManagementContainer extends Component {
           currentProjectToolsSelectedGL,
           toolsCategories
         },
-        invalidatedReducer,
+        invalidatedReducer
       },
       translate
     } = this.props;
     const instructions = (
       <div>
-        <p>{translate('tools.select_tool_from_list')}</p>
-        <p>{translate('projects.books_available', {app: translate('_.app_name')})}</p>
+        <p>{translate("tools.select_tool_from_list")}</p>
+        <p>{translate("projects.books_available",
+          { app: translate("_.app_name") })}</p>
       </div>
     );
-    const availableCategories = ResourcesHelpers.getAvailableToolCategories(currentProjectToolsSelectedGL, selectedToolName);
+    const availableCategories = this.buildCategories(currentProjectToolsSelectedGL);
+    debugger;
     return (
       <HomeContainerContentWrapper
         translate={translate}
         instructions={instructions}
       >
-        <div style={{ height: '100%' }}>
-          {translate('tools.tools')}
+        <div style={{ height: "100%" }}>
+          {translate("tools.tools")}
           <ToolsCards
             tools={tools}
             availableCategories={availableCategories}
@@ -65,13 +97,13 @@ class ToolsManagementContainer extends Component {
             loggedInUser={loggedInUser}
             actions={{
               ...this.props.actions,
-              launchTool: this.props.actions.launchTool(translate('please_log_in'))
+              launchTool: this.props.actions.launchTool(
+                translate("please_log_in"))
             }}
             developerMode={developerMode}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
-            currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
           />
         </div>
       </HomeContainerContentWrapper>
@@ -81,7 +113,6 @@ class ToolsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    selectedToolName: getSelectedToolName(state),
     tools: getTools(state),
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
@@ -115,14 +146,14 @@ const mapDispatchToProps = (dispatch) => {
         };
       },
       updateCheckSelection: (id, value, toolName) => {
-        dispatch(ProjectDetailsActions.updateCheckSelection(id, value, toolName));
+        dispatch(
+          ProjectDetailsActions.updateCheckSelection(id, value, toolName));
       }
     }
   };
 };
 
 ToolsManagementContainer.propTypes = {
-  selectedToolName: PropTypes.string,
   tools: PropTypes.array.isRequired,
   reducers: PropTypes.shape({
     settingsReducer: PropTypes.shape({

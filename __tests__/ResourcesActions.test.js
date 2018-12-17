@@ -199,7 +199,8 @@ describe('ResourcesActions', () => {
             id: bookId
           }
         },
-        projectSaveLocation: path.resolve(projectPath)
+        projectSaveLocation: path.resolve(projectPath),
+        currentProjectToolsSelectedGL: {}
       },
       resourcesReducer: {
         bibles: {

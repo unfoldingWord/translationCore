@@ -137,8 +137,22 @@ const projectDetailsReducer = (state = initialState, action) => {
 export default projectDetailsReducer;
 
 /**
- * Returns the save location of the current project
- * @param {object} state the project details slice of the state
+ * Returns the gateway language selected for the given tool.
+ * @param state
+ * @param {string} toolName - the name of the tool to look up
+ * @returns {string} - the gateway language code. Default value is "en".
+ */
+export const getToolGatewayLanguage = (state, toolName) => {
+  if(state && state.currentProjectToolsSelectedGL.hasOwnProperty(toolName)) {
+    return state.currentProjectToolsSelectedGL[toolName];
+  } else {
+    return "en";
+  }
+};
+
+/**
+ * Returns the file path where the project is saved
+ * @param {object} state - the project details slice of the state
  */
 export const getSaveLocation = (state) =>
   state.projectSaveLocation;
@@ -164,6 +178,20 @@ export const getNickname = state => {
     return manifest.resource.name;
   } else {
     return '';
+  }
+};
+
+/**
+ * Returns the book id
+ * @param state
+ * @returns {string|null} the book id or null if not found
+ */
+export const getBookId = state => {
+  const manifest = getManifest(state);
+  if(manifest && manifest.project) {
+    return manifest.project.id;
+  } else {
+    return null;
   }
 };
 
