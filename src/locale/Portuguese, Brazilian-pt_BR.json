@@ -39,7 +39,7 @@
   "project_information": "Informações do Projeto",
   "missing_verses": "Versículos Ausentes",
   "dev_mode_disabled": "Modo de desenvolvedor desativado",
-  "dev_mode_enabled": "Modo de Desenvolvimento Habilitado. Não há suporte técnico para ${app} neste modo!",
+  "dev_mode_enabled": "Modo de Desenvolvedor Habilitado. Não fornecemos suporte técnico para ${app} neste modo!",
   "no_internet": "Não foi possível conectar com o servidor. Favor verificar conexão com a internet.",
   "alert": "Alerta",
   "using_internet": "Você está prestes a transmitir dados pela Internet. Tem certeza que quer fazer isso?",
@@ -238,7 +238,7 @@
       "field_invalid_length": "São precisos, no mínimo, 3 ou 4 letras",
       "invalid_characters": "Apenas as letras básicas do Latim são suportadas"
     },
-    "conflicting_project": "Já existe um projeto com este identificador para este idioma e este livro"
+    "conflicting_project": "Já existe um projeto com este identificador para este idioma e livro"
   },
   "book_list": {
     "ot": {
@@ -349,7 +349,7 @@
     "grammar": "Gramática",
     "other": "Outros",
     "select_reason": "A seguir, selecione a razão ou razões para a mudança",
-    "comment": "Comentário",
+    "comment": "Comentar",
     "select": "Selecionar",
     "please_select": "Por favor, selecione a tradução de: ",
     "has_been_translated": "foi traduzido por",
@@ -371,7 +371,7 @@
     "cancel_import_button": "Cancelar a Importação",
     "clear_selection_button": "Limpar Seleção",
     "close_button": "Fechar",
-    "comment_button": "Comentário",
+    "comment_button": "Comentar",
     "continue_button": "Continuar",
     "continue_import_button": "Continuar a Importação",
     "d43_login_button": "Fazer Login com ${door43}",
