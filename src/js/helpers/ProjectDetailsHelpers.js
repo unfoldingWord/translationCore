@@ -24,24 +24,29 @@ export function getCategoriesForProjectFromFS(toolName, bookName, projectSaveLoc
   if (fs.existsSync(currentCategoriesLoadedPath)) {
     categoriesIndexObject = fs.readJSONSync(currentCategoriesLoadedPath, categoriesIndexObject) || {};
   }
+  if (!categoriesIndexObject.current && toolName === 'translationWords') {
+    categoriesIndexObject.current = ['kt', 'other', 'names'];
+  }
   return categoriesIndexObject.current || [] ;
 }
 
 export function setCategoriesForProjectInFS(categories, toolName, bookName, projectSaveLocation) {
   const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
   let categoriesIndexObject = {
-    current:categories,
+    current: categories,
     loaded: []
   };
-  if (fs.existsSync(currentCategoriesLoadedPath)) {
-    try {
+  try {
+    if (fs.existsSync(currentCategoriesLoadedPath)) {
       categoriesIndexObject = fs.readJSONSync(currentCategoriesLoadedPath);
       categoriesIndexObject.current = categories;
-    } catch (e) {
-      //
+    } else {
+      fs.ensureDirSync(path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName));
     }
+    fs.writeJSONSync(currentCategoriesLoadedPath, categoriesIndexObject);
+  } catch (e) {
+    //
   }
-  fs.writeJSONSync(currentCategoriesLoadedPath, categoriesIndexObject);
 }
 
   /** function to make the change in the array based on the passed params
