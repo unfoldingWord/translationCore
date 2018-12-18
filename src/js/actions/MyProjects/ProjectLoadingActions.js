@@ -57,12 +57,12 @@ export const openProject = (name) => {
       const manifest = getProjectManifest(getState());
       await dispatch(loadBookTranslations(manifest.project.id, name));
 
+      // TODO: copy the groups data into the project.
+
       // connect the tools
       const tools = getTools(getState());
       for (const t of tools) {
-        // await dispatch(initializeProjectGroups(t.name));
         const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
-        console.warn(`generated tool props for ${t.name}`, toolProps);
         t.api.triggerWillConnect(toolProps);
       }
 

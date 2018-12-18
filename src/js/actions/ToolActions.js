@@ -57,11 +57,11 @@ export const openTool = (name) => (dispatch, getData) => {
         type: types.OPEN_TOOL,
         name
       });
+      // TODO: only load the groups data. Do not copy them into the project here.
       dispatch(initializeProjectGroups(name)).then(() => {
         dispatch(loadCurrentContextId());
-      dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
-      dispatch(BodyUIActions.toggleHomeView(false));
-
+        dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
+        dispatch(BodyUIActions.toggleHomeView(false));
       });
     } catch (e) {
       console.warn(e);
@@ -111,7 +111,6 @@ export function initializeProjectGroups(toolName) {
       });
       Promise.all(categoryGroupsLoadActions).then(() => {
         dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-        // dispatch(loadCurrentContextId());
         resolve();
       }).catch(reject);
     })

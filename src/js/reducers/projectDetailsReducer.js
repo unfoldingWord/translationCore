@@ -10,7 +10,7 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  toolsCategories: { 
+  toolsCategories: {
     translationWords: ['kt', 'other', 'names']
   }
 };
@@ -150,6 +150,20 @@ export const getToolGatewayLanguage = (state, toolName) => {
     }
   }
   return "en";
+};
+
+/**
+ * Returns the progress of a tool
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
+export const getToolProgress = (state, toolName) => {
+  if(state.currentProjectToolsProgress[toolName]) {
+    return state.currentProjectToolsProgress[toolName];
+  } else {
+    return 0;
+  }
 };
 
 /**

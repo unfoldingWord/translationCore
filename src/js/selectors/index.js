@@ -451,5 +451,20 @@ export const getIsHomeVisible = state =>
 export const getListOfOutdatedSourceContent = (state) =>
   fromSourceContentUpdatesReducer.getListOfOutdatedSourceContent(state.sourceContentUpdatesReducer);
 
+/**
+ * Returns the selected tool categories for the selected project
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
 export const getToolCategories = (state, toolName) =>
   fromProjectDetailsReducer.getToolCategories(state.projectDetailsReducer, toolName);
+
+/**
+ * Returns the progress of a tool for the selected project
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
+export const getProjectToolProgress = (state, toolName) =>
+  fromProjectDetailsReducer.getToolProgress(state.projectDetailsReducer, toolName);

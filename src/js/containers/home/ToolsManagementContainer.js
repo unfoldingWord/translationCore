@@ -70,9 +70,6 @@ class ToolsManagementContainer extends Component {
       tools,
       reducers: {
         loginReducer: { loggedInUser },
-        settingsReducer: {
-          currentSettings: { developerMode }
-        },
         projectDetailsReducer: {
           manifest,
           projectSaveLocation,
@@ -111,7 +108,6 @@ class ToolsManagementContainer extends Component {
             actions={{
               ...this.props.actions
             }}
-            developerMode={developerMode}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
@@ -128,7 +124,6 @@ const mapStateToProps = (state) => {
     tools: getTools(state),
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
-      settingsReducer: state.settingsReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       loginReducer: state.loginReducer,
       invalidatedReducer: state.invalidatedReducer
@@ -164,11 +159,6 @@ ToolsManagementContainer.propTypes = {
   openAlertDialog: PropTypes.func.isRequired,
   tools: PropTypes.array.isRequired,
   reducers: PropTypes.shape({
-    settingsReducer: PropTypes.shape({
-      currentSettings: PropTypes.shape({
-        developerMode: PropTypes.bool
-      }).isRequired
-    }).isRequired,
     projectDetailsReducer: PropTypes.object.isRequired,
     loginReducer: PropTypes.shape({
       loggedInUser: PropTypes.bool

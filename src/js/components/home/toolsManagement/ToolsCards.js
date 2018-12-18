@@ -17,7 +17,6 @@ import { Card, CardText } from 'material-ui';
  * @param currentProjectToolsProgress
  * @param manifest
  * @param invalidatedReducer
- * @param developerMode
  * @param selectedCategories
  * @param availableCategories
  * @returns {*}
@@ -34,7 +33,6 @@ const ToolsCards = ({
   currentProjectToolsProgress,
   manifest,
   invalidatedReducer,
-  developerMode,
   toolsCategories,
   availableCategories
 }) => {
@@ -90,7 +88,6 @@ const ToolsCards = ({
                 invalidatedReducer={invalidatedReducer}
                 currentProjectToolsProgress={currentProjectToolsProgress}
                 manifest={manifest}
-                developerMode={developerMode}
               />
             );
           })
@@ -111,7 +108,6 @@ ToolsCards.propTypes = {
   currentProjectToolsProgress: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
-  developerMode: PropTypes.bool.isRequired,
   toolsCategories: PropTypes.object.isRequired,
   availableCategories: PropTypes.object.isRequired,
 };

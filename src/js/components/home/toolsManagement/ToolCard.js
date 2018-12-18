@@ -14,11 +14,10 @@ import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
 import {
-  getProjectBookId, getSetting,
+  getProjectBookId, getProjectToolProgress, getSetting,
   getToolGatewayLanguage
 } from "../../../selectors";
 import { connect } from "react-redux";
-import { withLocale } from "../../../containers/Locale";
 
 class ToolCard extends Component {
   constructor(props) {
@@ -27,16 +26,24 @@ class ToolCard extends Component {
     this.handleSelect = this.handleSelect.bind(this);
     this.state = {
       showDescription: false,
-      progress: 0
+      progress: 0,
+      useLegacyProgress: false
     };
   }
 
   componentDidMount() {
-    const {tool} = this.props;
-    const toolProgress = tool.api.trigger("getProgress");
-    this.setState({
-      progress: toolProgress ? toolProgress : 0
-    });
+    const {tool, actions: {getProjectProgressForTools}} = this.props;
+    if(tool.api.methodExists("getProgress")) {
+      const toolProgress = tool.api.trigger("getProgress");
+      this.setState({
+        progress: toolProgress ? toolProgress : 0
+      });
+    } else {
+      getProjectProgressForTools(tool.name);
+      this.setState({
+        useLegacyProgress: true
+      });
+    }
   }
 
   componentWillMount() {
@@ -87,6 +94,7 @@ class ToolCard extends Component {
       tool,
       bookId,
       translate,
+      progress: legacyProgress,
       developerMode,
       actions: {
         updateCheckSelection
@@ -94,7 +102,13 @@ class ToolCard extends Component {
       selectedCategories,
       availableCategories
     } = this.props;
-    const {progress} = this.state;
+    const {progress: newProgress, useLegacyProgress} = this.state;
+
+    let progress = newProgress;
+    if(useLegacyProgress) {
+      progress = legacyProgress;
+    }
+
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
     let showCheckBoxes = false;
@@ -189,8 +203,10 @@ ToolCard.propTypes = {
   bookId: PropTypes.string.isRequired,
   tool: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,
+  progress: PropTypes.number.isRequired,
 
   actions: PropTypes.shape({
+    getProjectProgressForTools: PropTypes.func.isRequired,
     setProjectToolGL: PropTypes.func.isRequired,
     updateCheckSelection: PropTypes.func.isRequired
   }),
@@ -202,9 +218,10 @@ ToolCard.contextTypes = {
   store: PropTypes.any
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, props) => ({
+  progress: getProjectToolProgress(state, props.tool.name),
   bookId: getProjectBookId(state),
   developerMode: getSetting(state, 'developerMode')
 });
 
-export default withLocale(connect(mapStateToProps)(ToolCard));
+export default connect(mapStateToProps)(ToolCard);
