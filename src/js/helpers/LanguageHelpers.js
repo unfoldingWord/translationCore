@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
 
-let languageCodes = null; // for quick lookup
-let languageNames = null; // for quick lookup
-let languageNamePrompts = null; // for quick lookup
-let languageIdPrompts = null; // for quick lookup
-let languages = null; // cache languages for speed up
-let languageListByName = null; // list caching for speed up
+let languageCodes = null; // object for quick lookup
+let languageNames = null; // object for quick lookup
+let languageNamePrompts = null; // object for quick lookup
+let languageIdPrompts = null; // object for quick lookup
+let languages = null; // list of languages sorted by code for drop down lists
+let languageListByName = null; // list of languages sorted by names for for drop down lists
+let languageCodeList = null; // sorted list of language codes for quick lookup
 
 /**
  * @description - returns a list of language objects from langnames.json sorted by language code.
@@ -15,7 +16,8 @@ export const getLanguagesSortedByCode = () => {
   if (!languages) {
     languages = [];
     const languageCodes = getLanguageCodes();
-    for (let code of Object.keys(languageCodes.local).sort()) {
+    languageCodeList = Object.keys(languageCodes.local).sort();
+    for (let code of languageCodeList) {
       if ( languageCodes.english[code] ) {
         languages.push(languageCodes.english[code]);
       }
@@ -110,14 +112,26 @@ export const getLanguageCodes = () => {
 };
 
 /**
- * @description - searches language array to match language code.
+ * @description - searches language array to match language code.  Case insensitive.
  * @param {string} code
  * @return {object} language entry matched or null if no match
  */
 export const getLanguageByCode = (code) => {
   if (code) {
     getLanguagesSortedByCode(); // make sure initialized
-    return languageCodes.local[code];
+    let langData = languageCodes.local[code];
+    if (!langData) {
+      // do case insensitive fast search (since there are over 10,000 codes)
+      const codeLc = code.toLowerCase();
+      for (let i = 0, len = languageCodeList.length; i < len; i++) {
+        const codeToMatch = languageCodeList[i].toLowerCase();
+        if (codeToMatch === codeLc) {
+          langData = languageCodes.local[languageCodeList[i]];
+          break;
+        }
+      }
+    }
+    return langData;
   }
   return null;
 };

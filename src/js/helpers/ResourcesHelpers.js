@@ -10,7 +10,6 @@ import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from './SettingsHelpers';
 import {
   getContext,
-  getSelectedToolName,
   getToolGatewayLanguage
 } from "../selectors";
 import _ from "lodash";
@@ -33,6 +32,10 @@ export const getAvailableToolCategories = (currentProjectToolsSelectedGL) => {
       availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
         fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
       );
+      if (availableCategories[toolName] && availableCategories[toolName].indexOf('other') === availableCategories[toolName].length - 1) {
+       var otherCat = availableCategories[toolName].splice(availableCategories[toolName].length - 1, availableCategories[toolName].length );
+       availableCategories[toolName].splice(1, 0, ...otherCat);
+      }
     else availableCategories[toolName] = [];
   });
   return availableCategories;

@@ -22,7 +22,7 @@ import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructu
 import { loadBookTranslations } from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
-import { initializeProjectGroups, resetReducersData } from "../ToolActions";
+import { resetReducersData } from "../ToolActions";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');

@@ -450,3 +450,6 @@ export const getIsHomeVisible = state =>
  */
 export const getListOfOutdatedSourceContent = (state) =>
   fromSourceContentUpdatesReducer.getListOfOutdatedSourceContent(state.sourceContentUpdatesReducer);
+
+export const getToolCategories = (state, toolName) =>
+  fromProjectDetailsReducer.getToolCategories(state.projectDetailsReducer, toolName);

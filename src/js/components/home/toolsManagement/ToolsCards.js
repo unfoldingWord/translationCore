@@ -12,9 +12,12 @@ import { Card, CardText } from 'material-ui';
  * @param actions
  * @param translate
  * @param bookName
- * @param projectPath
- * @param onGoBack
- * @param onSelectTool
+ * @param loggedInUser
+ * @param projectSaveLocation
+ * @param currentProjectToolsProgress
+ * @param manifest
+ * @param invalidatedReducer
+ * @param developerMode
  * @param selectedCategories
  * @param availableCategories
  * @returns {*}
@@ -24,11 +27,15 @@ const ToolsCards = ({
   tools,
   actions,
   translate,
-  bookName,
-  projectPath,
-  onGoBack,
   onSelectTool,
-  selectedCategories,
+  bookName,
+  loggedInUser,
+  projectSaveLocation,
+  currentProjectToolsProgress,
+  manifest,
+  invalidatedReducer,
+  developerMode,
+  toolsCategories,
   availableCategories
 }) => {
   if (!tools || tools.length === 0) {
@@ -41,7 +48,7 @@ const ToolsCards = ({
         </Card>
       </MuiThemeProvider>
     );
-  } else if (bookName.length === 0 && projectPath === 0) {
+  } else if (bookName.length === 0 && projectSaveLocation === 0) {
     return (
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
@@ -49,7 +56,7 @@ const ToolsCards = ({
             {translate('projects.no_project')}
             <span
               style={{ color: "var(--accent-color-dark)", cursor: "pointer" }}
-              onClick={onGoBack}
+              onClick={() => this.props.actions.goToStep(2)}
             >
               &nbsp;{translate('select_project')}&nbsp;
             </span>
@@ -64,13 +71,26 @@ const ToolsCards = ({
           tools.map((tool, i) => {
             return (
               <ToolCard
-                availableCategories={availableCategories[tool.name] || []}
-                selectedCategories={selectedCategories}
-                translate={translate}
-                key={i}
                 tool={tool}
                 onSelect={onSelectTool}
+                availableCategories={availableCategories[tool.name] || []}
+                selectedCategories={toolsCategories[tool.name] || []}
+                translate={translate}
+                key={i}
                 actions={actions}
+                loggedInUser={loggedInUser}
+                metadata={{
+                  title: tool.title,
+                  version: tool.version,
+                  description: tool.description,
+                  badgeImagePath: tool.badge,
+                  folderName: tool.path,
+                  name: tool.name
+                }}
+                invalidatedReducer={invalidatedReducer}
+                currentProjectToolsProgress={currentProjectToolsProgress}
+                manifest={manifest}
+                developerMode={developerMode}
               />
             );
           })
@@ -81,14 +101,18 @@ const ToolsCards = ({
 };
 
 ToolsCards.propTypes = {
-  onGoBack: PropTypes.func.isRequired,
   tools: PropTypes.array,
   onSelectTool: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
-  projectPath: PropTypes.string.isRequired,
-  selectedCategories: PropTypes.array.isRequired,
+  loggedInUser: PropTypes.bool.isRequired,
+  projectSaveLocation: PropTypes.string.isRequired,
+  currentProjectToolsProgress: PropTypes.object.isRequired,
+  manifest: PropTypes.object.isRequired,
+  invalidatedReducer: PropTypes.object.isRequired,
+  developerMode: PropTypes.bool.isRequired,
+  toolsCategories: PropTypes.object.isRequired,
   availableCategories: PropTypes.object.isRequired,
 };
 
