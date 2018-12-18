@@ -462,6 +462,7 @@ export const getToolCategories = (state, toolName) =>
 
 /**
  * Returns the progress of a tool for the selected project
+ * @deprecated
  * @param state
  * @param toolName
  * @returns {*}
