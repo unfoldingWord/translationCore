@@ -7,7 +7,7 @@ import HomeContainerContentWrapper
 import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import {
-  getTools
+  getTools, getProjectSaveLocation, getProjectBookId
 } from "../../selectors";
 import { openTool } from "../../actions/ToolActions";
 import path from "path-extra";
@@ -19,13 +19,12 @@ class ToolsManagementContainer extends Component {
   constructor(props) {
     super(props);
     this.buildCategories = this.buildCategories.bind(this);
-  }
-
-  componentWillMount() {
-    const {tools, reducers: {projectDetailsReducer: {projectSaveLocation, manifest: {project = {}}}}} = this.props;
-    if (projectSaveLocation && project.id) {
+    const {tools, reducers} = this.props;
+    const projectSaveLocation = getProjectSaveLocation(reducers);
+    const bookId = getProjectBookId(reducers);
+    if (projectSaveLocation && bookId) {
       tools.forEach(({name}) => {
-        this.props.actions.loadCurrentCheckCategories(name, project.id, projectSaveLocation);
+        this.props.actions.loadCurrentCheckCategories(name, bookId, projectSaveLocation);
       });
     }
   }

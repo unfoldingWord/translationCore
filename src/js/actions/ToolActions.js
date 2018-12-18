@@ -1,6 +1,6 @@
 import types from "./ActionTypes";
 import { loadToolsInDir } from "../helpers/toolHelper";
-import { getToolGatewayLanguage, getTranslate } from "../selectors";
+import { getToolGatewayLanguage, getTranslate, getToolCategories, getProjectBookId, getProjectSaveLocation } from "../selectors";
 import * as ModalActions from "./ModalActions";
 import * as AlertModalActions from "./AlertModalActions";
 import path from "path-extra";
@@ -76,10 +76,10 @@ export function initializeProjectGroups(toolName) {
     const state = getState();
     const translate = getTranslate(state);
     return new Promise((resolve, reject) => {
-      let { projectDetailsReducer } = getState();
-      let { projectSaveLocation, manifest, toolsCategories } = projectDetailsReducer;
-      let selectedCategories = [ ...toolsCategories[toolName] ];
-      let bookAbbreviation = manifest.project.id;
+      const state = getState();
+      let selectedCategories = getToolCategories(state, toolName);
+      const bookAbbreviation = getProjectBookId(state);
+      const projectSaveLocation = getProjectSaveLocation(state);
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', toolName);
       const categoryGroupsLoadActions = [];
       if (toolName === 'wordAlignment') {
@@ -178,7 +178,7 @@ export function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviatio
         categoriesIndexObject = fs.readJSONSync(groupsDataLoadedIndex);
         groupsDataAlreadyLoaded = categoriesIndexObject.loaded;
       } catch (e) {
-        //
+        console.warn('Could not parse old check categories, making new one');
       }
     }
     if (groupsDataAlreadyLoaded.indexOf(category) >= 0) {

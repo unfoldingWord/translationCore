@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername} from "../selectors";
+import {getTranslate, getUsername, getProjectSaveLocation, getProjectBookId, getToolCategories} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
@@ -19,6 +19,14 @@ import Repo from '../helpers/Repo.js';
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
+/**
+ * @description Gets the check categories from the filesystem for the project and 
+ * sets them in the reducer
+ * @param {String} toolName - The name of the tool to load check categories from
+ * @param {String} bookName - The id abbreviation of the book name to load from
+ * @param {String} projectSaveLocation - The project location to load from 
+ * i.e. ~/translationCore/projects/en_tit_reg
+ */
 export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
   return dispatch => {
     const selectedCategories = ProjectDetailsHelpers.getCategoriesForProjectFromFS(toolName, bookName, projectSaveLocation);
@@ -28,7 +36,7 @@ export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocati
 
 /**
  * @description sets the categories to be used in the project.
- * Note: This preference is persisted in the settings
+ * Note: This preference is persisted in on a project basis
  * @param {String} id - The category to be toggled e.i. "kt"
  * @param {Boolean} value - The value of the category to be updated to
  * @param {String} toolName - The tool that has been toggled on. This
@@ -38,12 +46,11 @@ export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocati
 export const updateCheckSelection = (id, value, toolName) => {
   return (dispatch, getState) => {
     const state = getState();
-    const {projectDetailsReducer: {toolsCategories, projectSaveLocation, manifest: {project = {}}}  } = state;
-    const previousSelectedCategories = [...toolsCategories[toolName]];
+    const previousSelectedCategories = getToolCategories(state, toolName);
     const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
     dispatch(setCategories(selectedCategories, toolName));
     dispatch(getProjectProgressForTools(toolName));
-    ProjectDetailsHelpers.setCategoriesForProjectInFS(selectedCategories, toolName, project.id, projectSaveLocation);
+    ProjectDetailsHelpers.setCategoriesForProjectInFS(selectedCategories, toolName, getProjectBookId(state), getProjectSaveLocation(state));
   };
 };
 

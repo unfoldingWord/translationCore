@@ -201,3 +201,6 @@ export const getBookId = state => {
  */
 export const getManifest = (state) =>
   state.manifest;
+
+export const getToolCategories = (state, toolName) =>
+[...state.toolsCategories[toolName]];
