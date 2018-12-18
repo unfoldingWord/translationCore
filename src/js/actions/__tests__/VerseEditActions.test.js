@@ -26,8 +26,12 @@ describe('verse edit actions', () => {
     const verse = 2;
     const activeChapter = 1;
     const activeVerse = 17;
+    const quote = 'quote';
+    const groupId = 'group';
+    const occurrence = 1;
 
-    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, null, null, activeChapter, activeVerse);
+    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, null, null, 
+      {reference: {chapter:activeChapter, verse: activeVerse}}, quote, groupId, occurrence);
     expect(result).toEqual({
       type: types.ADD_VERSE_EDIT,
       tags,
@@ -61,8 +65,12 @@ describe('verse edit actions', () => {
     const verse = 2;
     const activeChapter = 1;
     const activeVerse = 17;
+    const quote = 'quote';
+    const groupId = 'group';
+    const occurrence = 1;
 
-    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, glCode, glQuote, activeChapter, activeVerse);
+    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, glCode, glQuote, 
+      {reference: {chapter:activeChapter, verse: activeVerse}}, quote, groupId, occurrence);
     expect(result).toEqual({
       type: types.ADD_VERSE_EDIT,
       tags,

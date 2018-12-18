@@ -63,7 +63,7 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       }
     };
     dispatch(validateSelections(after, verseContextId, chapter, verse));
-    dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote, currentChapter, currentVerse));
+    dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote, verseContextId));
     dispatch(updateTargetVerse(chapter, verse, after));
     dispatch({
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
@@ -106,7 +106,8 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
  * @param {string|null} [glQuote=null] - the gateway language code
  * @return {*}
  */
-export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null, activeChapter, activeVerse) => ({
+export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null, 
+  {reference:{chapter:activeChapter, verse:activeVerse}, quote, groupId, occurrence}) => ({
   type: types.ADD_VERSE_EDIT,
   before,
   after,
@@ -121,8 +122,11 @@ export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tag
   reference: {
     bookId,
     chapter: parseInt(chapter),
-    verse: parseInt(verse)
-  }
+    verse: parseInt(verse),
+    groupId
+  },
+  quote,
+  occurrence
 });
 
 /**
