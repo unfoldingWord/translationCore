@@ -32,9 +32,14 @@ const groupsIndexReducer = (state = initialState, action) => {
 };
 
 function sortIndexBasedOnId(a, b) {
-  if (a.id < b.id)
+  // if the id string contains chapter_ then remove it so that it doesnt mess up with the sorting
+  // otherwise it'd leave it alone
+  const A = a.id.includes('chapter_') ? parseInt(a.id.replace('chapter_', ''), 10) : a.id;
+  const B = b.id.includes('chapter_') ? parseInt(b.id.replace('chapter_', ''), 10) : b.id;
+
+  if (A < B)
     return -1;
-  if (a.id > b.id)
+  if (A > B)
     return 1;
   return 0;
 }

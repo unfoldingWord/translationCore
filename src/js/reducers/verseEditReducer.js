@@ -14,8 +14,11 @@ const initialState = {
   reference: {
     bookId: null,
     chapter: null,
-    verse: null
-  }
+    verse: null,
+    groupId: null
+  },
+  quote: null,
+  occurrence: null
 };
 
 const verseEditReducer = (state = initialState, action) => {
@@ -36,8 +39,11 @@ const verseEditReducer = (state = initialState, action) => {
         reference: {
           bookId: action.reference.bookId,
           chapter: action.reference.chapter,
-          verse: action.reference.verse
-        }
+          verse: action.reference.verse,
+          groupId: action.reference.groupId
+        },
+        quote: action.quote,
+        occurrence: action.occurrence
       };
     default:
       return state;
@@ -58,7 +64,9 @@ export const getSaveStructure = (state, toolName) => {
     contextId: {
       reference: state.reference,
       tool: toolName,
-      groupId: `chapter_${state.reference.chapter}`
+      groupId: state.reference.groupId,
+      occurrence: state.occurrence,
+      quote: state.quote
     }
   };
   delete obj.reference;
