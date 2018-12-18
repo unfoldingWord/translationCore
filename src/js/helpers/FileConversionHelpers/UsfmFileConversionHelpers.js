@@ -339,8 +339,15 @@ function convertVerseDataToUSFM(verseData) {
     }
   };
   const USFM = usfmjs.toUSFM(outputData, {chunk: true});
-  const split = USFM.split("\\v 1 ");
-  return split.length > 1 ? split[1] : "";
+  const split = USFM.split("\\v 1");
+  if (split.length > 1) {
+    let content = split[1];
+    if (content.substr(0, 1) === ' ') { // remove space separator
+      content = content.substr(1);
+    }
+    return content;
+  }
+  return ""; // error on JSON to USFM
 }
 
 /**
