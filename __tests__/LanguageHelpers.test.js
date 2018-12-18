@@ -7,7 +7,7 @@ describe('Test LanguageHelpers',()=>{
   const minimumLangCount = 8020;
 
   test('getLanguageByCode() should work with mixed and lower case', () => {
-    const codes = ['sr-latn', 'sr-Latn', 'ur-deva', 'ur-Deva'];
+    const codes = ['sr-latn', 'sr-Latn', 'SR-LATN', 'ur-deva', 'ur-Deva', "UR-DEVA", 'ZH'];
     for (let code of codes) {
       const languageData = LanguageHelpers.getLanguageByCode(code);
       expect(languageData).toBeTruthy();
