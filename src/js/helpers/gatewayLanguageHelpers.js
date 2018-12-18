@@ -2,7 +2,6 @@ import fs from 'fs-extra';
 import path from "path-extra";
 import _ from 'lodash';
 
-// import * as groupsIndexHelpers from './groupsIndexHelpers';
 import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./LanguageHelpers";
 import * as ResourcesHelpers from "./ResourcesHelpers";
 import * as BibleHelpers from "./bibleHelpers";
