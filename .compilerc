@@ -8,6 +8,7 @@
       "transform-object-rest-spread",
       "transform-runtime",
       "transform-decorators-legacy"
-    ]
+    ],
+    "sourceMaps": "inline"
   }
 }

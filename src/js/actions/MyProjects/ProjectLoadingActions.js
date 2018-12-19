@@ -63,7 +63,6 @@ export const openProject = (name) => {
         t.api.triggerWillConnect(toolProps);
       }
 
-      dispatch(closeAlertDialog());
       await dispatch(displayTools());
     } catch (e) {
       // TODO: clean this up
