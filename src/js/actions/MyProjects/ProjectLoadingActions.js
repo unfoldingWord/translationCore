@@ -6,7 +6,7 @@ import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
-import {openAlertDialog, closeAlertDialog} from '../AlertModalActions';
+import {openAlertDialog} from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
