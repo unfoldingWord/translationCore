@@ -43,7 +43,8 @@ describe('getProjectProgressForTools() should create an action to get the projec
         project: {
           id: ''
         }
-      }
+      },
+      toolsCategories:{}
     },
     settingsReducer: {
       currentSettings: { }
@@ -392,24 +393,20 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
   });
   test('should set the check category from the user selection', () => {
     const initialState = {
-      settingsReducer: {
-        currentSettings: {
-          selectedCategories: ['kt']
-        }
-      },
       projectDetailsReducer: {
         projectSaveLocation: path.join(PROJECTS_PATH, project_name),
         manifest: {
           project: {
             id: 'tit'
           }
-        }
+        },
+        toolsCategories: {translationWords: ['kt']}
       }
     };
     const expectedActions = [{
-      type: 'SET_SETTING',
-      key: 'selectedCategories',
-      value: ['kt']
+      type: 'SET_CHECK_CATEGORIES',
+      toolName: 'translationWords',
+      selectedCategories: ['kt']
     },
     {
       type: 'SET_PROJECT_PROGRESS_FOR_TOOL',

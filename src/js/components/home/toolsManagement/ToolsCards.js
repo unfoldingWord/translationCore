@@ -5,6 +5,24 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui';
 
+/**
+ * Renders a list of tools.
+ * TODO: rename this to ToolsList and make it a self contained container with supporting components
+ * @param tools
+ * @param actions
+ * @param translate
+ * @param bookName
+ * @param loggedInUser
+ * @param projectSaveLocation
+ * @param currentProjectToolsProgress
+ * @param manifest
+ * @param invalidatedReducer
+ * @param developerMode
+ * @param selectedCategories
+ * @param availableCategories
+ * @returns {*}
+ * @constructor
+ */
 const ToolsCards = ({
   tools,
   actions,
@@ -13,11 +31,10 @@ const ToolsCards = ({
   loggedInUser,
   projectSaveLocation,
   currentProjectToolsProgress,
-  currentProjectToolsSelectedGL,
   manifest,
   invalidatedReducer,
   developerMode,
-  selectedCategories,
+  toolsCategories,
   availableCategories
 }) => {
   if (!tools || tools.length === 0) {
@@ -54,7 +71,7 @@ const ToolsCards = ({
             return (
               <ToolCard
                 availableCategories={availableCategories[tool.name] || []}
-                selectedCategories={selectedCategories}
+                selectedCategories={toolsCategories[tool.name]}
                 translate={translate}
                 key={i}
                 actions={actions}
@@ -69,7 +86,6 @@ const ToolsCards = ({
                 }}
                 invalidatedReducer={invalidatedReducer}
                 currentProjectToolsProgress={currentProjectToolsProgress}
-                currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
                 manifest={manifest}
                 developerMode={developerMode}
               />
@@ -89,11 +105,10 @@ ToolsCards.propTypes = {
   loggedInUser: PropTypes.bool.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,
-  selectedCategories: PropTypes.array.isRequired,
+  toolsCategories: PropTypes.object.isRequired,
   availableCategories: PropTypes.object.isRequired,
 };
 

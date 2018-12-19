@@ -259,7 +259,7 @@ export const saveVerseEditsToCSV = (projectPath) => {
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': data.gatewayLanguageQuote
           };
-          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp, true);
+          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');

@@ -4,7 +4,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Card, CardHeader} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
 // helpers
-import * as gatewayLanguageHelpers from '../../../helpers/gatewayLanguageHelpers';
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import {getTranslation} from '../../../helpers/localizationHelpers';
 // components
@@ -14,8 +13,10 @@ import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
+import { getToolGatewayLanguage } from "../../../selectors";
+import { connect } from "react-redux";
 
-export default class ToolCard extends Component {
+class ToolCard extends Component {
   constructor(props) {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
@@ -25,13 +26,14 @@ export default class ToolCard extends Component {
   }
 
   componentWillMount() {
+    const {store} = this.context;
     const name = this.props.metadata.name;
     this.props.actions.getProjectProgressForTools(name);
-    if (!this.props.currentProjectToolsSelectedGL[name]) {
-      this.selectionChange(gatewayLanguageHelpers.DEFAULT_GATEWAY_LANGUAGE);
-    } else {
-      this.setState({selectedGL: this.props.currentProjectToolsSelectedGL[name]});
-    }
+    const gatewayLanguage = getToolGatewayLanguage(store.getState(), name);
+    this.selectionChange(gatewayLanguage);
+    this.setState({
+      selectedGL: gatewayLanguage
+    });
   }
 
   selectionChange(selectedGL) {
@@ -179,7 +181,6 @@ ToolCard.propTypes = {
   }),
   loggedInUser: PropTypes.bool.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   metadata: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
@@ -187,3 +188,9 @@ ToolCard.propTypes = {
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.array.isRequired
 };
+
+ToolCard.contextTypes = {
+  store: PropTypes.any
+};
+
+export default connect()(ToolCard);

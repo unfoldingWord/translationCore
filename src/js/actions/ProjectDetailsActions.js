@@ -5,16 +5,14 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername} from "../selectors";
+import {getTranslate, getUsername, getProjectSaveLocation, getProjectBookId, getToolCategories} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
-import {setSetting} from "./SettingsActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 //reducers
-import {getSetting} from '../reducers/settingsReducer';
 import Repo from '../helpers/Repo.js';
 
 // constants
@@ -22,8 +20,23 @@ const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
+ * @description Gets the check categories from the filesystem for the project and 
+ * sets them in the reducer
+ * @param {String} toolName - The name of the tool to load check categories from
+ * @param {String} bookName - The id abbreviation of the book name to load from
+ * @param {String} projectSaveLocation - The project location to load from 
+ * i.e. ~/translationCore/projects/en_tit_reg
+ */
+export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
+  return dispatch => {
+    const selectedCategories = ProjectDetailsHelpers.getCategoriesForProjectFromFS(toolName, bookName, projectSaveLocation);
+    dispatch(setCategories(selectedCategories, toolName));
+  };
+};
+
+/**
  * @description sets the categories to be used in the project.
- * Note: This preference is persisted in the settings
+ * Note: This preference is persisted in on a project basis
  * @param {String} id - The category to be toggled e.i. "kt"
  * @param {Boolean} value - The value of the category to be updated to
  * @param {String} toolName - The tool that has been toggled on. This
@@ -32,31 +45,30 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  */
 export const updateCheckSelection = (id, value, toolName) => {
   return (dispatch, getState) => {
-    /** function to make the change in the array based on the passed params
-     * i.e. If the value is present in the array and you pass the value of 
-     * false it will be deleted from the array
-    */
     const state = getState();
-    const previousSelectedCategories = getSetting(state.settingsReducer, 'selectedCategories');
+    const previousSelectedCategories = getToolCategories(state, toolName);
     const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
-    dispatch(setSetting('selectedCategories', selectedCategories));
+    dispatch(setCategories(selectedCategories, toolName));
     dispatch(getProjectProgressForTools(toolName));
+    ProjectDetailsHelpers.setCategoriesForProjectInFS(selectedCategories, toolName, getProjectBookId(state), getProjectSaveLocation(state));
   };
 };
+
+export const setCategories = (selectedCategories, toolName) => ({
+  type: consts.SET_CHECK_CATEGORIES,
+  selectedCategories,
+  toolName
+});
 
 /**
  * @description sets the project save location in the projectDetailReducer.
  * @param {String} pathLocation - project save location and/or directory.
  * @return {object} action object.
  */
-export const setSaveLocation = pathLocation => {
-  return ((dispatch) => {
-    dispatch({
+export const setSaveLocation = pathLocation => ({
       type: consts.SET_SAVE_PATH_LOCATION,
       pathLocation
     });
-  });
-};
 
 export const resetProjectDetail = () => {
   return {
@@ -82,10 +94,8 @@ export function getProjectProgressForTools(toolName) {
     const {
       projectDetailsReducer: {
         projectSaveLocation,
-        manifest
-      },
-      settingsReducer:{
-        currentSettings: { selectedCategories }
+        manifest,
+        toolsCategories
       }
     } = getState();
     const bookId = manifest.project.id;
@@ -98,7 +108,7 @@ export function getProjectProgressForTools(toolName) {
       const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     } else {
-      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, selectedCategories, bookId);
+      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
     }
 
     dispatch({
