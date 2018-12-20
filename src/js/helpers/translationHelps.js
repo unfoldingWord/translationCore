@@ -5,6 +5,7 @@ import path from "path-extra";
 
 /**
  * Copies all of a tool's group data into a project.
+ * This is boiler plate to keep a separation of concerns between the global resources and projects.
  * @param {string} gatewayLanguage - the gateway language code
  * @param {string} toolName - the name of the tool for which helps will be copied
  * @param {string} projectDir - path to the project directory
