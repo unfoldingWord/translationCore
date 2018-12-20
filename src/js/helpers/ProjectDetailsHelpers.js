@@ -56,12 +56,9 @@ export function setCategoriesForProjectInFS(categories, toolName, bookName, proj
 export function updateArray (array, id, value) {
   const exists = array.indexOf(id) >= 0;
   if (exists && value === true) return array;
-  else if (exists && value === false) {
-    return array.filter((el) => el !== id);
-  }
-  else if (!exists && value === true)
-    return array.concat(id);
-  else return array;
+  if (exists && value === false) return array.filter((el) => el !== id);
+  if (!exists && value === true) return array.concat(id);
+  return array;
 }
 
 /**

@@ -18,7 +18,7 @@ import { Card, CardText } from 'material-ui';
  * @param manifest
  * @param invalidatedReducer
  * @param developerMode
- * @param selectedCategories
+ * @param toolsCategories
  * @param availableCategories
  * @returns {*}
  * @constructor
@@ -71,7 +71,7 @@ const ToolsCards = ({
             return (
               <ToolCard
                 availableCategories={availableCategories[tool.name] || []}
-                selectedCategories={toolsCategories[tool.name]}
+                selectedCategories={toolsCategories[tool.name] || []}
                 translate={translate}
                 key={i}
                 actions={actions}
