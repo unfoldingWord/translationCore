@@ -188,7 +188,7 @@ function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviation, cate
 }
 
 /**
- * Loads all the groups data files from filesystem.
+ * Loads all the groups data files from a project.
  * @param {string} groupsDataDirectory - groups data save location in the filesystem.
  * @param {function} dispatch - redux dispatch function.
  * @return {object} object action / Promises.

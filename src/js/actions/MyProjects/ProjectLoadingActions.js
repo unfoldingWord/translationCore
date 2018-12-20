@@ -109,15 +109,15 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
 
   return {
     // project api
-    readProjectDir: projectApi.readDir,
-    readProjectDirSync: projectApi.readDirSync,
-    writeProjectData: projectApi.writeData,
-    writeProjectDataSync: projectApi.writeDataSync,
-    readProjectData: projectApi.readData,
-    readProjectDataSync: projectApi.readDataSync,
-    projectDataPathExists: projectApi.pathExists,
-    projectDataPathExistsSync: projectApi.pathExistsSync,
-    deleteProjectFile: projectApi.deleteFile,
+    readProjectDir: projectApi.readDataDir,
+    readProjectDirSync: projectApi.readDataDirSync,
+    writeProjectData: projectApi.writeDataFile,
+    writeProjectDataSync: projectApi.writeDataFileSync,
+    readProjectData: projectApi.readDataFile,
+    readProjectDataSync: projectApi.readDataFileSync,
+    projectDataPathExists: projectApi.dataPathExists,
+    projectDataPathExistsSync: projectApi.dataPathExistsSync,
+    deleteProjectFile: projectApi.deleteDataFile,
 
     // tC api
     showDialog: coreApi.showDialog,
@@ -149,7 +149,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     },
     projectFileExistsSync: (...args) => {
       console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
-      return projectApi.pathExistsSync(...args);
+      return projectApi.dataPathExistsSync(...args);
     },
     get targetBible() {
       console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');
