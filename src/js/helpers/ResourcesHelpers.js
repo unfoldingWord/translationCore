@@ -65,6 +65,10 @@ export function loadProjectGroupData(toolName, projectDir) {
   return project.getGroupsData(toolName);
 }
 
+export function loadGroupIndex(gatewayLanguage, toolName, categoryName) {
+
+}
+
 /**
  *
  * @param {Object} currentProjectToolsSelectedGL Specifys which tools are using which gateway language

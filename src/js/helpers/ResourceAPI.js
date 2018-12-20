@@ -35,6 +35,7 @@ class ResourceAPI {
   /**
    * Lists the translation helps available in the gateway language
    * @param {string} gatewayLanguage - the gateway language code
+   * @returns {string[]}
    */
   getTranslationHelps(gatewayLanguage) {
     const dir = path.join(this._resourcesDir, gatewayLanguage);

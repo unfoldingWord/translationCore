@@ -64,6 +64,8 @@ export const openTool = (name) => (dispatch, getData) => {
       //   allGroupsData: groupData
       // });
 
+      // TODO: load the group index from the resources
+
       // TODO: `initializeProjectGroups` is deprecated
       dispatch(initializeProjectGroups(name)).then(() => {
         dispatch(loadCurrentContextId());
