@@ -11,6 +11,7 @@ import { loadCurrentContextId } from "./ContextIdActions";
 import * as BodyUIActions from "./BodyUIActions";
 import fs from "fs-extra";
 import * as GroupsIndexActions from "./GroupsIndexActions";
+import { loadProjectGroupData } from "../helpers/ResourcesHelpers";
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -55,7 +56,15 @@ export const openTool = (name) => (dispatch, getData) => {
         type: types.OPEN_TOOL,
         name
       });
-      // TODO: only load the groups data. Do not copy them into the project here.
+      // NEW: loads the group data from the project
+      // const projectDir = getProjectSaveLocation(getData());
+      // const groupData = loadProjectGroupData(name, projectDir);
+      // dispatch({
+      //   type: types.LOAD_GROUPS_DATA_FROM_FS,
+      //   allGroupsData: groupData
+      // });
+
+      // TODO: `initializeProjectGroups` is deprecated
       dispatch(initializeProjectGroups(name)).then(() => {
         dispatch(loadCurrentContextId());
         dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
@@ -70,7 +79,7 @@ export const openTool = (name) => (dispatch, getData) => {
 
 /**
  * Initializes the project's group indices.
- * TODO: this needs to be split into two actions. 1) to copy group data to the project and 2) to load the data into tc.
+ * @deprecated
  * @param {string} toolName
  * @returns {*}
  */
@@ -145,6 +154,7 @@ function getGroupsIndex(dispatch, dataDirectory, translate) {
 
 /**
  * @description loads the group index from the filesystem.
+ * @deprecated this has been replaced by {@link copyGroupDataToProject} and {@link loadProjectGroupData}
  * @param {function} dispatch - redux action dispatcher.
  * @param {String} dataDirectory - group data path or save location in the filesystem.
  * @param {String} toolName - name if the tool being loaded.

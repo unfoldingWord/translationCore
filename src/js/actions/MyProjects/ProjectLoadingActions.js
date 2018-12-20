@@ -13,7 +13,7 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
   getActiveLocaleLanguage,
-  getProjectManifest, getSourceBook, getTargetBook,
+  getProjectManifest, getSourceBook, getTargetBook, getToolGatewayLanguage,
   getTools,
   getTranslate,
   getUsername
@@ -22,6 +22,7 @@ import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructu
 import { loadBookTranslations } from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
+import { copyGroupDataToProject } from "../../helpers/ResourcesHelpers";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -56,11 +57,14 @@ export const openProject = (name) => {
       const manifest = getProjectManifest(getState());
       await dispatch(loadBookTranslations(manifest.project.id, name));
 
-      // TODO: copy the groups data into the project.
-
       // connect the tools
       const tools = getTools(getState());
       for (const t of tools) {
+        // NEW: copy group data to project
+        // const language = getToolGatewayLanguage(getState(), t.name);
+        // copyGroupDataToProject(language, t.name, projectDir);
+
+        // connect tool api
         const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
         t.api.triggerWillConnect(toolProps);
       }
