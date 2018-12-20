@@ -52,9 +52,9 @@ export default class ProjectAPI {
    * @returns {Promise<JSON>} the manifest json object
    * @private
    */
-  async getManifest() {
+  getManifest() {
     if (this._manifest === null) {
-      const data = this.readData("manifest.json");
+      const data = this._readProjectDataSync("manifest.json");
       this._manifest = JSON.parse(data);
     }
     return this._manifest;
@@ -65,7 +65,36 @@ export default class ProjectAPI {
    * @returns {Promise<string>}
    */
   getBookId() {
-    return this.getManifest().project.id;
+    const manifest = this.getManifest();
+    return manifest.project.id;
+  }
+
+  /**
+   * Checks if a tool (a.k.a. translationHelps) category has been loaded
+   * @param {string} toolName - the tool name. This is synonymous with translationHelp name
+   * @param {string} category - the category id
+   * @returns {boolean}
+   */
+  isToolCategoryLoaded(toolName, category) {
+    // TODO: the book id is redundant to have in the project directory.
+    const bookId = this.getBookId();
+    const categoriesPath = path.join(this._dataPath, "index", toolName, bookId, ".categories");
+    if(fs.existsSync(categoriesPath)) {
+      try {
+        const data = fs.readJSONSync(categoriesPath);
+        return data.loaded.indexOf(category) >= 0;
+      } catch (e) {
+        console.warn(`Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    // rebuild missing/corrupt category index
+    fs.writeJSONSync(categoriesPath, {
+      current: [],
+      loaded: []
+    });
+
+    return false;
   }
 
   /**
@@ -119,6 +148,19 @@ export default class ProjectAPI {
   async readData(filePath) {
     const readPath = path.join(this._dataPath, filePath);
     const data = await fs.readFile(readPath);
+    return data.toString();
+  }
+
+  /**
+   * Read data relative to the project's root path.
+   * You probably shouldn't use this in most situations.
+   * @param {string} filePath - the relative file path
+   * @returns {string}
+   * @private
+   */
+  _readProjectDataSync(filePath) {
+    const readPath = path.join(this._projectPath, filePath);
+    const data = fs.readFileSync(readPath);
     return data.toString();
   }
 
