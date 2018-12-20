@@ -22,7 +22,6 @@ import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructu
 import { loadBookTranslations } from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
-import { resetReducersData } from "../ToolActions";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -80,7 +79,18 @@ export const openProject = (name) => {
   };
 };
 
-//
+function resetReducersData() {
+  // TODO: this is crazy. All of related reducers could be keyed by the same action.
+  return (dispatch => {
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
+    dispatch({ type: consts.CLEAR_CONTEXT_ID });
+    dispatch({ type: consts.CLEAR_ALIGNMENT_DATA });
+    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
+  });
+}
+
 /**
  * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
  * This is just a temporary prop generator until we can properly abstract the tc api.

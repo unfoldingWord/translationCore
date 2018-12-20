@@ -9,8 +9,6 @@ import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
 import * as GroupsDataActions from "./GroupsDataActions";
 import { loadCurrentContextId } from "./ContextIdActions";
 import * as BodyUIActions from "./BodyUIActions";
-// import { getGroupsIndex } from "./ProjectDataLoadingActions";
-// import { getGroupsData } from "./ProjectDataLoadingActions";
 import fs from "fs-extra";
 import * as GroupsIndexActions from "./GroupsIndexActions";
 
@@ -18,7 +16,7 @@ import * as GroupsIndexActions from "./GroupsIndexActions";
  * Registers a tool that has been loaded from the disk.
  * @param {object} tool - a tc-tool.
  */
-export const registerTool = tool => ({
+const registerTool = tool => ({
   type: types.ADD_TOOL,
   name: tool.name,
   tool
@@ -121,19 +119,6 @@ export function initializeProjectGroups(toolName) {
   });
 }
 
-export function resetReducersData() {
-  // TODO: this is crazy. All of related reducers could be keyed by the same action.
-  return (dispatch => {
-    dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_DATA });
-    dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_INDEX });
-    dispatch({ type: types.CLEAR_CONTEXT_ID });
-    dispatch({ type: types.CLEAR_ALIGNMENT_DATA });
-    dispatch({ type: types.CLEAR_RESOURCES_REDUCER });
-    dispatch({ type: types.CLEAR_PREVIOUS_FILTERS});
-  });
-}
-
-
 /**
 * Loads the group index from the filesystem or generates a new one.
 * @param {function} dispatch - redux action dispatcher.
@@ -141,7 +126,7 @@ export function resetReducersData() {
 * @param {function} translate
 * @return {Promise<void>}
 */
-export function getGroupsIndex(dispatch, dataDirectory, translate) {
+function getGroupsIndex(dispatch, dataDirectory, translate) {
   return new Promise((resolve) => {
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');
     let groupIndexData;
@@ -166,7 +151,7 @@ export function getGroupsIndex(dispatch, dataDirectory, translate) {
  * @param {String} bookAbbreviation - book abbreviation stinrg.
  * @return {object} object action / Promises.
  */
-export function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviation, category) {
+function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviation, category) {
   return new Promise((resolve) => {
     let groupsDataDirectory = path.join(dataDirectory, bookAbbreviation);
     const groupsDataLoadedIndex = path.join(groupsDataDirectory, '.categories');
@@ -208,7 +193,7 @@ export function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviatio
  * @param {function} dispatch - redux dispatch function.
  * @return {object} object action / Promises.
  */
-export function loadAllGroupsData(groupsDataDirectory, dispatch) {
+function loadAllGroupsData(groupsDataDirectory, dispatch) {
   // read in the groupsData files
   let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
   let allGroupsData = {};
@@ -236,7 +221,7 @@ export function loadAllGroupsData(groupsDataDirectory, dispatch) {
  * @param {string} groupDataFolderPath - group data save location in the filesystem.
  * @return {object} object action / Promises.
  */
-export function loadGroupData(groupName, groupDataFolderPath) {
+function loadGroupData(groupName, groupDataFolderPath) {
   const groupPath = path.join(groupDataFolderPath, groupName + '.json');
   let groupData;
   try {
