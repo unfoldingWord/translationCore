@@ -183,7 +183,7 @@
     "tc-tool": "2.0.0",
     "tc-ui-toolkit": "0.12.7",
     "truncate-utf8-bytes": "1.0.2",
-    "usfm-js": "1.0.11",
+    "usfm-js": "github:translationCoreApps/usfm-js#bugfix-mcleanb-5388",
     "uuid": "3.2.1",
     "word-aligner": "0.2.8",
     "wordmap": "0.4.3",
