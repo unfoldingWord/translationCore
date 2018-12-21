@@ -34,7 +34,7 @@ const ToolsCards = ({
   manifest,
   invalidatedReducer,
   developerMode,
-  selectedCategories,
+  toolsCategories,
   availableCategories
 }) => {
   if (!tools || tools.length === 0) {
@@ -71,7 +71,7 @@ const ToolsCards = ({
             return (
               <ToolCard
                 availableCategories={availableCategories[tool.name] || []}
-                selectedCategories={selectedCategories}
+                selectedCategories={toolsCategories[tool.name]}
                 translate={translate}
                 key={i}
                 actions={actions}
@@ -108,7 +108,7 @@ ToolsCards.propTypes = {
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,
-  selectedCategories: PropTypes.array.isRequired,
+  toolsCategories: PropTypes.object.isRequired,
   availableCategories: PropTypes.object.isRequired,
 };
 

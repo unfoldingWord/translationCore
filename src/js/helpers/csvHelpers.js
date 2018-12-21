@@ -45,7 +45,6 @@ function cacheIndicies() {
 }
 
 /**
- * todo: fix makeBlank
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
  * @param {object} contextId - to be merged in
@@ -56,14 +55,10 @@ function cacheIndicies() {
  * @param {boolean} - This is a temporary flag to hide bad data
  * @return {object}
  */
-export function combineData(data, contextId, username, timestamp, makeBlank = false) {
-  const blankParams = ['groupId', 'groupName', 'gateway Language Quote', 'occurrence', 'quote'];
+export function combineData(data, contextId, username, timestamp) {
   const flatContextId = flattenContextId(contextId);
   const userTimestamp = userTimestampObject(username, timestamp);
   const combinedData = Object.assign({}, data, flatContextId, userTimestamp);
-  if (makeBlank) blankParams.forEach((key) => {
-    if (combinedData[key]) combinedData[key] = '';
-  });
   return combinedData;
 }
 /**

@@ -7,8 +7,7 @@ import HomeContainerContentWrapper
 import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import {
-  getToolGatewayLanguage,
-  getTools
+  getTools, getProjectSaveLocation, getProjectBookId
 } from "../../selectors";
 import { openTool } from "../../actions/ToolActions";
 import path from "path-extra";
@@ -17,34 +16,39 @@ import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
 import fs from "fs-extra";
 
 class ToolsManagementContainer extends Component {
-
   constructor(props) {
     super(props);
     this.buildCategories = this.buildCategories.bind(this);
+    const {tools, reducers} = this.props;
+    const projectSaveLocation = getProjectSaveLocation(reducers);
+    const bookId = getProjectBookId(reducers);
+    if (projectSaveLocation && bookId) {
+      tools.forEach(({name}) => {
+        this.props.actions.loadCurrentCheckCategories(name, bookId, projectSaveLocation);
+      });
+    }
   }
 
   /**
    * TODO: move this into {@link ToolsCards}
    */
-  buildCategories() {
-    const { tools } = this.props;
-    const categories = {};
-    for (let t of tools) {
-      const language = getToolGatewayLanguage(t.name);
-      const resourceDir = path.join(ospath.home(), "translationCore",
-        "resources", language, "translationHelps", t.name);
-      const versionDir = getLatestVersionInPath(resourceDir) || resourceDir;
-
-      if (fs.existsSync(versionDir)) {
-        categories[t.name] = fs.readdirSync(versionDir).
-          filter((dirName) =>
-            fs.lstatSync(path.join(versionDir, dirName)).isDirectory()
-          );
-      } else {
-        categories[t.name] = [];
-      }
-    }
-    return categories;
+  buildCategories(currentProjectToolsSelectedGL) {
+    const availableCategories = {};
+    Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
+      const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
+      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
+      const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
+      if (fs.existsSync(versionDirectory))
+        availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
+          fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
+        );
+        if (availableCategories[toolName] && availableCategories[toolName].indexOf('other') === availableCategories[toolName].length - 1) {
+         var otherCat = availableCategories[toolName].splice(availableCategories[toolName].length - 1, availableCategories[toolName].length );
+         availableCategories[toolName].splice(1, 0, ...otherCat);
+        }
+      else availableCategories[toolName] = [];
+    });
+    return availableCategories;
   }
 
   render() {
@@ -53,12 +57,14 @@ class ToolsManagementContainer extends Component {
       reducers: {
         loginReducer: { loggedInUser },
         settingsReducer: {
-          currentSettings: { developerMode, selectedCategories }
+          currentSettings: { developerMode }
         },
         projectDetailsReducer: {
           manifest,
           projectSaveLocation,
-          currentProjectToolsProgress
+          currentProjectToolsProgress,
+          currentProjectToolsSelectedGL,
+          toolsCategories
         },
         invalidatedReducer
       },
@@ -71,7 +77,7 @@ class ToolsManagementContainer extends Component {
           { app: translate("_.app_name") })}</p>
       </div>
     );
-    const availableCategories = this.buildCategories();
+    const availableCategories = this.buildCategories(currentProjectToolsSelectedGL);
     return (
       <HomeContainerContentWrapper
         translate={translate}
@@ -82,7 +88,7 @@ class ToolsManagementContainer extends Component {
           <ToolsCards
             tools={tools}
             availableCategories={availableCategories}
-            selectedCategories={selectedCategories}
+            toolsCategories={toolsCategories}
             manifest={manifest}
             translate={translate}
             bookName={name}
@@ -119,6 +125,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
+      loadCurrentCheckCategories: (toolName, bookName, projectSaveLocation) => {
+        dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      },
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
       },

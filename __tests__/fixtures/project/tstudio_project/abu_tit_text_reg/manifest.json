@@ -1,0 +1,20 @@
+{
+	"generator": {
+		"name": "ts-desktop",
+		"build": ""
+	},
+	"package_version": 2,
+	"timestamp": 1504902788621,
+	"target_translations": [
+		{
+			"path": "abu_tit_text_reg",
+			"id": "abu_tit_text_reg",
+			"commit_hash": {
+				"stdout": "42769d88cd5b609540f0f96a2dce4d0351bd9d88\n",
+				"stderr": "",
+				"error": null
+			},
+			"direction": "ltr"
+		}
+	]
+}

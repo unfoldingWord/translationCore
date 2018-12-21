@@ -130,7 +130,7 @@ export const createVerseEdit = (projectPath, verseBefore, verseAfter, bookId, ch
         chapter,
         verse
       },
-      tool: 'wordAlignment',
+      tool: '[External edit]',
       groupId: 'chapter_' + chapter
     },
   };
