@@ -6,48 +6,23 @@ import HomeContainerContentWrapper
   from "../../components/home/HomeContainerContentWrapper";
 import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
+import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import {
   getTools, getProjectSaveLocation, getProjectBookId
 } from "../../selectors";
 import { openTool } from "../../actions/ToolActions";
-import path from "path-extra";
-import ospath from "ospath";
-import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
-import fs from "fs-extra";
 
 class ToolsManagementContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.buildCategories = this.buildCategories.bind(this);
-    const {tools, reducers} = this.props;
-    const projectSaveLocation = getProjectSaveLocation(reducers);
-    const bookId = getProjectBookId(reducers);
-    if (projectSaveLocation && bookId) {
-      tools.forEach(({name}) => {
-        this.props.actions.loadCurrentCheckCategories(name, bookId, projectSaveLocation);
-      });
-    }
-  }
-
-  /**
-   * TODO: move this into {@link ToolsCards}
-   */
-  buildCategories(currentProjectToolsSelectedGL) {
-    const availableCategories = {};
-    Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-      const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
-      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-      const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
-      if (fs.existsSync(versionDirectory))
-        availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
-          fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
-        );
-        if (!availableCategories[toolName]) {
-          availableCategories[toolName] = [];
-        }
+componentDidMount() {
+  const {tools, reducers} = this.props;
+  const projectSaveLocation = getProjectSaveLocation(reducers);
+  const bookId = getProjectBookId(reducers);
+  if (projectSaveLocation && bookId) {
+    tools.forEach(({name}) => {
+      this.props.actions.loadCurrentCheckCategories(name, bookId, projectSaveLocation);
     });
-    return availableCategories;
   }
+}
 
   render() {
     const {
@@ -75,7 +50,7 @@ class ToolsManagementContainer extends Component {
           { app: translate("_.app_name") })}</p>
       </div>
     );
-    const availableCategories = this.buildCategories(currentProjectToolsSelectedGL);
+    const availableCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
     return (
       <HomeContainerContentWrapper
         translate={translate}

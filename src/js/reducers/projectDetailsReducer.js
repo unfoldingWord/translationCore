@@ -204,3 +204,6 @@ export const getManifest = (state) =>
 
 export const getToolCategories = (state, toolName) =>
 [...state.toolsCategories[toolName]];
+
+export const getCurrentProjectToolsSelectedGL = (state) => 
+  state.currentProjectToolsSelectedGL;
