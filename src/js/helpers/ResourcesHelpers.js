@@ -53,6 +53,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   }
 }
 
+
 /**
  * Loads all of a tool's group data from the project.
  * TODO: if this remains as simple as it is we could refactor this to be inline.
@@ -65,8 +66,17 @@ export function loadProjectGroupData(toolName, projectDir) {
   return project.getGroupsData(toolName);
 }
 
+/**
+ * Loads the groups index.
+ * This is used primarily for generating the groups menu but is also used in
+ * a lot of places within tc.
+ * @param gatewayLanguage
+ * @param toolName
+ * @param categoryName
+ */
 export function loadGroupIndex(gatewayLanguage, toolName, categoryName) {
-
+  // TRICKY: the index is used in a lot of places so we need to keep it.
+  // TODO: the export needs to have the groups index so we need to run this when selecting a tool _and_ when exporting.
 }
 
 /**
