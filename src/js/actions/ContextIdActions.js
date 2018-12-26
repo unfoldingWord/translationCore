@@ -138,7 +138,7 @@ export function loadCurrentContextId() {
         let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName);
         if (fs.existsSync(loadPath)) {
           contextId = fs.readJsonSync(loadPath);
-          const contextIdExistInGroups = groupsIndex.map(({id}) => id === contextId.groupId).length >= 0;
+          const contextIdExistInGroups = groupsIndex.filter(({id}) => id === contextId.groupId).length > 0;
           if (contextId && contextIdExistInGroups) {
             return dispatch(changeCurrentContextId(contextId));
           }
