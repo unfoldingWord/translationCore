@@ -31,7 +31,9 @@ export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocati
   return (dispatch, getState) => {
     const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
     const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
+    console.log("availableCheckCategories", availableCheckCategories);
     let selectedCategories = ProjectDetailsHelpers.getCachedCategoriesFromProject(toolName, bookName, projectSaveLocation);
+    console.log("selectedCategories", selectedCategories);
     selectedCategories = selectedCategories.filter((category) => availableCheckCategories[toolName] && availableCheckCategories[toolName].includes(category));
     dispatch(setCategories(selectedCategories, toolName));
   };
