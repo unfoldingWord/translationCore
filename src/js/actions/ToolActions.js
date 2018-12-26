@@ -172,7 +172,7 @@ export function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviatio
     const groupsDataLoadedIndex = path.join(groupsDataDirectory, '.categories');
     let groupsDataAlreadyLoaded = [];
     let categoriesIndexObject = {
-      current: ['kt', 'other', 'names'],
+      current: toolName === 'translationWords' ? ['kt', 'other', 'names'] : [],
       loaded: []
     };
     if (fs.existsSync(groupsDataLoadedIndex)) {
