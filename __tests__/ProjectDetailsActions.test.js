@@ -417,6 +417,15 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
     store.dispatch(actions.updateCheckSelection('kt', true, 'translationWords'));
     expect(store.getActions()).toMatchObject(expectedActions);
   });
+
+  describe('ProjectDetailsActions.loadCurrentCheckCategories', () => {
+    test('should load all the check categories from the project', () => {
+      expect(false).toBeTruthy();
+    });
+    test('should load all the check categories from the project except kt', () => {
+      expect(false).toBeTruthy();
+    });
+  });
 });
 
 //
