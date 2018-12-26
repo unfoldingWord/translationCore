@@ -253,9 +253,6 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "type": "CLOSE_ALERT_DIALOG",
-  },
-  Object {
     "stepIndex": 3,
     "type": "GO_TO_STEP",
   },
@@ -665,9 +662,6 @@ Array [
     "bibleId": "targetBible",
     "languageId": "targetLanguage",
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
-  },
-  Object {
-    "type": "CLOSE_ALERT_DIALOG",
   },
   Object {
     "stepIndex": 3,
@@ -1081,9 +1075,6 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "type": "CLOSE_ALERT_DIALOG",
-  },
-  Object {
     "stepIndex": 3,
     "type": "GO_TO_STEP",
   },
@@ -1341,9 +1332,6 @@ Array [
     "bibleId": "targetBible",
     "languageId": "targetLanguage",
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
-  },
-  Object {
-    "type": "CLOSE_ALERT_DIALOG",
   },
   Object {
     "stepIndex": 3,
