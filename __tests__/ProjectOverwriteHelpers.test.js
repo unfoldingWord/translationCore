@@ -96,5 +96,6 @@ describe('ProjectOverwriteHelpers.createVerseEditsForAllChangedVerses() tests', 
     const verseEdit = fs.readJsonSync(path.join(verseEditsPath, verseEditFiles[0]));
     expect(verseEdit['verseBefore']).toEqual(expectedVerseBefore);
     expect(verseEdit['verseAfter']).toEqual(expectedVerseAfter);
+    expect(verseEdit.contextId.tool).toEqual('[External edit]');
   });
 });
