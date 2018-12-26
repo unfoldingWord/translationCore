@@ -453,3 +453,6 @@ export const getListOfOutdatedSourceContent = (state) =>
 
 export const getToolCategories = (state, toolName) =>
   fromProjectDetailsReducer.getToolCategories(state.projectDetailsReducer, toolName);
+
+export const getCurrentProjectToolsSelectedGL = (state) => 
+  fromProjectDetailsReducer.getCurrentProjectToolsSelectedGL(state.projectDetailsReducer);

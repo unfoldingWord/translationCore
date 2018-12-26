@@ -8,10 +8,13 @@ const checkBoxNames = {
 };
 
 const ToolCardBoxes = ({checks, onChecked, selectedCategories, toolName}) => {
+  const sortedChecks = checks.sort((a, b) => {
+    return Object.keys(checkBoxNames).indexOf(a) > Object.keys(checkBoxNames).indexOf(b);
+  });
   return (
     <div style={{marginLeft: '6%'}}>
       {
-        checks.map((id, index) => (
+        sortedChecks.map((id, index) => (
           <div style={{display: 'flex', alignItems: 'center', marginBottom: 5}} key={index}>
             <Checkbox
               style={{width: 'unset'}}
