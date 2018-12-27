@@ -218,8 +218,19 @@ export const getBookId = state => {
 export const getManifest = (state) =>
   state.manifest;
 
-export const getToolCategories = (state, toolName) =>
-[...state.toolsCategories[toolName]];
+/**
+ * Returns the categories selected for the tool
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
+export const getToolCategories = (state, toolName) => {
+  if(toolName in state.toolsCategories) {
+    return [...state.toolsCategories[toolName]];
+  } else {
+    return [];
+  }
+};
 
-export const getCurrentProjectToolsSelectedGL = (state) => 
+export const getCurrentProjectToolsSelectedGL = (state) =>
   state.currentProjectToolsSelectedGL;
