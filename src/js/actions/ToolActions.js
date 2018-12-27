@@ -58,7 +58,8 @@ export const openTool = (name) => (dispatch, getData) => {
         type: types.OPEN_TOOL,
         name
       });
-      // NEW: loads the group data from the project
+
+      // load group data
       const projectDir = getProjectSaveLocation(getData());
       const groupData = loadProjectGroupData(name, projectDir);
       dispatch({
@@ -71,14 +72,12 @@ export const openTool = (name) => (dispatch, getData) => {
       const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
       dispatch(loadGroupsIndex(groupIndex));
 
-      // TODO: load the group index from the resources
+      // verify stuff. TODO: why do we need this?
+      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
 
-      // TODO: `initializeProjectGroups` is deprecated
-      // dispatch(initializeProjectGroups(name)).then(() => {
       dispatch(loadCurrentContextId());
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));
-      // });
     } catch (e) {
       console.warn(e);
       AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));

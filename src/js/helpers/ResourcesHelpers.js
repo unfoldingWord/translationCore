@@ -98,7 +98,6 @@ export function loadProjectGroupIndex(gatewayLanguage, toolName, projectDir, tra
     return indices;
   } else {
     // generate indices
-    console.warn(`generating chapter group indicies for ${projectDir}`);
     return generateChapterGroupIndex(translate);
   }
 

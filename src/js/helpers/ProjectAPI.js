@@ -218,6 +218,7 @@ export default class ProjectAPI {
    */
   setSelectedCategories(toolName, categories) {
     // TODO: implement this
+    throw new Error(`Not implemented`, toolName, categories);
   }
 
   /**

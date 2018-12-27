@@ -60,7 +60,7 @@ export const openProject = (name) => {
       // connect the tools
       const tools = getTools(getState());
       for (const t of tools) {
-        // NEW: copy group data to project
+        // copy group data
         const language = getToolGatewayLanguage(getState(), t.name);
         copyGroupDataToProject(language, t.name, projectDir);
 
