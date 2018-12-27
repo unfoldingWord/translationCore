@@ -92,7 +92,8 @@ export const localImport = () => {
         // TODO: refactor this localImport method to remove project opening logic so we are not duplicating logic.
 
         const finalProjectPath = getProjectSaveLocation(getState());
-        await dispatch(openProject(path.basename(finalProjectPath)));
+        await dispatch(openProject(path.basename(finalProjectPath), true));
+        dispatch(AlertModalActions.closeAlertDialog());
         return;
       }
     } catch (error) { // Catch all errors in nested functions above

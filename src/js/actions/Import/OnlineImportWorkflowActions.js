@@ -111,7 +111,8 @@ export const onlineImport = () => {
           // TODO: refactor this onlineImport method to remove project opening logic so we are not duplicating logic.
 
           const finalProjectPath = getProjectSaveLocation(getState());
-          await dispatch(openProject(path.basename(finalProjectPath)));
+          await dispatch(openProject(path.basename(finalProjectPath), true));
+          dispatch(AlertModalActions.closeAlertDialog());
           resolve();
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.online_import_error', {project_url: link, toPath: importProjectPath}));
