@@ -18,7 +18,24 @@ export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', '
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const TOOL_DATA_PATH = path.join('.apps', 'translationCore', 'index');
 
-export function getCategoriesForProjectFromFS(toolName, bookName, projectSaveLocation) {
+export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
+  const availableCategories = {};
+  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
+    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
+    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
+    const versionDirectory = ResourceHelpers.getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
+    if (fs.existsSync(versionDirectory))
+      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
+        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
+      );
+      if (!availableCategories[toolName]) {
+        availableCategories[toolName] = [];
+      }
+  });
+  return availableCategories;
+}
+
+export function getCachedCategoriesFromProject(toolName, bookName, projectSaveLocation) {
   const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
   let categoriesIndexObject = {};
   if (fs.existsSync(currentCategoriesLoadedPath)) {
@@ -56,12 +73,9 @@ export function setCategoriesForProjectInFS(categories, toolName, bookName, proj
 export function updateArray (array, id, value) {
   const exists = array.indexOf(id) >= 0;
   if (exists && value === true) return array;
-  else if (exists && value === false) {
-    return array.filter((el) => el !== id);
-  }
-  else if (!exists && value === true)
-    return array.concat(id);
-  else return array;
+  if (exists && value === false) return array.filter((el) => el !== id);
+  if (!exists && value === true) return array.concat(id);
+  return array;
 }
 
 /**

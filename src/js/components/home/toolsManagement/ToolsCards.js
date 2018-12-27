@@ -17,7 +17,7 @@ import { Card, CardText } from 'material-ui';
  * @param currentProjectToolsProgress
  * @param manifest
  * @param invalidatedReducer
- * @param selectedCategories
+ * @param toolsCategories
  * @param availableCategories
  * @returns {*}
  * @constructor
