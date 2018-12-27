@@ -106,7 +106,7 @@ export default class Repo {
    * @param {object} [user] - the user object that contains names, passwords. and tokens
    * @returns {Promise<Repo>}
    */
-  static async open(dir, user={}) {
+  static async open(dir, user = {}) {
     const ok = await Repo.isRepo(dir);
     if (!ok) {
       await Repo.init(dir);
@@ -206,13 +206,14 @@ export default class Repo {
    * Clones a remote repository
    * @param {string} url - the remote repository to be cloned
    * @param {string} dest - the local destination of the repository
+   * @param {string} [branch=master] - the branch to clone
    * @return {Promise<void>}
    */
-  static async clone(url, dest) {
+  static async clone(url, dest, branch = "master") {
     const config = {
       dir: dest,
       url,
-      ref: "master",
+      ref: branch,
       singleBranch: true,
       ...makeCredentials(this.user)
     };
