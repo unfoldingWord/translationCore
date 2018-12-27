@@ -5,6 +5,7 @@ import ToolsCards from "../../components/home/toolsManagement/ToolsCards";
 import HomeContainerContentWrapper
   from "../../components/home/HomeContainerContentWrapper";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
+import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import {
   getTools, getProjectSaveLocation, getProjectBookId, getIsUserLoggedIn
 } from "../../selectors";
@@ -18,16 +19,7 @@ import { openAlertDialog } from "../../actions/AlertModalActions";
 class ToolsManagementContainer extends Component {
   constructor(props) {
     super(props);
-    this.buildCategories = this.buildCategories.bind(this);
     this.handleSelectTool = this.handleSelectTool.bind(this);
-    const {tools, reducers} = this.props;
-    const projectSaveLocation = getProjectSaveLocation(reducers);
-    const bookId = getProjectBookId(reducers);
-    if (projectSaveLocation && bookId) {
-      tools.forEach(({name}) => {
-        this.props.actions.loadCurrentCheckCategories(name, bookId, projectSaveLocation);
-      });
-    }
   }
 
   /**
@@ -41,28 +33,6 @@ class ToolsManagementContainer extends Component {
     } else {
       openAlertDialog(translate("please_log_in"));
     }
-  }
-
-  /**
-   * TODO: move this into {@link ToolsCards}
-   */
-  buildCategories(currentProjectToolsSelectedGL) {
-    const availableCategories = {};
-    Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-      const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
-      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-      const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
-      if (fs.existsSync(versionDirectory))
-        availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
-          fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
-        );
-        if (availableCategories[toolName] && availableCategories[toolName].indexOf('other') === availableCategories[toolName].length - 1) {
-         var otherCat = availableCategories[toolName].splice(availableCategories[toolName].length - 1, availableCategories[toolName].length );
-         availableCategories[toolName].splice(1, 0, ...otherCat);
-        }
-      else availableCategories[toolName] = [];
-    });
-    return availableCategories;
   }
 
   render() {
@@ -88,7 +58,7 @@ class ToolsManagementContainer extends Component {
           { app: translate("_.app_name") })}</p>
       </div>
     );
-    const availableCategories = this.buildCategories(currentProjectToolsSelectedGL);
+    const availableCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
     return (
       <HomeContainerContentWrapper
         translate={translate}
