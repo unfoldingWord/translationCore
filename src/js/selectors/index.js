@@ -469,3 +469,6 @@ export const getToolCategories = (state, toolName) =>
  */
 export const getProjectToolProgress = (state, toolName) =>
   fromProjectDetailsReducer.getToolProgress(state.projectDetailsReducer, toolName);
+
+export const getCurrentProjectToolsSelectedGL = (state) => 
+  fromProjectDetailsReducer.getCurrentProjectToolsSelectedGL(state.projectDetailsReducer);

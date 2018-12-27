@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername, getProjectSaveLocation, getProjectBookId, getToolCategories} from "../selectors";
+import {getTranslate, getUsername, getProjectSaveLocation, getProjectBookId, getToolCategories, getCurrentProjectToolsSelectedGL} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
@@ -28,8 +28,13 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * i.e. ~/translationCore/projects/en_tit_reg
  */
 export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
-  return dispatch => {
-    const selectedCategories = ProjectDetailsHelpers.getCategoriesForProjectFromFS(toolName, bookName, projectSaveLocation);
+  return (dispatch, getState) => {
+    const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
+    const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
+    console.log("availableCheckCategories", availableCheckCategories);
+    let selectedCategories = ProjectDetailsHelpers.getCachedCategoriesFromProject(toolName, bookName, projectSaveLocation);
+    console.log("selectedCategories", selectedCategories);
+    selectedCategories = selectedCategories.filter((category) => availableCheckCategories[toolName] && availableCheckCategories[toolName].includes(category));
     dispatch(setCategories(selectedCategories, toolName));
   };
 };
