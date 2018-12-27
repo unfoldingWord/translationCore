@@ -18,7 +18,7 @@ describe('ResourcesHelpers.chapterGroupsIndex', () => {
 
 describe('ResourcesHelpers.chapterGroupsData', () => {
   it('should return groupsData array for Titus', function () {
-    const output = ResourcesHelpers.chapterGroupsData('tit', 'toolTemplate');
+    const output = ResourcesHelpers.generateChapterGroupData('tit', 'toolTemplate');
     expect(output.constructor).toBe(Array);
     expect(output.length).toEqual(3);
     expect(output[0].constructor).toBe(Array);

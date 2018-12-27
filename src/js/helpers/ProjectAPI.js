@@ -55,7 +55,8 @@ export default class ProjectAPI {
   }
 
   /**
-   * Returns the path to the categories index directory
+   * Returns the path to the categories index directory.
+   * This is the same as the groups data directory.
    * @param {string} toolName - the name of the tool that the categories belong to
    * @returns {*}
    */
@@ -75,7 +76,7 @@ export default class ProjectAPI {
     const data = {};
     const dir = this.getCategoriesDir(toolName);
 
-    if (fs.lstatSync(dir).isDirectory()) {
+    if (fs.pathExistsSync(dir) && fs.lstatSync(dir).isDirectory()) {
       const files = fs.readdirSync(dir);
 
       for (let i = 0, len = files.length; i < len; i++) {
