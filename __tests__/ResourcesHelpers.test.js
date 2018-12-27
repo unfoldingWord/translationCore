@@ -6,7 +6,7 @@ import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 
 describe('ResourcesHelpers.chapterGroupsIndex', () => {
   it('should return groupsIndex array for chapters 1-150', function () {
-    const output = ResourcesHelpers.chapterGroupsIndex();
+    const output = ResourcesHelpers.generateChapterGroupIndex();
     expect(output.constructor).toBe(Array);
     expect(output.length).toEqual(150);
     expect(output[0].id).toBe('chapter_1');

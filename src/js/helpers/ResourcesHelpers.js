@@ -20,7 +20,7 @@ export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', '
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 
 /**
- * Copies all of a tool's group data into a project.
+ * Copies all of a tool's group data from the global resources into a project.
  * This is boiler plate to keep a separation of concerns between the global resources and projects.
  * @param {string} gatewayLanguage - the gateway language code
  * @param {string} toolName - the name of the tool for which helps will be copied
@@ -56,7 +56,6 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
 
 /**
  * Loads all of a tool's group data from the project.
- * TODO: if this remains as simple as it is we could refactor this to be inline.
  * @param {string} toolName - the name of the tool who's helps will be loaded
  * @param {string} projectDir - the absolute path to the project
  * @returns {*}
@@ -67,41 +66,44 @@ export function loadProjectGroupData(toolName, projectDir) {
 }
 
 /**
- * Loads the groups index.
- * This is used primarily for generating the groups menu but is also used in
- * a lot of places within tc.
- * @param gatewayLanguage
- * @param toolName
- * @param categoryName
+ * Loads the groups index from the global resources.
+ * This is used primarily for generating the groups menu.
+ * This is boiler plate to keep a separation of concerns between the global resources and projects.
+ * TODO: the groups index should be copied into the project as part of {@link copyGroupDataToProject} and loaded from the project instead of the global resources.
+ * @param {string} gatewayLanguage - the gateway language code
+ * @param {string} toolName - the name of the tool who's index will be loaded
+ * @param {string} projectDir - path to the project directory
+ * @param {func} translate - the locale function. TODO: refactor index loading so locale is not required
+ * @return {*}
  */
-export function loadGroupIndex(gatewayLanguage, toolName, categoryName) {
-  // TRICKY: the index is used in a lot of places so we need to keep it.
+export function loadProjectGroupIndex(gatewayLanguage, toolName, projectDir, translate) {
+  const project = new ProjectAPI(projectDir);
+  const resources = ResourceAPI.default();
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+
+  if(helpDir) {
+    // load indices
+    const indices = [];
+    const categories = project.getSelectedCategories(toolName);
+    for(const category of categories) {
+      const categoryIndex = path.join(helpDir, category, "index.json");
+      if(fs.lstatSync(categoryIndex).isFile()) {
+        try {
+          indices.push.apply(indices, fs.readJsonSync(categoryIndex));
+        } catch (e) {
+          console.error(`Failed to read group index from ${categoryIndex}`, e);
+        }
+      }
+    }
+    return indices;
+  } else {
+    // generate indices
+    console.warn(`generating chapter group indicies for ${projectDir}`);
+    return generateChapterGroupIndex(translate);
+  }
+
   // TODO: the export needs to have the groups index so we need to run this when selecting a tool _and_ when exporting.
 }
-
-/**
- *
- * @param {Object} currentProjectToolsSelectedGL Specifys which tools are using which gateway language
- * i.e. {"translationWords":"en"}
- */
-export const getAvailableToolCategories = (currentProjectToolsSelectedGL) => {
-  const availableCategories = {};
-  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
-    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-    const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
-    if (fs.existsSync(versionDirectory))
-      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
-        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
-      );
-      if (availableCategories[toolName] && availableCategories[toolName].indexOf('other') === availableCategories[toolName].length - 1) {
-       var otherCat = availableCategories[toolName].splice(availableCategories[toolName].length - 1, availableCategories[toolName].length );
-       availableCategories[toolName].splice(1, 0, ...otherCat);
-      }
-    else availableCategories[toolName] = [];
-  });
-  return availableCategories;
-};
 
 /**
  * @description gets the resources from the static folder located in the tC codebase.
@@ -204,19 +206,22 @@ export function getLexiconsFromStaticPackage(force = false) {
 }
 
 /**
- * @description - Auto generate the chapter index since more projects will use it
- * @param {function} translate
+ * Generates a chapter-based group index.
+ * Most tools will use a chapter based-index.
+ * TODO: do not localize the group name here. Instead localize it as needed. See todo on {@link loadProjectGroupIndex}
+ * @param {function} translate - the locale function
+ * @param {number} [numChapters=150] - the number of chapters to generate
+ * @return {*}
  */
-export const chapterGroupsIndex = (translate) => {
+export const generateChapterGroupIndex = (translate, numChapters=150) => {
   const chapterLocalized = getTranslation(translate, "tools.chapter", 'Chapter');
-  const groupsIndex = Array(150).fill().map((_, i) => {
+  return Array(numChapters).fill().map((_, i) => {
     let chapter = i + 1;
     return {
       id: 'chapter_' + chapter,
       name: chapterLocalized + ' ' + chapter
     };
   });
-  return groupsIndex;
 };
 
 /**

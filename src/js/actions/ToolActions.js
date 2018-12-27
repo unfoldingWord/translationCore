@@ -12,6 +12,8 @@ import * as BodyUIActions from "./BodyUIActions";
 import fs from "fs-extra";
 import * as GroupsIndexActions from "./GroupsIndexActions";
 import { loadProjectGroupData } from "../helpers/ResourcesHelpers";
+import { loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
+import { loadGroupsIndex } from "./GroupsIndexActions";
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -57,21 +59,26 @@ export const openTool = (name) => (dispatch, getData) => {
         name
       });
       // NEW: loads the group data from the project
-      // const projectDir = getProjectSaveLocation(getData());
-      // const groupData = loadProjectGroupData(name, projectDir);
-      // dispatch({
-      //   type: types.LOAD_GROUPS_DATA_FROM_FS,
-      //   allGroupsData: groupData
-      // });
+      const projectDir = getProjectSaveLocation(getData());
+      const groupData = loadProjectGroupData(name, projectDir);
+      dispatch({
+        type: types.LOAD_GROUPS_DATA_FROM_FS,
+        allGroupsData: groupData
+      });
+
+      // load group index
+      const language = getToolGatewayLanguage(getData(), name);
+      const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
+      dispatch(loadGroupsIndex(groupIndex));
 
       // TODO: load the group index from the resources
 
       // TODO: `initializeProjectGroups` is deprecated
-      dispatch(initializeProjectGroups(name)).then(() => {
-        dispatch(loadCurrentContextId());
-        dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
-        dispatch(BodyUIActions.toggleHomeView(false));
-      });
+      // dispatch(initializeProjectGroups(name)).then(() => {
+      dispatch(loadCurrentContextId());
+      dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
+      dispatch(BodyUIActions.toggleHomeView(false));
+      // });
     } catch (e) {
       console.warn(e);
       AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));
@@ -147,7 +154,7 @@ function getGroupsIndex(dispatch, dataDirectory, translate) {
       resolve();
     } catch (err) {
       console.log('No GL based index found for tool, will use a generated chapterGroupsIndex.');
-      groupIndexData = ResourcesHelpers.chapterGroupsIndex(translate);
+      groupIndexData = ResourcesHelpers.generateChapterGroupIndex(translate);
       dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
       resolve();
     }

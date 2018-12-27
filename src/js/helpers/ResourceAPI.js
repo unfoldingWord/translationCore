@@ -38,7 +38,7 @@ class ResourceAPI {
    * @returns {string[]}
    */
   getTranslationHelps(gatewayLanguage) {
-    const dir = path.join(this._resourcesDir, gatewayLanguage);
+    const dir = path.join(this._resourcesDir, gatewayLanguage, "translationHelps");
     return fs.readdirSync(dir);
   }
 
@@ -49,10 +49,10 @@ class ResourceAPI {
    * @returns {string|null} the file path or null if no directory was found
    */
   getLatestTranslationHelp(gatewayLanguage, helpName) {
-    const helpDir = path.join(this._resourcesDir, gatewayLanguage, helpName);
+    const helpDir = path.join(this._resourcesDir, gatewayLanguage, "translationHelps", helpName);
     const versions = this.listVersionedDirectories(helpDir);
     if(versions.length > 0) {
-      return versions[0];
+      return path.join(helpDir, versions[0]);
     } else {
       return null;
     }

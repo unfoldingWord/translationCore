@@ -234,7 +234,7 @@ describe('ResourcesActions', () => {
 
     // when
     store.dispatch(
-      ResourcesActions.loadBooks(contextId)
+      ResourcesActions.loadBookTranslations(contextId.reference.bookId)
     );
 
     // then

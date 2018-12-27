@@ -164,8 +164,8 @@ export default class ProjectAPI {
 
   /**
    * Marks a category as having been loaded into the project.
-   * @param toolName
-   * @param category
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   * @param {string} category - the category that has been copied into the project
    * @returns {boolean}
    */
   setCategoryLoaded(toolName, category) {
@@ -187,6 +187,37 @@ export default class ProjectAPI {
     }
 
     fs.writeJSONSync(categoriesPath, data);
+  }
+
+  /**
+   * Returns an array of categories that have been selected for the given tool.
+   * @param toolName - The tool name. This is synonymous with translationHelp name
+   * @return {string[]} an array of category names
+   */
+  getSelectedCategories(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName), ".categories");
+    if (fs.existsSync(categoriesPath)) {
+      try {
+        const data = fs.readJSONSync(categoriesPath);
+        return data.current;
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    return [];
+  }
+
+  /**
+   * Sets the categories that have been selected for the the given tool.
+   * Category selection controls which sets of help data will be loaded
+   * when the tool is opened.
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   * @param {string[]} categories - an array of category names
+   */
+  setSelectedCategories(toolName, categories) {
+    // TODO: implement this
   }
 
   /**

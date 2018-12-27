@@ -61,8 +61,8 @@ export const openProject = (name) => {
       const tools = getTools(getState());
       for (const t of tools) {
         // NEW: copy group data to project
-        // const language = getToolGatewayLanguage(getState(), t.name);
-        // copyGroupDataToProject(language, t.name, projectDir);
+        const language = getToolGatewayLanguage(getState(), t.name);
+        copyGroupDataToProject(language, t.name, projectDir);
 
         // connect tool api
         const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
