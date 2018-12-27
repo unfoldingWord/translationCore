@@ -7,13 +7,9 @@ import HomeContainerContentWrapper
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import {
-  getTools, getProjectSaveLocation, getProjectBookId, getIsUserLoggedIn
+  getTools, getIsUserLoggedIn
 } from "../../selectors";
 import { openTool } from "../../actions/ToolActions";
-import path from "path-extra";
-import ospath from "ospath";
-import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
-import fs from "fs-extra";
 import { openAlertDialog } from "../../actions/AlertModalActions";
 
 class ToolsManagementContainer extends Component {
