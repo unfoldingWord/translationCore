@@ -65,28 +65,31 @@ export default class ProjectAPI {
     return path.join(this._dataPath, "index", toolName, bookId);
   }
 
-
-
   /**
-   * Returns a dictionary of all the group data loaded for a given tool
+   * Returns a dictionary of all the group data loaded for a given tool.
+   * This will silently fail if the groups data does not exist.
    * @param {string} toolName - the name of the tool who's group data will be returned
+   * @returns {*}
    */
   getGroupsData(toolName) {
-    const dir = this.getCategoriesDir(toolName);
-    const files = fs.readdirSync(dir);
-
     const data = {};
-    for(let i = 0, len = files.length; i < len; i ++) {
-      const dataPath = path.join(dir, files[i]);
-      if(path.extname(dataPath) !== ".json") {
-        continue;
-      }
+    const dir = this.getCategoriesDir(toolName);
 
-      const groupName = path.basename(dataPath, ".json");
-      try {
-        data[groupName] = fs.readJsonSync(dataPath);
-      } catch (e) {
-        console.error(`Failed to load group data from ${dataPath}`);
+    if (fs.lstatSync(dir).isDirectory()) {
+      const files = fs.readdirSync(dir);
+
+      for (let i = 0, len = files.length; i < len; i++) {
+        const dataPath = path.join(dir, files[i]);
+        if (path.extname(dataPath) !== ".json") {
+          continue;
+        }
+
+        const groupName = path.basename(dataPath, ".json");
+        try {
+          data[groupName] = fs.readJsonSync(dataPath);
+        } catch (e) {
+          console.error(`Failed to load group data from ${dataPath}`);
+        }
       }
     }
 
@@ -115,6 +118,7 @@ export default class ProjectAPI {
   /**
    * Loads the project manifest from the disk.
    * Subsequent calls are cached.
+   * @throws an error if the manifest does not exist.
    * @returns {Promise<JSON>} the manifest json object
    * @private
    */
@@ -128,6 +132,7 @@ export default class ProjectAPI {
 
   /**
    * Returns the project's book id
+   * @throws an error if the book id does not exist.
    * @returns {Promise<string>}
    */
   getBookId() {
@@ -142,7 +147,8 @@ export default class ProjectAPI {
    * @returns {boolean}
    */
   isCategoryLoaded(toolName, category) {
-    const categoriesPath = path.join(this.getCategoriesDir(toolName), ".categories");
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
     if (fs.existsSync(categoriesPath)) {
       try {
         const data = fs.readJSONSync(categoriesPath);
@@ -154,8 +160,8 @@ export default class ProjectAPI {
     }
 
     // rebuild missing/corrupt category index
-    fs.writeJSONSync(categoriesPath, {
-      current: ['kt', 'other', 'names'], // TODO: These don't apply in every case and should not be hard-coded.
+    fs.outputJsonSync(categoriesPath, {
+      current: ["kt", "other", "names"], // TODO: These don't apply in every case and should not be hard-coded.
       loaded: []
     });
 
@@ -169,9 +175,10 @@ export default class ProjectAPI {
    * @returns {boolean}
    */
   setCategoryLoaded(toolName, category) {
-    const categoriesPath = path.join(this.getCategoriesDir(toolName), ".categories");
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
     let data = {
-      current: ['kt', 'other', 'names'], // TODO: These don't apply in every case and should not be hard-coded.
+      current: ["kt", "other", "names"], // TODO: These don't apply in every case and should not be hard-coded.
       loaded: [category]
     };
 
@@ -182,11 +189,12 @@ export default class ProjectAPI {
         rawData.loaded.push(category);
         data = rawData;
       } catch (e) {
-        console.warn(`Failed to parse tool categories index at ${categoriesPath}.`, e);
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
 
-    fs.writeJSONSync(categoriesPath, data);
+    fs.outputJsonSync(categoriesPath, data);
   }
 
   /**
@@ -195,7 +203,8 @@ export default class ProjectAPI {
    * @return {string[]} an array of category names
    */
   getSelectedCategories(toolName) {
-    const categoriesPath = path.join(this.getCategoriesDir(toolName), ".categories");
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
     if (fs.existsSync(categoriesPath)) {
       try {
         const data = fs.readJSONSync(categoriesPath);
@@ -290,6 +299,7 @@ export default class ProjectAPI {
   /**
    * Handles reading data from the project's root directory.
    * You probably shouldn't use this in most situations.
+   * @throws an exception if the path does not exist.
    * @param {string} filePath - the relative file path
    * @returns {string}
    * @private
@@ -301,7 +311,8 @@ export default class ProjectAPI {
   }
 
   /**
-   * Handles synchronously reading data from the project's data directory
+   * Handles synchronously reading data from the project's data directory.
+   * @throws an exception if the path does not exist.
    * @param {string} filePath - the relative path to read
    * @return {string}
    */
@@ -329,7 +340,7 @@ export default class ProjectAPI {
    */
   pathExistsSync(filePath) {
     const readPath = path.join(this._projectPath, filePath);
-    return fs.pathExists(readPath);
+    return fs.pathExistsSync(readPath);
   }
 
   /**
