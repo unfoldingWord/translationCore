@@ -109,7 +109,7 @@ export default class ProjectAPI {
     const groupName = path.basename(dataPath);
     const destFile = path.join(destDir, groupName);
 
-    if (!fs.existsSync(destFile)) {
+    if (!fs.pathExistsSync(destFile)) {
       fs.copySync(dataPath, destFile);
       return true;
     }
@@ -150,9 +150,9 @@ export default class ProjectAPI {
   isCategoryLoaded(toolName, category) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
-    if (fs.existsSync(categoriesPath)) {
+    if (fs.pathExistsSync(categoriesPath)) {
       try {
-        const data = fs.readJSONSync(categoriesPath);
+        const data = fs.readJsonSync(categoriesPath);
         return data.loaded.indexOf(category) >= 0;
       } catch (e) {
         console.warn(
@@ -173,21 +173,27 @@ export default class ProjectAPI {
    * Marks a category as having been loaded into the project.
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
    * @param {string} category - the category that has been copied into the project
+   * @param {boolean} [loaded=true] - indicates if the category is loaded
    * @returns {boolean}
    */
-  setCategoryLoaded(toolName, category) {
+  setCategoryLoaded(toolName, category, loaded=true) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     let data = {
-      current: ["kt", "other", "names"], // TODO: These don't apply in every case and should not be hard-coded.
-      loaded: [category]
+      // TODO: do not hard code tool specific logic in tc.
+      current: toolName === 'translationWords' ? ["kt", "other", "names"] : [],
+      loaded: loaded ? [category] : []
     };
 
-    if (fs.existsSync(categoriesPath)) {
+    if (fs.pathExistsSync(categoriesPath)) {
       try {
-        let rawData = fs.readJSONSync(categoriesPath);
+        let rawData = fs.readJsonSync(categoriesPath);
         // TRICKY: assert data structure before overwriting default to not propagate errors.
-        rawData.loaded.push(category);
+        if(loaded) {
+          rawData.loaded.push(category);
+        } else {
+          rawData.loaded = rawData.loaded.filter(c => c !== category);
+        }
         data = rawData;
       } catch (e) {
         console.warn(
@@ -206,9 +212,9 @@ export default class ProjectAPI {
   getSelectedCategories(toolName) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
-    if (fs.existsSync(categoriesPath)) {
+    if (fs.pathExistsSync(categoriesPath)) {
       try {
-        const data = fs.readJSONSync(categoriesPath);
+        const data = fs.readJsonSync(categoriesPath);
         return data.current;
       } catch (e) {
         console.warn(
@@ -224,11 +230,29 @@ export default class ProjectAPI {
    * Category selection controls which sets of help data will be loaded
    * when the tool is opened.
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
-   * @param {string[]} categories - an array of category names
+   * @param {string[]} [categories=[]] - an array of category names
    */
-  setSelectedCategories(toolName, categories) {
-    // TODO: implement this
-    throw new Error(`Not implemented`, toolName, categories);
+  setSelectedCategories(toolName, categories=[]) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    let data = {
+      current: categories,
+      loaded: []
+    };
+
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        const rawData = fs.readJsonSync(categoriesPath);
+        // TRICKY: assert data structure before overwriting default to not propagate errors.
+        rawData.current = categories;
+        data = rawData;
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    fs.outputJsonSync(categoriesPath, data);
   }
 
   /**
