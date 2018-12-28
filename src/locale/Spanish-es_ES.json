@@ -363,7 +363,9 @@
     "verse_edit": "Edición del verso",
     "comments": "Comentarios",
     "menu": "Menú",
-    "no_gl_available": "Ninguno disponible"
+    "no_gl_available": "Ninguno disponible",
+    "invalid_checks": "Invalidated checks",
+    "invalid_verse_alignments": "Verses with invalidated alignments."
   },
   "buttons": {
     "back_button": "Volver",
