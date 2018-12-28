@@ -70,7 +70,9 @@ class ResourceAPI {
           file.match(/^v\d/i);
       });
       return versionedDirs.sort((a, b) => {
-        return a.localeCompare(b, undefined, { numeric: true});
+        const numA = parseInt(a.substr(1));
+        const numB = parseInt(b.substr(1));
+        return numB - numA;
       });
     }
     return [];
