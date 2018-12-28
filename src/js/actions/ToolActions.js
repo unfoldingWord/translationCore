@@ -54,6 +54,11 @@ export const openTool = (name) => (dispatch, getData) => {
   dispatch({ type: types.START_LOADING });
   setTimeout(() => {
     try {
+
+      dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_DATA });
+      dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_INDEX });
+      dispatch({ type: types.CLEAR_CONTEXT_ID });
+
       dispatch({
         type: types.OPEN_TOOL,
         name

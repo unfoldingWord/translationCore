@@ -47,23 +47,6 @@ class ToolContainer extends Component {
     this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
-  componentWillMount () {
-    // const { toolApi, supportingToolApis } = this.props;
-
-    // connect to APIs
-    // const toolProps = this.makeToolProps();
-    // for (const key of Object.keys(supportingToolApis)) {
-    //   supportingToolApis[key].triggerWillConnect(toolProps);
-    // }
-    // if (toolApi) {
-    //   const activeToolProps = {
-    //     ...toolProps,
-    //     tools: supportingToolApis
-    //   };
-    //   toolApi.triggerWillConnect(activeToolProps);
-    // }
-  }
-
   componentWillUnmount () {
     const { toolApi, supportingToolApis } = this.props;
     for (const key of Object.keys(supportingToolApis)) {

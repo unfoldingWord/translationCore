@@ -42,7 +42,16 @@ jest.mock('../../selectors', () => ({
     return 'en';
   },
   getTools: () => {
-    return [];
+    return [
+      {
+        name: "translationWords",
+        api: jest.fn()
+      },
+      {
+        name: "wordAlignment",
+        api: jest.fn()
+      }
+    ];
   }
 }));
 

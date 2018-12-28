@@ -44,7 +44,9 @@ export const openProject = (name, skipValidation=false) => {
     const translate = getTranslate(getState());
 
     try {
-      dispatch(resetReducersData());
+      dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+      dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
+
       dispatch(initializeReducersForProjectOpenValidation());
       dispatch(
         openAlertDialog(translate('projects.loading_project_alert'), true));
@@ -59,13 +61,14 @@ export const openProject = (name, skipValidation=false) => {
         await dispatch(validateProject(projectDir));
       }
 
-      // load the book data
       const manifest = getProjectManifest(getState());
-      await dispatch(loadBookTranslations(manifest.project.id, name));
 
       // connect the tools
       const tools = getTools(getState());
       for (const t of tools) {
+        // load the book data
+        await dispatch(loadBookTranslations(manifest.project.id, t.name));
+
         // copy group data
         const language = getToolGatewayLanguage(getState(), t.name);
         copyGroupDataToProject(language, t.name, projectDir);
@@ -87,18 +90,6 @@ export const openProject = (name, skipValidation=false) => {
     }
   };
 };
-
-function resetReducersData() {
-  // TODO: this is crazy. All of related reducers could be keyed by the same action.
-  return (dispatch => {
-    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
-    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
-    dispatch({ type: consts.CLEAR_CONTEXT_ID });
-    dispatch({ type: consts.CLEAR_ALIGNMENT_DATA });
-    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
-  });
-}
 
 /**
  * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
