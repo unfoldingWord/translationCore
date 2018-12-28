@@ -363,7 +363,9 @@
     "verse_edit": "श्लोक संपादित करें",
     "comments": "टिप्पणियाँ",
     "menu": "मेन्यू",
-    "no_gl_available": "उपलब्ध नहीं"
+    "no_gl_available": "उपलब्ध नहीं",
+    "invalid_checks": "Invalidated checks",
+    "invalid_verse_alignments": "Verses with invalidated alignments."
   },
   "buttons": {
     "back_button": "वापस जाओ",
