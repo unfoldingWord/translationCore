@@ -42,7 +42,11 @@ export function finalize() {
         const chapterPath = path.join(projectSaveLocation, bookAbbr, chapterNum + '.json');
         let chapterJSONObject = {};
         if (fs.existsSync(chapterPath)) {
-          chapterJSONObject = fs.readJSONSync(chapterPath);
+          try {
+            chapterJSONObject = fs.readJSONSync(chapterPath);
+          } catch (e) {
+            console.error(`Failed to parse chapter json from ${chapterPath}`, e);
+          }
         }
         for (let missingVerse of missingVerses[chapterNum]) {
           chapterJSONObject[missingVerse.toString()] = "";

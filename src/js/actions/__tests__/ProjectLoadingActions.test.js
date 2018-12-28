@@ -37,6 +37,12 @@ jest.mock('../../selectors', () => ({
   },
   getUsername: () => {
     return 'johndoe';
+  },
+  getToolGatewayLanguage: () => {
+    return 'en';
+  },
+  getTools: () => {
+    return [];
   }
 }));
 

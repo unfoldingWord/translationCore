@@ -363,7 +363,9 @@
     "verse_edit": "Verse edit",
     "comments": "Comments",
     "menu": "Menu",
-    "no_gl_available": "None available"
+    "no_gl_available": "None available",
+    "invalid_checks": "Invalidated checks",
+    "invalid_verse_alignments": "Verses with invalidated alignments."
   },
   "buttons": {
     "back_button": "Go Back",

@@ -22,6 +22,7 @@ import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructu
 import { loadBookTranslations } from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
+import { resetReducersData } from "../ToolActions";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -35,14 +36,15 @@ function delay(ms) {
 /**
  * This thunk opens a project and prepares it for use in tools.
  * @param {string} name -  the name of the project
+ * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
  */
-export const openProject = (name) => {
+export const openProject = (name, skipValidation=false) => {
   return async (dispatch, getState) => {
     const projectDir = path.join(PROJECTS_PATH, name);
     const translate = getTranslate(getState());
 
     try {
-      // TODO: refactor project reducers
+      dispatch(resetReducersData());
       dispatch(initializeReducersForProjectOpenValidation());
       dispatch(
         openAlertDialog(translate('projects.loading_project_alert'), true));
@@ -50,11 +52,18 @@ export const openProject = (name) => {
       await delay(200);
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
-      await dispatch(validateProject(projectDir));
+
+      // TODO: this is a temporary hack. Eventually we will always validate the project
+      // but we need to refactored the online and local import functions first.
+      if(!skipValidation) {
+        await dispatch(validateProject(projectDir));
+      }
 
       // load the book data
       const manifest = getProjectManifest(getState());
-      await dispatch(loadBookTranslations(manifest.project.id));
+      await dispatch(loadBookTranslations(manifest.project.id, name));
+
+      // TODO: copy the groups data into the project.
 
       // connect the tools
       const tools = getTools(getState());
