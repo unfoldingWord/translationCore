@@ -14,6 +14,7 @@ import * as GroupsIndexActions from "./GroupsIndexActions";
 import { loadProjectGroupData } from "../helpers/ResourcesHelpers";
 import { loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
 import { loadGroupsIndex } from "./GroupsIndexActions";
+import { generateChapterGroupIndex } from "../helpers/groupDataHelpers";
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -158,7 +159,7 @@ function getGroupsIndex(dispatch, dataDirectory, translate) {
       resolve();
     } catch (err) {
       console.log('No GL based index found for tool, will use a generated chapterGroupsIndex.');
-      groupIndexData = ResourcesHelpers.generateChapterGroupIndex(translate);
+      groupIndexData = generateChapterGroupIndex(translate);
       dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
       resolve();
     }

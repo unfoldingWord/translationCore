@@ -3,10 +3,14 @@ import path from 'path';
 jest.unmock('fs-extra');
 // helpers
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
+import {
+  generateChapterGroupData,
+  generateChapterGroupIndex
+} from "../src/js/helpers/groupDataHelpers";
 
 describe('ResourcesHelpers.chapterGroupsIndex', () => {
   it('should return groupsIndex array for chapters 1-150', function () {
-    const output = ResourcesHelpers.generateChapterGroupIndex();
+    const output = generateChapterGroupIndex();
     expect(output.constructor).toBe(Array);
     expect(output.length).toEqual(150);
     expect(output[0].id).toBe('chapter_1');
@@ -18,7 +22,7 @@ describe('ResourcesHelpers.chapterGroupsIndex', () => {
 
 describe('ResourcesHelpers.chapterGroupsData', () => {
   it('should return groupsData array for Titus', function () {
-    const output = ResourcesHelpers.generateChapterGroupData('tit', 'toolTemplate');
+    const output = generateChapterGroupData('tit', 'toolTemplate');
     expect(output.constructor).toBe(Array);
     expect(output.length).toEqual(3);
     expect(output[0].constructor).toBe(Array);

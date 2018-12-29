@@ -36,6 +36,7 @@ export default class ProjectAPI {
     this.getBookId = this.getBookId.bind(this);
     this.isCategoryLoaded = this.isCategoryLoaded.bind(this);
     this.setCategoryLoaded = this.setCategoryLoaded.bind(this);
+    this.getGroupsData = this.getGroupsData.bind(this);
   }
 
   /**
