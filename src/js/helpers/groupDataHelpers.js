@@ -6,6 +6,8 @@ import { getTranslation } from "./localizationHelpers";
 export const STATIC_RESOURCES_PATH = path.join(__dirname,
   "../../../tcResources");
 
+// TODO: groupsIndexHelpers.js should be combined with this file or vice versa.
+
 /**
  * @description - Auto generate the chapter group data since more projects will use it
  * @param {String} bookId - id of the current book

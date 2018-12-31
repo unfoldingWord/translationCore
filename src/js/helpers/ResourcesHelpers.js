@@ -112,6 +112,8 @@ export function loadProjectGroupIndex(
         } catch (e) {
           console.error(`Failed to read group index from ${categoryIndex}`, e);
         }
+      } else {
+        console.warn(`Unexpected tool category selection in ${projectDir}. "${categoryIndex}" could not be found.`);
       }
     }
     return indices;

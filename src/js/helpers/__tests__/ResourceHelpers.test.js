@@ -1,4 +1,7 @@
-import { generateChapterGroupData } from "../groupDataHelpers";
+import {
+  generateChapterGroupData,
+  generateChapterGroupIndex
+} from "../groupDataHelpers";
 
 jest.mock("../groupDataHelpers");
 jest.mock("../ProjectAPI");
@@ -11,7 +14,8 @@ import {
   mockSetCategoryLoaded,
   mockImportCategoryGroupData,
   mockGetCategoriesDir,
-  mockGetBookId
+  mockGetBookId,
+  mockGetSelectedCategories
 } from "../ProjectAPI";
 import { mockGetLatestTranslationHelp } from "../ResourceAPI";
 
@@ -69,15 +73,99 @@ describe("copy group data", () => {
 });
 
 describe("load group index", () => {
+
+  beforeEach(() => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  });
+
   it("has an index", () => {
-    expect(loadProjectGroupIndex()).toEqual();
+    const translate = jest.fn();
+    const expectedResult = [{
+      id: "hello",
+      name: "World"
+    }];
+
+    global.console = {error: jest.fn(), warn: jest.fn()};
+    mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
+    mockGetSelectedCategories.mockReturnValueOnce(["category"]);
+    fs.lstatSync.mockReturnValue({
+      isFile: () => true
+    });
+    fs.readJsonSync.mockReturnValueOnce([{id: "hello", name: "World"}]);
+
+    expect(loadProjectGroupIndex("lang", "tool", "dir/", translate)).toEqual(expectedResult);
+    expect(generateChapterGroupIndex).not.toBeCalled();
+    expect(console.error).not.toBeCalled();
+    expect(console.warn).not.toBeCalled();
   });
 
   it("has a corrupt index", () => {
+    const translate = jest.fn();
+    const expectedResult = [];
 
+    global.console = {error: jest.fn(), warn: jest.fn()};
+    mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
+    mockGetSelectedCategories.mockReturnValueOnce(["category"]);
+    fs.lstatSync.mockReturnValue({
+      isFile: () => true
+    });
+    fs.readJsonSync.mockImplementation(() => {throw new Error()}); // index is corrupt
+
+    expect(loadProjectGroupIndex("lang", "tool", "dir/", translate)).toEqual(expectedResult);
+    expect(generateChapterGroupIndex).not.toBeCalled();
+    expect(console.error).toBeCalled();
+    expect(console.warn).not.toBeCalled();
   });
 
   it("is missing help dir", () => {
+    const translate = jest.fn();
+    const expectedResult = [];
 
+    global.console = {error: jest.fn(), warn: jest.fn()};
+    mockGetLatestTranslationHelp.mockReturnValueOnce(null);
+    generateChapterGroupIndex.mockReturnValueOnce([]);
+
+    expect(loadProjectGroupIndex("lang", "tool", "dir/", translate)).toEqual(expectedResult);
+    expect(generateChapterGroupIndex.mock.calls.length).toBe(1); // chapter index is generated
+    expect(console.error).not.toBeCalled();
+    expect(console.warn).not.toBeCalled();
+    expect(fs.readJsonSync).not.toBeCalled();
+    expect(mockGetSelectedCategories).not.toBeCalled();
+  });
+
+  it("is missing category index", () => {
+    const translate = jest.fn();
+    const expectedResult = [];
+
+    global.console = {error: jest.fn(), warn: jest.fn()};
+    mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
+    mockGetSelectedCategories.mockReturnValueOnce(["category"]);
+    fs.lstatSync.mockReturnValue({
+      isFile: () => false // category index does not exist
+    });
+
+    expect(loadProjectGroupIndex("lang", "tool", "dir/", translate)).toEqual(expectedResult);
+    expect(generateChapterGroupIndex).not.toBeCalled();
+    expect(fs.readJsonSync).not.toBeCalled();
+    expect(console.error).not.toBeCalled();
+    expect(console.warn).toBeCalled();
+  });
+
+  it("has no selected categories", () => {
+    const translate = jest.fn();
+    const expectedResult = [];
+
+    global.console = {error: jest.fn(), warn: jest.fn()};
+    mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
+    mockGetSelectedCategories.mockReturnValueOnce([]); // empty selection
+
+    expect(loadProjectGroupIndex("lang", "tool", "dir/", translate)).toEqual(expectedResult);
+    expect(generateChapterGroupIndex).not.toBeCalled();
+    expect(fs.readJsonSync).not.toBeCalled();
+    expect(fs.lstatSync).not.toBeCalled();
+    expect(console.error).not.toBeCalled();
+    expect(console.warn).not.toBeCalled();
   });
 });
