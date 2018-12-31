@@ -20,6 +20,12 @@ jest.mock('../../selectors', () => ({
       return code;
     });
   },
+  getSourceBook: () => {
+    return {};
+  },
+  getTargetBook: () => {
+    return {};
+  },
   getProjectSaveLocation: (state) => {
     return (state.projectDetailsReducer.projectSaveLocation);
   },
@@ -45,11 +51,15 @@ jest.mock('../../selectors', () => ({
     return [
       {
         name: "translationWords",
-        api: jest.fn()
+        api: {
+          triggerWillConnect: jest.fn()
+        }
       },
       {
         name: "wordAlignment",
-        api: jest.fn()
+        api: {
+          triggerWillConnect: jest.fn()
+        }
       }
     ];
   }

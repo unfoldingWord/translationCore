@@ -75,9 +75,7 @@ describe("copy group data", () => {
 describe("load group index", () => {
 
   beforeEach(() => {
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
+    jest.clearAllMocks();
   });
 
   it("has an index", () => {

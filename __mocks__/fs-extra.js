@@ -50,7 +50,13 @@ function writeFileSync(filePath, data) {
 
 function readFileSync(filePath) {
   if (typeof filePath !== 'string') throw 'fail';
-  return mockFS[filePath];
+  const data = mockFS[filePath];
+  // TRICKY: readFileSync should always return a string
+  if(typeof data === 'object' && data !== null) {
+    return JSON.stringify(data);
+  } else {
+    return data;
+  }
 }
 
 function outputFileSync(filePath, data) {
