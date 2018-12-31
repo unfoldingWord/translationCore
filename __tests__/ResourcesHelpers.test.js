@@ -52,7 +52,6 @@ describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
         let resourcePath = path.join(__dirname, 'fixtures/resources', property);
-        console.log(resourcePath);
         let versionPath = ResourcesHelpers.getLatestVersionInPath(resourcePath);
         expect(versionPath).toEqual(path.join(resourcePath, resourcePathsExpectedVersions[property]));
       }

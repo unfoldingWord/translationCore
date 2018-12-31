@@ -57,10 +57,10 @@ const migrateToVersion6 = (projectPath) => {
         }
       }
     } else {
-      console.log("Manifest not found.");
+      console.warn("Manifest not found.");
     }
   } catch(e){
-    console.log("Migration error: " + e.toString());
+    console.error("Migration error: " + e.toString());
   }
 };
 

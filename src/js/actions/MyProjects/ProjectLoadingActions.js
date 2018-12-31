@@ -19,7 +19,10 @@ import {
   getUsername
 } from "../../selectors";
 import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
-import { loadBookTranslations } from "../ResourcesActions";
+import {
+  loadSourceBookTranslations,
+  loadTargetLanguageBook
+} from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
 import { copyGroupDataToProject } from "../../helpers/ResourcesHelpers";
@@ -56,18 +59,20 @@ export const openProject = (name, skipValidation=false) => {
       migrateProject(projectDir, null, getUsername(getState()));
 
       // TODO: this is a temporary hack. Eventually we will always validate the project
-      // but we need to refactored the online and local import functions first.
+      // but we need to refactored the online and local import functions first so there is no duplication.
       if(!skipValidation) {
         await dispatch(validateProject(projectDir));
       }
 
-      const manifest = getProjectManifest(getState());
+      // load target book
+      dispatch(loadTargetLanguageBook());
 
       // connect the tools
+      const manifest = getProjectManifest(getState());
       const tools = getTools(getState());
       for (const t of tools) {
-        // load the book data
-        await dispatch(loadBookTranslations(manifest.project.id, t.name));
+        // load source book translations
+        await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
 
         // copy group data
         const language = getToolGatewayLanguage(getState(), t.name);
