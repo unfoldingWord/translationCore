@@ -9,6 +9,7 @@ export const STATIC_RESOURCES_PATH = path.join(__dirname,
 // TODO: groupsIndexHelpers.js should be combined with this file or vice versa.
 
 /**
+ * TODO: should this use the user's resources in the home dir instead of the static resources?
  * @description - Auto generate the chapter group data since more projects will use it
  * @param {String} bookId - id of the current book
  * @param {String} toolName - id of the current tool
