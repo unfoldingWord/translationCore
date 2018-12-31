@@ -3,19 +3,20 @@ import consts from "./ActionTypes";
 import fs from "fs-extra";
 import path from "path-extra";
 import ospath from "ospath";
+import _ from "lodash";
+import SimpleCache from "../helpers/SimpleCache";
+import { getContext, getSelectedToolName } from "../selectors";
 // actions
+import * as SettingsActions from "./SettingsActions";
 // helpers
 import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
 import * as SettingsHelpers from "../helpers/SettingsHelpers";
 import { DEFAULT_GATEWAY_LANGUAGE } from "../helpers/gatewayLanguageHelpers";
-import _ from "lodash";
-import { getContext, getSelectedToolName } from "../selectors";
 import * as BibleHelpers from "../helpers/bibleHelpers";
-import SimpleCache from "../helpers/SimpleCache";
-import * as SettingsActions from "./SettingsActions";
+import ResourceAPI from "../helpers/ResourceAPI";
+
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
-
 const bookCache = new SimpleCache();
 
 /**
@@ -413,7 +414,7 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   for(let i = 0, len = languageDirs.length; i < len; ++i) {
     let languageDir = languageDirs[i];
     let typePath = path.join(USER_RESOURCES_PATH, languageDir, 'translationHelps', resourceType);
-    let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath) || typePath;
+    let versionPath = ResourceAPI.getLatestVersion(typePath) || typePath;
     for(let j = 0, jLen = categories.length; j < jLen; ++j) {
       let categoryDir = categories[j];
       if (resourceType === 'translationWords') {

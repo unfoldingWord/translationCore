@@ -50,20 +50,30 @@ class ResourceAPI {
    */
   getLatestTranslationHelp(gatewayLanguage, helpName) {
     const helpDir = path.join(this._resourcesDir, gatewayLanguage, "translationHelps", helpName);
-    const versions = this.listVersionedDirectories(helpDir);
+    return ResourceAPI.getLatestVersion(helpDir);
+  }
+
+  /**
+   * Returns the versioned folder within the directory with the highest value.
+   * e.g. `v10` is greater than `v9`
+   * @param {string} dir - the directory to read
+   * @returns {string} the full path to the latest version directory.
+   */
+  static getLatestVersion(dir) {
+    const versions = ResourceAPI.listVersions(dir);
     if(versions.length > 0) {
-      return path.join(helpDir, versions[0]);
+      return path.join(dir, versions[0]);
     } else {
       return null;
     }
   }
 
   /**
-   * Returns an array of paths found in the directory sorted by version
+   * Returns an array of paths found in the directory filtered and sorted by version
    * @param {string} dir
    * @returns {string[]}
    */
-  listVersionedDirectories(dir) {
+  static listVersions(dir) {
     if (fs.pathExistsSync(dir)) {
       const versionedDirs = fs.readdirSync(dir).filter(file => {
         return fs.lstatSync(path.join(dir, file)).isDirectory() &&

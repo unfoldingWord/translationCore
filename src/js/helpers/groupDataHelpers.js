@@ -1,7 +1,7 @@
 import fs from "fs-extra";
 import path from "path-extra";
-import { getLatestVersionInPath } from "./ResourcesHelpers";
 import { getTranslation } from "./localizationHelpers";
+import ResourceAPI from "./ResourceAPI";
 
 export const STATIC_RESOURCES_PATH = path.join(__dirname,
   "../../../tcResources");
@@ -17,7 +17,7 @@ export const STATIC_RESOURCES_PATH = path.join(__dirname,
 export const generateChapterGroupData = (bookId, toolName) => {
   let groupsData = [];
   let ultPath = path.join(STATIC_RESOURCES_PATH, "en", "bibles", "ult");
-  let versionPath = getLatestVersionInPath(ultPath) || ultPath;
+  let versionPath = ResourceAPI.getLatestVersion(ultPath) || ultPath;
   const ultIndexPath = path.join(versionPath, "index.json");
   if (fs.existsSync(ultIndexPath)) { // make sure it doens't crash if the path doesn't exist
     const ultIndex = fs.readJsonSync(ultIndexPath); // the index of book/chapter/verses

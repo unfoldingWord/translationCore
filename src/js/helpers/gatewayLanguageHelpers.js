@@ -7,6 +7,7 @@ import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./Language
 import * as ResourcesHelpers from "./ResourcesHelpers";
 import * as BibleHelpers from "./bibleHelpers";
 import { getSelectedToolName, getToolGatewayLanguage } from "../selectors";
+import ResourceAPI from "./ResourceAPI";
 
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
@@ -158,7 +159,7 @@ function isValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentD
  * @return {String} resource version path
  */
 function getValidResourcePath(langPath, subpath) {
-  const validPath = ResourcesHelpers.getLatestVersionInPath(path.join(langPath, subpath));
+  const validPath = ResourceAPI.getLatestVersion(path.join(langPath, subpath));
   if (validPath) {
     const subFolders = ResourcesHelpers.getFoldersInResourceFolder(validPath);
     if (subFolders && subFolders.length) { // make sure it has subfolders

@@ -179,7 +179,7 @@ export function getBibleFromStaticPackage(force = false) {
 }
 
 export const extractZippedBooks = (bibleDestinationPath) => {
-  const versionPath = getLatestVersionInPath(bibleDestinationPath);
+  const versionPath = ResourceAPI.getLatestVersion(bibleDestinationPath);
   const booksZipPath = path.join(versionPath, "books.zip");
   const zip = new AdmZip(booksZipPath);
   zip.extractAllTo(versionPath, /*overwrite*/true);
@@ -257,7 +257,7 @@ export function copyGroupsDataToProjectResources(
   }
   const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId,
     "translationHelps", toolName);
-  const versionPath = getLatestVersionInPath(toolResourcePath) ||
+  const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) ||
     toolResourcePath;
   const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
   if (fs.existsSync(groupsDataSourcePath)) {
@@ -330,7 +330,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
     bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId,
       bibleVersion, fileName);
   } else {
-    const versionPath = getLatestVersionInPath(
+    const versionPath = ResourceAPI.getLatestVersion(
       path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId));
     if (versionPath) {
       bibleIndexPath = path.join(versionPath, fileName);
@@ -381,19 +381,6 @@ export function sortVersions(versions) {
   versions.sort(
     (a, b) => String(a).localeCompare(b, undefined, { numeric: true }));
   return versions;
-}
-
-/**
- * Return the full path to the highest version folder in resource path
- * @param {String} resourcePath - base path to search for versions
- * @return {String} - path to highest version
- */
-export function getLatestVersionInPath(resourcePath) {
-  const versions = sortVersions(getVersionsInPath(resourcePath));
-  if (versions && versions.length) {
-    return path.join(resourcePath, versions[versions.length - 1]);
-  }
-  return null; // return illegal path
 }
 
 export function getLanguageIdsFromResourceFolder(bookId) {
@@ -466,7 +453,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
             filter(folder => folder !== ".DS_Store");
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
-            const bibleLatestVersion = getLatestVersionInPath(bibleIdPath);
+            const bibleLatestVersion = ResourceAPI.getLatestVersion(bibleIdPath);
             if (bibleLatestVersion) {
               const pathToBibleManifestFile = path.join(bibleLatestVersion,
                 "manifest.json");
@@ -550,7 +537,7 @@ export function getGLQuote(languageId, groupId, toolName) {
   try {
     const GLQuotePathWithoutVersion = path.join(STATIC_RESOURCES_PATH,
       languageId, "translationHelps", toolName);
-    const versionDirectory = getLatestVersionInPath(GLQuotePathWithoutVersion);
+    const versionDirectory = ResourceAPI.getLatestVersion(GLQuotePathWithoutVersion);
     const GLQuotePathIndex = path.join(versionDirectory, "kt", "index.json");
     const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);
     return resourceIndexArray.find(({ id }) => id === groupId).name;

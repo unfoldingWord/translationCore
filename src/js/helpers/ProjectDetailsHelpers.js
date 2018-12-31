@@ -14,6 +14,7 @@ import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
 import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
+import ResourceAPI from "./ResourceAPI";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const TOOL_DATA_PATH = path.join('.apps', 'translationCore', 'index');
@@ -23,7 +24,7 @@ export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
   Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
     const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-    const versionDirectory = ResourceHelpers.getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
+    const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
     if (fs.existsSync(versionDirectory))
       availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
         fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
@@ -67,7 +68,7 @@ export function setCategoriesForProjectInFS(categories, toolName, bookName, proj
 }
 
   /** function to make the change in the array based on the passed params
-   * i.e. If the value is present in the array and you pass the value of 
+   * i.e. If the value is present in the array and you pass the value of
    * false it will be deleted from the array
   */
 export function updateArray (array, id, value) {
@@ -426,7 +427,7 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     const languageId = toolName === 'translationWords' ? 'grc' : 'en';
     //Note: translationWords only uses checks that are also available in the greek (OL)
     const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', toolName);
-    const versionPath = ResourceHelpers.getLatestVersionInPath(toolResourcePath) || toolResourcePath;
+    const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) || toolResourcePath;
     userSelectedCategories.forEach((category) => {
       const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
       const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
