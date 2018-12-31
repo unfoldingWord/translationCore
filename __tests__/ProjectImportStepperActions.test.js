@@ -9,9 +9,6 @@ const mockStore = configureMockStore(middlewares);
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
-// jest.mock('../src/js/actions/TargetLanguageActions', () => ({
-//   generateTargetBibleFromTstudioProjectPath: () => { }
-// }));
 jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
   displayTools: () => { return { type: 'DISPLAY_TOOLS' } }
 }));
