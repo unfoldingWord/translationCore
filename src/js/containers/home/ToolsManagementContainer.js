@@ -7,7 +7,7 @@ import HomeContainerContentWrapper
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import {
-  getTools, getIsUserLoggedIn
+  getTools, getIsUserLoggedIn, getProjectSaveLocation, getProjectBookId
 } from "../../selectors";
 import { openTool } from "../../actions/ToolActions";
 import { openAlertDialog } from "../../actions/AlertModalActions";
@@ -16,6 +16,17 @@ class ToolsManagementContainer extends Component {
   constructor(props) {
     super(props);
     this.handleSelectTool = this.handleSelectTool.bind(this);
+  }
+
+  componentDidMount() {
+    const {tools, reducers} = this.props;
+    const projectSaveLocation = getProjectSaveLocation(reducers);
+    const bookId = getProjectBookId(reducers);
+    if (projectSaveLocation && bookId) {
+      tools.forEach(({name:toolName}) => {
+        this.props.actions.loadCurrentCheckCategories(toolName, bookId, projectSaveLocation);
+      });
+    }
   }
 
   /**
