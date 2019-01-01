@@ -17,7 +17,6 @@ import { Card, CardText } from 'material-ui';
  * @param currentProjectToolsProgress
  * @param manifest
  * @param invalidatedReducer
- * @param developerMode
  * @param toolsCategories
  * @param availableCategories
  * @returns {*}
@@ -27,13 +26,13 @@ const ToolsCards = ({
   tools,
   actions,
   translate,
+  onSelectTool,
   bookName,
   loggedInUser,
   projectSaveLocation,
   currentProjectToolsProgress,
   manifest,
   invalidatedReducer,
-  developerMode,
   toolsCategories,
   availableCategories
 }) => {
@@ -70,6 +69,8 @@ const ToolsCards = ({
           tools.map((tool, i) => {
             return (
               <ToolCard
+                tool={tool}
+                onSelect={onSelectTool}
                 availableCategories={availableCategories[tool.name] || []}
                 selectedCategories={toolsCategories[tool.name] || []}
                 translate={translate}
@@ -87,7 +88,6 @@ const ToolsCards = ({
                 invalidatedReducer={invalidatedReducer}
                 currentProjectToolsProgress={currentProjectToolsProgress}
                 manifest={manifest}
-                developerMode={developerMode}
               />
             );
           })
@@ -99,6 +99,7 @@ const ToolsCards = ({
 
 ToolsCards.propTypes = {
   tools: PropTypes.array,
+  onSelectTool: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
@@ -107,7 +108,6 @@ ToolsCards.propTypes = {
   currentProjectToolsProgress: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
-  developerMode: PropTypes.bool.isRequired,
   toolsCategories: PropTypes.object.isRequired,
   availableCategories: PropTypes.object.isRequired,
 };

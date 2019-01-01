@@ -10,7 +10,6 @@ import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from './SettingsHelpers';
 import {
   getContext,
-  getSelectedToolName,
   getToolGatewayLanguage
 } from "../selectors";
 import _ from "lodash";
@@ -378,6 +377,9 @@ export function addLanguage(languageIds, languageID) {
  * @param {String} bibleId
  */
 export function addResource(resources, languageId, bibleId) {
+  if(!languageId) {
+    throw new Error("Error when adding resource. languageId is not valid.");
+  }
   const pos = resources.findIndex(resource =>
     ((resource.languageId === languageId) && (resource.bibleId === bibleId))
   );
@@ -445,10 +447,10 @@ export function getAvailableScripturePaneSelections(resourceList) {
  *      for GL.
  * @param {Object} state
  * @param {String} bookId
+ * @param {string} toolName - the name of the tool for which resources will be found.
  * @return {Array} array of resource in scripture panel
  */
-export function getResourcesNeededByTool(state, bookId) {
-  const toolName = getSelectedToolName(state);
+export function getResourcesNeededByTool(state, bookId, toolName) {
   const resources = [];
   const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'hbo' : 'grc';
   const olBibleId = BibleHelpers.isOldTestament(bookId) ? 'uhb' : 'ugnt';
