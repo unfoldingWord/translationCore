@@ -2,7 +2,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
-import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import ResourceAPI from "./ResourceAPI";
 /**
  * Finds the group object for a given group id in the groupsIndex array.

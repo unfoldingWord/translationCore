@@ -236,67 +236,6 @@ export function getLexiconsFromStaticPackage(force = false) {
 }
 
 /**
- * @description This function writes the groups data from the user resources folder to the project.
- * If the user already has some checks that are present in the project folder then it will not erase those
- * but simply skip them.
- * @param {String} toolName - the name of the tool selected i.e. "translationWords"
- * @param {String} groupsDataDirectory - the folder path of the users projects groups
- *  i.e. "~/translaionCore/projects/en_reg_mat/.apps/translationCore/index/translationWords/mat"
- * @param {String} bookAbbreviation - The current project book abbreviation i.e. "mat"
- * @param {String} category - The current category to load groups data for i.e. "kt"
- */
-export function copyGroupsDataToProjectResources(
-  toolName, groupsDataDirectory, bookAbbreviation, category = "kt") {
-  /** This will be used to create a full path to the groups in the resource folder*/
-  let groupsFolderPath;
-  const languageId = toolName === "translationWords" ? "grc" : "en";
-  if (toolName === "translationWords") {
-    groupsFolderPath = path.join(category, "groups", bookAbbreviation);
-  } else {
-    groupsFolderPath = path.join("groups", bookAbbreviation);
-  }
-  const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId,
-    "translationHelps", toolName);
-  const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) ||
-    toolResourcePath;
-  const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
-  if (fs.existsSync(groupsDataSourcePath)) {
-    //There are translationHelps for the selected tool/project combination
-    if (fs.existsSync(groupsDataDirectory)) {
-      //The user already has a groups data folder created
-      //Need to only copy what the user doesn't have
-      let groupsPreviouslyLoaded = fs.readdirSync(groupsDataDirectory);
-      groupsPreviouslyLoaded = groupsPreviouslyLoaded.filter((fileName) =>
-        path.extname(fileName) === ".json" && fileName[0] !== ".");
-      const groupsFromResourceFolder = fs.readdirSync(groupsDataSourcePath).
-        filter((folderName) => folderName[0] !== ".");
-      groupsFromResourceFolder.forEach((groupToLoad) => {
-        if (!groupsPreviouslyLoaded.includes(groupToLoad)) {
-          fs.copySync(path.join(groupsDataSourcePath, groupToLoad),
-            path.join(groupsDataDirectory, groupToLoad));
-        }
-      });
-    } else {
-      //If the user has no previous groups loaded
-      //copying the entire groups data folder from the resources
-      fs.copySync(groupsDataSourcePath, groupsDataDirectory);
-    }
-  } else {
-    //The only use case for this at the moment is wordAlignment
-    const groupsData = generateChapterGroupData(bookAbbreviation, toolName);
-    groupsData.forEach(groupData => {
-      const groupId = groupData[0].contextId.groupId;
-      const chapterIndexPath = path.join(groupsDataDirectory,
-        groupId + ".json");
-      fs.outputFileSync(chapterIndexPath, JSON.stringify(groupData, null, 2));
-    });
-    console.log(
-      "Chapter Groups Data generated. translationHelps resources path was not found, " +
-      groupsDataSourcePath);
-  }
-}
-
-/**
  * @description Helper function to get a bibles manifest file from the bible resources folder.
  * @param {string} bibleVersionPath - path to a bibles version folder.
  * @param {string} bibleID - bible name. ex. bhp, uhb, udt, ult.

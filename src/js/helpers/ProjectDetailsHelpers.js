@@ -8,7 +8,6 @@ import * as ProjectInformationCheckActions from "../actions/ProjectInformationCh
 import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
 import {getTranslate} from "../selectors";
-import * as ResourceHelpers from './ResourcesHelpers';
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
