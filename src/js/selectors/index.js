@@ -20,6 +20,8 @@ import * as fromProjectInformationCheckReducer from '../reducers/projectInformat
 import * as fromSourceContentUpdatesReducer from '../reducers/sourceContentUpdatesReducer';
 import * as fromMyProjectsReducer from '../reducers/myProjectsReducer';
 import * as fromAlert from '../reducers/alerts';
+import * as fromGrouspIndex from '../reducers/groupsIndexReducer';
+import * as fromGroupsData from '../reducers/groupsDataReducer';
 
 /**
  * Retrieves active alerts
@@ -456,3 +458,9 @@ export const getToolCategories = (state, toolName) =>
 
 export const getCurrentProjectToolsSelectedGL = (state) => 
   fromProjectDetailsReducer.getCurrentProjectToolsSelectedGL(state.projectDetailsReducer);
+
+export const getGroupsIndex = (state) => 
+  fromGrouspIndex.getGroupsIndex(state.groupsIndexReducer);
+
+export const getGroupsData = (state) => 
+  fromGroupsData.getGroupsData(state.groupsDataReducer);
