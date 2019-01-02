@@ -39,7 +39,7 @@ export const editSelectedTargetVerse = (before, after, tags, username=null) => {
  * @param {string[]} tags - an array of tags indicating the reason for the edit
  * @param {string} [username=null] - The user's alias. If null the current username will be used.
  */
-export const editTargetVerse = (contextId, before, after, tags, username=null) => {
+export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, username=null) => {
   return async (dispatch, getState) => {
     const {
       contextIdReducer
@@ -49,9 +49,9 @@ export const editTargetVerse = (contextId, before, after, tags, username=null) =
     let {bookId, chapter: currentCheckChapter, verse: currentCheckVerse} = currentCheckContextId.reference;
     const contextIdWithVerseEdit = {
       ...currentCheckContextId,
-      ...contextId
+      chapter: chapterWithVerseEdit,
+      verse: verseWithVerseEdit
     };
-    const {chapter: chapterWithVerseEdit, verse: verseWithVerseEdit} = contextIdWithVerseEdit;
     // fallback to the current username
     let userAlias = username;
     if(userAlias === null) {

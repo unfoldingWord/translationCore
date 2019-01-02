@@ -321,9 +321,9 @@ const mapDispatchToProps = (dispatch) => {
       selectModalTab: (tab, section, vis) => {
         dispatch(selectModalTab(tab, section, vis));
       },
-      editTargetVerse: (contextId, before, after, tags, username) => {
+      editTargetVerse: (chapter, verse, before, after, tags, username) => {
         dispatch(
-          editTargetVerse(contextId, before, after, tags, username));
+          editTargetVerse(chapter, verse, before, after, tags, username));
       },
       changeCurrentContextId: (contextId) => {
         dispatch(changeCurrentContextId(contextId));
