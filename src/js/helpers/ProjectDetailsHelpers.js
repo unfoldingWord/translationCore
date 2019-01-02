@@ -16,7 +16,6 @@ import * as BibleHelpers from "./bibleHelpers";
 import ResourceAPI from "./ResourceAPI";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const TOOL_DATA_PATH = path.join('.apps', 'translationCore', 'index');
 
 export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
   const availableCategories = {};
@@ -35,41 +34,11 @@ export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
   return availableCategories;
 }
 
-export function getCachedCategoriesFromProject(toolName, bookName, projectSaveLocation) {
-  const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
-  let categoriesIndexObject = {};
-  if (fs.existsSync(currentCategoriesLoadedPath)) {
-    categoriesIndexObject = fs.readJSONSync(currentCategoriesLoadedPath, categoriesIndexObject) || {};
-  }
-  if (!categoriesIndexObject.current && toolName === 'translationWords') {
-    categoriesIndexObject.current = ['kt', 'other', 'names'];
-  }
-  return categoriesIndexObject.current || [] ;
-}
-
-export function setCategoriesForProjectInFS(categories, toolName, bookName, projectSaveLocation) {
-  const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
-  let categoriesIndexObject = {
-    current: categories,
-    loaded: []
-  };
-  try {
-    if (fs.existsSync(currentCategoriesLoadedPath)) {
-      categoriesIndexObject = fs.readJSONSync(currentCategoriesLoadedPath);
-      categoriesIndexObject.current = categories;
-    } else {
-      fs.ensureDirSync(path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName));
-    }
-    fs.writeJSONSync(currentCategoriesLoadedPath, categoriesIndexObject);
-  } catch (e) {
-    //
-  }
-}
-
-  /** function to make the change in the array based on the passed params
-   * i.e. If the value is present in the array and you pass the value of
-   * false it will be deleted from the array
-  */
+/**
+ * function to make the change in the array based on the passed params
+ * i.e. If the value is present in the array and you pass the value of
+ * false it will be deleted from the array
+ */
 export function updateArray (array, id, value) {
   const exists = array.indexOf(id) >= 0;
   if (exists && value === true) return array;

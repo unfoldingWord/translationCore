@@ -4,6 +4,7 @@ export const mockSetCategoryLoaded = jest.fn();
 export const mockImportCategoryGroupData = jest.fn();
 export const mockGetBookId = jest.fn();
 export const mockGetSelectedCategories = jest.fn();
+export const mockSetSelectedCategories = jest.fn();
 
 const mock = jest.fn().mockImplementation(() => {
   return {
@@ -13,6 +14,7 @@ const mock = jest.fn().mockImplementation(() => {
     importCategoryGroupData: mockImportCategoryGroupData,
     getBookId: mockGetBookId,
     getSelectedCategories: mockGetSelectedCategories,
+    setSelectedCategories: mockSetSelectedCategories,
   };
 });
 
