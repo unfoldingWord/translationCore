@@ -373,6 +373,53 @@ Array [
 
 exports[`SelectionsActions.validateSelections apostle selection edited 1`] = `Array []`;
 
+exports[`SelectionsActions.validateSelections apostle selection with footnote and edited 1`] = `
+Array [
+  Object {
+    "contextId": Object {
+      "groupId": "god",
+      "occurrence": 1,
+      "quote": "Θεοῦ",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G23160",
+      ],
+      "tool": "translationWords",
+    },
+    "selections": Array [],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "boolean": true,
+    "contextId": Object {
+      "groupId": "god",
+      "occurrence": 1,
+      "quote": "Θεοῦ",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G23160",
+      ],
+      "tool": "translationWords",
+    },
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+  Object {
+    "alertMessage": "tools.selections_invalidated",
+    "type": "OPEN_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`SelectionsActions.validateSelections apostle selection with footnote not edited 1`] = `Array []`;
+
 exports[`SelectionsActions.validateSelections god selection edited in different context 1`] = `
 Array [
   Object {

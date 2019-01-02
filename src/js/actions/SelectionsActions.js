@@ -139,30 +139,6 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
 };
 
 /**
- * validate selections for verse.  For performance reasons, first checks unfiltered verse since in most cases that is
- *  sufficient.  But if that fails, we will double check with filtered verse.
- * @param {string} targetVerse - new text for verse
- * @param {Array} selections - for group item
- * @param {object} results - keeps state of
- * @param {string} username - current user
- * @param {object} checkingOccurrence - item we are checking
- * @return {Function}
- */
-function validateVerseSelections(targetVerse, selections, results, username, checkingOccurrence) {
-  return (dispatch) => {
-    let validSelections = checkSelectionOccurrences(targetVerse, selections);
-    if (selections.length !== validSelections.length) {
-      const cleaned = usfm.removeMarker(targetVerse); // remove USFM markers
-      validSelections = checkSelectionOccurrences(cleaned, selections);
-      if (selections.length !== validSelections.length) {
-        results.selectionsChanged = true;
-        dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear selection
-      }
-    }
-  };
-}
-
-/**
  * verify all selections for current verse
  * @param {string} targetVerse - new text for verse
  * @param {object} results - keeps state of
@@ -178,6 +154,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     const initialSelectionsChanged = results.selectionsChanged;
     contextId = contextId || state.contextIdReducer.contextId;
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
+    let filtered = null;
     results.selectionsChanged = false;
 
     for (let groupItemKey of Object.keys(groupsDataForVerse)) {
@@ -186,7 +163,14 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
         const selections = checkingOccurrence.selections;
         if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
           if (selections && selections.length) {
-            dispatch(validateVerseSelections(targetVerse, selections, results, username, checkingOccurrence));
+            if (!filtered) {  // for performance, we filter the verse only once and only if there is a selection
+              filtered = usfm.removeMarker(targetVerse); // remove USFM markers
+            }
+            const validSelections = checkSelectionOccurrences(filtered, selections);
+            if (selections.length !== validSelections.length) {
+              results.selectionsChanged = true;
+              dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear selection
+            }
           }
         }
       }
