@@ -1,6 +1,7 @@
 import ospath from "ospath";
 import path from "path-extra";
 import fs from "fs-extra";
+import semver from "semver";
 
 /**
  * Provides an interface by which you can interact with the resources in the user's home directory.
@@ -80,9 +81,16 @@ class ResourceAPI {
           file.match(/^v\d/i);
       });
       return versionedDirs.sort((a, b) => {
-        const numA = parseInt(a.substr(1));
-        const numB = parseInt(b.substr(1));
-        return numB - numA;
+        const cleanA = semver.coerce(a);
+        const cleanB = semver.coerce(b);
+
+        if(semver.gt(cleanA, cleanB)) {
+          return -1;
+        } else if(semver.lt(cleanA, cleanB)) {
+          return 1;
+        } else {
+          return 0;
+        }
       });
     }
     return [];
