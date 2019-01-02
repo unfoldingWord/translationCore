@@ -5,8 +5,7 @@ import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import {
   getSelectedToolApi,
   getSupportingToolApis,
-  getUsername,
-  getGroupsData
+  getUsername
 } from '../selectors';
 import {validateSelections} from "./SelectionsActions";
 
@@ -48,8 +47,11 @@ export const editTargetVerse = (contextId, before, after, tags, username=null) =
     const {contextId: currentCheckContextId} = contextIdReducer;
     const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
     let {bookId, chapter: currentCheckChapter, verse: currentCheckVerse} = currentCheckContextId.reference;
-    const contextIdWithVerseEdit = contextId;
-    const {contextId: {chapter: chapterWithVerseEdit, verse: verseWithVerseEdit}} = contextIdWithVerseEdit;
+    const contextIdWithVerseEdit = {
+      ...currentCheckContextId,
+      ...contextId
+    };
+    const {chapter: chapterWithVerseEdit, verse: verseWithVerseEdit} = contextIdWithVerseEdit;
     // fallback to the current username
     let userAlias = username;
     if(userAlias === null) {
