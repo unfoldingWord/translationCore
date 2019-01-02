@@ -68,6 +68,7 @@ export default class ToolCardNotificationBadges extends Component {
   constructor(props) {
     super(props);
     const {tool} = props;
+    this.loadInvalidCount = this.loadInvalidCount.bind(this);
 
     // TRICKY: only display error count if supported by the tool
     this.state = {
@@ -76,12 +77,32 @@ export default class ToolCardNotificationBadges extends Component {
     };
   }
 
-  componentDidMount() {
+  /**
+   * Loads the number of invalid checks from the tool.
+   */
+  loadInvalidCount() {
     const {tool} = this.props;
-    const numInvalidChecks = tool.api.trigger('getInvalidChecks');
-    this.setState({
-      errorCount: numInvalidChecks
-    });
+    const {errorCount, countEnabled} = this.state;
+
+    if(countEnabled) {
+      setTimeout(() => {
+        const numInvalidChecks = tool.api.trigger('getInvalidChecks');
+
+        if (errorCount !== numInvalidChecks) {
+          this.setState({
+            errorCount: numInvalidChecks
+          });
+        }
+      }, 0);
+    }
+  }
+
+  componentDidMount() {
+    this.loadInvalidCount();
+  }
+
+  componentDidUpdate() {
+    this.loadInvalidCount();
   }
 
   render() {

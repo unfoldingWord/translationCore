@@ -24,6 +24,7 @@ class ToolCard extends Component {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.loadProgress = this.loadProgress.bind(this);
     this.state = {
       showDescription: false,
       progress: 0,
@@ -31,19 +32,32 @@ class ToolCard extends Component {
     };
   }
 
-  componentDidMount() {
+  loadProgress() {
     const {tool, actions: {getProjectProgressForTools}} = this.props;
+    const {progress, useLegacyProgress} = this.state;
+
     if(tool.api.methodExists("getProgress")) {
-      const toolProgress = tool.api.trigger("getProgress");
-      this.setState({
-        progress: toolProgress ? toolProgress : 0
-      });
-    } else {
-      getProjectProgressForTools(tool.name);
-      this.setState({
-        useLegacyProgress: true
+      setTimeout(() => {
+        const toolProgress = tool.api.trigger("getProgress");
+        if(progress !== toolProgress) {
+          this.setState({
+            progress: toolProgress ? toolProgress : 0
+          });
+        }
+      }, 0);
+    } else if(!useLegacyProgress) {
+      // TRICKY: only load the legacy progress if it has not already been loaded.
+      setTimeout(() => {
+        getProjectProgressForTools(tool.name);
+        this.setState({
+          useLegacyProgress: true
+        });
       });
     }
+  }
+
+  componentDidMount() {
+    this.loadProgress();
   }
 
   componentWillMount() {
