@@ -123,15 +123,13 @@ export const createVerseEdit = (projectPath, verseBefore, verseAfter, bookId, ch
     activeVerse: verse,
     modifiedTimestamp: modifiedTimestamp,
     gatewayLanguageCode: 'en',
-    gatewayLanguageQuote: 'Chapter ' + chapter,
     contextId: {
       reference: {
         bookId,
         chapter,
         verse
       },
-      tool: '[External edit]',
-      groupId: 'chapter_' + chapter
+      tool: '[External edit]'
     },
   };
   const newFilename = modifiedTimestamp + '.json';
