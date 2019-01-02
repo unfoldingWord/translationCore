@@ -163,7 +163,7 @@ export default class ProjectAPI {
 
     // rebuild missing/corrupt category index
     fs.outputJsonSync(categoriesPath, {
-      current: ["kt", "other", "names"], // TODO: These don't apply in every case and should not be hard-coded.
+      current: [],
       loaded: []
     });
 
@@ -181,8 +181,7 @@ export default class ProjectAPI {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     let data = {
-      // TODO: do not hard code tool specific logic in tc.
-      current: toolName === 'translationWords' ? ["kt", "other", "names"] : [],
+      current: [],
       loaded: loaded ? [category] : []
     };
 
