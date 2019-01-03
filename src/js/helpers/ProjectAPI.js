@@ -121,8 +121,7 @@ export default class ProjectAPI {
    * Loads the project manifest from the disk.
    * Subsequent calls are cached.
    * @throws an error if the manifest does not exist.
-   * @returns {Promise<JSON>} the manifest json object
-   * @private
+   * @returns {JSON} the manifest json object
    */
   getManifest() {
     if (this._manifest === null) {
@@ -135,7 +134,7 @@ export default class ProjectAPI {
   /**
    * Returns the project's book id
    * @throws an error if the book id does not exist.
-   * @returns {Promise<string>}
+   * @returns {string}
    */
   getBookId() {
     const manifest = this.getManifest();

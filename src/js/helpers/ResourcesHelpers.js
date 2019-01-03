@@ -42,6 +42,10 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
       return fs.lstatSync(path.join(helpDir, file)).isDirectory();
     });
 
+    if(categories.length === 0) {
+      throw new Error(`Missing translationHelp categories for ${toolName}`);
+    }
+
     for (const category of categories) {
       if (!project.isCategoryLoaded(toolName, category)) {
         // copy un-loaded category group data into project
@@ -113,7 +117,7 @@ export function loadProjectGroupData(toolName, projectDir) {
  * @param {string} gatewayLanguage - the gateway language code
  * @param {string} toolName - the name of the tool who's index will be loaded
  * @param {string} projectDir - path to the project directory
- * @param {func} translate - the locale function. TODO: refactor index loading so locale is not required
+ * @param {function} translate - the locale function. TODO: refactor index loading so locale is not required
  * @return {*}
  */
 export function loadProjectGroupIndex(
@@ -536,10 +540,10 @@ export function getFoldersInResourceFolder(resourcePath) {
 /**
  * get list of files in resource path
  * @param {String} resourcePath - path
- * @param {String|null} ext - optional extension to match
+ * @param {String|null} [ext=null] - optional extension to match
  * @return {Array}
  */
-export function getFilesInResourcePath(resourcePath, ext) {
+export function getFilesInResourcePath(resourcePath, ext=null) {
   if (fs.lstatSync(resourcePath).isDirectory()) {
     let files = fs.readdirSync(resourcePath).filter(file => {
       if (ext) {
