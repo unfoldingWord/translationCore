@@ -73,6 +73,28 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
 }
 
 /**
+ * Configures the project have selected the default categories.
+ * If category selections already exist this method will be a no-op.
+ * @param {string} gatewayLanguage - the gateway language code
+ * @param {string} toolName - the name of the tool for which selections will be made
+ * @param {string} projectDir - path to the project directory
+ */
+export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDir) {
+  const project = new ProjectAPI(projectDir);
+  const resources = ResourceAPI.default();
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+
+  if(helpDir && project.getSelectedCategories(toolName).length === 0) {
+    const categories = fs.readdirSync(helpDir).filter(file => {
+      return fs.lstatSync(path.join(helpDir, file)).isDirectory();
+    });
+    if(categories.length > 0) {
+      project.setSelectedCategories(toolName, categories);
+    }
+  }
+}
+
+/**
  * Loads all of a tool's group data from the project.
  * @param {string} toolName - the name of the tool who's helps will be loaded
  * @param {string} projectDir - the absolute path to the project

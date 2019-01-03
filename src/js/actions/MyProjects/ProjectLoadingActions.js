@@ -25,7 +25,10 @@ import {
 } from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
-import { copyGroupDataToProject } from "../../helpers/ResourcesHelpers";
+import {
+  copyGroupDataToProject,
+  setDefaultProjectCategories
+} from "../../helpers/ResourcesHelpers";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -51,8 +54,8 @@ export const openProject = (name, skipValidation=false) => {
       dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
 
       dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(
-        openAlertDialog(translate('projects.loading_project_alert'), true));
+      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
+
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
       await isProjectSupported(projectDir, translate);
@@ -77,6 +80,9 @@ export const openProject = (name, skipValidation=false) => {
         // copy group data
         const language = getToolGatewayLanguage(getState(), t.name);
         copyGroupDataToProject(language, t.name, projectDir);
+
+        // select default categories
+        setDefaultProjectCategories(language, t.name, projectDir);
 
         // connect tool api
         const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
