@@ -190,12 +190,16 @@ export const getGroupDataForVerse = (state, contextId) => {
     for (let groupItemKey of Object.keys(groupsData)) {
       const groupItem = groupsData[groupItemKey];
       if (groupItem) {
-        for (let checkingOccurrence of groupItem) {
-          if (isEqual(checkingOccurrence.contextId.reference, contextId.reference)) {
-            if (!filteredGroupData[groupItemKey]) {
-              filteredGroupData[groupItemKey] = [];
+        for (let check of groupItem) {
+          try {
+            if (isEqual(check.contextId.reference, contextId.reference)) {
+              if (!filteredGroupData[groupItemKey]) {
+                filteredGroupData[groupItemKey] = [];
+              }
+              filteredGroupData[groupItemKey].push(check);
             }
-            filteredGroupData[groupItemKey].push(checkingOccurrence);
+          } catch(e) {
+            console.warn(`Corrupt check found in group "${groupItemKey}"`, check);
           }
         }
       }
