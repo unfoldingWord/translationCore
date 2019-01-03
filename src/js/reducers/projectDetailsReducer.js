@@ -10,7 +10,7 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  toolsCategories: { 
+  toolsCategories: {
     translationWords: ['kt', 'other', 'names']
   }
 };
@@ -143,10 +143,26 @@ export default projectDetailsReducer;
  * @returns {string} - the gateway language code. Default value is "en".
  */
 export const getToolGatewayLanguage = (state, toolName) => {
-  if(state && state.currentProjectToolsSelectedGL.hasOwnProperty(toolName)) {
-    return state.currentProjectToolsSelectedGL[toolName];
+  if(state) {
+    const languages = state.currentProjectToolsSelectedGL;
+    if(languages.hasOwnProperty(toolName) && languages[toolName]) {
+      return languages[toolName];
+    }
+  }
+  return "en";
+};
+
+/**
+ * Returns the progress of a tool
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
+export const getToolProgress = (state, toolName) => {
+  if(state.currentProjectToolsProgress[toolName]) {
+    return state.currentProjectToolsProgress[toolName];
   } else {
-    return "en";
+    return 0;
   }
 };
 
@@ -202,5 +218,19 @@ export const getBookId = state => {
 export const getManifest = (state) =>
   state.manifest;
 
-export const getToolCategories = (state, toolName) =>
-[...state.toolsCategories[toolName]];
+/**
+ * Returns the categories selected for the tool
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
+export const getToolCategories = (state, toolName) => {
+  if(toolName in state.toolsCategories) {
+    return [...state.toolsCategories[toolName]];
+  } else {
+    return [];
+  }
+};
+
+export const getCurrentProjectToolsSelectedGL = (state) =>
+  state.currentProjectToolsSelectedGL;

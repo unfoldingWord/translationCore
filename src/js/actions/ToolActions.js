@@ -53,12 +53,16 @@ export const openTool = (name) => (dispatch, getData) => {
   dispatch({ type: types.START_LOADING });
   setTimeout(() => {
     try {
-      dispatch(resetReducersData());
       dispatch({
         type: types.OPEN_TOOL,
         name
       });
-      dispatch(initializeProjectGroups(name));
+      // TODO: only load the groups data. Do not copy them into the project here.
+      dispatch(initializeProjectGroups(name)).then(() => {
+        dispatch(loadCurrentContextId());
+        dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
+        dispatch(BodyUIActions.toggleHomeView(false));
+      });
     } catch (e) {
       console.warn(e);
       AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));
@@ -68,6 +72,7 @@ export const openTool = (name) => (dispatch, getData) => {
 
 /**
  * Initializes the project's group indices.
+ * TODO: this needs to be split into two actions. 1) to copy group data to the project and 2) to load the data into tc.
  * @param {string} toolName
  * @returns {*}
  */
@@ -106,9 +111,6 @@ export function initializeProjectGroups(toolName) {
       });
       Promise.all(categoryGroupsLoadActions).then(() => {
         dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-        dispatch(loadCurrentContextId());
-        dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
-        dispatch(BodyUIActions.toggleHomeView(false));
         resolve();
       }).catch(reject);
     })
@@ -170,7 +172,7 @@ export function getGroupsData(dispatch, dataDirectory, toolName, bookAbbreviatio
     const groupsDataLoadedIndex = path.join(groupsDataDirectory, '.categories');
     let groupsDataAlreadyLoaded = [];
     let categoriesIndexObject = {
-      current: ['kt', 'other', 'names'],
+      current: toolName === 'translationWords' ? ['kt', 'other', 'names'] : [],
       loaded: []
     };
     if (fs.existsSync(groupsDataLoadedIndex)) {

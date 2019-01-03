@@ -4,51 +4,42 @@ import { connect } from "react-redux";
 import ToolsCards from "../../components/home/toolsManagement/ToolsCards";
 import HomeContainerContentWrapper
   from "../../components/home/HomeContainerContentWrapper";
-import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
+import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import {
-  getTools, getProjectSaveLocation, getProjectBookId
+  getTools, getIsUserLoggedIn, getProjectSaveLocation, getProjectBookId
 } from "../../selectors";
 import { openTool } from "../../actions/ToolActions";
-import path from "path-extra";
-import ospath from "ospath";
-import { getLatestVersionInPath } from "../../helpers/ResourcesHelpers";
-import fs from "fs-extra";
+import { openAlertDialog } from "../../actions/AlertModalActions";
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
     super(props);
-    this.buildCategories = this.buildCategories.bind(this);
+    this.handleSelectTool = this.handleSelectTool.bind(this);
+  }
+
+  componentDidMount() {
     const {tools, reducers} = this.props;
     const projectSaveLocation = getProjectSaveLocation(reducers);
     const bookId = getProjectBookId(reducers);
     if (projectSaveLocation && bookId) {
-      tools.forEach(({name}) => {
-        this.props.actions.loadCurrentCheckCategories(name, bookId, projectSaveLocation);
+      tools.forEach(({name:toolName}) => {
+        this.props.actions.loadCurrentCheckCategories(toolName, bookId, projectSaveLocation);
       });
     }
   }
 
   /**
-   * TODO: move this into {@link ToolsCards}
+   *
+   * @param toolName
    */
-  buildCategories(currentProjectToolsSelectedGL) {
-    const availableCategories = {};
-    Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-      const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
-      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-      const versionDirectory = getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;
-      if (fs.existsSync(versionDirectory))
-        availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
-          fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
-        );
-        if (availableCategories[toolName] && availableCategories[toolName].indexOf('other') === availableCategories[toolName].length - 1) {
-         var otherCat = availableCategories[toolName].splice(availableCategories[toolName].length - 1, availableCategories[toolName].length );
-         availableCategories[toolName].splice(1, 0, ...otherCat);
-        }
-      else availableCategories[toolName] = [];
-    });
-    return availableCategories;
+  handleSelectTool(toolName) {
+    const {isUserLoggedIn, openTool, translate, openAlertDialog} = this.props;
+    if(isUserLoggedIn) {
+      openTool(toolName);
+    } else {
+      openAlertDialog(translate("please_log_in"));
+    }
   }
 
   render() {
@@ -56,9 +47,6 @@ class ToolsManagementContainer extends Component {
       tools,
       reducers: {
         loginReducer: { loggedInUser },
-        settingsReducer: {
-          currentSettings: { developerMode }
-        },
         projectDetailsReducer: {
           manifest,
           projectSaveLocation,
@@ -77,7 +65,7 @@ class ToolsManagementContainer extends Component {
           { app: translate("_.app_name") })}</p>
       </div>
     );
-    const availableCategories = this.buildCategories(currentProjectToolsSelectedGL);
+    const availableCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
     return (
       <HomeContainerContentWrapper
         translate={translate}
@@ -87,6 +75,7 @@ class ToolsManagementContainer extends Component {
           {translate("tools.tools")}
           <ToolsCards
             tools={tools}
+            onSelectTool={this.handleSelectTool}
             availableCategories={availableCategories}
             toolsCategories={toolsCategories}
             manifest={manifest}
@@ -94,11 +83,8 @@ class ToolsManagementContainer extends Component {
             bookName={name}
             loggedInUser={loggedInUser}
             actions={{
-              ...this.props.actions,
-              launchTool: this.props.actions.launchTool(
-                translate("please_log_in"))
+              ...this.props.actions
             }}
-            developerMode={developerMode}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
@@ -111,10 +97,10 @@ class ToolsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    isUserLoggedIn: getIsUserLoggedIn(state),
     tools: getTools(state),
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
-      settingsReducer: state.settingsReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       loginReducer: state.loginReducer,
       invalidatedReducer: state.invalidatedReducer
@@ -124,6 +110,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    openTool: name => dispatch(openTool(name)),
+    openAlertDialog: message => dispatch(openAlertDialog(message)),
     actions: {
       loadCurrentCheckCategories: (toolName, bookName, projectSaveLocation) => {
         dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
@@ -134,15 +122,6 @@ const mapDispatchToProps = (dispatch) => {
       setProjectToolGL: (toolName, selectedGL) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
       },
-      launchTool: (loginMessage) => {
-        return (toolFolderPath, loggedInUser, toolName) => {
-          if (!loggedInUser) {
-            dispatch(AlertModalActions.openAlertDialog(loginMessage));
-            return;
-          }
-          dispatch(openTool(toolName));
-        };
-      },
       updateCheckSelection: (id, value, toolName) => {
         dispatch(
           ProjectDetailsActions.updateCheckSelection(id, value, toolName));
@@ -152,13 +131,11 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
+  isUserLoggedIn: PropTypes.bool.isRequired,
+  openTool: PropTypes.func.isRequired,
+  openAlertDialog: PropTypes.func.isRequired,
   tools: PropTypes.array.isRequired,
   reducers: PropTypes.shape({
-    settingsReducer: PropTypes.shape({
-      currentSettings: PropTypes.shape({
-        developerMode: PropTypes.bool
-      }).isRequired
-    }).isRequired,
     projectDetailsReducer: PropTypes.object.isRequired,
     loginReducer: PropTypes.shape({
       loggedInUser: PropTypes.bool

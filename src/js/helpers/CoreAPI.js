@@ -6,7 +6,7 @@ import {
 import { openIgnorableAlert } from "../actions/AlertActions";
 
 /**
- * Provides an interface for interacting with tC.
+ * Provides an interface with which tools can interact with tC.
  */
 export default class CoreAPI {
   constructor(dispatch) {
