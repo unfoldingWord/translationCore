@@ -263,7 +263,7 @@ export const saveVerseEditsToCSV = (projectPath) => {
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };
-          if (data.contextId.tool === 'wordAlignment') {
+          if (data.contextId.tool === 'wordAlignment' || data.contextId.tool === '[External edit]') {
             _data["gateway Language Quote"] = 'N/A';
             data.contextId.groupId = 'N/A';
             data.contextId.reference.groupId = 'N/A';
