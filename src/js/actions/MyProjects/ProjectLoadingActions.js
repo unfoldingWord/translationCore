@@ -78,10 +78,15 @@ export const openProject = (name, skipValidation=false) => {
         await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
 
         // copy group data
-        const language = getToolGatewayLanguage(getState(), t.name);
-        copyGroupDataToProject(language, t.name, projectDir);
+        // TRICKY: group data is hard coded to grc or en. Why? I have no idea.
+        if(t.name === "translationWords") {
+          copyGroupDataToProject("grc", t.name, projectDir);
+        } else {
+          copyGroupDataToProject("en", t.name, projectDir);
+        }
 
         // select default categories
+        const language = getToolGatewayLanguage(getState(), t.name);
         setDefaultProjectCategories(language, t.name, projectDir);
 
         // connect tool api
