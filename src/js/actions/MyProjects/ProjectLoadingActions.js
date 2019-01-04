@@ -79,12 +79,7 @@ export const openProject = (name, skipValidation=false) => {
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
-        // TODO: could we just hardcode "grc"? why do we need to flip back and forth between "en" and "grc"?
-        if(t.name === "translationWords") {
-          copyGroupDataToProject("grc", t.name, projectDir);
-        } else {
-          copyGroupDataToProject("en", t.name, projectDir);
-        }
+        copyGroupDataToProject("grc", t.name, projectDir);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
