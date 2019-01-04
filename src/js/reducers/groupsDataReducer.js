@@ -80,4 +80,7 @@ const groupsDataReducer = (state = initialState, action) => {
   }
 };
 
+export const getGroupsData = (state) => 
+  state.groupsData;
+
 export default groupsDataReducer;
