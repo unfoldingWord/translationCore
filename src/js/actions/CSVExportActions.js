@@ -263,6 +263,13 @@ export const saveVerseEditsToCSV = (projectPath) => {
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };
+          if (data.contextId.tool === 'wordAlignment' || data.contextId.tool === '[External edit]') {
+            _data["gateway Language Quote"] = 'N/A';
+            data.contextId.groupId = 'N/A';
+            data.contextId.reference.groupId = 'N/A';
+            data.contextId.occurrence = 'N/A';
+            data.contextId.quote = 'N/A';
+          }
           return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
         });
         const dataPath = csvHelpers.dataPath(projectPath);

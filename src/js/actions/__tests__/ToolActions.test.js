@@ -42,21 +42,23 @@ describe('', () => {
         },
         currentProjectToolsSelectedGL: {
           'translationWords': 'en'
-        }
-      },
-      settingsReducer: {
-        currentSettings: {
-          selectedCategories: ['kt']
+        },
+        toolsCategories: {
+          translationWords: ['kt']
         }
       }
     });
     const expectedActions = [
       {type: 'LOAD_GROUPS_INDEX', groupsIndex: expect.any(Array)},
-      {type: 'LOAD_GROUPS_DATA_FROM_FS', allGroupsData: expect.any(Object)},
-      {type: 'VERIFY_GROUP_DATA'},
-      {type: 'LOAD_CURRENT_CONTEXT_ID'},
-      {type: 'TOGGLE_LOADER_MODAL', show: false},
-      {type: 'TOGGLE_HOME_VIEW', boolean: false}
+      {
+        type: 'LOAD_GROUPS_DATA_FROM_FS',
+        allGroupsData: {
+          apostle: expect.any(Array),
+          authority: expect.any(Array),
+          clean: expect.any(Array)
+        }
+      },
+      {type: 'VERIFY_GROUP_DATA'}
     ];
     store.dispatch(actions.initializeProjectGroups('translationWords')).then(() => {
       const receivedActions = store.getActions();

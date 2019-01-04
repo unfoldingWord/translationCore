@@ -11,7 +11,7 @@ import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpe
 import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
 import { saveContextId } from '../helpers/contextIdHelpers';
 import * as ResourcesActions from './ResourcesActions';
-import { getSelectedToolName } from "../selectors";
+import { getSelectedToolName, getGroupsIndex, getGroupsData } from "../selectors";
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
@@ -52,8 +52,8 @@ export const changeCurrentContextId = contextId => {
  */
 function firstContextId(state) {
   let contextId;
-  let { groupsIndex } = state.groupsIndexReducer;
-  let { groupsData } = state.groupsDataReducer;
+  const groupsIndex = getGroupsIndex(state);
+  const groupsData = getGroupsData(state);
   let groupsIndexEmpty = groupsIndex.length === 0;
   let groupsDataEmpty = Object.keys(groupsData).length === 0;
   if (!groupsIndexEmpty && !groupsDataEmpty) {

@@ -77,7 +77,7 @@ const migrateToVersion7 = (projectPath, userName) => {
               if (modifiedTimestamp < verseEditFileName.split('.').slice(0, -1).join('.')) {
                 modifiedTimestamp = generateTimestamp();
               }
-              ProjectOverwriteHelpers.createVerseEdit(projectPath, lastVerse, currentVerse, bookId, chapter, verse, userName, modifiedTimestamp);
+              ProjectOverwriteHelpers.createExternalVerseEdit(projectPath, lastVerse, currentVerse, bookId, chapter, verse, userName, modifiedTimestamp);
             }
           }
         });

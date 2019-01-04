@@ -31,6 +31,9 @@ const groupsIndexReducer = (state = initialState, action) => {
   }
 };
 
+export const getGroupsIndex = (state) => 
+  state.groupsIndex;
+
 function sortIndexBasedOnId(a, b) {
   // if the id string contains chapter_ then remove it so that it doesnt mess up with the sorting
   // otherwise it'd leave it alone
