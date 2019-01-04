@@ -78,7 +78,8 @@ export const openProject = (name, skipValidation=false) => {
         await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
 
         // copy group data
-        // TRICKY: group data is hard coded to grc or en. Why? I have no idea.
+        // TRICKY: group data must be tied to the original language.
+        // TODO: could we just hardcode "grc"? why do we need to flip back and forth between "en" and "grc"?
         if(t.name === "translationWords") {
           copyGroupDataToProject("grc", t.name, projectDir);
         } else {
