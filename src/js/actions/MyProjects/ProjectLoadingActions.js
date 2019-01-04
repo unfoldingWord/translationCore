@@ -13,7 +13,11 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
   getActiveLocaleLanguage,
-  getProjectManifest, getSourceBook, getTargetBook, getToolGatewayLanguage,
+  getProjectManifest,
+  getProjectSaveLocation,
+  getSourceBook,
+  getTargetBook,
+  getToolGatewayLanguage,
   getTools,
   getTranslate,
   getUsername
@@ -67,6 +71,9 @@ export const openProject = (name, skipValidation=false) => {
         await dispatch(validateProject(projectDir));
       }
 
+      // TRICKY: validation may have changed the project path
+      const validProjectDir = getProjectSaveLocation(getState());
+
       // load target book
       dispatch(loadTargetLanguageBook());
 
@@ -79,14 +86,14 @@ export const openProject = (name, skipValidation=false) => {
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
-        copyGroupDataToProject("grc", t.name, projectDir);
+        copyGroupDataToProject("grc", t.name, validProjectDir);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
-        setDefaultProjectCategories(language, t.name, projectDir);
+        setDefaultProjectCategories(language, t.name, validProjectDir);
 
         // connect tool api
-        const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
+        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
         t.api.triggerWillConnect(toolProps);
       }
 
