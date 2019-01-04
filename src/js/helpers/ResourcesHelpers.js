@@ -48,15 +48,25 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
 
     for (const category of categories) {
       if (!project.isCategoryLoaded(toolName, category)) {
-        // copy un-loaded category group data into project
-        const resourceCategoryDir = path.join(helpDir, category);
-        const files = fs.readdirSync(resourceCategoryDir);
-        for (const f of files) {
-          const dataPath = path.join(resourceCategoryDir, f);
-          project.importCategoryGroupData(toolName, dataPath);
+        // TRICKY: some helps do not have groups nested under categories
+        const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
+        const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
+
+        let groupsDir = resourceCategoryDir;
+        if(!fs.pathExistsSync(resourceCategoryDir)) {
+          groupsDir = altResourceCategoryDir;
         }
-        // loading complete
-        project.setCategoryLoaded(toolName, category);
+
+        // copy un-loaded category group data into project
+        if(fs.pathExistsSync(groupsDir)) {
+          const files = fs.readdirSync(groupsDir);
+          for (const f of files) {
+            const dataPath = path.join(groupsDir, f);
+            project.importCategoryGroupData(toolName, dataPath);
+          }
+          // loading complete
+          project.setCategoryLoaded(toolName, category);
+        }
       }
     }
   } else {
