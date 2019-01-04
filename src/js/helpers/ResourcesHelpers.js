@@ -27,6 +27,7 @@ export const STATIC_RESOURCES_PATH = path.join(__dirname,
 /**
  * Copies all of a tool's group data from the global resources into a project.
  * This is boiler plate to keep a separation of concerns between the global resources and projects.
+ * NOTE: this is designed to work on any gateway language, however it should only be with original languages.
  * @param {string} gatewayLanguage - the gateway language code
  * @param {string} toolName - the name of the tool for which helps will be copied
  * @param {string} projectDir - path to the project directory
@@ -61,8 +62,10 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
         if(fs.pathExistsSync(groupsDir)) {
           const files = fs.readdirSync(groupsDir);
           for (const f of files) {
-            const dataPath = path.join(groupsDir, f);
-            project.importCategoryGroupData(toolName, dataPath);
+            if(path.extname(f).toLowerCase() === ".json") {
+              const dataPath = path.join(groupsDir, f);
+              project.importCategoryGroupData(toolName, dataPath);
+            }
           }
           // loading complete
           project.setCategoryLoaded(toolName, category);
