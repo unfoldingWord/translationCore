@@ -35,13 +35,15 @@ describe("copy group data", () => {
     fs.lstatSync.mockReturnValue({
       isDirectory: () => true
     });
+    fs.pathExistsSync.mockReturnValue(true);
+    mockGetBookId.mockReturnValue("tit");
     mockIsCategoryLoaded.mockReturnValueOnce(false);
     mockIsCategoryLoaded.mockReturnValueOnce(true); // other category is loaded and will be skipped
-    fs.readdirSync.mockReturnValueOnce(["group1", "group2"]);
+    fs.readdirSync.mockReturnValueOnce(["group1.json", "group2.json", "folder"]);
 
     copyGroupDataToProject("lang", "tool", "project/");
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", "/help/dir/names/group1");
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", "/help/dir/names/group2");
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", "/help/dir/names/groups/tit/group1.json");
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", "/help/dir/names/groups/tit/group2.json");
     expect(mockImportCategoryGroupData.mock.calls.length).toBe(2);
     expect(mockSetCategoryLoaded).toBeCalledWith("tool", "names");
     expect(mockSetCategoryLoaded.mock.calls.length).toBe(1);
@@ -52,7 +54,7 @@ describe("copy group data", () => {
     mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
     fs.readdirSync.mockReturnValueOnce([]);
 
-    copyGroupDataToProject("lang", "tool", "project/");
+    expect(() => copyGroupDataToProject("lang", "tool", "project/")).toThrow();
     expect(mockImportCategoryGroupData).not.toBeCalled(); // nothing to import
     expect(mockSetCategoryLoaded).not.toBeCalled();
     expect(generateChapterGroupData).not.toBeCalled();
