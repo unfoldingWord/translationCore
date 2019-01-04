@@ -6,7 +6,7 @@
   "description": "A bridge between TS and TM",
   "main": "src/es6-init.js",
   "engines": {
-    "node": ">=8.9.3 <9"
+    "node": ">=8.15.0 <9"
   },
   "scripts": {
     "release-content-update": "node scripts/releaseContentUpdate",
