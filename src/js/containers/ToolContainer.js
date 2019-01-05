@@ -47,23 +47,6 @@ class ToolContainer extends Component {
     this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
-  componentWillMount () {
-    // const { toolApi, supportingToolApis } = this.props;
-
-    // connect to APIs
-    // const toolProps = this.makeToolProps();
-    // for (const key of Object.keys(supportingToolApis)) {
-    //   supportingToolApis[key].triggerWillConnect(toolProps);
-    // }
-    // if (toolApi) {
-    //   const activeToolProps = {
-    //     ...toolProps,
-    //     tools: supportingToolApis
-    //   };
-    //   toolApi.triggerWillConnect(activeToolProps);
-    // }
-  }
-
   componentWillUnmount () {
     const { toolApi, supportingToolApis } = this.props;
     for (const key of Object.keys(supportingToolApis)) {
@@ -121,15 +104,15 @@ class ToolContainer extends Component {
     } = nextProps;
     return {
       // project api
-      readProjectDir: projectApi.readDir,
-      readProjectDirSync: projectApi.readDirSync,
-      writeProjectData: projectApi.writeData,
-      writeProjectDataSync: projectApi.writeDataSync,
-      readProjectData: projectApi.readData,
-      readProjectDataSync: projectApi.readDataSync,
-      projectDataPathExists: projectApi.pathExists,
-      projectDataPathExistsSync: projectApi.pathExistsSync,
-      deleteProjectFile: projectApi.deleteFile,
+      readProjectDir: projectApi.readDataDir,
+      readProjectDirSync: projectApi.readDataDirSync,
+      writeProjectData: projectApi.writeDataFile,
+      writeProjectDataSync: projectApi.writeDataFileSync,
+      readProjectData: projectApi.readDataFile,
+      readProjectDataSync: projectApi.readDataFileSync,
+      projectDataPathExists: projectApi.dataPathExists,
+      projectDataPathExistsSync: projectApi.dataPathExistsSync,
+      deleteProjectFile: projectApi.deleteDataFile,
 
       // tC api
       showAlert: coreApi.showAlert,
@@ -164,7 +147,7 @@ class ToolContainer extends Component {
       },
       projectFileExistsSync: (...args) => {
         console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
-        return projectApi.pathExistsSync(...args);
+        return projectApi.dataPathExistsSync(...args);
       },
       get targetBible() {
         console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');

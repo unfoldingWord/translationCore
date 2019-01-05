@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
-import { getLatestVersionInPath } from './ResourcesHelpers';
+import ResourceAPI from "./ResourceAPI";
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
@@ -35,7 +35,7 @@ export const getLocalResourceList = () => {
 
       bibleIds.forEach(bibleId => {
         const bibleIdPath = path.join(biblesPath, bibleId);
-        const bibleLatestVersion = getLatestVersionInPath(bibleIdPath);
+        const bibleLatestVersion = ResourceAPI.getLatestVersion(bibleIdPath);
         if (bibleLatestVersion) {
           const pathToBibleManifestFile = path.join(bibleLatestVersion, 'manifest.json');
           if (fs.existsSync(pathToBibleManifestFile)) {
@@ -57,7 +57,7 @@ export const getLocalResourceList = () => {
 
       tHelpsResources.forEach(tHelpsId => {
         const tHelpResource = path.join(tHelpsPath, tHelpsId);
-        const tHelpsLatestVersion = getLatestVersionInPath(tHelpResource);
+        const tHelpsLatestVersion = ResourceAPI.getLatestVersion(tHelpResource);
 
         if (tHelpsLatestVersion) {
           const pathTotHelpsManifestFile = path.join(tHelpsLatestVersion, 'manifest.json');

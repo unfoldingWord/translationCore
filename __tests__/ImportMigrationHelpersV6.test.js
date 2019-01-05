@@ -51,6 +51,7 @@ describe('migrateToVersion6', () => {
   });
 
   it('with no tc_version expect to set', () => {
+    global.console = {error: jest.fn()};
     // given
 
     // when
@@ -60,9 +61,11 @@ describe('migrateToVersion6', () => {
     const version = Version.getVersionFromManifest(PROJECT_PATH);
     expect(MigrateToVersion6.MIGRATE_MANIFEST_VERSION).toBe(6); // this shouldn't change
     expect(version).toBe(MigrateToVersion6.MIGRATE_MANIFEST_VERSION);
+    expect(console.error).toHaveBeenCalled();
   });
 
   it('with lower tc_version expect to update version', () => {
+    global.console = {error: jest.fn()};
     // given
     Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion6.MIGRATE_MANIFEST_VERSION - 1);
 
@@ -72,6 +75,7 @@ describe('migrateToVersion6', () => {
     // then
     const version = Version.getVersionFromManifest(PROJECT_PATH);
     expect(version).toBe(MigrateToVersion6.MIGRATE_MANIFEST_VERSION);
+    expect(console.error).toHaveBeenCalled();
   });
 
   it('with same tc_version expect to leave alone', () => {

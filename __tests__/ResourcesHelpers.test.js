@@ -3,10 +3,15 @@ import path from 'path';
 jest.unmock('fs-extra');
 // helpers
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
+import {
+  generateChapterGroupData,
+  generateChapterGroupIndex
+} from "../src/js/helpers/groupDataHelpers";
+import ResourceAPI from "../src/js/helpers/ResourceAPI";
 
 describe('ResourcesHelpers.chapterGroupsIndex', () => {
   it('should return groupsIndex array for chapters 1-150', function () {
-    const output = ResourcesHelpers.chapterGroupsIndex();
+    const output = generateChapterGroupIndex();
     expect(output.constructor).toBe(Array);
     expect(output.length).toEqual(150);
     expect(output[0].id).toBe('chapter_1');
@@ -18,7 +23,7 @@ describe('ResourcesHelpers.chapterGroupsIndex', () => {
 
 describe('ResourcesHelpers.chapterGroupsData', () => {
   it('should return groupsData array for Titus', function () {
-    const output = ResourcesHelpers.chapterGroupsData('tit', 'toolTemplate');
+    const output = generateChapterGroupData('tit', 'toolTemplate');
     expect(output.constructor).toBe(Array);
     expect(output.length).toEqual(3);
     expect(output[0].constructor).toBe(Array);
@@ -48,23 +53,22 @@ describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
         let resourcePath = path.join(__dirname, 'fixtures/resources', property);
-        console.log(resourcePath);
-        let versionPath = ResourcesHelpers.getLatestVersionInPath(resourcePath);
+        let versionPath = ResourceAPI.getLatestVersion(resourcePath);
         expect(versionPath).toEqual(path.join(resourcePath, resourcePathsExpectedVersions[property]));
       }
     }
   });
   it('Test getLatestVersionInPath with a directory multiple subdirectories and files', () => {
     const testPath = path.join('__tests__', 'fixtures', 'latestVersionTest');
-    const versionPath = ResourcesHelpers.getLatestVersionInPath(testPath);
+    const versionPath = ResourceAPI.getLatestVersion(testPath);
     const expectedResult = path.join(testPath, 'v100.2a');
     expect(versionPath).toEqual(expectedResult);
   });
 
   it('Test various paths', ()=>{
-    expect(ResourcesHelpers.getLatestVersionInPath(null)).toEqual(null); // invalid dir
-    expect(ResourcesHelpers.getLatestVersionInPath(path.join('path', 'does', 'not', 'exist'))).toEqual(null); // invalid directory
-    expect(ResourcesHelpers.getLatestVersionInPath(path.join('__tests__', 'fixtures', 'latestVersionTest', 'v0'))).toEqual(null); // directory with no versions
+    expect(ResourceAPI.getLatestVersion(null)).toEqual(null); // invalid dir
+    expect(ResourceAPI.getLatestVersion(path.join('path', 'does', 'not', 'exist'))).toEqual(null); // invalid directory
+    expect(ResourceAPI.getLatestVersion(path.join('__tests__', 'fixtures', 'latestVersionTest', 'v0'))).toEqual(null); // directory with no versions
   });
 });
 

@@ -7,7 +7,6 @@ import path from 'path-extra';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 //actions
 import * as AlertModalActions from './AlertModalActions';
-import * as TargetLanguageActions from './TargetLanguageActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as WordAlignmentActions from './WordAlignmentActions';
@@ -19,6 +18,7 @@ import {getTranslate, getUsername} from '../selectors';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 //components
 import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
+import { generateTargetBibleFromTstudioProjectPath } from "../helpers/TargetLanguageHelpers";
 
 /**
  * Action to initiate an USFM export
@@ -157,7 +157,7 @@ export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let bookName = manifest.project.id;
   if (!fs.existsSync(path.join(projectPath, bookName))) {
-    TargetLanguageActions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
+    generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
   }
   let usfmJSONObject = {};
   let currentFolderChapters = fs.readdirSync(path.join(projectPath, bookName));

@@ -1,22 +1,22 @@
 /* eslint-disable no-console */
-import consts from './ActionTypes';
-import fs from 'fs-extra';
-import path from 'path-extra';
-import ospath from 'ospath';
+import consts from "./ActionTypes";
+import fs from "fs-extra";
+import path from "path-extra";
+import ospath from "ospath";
+import _ from "lodash";
+import SimpleCache from "../helpers/SimpleCache";
+import { getContext, getSelectedToolName } from "../selectors";
 // actions
-import * as TargetLanguageActions from './TargetLanguageActions';
+import * as SettingsActions from "./SettingsActions";
 // helpers
-import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
-import * as SettingsHelpers from '../helpers/SettingsHelpers';
-import { DEFAULT_GATEWAY_LANGUAGE } from '../helpers/gatewayLanguageHelpers';
+import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
+import * as SettingsHelpers from "../helpers/SettingsHelpers";
+import { DEFAULT_GATEWAY_LANGUAGE } from "../helpers/gatewayLanguageHelpers";
+import * as BibleHelpers from "../helpers/bibleHelpers";
+import ResourceAPI from "../helpers/ResourceAPI";
+
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
-import _ from 'lodash';
-import { getContext, getSelectedToolName } from "../selectors";
-import * as BibleHelpers from "../helpers/bibleHelpers";
-import SimpleCache from "../helpers/SimpleCache";
-import * as SettingsActions from "./SettingsActions";
-
 const bookCache = new SimpleCache();
 
 /**
@@ -272,38 +272,43 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
 };
 
 /**
- * Loads book data for each of the languages.
- * @deprecated This is deprecated. use {@link loadBookTranslations} instead.
- * @param {Object} contextId
+ * Loads the target language book
+ * @returns {Function}
  */
-export const loadBooks = contextId => dispatch => {
-  if(contextId && contextId.reference) {
-    return dispatch(loadBookTranslations(contextId.reference.bookId));
-  } else {
-    return Promise.reject("Invalid context received in action");
-  }
+export function loadTargetLanguageBook() {
+  return (dispatch, getState) => {
+    const { projectDetailsReducer } = getState();
+    const bookId = projectDetailsReducer.manifest.project.id;
+    const projectPath = projectDetailsReducer.projectSaveLocation;
+    const bookPath = path.join(projectPath, bookId);
+    const resourceId = "targetLanguage";
+    const bibleId = "targetBible";
 
-  // return loadBookTranslations()
-  // return new Promise((resolve, reject) => {
-  //   try {
-  //     let bookId = contextId.reference.bookId;
-  //     dispatch(updateOlPaneSettings(bookId));
-  //     // load source bibles
-  //     const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
-  //
-  //     for (let i = 0, len = resources.length; i < len; i++) {
-  //       const resource = resources[i];
-  //       dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
-  //     }
-  //     // load target bible
-  //     dispatch(TargetLanguageActions.loadTargetLanguageBible());
-  //     resolve();
-  //   } catch(err) {
-  //     console.warn(err);
-  //     reject(err);
-  //   }
-  // });
-};
+    if (fs.existsSync(bookPath)) {
+      const bookData = {};
+      const files = fs.readdirSync(bookPath);
+
+      for (let i = 0, len = files.length; i < len; i++) {
+        const file = files[i];
+        const chapterNumber = path.basename(file, ".json");
+        if (!isNaN(chapterNumber)) {
+          // load chapter
+          bookData[chapterNumber] = fs.readJsonSync(
+            path.join(bookPath, file));
+
+        } else if (file === "manifest.json") {
+          // load manifest
+          bookData["manifest"] = fs.readJsonSync(
+            path.join(bookPath, file));
+        }
+      }
+
+      dispatch(addNewBible(resourceId, bibleId, bookData));
+    } else {
+      console.warn(`Target book was not found at ${bookPath}`);
+    }
+  };
+}
 
 /**
  * Loads book data for each of the languages.
@@ -316,17 +321,27 @@ export const loadBookTranslations = (bookId, toolName=null) => async (dispatch, 
     toolName = getSelectedToolName(getState());
   }
 
+  // translations of the source book
+  dispatch(loadSourceBookTranslations(bookId, toolName));
+
+  // target book
+  dispatch(loadTargetLanguageBook());
+};
+
+/**
+ * Loads the translations of the source book required by the tool.
+ * @param {string} bookId - the id of the source book to load
+ * @param {string} toolName - the name of the tool for which the translations will be loaded.
+ * @returns {Function}
+ */
+export const loadSourceBookTranslations = (bookId, toolName) => async (dispatch, getState) => {
   dispatch(updateOlPaneSettings(bookId));
 
-  // source bibles
   const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);
   for (let i = 0, len = resources.length; i < len; i++) {
     const resource = resources[i];
     dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
   }
-
-  // target bible
-  dispatch(TargetLanguageActions.loadTargetLanguageBible());
 };
 
 /**
@@ -399,7 +414,7 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   for(let i = 0, len = languageDirs.length; i < len; ++i) {
     let languageDir = languageDirs[i];
     let typePath = path.join(USER_RESOURCES_PATH, languageDir, 'translationHelps', resourceType);
-    let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath) || typePath;
+    let versionPath = ResourceAPI.getLatestVersion(typePath) || typePath;
     for(let j = 0, jLen = categories.length; j < jLen; ++j) {
       let categoryDir = categories[j];
       if (resourceType === 'translationWords') {
