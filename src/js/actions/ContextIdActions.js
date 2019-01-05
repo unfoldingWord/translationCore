@@ -10,13 +10,13 @@ import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpe
 // actions
 import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
 import { saveContextId } from '../helpers/contextIdHelpers';
-import * as ResourcesActions from './ResourcesActions';
 import { getSelectedToolName, getGroupsIndex, getGroupsData } from "../selectors";
+
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
 /**
- * @deprecated - tool data will eventually move into the respective tools.
+ * TODO: tool data should eventually move into the respective tools.
  * @param dispatch
  */
 function loadCheckData(dispatch) {
@@ -39,8 +39,6 @@ export const changeCurrentContextId = contextId => {
     });
     if (contextId) {
       loadCheckData(dispatch);
-      // TODO: don't load bibles every time the context changes.
-      dispatch(ResourcesActions.loadBooks(contextId));
       let state = getState();
       saveContextId(state, contextId);
     }
@@ -60,8 +58,8 @@ function firstContextId(state) {
     let valid = false, i = 0;
     while (!valid && i < groupsIndex.length - 1) {
       let groupId = groupsIndex[i].id;
-      let groupData = groupsData[groupId];
-      if (!!groupData && !!groupData[0]) contextId = groupData[0].contextId;
+      let data = groupsData[groupId];
+      if (!!data && !!data[0]) contextId = data[0].contextId;
       valid = (contextId?true:false);
       i++;
     }

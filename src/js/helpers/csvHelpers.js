@@ -3,8 +3,8 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import csv from 'csv';
 // helpers
-import { getLatestVersionInPath } from './ResourcesHelpers';
 import * as groupsIndexHelpers from './groupsIndexHelpers';
+import ResourceAPI from "./ResourceAPI";
 
 const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tcResources', 'en', 'translationHelps');
 let tWIndex = [];
@@ -22,7 +22,7 @@ function cacheIndicies() {
 
   // load tW index
   const tWpath = path.join(tHelpsPath, 'translationWords');
-  let tWversionPath = getLatestVersionInPath(tWpath) || tWpath;
+  let tWversionPath = ResourceAPI.getLatestVersion(tWpath) || tWpath;
   const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
   const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
   const tWotherIndexPath = path.join(tWversionPath, 'other', 'index.json');

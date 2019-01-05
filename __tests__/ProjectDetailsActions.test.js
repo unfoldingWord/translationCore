@@ -1,5 +1,6 @@
 /* eslint-env jest */
 jest.mock('fs-extra');
+jest.mock('../src/js/helpers/ProjectAPI');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -7,6 +8,7 @@ import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
+import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -434,7 +436,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       const copyResourceFiles = ['grc', 'en'];
       fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
     });
-  
+
     afterAll(() => {
       fs.__resetMockFS();
     });
@@ -453,6 +455,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
           }
         }
       };
+      mockGetSelectedCategories.mockReturnValue(["names"]);
       const store = mockStore(initialState);
       store.dispatch(actions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
       expect(store.getActions()).toMatchObject(expectedActions);
@@ -474,6 +477,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
           }
         }
       };
+      mockGetSelectedCategories.mockReturnValue(["names"]);
       const store = mockStore(initialState);
       store.dispatch(actions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
       expect(store.getActions()).toMatchObject(expectedActions);

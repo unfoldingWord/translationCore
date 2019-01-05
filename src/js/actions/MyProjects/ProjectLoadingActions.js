@@ -13,16 +13,26 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
   getActiveLocaleLanguage,
-  getProjectManifest, getSourceBook, getTargetBook,
+  getProjectManifest,
+  getProjectSaveLocation,
+  getSourceBook,
+  getTargetBook,
+  getToolGatewayLanguage,
   getTools,
   getTranslate,
   getUsername
 } from "../../selectors";
 import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
-import { loadBookTranslations } from "../ResourcesActions";
+import {
+  loadSourceBookTranslations,
+  loadTargetLanguageBook
+} from "../ResourcesActions";
 import ProjectAPI from "../../helpers/ProjectAPI";
 import CoreAPI from "../../helpers/CoreAPI";
-import { resetReducersData } from "../ToolActions";
+import {
+  copyGroupDataToProject,
+  setDefaultProjectCategories
+} from "../../helpers/ResourcesHelpers";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -44,31 +54,46 @@ export const openProject = (name, skipValidation=false) => {
     const translate = getTranslate(getState());
 
     try {
-      dispatch(resetReducersData());
+      dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+      dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
+
       dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(
-        openAlertDialog(translate('projects.loading_project_alert'), true));
+      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
+
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
 
       // TODO: this is a temporary hack. Eventually we will always validate the project
-      // but we need to refactored the online and local import functions first.
+      // but we need to refactored the online and local import functions first so there is no duplication.
       if(!skipValidation) {
         await dispatch(validateProject(projectDir));
       }
 
-      // load the book data
-      const manifest = getProjectManifest(getState());
-      await dispatch(loadBookTranslations(manifest.project.id, name));
+      // TRICKY: validation may have changed the project path
+      const validProjectDir = getProjectSaveLocation(getState());
 
-      // TODO: copy the groups data into the project.
+      // load target book
+      dispatch(loadTargetLanguageBook());
 
       // connect the tools
+      const manifest = getProjectManifest(getState());
       const tools = getTools(getState());
       for (const t of tools) {
-        const toolProps = makeToolProps(dispatch, getState(), projectDir, manifest.project.id);
+        // load source book translations
+        await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
+
+        // copy group data
+        // TRICKY: group data must be tied to the original language.
+        copyGroupDataToProject("grc", t.name, validProjectDir);
+
+        // select default categories
+        const language = getToolGatewayLanguage(getState(), t.name);
+        setDefaultProjectCategories(language, t.name, validProjectDir);
+
+        // connect tool api
+        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
         t.api.triggerWillConnect(toolProps);
       }
 
@@ -85,7 +110,6 @@ export const openProject = (name, skipValidation=false) => {
   };
 };
 
-//
 /**
  * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
  * This is just a temporary prop generator until we can properly abstract the tc api.
@@ -104,15 +128,15 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
 
   return {
     // project api
-    readProjectDir: projectApi.readDir,
-    readProjectDirSync: projectApi.readDirSync,
-    writeProjectData: projectApi.writeData,
-    writeProjectDataSync: projectApi.writeDataSync,
-    readProjectData: projectApi.readData,
-    readProjectDataSync: projectApi.readDataSync,
-    projectDataPathExists: projectApi.pathExists,
-    projectDataPathExistsSync: projectApi.pathExistsSync,
-    deleteProjectFile: projectApi.deleteFile,
+    readProjectDir: projectApi.readDataDir,
+    readProjectDirSync: projectApi.readDataDirSync,
+    writeProjectData: projectApi.writeDataFile,
+    writeProjectDataSync: projectApi.writeDataFileSync,
+    readProjectData: projectApi.readDataFile,
+    readProjectDataSync: projectApi.readDataFileSync,
+    projectDataPathExists: projectApi.dataPathExists,
+    projectDataPathExistsSync: projectApi.dataPathExistsSync,
+    deleteProjectFile: projectApi.deleteDataFile,
 
     // tC api
     showDialog: coreApi.showDialog,
@@ -144,7 +168,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     },
     projectFileExistsSync: (...args) => {
       console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
-      return projectApi.pathExistsSync(...args);
+      return projectApi.dataPathExistsSync(...args);
     },
     get targetBible() {
       console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');

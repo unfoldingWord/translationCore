@@ -1,5 +1,7 @@
 /* eslint-env jest */
 
+import ResourceAPI from "../src/js/helpers/ResourceAPI";
+
 jest.mock('fs-extra');
 import ospath from "ospath";
 import path from "path-extra";
@@ -125,7 +127,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
       setupDummyHelps('grk');
-      const ugntVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'grc/bibles/ugnt'));
+      const ugntVersionPath = ResourceAPI.getLatestVersion(path.join(RESOURCE_PATH, 'grc/bibles/ugnt'));
       setCheckingLevel(path.join(ugntVersionPath, 'manifest.json'), 1);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);

@@ -3,18 +3,6 @@
 exports[`ProjectLoadingActions.migrateValidateLoadProject should just open project if project name is valid 1`] = `
 Array [
   Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-  },
-  Object {
-    "type": "CLEAR_CONTEXT_ID",
-  },
-  Object {
-    "type": "CLEAR_ALIGNMENT_DATA",
-  },
-  Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
@@ -261,18 +249,6 @@ Array [
 
 exports[`ProjectLoadingActions.migrateValidateLoadProject should open to details screen if project name is not valid 1`] = `
 Array [
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-  },
-  Object {
-    "type": "CLEAR_CONTEXT_ID",
-  },
-  Object {
-    "type": "CLEAR_ALIGNMENT_DATA",
-  },
   Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
@@ -673,18 +649,6 @@ Array [
 exports[`loadProject displays the details screen of an invalid project 1`] = `
 Array [
   Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-  },
-  Object {
-    "type": "CLEAR_CONTEXT_ID",
-  },
-  Object {
-    "type": "CLEAR_ALIGNMENT_DATA",
-  },
-  Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
@@ -1083,18 +1047,6 @@ Array [
 
 exports[`loadProject opens a valid project 1`] = `
 Array [
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-  },
-  Object {
-    "type": "CLEAR_CONTEXT_ID",
-  },
-  Object {
-    "type": "CLEAR_ALIGNMENT_DATA",
-  },
   Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
