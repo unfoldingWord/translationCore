@@ -15,7 +15,8 @@ import {
   getHomeScreenStep,
   getActiveHomeScreenSteps,
   getProjectNickname,
-  getProjectName
+  getProjectName,
+  getSelectedToolTitle
 } from '../../../selectors';
 import {connect} from 'react-redux';
 
@@ -28,7 +29,8 @@ const mapStateToProps = (state) => {
     projectName: getProjectName(state),
     stepIndex: getHomeScreenStep(state),
     activeSteps: getActiveHomeScreenSteps(state),
-    projectNickname: getProjectNickname(state)
+    projectNickname: getProjectNickname(state),
+    toolName: getSelectedToolTitle(state)
   };
 };
 
@@ -56,7 +58,8 @@ class HomeStepper extends Component {
       isProjectLoaded,
       projectName,
       projectNickname,
-      goToStep
+      goToStep,
+      toolName
     } = this.props;
 
     const userLabel = isUserLoggedIn ? username : translate('user');
@@ -64,11 +67,12 @@ class HomeStepper extends Component {
     const {hoverProjectName, displayedProjectLabel} = ProjectDetailsHelpers.getProjectLabel(isProjectLoaded, projectName,
             translate, projectNickname, project_max_length);
 
+    const toolLabel = toolName || translate('tool');
     const labels = [
       translate('home'),
       userLabel,
       displayedProjectLabel,
-      translate('tool')
+      toolLabel
     ];
     const colors = bodyUIHelpers.getIconColorFromIndex(stepIndex, activeSteps);
     const icons = [
@@ -135,7 +139,8 @@ HomeStepper.propTypes = {
   activeSteps: PropTypes.array,
   goToStep: PropTypes.func,
   translate: PropTypes.func.isRequired,
-  projectNickname: PropTypes.string
+  projectNickname: PropTypes.string,
+  toolName: PropTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeStepper);
