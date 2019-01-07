@@ -162,6 +162,40 @@ describe('SelectionsActions.validateSelections', () => {
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
   });
 
+  it('"servant of God" selection with footnote not edited', () => {
+    // given
+    const targetVerse =  "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
+
+    // when
+    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+  });
+
+  it('"servant of God" selection with footnote and edited', () => {
+    // given
+    const targetVerse =  "Paul, a servan of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
+
+    // when
+    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
+  });
+
   it('all selections edited', () => {
     // given
     const targetVerse =  "";
