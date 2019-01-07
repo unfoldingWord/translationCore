@@ -146,7 +146,7 @@ export function getExportType(projectPath) {
  */
 export function getUsfm2ExportFile(projectPath) {
   const usfmJSONObject = setUpUSFMJSONObject(projectPath);
-  return usfm.toUSFM(usfmJSONObject);
+  return usfm.toUSFM(usfmJSONObject, {forcedNewLines: true});
 }
 
 /**
