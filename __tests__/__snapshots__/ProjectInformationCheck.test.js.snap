@@ -158,9 +158,46 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
               className="project-details-left-column project-details-column"
             >
               <div
-                className="project-details-item language-name-textbox"
+                className="project-details-item language-name-textbox select-field"
                 id="Language-Name-TextBox-AutoComplete-wrapper"
               >
+                <label
+                  htmlFor="Language-Name-TextBox-AutoComplete"
+                  style={
+                    Object {
+                      "margin": 0,
+                    }
+                  }
+                >
+                  <svg
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "color": "#000000",
+                        "display": "inline-block",
+                        "fill": "currentColor",
+                        "height": "16px",
+                        "muiPrepared": true,
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                        "verticalAlign": "bottom",
+                        "width": "16px",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
+                    />
+                  </svg>
+                   
+                  projects.language_name
+                   
+                  <span
+                    className="required"
+                  />
+                </label>
                 <div
                   style={
                     Object {
@@ -181,7 +218,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         "display": "inline-block",
                         "fontFamily": "Roboto, sans-serif",
                         "fontSize": 16,
-                        "height": 72,
+                        "height": 48,
                         "lineHeight": "24px",
                         "muiPrepared": true,
                         "position": "relative",
@@ -190,60 +227,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       }
                     }
                   >
-                    <label
-                      className={undefined}
-                      htmlFor="Language-Name-TextBox-AutoComplete"
-                      onClick={undefined}
-                      style={
-                        Object {
-                          "color": "var(--text-color-dark)",
-                          "fontSize": "22px",
-                          "fontWeight": "bold",
-                          "lineHeight": "22px",
-                          "muiPrepared": true,
-                          "pointerEvents": "none",
-                          "position": "absolute",
-                          "top": 38,
-                          "transform": "scale(0.75) translate(0, -28px)",
-                          "transformOrigin": "left top",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                          "zIndex": 1,
-                        }
-                      }
-                    >
-                      <div>
-                        <svg
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          style={
-                            Object {
-                              "color": "#000000",
-                              "display": "inline-block",
-                              "fill": "currentColor",
-                              "height": "28px",
-                              "muiPrepared": true,
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "width": "28px",
-                            }
-                          }
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
-                          />
-                        </svg>
-                         
-                        <span>
-                          projects.language_name
-                        </span>
-                         
-                        <span
-                          className="required"
-                        />
-                      </div>
-                    </label>
                     <input
                       autoComplete="off"
                       disabled={false}
@@ -260,12 +243,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "appearance": "textfield",
                           "backgroundColor": "rgba(0,0,0,0)",
                           "border": "none",
-                          "boxSizing": "border-box",
                           "color": "rgba(0, 0, 0, 0.87)",
                           "cursor": "inherit",
                           "font": "inherit",
                           "height": "100%",
-                          "marginTop": 14,
                           "muiPrepared": true,
                           "outline": "none",
                           "padding": 0,
@@ -495,9 +476,48 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
               className="project-details-left-column project-details-column"
             >
               <div
-                className="project-details-item language-id-textbox"
+                className="project-details-item language-id-textbox select-field"
                 id="Language-Id-TextBox-AutoComplete-wrapper"
               >
+                <label
+                  htmlFor="Language-Id-TextBox-AutoComplete"
+                  style={
+                    Object {
+                      "margin": 0,
+                    }
+                  }
+                >
+                  <svg
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "color": "#000000",
+                        "display": "inline-block",
+                        "fill": "currentColor",
+                        "height": "16px",
+                        "muiPrepared": true,
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                        "verticalAlign": "bottom",
+                        "width": "16px",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
+                    />
+                  </svg>
+                   
+                  <span>
+                    projects.language_code
+                  </span>
+                   
+                  <span
+                    className="required"
+                  />
+                </label>
                 <div
                   style={
                     Object {
@@ -518,7 +538,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         "display": "inline-block",
                         "fontFamily": "Roboto, sans-serif",
                         "fontSize": 16,
-                        "height": 72,
+                        "height": 48,
                         "lineHeight": "24px",
                         "muiPrepared": true,
                         "position": "relative",
@@ -527,60 +547,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       }
                     }
                   >
-                    <label
-                      className={undefined}
-                      htmlFor="Language-Id-TextBox-AutoComplete"
-                      onClick={undefined}
-                      style={
-                        Object {
-                          "color": "var(--text-color-dark)",
-                          "fontSize": "22px",
-                          "fontWeight": "bold",
-                          "lineHeight": "22px",
-                          "muiPrepared": true,
-                          "pointerEvents": "none",
-                          "position": "absolute",
-                          "top": 38,
-                          "transform": "scale(0.75) translate(0, -28px)",
-                          "transformOrigin": "left top",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                          "zIndex": 1,
-                        }
-                      }
-                    >
-                      <div>
-                        <svg
-                          onMouseEnter={[Function]}
-                          onMouseLeave={[Function]}
-                          style={
-                            Object {
-                              "color": "#000000",
-                              "display": "inline-block",
-                              "fill": "currentColor",
-                              "height": "28px",
-                              "muiPrepared": true,
-                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                              "userSelect": "none",
-                              "width": "28px",
-                            }
-                          }
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
-                          />
-                        </svg>
-                         
-                        <span>
-                          projects.language_code
-                        </span>
-                         
-                        <span
-                          className="required"
-                        />
-                      </div>
-                    </label>
                     <input
                       autoComplete="off"
                       disabled={false}
@@ -597,12 +563,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "appearance": "textfield",
                           "backgroundColor": "rgba(0,0,0,0)",
                           "border": "none",
-                          "boxSizing": "border-box",
                           "color": "rgba(0, 0, 0, 0.87)",
                           "cursor": "inherit",
                           "font": "inherit",
                           "height": "100%",
-                          "marginTop": 14,
                           "muiPrepared": true,
                           "outline": "none",
                           "padding": 0,
@@ -803,9 +767,35 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
               className="project-details-left-column project-details-column"
             >
               <div
-                className="project-details-item language-dirction-select"
+                className="project-details-item language-dirction-select select-field"
                 id="language-direction-SelectField-wrapper"
               >
+                <label
+                  htmlFor="language-direction-SelectField"
+                  style={
+                    Object {
+                      "margin": 0,
+                    }
+                  }
+                >
+                  <span
+                    className="glyphicon glyphicon-eye-open"
+                    style={
+                      Object {
+                        "color": "#000000",
+                        "fontSize": "16px",
+                      }
+                    }
+                  />
+                   
+                  <span>
+                    project_validation.language_direction
+                  </span>
+                   
+                  <span
+                    className="required"
+                  />
+                </label>
                 <div
                   className={undefined}
                   style={
@@ -815,7 +805,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       "display": "inline-block",
                       "fontFamily": "Roboto, sans-serif",
                       "fontSize": 16,
-                      "height": 72,
+                      "height": 48,
                       "lineHeight": "24px",
                       "minWidth": "256px",
                       "muiPrepared": true,
@@ -825,54 +815,20 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     }
                   }
                 >
-                  <label
-                    className={undefined}
-                    htmlFor="language-direction-SelectField"
-                    onClick={undefined}
+                  <div
                     style={
                       Object {
-                        "color": "var(--text-color-dark)",
-                        "fontSize": "22px",
-                        "fontWeight": "bold",
-                        "lineHeight": "22px",
+                        "bottom": 12,
+                        "color": "rgba(0, 0, 0, 0.3)",
                         "muiPrepared": true,
-                        "pointerEvents": "none",
+                        "opacity": 0,
                         "position": "absolute",
-                        "top": "32px",
-                        "transform": "scale(0.75) translate(0, -28px)",
-                        "transformOrigin": "left top",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "userSelect": "none",
-                        "zIndex": 1,
                       }
                     }
                   >
-                    <div
-                      style={
-                        Object {
-                          "width": "270px",
-                        }
-                      }
-                    >
-                      <span
-                        className="glyphicon glyphicon-eye-open"
-                        style={
-                          Object {
-                            "color": "#000000",
-                            "fontSize": "28px",
-                          }
-                        }
-                      />
-                       
-                      <span>
-                        project_validation.language_direction
-                      </span>
-                       
-                      <span
-                        className="required"
-                      />
-                    </div>
-                  </label>
+                     
+                  </div>
                   <div
                     className={undefined}
                     id="language-direction-SelectField"
@@ -885,7 +841,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         "WebkitTapHighlightColor": "rgba(0,0,0,0)",
                         "backgroundColor": "rgba(0,0,0,0)",
                         "border": "none",
-                        "boxSizing": "border-box",
                         "color": "rgba(0, 0, 0, 0.87)",
                         "cursor": "inherit",
                         "display": "block",
@@ -893,7 +848,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         "fontFamily": "Roboto, sans-serif",
                         "fontSize": 15,
                         "height": "100%",
-                        "marginTop": 14,
                         "muiPrepared": true,
                         "outline": "none",
                         "padding": 0,
@@ -938,7 +892,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                             "paddingRight": 56,
                             "position": "relative",
                             "textOverflow": "ellipsis",
-                            "top": 6,
+                            "top": -4,
                             "whiteSpace": "nowrap",
                           }
                         }
@@ -977,7 +931,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                             "position": "absolute",
                             "right": 0,
                             "textDecoration": "none",
-                            "top": 8,
+                            "top": 0,
                             "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                             "verticalAlign": null,
                             "width": 48,
@@ -1098,9 +1052,35 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
               className="project-details-right-column project-details-column"
             >
               <div
-                className="project-details-item book-dropdown-menu-select"
+                className="project-details-item book-dropdown-menu-select select-field"
                 id="book-dropdown-menu-selectField-wrapper"
               >
+                <label
+                  htmlFor="book-dropdown-menu-selectField"
+                  style={
+                    Object {
+                      "margin": 0,
+                    }
+                  }
+                >
+                  <span
+                    className="glyphicon glyphicon-book"
+                    style={
+                      Object {
+                        "color": "#000000",
+                        "fontSize": "16px",
+                      }
+                    }
+                  />
+                   
+                  <span>
+                    projects.book
+                  </span>
+                   
+                  <span
+                    className="required"
+                  />
+                </label>
                 <div
                   className={undefined}
                   style={
@@ -1110,7 +1090,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       "display": "inline-block",
                       "fontFamily": "Roboto, sans-serif",
                       "fontSize": 16,
-                      "height": 72,
+                      "height": 48,
                       "lineHeight": "24px",
                       "minWidth": "256px",
                       "muiPrepared": true,
@@ -1120,48 +1100,20 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     }
                   }
                 >
-                  <label
-                    className={undefined}
-                    htmlFor="book-dropdown-menu-selectField"
-                    onClick={undefined}
+                  <div
                     style={
                       Object {
-                        "color": "#000",
-                        "fontSize": "22px",
-                        "fontWeight": "bold",
-                        "lineHeight": "22px",
+                        "bottom": 12,
+                        "color": "rgba(0, 0, 0, 0.3)",
                         "muiPrepared": true,
-                        "pointerEvents": "none",
+                        "opacity": 0,
                         "position": "absolute",
-                        "top": 38,
-                        "transform": "scale(0.75) translate(0, -28px)",
-                        "transformOrigin": "left top",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "userSelect": "none",
-                        "zIndex": 1,
                       }
                     }
                   >
-                    <div>
-                      <span
-                        className="glyphicon glyphicon-book"
-                        style={
-                          Object {
-                            "color": "#000000",
-                            "fontSize": "22px",
-                          }
-                        }
-                      />
-                       
-                      <span>
-                        projects.book
-                      </span>
-                       
-                      <span
-                        className="required"
-                      />
-                    </div>
-                  </label>
+                     
+                  </div>
                   <div
                     className={undefined}
                     id="book-dropdown-menu-selectField"
@@ -1174,7 +1126,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         "WebkitTapHighlightColor": "rgba(0,0,0,0)",
                         "backgroundColor": "rgba(0,0,0,0)",
                         "border": "none",
-                        "boxSizing": "border-box",
                         "color": "rgba(0, 0, 0, 0.87)",
                         "cursor": "inherit",
                         "display": "block",
@@ -1182,7 +1133,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         "fontFamily": "Roboto, sans-serif",
                         "fontSize": 15,
                         "height": "100%",
-                        "marginTop": 14,
                         "muiPrepared": true,
                         "outline": "none",
                         "padding": 0,
@@ -1227,7 +1177,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                             "paddingRight": 56,
                             "position": "relative",
                             "textOverflow": "ellipsis",
-                            "top": 6,
+                            "top": -4,
                             "whiteSpace": "nowrap",
                           }
                         }
@@ -1266,7 +1216,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                             "position": "absolute",
                             "right": 0,
                             "textDecoration": "none",
-                            "top": 8,
+                            "top": 0,
                             "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                             "verticalAlign": null,
                             "width": 48,

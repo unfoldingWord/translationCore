@@ -186,7 +186,7 @@ class ProjectInformationCheck extends Component {
                 <div  className={'project-details-left-column project-details-column'}>
                   <LanguageNameTextBox
                     id={'Language-Name-TextBox-AutoComplete'}
-                    className={'project-details-item language-name-textbox'}
+                    className={'project-details-item language-name-textbox select-field'}
                     translate={translate}
                     languageName={languageName}
                     languageId={languageId}
@@ -210,7 +210,7 @@ class ProjectInformationCheck extends Component {
                 <div className={'project-details-left-column project-details-column'}>
                   <LanguageIdTextBox
                     id={'Language-Id-TextBox-AutoComplete'}
-                    className={'project-details-item language-id-textbox'}
+                    className={'project-details-item language-id-textbox select-field'}
                     translate={translate}
                     languageId={languageId}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
@@ -233,7 +233,7 @@ class ProjectInformationCheck extends Component {
                 <div className={'project-details-left-column project-details-column'}>
                   <LanguageDirectionDropdownMenu
                     id={'language-direction-SelectField'}
-                    className={'project-details-item language-dirction-select'}
+                    className={'project-details-item language-dirction-select select-field'}
                     translate={translate}
                     languageDirection={languageDirection}
                     updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
@@ -242,7 +242,7 @@ class ProjectInformationCheck extends Component {
                 <div className={'project-details-right-column project-details-column'}>
                   <BookDropdownMenu
                     id={'book-dropdown-menu-selectField'}
-                    className={'project-details-item book-dropdown-menu-select'}
+                    className={'project-details-item book-dropdown-menu-select select-field'}
                     translate={translate}
                     bookId={bookId}
                     updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId, true)}

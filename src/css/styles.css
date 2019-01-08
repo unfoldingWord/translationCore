@@ -583,14 +583,17 @@ main modal. They basically override bootstrap styling for these components
 
 @media (max-width: 1199px) {
   .project-details-table {
-    display: table;
-    margin: 0 auto;
-    width: auto;
+    margin: 0 auto !important;
+    width: auto !important;
   }
 
-  .project-details-table .project-details-left-column .project-details-item,
-  .project-details-table .project-details-right-column .project-details-item {
-    float: none;
+  .project-details-table .project-details-column {
+    flex: none !important;
+    margin: 0 auto !important;
+  }
+
+  .project-details-table .project-details-item {
+    float: none !important;
   }
 }
 
@@ -612,6 +615,7 @@ main modal. They basically override bootstrap styling for these components
 
 .project-details-table .project-details-item label {
   display: block;
+  margin: 0 0 10px 0 !important;
 }
 
 .project-details-table .language-name-textbox {
@@ -638,4 +642,32 @@ main modal. They basically override bootstrap styling for these components
 .project-details-table .required:after {
   content: '*';
   color: #cd0033;
+}
+
+.project-details-table .select-field {
+  margin-top: 20px;
+}
+
+.project-details-table .select-field input {
+  height: auto !important;
+}
+
+.project-details-table .select-field hr {
+  bottom: inherit !important;
+}
+
+.project-details-table .select-field div {
+  height: auto !important;
+  line-height: 16px !important;
+}
+
+.project-details-table .select-field > div,
+.project-details-table .select-field > div > div {
+  height: 16px !important;
+}
+
+.project-details-table .select-field button {
+  padding: 0 !important;
+  height: auto !important;
+  top: -5px !important;
 }

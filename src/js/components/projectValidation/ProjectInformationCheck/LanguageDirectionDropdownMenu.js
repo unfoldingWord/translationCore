@@ -16,22 +16,18 @@ const LanguageDirectionDropdownMenu = ({
       id={id+'-wrapper'}
       className={className}
     >
+      <label htmlFor={id} style={{margin: 0}}>
+        <Glyphicon glyph={"eye-open"} style={{ color: "#000000", fontSize: '16px' }} />&nbsp;
+        <span>{translate('project_validation.language_direction')}</span>&nbsp;
+        <span className={"required"}/>
+      </label>
       <SelectField
         id={id}
         value={languageDirection}
         style={{ minWidth: '256px' }}
-        errorText={languageDirection === "" ? "This field is required." : null}
+        errorText={languageDirection === "" ? translate('project_validation.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelFixed={true}
-        floatingLabelStyle={{ color: 'var(--text-color-dark)', fontSize: '22px', fontWeight: 'bold', top: '32px' }}
-        floatingLabelText={
-          <div style={{ width: '270px' }}>
-            <Glyphicon glyph={"eye-open"} style={{ color: "#000000", fontSize: '28px' }} />&nbsp;
-            <span>{translate('project_validation.language_direction')}</span>&nbsp;
-            <span className={"required"}/>
-          </div>
-        }
         onChange={(event, index, value) => {
           updateLanguageDirection(value);
         }}

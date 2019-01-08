@@ -18,6 +18,11 @@ const BookDropdownMenu = ({
       id={id+'-wrapper'}
       className={className}
     >
+      <label htmlFor={id} style={{margin: 0}}>
+        <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '16px' }} />&nbsp;
+        <span>{translate('projects.book')}</span>&nbsp;
+        <span className={"required"}/>
+      </label>
       <SelectField
         id={id}
         value={bookId}
@@ -25,15 +30,6 @@ const BookDropdownMenu = ({
         errorText={bookId === "" ? translate('project_validation.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelFixed={true}
-        floatingLabelStyle={{ color: '#000', fontSize: '22px', fontWeight: 'bold' }}
-        floatingLabelText={
-          <div>
-            <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
-            <span>{translate('projects.book')}</span>&nbsp;
-            <span className={"required"}/>
-          </div>
-        }
         onChange={(event, index, value) => {
           updateBookId(value);
         }}

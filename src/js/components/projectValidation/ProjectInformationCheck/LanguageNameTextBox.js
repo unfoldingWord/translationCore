@@ -21,6 +21,12 @@ const LanguageNameTextBox = ({
       id={id+'-wrapper'}
       className={className}
     >
+      <label htmlFor={id} style={{margin: 0}}>
+        <TranslateIcon style={{ height: "16px", width: "16px", color: "#000000", verticalAlign: "bottom"}} />&nbsp;
+        {translate('projects.language_name')}
+        &nbsp;
+        <span className={"required"}/>
+      </label>
       <AutoComplete
         id={id}
         searchText={languageName}
@@ -29,15 +35,6 @@ const LanguageNameTextBox = ({
         errorText={getErrorMessage(translate, languageName, languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelFixed={true}
-        floatingLabelStyle={{ color: "var(--text-color-dark)", fontSize: '22px', fontWeight: 'bold' }}
-        floatingLabelText={
-          <div>
-            <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-            <span>{translate('projects.language_name')}</span>&nbsp;
-            <span className={"required"}/>
-          </div>
-        }
         onNewRequest={(chosenRequest, index) => {
             selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
           }
