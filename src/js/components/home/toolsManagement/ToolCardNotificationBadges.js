@@ -1,89 +1,131 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import { Badge } from 'react-bootstrap';
-// components
-// import Tooltip from '../../Tooltip';
-// import InvalidatedIcon from '../../svgIcons/InvalidatedIcon';
+import { Badge } from 'react-bootstrap';
+import Tooltip from '../../Tooltip';
+import InvalidatedIcon from '../../svgIcons/InvalidatedIcon';
 
-const styles = {
-  container: {
-    display: 'flex',
-    float: 'right'
-  },
-  tableRowItem: {
-    padding: '5px',
-    paddingRight: '10px',
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-  whiteBadge: {
-    borderStyle: 'solid',
-    borderColor: '#000000',
-    borderWidth: '1px',
-    backgroundColor: '#ffffff',
-    color: '#000000',
-    borderRadius: '6px',
-  },
-  redBadge: {
-    backgroundColor: 'var(--danger-color)',
-    color: '#ffffff',
-    borderRadius: '6px',
-  },
-  yellowBadge: {
-    borderStyle: 'solid',
-    borderColor: '#000000',
-    borderWidth: '1px',
-    backgroundColor: 'var(--highlight-color)',
-    color: '#000000',
-    borderRadius: '6px',
-  },
+const makeStyles = errorCount => {
+  return {
+    container: {
+      display: 'flex',
+      float: 'right'
+    },
+    tableRowItem: {
+      padding: '5px',
+      paddingRight: '10px',
+      display: 'flex',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+    },
+    badge: {
+      borderStyle: 'solid',
+      borderRadius: '6px',
+      color: errorCount > 0 ? '#ffffff' : '#000000',
+      backgroundColor: errorCount > 0 ? 'var(--danger-color)' : '#ffffff',
+      borderWidth: '1px',
+      borderColor: errorCount > 0 ? 'var(--danger-color)' : '#000000',
+    }
+  };
+};
+
+/**
+ * Displays the error count
+ * @param {number} count - the number of errors found
+ * @param {string} tooltip - the tooltip message
+ * @returns {*}
+ * @constructor
+ */
+const ErrorCount = ({count, tooltip}) => {
+  const styles = makeStyles(count);
+  return (
+    <div style={styles.container}>
+      <div>
+        <table>
+          <tbody>
+          <tr style={{ display: 'flex' }}>
+            <th style={styles.tableRowItem}>
+              <Tooltip id="invalid-check-tooltip" placement="bottom" tooltipMessage={tooltip}>
+                <div>
+                  <InvalidatedIcon />
+                </div>
+              </Tooltip>&nbsp;
+              <Badge style={styles.badge}>{count}</Badge>
+            </th>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+ErrorCount.propTypes = {
+  count: PropTypes.number.isRequired,
+  tooltip: PropTypes.string.isRequired
 };
 
 export default class ToolCardNotificationBadges extends Component {
-  render() {
-    // TODO: Finish Tool Card Notification Badges
-    // const { invalidatedReducer, toolName } = this.props;
-    // const { invalidatedChecksTotal, invalidatedAlignmentsTotal } = invalidatedReducer;
-    // const invalidatedChecksTooltip = 'Invalidated checks';
-    // const invalidatedAlignments = 'Verses with invalidated alignments.';
-    // const invalidatedMessage = toolName === 'wordAlignment' ? invalidatedAlignments : invalidatedChecksTooltip;
-    // const invalidatedTotal = toolName === 'wordAlignment' ? invalidatedAlignmentsTotal : invalidatedChecksTotal;
 
-    return (
-      <div style={styles.container}>
-        {/* Left this commented out code because it may be needed in the near future */}
-        {/* <div>
-          <table>
-            <tbody>
-              <tr style={{ display: 'flex' }}>
-                <th style={styles.tableRowItem}>
-                  <Tooltip id="verse-edit-tooltip" placement="bottom" tooltipMessage={verseEditsTooltip}>
-                    <Glyphicon glyph="pencil" style={{ fontSize: '18px' }} />
-                  </Tooltip>&nbsp;
-                  <Badge style={verseEditsTotal === 0 ? styles.whiteBadge : styles.redBadge}>{verseEditsTotal || 0}</Badge>
-                </th>
-                <th style={styles.tableRowItem}>
-                  <Tooltip id="invalid-check-tooltip" placement="bottom" tooltipMessage={invalidatedMessage}>
-                    <div>
-                      <InvalidatedIcon />
-                    </div>
-                  </Tooltip>&nbsp;
-                  <Badge style={invalidatedTotal === 0 ? styles.whiteBadge : styles.redBadge}>{invalidatedTotal || 0}</Badge>
-                </th>
-                <th style={styles.tableRowItem}>
-                  <Glyphicon glyph="refresh" style={{ fontSize: '18px', cursor: 'pointer' }} />
-                </th>
-              </tr>
-            </tbody>
-          </table>
-        </div> */}
-      </div>
-    );
+  constructor(props) {
+    super(props);
+    const {tool} = props;
+    this.loadInvalidCount = this.loadInvalidCount.bind(this);
+
+    // TRICKY: only display error count if supported by the tool
+    this.state = {
+      errorCount: 0,
+      countEnabled: tool.api.methodExists('getInvalidChecks')
+    };
+  }
+
+  /**
+   * Loads the number of invalid checks from the tool.
+   */
+  loadInvalidCount() {
+    const {tool} = this.props;
+    const {errorCount, countEnabled} = this.state;
+
+    if(countEnabled) {
+      setTimeout(() => {
+        const numInvalidChecks = tool.api.trigger('getInvalidChecks');
+
+        if (errorCount !== numInvalidChecks) {
+          this.setState({
+            errorCount: numInvalidChecks
+          });
+        }
+      }, 0);
+    }
+  }
+
+  componentDidMount() {
+    this.loadInvalidCount();
+  }
+
+  componentDidUpdate() {
+    this.loadInvalidCount();
+  }
+
+  render() {
+    const {tool, translate} = this.props;
+    const {errorCount, countEnabled} = this.state;
+
+    let message = '';
+    if(tool.name === "wordAlignment") {
+      message = translate('tools.invalid_verse_alignments');
+    } else {
+      message = translate('tools.invalid_checks');
+    }
+
+    if(countEnabled) {
+      return <ErrorCount count={errorCount} tooltip={message}/>;
+    } else {
+      return null;
+    }
+
   }
 }
 
 ToolCardNotificationBadges.propTypes = {
-  toolName: PropTypes.string.isRequired,
-  invalidatedReducer: PropTypes.object.isRequired,
+  tool: PropTypes.object.isRequired,
+  translate: PropTypes.func.isRequired
 };

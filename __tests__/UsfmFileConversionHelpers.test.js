@@ -419,7 +419,7 @@ describe('UsfmFileConversionHelpers', () => {
       const verseNum = 20;
       const verseParts = json.verses[verseNum];
       const expectedBibleVerse = "\"For it is written in the Book of Psalms,\\q 'Let his field be made desolate,\\q  and do not let even one person live there';\\q 'And let someone else take his position of leadership.'\\m\n\n\\s5";
-      const expectedCleanedVerse = "\"For it is written in the Book of Psalms, 'Let his field be made desolate, and do not let even one person live there'; 'And let someone else take his position of leadership.'\n\n";
+      const expectedCleanedVerse = "\"For it is written in the Book of Psalms, 'Let his field be made desolate,  and do not let even one person live there'; 'And let someone else take his position of leadership.'\n\n";
 
       // when
       const bibleVerse = getUsfmForVerseContent(verseParts).trim();
@@ -439,7 +439,7 @@ describe('UsfmFileConversionHelpers', () => {
       const verseNum = 6;
       const verseParts = json.verses[verseNum];
       const expectedBibleVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written,\\q 'He will command his angels to take care of you,'\\m and,\n\\q 'They will lift you up in their hands,\\q  so that you will not hit your foot against a stone.'\"\\m";
-      const expectedCleanedVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written, 'He will command his angels to take care of you,' and,\n'They will lift you up in their hands, so that you will not hit your foot against a stone.'\"";
+      const expectedCleanedVerse = "and said to him,\"If you are the Son of God, throw yourself down, for it is written, 'He will command his angels to take care of you,' and,\n'They will lift you up in their hands,  so that you will not hit your foot against a stone.'\"";
 
       // when
       const bibleVerse = getUsfmForVerseContent(verseParts).trim();

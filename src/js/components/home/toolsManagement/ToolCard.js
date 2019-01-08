@@ -13,22 +13,56 @@ import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
-import { getToolGatewayLanguage } from "../../../selectors";
+import {
+  getProjectBookId, getProjectToolProgress, getSetting,
+  getToolGatewayLanguage
+} from "../../../selectors";
 import { connect } from "react-redux";
 
 class ToolCard extends Component {
   constructor(props) {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.loadProgress = this.loadProgress.bind(this);
     this.state = {
-      showDescription: false
+      showDescription: false,
+      progress: 0,
+      useLegacyProgress: false
     };
+  }
+
+  loadProgress() {
+    const {tool, actions: {getProjectProgressForTools}} = this.props;
+    const {progress, useLegacyProgress} = this.state;
+
+    if(tool.api.methodExists("getProgress")) {
+      setTimeout(() => {
+        const toolProgress = tool.api.trigger("getProgress");
+        if(progress !== toolProgress) {
+          this.setState({
+            progress: toolProgress ? toolProgress : 0
+          });
+        }
+      }, 0);
+    } else if(!useLegacyProgress) {
+      // TRICKY: only load the legacy progress if it has not already been loaded.
+      setTimeout(() => {
+        getProjectProgressForTools(tool.name);
+        this.setState({
+          useLegacyProgress: true
+        });
+      });
+    }
+  }
+
+  componentDidMount() {
+    this.loadProgress();
   }
 
   componentWillMount() {
     const {store} = this.context;
-    const name = this.props.metadata.name;
-    this.props.actions.getProjectProgressForTools(name);
+    const name = this.props.tool.name;
     const gatewayLanguage = getToolGatewayLanguage(store.getState(), name);
     this.selectionChange(gatewayLanguage);
     this.setState({
@@ -38,7 +72,7 @@ class ToolCard extends Component {
 
   selectionChange(selectedGL) {
     if (selectedGL && selectedGL.trim()) {
-      this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
+      this.props.actions.setProjectToolGL(this.props.tool.name, selectedGL);
       this.setState({selectedGL});
     }
   }
@@ -61,22 +95,20 @@ class ToolCard extends Component {
     return launchDisableMessage;
   }
 
+  /**
+   * Handles selecting the tool
+   */
+  handleSelect() {
+    const {onSelect, tool} = this.props;
+    onSelect(tool.name);
+  }
+
   render() {
-    const {metadata: {
-      title,
-      version,
-      description,
-      badgeImagePath,
-      folderName,
-      name
-    },
-      manifest: {
-        project: {id}
-      },
-      loggedInUser,
-      currentProjectToolsProgress,
+    const {
+      tool,
+      bookId,
       translate,
-      invalidatedReducer,
+      progress: legacyProgress,
       developerMode,
       actions: {
         updateCheckSelection
@@ -84,11 +116,17 @@ class ToolCard extends Component {
       selectedCategories,
       availableCategories
     } = this.props;
-    const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    const launchDisableMessage = this.getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories);
+    const {progress: newProgress, useLegacyProgress} = this.state;
+
+    let progress = newProgress;
+    if(useLegacyProgress) {
+      progress = legacyProgress;
+    }
+
+    const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
     let showCheckBoxes = false;
-    switch (name) {
+    switch (tool.name) {
       case 'wordAlignment':
         desc_key = 'tools.alignment_description';
         break;
@@ -101,27 +139,28 @@ class ToolCard extends Component {
       default:
         break;
     }
-    let descriptionLocalized = description;
+    let descriptionLocalized = tool.description;
     if (desc_key) {
-      descriptionLocalized = getTranslation(translate, desc_key, description);
+      descriptionLocalized = getTranslation(translate, desc_key, tool.description);
     }
 
     return (
       <MuiThemeProvider>
         <Card style={{margin: "6px 0px 10px"}}>
           <img
+            alt={tool.name}
             style={{float: "left", height: "90px", margin: "10px"}}
-            src={badgeImagePath}
+            src={tool.badge}
           />
           <CardHeader
-            title={title}
+            title={tool.title}
             titleStyle={{fontWeight: "bold"}}
-            subtitle={version}
+            subtitle={tool.version}
             style={{display: 'flex', justifyContent: 'space-between'}}>
-            <ToolCardNotificationBadges toolName={name} invalidatedReducer={invalidatedReducer} />
+            <ToolCardNotificationBadges tool={tool} translate={translate} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes toolName={name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
+          {showCheckBoxes && <ToolCardBoxes toolName={tool.name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -147,8 +186,8 @@ class ToolCard extends Component {
               translate={translate}
               selectedGL={this.state.selectedGL}
               selectionChange={this.selectionChange}
-              bookID={id}
-              toolName={name}
+              bookID={bookId}
+              toolName={tool.name}
             />
             <Hint
               position={'left'}
@@ -159,7 +198,7 @@ class ToolCard extends Component {
               <button
                 disabled={launchDisableMessage ? true : false}
                 className='btn-prime'
-                onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
+                onClick={this.handleSelect}
                 style={{width: '90px', margin: '10px'}}
               >
                 {translate('buttons.launch_button')}
@@ -173,18 +212,18 @@ class ToolCard extends Component {
 }
 
 ToolCard.propTypes = {
+  onSelect: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
+  bookId: PropTypes.string.isRequired,
+  tool: PropTypes.object.isRequired,
+  developerMode: PropTypes.bool.isRequired,
+  progress: PropTypes.number.isRequired,
+
   actions: PropTypes.shape({
     getProjectProgressForTools: PropTypes.func.isRequired,
     setProjectToolGL: PropTypes.func.isRequired,
-    launchTool: PropTypes.func.isRequired
+    updateCheckSelection: PropTypes.func.isRequired
   }),
-  loggedInUser: PropTypes.bool.isRequired,
-  currentProjectToolsProgress: PropTypes.object.isRequired,
-  metadata: PropTypes.object.isRequired,
-  manifest: PropTypes.object.isRequired,
-  invalidatedReducer: PropTypes.object.isRequired,
-  developerMode: PropTypes.bool.isRequired,
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.array.isRequired
 };
@@ -193,4 +232,10 @@ ToolCard.contextTypes = {
   store: PropTypes.any
 };
 
-export default connect()(ToolCard);
+const mapStateToProps = (state, props) => ({
+  progress: getProjectToolProgress(state, props.tool.name),
+  bookId: getProjectBookId(state),
+  developerMode: getSetting(state, 'developerMode')
+});
+
+export default connect(mapStateToProps)(ToolCard);

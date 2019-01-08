@@ -1,5 +1,6 @@
 /* eslint-env jest */
 jest.mock('fs-extra');
+jest.mock('../src/js/helpers/ProjectAPI');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -7,6 +8,7 @@ import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
+import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -416,6 +418,70 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
     const store = mockStore(initialState);
     store.dispatch(actions.updateCheckSelection('kt', true, 'translationWords'));
     expect(store.getActions()).toMatchObject(expectedActions);
+  });
+
+  describe('ProjectDetailsActions.loadCurrentCheckCategories', () => {
+    const project_name = 'normal_project';
+    const toolName = 'translationWords';
+    const bookName = 'tit';
+    const projectSaveLocation = path.join(PROJECTS_PATH, project_name);
+    const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
+    beforeAll(()=>{
+      // Make resource
+      fs.__resetMockFS();
+      const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'translationWords');
+      const copyFiles = [project_name];
+      fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
+      const resourcesPath = RESOURCE_PATH;
+      const copyResourceFiles = ['grc', 'en'];
+      fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
+    });
+
+    afterAll(() => {
+      fs.__resetMockFS();
+    });
+    test('should load all the check categories from the project', () => {
+      const expectedActions = [{"selectedCategories": ["names"], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
+      const initialState = {
+        projectDetailsReducer: {
+          projectSaveLocation: path.join(PROJECTS_PATH, project_name),
+          manifest: {
+            project: {
+              id: 'tit'
+            }
+          },
+          currentProjectToolsSelectedGL: {
+            translationWords: 'en'
+          }
+        }
+      };
+      mockGetSelectedCategories.mockReturnValue(["names"]);
+      const store = mockStore(initialState);
+      store.dispatch(actions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      expect(store.getActions()).toMatchObject(expectedActions);
+    });
+    test('should not load check categories that are not present in the resources', () => {
+      const namesResourcePath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationWords');
+      fs.removeSync(namesResourcePath);
+      const expectedActions =  [{"selectedCategories": [], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
+      const initialState = {
+        projectDetailsReducer: {
+          projectSaveLocation: path.join(PROJECTS_PATH, project_name),
+          manifest: {
+            project: {
+              id: 'tit'
+            }
+          },
+          currentProjectToolsSelectedGL: {
+            translationWords: 'en'
+          }
+        }
+      };
+      mockGetSelectedCategories.mockReturnValue(["names"]);
+      const store = mockStore(initialState);
+      store.dispatch(actions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      expect(store.getActions()).toMatchObject(expectedActions);
+    });
   });
 });
 

@@ -4,8 +4,7 @@ import fs from "fs-extra";
 const PROJECT_TC_DIR = ".apps/translationCore/";
 
 /**
- * Provides an interface for interacting with project files.
- * TODO: this could eventually be used to handle all project manipulation in tC not use used with the tools
+ * Provides an interface with which tools can interact with a project.
  */
 export default class ProjectAPI {
 
@@ -14,126 +13,367 @@ export default class ProjectAPI {
    * @param {string} projectDir - the absolute path to the project directory
    */
   constructor(projectDir) {
-    this.projectPath = projectDir;
-    this.dataPath = path.join(projectDir, PROJECT_TC_DIR);
-    this.manifest = null;
+    this._projectPath = projectDir;
+    this._dataPath = path.join(projectDir, PROJECT_TC_DIR);
+    this._manifest = null;
 
-    this.writeData = this.writeData.bind(this);
-    this.writeDataSync = this.writeDataSync.bind(this);
-    this.readDir = this.readDir.bind(this);
-    this.readDirSync = this.readDirSync.bind(this);
-    this.readData = this.readData.bind(this);
-    this.readDataSync = this.readDataSync.bind(this);
-    this.pathExists = this.pathExists.bind(this);
+    this.writeDataFile = this.writeDataFile.bind(this);
+    this.writeDataFileSync = this.writeDataFileSync.bind(this);
+    this.readDataDir = this.readDataDir.bind(this);
+    this.readDataDirSync = this.readDataDirSync.bind(this);
+    this.readFile = this.readFile.bind(this);
+    this.readDataFile = this.readDataFile.bind(this);
+    this.readFileSync = this.readFileSync.bind(this);
+    this.readDataFileSync = this.readDataFileSync.bind(this);
+    this.dataPathExists = this.dataPathExists.bind(this);
     this.pathExistsSync = this.pathExistsSync.bind(this);
-    this.deleteFile = this.deleteFile.bind(this);
-    this.deleteFileSync = this.deleteFileSync.bind(this);
+    this.dataPathExistsSync = this.dataPathExistsSync.bind(this);
+    this.deleteDataFile = this.deleteDataFile.bind(this);
+    this.deleteDataFileSync = this.deleteDataFileSync.bind(this);
+    this.getCategoriesDir = this.getCategoriesDir.bind(this);
+    this.importCategoryGroupData = this.importCategoryGroupData.bind(this);
+    this.getManifest = this.getManifest.bind(this);
+    this.getBookId = this.getBookId.bind(this);
+    this.isCategoryLoaded = this.isCategoryLoaded.bind(this);
+    this.setCategoryLoaded = this.setCategoryLoaded.bind(this);
+    this.getGroupsData = this.getGroupsData.bind(this);
+  }
+
+  /**
+   * Returns the path to the project directory
+   * @returns {string}
+   */
+  get path() {
+    return this._projectPath;
+  }
+
+  /**
+   * Returns the path to the project data directory
+   * @returns {*}
+   */
+  get dataPath() {
+    return this._dataPath;
+  }
+
+  /**
+   * Returns the path to the categories index directory.
+   * This is the same as the groups data directory.
+   * @param {string} toolName - the name of the tool that the categories belong to
+   * @returns {*}
+   */
+  getCategoriesDir(toolName) {
+    // TODO: the book id is redundant to have in the project directory.
+    const bookId = this.getBookId();
+    return path.join(this._dataPath, "index", toolName, bookId);
+  }
+
+  /**
+   * Returns a dictionary of all the group data loaded for a given tool.
+   * This will silently fail if the groups data does not exist.
+   * @param {string} toolName - the name of the tool who's group data will be returned
+   * @returns {*}
+   */
+  getGroupsData(toolName) {
+    const data = {};
+    const dir = this.getCategoriesDir(toolName);
+
+    if (fs.pathExistsSync(dir) && fs.lstatSync(dir).isDirectory()) {
+      const files = fs.readdirSync(dir);
+
+      for (let i = 0, len = files.length; i < len; i++) {
+        const dataPath = path.join(dir, files[i]);
+        if (path.extname(dataPath) !== ".json") {
+          continue;
+        }
+
+        const groupName = path.basename(dataPath, ".json");
+        try {
+          data[groupName] = fs.readJsonSync(dataPath);
+        } catch (e) {
+          console.error(`Failed to load group data from ${dataPath}`);
+        }
+      }
+    }
+
+    return data;
+  }
+
+  /**
+   * Imports a group data file into the project.
+   * Group data that already exists will not be overwritten.
+   * @param {string} toolName - the name of hte tool that the categories belong to
+   * @param {string} dataPath - the path to the group data file
+   * @returns {boolean} true if the group data was imported. false if already imported.
+   */
+  importCategoryGroupData(toolName, dataPath) {
+    const destDir = this.getCategoriesDir(toolName);
+    const groupName = path.basename(dataPath);
+    const destFile = path.join(destDir, groupName);
+
+    if (!fs.pathExistsSync(destFile)) {
+      fs.copySync(dataPath, destFile);
+      return true;
+    }
+    return false;
   }
 
   /**
    * Loads the project manifest from the disk.
    * Subsequent calls are cached.
-   * @returns {Promise<JSON>} the manifest json object
-   * @private
+   * @throws an error if the manifest does not exist.
+   * @returns {JSON} the manifest json object
    */
-  async _loadManifest() {
-    if (this.manifest === null) {
-      const data = this.readData("manifest.json");
-      this.manifest = JSON.parse(data);
+  getManifest() {
+    if (this._manifest === null) {
+      const data = this.readFileSync("manifest.json");
+      this._manifest = JSON.parse(data);
     }
-    return this.manifest;
+    return this._manifest;
   }
 
   /**
    * Returns the project's book id
-   * @returns {Promise<string>}
+   * @throws an error if the book id does not exist.
+   * @returns {string}
    */
   getBookId() {
-    return this._loadManifest().project.id;
+    const manifest = this.getManifest();
+    return manifest.project.id;
   }
 
   /**
-   * Handles writing global project data
+   * Checks if a tool (a.k.a. translationHelps) category has been copied into the project.
+   * @param {string} toolName - the tool name. This is synonymous with translationHelp name
+   * @param {string} category - the category id
+   * @returns {boolean}
+   */
+  isCategoryLoaded(toolName, category) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        const data = fs.readJsonSync(categoriesPath);
+        return data.loaded.indexOf(category) >= 0;
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    // rebuild missing/corrupt category index
+    fs.outputJsonSync(categoriesPath, {
+      current: [],
+      loaded: []
+    });
+
+    return false;
+  }
+
+  /**
+   * Marks a category as having been loaded into the project.
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   * @param {string} category - the category that has been copied into the project
+   * @param {boolean} [loaded=true] - indicates if the category is loaded
+   * @returns {boolean}
+   */
+  setCategoryLoaded(toolName, category, loaded=true) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    let data = {
+      current: [],
+      loaded: loaded ? [category] : []
+    };
+
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        let rawData = fs.readJsonSync(categoriesPath);
+        // TRICKY: assert data structure before overwriting default to not propagate errors.
+        if(loaded) {
+          rawData.loaded.push(category);
+        } else {
+          rawData.loaded = rawData.loaded.filter(c => c !== category);
+        }
+        data = rawData;
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    fs.outputJsonSync(categoriesPath, data);
+  }
+
+  /**
+   * Returns an array of categories that have been selected for the given tool.
+   * @param toolName - The tool name. This is synonymous with translationHelp name
+   * @return {string[]} an array of category names
+   */
+  getSelectedCategories(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        const data = fs.readJsonSync(categoriesPath);
+        return data.current;
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    return [];
+  }
+
+  /**
+   * Sets the categories that have been selected for the the given tool.
+   * Category selection controls which sets of help data will be loaded
+   * when the tool is opened.
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   * @param {string[]} [categories=[]] - an array of category names
+   */
+  setSelectedCategories(toolName, categories=[]) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    let data = {
+      current: categories,
+      loaded: []
+    };
+
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        const rawData = fs.readJsonSync(categoriesPath);
+        // TRICKY: assert data structure before overwriting default to not propagate errors.
+        rawData.current = categories;
+        data = rawData;
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    fs.outputJsonSync(categoriesPath, data);
+  }
+
+  /**
+   * Handles writing data to the project's data directory.
    *
    * @param {string} filePath - the relative path to be written
    * @param {string} data - the data to write
    * @return {Promise}
    */
-  writeData(filePath, data) {
-    const writePath = path.join(this.dataPath, filePath);
-    return fs.outputFile(writePath, data);
+  async writeDataFile(filePath, data) {
+    const writePath = path.join(this._dataPath, filePath);
+    return await fs.outputFile(writePath, data);
   }
 
   /**
-   * Handles writing global project data synchronously
+   * Handles synchronously writing data to the project's data directory.
    * @param {string} filePath - the relative path to be written
    * @param {string} data - the data to write
    */
-  writeDataSync(filePath, data) {
-    const writePath = path.join(this.dataPath, filePath);
+  writeDataFileSync(filePath, data) {
+    const writePath = path.join(this._dataPath, filePath);
     fs.outputFileSync(writePath, data);
   }
 
   /**
-   * Reads the contents of the project directory
+   * Reads the contents of the project's data directory.
    * @param {string} dir - the relative path to read
    * @return {Promise<string[]>}
    */
-  readDir(dir) {
-    const dirPath = path.join(this.dataPath, dir);
-    return fs.readdir(dirPath);
+  async readDataDir(dir) {
+    const dirPath = path.join(this._dataPath, dir);
+    return await fs.readdir(dirPath);
   }
 
   /**
-   * Handles reading a project directory synchronously
+   * Handles synchronously reading a directory in the project's data directory.
    * @param {string} dir - the relative path to read
    * @return {string[]}
    */
-  readDirSync(dir) {
-    const dirPath = path.join(this.dataPath, dir);
+  readDataDirSync(dir) {
+    const dirPath = path.join(this._dataPath, dir);
     return fs.readdirSync(dirPath);
   }
 
   /**
-   * Handles reading global project data
+   * Handles reading data from the project's root directory
    *
    * @param {string} filePath - the relative path to read
    * @return {Promise<string>}
    */
-  async readData(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
+  async readFile(filePath) {
+    const readPath = path.join(this._projectPath, filePath);
     const data = await fs.readFile(readPath);
     return data.toString();
   }
 
   /**
-   * Handles reading global project data synchronously
+   * Handles reading data from the project's data directory
+   *
    * @param {string} filePath - the relative path to read
-   * @return {string}
+   * @return {Promise<string>}
    */
-  readDataSync(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
+  async readDataFile(filePath) {
+    const readPath = path.join(this._dataPath, filePath);
+    const data = await fs.readFile(readPath);
+    return data.toString();
+  }
+
+  /**
+   * Handles reading data from the project's root directory.
+   * You probably shouldn't use this in most situations.
+   * @throws an exception if the path does not exist.
+   * @param {string} filePath - the relative file path
+   * @returns {string}
+   * @private
+   */
+  readFileSync(filePath) {
+    const readPath = path.join(this._projectPath, filePath);
     const data = fs.readFileSync(readPath);
     return data.toString();
   }
 
   /**
-   * Checks if the path exists in the project
-   * @param {string} filePath - the relative path who's existence will be checked
-   * @return {Promise<boolean>}
+   * Handles synchronously reading data from the project's data directory.
+   * @throws an exception if the path does not exist.
+   * @param {string} filePath - the relative path to read
+   * @return {string}
    */
-  pathExists(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
-    return fs.pathExists(readPath);
+  readDataFileSync(filePath) {
+    const readPath = path.join(this._dataPath, filePath);
+    const data = fs.readFileSync(readPath);
+    return data.toString();
   }
 
   /**
-   * Synchronously checks if a path exists in the project
+   * Checks if the path exists in the project's data directory
+   * @param {string} filePath - the relative path who's existence will be checked
+   * @return {Promise<boolean>}
+   */
+  async dataPathExists(filePath) {
+    const readPath = path.join(this._dataPath, filePath);
+    return await fs.pathExists(readPath);
+  }
+
+  /**
+   * Checks if the path exists in the project's root directory
+   * @param filePath
+   * @returns {Promise<boolean>|*}
+   * @private
+   */
+  pathExistsSync(filePath) {
+    const readPath = path.join(this._projectPath, filePath);
+    return fs.pathExistsSync(readPath);
+  }
+
+  /**
+   * Synchronously checks if a path exists in the project's data directory
    * @param {string} filePath - the relative path who's existence will be checked
    * @return {boolean}
    */
-  pathExistsSync(filePath) {
-    const readPath = path.join(this.dataPath, filePath);
+  dataPathExistsSync(filePath) {
+    const readPath = path.join(this._dataPath, filePath);
     return fs.pathExistsSync(readPath);
   }
 
@@ -143,9 +383,9 @@ export default class ProjectAPI {
    * @param {string} filePath - the relative path to delete
    * @return {Promise}
    */
-  deleteFile(filePath) {
-    const fullPath = path.join(this.dataPath, filePath);
-    return fs.remove(fullPath);
+  async deleteDataFile(filePath) {
+    const fullPath = path.join(this._dataPath, filePath);
+    return await fs.remove(fullPath);
   }
 
   /**
@@ -153,8 +393,8 @@ export default class ProjectAPI {
    *
    * @param {string} filePath - the relative path to delete
    */
-  deleteFileSync(filePath) {
-    const fullPath = path.join(this.dataPath, filePath);
+  deleteDataFileSync(filePath) {
+    const fullPath = path.join(this._dataPath, filePath);
     fs.removeSync(fullPath);
   }
 }

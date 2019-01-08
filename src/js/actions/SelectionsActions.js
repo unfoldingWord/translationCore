@@ -12,6 +12,7 @@ import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
+import usfm from "usfm-js";
 
 /**
  * This method adds a selection array to the selections reducer.
@@ -153,6 +154,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     const initialSelectionsChanged = results.selectionsChanged;
     contextId = contextId || state.contextIdReducer.contextId;
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
+    let filtered = null;
     results.selectionsChanged = false;
 
     for (let groupItemKey of Object.keys(groupsDataForVerse)) {
@@ -161,7 +163,10 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
         const selections = checkingOccurrence.selections;
         if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
           if (selections && selections.length) {
-            const validSelections = checkSelectionOccurrences(targetVerse, selections);
+            if (!filtered) {  // for performance, we filter the verse only once and only if there is a selection
+              filtered = usfm.removeMarker(targetVerse); // remove USFM markers
+            }
+            const validSelections = checkSelectionOccurrences(filtered, selections);
             if (selections.length !== validSelections.length) {
               results.selectionsChanged = true;
               dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear selection
@@ -190,12 +195,16 @@ export const getGroupDataForVerse = (state, contextId) => {
     for (let groupItemKey of Object.keys(groupsData)) {
       const groupItem = groupsData[groupItemKey];
       if (groupItem) {
-        for (let checkingOccurrence of groupItem) {
-          if (isEqual(checkingOccurrence.contextId.reference, contextId.reference)) {
-            if (!filteredGroupData[groupItemKey]) {
-              filteredGroupData[groupItemKey] = [];
+        for (let check of groupItem) {
+          try {
+            if (isEqual(check.contextId.reference, contextId.reference)) {
+              if (!filteredGroupData[groupItemKey]) {
+                filteredGroupData[groupItemKey] = [];
+              }
+              filteredGroupData[groupItemKey].push(check);
             }
-            filteredGroupData[groupItemKey].push(checkingOccurrence);
+          } catch(e) {
+            console.warn(`Corrupt check found in group "${groupItemKey}"`, check);
           }
         }
       }

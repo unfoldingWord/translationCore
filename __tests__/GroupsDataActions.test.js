@@ -1,8 +1,3 @@
-jest.mock('../src/js/actions/ResourcesActions', () => ({
-  addNewBible: () => {
-    return mock_addNewBible();
-  }
-}));
 import fs from 'fs-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -37,7 +32,6 @@ describe('GroupsDataActions.validateBookSelections', () => {
   let saveOtherContextSpy = null;
 
   beforeEach(() => {
-    mock_addNewBible = jest.fn(() => { return () => {} });
     saveOtherContextSpy = jest.spyOn(saveMethods,
       'saveSelectionsForOtherContext');
     fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
@@ -60,7 +54,6 @@ describe('GroupsDataActions.validateBookSelections', () => {
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(expectedSelectionChanges);
-    expect(mock_addNewBible).toHaveBeenCalledTimes(3);
   });
 
   it('apostle selection edited', () => {
@@ -77,7 +70,6 @@ describe('GroupsDataActions.validateBookSelections', () => {
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(expectedSelectionChanges);
-    expect(mock_addNewBible).toHaveBeenCalledTimes(3);
   });
 
   it('all selections edited', () => {
@@ -94,7 +86,6 @@ describe('GroupsDataActions.validateBookSelections', () => {
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(expectedSelectionChanges);
-    expect(mock_addNewBible).toHaveBeenCalledTimes(3);
   });
 });
 

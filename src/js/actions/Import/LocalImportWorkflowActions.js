@@ -20,6 +20,7 @@ import {getTranslate, getProjectManifest, getProjectSaveLocation, getUsername} f
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import {deleteImportsFolder, deleteProjectFromImportsFolder} from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
+import { openProject } from "../MyProjects/ProjectLoadingActions";
 
 // constants
 export const ALERT_MESSAGE = (
@@ -87,7 +88,12 @@ export const localImport = () => {
       }
       if (success) {
         dispatch(MyProjectsActions.getMyProjects());
-        await dispatch(ProjectLoadingActions.displayTools());
+
+        // TODO: refactor this localImport method to remove project opening logic so we are not duplicating logic.
+
+        const finalProjectPath = getProjectSaveLocation(getState());
+        await dispatch(openProject(path.basename(finalProjectPath), true));
+        dispatch(AlertModalActions.closeAlertDialog());
         return;
       }
     } catch (error) { // Catch all errors in nested functions above

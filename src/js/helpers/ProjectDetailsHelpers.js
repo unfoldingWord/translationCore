@@ -8,60 +8,43 @@ import * as ProjectInformationCheckActions from "../actions/ProjectInformationCh
 import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
 import {getTranslate} from "../selectors";
-import * as ResourceHelpers from './ResourcesHelpers';
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
 import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
+import ResourceAPI from "./ResourceAPI";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const TOOL_DATA_PATH = path.join('.apps', 'translationCore', 'index');
 
-export function getCategoriesForProjectFromFS(toolName, bookName, projectSaveLocation) {
-  const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
-  let categoriesIndexObject = {};
-  if (fs.existsSync(currentCategoriesLoadedPath)) {
-    categoriesIndexObject = fs.readJSONSync(currentCategoriesLoadedPath, categoriesIndexObject) || {};
-  }
-  if (!categoriesIndexObject.current && toolName === 'translationWords') {
-    categoriesIndexObject.current = ['kt', 'other', 'names'];
-  }
-  return categoriesIndexObject.current || [] ;
+export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
+  const availableCategories = {};
+  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
+    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
+    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
+    const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
+    if (fs.existsSync(versionDirectory))
+      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
+        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
+      );
+      if (!availableCategories[toolName]) {
+        availableCategories[toolName] = [];
+      }
+  });
+  return availableCategories;
 }
 
-export function setCategoriesForProjectInFS(categories, toolName, bookName, projectSaveLocation) {
-  const currentCategoriesLoadedPath = path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName, '.categories');
-  let categoriesIndexObject = {
-    current: categories,
-    loaded: []
-  };
-  try {
-    if (fs.existsSync(currentCategoriesLoadedPath)) {
-      categoriesIndexObject = fs.readJSONSync(currentCategoriesLoadedPath);
-      categoriesIndexObject.current = categories;
-    } else {
-      fs.ensureDirSync(path.join(projectSaveLocation, TOOL_DATA_PATH, toolName, bookName));
-    }
-    fs.writeJSONSync(currentCategoriesLoadedPath, categoriesIndexObject);
-  } catch (e) {
-    //
-  }
-}
-
-  /** function to make the change in the array based on the passed params
-   * i.e. If the value is present in the array and you pass the value of 
-   * false it will be deleted from the array
-  */
+/**
+ * function to make the change in the array based on the passed params
+ * i.e. If the value is present in the array and you pass the value of
+ * false it will be deleted from the array
+ */
 export function updateArray (array, id, value) {
   const exists = array.indexOf(id) >= 0;
   if (exists && value === true) return array;
-  else if (exists && value === false) {
-    return array.filter((el) => el !== id);
-  }
-  else if (!exists && value === true)
-    return array.concat(id);
-  else return array;
+  if (exists && value === false) return array.filter((el) => el !== id);
+  if (!exists && value === true) return array.concat(id);
+  return array;
 }
 
 /**
@@ -412,7 +395,7 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     const languageId = toolName === 'translationWords' ? 'grc' : 'en';
     //Note: translationWords only uses checks that are also available in the greek (OL)
     const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', toolName);
-    const versionPath = ResourceHelpers.getLatestVersionInPath(toolResourcePath) || toolResourcePath;
+    const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) || toolResourcePath;
     userSelectedCategories.forEach((category) => {
       const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
       const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);

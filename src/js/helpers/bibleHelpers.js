@@ -2,8 +2,8 @@
 import Path from 'path-extra';
 import fs from 'fs-extra';
 import BooksOfBible from '../../../tcResources/books';
-import {getLatestVersionInPath} from "./ResourcesHelpers";
 import BooksOfTheBible from '../common/BooksOfTheBible';
+import ResourceAPI from "./ResourceAPI";
 
 /**
  *
@@ -64,7 +64,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
   try {
     let languageId = 'en';
     const resourcePath = Path.join(resourceDir, languageId, 'bibles', 'ult');
-    const versionPath = getLatestVersionInPath(resourcePath) || resourcePath;
+    const versionPath = ResourceAPI.getLatestVersion(resourcePath) || resourcePath;
     const indexLocation = Path.join(versionPath, 'index.json');
     const expectedVerses = fs.readJSONSync(indexLocation);
     const actualVersesObject = {};

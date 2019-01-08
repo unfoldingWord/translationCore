@@ -14,7 +14,6 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-const TOOLS_DATA_PATH = path.join('.apps', 'translationCore', 'index');
 const STATIC_RESOURCES_PATH = ResourcesHelpers.STATIC_RESOURCES_PATH;
 
 describe('ResourcesHelpers.getResourcesNeededByTool', () => {
@@ -228,52 +227,6 @@ function loadMockFsWithlexicons() {
   const copyResourceFiles = ['en/lexicons'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
 }
-
-
-describe('ResourcesHelpers.copyGroupsDataToProjectResources', () => {
-  let category;
-  let bookAbbreviation;
-  let project_name;
-  let currentToolName;
-  let groupsDataDirectory;
-  beforeEach(() => {
-    category = 'kt';
-    bookAbbreviation = 'tit';
-    project_name = 'en_tit';
-    currentToolName = 'translationWords';
-    groupsDataDirectory = path.join(PROJECTS_PATH, project_name, TOOLS_DATA_PATH, 'translationWords', bookAbbreviation);
-    
-    // Make resources
-    fs.__resetMockFS();
-    const projectSourcePath = path.join('__tests__', 'fixtures', 'project');
-    const copyFiles = [project_name];
-    fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
-    const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-    const copyResourceFiles = [
-      'grc/translationHelps'
-    ];
-    fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, RESOURCE_PATH);
-    const copyTCresourceFiles = [
-      'en'
-    ];
-    fs.__loadFilesIntoMockFs(copyTCresourceFiles, sourceResourcesPath,  path.join(__dirname, '../tcResources'));
-  });
-  it('should copy the entire resources groups to the user project directory', ()=> {
-    fs.removeSync(groupsDataDirectory);
-    ResourcesHelpers.copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation, category);
-    expect(fs.readdirSync(groupsDataDirectory)).toMatchObject([ 'apostle.json', 'authority.json', 'clean.json' ]);
-  });
-  it('should only copy checks not already present to the user project directory', ()=> {
-    ResourcesHelpers.copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation, category);
-    expect(fs.readdirSync(groupsDataDirectory)).toContain('clean.json');
-  });
-  it('should only copy checks not already present to the user project directory', ()=> {
-    currentToolName = 'wordAlignment';
-    fs.removeSync(groupsDataDirectory);
-    ResourcesHelpers.copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation, category);
-    expect(fs.readdirSync(groupsDataDirectory)).toMatchObject(["chapter_1.json", "chapter_2.json", "chapter_3.json"]);
-  });
-});
 
 function verifyLexicons(expectedLexicons, lexiconResourcePath) {
   for (let lexicon of expectedLexicons) {

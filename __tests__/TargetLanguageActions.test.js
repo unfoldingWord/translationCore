@@ -1,12 +1,9 @@
 jest.unmock('fs-extra');
 jest.unmock('adm-zip');
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 import path from 'path';
 import fs from 'fs-extra';
 import ncp from 'ncp';
 import AdmZip from 'adm-zip';
-import * as actions from '../src/js/actions/TargetLanguageActions';
 import * as manifestHelpers from "../src/js/helpers/manifestHelpers";
 import * as helpers from '../src/js/helpers/TargetLanguageHelpers';
 
@@ -16,9 +13,6 @@ jest.mock('../src/js/selectors', () => ({
     return {code: 'en'};
   }
 }));
-
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 
 const cleanOutput = () => {
   fs.emptyDirSync(path.join(__dirname, 'output'));

@@ -20,6 +20,8 @@ import * as fromProjectInformationCheckReducer from '../reducers/projectInformat
 import * as fromSourceContentUpdatesReducer from '../reducers/sourceContentUpdatesReducer';
 import * as fromMyProjectsReducer from '../reducers/myProjectsReducer';
 import * as fromAlert from '../reducers/alerts';
+import * as fromGrouspIndex from '../reducers/groupsIndexReducer';
+import * as fromGroupsData from '../reducers/groupsDataReducer';
 
 /**
  * Retrieves active alerts
@@ -451,5 +453,30 @@ export const getIsHomeVisible = state =>
 export const getListOfOutdatedSourceContent = (state) =>
   fromSourceContentUpdatesReducer.getListOfOutdatedSourceContent(state.sourceContentUpdatesReducer);
 
+/**
+ * Returns the selected tool categories for the selected project
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
 export const getToolCategories = (state, toolName) =>
   fromProjectDetailsReducer.getToolCategories(state.projectDetailsReducer, toolName);
+
+/**
+ * Returns the progress of a tool for the selected project
+ * @deprecated
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
+export const getProjectToolProgress = (state, toolName) =>
+  fromProjectDetailsReducer.getToolProgress(state.projectDetailsReducer, toolName);
+
+export const getCurrentProjectToolsSelectedGL = (state) => 
+  fromProjectDetailsReducer.getCurrentProjectToolsSelectedGL(state.projectDetailsReducer);
+
+export const getGroupsIndex = (state) => 
+  fromGrouspIndex.getGroupsIndex(state.groupsIndexReducer);
+
+export const getGroupsData = (state) => 
+  fromGroupsData.getGroupsData(state.groupsDataReducer);

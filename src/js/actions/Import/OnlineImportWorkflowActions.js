@@ -35,6 +35,7 @@ import migrateProject from "../../helpers/ProjectMigration";
 import fs from "fs-extra";
 import Repo from "../../helpers/Repo";
 import { isProjectSupported } from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
+import { openProject } from "../MyProjects/ProjectLoadingActions";
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -72,7 +73,7 @@ export const onlineImport = () => {
           const isValid = verifyThisIsTCoreOrTStudioProject(importProjectPath, errorMessage);
           if (!isValid) {
             console.warn("This is not a valid tStudio or tCore project we can migrate: ", errorMessage);
-            throw errorMessage;
+            throw new Error(errorMessage);
           }
 
           await isProjectSupported(importProjectPath, translate);
@@ -106,7 +107,12 @@ export const onlineImport = () => {
             await dispatch(ProjectDetailsActions.doRenamePrompting());
           }
           dispatch(MyProjectsActions.getMyProjects());
-          await dispatch(ProjectLoadingActions.displayTools());
+
+          // TODO: refactor this onlineImport method to remove project opening logic so we are not duplicating logic.
+
+          const finalProjectPath = getProjectSaveLocation(getState());
+          await dispatch(openProject(path.basename(finalProjectPath), true));
+          dispatch(AlertModalActions.closeAlertDialog());
           resolve();
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.online_import_error', {project_url: link, toPath: importProjectPath}));
