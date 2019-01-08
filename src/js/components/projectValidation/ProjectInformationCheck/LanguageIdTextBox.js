@@ -22,11 +22,11 @@ const LanguageIdTextBox = ({
 
   return (
     <div
-      id={id}
+      id={id+'-wrapper'}
       className={className}
     >
       <AutoComplete
-        id={id+'-AutoComplete'}
+        id={id}
         searchText={languageId}
         style={{ height: '80px' }}
         listStyle={{ maxHeight: 300, overflow: 'auto' }}

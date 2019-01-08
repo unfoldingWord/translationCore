@@ -370,6 +370,9 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                    
                   projects.resource_id
                    
+                  <span
+                    className="required"
+                  />
                   <span>
                     <span
                       data-class="selection-tooltip"
@@ -396,9 +399,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       id={undefined}
                     />
                   </span>
-                  <span
-                    className="required"
-                  />
                 </label>
                 <div
                   className={undefined}
@@ -496,7 +496,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
             >
               <div
                 className="project-details-item language-id-textbox"
-                id="Language-Id-TextBox-AutoComplete"
+                id="Language-Id-TextBox-AutoComplete-wrapper"
               >
                 <div
                   style={
@@ -529,7 +529,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                   >
                     <label
                       className={undefined}
-                      htmlFor="Language-Id-TextBox-AutoComplete-AutoComplete"
+                      htmlFor="Language-Id-TextBox-AutoComplete"
                       onClick={undefined}
                       style={
                         Object {
@@ -584,7 +584,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     <input
                       autoComplete="off"
                       disabled={false}
-                      id="Language-Id-TextBox-AutoComplete-AutoComplete"
+                      id="Language-Id-TextBox-AutoComplete"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
