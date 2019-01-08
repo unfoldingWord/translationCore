@@ -13,11 +13,12 @@ const TextPrompt = ({
   updateText,
   getErrorMessage,
   required,
-  infoText
+  infoText,
+  className
 }) => {
   function getRequiredIcon() {
     if (required) {
-      return (<span style={{color: '#cd0033'}}>*</span>);
+      return (<span className={'required'}></span>);
     }
   }
 
@@ -45,6 +46,8 @@ const TextPrompt = ({
 
   return (
     <div
+      id={id+'-wrapper'}
+      className={className}
       style={{
         marginTop: '20px',
         paddingTop: 0,
@@ -58,11 +61,7 @@ const TextPrompt = ({
       }}
     >
       <label htmlFor={id} style={{margin: 0}}>
-        <Glyphicon glyph={'book'} style={{color: '#000000', fontSize: '16px'}}/>
-        &nbsp;
-        {title}
-        {getInfoIcon()}
-        {getRequiredIcon()}
+        <Glyphicon glyph={'book'} style={{color: '#000000', fontSize: '16px'}}/>&nbsp;{title}&nbsp;{getInfoIcon()}{getRequiredIcon()}
       </label>
       <TextField
         id={id}
@@ -81,6 +80,10 @@ const TextPrompt = ({
   );
 };
 
+TextPrompt.defaultProps = {
+  className: 'text-propmpt'
+};
+
 TextPrompt.propTypes = {
   id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
@@ -88,7 +91,8 @@ TextPrompt.propTypes = {
   updateText: PropTypes.func.isRequired,
   getErrorMessage: PropTypes.func.isRequired,
   required: PropTypes.bool.isRequired,
-  infoText: PropTypes.string.isRequired
+  infoText: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 export default TextPrompt;

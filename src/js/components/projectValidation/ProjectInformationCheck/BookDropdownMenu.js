@@ -8,15 +8,20 @@ import * as BooksOfTheBible from '../../../common/BooksOfTheBible';
 const BookDropdownMenu = ({
   bookId,
   updateBookId,
-  translate
+  translate,
+  id,
+  className
 }) => {
   const bibleBooks = BooksOfTheBible.getAllBibleBooks(translate);
   return (
-    <div>
+    <div
+      id={id+'-wrapper'}
+      className={className}
+    >
       <SelectField
-        id="book-dropdown-menu-selectField"
+        id={id}
         value={bookId}
-        style={{ width: '200px', marginTop: bookId === "" ? '30px' : '' }}
+        style={{ minWidth: '256px' }}
         errorText={bookId === "" ? translate('project_validation.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
@@ -26,7 +31,7 @@ const BookDropdownMenu = ({
           <div>
             <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
             <span>{translate('projects.book')}</span>&nbsp;
-            <span style={{ color: '#cd0033'}}>*</span>
+            <span className={"required"}/>
           </div>
         }
         onChange={(event, index, value) => {
@@ -47,11 +52,18 @@ const BookDropdownMenu = ({
   );
 };
 
+BookDropdownMenu.defaultProps = {
+  id: 'book-dropdown-menu-selectField',
+  className: 'book-dropdown-menu-select'
+};
+
 BookDropdownMenu.propTypes = {
   bookId: PropTypes.string.isRequired,
   updateBookId: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  developerMode: PropTypes.bool.isRequired
+  developerMode: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default BookDropdownMenu;

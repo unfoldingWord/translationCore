@@ -12,14 +12,19 @@ const LanguageNameTextBox = ({
   updateLanguageName,
   updateLanguageId,
   updateLanguageSettings,
-  translate
+  translate,
+  id,
+  className
 }) => {
   return (
-    <div>
+    <div
+      id={id+'-wrapper'}
+      className={className}
+    >
       <AutoComplete
-        id="Language-Name-TextBox-AutoComplete"
+        id={id}
         searchText={languageName}
-        style={{ width: '100%', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
+        style={{ width: '100%', height: '80px' }}
         listStyle={{ maxHeight: 300, width: '500px', overflow: 'auto' }}
         errorText={getErrorMessage(translate, languageName, languageId)}
         errorStyle={{ color: '#cd0033' }}
@@ -30,7 +35,7 @@ const LanguageNameTextBox = ({
           <div>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
             <span>{translate('projects.language_name')}</span>&nbsp;
-            <span style={{ color: '#cd0033'}}>*</span>
+            <span className={"required"}/>
           </div>
         }
         onNewRequest={(chosenRequest, index) => {
@@ -110,13 +115,20 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
   }
 };
 
+LanguageNameTextBox.defaultProps = {
+  id: 'Language-Name-TextBox-AutoComplete',
+  className: 'language-name-textbox'
+};
+
 LanguageNameTextBox.propTypes = {
   translate: PropTypes.func.isRequired,
   languageName: PropTypes.string.isRequired,
   languageId: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,
   updateLanguageId: PropTypes.func.isRequired,
-  updateLanguageSettings: PropTypes.func.isRequired
+  updateLanguageSettings: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default LanguageNameTextBox;

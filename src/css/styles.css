@@ -575,3 +575,67 @@ main modal. They basically override bootstrap styling for these components
 .project-info-text-field-area .project-info-text-field hr {
   position: initial !important;
 }
+
+.project-details-table {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1199px) {
+  .project-details-table {
+    display: table;
+    margin: 0 auto;
+    width: auto;
+  }
+
+  .project-details-table .project-details-left-column .project-details-item,
+  .project-details-table .project-details-right-column .project-details-item {
+    float: none;
+  }
+}
+
+.project-details-table .project-details-column {
+  flex: 1 1 40%;
+  margin: 5px;
+  min-width: 260px;
+}
+
+.project-details-table .project-details-left-column .project-details-item {
+  display: block !important;
+  float: right;
+}
+
+.project-details-table .project-details-right-column .project-details-item {
+  display: block !important;
+  float: left;
+}
+
+.project-details-table .project-details-item label {
+  display: block;
+}
+
+.project-details-table .language-name-textbox {
+  display: block;
+}
+
+.project-details-table .language-id-textbox {
+  display: block;
+}
+
+.project-details-table .text-prompt > div {
+  display: block !important;
+}
+
+.project-details-table .contributor-area, .project-details-table .checkers-area {
+  min-width: 256px;
+  margin-top: 15px;
+}
+
+.project-details-table .required {
+  color: #cd0033;
+}
+
+.project-details-table .required:after {
+  content: '*';
+  color: #cd0033;
+}

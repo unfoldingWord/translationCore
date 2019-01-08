@@ -7,14 +7,19 @@ import { SelectField, MenuItem } from 'material-ui';
 const LanguageDirectionDropdownMenu = ({
   languageDirection,
   updateLanguageDirection,
-  translate
+  translate,
+  id,
+  className
 }) => {
   return (
-    <div>
+    <div
+      id={id+'-wrapper'}
+      className={className}
+    >
       <SelectField
-        id="language-direction-SelectField"
+        id={id}
         value={languageDirection}
-        style={{ width: '200px', marginTop: languageDirection === "" ? '30px' : '' }}
+        style={{ minWidth: '256px' }}
         errorText={languageDirection === "" ? "This field is required." : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
@@ -24,7 +29,7 @@ const LanguageDirectionDropdownMenu = ({
           <div style={{ width: '270px' }}>
             <Glyphicon glyph={"eye-open"} style={{ color: "#000000", fontSize: '28px' }} />&nbsp;
             <span>{translate('project_validation.language_direction')}</span>&nbsp;
-            <span style={{ color: '#cd0033'}}>*</span>
+            <span className={"required"}/>
           </div>
         }
         onChange={(event, index, value) => {
@@ -39,10 +44,17 @@ const LanguageDirectionDropdownMenu = ({
   );
 };
 
+LanguageDirectionDropdownMenu.defaultProps = {
+  id: 'language-direction-SelectField',
+  className: 'language-irextion-select'
+};
+
 LanguageDirectionDropdownMenu.propTypes = {
   translate: PropTypes.func.isRequired,
   languageDirection: PropTypes.string.isRequired,
-  updateLanguageDirection: PropTypes.func.isRequired
+  updateLanguageDirection: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default LanguageDirectionDropdownMenu;
