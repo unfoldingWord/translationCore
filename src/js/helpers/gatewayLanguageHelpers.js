@@ -5,7 +5,7 @@ import _ from 'lodash';
 import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./LanguageHelpers";
 import * as ResourcesHelpers from "./ResourcesHelpers";
 import * as BibleHelpers from "./bibleHelpers";
-import { getSelectedToolName, currentProjectToolsSelectedGL } from "../selectors";
+import { getSelectedToolName, getToolGatewayLanguage } from "../selectors";
 
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
@@ -17,7 +17,7 @@ export const DEFAULT_GATEWAY_LANGUAGE = 'en';
  */
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const toolName = getSelectedToolName(state);
-  const gatewayLanguageCode = currentProjectToolsSelectedGL[toolName];
+  const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
   const gatewayLanguageQuote = getAlignedGLText(
     state.projectDetailsReducer.currentProjectToolsSelectedGL,
     contextId || state.contextIdReducer.contextId,
