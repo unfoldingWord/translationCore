@@ -61,7 +61,12 @@ const TextPrompt = ({
       }}
     >
       <label htmlFor={id} style={{margin: 0}}>
-        <Glyphicon glyph={'book'} style={{color: '#000000', fontSize: '16px'}}/>&nbsp;{title}&nbsp;{getInfoIcon()}{getRequiredIcon()}
+        <Glyphicon glyph={'book'} style={{color: '#000000', fontSize: '16px'}}/>
+        &nbsp;
+        {title}
+        &nbsp;
+        {getRequiredIcon()}
+        {getInfoIcon()}
       </label>
       <TextField
         id={id}
