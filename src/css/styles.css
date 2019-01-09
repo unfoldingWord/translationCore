@@ -604,6 +604,11 @@ main modal. They basically override bootstrap styling for these components
   min-width: 256px;
 }
 
+.project-details-table .contributor-area,
+.project-details-table .checkers-area {
+  margin-top: 10px;
+}
+
 .project-details-table .project-details-left-column .project-details-item {
   display: block !important;
   float: right;
