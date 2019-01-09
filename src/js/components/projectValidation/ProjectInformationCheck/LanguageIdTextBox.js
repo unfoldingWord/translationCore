@@ -11,7 +11,9 @@ const LanguageIdTextBox = ({
   updateLanguageName,
   updateLanguageId,
   updateLanguageSettings,
-  translate
+  translate,
+  id,
+  className
 }) => {
 
   const caseInsensitiveLeadingFilter = function (searchText, key) {
@@ -19,24 +21,23 @@ const LanguageIdTextBox = ({
   };
 
   return (
-    <div>
+    <div
+      id={id+'-wrapper'}
+      className={className}
+    >
+      <label htmlFor={id} style={{margin: 0}}>
+        <TranslateIcon style={{ height: "16px", width: "16px", color: "#000000", verticalAlign: "bottom" }} />&nbsp;
+        <span>{translate('projects.language_code')}</span>&nbsp;
+        <span className={"required"}/>
+      </label>
       <AutoComplete
-        id="Language-Id-TextBox-AutoComplete"
+        id={id}
         searchText={languageId}
-        style={{ height: '80px', marginTop: languageId === "" ? '30px' : '' }}
+        style={{ height: '80px' }}
         listStyle={{ maxHeight: 300, overflow: 'auto' }}
         errorText={getErrorMessage(translate, languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelFixed={true}
-        floatingLabelStyle={{ color: "var(--text-color-dark)", fontSize: '22px', fontWeight: 'bold' }}
-        floatingLabelText={
-          <div>
-            <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-            <span>{translate('projects.language_code')}</span>&nbsp;
-            <span style={{ color: '#cd0033'}}>*</span>
-          </div>
-        }
         onNewRequest={(chosenRequest, index) => {
             selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
           }
@@ -110,12 +111,19 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
   }
 };
 
+LanguageIdTextBox.defaultProps = {
+  id: 'Language-Id-TextBox',
+  className: 'language-id-textbox'
+};
+
 LanguageIdTextBox.propTypes = {
   translate: PropTypes.func.isRequired,
   languageId: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,
   updateLanguageId: PropTypes.func.isRequired,
-  updateLanguageSettings: PropTypes.func.isRequired
+  updateLanguageSettings: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default LanguageIdTextBox;

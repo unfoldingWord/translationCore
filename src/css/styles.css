@@ -575,3 +575,106 @@ main modal. They basically override bootstrap styling for these components
 .project-info-text-field-area .project-info-text-field hr {
   position: initial !important;
 }
+
+.project-details-table {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1290px) {
+  .project-details-table .project-details-column {
+    margin: 7px 15px !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .project-details-table .project-details-column {
+    width: 100% !important;
+    margin: 7px !important;
+  }
+
+  .project-details-table .project-details-item {
+    float: none !important;
+    width: 256px !important;
+    margin: 0 auto !important;
+  }
+}
+
+.project-details-table .project-details-column {
+  flex: 1 1 45%;
+  margin: 7px 10px;
+  width: 45%;
+}
+
+.project-details-table .project-details-item {
+  min-width: 256px;
+}
+
+.project-details-table .contributor-area,
+.project-details-table .checkers-area {
+  margin-top: 10px;
+}
+
+.project-details-table .project-details-left-column .project-details-item {
+  display: block !important;
+  float: right;
+}
+
+.project-details-table .project-details-right-column .project-details-item {
+  display: block !important;
+  float: left;
+}
+
+.project-details-table .project-details-item label {
+  display: block;
+  margin: 0 0 10px 0 !important;
+}
+
+.project-details-table .language-name-textbox {
+  display: block;
+}
+
+.project-details-table .language-id-textbox {
+  display: block;
+}
+
+.project-details-table .text-prompt > div {
+  display: block !important;
+}
+
+.project-details-table .required {
+  color: #cd0033;
+}
+
+.project-details-table .required:after {
+  content: '*';
+  color: #cd0033;
+}
+
+.project-details-table .select-field {
+  margin-top: 20px;
+}
+
+.project-details-table .select-field input {
+  height: auto !important;
+}
+
+.project-details-table .select-field hr {
+  bottom: inherit !important;
+}
+
+.project-details-table .select-field div {
+  height: auto !important;
+  line-height: 16px !important;
+}
+
+.project-details-table .select-field > div,
+.project-details-table .select-field > div > div {
+  height: 16px !important;
+}
+
+.project-details-table .select-field button {
+  padding: 0 !important;
+  height: auto !important;
+  top: -5px !important;
+}
