@@ -1,5 +1,6 @@
 jest.mock('fs-extra');
 import fs from 'fs-extra';
+import path from "path-extra";
 import ProjectAPI from "../ProjectAPI";
 
 describe('ProjectAPI', () => {
@@ -11,9 +12,10 @@ describe('ProjectAPI', () => {
   it('provides paths', () => {
     const p = new ProjectAPI('/root');
     expect(p.path).toEqual('/root');
-    expect(p.dataPath).toEqual('/root/.apps/translationCore/');
+console.log("p.dataPath:", p.dataPath);
+    expect(p.dataPath).toContain(path.join("root", ".apps", "translationCore"));
     fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
-    expect(p.getCategoriesDir('tool')).toEqual('/root/.apps/translationCore/index/tool/book');
+    expect(p.getCategoriesDir('tool')).toContain(path.join("root", ".apps", "translationCore", "index", "tool", "book"));
   });
 
   describe('get group data', () => {
@@ -134,7 +136,7 @@ describe('ProjectAPI', () => {
       p.setCategoryLoaded('tool', 'category');
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
-        "/root/.apps/translationCore/index/tool/book/.categories",
+        path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
         {"current": [], "loaded": ["other", "category"]});
     });
 
@@ -149,7 +151,7 @@ describe('ProjectAPI', () => {
       p.setCategoryLoaded('tool', 'category', false);
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
-        "/root/.apps/translationCore/index/tool/book/.categories",
+        path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
         {"current": [], "loaded": ["other"]});
     });
 
@@ -163,7 +165,7 @@ describe('ProjectAPI', () => {
       p.setCategoryLoaded('tool', 'category');
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
-        "/root/.apps/translationCore/index/tool/book/.categories",
+        path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
         {"current": [], "loaded": ["category"]});
     });
 
@@ -178,7 +180,7 @@ describe('ProjectAPI', () => {
 
       expect(console.warn).toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
-        "/root/.apps/translationCore/index/tool/book/.categories",
+        path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
         {"current": [], "loaded": ["category"]});
     });
   });
@@ -231,7 +233,7 @@ describe('ProjectAPI', () => {
 
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
-        "/root/.apps/translationCore/index/tool/book/.categories",
+        path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
         {"current": ["category"], "loaded": []}
       );
       expect(console.warn).not.toBeCalled();
@@ -246,7 +248,7 @@ describe('ProjectAPI', () => {
 
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
-        "/root/.apps/translationCore/index/tool/book/.categories",
+        path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
         {"current": ["category"], "loaded": []}
       );
       expect(console.warn).not.toBeCalled();
@@ -262,7 +264,7 @@ describe('ProjectAPI', () => {
 
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
-        "/root/.apps/translationCore/index/tool/book/.categories",
+        path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
         {"current": ["category"], "loaded": []}
       );
       expect(console.warn).toBeCalled();
