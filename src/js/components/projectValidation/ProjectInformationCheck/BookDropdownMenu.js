@@ -26,7 +26,6 @@ const BookDropdownMenu = ({
       <SelectField
         id={id}
         value={bookId}
-        style={{ minWidth: '256px' }}
         errorText={bookId === "" ? translate('project_validation.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}

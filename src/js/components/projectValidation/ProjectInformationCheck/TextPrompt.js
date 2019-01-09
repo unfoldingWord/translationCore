@@ -71,7 +71,7 @@ const TextPrompt = ({
       <TextField
         id={id}
         value={text}
-        style={{width: '256px', height: '35px', fontWeight: 'normal'}}
+        style={{height: '35px', fontWeight: 'normal'}}
         inputStyle={{height: '25px'}}
         errorText={getErrorMessage(text)}
         errorStyle={{color: '#cd0033', height: '6px', bottom: 0, paddingTop: '5px'}}

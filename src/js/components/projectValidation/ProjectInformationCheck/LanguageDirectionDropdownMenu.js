@@ -24,7 +24,6 @@ const LanguageDirectionDropdownMenu = ({
       <SelectField
         id={id}
         value={languageDirection}
-        style={{ minWidth: '256px' }}
         errorText={languageDirection === "" ? translate('project_validation.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}

@@ -582,25 +582,35 @@ main modal. They basically override bootstrap styling for these components
 }
 
 @media (max-width: 1199px) {
-  .project-details-table {
-    margin: 0 auto !important;
-    width: auto !important;
-  }
-
   .project-details-table .project-details-column {
-    flex: none !important;
-    margin: 0 auto !important;
+    width: 100% !important;
+    margin: 15px 0 !important;
   }
 
   .project-details-table .project-details-item {
     float: none !important;
+    width: 260px !important;
+    margin: 0 auto !important;
   }
 }
 
 .project-details-table .project-details-column {
-  flex: 1 1 40%;
-  margin: 5px;
+  flex: 1 1 45%;
+  margin: 5px 0;
+  width: 50%;
+}
+
+.project-details-table .project-details-left-column {
+  margin-right: 15px;
+}
+
+.project-details-table .project-details-right-column {
+  margin-left: 15px;
+}
+
+.project-details-table .project-details-item {
   min-width: 260px;
+  margin-top: 15px;
 }
 
 .project-details-table .project-details-left-column .project-details-item {
@@ -628,11 +638,6 @@ main modal. They basically override bootstrap styling for these components
 
 .project-details-table .text-prompt > div {
   display: block !important;
-}
-
-.project-details-table .contributor-area, .project-details-table .checkers-area {
-  min-width: 256px;
-  margin-top: 15px;
 }
 
 .project-details-table .required {
