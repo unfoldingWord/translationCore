@@ -109,7 +109,6 @@
     "yargs": "10.0.3"
   },
   "dependencies": {
-    "@material-ui/core": "^3.8.2",
     "@neutrinog/electron-dl": "1.11.1",
     "adm-zip": "^0.4.11",
     "agentkeepalive": "4.0.0",
