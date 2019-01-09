@@ -581,6 +581,12 @@ main modal. They basically override bootstrap styling for these components
   flex-wrap: wrap;
 }
 
+@media (min-width: 1290px) {
+  .project-details-table .project-details-column {
+    margin: 7px 15px !important;
+  }
+}
+
 @media (max-width: 1199px) {
   .project-details-table .project-details-column {
     width: 100% !important;
