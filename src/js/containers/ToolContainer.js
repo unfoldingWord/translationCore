@@ -157,17 +157,9 @@ class ToolContainer extends Component {
         return legacyToolsReducer;
       },
       projectFileExistsSync: (...args) => {
-        console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
+        console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use projectDataPathExistsSync instead.`);
         return projectApi.dataPathExistsSync(...args);
-      },
-      get targetBible() {
-        console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');
-        return targetBook;
-      },
-      get sourceBible() {
-        console.warn('DEPRECATED: sourceBible is deprecated. Use sourceBook instead');
-        return sourceBook;
-      },
+      }
     };
   }
 
