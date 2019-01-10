@@ -25,7 +25,7 @@ class ToolCard extends Component {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-    this.loadProgress = this.loadProgress.bind(this);
+    this.loadProgress = _.debounce(this.loadProgress.bind(this), 200);
     this.state = {
       showDescription: false,
       progress: 0,

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Badge } from 'react-bootstrap';
 import Tooltip from '../../Tooltip';
 import InvalidatedIcon from '../../svgIcons/InvalidatedIcon';
+import _ from "lodash";
 
 const makeStyles = errorCount => {
   return {
@@ -68,7 +69,7 @@ export default class ToolCardNotificationBadges extends Component {
   constructor(props) {
     super(props);
     const {tool} = props;
-    this.loadInvalidCount = this.loadInvalidCount.bind(this);
+    this.loadInvalidCount = _.debounce(this.loadInvalidCount.bind(this), 200);
 
     // TRICKY: only display error count if supported by the tool
     this.state = {
