@@ -48,7 +48,7 @@ describe("copy group data", () => {
     expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "group2.json"));
     expect(mockImportCategoryGroupData.mock.calls.length).toBe(2);
     expect(mockSetCategoryLoaded).toBeCalledWith("tool", "names");
-    expect(mockSetCategoryLoaded.mock.calls.length).toBe(1);
+    expect(mockSetCategoryLoaded.mock.calls.length).toBe(2);
     expect(generateChapterGroupData).not.toBeCalled();
   });
 

@@ -12,10 +12,15 @@ const CheckersArea = ({
   removeChecker,
   updateCheckerName,
   checkersRequiredFieldMessage,
-  translate
+  translate,
+  id,
+  className
 }) => {
   return (
-    <div>
+    <div
+      id={id}
+      className={className}
+    >
       <div>
         <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000", verticalAlign: "top" }} />&nbsp;
         <span style={{ fontWeight: 'bold' }}>{translate('project_validation.checkers')}</span>
@@ -59,13 +64,20 @@ const CheckersArea = ({
   );
 };
 
+CheckersArea.defaultProps = {
+  id: 'checkers-area',
+  className: 'checkers-area'
+};
+
 CheckersArea.propTypes = {
   translate: PropTypes.func.isRequired,
   checkers: PropTypes.array.isRequired,
   addChecker: PropTypes.func.isRequired,
   removeChecker: PropTypes.func.isRequired,
   updateCheckerName: PropTypes.func.isRequired,
-  checkersRequiredFieldMessage: PropTypes.bool.isRequired
+  checkersRequiredFieldMessage: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default CheckersArea;

@@ -12,10 +12,15 @@ const ContributorsArea = ({
   removeContributor,
   updateContributorName,
   contributorsRequiredFieldMessage,
-  translate
+  translate,
+  id,
+  className
 }) => {
   return (
-    <div>
+    <div
+      id={id}
+      className={className}
+    >
       <div>
         <GroupIcon style={{ height: "28px", width: "28px", color: "#000000", verticalAlign: "top" }} />&nbsp;
         <span style={{ fontWeight: 'bold' }}>{translate('project_validation.contributors')}</span>
@@ -59,13 +64,20 @@ const ContributorsArea = ({
   );
 };
 
+ContributorsArea.defaultProps = {
+  id: 'contributor-area',
+  className: 'contributor-area'
+};
+
 ContributorsArea.propTypes = {
   translate: PropTypes.func.isRequired,
   contributors: PropTypes.array.isRequired,
   addContributor: PropTypes.func.isRequired,
   removeContributor: PropTypes.func.isRequired,
   updateContributorName: PropTypes.func.isRequired,
-  contributorsRequiredFieldMessage: PropTypes.bool.isRequired
+  contributorsRequiredFieldMessage: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default ContributorsArea;
