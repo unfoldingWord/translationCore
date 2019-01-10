@@ -73,7 +73,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
         project.setCategoryLoaded(toolName, category);
 
         // TRICKY: gives the tool an index of which groups belong to which category
-        project.indexCategoryGroups(toolName, category, groups);
+        project.setCategoryGroupIds(toolName, category, groups);
       }
     }
   } else {
