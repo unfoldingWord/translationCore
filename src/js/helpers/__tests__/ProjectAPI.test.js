@@ -12,7 +12,6 @@ describe('ProjectAPI', () => {
   it('provides paths', () => {
     const p = new ProjectAPI('/root');
     expect(p.path).toEqual('/root');
-console.log("p.dataPath:", p.dataPath);
     expect(p.dataPath).toContain(path.join("root", ".apps", "translationCore"));
     fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
     expect(p.getCategoriesDir('tool')).toContain(path.join("root", ".apps", "translationCore", "index", "tool", "book"));
