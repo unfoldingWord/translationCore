@@ -104,9 +104,11 @@ class ToolContainer extends Component {
     } = nextProps;
     return {
       // project api
+      project: projectApi,
+
+      // flattened project api methods that may be deprecated in the future.
       readProjectDataDir: projectApi.readDataDir,
       readProjectDataDirSync: projectApi.readDataDirSync,
-
       writeProjectData: projectApi.writeDataFile,
       writeProjectDataSync: projectApi.writeDataFileSync,
       readProjectData: projectApi.readDataFile,
