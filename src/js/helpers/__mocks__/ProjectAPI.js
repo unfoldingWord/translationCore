@@ -5,9 +5,11 @@ export const mockImportCategoryGroupData = jest.fn();
 export const mockGetBookId = jest.fn();
 export const mockGetSelectedCategories = jest.fn();
 export const mockSetSelectedCategories = jest.fn();
+export const mockIndexCategoryGroups = jest.fn();
 
 const mock = jest.fn().mockImplementation(() => {
   return {
+    indexCategoryGroups: mockIndexCategoryGroups,
     getCategoriesDir: mockGetCategoriesDir,
     isCategoryLoaded: mockIsCategoryLoaded,
     setCategoryLoaded: mockSetCategoryLoaded,

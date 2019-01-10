@@ -104,8 +104,9 @@ class ToolContainer extends Component {
     } = nextProps;
     return {
       // project api
-      readProjectDir: projectApi.readDataDir,
-      readProjectDirSync: projectApi.readDataDirSync,
+      readProjectDataDir: projectApi.readDataDir,
+      readProjectDataDirSync: projectApi.readDataDirSync,
+
       writeProjectData: projectApi.writeDataFile,
       writeProjectDataSync: projectApi.writeDataFileSync,
       readProjectData: projectApi.readDataFile,
@@ -137,6 +138,14 @@ class ToolContainer extends Component {
       selectedToolName,
 
       // deprecated props
+      readProjectDir: (...args) => {
+        console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
+        return projectApi.readDataDir(...args);
+      },
+      readProjectDirSync: (...args) => {
+        console.warn('DEPRECATED: readProjectDirSync is deprecated. Use readProjectDataDirSync instead.');
+        return projectApi.readDataDirSync(...args);
+      },
       showIgnorableDialog: (...args) => {
         console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
         return coreApi.showIgnorableAlert(...args);

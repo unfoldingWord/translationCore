@@ -37,6 +37,7 @@ export default class ProjectAPI {
     this.isCategoryLoaded = this.isCategoryLoaded.bind(this);
     this.setCategoryLoaded = this.setCategoryLoaded.bind(this);
     this.getGroupsData = this.getGroupsData.bind(this);
+    this.indexCategoryGroups = this.indexCategoryGroups.bind(this);
   }
 
   /**
@@ -201,6 +202,18 @@ export default class ProjectAPI {
     }
 
     fs.outputJsonSync(categoriesPath, data);
+  }
+
+  /**
+   * Records an index of which groups belong to which category.
+   * @param toolName
+   * @param category
+   * @param groups
+   */
+  indexCategoryGroups(toolName, category, groups) {
+    const indexPath = path.join(this.getCategoriesDir(toolName),
+      ".categoryIndex", `${category}.json`);
+    fs.outputJsonSync(indexPath, groups);
   }
 
   /**

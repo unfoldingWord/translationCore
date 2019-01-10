@@ -48,28 +48,32 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
     }
 
     for (const category of categories) {
-      if (!project.isCategoryLoaded(toolName, category)) {
-        // TRICKY: some helps do not have groups nested under categories
-        const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
-        const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
+      // TRICKY: some helps do not have groups nested under categories
+      const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
+      const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
 
-        let groupsDir = resourceCategoryDir;
-        if(!fs.pathExistsSync(resourceCategoryDir)) {
-          groupsDir = altResourceCategoryDir;
-        }
+      let groupsDir = resourceCategoryDir;
+      if(!fs.pathExistsSync(resourceCategoryDir)) {
+        groupsDir = altResourceCategoryDir;
+      }
 
-        // copy un-loaded category group data into project
-        if(fs.pathExistsSync(groupsDir)) {
-          const files = fs.readdirSync(groupsDir);
-          for (const f of files) {
-            if(path.extname(f).toLowerCase() === ".json") {
-              const dataPath = path.join(groupsDir, f);
-              project.importCategoryGroupData(toolName, dataPath);
-            }
+      // copy un-loaded category group data into project
+      if(fs.pathExistsSync(groupsDir)) {
+        const files = fs.readdirSync(groupsDir);
+        const groups = [];
+        for (const f of files) {
+          if(path.extname(f).toLowerCase() === ".json") {
+            groups.push(path.basename(f.toLowerCase(), ".json"));
+            const dataPath = path.join(groupsDir, f);
+            project.importCategoryGroupData(toolName, dataPath);
           }
-          // loading complete
-          project.setCategoryLoaded(toolName, category);
         }
+        // loading complete
+        // TODO: I don't think this is necessary anymore
+        project.setCategoryLoaded(toolName, category);
+
+        // TRICKY: gives the tool an index of which groups belong to which category
+        project.indexCategoryGroups(toolName, category, groups);
       }
     }
   } else {
