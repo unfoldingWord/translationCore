@@ -105,10 +105,10 @@ export default class ProjectAPI {
    * @throws an I/O error if there is a problem reading the file.
    * @param {string} toolName - the tool name. This is synonymous with translationHelp name
    * @param {string} groupId - the group id
-   * @returns {object} - the group data object
+   * @returns {object[]} - the group data object
    */
   getGroupData(toolName, groupId) {
-    const dataPath = path.join(this.getCategoriesDir(toolName), `${groupId}`);
+    const dataPath = path.join(this.getCategoriesDir(toolName), `${groupId}.json`);
     return fs.readJsonSync(dataPath);
   }
 

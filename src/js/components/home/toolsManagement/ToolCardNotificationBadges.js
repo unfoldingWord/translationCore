@@ -81,12 +81,12 @@ export default class ToolCardNotificationBadges extends Component {
    * Loads the number of invalid checks from the tool.
    */
   loadInvalidCount() {
-    const {tool} = this.props;
+    const {tool, selectedCategories} = this.props;
     const {errorCount, countEnabled} = this.state;
 
     if(countEnabled) {
       setTimeout(() => {
-        const numInvalidChecks = tool.api.trigger('getInvalidChecks');
+        const numInvalidChecks = tool.api.trigger('getInvalidChecks', selectedCategories);
 
         if (errorCount !== numInvalidChecks) {
           this.setState({
@@ -127,5 +127,6 @@ export default class ToolCardNotificationBadges extends Component {
 
 ToolCardNotificationBadges.propTypes = {
   tool: PropTypes.object.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  selectedCategories: PropTypes.array.isRequired,
 };

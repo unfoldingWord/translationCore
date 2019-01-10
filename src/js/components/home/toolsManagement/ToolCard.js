@@ -18,6 +18,7 @@ import {
   getToolGatewayLanguage
 } from "../../../selectors";
 import { connect } from "react-redux";
+import _ from "lodash";
 
 class ToolCard extends Component {
   constructor(props) {
@@ -33,12 +34,12 @@ class ToolCard extends Component {
   }
 
   loadProgress() {
-    const {tool, actions: {getProjectProgressForTools}} = this.props;
+    const {tool, actions: {getProjectProgressForTools}, selectedCategories} = this.props;
     const {progress, useLegacyProgress} = this.state;
 
     if(tool.api.methodExists("getProgress")) {
       setTimeout(() => {
-        const toolProgress = tool.api.trigger("getProgress");
+        const toolProgress = tool.api.trigger("getProgress", selectedCategories);
         if(progress !== toolProgress) {
           this.setState({
             progress: toolProgress ? toolProgress : 0
@@ -58,6 +59,12 @@ class ToolCard extends Component {
 
   componentDidMount() {
     this.loadProgress();
+  }
+
+  componentDidUpdate(prevProps) {
+    if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
+      this.loadProgress();
+    }
   }
 
   componentWillMount() {
@@ -157,7 +164,7 @@ class ToolCard extends Component {
             titleStyle={{fontWeight: "bold"}}
             subtitle={tool.version}
             style={{display: 'flex', justifyContent: 'space-between'}}>
-            <ToolCardNotificationBadges tool={tool} translate={translate} />
+            <ToolCardNotificationBadges tool={tool} translate={translate} selectedCategories={selectedCategories} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
           {showCheckBoxes && <ToolCardBoxes toolName={tool.name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
