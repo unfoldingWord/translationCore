@@ -23,7 +23,7 @@ import usfm from "usfm-js";
  * @return {Object} - An action object, consisting of a timestamp, action type,
  *                    a selection array, and a username.
  */
-export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {    
+export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
     let state = getState();
     if (getSelectedToolName(state) === 'translationWords') {
