@@ -104,8 +104,11 @@ class ToolContainer extends Component {
     } = nextProps;
     return {
       // project api
-      readProjectDir: projectApi.readDataDir,
-      readProjectDirSync: projectApi.readDataDirSync,
+      project: projectApi,
+
+      // flattened project api methods that may be deprecated in the future.
+      readProjectDataDir: projectApi.readDataDir,
+      readProjectDataDirSync: projectApi.readDataDirSync,
       writeProjectData: projectApi.writeDataFile,
       writeProjectDataSync: projectApi.writeDataFileSync,
       readProjectData: projectApi.readDataFile,
@@ -137,6 +140,14 @@ class ToolContainer extends Component {
       selectedToolName,
 
       // deprecated props
+      readProjectDir: (...args) => {
+        console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
+        return projectApi.readDataDir(...args);
+      },
+      readProjectDirSync: (...args) => {
+        console.warn('DEPRECATED: readProjectDirSync is deprecated. Use readProjectDataDirSync instead.');
+        return projectApi.readDataDirSync(...args);
+      },
       showIgnorableDialog: (...args) => {
         console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
         return coreApi.showIgnorableAlert(...args);
@@ -146,17 +157,9 @@ class ToolContainer extends Component {
         return legacyToolsReducer;
       },
       projectFileExistsSync: (...args) => {
-        console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
+        console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use projectDataPathExistsSync instead.`);
         return projectApi.dataPathExistsSync(...args);
-      },
-      get targetBible() {
-        console.warn('DEPRECATED: targetBible is deprecated. Use targetBook instead');
-        return targetBook;
-      },
-      get sourceBible() {
-        console.warn('DEPRECATED: sourceBible is deprecated. Use sourceBook instead');
-        return sourceBook;
-      },
+      }
     };
   }
 

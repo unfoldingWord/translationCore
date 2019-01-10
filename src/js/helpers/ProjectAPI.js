@@ -37,6 +37,8 @@ export default class ProjectAPI {
     this.isCategoryLoaded = this.isCategoryLoaded.bind(this);
     this.setCategoryLoaded = this.setCategoryLoaded.bind(this);
     this.getGroupsData = this.getGroupsData.bind(this);
+    this.getGroupData = this.getGroupData.bind(this);
+    this.setCategoryGroupIds = this.setCategoryGroupIds.bind(this);
   }
 
   /**
@@ -99,9 +101,21 @@ export default class ProjectAPI {
   }
 
   /**
+   * Returns a single group data item
+   * @throws an I/O error if there is a problem reading the file.
+   * @param {string} toolName - the tool name. This is synonymous with translationHelp name
+   * @param {string} groupId - the group id
+   * @returns {object[]} - the group data object
+   */
+  getGroupData(toolName, groupId) {
+    const dataPath = path.join(this.getCategoriesDir(toolName), `${groupId}.json`);
+    return fs.readJsonSync(dataPath);
+  }
+
+  /**
    * Imports a group data file into the project.
    * Group data that already exists will not be overwritten.
-   * @param {string} toolName - the name of hte tool that the categories belong to
+   * @param {string} toolName - the name of the tool that the categories belong to
    * @param {string} dataPath - the path to the group data file
    * @returns {boolean} true if the group data was imported. false if already imported.
    */
@@ -201,6 +215,37 @@ export default class ProjectAPI {
     }
 
     fs.outputJsonSync(categoriesPath, data);
+  }
+
+  /**
+   * Records an index of which groups belong to which category.
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   * @param {string} category - the name of the category to which the groups belong
+   * @param {string[]} groups - an array of group ids
+   */
+  setCategoryGroupIds(toolName, category, groups) {
+    const indexPath = path.join(this.getCategoriesDir(toolName),
+      ".categoryIndex", `${category}.json`);
+    fs.outputJsonSync(indexPath, groups);
+  }
+
+  /**
+   * Returns an array of groups ids for the given category
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   * @param {string} category - the name of the category
+   * @returns {string[]} - an array of group ids that belong to the category
+   */
+  getCategoryGroupIds(toolName, category) {
+    const indexPath = path.join(this.getCategoriesDir(toolName),
+      ".categoryIndex", `${category}.json`);
+    if(fs.pathExistsSync(indexPath)) {
+      try {
+        return fs.readJsonSync(indexPath);
+      } catch (e) {
+        console.error(`Failed to read the category index at ${indexPath}`, e);
+      }
+    }
+    return [];
   }
 
   /**
