@@ -156,6 +156,20 @@ export default class ProjectAPI {
   }
 
   /**
+   * Returns the name of the book.
+   * If available the name will be localized.
+   * @returns {string}
+   */
+  getBookName() {
+    const manifest = this.getManifest();
+    if(manifest.target_language && manifest.target_language.book && manifest.target_language.book.name) {
+      return manifest.target_language.book.name;
+    } else {
+      return manifest.project.name;
+    }
+  }
+
+  /**
    * Checks if a tool (a.k.a. translationHelps) category has been copied into the project.
    * @param {string} toolName - the tool name. This is synonymous with translationHelp name
    * @param {string} category - the category id
