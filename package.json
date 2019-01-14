@@ -173,7 +173,7 @@
     "redux-promise": "0.6.0",
     "redux-subscriptions": "0.2.0",
     "redux-thunk": "2.2.0",
-    "reselect": "3.0.1",
+    "reselect": "4.0.0",
     "rimraf": "^2.6.2",
     "selections": "0.1.7",
     "semver": "5.5.0",
