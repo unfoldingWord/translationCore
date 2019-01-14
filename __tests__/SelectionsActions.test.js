@@ -9,16 +9,6 @@ import * as saveMethods from "../src/js/localStorage/saveMethods";
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-
-jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
-  getGatewayLanguageCodeAndQuote: () => {
-    return {
-      gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority'
-    };
-  }
-}));
-
 const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 
 fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
@@ -97,7 +87,7 @@ describe('SelectionsActions.validateSelections', () => {
   const bookId = 'tit';
   const selectionsReducer = {
     gatewayLanguageCode: "en",
-    gatewayLanguageQuote: "authority",
+    gatewayLanguageQuote: "authority, authorities",
     "selections": [
       {
         "text": "apostle",
@@ -263,7 +253,7 @@ describe('SelectionsActions.changeSelections', () => {
   const bookId = 'tit';
   const selectionsReducer = {
     gatewayLanguageCode: "en",
-    gatewayLanguageQuote: "authority",
+    gatewayLanguageQuote: "authority, authorities",
     "selections": [
       {
         "text": "apostle",
