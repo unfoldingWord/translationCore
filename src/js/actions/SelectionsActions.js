@@ -34,7 +34,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
         gatewayLanguageQuote
       } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
       if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
-        const modifiedTimestamp = generateTimestamp();
+        const modifiedTimestamp = generateTimestamp();       
         dispatch({
           type: types.CHANGE_SELECTIONS,
           modifiedTimestamp: modifiedTimestamp,
