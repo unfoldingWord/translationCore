@@ -4,7 +4,7 @@ exports[`SelectionsActions.changeSelections Set selection change 1`] = `
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "selections": Array [
       Object {
         "occurrence": 1,
@@ -16,7 +16,7 @@ Array [
   },
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "invalidated": false,
     "type": "SET_INVALIDATED",
   },
@@ -94,14 +94,14 @@ exports[`SelectionsActions.validateAllSelectionsForVerse all selections edited 1
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
     "userName": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "invalidated": true,
     "type": "SET_INVALIDATED",
     "userName": "dummy-test",
@@ -185,14 +185,14 @@ exports[`SelectionsActions.validateAllSelectionsForVerse apostle selection edite
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
     "userName": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "invalidated": true,
     "type": "SET_INVALIDATED",
     "userName": "dummy-test",

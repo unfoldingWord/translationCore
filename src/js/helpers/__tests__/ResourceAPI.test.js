@@ -1,6 +1,5 @@
 jest.mock('fs-extra');
 import fs from "fs-extra";
-import path from 'path-extra';
 import ResourceAPI from "../ResourceAPI";
 
 describe('ResourceAPI', () => {
@@ -16,10 +15,11 @@ describe('ResourceAPI', () => {
 
   it("lists translation helps", () => {
     const r = new ResourceAPI('/root');
+
     fs.readdirSync.mockReturnValueOnce(["test"]);
 
     expect(r.getTranslationHelps("lang")).toEqual(["test"]);
-    expect(fs.readdirSync).toBeCalledWith(path.join(path.sep, "root", "lang", "translationHelps"));
+    expect(fs.readdirSync).toBeCalledWith("/root/lang/translationHelps");
   });
 
   describe("get latest translation help", () => {
@@ -33,7 +33,7 @@ describe('ResourceAPI', () => {
       });
 
       const result = r.getLatestTranslationHelp("lang", "tw");
-      expect(result).toContain(path.join("root", "lang", "translationHelps", "tw", "v10"));
+      expect(result).toEqual("/root/lang/translationHelps/tw/v10");
 
     });
 
@@ -47,7 +47,7 @@ describe('ResourceAPI', () => {
       });
 
       const result = r.getLatestTranslationHelp("lang", "tw");
-      expect(result).toContain(path.join("root", "lang", "translationHelps", "tw", "v10.10"));
+      expect(result).toEqual("/root/lang/translationHelps/tw/v10.10");
 
     });
 

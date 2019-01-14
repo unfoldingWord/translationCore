@@ -89,8 +89,8 @@ describe('MergeConflictHelpers.merge', () => {
   });
 
   test('should successfully merge two seleceted merge conflicts', () => {
-    let inputFile = path.join(twoMergeConflictsUSFMPath, 'tit.usfm');
-    let outputFile = path.join(twoMergeConflictsUSFMPath, 'tit-merged.usfm');
+    let inputFile = twoMergeConflictsUSFMPath + '/tit.usfm';
+    let outputFile = twoMergeConflictsUSFMPath + '/tit-merged.usfm';
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
     MergeConflictHelpers.merge(twoMergeConflictsObject, inputFile, outputFile);

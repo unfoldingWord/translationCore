@@ -4,7 +4,7 @@ exports[`InvalidatedActions.set set Invalidated false 1`] = `
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "authority, authorities",
     "invalidated": false,
     "modifiedTimestamp": "2017-10-27T18:13:41.455Z",
     "type": "SET_INVALIDATED",
@@ -17,7 +17,7 @@ exports[`InvalidatedActions.set set Invalidated true 1`] = `
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "authority, authorities",
     "invalidated": true,
     "modifiedTimestamp": "2017-10-27T18:13:41.455Z",
     "type": "SET_INVALIDATED",
@@ -30,7 +30,7 @@ exports[`InvalidatedActions.setInvalidated set Invalidated false 1`] = `
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "authority, authorities",
     "invalidated": false,
     "type": "SET_INVALIDATED",
     "userName": "mannycolon",
@@ -49,7 +49,7 @@ exports[`InvalidatedActions.setInvalidated set Invalidated true 1`] = `
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "authority",
+    "gatewayLanguageQuote": "authority, authorities",
     "invalidated": true,
     "type": "SET_INVALIDATED",
     "userName": "mannycolon",

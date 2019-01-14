@@ -249,6 +249,10 @@ export const saveVerseEditsToCSV = (projectPath) => {
     loadProjectDataByType(projectPath, 'verseEdits')
       .then((array) => {
         const objectArray = array.map(data => {
+          const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
+          const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           const _data = {
             after: data.verseAfter,
             before: data.verseBefore,
@@ -257,7 +261,7 @@ export const saveVerseEditsToCSV = (projectPath) => {
             activeChapter: data.activeChapter,
             activeVerse: data.activeVerse,
             'gateway Language Code': data.gatewayLanguageCode || 'en',
-            'gateway Language Quote': data.gatewayLanguageQuote
+            'gateway Language Quote': gatewayLanguageQuote
           };
           if (data.contextId.tool === 'wordAlignment' || data.contextId.tool === '[External edit]') {
             _data["gateway Language Quote"] = 'N/A';
@@ -317,13 +321,17 @@ export const saveSelectionsToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = [];
         array.forEach(data => {
+          const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
+          const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           data.selections.forEach(selection => {
             const _data = {
               text: selection.text,
               'selection/occurrence': selection.occurrence,
               'selection/occurrences': selection.occurrences,
               'gateway Language Code': data.gatewayLanguageCode || 'en',
-              'gateway Language Quote': data.gatewayLanguageQuote
+              'gateway Language Quote': gatewayLanguageQuote
             };
             const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
             objectArray.push(newObject);

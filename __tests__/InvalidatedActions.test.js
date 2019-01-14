@@ -5,15 +5,6 @@ import * as InvalidatedActions from '../src/js/actions/InvalidatedActions';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
-  getGatewayLanguageCodeAndQuote: () => {
-    return {
-      gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority'
-    };
-  }
-}));
-
 describe('InvalidatedActions.set', () => {
   test('set Invalidated true', () => {
     const invalidated = true;

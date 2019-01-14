@@ -9,7 +9,6 @@ jest.mock("../ResourceAPI");
 jest.mock("fs-extra");
 
 import fs from "fs-extra";
-import path from "path-extra";
 import {
   mockIsCategoryLoaded,
   mockSetCategoryLoaded,
@@ -31,7 +30,7 @@ describe("copy group data", () => {
   });
 
   it("copies group data", () => {
-    mockGetLatestTranslationHelp.mockReturnValueOnce(path.join("", "help", "dir"));
+    mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
     fs.readdirSync.mockReturnValueOnce(["names", "other"]);
     fs.lstatSync.mockReturnValue({
       isDirectory: () => true
@@ -43,9 +42,8 @@ describe("copy group data", () => {
     fs.readdirSync.mockReturnValueOnce(["group1.json", "group2.json", "folder"]);
 
     copyGroupDataToProject("lang", "tool", "project/");
-    const groupPath =  path.join("", "help", "dir", "names", "groups", "tit");
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "group1.json"));
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "group2.json"));
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", "/help/dir/names/groups/tit/group1.json");
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", "/help/dir/names/groups/tit/group2.json");
     expect(mockImportCategoryGroupData.mock.calls.length).toBe(2);
     expect(mockSetCategoryLoaded).toBeCalledWith("tool", "names");
     expect(mockSetCategoryLoaded.mock.calls.length).toBe(2);

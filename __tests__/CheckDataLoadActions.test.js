@@ -7,16 +7,6 @@ import thunk from 'redux-thunk';
 import fs from 'fs-extra';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-
-jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
-  getGatewayLanguageCodeAndQuote: () => {
-    return {
-      gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority'
-    };
-  }
-}));
-
 //actions
 import * as CheckDataLoadActions from '../src/js/actions/CheckDataLoadActions';
 const projectSaveLocation = path.join(__dirname, 'fixtures/project/checkDataProject');
@@ -153,6 +143,7 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
       projectDetailsReducer,
       contextIdReducer
     });
+
     store.dispatch(CheckDataLoadActions.loadReminders());
     expect(store.getActions()).toEqual(expectedActions);
   });
