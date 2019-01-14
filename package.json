@@ -174,7 +174,7 @@
     "redux-subscriptions": "0.2.0",
     "redux-thunk": "2.2.0",
     "reselect": "3.0.1",
-    "rimraf": "2.6.2",
+    "rimraf": "^2.6.2",
     "selections": "0.1.7",
     "semver": "5.5.0",
     "string-punctuation-tokenizer": "0.9.3",

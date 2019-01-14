@@ -158,6 +158,10 @@ describe('csv export actions', () => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
           const filePath = path.join(dataPath, 'output', 'Selections.csv');
+
+          // verify that gatewayLanguageQuote might exist if test files were created correctly
+          let csvData = fs.readFileSync(filePath, 'utf8' );
+          expect(csvData).toContain('1,adoption,eph'); // quote is between instance and bookid in csv data 
           expect(fs.existsSync(filePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         })

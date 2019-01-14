@@ -10,8 +10,9 @@ import * as saveMethods from '../src/js/localStorage/saveMethods';
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const CHECK_DATA_PATH = path.join(__dirname, 'fixtures/checkData');
-const PROJECTS_PATH = path.join(__dirname, 'fixtures/project/en_tit');
+const CHECK_DATA_PATH = path.join(__dirname, 'fixtures', 'checkData');
+const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'project', 'en_tit');
+let mock_addNewBible = jest.fn();
 
 describe('GroupsDataActions.validateBookSelections', () => {
   const bookId = 'tit';
