@@ -291,9 +291,9 @@ export function doRenamePrompting() {
     const {projectDetailsReducer: {projectSaveLocation}, loginReducer: login} = getState();
     const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
     if (pointsToCurrentUsersRepo) {
-      dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+      await dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
     } else { // do not rename on dcs
-      dispatch(ProjectDetailsHelpers.showRenamedDialog());
+      await dispatch(ProjectDetailsHelpers.showRenamedDialog());
     }
   });
 }
