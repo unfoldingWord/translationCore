@@ -397,7 +397,7 @@ console.log("bibles: ", bibles);
 console.log("currentToolName: ", currentToolName);
   const selectedGL = currentProjectToolsSelectedGL[currentToolName];
 console.log("selectedGL: ", selectedGL);
-  if (!contextId.quote || ! bibles || ! bibles[selectedGL] || ! Object.keys(bibles[selectedGL]).length)
+  if (! contextId.quote || ! bibles || ! bibles[selectedGL] || ! Object.keys(bibles[selectedGL]).length)
     return contextId.quote;
   const sortedBibleIds = Object.keys(bibles[selectedGL]).sort(bibleIdSort);
   for (let i = 0; i < sortedBibleIds.length; ++i) {
