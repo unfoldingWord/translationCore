@@ -303,6 +303,18 @@ export function loadTargetLanguageBook() {
         }
       }
 
+      const projectManifestPath = path.join(projectPath, "manifest.json");
+      if (fs.existsSync(projectManifestPath)) { // read user selections from manifest if present
+        const manifest = fs.readJsonSync(projectManifestPath);
+        if (manifest.target_language && manifest.target_language.id) {
+          if (!bookData.manifest) {
+            bookData.manifest = {};
+          }
+          bookData.manifest.language_id = manifest.target_language.id;
+          bookData.manifest.language_name = manifest.target_language.name || manifest.target_language.id;
+        }
+      }
+
       dispatch(addNewBible(resourceId, bibleId, bookData));
     } else {
       console.warn(`Target book was not found at ${bookPath}`);
