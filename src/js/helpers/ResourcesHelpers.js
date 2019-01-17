@@ -424,8 +424,20 @@ export function getAvailableScripturePaneSelections(resourceList) {
     try {
       resourceList.splice(0, resourceList.length); // remove any pre-existing elements
       const contextId = getContext(getState());
+      const {resourcesReducer: {bibles}} = getState();
       const bookId = contextId && contextId.reference.bookId;
       const languagesIds = getLanguageIdsFromResourceFolder(bookId);
+
+      // add target Bible if in resource reducer
+      if (bibles && bibles["targetLanguage"] && bibles["targetLanguage"]["targetBible"]) {
+        const resource = {
+          bookId,
+          bibleId: "targetBible",
+          languageId: "targetLanguage",
+          manifest: bibles["targetLanguage"]["targetBible"].manifest
+        };
+        resourceList.push(resource);
+      }
 
       // load source bibles
       languagesIds.forEach((languageId) => {
@@ -444,12 +456,16 @@ export function getAvailableScripturePaneSelections(resourceList) {
                 const bookExists = fs.existsSync(
                   path.join(bibleLatestVersion, bookId, "1.json"));
                 if (manifestExists && bookExists) {
+                  let languageId_ = languageId;
+                  if ((languageId.toLowerCase() === 'grc') || (languageId.toLowerCase() === 'hbo')) {
+                    languageId_ = 'originalLanguage';
+                  }
                   const manifest = fs.readJsonSync(pathToBibleManifestFile);
                   if (Object.keys(manifest).length) {
                     const resource = {
                       bookId,
                       bibleId,
-                      languageId,
+                      languageId: languageId_,
                       manifest
                     };
                     resourceList.push(resource);
