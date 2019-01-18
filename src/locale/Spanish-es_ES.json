@@ -148,7 +148,7 @@
     "import_local_project": "Importar un Proyecto Local",
     "import_online_project": "Importar un Proyecto Online",
     "searching_alert": "Buscando. Por favor espere...",
-    "books_available": "En esta versión de ${app}, la herramienta translationWords y la herramienta Word Alignment son compatibles con los proyectos del Nuevo Testamento.",
+    "books_available": "In this version of ${app}, the translationWords tool supports projects from the New Testament and the Word Alignment tool supports projects from the whole Bible.",
     "enter_url": "Escriba la URL",
     "or": "O",
     "language_code": "Código De Idioma",
