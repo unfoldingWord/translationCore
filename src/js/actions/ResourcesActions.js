@@ -5,7 +5,7 @@ import path from "path-extra";
 import ospath from "ospath";
 import _ from "lodash";
 import SimpleCache from "../helpers/SimpleCache";
-import { getContext, getSelectedToolName } from "../selectors";
+import { getContext, getSelectedToolName, getProjectBookId, getBibles } from "../selectors";
 // actions
 import * as SettingsActions from "./SettingsActions";
 // helpers
@@ -200,6 +200,29 @@ export const loadBibleBook = (bibleId, bookId, languageId) => (dispatch) => {
     dispatch(addNewBible(languageId, bibleId, bibleData));
   }
 };
+
+/**
+ * Load all found books for a given language Id.
+ * @param languageId
+ * @return {Function}
+ */
+export const loadBiblesByLanguageId = (languageId) => {
+  return (dispatch, getState) => {
+    const bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles'); // ex. user/NAME/translationCore/resources/en/bibles/
+    const bookId = getProjectBookId(getState());
+    const bibles = getBibles(getState());
+    // check if the languae id is already included in the bibles object.
+    const isIncluded = Object.keys(bibles).includes(languageId);
+
+    if (!isIncluded && fs.existsSync(bibleFolderPath) && bookId) {
+      const bibleIds = fs.readdirSync(bibleFolderPath).filter(file => file !== ".DS_Store");
+      bibleIds.forEach(bibleId => {
+        dispatch(loadBibleBook(bibleId, bookId, languageId));
+      });
+    }
+  };
+};
+
 
 /**
  * remove bible from resources
