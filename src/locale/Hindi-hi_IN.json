@@ -148,7 +148,7 @@
     "import_local_project": "स्थानीय परियोजना आयात करें",
     "import_online_project": "ऑनलाइन परियोजना आयात करें",
     "searching_alert": "खोज रहे हैं, कृपया प्रतीक्षा करें ...",
-    "books_available": "${app} इस संस्करण में, अनुवाद शब्द उपकरण और शब्द संरेखण उपकरण नई नियम परियोजनाओं का समर्थन करते हैं।",
+    "books_available": "In this version of ${app}, the translationWords tool supports projects from the New Testament and the Word Alignment tool supports projects from the whole Bible.",
     "enter_url": "यू आर एल दर्ज करो",
     "or": "या",
     "language_code": "भाषा कोड",
