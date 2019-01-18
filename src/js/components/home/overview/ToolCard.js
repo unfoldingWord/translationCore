@@ -46,9 +46,10 @@ class ToolCard extends Component {
     const state = store.getState();
     const tool = getSelectedTool(state);
     let content; // content can be empty to fallback to empty button/message
-    if (tool) {
+    let progress = 0;
+    if (tool && tool.api.methodExists("getProgress")) {
       const selectedCategories =  getToolCategories(state, tool.name);
-      const progress = tool.api.trigger("getProgress", selectedCategories);
+      progress = tool.api.trigger("getProgress", selectedCategories);
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
           <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
