@@ -66,7 +66,124 @@ describe('ResourcesHelpers.getResourcesNeededByTool', () => {
 });
 
 describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
+  beforeAll(() => {
+    fs.__resetMockFS();
+    loadMockFsWithProjectAndResources();
+    fs.ensureDirSync(path.join(RESOURCE_PATH, 'en'));
+  });
+
   it('getAvailableScripturePaneSelections() should work', () => {
+    const bookId = 'gal';
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {
+          targetLanguage: {
+            targetBible: {
+              manifest: {}
+            }
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: {
+          reference: {
+            bookId: bookId,
+            chapter:1
+          }
+        }
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: "targetBible",
+                languageId: "targetLanguage"
+              }, {
+                bibleId: "ugnt",
+                languageId: "originalLanguage"
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      }
+    });
+    const resourceList = [];
+
+    // when
+    store.dispatch(
+      ResourcesHelpers.getAvailableScripturePaneSelections(resourceList)
+    );
+
+    // then
+    expect(cleanupResources(resourceList)).toMatchSnapshot();
+  });
+
+  it('getAvailableScripturePaneSelections() should work OT', () => {
+    const bookId = 'jol';
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {
+          targetLanguage: {
+            targetBible: {
+              manifest: {}
+            }
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: {
+          reference: {
+            bookId: bookId,
+            chapter:1
+          }
+        }
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: "targetBible",
+                languageId: "targetLanguage"
+              }, {
+                bibleId: "uhb",
+                languageId: "originalLanguage"
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      }
+    });
+
+    const resourceList = [];
+
+    // when
+    store.dispatch(
+      ResourcesHelpers.getAvailableScripturePaneSelections(resourceList)
+    );
+
+    // then
+    expect(cleanupResources(resourceList)).toMatchSnapshot();
+  });
+
+  it('getAvailableScripturePaneSelections() should work without targetBible loaded into resources', () => {
     const bookId = 'gal';
     const store =  mockStore({
       resourcesReducer: {
@@ -104,7 +221,6 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
         }
       }
     });
-    loadMockFsWithProjectAndResources();
     const resourceList = [];
 
     // when
@@ -215,6 +331,7 @@ function loadMockFsWithProjectAndResources() {
     'en/bibles/ult',
     'en/bibles/ust',
     'grc/bibles/ugnt',
+    'hbo/bibles/uhb',
     'en/translationHelps/translationWords',
     'en/translationHelps/translationAcademy',
     'hi/translationHelps/translationWords'];
