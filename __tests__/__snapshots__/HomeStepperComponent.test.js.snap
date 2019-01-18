@@ -377,7 +377,10 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
 <div
   style={
     Object {
+      "MozBoxSizing": "border-box",
+      "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
       "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
       "backgroundColor": "#ffffff",
       "borderRadius": 2,
       "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
@@ -410,13 +413,27 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
       <div
         style={
           Object {
+            "WebkitAlignContent": "center",
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "justify",
+            "WebkitFlexDirection": "row",
+            "WebkitFlexGrow": 1,
+            "WebkitJustifyContent": "space-between",
             "alignContent": "center",
             "alignItems": "center",
             "borderRight": "solid 1px #ccc",
-            "display": "flex",
+            "display": "-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex",
             "flexDirection": "row",
             "flexGrow": 1,
             "justifyContent": "space-between",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexLinePack": "center",
+            "msFlexPack": "justify",
+            "msFlexPositive": 1,
             "muiPrepared": true,
             "padding": "0 50px",
           }
@@ -425,8 +442,10 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
         <div
           style={
             Object {
+              "WebkitFlex": "0 0 auto",
               "cursor": "pointer",
               "flex": "0 0 auto",
+              "msFlex": "0 0 auto",
               "muiPrepared": true,
             }
           }
@@ -436,12 +455,15 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
             onClick={[Function]}
             style={
               Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
                 "alignItems": "center",
                 "color": "rgba(0, 0, 0, 0.87)",
-                "display": "flex",
+                "display": "-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex",
                 "fontFamily": "Roboto, sans-serif",
                 "fontSize": 14,
                 "height": 72,
+                "msFlexAlign": "center",
                 "muiPrepared": true,
                 "paddingLeft": 14,
                 "paddingRight": 14,
@@ -484,7 +506,9 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
         <div
           style={
             Object {
+              "WebkitFlex": "1 1 auto",
               "flex": "1 1 auto",
+              "msFlex": "1 1 auto",
               "muiPrepared": true,
             }
           }
@@ -505,8 +529,10 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
         <div
           style={
             Object {
+              "WebkitFlex": "0 0 auto",
               "cursor": "pointer",
               "flex": "0 0 auto",
+              "msFlex": "0 0 auto",
               "muiPrepared": true,
             }
           }
@@ -516,12 +542,15 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
             onClick={[Function]}
             style={
               Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
                 "alignItems": "center",
                 "color": "rgba(0, 0, 0, 0.87)",
-                "display": "flex",
+                "display": "-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex",
                 "fontFamily": "Roboto, sans-serif",
                 "fontSize": 14,
                 "height": 72,
+                "msFlexAlign": "center",
                 "muiPrepared": true,
                 "paddingLeft": 14,
                 "paddingRight": 14,
@@ -564,7 +593,9 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
         <div
           style={
             Object {
+              "WebkitFlex": "1 1 auto",
               "flex": "1 1 auto",
+              "msFlex": "1 1 auto",
               "muiPrepared": true,
             }
           }
@@ -585,8 +616,10 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
         <div
           style={
             Object {
+              "WebkitFlex": "0 0 auto",
               "cursor": "pointer",
               "flex": "0 0 auto",
+              "msFlex": "0 0 auto",
               "muiPrepared": true,
             }
           }
@@ -596,12 +629,15 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
             onClick={[Function]}
             style={
               Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
                 "alignItems": "center",
                 "color": "rgba(0, 0, 0, 0.87)",
-                "display": "flex",
+                "display": "-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex",
                 "fontFamily": "Roboto, sans-serif",
                 "fontSize": 14,
                 "height": 72,
+                "msFlexAlign": "center",
                 "muiPrepared": true,
                 "paddingLeft": 14,
                 "paddingRight": 14,
@@ -644,7 +680,9 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
         <div
           style={
             Object {
+              "WebkitFlex": "1 1 auto",
               "flex": "1 1 auto",
+              "msFlex": "1 1 auto",
               "muiPrepared": true,
             }
           }
@@ -665,8 +703,10 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
         <div
           style={
             Object {
+              "WebkitFlex": "0 0 auto",
               "cursor": "pointer",
               "flex": "0 0 auto",
+              "msFlex": "0 0 auto",
               "muiPrepared": true,
             }
           }
@@ -676,12 +716,15 @@ exports[`HomeStepper HomeStepper component without nickname should match snapsho
             onClick={[Function]}
             style={
               Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
                 "alignItems": "center",
                 "color": "rgba(0, 0, 0, 0.87)",
-                "display": "flex",
+                "display": "-webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex",
                 "fontFamily": "Roboto, sans-serif",
                 "fontSize": 14,
                 "height": 72,
+                "msFlexAlign": "center",
                 "muiPrepared": true,
                 "paddingLeft": 14,
                 "paddingRight": 14,

@@ -3735,7 +3735,10 @@ exports[`MergeConflictsComponents.index should render the default component and 
       <div
         style={
           Object {
+            "MozBoxSizing": "border-box",
+            "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
             "backgroundColor": "#ffffff",
             "borderRadius": 2,
             "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
@@ -3798,7 +3801,10 @@ exports[`MergeConflictsComponents.index should render the default component and 
       <div
         style={
           Object {
+            "MozBoxSizing": "border-box",
+            "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
             "backgroundColor": "#ffffff",
             "borderRadius": 2,
             "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
@@ -3881,10 +3887,15 @@ exports[`MergeConflictsComponents.index should render the default component and 
                   onMouseLeave={[Function]}
                   style={
                     Object {
+                      "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "MozUserSelect": "none",
+                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "WebkitUserSelect": "none",
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fill": "currentColor",
                       "height": 60,
+                      "msUserSelect": "none",
                       "muiPrepared": true,
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",

@@ -71,6 +71,8 @@ exports[`snapshot 1`] = `
       className="Username"
       style={
         Object {
+          "MozTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "backgroundColor": "transparent",
           "cursor": "auto",
           "display": "inline-block",
@@ -91,9 +93,18 @@ exports[`snapshot 1`] = `
         onClick={undefined}
         style={
           Object {
+            "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "MozUserSelect": "none",
+            "WebkitTransform": "scale(1) translate(0, 0)",
+            "WebkitTransformOrigin": "left top",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "WebkitUserSelect": "none",
             "color": "var(--text-color-dark)",
             "fontWeight": "500",
             "lineHeight": "22px",
+            "msTransform": "scale(1) translate(0, 0)",
+            "msTransformOrigin": "left top",
+            "msUserSelect": "none",
             "muiPrepared": true,
             "opacity": "0.3",
             "pointerEvents": "none",
@@ -118,6 +129,9 @@ exports[`snapshot 1`] = `
         onFocus={[Function]}
         style={
           Object {
+            "MozAppearance": "textfield",
+            "MozBoxSizing": "border-box",
+            "WebkitAppearance": "textfield",
             "WebkitOpacity": 1,
             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
             "appearance": "textfield",
@@ -143,6 +157,7 @@ exports[`snapshot 1`] = `
           aria-hidden="true"
           style={
             Object {
+              "MozBoxSizing": "content-box",
               "borderBottomStyle": "solid",
               "borderBottomWidth": 1,
               "borderColor": "#e0e0e0",
@@ -162,6 +177,10 @@ exports[`snapshot 1`] = `
           aria-hidden="true"
           style={
             Object {
+              "MozBoxSizing": "content-box",
+              "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "WebkitTransform": "scaleX(0)",
+              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
               "borderBottomStyle": "solid",
               "borderBottomWidth": 2,
               "borderColor": "var(--accent-color-dark)",
@@ -171,6 +190,7 @@ exports[`snapshot 1`] = `
               "bottom": 8,
               "boxSizing": "content-box",
               "margin": 0,
+              "msTransform": "scaleX(0)",
               "muiPrepared": true,
               "position": "absolute",
               "transform": "scaleX(0)",
@@ -185,6 +205,8 @@ exports[`snapshot 1`] = `
       className="Passowrd"
       style={
         Object {
+          "MozTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "backgroundColor": "transparent",
           "cursor": "auto",
           "display": "inline-block",
@@ -205,9 +227,18 @@ exports[`snapshot 1`] = `
         onClick={undefined}
         style={
           Object {
+            "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "MozUserSelect": "none",
+            "WebkitTransform": "scale(1) translate(0, 0)",
+            "WebkitTransformOrigin": "left top",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "WebkitUserSelect": "none",
             "color": "var(--text-color-dark)",
             "fontWeight": "500",
             "lineHeight": "22px",
+            "msTransform": "scale(1) translate(0, 0)",
+            "msTransformOrigin": "left top",
+            "msUserSelect": "none",
             "muiPrepared": true,
             "opacity": "0.3",
             "pointerEvents": "none",
@@ -231,6 +262,9 @@ exports[`snapshot 1`] = `
         onFocus={[Function]}
         style={
           Object {
+            "MozAppearance": "textfield",
+            "MozBoxSizing": "border-box",
+            "WebkitAppearance": "textfield",
             "WebkitOpacity": 1,
             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
             "appearance": "textfield",
@@ -256,6 +290,7 @@ exports[`snapshot 1`] = `
           aria-hidden="true"
           style={
             Object {
+              "MozBoxSizing": "content-box",
               "borderBottomStyle": "solid",
               "borderBottomWidth": 1,
               "borderColor": "#e0e0e0",
@@ -275,6 +310,10 @@ exports[`snapshot 1`] = `
           aria-hidden="true"
           style={
             Object {
+              "MozBoxSizing": "content-box",
+              "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "WebkitTransform": "scaleX(0)",
+              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
               "borderBottomStyle": "solid",
               "borderBottomWidth": 2,
               "borderColor": "var(--accent-color-dark)",
@@ -284,6 +323,7 @@ exports[`snapshot 1`] = `
               "bottom": 8,
               "boxSizing": "content-box",
               "margin": 0,
+              "msTransform": "scaleX(0)",
               "muiPrepared": true,
               "position": "absolute",
               "transform": "scaleX(0)",

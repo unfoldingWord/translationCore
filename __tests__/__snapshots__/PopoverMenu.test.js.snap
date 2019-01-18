@@ -23,11 +23,16 @@ Array [
       onMouseLeave={[Function]}
       style={
         Object {
+          "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "MozUserSelect": "none",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "WebkitUserSelect": "none",
           "color": "#ffffff",
           "display": "inline-block",
           "fill": "#ffffff",
           "height": 15,
           "marginRight": "5px",
+          "msUserSelect": "none",
           "muiPrepared": true,
           "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "userSelect": "none",
@@ -88,11 +93,16 @@ Array [
       onMouseLeave={[Function]}
       style={
         Object {
+          "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "MozUserSelect": "none",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "WebkitUserSelect": "none",
           "color": "var(--accent-color-dark)",
           "display": "inline-block",
           "fill": "var(--accent-color-dark)",
           "height": 24,
           "marginRight": "5px",
+          "msUserSelect": "none",
           "muiPrepared": true,
           "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "userSelect": "none",
