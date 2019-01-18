@@ -14,7 +14,7 @@ import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
 import {
-  getProjectBookId, getProjectToolProgress, getSetting,
+  getProjectBookId, getSetting,
   getToolGatewayLanguage
 } from "../../../selectors";
 import { connect } from "react-redux";
@@ -28,14 +28,13 @@ class ToolCard extends Component {
     this.loadProgress = _.debounce(this.loadProgress.bind(this), 200);
     this.state = {
       showDescription: false,
-      progress: 0,
-      useLegacyProgress: false
+      progress: 0
     };
   }
 
   loadProgress() {
-    const {tool, actions: {getProjectProgressForTools}, selectedCategories} = this.props;
-    const {progress, useLegacyProgress} = this.state;
+    const {tool, selectedCategories} = this.props;
+    const {progress} = this.state;
 
     if(tool.api.methodExists("getProgress")) {
       setTimeout(() => {
@@ -46,14 +45,6 @@ class ToolCard extends Component {
           });
         }
       }, 0);
-    } else if(!useLegacyProgress) {
-      // TRICKY: only load the legacy progress if it has not already been loaded.
-      setTimeout(() => {
-        getProjectProgressForTools(tool.name);
-        this.setState({
-          useLegacyProgress: true
-        });
-      });
     }
   }
 
@@ -115,7 +106,6 @@ class ToolCard extends Component {
       tool,
       bookId,
       translate,
-      progress: legacyProgress,
       developerMode,
       actions: {
         updateCheckSelection
@@ -123,12 +113,7 @@ class ToolCard extends Component {
       selectedCategories,
       availableCategories
     } = this.props;
-    const {progress: newProgress, useLegacyProgress} = this.state;
-
-    let progress = newProgress;
-    if(useLegacyProgress) {
-      progress = legacyProgress;
-    }
+    const {progress} = this.state;
 
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
@@ -224,7 +209,6 @@ ToolCard.propTypes = {
   bookId: PropTypes.string.isRequired,
   tool: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,
-  progress: PropTypes.number.isRequired,
 
   actions: PropTypes.shape({
     getProjectProgressForTools: PropTypes.func.isRequired,
@@ -239,8 +223,7 @@ ToolCard.contextTypes = {
   store: PropTypes.any
 };
 
-const mapStateToProps = (state, props) => ({
-  progress: getProjectToolProgress(state, props.tool.name),
+const mapStateToProps = (state) => ({
   bookId: getProjectBookId(state),
   developerMode: getSetting(state, 'developerMode')
 });
