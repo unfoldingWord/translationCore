@@ -84,7 +84,10 @@ describe('getProjectProgressForTools() should create an action to get the projec
 
 describe('setProjectToolGL() should create an action to get the project GL for tools', () => {
   const initialState = {
-    projectDetailsReducer: {}
+    projectDetailsReducer: {},
+    resourcesReducer: {
+      bibles: {}
+    }
   };
 
   it('should fail if no toolName is given', () => {

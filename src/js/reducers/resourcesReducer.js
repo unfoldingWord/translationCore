@@ -135,3 +135,12 @@ export const getOriginalChapter = (state, chapter) => {
   const sourceBible = getSourceBook(state);
   return sourceBible && sourceBible[chapter + ''];
 };
+
+/**
+ * Returns the bibles object
+ * @param state
+ * @returns {*}
+ */
+export const getBibles = state => {
+  return state.bibles;
+};
