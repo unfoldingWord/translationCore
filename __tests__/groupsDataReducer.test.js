@@ -73,6 +73,71 @@ describe('groupsDataReducer', () => {
     expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
   });
 
+  it('clears the selection of the context', () => {
+    const before = {
+      groupsData: {
+        authority: [
+          {
+            verseEdits: true,
+            contextId: {
+              groupId: "authority",
+              reference: {bookId: "book", chapter: 1, verse: 1}
+            },
+            selections: null
+          },
+          {
+          verseEdits: true,
+          contextId: {
+            groupId: "authority",
+            reference: {bookId: "book", chapter: 1, verse: 2}
+          },
+          selections: [{
+            text: "world",
+            occurrence: 1,
+            occurrences: 2
+          }]
+        }]
+      },
+      loadedFromFileSystem: true
+    };
+
+    const action = {
+      type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
+      selections: [],
+      contextId: {
+        groupId: "authority",
+        reference: {bookId: "book", chapter: 1, verse: 2}
+      }
+    };
+
+    const after = {
+      groupsData: {
+        authority: [
+          {
+            verseEdits: true,
+            contextId: {
+              groupId: "authority",
+              reference: {bookId: "book", chapter: 1, verse: 1}
+            },
+            selections: null
+          },
+          {
+          verseEdits: true,
+          contextId: {
+            groupId: "authority",
+            reference: {bookId: "book", chapter: 1, verse: 2}
+          },
+          selections: null
+        }]
+      },
+      loadedFromFileSystem: true
+    };
+
+    const newState = groupsDataReducer(before, action);
+    expect(newState).toEqual(after);
+    expect(newState).not.toEqual(before); // make sure we did not modify initial state
+  });
+
   test('should handle TOGGLE_SELECTIONS_IN_GROUPDATA', () => {
     const selections = [
       {
