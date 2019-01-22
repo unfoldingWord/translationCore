@@ -49,8 +49,11 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     let {bookId, chapter: currentCheckChapter, verse: currentCheckVerse} = currentCheckContextId.reference;
     const contextIdWithVerseEdit = {
       ...currentCheckContextId,
-      chapter: chapterWithVerseEdit,
-      verse: verseWithVerseEdit
+      reference: {
+        ...currentCheckContextId.reference,
+        chapter: chapterWithVerseEdit,
+        verse: verseWithVerseEdit
+      }
     };
     // fallback to the current username
     let userAlias = username;
@@ -101,7 +104,7 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
  * @param {string|null} [glQuote=null] - the gateway language code
  * @return {*}
  */
-export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null, 
+export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null,
   {reference:{chapter:activeChapter, verse:activeVerse}, quote, groupId, occurrence}) => ({
   type: types.ADD_VERSE_EDIT,
   before,

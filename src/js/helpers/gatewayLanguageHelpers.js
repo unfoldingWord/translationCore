@@ -385,18 +385,13 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
 
 /**
  * get the selected text from the GL resource for this context
- * @param {*} currentProjectToolsSelectedGL 
- * @param {*} contextId 
+ * @param {*} currentProjectToolsSelectedGL
+ * @param {*} contextId
  * @param {*} bibles - list of resources
  * @param {*} currentToolName - such as translationWords
  */
 export function getAlignedGLText(currentProjectToolsSelectedGL, contextId, bibles, currentToolName) {
-console.log("currentProjectToolsSelectedGL: ", currentProjectToolsSelectedGL);
-console.log("contextId: ", contextId);
-console.log("bibles: ", bibles);
-console.log("currentToolName: ", currentToolName);
   const selectedGL = currentProjectToolsSelectedGL[currentToolName];
-console.log("selectedGL: ", selectedGL);
   if (! contextId.quote || ! bibles || ! bibles[selectedGL] || ! Object.keys(bibles[selectedGL]).length)
     return contextId.quote;
   const sortedBibleIds = Object.keys(bibles[selectedGL]).sort(bibleIdSort);
