@@ -597,7 +597,15 @@ function copyMissingSubfolders(source, destination) {
   const sourceSubFolders = getFilteredSubFolders(source);
   const destinationSubFolders = getFilteredSubFolders(destination);
   sourceSubFolders.forEach((lexicon) => {
-    if (!destinationSubFolders.includes(lexicon)) {
+    let lexiconMissing = !destinationSubFolders.includes(lexicon);
+    if (!lexiconMissing) { // if we have lexicon, make sure we have the latest version installed
+      const latestVersion = ResourceAPI.getLatestVersion(path.join(source, lexicon));
+      if (latestVersion) {
+        const destinationVersionPath = path.join(destination, lexicon, path.basename(latestVersion));
+        lexiconMissing = !fs.existsSync(destinationVersionPath);
+      }
+    }
+    if (lexiconMissing) {
       const sourcePath = path.join(source, lexicon);
       const destinationPath = path.join(destination, lexicon);
       fs.copySync(sourcePath, destinationPath);
