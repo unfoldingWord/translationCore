@@ -5,6 +5,10 @@ import ospath from 'ospath';
 import * as LexiconHelpers from '../src/js/helpers/LexiconHelpers';
 
 describe('LexiconHelpers', () => {
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+
   test('LexiconHelpers.getLexiconData loads lexicon data for a specific lexiconIda and entryId', () => {
     const languageId = 'en';
     const resourceVersion = 'v0';
@@ -15,9 +19,26 @@ describe('LexiconHelpers', () => {
       "brief": "the first letter of the Greek alphabet",
       "long": "alpha; the first letter of the Greek alphabet."
     };
-    fs.__setMockFS({
-      [lexiconFilePath]: lexiconContent
-    });
+    fs.outputFileSync(lexiconFilePath, lexiconContent);
+    const expectedResult = {
+      [lexiconId]: {
+        [entryId]: lexiconContent
+      }
+    };
+    expect(LexiconHelpers.getLexiconData(lexiconId, entryId)).toEqual(expectedResult);
+  });
+
+  test('LexiconHelpers.getLexiconData loads lexicon data for v0.1 resource', () => {
+    const languageId = 'en';
+    const resourceVersion = 'v0.1';
+    const lexiconId = 'uhl';
+    const entryId = '1';
+    const lexiconFilePath = path.join(ospath.home(), 'translationCore', 'resources', languageId, 'lexicons', lexiconId, resourceVersion, 'content', '1.json');
+    const lexiconContent = {
+      "brief": "father",
+      "long": "<i>Meaning:</i> \"father\", in a literal and immediate, or figurative and remote application.<br/><i>Usage:</i> chief, (fore-) father(-less), × patrimony, principal. Compare names in 'Abi-'.<br/><i>Source:</i> a primitive word;"
+    };
+    fs.outputFileSync(lexiconFilePath, lexiconContent);
     const expectedResult = {
       [lexiconId]: {
         [entryId]: lexiconContent
