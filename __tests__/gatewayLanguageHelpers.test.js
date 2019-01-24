@@ -8,7 +8,6 @@ import path from "path-extra";
 import fs from 'fs-extra';
 // helpers
 import * as gatewayLanguageHelpers from "../src/js/helpers/gatewayLanguageHelpers";
-import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 
 const RESOURCE_PATH = path.resolve(path.join(ospath.home(), 'translationCore', 'resources'));
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
@@ -766,16 +765,15 @@ function setupDummyHelps(lang) {
   // add dummy resources
     fs.copySync(path.join(RESOURCE_PATH, 'en/translationHelps/translationWords'), path.join(RESOURCE_PATH, lang + '/translationHelps/translationWords'));
   }
-  
+
   function setCheckingLevel(jsonPath, level) {
     const json = fs.readJSONSync(jsonPath);
     json.checking.checking_level = level.toString();
     fs.outputJsonSync(jsonPath, json);
   }
-  
+
   function fakeResourceByCopying(resourcePath_, sourceBook, destBook) {
     const sourcePath = path.join(resourcePath_, sourceBook);
     const destPath = path.join(resourcePath_, destBook);
     fs.copySync(sourcePath, destPath);
   }
-  

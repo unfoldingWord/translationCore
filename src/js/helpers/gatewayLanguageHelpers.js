@@ -33,26 +33,38 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
 };
 
 /**
- * lookup required helps for tool
+ * lookup required helps for tool to be supported Gateway Languages
  * @param toolName
- * @return {*}
+ * @return {{helpsPaths: Array.<String>, alignedBookRequired: Boolean, minimumCheckingLevel: Number, minimumOlCheckingLevel: Number}}
  */
-export function getRequiredHelpsForTool(toolName) {
-  let helpsRequired = null;
+export function getGlRequirementsForTool(toolName) {
+  let helpsPaths = [];
+  let alignedBookRequired = false; // for a valid GL book
+  let minimumCheckingLevel = 3; // for a valid GL book
+  let minimumOlCheckingLevel = 2; // for a valid OL for book
+
   switch (toolName) {
     case 'wordAlignment':
-    default:
-      helpsRequired = [];
+      helpsPaths = [];
+      minimumCheckingLevel = 3;
       break;
 
     case 'translationWords':
-      helpsRequired = ['translationHelps/translationWords'];
+      helpsPaths = ['translationHelps/translationWords'];
+      alignedBookRequired = true;
+      minimumCheckingLevel = 3;
       break;
+
     // case 'translationNotes':
-    //   helpsRequired = ['translationHelps/translationNotes', 'translationHelps/translationAcademy'];
+    //   helpsPaths = ['translationHelps/translationNotes', 'translationHelps/translationAcademy'];
     //   break;
+
+    default:
+      minimumCheckingLevel = 3;
+      minimumOlCheckingLevel = 2;
+      break;
   }
-  return helpsRequired;
+  return { helpsPaths, alignedBookRequired, minimumCheckingLevel, minimumOlCheckingLevel };
 }
 
 /**
@@ -66,9 +78,9 @@ export function getRequiredHelpsForTool(toolName) {
  * @return {Object} set of supported languages
  */
 export function getGatewayLanguageList(bookId = null, toolName = null) {
-  const helpsCheck = getRequiredHelpsForTool(toolName);
+  const glRequirements = getGlRequirementsForTool(toolName);
   const forceLanguageId = (toolName === 'wordAlignment') ? 'en' : null;
-  const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, helpsCheck, forceLanguageId);
+  const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, glRequirements, forceLanguageId);
   const supportedLanguageCodes = Object.keys(languageBookData);
   const supportedLanguages = supportedLanguageCodes.map(code => {
     let lang = getLanguageByCodeSelection(code);
@@ -186,12 +198,12 @@ export function getOlBookPath(bookId) {
 /**
  * test to make sure book has valid OL
  * @param {String} bookId - book to look up
- * @param checkingHelps
+ * @param {Number} minimumCheckingLevel
  * @return {Boolean}
  */
-export function hasValidOL(bookId, checkingHelps = true) {
+export function hasValidOL(bookId, minimumCheckingLevel = 0) {
   const origPath = getOlBookPath(bookId);
-  const isValidOrig = origPath && isValidResource(origPath, bookId, checkingHelps ? 2 : 0);
+  const isValidOrig = origPath && isValidResource(origPath, bookId, minimumCheckingLevel);
   return isValidOrig;
 }
 
@@ -217,8 +229,8 @@ export function hasValidOL(bookId, checkingHelps = true) {
  * @return {Array} valid bibles that can be used for Gateway language
  */
 export function getValidGatewayBiblesForTool(toolName, langCode, bookId) {
-  const helpsChecks = getRequiredHelpsForTool(toolName);
-  const validBibles = getValidGatewayBibles(langCode, bookId, helpsChecks);
+  const glRequirements = getGlRequirementsForTool(toolName);
+  const validBibles = getValidGatewayBibles(langCode, bookId, glRequirements);
   return validBibles;
 }
 
@@ -240,10 +252,10 @@ export function getValidGatewayBiblesForTool(toolName, langCode, bookId) {
  *
  * @param {String} langCode - language to check
  * @param {string} bookId - optionally filter on book
- * @param {Array|null} helpsChecks - array of helps to check for (subpaths to the helps folders that must exist)
+ * @param {{helpsPaths: Array.<String>, alignedBookRequired: Boolean, minimumCheckingLevel: Number, minimumOlCheckingLevel: Number}} glRequirements - helpsPaths - array of helps to check for (subpaths to the helps folders that must exist)
  * @return {Array} valid bibles that can be used for Gateway language
  */
-export function getValidGatewayBibles(langCode, bookId, helpsChecks=null) {
+export function getValidGatewayBibles(langCode, bookId, glRequirements = {}) {
   const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
   const bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
@@ -255,19 +267,20 @@ export function getValidGatewayBibles(langCode, bookId, helpsChecks=null) {
     let biblePath = getValidResourcePath(biblesPath, bible);
     if (biblePath) {
       isBibleValidSource = true;
-      const checkingHelps = helpsChecks && helpsChecks.length;
+      const checkingHelps = glRequirements.helpsPaths && glRequirements.helpsPaths.length;
       if (checkingHelps) { // if no resource checking given, we add empty check
-        for (let helpsCheck of helpsChecks) {
+        for (let helpsCheck of glRequirements.helpsPaths) {
           isBibleValidSource = isBibleValidSource && (!helpsCheck || getValidResourcePath(languagePath, helpsCheck));
         }
       }
       if (isBibleValidSource) {
         if (bookId) { // if filtering by book
-          const isValidOrig = hasValidOL(bookId, checkingHelps);
+          const isValidOrig = hasValidOL(bookId, glRequirements.minimumOlCheckingLevel); // make sure we have an OL for the book
           isBibleValidSource = isBibleValidSource && isValidOrig;
 
           // make sure resource for book is present and has the right checking level
-          const isValidUlt = biblePath && isValidResource(biblePath, bookId, 3, true);
+          const isValidUlt = biblePath && isValidResource(biblePath, bookId,
+            glRequirements.minimumCheckingLevel, glRequirements.alignedBookRequired);
           isBibleValidSource = isBibleValidSource && isValidUlt;
         }
       }
@@ -284,15 +297,15 @@ export function getValidGatewayBibles(langCode, bookId, helpsChecks=null) {
  *          See getValidGatewayBibles() for rules that determine if a bible can be used as gateway source.
  *
  * @param {String|null} bookId - optionally filter on book
- * @param {Array|null} helpsChecks - array of helps to check for (subpaths to the helps folders that must exist)
+ * @param {{helpsPaths: Array.<String>, alignedBookRequired: Boolean, minimumCheckingLevel: Number, minimumOlCheckingLevel: Number}} glRequirements - helpsPaths - array of helps to check for (subpaths to the helps folders that must exist)
  * @param {String|null} forceLanguageId - if not null, then add this language code
  * @return {Object} set of supported languages and their supported bibles
  */
-export function getSupportedGatewayLanguageResourcesList(bookId = null, helpsChecks = null, forceLanguageId = null) {
+export function getSupportedGatewayLanguageResourcesList(bookId = null, glRequirements = {}, forceLanguageId = null) {
   const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder(true) || [];
   const filteredLanguages = {};
   for (let language of allLanguages) {
-    const validBibles = getValidGatewayBibles(language, bookId, helpsChecks);
+    const validBibles = getValidGatewayBibles(language, bookId, glRequirements);
     if (validBibles && validBibles.length) {
       const default_literal = validBibles[0];
       filteredLanguages[language] = {
