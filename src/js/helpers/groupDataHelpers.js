@@ -67,7 +67,7 @@ export const generateChapterGroupIndex = (translate, numChapters = 150) => {
 /**
  * Reads the latest unique checks from the directory.
  * @param {string} dir - directory where check data is saved.
- * @return {[]} - array of the most recent check data
+ * @return {array} - array of the most recent check data
  */
 export function readLatestChecks(dir) {
   let checks = [];
@@ -96,8 +96,8 @@ export function readLatestChecks(dir) {
 /**
  * Evaluates whether a check has already been loaded
  * @param {object} checkData - the json check data
- * @param {[]} loadedChecks - an array of loaded unique checks
- * @returns {boolean} true if the check has not been loaded yet.
+ * @param {array} loadedChecks - an array of loaded unique checks
+ * @returns {boolean} - true if the check has not been loaded yet.
  */
 export function isCheckUnique(checkData, loadedChecks) {
   for(const check of loadedChecks) {
