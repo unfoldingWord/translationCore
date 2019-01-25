@@ -17,6 +17,7 @@ import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
 import {getTranslate} from '../selectors';
 import BooksOfBible from '../../../tcResources/books';
+import { closeProject } from "./MyProjects/ProjectLoadingActions";
 
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
@@ -111,7 +112,7 @@ export function finalize() {
       } catch (error) {
         dispatch(AlertModalActions.openAlertDialog(error));
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-        dispatch(ProjectLoadingActions.clearLastProject());
+        dispatch(closeProject());
       }
     }
   });
@@ -480,9 +481,10 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false});
-      dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()).then(() => {
-        dispatch(MyProjectsActions.getMyProjects());
-      });
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting());
+      // TRICKY: close the project so that changes can be re-loaded by the tools.
+      dispatch(closeProject());
+      dispatch(MyProjectsActions.getMyProjects());
     }
   });
 }

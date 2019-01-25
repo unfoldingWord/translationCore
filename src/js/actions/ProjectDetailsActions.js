@@ -337,7 +337,7 @@ export function updateProjectNameIfNecessaryAndDoPrompting() {
     const renamingResults = {};
     await dispatch(updateProjectNameIfNecessary(renamingResults));
     if (renamingResults.repoRenamed) {
-      dispatch(doRenamePrompting());
+      await dispatch(doRenamePrompting());
     }
   });
 }
