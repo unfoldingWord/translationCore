@@ -1,6 +1,7 @@
 /* eslint-env jest */
 jest.mock('fs-extra');
 jest.mock('../src/js/helpers/ProjectAPI');
+jest.mock('../')
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -297,9 +298,11 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+    const results = {};
+    await store.dispatch(actions.updateProjectNameIfNecessary(results));
 
     // then
+    expect(results.repoRenamed).toBe(true);
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
@@ -314,9 +317,11 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+    const results = {};
+    await store.dispatch(actions.updateProjectNameIfNecessary(results));
 
     // then
+    expect(results.repoRenamed).toBe(true);
     cleanupPaths(store.getActions());
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
@@ -331,9 +336,11 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+    const results = {};
+    await store.dispatch(actions.updateProjectNameIfNecessary(results));
 
     // then
+    expect(results.repoRenamed).toBe(true);
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
@@ -350,9 +357,11 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+    const results = {};
+    await store.dispatch(actions.updateProjectNameIfNecessary(results));
 
     // then
+    expect(results.repoRenamed).toBe(true);
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
