@@ -500,6 +500,11 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
   const olBibleId = BibleHelpers.isOldTestament(bookId) ? "uhb" : "ugnt";
   const currentPaneSettings = _.cloneDeep(
     SettingsHelpers.getCurrentPaneSetting(state));
+
+  // TODO: hardcoded fixed for 1.1.0, the En ULT is used by the expanded scripture pane & if
+  // not found throws an error. Should be addressed later by 4858.
+  addResource(resources, 'en', 'ult');
+
   if (Array.isArray(currentPaneSettings)) {
     for (let setting of currentPaneSettings) {
       let languageId = setting.languageId;
