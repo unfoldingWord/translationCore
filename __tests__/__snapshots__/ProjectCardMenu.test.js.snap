@@ -9,7 +9,7 @@ exports[`Test ProjectCardMenu component Should match snapshot with required prop
   }
 >
   <div
-    onTouchTap={[Function]}
+    onClick={[Function]}
   >
     <span
       className="glyphicon glyphicon-option-vertical"

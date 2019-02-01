@@ -5,10 +5,7 @@ import PropTypes from 'prop-types';
 import path from 'path-extra';
 import ospath from 'ospath';
 import { Grid, Row } from 'react-bootstrap';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-// injectTapEventPlugin Handles onTouchTap events from material-ui components
-injectTapEventPlugin();
 // container
 import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
