@@ -11,6 +11,8 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
+import { changeSelections } from '../SelectionsActions';
+
 import {
   getActiveLocaleLanguage,
   getProjectManifest,
@@ -159,7 +161,10 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
         verse: "1"
       }
     },
-
+    username: getUsername(state),
+    changeSelections: (selections, userName) => {
+      dispatch(changeSelections(selections, userName));
+    },
     // deprecated props
     readProjectDir: (...args) => {
       console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
