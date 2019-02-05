@@ -48,9 +48,9 @@ export function getRequiredHelpsForTool(toolName) {
     case 'translationWords':
       helpsRequired = ['translationHelps/translationWords'];
       break;
-    // case 'translationNotes':
-    //   helpsRequired = ['translationHelps/translationNotes', 'translationHelps/translationAcademy'];
-    //   break;
+    case 'translationNotes':
+      helpsRequired = ['translationHelps/translationNotes', 'translationHelps/translationAcademy'];
+      break;
   }
   return helpsRequired;
 }
