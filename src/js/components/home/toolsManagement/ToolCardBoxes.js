@@ -1,19 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
-const checkBoxNames = {
-  'kt': 'Key Terms',
-  'other': 'Other Terms',
-  'names': 'Names'
-};
 
 const ToolCardBoxes = ({checks, onChecked, selectedCategories, toolName}) => {
+  let checkBoxNames = {};
+console.log( "toolName", toolName );
+
+  if( toolName === "translationWords") {
+    checkBoxNames = {
+      'kt': 'Key Terms',
+      'names': 'Names',
+      'other': 'Other Terms'
+    };
+  } else {
+    checkBoxNames = {
+      'num': 'Numbers',
+      'fig': 'Figures of Speech'
+    };
+  }
+
   const sortedChecks = checks.sort((a, b) => {
     return Object.keys(checkBoxNames).indexOf(a) > Object.keys(checkBoxNames).indexOf(b);
   });
+  
   return (
     <div style={{marginLeft: '6%'}}>
       {
+        //checkBoxNames.map((id, index) => (
         sortedChecks.map((id, index) => (
           <div style={{display: 'flex', alignItems: 'center', marginBottom: 5}} key={index}>
             <Checkbox
