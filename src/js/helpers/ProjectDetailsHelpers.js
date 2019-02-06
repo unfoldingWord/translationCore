@@ -21,6 +21,7 @@ export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
   const availableCategories = {};
   Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
     const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
+    //TODO: Does this also need to check the grc for the groups data existing?
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
     if (fs.existsSync(versionDirectory))
