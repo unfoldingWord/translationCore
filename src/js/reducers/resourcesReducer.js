@@ -91,11 +91,21 @@ export const getTargetChapter = (state, chapter) => {
   return state.bibles.targetLanguage.targetBible[chapter + ''];
 };
 
-export const getTargetBible = state => {
-  return state.bibles.targetLanguage.targetBible;
+/**
+ * Returns the target language book
+ * @param state
+ * @returns {*}
+ */
+export const getTargetBook = state => {
+  return state.bibles.targetLanguage && state.bibles.targetLanguage.targetBible;
 };
 
-export const getSourceBible = state => {
+/**
+ * Returns the source language book
+ * @param state
+ * @returns {*}
+ */
+export const getSourceBook = state => {
   return state.bibles.originalLanguage && (state.bibles.originalLanguage.ugnt || state.bibles.originalLanguage.uhb);
 };
 
@@ -122,6 +132,6 @@ export const getOriginalVerse = (state, chapter, verse) => {
  * @return {*}
  */
 export const getOriginalChapter = (state, chapter) => {
-  const sourceBible = getSourceBible(state);
+  const sourceBible = getSourceBook(state);
   return sourceBible && sourceBible[chapter + ''];
 };

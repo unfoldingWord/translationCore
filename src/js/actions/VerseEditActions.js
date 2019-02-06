@@ -3,7 +3,7 @@ import types from './ActionTypes';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import {
-  getCurrentToolApi,
+  getSelectedToolApi,
   getSupportingToolApis,
   getUsername
 } from '../selectors';
@@ -39,35 +39,30 @@ export const editSelectedTargetVerse = (before, after, tags, username=null) => {
  * @param {string[]} tags - an array of tags indicating the reason for the edit
  * @param {string} [username=null] - The user's alias. If null the current username will be used.
  */
-export const editTargetVerse = (chapter, verse, before, after, tags, username=null) => {
+export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, username=null) => {
   return async (dispatch, getState) => {
     const {
       contextIdReducer
     } = getState();
-    const {contextId} = contextIdReducer;
+    const {contextId: currentCheckContextId} = contextIdReducer;
     const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
-    let {bookId, chapter: currentChapter, verse: currentVerse} = contextId.reference;
-
+    let {bookId, chapter: currentCheckChapter, verse: currentCheckVerse} = currentCheckContextId.reference;
+    const contextIdWithVerseEdit = {
+      ...currentCheckContextId,
+      chapter: chapterWithVerseEdit,
+      verse: verseWithVerseEdit
+    };
     // fallback to the current username
     let userAlias = username;
     if(userAlias === null) {
       userAlias = getUsername(getState());
     }
-
-    const verseContextId = {
-      ...contextId,
-      reference: {
-        ...contextId.reference,
-        chapter,
-        verse
-      }
-    };
-    dispatch(validateSelections(after, verseContextId, chapter, verse));
-    dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote, currentChapter, currentVerse));
-    dispatch(updateTargetVerse(chapter, verse, after));
+    dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit));
+    dispatch(recordTargetVerseEdit(bookId, chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote, currentCheckContextId));
+    dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, after));
     dispatch({
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-      contextId: verseContextId
+      contextId:currentCheckContextId
     });
 
     // TRICKY: this is a temporary hack to validate verse edits.
@@ -78,12 +73,12 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
     const apis = getSupportingToolApis(newState);
     if('wordAlignment' in apis && apis['wordAlignment'] !== null) {
       // for other tools
-      apis['wordAlignment'].trigger('validateVerse', chapter, verse);
+      apis['wordAlignment'].trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
     } else {
       // for wA
-      const api = getCurrentToolApi(newState);
-      if(api !== null && (currentChapter !== chapter || currentVerse !== verse)) {
-        api.trigger('validateVerse', chapter, verse);
+      const api = getSelectedToolApi(newState);
+      if(api !== null && (currentCheckChapter !== chapterWithVerseEdit || currentCheckVerse !== verseWithVerseEdit)) {
+        api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
       }
     }
   };
@@ -106,7 +101,8 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
  * @param {string|null} [glQuote=null] - the gateway language code
  * @return {*}
  */
-export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null, activeChapter, activeVerse) => ({
+export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null, 
+  {reference:{chapter:activeChapter, verse:activeVerse}, quote, groupId, occurrence}) => ({
   type: types.ADD_VERSE_EDIT,
   before,
   after,
@@ -121,8 +117,11 @@ export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tag
   reference: {
     bookId,
     chapter: parseInt(chapter),
-    verse: parseInt(verse)
-  }
+    verse: parseInt(verse),
+    groupId
+  },
+  quote,
+  occurrence
 });
 
 /**

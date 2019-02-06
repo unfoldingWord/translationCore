@@ -11,16 +11,20 @@ const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
  * @param {string} file - The file name to load.
  */
 export function loadFile(directory, file) {
+  if(!directory) {
+    return null;
+  }
+
   const pathLocation = path.join(directory, file);
   if (fs.existsSync(pathLocation)) {
-    var manifest = fs.readJsonSync(pathLocation);
-    return manifest;
+    return fs.readJsonSync(pathLocation);
   } else {
     return null;
   }
 }
 
 /**
+ * @deprecated
  * @description creates an array that has the data of each included tool and 'subtool'
  * @param {object} dataObject - Package json of the tool being loaded,
  * meta data of what the tool needs to load.

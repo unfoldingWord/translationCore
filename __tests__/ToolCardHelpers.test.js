@@ -100,11 +100,24 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     expect(status).toEqual(expectedStatus);
   });
 
-  test('Should return book not supported status for wordAlignment with an OT book', () => {
+  test('Should return book supported status for wordAlignment with an OT book', () => {
     //given
     const bookId = 'psa';
     const developerMode = false;
-    const expectedStatus = false;
+    const expectedStatus = true;
+
+    //when
+    const status = ToolCardHelpers.isToolSupported(bookId, developerMode);
+
+    //then
+    expect(status).toEqual(expectedStatus);
+  });
+
+  test('Should return book supported status for wordAlignment with an NT book', () => {
+    //given
+    const bookId = 'rev';
+    const developerMode = false;
+    const expectedStatus = true;
 
     //when
     const status = ToolCardHelpers.isToolSupported(bookId, developerMode);

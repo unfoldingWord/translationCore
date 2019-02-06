@@ -6,6 +6,15 @@ import * as actions from '../src/js/actions/RemindersActions';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
+jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
+  getGatewayLanguageCodeAndQuote: () => {
+    return {
+      gatewayLanguageCode: 'en',
+      gatewayLanguageQuote: 'authority'
+    };
+  }
+}));
+
 describe('RemindersActions.toggleReminder', () => {
   test('Toggle reminder', () => {
     const expectedActions = [{
@@ -13,7 +22,7 @@ describe('RemindersActions.toggleReminder', () => {
       modifiedTimestamp: "2017-10-27T18:13:41.455Z",
       userName: 'mannycolon',
       gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority, authorities'
+      gatewayLanguageQuote: 'authority'
     }];
     const store = mockStore({
       projectDetailsReducer: {
@@ -22,7 +31,7 @@ describe('RemindersActions.toggleReminder', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'translationWords'
+        selectedTool: 'translationWords'
       },
       groupsIndexReducer: {
         groupsIndex: [

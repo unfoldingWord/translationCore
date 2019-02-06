@@ -9,12 +9,16 @@ describe('default storage', () => {
 
 describe('fallback storage', () => {
   it('falls back to instanceStorage when localStorage is missing', () => {
+    global.console = {warn: jest.fn()};
     const cache = new SimpleCache(LOCAL_STORAGE);
     expect(cache.type()).toEqual(INSTANCE_STORAGE);
+    expect(console.warn).toHaveBeenCalled();
   });
   it('falls back to instanceStorage when sessionStorage is missing', () => {
+    global.console = {warn: jest.fn()};
     const cache = new SimpleCache(SESSION_STORAGE);
     expect(cache.type()).toEqual(INSTANCE_STORAGE);
+    expect(console.warn).toHaveBeenCalled();
   });
 });
 

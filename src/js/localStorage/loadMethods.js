@@ -19,7 +19,7 @@ export const loadSettings = () => {
     if (fs.existsSync(SETTINGS_DIRECTORY)) {
       settings = fs.readJsonSync(SETTINGS_DIRECTORY);
       if (!settings.toolsSettings) settings.toolsSettings = {};
-      settings.onlineMode = false;
+        settings.onlineMode = false;
       //this is a temporary fix until there is a better workflow for persisting online/offline mode.
     } else {
       console.log("No settings file found therefore it will be created when the settings reducer is fully loaded");

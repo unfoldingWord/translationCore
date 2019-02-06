@@ -8,9 +8,9 @@ import * as ProjectInformationCheckActions from './ProjectInformationCheckAction
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
-import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
+import {deleteProjectFromImportsFolder} from "../helpers/Import/ProjectImportFilesystemHelpers";
 
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
@@ -166,7 +166,7 @@ export function removeProjectValidationStep(namespace) {
 }
 
 export function cancelProjectValidationStepper() {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     dispatch(toggleProjectValidationStepper(false));
     dispatch(ProjectLoadingActions.clearLastProject());
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
@@ -175,7 +175,8 @@ export function cancelProjectValidationStepper() {
     dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
     // updating project list
     dispatch(MyProjectsActions.getMyProjects());
-    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+    const projectName = getState().localImportReducer.selectedProjectFilename;
+    deleteProjectFromImportsFolder(projectName);
   });
 }
 

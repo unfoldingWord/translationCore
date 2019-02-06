@@ -1,36 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { RadioButton } from 'material-ui/RadioButton';
+import { Checkbox } from 'material-ui';
 import { withLocale } from '../../containers/Locale';
 import { connect } from 'react-redux';
 
-const USFMExportDialog = ({ selected, onSelect }) => {
+const USFMExportDialog = ({ translate, selected, onSelect }) => {
+  function isSelected(selected) {
+    return selected === 'usfm3';
+  }
+
+  function toggleSelection(selected) {
+    const alignmentsSelected = !isSelected(selected); // toggle selection
+    const newSelection = alignmentsSelected ? 'usfm3' : 'usfm2';
+    onSelect(newSelection);
+    return newSelection;
+  }
+
   return (
     <MuiThemeProvider>
-      <div>
+      <div style={{ marginLeft: 20}}>
         <div style={{ fontSize: 15, marginTop: 20, marginBottom: 20 }}>
-          {'Please select the desired format for your project export.'}
+          {translate("alignment_prompt")}
         </div>
-        <div>
-          <RadioButton
-          iconStyle={{fill: 'black'}}
-            checked={selected === 'usfm2'}
-            label={'USFM 2 - only preserves the text of your translation'}
-            onCheck={() => onSelect('usfm2')}
-          />
-          <RadioButton
-            iconStyle={{ fill: 'black' }}
-            checked={selected === 'usfm3'}
-            label={'USFM 3 - preserves the text and alignment data of your translation.'}
-            onCheck={() => onSelect('usfm3')}
-          />
+        <div style={{ paddingLeft: 20 }}>
+          <div>
+            <Checkbox
+              iconStyle={{ marginLeft: 10, fill: 'var(--accent-color-dark)' }}
+              checked={isSelected(selected)}
+              label={translate("include_alignment_check")}
+              onCheck={() => {toggleSelection(selected)}}
+            />
+          </div>
         </div>
       </div>
     </MuiThemeProvider>
   );
 };
 USFMExportDialog.propTypes = {
+  translate: PropTypes.func.isRequired,
   selected: PropTypes.string,
   onSelect: PropTypes.func.isRequired
 };

@@ -12,12 +12,17 @@ const ContributorsArea = ({
   removeContributor,
   updateContributorName,
   contributorsRequiredFieldMessage,
-  translate
+  translate,
+  id,
+  className
 }) => {
   return (
-    <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
-        <GroupIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
+    <div
+      id={id}
+      className={className}
+    >
+      <div>
+        <GroupIcon style={{ height: "28px", width: "28px", color: "#000000", verticalAlign: "top" }} />&nbsp;
         <span style={{ fontWeight: 'bold' }}>{translate('project_validation.contributors')}</span>
       </div>
       <div
@@ -30,12 +35,12 @@ const ContributorsArea = ({
         />&nbsp;
         <span>{translate('project_validation.add_contributor')}</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div>
         {
           contributors.map((contributorName, index) => {
             const showRequiredFieldError = contributorsRequiredFieldMessage && index === 0;
             return (
-              <div key={index} style={{ display: 'flex', alignItems: 'center', marginLeft: '30px' }}>
+              <div key={index} style={{marginLeft: '30px'}}>
                 <TextField
                   id={index.toString()}
                   value={contributorName}
@@ -59,13 +64,20 @@ const ContributorsArea = ({
   );
 };
 
+ContributorsArea.defaultProps = {
+  id: 'contributor-area',
+  className: 'contributor-area'
+};
+
 ContributorsArea.propTypes = {
   translate: PropTypes.func.isRequired,
   contributors: PropTypes.array.isRequired,
   addContributor: PropTypes.func.isRequired,
   removeContributor: PropTypes.func.isRequired,
   updateContributorName: PropTypes.func.isRequired,
-  contributorsRequiredFieldMessage: PropTypes.bool.isRequired
+  contributorsRequiredFieldMessage: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default ContributorsArea;

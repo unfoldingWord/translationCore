@@ -11,10 +11,41 @@ import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
-import BooksOfTheBible from "../common/BooksOfTheBible";
+import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
-
+import ResourceAPI from "./ResourceAPI";
+export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+
+export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
+  const availableCategories = {};
+  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
+    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
+    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
+    const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
+    if (fs.existsSync(versionDirectory))
+      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
+        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
+      );
+      if (!availableCategories[toolName]) {
+        availableCategories[toolName] = [];
+      }
+  });
+  return availableCategories;
+}
+
+/**
+ * function to make the change in the array based on the passed params
+ * i.e. If the value is present in the array and you pass the value of
+ * false it will be deleted from the array
+ */
+export function updateArray (array, id, value) {
+  const exists = array.indexOf(id) >= 0;
+  if (exists && value === true) return array;
+  if (exists && value === false) return array.filter((el) => el !== id);
+  if (!exists && value === true) return array.concat(id);
+  return array;
+}
 
 /**
  * display prompt that project as been renamed
@@ -168,6 +199,7 @@ export function doDcsRenamePrompting() {
 }
 
 /**
+ * TODO: this is an action and should be moved to the correct location.
  * perform selected action create new or rename project on DCS to match new name
  * @param {boolean} createNew - if true then create new DCS project with current name
  * @param {string} projectSaveLocation
@@ -282,7 +314,7 @@ export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
  * @param projectName
  * @return {{bookId: string, languageId: *}}
  */
-export function getDetailsFromProjectName(projectName) {
+export function getDetailsFromProjectName(projectName, translate) {
   let bookId = "";
   let bookName = "";
   let languageId = "";
@@ -292,14 +324,15 @@ export function getDetailsFromProjectName(projectName) {
     // we can have a bunch of old formats (e.g. en_act, aaw_php_text_reg) and new format (en_ult_tit_book)
     for (let i = 1; i < parts.length; i++) { // iteratively try the fields to see if valid book ids
       const possibleBookId = parts[i].toLowerCase();
-      bookName = BooksOfTheBible.newTestament[possibleBookId];
+      const allBooks = BooksOfTheBible.getAllBibleBooks(translate);
+      bookName = allBooks[possibleBookId];
       if (bookName) {
         bookId = possibleBookId; // if valid bookName use this book id
         break;
       }
     }
   }
-  return { bookId, languageId, bookName};
+  return {bookId, languageId, bookName};
 }
 /**
  * generate new project name to match spec
@@ -344,20 +377,65 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
 
 /**
  * Gets a tool's progress
- * @param {String} pathToCheckDataFiles
+ * @param {string} pathToProjectGroupsDataFiles
+ * @param toolName
+ * @param userSelectedCategories
+ * @param bookAbbreviation
  */
-export function getToolProgress(pathToCheckDataFiles) {
+export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSelectedCategories = [], bookAbbreviation) {
   let progress = 0;
-  if (fs.existsSync(pathToCheckDataFiles)) {
-    let groupDataFiles = fs.readdirSync(pathToCheckDataFiles).filter(file => { // filter out .DS_Store
+  if (fs.existsSync(pathToProjectGroupsDataFiles)) {
+    //Getting all the groups data that exist in the project
+    //Note: Not all of these may be used for the counting because
+    //Some groups here are not apart of the currently selected categories
+    let projectGroupsData = fs.readdirSync(pathToProjectGroupsDataFiles).filter(file => {
       return file !== '.DS_Store' && path.extname(file) === '.json';
     });
-    let allGroupDataObjects = {};
-    groupDataFiles.map((groupDataFileName) => {
-      const groupData = fs.readJsonSync(path.join(pathToCheckDataFiles, groupDataFileName));
-      allGroupDataObjects[groupDataFileName.replace('.json', '')] = groupData;
+    let availableCheckCategories = [];
+    const languageId = toolName === 'translationWords' ? 'grc' : 'en';
+    //Note: translationWords only uses checks that are also available in the greek (OL)
+    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', toolName);
+    const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) || toolResourcePath;
+    userSelectedCategories.forEach((category) => {
+      const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
+      const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
+      if (fs.existsSync(groupsDataSourcePath)) {
+        //Here we are categorizing the checks in the OL by their respective category i.e. "kt"
+        //Note: All checks here need to be accounted for in the progress because the
+        //user selected these categories and it exist in the greek
+        availableCheckCategories = availableCheckCategories.concat({
+          category,
+          checksToBeCounted: fs.readdirSync(groupsDataSourcePath)
+        });
+      }
     });
-    progress = calculateProgress(allGroupDataObjects);
+
+    //Here we are setting up the object to be calculated for progress
+    //The data is either going to come from the users local project groupsData
+    //Or if the user has not explicitly opened the project yet then it will come from
+    //the greek source path because that groupsData only gets copied to the project
+    //groupsData after being selected and opened.
+    let groupsDataToBeCounted = {};
+    availableCheckCategories.forEach(({checksToBeCounted, category}) => {
+      checksToBeCounted.forEach((groupDataFileName) => {
+        if (projectGroupsData.includes(groupDataFileName)) {
+          //This means that the user has opened the tool with these checks selected before and
+          //They are avialable to read from the project folder
+            const groupData = fs.readJsonSync(path.join(pathToProjectGroupsDataFiles, groupDataFileName));
+            groupsDataToBeCounted[groupDataFileName.replace('.json', '')] = groupData;
+        } else {
+          //This means that the check needs to be accounted for in the progress but the user
+          //has not opened that check category yet so it is not in the local project folder
+          //Grabbing the default groupObject from the OL resource which will have no selections
+          const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
+          const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
+          groupsDataToBeCounted[groupDataFileName.replace('.json', '')] = fs.readJsonSync(path.join(groupsDataSourcePath, groupDataFileName));
+        }
+      });
+    });
+    if (availableCheckCategories.length) {
+      progress = calculateProgress(groupsDataToBeCounted);
+    }
   }
   return progress;
 }

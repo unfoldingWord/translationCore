@@ -9,6 +9,16 @@ import * as saveMethods from "../src/js/localStorage/saveMethods";
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+
+jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
+  getGatewayLanguageCodeAndQuote: () => {
+    return {
+      gatewayLanguageCode: 'en',
+      gatewayLanguageQuote: 'authority'
+    };
+  }
+}));
+
 const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 
 fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
@@ -87,7 +97,7 @@ describe('SelectionsActions.validateSelections', () => {
   const bookId = 'tit';
   const selectionsReducer = {
     gatewayLanguageCode: "en",
-    gatewayLanguageQuote: "authority, authorities",
+    gatewayLanguageQuote: "authority",
     "selections": [
       {
         "text": "apostle",
@@ -162,6 +172,40 @@ describe('SelectionsActions.validateSelections', () => {
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
   });
 
+  it('"servant of God" selection with footnote not edited', () => {
+    // given
+    const targetVerse =  "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
+
+    // when
+    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+  });
+
+  it('"servant of God" selection with footnote and edited', () => {
+    // given
+    const targetVerse =  "Paul, a servan of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
+
+    // when
+    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
+  });
+
   it('all selections edited', () => {
     // given
     const targetVerse =  "";
@@ -219,7 +263,7 @@ describe('SelectionsActions.changeSelections', () => {
   const bookId = 'tit';
   const selectionsReducer = {
     gatewayLanguageCode: "en",
-    gatewayLanguageQuote: "authority, authorities",
+    gatewayLanguageQuote: "authority",
     "selections": [
       {
         "text": "apostle",
@@ -314,7 +358,7 @@ function getInitialStateData(bookId, projectPath) {
     groupsDataReducer,
     groupsIndexReducer,
     toolsReducer: {
-      currentToolName: 'translationWords'
+      selectedTool: 'translationWords'
     },
     loginReducer: {
       loggedInUser: false,

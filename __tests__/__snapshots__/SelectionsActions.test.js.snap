@@ -4,7 +4,7 @@ exports[`SelectionsActions.changeSelections Set selection change 1`] = `
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "gatewayLanguageQuote": "authority",
     "selections": Array [
       Object {
         "occurrence": 1,
@@ -16,7 +16,7 @@ Array [
   },
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "gatewayLanguageQuote": "authority",
     "invalidated": false,
     "type": "SET_INVALIDATED",
   },
@@ -94,14 +94,14 @@ exports[`SelectionsActions.validateAllSelectionsForVerse all selections edited 1
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "gatewayLanguageQuote": "authority",
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
     "userName": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "gatewayLanguageQuote": "authority",
     "invalidated": true,
     "type": "SET_INVALIDATED",
     "userName": "dummy-test",
@@ -185,14 +185,14 @@ exports[`SelectionsActions.validateAllSelectionsForVerse apostle selection edite
 Array [
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "gatewayLanguageQuote": "authority",
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
     "userName": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "gatewayLanguageQuote": "authority",
     "invalidated": true,
     "type": "SET_INVALIDATED",
     "userName": "dummy-test",
@@ -235,6 +235,53 @@ Array [
   },
 ]
 `;
+
+exports[`SelectionsActions.validateSelections "servant of God" selection with footnote and edited 1`] = `
+Array [
+  Object {
+    "contextId": Object {
+      "groupId": "god",
+      "occurrence": 1,
+      "quote": "Θεοῦ",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G23160",
+      ],
+      "tool": "translationWords",
+    },
+    "selections": Array [],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "boolean": true,
+    "contextId": Object {
+      "groupId": "god",
+      "occurrence": 1,
+      "quote": "Θεοῦ",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G23160",
+      ],
+      "tool": "translationWords",
+    },
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+  Object {
+    "alertMessage": "tools.selections_invalidated",
+    "type": "OPEN_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`SelectionsActions.validateSelections "servant of God" selection with footnote not edited 1`] = `Array []`;
 
 exports[`SelectionsActions.validateSelections all selections edited 1`] = `
 Array [

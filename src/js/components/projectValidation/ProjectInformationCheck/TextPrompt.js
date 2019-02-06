@@ -7,16 +7,18 @@ import { Glyphicon } from 'react-bootstrap';
 import { TextField } from 'material-ui';
 
 const TextPrompt = ({
+  id,
   text,
   title,
   updateText,
   getErrorMessage,
   required,
-  infoText
+  infoText,
+  className
 }) => {
   function getRequiredIcon() {
     if (required) {
-      return (<span style={{color: '#cd0033'}}>*</span>);
+      return (<span className={'required'}></span>);
     }
   }
 
@@ -43,31 +45,36 @@ const TextPrompt = ({
   }
 
   return (
-    <div>
-      <div style={{
-        width: '240px',
-        height: '10px',
-        marginTop: '12px',
+    <div
+      id={id+'-wrapper'}
+      className={className}
+      style={{
+        marginTop: '20px',
         paddingTop: 0,
-        paddingBottom: '2px',
+        paddingBottom: 0,
         paddingLeft: 0,
         paddingRight: 0,
         color: '#000',
         fontSize: '16px',
-        fontWeight: 'bold'
-      }}>
-        <Glyphicon glyph={"book"} style={{color: "#000000", fontSize: '16px'}}/>&nbsp;
-        <span>{title}
-          {getInfoIcon()}
-          {getRequiredIcon()}
-          </span>
-      </div>
+        fontWeight: 'bold',
+        lineHeight: '16px'
+      }}
+    >
+      <label htmlFor={id} style={{margin: 0}}>
+        <Glyphicon glyph={'book'} style={{color: '#000000', fontSize: '16px'}}/>
+        &nbsp;
+        {title}
+        &nbsp;
+        {getRequiredIcon()}
+        {getInfoIcon()}
+      </label>
       <TextField
-        id="resource-id-textfield"
+        id={id}
         value={text}
-        style={{width: '230px', height: '40px'}}
+        style={{height: '35px', fontWeight: 'normal'}}
+        inputStyle={{height: '25px'}}
         errorText={getErrorMessage(text)}
-        errorStyle={{color: '#cd0033', height: '6px', bottom: 0}}
+        errorStyle={{color: '#cd0033', height: '6px', bottom: 0, paddingTop: '5px'}}
         underlineFocusStyle={{borderColor: "var(--accent-color-dark)"}}
         onChange={(event, value) => {
           updateText(value);
@@ -78,13 +85,19 @@ const TextPrompt = ({
   );
 };
 
+TextPrompt.defaultProps = {
+  className: 'text-propmpt'
+};
+
 TextPrompt.propTypes = {
+  id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   updateText: PropTypes.func.isRequired,
   getErrorMessage: PropTypes.func.isRequired,
   required: PropTypes.bool.isRequired,
-  infoText: PropTypes.string.isRequired
+  infoText: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 export default TextPrompt;

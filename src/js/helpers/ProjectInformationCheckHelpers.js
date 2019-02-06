@@ -131,13 +131,7 @@ export function checkCheckers(manifest) {
  * @return {Boolean}
  */
 export function validateBookId(state, bookId) {
-  if (bibleHelpers.isNewTestament(bookId)) {
-    return true;
-  }
-
-  // TODO: in future accept OT books as well in all modes
-  const developerMode = state.settingsReducer && state.settingsReducer.currentSettings && state.settingsReducer.currentSettings.developerMode;
-  return (developerMode && bibleHelpers.isOldTestament(bookId));
+  return bibleHelpers.isValidBibleBook(bookId);
 }
 
 /**

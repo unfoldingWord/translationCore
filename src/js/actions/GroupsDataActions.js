@@ -5,8 +5,8 @@ import { batchActions } from 'redux-batched-actions';
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import * as TargetLanguageActions from "./TargetLanguageActions";
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
+import { getSelectedToolName } from "../selectors";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -31,7 +31,8 @@ export const addGroupData = (groupId, groupsData) => {
  */
 export function verifyGroupDataMatchesWithFs() {
   return ((dispatch, getState) => {
-    let state = getState();
+    const state = getState();
+    const toolName = getSelectedToolName(state);
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
     let checkDataPath;
     if (PROJECT_SAVE_LOCATION) {
@@ -62,7 +63,7 @@ export function verifyGroupDataMatchesWithFs() {
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
             let latestObjects = getUniqueObjectsFromFolder(filePath);
             latestObjects.forEach(object => {
-              if (object.contextId.tool === state.toolsReducer.currentToolName) {
+              if (object.contextId.tool === toolName) {
                 let action = toggleGroupDataItems(folderName, object);
                 if (action) actionsBatch.push(action);
               }
@@ -100,14 +101,15 @@ export function validateBookSelections() {
 }
 
 /**
- * verifies all the selections for chapter to make sure they are still valid
+ * verifies all the selections for chapter to make sure they are still valid.
+ * This expects the book resources to have already been loaded.
+ * Books are loaded when a project is selected.
  * @param {String} chapter
  * @param {Object} results - for keeping track if any selections have been reset.
  */
 function validateChapterSelections(chapter, results) {
   return ((dispatch, getState) => {
     let changed = results.selectionsChanged; // save initial state
-    dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
     const state = getState();
     if (state.resourcesReducer && state.resourcesReducer.bibles && state.resourcesReducer.bibles.targetLanguage && state.resourcesReducer.bibles.targetLanguage.targetBible) {
       const bibleChapter = state.resourcesReducer.bibles.targetLanguage.targetBible[chapter];

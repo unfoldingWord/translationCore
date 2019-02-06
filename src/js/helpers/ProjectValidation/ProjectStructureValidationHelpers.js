@@ -7,8 +7,8 @@ import * as usfmHelpers from '../usfmHelpers';
 //static
 import books from '../../../../tcResources/books';
 //common
-import BooksOfTheBible from '../../common/BooksOfTheBible';
 import {getProjectManifest} from "../manifestHelpers";
+import {isValidBibleBook} from "../bibleHelpers";
 
 
 /**
@@ -195,10 +195,10 @@ export function verifyValidBetaProject(state) {
     let { currentSettings } = state.settingsReducer;
     let { manifest } = state.projectDetailsReducer;
     if (currentSettings && currentSettings.developerMode) return resolve();
-    else if (manifest && manifest.project && !BooksOfTheBible.oldTestament[manifest.project.id]) return resolve();
+    else if (manifest && manifest.project && isValidBibleBook(manifest.project.id)) return resolve();
     else {
       const translate = getTranslate(state);
-      return reject(translate("project_validation.only_nt_supported", {'app': translate('_.app_name')}));
+      return reject(translate("tools.book_not_supported", {'app': translate('_.app_name')}));
     }
   });
 }
@@ -206,6 +206,7 @@ export function verifyValidBetaProject(state) {
 /**
  * Checks if the project is supported by this version of tC.
  * @param {string} projectDir - the path to the project directory
+ * @param translate
  * @return {Promise<boolean>} - Promise resolves true if the project is supported, otherwise false.
  */
 export function isProjectSupported(projectDir, translate) {
@@ -222,23 +223,6 @@ export function isProjectSupported(projectDir, translate) {
       reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     } else {
       resolve(true);
-    }
-  });
-}
-
-/**
- * @deprecated This is deprecated. Use {@link isProjectSupported} instead.
- *
- * ensures that this project can be opened in this app version
- * @param {String} projectPath
- * @param {Function} translate
- */
-export function ensureSupportedVersion(projectPath, translate) {
-  return isProjectSupported(projectPath, translate).then(isSupported => {
-    if(isSupported) {
-      return Promise.resolve();
-    } else {
-      return Promise.reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     }
   });
 }

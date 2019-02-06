@@ -103,7 +103,8 @@ export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPa
         let verseAfter = newChapterVerses[verse];
         verse = parseInt(verse);
         if (verseBefore != verseAfter) {
-          createVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName, generateTimestamp());
+          //An external edit happened
+          createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName, generateTimestamp());
         }
       });
     } catch (error) {
@@ -112,26 +113,26 @@ export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPa
   });
 };
 
-export const createVerseEdit = (projectPath, verseBefore, verseAfter, bookId, chapter, verse, userName, modifiedTimestamp) => {
+export const createExternalVerseEdit = (projectPath, verseBefore, verseAfter, bookId, chapter, verse, userName, modifiedTimestamp) => {
   const verseEdit = {
     verseBefore,
     verseAfter,
-    tags: 'other',
+    tags: 'N/A',
     userName,
-    activeBook: bookId,
-    activeChapter: chapter,
-    activeVerse: verse,
+    activeBook: 'N/A',
+    activeChapter: 'N/A',
+    activeVerse: 'N/A',
     modifiedTimestamp: modifiedTimestamp,
-    gatewayLanguageCode: 'en',
-    gatewayLanguageQuote: 'Chapter ' + chapter,
+    gatewayLanguageCode: 'N/A',
+    gatewayLanguageQuote: 'N/A',
     contextId: {
       reference: {
         bookId,
         chapter,
         verse
       },
-      tool: 'wordAlignment',
-      groupId: 'chapter_' + chapter
+      tool: '[External edit]',
+      groupId: 'N/A'
     },
   };
   const newFilename = modifiedTimestamp + '.json';

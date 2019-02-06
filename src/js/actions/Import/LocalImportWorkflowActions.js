@@ -18,8 +18,9 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation, getUsername} from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
-import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
+import {deleteImportsFolder, deleteProjectFromImportsFolder} from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
+import { openProject } from "../MyProjects/ProjectLoadingActions";
 
 // constants
 export const ALERT_MESSAGE = (
@@ -46,7 +47,7 @@ export const localImport = () => {
     } = getState().localImportReducer;
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
 
-    ProjectFilesystemHelpers.deleteImportsFolder();
+    deleteImportsFolder();
     try {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
@@ -87,7 +88,12 @@ export const localImport = () => {
       }
       if (success) {
         dispatch(MyProjectsActions.getMyProjects());
-        await dispatch(ProjectLoadingActions.displayTools());
+
+        // TODO: refactor this localImport method to remove project opening logic so we are not duplicating logic.
+
+        const finalProjectPath = getProjectSaveLocation(getState());
+        await dispatch(openProject(path.basename(finalProjectPath), true));
+        dispatch(AlertModalActions.closeAlertDialog());
         return;
       }
     } catch (error) { // Catch all errors in nested functions above
@@ -100,9 +106,10 @@ export const localImport = () => {
     dispatch(ProjectLoadingActions.clearLastProject());
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     // remove failed project import
-    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+    const projectName = getState().localImportReducer.selectedProjectFilename;
+    deleteProjectFromImportsFolder(projectName);
     const { projectDetailsReducer: {projectSaveLocation} } = getState();
-    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectSaveLocation));
+    deleteProjectFromImportsFolder(projectSaveLocation);
   };
 };
 

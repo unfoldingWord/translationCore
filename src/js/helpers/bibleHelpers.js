@@ -2,8 +2,8 @@
 import Path from 'path-extra';
 import fs from 'fs-extra';
 import BooksOfBible from '../../../tcResources/books';
-import {getLatestVersionInPath} from "./ResourcesHelpers";
 import BooksOfTheBible from '../common/BooksOfTheBible';
+import ResourceAPI from "./ResourceAPI";
 
 /**
  *
@@ -32,6 +32,14 @@ export function isNewTestament(bookId) {
   return bookId in BooksOfTheBible.newTestament;
 }
 
+/**
+ * tests if book is in Old or New Testament
+ * @param bookId
+ * @return {boolean}
+ */
+export function isValidBibleBook(bookId) {
+  return (isNewTestament(bookId) || isOldTestament(bookId)) ;
+}
 
 /**
  * determine
@@ -40,7 +48,7 @@ export function isNewTestament(bookId) {
  */
 export function getOLforBook(bookId) {
   const isOT = isOldTestament(bookId);
-  const languageId = (isOT) ? 'he' : 'grc';
+  const languageId = (isOT) ? 'hbo' : 'grc';
   const bibleId = (isOT) ? 'uhb' : 'ugnt';
   return {languageId, bibleId};
 }
@@ -56,7 +64,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
   try {
     let languageId = 'en';
     const resourcePath = Path.join(resourceDir, languageId, 'bibles', 'ult');
-    const versionPath = getLatestVersionInPath(resourcePath) || resourcePath;
+    const versionPath = ResourceAPI.getLatestVersion(resourcePath) || resourcePath;
     const indexLocation = Path.join(versionPath, 'index.json');
     const expectedVerses = fs.readJSONSync(indexLocation);
     const actualVersesObject = {};

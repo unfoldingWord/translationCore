@@ -6,6 +6,15 @@ import * as actions from '../src/js/actions/CommentsActions';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
+jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
+  getGatewayLanguageCodeAndQuote: () => {
+    return {
+      gatewayLanguageCode: 'en',
+      gatewayLanguageQuote: 'authority'
+    };
+  }
+}));
+
 describe('CommentsActions.addComment', () => {
   test('Add Comment', () => {
     const expectedActions = [{
@@ -17,7 +26,7 @@ describe('CommentsActions.addComment', () => {
       activeChapter: 1,
       activeVerse: 3,
       gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority, authorities'
+      gatewayLanguageQuote: 'authority'
     }];
     const store = mockStore({
       projectDetailsReducer: {
@@ -26,7 +35,7 @@ describe('CommentsActions.addComment', () => {
         }
       },
       toolsReducer: {
-        currentToolName: 'translationWords'
+        selectedTool: 'translationWords'
       },
       groupsIndexReducer: {
         groupsIndex: [

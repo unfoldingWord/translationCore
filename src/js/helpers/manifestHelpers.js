@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import * as usfmHelpers from './usfmHelpers';
 import * as LoadHelpers from './LoadHelpers';
 //common
-import BooksOfTheBible from '../common/BooksOfTheBible';
+import {getAllBibleBooks} from '../common/BooksOfTheBible';
 
 // constants
 const template = {
@@ -110,7 +110,8 @@ export function fixManifestVerThree(oldManifest) {
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function checkIfValidBetaProject(manifest) {
-  if (manifest && manifest.project) return (BooksOfTheBible.newTestament[manifest.project.id]?true:false);
+  const allBooks = getAllBibleBooks();
+  if (manifest && manifest.project) return (!!allBooks[manifest.project.id]);
   else return false;
 }
 

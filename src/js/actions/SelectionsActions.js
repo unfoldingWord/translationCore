@@ -8,10 +8,11 @@ import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {getTranslate, getUsername, getCurrentToolName} from '../selectors';
+import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
+import usfm from "usfm-js";
 
 /**
  * This method adds a selection array to the selections reducer.
@@ -25,7 +26,7 @@ import * as saveMethods from "../localStorage/saveMethods";
 export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
     let state = getState();
-    if (getCurrentToolName(state) === 'translationWords') {
+    if (getSelectedToolName(state) === 'translationWords') {
       const currentContextId = state.contextIdReducer.contextId;
       contextId = contextId || currentContextId; // use current if contextId is not passed
       const {
@@ -33,7 +34,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
         gatewayLanguageQuote
       } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
       if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
-        const modifiedTimestamp = generateTimestamp();
+        const modifiedTimestamp = generateTimestamp();       
         dispatch({
           type: types.CHANGE_SELECTIONS,
           modifiedTimestamp: modifiedTimestamp,
@@ -88,7 +89,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
     const { bookId, chapter, verse } = contextId.reference;
 
-    if (getCurrentToolName(state) === 'translationWords') {
+    if (getSelectedToolName(state) === 'translationWords') {
       const username = getUsername(state);
       const selections = getSelectionsFromChapterAndVerseCombo(
         bookId,
@@ -103,7 +104,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       }
       const results = {selectionsChanged: selectionsChanged};
       dispatch(validateAllSelectionsForVerse(targetVerse, results, true, contextId, true));
-    } else if (getCurrentToolName(state) === 'wordAlignment') {
+    } else if (getSelectedToolName(state) === 'wordAlignment') {
       const bibleId = project.id;
       const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
 
@@ -153,6 +154,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     const initialSelectionsChanged = results.selectionsChanged;
     contextId = contextId || state.contextIdReducer.contextId;
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
+    let filtered = null;
     results.selectionsChanged = false;
 
     for (let groupItemKey of Object.keys(groupsDataForVerse)) {
@@ -161,7 +163,10 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
         const selections = checkingOccurrence.selections;
         if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
           if (selections && selections.length) {
-            const validSelections = checkSelectionOccurrences(targetVerse, selections);
+            if (!filtered) {  // for performance, we filter the verse only once and only if there is a selection
+              filtered = usfm.removeMarker(targetVerse); // remove USFM markers
+            }
+            const validSelections = checkSelectionOccurrences(filtered, selections);
             if (selections.length !== validSelections.length) {
               results.selectionsChanged = true;
               dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear selection
@@ -190,12 +195,16 @@ export const getGroupDataForVerse = (state, contextId) => {
     for (let groupItemKey of Object.keys(groupsData)) {
       const groupItem = groupsData[groupItemKey];
       if (groupItem) {
-        for (let checkingOccurrence of groupItem) {
-          if (isEqual(checkingOccurrence.contextId.reference, contextId.reference)) {
-            if (!filteredGroupData[groupItemKey]) {
-              filteredGroupData[groupItemKey] = [];
+        for (let check of groupItem) {
+          try {
+            if (isEqual(check.contextId.reference, contextId.reference)) {
+              if (!filteredGroupData[groupItemKey]) {
+                filteredGroupData[groupItemKey] = [];
+              }
+              filteredGroupData[groupItemKey].push(check);
             }
-            filteredGroupData[groupItemKey].push(checkingOccurrence);
+          } catch(e) {
+            console.warn(`Corrupt check found in group "${groupItemKey}"`, check);
           }
         }
       }

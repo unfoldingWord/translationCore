@@ -7,11 +7,21 @@ import thunk from 'redux-thunk';
 import fs from 'fs-extra';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+
+jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
+  getGatewayLanguageCodeAndQuote: () => {
+    return {
+      gatewayLanguageCode: 'en',
+      gatewayLanguageQuote: 'authority'
+    };
+  }
+}));
+
 //actions
 import * as CheckDataLoadActions from '../src/js/actions/CheckDataLoadActions';
 const projectSaveLocation = path.join(__dirname, 'fixtures/project/checkDataProject');
 const toolsReducer = {
-  currentToolName: 'translationWords'
+  selectedTool: 'translationWords'
 };
 const groupsIndexReducer = {
   groupsIndex: [
@@ -126,36 +136,6 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('runs CheckDataLoadActions.loadVerseEdit', () => {
-    const expectedActions = [
-      {
-        type:"ADD_VERSE_EDIT",
-        before:"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST",
-        after:"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.",
-        tags:["punctuation"],
-        activeBook: 'tit',
-        activeChapter: 3,
-        activeVerse: 8,
-        modifiedTimestamp:"2017-04-28T14:28:24.328Z",
-        gatewayLanguageCode: null,
-        gatewayLanguageQuote: null,
-        reference: {
-          bookId: 'tit',
-          chapter: 3,
-          verse: 8
-        },
-        username: undefined
-      }
-    ];
-    const store = mockStore({
-      projectDetailsReducer,
-      contextIdReducer
-    });
-
-    store.dispatch(CheckDataLoadActions.loadVerseEdit());
-    expect(store.getActions()).toEqual(expectedActions);
-  });
-
   it('runs CheckDataLoadActions.loadReminders: should not load another tools data', () => {
     const expectedActions = [
       {
@@ -173,7 +153,6 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
       projectDetailsReducer,
       contextIdReducer
     });
-
     store.dispatch(CheckDataLoadActions.loadReminders());
     expect(store.getActions()).toEqual(expectedActions);
   });

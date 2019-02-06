@@ -3,7 +3,6 @@
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../src/js/reducers';
-import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
@@ -159,6 +158,10 @@ describe('csv export actions', () => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
           const filePath = path.join(dataPath, 'output', 'Selections.csv');
+
+          // verify that gatewayLanguageQuote might exist if test files were created correctly
+          let csvData = fs.readFileSync(filePath, 'utf8' );
+          expect(csvData).toContain('1,adoption,eph'); // quote is between instance and bookid in csv data 
           expect(fs.existsSync(filePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         })

@@ -6,13 +6,33 @@ import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
-import {openAlertDialog, closeAlertDialog} from '../AlertModalActions';
+import {openAlertDialog} from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { getTranslate, getUsername } from '../../selectors';
-import {isProjectSupported, ensureSupportedVersion} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {
+  getActiveLocaleLanguage,
+  getProjectManifest,
+  getProjectSaveLocation,
+  getSourceBook,
+  getTargetBook,
+  getToolGatewayLanguage,
+  getTools,
+  getTranslate,
+  getUsername
+} from "../../selectors";
+import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {
+  loadSourceBookTranslations,
+  loadTargetLanguageBook
+} from "../ResourcesActions";
+import ProjectAPI from "../../helpers/ProjectAPI";
+import CoreAPI from "../../helpers/CoreAPI";
+import {
+  copyGroupDataToProject,
+  setDefaultProjectCategories
+} from "../../helpers/ResourcesHelpers";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -26,24 +46,57 @@ function delay(ms) {
 /**
  * This thunk opens a project and prepares it for use in tools.
  * @param {string} name -  the name of the project
+ * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
  */
-export const openProject = (name) => {
+export const openProject = (name, skipValidation=false) => {
   return async (dispatch, getState) => {
     const projectDir = path.join(PROJECTS_PATH, name);
     const translate = getTranslate(getState());
 
     try {
-      // TODO: refactor project reducers
+      dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+      dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
+
       dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(
-        openAlertDialog(translate('projects.loading_project_alert'), true));
+      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
+
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
-      await dispatch(validateProject(projectDir));
-      // TODO: load the project data here
-      dispatch(closeAlertDialog());
+
+      // TODO: this is a temporary hack. Eventually we will always validate the project
+      // but we need to refactored the online and local import functions first so there is no duplication.
+      if(!skipValidation) {
+        await dispatch(validateProject(projectDir));
+      }
+
+      // TRICKY: validation may have changed the project path
+      const validProjectDir = getProjectSaveLocation(getState());
+
+      // load target book
+      dispatch(loadTargetLanguageBook());
+
+      // connect the tools
+      const manifest = getProjectManifest(getState());
+      const tools = getTools(getState());
+      for (const t of tools) {
+        // load source book translations
+        await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
+
+        // copy group data
+        // TRICKY: group data must be tied to the original language.
+        copyGroupDataToProject("grc", t.name, validProjectDir);
+
+        // select default categories
+        const language = getToolGatewayLanguage(getState(), t.name);
+        setDefaultProjectCategories(language, t.name, validProjectDir);
+
+        // connect tool api
+        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
+        t.api.triggerWillConnect(toolProps);
+      }
+
       await dispatch(displayTools());
     } catch (e) {
       // TODO: clean this up
@@ -58,36 +111,78 @@ export const openProject = (name) => {
 };
 
 /**
- * @deprecated This action is deprecated. Use {@link openProject} instead.
- * This thunk migrates, validates, then loads a project.
- * This may seem redundant to run migrations and validations each time
- * But the helpers called from each action test to only run when needed
- * @param {string} projectName - the name of the project
+ * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
+ * This is just a temporary prop generator until we can properly abstract the tc api.
+ * @param dispatch
+ * @param state
+ * @param projectDir
+ * @param bookId
+ * @returns {*}
  */
-export const migrateValidateLoadProject = (projectName) => {
-  return async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    try {
-      dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
-      await delay(200);
-      const projectPath = path.join(PROJECTS_PATH, projectName);
-      await ensureSupportedVersion(projectPath, translate);
-      migrateProject(projectPath, null, getUsername(getState()));
-      dispatch(closeAlertDialog());
-      await dispatch(validateProject(projectPath));
-      await dispatch(displayTools());
-    } catch (error) {
-      if (error.type !== 'div') console.warn(error);
-      // clear last project must be called before any other action.
-      // to avoid triggering autosaving.
-      dispatch(clearLastProject());
-      dispatch(openAlertDialog(error));
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      dispatch({ type: "LOADED_ONLINE_FAILED" });
+function makeToolProps(dispatch, state, projectDir, bookId) {
+  const projectApi = new ProjectAPI(projectDir);
+  const coreApi = new CoreAPI(dispatch);
+  const {code} = getActiveLocaleLanguage(state);
+  const sourceBook = getSourceBook(state);
+  const targetBook = getTargetBook(state);
+
+  return {
+    // project api
+    project: projectApi,
+
+    // flattened project api methods that may be deprecated in the future.
+    readProjectDataDir: projectApi.readDataDir,
+    readProjectDataDirSync: projectApi.readDataDirSync,
+    writeProjectData: projectApi.writeDataFile,
+    writeProjectDataSync: projectApi.writeDataFileSync,
+    readProjectData: projectApi.readDataFile,
+    readProjectDataSync: projectApi.readDataFileSync,
+    projectDataPathExists: projectApi.dataPathExists,
+    projectDataPathExistsSync: projectApi.dataPathExistsSync,
+    deleteProjectFile: projectApi.deleteDataFile,
+
+    // tC api
+    showDialog: coreApi.showDialog,
+    showLoading: coreApi.showLoading,
+    closeLoading: coreApi.closeLoading,
+    showIgnorableAlert: coreApi.showIgnorableAlert,
+    appLanguage: code,
+
+    // project data
+    sourceBook,
+    targetBook,
+
+    contextId: {
+      reference: {
+        bookId,
+        chapter: "1", // TRICKY: just some dummy values at first
+        verse: "1"
+      }
+    },
+
+    // deprecated props
+    readProjectDir: (...args) => {
+      console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
+      return projectApi.readDataDir(...args);
+    },
+    readProjectDirSync: (...args) => {
+      console.warn('DEPRECATED: readProjectDirSync is deprecated. Use readProjectDataDirSync instead.');
+      return projectApi.readDataDirSync(...args);
+    },
+    showIgnorableDialog: (...args) => {
+      console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
+      return coreApi.showIgnorableAlert(...args);
+    },
+    get toolsReducer () {
+      console.warn(`DEPRECATED: toolsReducer is deprecated.`);
+      return {};
+    },
+    projectFileExistsSync: (...args) => {
+      console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
+      return projectApi.dataPathExistsSync(...args);
     }
   };
-};
+}
 
 /**
  * @description - Opening the tools screen upon making sure the project is
@@ -95,11 +190,12 @@ export const migrateValidateLoadProject = (projectName) => {
  */
 export function displayTools() {
   return (dispatch, getState) => {
-    const translate = getTranslate(getState());
+    const state = getState();
+    const translate = getTranslate(state);
     return new Promise ((resolve, reject) => {
       try {
-        const { currentSettings } = getState().settingsReducer;
-        const { manifest } = getState().projectDetailsReducer;
+        const { currentSettings } = state.settingsReducer;
+        const { manifest } = state.projectDetailsReducer;
         if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
           // Go to toolsCards page
           dispatch(BodyUIActions.goToStep(3));
@@ -133,13 +229,9 @@ export function clearLastProject() {
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
-    dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
+    dispatch({ type: consts.CLOSE_TOOL });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
     dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
-    dispatch({
-      type: consts.SET_CURRENT_TOOL_TITLE,
-      currentToolTitle: ""
-    });
   };
 }
 

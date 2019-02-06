@@ -4,7 +4,7 @@ import BaseDialog from './BaseDialog';
 import Checkbox from 'material-ui/Checkbox';
 import Divider from 'material-ui/Divider';
 // helpers
-import { getLanguageCodes } from '../../helpers/LanguageHelpers';
+import { getLanguageByCode } from '../../helpers/LanguageHelpers';
 
 const styles = {
   content: {
@@ -58,26 +58,31 @@ const styles = {
 };
 
 const ResourceListItem = ({resource, checked, handleItemOnCheck}) => {
-  const languageCodeDetails = getLanguageCodes().local[resource.languageId];
+  const languageCodeDetails = getLanguageByCode(resource.languageId);
   const languageName = languageCodeDetails ? languageCodeDetails.name : resource.languageId;
-
-  return (
-    <tr style={styles.tr}>
-      <td style={styles.firstTd}>
-        <Checkbox checked={checked}
-                  onCheck={(event) => {
-                    event.preventDefault();
-                    handleItemOnCheck(resource.languageId);
-                  }}
-                  label={`${languageName} (${resource.languageId})`}
-                  style={styles.checkbox}
-                  iconStyle={styles.checkboxIconStyle}
-                  labelStyle={styles.checkboxLabelStyle} />
-      </td>
-      <td style={styles.td}>{`${resource.localModifiedTime.substring(0, 10)}`}</td>
-      <td style={styles.td}>{`${resource.remoteModifiedTime.substring(0, 10)}`}</td>
-    </tr>
-  );
+  const languageId = languageCodeDetails ? languageCodeDetails.code : resource.languageId;
+  if( languageName ) {
+    return (
+      <tr style={styles.tr}>
+        <td style={styles.firstTd}>
+          <Checkbox checked={checked}
+                    onCheck={(event) => {
+                      event.preventDefault();
+                      handleItemOnCheck(resource.languageId);
+                    }}
+                    label={`${languageName} (${languageId})`}
+                    style={styles.checkbox}
+                    iconStyle={styles.checkboxIconStyle}
+                    labelStyle={styles.checkboxLabelStyle} />
+        </td>
+        <td style={styles.td}>{`${resource.localModifiedTime.substring(0, 10)}`}</td>
+        <td style={styles.td}>{`${resource.remoteModifiedTime.substring(0, 10)}`}</td>
+      </tr>
+    );
+  } else {
+    // no details for this language so it is unsupported
+    return null;
+  }
 };
 
 ResourceListItem.propTypes = {

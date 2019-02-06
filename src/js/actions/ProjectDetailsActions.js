@@ -5,32 +5,88 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername} from "../selectors";
+import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories, getCurrentProjectToolsSelectedGL} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
-import git from '../helpers/GitApi.js';
+//reducers
+import Repo from '../helpers/Repo.js';
+import ProjectAPI from "../helpers/ProjectAPI";
 
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
+ * @description Gets the check categories from the filesystem for the project and
+ * sets them in the reducer
+ * @param {String} toolName - The name of the tool to load check categories from
+ * @param {String} bookName - The id abbreviation of the book name to load from
+ * @param {String} projectSaveLocation - The project location to load from
+ * i.e. ~/translationCore/projects/en_tit_reg
+ */
+export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
+  return (dispatch, getState) => {
+    const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
+    const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
+    const project = new ProjectAPI(projectSaveLocation);
+    let selectedCategories = project.getSelectedCategories(toolName);
+    selectedCategories = selectedCategories.filter((category) => availableCheckCategories[toolName] && availableCheckCategories[toolName].includes(category));
+    dispatch(setCategories(selectedCategories, toolName));
+  };
+};
+
+/**
+ * @description sets the categories to be used in the project.
+ * Note: This preference is persisted in on a project basis
+ * @param {String} id - The category to be toggled e.i. "kt"
+ * @param {Boolean} value - The value of the category to be updated to
+ * @param {String} toolName - The tool that has been toggled on. This
+ * is used to update the tool progress with the the updated selected
+ * categories
+ */
+export const updateCheckSelection = (id, value, toolName) => {
+  return (dispatch, getState) => {
+    const state = getState();
+    const previousSelectedCategories = getToolCategories(state, toolName);
+    const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
+
+    // TRICKY: tools with categories must have a selection.
+    if(selectedCategories.length === 0) {
+      const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
+      const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
+
+      // default to available
+      if(availableCheckCategories.length > 0) {
+        [].push.apply(selectedCategories, availableCheckCategories);
+      }
+    }
+
+    dispatch(setCategories(selectedCategories, toolName));
+    dispatch(getProjectProgressForTools(toolName));
+    const project = new ProjectAPI(getProjectSaveLocation(state));
+    project.setSelectedCategories(toolName, selectedCategories);
+  };
+};
+
+export const setCategories = (selectedCategories, toolName) => ({
+  type: consts.SET_CHECK_CATEGORIES,
+  selectedCategories,
+  toolName
+});
+
+/**
  * @description sets the project save location in the projectDetailReducer.
  * @param {String} pathLocation - project save location and/or directory.
  * @return {object} action object.
  */
-export const setSaveLocation = pathLocation => {
-  return ((dispatch) => {
-    dispatch({
+export const setSaveLocation = pathLocation => ({
       type: consts.SET_SAVE_PATH_LOCATION,
       pathLocation
     });
-  });
-};
 
 export const resetProjectDetail = () => {
   return {
@@ -56,7 +112,8 @@ export function getProjectProgressForTools(toolName) {
     const {
       projectDetailsReducer: {
         projectSaveLocation,
-        manifest
+        manifest,
+        toolsCategories
       }
     } = getState();
     const bookId = manifest.project.id;
@@ -69,7 +126,7 @@ export function getProjectProgressForTools(toolName) {
       const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     } else {
-      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles);
+      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
     }
 
     dispatch({
@@ -112,29 +169,20 @@ export function addObjectPropertyToManifest(propertyName, value) {
 }
 
 export function setProjectBookIdAndBookName() {
-  return ((dispatch, getState) => {
-    return new Promise((resolve, reject) => {
-      const {bookId} = getState().projectInformationCheckReducer;
-      const {manifest: {project: {id: originalBookId}}, projectSaveLocation} = getState().projectDetailsReducer;
-      const {userdata} = getState().loginReducer;
-      const bookName = bibleHelpers.convertToFullBookName(bookId);
-      dispatch({
-        type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
-        bookId,
-        bookName
-      });
-      if (bookId !== originalBookId) {
-        git(projectSaveLocation).save(userdata, 'Saving new book id', projectSaveLocation, (err)=>{
-          if (!err) {
-          resolve();
-          } else {
-            reject(err);
-          }
-        });
-      } else {
-        resolve();
-      }
+  return (async (dispatch, getState) => {
+    const {bookId} = getState().projectInformationCheckReducer;
+    const {manifest: {project: {id: originalBookId}}, projectSaveLocation} = getState().projectDetailsReducer;
+    const {userdata} = getState().loginReducer;
+    const bookName = bibleHelpers.convertToFullBookName(bookId);
+    dispatch({
+      type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
+      bookId,
+      bookName
     });
+    if (bookId !== originalBookId) {
+      const repo = await Repo.open(projectSaveLocation, userdata);
+      await repo.save("Saving new book id");
+    }
   });
 }
 
@@ -197,7 +245,7 @@ export function updateCheckers() {
  * @return {Promise} - Returns a promise
  */
 export function renameProject(projectSaveLocation, newProjectName) {
-  return ((dispatch, getState) => {
+  return (dispatch, getState) => {
     return new Promise(async (resolve) => {
       const projectPath = path.dirname(projectSaveLocation);
       const currentProjectName = path.basename(projectSaveLocation);
@@ -231,7 +279,7 @@ export function renameProject(projectSaveLocation, newProjectName) {
         );
       }
     });
-  });
+  };
 }
 
 /**
@@ -243,9 +291,9 @@ export function doRenamePrompting() {
     const {projectDetailsReducer: {projectSaveLocation}, loginReducer: login} = getState();
     const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
     if (pointsToCurrentUsersRepo) {
-      dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+      await dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
     } else { // do not rename on dcs
-      dispatch(ProjectDetailsHelpers.showRenamedDialog());
+      await dispatch(ProjectDetailsHelpers.showRenamedDialog());
     }
   });
 }
@@ -295,7 +343,7 @@ export function updateProjectNameIfNecessaryAndDoPrompting() {
  * @return {Promise} - Returns a promise
  */
 export function handleOverwriteWarning(newProjectPath, projectName) {
-  return ((dispatch, getState) => {
+  return (dispatch, getState) => {
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
       const confirmText = translate('buttons.overwrite_project');
@@ -330,7 +378,7 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
         )
       );
     });
-  });
+  };
 }
 
 export function updateProjectTargetLanguageBookFolderName() {

@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import {getLatestVersionInPath} from "../ResourcesHelpers";
+import ResourceAPI from "../ResourceAPI";
 // constants
 const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources');
 
@@ -62,7 +62,7 @@ export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'u
   if (version) {
     indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName, version, 'index.json');
   } else {
-    let versionPath = getLatestVersionInPath(path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName));
+    let versionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName));
     if (versionPath === null) { // if failed, return nothing
       return {};
     }

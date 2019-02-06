@@ -9,11 +9,22 @@ const initialState = {
   },
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
-  projectType: null
+  projectType: null,
+  toolsCategories: {
+    translationWords: ['kt', 'other', 'names']
+  }
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case consts.SET_CHECK_CATEGORIES:
+    return {
+      ...state,
+      toolsCategories: {
+        ...state.toolsCategories,
+        [action.toolName]: action.selectedCategories
+      }
+    };
     case consts.SET_SAVE_PATH_LOCATION:
       return {
         ...state,
@@ -126,8 +137,38 @@ const projectDetailsReducer = (state = initialState, action) => {
 export default projectDetailsReducer;
 
 /**
- * Returns the save location of the current project
- * @param {object} state the project details slice of the state
+ * Returns the gateway language selected for the given tool.
+ * @param state
+ * @param {string} toolName - the name of the tool to look up
+ * @returns {string} - the gateway language code. Default value is "en".
+ */
+export const getToolGatewayLanguage = (state, toolName) => {
+  if(state) {
+    const languages = state.currentProjectToolsSelectedGL;
+    if(languages.hasOwnProperty(toolName) && languages[toolName]) {
+      return languages[toolName];
+    }
+  }
+  return "en";
+};
+
+/**
+ * Returns the progress of a tool
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
+export const getToolProgress = (state, toolName) => {
+  if(state.currentProjectToolsProgress[toolName]) {
+    return state.currentProjectToolsProgress[toolName];
+  } else {
+    return 0;
+  }
+};
+
+/**
+ * Returns the file path where the project is saved
+ * @param {object} state - the project details slice of the state
  */
 export const getSaveLocation = (state) =>
   state.projectSaveLocation;
@@ -149,10 +190,24 @@ export const getName = state => {
  */
 export const getNickname = state => {
   const manifest = getManifest(state);
-  if(manifest && manifest.resource && manifest.resource.name) {
+  if (manifest && manifest.resource && manifest.resource.name) {
     return manifest.resource.name;
   } else {
     return '';
+  }
+};
+
+/**
+ * Returns the book id
+ * @param state
+ * @returns {string|null} the book id or null if not found
+ */
+export const getBookId = state => {
+  const manifest = getManifest(state);
+  if(manifest && manifest.project) {
+    return manifest.project.id;
+  } else {
+    return null;
   }
 };
 
@@ -162,3 +217,20 @@ export const getNickname = state => {
  */
 export const getManifest = (state) =>
   state.manifest;
+
+/**
+ * Returns the categories selected for the tool
+ * @param state
+ * @param toolName
+ * @returns {*}
+ */
+export const getToolCategories = (state, toolName) => {
+  if(toolName in state.toolsCategories) {
+    return [...state.toolsCategories[toolName]];
+  } else {
+    return [];
+  }
+};
+
+export const getCurrentProjectToolsSelectedGL = (state) =>
+  state.currentProjectToolsSelectedGL;

@@ -12,12 +12,17 @@ const CheckersArea = ({
   removeChecker,
   updateCheckerName,
   checkersRequiredFieldMessage,
-  translate
+  translate,
+  id,
+  className
 }) => {
   return (
-    <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
-        <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
+    <div
+      id={id}
+      className={className}
+    >
+      <div>
+        <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000", verticalAlign: "top" }} />&nbsp;
         <span style={{ fontWeight: 'bold' }}>{translate('project_validation.checkers')}</span>
       </div>
       <div
@@ -30,12 +35,12 @@ const CheckersArea = ({
         />&nbsp;
         <span>{translate('project_validation.add_checker')}</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div>
         {
           checkers.map((checkerName, index) => {
             const showRequiredFieldError = checkersRequiredFieldMessage && index === 0;
             return (
-              <div key={index} style={{ display: 'flex', alignItems: 'center', marginLeft: '30px' }}>
+              <div key={index} style={{marginLeft: '30px' }}>
                 <TextField
                   id={index.toString()}
                   value={checkerName}
@@ -59,13 +64,20 @@ const CheckersArea = ({
   );
 };
 
+CheckersArea.defaultProps = {
+  id: 'checkers-area',
+  className: 'checkers-area'
+};
+
 CheckersArea.propTypes = {
   translate: PropTypes.func.isRequired,
   checkers: PropTypes.array.isRequired,
   addChecker: PropTypes.func.isRequired,
   removeChecker: PropTypes.func.isRequired,
   updateCheckerName: PropTypes.func.isRequired,
-  checkersRequiredFieldMessage: PropTypes.bool.isRequired
+  checkersRequiredFieldMessage: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default CheckersArea;

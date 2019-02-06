@@ -3,8 +3,8 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import csv from 'csv';
 // helpers
-import { getLatestVersionInPath } from './ResourcesHelpers';
 import * as groupsIndexHelpers from './groupsIndexHelpers';
+import ResourceAPI from "./ResourceAPI";
 
 const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tcResources', 'en', 'translationHelps');
 let tWIndex = [];
@@ -22,7 +22,7 @@ function cacheIndicies() {
 
   // load tW index
   const tWpath = path.join(tHelpsPath, 'translationWords');
-  let tWversionPath = getLatestVersionInPath(tWpath) || tWpath;
+  let tWversionPath = ResourceAPI.getLatestVersion(tWpath) || tWpath;
   const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
   const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
   const tWotherIndexPath = path.join(tWversionPath, 'other', 'index.json');
@@ -45,7 +45,6 @@ function cacheIndicies() {
 }
 
 /**
- * todo: fix makeBlank
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
  * @param {object} contextId - to be merged in
@@ -56,14 +55,10 @@ function cacheIndicies() {
  * @param {boolean} - This is a temporary flag to hide bad data
  * @return {object}
  */
-export function combineData(data, contextId, username, timestamp, makeBlank = false) {
-  const blankParams = ['groupId', 'groupName', 'gateway Language Quote', 'occurrence', 'quote'];
+export function combineData(data, contextId, username, timestamp) {
   const flatContextId = flattenContextId(contextId);
   const userTimestamp = userTimestampObject(username, timestamp);
   const combinedData = Object.assign({}, data, flatContextId, userTimestamp);
-  if (makeBlank) blankParams.forEach((key) => {
-    if (combinedData[key]) combinedData[key] = '';
-  });
   return combinedData;
 }
 /**

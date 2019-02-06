@@ -6,6 +6,15 @@ import * as LanguageHelpers from "../src/js/helpers/LanguageHelpers";
 describe('Test LanguageHelpers',()=>{
   const minimumLangCount = 8020;
 
+  test('getLanguageByCode() should work with mixed and lower case', () => {
+    const codes = ['sr-latn', 'sr-Latn', 'SR-LATN', 'ur-deva', 'ur-Deva', "UR-DEVA", 'ZH'];
+    for (let code of codes) {
+      const languageData = LanguageHelpers.getLanguageByCode(code);
+      expect(languageData).toBeTruthy();
+      expect(languageData.code.toLowerCase()).toEqual(code.toLowerCase());
+    }
+  });
+
   test('getLanguagesSortedByCode() should work', () => {
     const languages = LanguageHelpers.getLanguagesSortedByCode();
     const langCount = languages.length;
@@ -54,5 +63,27 @@ describe('Test LanguageHelpers',()=>{
       expect(langB.name.length).toBeGreaterThan(0);
       expect(langB.ltr !== undefined).toBeTruthy();
     }
+  });
+
+  test('getLanguageCodes() verify no dups among language codes.', () => {
+    let languageCodes = LanguageHelpers.getLanguageCodes();
+    let localLanguageCodes = languageCodes.local;
+    let localAry = [];
+
+    for (var key in localLanguageCodes) {
+      localAry.push( localLanguageCodes[key].code );
+    }
+
+    const sorted = localAry.sort();
+    let dupsFound = 0;
+
+    for( let idx = 1; idx < sorted.length; idx++ ) {
+      if( sorted[idx] == sorted[idx-1]) {
+        dupsFound++;
+      }
+    }
+
+    expect(dupsFound).toBeLessThan(1);
+    expect(sorted.length).toBeGreaterThan(2000);
   });
 });

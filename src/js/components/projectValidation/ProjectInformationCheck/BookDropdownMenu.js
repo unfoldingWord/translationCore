@@ -9,28 +9,26 @@ const BookDropdownMenu = ({
   bookId,
   updateBookId,
   translate,
-  developerMode
+  id,
+  className
 }) => {
-  // TODO: in future accept all bible books in all modes
-  const bibleBooks = developerMode ? BooksOfTheBible.getAllBibleBooks() : BooksOfTheBible.BIBLE_BOOKS.newTestament;
+  const bibleBooks = BooksOfTheBible.getAllBibleBooks(translate);
   return (
-    <div>
+    <div
+      id={id+'-wrapper'}
+      className={className}
+    >
+      <label htmlFor={id} style={{margin: 0}}>
+        <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '16px' }} />&nbsp;
+        <span>{translate('projects.book')}</span>&nbsp;
+        <span className={"required"}/>
+      </label>
       <SelectField
-        id="book-dropdown-menu-selectField"
+        id={id}
         value={bookId}
-        style={{ width: '200px', marginTop: bookId === "" ? '30px' : '' }}
         errorText={bookId === "" ? translate('project_validation.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelFixed={true}
-        floatingLabelStyle={{ color: '#000', fontSize: '22px', fontWeight: 'bold' }}
-        floatingLabelText={
-          <div>
-            <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
-            <span>{translate('projects.book')}</span>&nbsp;
-            <span style={{ color: '#cd0033'}}>*</span>
-          </div>
-        }
         onChange={(event, index, value) => {
           updateBookId(value);
         }}
@@ -38,7 +36,7 @@ const BookDropdownMenu = ({
       <MenuItem key="empty-menu-item" value={""} primaryText={""} />
       {
         Object.keys(bibleBooks).map((key, index) => {
-          const BookName = bibleBooks[key] + ` (${key})`;
+          const BookName = bibleBooks[key];
           return (
             <MenuItem key={index.toString() + BookName} value={key} primaryText={BookName} />
           );
@@ -49,11 +47,18 @@ const BookDropdownMenu = ({
   );
 };
 
+BookDropdownMenu.defaultProps = {
+  id: 'book-dropdown-menu-selectField',
+  className: 'book-dropdown-menu-select'
+};
+
 BookDropdownMenu.propTypes = {
   bookId: PropTypes.string.isRequired,
   updateBookId: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  developerMode: PropTypes.bool.isRequired
+  developerMode: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default BookDropdownMenu;

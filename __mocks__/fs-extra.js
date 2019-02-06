@@ -50,7 +50,13 @@ function writeFileSync(filePath, data) {
 
 function readFileSync(filePath) {
   if (typeof filePath !== 'string') throw 'fail';
-  return mockFS[filePath];
+  const data = mockFS[filePath];
+  // TRICKY: readFileSync should always return a string
+  if(typeof data === 'object' && data !== null) {
+    return JSON.stringify(data);
+  } else {
+    return data;
+  }
 }
 
 function outputFileSync(filePath, data) {
@@ -98,6 +104,10 @@ function readJsonSync(filePath) {
 
 function existsSync(path) {
   return mockFS[path] !== '' ? !!mockFS[path] : true;
+}
+
+function exists(path) {
+  return Promise.resolve(existsSync(path));
 }
 
 function removeSync(path) {
@@ -255,23 +265,25 @@ fs.__actual = fsActual; // to access actual file system
 fs.__loadFilesIntoMockFs = __loadFilesIntoMockFs;
 fs.__correctSeparatorsFromLinux = __correctSeparatorsFromLinux;
 fs.__loadDirIntoMockFs = __loadDirIntoMockFs;
-fs.readdirSync = readdirSync;
+fs.readdirSync = jest.fn(readdirSync);
 fs.writeFileSync = writeFileSync;
-fs.readFileSync = readFileSync;
+fs.readFileSync = jest.fn(readFileSync);
 fs.writeJSONSync = outputJsonSync;
-fs.outputJsonSync = outputJsonSync;
-fs.readJsonSync = readJsonSync;
+fs.outputJsonSync = jest.fn(outputJsonSync);
+fs.readJsonSync = jest.fn(readJsonSync);
 fs.readJSONSync = readJsonSync;
-fs.existsSync = existsSync;
-fs.pathExistsSync = existsSync;
+fs.existsSync = jest.fn(existsSync);
+fs.exists = exists;
+fs.pathExists = exists;
+fs.pathExistsSync = jest.fn(existsSync);
 fs.outputFileSync = outputFileSync;
 fs.removeSync = removeSync;
-fs.copySync = copySync;
+fs.copySync = jest.fn(copySync);
 fs.renameSync = renameSync;
 fs.ensureDirSync = ensureDirSync;
 fs.statSync = statSync;
 fs.fstatSync = statSync;
-fs.lstatSync = statSync;
+fs.lstatSync = jest.fn(statSync);
 fs.moveSync = moveSync;
 
 module.exports = fs;
