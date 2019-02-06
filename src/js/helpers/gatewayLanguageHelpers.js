@@ -272,7 +272,7 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
         if (subFolders && subFolders.length) { // make sure it has subfolders
           helpValid = subFolders.find(subFolder => {
             const subFolderPath = path.join(latestVersionPath, subFolder);
-            if (fs.lstatSync(subFolderPath).isDir) {
+            if (fs.lstatSync(subFolderPath).isDirectory()) {
               const checkPath = path.join(subFolderPath, helpsCheck.subpath.replace('${bookID}', bookID));
               const validFile = fs.readdirSync(checkPath).find(file => {
                 const ext = path.parse(file).ext;
