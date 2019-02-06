@@ -31,7 +31,8 @@
 \w the|x-occurrence="1" x-occurrences="3"\w*
 \w faith|x-occurrence="1" x-occurrences="1"\w*
 \w of|x-occurrence="3" x-occurrences="4"\w*
-\w God|x-occurrence="2" x-occurrences="2"\w*'\w s|x-occurrence="1" x-occurrences="1"\w*
+\w God|x-occurrence="2" x-occurrences="2"\w*'
+\w s|x-occurrence="1" x-occurrences="1"\w*
 \w chosen|x-occurrence="1" x-occurrences="1"\w*
 \w people|x-occurrence="1" x-occurrences="1"\w*
 \w and|x-occurrence="2" x-occurrences="2"\w*
