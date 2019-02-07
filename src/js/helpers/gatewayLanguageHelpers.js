@@ -253,6 +253,15 @@ export function getValidGatewayBiblesForTool(toolName, langCode, bookId) {
 }
 
 /**
+ * validate that folder exists
+ * @param {String} folderPath
+ * @return {boolean}
+ */
+function isDirectory(folderPath) {
+  return fs.existsSync(folderPath) && fs.lstatSync(folderPath).isDirectory();
+}
+
+/**
  *
  * @param {Array.<Object>} helpsChecks - list of helps to check
  * @param {String} languagePath
@@ -272,13 +281,15 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
         if (subFolders && subFolders.length) { // make sure it has subfolders
           helpValid = subFolders.find(subFolder => {
             const subFolderPath = path.join(latestVersionPath, subFolder);
-            if (fs.lstatSync(subFolderPath).isDirectory()) {
+            if (isDirectory(subFolderPath)) {
               const checkPath = path.join(subFolderPath, helpsCheck.subpath.replace('${bookID}', bookID));
-              const validFile = fs.readdirSync(checkPath).find(file => {
-                const ext = path.parse(file).ext;
-                return ((ext === '.json') || (ext === '.md'));
-              });
-              return validFile;
+              if (isDirectory(checkPath)) {
+                const validFile = fs.readdirSync(checkPath).find(file => {
+                  const ext = path.parse(file).ext;
+                  return ((ext === '.json') || (ext === '.md'));
+                });
+                return validFile;
+              }
             }
             return false;
           });

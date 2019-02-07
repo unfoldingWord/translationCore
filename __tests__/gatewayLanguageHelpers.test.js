@@ -8,6 +8,7 @@ import path from "path-extra";
 import fs from 'fs-extra';
 // helpers
 import * as gatewayLanguageHelpers from "../src/js/helpers/gatewayLanguageHelpers";
+import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 
 const RESOURCE_PATH = path.resolve(path.join(ospath.home(), 'translationCore', 'resources'));
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
@@ -61,7 +62,8 @@ describe('Test getGatewayLanguageList() for TW',()=>{
 
       // fake the book of joel
       fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
-      // fake a hindi bible
+      fakeHelpsBookByCopying('hbo', 'tit', 'jol');
+        // fake a hindi bible
       fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/v12.1', 'hi/bibles/irv/v12.1');
       fs.outputJsonSync(path.join(RESOURCE_PATH, 'hi/bibles/irv/v12.1/jol/1.json'), {}); // remove alignments
 
@@ -99,7 +101,6 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     test('should return an empty list for Titus if ULT not checked', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-      fakeHelpsByCopying('grk');
       const jsonPath = path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1/manifest.json');
       const json = fs.readJSONSync(jsonPath);
       delete json['checking'];
@@ -112,7 +113,6 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     test('should return an empty list for Titus if ULT not checking 3', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-      fakeHelpsByCopying('grk');
       setCheckingLevel(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1/manifest.json'), 2);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
@@ -122,7 +122,6 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     test('should return an empty list for Titus if UGNT not checking 2', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-      fakeHelpsByCopying('grk');
       const ugntVersionPath = ResourceAPI.getLatestVersion(path.join(RESOURCE_PATH, 'grc/bibles/ugnt'));
       setCheckingLevel(path.join(ugntVersionPath, 'manifest.json'), 1);
 
@@ -760,17 +759,33 @@ describe('checkAreayHelpers.bibleIdSort', () => {
 
 function fakeHelpsByCopying(srcLang, destLang) {
   // add dummy resources
-    fs.copySync(path.join(RESOURCE_PATH, srcLang, 'translationHelps/translationWords'), path.join(RESOURCE_PATH, destLang, 'translationHelps/translationWords'));
-  }
+  fs.copySync(path.join(RESOURCE_PATH, srcLang, 'translationHelps/translationWords'), path.join(RESOURCE_PATH, destLang, 'translationHelps/translationWords'));
+}
 
-  function setCheckingLevel(jsonPath, level) {
-    const json = fs.readJSONSync(jsonPath);
-    json.checking.checking_level = level.toString();
-    fs.outputJsonSync(jsonPath, json);
+function fakeHelpsBookByCopying(lang, srcBook, destBook) {
+  // add dummy resources
+  const tWHelpsPath = path.join(RESOURCE_PATH, lang, 'translationHelps/translationWords');
+  const latestVersionPath = ResourceAPI.getLatestVersion(tWHelpsPath);
+  if (latestVersionPath) {
+    const subFolders = ResourcesHelpers.getFoldersInResourceFolder(latestVersionPath);
+    for (let subFolder of subFolders) {
+      const srcPath = path.join(latestVersionPath, subFolder, 'groups');
+      const srcBookPath = path.join(srcPath, srcBook);
+      if (fs.lstatSync(srcBookPath).isDirectory()) {
+        fs.copySync(srcBookPath, path.join(srcPath, destBook));
+      }
+    }
   }
+}
 
-  function fakeResourceByCopying(resourcePath_, sourceBook, destBook) {
-    const sourcePath = path.join(resourcePath_, sourceBook);
-    const destPath = path.join(resourcePath_, destBook);
-    fs.copySync(sourcePath, destPath);
-  }
+function setCheckingLevel(jsonPath, level) {
+  const json = fs.readJSONSync(jsonPath);
+  json.checking.checking_level = level.toString();
+  fs.outputJsonSync(jsonPath, json);
+}
+
+function fakeResourceByCopying(resourcePath_, sourceBook, destBook) {
+  const sourcePath = path.join(resourcePath_, sourceBook);
+  const destPath = path.join(resourcePath_, destBook);
+  fs.copySync(sourcePath, destPath);
+}
