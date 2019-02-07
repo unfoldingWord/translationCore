@@ -10,9 +10,9 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  toolsCategories: {
+  toolsCategories: { // TBD his should be dynamic for tN
     translationWords: ['kt', 'other', 'names'],
-    translationNotes: ['other']
+    translationNotes: ['cult', 'fig', 'lex', 'mrph', 'idiom', 'irony', 'metaphor', 'rhet', 'simile']
   }
 };
 

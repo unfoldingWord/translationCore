@@ -2,22 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
 
-const ToolCardBoxes = ({checks, onChecked, selectedCategories, toolName}) => {
-  let checkBoxNames = {};
-console.log( "toolName", toolName );
+const checkBoxNames = { // this will use translate
+  'kt':       'Key Terms',
+  'names':    'Names',
+  'other':    'Other Terms',
+  
+  'lex':      'Lexical',
+    'wgt':      'Weights and Measures',
+    'num':      'Numbers',
+    'frac':     'Fractions',
+    'ord':      'Ordinal Numbers',
+  'fig':      'Figures of Speech',
+    'idiom':    'Idiom',
+    'irony':    'Irony',
+    'rhet':     'Rhetorical Questions',
+    'metaphor': 'Metaphor',
+    'simile':   'Simile',
+  'cult':     'Cultural',
+    'sym':      'Symbolic Language', 
+  'morph':    'Morphological',
+    'you':    'Forms of You',
+    'we':     'Forms of We'
+};
 
-  if( toolName === "translationWords") {
-    checkBoxNames = {
-      'kt': 'Key Terms',
-      'names': 'Names',
-      'other': 'Other Terms'
-    };
-  } else {
-    checkBoxNames = {
-      'num': 'Numbers',
-      'fig': 'Figures of Speech'
-    };
-  }
+const ToolCardBoxes = ({checks, onChecked, selectedCategories, toolName}) => {
+console.log( "checks", checks ); // This works
+console.log( "onChecked", onChecked );
+console.log( "selectedCategories", selectedCategories );
+console.log( "toolName", toolName );
 
   const sortedChecks = checks.sort((a, b) => {
     return Object.keys(checkBoxNames).indexOf(a) > Object.keys(checkBoxNames).indexOf(b);
@@ -26,7 +38,6 @@ console.log( "toolName", toolName );
   return (
     <div style={{marginLeft: '6%'}}>
       {
-        //checkBoxNames.map((id, index) => (
         sortedChecks.map((id, index) => (
           <div style={{display: 'flex', alignItems: 'center', marginBottom: 5}} key={index}>
             <Checkbox
@@ -37,6 +48,7 @@ console.log( "toolName", toolName );
                 onChecked(id, e.target.checked, toolName);
               }}
             />
+
             <div>{checkBoxNames[id] || id}</div>
           </div>
         ))
