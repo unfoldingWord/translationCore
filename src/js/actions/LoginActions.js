@@ -49,7 +49,7 @@ export function logoutUser() {
     dispatch({
       type: types.LOGOUT_USER
     });
-    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(ProjectLoadingActions.closeProject());
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch({ type: types.RESET_ONLINE_MODE_WARNING_ALERT });
     dispatch(BodyUIActions.goToStep(1));
