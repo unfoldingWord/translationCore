@@ -105,7 +105,7 @@ export const openProject = (name, skipValidation=false) => {
       if (e.type !== 'div') console.warn(e);
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
-      dispatch(clearLastProject());
+      dispatch(closeProject());
       dispatch(openAlertDialog(e));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     }
@@ -221,7 +221,7 @@ export function displayTools() {
  * @description - Wrapper to clear everything in the store that could
  * prevent a new project from loading
  */
-export function clearLastProject() {
+export function closeProject() {
   return (dispatch) => {
     /**
      * ATTENTION: THE project details reducer must be reset

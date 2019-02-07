@@ -12,15 +12,6 @@ Array [
     "pathLocation": "am_ult_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
-  Object {
-    "alertMessage": "projects.renamed_project",
-    "button1Text": "buttons.ok_button",
-    "button2Text": undefined,
-    "buttonLinkText": null,
-    "callback": [Function],
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
-  },
 ]
 `;
 
@@ -30,15 +21,6 @@ Array [
     "pathLocation": "fr_ult_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
-  Object {
-    "alertMessage": "projects.renamed_project",
-    "button1Text": "buttons.ok_button",
-    "button2Text": undefined,
-    "buttonLinkText": null,
-    "callback": [Function],
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
-  },
 ]
 `;
 
@@ -47,15 +29,6 @@ Array [
   Object {
     "pathLocation": "fr_lib_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
-  },
-  Object {
-    "alertMessage": "projects.renamed_project",
-    "button1Text": "buttons.ok_button",
-    "button2Text": undefined,
-    "buttonLinkText": null,
-    "callback": [Function],
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
   },
 ]
 `;
