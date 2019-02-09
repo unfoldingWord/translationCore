@@ -38,10 +38,10 @@ function cacheIndicies() {
   tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
 
   // load tN index
-  const tNpath = path.join(tHelpsPath, 'translationNotes');
-  let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
-  const tNIndexPath = path.join(tNversionPath, 'index.json');
-  tNIndex = fs.readJsonSync(tNIndexPath);
+  //const tNpath = path.join(tHelpsPath, 'translationNotes');
+  //let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
+  //const tNIndexPath = path.join(tNversionPath, 'index.json');
+  //tNIndex = fs.readJsonSync(tNIndexPath);
 }
 
 /**

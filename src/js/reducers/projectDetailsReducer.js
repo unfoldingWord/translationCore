@@ -10,9 +10,20 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  toolsCategories: { // TBD his should be dynamic for tN
+  toolsCategories: { 
     translationWords: ['kt', 'other', 'names'],
-    translationNotes: ['cult', 'fig', 'lex', 'mrph', 'idiom', 'irony', 'metaphor', 'rhet', 'simile']
+    translationNotes: ['cult', 
+                         'cult\\symAct', 'cult\\symLang', 'cult\\cultInfo', 'cult\\unknown', 'cult\\plicit',
+                       'fig', 
+                         'fig\\idiom', 'fig\\irony',  'fig\\metaphor', 'fig\\rhet',     'fig\\simile', 'fig\\apos',
+                         'fig\\euph',  'fig\\hen',    'fig\\hyper',    'fig\\litotes',  'fig\\merism', 'fig\\meto',
+                         'fig\\para',  'fig\\person', 'fig\\synec',    'fig\\ellipsis', 'fig\\neg',
+                       'lex', 
+                         'lex\\wgt', 'lex\\num', 'lex\\frac', 'lex\\ord',
+                       'morph',
+                         'morph\\you',      'morph\\we',   'morph\\they', 'morph\\actPas', 'morph\\gender', 
+                         'morph\\pronouns', 'morph\\conj', 'morph\\gen',  'morph\\honor'
+                       ]
   }
 };
 

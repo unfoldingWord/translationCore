@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
+import readdir from 'readdir-enhanced';
 // actions
 import * as AlertModalActions from "../actions/AlertModalActions";
 import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
@@ -14,22 +15,49 @@ import * as manifestHelpers from "./manifestHelpers";
 import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
 import ResourceAPI from "./ResourceAPI";
+//import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
+function noArticlesFilter(folders) {
+  let filterResult = [];
+console.log("noArticlesFilter: folders: ", folders);
+  for( var idx = 0; idx < folders.length; idx++) {
+    if( folders[idx].indexOf("articles") <0 ) {
+      filterResult.push(folders[idx]);
+    } 
+  }
+
+console.log("noArticlesFilter: result: ", filterResult);
+  return filterResult;
+}
+
 export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
-  const availableCategories = {};
+  let availableCategories = {};
   Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
+  // where to look for categories  
     const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
-    if (fs.existsSync(versionDirectory))
-      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
-        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
-      );
-      if (!availableCategories[toolName]) {
-        availableCategories[toolName] = [];
-      }
+    if (fs.existsSync(versionDirectory)) {
+    // categories are 2 levels of sub directories of version  
+   
+      const catFolders = readdir.readdirSync(versionDirectory, {deep:2} ).filter((dirName)=>
+        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());
+console.log("getAvailableCheckCategories: versionDirectory: ", versionDirectory); 
+console.log("getAvailableCheckCategories: catFolders: ", catFolders);
+        let noArt = noArticlesFilter(catFolders);
+        noArt.sort();
+console.log("getAvailableCheckCategories: noArt: ", noArt);
+        availableCategories[toolName] = noArt;
+      //availableCategories[toolName] = fs.readdir.Sync(versionDirectory).filter((dirName)=>
+      //  fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());  
+console.log("--getAvailableCheckCategories: availableCategories: ["+ toolName + "] ",
+  availableCategories[toolName]);
+    }
+    if (!availableCategories[toolName]) {
+      availableCategories[toolName] = [];
+    }
   });
   return availableCategories;
 }
