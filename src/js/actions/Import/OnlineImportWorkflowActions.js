@@ -131,7 +131,7 @@ export const onlineImport = () => {
  */
 export const recoverFailedOnlineImport = (errorMessage) => (dispatch) => {
   // TRICKY: clear last project first to avoid triggering autos-saving.
-  dispatch(ProjectLoadingActions.clearLastProject());
+  dispatch(ProjectLoadingActions.closeProject());
   dispatch(AlertModalActions.openAlertDialog(errorMessage));
   dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   dispatch({ type: "LOADED_ONLINE_FAILED" });

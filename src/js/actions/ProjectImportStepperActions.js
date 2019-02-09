@@ -168,7 +168,7 @@ export function removeProjectValidationStep(namespace) {
 export function cancelProjectValidationStepper() {
   return ((dispatch, getState) => {
     dispatch(toggleProjectValidationStepper(false));
-    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(ProjectLoadingActions.closeProject());
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
     dispatch({ type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
