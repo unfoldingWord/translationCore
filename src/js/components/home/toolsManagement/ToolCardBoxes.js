@@ -54,7 +54,8 @@ const checkBoxNames = { // this will use translate
     'morph\\pronouns':   'Pronounds', 
     'morph\\conj':       'Connecting Words', 
     'morph\\gen':        'Genitive', 
-    'morph\\honor':      'Honorifics'
+    'morph\\honor':      'Honorifics',
+    'other': 'Other'
 };
 
 const ToolCardBoxes = ({checks, onChecked, selectedCategories, toolName}) => {
@@ -66,14 +67,14 @@ console.log( "ToolCardBoxes: toolName", toolName );
   const sortedChecks = checks.sort((a, b) => {
     return Object.keys(checkBoxNames).indexOf(a) > Object.keys(checkBoxNames).indexOf(b);
   });
-  
+//  { let toggleVisibility = id.slice("\\");}
   return (
     <div style={{marginLeft: '6%'}}>
       {
         sortedChecks.map((id, index) => (
           <div style={{display: 'flex', alignItems: 'center', marginBottom: 5}} key={index}>
-            {
-              id.indexOf('\\') == -1 ? (
+          
+            { id.indexOf('\\') == -1 ? (
               <React.Fragment>
                   <Checkbox
                     style={{width: 'unset'}}
@@ -84,14 +85,15 @@ console.log( "ToolCardBoxes: toolName", toolName );
                     }}
                   />{checkBoxNames[id] || id}
                   {toolName == 'translationNotes' ? (
-                    <Glyphicon
+                    <Glyphicon 
                      style={{float: "right", fontSize: "18px", margin: "0px 0px 0px 6px"}}
                      glyph={id.onChecked ? "chevron-up" : "chevron-down"} 
                     />) : ("")}
               </React.Fragment>
             ) : (
               <React.Fragment>
-                  <Checkbox
+                  <Checkbox 
+                    
                     style={{marginLeft: 34, width: 'unset'}}
                     iconStyle={{fill: 'black', marginRight: 12}}
                     checked={selectedCategories.includes(id)}

@@ -30,6 +30,7 @@ const initialState = {
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.SET_CHECK_CATEGORIES:
+console.log("action&state", action, state);
     return {
       ...state,
       toolsCategories: {
