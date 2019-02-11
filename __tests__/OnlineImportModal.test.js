@@ -2,9 +2,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import OnlineImportModal from '../src/js/components/home/projectsManagement/OnlineImportModal';
-// Needed for onTouchTap event in OnlineImportModal
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
 
 describe('OnlineImportModal component renders correctly', () => {
   test('OnlineImportModal Component render should match snapshot', () => {
