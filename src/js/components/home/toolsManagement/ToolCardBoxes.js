@@ -54,8 +54,7 @@ const checkBoxNames = { // this will use translate
     'morph\\pronouns':   'Pronounds', 
     'morph\\conj':       'Connecting Words', 
     'morph\\gen':        'Genitive', 
-    'morph\\honor':      'Honorifics',
-    'other': 'Other'
+    'morph\\honor':      'Honorifics'
 };
 
 const ToolCardBoxes = ({checks, onChecked, selectedCategories, toolName}) => {

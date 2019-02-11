@@ -35,7 +35,6 @@ console.log("noArticlesFilter: folders: ", folders);
 export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
   let availableCategories = {};
   Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-    debugger;
   // where to look for categories  
     const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
@@ -44,17 +43,13 @@ export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
     // categories are 2 levels of sub directories of version  
    
       const catFolders = readdir.readdirSync(versionDirectory, {deep:2} ).filter((dirName)=>
-        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());
-//console.log("getAvailableCheckCategories: versionDirectory: ", versionDirectory); 
-//console.log("getAvailableCheckCategories: catFolders: ", catFolders);
-        let noArt = noArticlesFilter(catFolders);
-        noArt.sort();
-//console.log("getAvailableCheckCategories: noArt: ", noArt);
-        availableCategories[toolName] = noArt;
+        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory().replace(ospath.sep(), '-'));
+      let noArt = noArticlesFilter(catFolders);
+      noArt.sort();
+      debugger;
+      availableCategories[toolName] = noArt;
       //availableCategories[toolName] = fs.readdir.Sync(versionDirectory).filter((dirName)=>
       //  fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());  
-//console.log("--getAvailableCheckCategories: availableCategories: ["+ toolName + "] ",
-//  availableCategories[toolName]);
     }
     if (!availableCategories[toolName]) {
       availableCategories[toolName] = [];
