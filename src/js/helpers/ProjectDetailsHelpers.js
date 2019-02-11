@@ -21,21 +21,18 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 function noArticlesFilter(folders) {
   let filterResult = [];
-console.log("noArticlesFilter: folders: ", folders);
   for( var idx = 0; idx < folders.length; idx++) {
     if( folders[idx].indexOf("articles") <0 ) {
       filterResult.push(folders[idx]);
     } 
   }
 
-//console.log("noArticlesFilter: result: ", filterResult);
   return filterResult;
 }
 
 export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
   let availableCategories = {};
   Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-    debugger;
   // where to look for categories  
     const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
@@ -45,16 +42,9 @@ export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
    
       const catFolders = readdir.readdirSync(versionDirectory, {deep:2} ).filter((dirName)=>
         fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());
-//console.log("getAvailableCheckCategories: versionDirectory: ", versionDirectory); 
-//console.log("getAvailableCheckCategories: catFolders: ", catFolders);
         let noArt = noArticlesFilter(catFolders);
         noArt.sort();
-//console.log("getAvailableCheckCategories: noArt: ", noArt);
         availableCategories[toolName] = noArt;
-      //availableCategories[toolName] = fs.readdir.Sync(versionDirectory).filter((dirName)=>
-      //  fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());  
-//console.log("--getAvailableCheckCategories: availableCategories: ["+ toolName + "] ",
-//  availableCategories[toolName]);
     }
     if (!availableCategories[toolName]) {
       availableCategories[toolName] = [];

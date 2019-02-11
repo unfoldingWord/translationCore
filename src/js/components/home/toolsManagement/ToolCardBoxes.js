@@ -16,57 +16,55 @@ const checkBoxNames = { // this will use translate
   'other':    'Other Terms',
 
   'cult':     'Cultural',
-    'cult\\symAct':      'Symbolic Actions',
-    'cult\\symLang':     'Symbolic Language', 
-    'cult\\cultInfo':    'Cultural Information', 
-    'cult\\unknown':     'Unknowns',
-    'cult\\plicit':      'Implicit and Explicit Information',
+    'cult/symAct':      'Symbolic Actions',
+    'cult/symLang':     'Symbolic Language', 
+    'cult/cultInfo':    'Cultural Information', 
+    'cult/unknown':     'Unknowns',
+    'cult/plicit':      'Implicit and Explicit Information',
   'fig':      'Figures of Speech',
-    'fig\\idiom':        'Idiom',
-    'fig\\irony':        'Irony',
-    'fig\\rhet':         'Rhetorical Questions',
-    'fig\\metaphor':     'Metaphor',
-    'fig\\simile':       'Simile',
-    'fig\\apos':         'Apostrophy',
-    'fig\\euph':         'Euphemism',
-    'fig\\hen':          'Hendiadys',
-    'fig\\hyper':        'Hyperbole',
-    'fig\\litotes':      'Litotes',
-    'fig\\merism':       'Merism',
-    'fig\\meto':         'Metonymy',
-    'fig\\para':         'Parallelism',
-    'fig\\person':       'Personification',
-    'fig\\synec':        'Synecdoche',
-    'fig\\ellipsis':     'Ellipsis',
-    'fig\\neg':          'Double Negative',
+    'fig/idiom':        'Idiom',
+    'fig/irony':        'Irony',
+    'fig/rhet':         'Rhetorical Questions',
+    'fig/metaphor':     'Metaphor',
+    'fig/simile':       'Simile',
+    'fig/apos':         'Apostrophy',
+    'fig/euph':         'Euphemism',
+    'fig/hen':          'Hendiadys',
+    'fig/hyper':        'Hyperbole',
+    'fig/litotes':      'Litotes',
+    'fig/merism':       'Merism',
+    'fig/meto':         'Metonymy',
+    'fig/para':         'Parallelism',
+    'fig/person':       'Personification',
+    'fig/synec':        'Synecdoche',
+    'fig/ellipsis':     'Ellipsis',
+    'fig/neg':          'Double Negative',
   'lex':      'Lexical',
-    'lex\\wgt':          'Weights and Measures',
-    'lex\\num':          'Numbers',
-    'lex\\frac':         'Fractions',
-    'lex\\ord':          'Ordinal Numbers',
+    'lex/wgt':          'Weights and Measures',
+    'lex/num':          'Numbers',
+    'lex/frac':         'Fractions',
+    'lex/ord':          'Ordinal Numbers',
 
   'morph':    'Morphological',
-    'morph\\you':        'Forms of You',
-    'morph\\we':         'Forms of We',
-    'morph\\they':       'Forms of They', 
-    'morph\\actPas':     'Active or Passive', 
-    'morph\\gender':     'Gender', 
-    'morph\\pronouns':   'Pronounds', 
-    'morph\\conj':       'Connecting Words', 
-    'morph\\gen':        'Genitive', 
-    'morph\\honor':      'Honorifics',
+    'morph/you':        'Forms of You',
+    'morph/we':         'Forms of We',
+    'morph/they':       'Forms of They', 
+    'morph/actPas':     'Active or Passive', 
+    'morph/gender':     'Gender', 
+    'morph/pronouns':   'Pronounds', 
+    'morph/conj':       'Connecting Words', 
+    'morph/gen':        'Genitive', 
+    'morph/honor':      'Honorifics',
     'other': 'Other'
 };
 
 const ToolCardBoxes = ({checks, onChecked, selectedCategories, toolName}) => {
-console.log( "ToolCardBoxes: checks", checks ); // This works
-console.log( "ToolCardBoxes: onChecked", onChecked );
-console.log( "ToolCardBoxes: selectedCategories", selectedCategories );
-console.log( "ToolCardBoxes: toolName", toolName );
-
-  const sortedChecks = checks.sort((a, b) => {
-    return Object.keys(checkBoxNames).indexOf(a) > Object.keys(checkBoxNames).indexOf(b);
-  });
+  let sortedChecks = checks;
+  if (toolName !== 'translationNotes') {
+    sortedChecks = checks.sort((a, b) => {
+      return Object.keys(checkBoxNames).indexOf(a) > Object.keys(checkBoxNames).indexOf(b);
+    });
+  }
 //  { let toggleVisibility = id.slice("\\");}
   return (
     <div style={{marginLeft: '6%'}}>
@@ -74,7 +72,7 @@ console.log( "ToolCardBoxes: toolName", toolName );
         sortedChecks.map((id, index) => (
           <div style={{display: 'flex', alignItems: 'center', marginBottom: 5}} key={index}>
           
-            { id.indexOf('\\') == -1 ? (
+            { id.indexOf('/') == -1 ? (
               <React.Fragment>
                   <Checkbox
                     style={{width: 'unset'}}
@@ -93,7 +91,6 @@ console.log( "ToolCardBoxes: toolName", toolName );
             ) : (
               <React.Fragment>
                   <Checkbox 
-                    
                     style={{marginLeft: 34, width: 'unset'}}
                     iconStyle={{fill: 'black', marginRight: 12}}
                     checked={selectedCategories.includes(id)}

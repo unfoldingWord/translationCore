@@ -13,16 +13,16 @@ const initialState = {
   toolsCategories: { 
     translationWords: ['kt', 'other', 'names'],
     translationNotes: ['cult', 
-                         'cult\\symAct', 'cult\\symLang', 'cult\\cultInfo', 'cult\\unknown', 'cult\\plicit',
+                         'cult/symAct', 'cult/symLang', 'cult/cultInfo', 'cult/unknown', 'cult/plicit',
                        'fig', 
-                         'fig\\idiom', 'fig\\irony',  'fig\\metaphor', 'fig\\rhet',     'fig\\simile', 'fig\\apos',
-                         'fig\\euph',  'fig\\hen',    'fig\\hyper',    'fig\\litotes',  'fig\\merism', 'fig\\meto',
-                         'fig\\para',  'fig\\person', 'fig\\synec',    'fig\\ellipsis', 'fig\\neg',
+                         'fig/idiom', 'fig/irony',  'fig/metaphor', 'fig/rhet',     'fig/simile', 'fig/apos',
+                         'fig/euph',  'fig/hen',    'fig/hyper',    'fig/litotes',  'fig/merism', 'fig/meto',
+                         'fig/para',  'fig/person', 'fig/synec',    'fig/ellipsis', 'fig/neg',
                        'lex', 
-                         'lex\\wgt', 'lex\\num', 'lex\\frac', 'lex\\ord',
+                         'lex/wgt', 'lex/num', 'lex/frac', 'lex/ord',
                        'morph',
-                         'morph\\you',      'morph\\we',   'morph\\they', 'morph\\actPas', 'morph\\gender', 
-                         'morph\\pronouns', 'morph\\conj', 'morph\\gen',  'morph\\honor'
+                         'morph/you',      'morph/we',   'morph/they', 'morph/actPas', 'morph/gender', 
+                         'morph/pronouns', 'morph/conj', 'morph/gen',  'morph/honor'
                        ]
   }
 };
@@ -30,7 +30,6 @@ const initialState = {
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.SET_CHECK_CATEGORIES:
-console.log("action&state", action, state);
     return {
       ...state,
       toolsCategories: {
