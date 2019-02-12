@@ -1,4 +1,5 @@
 const electron = require('electron');
+const p = require('../package.json');
 const {download} = require('@neutrinog/electron-dl');
 const DownloadManager = require('./js/DownloadManager');
 
@@ -32,6 +33,10 @@ function createMainWindow () {
     useContentSize: true,
     show: false,
   });
+
+  if('developer_mode' in p && p.developer_mode) {
+    mainWindow.webContents.openDevTools();
+  }
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
