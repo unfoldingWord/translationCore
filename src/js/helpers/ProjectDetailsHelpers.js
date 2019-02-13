@@ -21,14 +21,12 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 function noArticlesFilter(folders) {
   let filterResult = [];
-console.log("noArticlesFilter: folders: ", folders);
   for( var idx = 0; idx < folders.length; idx++) {
     if( folders[idx].indexOf("articles") <0 ) {
-      filterResult.push(folders[idx]);
+      filterResult.push(folders[idx].replace(path.sep, '-'));
     } 
   }
 
-//console.log("noArticlesFilter: result: ", filterResult);
   return filterResult;
 }
 
@@ -41,15 +39,11 @@ export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
     const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
     if (fs.existsSync(versionDirectory)) {
     // categories are 2 levels of sub directories of version  
-   
       const catFolders = readdir.readdirSync(versionDirectory, {deep:2} ).filter((dirName)=>
-        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory().replace(ospath.sep(), '-'));
-      let noArt = noArticlesFilter(catFolders);
-      noArt.sort();
-      debugger;
-      availableCategories[toolName] = noArt;
-      //availableCategories[toolName] = fs.readdir.Sync(versionDirectory).filter((dirName)=>
-      //  fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());  
+        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());
+        let noArt = noArticlesFilter(catFolders);
+        noArt.sort();
+        availableCategories[toolName] = noArt;
     }
     if (!availableCategories[toolName]) {
       availableCategories[toolName] = [];

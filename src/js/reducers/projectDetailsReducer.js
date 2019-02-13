@@ -12,17 +12,17 @@ const initialState = {
   projectType: null,
   toolsCategories: { 
     translationWords: ['kt', 'other', 'names'],
-    translationNotes: ['cult', 
-                         'cult\\symAct', 'cult\\symLang', 'cult\\cultInfo', 'cult\\unknown', 'cult\\plicit',
-                       'fig', 
-                         'fig\\idiom', 'fig\\irony',  'fig\\metaphor', 'fig\\rhet',     'fig\\simile', 'fig\\apos',
-                         'fig\\euph',  'fig\\hen',    'fig\\hyper',    'fig\\litotes',  'fig\\merism', 'fig\\meto',
-                         'fig\\para',  'fig\\person', 'fig\\synec',    'fig\\ellipsis', 'fig\\neg',
-                       'lex', 
-                         'lex\\wgt', 'lex\\num', 'lex\\frac', 'lex\\ord',
-                       'morph',
-                         'morph\\you',      'morph\\we',   'morph\\they', 'morph\\actPas', 'morph\\gender', 
-                         'morph\\pronouns', 'morph\\conj', 'morph\\gen',  'morph\\honor'
+    translationNotes: ['cultural', 
+                         'cultural-symAct', 'cultural-symLang', 'cultural-cultInfo', 'cultural-unknown', 'cultural-plicit',
+                       'figures', 
+                         'figures-idiom', 'figures-irony',  'figures-metaphor', 'figures-rhet',     'figures-simile', 'figures-apos',
+                         'figures-euph',  'figures-hen',    'figures-hyper',    'figures-litotes',  'figures-merism', 'figures-meto',
+                         'figures-para',  'figures-person', 'figures-synec',    'figures-ellipsis', 'figures-neg',
+                       'lexical', 
+                         'lexical-wgt', 'lexical-num', 'lexical-frac', 'lexical-ord',
+                       'morphological',
+                         'morphological-you',      'morphological-we',   'morphological-they', 'morphological-actPas', 'morphological-gender', 
+                         'morphological-pronouns', 'morphological-conj', 'morphological-gen',  'morphological-honor'
                        ]
   }
 };
@@ -30,7 +30,6 @@ const initialState = {
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.SET_CHECK_CATEGORIES:
-console.log("action&state", action, state);
     return {
       ...state,
       toolsCategories: {
