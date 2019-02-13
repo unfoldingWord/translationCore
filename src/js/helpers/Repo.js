@@ -26,6 +26,21 @@ function makeCredentials(user) {
 }
 
 /**
+ * Checks if a string matches any of the expressions
+ * @param {string} string - the string to compare
+ * @param {array} expressions - an array of expressions to compare against the string
+ * @returns {boolean} true if any of the expressions match the string
+ */
+export function isMatched(string, expressions) {
+  for(const expr of expressions) {
+    if(expr === string || new RegExp(expr).exec(string)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
  * Generates the commit author from the user object
  * @param user
  * @returns {{name: string, email: string}}
@@ -253,6 +268,51 @@ export default class Repo {
   }
 
   /**
+   * Lists all files in the git repo including ones that have been removed but not committed yet.
+   * @returns {Promise<string>}
+   */
+  async list() {
+    // files that git knows about
+    const stagedFiles = await git.listFiles({
+      dir: this.dir
+    });
+    // files that git may not know about
+    const paths = await readGitDir(this.dir);
+
+    // merge lists
+    for (let i = 0, len = stagedFiles.length; i < len; i++) {
+      if (paths.indexOf(stagedFiles[i]) === -1) {
+        paths.push(stagedFiles[i]);
+      }
+    }
+    return paths;
+  }
+
+  /**
+   * Checks if there are any file changes.
+   * Paths can be ignored from this check which is helpful for constantly changing files like the current context id.
+   * @param {array} [ignored=[]] - an array of path expressions that will excluded from the check.
+   * @returns {Promise<string>} the status
+   */
+  async isDirty(ignored = []) {
+    const paths = await this.list();
+    for (let i = 0, size = paths.length; i < size; i++) {
+      if(isMatched(paths[i], ignored)) {
+        // skip ignored paths
+        continue;
+      }
+      const status = await git.status({
+        dir: this.dir,
+        filepath: paths[i]
+      });
+      if (status !== "*unmodified") {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
    * Removes a named remote from this repo.
    * @param {string} [name="origin"] - the locale remote alias
    * @return {Promise<void>}
@@ -285,15 +345,27 @@ export default class Repo {
   }
 
   /**
-   * Adds a file to the git index
+   * Adds a file to the git index.
+   * If the file has been deleted it will be removed from the index.
    * @param {string} filepath - the relative path to the file being added.
    * @returns {Promise<void>}
    */
   async add(filepath) {
-    await git.add({
+    const status = await git.status({
       dir: this.dir,
-      filepath
+      filepath: filepath
     });
+    if (["*deleted", "deleted"].indexOf(status) > -1) {
+      await git.remove({
+        dir: this.dir,
+        filepath
+      });
+    } else if(["*modified", "modified", "*added", "added"].indexOf(status) > -1) {
+      await git.add({
+        dir: this.dir,
+        filepath
+      });
+    }
   }
 
   /**
@@ -301,7 +373,7 @@ export default class Repo {
    * @returns {Promise<void>}
    */
   async addAll() {
-    const paths = await readGitDir(this.dir);
+    const paths = await this.list();
     for (let i = 0, size = paths.length; i < size; i++) {
       await this.add(paths[i]);
     }
