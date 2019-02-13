@@ -305,7 +305,7 @@ export default class Repo {
         dir: this.dir,
         filepath: paths[i]
       });
-      if (status !== "*unmodified") {
+      if (["unmodified", "ignored"].indexOf(status) === -1) {
         return true;
       }
     }

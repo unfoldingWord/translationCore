@@ -51,7 +51,7 @@ export const changeCurrentContextId = contextId => {
     // commit project changes
     const projectDir = getProjectSaveLocation(getState());
     const repo = await Repo.open(projectDir);
-    const dirty = await repo.isDirty(['/contextId.json']);
+    const dirty = await repo.isDirty(['/contextId.json', '/.categories']);
     if(dirty) {
       await repo.save(`Auto saving`);
     }
