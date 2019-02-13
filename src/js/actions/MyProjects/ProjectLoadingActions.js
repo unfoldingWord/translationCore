@@ -35,6 +35,7 @@ import {
   copyGroupDataToProject,
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
+import * as BibleHelpers from "../../helpers/bibleHelpers";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -82,20 +83,23 @@ export const openProject = (name, skipValidation=false) => {
       // connect the tools
       const manifest = getProjectManifest(getState());
       const tools = getTools(getState());
+      const bookId = (manifest && manifest.project && manifest.project.id) || '';
       for (const t of tools) {
         // load source book translations
-        await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
+        await dispatch(loadSourceBookTranslations(bookId, t.name));
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
-        copyGroupDataToProject("grc", t.name, validProjectDir);
+        const olForBook = BibleHelpers.getOLforBook(bookId);
+        const olID = (olForBook && olForBook.languageId) || 'grc';
+        copyGroupDataToProject(olID, t.name, validProjectDir);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
         setDefaultProjectCategories(language, t.name, validProjectDir);
 
         // connect tool api
-        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
+        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
         t.api.triggerWillConnect(toolProps);
       }
 
