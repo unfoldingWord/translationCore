@@ -10,7 +10,13 @@ import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpe
 // actions
 import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
 import { saveContextId } from '../helpers/contextIdHelpers';
-import { getSelectedToolName, getGroupsIndex, getGroupsData } from "../selectors";
+import {
+  getSelectedToolName,
+  getGroupsIndex,
+  getGroupsData,
+  getProjectSaveLocation
+} from "../selectors";
+import Repo from "../helpers/Repo";
 
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
@@ -32,7 +38,7 @@ function loadCheckData(dispatch) {
  * @return {object} New state for contextId reducer.
  */
 export const changeCurrentContextId = contextId => {
-  return ((dispatch, getState) => {
+  return async (dispatch, getState) => {
     dispatch({
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
@@ -42,7 +48,14 @@ export const changeCurrentContextId = contextId => {
       let state = getState();
       saveContextId(state, contextId);
     }
-  });
+    // commit project changes
+    const projectDir = getProjectSaveLocation(getState());
+    const repo = await Repo.open(projectDir);
+    const dirty = await repo.isDirty(['/contextId.json', '/.categories']);
+    if(dirty) {
+      await repo.save(`Auto saving`);
+    }
+  };
 };
 /**
  * @description this action changes the contextId to the first check.
