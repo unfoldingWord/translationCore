@@ -8,6 +8,7 @@ import path from 'path-extra';
 import isEqual from "deep-equal";
 import {getEditedVerse, getProjectSaveLocation} from '../selectors';
 import {generateTimestamp} from "../helpers";
+import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
@@ -40,7 +41,9 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
     if (savePath !== undefined) {
       // since contextId updates and triggers the rest to load, contextId get's updated and fires this.
       // let's not overwrite files, so check to see if it exists.
-      if (!fs.existsSync(savePath)) {
+      const saveDir = path.parse(savePath).dir;
+      const existingPayload = CheckDataLoadActions.loadCheckData(saveDir, payload.contextId);
+      if (!fs.existsSync(savePath) && !isEqual(existingPayload, payload)) {
         fs.outputJsonSync(savePath, payload, err => {console.log(err)});
       }
     } else {
