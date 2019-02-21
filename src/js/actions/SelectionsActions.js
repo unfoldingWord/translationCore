@@ -86,11 +86,11 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     const state = getState();
     contextId = contextId || state.contextIdReducer.contextId;
     const {projectSaveLocation} = state.projectDetailsReducer;
-    const {bookId, chapter, verse} = contextId.reference;
+    const {bookId, chapter:chapterFromContextId, verse: verseFromContextId} = contextId.reference;
     const selectionsObject = getSelectionsFromChapterAndVerseCombo(
       bookId,
-      chapterNumber || chapter,
-      verseNumber || verse,
+      chapterNumber || chapterFromContextId,
+      verseNumber || verseFromContextId,
       projectSaveLocation
     );
     const {selections, gatewayLanguageCode, gatewayLanguageQuote} = selectionsObject;
@@ -121,7 +121,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
         fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), invalidted);
       }
     }
-  }
+  };
 };
 
 /**
