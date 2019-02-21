@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 //import { render } from 'react-dom';
+=======
+import {render} from 'react-dom';
+>>>>>>> 340ceaddbd123bb2451fb6da8e04acc00127cabc
 import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
@@ -12,12 +16,8 @@ translation notes FileFolder. This is mapped to the array in
 projectDetailsReducer which determines the order of folders that exist. 
 Finally it is mapped to this object to deterime categories to show the 
 user
-*/
-/* 
-'translationWords': {
-  },
-  'translationNotes':{
-  */
+*/ 
+
 const checkBoxNames = { // this will use translate
     'kt':       'Key Terms',
     'names':    'Names',
@@ -83,7 +83,7 @@ function localCheckBox(selectedCategories, id, toolName, onChecked) {
 class ToolCardBoxes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       expand: false
     };
     this.showExpanded = this.showExpanded.bind(this);
@@ -91,7 +91,7 @@ class ToolCardBoxes extends React.Component {
 
 
   showExpanded() {
-    this.setState({ expand: !this.state.expand });
+    this.setState({expand: !this.state.expand});
   }
 
 
@@ -160,30 +160,7 @@ class ToolCardBoxes extends React.Component {
     );
   }
 }
-/*
 
-                  <div className='subCategory'>
-                  { // sub categories              id.split('-')[1]
-                    sortedChecks
-                      .filter(iid => iid.indexOf( id ) >= -1 )
-                      .map(id, idx => {
-                        return ( 
-                          <div key={idx} >
-                            <Checkbox 
-                              style={{marginLeft: 34, width: 'unset'}}
-                              iconStyle={{fill: 'black', marginRight: 12}}
-                              checked={selectedCategories.includes(id)}
-                              onCheck={(e) => {
-                                onChecked(id, e.target.checked, toolName);
-                              }}
-                            />
-                            {checkBoxNames[id] || id}
-                          </div>
-                        );
-                      }) 
-                  }  
-                  </div>  
-*/
 ToolCardBoxes.propTypes = {
   checks: PropTypes.array.isRequired,
   onChecked: PropTypes.func,
