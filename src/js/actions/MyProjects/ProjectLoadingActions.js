@@ -14,8 +14,8 @@ import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
   getActiveLocaleLanguage,
   getProjectManifest,
-  getProjectSaveLocation,
-  getSourceBook,
+  getProjectSaveLocation, getSelectedToolApi,
+  getSourceBook, getSupportingToolApis,
   getTargetBook,
   getToolGatewayLanguage,
   getTools,
@@ -217,7 +217,18 @@ export function displayTools() {
  * prevent a new project from loading
  */
 export function clearLastProject() {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    // disconnect from the tools
+    const state = getState();
+    const toolApi = getSelectedToolApi(state);
+    const supportingToolApis = getSupportingToolApis(state);
+    for (const key of Object.keys(supportingToolApis)) {
+      supportingToolApis[key].triggerWillDisconnect();
+    }
+    if (toolApi) {
+      toolApi.triggerWillDisconnect();
+    }
+
     /**
      * ATTENTION: THE project details reducer must be reset
      * before any other action being called to avoid
