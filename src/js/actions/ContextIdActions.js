@@ -53,7 +53,8 @@ export const changeCurrentContextId = contextId => {
     const repo = await Repo.open(projectDir, getState().loginReducer.userdata);
     const dirty = await repo.isDirty(['/contextId.json', '/.categories']);
     if(dirty) {
-      await repo.save(`Auto saving`);
+      const {reference: {chapter, verse}} = contextId;
+      await repo.save(`Auto saving at ${chapter}:${verse}`);
     }
   };
 };
