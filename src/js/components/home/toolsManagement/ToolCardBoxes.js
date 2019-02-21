@@ -1,13 +1,7 @@
 import React from 'react';
-<<<<<<< HEAD
-//import { render } from 'react-dom';
-=======
-import {render} from 'react-dom';
->>>>>>> 340ceaddbd123bb2451fb6da8e04acc00127cabc
 import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
-import { relative } from 'path';
 //import RenderToLayer from 'material-ui/internal/RenderToLayer';
 //import { FileFolderShared } from 'material-ui/svg-icons';
 /*
@@ -84,14 +78,18 @@ class ToolCardBoxes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expand: false
+      expanded: {}
     };
     this.showExpanded = this.showExpanded.bind(this);
   }
 
 
-  showExpanded() {
-    this.setState({expand: !this.state.expand});
+  showExpanded(id) {
+    this.setState({
+      expanded: {
+      ...this.state.expanded,
+      [id]: !this.state.expanded[id]
+    }});
   }
 
 
@@ -131,10 +129,10 @@ class ToolCardBoxes extends React.Component {
                           style={{fontSize: '18px', margin: '0 12px 0 0',
                                   width: '20px', textAlign: 'right'}}
                           glyph={index.onChecked ? 'chevron-up' : 'chevron-down'}
-                          onClick={this.showExpanded}
+                          onClick={() => this.showExpanded(id)}
                         />
                       </div>
-                      {this.state.expand ? (
+                      {this.state.expanded[id] ? (
                       <div style={{display: 'flex', flexWrap: 'wrap', alignItems: 'left', 
                                   marginBottom: 5, border: 'thin none magenta', width: '100%'}} key={index}> 
                         {sortedChecks
