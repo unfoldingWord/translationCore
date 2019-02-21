@@ -80,7 +80,7 @@
     "electron": "4.0.5",
     "electron-compilers": "5.9.0",
     "electron-devtools-installer": "^2.2.4",
-    "electron-packager": "9.1.0",
+    "electron-packager": "^13.1.0",
     "electron-react-devtools": "0.5.3",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.8.0",
