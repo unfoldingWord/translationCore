@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is using irony and a rhetorical question to say that the Galatians are acting as though someone has put a spell on them. He does not really believe that someone has put a spell on them. Alternate translation: \"You behave as if someone has put a spell on you!\" (See: [[rc://en/ta/man/translate/figs-irony]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": "τίς ὑμᾶς ἐβάσκανεν",
+      "glQuote": "Who has put a spell on you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This continues the irony from verse 1. Paul knows the answers to the rhetorical questions he is about to ask. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": "τοῦτο μόνον θέλω μαθεῖν ἀφ’ ὑμῶν",
+      "glQuote": "This is the only thing I want to learn from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking ironically here. He actually teaches that no one can be justified by trying to do the deeds required by the law. Alternate translation: \"all you who think you can be justified by doing the deeds required by the law\" or \"you who want to be justified by the law\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": "οἵτινες ἐν νόμῳ δικαιοῦσθε",
+      "glQuote": "you who would be justified by the law",
+      "occurrence": 1
+    }
+  }
+]

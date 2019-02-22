@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The UST rearranges these verses into a verse bridge in order to keep the information about Israel together. (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The UST rearranges these two verses into a verse bridge in order to make it easier to shorten the sentences. (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The UST rearranges these verses into a verse bridge in order to keep together the details about the place they stayed. (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

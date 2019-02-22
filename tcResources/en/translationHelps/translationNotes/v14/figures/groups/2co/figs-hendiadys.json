@@ -1,0 +1,39 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"secret\" describes the things that people do secretly. Things that are shameful should cause people who do them to feel ashamed. Alternate translation: \"the things that people do secretly because they cause shame\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "glQuote": "secret and shameful ways",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) Paul uses the words \"visions\" and \"revelations\" to mean the same thing in hendiadys for emphasis. Alternate translation: \"things that the Lord has allowed only me to see\" or 2) Paul is speaking of two different things. Alternate translation: \"secret things that the Lord has let me see with my eyes and other secrets that he has told me about\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": "ὀπτασίας καὶ ἀποκαλύψεις Κυρίου",
+      "glQuote": "visions and revelations from the Lord",
+      "occurrence": 1
+    }
+  }
+]

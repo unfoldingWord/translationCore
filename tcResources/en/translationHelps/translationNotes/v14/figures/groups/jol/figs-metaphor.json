@@ -1,0 +1,272 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The locust swarm is like an invading army. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "a nation",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the land is spoken of as if it were a person. These words could also be seen as a metonym for the people who are mourning or even as hyperbole, that the famine is so bad that even things that are not alive are mourning. Alternate translation: \"the farmers are mourning\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "the ground is mourning",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"large\" and \"mighty\" share similar meanings here and emphasize that the army will be very strong. The word \"army\" could possibly be 1) a metaphor for a swarm of locusts or 2) referring to a human army. (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "a large and mighty army",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A fire destroys everything as it moves, and the \"army\" ([Joel 2:2](../02/02.md)), whether of humans or of locusts, destroys everything as it moves. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "A fire is consuming everything in front of it",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "After a wall of flame goes through dry land and burns the dryest and smallest fuel, there will still be flames as the larger and less dry fuel burns, (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "behind it a flame is burning",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the people of Israel are spoken of as God's inheritance. Alternate translation: \"your special people\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "your inheritance",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of the Spirit as if he were speaking of water. AT\" \"I will give my Spirit generously to all flesh\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "I will pour out my Spirit on all flesh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are that Yahweh speaks of completely destroying the nations as if 1) he were harvesting all the grapes and all the grain or 2) he were harvesting quickly, while the grain and grapes are ripe. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "Put in the sickle ... the winepress is full",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of making war against the nations as if he were using a sharp tool to harvest a field of ripe crops. If your readers will not understand the word \"sickle,\" you may use the word for any sharp tool that your people use for harvesting. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "Put in the sickle, for the harvest is ripe",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Swing the sickle to cut the grain.\" This is a metaphor for a soldier using a sword to kill people, but it is best to use the word for a sharp tool used in harvesting. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "Put in the sickle",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of the nations as if they were many grapes in a winepress, ready for people to crush them by stepping on them. Alternate translation: \"Come, completely destroy the nations, for they are many, and they are helpless to resist you\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "Come, crush the grapes, for the winepress is full",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of the nations' wickedness as if it were the juice that flows from the winepress into storage containers, and more juice flows into the vats than they can contain. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "The vats overflow, for their wickedness is enormous",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"Yahweh will roar like a lion\" or 2) \"Yahweh will roar like thunder.\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "Yahweh will roar",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these phrases mean Yahweh will protect his people. A fortress is a strong shelter used to protect people during war. Alternate translation: \"Yahweh will be a strong fortress for his people, the people of Israel\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "Yahweh will be a shelter for his people, and a fortress for the people of Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"milk will flow from the hills.\" The land being very fertile is spoken of as if the hills would flow with milk. Alternate translation: \"on the hills your cattle and goats will produce plenty of milk\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "glQuote": "the hills will flow with milk",
+      "occurrence": 0
+    }
+  }
+]

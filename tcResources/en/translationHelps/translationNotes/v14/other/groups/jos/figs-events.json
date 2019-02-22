@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joshua had commanded the people before they started walking around the city. Alternate translation: \"Joshua had commanded the people\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "But Joshua commanded the people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They had conquered the people who lived in the land before they set up the tent of meeting. Alternate translation: \"after they had conquered the land\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 18,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "and they conquered the land",
+      "occurrence": 0
+    }
+  }
+]

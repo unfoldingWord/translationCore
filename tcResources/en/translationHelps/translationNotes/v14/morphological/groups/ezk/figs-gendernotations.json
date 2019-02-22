@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"empty visions for you Ammonites ... with lies for you Ammonites.\" The word \"you\" refers to the people of Ammon. In the original Biblical language, the word \"your\" is feminine singular and refers to the nation of Ammon. Nations were often thought of as a woman. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 21,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "glQuote": "empty visions for you ... with lies for you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"her\" refers to Jerusalem. Cities were often thought of as a woman. (See: [[rc://en/ta/man/translate/figs-gendernotations]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 22,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "glQuote": "her",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"her\" refers to Jerusalem. Cities were often thought of as a woman. This continues through verse 32. (See: [[rc://en/ta/man/translate/figs-gendernotations]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 22,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "glQuote": "her ... herself",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The directions \"right\" and \"left\" form a merism, meaning that the person is not to leave the level path in any direction. Alternate translation: \"Walk straight ahead and do not leave the level path\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 4,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "Do not turn aside to the right or to the left",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There are two types of sexually immoral women. The \"prostitute\" is unmarried, \"another man's wife\" is married. Together they form a merism for any kind of sexually immoral woman. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 23,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "prostitute ... immoral woman",
+      "occurrence": 0
+    }
+  }
+]

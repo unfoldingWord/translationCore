@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"harvest of the Nile\" refers to the grain that was harvested near the Nile River and transported on the river and then to Phoenicia. (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 23,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "the harvest of the Nile was her produce",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the times when they are experiencing trouble. Alternate translation: \"\"when we have troubles\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 33,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "in the time of trouble",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they have their festival and feasts at this city. Alternate translation: \"the city where we have our feasts\" or \"they city where we celebrate our festivals\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 33,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "the city of our feasts",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"the scroll of Yahweh\" means that it contains the messages spoken by Yahweh. Alternate translation: \"Read carefully what is written in this scroll that contains the messages of Yahweh\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 34,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "Search through the scroll of Yahweh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they land is full of natural resources, such as grain. Alternate translation: \"a land where there is plenty of grain ... a land where there is plenty of bread\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 36,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "a land of grain ... a land of bread",
+      "occurrence": 0
+    }
+  }
+]

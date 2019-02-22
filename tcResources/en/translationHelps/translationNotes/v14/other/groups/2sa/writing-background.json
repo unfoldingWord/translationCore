@@ -1,0 +1,182 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information added to tell the reader what happened to the song in the future. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "which has been written in the Book of Jashar",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main story line. Here Samuel gives information about the war between David and the supporters of Saul. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the author begins to provide background information about Beeroth for the reader. The area of Beeroth was part of the land that belonged to the tribe of Benjamin. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "for Beeroth is also considered part of Benjamin",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the author finishes providing background information about Beeroth for the reader. The area of Beeroth was part of the land that belonged to the tribe of Benjamin. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "and the Beerothites fled to Gittaim and have been living there until this very time",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This verse pauses the main story to provide background information about Mephibosheth, a descendent of Saul through Jonathan instead of through Ishbosheth. Mephibosheth will become an important character later in the book. (See: [[rc://en/ta/man/translate/writing-background]] and [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is historical information. Saul had been their king before David. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "In the recent past",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"now\" makes a break in the main story line. The narrator gives background information about Ziba. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now Ziba ... servants",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word marks a break in the main story line. This new section gives background information for the part of the story that follows. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 14,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Now\" marks a break in the main story line. This new section gives background information about the men who served King David. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 20,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Now\" marks a break in the main story line. This gives background information about the Gibeonites. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  }
+]

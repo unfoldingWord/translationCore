@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces Mordecai as a new character in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "glQuote": "There was a certain Jew",
+      "occurrence": 0
+    }
+  }
+]

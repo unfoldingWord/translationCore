@@ -1,0 +1,77 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. Alternate translation: \"I have much to say\" (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "quote": "πολὺς ἡμῖν ὁ ὁ λόγος λόγος",
+      "glQuote": "We have much to say",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. Alternate translation: \"I am convinced\" or \"I am certain\" (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "quote": "πεπείσμεθα ὑμῶν",
+      "glQuote": "we are convinced",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. Alternate translation: \"I greatly desire\" (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "quote": "ἐπιθυμοῦμεν",
+      "glQuote": "We greatly desire",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. Alternate translation: \"which I cannot\" (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "which we cannot",
+      "occurrence": 0
+    }
+  }
+]

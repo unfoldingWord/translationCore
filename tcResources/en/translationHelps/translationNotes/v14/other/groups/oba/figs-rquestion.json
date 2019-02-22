@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question expresses that the Edomites were proud and felt safe. Alternate translation: \"No one can bring me down to the ground.\" or \"I am safe from all attackers.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Who will bring me down to the ground?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question is used to imply that Yahweh's punishment of Edom would be worse than what thieves would do when they steal. This can be stated explicitly. Alternate translation: \"If thieves came to you ... they would only steal as much as they needed, but I will take everything from you!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "If thieves came to you ... would they not steal only as much as they needed?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question is used to imply that Yahweh's punishment of Edom would be more thorough than what grape gatherers would do when they harvest grapes. This can be stated explicitly. Alternate translation: \"If grape gatherers came to you, they would leave some grapes, but I will take everything from you!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "If grape gatherers came to you, would they not leave the gleanings?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh uses this question to emphasize the certainty of the destruction of Edom. Alternate translation: \"'On that day,' says Yahweh, 'I surely will destroy ... mountain of Esau.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Will I not on that day,\" says Yahweh, \"destroy ... mountain of Esau?",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author gives a hypothetical situation where a person accidentally kills another person. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "For example, if a man goes into the forest ... to cut wood",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The officer is describing a situation that could possibly happen to a soldier. Alternate translation: \"so that, if he dies in battle, another man will not dedicate his house instead of him\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 20,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "so that he does not die in battle and another man dedicates it",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The officer is describing a situation that could possibly happen to a soldier. Alternate translation: \"so that, if he dies in battle, another man will not harvest its fruit instead of him\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 20,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "so he will not die in battle and another man enjoy its fruit",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The officer is describing a situation that could possibly happen to a soldier. Alternate translation: \"so that, if he dies in battle, another man does not marry her instead of him\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 20,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "so that he does not die in battle and another man marries her",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses states something that he wishes were true, but he knows that they are not wise and do not understand that their disobedience will cause Yahweh to bring this disaster on them. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 32,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "Oh, that they were wise, that they understood this, that they would consider their coming fate",
+      "occurrence": 0
+    }
+  }
+]

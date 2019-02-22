@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "the next day (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "the second day",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "number two in a list (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 19,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "The second",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "number three in a list (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "The third",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "number four in a list (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 19,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "The fourth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "number five in a list (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 19,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "The fifth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "number six in a list (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 19,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "The sixth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "number seven in a list (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 19,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "The seventh",
+      "occurrence": 0
+    }
+  }
+]

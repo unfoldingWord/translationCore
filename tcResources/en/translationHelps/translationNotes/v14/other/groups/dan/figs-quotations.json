@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as an indirect quotation. Alternate translation: \"No one can question what he does.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 4,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "No one can say to him, 'Why have you done this?'",
+      "occurrence": 0
+    }
+  }
+]

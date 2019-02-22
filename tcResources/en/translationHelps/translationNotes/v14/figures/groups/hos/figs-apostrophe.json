@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "People do not normally speak to things that cannot think or hear them. Translators may choose to have a different format for this passage if their languages do not allow such speech. Alternate translation: \"The people will say, 'We wish the mountains would cover us!' and 'We wish the hills would fall on us!'\" (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "The people will say to the mountains, \"Cover us!\" and to the hills, \"Fall on us!\"",
+      "occurrence": 0
+    }
+  }
+]

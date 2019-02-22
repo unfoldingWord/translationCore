@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "2 liters (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 16,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "omer",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "2 liters (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 16,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "omer",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"two liters\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 16,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "an omer",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "An omer and an ephah are both containers for measuring volume. The original readers would have known how much an ephah was. This sentence would help them know how much an omer was. For languages that do not use fractions, this can be reworded. Alternate translation: \"Now ten omers equal one ephah\" (See: [[rc://en/ta/man/translate/translate-bvolume]] and [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 16,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "Now an omer is a tenth of an ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "An ephah is 22 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 29,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A hin is 3.7 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 29,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "hin",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Translators may use units that people know and round numbers: \"3.7 liters\" or \"four liters\" (See: [[rc://en/ta/man/translate/translate-bvolume]] and [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 30,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "one hin",
+      "occurrence": 0
+    }
+  }
+]

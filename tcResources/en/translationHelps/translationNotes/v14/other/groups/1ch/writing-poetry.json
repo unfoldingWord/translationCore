@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Parallelism is common in Hebrew poetry. (See: [[rc://en/ta/man/translate/writing-poetry]] and [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-poetry",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

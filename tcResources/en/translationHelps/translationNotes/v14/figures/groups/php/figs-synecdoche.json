@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"knee\" is a synecdoche for the whole person, and bending the knee to kneel on the ground is a metonym for worship. \"In the name of\" here is a metonym for the person, telling who it is they will worship. Alternate translation: \"every person will worship Jesus\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "ἐν τῷ ὀνόματι Ἰησοῦ, πᾶν γόνυ κάμψῃ",
+      "glQuote": "in the name of Jesus every knee should bend",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"tongue\" refers to the whole person. Alternate translation: \"every person\" or \"every being\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "πᾶσα γλῶσσα",
+      "glQuote": "every tongue",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul refers to the believers by using the word \"spirit,\" which is what enables humans to relate to God. Alternate translation: \"with you\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 4,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "μετὰ τοῦ πνεύματος ὑμῶν",
+      "glQuote": "with your spirit",
+      "occurrence": 1
+    }
+  }
+]

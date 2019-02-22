@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as an indirect quote. Alternate translation: \"where Yahweh told Moses to gather the people together for him to give them water\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "where Yahweh said to Moses, \"Gather the people together for me to give them water.\"",
+      "occurrence": 0
+    }
+  }
+]

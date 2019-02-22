@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A talent weighs about thirty-three kilograms. (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 25,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "one talent",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There were evidently shekels of more than one weight at the time. This specified which one was to be used. See how you translated this in [Exodus 30:13](../30/13.md). (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 30,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "the weight of the shekel of the sanctuary",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"33 kilograms\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 37,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "one talent",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There were evidently shekels of more than one weight at the time. This specified which one was to be used. See how you translated this in [Exodus 30:13](../30/13.md). (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 38,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "measured by the standard of the sanctuary shekel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A beka is 1/2 a shekel. (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 38,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "one beka",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A shekel is 11 grams. Alternate translation: \"1/2 a shekel\" or \"five and a half grams\" or \"5 1/2 grams\" (See: [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 38,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "half a shekel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A talent is about 33 kilograms. Alternate translation: \"The workers cast 100 talents of silver\" or \"The workers cast 3,300 kilograms of silver\" (See: [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 38,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "One hundred talents of silver were cast",
+      "occurrence": 0
+    }
+  }
+]

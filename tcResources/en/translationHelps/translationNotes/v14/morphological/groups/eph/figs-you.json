@@ -1,0 +1,57 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul names himself as the writer of this letter to the believers at the church at Ephesus. Except where noted, all instances of \"you\" and \"your\" refers to the Ephesian believers as well as all believers and so are plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These instances of \"you\" refer to the \"sleeper\" and are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὁ καθεύδων ... ἐπιφαύσει σοι",
+      "glQuote": "you sleeper ... shine on you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The first word \"your\" is plural. Then Paul quotes Moses. Moses was talking to the people of Israel as though they were one person, so \"your\" and \"you\" are singular. You may need to translate them as plurals. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

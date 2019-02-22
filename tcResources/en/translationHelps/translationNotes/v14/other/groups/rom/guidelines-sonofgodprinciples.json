@@ -1,0 +1,135 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "τοῦ Υἱοῦ",
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Father\" is an important title for God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "Θεοῦ ... Πατρὸς ἡμῶν",
+      "glQuote": "God our Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "Υἱοῦ",
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "τοῦ ... Υἱοῦ",
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "Υἱὸν",
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "τοῦ Υἱοῦ",
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God the Father sent the Son of God, Jesus Christ, to the cross as the holy, infinite sacrifice necessary to satisfy God's infinite, holy nature against the sin of humanity. Here \"Son\" is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "ὅς γε τοῦ ἰδίου Υἱοῦ οὐκ ἐφείσατο",
+      "glQuote": "He who did not spare his own Son",
+      "occurrence": 1
+    }
+  }
+]

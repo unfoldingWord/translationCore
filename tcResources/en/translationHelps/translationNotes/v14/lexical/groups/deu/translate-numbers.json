@@ -1,0 +1,686 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"11\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "eleven",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "40th (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "fortieth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "11th (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "eleventh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "1000 (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "a thousand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"of groups of 1,000 ... of groups of 100 ... of groups of 50 ... and groups of 10\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "of thousands ... of hundreds ... of fifties ... of tens",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"12 men\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "twelve men",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"38 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "thirty-eight years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"60 cities\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "sixty cities",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"for 1,000 generations\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "for a thousand generations",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 days and 40 nights\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty days and forty nights",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 days and 40 nights\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty days and forty nights",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 days and 40 nights\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty days and forty nights",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 days and 40 nights\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty days and forty nights",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 days and 40 nights\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty days and forty nights",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"70 persons\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seventy persons",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Once every 3 years the Israelites were to store their tithes within their own towns so that it would be used to provide for the Levites, orphans, widows and foreigners. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 14,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "every three years you will present all the tithe of your produce",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seven years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"6 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 15,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "six years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 16,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seven days",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"6 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "six days",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"count 7 weeks\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 16,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "count seven weeks",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 16,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seven days",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"choose 3 cities\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "select three cities",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of this statement can be made explicit. Alternate translation: \"then you must choose three more cities for a person to escape to if he accidentally kills someone\" (See: [[rc://en/ta/man/translate/translate-numbers]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 19,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "then you must add three more cities for yourself",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"in addition to the three cities you already established\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 19,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "besides these three",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"The judge may say that they should beat the guilty person 40 times\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 25,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "The judge may give him forty blows",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means the Israelites will be afraid and panic and run away from their enemies. See similar wording in [Deuteronomy 28:7](../28/07.md). Alternate translation: \"you will flee in seven directions\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 28,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "will flee before them seven ways",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 29,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"120 years old\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 31,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "one hundred twenty years old",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 31,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seven years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make clear the understood information. Alternate translation: \"How could 1 enemy soldier chase 1,000 of your men, and 2 enemy soldiers cause 10,000 of your men to run away\" (See: [[rc://en/ta/man/translate/translate-numbers]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 32,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "How could one chase a thousand, and two put ten thousand to flight",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"10,000 angels\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 33,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "ten thousands of holy ones",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means the tribe of Ephraim will be stronger than the tribe of Manasseh. Alternate translation: \"the people of Ephraim, who number many times 10,000 ... the people of Manasseh, who number many times 1,000\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 33,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "ten thousands of Ephraim ... the thousands of Manasseh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"30 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 34,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "one hundred twenty years old",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"30 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 34,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "thirty days",
+      "occurrence": 0
+    }
+  }
+]

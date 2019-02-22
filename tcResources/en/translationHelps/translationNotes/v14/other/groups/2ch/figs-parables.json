@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This message is in the form of a parable. The worthless thistle represents Amaziah, and the cedar represents Jehoash. The trampling of the thistle by the beast expresses that something bad will happen to the thistle, and it will be powerless to stop it. The point of the parable is that Amaziah was foolish to challenge Jehoash. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 25,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "glQuote": "A thistle that was in Lebanon ... trampled down the thistle",
+      "occurrence": 0
+    }
+  }
+]

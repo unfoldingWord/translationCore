@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These direct quotations could be stated as indirect speech. Alternate translation: \"He asked me who I was, and I told him that I am an Amalekite\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "He said to me, 'Who are you?' I answered him, 'I am an Amalekite.'",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If in [2 Samuel 7:8](../07/08.md) and [2 Samuel 7:9](../07/09.md) you translated the direct quotations as indirect quotation, then here you may need to translate \"you\" as \"David\" or \"him\" or \"his\" as in the UST. Alternate translation: \"from before David. David's house ... before him.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "from before you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If in [2 Samuel 7:8](../07/08.md) and [2 Samuel 7:9](../07/09.md) you translated the direct quotations as indirect quotation, then here you may need to translate \"you\" as \"David\" or \"him\" or \"his\" as in the UST. Alternate translation: \"David's house ... before him. His throne\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "Your house ... before you. Your throne",
+      "occurrence": 0
+    }
+  }
+]

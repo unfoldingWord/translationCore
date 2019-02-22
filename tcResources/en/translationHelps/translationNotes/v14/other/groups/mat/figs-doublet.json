@@ -1,0 +1,96 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Rejoice\" and \"be very glad\" mean almost the same thing. Jesus wanted his hearers not merely to rejoice but to do even more than rejoice if possible. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "χαίρετε καὶ ἀγαλλιᾶσθε",
+      "glQuote": "Rejoice and be very glad",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"meek\" and \"lowly in heart\" mean basically the same thing. Jesus combines them to emphasize that he will be much kinder than the religious leaders. Alternate translation: \"I am gentle and humble\" or \"I am very gentle\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "πραΰς εἰμι καὶ ταπεινὸς τῇ καρδίᾳ",
+      "glQuote": "I am meek and lowly in heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus expresses the same idea both positively and negatively to emphasize that this faith must be genuine. Alternate translation: \"if you truly believe\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "ἐὰν ἔχητε πίστιν καὶ μὴ διακριθῆτε",
+      "glQuote": "if you have faith and do not doubt",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"great\" and \"first\" mean the same thing. They emphasize that this is the most important commandment. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "ἡ μεγάλη καὶ πρώτη ἐντολή",
+      "glQuote": "the great and first commandment",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Serpents are snakes, and vipers are poisonous snakes. They are dangerous and often symbols of evil. Alternate translation: \"You are as evil as dangerous and poisonous snakes\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "You serpents, you offspring of vipers",
+      "occurrence": 0
+    }
+  }
+]

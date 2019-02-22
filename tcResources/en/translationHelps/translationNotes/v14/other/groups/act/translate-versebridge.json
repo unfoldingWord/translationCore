@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to your audience to move these parts of the story about Stephen together by using a verse bridge as the UST does. (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to rearrange the parts of this sentence, which begins in verse 32. \"God has fulfilled for us, their children, these promises that he made to our ancestors, by\" (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "he has fulfilled for us, their children, by",
+      "occurrence": 0
+    }
+  }
+]

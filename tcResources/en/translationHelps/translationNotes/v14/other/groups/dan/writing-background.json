@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information that explains how Daniel's enemies knew he was praying to God. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "now his windows were open in his upper room toward Jerusalem",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information to remind the reader that this is Daniel's second vision. Alternate translation: \"had a second vision appear to me\" (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "had a vision appear to me (after the one ... first)",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information about who Ahasuerus was. The UST places this in parentheses to make that clear. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "It was Ahasuerus who had been made king over the realm of the Babylonians",
+      "occurrence": 0
+    }
+  }
+]

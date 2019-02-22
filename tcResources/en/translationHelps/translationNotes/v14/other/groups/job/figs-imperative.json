@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The command in the first part of the sentence functions as a hypothetical condition. Alternate translation: \"But if you were to ask the beasts, they would teach you\" (See: [[rc://en/ta/man/translate/figs-imperative]] and [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "glQuote": "But now ask the beasts, and they will teach you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The command in the first part of the sentence functions as a hypothetical condition. Alternate translation: if you were to ask the birds of the heavens, they would tell you\" (See: [[rc://en/ta/man/translate/figs-imperative]] and [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "glQuote": "ask the birds of the heavens, and they will tell you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The command in the first part of the sentence functions as a hypothetical condition. Alternate translation: \"Or if you were to speak to the earth, it would teach you\" (See: [[rc://en/ta/man/translate/figs-imperative]] and [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "glQuote": "Or speak to the earth, and it will teach you",
+      "occurrence": 0
+    }
+  }
+]

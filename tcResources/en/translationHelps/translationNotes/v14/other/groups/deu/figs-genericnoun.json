@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These do not refer to a specific person. It means these types of people in general. Alternate translation: \"your sons, your daughters, your male servants, your females servants, any Levite\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "your son, your daughter, your male servant, your female servant, the Levite",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to these types of people in general. Alternate translation: \"all foreigners, orphans, and widows\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "the foreigner, the fatherless, and the widow",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These refer to groups of people. Alternate translation: \"for foreigners, for those who are fatherless, and for the widows\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 24,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "for the foreigner, for the fatherless, and for the widow",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This does not mean a specific foreigner but refers to foreigners in general. Alternate translation: \"The foreigners who are\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 28,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "The foreigner who is",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This does not mean a specific foreigner (verse 43) but refers to foreigners in general. Alternate translation: \"They will ... to them\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 28,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "He will ... to him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There were many foreigners among the Israelites. Alternate translation: \"the foreigners who are among you in your camp, from those who cut your wood to those who get your water\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 29,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "the foreigner who is among you in your camp, from him who cuts your wood to him who draws",
+      "occurrence": 0
+    }
+  }
+]

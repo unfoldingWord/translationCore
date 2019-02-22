@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration for a very long time. Alternate translation: \"an extremely long time\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 32,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "forever",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This exaggerates the princes losing their royal status by saying that they will become nothing. Alternate translation: \"all her princes will no longer rule\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 34,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "all her princes will be nothing",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a generalization. The kings had destroyed many of the nearby lands, but not necessarily all lands. Alternate translation: \"many of the nations and their lands\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 37,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "all the nations and their lands",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Sennachrib is exaggerating his conquest and travels across the rivers of Egypt by claiming to have dried up the rivers when he marched his army through them. Alternate translation: \"I have marched through all the rivers of Egypt as if they were dry under my feet\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 37,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "I dried up all the rivers of Egypt under the soles of my feet",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a generalization, as Hezekiah showed them many things, but not necessarily everything in the palace. Alternate translation: \"almost everything in my house\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 39,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "everything in my house",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is generalization. Many children will lie in the street, but not necessarily on every street corner. Alternate translation: \"they lie on the street\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 51,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "they lie at every street corner",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people did not literally go to Sheol, the world of the dead. Instead, Yahweh is indicating by exaggeration that the people were willing to go anywhere to find new gods to worship. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 57,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "you went down to Sheol",
+      "occurrence": 0
+    }
+  }
+]

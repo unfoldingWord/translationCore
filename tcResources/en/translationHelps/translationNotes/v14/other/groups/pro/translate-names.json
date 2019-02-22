@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a name that means \"destroyer.\" Alternate translation: \"the Destroyer\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "glQuote": "Abaddon",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are the names of men. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 30,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "glQuote": "Agur ... Jakeh ... Ithiel ... Ucal",
+      "occurrence": 0
+    }
+  }
+]

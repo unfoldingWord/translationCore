@@ -1,0 +1,39 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"works were\" are also understood in the second phrase. Alternate translation: \"Cain's works were evil and his brother's works were righteous\" or \"Cain did evil things and his brother did what was right\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "his works were evil and his brother's righteous",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"remains\" is understood from the previous phrase. Alternate translation: \"and he remains in us\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "καὶ αὐτὸς ἐν ἡμῖν",
+      "glQuote": "and he in us",
+      "occurrence": 1
+    }
+  }
+]

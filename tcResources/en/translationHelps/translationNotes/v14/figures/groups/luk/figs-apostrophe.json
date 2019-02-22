@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks as if the people of the cities of Chorazin and Bethsaida are there listening to him, but they are not. (See: [[rc://en/ta/man/translate/figs-apostrophe]] and [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": "οὐαί σοι, Χοραζείν! οὐαί σοι, Βηθσαϊδά",
+      "glQuote": "Woe to you, Chorazin! Woe to you, Bethsaida!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus now speaks to the people in the city of Capernaum as if they are listening to him, but they are not. (See: [[rc://en/ta/man/translate/figs-apostrophe]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": "σύ, Καφαρναούμ",
+      "glQuote": "You, Capernaum",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks as if the people of Jerusalem are there listening to him. Jesus says this twice to show how sad he is for them. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": "Ἰερουσαλὴμ, Ἰερουσαλήμ",
+      "glQuote": "Jerusalem, Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is speaking to the people of the city as if he were speaking to the city itself as he would speak to a woman. He speaks of the people who live in the city as if they are the woman's children, and thus the city's children. To strike down a city is to destroy its walls and buildings, and to strike down its children is to kill those who live in it. Alternate translation: \"They will completely destroy you and kill all who live in you\" or \"They will completely destroy your city and kill all of you\" (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": "ἐδαφιοῦσίν σε καὶ τὰ τέκνα σου ἐν σοί",
+      "glQuote": "They will strike you down to the ground and your children with you",
+      "occurrence": 1
+    }
+  }
+]

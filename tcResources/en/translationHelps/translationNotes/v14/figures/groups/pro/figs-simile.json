@@ -1,0 +1,866 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Terrible things happening to the people is compared to a storm hitting them and causing fear and suffering. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "when your fearful dread comes like a storm ... like a whirlwind ... come upon you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer compares the path of righteous people to the sunrise, meaning that they are safe because they have light to see where they are walking. Alternate translation: \"righteous people walk along their path safely because the morning sun shines on it and grows brighter\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "the path of righteous people is like the first light that grows brighter",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer compares the way of wicked people to darkness, meaning that they are always in danger because they have no light to see where they are walking. Alternate translation: \"Wicked people walk dangerously along their path because they have no light to be able to see\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 4,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The way of the wicked is like darkness",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The sudden way a lazy person becomes poor is like the sudden way a robber comes and steals things. Alternate translation: \"you will suddenly become poor, just as if a robber came and stole everything you have\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "your poverty will come like a robber",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The sudden way a lazy person becomes in need of things is like the sudden way an armed soldier takes things from a person. This can be stated as a complete sentence. Alternate translation: \"and your needs will come to you like an armed soldier\" or \"and you will become needy just as if an armed soldier stole all your things\" (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "and your needs like an armed soldier",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The naive and unsuspecting way the young man follows the adulteress is compared to the way two animals are unaware of the danger they are in. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "like an ox going to slaughter ... a deer caught in a trap",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The naive and unsuspecting way the young man follows the adulteress is compared to the way an animal is unaware of the danger he is in. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "like a bird rushing into a snare",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Just as storm comes and sweeps everything away so wicked people will disappear. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The wicked are like the storm",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Vinegar\" and \"smoke\" represent things that hurt a person's teeth and eyes. Alternate translation: \"Sending a lazy person to accomplish a task is irritating and unpleasant\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like vinegar on the teeth and smoke in the eyes, so is the sluggard to those who send him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A beautiful woman without discretion is compared to a useless and unsuitable golden ring in a pig's nose. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like a gold ring ... without discretion",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Leaf\" represents growth and prosperity. Alternate translation: \"righteous people will prosper in the same way a healthy green leaf grows\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "like the leaf, righteous people will flourish",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A person who does what is right is compared to a tree that produces life as its fruit. Alternate translation: \"Those who do right will bring life to themselves and others\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The righteous person will be like a tree of life",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A disease that rots the bones represents the spoiling of a person's life. Alternate translation: \"a wife's shameful acts destroy her husband's influence and happiness\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "she who brings shame is like a disease that rots his bones",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase, \"thrusts of a sword\" represents cruel words that hurt another. Alternate translation: \"What a person says without thinking can hurt as much as if he stabbed with a sword\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The words of one who speaks rashly are like the thrusts of a sword",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer compares the lifestyle of the sluggard with trying to walk through a hedge of thorns. Both cause the person to suffer pain. Alternate translation: \"The life of the sluggard is like a person trying to walk through a hedge of thorns\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 15,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The path of the sluggard is like a place with a hedge of thorns",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer compares the king showing favor towards someone with a cloud that brings rain to make crops grow. Both promise blessing to those who receive them. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "his favor is like a cloud that brings a spring rain",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer compares the way this person's words hurt others with the way that fire burns things. Alternate translation: \"he hurts people with his words, like a fire scorches the things it touches\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 16,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "his speech is like a scorching fire",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks of a person's bribe working by comparing it to a magical stone or amulet. Alternate translation: \"A bribe works like a magical stone for the one who gives it\" or \"A bribe works like magic for the one who is giving the bribe\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 17,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "A bribe is like a magic stone to the one who gives it",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This compares how easily a conflict spreads to how spilled water flows everywhere. Alternate translation: \"Starting a conflict is like pumping water and letting it run everywhere\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 17,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The beginning of conflict is like one who releases water everywhere",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks of the words of a gossip being desirable to listen to as if they were delicious food to eat. Alternate translation: \"The words of a gossip are desirable to listen to\" or (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 18,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The words of a gossip are like delicious morsels",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks of the rich person believing his wealth will keep him safe like a high wall keeps those inside a city safe. Alternate translation: \"he thinks it protects him as well as a high wall\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 18,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "in his imagination it is like a high wall",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks of the difficulty of resolving quarreling by comparing it to the difficulty of breaking down the bars of a castle. Alternate translation: \"resolving quarreling is as difficult as breaking down the bars of a castle\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 18,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "quarreling is like the bars of a castle",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the lion's roaring refers to attacking. The wrath of a king is compared to the unpredictable and dangerous attack of a young lion. Alternate translation: \"The wrath of the king is as dangerous as the attack of a young lion\" (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The wrath of the king is like the roaring of a young lion",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The favor of the king is compared to the refreshing water that appears on grass in the morning. Alternate translation: \"but his favor is refreshing like dew on grass\" or \"but his favor is refreshing like the dew on the ground in the morning\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "but his favor is like dew on the grass",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This compares how people fear a king's wrath to how they fear a young roaring lion. Alternate translation: \"The king's wrath makes people as afraid as if they were facing a young lion roaring at them\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 20,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The fear of a king is like the fear of a young lion that is roaring",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks of how difficult it is to understand the reasons for a person's actions by comparing it to the difficulty of reaching the water in a deep well. Alternate translation: \"It is as difficult to understand the purpose in the human heart as it is to reach the water in a deep well\" or \"The purpose of in the human heart is very difficult to understand\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 20,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The purpose in a human heart is like deep water",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Needs are spoken of as if they were a person who could attack the lazy person. Alternate translation: \"your needs will come to you like an armed soldier\" (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 24,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "your needs like an armed soldier",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The hearts of kings are compared to the size of the heavens and the earth. Alternate translation: \"Just as no one can measure the height of the heavens or the depth of the earth, even so no one can understand the heart of kings\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like the heavens are for height and the earth is for depth, so the heart of kings is unsearchable",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here a faithful messenger is being compared to the cold of snow, because both are pleasant. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like the cold of snow at harvest time is a faithful messenger",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A false witness is compared to three weapons that can hurt or kill people. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "A man who bears false witness against his neighbor is like a club used in war, or a sword, or a sharp arrow",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A foolish man is compared to a part of the body that causes trouble for a person. Alternate translation: \"Trusting in an unfaithful man in time of trouble will bring you pain like a bad tooth or a foot that slips\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "An unfaithful man in whom you trust in a time of trouble is like a bad tooth or a foot that slips",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Cold water is compared to good news that is both refreshing and delightful. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like cold waters to one who is thirsty, so is good news from a far country",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One expects a spring or fountain to have clear water, just as one expects a righteous man to stand for what he believes. A polluted spring or fountain is compared to a righteous man who falls. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like a fouled spring or a ruined fountain is a righteous person tottering before wicked people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both wanting others to honor you and eating honey are good, but you can eat too much honey, and you can try too hard to have people honor you. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "It is not good to eat too much honey; that is like searching for honor after honor.",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both a person without self-control and a city without walls are weak and vulnerable. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "A person without self-control is like a city breached and without walls.",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Normally snow does not fall during the summer and rain does not fall during the harvest. This can be stated clearly. Alternate translation: \"Just as it would be very strange to have snow in summer or rain during the harvest\" (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like snow in summer or rain in harvest",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A curse that does not harm a person is spoken of as if it were a bird that does not land. Alternate translation: \"so an undeserved curse does not land on its mark\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "so an undeserved curse does not alight",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases can be reordered. Alternate translation: \"A proverb in the mouth of fools is like the legs of a paralytic which hang down\" or \"A proverb in the mouth of fools is as useless as the legs of a paralytic which hang down\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like the legs ... is a proverb in the mouth of fools",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "How the two are alike can be stated clearly. Alternate translation: \"A proverb in the mouth of fools is as dangerous as a thorn that goes into the hand of a drunkard\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like a thorn ... is a proverb in the mouth of fools",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both the door and the lazy person move, but they do not go anywhere. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "As the door turns on its hinges, so is the lazy person upon his bed",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reordered. Alternate translation: \"A passerby who becomes angry at some other people's dispute is like a person who grabs hold of a dog's ears\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like one who takes hold of the ears of a dog, is a passerby who becomes angry at a dispute that is not his own",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks of gossip being desirable to listen to as if it were delicious food to eat. Alternate translation: \"The words of a gossip are desirable to listen to\" or (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The words of a gossip are like delicious morsels",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This simile means that a person who says things to hide the evil in their heart are like a earthen vessel covered in glaze to make it look good. These phrases can be reordered. Alternate translation: \"People who have burning lips and an evil heart are like an earthen vessel covered with glaze\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like the glaze overlaying an earthen vessel so are burning lips and an evil heart",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"wanders\" and \"strays\" mean the same thing in this verse. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like a bird that wanders from its nest is a man who strays from where he lives",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that it is as difficult or useless to try and restrain her as it is to try to restrain the wind or catch oil in your hand (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "restraining her is like restraining the wind, or trying to catch oil in your right hand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases are comparing how iron and a man can be improved. Alternate translation: \"As iron can sharpen another piece of iron, so a man's character is improved by contact with his friend\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Iron sharpens iron; in the same way, a man sharpens his friend.",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The poor man who oppresses other poor people is compared to a rain that falls so hard that it leaves no crop to harvest. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 28,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "like a beating rain that leaves no food",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Poor people who are helpless against an evil ruler are compared to people who have a lion roaring at them or a bear attacking them. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 28,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like a roaring lion or a charging bear is a wicked ruler over poor people",
+      "occurrence": 0
+    }
+  }
+]

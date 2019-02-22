@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the ideas in the abstract noun \"persecution\" are expressed with the verb \"persecute.\" Because the sentence is so long and complicated, \"will receive\" can be repeated. Alternate translation: \"and even though people persecute them, in the world to come, they will receive eternal life\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "with persecutions, and in the world to come, eternal life",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The noun \"greetings\" can be expressed with the verb \"greet.\" These greetings showed that the people respected the scribes. Alternate translation: \"to be greeted respectfully in the marketplaces\" or \"people to greet them respectfully in the marketplaces\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "the greetings they receive in the marketplaces",
+      "occurrence": 0
+    }
+  }
+]

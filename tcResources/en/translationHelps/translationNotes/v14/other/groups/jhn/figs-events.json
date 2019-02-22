@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The content of verse 57 occurs before that of verse 56. If this order might confuse your readers, you can combine these verses and put the text of verse 57 before the text of verse 56. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 56
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

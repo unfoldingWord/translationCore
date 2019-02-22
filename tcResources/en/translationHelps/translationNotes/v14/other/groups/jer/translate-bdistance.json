@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A cubit was about 46 centimeters long. Alternate translation: \"18 cubits ... 12 cubits\" or \"about 8.3 meters ... about 5.5 meters\" (See: [[rc://en/ta/man/translate/translate-bdistance]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 52,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "glQuote": "eighteen cubits ... twelve cubits",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A cubit was about 46 centimeters long. Alternate translation: \"5 cubits\" or \"about 2.3 meters\" (See: [[rc://en/ta/man/translate/translate-bdistance]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 52,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "glQuote": "five cubits",
+      "occurrence": 0
+    }
+  }
+]

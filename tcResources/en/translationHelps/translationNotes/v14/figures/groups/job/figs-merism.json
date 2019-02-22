@@ -1,0 +1,91 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a figure of speech which means \"all people, both poor people and rich people.\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "small and great people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"blameless\" and \"wicked\" are two extremes for a merism that include everything in between. Alternate translation: \"he brings everyone to an end, whether they are blameless or wicked\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 9,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "he destroys blameless people and wicked people together",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"in the west\" and \"in the east\" are together a merism that refers to all people living everywhere. This is an exaggeration as not everyone on the earth will hear about what happened to a specific wicked person. Alternate translation: \"Everyone in the whole world will be horrified and frightened when they see what happens to the wicked person\" or \"Many people who live in the east and in the west will be horrified and frightened when they see what happens to the wicked person\" (See: [[rc://en/ta/man/translate/figs-merism]] and [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 18,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "Those who live in the west ... those who live in the east will be frightened by it",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Job continues speaking. He begins using a merism to say that he has looked everywhere. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 23,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the merism that begins with the words \"eastward ... westward\" in verse 8. By mentioning these four directions, Job emphasizes that he has looked everywhere. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 23,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "north ... south",
+      "occurrence": 0
+    }
+  }
+]

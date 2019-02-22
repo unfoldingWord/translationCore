@@ -1,0 +1,326 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"your\" is plural and refers to the people of Israel. The idiom means that Yahweh will do this where they can see. Alternate translation: \"in front of you\" or \"where you can see\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 16,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "before your eyes",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This \"You\" is singular and refers to the king. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 22,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "You who live",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two instances of \"you\" are singular and refer to Jeremiah. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "asks you ... you will say",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two instances of \"you\" are plural and refer to the false prophets and the priests. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "You are the burden ... cast you off",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is singular and refers to Jeremiah. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 23,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "This is what you will say",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All of these instances of \"you\" are plural and refer to the priests and false prophets. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 23,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "But if you say ... Because you have said ... when I sent to you ... You will not say",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All of these instances of \"you\" are plural and refer to the priests and false prophets. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 23,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "pick you up ... throw you ... I gave you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This instance of \"you\" is plural and refers to the priests and false prophets. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 23,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "insult on you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"your\" refers to Zedekiah and the people of Judah and so is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 27,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "Place your necks",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh is speaking to the Israelites as if he were speaking to Rachel ([Jeremiah 31:15](../31/15.md)), so all instances of \"your\" and the commands are singular. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 31,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "Hold your voice ... your eyes ... your work ... your children",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh is speaking to the Israelites as if he were speaking to Rachel ([Jeremiah 31:15](../31/15.md)), so all instances of \"your\" and the commands are singular. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 31,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "your future ... your descendants",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is plural and refers to the people in Jerusalem. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 32,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you fight",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is plural. Possible meanings are 1) this refers to Jeremiah and those with him, or 2) it refers to all the people. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 32,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "which you are saying",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" refers to the people of Israel. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 32,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you are saying",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" refers to Baruch and Jeremiah and so is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 36,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "where you are",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" refers to the two men that king Zedekiah had sent to Jeremiah, Jehukal son of Shelemiah, and Zephaniah son of Maaseiah the priest. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 37,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you will say",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"The Chaldeans will not give you over to the Judeans.\" Here \"you\" refers to Zedekiah. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 38,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "They will not give you over to them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"you\" and \"yourself\" refer to Edom, which represents the people of Edom. The word \"yourself\" is used to draw attention to the people of Edom. Alternate translation: \"you yourselves\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 49,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you yourself",
+      "occurrence": 0
+    }
+  }
+]

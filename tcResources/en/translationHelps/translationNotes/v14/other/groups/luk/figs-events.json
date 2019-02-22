@@ -1,0 +1,58 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The previous verse says that Herod put John in prison. It might be helpful to make it clear that the account starting in verse 21 happened before John was arrested. The UST does this by starting verse 21 with \"But before John was put in prison.\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was before the men actually went out. Alternate translation: \"He had said to them\" or \"Before they went out he told them\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "quote": "ἔλεγεν ... πρὸς αὐτούς",
+      "glQuote": "He said to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He would have put the oil and wine on the wounds first, and then bound the wounds. Alternate translation: \"he put wine and oil on the wounds and wrapped them with cloth\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "quote": "κατέδησεν τὰ τραύματα αὐτοῦ, ἐπιχέων ἔλαιον καὶ οἶνον",
+      "glQuote": "bound up his wounds, pouring on oil and wine",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract nouns \"wisdom\" and \"skill\" can be translated using the adjectives \"wise\" and \"skillful.\" Alternate translation: \"You have become wealthy by your own wisdom and skill\" or \"You have become wealthy by being wise and skillful\" (See: [[rc://en/ta/man/translate/figs-rpronouns]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 28,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "glQuote": "You have made yourself wealthy with wisdom and skill",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"myself\" adds emphasis. God would do this because the shepherds were not doing it. (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 34,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "glQuote": "I myself",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"myself\" emphasizes that it is Yahweh who will judge. (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 34,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "glQuote": "I myself",
+      "occurrence": 0
+    }
+  }
+]

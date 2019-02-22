@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"we\" refers to Job's friends but not to Job. Alternate translation: \"Look, we have thought about this matter. Listen to what I am saying and know that it is true\" (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 5,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "See, we have examined this matter; it is like this; listen to it, and know it for yourself",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"we\" probably refers to Bildad and Job's other friends and so is exclusive. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "Why are we",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"us\" and \"we\" refer to Elihu, Eliphaz, Bildad, and Zophar, but not to Job. Elihu uses this phrase sarcastically. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 37,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "Teach us what we should say to him",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"we taught you\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "παρελάβετε παρ’ ἡμῶν",
+      "glQuote": "you received instructions from us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"spirit, soul, and body\" represent the whole person. If your language does not have three words for these parts you can state it as \"your whole life\" or \"you.\" This can be stated in active form. Alternate translation: \"May God make your whole life without sin\" or \"May God keep you completely blameless\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ὁλόκληρον ὑμῶν τὸ πνεῦμα, καὶ ἡ ψυχὴ, καὶ τὸ σῶμα, ἀμέμπτως ... τηρηθείη",
+      "glQuote": "May your whole spirit, soul, and body be preserved without blame",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"I urge you, as if the Lord were speaking to you, to have people read this letter\" or \"With the authority of the Lord I direct you to read this letter\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ἐνορκίζω ὑμᾶς τὸν Κύριον, ἀναγνωσθῆναι τὴν ἐπιστολὴν",
+      "glQuote": "I solemnly charge you by the Lord to have this letter read",
+      "occurrence": 1
+    }
+  }
+]

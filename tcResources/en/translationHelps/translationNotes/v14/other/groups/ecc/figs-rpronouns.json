@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"you yourself know.\" Here \"yourself\" is used to emphasize the phrase \"you know.\" (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "ecc",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "glQuote": "you know yourself",
+      "occurrence": 0
+    }
+  }
+]

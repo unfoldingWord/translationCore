@@ -1,0 +1,39 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "Υἱὸς τοῦ Θεοῦ",
+      "glQuote": "Son of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are important titles that describe the relationship between Jesus and God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "glQuote": "Son ... Father",
+      "occurrence": 0
+    }
+  }
+]

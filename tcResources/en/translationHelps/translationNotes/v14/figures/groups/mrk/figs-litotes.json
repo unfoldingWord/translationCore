@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"For everything that is hidden will be made known, and everything that is secret will come out into to open\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "For nothing is hidden that will not be known ... come out into the open",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The negative phrase \"no more\" is used to emphasize how small an amount of bread they had. Alternate translation: \"only one loaf\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "no more than one loaf",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative sentence emphasizes the positive meaning. In some languages, it is more natural to use a positive statement. Alternate translation: \"definitely receive\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐ μὴ ἀπολέσῃ",
+      "glQuote": "not lose",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that Jesus is not concerned. The negation can modify the verb instead. Alternate translation: \"you do not care about people's opinions\" or \"you are not concerned with earning people's favor\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "μέλει σοι περὶ οὐδενός",
+      "glQuote": "you care for no one's opinion",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Here Jesus speaks of the man being ready to submit to God as king as being physically close to the kingdom of God, as if it where a physical place. Alternate translation: \"You are close to submitting to God as king\" (See: [[rc://en/ta/man/translate/figs-litotes]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐ μακρὰν εἶ ἀπὸ τῆς Βασιλείας τοῦ Θεοῦ",
+      "glQuote": "You are not far from the kingdom of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"everyone was afraid\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐδεὶς ... ἐτόλμα",
+      "glQuote": "no one dared",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"Perhaps the reason God took Onesimus away from you for a time was so that\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "τάχα γὰρ διὰ τοῦτο, ἐχωρίσθη πρὸς ὥραν, ἵνα",
+      "glQuote": "Perhaps for this he was separated from you for a time, so that",
+      "occurrence": 1
+    }
+  }
+]

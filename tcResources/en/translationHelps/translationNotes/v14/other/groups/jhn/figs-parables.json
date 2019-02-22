@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus begins to speak in parables. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

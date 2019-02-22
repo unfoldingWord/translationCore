@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This idiom is used to explain that a God gave a message to someone. Alternate translation: \"the message that Yahweh spoke\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "the word of Yahweh that came",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This idiom makes explicit that the people will be totally naked. Alternate translation: \"totally naked and ashamed\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "in nakedness and shame",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"from one mountain to another.\" Micah does not speak of any particular mountain. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 7,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "from mountain to mountain",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Nothing anyone says will have any effect on them. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "their ears will be deaf",
+      "occurrence": 0
+    }
+  }
+]

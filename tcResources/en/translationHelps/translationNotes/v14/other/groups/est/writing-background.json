@@ -1,0 +1,126 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information to help the reader identify Ahasuerus. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "this is Ahasuerus who reigned from India as far as Cush, over 127 provinces",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information to explain who these men were. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "the seven officials who served before him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This background information explains why the king called these men. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "for this was the king's procedure toward all who were expert in law and judgment",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This background information explains how Mordecai came to live in Susa. This can be stated in active form. Alternate translation: \"Nebuchadnezzar king of Babylonia carried him and other exiles away along with Jehoiachin, king of Judah\" (See: [[rc://en/ta/man/translate/writing-background]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "He had been taken away ... king of Babylonia carried away",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This continues the background information about Mordecai and explains his relationship to Esther. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Verses 12-14 are background information about the customs for the women who became the king's wives. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This continues the background information that began in [Esther 2:12](../02/12.md) about the customs for the women who became the king's wives. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "occurrence": 0
+    }
+  }
+]

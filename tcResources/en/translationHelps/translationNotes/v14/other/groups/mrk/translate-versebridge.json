@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus' instructions in verses 8 and 9 can be reordered to separate what he told the disciples to do from what he told them not to do, as in the UST. (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In verses 11 and 12, Jesus shows how the Pharisees teach people that they do not have to obey God's commandment to honor their parents. In verse 11 Jesus tells what the Pharisees allow people to say about their possessions, and in verse 12 he tells how that shows the Pharisees' attitude toward people helping their parents. This information can be reordered to first tell about the Pharisees' attitude toward people helping their parents and then tell how that attitude is shown in what the Pharisees allow people to say about their possessions. (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In verse 43 Jesus says that the widow put more money in the offering than the rich people put in, and in verse 44 he tells his reason for saying that. The information can be reordered so that Jesus tells his reason first and then says that the widow put in more, as in the UST. (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In verse 21 Jesus gives a command, and in 22 he tells the reason for the command. This can be reordered with the reason first, and the command second, as in the UST. (See: [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

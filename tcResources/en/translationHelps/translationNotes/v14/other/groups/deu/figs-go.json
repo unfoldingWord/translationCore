@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"come to\" can be translated as \"gone to\" or \"entered.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 17,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "glQuote": "When you have come to the land",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"come\" can be translated as \"gone\" or \"entered.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 18,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "glQuote": "When you have come",
+      "occurrence": 0
+    }
+  }
+]

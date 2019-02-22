@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase with the quote following it gives us more information about the king. The quote shows what the people had hoped the king would do for them before he was trapped. It can be expressed in active form. Alternate translation: \"even though we had said about him\" (See: [[rc://en/ta/man/translate/figs-distinguish]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 4,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "of whom it was said",
+      "occurrence": 0
+    }
+  }
+]

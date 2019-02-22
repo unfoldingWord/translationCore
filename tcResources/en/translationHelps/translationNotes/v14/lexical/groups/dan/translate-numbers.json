@@ -1,0 +1,182 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"12 months\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 4,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "Twelve months",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"for 1,000\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "for a thousand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"when he was about 62 years old\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 5,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "when he was about sixty-two years old",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"one hundred and twenty provincial governors\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "120 provincial governors",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"for 30 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "for thirty days",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Two thousand three hundred evenings and mornings.\" Here \"evenings and mornings\" is a merism that refers to everything in between, which means full days. Alternate translation: \"2,300 sunsets and sunrises\" or \"2,300 days\" (See: [[rc://en/ta/man/translate/translate-numbers]] and [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 8,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "2,300 evenings and mornings",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"from the time Jerusalem was destroyed, it would remain in ruins for 70 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "there would be seventy years until Jerusalem's abandonment would end",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"many thousands\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 11,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "tens of thousands",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"one thousand two and hundred ninety days\" or \"twelve hundred and ninety days.\" Here \"days\" refers to a period of time. Most commonly rendered as days, but can also imply years. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "1,290 days",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"one thousand three hundred and thirty-five days\" or \"thirteen hundred and thirty-five days.\" Here \"days\" is referring to a period of time most commonly rendered as days. However, it can also imply years. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 12,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "the 1,335 days",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This proverbs means that children experience the consequences of their parents' actions. (See: [[rc://en/ta/man/translate/writing-proverbs]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-proverbs",
+      "glQuote": "Fathers eat sour grapes, and the children's teeth are made blunt",
+      "occurrence": 0
+    }
+  }
+]

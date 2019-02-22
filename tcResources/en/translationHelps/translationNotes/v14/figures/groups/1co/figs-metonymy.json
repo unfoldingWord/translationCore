@@ -1,0 +1,341 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"name\" here is a metonym for person of Jesus Christ. Alternate translation: \"who call on the Lord Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τοῖς ἐπικαλουμένοις τὸ ὄνομα τοῦ Κυρίου ἡμῶν, Ἰησοῦ Χριστοῦ",
+      "glQuote": "who call on the name of our Lord Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Name\" here is a metonym for the person of Jesus Christ. Alternate translation: \"by means of our Lord Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "διὰ τοῦ ὀνόματος τοῦ Κυρίου ἡμῶν, Ἰησοῦ Χριστοῦ",
+      "glQuote": "through the name of our Lord Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"In the name of\" here is a metonym for \"by the authority of.\" Alternate translation: \"by Paul's authority\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "εἰς τὸ ὄνομα Παύλου",
+      "glQuote": "in the name of Paul",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" represents \"authority.\" This means Paul did not baptize others because they may claim that they became Paul's disciples. This can be stated in active form. Alternate translation: \"For some of you might have claimed that I baptized you to make you my disciples\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "This was so that no one would say that you were baptized into my name",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"Christ Jesus, who has made clear to us how wise God is\" or 2) \"Christ Jesus, who has given us God's wisdom.\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "Χριστῷ Ἰησοῦ, ὃς ἐγενήθη σοφία ἡμῖν ἀπὸ Θεοῦ",
+      "glQuote": "Christ Jesus, who became for us wisdom from God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a triplet referring to all parts of a person to emphasize that no man has ever been aware of the things that God has prepared. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "Things that no eye has seen, no ear has heard, no mind has imagined",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the name of the Lord Jesus is a metonym that represents his authority. Alternate translation: \"with the authority of our Lord Jesus\" or 2) being assembled in the Lord's name implies meeting together to worship him. Alternate translation: \"to worship our Lord Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐν τῷ ὀνόματι τοῦ Κυρίου ἡμῶν, Ἰησοῦ",
+      "glQuote": "in the name of our Lord Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Name\" here is a metonym for the power and authority of Jesus Christ. Alternate translation: \"by the power and authority of our Lord Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐν τῷ ὀνόματι τοῦ Κυρίου Ἰησοῦ Χριστοῦ",
+      "glQuote": "in the name of the Lord Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Food\" here is a metonym for the person eating the food. Alternate translation: \"if I cause by eating\" or \"if I, because of what I eat, cause\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "εἰ βρῶμα σκανδαλίζει",
+      "glQuote": "if food causes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Proof\" here is a metonym for the evidence needed to prove something. Alternate translation: \"you are evidence I can use to prove that the Lord has chosen me to be an apostle\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἡ ... σφραγίς μου τῆς ἀποστολῆς, ὑμεῖς ἐστε ἐν Κυρίῳ",
+      "glQuote": "you are the proof of my apostleship in the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"the gospel\" here are a metonym for 1) the people to whom they tell the gospel, \"receive their food and other things they need from those to whom they teach the good news,\" or 2) the result of working to tell the gospel, \"receive their food and other things they need because they work to tell the good news.\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐκ τοῦ εὐαγγελίου ζῆν",
+      "glQuote": "get their living from the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"rock\" was a literal, physical rock, so it would be best to translate this literally. If your language cannot say that a rock \"was\" a person's name, treat the word \"rock\" as a metonym for the power of Christ that worked through the rock. Alternate translation: \"it was Christ who worked through that rock\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἡ ... πέτρα ἦν ὁ Χριστός",
+      "glQuote": "that rock was Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of a person drinking from the same cup as the demon as evidence that that person is a friend of the demon. Alternate translation: \"It is impossible for you to be true friends with both the Lord and demons\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "οὐ δύνασθε ποτήριον Κυρίου πίνειν, καὶ ποτήριον δαιμονίων",
+      "glQuote": "You cannot drink the cup of the Lord and the cup of demons",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"it will not be an occasion for God to discipline you\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 11,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "it will not be for judgment",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"tongues\" represents languages. Alternate translation: \"the ability to speak different languages\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "γένη γλωσσῶν",
+      "glQuote": "various kinds of tongues",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Bound\" here is a metonym for \"slaves.\" Alternate translation: \"whether slave-people or free-people\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "εἴτε ... δοῦλοι, εἴτε ἐλεύθεροι",
+      "glQuote": "whether bound or free",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's thoughts. This can be stated in active form. Alternate translation: \"God would reveal to him the secrets of his heart\" or \"He would recognize his own private inner thoughts\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὰ κρυπτὰ τῆς καρδίας αὐτοῦ φανερὰ γίνεται",
+      "glQuote": "The secrets of his heart would be revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Word of God\" here is a metonym for the message from God. Alternate translation: \"God's message\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὁ λόγος τοῦ Θεοῦ",
+      "glQuote": "the word of God",
+      "occurrence": 1
+    }
+  }
+]

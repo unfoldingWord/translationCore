@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The speaker is speaking to many wicked people, so these forms are plural. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 75,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "Do not be arrogant ... Do not lift",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The speaker is speaking to many wicked people, so these forms are plural. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 75,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "Do not lift up your ... do not speak",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer speaks of himself as if he were another person. Alternate translation: \"I, your servant, love\" or \"I love\" (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 119,
+        "verse": 140
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "your servant loves",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"He\", \"my\" and \"I\" refer to Yahweh and \"her\" refers to Zion. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 132,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The psalmist is speaking to all of God's people, so you should use the plural command form if your language has one. Parallelism is common in Hebrew poetry. (See: [[rc://en/ta/man/translate/figs-pronouns]] and [[rc://en/ta/man/translate/writing-poetry]] and [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 149,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

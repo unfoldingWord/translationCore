@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reflexive \"myself\" means that David originally planned to build the temple. Alternate translation: \"that I would be the one to build the temple\" (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 22,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "glQuote": "to build a house myself",
+      "occurrence": 0
+    }
+  }
+]

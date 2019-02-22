@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is one part out of ten equal parts. (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "glQuote": "a tenth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is one part out of five equal parts. (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "glQuote": "one-fifth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means the person must return what he owes to someone and pay an extra one-fifth of the value. See how you translated this in [Leviticus 5:16](../05/16.md). (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "glQuote": "add one-fifth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is one part of ten equal parts. (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "glQuote": "a tenth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is one part out of five equal parts. (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 22,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "glQuote": "one-fifth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A \"fifth\" is a part of something that is divided into five equal parts. Alternate translation: \"he must divide the value of the house into five equal parts, add the amount equal to one of those parts, and pay all of it\" (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 27,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "glQuote": "he must add a fifth of its value to its redemption price",
+      "occurrence": 0
+    }
+  }
+]

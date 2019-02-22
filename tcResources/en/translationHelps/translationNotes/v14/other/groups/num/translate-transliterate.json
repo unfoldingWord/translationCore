@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Zin\" here is the Hebrew name of the wilderness. (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 13,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "glQuote": "the wilderness of Zin",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Zin\" here is the Hebrew name of the wilderness. (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "glQuote": "the wilderness of Zin",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to what a gossiping person says. Alternate translation: \"The words that a gossiping person speaks\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 18,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "The words of a gossip",
+      "occurrence": 0
+    }
+  }
+]

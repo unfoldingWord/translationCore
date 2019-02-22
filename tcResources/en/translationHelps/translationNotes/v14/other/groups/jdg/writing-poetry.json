@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Deborah and Barak's song continues using poetry. (See: [[rc://en/ta/man/translate/writing-poetry]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-poetry",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Deborah and Barak's song continues using poetry. (See: [[rc://en/ta/man/translate/writing-poetry]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-poetry",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Deborah and Barak's song continues using poetry. (See: [[rc://en/ta/man/translate/writing-poetry]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-poetry",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

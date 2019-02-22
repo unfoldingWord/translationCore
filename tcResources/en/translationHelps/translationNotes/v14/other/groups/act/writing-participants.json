@@ -1,0 +1,319 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Luke introduces Barnabas into the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Luke introduces Gamaliel and provides background information about him. (See: [[rc://en/ta/man/translate/writing-participants]] and [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "Γαμαλιήλ, νομοδιδάσκαλος τίμιος παντὶ τῷ λαῷ",
+      "glQuote": "Gamaliel, a teacher of the law, who was honored by all the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces Stephen as the main character in this part of the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "Στέφανος δὲ",
+      "glQuote": "Now Stephen",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces Moses into the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "ἐν ᾧ καιρῷ ἐγεννήθη Μωϋσῆς",
+      "glQuote": "At that time Moses was born",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a way of introducing a new person into the story. Your language may use different wording to introduce a new person into the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "glQuote": "But there was a certain man ... named Simon",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to a new person in the story. Your language may have a way of doing this. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "glQuote": "Behold",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces Ananias as a new character. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "ἦν δέ",
+      "glQuote": "Now there was",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces Aeneas as a new character in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "ἄνθρωπόν τινα ὀνόματι Αἰνέαν",
+      "glQuote": "a certain man named Aeneas",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a way of introducing a new person to this part of the historical account. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "ἀνὴρ δέ τις",
+      "glQuote": "Now there was a certain man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new person in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "τις ἀνὴρ ... ἐκάθητο",
+      "glQuote": "a certain man sat",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"A certain woman\" introduces a new person in the story. Alternate translation: \"There was a woman named Lydia\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "glQuote": "A certain woman named Lydia",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"a certain\" introduces a new person to the story. Alternate translation: \"there was a young woman\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "παιδίσκην τινὰ",
+      "glQuote": "a certain young woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the phrase \"a certain\" indicates this is introducing new person in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "τινα Ἰουδαῖον ὀνόματι Ἀκύλαν",
+      "glQuote": "a Jew named Aquila",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"a certain\" indicates that Luke is introducing a new person in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "Ἰουδαῖος ... τις Ἀπολλῶς ὀνόματι",
+      "glQuote": "a certain Jew named Apollos",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The use of the words \"a certain\" introduces a new person in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "glQuote": "A certain silversmith named Demetrius",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new person in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "τις ... προφήτης ὀνόματι Ἅγαβος",
+      "glQuote": "a certain prophet named Agabus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "King Agrippa and Bernice are new people in the story. Though he ruled over only a few territories, King Agrippa is the current reigning king in Palestine. Bernice is Agrippa's sister.(See: [[rc://en/ta/man/translate/writing-participants]] and [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

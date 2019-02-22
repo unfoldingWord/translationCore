@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"despise\" is a strong word for \"hate.\" Together the two words emphasize the intensity of Yahweh's hatred for their religious festivals. Alternate translation: \"I hate your festivals very much\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "I hate, I despise your festivals",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"king's sanctuary\" and \"royal house\" refer to the same place. Alternate translation: \"this is where the national temple is, the place where the king worships\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "for it is the king's sanctuary and a royal house",
+      "occurrence": 0
+    }
+  }
+]

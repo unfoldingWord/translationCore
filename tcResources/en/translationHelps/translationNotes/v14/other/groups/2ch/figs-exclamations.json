@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exclamation that shows her amazement. Alternate translation: \"Your people are greatly blessed\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "glQuote": "How blessed are your people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exclamation that shows her amazement. Alternate translation: \"your servants who constantly stand before you are greatly blessed\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "glQuote": "how blessed are your servants who constantly stand before you",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"worthless\" does not distinguish worthless idols from idols that have worth, because all idols are worthless. Alternate translation: \"cast worthless idols\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 44,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "cast an idol that is worthless",
+      "occurrence": 0
+    }
+  }
+]

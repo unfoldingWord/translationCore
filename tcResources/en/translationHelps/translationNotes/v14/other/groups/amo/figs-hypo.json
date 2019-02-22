@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In 6:9-10 Amos describes a hypothetical situation of what it will be like when Yahweh hands the people of Israel over to their enemies. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"you\" is singular and refers to God. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 22,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "You have laid me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"You\" is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 22,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "You who fear",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" refers to Yahweh. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 22,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "because of you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your\" is plural and refers to the oppressed people. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 22,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "May your hearts",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" refers to Yahweh. It can be translated in the third person to match the first part of the sentence. Alternate translation: \"before him\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 22,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "before you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" refers to Yahweh. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 23,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you are with me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"you\" and \"your\" refer to the mighty men who are judges ([Psalm 58:1](../058/001.md)) and so is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 58,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you ... your",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "David is speaking to God's people, so this is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 58,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "your",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer is speaking to Yahweh, so these words are all singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 65,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "You ... you ... you ... you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"You\" and \"your\" refer to Yahweh and so are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 65,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "You ... your",
+      "occurrence": 0
+    }
+  }
+]

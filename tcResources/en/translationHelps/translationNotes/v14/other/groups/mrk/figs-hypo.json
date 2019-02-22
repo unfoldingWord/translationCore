@@ -1,0 +1,39 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks of an impossible situation. If you cannot state this in this way in your language, it can be written as a hypothetical situation. Alternate translation: \"It would be easier for a camel\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "It is easier for a camel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Sadducees talk about a situation that did not really happen because they want Jesus to tell them what he thinks is right and wrong. Alternate translation: \"Suppose there were seven brothers\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": "ἑπτὰ ἀδελφοὶ ἦσαν",
+      "glQuote": "There were seven brothers",
+      "occurrence": 1
+    }
+  }
+]

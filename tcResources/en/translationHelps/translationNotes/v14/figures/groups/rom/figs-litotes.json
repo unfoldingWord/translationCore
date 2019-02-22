@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in a positive form. Alternate translation: \"I trust completely in the gospel\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐ ... ἐπαισχύνομαι τὸ εὐαγγέλιον",
+      "glQuote": "I am not ashamed of the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in a positive form. Alternate translation: \"For God treats all people the same\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐ γάρ ἐστιν προσωπολημψία παρὰ τῷ Θεῷ",
+      "glQuote": "For there is no favoritism with God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in a positive form. Alternate translation: \"He remained strong in his faith, although\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "καὶ μὴ ἀσθενήσας τῇ πίστει",
+      "glQuote": "Without becoming weak in faith,",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in a positive form. Alternate translation: \"he carries the sword for a very good reason\" or \"he has the power to punish people, and he will punish people\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐ ... εἰκῇ τὴν μάχαιραν φορεῖ",
+      "glQuote": "he does not carry the sword for no reason",
+      "occurrence": 1
+    }
+  }
+]

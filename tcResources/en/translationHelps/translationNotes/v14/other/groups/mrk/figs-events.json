@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Verse 9 tells what Jesus asked his disciples to do because of the large crowd of people around him. Verse 10 tells why such a large crowd was around Jesus. The information in these verses can be reordered to present the events in the order they happened, as in the UST. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The information in these two verses may be reordered to present the events in the order that they happened, as in the UST. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The information in verses 37 and 38 may be reordered to present the events in the order that they happened, as in the UST. (See: [[rc://en/ta/man/translate/figs-events]] and [[rc://en/ta/man/translate/translate-versebridge)]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

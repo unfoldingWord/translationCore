@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"now\" is used here to mark background information. This happened before Ahab went down to Samaria. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 18,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now Jehoshaphat had great riches and honor; he allied himself with Ahab",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information about the events of [2 Chronicles 21:16](../21/16.md) and [2 Chronicles 21:17](../21/17.md). Ahaziah was called \"Jehoahaz\" in that earlier account. It is possible he changed his name when he became king. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 22,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "for the band of men ... had killed all his older sons",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"now\" is used here to mark a break in the main story line. Here the narrator tells background information about the location of Sennacherib and his army. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "now he was ... with him",
+      "occurrence": 0
+    }
+  }
+]

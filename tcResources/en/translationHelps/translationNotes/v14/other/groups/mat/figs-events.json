@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These events happen before Herod's death, which Matthew mentioned in [Matthew 2:15](../02/15.md). (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "She said this to herself before she touched Jesus' garment. This tells why she touched Jesus' garment. (See: [[rc://en/ta/man/translate/figs-events]] and [[rc://en/ta/man/translate/translate-versebridge]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "quote": "ἔλεγεν γὰρ ἐν ἑαυτῇ,\" ἐὰν μόνον ἅψωμαι τοῦ ἱματίου αὐτοῦ, σωθήσομαι",
+      "glQuote": "For she had said to herself, \"If only I touch his clothes, I will be made well.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Although verse 5 begins by saying that he sent out the twelve, Jesus gave these instructions before he sent them out. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These verses explain Herod's reaction when he heard about Jesus. This event happens some time after the events that follow in the narrative. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the author begins to tell about how Herod had executed John the Baptist. These events occur some time before the event in the previous verses. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If needed, you can present the events of 14:3-4 in the order that they happened, as in the UST. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "For John ... as your wife",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This event happened after Jesus' trial in front of the council of Jewish religious leaders, but we do not know if it happened before or during Jesus' trial before Pilate. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

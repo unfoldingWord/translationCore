@@ -1,0 +1,164 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a list of Zephaniah's ancestors. These usages of \"son of\" are the broader sense of \"descendant of.\" Here \"Hezekiah\" refers to King Hezekiah. These things can be made explicit. Alternate translation: \"the grandson of Gedaliah, and the great-grandson of Amariah, whose father was King Hezekiah\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "son of Gedaliah son of Amariah son of Hezekiah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase suggests that the Israelites wore clothes similar to the foreigners to show sympathy to their customs and to the worship of their foreign gods. Alternate translation: \"everyone who worships foreign gods\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "everyone dressed in foreign clothes",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the sound of buildings collapsing. This can be stated explicitly. Alternate translation: \"a loud sound of buildings collapsing\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "a great crashing sound",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is understood that this refers to the wicked people. This can be stated explicitly. Alternate translation: \"all the wicked people who live on the earth\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "all the inhabitants of the earth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two cities were so wicked that God completely destroyed them with fire from heaven. These similes therefore refer to complete destruction. This can be stated explicitly. Alternate translation: \"completely destroyed like Sodom ... like Gomorrah\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "like Sodom ... like Gomorrah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be necessary to supply an object for \"I am.\" Alternate translation: \"I am the greatest city, and no other city is equal to me\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "I am, and nothing is my equal",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nature of their rebellion can be stated. Alternate translation: \"the people of the city who have rebelled against God\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "the rebellious city",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In verses 3:6-7, Yahweh rebukes the people of Jerusalem because they did not learn from how he judged other sinful cities. It may be helpful to add \"Yahweh says this:\" to the beginning of verse 6 to make this explicit. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is understood that \"deal with\" means to punish the oppressors. This can be stated explicitly. Alternate translation: \"I will severely punish all those who oppressed you\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "I am about to deal with all your oppressors",
+      "occurrence": 0
+    }
+  }
+]

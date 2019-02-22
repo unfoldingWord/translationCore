@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This hypothetical statement tells what might have happened if Abner had not spoken wisely to Joab. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "if you had not said that ... pursued their brothers until the morning",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The speaker is giving a hypothetical situation. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 19,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "if Absalom had lived, and we all had died, then that would have pleased you",
+      "occurrence": 0
+    }
+  }
+]

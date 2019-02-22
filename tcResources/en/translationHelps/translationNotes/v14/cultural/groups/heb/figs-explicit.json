@@ -1,0 +1,434 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews believed that God spoke his law to Moses through angels. This can be stated in active form. Alternate translation: \"For if the message that God spoke through the angels\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "For if the message that was spoken through the angels",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Who that source is can be stated clearly. Alternate translation: \"have one source, God himself\" or \"have the same Father\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "have one source",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implicit meaning can be stated explicitly. Alternate translation: \"to the end of your lives\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "πρὸς τὴν τέλους",
+      "glQuote": "to the end",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is refers to when Abraham and his men went and defeated the armies of four kings in order to rescue his nephew, Lot, and his family. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "Ἀβραὰμ ὑποστρέφοντι ἀπὸ τῆς κοπῆς τῶν βασιλέων",
+      "glQuote": "Abraham returning from the slaughter of the kings",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"it\" refers to Jesus becoming the eternal priest. It can be stated clearly who made the oath. Alternate translation: \"And God did not choose this new priest without swearing an oath!\" or \"And it was because God swore an oath that the Lord became the new priest!\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "καὶ καθ’ οὐ χωρὶς ὁρκωμοσίας!",
+      "glQuote": "And it was not without an oath!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit what \"Therefore\" implies. Alternate translation: \"Because Christ is our high priest who lives forever, he\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ὅθεν δύναται",
+      "glQuote": "Therefore he",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses did not construct the tabernacle himself. He ordered the people to construct it. Alternate translation: \"was about to command the people to construct the tabernacle\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "κεχρημάτισται μέλλων ἐπιτελεῖν τὴν σκηνήν",
+      "glQuote": "was about to construct the tabernacle",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit that \"mountain\" refers to Mount Sinai. Alternate translation: \"on Mount Sinai\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἐν τῷ ὄρει",
+      "glQuote": "on the mountain",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was the rod Aaron had when God proved to the people of Israel that he had chosen Aaron as his priest by making Aaron's rod bud. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "Ἀαρὼν' ῥάβδος Ἀαρὼν ἡ βλαστήσασα",
+      "glQuote": "Aaron's rod that budded",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can state explicitly the implied meaning. Alternate translation: \"forgiveness of the sins of the people\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἄφεσις",
+      "glQuote": "forgiveness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I will no longer remember their sins and lawless deeds.'\" or \"I will no longer think about their sins and lawless deeds.'\" This is the second part of the Holy Spirit's testimony ([Hebrews 10:15-16](./15.md)). You can make this explicit in the translation by ending the quotation at the end of verse 16 and starting a new quotation here. Alternate translation: \"Then next he said, 'Their sins and lawless deeds I will remember no longer.'\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "τῶν ἁμαρτιῶν αὐτῶν καὶ τῶν ἀνομιῶν οὐ μὴ μνησθήσομαι ἔτι",
+      "glQuote": "Their sins and lawless deeds I will remember no longer.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit that the people met to worship. Alternate translation: \"Let us not stop coming together to worship\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "μὴ ἐγκαταλείποντες ἐγκαταλείποντες τὴν ἐπισυναγωγὴν ἑαυτῶν",
+      "glQuote": "Let us not stop meeting together",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The truth about God. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "τῆς ἀληθείας",
+      "glQuote": "the truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "No one is able to give a new sacrifice because Christ's sacrifice is the only one that works. Alternate translation: \"no one can offer a sacrifice for which God will forgive our sins\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "οὐκέτι περὶ ἁμαρτιῶν ἀπολείπεται θυσία",
+      "glQuote": "a sacrifice for sins no longer exists",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Of God's judgment, that is, that God will judge. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "κρίσεως",
+      "glQuote": "of judgment",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that this means \"of at least two or three witness.\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἐπὶ δυσὶν ἢ τρισὶν μάρτυσιν",
+      "glQuote": "of two or three witnesses",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make this explicit. Alternate translation: \"As God said in the scriptures, 'For in a very little while\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἔτι γὰρ μικρὸν ὅσον ὅσον",
+      "glQuote": "For in a very little while",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author is speaking to the Hebrews about Hebrew ancestors. Alternate translation: \"our ancestors\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "οἱ πρεσβύτεροι",
+      "glQuote": "the ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joseph died while in Egypt. He wanted his people to take his bones with them when they left Egypt so they could bury his bones in the land that God promised them. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "instructed them about his bones",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to God's command to the Israelites to kill a lamb and spread its blood on the doorposts of every house where Israelites lived. This would prevent the destroyer from harming their firstborn sons. This was one of the Passover commands. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "τὴν πρόσχυσιν τοῦ αἵματος",
+      "glQuote": "the sprinkling of the blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implicit information can be stated explicitly. Alternate translation: \"For you have not come, as the people of Israel came, to a mountain that can be touched\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "For you have not come to a mountain that can be touched",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implicit information can be stated explicitly. Alternate translation: \"if the people of Israel did not escape judgment\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "εἰ ἐκεῖνοι οὐκ ἐξέφυγον ἐξέφυγον",
+      "glQuote": "if they did not escape",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a quotation from the book of Psalms in the Old Testament. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "The Lord is my helper ... do to me",
+      "occurrence": 0
+    }
+  }
+]

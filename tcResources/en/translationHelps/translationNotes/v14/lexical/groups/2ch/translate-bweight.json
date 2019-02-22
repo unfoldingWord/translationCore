@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A shekel is a unit of weight equal to about 11 grams. Alternate translation: \"about 6.6 kilograms of silver ... about 1.7 kilograms\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "six hundred shekels of silver ... 150 shekels",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A talent is a unit of weight equal to about 33 kilograms. You may convert this to a modern measure. Alternate translation: \"about twenty-two thousand kilograms of gold\" or \"about twenty-two metric tons of gold\" (See: [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "666 talents of gold",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A shekel is a unit of weight equal to about 11 grams. You may convert this to a modern measure. Alternate translation: \"Six and one half kilograms of gold\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 9,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "Six hundred shekels of gold",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A mina is about 600 grams. You may convert this to a modern measure. Alternate translation: \"One and three-quarters kilograms of gold\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 9,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "Three minas of gold",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may convert this to a modern measure. Alternate translation: \"about the thirty-three hundred kilograms of silver\" or \"about the 3,300 kilograms of silver\" (See: [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 25,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "about the one hundred talents",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may convert this to a modern measure. A \"talent\" is equivalent to 33 kilograms. Alternate translation: \"100 talents of silver\" or \"3,300 kilograms of silver\" (See: [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "one hundred talents of silver",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The negative form here is used for emphasis and can be stated in a positive form. Alternate translation: \"Please tell me the truth about everything I ask you\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 14,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "Please do not hide from me anything that I will ask you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative sentence is used for emphasis and can be stated in a positive form. Alternate translation: \"We will kill every one of his men\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 17,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "We will not leave even one of his men ... alive",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative sentence is used to emphasize that they all crossed the river. It can be stated in a positive form. Alternate translation: \"By morning daylight every one of them had crossed over the Jordan\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 17,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "By morning daylight not one of them had failed to cross over the Jordan",
+      "occurrence": 0
+    }
+  }
+]

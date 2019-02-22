@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the Israelites, about whom Habakkuk had been complaining. The reader should understand that these are wicked people, but they are \"more righteous than\" or not as wicked as the Chaldeans. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "glQuote": "those more righteous than they are",
+      "occurrence": 0
+    }
+  }
+]

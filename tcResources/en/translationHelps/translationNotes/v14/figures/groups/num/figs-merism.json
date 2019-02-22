@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two extremes are given to emphasize the entire grape may not be eaten. Alternate translation: \"from any part of a grape\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "from the seeds to their skins",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that Joshua will have authority to command the movements of the community of Israel. \"Going out\" and \"coming in\" are two opposite commands used to emphasize that he will have full command over their movements. Alternate translation: \"He will command the community's movements\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 27,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "It will be at his command that the people will go out and come in",
+      "occurrence": 0
+    }
+  }
+]

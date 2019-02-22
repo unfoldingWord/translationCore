@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Nahum speaks to the people of Nineveh. He tells them to prepare for battle, although he knows that the enemy will destroy the city. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "glQuote": "Man the city walls, guard the roads, make yourselves strong, assemble your armies",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Nahum speaks to the people of Nineveh. He tells them to prepare for battle and to repair the walls, although he knows that the enemy will destroy the city. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "glQuote": "Go draw water for the siege ... pick up the molds for the bricks",
+      "occurrence": 0
+    }
+  }
+]

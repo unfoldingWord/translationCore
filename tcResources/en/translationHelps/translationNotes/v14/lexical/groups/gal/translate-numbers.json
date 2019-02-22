@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"four hundred and thirty years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": "ὁ μετὰ τετρακόσια καὶ τριάκοντα ἔτη",
+      "glQuote": "430 years",
+      "occurrence": 1
+    }
+  }
+]

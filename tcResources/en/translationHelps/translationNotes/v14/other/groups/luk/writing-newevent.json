@@ -1,0 +1,870 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"In the days of\" is used to indicate a new event. Alternate translation: \"During the time that King Herod ruled over Judea\" (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐν ταῖς ἡμέραις Ἡρῴδου βασιλέως τῆς Ἰουδαίας",
+      "glQuote": "In the days of Herod, king of Judea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"these days\" refers to the time Zechariah was serving in the temple. It is possible to state more clearly what this refers to. Alternate translation: \"After Zechariah's time of serving at the temple\" (See: [[rc://en/ta/man/translate/writing-newevent]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "μετὰ ... ταύτας τὰς ἡμέρας",
+      "glQuote": "After these days",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Mary goes to visit her relative Elizabeth, who is going to give birth to John. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark a break in the main story line. Here Luke starts to tell a new part of the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 59
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "καὶ ἐγένετο",
+      "glQuote": "Now it happened",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word marks the beginning of a new part of the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase marks the beginning of the next event in the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο δὲ",
+      "glQuote": "Now it came about",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase shows the passing of time before this new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ὅτε ἐπλήσθησαν ἡμέραι ὀκτὼ",
+      "glQuote": "When it was the end of the eighth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This shows the passing of time before this new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "When the required number ... had passed",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase marks the beginning of a new event in the story. If your language has a way for doing this, you could consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο δὲ",
+      "glQuote": "Now it came about",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "After John had baptized Jesus. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "Ἰησοῦς δὲ",
+      "glQuote": "Then Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This begins a new event in the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "καὶ ὑπέστρεψεν ὁ Ἰησοῦς",
+      "glQuote": "Then Jesus returned",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Then Jesus.\" This indicates a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "καὶ κατῆλθεν",
+      "glQuote": "Then he",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἀναστὰς δὲ",
+      "glQuote": "Then Jesus left",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new part of the story. If your language has a way for doing this, you could consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο δὲ",
+      "glQuote": "Now it happened",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase marks a new event in the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It came about",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase marks the beginning of a new part of the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It came about",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"these things\" refers to what happened in the previous verses. This signals a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "After these things happened",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new part of the story. If your language has a way for doing this, you can consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο δὲ",
+      "glQuote": "Now it happened",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new event in the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It happened",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new part of the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο ... ἐν ταῖς ἡμέραις ταύταις",
+      "glQuote": "It happened in those days",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This begins a new event in the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "εἰσῆλθεν εἰς Καφαρναούμ",
+      "glQuote": "he entered Capernaum",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new event in the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἀπήγγειλαν Ἰωάννῃ οἱ μαθηταὶ αὐτοῦ περὶ πάντων τούτων",
+      "glQuote": "John's disciples told him about all these things",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The marks the beginning of a new part of the story and introduces the Pharisee into the story. (See: [[rc://en/ta/man/translate/writing-newevent]] and [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "δέ τις ... τῶν Φαρισαίων",
+      "glQuote": "Now one of the Pharisees",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark a new part of the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It happened",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It came about",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a new event in the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This alerts us to a new event and a new person in the story. (See: [[rc://en/ta/man/translate/writing-newevent]] and [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἰδοὺ, νομικός τις",
+      "glQuote": "Behold, a certain expert",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new part of the story. If your language has a way for doing this, you could consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It happened",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses this word to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "καὶ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark an important event in the story. If your language has a way for doing this, you could consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It happened that",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses these words to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐν ... τῷ λαλῆσαι",
+      "glQuote": "When he had finished speaking",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is probably while the scribes and Pharisees were looking for a way to trap him. The author uses these words to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐν οἷς",
+      "glQuote": "In the meantime",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses this word to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This indicates a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο ... Σαββάτῳ",
+      "glQuote": "It happened one Sabbath",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This marks the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark an event in the story. If your language has a way for doing this, you could consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It came about that",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new event. If your language has a way for doing this, you could consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It came about that",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the beginning of a new event. Some translations start it with \"One day\" or \"Once.\" It can be stated in active form. Alternate translation: \"One day the Pharisees asked Jesus, 'When will the kingdom of God come?'\" (See: [[rc://en/ta/man/translate/writing-newevent]] and [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐπερωτηθεὶς ... ὑπὸ τῶν Φαρισαίων πότε ἔρχεται ἡ Βασιλεία τοῦ Θεοῦ",
+      "glQuote": "Being asked by the Pharisees when the kingdom of God would come,",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new part of the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It came about",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new event. If your language has a way for doing this, you could consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It came about that",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new part of the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It came about",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to introduce a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Two of the disciples are on their way to Emmaus. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses this word to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἰδοὺ",
+      "glQuote": "Behold",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"It came about.\" This introduces a new event in the story. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "ἐγένετο",
+      "glQuote": "It happened",
+      "occurrence": 1
+    }
+  }
+]

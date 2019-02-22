@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This tells what happened before the servants opened the doors to the upper room and found the king dead. Alternate translation: \"Meanwhile, as the servants were still waiting outside of the upper room ... Ehud escaped\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 3,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "While the servants were waiting ... Ehud escaped",
+      "occurrence": 0
+    }
+  }
+]

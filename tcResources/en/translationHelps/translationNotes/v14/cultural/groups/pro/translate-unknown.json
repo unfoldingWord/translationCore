@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a container used for heating substances to very high temperatures (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "crucible",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "an oven that can be made extremely hot (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "furnace",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a hard tool with a rounded end, used for crushing things in a bowl (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "pestle",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A bear is a large, furry, dangerous animal that walks on four legs and has sharp claws and teeth. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 28,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "a charging bear",
+      "occurrence": 0
+    }
+  }
+]

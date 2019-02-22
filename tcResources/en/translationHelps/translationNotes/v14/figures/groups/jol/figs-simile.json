@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "When direct sunlight shines on a mountain at dawn, it begins at the top and spreads to the bottom. When an army comes over a mountain range, it comes over the top and spreads out as it comes down. Alternate translation: \"A large, mighty army comes over the mountains into the land. They spread over the land like the light from the rising sun\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "Like the dawn that spreads on the mountains, a large and mighty army is approaching",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The garden of Eden was a beautiful place, and the land was beautiful. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "land is like the garden of Eden",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The head of a locust looks like a small horse head. The army is fast, and horses are fast. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "The army's appearance is like horses",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Men riding horses move quickly, and the army moves quickly. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "they run like horsemen",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These sounds would have been very frightening to Joel's readers. If your readers will not understand what these sound like, you might be able to use a more general phrase: \"a noise that frightens everyone\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "a noise like that of chariots ... like the noise of fiery flames ... like a mighty army ready for battle",
+      "occurrence": 0
+    }
+  }
+]

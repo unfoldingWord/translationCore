@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"labor\" can be translated using the phrase \"work hard.\" The labor that the hands perform is a metonym for the things that the labor produces. The hand is a metonym for the person. Alternate translation: \"everything you have worked hard to make\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hag",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "all the labor of your hands",
+      "occurrence": 0
+    }
+  }
+]

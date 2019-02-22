@@ -1,0 +1,40 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The mockers ask this rhetorical question to emphasize that they do not believe that Jesus will return. The word \"promise\" refers to the fulfillment of the promise that Jesus will return. Alternate translation: \"The promise that Jesus would return is not true! He will not return!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ποῦ ἐστιν ἡ ἐπαγγελία τῆς παρουσίας αὐτοῦ",
+      "glQuote": "Where is the promise of his return?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter uses this rhetorical question to emphasize what he will say next, that they \"should live holy and godly lives.\" Alternate translation: \"you know what kind of people you should be.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ποταποὺς δεῖ ὑπάρχειν ὑμᾶς",
+      "glQuote": "what kind of people should you be?",
+      "occurrence": 1
+    }
+  }
+]

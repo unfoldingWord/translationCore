@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A shekel is 11 grams. Alternate translation: \"17 shekels\" or \"187 grams\" (See: [[rc://en/ta/man/translate/translate-bmoney]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 32,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "glQuote": "seventeen shekels",
+      "occurrence": 0
+    }
+  }
+]

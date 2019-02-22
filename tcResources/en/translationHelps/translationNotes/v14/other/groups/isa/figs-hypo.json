@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This describes something that could have happened in the past but did not. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "If Yahweh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh describes something that could have happened but did not. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 48,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "If only you had obeyed my commandments",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh describes a hypothetical condition to explain what would happen even if those conditions were met. Alternate translation: \"Even if the mountains fell and the hills shook, my steadfast love\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 54,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "Though the mountains may fall and the hills be shaken, yet my steadfast love",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Isaiah introduces this desire for Yahweh's presence in their past history with a strong exclamation. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 64,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "Oh, if you had",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The mountains would have trembled as in an earthquake. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 64,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "mountains would have shaken",
+      "occurrence": 0
+    }
+  }
+]

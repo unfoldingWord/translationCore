@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since Nehemiah is speaking to Yahweh, the pronouns \"him\" and \"his\" can be translated as \"you\" and \"your.\" Alternate translation: \"who love you and keep your commandments\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "who love him and keep his commandments",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A few men accompanied Nehemiah on this inspection, but he speaks in the first person because he was the primary person. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

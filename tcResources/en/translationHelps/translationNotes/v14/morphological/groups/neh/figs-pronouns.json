@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some people believe that Nehemiah wrote this book and is speaking of himself as if he were someone else because this is an official list. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "Nehemiah",
+      "occurrence": 0
+    }
+  }
+]

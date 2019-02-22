@@ -1,0 +1,135 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate \"knowledge\" using a verbal phrase. Alternate translation: \"through your knowing God and Jesus our Lord\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἐν ἐπιγνώσει τοῦ Θεοῦ, καὶ Ἰησοῦ τοῦ Κυρίου ἡμῶν",
+      "glQuote": "in the knowledge of God and of Jesus our Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate \"knowledge\" using a verbal phrase. Alternate translation: \"through your knowing God and Jesus our Lord\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "εἰς τὴν τοῦ Κυρίου ἡμῶν, Ἰησοῦ Χριστοῦ, ἐπίγνωσιν",
+      "glQuote": "in the knowledge of our Lord Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can use a verb to translate this. Alternate translation: \"that God has cleansed him from his old sins\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "τοῦ καθαρισμοῦ τῶν πάλαι αὐτοῦ ἁμαρτιῶν",
+      "glQuote": "he has been cleansed from his past sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can specify it was God who rebuked Balaam. Alternate translation: \"God rebuked him\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἔλεγξιν ... ἔσχεν",
+      "glQuote": "he obtained a rebuke",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate \"knowledge\" using a verbal phrase. See how you translated similar phrases in [2 Peter 1:2](../01/02.md). Alternate translation: \"by knowing the Lord and Savior Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἐν ἐπιγνώσει τοῦ Κυρίου ... καὶ Σωτῆρος, Ἰησοῦ Χριστοῦ",
+      "glQuote": "through the knowledge of the Lord and Savior Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a verbal phrase. Alternate translation: \"since God created the world\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἀπ’ ἀρχῆς κτίσεως",
+      "glQuote": "since the beginning of creation",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated with verbal phrases. Alternate translation: \"for the day when he judges and destroys ungodly people\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "εἰς ἡμέραν κρίσεως καὶ ἀπωλείας τῶν ἀσεβῶν ἀνθρώπων",
+      "glQuote": "for the day of judgment and the destruction of the ungodly people",
+      "occurrence": 1
+    }
+  }
+]

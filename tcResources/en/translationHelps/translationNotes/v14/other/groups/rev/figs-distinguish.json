@@ -1,0 +1,95 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase reminds us that idols are not alive and do not deserve to be worshiped. But the people did not stop worshiping them. Alternate translation: \"even though idols cannot see, hear, or walk\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "things that cannot see, hear, or walk",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These phrases can be stated as sentences. Alternate translation: \"you, Lord God, the ruler over all. You are the one who is, and you are the one who was\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": "σοι, Κύριε ὁ Θεός ὁ Παντοκράτωρ, ὁ ὢν, καὶ ὁ ἦν",
+      "glQuote": "you, Lord God Almighty, the one who is and who was",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The information about the serpent can be given in a separate sentence after the statement that it was thrown down to the earth. Alternate translation: \"dragon was thrown down to earth, and his angels were thrown down with him. He is the old serpent who deceives the world and is called the devil or Satan\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": "δράκων ὁ ... ὄφις ὁ ἀρχαῖος ... καλούμενος, Διάβολος, καὶ ὁ Σατανᾶς, ὁ πλανῶν τὴν οἰκουμένην ὅλην; ἐβλήθη εἰς τὴν γῆν, καὶ οἱ ἄγγελοι αὐτοῦ μετ’ αὐτοῦ ἐβλήθησαν",
+      "glQuote": "dragon—that old serpent called the devil or Satan, who deceives the whole world—was thrown down to the earth, and his angels were thrown down with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase reminds readers of something they already know about God. It helps to explain why the people were blaspheming God. Alternate translation: \"God because he has the power over these plagues\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": "τοῦ Θεοῦ, τοῦ ἔχοντος τὴν ἐξουσίαν ἐπὶ τὰς πληγὰς ταύτας",
+      "glQuote": "God, who has the power over these plagues",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The wine represents sexual immorality. Alternate translation: \"The people of the earth became drunk by drinking her wine, that is, they were sexually immoral\" (See: [[rc://en/ta/man/translate/figs-distinguish]] and [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "It is with the wine of her sexual immorality that the earth's inhabitants became drunk",
+      "occurrence": 0
+    }
+  }
+]

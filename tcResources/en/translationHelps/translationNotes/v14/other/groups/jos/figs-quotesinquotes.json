@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Embedded quotes can be expressed as indirect quotes. Alternate translation: \"Go through the camp and command the people to prepare provisions for themselves. In three days they will cross over this Jordan and go in and possess the land that Yahweh their God is giving them to possess.\" (See: [[rc://en/ta/man/translate/figs-quotesinquotes]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "glQuote": "Go through the camp and command the people, 'Prepare ... possess.'",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nested quote can be stated as an indirect quote. Alternate translation: \"Give them this command to take up twelve stones from the middle of the Jordan where the priests are standing on the dry ground, and bring them over with you and lay them down in the place where you will spend the night tonight\" (See: [[rc://en/ta/man/translate/figs-quotesinquotes]] and [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "glQuote": "Give them this command: ' ... '",
+      "occurrence": 0
+    }
+  }
+]

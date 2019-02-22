@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to reorder the events in these verses as in the UST. (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

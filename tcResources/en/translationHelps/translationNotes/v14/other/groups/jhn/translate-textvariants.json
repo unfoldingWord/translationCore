@@ -1,0 +1,57 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some copies of this text say \"Son of God\"; others say \"chosen one of God.\" (See: [[rc://en/ta/man/translate/translate-textvariants]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-textvariants",
+      "quote": "ὁ Υἱὸς τοῦ Θεοῦ",
+      "glQuote": "the Son of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The best early texts do not have 7:53 - 8:11. The ULT has set them apart in square brackets ([ ]) to show that John probably did not include them in his original text. Translators are encouraged to translate them, to set them apart with square brackets, and to include a footnote like the one written on [John 7:53](../07/53.md). (See: [[rc://en/ta/man/translate/translate-textvariants]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 53
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-textvariants",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "While some texts have 7:53 - 8:11, the best and earliest texts do not include them. (See: [[rc://en/ta/man/translate/translate-textvariants]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-textvariants",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

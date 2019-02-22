@@ -1,0 +1,200 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7 sons and 3 daughters\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seven sons and three daughters",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"He had 7,000 sheep\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "He possessed seven thousand sheep",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"3,000 camels\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "three thousand camels",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"500 pairs of oxen\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "five hundred pairs of oxen",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In some languages it may be more natural to refer to \"a great number\" instead of \"a thousand.\" Alternate translation: \"one from the great number of angels\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 33,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "one out of a thousand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7 bulls\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 42,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seven bulls",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "14,000 sheep (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 42,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "fourteen thousand sheep",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "6,000 camels (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 42,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "six thousand camels",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "1,000 yoke of oxen (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 42,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "one thousand yoke of oxen",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "7 sons and 3 daughters (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 42,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seven sons and three daughters",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"lived 140 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 42,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "lived 140 years",
+      "occurrence": 0
+    }
+  }
+]

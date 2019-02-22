@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a merism that refers to the area to the north, and to the south, and all places in between. Alternate translation: \"in every direction\" or \"everywhere\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 21,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "from the south to the north",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to all of Egypt. Where these places are can be stated clearly. Alternate translation: \"throughout all of Egypt, from Migdol in the north to Syene in the south and the borders of Cush further south\" (See: [[rc://en/ta/man/translate/figs-merism]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 29,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "from the Migdol to Syene and the borders of Cush",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Ezekiel names towns on the borders of Egypt in order to refer to all of Egypt. Alternate translation: \"In all of Egypt\" or \"From the northern border of Egypt to the southern border of Egypt\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 30,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "From Migdol to Syene",
+      "occurrence": 0
+    }
+  }
+]

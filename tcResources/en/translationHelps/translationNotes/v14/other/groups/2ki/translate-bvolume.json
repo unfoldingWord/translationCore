@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be written in modern measurements. Alternate translation: \"a fourth part of a liter\" or \"a quarter of a liter\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 6,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "the fourth part of a kab",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"measure\" translates the word \"seah,\" which is a unit of dry measurement equal to about 7 liters. Alternate translation: \"7 liters of fine flour ... 14 liters of barley\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "a measure of fine flour ... two measures of barley",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"measure\" translates the word \"seah,\" which is a unit of dry measurement equal to about 7 liters. Alternate translation: \"7 liters of fine flour ... 14 liters of barley\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "a measure of fine flour ... two measures of barley",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"measure\" translates the word \"seah,\" which is a unit of dry measurement equal to about 7 liters. Alternate translation: \"14 liters of barley ... 7 liters of fine flour\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "two measures of barley ... a measure of fine flour",
+      "occurrence": 0
+    }
+  }
+]
