@@ -4,6 +4,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as USFMExportActions from './USFMExportActions';
+import * as exportHelpers from "../helpers/exportHelpers";
 
 /**
  * Wrapper for exporting project alignment data to usfm.
@@ -19,6 +20,7 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       //Get path for alignment conversion
       const {wordAlignmentDataPath, projectTargetLanguagePath, chapters} = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
       const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
+      exportHelpers.makeSureUsfm3InHeader(projectSaveLocation, manifest);
       /** Convert alignments from the filesystem under the project alignments folder */
       let usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id

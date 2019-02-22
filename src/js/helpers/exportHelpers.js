@@ -10,6 +10,7 @@ import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 import * as manifestHelpers from './manifestHelpers';
 import * as bibleHelpers from './bibleHelpers';
 import * as LoadHelpers from "./LoadHelpers";
+import * as FileConversionHelpers from "./FileConversionHelpers";
 
 /**
  * Prompts the user to enter a location/name to save the usfm project.
@@ -130,5 +131,78 @@ export function getUsfmExportName(manifest) {
     const bookAbbrv = manifest.project.id;
     const index = BIBLES_ABBRV_INDEX[bookAbbrv];
     return `${index}-${bookAbbrv.toUpperCase()}`;
+  }
+}
+
+/**
+ * reads the header.json for project
+ * @param {String} projectSaveLocation
+ * @param {String} bookName
+ * @return {Object}
+ */
+export function getProjectHeaderData(projectSaveLocation, bookName) {
+  return LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 'headers.json');
+}
+
+/**
+ * saves the header.json for project
+ * @param {String} projectSaveLocation
+ * @param {String} bookName
+ * @param {Array} headers
+ */
+export function saveProjectHeaderData(projectSaveLocation, bookName, headers) {
+  fs.ensureDirSync(path.join(projectSaveLocation, bookName));
+  fs.outputJsonSync(path.join(projectSaveLocation, bookName, 'headers.json'),
+    headers);
+}
+
+/**
+ * search for specific tag in header
+ * @param {Array} headers
+ * @param {String} matchTag - to match
+ * @return {*}
+ */
+export function findUsfmTagInHeader(headers, matchTag) {
+  const matchedHeader = headers.find(({tag}) => tag === matchTag);
+  return matchedHeader;
+}
+
+/**
+ * search for specific tag in header
+ * @param {String} projectSaveLocation
+ * @param {object} manifest
+ */
+export function makeSureUsfm3InHeader(projectSaveLocation, manifest) {
+  let folderForHeader = projectSaveLocation;
+  try {
+    const bookAbbrv = manifest && manifest.project && manifest.project.id;
+    folderForHeader = path.join(projectSaveLocation, bookAbbrv);
+    const headers = getProjectHeaderData(projectSaveLocation, bookAbbrv);
+    if (!headers) {
+      console.log("Empty Project Header at '" + folderForHeader);
+    }
+    let updateHeader = true;
+    const matchedHeader = findUsfmTagInHeader(headers, 'usfm');
+    if (matchedHeader) {
+      if (matchedHeader.content !== '3.0') {
+        matchedHeader.content = '3.0';
+      } else {
+        updateHeader = false;
+      }
+    } else {
+      const usfmTag = {tag: 'usfm', content: '3.0'};
+      if (headers.length < 2) {
+        headers.push(usfmTag);
+      } else {
+        headers.splice(1, 0, usfmTag);
+      }
+    }
+
+    if (updateHeader) {
+      saveProjectHeaderData(projectSaveLocation, bookAbbrv, headers);
+    }
+  } catch (e) {
+    const errorMessage = FileConversionHelpers.getSafeErrorMessage(e, 'Error updating Project Header');
+    console.error("Error updating Project Header at '" + folderForHeader + "' " + errorMessage);
   }
 }

@@ -52,68 +52,6 @@ export function getHeaderTag(headers, tag) {
 }
 
 /**
- * reads the header.json for project
- * @param {String} projectSaveLocation
- * @param {String} bookName
- * @return {Object}
- */
-export function getProjectHeaderData(projectSaveLocation, bookName) {
-  return LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 'headers.json');
-}
-
-/**
- * saves the header.json for project
- * @param {String} projectSaveLocation
- * @param {String} bookName
- * @param {Array} headers
- */
-export function saveProjectHeaderData(projectSaveLocation, bookName, headers) {
-  fs.ensureDirSync(path.join(projectSaveLocation, bookName));
-  fs.outputJsonSync(path.join(projectSaveLocation, bookName, 'headers.json'),
-    headers);
-}
-
-/**
- * search for specific tag in header
- * @param {Array} headers
- * @param {String} matchTag - to match
- * @return {*}
- */
-export function findUsfmTagInHeader(headers, matchTag) {
-  const matchedHeader = headers.find(({tag}) => tag === matchTag);
-  return matchedHeader;
-}
-
-/**
- * search for specific tag in header
- * @param projectSaveLocation
- * @param bookName
- */
-export function makeSureUsfm3InHeader(projectSaveLocation, bookName) {
-  const headers = getProjectHeaderData(projectSaveLocation, bookName);
-  let updateHeader = true;
-  const matchedHeader = findUsfmTagInHeader(headers, 'usfm');
-  if (matchedHeader) {
-    if (matchedHeader.content !== '3.0') {
-      matchedHeader.content = '3.0';
-    } else {
-      updateHeader = false;
-    }
-  } else {
-    const usfmTag = { tag: 'usfm', content: '3.0'};
-    if (headers.length < 2) {
-      headers.push(usfmTag);
-    } else {
-      headers.splice(1, 0, usfmTag);
-    }
-  }
-
-  if (updateHeader) {
-    saveProjectHeaderData(projectSaveLocation, bookName, headers);
-  }
-}
-
-/**
  * parses only the header information of a valid usfm file.  Header information is the part before the first chapter marker.
  * @param {String} usfmData - USFM data to parse
  * @return {*}
