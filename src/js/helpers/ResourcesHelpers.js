@@ -640,6 +640,7 @@ function copyMissingSubfolders(source, destination) {
 export function getMissingResources() {
   const tcResourcesFiles = getFilteredSubFolders(STATIC_RESOURCES_PATH);
   const userResources = getFilteredSubFolders(USER_RESOURCES_PATH);
+  console.log(userResources, 'userResources');
   tcResourcesFiles.forEach((languageId) => {
     // if a resource package with tC executable file is missing in the user resource directory
     if (!userResources.includes(languageId)) {
@@ -653,6 +654,8 @@ export function getMissingResources() {
         let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleId);
         extractZippedBooks(bibleDestinationPath);
       });
+    } else {
+        // write logic to update by resource and not by language like above
     }
     // TODO: this is temporary - eventually this will be packaged in catalog
     // check for lexicons packaged with tc executable
