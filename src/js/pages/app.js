@@ -30,7 +30,8 @@ import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
 import { injectFileLogging } from "../helpers/logger";
 
-injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'));
+const version = `v${packageJson.version} (${process.env.BUILD})`;
+injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
 
 class Main extends Component {
 

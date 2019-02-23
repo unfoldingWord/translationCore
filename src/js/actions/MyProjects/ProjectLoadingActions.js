@@ -14,8 +14,8 @@ import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
   getActiveLocaleLanguage,
   getProjectManifest,
-  getProjectSaveLocation,
-  getSourceBook,
+  getProjectSaveLocation, getSelectedToolApi,
+  getSourceBook, getSupportingToolApis,
   getTargetBook,
   getToolGatewayLanguage,
   getTools,
@@ -103,7 +103,7 @@ export const openProject = (name, skipValidation=false) => {
       if (e.type !== 'div') console.warn(e);
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
-      dispatch(closeProject());
+      dispatch(clearLastProject());
       dispatch(openAlertDialog(e));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     }
@@ -216,8 +216,19 @@ export function displayTools() {
  * @description - Wrapper to clear everything in the store that could
  * prevent a new project from loading
  */
-export function closeProject() {
-  return (dispatch) => {
+export function clearLastProject() {
+  return (dispatch, getState) => {
+    // disconnect from the tools
+    const state = getState();
+    const toolApi = getSelectedToolApi(state);
+    const supportingToolApis = getSupportingToolApis(state);
+    for (const key of Object.keys(supportingToolApis)) {
+      supportingToolApis[key].triggerWillDisconnect();
+    }
+    if (toolApi) {
+      toolApi.triggerWillDisconnect();
+    }
+
     /**
      * ATTENTION: THE project details reducer must be reset
      * before any other action being called to avoid

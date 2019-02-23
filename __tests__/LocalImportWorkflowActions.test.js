@@ -28,7 +28,11 @@ jest.mock('../src/js/selectors', () => ({
     return jest.fn((code) => {
       return code;
     });
-  }
+  },
+  getSelectedToolApi: jest.fn(),
+  getSupportingToolApis: jest.fn(() => {
+    return [];
+  })
 }));
 
 
