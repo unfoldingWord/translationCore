@@ -103,7 +103,7 @@ export const localImport = () => {
     // Either import was canceled or error occurred. We clean up here.
     // clear last project must be called before any other action.
     // to avoid triggering auto-saving.
-    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(ProjectLoadingActions.closeProject());
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     // remove failed project import
     const projectName = getState().localImportReducer.selectedProjectFilename;

@@ -35,6 +35,7 @@ import {
   copyGroupDataToProject,
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
+import * as BibleHelpers from "../../helpers/bibleHelpers";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -82,13 +83,15 @@ export const openProject = (name, skipValidation=false) => {
       // connect the tools
       const manifest = getProjectManifest(getState());
       const tools = getTools(getState());
+      const bookId = (manifest && manifest.project && manifest.project.id) || '';
       for (const t of tools) {
         // load source book translations
-        await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
+        await dispatch(loadSourceBookTranslations(bookId, t.name));
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
-        let helpDir = "grc";
+        const olForBook = BibleHelpers.getOLforBook(bookId);
+        const helpDir = (olForBook && olForBook.languageId) || 'grc';
         if (t.name === "translationNotes")
           helpDir = "en";
         copyGroupDataToProject(helpDir, t.name, validProjectDir);
@@ -98,7 +101,7 @@ export const openProject = (name, skipValidation=false) => {
         setDefaultProjectCategories(language, t.name, validProjectDir);
 
         // connect tool api
-        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
+        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
         t.api.triggerWillConnect(toolProps);
       }
 
@@ -108,7 +111,7 @@ export const openProject = (name, skipValidation=false) => {
       if (e.type !== 'div') console.warn(e);
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
-      dispatch(clearLastProject());
+      dispatch(closeProject());
       dispatch(openAlertDialog(e));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     }
@@ -165,8 +168,10 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
       }
     },
     username: getUsername(state),
-    changeSelections: (selections, userName) => {
-      dispatch(changeSelections(selections, userName));
+    actions: {
+      changeSelections: (selections, userName) => {
+        dispatch(changeSelections(selections, userName));
+      }
     },
     // deprecated props
     readProjectDir: (...args) => {
@@ -224,7 +229,7 @@ export function displayTools() {
  * @description - Wrapper to clear everything in the store that could
  * prevent a new project from loading
  */
-export function clearLastProject() {
+export function closeProject() {
   return (dispatch) => {
     /**
      * ATTENTION: THE project details reducer must be reset

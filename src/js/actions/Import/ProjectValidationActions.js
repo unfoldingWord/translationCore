@@ -56,7 +56,7 @@ export const validateProject = (projectPath) => {
  */
 export const setUpProjectDetails = (projectPath, dispatch) => {
   return new Promise((resolve) => {
-    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(ProjectLoadingActions.closeProject());
     let manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     resolve();
