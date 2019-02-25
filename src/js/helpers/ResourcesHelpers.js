@@ -602,9 +602,9 @@ export function getFilesInResourcePath(resourcePath, ext=null) {
 function getFilteredSubFolders(folderPath) {
   const excludedItems = ["imports_processed", "imports", ".DS_Store"];
   if (fs.existsSync(folderPath)) {
-    return fs.readdirSync(folderPath).
-      filter(item => !excludedItems.includes(item)).
-      filter(file => fs.lstatSync(path.join(folderPath, file)).isDirectory());
+    return fs.readdirSync(folderPath)
+      .filter(item => !excludedItems.includes(item))
+      .filter(file => fs.lstatSync(path.join(folderPath, file)).isDirectory());
   }
   return [];
 }
