@@ -5,8 +5,9 @@ import path from "path-extra";
  * Injects file logging into the default console logger.
  * console logging will continue to function as normal.
  * @param {string} [logDir=''] - directory where logs will be stored
+ * @param {string} appVersion - the version of the application (commit)
  */
-export function injectFileLogging(logDir = "") {
+export function injectFileLogging(logDir = "", appVersion="") {
   fs.ensureDirSync(logDir);
 
   const logPath = path.join(logDir, new Date().toDateString() + ".log");
@@ -26,7 +27,7 @@ export function injectFileLogging(logDir = "") {
     originalLevels[level] = console[level];
     global.console[level] = (...data) => {
       // write to file
-      writeLogSync(logPath, level, data);
+      writeLogSync(logPath, level, appVersion, data);
       // pass to console
       originalLevels[level](...data);
     };
@@ -37,9 +38,10 @@ export function injectFileLogging(logDir = "") {
  * Writes log arguments to the file
  * @param {string} path - file path where logs will be appended
  * @param {string} level - the logging level
+ * @param {string} appVersion - the version of the application
  * @param {array} args - arguments to the logger
  */
-function writeLogSync(path, level, args) {
+function writeLogSync(path, level, appVersion, args) {
   // stringify args if applicable
   const stringableLevels = ['info', 'warn', 'error'];
   let data = args;
@@ -49,7 +51,7 @@ function writeLogSync(path, level, args) {
 
   // record log to file
   fs.appendFileSync(path,
-    `${new Date().toTimeString()} ${level.toUpperCase()}: ${data} \n`,
+    `${new Date().toTimeString()} ${level.toUpperCase()}: ${appVersion}: ${data} \n`,
     { encoding: "utf-8" });
 }
 
