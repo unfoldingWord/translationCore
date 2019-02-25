@@ -155,6 +155,7 @@ export function getUsfm2ExportFile(projectPath) {
  */
 export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+  exportHelpers.makeSureUsfm3InHeader(projectPath, manifest);
   let bookName = manifest.project.id;
   if (!fs.existsSync(path.join(projectPath, bookName))) {
     generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
