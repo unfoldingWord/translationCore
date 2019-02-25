@@ -351,10 +351,20 @@ export default class Repo {
    * @returns {Promise<void>}
    */
   async add(filepath) {
-    const status = await git.status({
-      dir: this.dir,
-      filepath: filepath
-    });
+    let status = "";
+    try {
+      status = await git.status({
+        dir: this.dir,
+        filepath: filepath
+      });
+    } catch (e) {
+      if(e.code === "ResolveRefError") {
+        // TRICKY: if there are no commits we get a ref error
+        status = "*added";
+      } else {
+        throw e;
+      }
+    }
     if (["*deleted", "deleted"].indexOf(status) > -1) {
       await git.remove({
         dir: this.dir,
