@@ -269,7 +269,6 @@ function isDirectory(folderPath) {
  * @return {boolean}
  */
 function hasValidHelps(helpsChecks, languagePath, bookID = '') {
-  debugger;
   let isBibleValidSource = true;
   const checkingHelps = helpsChecks && helpsChecks.length;
   if (checkingHelps) { // if no resource checking given, we add empty check
@@ -361,7 +360,6 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}) {
           // make sure resource for book is present and has the right checking level
           const isValidUlt = biblePath && isValidResource(biblePath, bookId,
             glRequirements.gl.minimumCheckingLevel, glRequirements.gl.alignedBookRequired);
-          debugger;
           isBibleValidSource = isBibleValidSource && isValidUlt;
         }
       }

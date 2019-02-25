@@ -437,9 +437,9 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   if (! category ){
     if (resourceType === 'translationWords') {
       categories = ['kt', 'names', 'other'];
-    } else if (resourceType === 'translationNotes') {
+    } else if (resourceType === 'translationNotes' || resourceType === 'translationAcademy') {
       categories = ['translate', 'checking', 'process', 'intro'];
-      resourceType = 'translationAcademy'
+      resourceType = 'translationAcademy';
     } else {
       categories = ['content'];
     }
