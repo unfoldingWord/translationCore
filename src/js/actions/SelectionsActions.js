@@ -26,7 +26,7 @@ import usfm from "usfm-js";
 export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
     let state = getState();
-    if (getSelectedToolName(state) === 'translationWords') {
+    if (getSelectedToolName(state) === 'translationWords' || getSelectedToolName(state) === 'translationNotes') {
       const currentContextId = state.contextIdReducer.contextId;
       contextId = contextId || currentContextId; // use current if contextId is not passed
       const {

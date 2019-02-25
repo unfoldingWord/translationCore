@@ -88,7 +88,10 @@ export const openProject = (name, skipValidation=false) => {
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
-        copyGroupDataToProject("grc", t.name, validProjectDir);
+        let helpDir = "grc";
+        if (t.name === "translationNotes")
+          helpDir = "en";
+        copyGroupDataToProject(helpDir, t.name, validProjectDir);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
