@@ -3,8 +3,6 @@ import fs from 'fs-extra';
 import usfm from 'usfm-js';
 // helpers
 import * as bibleHelpers from './bibleHelpers';
-import * as LoadHelpers from "./LoadHelpers";
-import path from "path-extra";
 
 /**
  * @description Sets up the folder in the tC save location for a USFM project

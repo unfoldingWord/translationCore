@@ -146,7 +146,6 @@ export function getExportType(projectPath) {
  */
 export function getUsfm2ExportFile(projectPath) {
   const usfmJSONObject = setUpUSFMJSONObject(projectPath);
-  exportHelpers.makeSureUsfm3InHeader(projectPath, manifest);
   return usfm.toUSFM(usfmJSONObject, {forcedNewLines: true});
 }
 
@@ -156,6 +155,7 @@ export function getUsfm2ExportFile(projectPath) {
  */
 export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+  exportHelpers.makeSureUsfm3InHeader(projectPath, manifest);
   let bookName = manifest.project.id;
   if (!fs.existsSync(path.join(projectPath, bookName))) {
     generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
