@@ -77,7 +77,10 @@ export function getGlRequirementsForTool(toolName) {
     case 'translationNotes':
       requirements.gl.helpsChecks = [
         {
-          path: path.join('translationHelps/translationAcademy'),
+          path: path.join('translationHelps/translationAcademy')
+        },
+        {
+          path: path.join('translationHelps/translationNotes')
         }
       ];
       break;
