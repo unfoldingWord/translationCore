@@ -62,22 +62,22 @@ export function getGlRequirementsForTool(toolName) {
       requirements.gl.minimumCheckingLevel = 3;
       requirements.gl.helpsChecks = [
         {
-          path: 'translationHelps/translationWords',
+          path: path.join('translationHelps/translationWords'),
           subpath: 'articles',
           minimumCheckingLevel: 2
         }
       ];
       requirements.ol.helpsChecks = [
         {
-          path: 'translationHelps/translationWords',
-          subpath: 'groups/${bookID}'
+          path: path.join('translationHelps/translationWords'),
+          subpath: path.join('groups/${bookID}')
         }
       ];
       break;
     case 'translationNotes':
       requirements.gl.helpsChecks = [
         {
-          path: 'translationHelps/translationAcademy',
+          path: path.join('translationHelps/translationAcademy'),
         }
       ];
       break;
@@ -283,7 +283,7 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
             const subFolderPath = path.join(latestVersionPath, subFolder);
             if (isDirectory(subFolderPath)) {
               let checkPath, subpath = helpsCheck.subpath || '';
-              checkPath  = path.join(subFolderPath, subpath.replace('${bookID}', bookID));
+              checkPath = path.join(subFolderPath, subpath.replace('${bookID}', bookID));
               if (isDirectory(checkPath)) {
                 const validFile = fs.readdirSync(checkPath).find(file => {
                   const ext = path.parse(file).ext;
