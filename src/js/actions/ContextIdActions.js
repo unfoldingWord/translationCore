@@ -50,11 +50,16 @@ export const changeCurrentContextId = contextId => {
     }
     // commit project changes
     const projectDir = getProjectSaveLocation(getState());
-    const repo = await Repo.open(projectDir, getState().loginReducer.userdata);
-    const dirty = await repo.isDirty(['/contextId.json', '/.categories']);
-    if(dirty) {
-      const {reference: {bookId, chapter, verse}} = contextId;
-      await repo.save(`Auto saving at ${bookId} ${chapter}:${verse}`);
+    try {
+      const repo = await Repo.open(projectDir,
+        getState().loginReducer.userdata);
+      const dirty = await repo.isDirty(['/contextId.json', '/.categories']);
+      if (dirty) {
+        const { reference: { bookId, chapter, verse } } = contextId;
+        await repo.save(`Auto saving at ${bookId} ${chapter}:${verse}`);
+      }
+    } catch(e) {
+      console.error(`Failed to auto save`, contextId, e);
     }
   };
 };
