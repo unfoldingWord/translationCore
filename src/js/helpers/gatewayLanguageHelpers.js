@@ -62,25 +62,25 @@ export function getGlRequirementsForTool(toolName) {
       requirements.gl.minimumCheckingLevel = 3;
       requirements.gl.helpsChecks = [
         {
-          path: path.join('translationHelps/translationWords'),
+          path: path.join('translationHelps', 'translationWords'),
           subpath: 'articles',
           minimumCheckingLevel: 2
         }
       ];
       requirements.ol.helpsChecks = [
         {
-          path: path.join('translationHelps/translationWords'),
-          subpath: path.join('groups/${bookID}')
+          path: path.join('translationHelps', 'translationWords'),
+          subpath: path.join('groups', '${bookID}')
         }
       ];
       break;
     case 'translationNotes':
       requirements.gl.helpsChecks = [
         {
-          path: path.join('translationHelps/translationAcademy')
+          path: path.join('translationHelps', 'translationAcademy')
         },
         {
-          path: path.join('translationHelps/translationNotes')
+          path: path.join('translationHelps', 'translationNotes')
         }
       ];
       break;
