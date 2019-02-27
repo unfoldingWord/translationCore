@@ -62,24 +62,27 @@ export function getGlRequirementsForTool(toolName) {
       requirements.gl.minimumCheckingLevel = 3;
       requirements.gl.helpsChecks = [
         {
-          path: 'translationHelps/translationWords',
+          path: path.join('translationHelps/translationWords'),
           subpath: 'articles',
           minimumCheckingLevel: 2
         }
       ];
       requirements.ol.helpsChecks = [
         {
-          path: 'translationHelps/translationWords',
-          subpath: 'groups/${bookID}'
+          path: path.join('translationHelps/translationWords'),
+          subpath: path.join('groups/${bookID}')
         }
       ];
       break;
-
-    // case 'translationNotes':
-    //   helpsPaths = ['translationHelps/translationNotes', 'translationHelps/translationAcademy'];
-    //   break;
-
-    default:
+    case 'translationNotes':
+      requirements.gl.helpsChecks = [
+        {
+          path: path.join('translationHelps/translationAcademy')
+        },
+        {
+          path: path.join('translationHelps/translationNotes')
+        }
+      ];
       break;
   }
   return requirements;
@@ -282,7 +285,8 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
           helpValid = subFolders.find(subFolder => {
             const subFolderPath = path.join(latestVersionPath, subFolder);
             if (isDirectory(subFolderPath)) {
-              const checkPath = path.join(subFolderPath, helpsCheck.subpath.replace('${bookID}', bookID));
+              let checkPath, subpath = helpsCheck.subpath || '';
+              checkPath = path.join(subFolderPath, subpath.replace('${bookID}', bookID));
               if (isDirectory(checkPath)) {
                 const validFile = fs.readdirSync(checkPath).find(file => {
                   const ext = path.parse(file).ext;
@@ -350,9 +354,9 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}) {
           const isValidOrig = hasValidOL(bookId, glRequirements.ol.minimumCheckingLevel); // make sure we have an OL for the book
           isBibleValidSource = isBibleValidSource && isValidOrig;
 
-          if ( glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
+          if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
             const olBook = BibleHelpers.getOLforBook(bookId);
-            const olPath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, olBook.languageId );
+            const olPath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, olBook.languageId);
             isBibleValidSource = isBibleValidSource && hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId);
           }
 
@@ -412,9 +416,9 @@ const DEFAULT_SEPARATOR = ' ';
  * @param {int} occurrenceToMatch
  * @param {boolean} isMatch - if true, all verseObjects will be considered a match and will be included in the returned text
  */
-export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, isMatch=false) => {
+export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, isMatch = false) => {
   let text = '';
-  if(! verseObjects || ! wordsToMatch || ! occurrenceToMatch) {
+  if (!verseObjects || !wordsToMatch || !occurrenceToMatch) {
     return text;
   }
   let separator = DEFAULT_SEPARATOR;
@@ -428,7 +432,7 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
         // We have a match (or previoiusly had a match in the parent) so we want to include all text that we find,
         if (needsEllipsis) {
           // Need to add an ellipsis to the separator since a previous match but not one right next to this one
-          separator += ELLIPSIS+DEFAULT_SEPARATOR;
+          separator += ELLIPSIS + DEFAULT_SEPARATOR;
           needsEllipsis = false;
         }
         if (text) {
@@ -452,17 +456,17 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
         if (childText) {
           lastMatch = true;
           if (needsEllipsis) {
-            separator += ELLIPSIS+DEFAULT_SEPARATOR;
+            separator += ELLIPSIS + DEFAULT_SEPARATOR;
             needsEllipsis = false;
           }
-          text += (text?separator:'') + childText;
+          text += (text ? separator : '') + childText;
           separator = DEFAULT_SEPARATOR;
         } else if (text) {
           needsEllipsis = true;
         }
       }
     }
-    if ( lastMatch && verseObjects[index + 1] && verseObjects[index + 1].type === "text" && text) {
+    if (lastMatch && verseObjects[index + 1] && verseObjects[index + 1].type === "text" && text) {
       // Found some text that is a word separator/punctuation, e.g. the apostrophe between "God" and "s" for "God's"
       // We want to preserve this so we can show "God's" instead of "God ... s"
       if (separator === DEFAULT_SEPARATOR) {
@@ -483,12 +487,12 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
  */
 export function getAlignedGLText(currentProjectToolsSelectedGL, contextId, bibles, currentToolName) {
   const selectedGL = currentProjectToolsSelectedGL[currentToolName];
-  if (! contextId.quote || ! bibles || ! bibles[selectedGL] || ! Object.keys(bibles[selectedGL]).length)
+  if (!contextId.quote || !bibles || !bibles[selectedGL] || !Object.keys(bibles[selectedGL]).length)
     return contextId.quote;
   const sortedBibleIds = Object.keys(bibles[selectedGL]).sort(bibleIdSort);
   for (let i = 0; i < sortedBibleIds.length; ++i) {
     const bible = bibles[selectedGL][sortedBibleIds[i]];
-    if(bible && bible[contextId.reference.chapter] && bible[contextId.reference.chapter][contextId.reference.verse] && bible[contextId.reference.chapter][contextId.reference.verse].verseObjects) {
+    if (bible && bible[contextId.reference.chapter] && bible[contextId.reference.chapter][contextId.reference.verse] && bible[contextId.reference.chapter][contextId.reference.verse].verseObjects) {
       const verseObjects = bible[contextId.reference.chapter][contextId.reference.verse].verseObjects;
       const wordsToMatch = contextId.quote.split(' ');
       const alignedText = getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
@@ -507,7 +511,7 @@ export function getAlignedGLText(currentProjectToolsSelectedGL, contextId, bible
 export function bibleIdSort(a, b) {
   const biblePrecedence = ['udb', 'ust', 'ulb', 'ult', 'irv']; // these should come first in this order if more than one aligned Bible, from least to greatest
   if (biblePrecedence.indexOf(a) == biblePrecedence.indexOf(b))
-    return (a < b? -1 : a > b ? 1 : 0);
+    return (a < b ? -1 : a > b ? 1 : 0);
   else
     return biblePrecedence.indexOf(b) - biblePrecedence.indexOf(a); // this plays off the fact other Bible IDs will be -1
 }

@@ -4,3 +4,6 @@
 [submodule "tC_apps/wordAlignment"]
 	path = tC_apps/wordAlignment
 	url = https://github.com/translationCoreApps/word-alignment-tool.git
+[submodule "tC_apps/translationNotes"]
+	path = tC_apps/translationNotes
+	url = https://github.com/translationCoreApps/translationNotes.git
