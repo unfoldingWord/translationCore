@@ -1,0 +1,756 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks of \"God's judgment\" as if it were alive and could \"fall\" on people. Alternate translation: \"God will judge those people truly and fairly\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "τὸ κρίμα τοῦ Θεοῦ ἐστιν κατὰ ἀλήθειαν ἐπὶ τοὺς",
+      "glQuote": "God's judgment is according to truth when it falls on those",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the law here as if it were alive and had its own voice. Alternate translation: \"everything that the law says people should do is for\" or \"all the commands that Moses wrote in the law are for\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ὅσα ὁ νόμος λέγει, τοῖς ... λαλεῖ",
+      "glQuote": "whatever the law says, it speaks to",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"the Law and the Prophets\" refer to the parts of scripture that Moses and the prophets wrote in the Jewish scriptures. Paul describes them here as if they were people testifying in court. You can translate this in an active form. Alternate translation: \"What Moses and the prophets wrote confirms this\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "μαρτυρουμένη ὑπὸ τοῦ νόμου καὶ τῶν προφητῶν",
+      "glQuote": "It was witnessed by the Law and the Prophets",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses personification here as he speaks of \"confidence\" as if it were alive. Alternate translation: \"we are very confident that we will receive the things that we wait for\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἡ ... ἐλπὶς οὐ καταισχύνει",
+      "glQuote": "that hope does not disappoint",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul describes sin as a dangerous thing that came into the world through the actions of \"one man,\" Adam. This sin then became an opening through which death, pictured here as another dangerous thing, also came into the world. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "through one man sin entered ... death entered through sin",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking of death as if it were a king who ruled. Alternate translation: \"people continued to die from the time of Adam until the time of Moses as a consequence of their sin\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἐβασίλευσεν ὁ θάνατος ἀπὸ Ἀδὰμ μέχρι Μωϋσέως",
+      "glQuote": "death ruled from Adam until Moses",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks of \"death\" as a king who ruled. The \"rule\" of death causes everyone to die. Alternate translation: \"everyone died\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ὁ θάνατος ἐβασίλευσεν",
+      "glQuote": "death ruled",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks of the law as if it were a person. Alternate translation: \"God gave his law to Moses\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "νόμος ... παρεισῆλθεν",
+      "glQuote": "the law came in",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks of \"sin\" as if it were a king that ruled. Alternate translation: \"as sin resulted in death\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ὥσπερ ἐβασίλευσεν ἡ ἁμαρτία ἐν τῷ θανάτῳ",
+      "glQuote": "as sin ruled in death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"grace\" here as if it were a king that ruled. Alternate translation: \"grace gave people everlasting life through the righteousness of Jesus Christ our Lord\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "οὕτως καὶ ἡ χάρις βασιλεύσῃ διὰ δικαιοσύνης, εἰς ζωὴν αἰώνιον διὰ Ἰησοῦ Χριστοῦ τοῦ Κυρίου ἡμῶν",
+      "glQuote": "even so grace might rule through righteousness for everlasting life through Jesus Christ our Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"grace\" here as if it were a king that ruled. The word \"righteousness\" refers to God's ability to make people right with him. Alternate translation: \"so God might give his free gift to people to make them right with him\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "οὕτως ... ἡ χάρις βασιλεύσῃ διὰ δικαιοσύνης",
+      "glQuote": "so grace might rule through righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"death\" is described as a king or ruler that has power over people. Alternate translation: \"He can never die again\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "θάνατος αὐτοῦ οὐκέτι κυριεύει",
+      "glQuote": "death no longer has authority over him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of people sinning as if sin was there master or king that controlled them. Alternate translation: \"Do not let sinful desires control you\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "μὴ ... βασιλευέτω ἡ ἁμαρτία ἐν τῷ θνητῷ ὑμῶν σώματι",
+      "glQuote": "do not let sin rule in your mortal body",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of a person having evil desires as if it sin were a master that had evil desires. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "εἰς τὸ ὑπακούειν ταῖς ἐπιθυμίαις αὐτοῦ",
+      "glQuote": "in order that you may obey its lusts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"sin\" here as if it were a king who rules over people. Alternate translation: \"Do not let sinful desires control what you do\" or \"Do not allow yourselves to do the sinful things you want to do\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἁμαρτία γὰρ ὑμῶν οὐ κυριεύσει",
+      "glQuote": "Do not allow sin to rule over you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here, Paul speaks of \"sin\" and \"obedience\" as if they were masters that a slave would obey. Alternate translation: \"whether you are like slaves to sin ... or like slaves to obedience\" or \"You are either a slave to sin ... or you are a slave to obedience\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "whether you are slaves to sin ... or slaves to obedience",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking of sin as if it were a person who can act. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "τὴν ἁμαρτίαν οὐκ ἔγνων, εἰ μὴ διὰ νόμου",
+      "glQuote": "I would never have known sin, if it were not through the law",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul continues comparing sin to a person who can act. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "But sin took the opportunity ... brought about every lust",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can mean 1) \"I realized that I was sinning\" or 2) \"I strongly desired to sin\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἡ ἁμαρτία ἀνέζησεν",
+      "glQuote": "sin regained life",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "As in [Romans 7:7-8](./07.md), Paul is describing sin as a person who can do 3 things: take the opportunity, deceive, and kill. Alternate translation: \"Because I wanted to sin, I deceived myself into thinking that I could sin and obey the commandment at the same time, but God punished me for disobeying the commandment by separating me from him\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἡ γὰρ ἁμαρτία ἀφορμὴν λαβοῦσα διὰ τῆς ἐντολῆς, ἐξηπάτησέν με καὶ δι’ αὐτῆς ἀπέκτεινεν",
+      "glQuote": "For sin took the opportunity through the commandment and deceived me. Through the commandment it killed me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is comparing sin to a person who can act. See how you translated this in [Romans 7:8](../07/08.md). (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἀφορμὴν λαβοῦσα διὰ τῆς ἐντολῆς",
+      "glQuote": "took the opportunity through the commandment",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is viewing sin as though it were a person who could act. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "sin ... brought about death in me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul describes sin as a living being that has the power to influence him. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἡ ἐνοικοῦσα ἐν ἐμοὶ ἁμαρτία",
+      "glQuote": "the sin that lives in me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"sin\" as if it were alive and living inside him. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἀλλὰ ἡ οἰκοῦσα ἐν ἐμοὶ ἁμαρτία",
+      "glQuote": "rather sin that lives in me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"evil\" here as if it were alive and living inside him. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ὅτι ἐμοὶ τὸ κακὸν παράκειται",
+      "glQuote": "that evil is actually present in me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the law is described as a person who could not break the power of sin. Alternate translation: \"For the law did not have the power to stop us from sinning, because the power of sin within us was too strong. But God did stop us from sinning\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "τὸ γὰρ ἀδύνατον τοῦ νόμου, ἐν ᾧ ἠσθένει διὰ τῆς σαρκός, ὁ Θεὸς ... πέμψας",
+      "glQuote": "For what the law was unable to do because it was weak through the flesh, God did",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks of both the \"flesh\" and the \"spirit\" as if they were living persons. Alternate translation: \"the way sinful people think ... the way people who listen to the Holy Spirit think\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "the mind set on the flesh ... the mind set on the Spirit",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul describes everything that God created as a person who eagerly waits for something. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἡ ... ἀποκαραδοκία τῆς κτίσεως, τὴν ... ἀπεκδέχεται",
+      "glQuote": "the eager expectation of the creation waits for",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul describes \"creation\" as a person who can desire. Alternate translation: \"not because this is what the created things wanted, but because it is what God wanted\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "οὐχ ἑκοῦσα, ἀλλὰ διὰ τὸν ὑποτάξαντα",
+      "glQuote": "not of its own will, but because of him who subjected it",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the scripture is personified as if God were talking to Pharaoh. Alternate translation: \"The scripture records that God said\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "λέγει γὰρ ἡ Γραφὴ",
+      "glQuote": "For the scripture says",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"righteousness\" as if it were alive and able to move. Alternate translation: \"how the law makes a person right before God\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "τὴν δικαιοσύνην τὴν ἐκ νόμου",
+      "glQuote": "the righteousness that comes from the law",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"righteousness\" is described as a person who can speak. Alternate translation: \"But Moses writes this about how faith makes a person right before God\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἡ δὲ ἐκ πίστεως δικαιοσύνη οὕτως λέγει",
+      "glQuote": "But the righteousness that comes from faith says this",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"it\" refers to \"the righteousness\" of [Romans 10:6](../10/06.md). Here Paul describes \"righteousness\" as a person who can speak. Paul uses a question to emphasize the answer he is about to give. Alternate translation: \"But this is what Moses says\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἀλλὰ τί λέγει",
+      "glQuote": "But what does it say?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of God's message as if it were a person who can move. Alternate translation: \"You have heard the message\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἐγγύς σου τὸ ῥῆμά ἐστιν",
+      "glQuote": "The word is near you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the Scripture as if it were alive and had a voice. You can make explicit who wrote the Scripture that Paul uses here. Alternate translation: \"For Isaiah wrote in the Scriptures\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "λέγει γὰρ ἡ Γραφή",
+      "glQuote": "For scripture says",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is referring to the Scriptures as if they were able to speak. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "τί λέγει ἡ Γραφή",
+      "glQuote": "what the scripture says",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul describes \"evil\" as though it were a person. You can translate this in an active form. Alternate translation: \"Do not let those who are evil defeat you, but defeat those who are evil by doing what is good\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "μὴ νικῶ ὑπὸ τοῦ κακοῦ, ἀλλὰ νίκα ἐν τῷ ἀγαθῷ τὸ κακόν",
+      "glQuote": "Do not be overcome by evil, but overcome evil with good",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase portrays love as a person who is being kind to other people. Alternate translation: \"People who love their neighbors do not harm them\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "ἡ ἀγάπη τῷ πλησίον κακὸν οὐκ ἐργάζεται",
+      "glQuote": "Love does not harm one's neighbor",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks of the \"tidings\" or message about Christ as if it were alive and able to move by itself. Alternate translation: \"Those whom no one had told the news about him\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "οἷς οὐκ ἀνηγγέλη περὶ αὐτοῦ",
+      "glQuote": "Those to whom no tidings of him came",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks of the Roman believers' obedience as if it were a person who could go to people. Alternate translation: \"For everyone has heard how you obey Jesus\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "For your example of obedience reaches everyone",
+      "occurrence": 0
+    }
+  }
+]

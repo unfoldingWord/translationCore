@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"brother\" means an Israelite in general, whether a male or female. Alternate translation: \"If a fellow Israelite\" or \"If a fellow Hebrew\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 15,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "glQuote": "If your brother",
+      "occurrence": 0
+    }
+  }
+]

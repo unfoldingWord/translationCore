@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By saying this, Jesus healed the man. (See: [[rc://en/ta/man/translate/figs-imperative]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "quote": "καθαρίσθητι",
+      "glQuote": "Be clean",
+      "occurrence": 1
+    }
+  }
+]

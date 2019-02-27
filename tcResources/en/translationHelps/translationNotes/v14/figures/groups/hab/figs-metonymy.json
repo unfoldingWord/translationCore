@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hand\" is a metonym for power, and the word \"evil\" is a metonym for people who do evil things. Alternate translation: \"safe from the power of evil\" or \"safe from people who will harm him\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "safe from the hand of evil",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"blood\" is a metonym for murder. It is implicit that the person builds a city by means of the goods that he stole from those whom he has killed. Alternate translation: \"the one who kills people and steals their goods in order to build a city\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "the one who builds a city with blood",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings for the word \"Lebanon\" are 1) it represents the forest of Lebanon. Alternate translation: \"The violence done to the trees of Lebanon\" or 2) it represents the people of Lebanon. Alternate translation: \"The violence done to the people of Lebanon\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "The violence done to Lebanon",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"land\" is a metonym for the people who live in the land. Alternate translation: \"everyone in the land\" or \"everyone on earth\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "all the land",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"praise\" is a metonym for God's qualities that cause people to praise him. Alternate translation: \"the earth was full of his glory\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "the earth was full of his praise",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the words \"the tents\" and \"the fabric of the tents\" are metonyms for the people who live in those tents. Alternate translation: \"I saw the people who live in tents in the land of Cushan in affliction, and the people who live in tents in the land of Midian trembling\" or 2) this is a metaphor in which Habakkuk speaks of the tents in Cushan and Midian being blown about by a storm as if the tents were people who were trembling in affliction. Alternate translation: \"I saw the tents of Cushan blown about like people in affliction, and the fabric of the tents in the land of Midian trembling as if they were people\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "I saw the tents of Cushan in affliction, and the fabric of the tents in the land of Midian trembling",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) killing the leader and destroying the people is spoken of as if someone were destroying a house. Here the leader is the head, that is, the roof of the house; and \"base\" and \"neck\" represent other parts of the house. Alternate translation: \"You destroy the roof of the wicked house and demolish the rest of the building\" or \"You kill the leader of the wicked nation and completely destroy the nation\" or 2) Killing the leader and removing honor and power from the people is spoken of as if someone were shattering a person's head and stripping off all of his clothes. Here the leader is the \"head,\" and \"house\" represents the people who are the body. Alternate translation: \"The wicked people and their leader are like a man whose head you crush and whose body you strip naked from foot to neck\" or \"You kill the leader of the wicked people and completely remove all of the people's power\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "You shatter the head of the house of the wicked to lay bare from the base up to the neck",
+      "occurrence": 0
+    }
+  }
+]

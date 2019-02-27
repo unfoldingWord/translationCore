@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"everything\" and \"will cut off man\" are deliberate exaggerations by Yahweh to express his anger at the people's sin. Yahweh will destroy neither sinners who repent nor all living things. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "I will utterly destroy everything from off the surface of the earth",
+      "occurrence": 0
+    }
+  }
+]

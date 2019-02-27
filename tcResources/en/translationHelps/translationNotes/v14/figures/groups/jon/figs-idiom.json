@@ -1,0 +1,164 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that means Yahweh spoke. \"Yahweh spoke his message\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "the word of Yahweh came",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a common expression for traveling to distant places. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Get up and go",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"ran away from Yahweh.\" \"got up\" is referring to Jonah leaving where he was. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "got up to run away from the presence of Yahweh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to doing some activity. For Jonah, the Captain is telling him to wake up and pray to his god for safe passage. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Get up!",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Pray to your god!\" \"Call\" refers to getting the attention of someone. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Call upon your god!",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that means Yahweh spoke. See how you translated this in [Jonah 1:1](../01/01.md). Alternate translation: \"Yahweh spoke his message\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "The word of Yahweh came",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to leaving the place one is at. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Get up",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Jonah left the beach.\" The words \"got up\" refer to preparing to go somewhere. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Jonah got up",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"a city of three days' journey.\" A person had to walk for three days to completely go through it. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "jon",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "one of three days' journey",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"amazed\" and \"astonished\" share similar meanings. Together they emphasize the strength of the emotion. Alternate translation: \"be very amazed\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "be amazed and astonished",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"terrifying\" and \"fearsome\" share similar meanings. Together they emphasize the fear that the Chaldeans instilled in other people. Alternate translation: \"They cause others to be greatly terrified\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "They are terrifying and fearsome",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"your horses\" and \"your victorious chariots\" both refer to the same thing. This speaks of Yahweh as if he were a warrior riding a horse-drawn chariot into battle. Alternate translation: \"you rode your horse-drawn chariots to victory\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "you rode upon your horses and your victorious chariots",
+      "occurrence": 0
+    }
+  }
+]

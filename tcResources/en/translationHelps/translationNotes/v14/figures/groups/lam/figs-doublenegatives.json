@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated without the double negatives. Also, here the Lord is referred to by his \"hand.\" Alternate translation: \"with his hand he has destroyed the wall\" or \"he has destroyed the wall\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]] and [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "has not withheld his hand from destroying",
+      "occurrence": 0
+    }
+  }
+]

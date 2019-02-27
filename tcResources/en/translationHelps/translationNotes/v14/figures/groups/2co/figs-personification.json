@@ -1,0 +1,75 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of not being guilty as if his conscience were a person that could speak. Alternate translation: \"We know by our conscience\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "Our conscience testifies",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the Old Testament law as a person who kills. Following that law leads to spiritual death. Alternate translation: \"the written law leads to death\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": "τὸ γράμμα ἀποκτέννει",
+      "glQuote": "the letter kills",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of death and life as if they are persons who can work. This means that they are always in danger of physical death so that the Corinthians can have spiritual life. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "death is at work in us, but life is at work in you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"joy\" and \"poverty\" as if they were living things that can produce generosity. Alternate translation: \"because of the people's great joy and extreme poverty, they have become very generous\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "the abundance of their joy and the extremity of their poverty have produced great riches of generosity",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James includes himself and other teachers, but not the readers, so the word \"we\" is exclusive. (See: [[rc://en/ta/man/translate/figs-exclusive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "we who teach ",
+      "occurrence": 0
+    }
+  }
+]

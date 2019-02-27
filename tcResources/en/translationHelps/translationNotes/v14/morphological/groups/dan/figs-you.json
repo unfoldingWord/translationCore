@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"your\" here refers to Daniel. The people are the Israelites and the holy city is Jerusalem. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 9,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "your people and your holy city",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"your\" is plural. It refers to Daniel and the rest of the people of Israel. Alternate translation: \"Michael, the prince of your people\" (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "Michael your prince",
+      "occurrence": 0
+    }
+  }
+]

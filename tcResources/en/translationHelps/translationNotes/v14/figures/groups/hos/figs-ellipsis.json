@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"would attack\" are left out because they are understood. This can be stated in active form. Alternate translation: \"like a bear would attack an animal that takes her cubs\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "as a bear that is robbed of her cubs",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"would devour them\" are left out because they are understood. Alternate translation: \"as a lion would devour them\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "as a lion",
+      "occurrence": 0
+    }
+  }
+]

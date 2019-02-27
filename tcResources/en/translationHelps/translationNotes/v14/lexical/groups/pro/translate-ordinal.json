@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the person who pleads his case before his opponent pleads his case. Alternate translation: \"The first person to plead his case\" or \"The person who pleads his case first\" (See: [[rc://en/ta/man/translate/translate-ordinal]] and [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "The first to plead his case",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"another time\" or \"again\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 19,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "a second time",
+      "occurrence": 0
+    }
+  }
+]

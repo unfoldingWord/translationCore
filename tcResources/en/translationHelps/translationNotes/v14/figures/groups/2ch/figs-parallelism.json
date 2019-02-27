@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two sentences mean the same thing. Together they emphasize how bad the people's actions were. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 6,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "We have acted perversely and sinned. We have behaved wickedly",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing. The phrase \"bowed down to them\" describes the posture that people used in worship. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "bowed down to them and worshiped them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing. The yoke metaphor emphasizes the fact that Solomon had treated them harshly. Alternate translation: \"make the hard work that your father gave us easier, and do not treat us as harshly as he did\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "make your father's hard work easier, and lighten the heavy yoke that he put on us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases share similar meanings. The words \"faces\" and \"backs\" represent the people who turned so that their faces were away from the temple and their backs were towards it. Alternate translation: \"turned away from the place where Yahweh lives\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 29,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "turned away their faces from the place where Yahweh lives, and turned their backs on it",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing and imply that God responded favorably to their prayer. Alternate translation: \"God responded favorably to their prayer, which he heard in heaven, the holy place where he lives\" or \"God, who lives in the holy heaven, heard their prayer\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 30,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "Their voice was heard ... their prayer went up to heaven, the holy place where God lives",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both statements mean basically the same thing. They are polite ways of saying he will die. Alternate translation: \"so I will allow you to die and be buried peacefully\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 34,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "see, I will gather you to your ancestors. You will be gathered to your grave in peace",
+      "occurrence": 0
+    }
+  }
+]

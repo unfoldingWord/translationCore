@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"it\" refers to the lessons taught by the father and mother in [Proverbs 6:20](../06/20.md). Alternate translation: \"It saves you from\" or \"It protects you from\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 6,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "It keeps you from",
+      "occurrence": 0
+    }
+  }
+]

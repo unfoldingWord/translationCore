@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a symbolic act to indicate to the unbelieving people that God had rejected them and would punish them. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "quote": "ἐκτιναξάμενοι τὸν κονιορτὸν τῶν ποδῶν ἐπ’ αὐτοὺς",
+      "glQuote": "shook off the dust from their feet against them",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces the men Baanah and Rechab into the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "glQuote": "Now Saul's son had two men",
+      "occurrence": 0
+    }
+  }
+]

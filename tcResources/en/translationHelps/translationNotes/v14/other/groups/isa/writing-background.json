@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main story line. This gives background information about Isaiah and Hezekiah. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 38,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  }
+]

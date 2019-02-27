@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this phrase both descriptions mean basically the same thing. Alternate translation: \"greatly terrible\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "glQuote": "great and very terrible",
+      "occurrence": 0
+    }
+  }
+]

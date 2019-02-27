@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 18,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you are many people",
+      "occurrence": 0
+    }
+  }
+]

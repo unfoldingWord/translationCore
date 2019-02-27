@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "David speaks directly to the \"Mountains of Gilboa\" as if they were listening to his song. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "Mountains of Gilboa",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "David continues to address this part of the song to the mountains of Gilboa as he started in [2 Samuel 1:21](../01/21.md). (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "on your high places",
+      "occurrence": 0
+    }
+  }
+]

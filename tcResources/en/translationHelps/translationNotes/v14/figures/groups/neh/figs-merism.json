@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By saying that he prays both during the day and during the night, Nehemiah emphasizes the frequency of his prayers. Alternate translation: \"all the time\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "day and night",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration that is meant to express the ongoing nature of his wrath. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "his wrath lasted forever",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration. It describes how tall and strong the Amorite people were and compares them to the tallest and strongest trees in that region. Alternate translation: \"who were tall and strong like great trees\" (See: [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "whose height was like the height of cedars; he was strong as the oaks",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh uses an exaggerated image of people fleeing to Sheol or heaven to try to escape being killed. Here \"Sheol\" and \"heaven\" are a merism that represents all places. Alternate translation: \"Even if they were to flee to Sheol or to heaven, they would not be able to escape me\" (See: [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "Though they dig into Sheol, there my hand will take them. Though they climb up to heaven, there I will bring them down",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh gives an exaggerated image of the people fleeing to the top of mount Carmel or to the bottom of the sea to escape being killed. Here \"top of Carmel\" and \"bottom of the sea\" are a merism that represents all places. Alternate translation: \"Even if they were to hide on the top of Carmel ... Even if they tried to go the bottom sea, thinking that I could not see them\" (See: [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "Though they hide on the top of Carmel ... Though they are hidden from my sight in the bottom of the sea",
+      "occurrence": 0
+    }
+  }
+]

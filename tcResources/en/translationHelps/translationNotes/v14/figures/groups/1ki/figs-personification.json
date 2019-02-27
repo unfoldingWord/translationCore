@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The fire is compared to a thirsty person drinking water. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 18,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "licked up",
+      "occurrence": 0
+    }
+  }
+]

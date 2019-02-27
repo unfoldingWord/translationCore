@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase means \"they cast lots to decide who would get the valuable things that they took from Jerusalem.\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "cast lots for Jerusalem",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"it was as though you were one of these strangers and foreigners.\" This implies that they did not help the Israelites. This can be made explicit. Alternate translation: \"you were like one of the enemies and did not help Israel\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "you were like one of them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are the people of Jerusalem that are still alive after Yahweh has finished punishing the city. This can be made explicit. Alternate translation: \"some of the Israelites who escape the punishment of Yahweh\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "those that escape",
+      "occurrence": 0
+    }
+  }
+]

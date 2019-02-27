@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"terrors\" is a metonym for evil people who frighten others by attacking them. Alternate translation: \"evil people who attack others at night\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "sng",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "terrors of the night",
+      "occurrence": 0
+    }
+  }
+]

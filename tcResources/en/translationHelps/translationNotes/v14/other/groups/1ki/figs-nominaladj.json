@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"wealthy\" refers to wealthy people. Alternate translation: \"the wealthy people who sat with Naboth\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the wealthy who sat with him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"wealthy\" refers to wealthy people. Alternate translation: \"the wealthy people who lived in Naboth's city\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the wealthy who lived in Naboth's city",
+      "occurrence": 0
+    }
+  }
+]

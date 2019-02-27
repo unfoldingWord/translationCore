@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This simile emphasizes the great number of Israelites. Alternate translation: \"countless people\" or \"very many people\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "a people as numerous as the dust of the earth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people of the army are compared to sheep that have no one to lead them because their shepherd, the king, has died. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "like sheep who have no shepherd",
+      "occurrence": 0
+    }
+  }
+]

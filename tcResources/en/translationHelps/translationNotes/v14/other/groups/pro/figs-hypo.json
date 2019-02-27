@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the speaker gives an example of what sinners may try to entice someone to do. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "If they say",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This describes a hypothetical situation that has not happened but is possible if the writer becomes rich. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 30,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "if I have too much, I might deny you and say",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This describes a hypothetical situation that has not happened but is possible if the writer becomes poor. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 30,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "if I become poor, I might steal and profane",
+      "occurrence": 0
+    }
+  }
+]

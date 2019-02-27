@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be written in modern measurements. Alternate translation: \"33 kilograms of silver\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 5,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "a talent of silver",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be written in modern measurements. This talents are of silver. Alternate translation: \"two talents of silver\" or \"66 kilograms of silver\" (See: [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 5,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "two talents",
+      "occurrence": 0
+    }
+  }
+]

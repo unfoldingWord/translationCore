@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh says this to mock the Israelites. He knows these gods cannot help them. Alternate translation: \"These idols are not even able to get up and help or to protect you\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 32,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "glQuote": "Let them rise up and help you; let them be your protection",
+      "occurrence": 0
+    }
+  }
+]

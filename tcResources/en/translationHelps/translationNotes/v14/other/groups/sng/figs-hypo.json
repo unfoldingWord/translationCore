@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is something that could possibly happen. Alternate translation: \"Even if a man ... he would be utterly despised\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "sng",
+        "chapter": 8,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "If a man gave ... the offer would utterly be despised",
+      "occurrence": 0
+    }
+  }
+]

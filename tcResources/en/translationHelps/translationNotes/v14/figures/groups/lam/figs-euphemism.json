@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"sword\" refers to their enemies. This is a euphemism that means that they were murdered by their enemies. Alternate translation: \"My young women and my young men have been murdered by their enemies\" or \"My enemies have murdered my young women and my young men\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "My young women and my young men have fallen by the sword",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to them being dead. Alternate translation: \"they have died\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "they are no more",
+      "occurrence": 0
+    }
+  }
+]

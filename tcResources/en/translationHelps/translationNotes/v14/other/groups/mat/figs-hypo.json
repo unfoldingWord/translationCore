@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is describing a hypothetical situation that could have happened in the past, but it did not. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "If the mighty deeds ... in sackcloth and ashes",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is describing a hypothetical situation that could have happened in the past, but it did not. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "glQuote": "For if in Sodom ... it would still have remained until today",
+      "occurrence": 0
+    }
+  }
+]

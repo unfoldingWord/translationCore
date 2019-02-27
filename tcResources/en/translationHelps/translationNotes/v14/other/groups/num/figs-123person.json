@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Balaam refers to himself as \"He.\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 24,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "He speaks ... He sees ... he bows",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A singular pronoun is used because the Amalekites are spoken of as a single person. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 24,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "his final end",
+      "occurrence": 0
+    }
+  }
+]

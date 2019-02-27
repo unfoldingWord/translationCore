@@ -1,0 +1,686 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"father of\" refers to Jeiel's status as the leading person in the city of Gibeon. Alternate translation: \"Jeiel, the leader of Gibeon, lived in Gibeon. His wife's name was Maakah\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "The father of Gibeon, Jeiel, whose wife's name was Maakah, lived in Gibeon",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"turned over the kingdom\" is an idiom that means to give someone authority over a kingdom. Alternate translation: \"made David, son of Jesse, king\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 10,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "turned over the kingdom to David son of Jesse",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This idiom means that they are relatives. Alternate translation: \"we are your relatives\" or \"we have the same ancestors as you\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "we are your flesh and bone",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"took\" is an idiom that means \"captured\" or \"conquered.\" Since David led the army, his name here is a synecdoche for the whole army who attacked the city. Alternate translation: \"David captured the stronghold of Zion\" or \"David and the Israelite army captured the stronghold of Zion\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 11,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "David took the stronghold of Zion",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Benaiah went down to the Egyptian.\" This idiom means that he met him in battle. Alternate translation: \"he attacked him\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "he went down to him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the phrase \"like the army of God\" means \"like an army that God assembled\" or 2) the word \"God\" is used as an idiom that refers to the great size of the army. Alternate translation: \"a very large army\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 12,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "a great army, like the army of God",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This idiom means that this action is something that Yahweh approves. Alternate translation: \"if this is something that Yahweh our God approves\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "if this comes from Yahweh our God",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Possible meanings are 1) the idiom \"called by ... name\" refers to a person owning the thing. Alternate translation: \"which belongs to Yahweh\" or 2) the ark has Yahweh's name written on it. Alternate translation: \"which bears Yahweh's name\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "which is called by Yahweh's name",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The idiom \"exalted on high\" means that Yahweh had given great honor to David's kingdom. This can be stated in active form. Alternate translation: \"Yahweh had exalted David's kingdom on high\" or \"Yahweh had given great honor to David's kingdom\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 14,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "his kingdom was exalted on high",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This idiom means that Yahweh will enable David to have victory over them. Alternate translation: \"give you victory over them\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "give them to you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The idiom to \"break out against\" means to act violently toward someone. Alternate translation: \"acted violently toward us\" or \"attacked us\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "broke out against us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This idiom means to sing loudly. Alternate translation: \"singing loudly\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "lifting up their voices",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To \"seek Yahweh's strength\" means to ask him to strengthen you. Alternate translation: \"Seek Yahweh and ask him to give you his strength\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Seek Yahweh and his strength",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means to remember and think about his covenant. Alternate translation: \"Remember his covenant\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Keep his covenant in mind",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"calls to mind\" means to remember something. Alternate translation: \"He remembers\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 16,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "He calls to mind",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"with you\" means God is helping and blessing David. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 17,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "God is with you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The idiom \"the word of God came to\" is used to introduce a special message from God. Alternate translation: \"God gave a message to Nathan. He said,\" or \"God spoke this message to Nathan:\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 17,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "the word of God came to Nathan, saying,",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"with you\" means that Yahweh has helped and blessed David. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 17,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "I have been with you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To be in authority is referred to as being over someone. Alternate translation: \"to rule my people Israel\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 17,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "to be over my people Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Something that is not important is described as being small. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 17,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "this was a small thing",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this idiom, shame is described as deep to show that it has greatly affected them. Alternate translation: \"very ashamed\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "deeply ashamed",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Forgiveness is here spoken of as having guilt taken away. Alternate translation: \"forgive me\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "take away your servant's guilt",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that means to stop doing something. Alternate translation: \"do not kill attack the people of Jerusalem\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 21,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "draw back your hand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that implies that Yahweh will help Solomon be successful in the project. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 22,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "may Yahweh be with you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that implies that Yahweh will help Israel to prosper. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 22,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Yahweh your God is with you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"were in charge of\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 26,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "were over",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"In charge of the division\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 27,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Over the division",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"in charge of the 30 men\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 27,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "over the thirty",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"was in charge of\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 27,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "was over",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"In charge of the\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 27,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Over the",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"In charge of the\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 27,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Over the",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"over\" is used here as an idiom. Alternate translation: \"the managers in charge of\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 28,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "the managers over",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"stood up\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 28,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "rose to his feet",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"in the sight of\" means that they are all present and listening. Alternate translation: \"in the hearing of\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 28,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "in the sight of",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"I wrote all of this down\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 28,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "I have put all this in writing",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"will help you\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 28,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "is with you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"over\" is used as an idiom. Alternate translation: \"the officials in charge of the king's work\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 29,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "the officials over the king's work",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"in honor of Yahweh\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 29,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "before Yahweh",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to people from various nations, not the entire population of those nations. Alternate translation: \"people from the nations\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "the nations",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to food in general. Alternate translation: \"food\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "bread",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here all of the people of Jerusalem who were taken into captivity are represented by the \"virgins\" and the \"vigorous men\" who were taken. Alternate translation: \"Many of my people, including my virgins and vigorous men, have gone into captivity\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "My virgins and my vigorous men have gone into captivity",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the woman, representing Jerusalem, refers to her \"heart\" to emphasize her feelings. Alternate translation: \"my heart is broken\" or \"I am extremely sad\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "my heart is disturbed within me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"heart\" represents the whole person. Alternate translation: \"I am faint\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "my heart is faint",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"her\" may refer either to the temple or to Jersualem. Possible translations are 1) \"the walls of the temple\" or 2) \"the walls of Jerusalem's palaces.\" The word \"walls\" is a synecdoche for the whole building, and the building is a synecdoche for all of Jerusalem.  (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "the walls of her palaces",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heart\" represents the whole person emphasizing one's innermost being. Possible meanings of who cried out are 1) the people of Jerusalem. Alternate translation: \"The people of Jerusalem shouted to the Lord from their innermost being\" or 2) the walls are being personified. Alternate translation: \"You walls, cry out to the Lord from your innermost being\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "Their heart cried out to the Lord",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the women are represented by their \"hands.\" Because they were so hungry, women who had been compassionate in the past were no longer compassionate toward their children; instead they boiled them for food. Alternate translation: \"Compassionate women\" or \"Women who had been compassionate in the past\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "The hands of compassionate women",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"her foundations\" represents the whole city, even the part of the city that would be ruined last. Alternate translation: \"that burned down the city, even its foundations\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "that consumed her foundations",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heart\" refers to the whole person and emphasizes their emotions. Alternate translation: \"Our joy\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "The joy of our heart",
+      "occurrence": 0
+    }
+  }
+]

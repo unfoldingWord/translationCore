@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This double negative can be stated in positive form. Alternate translation: \"Yahweh can save\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "nothing can stop Yahweh from saving",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"our\" and \"us\" refer to all believers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "δὲ ὁ Κύριος ἡμῶν ... ὁ ἀγαπήσας ἡμᾶς καὶ δοὺς",
+      "glQuote": "may our Lord ... who loved us and gave us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"our\" refers to all believers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "τοῦ Κυρίου ἡμῶν",
+      "glQuote": "our Lord",
+      "occurrence": 1
+    }
+  }
+]

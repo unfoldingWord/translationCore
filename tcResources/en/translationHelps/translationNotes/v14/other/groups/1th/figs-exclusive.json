@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this letter the words \"we\" and \"us\" refer to Paul, Silvanus, and Timothy, unless otherwise noted. Also, the word \"you\" is plural and refers to the believers at the church of Thessalonica. (See: [[rc://en/ta/man/translate/figs-exclusive]] and [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"we\" refers to Paul, Silvanus, and Timothy but not the Thessalonian believers. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "εἰδότες",
+      "glQuote": "we know",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"our\" refers to Paul, Silvanus, and Timothy but not the Thessalonian believers. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "τὴν εἴσοδον ἡμῶν",
+      "glQuote": "our coming",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"us\" refers to Paul and Silvanus. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "ἐλθόντος ... πρὸς ἡμᾶς",
+      "glQuote": "came to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"our\" refers to Paul, Silvanus, and Timothy but not the Thessalonian believers. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "κατευθύναι τὴν ὁδὸν ἡμῶν πρὸς ὑμᾶς",
+      "glQuote": "direct our way to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this chapter the words \"we\" and \"us\" refer to Paul, Silvanus, and Timothy, unless otherwise noted. Also, the word \"you\" is plural and refers to the believers at the church of Thessalonica. (See: [[rc://en/ta/man/translate/figs-exclusive]] and [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a reference to death as the ultimate form of judgment. (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "κριθῶσι ... κατὰ ἀνθρώπους σαρκὶ",
+      "glQuote": "judged in the flesh as humans",
+      "occurrence": 1
+    }
+  }
+]

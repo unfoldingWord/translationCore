@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Verses 28 and 29 express the consequences if Job does what he says in verse 27. This can be expressed by adding the word \"then.\" Alternate translation: \"Then I would be afraid of all my sorrows\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 9,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "I would be afraid of all my sorrows",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The relationship between these phrases can be made clear with the words \"even though.\" Alternate translation: \"I am something for my neighbor to laugh at—even though I am one who called on God and he answered me!\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "I am something for my neighbor to laugh at—I, one who called on God and who was answered by him!",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The relationship between these phrases can be made clear with the words \"even though.\" Alternate translation: \"Even though I am a just and blameless man, people now laugh at me\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "I, a just and blameless man—I am now something to laugh at",
+      "occurrence": 0
+    }
+  }
+]

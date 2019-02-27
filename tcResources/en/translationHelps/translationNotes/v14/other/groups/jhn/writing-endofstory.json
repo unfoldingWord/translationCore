@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Verses 21 and 22 are not part of the main story line, but instead they comment on the story and tell about something that happens later. (See: [[rc://en/ta/man/translate/writing-endofstory]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "As the story is nearing the end, the author comments about the many things Jesus did. (See: [[rc://en/ta/man/translate/writing-endofstory]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the Gospel of John. Here the author, the Apostle John, gives a closing comment about himself and what he has written in this book. (See: [[rc://en/ta/man/translate/writing-endofstory]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

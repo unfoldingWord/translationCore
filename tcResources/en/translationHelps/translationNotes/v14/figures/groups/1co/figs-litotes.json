@@ -1,0 +1,57 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"you have every spiritual gift\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "you lack no spiritual gift",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"displeased\" or \"angry\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐκ ... ηὐδόκησεν",
+      "glQuote": "not well pleased",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is emphasizing through litotes that God worked through Paul. Alternate translation: \"because he was kind to me, I was able to do much good work\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "his grace in me was not in vain",
+      "occurrence": 0
+    }
+  }
+]

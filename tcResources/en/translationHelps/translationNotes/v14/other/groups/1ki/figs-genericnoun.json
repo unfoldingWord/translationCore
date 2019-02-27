@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means sins in general not a specific sin. Alternate translation: \"of my sins\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 17,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "of my sin",
+      "occurrence": 0
+    }
+  }
+]

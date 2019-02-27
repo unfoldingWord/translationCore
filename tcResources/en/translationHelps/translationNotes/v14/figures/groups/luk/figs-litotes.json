@@ -1,0 +1,39 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The negative phrase \"no end\" emphasizes that it continues forever. It could also be stated with a positive phrase. Alternate translation: \"his kingdom will never end\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "τῆς βασιλείας αὐτοῦ, οὐκ ἔσται τέλος",
+      "glQuote": "there will be no end to his kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"without failing\" emphasizes that this should always be done. This can be stated in positive form. Alternate translation: \"and to always do the other good things as well\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "without failing to do the other things also",
+      "occurrence": 0
+    }
+  }
+]

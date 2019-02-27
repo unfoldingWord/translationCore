@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh exaggerates to emphasize how rich Tyre was. Alternate translation: \"accumulated silver and gold as much as soil in the streets\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "heaped up silver like dust and refined gold like mud in the streets",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"every nation\" is a generalization that means \"many nations.\" Alternate translation: \"I will cause many nations to attack Jerusalem\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 14,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "I will gather every nation against Jerusalem for battle",
+      "occurrence": 0
+    }
+  }
+]

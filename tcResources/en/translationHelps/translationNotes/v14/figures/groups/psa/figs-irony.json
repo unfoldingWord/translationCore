@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people are saying this to mock the writer. They do not really believe Yahweh will rescue him. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 22,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "glQuote": "He trusts in Yahweh ... delights in him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "David may have been using irony when he called Doeg this. Alternate translation: \"you, who think you are so mighty\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 52,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "glQuote": "you mighty man",
+      "occurrence": 0
+    }
+  }
+]

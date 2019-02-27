@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This nominal adjective can be translated as a noun phrase. Alternate translation: \"people who lived long ago\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 24,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "ancients",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nominal adjective \"uncircumcised\" can be translated as an adjective. Not being circumcised is a metonym for being foreigners. Alternate translation: \"these men who have not been circumcised\" or \"these non-Israelite men\" (See: [[rc://en/ta/man/translate/figs-nominaladj]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 31,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "these uncircumcised",
+      "occurrence": 0
+    }
+  }
+]

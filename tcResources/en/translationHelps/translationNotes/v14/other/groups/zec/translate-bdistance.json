@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A cubit is 46 centimeters. Alternate translation: \"9.2 meters long and 4.6 meters wide\" (See: [[rc://en/ta/man/translate/translate-bdistance]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "glQuote": "twenty cubits long and ten cubits wide",
+      "occurrence": 0
+    }
+  }
+]

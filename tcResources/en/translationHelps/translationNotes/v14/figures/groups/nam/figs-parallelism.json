@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Nahum describes the destruction of Nineveh in poetry. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two rhetorical questions mean basically the same thing. They can be translated with statements. Alternate translation: \"No one can stand before his wrath! No one can resist the fierceness of his anger!\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "Who can stand before his wrath? Who can resist the fierceness of his anger?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases are saying the same thing in different ways. The verb may be supplied for the second phrase. Alternate translation: \"filled his cave with victims, and filled his dens with torn carcasses\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "filled his cave with victims, his dens with torn carcasses",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing and indicate that there were so many dead bodies that the attackers piled them in heaps. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "heaps of corpses, great piles of bodies",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two lines share similar meanings. Nahum speaks of the leaders of Assyria as if they were shepherd who are to care for their sheep. He speaks of the shepherds and rulers dying as if they had fallen asleep. Alternate translation: \"your leaders who are like shepherds are dead; your rulers are all dead\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "your shepherds are asleep; your rulers are lying down resting",
+      "occurrence": 0
+    }
+  }
+]

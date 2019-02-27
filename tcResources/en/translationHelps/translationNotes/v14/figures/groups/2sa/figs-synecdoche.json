@@ -1,0 +1,902 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your own mouth\" refers to the man himself. Alternate translation: \"you have testified against yourself\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "your own mouth has testified against you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hands\" refers to the people of Jabesh Gilead. Alternate translation: \"be strong\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "let your hands be strong",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Israel\" refers to the Israelite soldiers. Alternate translation: \"did not continue to chase the Israelite soldiers\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "did not pursue Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "David is stating the condition under which he will meet Abner. Here \"face\" refers to David himself. Alternate translation: \"you cannot see me unless you bring Michal to me first\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "you cannot see my face unless you first bring Michal",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this phrase \"his hands\" represents Ishbosheth himself. Alternate translation: \"Ishbosheth became weak\" or \"Ishbosheth lost all strength\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "his hands became weak",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"life\" refers to David himself. This means that Yahweh has kept David alive. Alternate translation: \"who rescued me\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "who delivered my life",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"eyes of the slave girls\" represents the slave girls. Alternate translation: \"in front of the slave girls\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "before the eyes of the slave girls",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here David represents his soldiers. Alternate translation: \"David and his soldiers attacked\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "David attacked",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" refers to David who represents his soldiers. Alternate translation: \"Then they defeated\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "Then he defeated",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here both \"David\" and \"Hadadezer\" represent their armies. Alternate translation: \"David and his army then defeated the army of Hadadezer\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "David then defeated Hadadezer",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here David represents his soldiers. Alternate translation: \"David and his soldiers killed\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "David killed",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"David\" is a metonym for his army. Alternate translation: \"David's army had defeated\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 8,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "David had defeated",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"me\" refers to Joab. Joab and Abishai represents themselves and their armies. Alternate translation: \"for us, then you, Abishai, and your army must rescue us\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "for me, then you, Abishai, must rescue me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Abishai represents himself and his soldiers. Alternate translation: \"from Abishai and his soldiers\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 10,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "from Abishai",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here David represents himself and his soldiers. Alternate translation: \"against David and his soldiers and fought them\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "against David and fought him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"David\" is a synecdoche for himself and his soldiers. Alternate translation: \"David and his soldiers killed\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 10,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "David killed",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to their armies. Alternate translation: \"the armies of Israel and Judah\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 11,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "Israel and Judah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"the hand of Uriah\" refers to Uriah himself. Alternate translation: \"sent Uriah himself to deliver it to him\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "sent it by the hand of Uriah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here David is referred to by his eyes to emphasize what he would see. Alternate translation: \"While you are watching\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "Before your own eyes",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The servants are referred to here by their voices to emphasize that they were speaking. Alternate translation: \"he did not listen to us\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "he did not listen to our voice",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the author says \"Joab\" but he is referring to Joab and his soldiers who fought with him. Alternate translation: \"Joab and his soldiers fought ... they captured\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 12,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "Joab fought ... he captured",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Joab speaks of himself when he is actually referring to himself and his soldiers. Alternate translation: \"My soldiers and I have fought ... my soldier and I have taken\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "I have fought ... I have taken",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Joab speaks of himself when he is actually referring to himself and his soldiers. Alternate translation: \"if my soldiers and I take\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "if I take",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the author speaks of David when he is actually referring to David and his soldiers. Alternate translation: \"David and his soldiers fought\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 12,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "he fought",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This does not include Absalom and Amnon who is dead. It includes the rest of the sons that the king allowed to go to the celebration. Alternate translation: \"the rest of the king's sons\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 13,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "all the king's sons",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here David is referred to by his mind to emphasize his thoughts. Alternate translation: \"King David longed\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 13,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "The mind of King David longed",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here speaking threats is spoken of as speaking in general. Alternate translation: \"threatens you\" or \"speaks threats to you\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "says anything to you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"face\" refers to the king himself. Alternate translation: \"but he may not see me ... the king\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 14,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "but he may not see my face ... the king's face",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the king's face\" refers to the king himself. Alternate translation: \"the king\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 14,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "the king's face",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"king's face\" refers to the king himself. Alternate translation: \"the king\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 14,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "the king's face",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the men are referred to by their \"hearts\" to emphasize their loyalty to Absalom. Alternate translation: \"The men of Israel are loyal to\" or \"The men of Israel are following after\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "The hearts of the men of Israel are following after",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here David speaks of Absalom and the men with him as \"Absalom\" himself because the men are following Absalom's authority. Alternate translation: \"escape from Absalom and his men ... he and his men will quickly ... and they will bring\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 15,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "escape from Absalom ... he will quickly ... and he will bring",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"their hand\" refers to the sons and means that they were to serve as messengers. Alternate translation: \"their sons to tell me\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 15,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "by their hand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the people who followed Absalom are referred to by their hands. The news will strengthen the peoples' loyalty to Absalom and encourage them. This can be stated clearly. Alternate translation: \"The news of this will strengthen the loyalty of all who follow you\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 16,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "Then the hands of all who are with you will be strong",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here God's mouth represents himself and emphasizes his speech. Alternate translation: \"as if God had said it with his own mouth\" or \"as if a man heard it spoken by God himself\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "as if a man heard from the mouth of God himself",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the soldiers are refers to by their \"hearts.\" Also, their strong bravery is compared to that of a lion's. Alternate translation: \"who are as brave as lions\" or \"who are very brave\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 17,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "whose hearts are like the heart of a lion",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Israel's soldiers, not to all of Israel. Alternate translation: \"then all of our soldiers\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "then all Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Israel\" refers to their soldiers, not all of the Israelites. Alternate translation: \"against the Israelite soldiers\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 18,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "against Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Absalom's heart refers to his chest or upper body. Alternate translation: \"chest\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 18,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "heart of Absalom",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to both the armor he would wear to protect himself and to his weapons. Alternate translation: \"armor and weapons\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 18,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "armor",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Israel\" refers to the Israelite army. Alternate translation: \"returned from pursuing the Israelite army\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "returned from pursuing Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"all Israel\" refers to the Israelite soldiers. The word \"fled\" means \"ran away.\" Alternate translation: \"while all the Israelite soldiers ran away\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "while all Israel fled",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the soldiers are referred to by their face to emphasize how they would have hid their faces because of their shame\" Alternate translation: \"You have caused all your soldiers to hide their faces in shame today\" or \"You have caused all of your soldiers to be ashamed today\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "You have shamed the faces of all your soldiers today",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Israel\" refers to the Israelite soldiers who followed Absalom. Alternate translation: \"And every Israelite soldier fled to his own home\" or \"And all of the Israelite soldiers fled to their homes\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 19,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "So Israel fled, every man to his home",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Sheba\" refers to both him and his army. Alternate translation: \"Sheba and his army\" or \"Sheba and his men\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 20,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "Sheba passed through",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"I\" refers to both Joab and his soldiers. Alternate translation: \"We will withdraw from the city\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 20,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "I will withdraw from the city",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"face\" is a synecdoche for Yahweh's presence. This means David prayed to Yahweh for an answer about the famine. (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 21,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "sought the face of Yahweh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these refer to David. (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 22,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "my hands ... and my arms",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh has put David in a safe place where his enemies cannot trap him. Here he refers to himself by his \"feet\" to emphasize his ability to stand securely. (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 22,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "You have made a wide place for my feet beneath me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase represents the king's command to them. Alternate translation: \"what the king had commanded\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 24,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "the king's word",
+      "occurrence": 0
+    }
+  }
+]

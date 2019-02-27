@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"who bore him\" describes \"his father and mother\" in order to express surprise that someone's own parents would treat him in this way. Alternate translation: \"his own father and mother\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "his father and mother who bore him",
+      "occurrence": 0
+    }
+  }
+]

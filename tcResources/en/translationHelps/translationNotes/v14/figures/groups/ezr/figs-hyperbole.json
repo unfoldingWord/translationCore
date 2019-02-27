@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"all\" is an exaggeration, as there were kingdoms over which Cyrus did not rule. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "ezr",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "all the kingdoms of the earth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"nothing\" is an exaggeration to make the king think that he will be losing much tax money if the Judeans rebel. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "ezr",
+        "chapter": 4,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "there will be nothing remaining for you",
+      "occurrence": 0
+    }
+  }
+]

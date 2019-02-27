@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"because\" can be used to make clear that God's wrath causes human life to end. Alternate translation: \"Our lives come to an end because of your wrath\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 90,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "Our life passes away under your wrath",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) this further describes those who honor God or 2) this indicates the purpose for those who honor God to return to the writer. Alternate translation: \"so that they may learn your covenant decrees\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 119,
+        "verse": 79
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "those who know your covenant decrees",
+      "occurrence": 0
+    }
+  }
+]

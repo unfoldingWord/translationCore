@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"horn\" and \"trumpet\" mean the same thing. This command is given to the people of Gibeah and Ramah to emphasize that the enemy is coming. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "Blow the horn in Gibeah, and the trumpet in Ramah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"sharp briers\" and \"thorns\" mean the same thing. To have briers and thorns growing represents a land that has become desolate and like a wilderness. (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 9,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "sharp briers will possess them, and thorns will fill their tents",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"prophet\" and \"inspired man\" both mean a person who claims to receive messages from God. It is implied that these people are false prophets and only thought they received messages from God. (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "The prophet is a fool, and the inspired man is insane",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"great iniquity\" and \"great hostility\" share similar meanings. The iniquity of the people manifested itself in hostility towards Yahweh and his prophets. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "because of your great iniquity and great hostility",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"And the people of Israel will be very ashamed because they had worshiped idols\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 10,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "Ephraim will be disgraced, and Israel will be ashamed of its idol",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Judah\" and \"Jacob\" both represent the people of Judah. Alternate translation: \"against the people of Judah ... punish them for what they have done ... repay them for their deeds\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "against Judah ... punish Jacob for what he has done ... repay him for his deeds",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing and emphasize that the people of Ephraim consider themselves to be blameless. Learning that someone has sinned is spoken of as finding sin in that person. Alternate translation: \"they will not discover that I have done anything sinful\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "they will not find any iniquity in me, anything that would be sin",
+      "occurrence": 0
+    }
+  }
+]

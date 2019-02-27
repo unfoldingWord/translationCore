@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Beating one's breast was a gesture used to express great mourning. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "glQuote": "beating on their breasts",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"disgusting filth\" refer to all kinds of garbage. Throwing garbage at a person was a sign of strong contempt. Alternate translation: \"I will show my contempt for you, like a person would throw disgusting filth at another\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "glQuote": "I will throw disgusting filth on you",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two clauses mean nearly the same thing, said twice for emphasis, first in the negative and then in the positive. Some languages may indicate emphasis in a different way. Alternate translation: God's real reason for sending his Son into the world was to save it\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": "οὐ γὰρ ἀπέστειλεν ὁ Θεὸς τὸν Υἱὸν εἰς τὸν κόσμον, ἵνα κρίνῃ τὸν κόσμον, ἀλλ’ ἵνα σωθῇ ὁ κόσμος δι’ αὐτοῦ",
+      "glQuote": "For God did not send the Son into the world in order to condemn the world, but in order to save the world through him",
+      "occurrence": 1
+    }
+  }
+]

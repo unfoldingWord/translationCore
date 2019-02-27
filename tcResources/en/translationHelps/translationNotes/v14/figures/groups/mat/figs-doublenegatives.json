@@ -1,0 +1,149 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in a positive form. Alternate translation: \"that your righteousness must exceed ... Pharisees in order to enter\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "that unless your righteousness exceeds ... Pharisees, you will in no way enter",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in a positive form. Alternate translation: \"your Father knows when even one sparrow dies and falls to the ground\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "ἓν ἐξ αὐτῶν οὐ πεσεῖται ἐπὶ τὴν γῆν, ἄνευ τοῦ Πατρὸς ὑμῶν",
+      "glQuote": "not one of them falls to the ground without your Father's knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in a positive form. \"This man is only able to cast out the demon because he is a servant of Beelzebul\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "This man does not cast out demons except by Beelzebul",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"he taught them nothing except by parables.\" The double negative can be expressed in a positive way. Alternate translation: \"everything he taught them he said in parables\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "χωρὶς παραβολῆς οὐδὲν ἐλάλει αὐτοῖς",
+      "glQuote": "he said nothing to them without a parable",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"A prophet receives honor everywhere\" or \"People everywhere honor a prophet\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 57
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "οὐκ ἔστιν προφήτης ἄτιμος",
+      "glQuote": "A prophet is not without honor",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"you must change ... children in order to enter\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "unless you turn ... children, you will in no way enter",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"while also obeying the less important laws\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "and not to have left the other undone",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive and active form. Alternate translation: \"If God does not shorten the time of suffering, everyone will die\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "Unless those days are shortened, no flesh would be saved",
+      "occurrence": 0
+    }
+  }
+]

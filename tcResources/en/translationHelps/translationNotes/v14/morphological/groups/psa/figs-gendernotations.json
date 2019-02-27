@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to humans in general. Alternate translation: \"humans\" or \"people\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 89,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "glQuote": "the children of mankind",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"man\" means people in general. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 90,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "glQuote": "return man",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is over two kilograms. (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "two hundred shekels",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is over 500 grams. (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "fifty shekels",
+      "occurrence": 0
+    }
+  }
+]

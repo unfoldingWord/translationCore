@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in modern units. Alternate translation: \"330 liters of barley\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "hos",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "a homer and a lethek of barley",
+      "occurrence": 0
+    }
+  }
+]

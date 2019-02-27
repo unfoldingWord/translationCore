@@ -1,0 +1,1003 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses the word \"name\" as a metonym to refer to Jesus. Alternate translation: \"in order to teach all nations to obey because of their faith in him\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "εἰς ὑπακοὴν πίστεως ἐν πᾶσιν τοῖς ἔθνεσιν ὑπὲρ τοῦ ὀνόματος αὐτοῦ",
+      "glQuote": "for obedience of faith among all the nations, for the sake of his name",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"wrath\" is a metonym that refers to God's severe punishment of wicked people. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὀργὴ",
+      "glQuote": "wrath",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" is a metonym for the person's thoughts or inner person. The phrase \"written in their hearts\" is a metaphor for knowing something in their mind. You can translate this in an active form. Alternate translation: \"that God has written on their hearts what the law requires them to do\" or \"that they know the actions that God wants them to do according to his law\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐνδείκνυνται τὸ ἔργον τοῦ νόμου, γραπτὸν ἐν ταῖς καρδίαις αὐτῶν",
+      "glQuote": "that the actions required by the law are written in their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"name\" is a metonym that refers to the entirety of God, not just his name. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὄνομα τοῦ Θεοῦ",
+      "glQuote": "name of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for the inner person. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "καρδίας",
+      "glQuote": "of the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"wrath\" is a metonym for punishment. Alternate translation: \"to bring his punishment upon us\" or \"to punish us\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "to bring his wrath upon us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"world\" is a metonym for the people who live in the world. Alternate translation: \"anyone in the world\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὸν κόσμον",
+      "glQuote": "the world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"throat\" is a metonym for everything that people say that is unrighteous and disgusting. Here \"open grave\" is a metaphor that refers to the stench of the evil words of the people. (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τάφος ἀνεῳγμένος ὁ λάρυγξ αὐτῶν",
+      "glQuote": "Their throat is an open grave",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"tongues\" is a metonym for the false words that people speak. Alternate translation: \"People speak lies\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ταῖς γλώσσαις αὐτῶν ἐδολιοῦσαν",
+      "glQuote": "Their tongues have deceived",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"mouths\" is a metonym that represents the evil words of the people. The word \"full\" exaggerates how often people speak bitterly and curse. Alternate translation: \"They often speak curses and cruel words\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὧν τὸ στόμα ἀρᾶς καὶ πικρίας γέμει",
+      "glQuote": "Their mouths are full of cursing and bitterness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"destruction and suffering\" are metonyms that represent the harm that these people cause others to suffer. Alternate translation: \"They try to destroy others and cause them to suffer\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "σύντριμμα καὶ ταλαιπωρία ἐν ταῖς ὁδοῖς αὐτῶν",
+      "glQuote": "Destruction and suffering are in their paths",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"glory of God\" is a metonym that refers to the image of God and his nature. Alternate translation: \"have failed to be like God\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὑστεροῦνται τῆς δόξης τοῦ Θεοῦ",
+      "glQuote": "come short of the glory of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym for the death of Jesus as a sacrifice for sins. Alternate translation: \"in his death as a sacrifice for sins\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐν τῷ αὐτοῦ αἵματι",
+      "glQuote": "in his blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"circumcision\" is a metonym that refers to Jews and \"uncircumcision\" is a metonym that refers to non-Jews. Alternate translation: \"God will make both Jews and non-Jews right with himself through their faith in Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὃς δικαιώσει περιτομὴν ἐκ πίστεως, καὶ ἀκροβυστίαν διὰ τῆς πίστεως",
+      "glQuote": "he will justify the circumcision by faith, and the uncircumcision through faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym that refers to the Jewish people. Alternate translation: \"the Jews\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὴν περιτομὴν",
+      "glQuote": "those of the circumcision",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym that refers to the people who are not Jews. Alternate translation: \"the Gentiles\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὴν ... ἀκροβυστίαν",
+      "glQuote": "those of the uncircumcision",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" represents a person's thoughts, feelings, or inner person. The phrase \"the love of God has been poured into our hearts\" is a metaphor for God showing love to his people. This can be stated in active form. Alternate translation: \"because he has loved us greatly\" or \"because God has shown us how much he loves us\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὅτι ἡ ἀγάπη τοῦ Θεοῦ ἐκκέχυται ἐν ταῖς καρδίαις ἡμῶν",
+      "glQuote": "because the love of God has been poured into our hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym for the sacrificial death of Jesus on the cross. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τῷ αἵματι",
+      "glQuote": "blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"wrath\" is a metonym that refers to God's punishment of those who have sinned against him. Alternate translation: \"God's punishment\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τῆς ὀργῆς",
+      "glQuote": "the wrath of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym that refers to the whole sinful person. Alternate translation: \"our sinful nature\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὸ σῶμα τῆς ἁμαρτίας",
+      "glQuote": "the body of sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heart\" refers to having sincere or honest motives for doing something. Alternate translation: \"but you truly obeyed\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὑπηκούσατε δὲ ἐκ καρδίας",
+      "glQuote": "but you have obeyed from the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Often Paul uses the word \"flesh\" as the opposite of \"spirit.\" Alternate translation: \"because you do not fully understand spiritual things\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "διὰ τὴν ἀσθένειαν τῆς σαρκὸς ὑμῶν",
+      "glQuote": "because of the weakness of your flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"flesh\" is a metonym for the sinful nature. Alternate translation: \"my sinful nature\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τῇ σαρκί μου",
+      "glQuote": "my flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"He\" refers to God. Here \"hearts\" is a metonym for a person's thoughts and emotions. The phrase \"searches the hearts\" is a metaphor for examining thoughts and emotions. Alternate translation: \"God, who knows all our thoughts and feelings\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "He who searches the hearts",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"children of the flesh\" is a metonym that refers to the physical descendants of Abraham. Alternate translation: \"not all of Abraham's descendants\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "οὐ τὰ τέκνα τῆς σαρκὸς, ταῦτα τέκνα",
+      "glQuote": "the children of the flesh are not",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metonym refers either 1) to God in all of his being. Alternate translation: \"who I am\" or 2) To his reputation. Alternate translation: \"how great I am\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὸ ὄνομά μου",
+      "glQuote": "my name",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Zion is a metonym that represents Israel. Alternate translation: \"in Israel\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐν Σιὼν",
+      "glQuote": "in Zion",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's emotions or inner being. Alternate translation: \"my greatest desire\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "my heart's desire",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"mouth\" is a metonym that refers to what a person says. Alternate translation: \"You know how to speak ... God's message\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "The word is ... in your mouth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"in your heart\" is metonym that refers to what a person thinks and believes. Alternate translation: \"You know what ... God's message means\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "The word is ... in your heart",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's mind or inner person. Alternate translation: \"believe in your mind\" or \"truly believe\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "πιστεύσῃς ἐν τῇ καρδίᾳ σου",
+      "glQuote": "believe in your heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym that represents the mind or will. Alternate translation: \"For it is with the mind that a person trusts and is right before God, and it is with the mouth that a person confesses and God saves him\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "καρδίᾳ γὰρ πιστεύεται εἰς δικαιοσύνην, στόματι δὲ ὁμολογεῖται εἰς σωτηρίαν",
+      "glQuote": "For with the heart one believes and has righteousness, and with the mouth one confesses and is saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" is a metonym for Jesus. You can translate this in an active form. Alternate translation: \"The Lord will save everyone who trusts in him\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "πᾶς” γὰρ\" ὃς ἂν ἐπικαλέσηται τὸ ὄνομα Κυρίου, σωθήσεται",
+      "glQuote": "For everyone who calls on the name of the Lord will be saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses \"feet\" to represent those who travel and bring the message to those who have not heard it. Alternate translation: \"It is wonderful when messengers come and tell us the good news\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "How beautiful are the feet of those who proclaim good news",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Table\" here is a metonym that represents feasting, and \"net\" and \"trap\" are metaphors that represent punishment. You can translate this in an active form. Alternate translation: \"Please, God, make their feasts like a trap that catches them\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "γενηθήτω ἡ τράπεζα αὐτῶν εἰς παγίδα, καὶ εἰς θήραν",
+      "glQuote": "Let their table become a net and a trap",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"bend their back\" is a metonym for forcing slaves to carry heavy loads on their backs. This is a metaphor for making them suffer. Alternate translation: \"make them suffer like people carrying heavy loads\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὸν νῶτον αὐτῶν διὰ παντὸς σύνκαμψον",
+      "glQuote": "bend their backs continually",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the world\" is a metonym for the people who live in the world. Alternate translation: \"the people in the world\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "καταλλαγὴ κόσμου",
+      "glQuote": "the world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Zion\" is used as a metonym for the place where God dwells. Alternate translation: \"From where God is among the Jews\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐκ Σιὼν",
+      "glQuote": "Out of Zion",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jacob\" is used as a metonym for Israel. Alternate translation: \"from the Israelite people\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἀπὸ Ἰακώβ",
+      "glQuote": "from Jacob",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"mind\" is a metonym for knowing things or thinking about things. Alternate translation: \"all that the Lord knows\" or \"what the Lord thinks about\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "νοῦν Κυρίου",
+      "glQuote": "the mind of the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to unbelievers who live in the world. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τῷ αἰῶνι τούτῳ",
+      "glQuote": "this world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"wrath\" is a metonym for God's punishment. Alternate translation: \"allow God to punish them\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "δότε τόπον τῇ ὀργῇ",
+      "glQuote": "give way to the wrath of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Roman governors carried a short sword as a symbol of their authority. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὴν μάχαιραν φορεῖ",
+      "glQuote": "carry the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"wrath\" represents the punishment people receive when they do evil deeds. Alternate translation: \"a person who punishes people as an expression of the government's anger against evil\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἔκδικος εἰς ὀργὴν",
+      "glQuote": "an avenger for wrath",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"flesh\" refers to the self-directed nature of people who oppose God. This is the sinful nature of human beings. Alternate translation: \"do not allow your old evil heart any opportunity at all for doing wicked things\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τῆς σαρκὸς πρόνοιαν μὴ ποιεῖσθε",
+      "glQuote": "make no provision for the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"judgment seat\" refers to God's authority to judge. Alternate translation: \"For God will judge us all\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "πάντες γὰρ παραστησόμεθα τῷ βήματι τοῦ Θεοῦ",
+      "glQuote": "For we will all stand before the judgment seat of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to be of the \"same mind\" is a metonym that means to be in agreement with each other. Alternate translation: \"to be in agreement with each other\" or \"to be united\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὸ αὐτὸ φρονεῖν ἐν ἀλλήλοις",
+      "glQuote": "to be of the same mind with each other",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means to be united in praising God. Alternate translation: \"praise God together in unity as if only one mouth were speaking\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐν ἑνὶ στόματι, δοξάζητε",
+      "glQuote": "praise with one mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the circumcision\" is a metonym that refers to the Jews. You can translate this in an active form. Alternate translation: \"Jesus Christ has become a servant of the Jews\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "Χριστὸν διάκονον γεγενῆσθαι περιτομῆς",
+      "glQuote": "Christ has been made a servant of the circumcision",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your name\" is a metonym that refers to God. Alternate translation: \"sing praise to you\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τῷ ὀνόματί σου ψαλῶ",
+      "glQuote": "sing praise to your name",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesse was the physical father of King David. Alternate translation: \"descendant of Jesse\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ῥίζα τοῦ Ἰεσσαί",
+      "glQuote": "root of Jesse",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"stomach\" is a metonym that refers to physical desires. Serving there stomach represents satisfying their desires. Alternate translation: \"but they only want to satisfy their own selfish desires\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἀλλὰ τῇ ἑαυτῶν κοιλίᾳ",
+      "glQuote": "but their own stomach",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" is a metonym for a person's mind or inner being. Alternate translation: \"they deceive the innocent believers\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐξαπατῶσι τὰς καρδίας τῶν ἀκάκων",
+      "glQuote": "they deceive the hearts of the innocent",
+      "occurrence": 1
+    }
+  }
+]

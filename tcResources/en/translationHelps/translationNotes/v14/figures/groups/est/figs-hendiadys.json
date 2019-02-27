@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"rejoiced\" tells how they shouted. Alternate translation: \"shouted joyfully\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "glQuote": "shouted and rejoiced",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration that means God has greatly increased the number of Israelites. Alternate translation: \"a great crowd of many people\" (See: [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "as the multitude of the stars of heaven",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration that emphasizes how frightened the people were because the cities were so large and strong. Alternate translation: \"have walls so high it is like they reach up to the heavens\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 1,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "are fortified up to the heavens",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "As indicated in 4:27, not every Israelite will be killed. Here \"completely destroy\" is a generalization and emphasizes that many of the Israelites will die. This can be stated in active form. Alternate translation: \"but Yahweh will destroy many of you\" (See: [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 4,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "but you will be completely destroyed",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"all\" is a generalization. Moses wanted everyone in Israel to hear and obey his words, but his voice was probably not so loud that everyone actually heard him. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "called to all Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration that emphasizes how frightened the people were because the cities were so large and strong. See how you translated similar words in [Deuteronomy 1:28](../01/28.md). Alternate translation: \"have walls so high it is like they reach up to the heavens\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "fortified up to heaven",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses is exaggerating. He is emphasizing that this noble woman is so rich and lives in such luxury that she would not allow herself to get dirty. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 28,
+        "verse": 56
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "who would not venture to put the bottom of her foot on the ground for delicateness and tenderness",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"every\" is a generalization that means \"many.\" This can be stated in active form. Alternate translation: \"even other sicknesses and plagues that I have not written\" (See: [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 28,
+        "verse": 61
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "every sickness and plague that is not written",
+      "occurrence": 0
+    }
+  }
+]

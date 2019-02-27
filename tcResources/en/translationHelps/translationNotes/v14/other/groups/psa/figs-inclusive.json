@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"we\" refers to the writer and the readers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 20,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "glQuote": "we call",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"we\" refers to the writer and the readers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 20,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "glQuote": "we will rise",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"us\" refers to David and the people he is speaking to. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 62,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "glQuote": "refuge for us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"we\" refers to the Israelites, their ancestors, David, and the people he is speaking to. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 66,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "glQuote": "we rejoiced",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words refer to David and the people he is speaking to. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 66,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "glQuote": "us ... our",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two opposite things are a merism that refers to everything the king does. Alternate translation: \"You must stay near the king at all times\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "You must stay with the king when he goes out, and when he comes in",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This merism includes everyone in between. Alternate translation: \"from the least important to the most important\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 23,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "from small to great",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a merism that means \"everyone,\" which is a generalization. Alternate translation: \"from the least important to the most important\" or \"everyone\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 25,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "from the least to the greatest",
+      "occurrence": 0
+    }
+  }
+]

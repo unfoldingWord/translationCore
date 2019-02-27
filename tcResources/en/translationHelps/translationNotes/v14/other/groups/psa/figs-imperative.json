@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer continues to speak to his own soul and commands it to trust God. (See: [[rc://en/ta/man/translate/figs-imperative]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 42,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "glQuote": "Hope in God",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer continues to speak to his own soul and commands it to trust God. See how you translated this in [Psalms 42:5](../042/005.md). (See: [[rc://en/ta/man/translate/figs-imperative]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 42,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "glQuote": "Hope in God",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer continues to speak to his own soul and commands it to trust God. See how you translated this in [Psalms 42:5](../042/005.md). (See: [[rc://en/ta/man/translate/figs-imperative]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 43,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "glQuote": "Hope in God",
+      "occurrence": 0
+    }
+  }
+]

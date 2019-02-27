@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"1/10 ... 1/4\" (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 29,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "glQuote": "a tenth ... the fourth part",
+      "occurrence": 0
+    }
+  }
+]

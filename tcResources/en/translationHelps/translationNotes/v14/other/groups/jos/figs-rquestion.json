@@ -1,0 +1,236 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Yahweh commanding Joshua. Alternate translation: \"I have commanded you!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Have I not commanded you?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joshua said this to show how upset he was that he did not even know what to say. Alternate translation: \"I do not know what to say. Israel has turned their backs before their enemies!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "what can I say, after Israel has turned their backs before their enemies?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joshua uses this question to warn God that if the Israelites are destroyed, then the other people will think that God is not great. Alternate translation: \"Then there will be nothing you can do for your great name.\" or \"Then people will not know that you are great.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What will you do for your great name?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God used this question to rebuke Joshua for lying there on his face. Alternate translation: \"Stop lying there with your face in the dirt!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why are you lying there on your face?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joshua uses this question to rebuke Achan. Alternate translation: \"You have troubled us\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 7,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why have you troubled us?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joshua is emphasizing that the people of Israel have to follow the command of Yahweh above all else. Alternate translation: \"If you do live near us, we cannot make a covenant with you.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Perhaps you live near us. How can we make a covenant with you?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer uses this question as background information to remind the reader that the incident is well-documented. Alternate translation: \"This is written in The Book of Jashar.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Is this not written in the Book of Jashar?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people of the tribes of Ephraim and Manasseh ask this question to emphasize that Joshua should have assigned to them more land. Alternate translation: \"You should have given us more than one ... Yahweh has blessed us.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 17,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why have you given us only one ... Yahweh has blessed us?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joshua asks this question in order to encourage the Israelites to take possession of the land. Alternate translation: \"For long enough, you have put off ... has given you.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How long will you put off ... has given you?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question emphasizes how serious their previous sin was. This can be written as a statement. Alternate translation: \"We had already sinned terribly at Peor!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 22,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Was our sin at Peor not enough for us?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question is used to rebuke the people for their sin. This can be written as a statement. Alternate translation: \"You must not turn away from following Yahweh today!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 22,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Must you also turn away from following Yahweh at this present day?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These questions are used to remind the people of the punishment for past sins. These questions can be written as statements. Alternate translation: \"Achan son of Zerah sinned by taking things that had been reserved for God. And because of that God punished all the people of Israel!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 22,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Did not Achan son of Zerah break faith in the matter of those things that had been reserved for God? Did not wrath fall on all the people of Israel?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The three tribes use this rhetorical question to emphasize the situation they are trying to avoid. This can be written as a statement. Alternate translation: \"You have nothing to do with Yahweh, the God of Israel!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 22,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What have you to do with Yahweh, the God of Israel?",
+      "occurrence": 0
+    }
+  }
+]

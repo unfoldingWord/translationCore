@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"he told them to instruct Silas and Timothy.\" This can also be stated as a direct quotation as in the UST. (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "ἐξῄεσαν",
+      "glQuote": "they received from him instructions for Silas and Timothy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a direct quotation. Alternate translation: \"He asked, 'Who is this man? What has he done?'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "ἐπυνθάνετο τίς εἴη καὶ τί ἐστιν πεποιηκώς",
+      "glQuote": "he asked who he was and what he had done.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a direct quotation. Alternate translation: \"he asked Paul, 'What province are you from?' When\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "he asked what province Paul was from. When",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence, which begins with the words \"When he learned\" in verse 43, can be stated as a direct quotation. Alternate translation: \"Paul said, 'I am from Cilicia.' Then the governor said\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "ἔφη",
+      "glQuote": "he said",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a direct quotation. Alternate translation: \"But Festus said, 'Paul is being held prisoner in Caesarea, and I myself will soon return there.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "Festus answered that Paul was being held at Caesarea, and that he himself was going there soon.",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a direct quotation. Alternate translation: \"said, 'This man must be a god.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "ἔλεγον αὐτὸν εἶναι θεόν",
+      "glQuote": "said that he was a god.",
+      "occurrence": 1
+    }
+  }
+]

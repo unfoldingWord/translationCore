@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these exaggerations say that Edom is built in a very high place by saying it is built much higher than possible. Alternate translation: \"And I tell you that even if you had wings and could fly higher than eagles fly, and if you could make your homes among the stars\" (See: [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "glQuote": "Though you soar high like the eagle and though your nest is set among the stars",
+      "occurrence": 0
+    }
+  }
+]

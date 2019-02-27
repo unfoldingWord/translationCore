@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to righteous people in general. Alternate translation: \"righteous people\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "the righteous",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to wicked people in general. Alternate translation: \"wicked people\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "the wicked",
+      "occurrence": 0
+    }
+  }
+]

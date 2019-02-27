@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is not clear whether the Hebrew word translated \"Sun\" here means \"sun\" or \"destruction.\" Is is also not clear what the name tells us about the city. Alternate translation: \"the city called Sun City\" or \"the city called Destruction City\" (See: [[rc://en/ta/man/translate/translate-textvariants]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 19,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-textvariants",
+      "glQuote": "called The City of the Sun",
+      "occurrence": 0
+    }
+  }
+]

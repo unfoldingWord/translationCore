@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"will go out\" are understood from the previous phrase. They can be repeated here. Alternate translation: \"and the word of Yahweh will go out from Jerusalem\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "and the word of Yahweh from Jerusalem",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"they will shepherd\" are understood from the beginning of the sentence. They can be repeated. Alternate translation: \"and they will shepherd the land of Nimrod\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 5,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "and the land of Nimrod",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"rises up\" are understood from the previous phrase. They can be repeated here. Alternate translation: \"a daughter-in-law rises up against her mother-in-law\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "a daughter-in-law against her mother-in-law",
+      "occurrence": 0
+    }
+  }
+]

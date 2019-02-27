@@ -1,0 +1,40 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"our\" includes James and his fellow believers. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "τοῦ Κυρίου ἡμῶν Ἰησοῦ Χριστοῦ ",
+      "glQuote": "our Lord Jesus Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James speaks of himself, other teachers, and the readers, so the word \"we\" is inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "πταίομεν ἅπαντες ",
+      "glQuote": "we all stumble ",
+      "occurrence": 1
+    }
+  }
+]

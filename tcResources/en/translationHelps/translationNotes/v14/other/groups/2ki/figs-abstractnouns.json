@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"anger\" can be expressed as a verb. There are two possibilities for who is angry here: 1) The Moabite soldiers. Alternate translation: \"So the Moabite soldiers were very angry with Israel\" or 2) God. Alternate translation: \"So God was very angry with Israel\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 3,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "So there was great anger against Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"zeal\" may be expressed as an adjective. Alternate translation: \"see how zealous I am\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 10,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "see my zeal",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing and are repeated for emphasis. The abstract noun \"oppression\" means the same as \"the king of Aram was oppressing them.\" Alternate translation: \"he saw how severely the king of Aram was oppressing Israel\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "he saw the oppression of Israel, how the king of Aram was oppressing them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"death\" can be expressed with the verb \"die.\" Alternate translation: \"until the day he died\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 15,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "to the day of his death",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"life\" can be translated with the verb \"live.\" Alternate translation: \"The whole time that he lived\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 15,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "For his whole life",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"support\" can be translated with the verb \"support.\" Alternate translation: \"so that Pul might support him\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 15,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "so that Pul's support might be with him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract nouns \"desolation\" and \"curse\" can be stated as an adjective and a verb. Alternate translation: \"that I would make the land desolate and would curse them\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 22,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "that they would become a desolation and a curse",
+      "occurrence": 0
+    }
+  }
+]

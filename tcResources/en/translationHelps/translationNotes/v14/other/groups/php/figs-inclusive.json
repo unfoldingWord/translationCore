@@ -1,0 +1,58 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses \"we\" to refer to himself and all true believers in Christ, including the Philippian believers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "ἡμεῖς γάρ ἐσμεν",
+      "glQuote": "For it is we who are",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses \"we\" to include the Philippian believers. Alternate translation: \"let us all continue obeying the same truth we have already received\" (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "εἰς ὃ ἐφθάσαμεν, τῷ αὐτῷ στοιχεῖν",
+      "glQuote": "whatever we have reached, let us hold on to it",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By Paul's use of \"our\" and \"we\" here, he includes himself and the believers in Philippi. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

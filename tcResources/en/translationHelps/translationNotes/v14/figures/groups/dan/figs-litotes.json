@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two negative words together emphasize a positive idea. Alternate translation: \"with perfect appearance\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "without blemish",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"Daniel, Hananiah, Mishael, and Azariah pleased him much more than anyone else in the whole group\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "among the whole group there were none to compare with Daniel, Hananiah, Mishael, and Azariah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is stated in negative form for emphasis. It can be stated in positive form. Alternate translation: \"only the gods can tell this to the king\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "there is no one who can tell it to the king except the gods",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"they were completely gone\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 2,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "there was no trace of them left",
+      "occurrence": 0
+    }
+  }
+]

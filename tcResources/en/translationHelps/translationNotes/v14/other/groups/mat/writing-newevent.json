@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the beginning of a new part of the story that contains several accounts of Jesus healing people. This theme continues through [Matthew 9:35](../09/35.md). (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the beginning of a new part of the story where Matthew tells of how Jesus responded to disciples of John the Baptist. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The scene shifts to events that occurred some time after events of the previous chapter. Here Jesus responds to the criticisms of the Pharisees. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

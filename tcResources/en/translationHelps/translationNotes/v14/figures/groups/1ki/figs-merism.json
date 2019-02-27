@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This represents the whole land of Israel from Dan in the north to Beersheba in the south. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "from Dan to Beersheba",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "neither humans who cause harm nor natural events that cause harm. This can be stated positively. Alternate translation: \"We are safe from our enemies and from natural disasters\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "There is neither adversary nor disaster",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a merism. Alternate translation: \"all the time\" or \"continually\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "night and day",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This merism refers to \"all the time\" or \"continually.\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 8,
+        "verse": 59
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "day and night",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By mentioning both \"unimportant\" and \"important soldiers,\" the king meant all soldiers. Alternate translation: \"Do not attack any of the soldiers\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 22,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "Do not attack unimportant or important soldiers",
+      "occurrence": 0
+    }
+  }
+]

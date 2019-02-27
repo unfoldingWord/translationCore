@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"for me.\" Here Job refers to himself in the third person. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 16,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "for this man",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"your\" here is plural. Bildad is using sarcasm to tell Job that Job should not think of himself as a great man. Alternate translation: \"your sight, you who wrongly think you are great\" (See: [[rc://en/ta/man/translate/figs-123person]] and [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "your sight",
+      "occurrence": 0
+    }
+  }
+]

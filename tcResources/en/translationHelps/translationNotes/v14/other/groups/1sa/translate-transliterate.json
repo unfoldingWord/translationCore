@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a borrowed word from the original language. (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 14,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "glQuote": "Thummim",
+      "occurrence": 0
+    }
+  }
+]

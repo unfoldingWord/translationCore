@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some translations read, \"excellent sayings.\" (See: [[rc://en/ta/man/translate/translate-textvariants]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 22,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-textvariants",
+      "glQuote": "thirty sayings",
+      "occurrence": 0
+    }
+  }
+]

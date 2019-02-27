@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the imperatives \"do not understand\" and \"do not perceive\" express what God is causing to happen. Alternate translation: \"You will listen, but Yahweh will not let you understand; you will look carefully, but Yahweh will not allow you to understand\" or 2) the imperatives \"Listen\" and \"see\" express the idea of \"if.\" Alternate translation: \"Even if you listen you will not understand; even if you look carefully, you will not understand\" (See: [[rc://en/ta/man/translate/figs-imperative]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "glQuote": "Listen, but do not understand; see, but do not perceive",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are the names of constellations, which are groups of stars that seem like they form a particular shape in the sky. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "the Bear, Orion, the Pleiades",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a musical instrument with a head like a drum that can be hit and with pieces of metal around the side that sound when the instrument is shaken (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "tambourine",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a beautiful, hard substance that grows on ocean reefs. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 28,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "coral",
+      "occurrence": 0
+    }
+  }
+]

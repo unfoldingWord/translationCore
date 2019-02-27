@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses a question to teach Timothy. Alternate translation: \"he cannot take care of a church of God.\" or \"he will not be able to lead a church of God.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "πῶς ἐκκλησίας Θεοῦ ἐπιμελήσεται?",
+      "glQuote": "how will he care for a church of God?",
+      "occurrence": 0
+    }
+  }
+]

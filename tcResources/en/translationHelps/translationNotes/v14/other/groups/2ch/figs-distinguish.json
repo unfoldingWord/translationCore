@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Israel, God's people.\" The phrase \"his people\" emphasizes God's faithfulness to Israel. (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "Israel, his people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase tells why they should have worshiped God. (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "who had brought their ancestors out of the land of Egypt",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase adds information about the descendants of those that Solomon had made into forced laborers. Alternate translation: \"and their descendants are still forced laborers even now\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "which they are to this day",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These phrases tell why people should praise Yahweh. Alternate translation: \"because he has taken pleasure in you and placed you on his throne\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "who has taken pleasure in you, who placed you on his throne",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"good\" here is a reminder to the people that Yahweh is kind. Alternate translation: \"Yahweh, who is good\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 30,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "the good Yahweh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was the reason that he spoke encouragingly to them. Alternate translation: \"because they understood the service of Yahweh\" or \"because they served Yahweh skillfully\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 30,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "who understood the service of Yahweh",
+      "occurrence": 0
+    }
+  }
+]

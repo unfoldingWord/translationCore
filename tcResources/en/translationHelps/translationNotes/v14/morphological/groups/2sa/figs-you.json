@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your\" refers to Michal. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 6,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "who chose me above your father",
+      "occurrence": 0
+    }
+  }
+]

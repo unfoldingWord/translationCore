@@ -1,0 +1,146 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"living\" refers to people. Alternate translation: \"all people\" or \"all living people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "all the living",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"firstborn\" and \"younger\" are nominal adjectives that refer to Lot's two daughters according to their birth order. Alternate translation: \"Lot's first daughter ... Lot's last daughter\" or \"The older daughter ... the younger daughter\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 19,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "The firstborn ... the younger",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nominal adjective \"dead\" can be stated as an adjective or a verb. Alternate translation: \"my dead wife\" or \"my wife who has died\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 23,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "my dead",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nominal adjective \"dead\" can be stated as a verb or simply as \"wife.\" Alternate translation: \"your wife who has died\" or \"your wife\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 23,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "your dead",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nominal adjective \"dead\" can be stated as a verb or simply as \"wife.\" Alternate translation: \"my wife who has died\" or \"my wife\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 23,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "my dead",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nominal adjective \"dead\" can be stated as a verb or simply as \"wife.\" Alternate translation: \"your wife who has died\" or \"your wife\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 23,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "your dead",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nominal adjective \"dead\" can be stated as a verb or simply as \"wife.\" Alternate translation: \"my wife who has died\" or \"my wife\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 23,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "my dead",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nominal adjective \"dead\" can be stated as a verb or simply as \"wife.\" Alternate translation: \"Go bury your wife who has died\" or \"Go bury your wife\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 23,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "Bury your dead",
+      "occurrence": 0
+    }
+  }
+]

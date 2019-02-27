@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Wisdom, personified as a woman, is not speaking. However, it is possible to make Wisdom the speaker here as well. Alternate translation: \"For I, Wisdom, am better than jewels; no treasure is equal to me\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "For Wisdom is better than jewels; no treasure is equal to her",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed as an indirect quotation. Alternate translation: \"says that it is not a sin, he\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 28,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "says, \"That is no sin,\" he",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "saying that good things have happened to her because she has done good things. This can be translated as a direct quote. Alternate translation: \"congratulate her\" or \"say, 'Yay, Mom!'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 31,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "call her blessed",
+      "occurrence": 0
+    }
+  }
+]

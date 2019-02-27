@@ -1,0 +1,668 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Nehemiah is referring to the number of years that Artaxerxes had been reigning as king. Alternate translation: \"in the twentieth year of the reign of Artaxerxes, King of Persia\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "in the twentieth year",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases refer to the same group of people. Possible meanings are 1) the few Jews who were taken as exiles to Babylon but escaped and returned to live in Jerusalem or 2) the few Jews who had escaped from those who were trying to take them into exile in Babylon and so remained in Jerusalem. Since it is unclear from where they escaped, it may be best not to specify in the translation. Alternate translation: \"the Jews who had escaped the exile and who remained in Jerusalem\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "the Jews who had escaped, the remnant of the Jews who were there",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"province\" refers to Judah as an administrative district under the Persian Empire. Alternate translation: \"the province of Judah\" or \"Judah\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "the province",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Nehemiah tells what he prayed. Alternate translation: \"Then I said to Yahweh\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Then I said",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase refers to Jerusalem, where the temple was located. Alternate translation: \"to Jerusalem, where I have chosen ... remain\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "to that place where I have chosen ... remain",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the men who would later rebuild the walls. Alternate translation: \"the others who would later do the work of rebuilding the walls\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "the rest who did the work",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They repaired the portion of the wall between the Valley Gate and the Dung Gate. Alternate translation: \"They repaired a thousand cubits of the wall, from the Valley Gate to the Dung Gate\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "They repaired a thousand cubits as far as the Dung Gate",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is understood that they were repaing the wall of Jerusalem. Alternate translation: \"They repaired a thousand cubits of the wall\" or \"They repaired another thousand cubits of the wall beyond the Valley Gate\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "They repaired a thousand cubits",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since they were working on the wall, the workers did not have enough time to work to buy and grow food for their families. The full meaning of this statement can be made clear. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Then the men and their wives raised a great outcry against their fellow Jews",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the Jews are implying that they are of the same Jewish descent as the other Jews and that they of the same importance as the others. The meaning of this can be made clear. Alternate translation: \"Yet our families are Jews just like the other Jew's families, and our children are just as important to us as their children are to them\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Yet now our flesh and blood is the same as our brothers, and our children are the same as their children",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since the mens' fields and vineyards are not in their possession, they are unable to produce the money they need to support their families. The full meaning of this can be made clear. Alternate translation: \"But we are unable to change this situation because other men now own our fields and our vineyards which we need to support our lives\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "But it is not in our power to help it because other men now own our fields and our vineyards",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Every Jew would have known that it is wrong under the Law to charge interest to another Jew. The full meaning of this can be made clear. Alternate translation: \"Each of you is charging interest to your own brother, and that is wrong under the Law\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "You are exacting interest, each from his own brother",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that he brought together a large group of people and brought these charges against them. The meaning of statement this can be made clear. Alternate translation: \"I held a great assembly and brought these charges against them\" or \"I held them on trial in front of the assembly\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "I held a great assembly against them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they are selling their family members, both men and women, as slaves to their fellow Jews. The full meaning of this statement can be made clear. Alternate translation: \"Now you are selling your own people to be slaves of your fellow Jews, so that they might later sell them back to us\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "but you even sell your brothers that they may be sold back to us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Nehemiah was responsible for providing food for all of these people. This can be stated clearly. Alternate translation: \"Also, every day I was responsible to feed at our table the Jews and the officials, 150 people; and we also fed the visitors who came from other countries around us (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "At my table were the Jews ... from among the nations who were around us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they are planning to rebel against Artaxerxes, the Persian king, who was currently ruling the Jews. Alternate translation: \"are planning to rebel against Artaxerxes\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "are planning to rebel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a descriptive phrase that means that they are stopping their work on the wall. Alternate translation: \"The workers on the wall will stop doing the work\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "They will drop their hands from doing the work",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that this refers to some of the Israelites who were not priests or other temple workers. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 7,
+        "verse": 73
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "some of the people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people stood up out of respect for God's word. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "when he opened it all the people stood up",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that the people were told to feast on rich food and sweet drinks. Alternate translation: \"eat rich food and drink something sweet\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "eat the fat and have something sweet to drink",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that it was during the entire week of the festival. Alternate translation: \"from the first day to the last day of the week\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 8,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "from the first day to the last",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that \"the decree\" was the command of Yahweh about how the Festival of Shelters was to end. Alternate translation: \"as God had commanded\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 8,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "in obedience to the decree",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was in order to show how sorry they were for the wrong things they and their ancestors had done. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "they were wearing sackcloth, and they put dust on their heads",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that God was moved to action because of the Israelites' cries for help. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "you heard their cry",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The plagues tested Pharaoh's heart, and they became a witness against his hardness of heart. Alternate translation: \"signs and wonders that testified against Pharaoh\" or \"signs and wonders that condemned Pharaoh\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "signs and wonders against Pharaoh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Israelites would know that this referred to their ancestors wanting to return to Egypt. Alternate translation: \"they appointed a leader to take them back to Egypt where they had been slaves\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "they appointed a leader to return to their slavery",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The names of these people were written on the documents. This can be stated clearly. Alternate translation: \"On the sealed documents were the names of Nehemiah ... Zedekiah\" or \"On the sealed documents were the names of the following people: Nehemiah ... Zedekiah\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "On the sealed documents were Nehemiah ... Zedekiah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the previous list of men who signed the document. Alternate translation: \"These were the names of the priests who signed the document\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "These were the priests",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to make explicit that these are those who sang in the temple. Alternate translation: \"temple singers\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "singers",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase can be made explicit. Alternate translation: \"all who were old enough to understand what promising to obey God meant\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "all who have knowledge and understanding",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they would not allow their sons and daughters to marry them. Alternate translation: \"would not give our daughters to marry the people of the land, and we would not take their daughters to marry our sons\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "would not give our daughters to the people of the land or take their daughters for our sons",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the people who live in their land who do not worship Yahweh. Alternate translation: \"the people of this land who do not worship Yahweh\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "the people of the land",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The original readers would have understood that Jeshua was the high priest. Alternate translation: \"Jeshua the high priest\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Jeshua",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the same Jeshua named in [Nehemiah 12:1](../12/01.md). The original readers would have understood that Jeshua was the high priest. Alternate translation: \"Jeshua the high priest was the father of Joiakim\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Jeshua was the father of Joiakim",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Levites and priests were not just standing, they were serving in their roles. The meaning can be made explicit. Alternate translation: \"who were standing before them serving God\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 12,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "who were standing before them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of this statement can be made clear. This can also be translated in active form. Alternate translation: \"the people had not been bringing into the storerooms their tithes and offerings of food for the temple priests\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "the Levites' portions had not been given to them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Jews that had married foreign women.\" God had forbidden intermarriage. The full meaning of this statement can be made clear. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 13,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Jews that had married women of Ashdod, Ammon, and Moab",
+      "occurrence": 0
+    }
+  }
+]

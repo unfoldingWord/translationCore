@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is likely a proverb that the writer has used to describe either the king or the nation of Israel. That which others have considered worthless, Yahweh has made to be the most important. (See: [[rc://en/ta/man/translate/writing-proverbs]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 118,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-proverbs",
+      "glQuote": "The stone that the builders rejected has become the cornerstone",
+      "occurrence": 0
+    }
+  }
+]

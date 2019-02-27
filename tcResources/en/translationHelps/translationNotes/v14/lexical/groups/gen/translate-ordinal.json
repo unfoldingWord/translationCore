@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"When Noah was 600 years old\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "In the six hundredth year of Noah's life",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"when Noah was 601 years old\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "in the six hundred and first year",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"third\" is the ordinal number for three. Alternate translation: \"After traveling for three days\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "On the third day",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"second\" is the ordinal number for two. Alternate translation: \"again\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 22,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "a second time",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"third\" is the ordinal number for three. It can be stated without the ordinal number. Alternate translation: \"After two days\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 34,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "On the third day",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"second\" is an ordinal number. Alternate translation: \"again\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 41,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "a second time",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"third\" is an ordinal number. Alternate translation: \"after the second day\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 42,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "glQuote": "on the third day",
+      "occurrence": 0
+    }
+  }
+]

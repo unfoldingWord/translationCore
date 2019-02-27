@@ -1,0 +1,58 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The woman did not have an open wound; rather, her monthly flow of blood would not stop. Your language may have a polite way to refer to this condition. (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "οὖσα ... ῥύσει αἵματος δώδεκα ἔτη",
+      "glQuote": "who had a flow of blood for twelve years",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a polite way to say that someone is pregnant. Alternate translation: \"are pregnant\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "are with child",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a polite way to talk about someone dying. Alternate translation: \"will not die\" or \"will not end\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "οὐ μὴ παρέλθῃ",
+      "glQuote": "will not pass away",
+      "occurrence": 1
+    }
+  }
+]

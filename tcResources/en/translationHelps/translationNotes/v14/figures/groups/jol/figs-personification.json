@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The army of locusts acts as real soldiers do. (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "They run like mighty warriors ... climb the walls like soldiers",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joel speaks of the earth and heavens as if they were people who are shaking with fear. This can be translated as either a hyperbole, that the army is so frightening that even things that are not alive are afraid, or as metonymy, that the earth and the heavens are metonyms for the beings who live there. Alternate translation: \"Everyone on earth and in the heavens is very afraid\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "glQuote": "The earth shakes in front of them, the heavens tremble",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" is plural and refers to the people of Israel. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "so you will know",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is plural and refers to the people of Jerusalem. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 14,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you will flee",
+      "occurrence": 0
+    }
+  }
+]

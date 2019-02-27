@@ -1,0 +1,578 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Wisdom uses this question to rebuke those who are not wise. Alternate translation: \"You who are naive must stop loving being naive.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How long, you naive people, will you love being naive?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Wisdom uses this question to rebuke the mockers and the fools. Alternate translation: \"You who mock must stop delighting in mockery, and you fools must stop hating knowledge.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How long, you mockers, will you delight in mockery, and how long, you fools, will you hate knowledge?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer asks this rhetorical question to emphasize that his son should not do these things. Alternate translation: \"Your springs should not ... your streams of water should not flow in the public squares.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Should your springs ... your streams of water flow in the public squares?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer asks these rhetorical questions to emphasize that his son must not do these things. Alternate translation: \"My son, do not be captivated by an adulteress! Do not embrace the breasts of an immoral woman!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "For why should you, my son, be captivated by an adulteress; why should you embrace the breasts of an immoral woman?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This action would be very dangerous and would cause harm. The implied answer to the question is \"no.\" Alternate translation: \"Every man who carries a fire in his chest will burn his clothes.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 6,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Can a man carry a fire against his chest without burning his clothes?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Walking on hot coals will scorch a person's feet, so the implied answer is \"no.\" Alternate translation: \"Every man who walks on hot coals will have scorched feet.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 6,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Can a man walk on hot coals without scorching his feet?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question is used to remind the readers of something they should already know. Alternate translation: \"Wisdom calls out\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Does not Wisdom call out?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Understanding\" means the same as \"Wisdom.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Does not Understanding raise her voice?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The assumed answer to this question is \"yes.\" Alternate translation: \"Those who plot evil will go astray.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do not those who plot evil go astray?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question emphasizes that since Yahweh knows everything about the place of the dead, it is more obvious that he knows everything about the hearts of men. Alternate translation: \"so he certainly knows the hearts of the sons of mankind!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 15,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "how much more the hearts of the sons of mankind?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question emphasizes that the fool should not do this. This question may be written as a statement. Alternate translation: \"A fool should not pay money to learn about wisdom because he does not have the ability to learn it.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 17,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why should a fool pay money to learn about wisdom, when he has no ability to learn it?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a rhetorical question, expecting the answer that few can bear it. This can be written as a statement. Alternate translation: \"but it is very hard to bear a broken spirit.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 18,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "but a broken spirit who can bear it?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implicit answer is \"few can find someone like that.\" This rhetorical question can be written as a statement. Alternate translation: \"but few men can find a person who is faithful!\" or \"but it is hard to find a person who really is faithful!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 20,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "but who can find one who is faithful?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implicit answer to this question is, \"No one can say that.\" This rhetorical question can be written as a statement. Alternate translation: \"No one can say that his heart is clean and that he is free from sin\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 20,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Who can say, \"I have kept my heart pure; I am clean from my sin\"?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implicit answer is that he cannot understand it. This rhetorical question may be written as a statement. Alternate translation: \"therefore, a person cannot understand his way\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 20,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "how then can he understand his way?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words end the rhetorical question that began with the words \"Have I not written\" in Proverbs 22:20. It can be translated as a statement. \"You need to know that I have written ... to teach you ... who sent you.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 22,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "to teach you ... who sent you?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question is actually a command. Alternate translation: \"Think of someone you know who is skilled at his work\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 22,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you see a man skilled at his work?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer uses these questions to prepare the reader for the point he is about to make about a particular type of person. He does not expect an answer to each question. Your language may have a different way of introducing a lesson. Alternate translation: \"Listen to me while I tell you what kind of person has woe, sorrow, fights, complaining, wounds for no reason, and bloodshot eyes.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 23,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Who has woe? Who has sorrow? Who has fights? Who has complaining? Who has wounds for no reason? Who has bloodshot eyes?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer assumes the readers know the answer and asks this for emphasis. Alternate translation: \"the one who weighs the heart understands what you are saying.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 24,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "does not the one who weighs the heart understand what you are saying?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer assumes the readers know the answer and asks this for emphasis. Alternate translation: \"The one who guards your life knows it.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 24,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "The one who guards your life, does he not know it?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer assumes the readers know the answer and asks this for emphasis. Alternate translation: \"God will give to each one what he deserves.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 24,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Will God not give to each one what he deserves?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer asks this question to emphasize the disaster. Alternate translation: \"no one knows the extent of the destruction that will come from both of them.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 24,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "who knows the extent of the destruction that will come from both of them?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question is asked to make the reader consider the possibility that he may have misunderstood the situation. The way in which the neighbor might put the reader to shame can be stated plainly. Alternate translation: \"For you will not know what to do in the end when your neighbor puts you to shame.\" or \"For if your neighbor has an explanation, he will put you to shame, and you will have nothing to say to defend yourself.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 25,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "For what will you do in the end when your neighbor puts you to shame?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question is used to lead the reader to think about someone who is wise in his own eyes. The phrase \"is wise in his own eyes\" means \"thinks he is wise,\" and here it implies that the person is not truly wise. Alternate translation: \"Consider the person who thinks he is wise but is not.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you see someone who is wise in his own eyes?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The deceiver uses this question to imply that since he his joke was only for fun, he should not be blamed for any harm he has caused. Alternate translation: \"I did nothing wrong. I was only telling a joke.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 26,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Was I not telling a joke?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question implies that no one can stand before jealousy. It can be reworded as a statement. Alternate translation: \"but no one is able to stand before jealousy\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "but who is able to stand before jealousy?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question expects a negative answer to make the point that the reign of earthly rulers does not last forever. This can be expressed as a statement. Alternate translation: \"A crown does not endure for all generations\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 27,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Does a crown endure for all generations?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer is using a question to get the reader's attention. Alternate translation: \"You should notice what happens to a man who is hasty in his words.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 29,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "See a man who is hasty in his words?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer asks these questions to get the reader thinking about how much greater Yahweh is than people. Alternate translation: \"No person has ever ... down. No person has ever ... hands. No person has ever ... cloak. No person has ever ... earth.\" or \"Who has ... down? Who has ... hands? Who has ... cloak? Who has ... earth? No one has ever done any of these things.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 30,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Who has ... down? Who has ... hands? Who has ... cloak? Who has ... earth?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer uses these questions to command the reader to give an answer. Alternate translation: \"Tell me his name and the name of his son, if you know them.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 30,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What is his name, and what is the name of his son?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings of the rhetorical question \"What\" are 1) \"What are you doing?\" or \"You should not be doing what you are doing\" or 2) \"What shall I tell you?\" or \"Listen to what I am telling you\" or 3) \"Do not do the things I am about to warn you against.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 31,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What, my son? What is it, son of my womb? What do you want, son of my vows?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer asks a question to show that he is beginning a new section. Alternate translation: \"Not many men can find a capable wife.\" or \"Not many men can find a wife who is able to do many things well.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 31,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Who can find a capable wife?",
+      "occurrence": 0
+    }
+  }
+]

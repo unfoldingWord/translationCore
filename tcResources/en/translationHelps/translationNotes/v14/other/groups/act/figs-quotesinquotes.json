@@ -1,0 +1,58 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a quotation within a quotation. The inner quotation can be stated as an indirect quotation. Alternate translation: \"'The Holy Spirit says that this will be how the Jews in Jerusalem will tie up ... of the Gentiles.' (See: [[rc://en/ta/man/translate/figs-quotesinquotes]] and [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "glQuote": "Thus says the Holy Spirit, 'So shall the Jews in Jerusalem tie up ... of the Gentiles.'",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence contains quotations within quotations. (See: [[rc://en/ta/man/translate/figs-quotesinquotes]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "quote": "καλῶς τὸ Πνεῦμα τὸ Ἅγιον ἐλάλησεν διὰ Ἠσαΐου τοῦ προφήτου πρὸς τοὺς πατέρας ὑμῶν",
+      "glQuote": "The Holy Spirit spoke well through Isaiah the prophet to your fathers.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the sentence that begins with the words \"The Holy Spirit spoke\" in verse 25 and that contains quotations within quotations. You can translate one of the inner quotations as an indirect quotation, or you can translate two of the inner quotations as indirect quotations. \"The Holy Spirit spoke well through Isaiah the prophet to your forefathers when the Spirit told Isaiah to go tell them that they will hear but will not understand and they will see but they will not perceive\" (See: [[rc://en/ta/man/translate/figs-quotesinquotes]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "quote": "λέγων, πορεύθητι‘ πρὸς τὸν λαὸν τοῦτον ... εἰπόν,\" ἀκοῇ ἀκούσετε, καὶ οὐ μὴ συνῆτε; καὶ βλέποντες βλέψετε, καὶ οὐ μὴ ἴδητε",
+      "glQuote": "He said, 'Go to this people and say, \"By hearing you will hear, but not understand; and seeing you will see, but will not perceive",
+      "occurrence": 1
+    }
+  }
+]

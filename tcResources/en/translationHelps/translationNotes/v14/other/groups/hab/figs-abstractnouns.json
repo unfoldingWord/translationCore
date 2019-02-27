@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"destruction\" and \"violence\" can be translated with a verbal phrase. The idiom \"before me\" means that Habakkuk witnesses these things happening. Alternate translation: \"I witness people destroying things and acting violently\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "Destruction and violence are before me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"contention\" refers to conflict between people and can be translated with a verbal phrase. Habakkuk speaks of there being more contention between people as if contention rises up. Alternate translation: \"there is more conflict between people\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "contention rises up",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"them\" refers to the Chaldeans. The words \"judgment\" and \"correction\" can be translated with verbs. The reader should understand that the Chaldeans will judge and correct Yahweh's people. Alternate translation: \"has ordained them to judge his people, and you, Rock, have established them to correct your people\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "has ordained them for judgment, and you, Rock, have established them for correction",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"knowledge\" can be translated with a verbal phrase. This can be stated in active form. Alternate translation: \"people throughout the land will know the glory of Yahweh\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "the land will be filled with the knowledge of the glory of Yahweh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"salvation\" can be translated with a verb. Alternate translation: \"You went out to save your people\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "You went out for the salvation of your people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"gloating\" here means to rejoice for bad reasons and can be translated with a verb. The warriors treating people cruelly or killing them is spoken of as if the warriors were wild beasts who carry their prey to their hiding places in order to eat it. Alternate translation: \"they gloated like a person who secretly abuses poor people\" or \"they rejoiced when they oppressed the poor, acting as if they would eat them like a beast eats its prey in its den\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "their gloating was like one who devours the poor in a hiding place",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"salvation\" can be translated with a verb. Alternate translation: \"the God who saves me\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "the God of my salvation",
+      "occurrence": 0
+    }
+  }
+]

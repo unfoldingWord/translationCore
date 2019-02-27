@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is the author of this letter, but he includes Silvanus and Timothy as senders of the letter. He begins by greeting the church at Thessalonica. The words \"we\" and \"us\" refer to Paul, Silvanus, and Timothy, unless otherwise noted. Also, the word \"you\" is plural and refers to the believers at the church of Thessalonica. (See: [[rc://en/ta/man/translate/figs-exclusive]] and [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

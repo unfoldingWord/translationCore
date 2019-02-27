@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of Job and himself as if they were two other people to remind Job that no person anywhere should argue with God. Alternate translation: \"You want to argue with me, so answer me\" (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 40,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "He who argues with God, let him answer",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks as if he were another person. Alternate translation: \"of my creatures. Only I, God\" (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 40,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "the creatures of God. Only God",
+      "occurrence": 0
+    }
+  }
+]

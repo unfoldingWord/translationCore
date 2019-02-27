@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The apostle John wrote this letter to believers. All instances of \"you,\" \"your,\" and \"yours\" include all believers and are plural. Here the words \"we\" and \"us\" refer to John and those who had been with Jesus. In verses 1-2 many pronouns like \"that,\" \"which,\" and \"it\" are used. They refer to \"the Word of life\" and \"the eternal life.\" But, since these are names for Jesus, you can use pronouns that refer to a person like \"who,\" \"whom\" or \"he.\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-exclusive]] and [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" is plural and refers to the people to whom John wrote as well as all believers. The word \"he\" is emphatic and refers to Christ. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Winking the eye\" represents a secretive sign for being cruel to someone else. Alternate translation: \"He who makes a signal with a gesture\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "glQuote": "He who winks the eye",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means to bend over to humbly express respect and submission toward someone. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 14,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "glQuote": "bow down",
+      "occurrence": 0
+    }
+  }
+]

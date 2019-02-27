@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jobs speaks to the \"earth\" directly even though it cannot hear him, to add strength to his statement. The earth is personified as purposefully covering up his blood after he dies. Alternate translation: \"I wish my blood would not soak into the ground but that it would remain on top of the ground as proof of how I died\" (See: [[rc://en/ta/man/translate/figs-apostrophe]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "Earth, do not cover up my blood",
+      "occurrence": 0
+    }
+  }
+]

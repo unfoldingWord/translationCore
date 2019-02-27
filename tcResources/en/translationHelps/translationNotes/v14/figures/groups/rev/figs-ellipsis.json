@@ -1,0 +1,57 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The verb can be supplied from the previous phrase. Alternate translation: \"If you do not repent, I\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "If you do not, I",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"to damage\" or \"to harm\" is understood. Alternate translation: \"but only to harm the people\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "εἰ μὴ τοὺς ἀνθρώπους",
+      "glQuote": "but only the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"given permission\" are understood. Alternate translation: \"but only given permission to torture them\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "but only to torture them",
+      "occurrence": 0
+    }
+  }
+]

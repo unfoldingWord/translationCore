@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"destruction\" can be translated using the verb \"destroy.\" You may need to make explicit what it is the Almighty will destroy. Alternate translation: \"On that day the Almighty will destroy his enemies\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "With it will come destruction from the Almighty",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"faithfulness\" can be stated as \"faithful\" or \"faithfully.\" Alternate translation: \"always faithful to his covenant\" or \"always loves faithfully\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "abundant in covenant faithfulness",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There is no known place with this name. The abstract noun \"judgment\" can be translated using the verb \"judge.\" Alternate translation: \"Valley Where Yahweh Judges\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "Valley of Judgment",
+      "occurrence": 0
+    }
+  }
+]

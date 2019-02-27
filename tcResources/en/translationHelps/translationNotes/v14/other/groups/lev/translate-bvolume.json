@@ -1,0 +1,290 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "An ephah is 22 liters. A tenth of an ephah is about two liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "a tenth of an ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "An ephah is 22 liters. One-tenth of an ephah is about 2 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "a tenth part of an ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One ephah is 22 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One log is 0.31 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "log",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One log is 0.31 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "log",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One log is 0.31 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 14,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "log",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One-tenth of an ephah is 22 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 14,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "one-tenth of an ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One log is 0.31 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 14,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "log",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One log is 0.31 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 14,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "log",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a measurement for grain. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 19,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a measurement for liquids. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 19,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "hin",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "An ephah is 22 liters. Alternate translation: \"four and a half liters\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 23,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "two-tenths of an ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A hin is 3.7 liters. Alternate translation: \"one liter\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 23,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "a fourth of a hin",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is approximately 4.5 liters. Alternate translation: \"four and a half liters\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 23,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "two-tenths of an ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is about 4.5 liters. Alternate translation: \"four and a half liters\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 24,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "two-tenths of an ephah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A homer is 220 liters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 27,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "homer",
+      "occurrence": 0
+    }
+  }
+]

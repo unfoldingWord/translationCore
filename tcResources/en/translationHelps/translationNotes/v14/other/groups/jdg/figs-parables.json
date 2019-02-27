@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jotham begins telling a parable in which the trees try to find someone to rule them. The trees represent the Israelites. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this parable Jotham describes the trees doing things that humans do. (See: [[rc://en/ta/man/translate/figs-parables]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "glQuote": "The trees once went out to anoint a king over them. For they said to the olive tree, 'Reign over us.'",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jotham continues describing the trees as doing things that humans do. (See: [[rc://en/ta/man/translate/figs-parables]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "glQuote": "the fig tree said to them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this parable, Jotham describes the trees and the vine as doing things that humans do. (See: [[rc://en/ta/man/translate/figs-parables]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 9,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "glQuote": "The trees said to the vine",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this parable, Jotham describes the thornbush and the trees as doing things that humans do. (See: [[rc://en/ta/man/translate/figs-parables]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 9,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "glQuote": "The thornbush said to the trees",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The wicked man hates the righteous person so much that he grinds his teeth together to show his anger. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 37,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "glQuote": "grinds his teeth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The imagery of a running river symbolizes peace and prosperity for the city of God. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 46,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "glQuote": "There is a river whose streams make the city of God happy",
+      "occurrence": 0
+    }
+  }
+]

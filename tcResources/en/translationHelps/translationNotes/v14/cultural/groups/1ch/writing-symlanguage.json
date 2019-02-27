@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is symbolic language to indicate that the angel was sent from Yahweh in heaven to judge the people on the earth. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "glQuote": "standing between earth and heaven",
+      "occurrence": 0
+    }
+  }
+]

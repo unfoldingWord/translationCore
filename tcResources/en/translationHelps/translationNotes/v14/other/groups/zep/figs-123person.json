@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of himself by name to express the certainty of what he is declaring. Alternate translation: \"this is what Yahweh has declared\" or \"this is what I, Yahweh, have declared\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "this is Yahweh's declaration",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In verses 1:8-13, Yahweh is speaking. He alternates between using first person and speaking about himself in the third person. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Zephaniah 1:2-18 refers to Yahweh's judgment. Zephaniah 1:4-16 describes Yahweh's judgment on the people of Judah. In Zephaniah 1:8-13, Yahweh is speaking. He alternates between using first person and speaking about himself in the third person. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of himself by name to express the certainty of what he is declaring. Alternate translation: \"this is what Yahweh of hosts, God of Israel, has declared\" or \"this is what I, Yahweh of hosts, God of Israel, have declared\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "this is the declaration of Yahweh of hosts, God of Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of himself by name to express the certainty of what he is declaring. Alternate translation: \"this is what Yahweh has declared\" or \"this is what I, Yahweh, have declared\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "this is Yahweh's declaration",
+      "occurrence": 0
+    }
+  }
+]

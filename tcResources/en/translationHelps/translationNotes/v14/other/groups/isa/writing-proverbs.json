@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was probably a proverb that the people knew at the time. It means that what they believe will keep them safe from Yahweh's punishment will disappoint them like a bed that is too short or a blanket that is too narrow. (See: [[rc://en/ta/man/translate/writing-proverbs]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 28,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-proverbs",
+      "glQuote": "For the bed is too short for a man to stretch out on, and the blanket too narrow for him to wrap himself in",
+      "occurrence": 0
+    }
+  }
+]

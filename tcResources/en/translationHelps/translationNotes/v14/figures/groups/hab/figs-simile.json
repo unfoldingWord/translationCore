@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the Chaldeans take people captive as easily as one would scoop up sand with his hand. Alternate translation: \"they gather captives as one gathers sand\" or 2) the Chaldeans take a great number of people captive, as if those people were as many as the grains of sand in the desert. Alternate translation: \"they capture as many people as there are grains of sand\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "they gather captives like sand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Habakkuk compares the way in which the Chaldeans will kill people without remorse with the way in which people will kill fish without remorse. Alternate translation: \"You cause men to become no more important than fish\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "You make men like fish in the sea",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This simile compares the way in which people everywhere will know of Yahweh's glory with how water fills every part of the sea. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "the land will be filled with the knowledge of the glory of Yahweh as the waters cover the sea",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The power and quickness of the Chaldeans as they attacked the people of Israel is compared to the coming of a sudden storm. Alternate translation: \"they came quickly like a storm\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "they came like a storm",
+      "occurrence": 0
+    }
+  }
+]

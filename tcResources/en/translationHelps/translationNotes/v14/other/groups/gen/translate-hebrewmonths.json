@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since Moses wrote this book, it is possible he is referring to the second month of the Hebrew calendar. But this is uncertain. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the second month, on the seventeenth day of the month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Because Moses wrote this book, it is possible he is referring to the seventh month of the Hebrew calendar, but this is uncertain. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "in the seventh month, on the seventeenth day of the month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Because Moses wrote this book, it is possible he is referring to the tenth month of the Hebrew calendar, but this is uncertain. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "tenth month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since Moses wrote this book it is possible he is referring to the first month of the Hebrew calendar, but this is uncertain. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the first month, on the first day of the month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"On the twenty seventh day of the second month.\" This may refer to the second month of the Hebrew calendar, but this is uncertain. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 8,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "In the second month, on the twenty-seventh day of the month",
+      "occurrence": 0
+    }
+  }
+]

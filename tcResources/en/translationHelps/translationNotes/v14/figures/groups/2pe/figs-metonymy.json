@@ -1,0 +1,135 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter refers to God in terms of his glory. This is a euphemism that avoids using God's name, out of reverence for him. Alternate translation: \"God, the Supreme Glory, saying\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τῆς Μεγαλοπρεποῦς Δόξης",
+      "glQuote": "the Majestic Glory saying",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"world\" refers to the people who lived in it. Alternate translation: \"he did not spare the people who lived in the ancient world\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἀρχαίου κόσμου οὐκ ἐφείσατο",
+      "glQuote": "he did not spare the ancient world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"authority\" stands for God, who has the right to give commands and to punish disobedience. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "κυριότητος",
+      "glQuote": "authority",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"eyes\" represent their desires and \"eyes full\" means they constant want something. Alternate translation: \"They constantly want to commit adultery\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ὀφθαλμοὺς ἔχοντες μεστοὺς μοιχαλίδος",
+      "glQuote": "They have eyes full of adultery",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hearts\" refers to the thoughts and emotions of the person. Because of their habitual actions, they have trained themselves to think and act out of covetousness. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "καρδίαν γεγυμνασμένην πλεονεξίας",
+      "glQuote": "hearts trained in covetousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God used a donkey to stop the prophet's foolish action. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐκώλυσεν τὴν τοῦ προφήτου παραφρονίαν",
+      "glQuote": "stopped the prophet's insanity",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"defilements\" refers to sinful behavior that makes one morally impure. The \"world\" refers to human society. Alternate translation: \"the defiling practices of sinful human society\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "τὰ μιάσματα τοῦ κόσμου",
+      "glQuote": "the corruption of the world",
+      "occurrence": 1
+    }
+  }
+]

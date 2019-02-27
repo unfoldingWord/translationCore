@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Who is the liar? Anyone who denies that Jesus is the Christ.\" John used a question to emphasize who liars are. (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίς ἐστιν ὁ ψεύστης, εἰ μὴ ὁ ἀρνούμενος ὅτι Ἰησοῦς ... ἔστιν ὁ Χριστός",
+      "glQuote": "Who is the liar but the one who denies that Jesus is the Christ?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John uses a question to teach his audience. This can be translated as a statement. Alternate translation: \"He killed him because\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίνος ἔσφαξεν αὐτόν? ὅτι",
+      "glQuote": "Why did he kill him? Because",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John uses a question to teach his audience. Alternate translation: \"God's love is not in him\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "πῶς ἡ ἀγάπη τοῦ Θεοῦ μένει ἐν αὐτῷ",
+      "glQuote": "how does the love of God remain in him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John used this question to introduce something he wanted to teach. Alternate translation: \"I will tell you who overcomes the world:\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίς ἐστιν ... ὁ νικῶν τὸν κόσμον",
+      "glQuote": "Who is the one who overcomes the world?",
+      "occurrence": 1
+    }
+  }
+]

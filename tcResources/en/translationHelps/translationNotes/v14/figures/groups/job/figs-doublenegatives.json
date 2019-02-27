@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"treat me fairly\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 6,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "let there be no injustice with you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded with only one of the negatives. Alternate translation: \"He devoured everything, and there is nothing left\" or \"There is nothing left because he devoured everything\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 20,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "There is nothing left that he did not devour",
+      "occurrence": 0
+    }
+  }
+]

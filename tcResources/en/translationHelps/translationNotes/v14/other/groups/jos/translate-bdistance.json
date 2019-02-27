@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"2,000 cubits.\" The word \"cubit\" is a measurement equaling the distance from the elbow to the finger tips. (See: [[rc://en/ta/man/translate/translate-bdistance]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "glQuote": "two thousand cubits",
+      "occurrence": 0
+    }
+  }
+]

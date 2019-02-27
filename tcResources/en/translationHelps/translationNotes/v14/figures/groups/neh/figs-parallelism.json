@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these double phrases describe the same thing, the law of Moses. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "righteous decrees and true laws, good statutes and commandments",
+      "occurrence": 0
+    }
+  }
+]

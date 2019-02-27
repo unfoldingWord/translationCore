@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words both mean that Hannah is sad and annoyed because her rival has been provoking her. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "concern and provocation",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"discouraged\" and \"greatly afraid\" mean basically the same thing and emphasize the intensity of their fear. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 17,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "they were discouraged and greatly afraid",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"saw\" and \"knew\" share similar meanings and emphasize that Saul knew with certainty. Alternate translation: \"Saul recognized\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 18,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "Saul saw, and he knew",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two words mean almost the same thing and can be translated as one phrase. Alternate translation: \"Know for sure\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 23,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "Learn and find out",
+      "occurrence": 0
+    }
+  }
+]

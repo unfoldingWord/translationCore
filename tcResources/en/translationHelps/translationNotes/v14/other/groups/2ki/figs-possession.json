@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that the fire came from God. Alternate translation: \"fire from God\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "fire of God",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the phrase \"of fire\" means that these were surround by fire. Alternate translation: \"a chariot surrounded by fire pulled by horses surrounded by fire\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "a chariot of fire and horses of fire",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This pillar was used in the worship of Baal, though it is unknown what the pillar looked like. Alternate translation: \"the sacred stone pillar for worshiping Baal\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "2ki",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "the sacred stone pillar of Baal",
+      "occurrence": 0
+    }
+  }
+]

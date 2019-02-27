@@ -1,0 +1,471 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"cleansing\" can be expressed as a verb: \"making clean.\" Alternate translation: \"After he had finished making us clean from sins\" or \"After he had finished purifying us from our sins\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "After he had made cleansing for sins",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"death\" can be stated as a verb. Alternate translation: \"by dying\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "διὰ τοῦ θανάτου",
+      "glQuote": "through death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"death\" can be stated as a verb. Alternate translation: \"has the power to cause people to die\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "τὸ κράτος ἔχοντα θανάτου",
+      "glQuote": "has the power of death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the abstract noun \"confession\" is expressed as the verb \"confess.\" Alternate translation: \"whom we confess\" or \"in whom we believe\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "τῆς ὁμολογίας ἡμῶν",
+      "glQuote": "of our confession",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"courage\" and \"hope\" are abstract and can be stated as verbs. Alternate translation: \"if we continue to be courageous and joyfully expect God to do what he has promised\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "if we hold fast to our courage and the hope of which we boast",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"rebellion\" and \"testing\" can be stated as verbs. Alternate translation: \"as when your ancestors rebelled against God and tested him in the wilderness\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ὡς ἐν τῷ παραπικρασμῷ κατὰ τὴν, ἡμέραν τοῦ πειρασμοῦ ἐν τῇ ἐρήμῳ",
+      "glQuote": "as in the rebellion, in the time of testing in the wilderness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Being stubborn is spoken of as being hard or having a hard heart. The hardness is a result of being deceived by sin. This can be reworded so that the abstract noun \"deceitfulness\" is expressed as the verb \"deceive.\" Alternate translation: \"no one among you will be deceived by sin and become stubborn\" or \"you do not sin, deceiving yourselves so that you become stubborn\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "μὴ σκληρυνθῇ τις ἐξ ὑμῶν ἀπάτῃ τῆς ἁμαρτίας",
+      "glQuote": "no one among you will be hardened by the deceitfulness of sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"rebellion\" can be stated as a verb. See how you translated this in [Hebrews 3:8](../03/08.md). Alternate translation: \"as when your ancestors rebelled against God\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ὡς ἐν τῷ παραπικρασμῷ",
+      "glQuote": "as in the rebellion",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"unbelief\" can be translated with a verbal phrase. Alternate translation: \"because they did not believe him\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "δι’ ἀπιστίαν",
+      "glQuote": "because of unbelief",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"salvation\" can be stated as a verb. Alternate translation: \"now he saves all who obey him and causes them to live forever\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἐγένετο, πᾶσιν τοῖς ὑπακούουσιν αὐτῷ, αἴτιος σωτηρίας αἰωνίου",
+      "glQuote": "became, for everyone who obeys him, the cause of eternal salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"salvation\" can be stated as a verb. Alternate translation: \"things that concern God saving you\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἐχόμενα σωτηρίας",
+      "glQuote": "things that concern salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A priest's work is spoken of as if it were an object that Jesus possesses. This can be worded to avoid the abstract noun. Alternate translation: \"he is a priest permanently\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἀπαράβατον ἔχει τὴν ἱερωσύνην",
+      "glQuote": "he has a permanent priesthood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the abstract noun \"presence\" is expressed as the verb \"display\" or \"present.\" Alternate translation: \"bread on display before God\" or \"bread the priests presented to God\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἡ Πρόθεσις ἄρτων",
+      "glQuote": "bread of the presence",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"practice\" here refers to a way of atoning for sins. Stopping doing it is spoken of as if it were an object that could be taken away. Starting the second way of atoning for sins is spoken of as establishing that practice. Alternate translation: \"He stops people atoning for sins the first way in order to atone for sins the second way\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἀναιρεῖ τὸ πρῶτον ἵνα τὸ δεύτερον στήσῃ",
+      "glQuote": "He takes away the first practice in order to establish the second practice",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"offering\" can be expressed with the verb \"offer\" or \"sacrifice.\" Alternate translation: \"because Jesus Christ offered his body as a sacrifice\" or \"because Jesus Christ sacrificed his body\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "διὰ τῆς προσφορᾶς τοῦ σώματος Ἰησοῦ Χριστοῦ",
+      "glQuote": "through the offering of the body of Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the abstract noun \"forgiveness\" is expressed as the verb \"forgive.\" Alternate translation: \"when God has forgiven these things\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ὅπου ἄφεσις",
+      "glQuote": "where there is forgiveness for these",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the abstract noun \"sacrifice\" is expressed as the verb \"make offerings.\" Alternate translation: \"people no longer need to make offerings for sin\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ὅπου ἄφεσις τούτων οὐκέτι προσφορὰ περὶ ἁμαρτίας",
+      "glQuote": "there is no longer any sacrifice for sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the abstract noun \"promise\" is expressed as the verb \"promised.\" Alternate translation: \"he lived as a foreigner in the land God had promised to him\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "παρῴκησεν εἰς γῆν τῆς τῆς ἐπαγγελίας ὡς ἀλλοτρίαν",
+      "glQuote": "he lived in the land of promise as a foreigner",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"faith\" can be expressed with the verb \"believe.\" Possible meanings are 1) it was by Abraham's faith. Alternate translation: \"It was because Abraham believed God\" or 2) it was by Sarah's faith. Alternate translation: \"It was because Sarah believed God\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "It was by faith",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the abstract noun \"disgrace\" is express as the verb \"disrespect.\" Alternate translation: \"the experience of people disrespecting him because he did what Christ would want\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "the disgrace of following Christ",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be restated to remove the abstract noun \"resurrection.\" The word \"dead\" is a nominal adjective. It can be stated as a verb. Alternate translation: \"Women received back alive those who had died\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ἔλαβον γυναῖκες ἐξ ἀναστάσεως νεκροὺς τὴν",
+      "glQuote": "Women received back their dead by resurrection",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the abstract nouns are expressed as verbs. Alternate translation: \"God tested others by allowing their enemies to mock and whip them and even put them in chains and imprison them\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": ", ἕτεροι ἐμπαιγμῶν καὶ μαστίγων πεῖραν ἔλαβον ἔτι δὲ δεσμῶν καὶ φυλακῆς",
+      "glQuote": "Others had testing in mocking and whippings, and even chains and imprisonment",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can restate the abstract noun \"discipline\" as the verb \"disciplining.\" Alternate translation: \"So if you have not experienced God disciplining you like he disciplines all his children\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "But if you are without discipline, which all people share in",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"repentance\" can be translated with a verbal phrase. Alternate translation: \"because it was not possible for him to repent\" or \"because it was not possible for him to change his decision\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "μετανοίας γὰρ γὰρ τόπον οὐχ εὗρεν",
+      "glQuote": "because he found no opportunity for repentance",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"removal\" can be translated with the verb \"remove.\" This can be stated in active form. Alternate translation: \"mean that God will remove the things that he can shake, that is, the things\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "mean the removal of those things that can be shaken, that is, of the things",
+      "occurrence": 0
+    }
+  }
+]

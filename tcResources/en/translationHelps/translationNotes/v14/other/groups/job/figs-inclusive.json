@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"us\" refers to Elihu, Job, and his three friends. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 34,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "glQuote": "Let us",
+      "occurrence": 0
+    }
+  }
+]

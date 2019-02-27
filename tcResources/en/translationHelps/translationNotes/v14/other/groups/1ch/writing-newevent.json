@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used here to mark the beginning of a new part of the story. If your language has a way for doing this, you could consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 17,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "It happened",
+      "occurrence": 0
+    }
+  }
+]

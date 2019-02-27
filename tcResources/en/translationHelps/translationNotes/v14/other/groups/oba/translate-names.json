@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a region in the land of Edom. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "glQuote": "Teman",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Zarephath was a Phoenician city north of Israel on the coast of the Mediterranean between Tyre and Sidon. Alternate translation: \"as far north as Zarephath\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "glQuote": "as far as Zarephath",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a place whose location is unknown. Some experts suggest it refers to the city of Sardis in the region of Lydia. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "oba",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "glQuote": "Sepharad",
+      "occurrence": 0
+    }
+  }
+]
