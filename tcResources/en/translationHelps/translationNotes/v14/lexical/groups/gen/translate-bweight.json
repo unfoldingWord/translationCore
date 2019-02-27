@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is about 4.5 kilograms of silver. (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 23,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "four hundred shekels of silver",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"a gold nose ring that weighed six grams.\" The weight indicates the value of the ring. Alternate translation: \"an expensive gold nose ring\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 24,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "a gold nose ring weighing half a shekel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"two gold bracelets for her arms that weighed 110 grams.\" The weight shows their size and value. Alternate translation: \"two large gold bracelets for her arms\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 24,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "two gold bracelets for her arms weighing ten shekels",
+      "occurrence": 0
+    }
+  }
+]

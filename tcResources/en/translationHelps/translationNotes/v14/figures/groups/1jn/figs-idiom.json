@@ -1,0 +1,58 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To keep someone's word here is an idiom for to obey. Alternate translation: \"does what God tells him to do\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "τηρῇ αὐτοῦ τὸν λόγον",
+      "glQuote": "keeps his word",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This expression means \"Christ willingly gave his life for us\" or \"Christ willingly died for us\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "Christ laid down his life for us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The idiom to \"receive the witness\" means to believe what another person testifies concerning something that he has seen. The abstract noun \"witness\" can be translated with a verbal phrase. Alternate translation: \"believe what men testify\" or \"believe what men say about what they have seen\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "τὴν μαρτυρίαν τῶν ἀνθρώπων λαμβάνομεν",
+      "glQuote": "receive the witness of men",
+      "occurrence": 1
+    }
+  }
+]

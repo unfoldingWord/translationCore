@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"sin\" can be expressed with the verb sin. Alternate translation: \"The one among you is has never sinned\" or \"If any one of you has never sinned\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "glQuote": "The one among you who has no sin",
+      "occurrence": 0
+    }
+  }
+]

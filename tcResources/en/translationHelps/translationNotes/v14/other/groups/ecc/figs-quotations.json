@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The direct quotation can be translated as an indirect quotation. Alternate translation: \"I said that it is crazy to laugh at things\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "ecc",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "I said about laughter, \"It is crazy,\"",
+      "occurrence": 0
+    }
+  }
+]

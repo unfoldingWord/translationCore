@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"He\" refers to both men and women in general. Alternate translation: \"That person is clean\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 13,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "glQuote": "He is clean",
+      "occurrence": 0
+    }
+  }
+]

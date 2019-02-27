@@ -207,15 +207,17 @@ export function loadSelections() {
         type: consts.CHANGE_SELECTIONS,
         modifiedTimestamp: selectionsObject.modifiedTimestamp,
         selections: selectionsObject.selections,
-        userName: selectionsObject.userName
+        userName: selectionsObject.userName,
+        gatewayLanguageCode: selectionsObject.gatewayLanguageCode,
+        gatewayLanguageQuote: selectionsObject.gatewayLanguageQuote
       });
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
       dispatch({
         type: consts.CHANGE_SELECTIONS,
-        modifiedTimestamp: "",
+        modifiedTimestamp: null,
         selections: [],
-        userName: ""
+        userName: null
       });
     }
   };

@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh is speaking to the nations, so these verbs are plural. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 31,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "Hear ... Report",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of himself as if he were someone else, and he speaks of the people of Israel as if they were a helpless woman. Alternate translation: \"I caused my people Israel to be scattered among the nations, but now I am bringing them home and keeping them\" (See: [[rc://en/ta/man/translate/figs-pronouns]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 31,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "The one who scattered Israel is gathering her up and keeping her",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These commands and instances of \"yourself\" and \"your\" and \"you\" are addressed to \"virgin Israel\" and so are singular. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 31,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "Place road signs for yourself ... Set up guideposts for yourself ... Set your mind ... you should take ... Come back",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Each instance of \"You\" or \"you\" is plural and refers to the people of Babylon. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 50,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "You rejoice ... you jump ... you neigh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" is plural and refers to the people of Babylon. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 50,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "glQuote": "bore you",
+      "occurrence": 0
+    }
+  }
+]

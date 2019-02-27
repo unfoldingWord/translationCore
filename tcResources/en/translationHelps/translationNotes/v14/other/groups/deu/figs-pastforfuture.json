@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks of what he will do as if he had already done it. (See: [[rc://en/ta/man/translate/figs-pastforfuture]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pastforfuture",
+      "glQuote": "I have given you victory",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses speaks of the future as if it were the past to emphasize that what he is saying will come true. AT \"He will thrust out ... he will say\" (See: [[rc://en/ta/man/translate/figs-pastforfuture]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 33,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pastforfuture",
+      "glQuote": "He thrust out ... he said",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) Moses speaks of the future as if it were the past to emphasize that what he is saying will come true, \"Israel will dwell ... Jacob's spring will be secure\" or 2) Moses is blessing Israel, \"May Israel dwell ... and may Jacob's spring be secure.\" (See: [[rc://en/ta/man/translate/figs-pastforfuture]])",
+      "reference": {
+        "bookId": "deu",
+        "chapter": 33,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pastforfuture",
+      "glQuote": "Israel dwelt ... Jacob's spring was secure",
+      "occurrence": 0
+    }
+  }
+]

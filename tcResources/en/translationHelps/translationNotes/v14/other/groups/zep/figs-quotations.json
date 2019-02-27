@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as an indirect quotation. Alternate translation: \"I thought they would surely fear me and accept correction so that they would not be cut off from their homes by all that I have planned to do to them.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "I said, 'Surely you will fear me ... I have planned to do to you.'",
+      "occurrence": 0
+    }
+  }
+]

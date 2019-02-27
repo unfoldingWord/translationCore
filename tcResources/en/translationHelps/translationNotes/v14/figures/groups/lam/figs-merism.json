@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two opposite times of day refer to all the time. Alternate translation: \"all of the time\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "day and night",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two actions together represent everything the people do. Alternate translation: \"everything they do\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 3,
+        "verse": 63
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "how they sit and then rise up",
+      "occurrence": 0
+    }
+  }
+]

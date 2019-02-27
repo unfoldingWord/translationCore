@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"feet\" represent the person who is running in order to declare a message. Alternate translation: \"on the mountains there is someone who is bringing good news\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "nam",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "glQuote": "on the mountains there are the feet of someone who is bringing good news",
+      "occurrence": 0
+    }
+  }
+]

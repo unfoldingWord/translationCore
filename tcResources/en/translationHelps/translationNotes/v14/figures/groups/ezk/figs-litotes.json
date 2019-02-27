@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these phrases mean that Ezekiel will speak. In the second phrase it is stated in negative form to emphasize that he will speak. (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 24,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "you will speak—you will no longer be silent",
+      "occurrence": 0
+    }
+  }
+]

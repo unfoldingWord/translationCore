@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"hurry\" and \"come\" can be combined into one idea. Alternate translation: \"Come quickly\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 23,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "glQuote": "Hurry and come",
+      "occurrence": 0
+    }
+  }
+]

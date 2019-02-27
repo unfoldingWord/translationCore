@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Samson had seven locks of hair on his head. Locks are small bunches of hair. Here his locks of hair are described as \"belonging\" to his head. Alternate translation: \"the seven locks of hair on his head\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "the seven locks of his head",
+      "occurrence": 0
+    }
+  }
+]

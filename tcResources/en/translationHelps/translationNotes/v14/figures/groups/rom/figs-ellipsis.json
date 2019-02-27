@@ -1,0 +1,154 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"the promise came\" are understood from the first phrase. You can translate this by adding these implied words. Alternate translation: \"but the promise came through faith, which God considers as righteousness\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ἀλλὰ διὰ δικαιοσύνης πίστεως",
+      "glQuote": "but through the righteousness of faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Again Paul speaks of obedience as if it were paying back a debt. You can include the implied word \"debtors.\" Alternate translation: \"but we are not debtors to the flesh, and we do not have to obey our sinful desires\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "οὐ τῇ σαρκὶ, τοῦ κατὰ σάρκα ζῆν",
+      "glQuote": "but not to the flesh to live according to the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"shall separate us from the love of Christ\" are understood from the previous question. Alternate translation: \"Shall tribulation, or distress, or persecution, or hunger, or nakedness, or danger, or sword separate us from the love of Christ?\"(See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "θλῖψις, ἢ στενοχωρία, ἢ διωγμὸς, ἢ λιμὸς, ἢ γυμνότης, ἢ κίνδυνος, ἢ μάχαιρα",
+      "glQuote": "Tribulation, or distress, or persecution, or hunger, or nakedness, or danger, or sword?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ellipsis. You can include the implied words in your translation. Paul asks this question to get the attention of his readers. Alternate translation: \"Why could they not attain righteousness?\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "διὰ τί",
+      "glQuote": "Why not?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Pay\" is understood from the previous sentence. Alternate translation: \"Pay tax to whom tax is due and toll to whom toll is due. Pay fear to whom fear is due and honor to him to whom honor is due\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "τῷ τὸν φόρον, τὸν φόρον; τῷ τὸ τέλος, τὸ τέλος; τῷ τὸν φόβον, τὸν φόβον; τῷ τὴν τιμὴν, τὴν τιμήν",
+      "glQuote": "Tax to whom tax is due, toll to whom toll is due; fear to whom fear is due, honor to whom honor is due.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"everything\" is understood from [Romans 14:3](../14/03.md). It can be repeatd here. Alternate translation: \"the person who eats every kind of food\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ὁ ... ἐσθίων",
+      "glQuote": "he who eats",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"everything\" is understood from [Romans 14:3](../14/03.md). It can be repeatd here. Alternate translation: \"He who does not eat everything\" or \"The person who does not eat certain kinds of food\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "καὶ ὁ ... μὴ ἐσθίων",
+      "glQuote": "He who does not eat",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"they serve\" are understood from the previous phrase. This can be expressed as a separate sentence. Alternate translation: \"Rather, they serve their own stomach\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ἀλλὰ τῇ ἑαυτῶν κοιλίᾳ",
+      "glQuote": "but their own stomach",
+      "occurrence": 1
+    }
+  }
+]

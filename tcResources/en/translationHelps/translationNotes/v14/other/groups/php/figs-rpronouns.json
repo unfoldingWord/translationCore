@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses \"myself\" for emphasis. Alternate translation: \"certainly I\" (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": "ἐγὼ",
+      "glQuote": "I myself",
+      "occurrence": 1
+    }
+  }
+]

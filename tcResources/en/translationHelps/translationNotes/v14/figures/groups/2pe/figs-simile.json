@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter compares the prophetic word to a lamp that gives light in the dark until light comes in the morning. The coming of morning is a reference to Christ's coming. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": "ὡς λύχνῳ φαίνοντι ἐν αὐχμηρῷ τόπῳ, ἕως οὗ ἡμέρα διαυγάσῃ",
+      "glQuote": "as to a lamp shining in a dark place, until the day dawns",
+      "occurrence": 1
+    }
+  }
+]

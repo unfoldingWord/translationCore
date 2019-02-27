@@ -1,0 +1,560 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"judge\" means to govern or rule. Solomon uses a question to state that it is impossible to rule over so many people without God's help. Alternate translation: \"no one can judge all of your countless people without your help.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "who can judge your people, who are so many in number?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Solomon uses a question to emphasize that no one is able or worthy to build a house for God. Alternate translation: \"no one is able to build a house for God because not even the universe or heaven is big enough to contain him. I am not worthy to build a house for him, except as a place to offer sacrifices to him. (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "who is able to build God a house, since the entire universe and even heaven itself cannot contain him? Who am I to build him a house, except to burn sacrifices before him?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings of this question are 1) Solomon is asking a real question and expecting an answer or 2) the question is rhetorical and Solomon is emphasizing that God is too big and mighty to live on earth. Alternate translation: \"But it surely cannot be that God will actually live on the earth!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "But will God actually live with mankind on the earth?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses the question to remind the readers that other people had written about Solomon. It can be expressed in active form Alternate translation: \"they are written ... (which also had information about Jeroboam son of Nebat.)\" or \"people have written about them ... (which also had information about Jeroboam son of Nebat).\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 9,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "are they not written ... (which also had information about Jeroboam son of Nebat)?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people use this question and statement to imply that since they do not belong to David's family, they are not obligated to support David's grandson, King Rehoboam. Alternate translation: \"We have no share in David. We will not have anything to do with the descendants of the son of Jesse\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 10,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What share do we have in David? We have no inheritance in the son of Jesse",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Abijah asks this rhetorical question to emphasize the positive answer that it anticipates. The question can be translated as a statement. Alternate translation: \"You know very well ... by a formal covenant.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 13,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you not know ... by a formal covenant?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Abijah asks this rhetorical question to rebuke the people and to emphasize the positive answer that it anticipates. The question can be translated as a statement. Alternate translation: \"But you drive out ... as the people of other lands do.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 13,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "But did you not drive out ... as the people of other lands do?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Hanani uses this rhetorical question to remind Asa of a previous victory. This can be written as a statement. Alternate translation: \"The Cushites and the Libyans were a huge army, with very many chariots and horsemen.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Were not the Cushites and the Libyans a huge army, with very many chariots and horsemen?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Ahab asks this question out of frustration to rebuke Micaiah. Alternate translation: \"Many times I have required ... in the name of Yahweh.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 18,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How many times must I require ... in the name of Yahweh?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Ahab asks this question to emphasize that he had spoken the truth about Micaiah. Alternate translation: \"I told you ... but only disaster!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Did I not tell you ... but only disaster?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Zedekiah asks this sarcastic question to insult and rebuke Micaiah. Alternate translation: \"Do not think that Yahweh's Spirit left me to speak to you!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 18,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Which way did the Spirit of Yahweh take to go from me to speak to you?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These questions expect negative answers to make the point that Jehoshaphat should not have helped Ahab. Alternate translation: \"You should not help the wicked! You should not love those who hate Yahweh!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Should you be helping the wicked? Should you be loving those who hate Yahweh?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jehoshaphat uses this rhetorical question to emphasize that God is in heaven and his authority over all things. This question can be written as statement. Alternate translation: \"you are indeed God in heaven and the ruler over all the kings of the earth.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 20,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "are you not God in heaven? Are you not the ruler over all the kingdoms of the nations?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jehoshaphat uses this rhetorical question to emphasize that God drove their enemies from their land and gave it to the Israelites. This question can be written as statement. Alternate translation: \"It was you who drove out those who lived in this land for the sake of your people Israel and who gave it permanently to the descendants of Abraham.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 20,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Our God, did you not drive out the inhabitants of this land ... to the descendants of Abraham?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question is used as a request. This question can be written as a statement. Alternate translation: \"please judge them.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 20,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "will you not judge them?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "King Joash asks this rhetorical question to accuse Jehoiada of not doing his duty. It can be translated as a statement. Alternate translation: \"You have neglected your duty. I told you to require the Levites ... covenant decrees, but you have not done it.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 24,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why have you not required the Levites ... covenant decrees?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Zechariah asked this rhetorical question to rebuke the people. It can be translated as a statement. Alternate translation: \"You are transgressing the commandments of Yahweh, so that is why you cannot prosper.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 24,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why do you transgress the commandments of Yahweh, so that you cannot prosper?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The prophet uses this rhetorical question to rebuke Amaziah for worshiping the powerless gods of the people he had defeated. Here the word \"hand\" is a metonym for power. The question can be translated as a statement. Alternate translation: \"You have worshiped the gods of a people that did not even save their own people from your power, King Amaziah.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 25,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why have you sought after the gods of a people who did not even save their own people from your hand?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The king used these rhetorical questions to rebuke the prophet for speaking against him. The questions can be translated as statements. Alternate translation: \"We certainly did not appoint you to be one of my advisors. So stop talking! If you say anything more, I will tell my soldiers to kill you!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 25,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Have we made you an advisor to the king? Stop! Why should you be killed?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jehoash used this rhetorical question to warn Amaziah not to fight with him. It can be translated as a statement. Alternate translation: \"you should not cause yourself trouble and fall, both you and Judah with you.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 25,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "why should you cause yourself trouble and fall, both you and Judah with you?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question is used to remind the reader that what happened to Amaziah is well-known. It can be translated as a statement. Alternate translation: \"All of the matters concerning Amaziah, behold, are written in the book of the kings of Judah and Israel.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 25,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "As for the other matters ... are they not written in the book of the kings of Judah and Israel?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Oded asks this rhetorical question to rebuke the army of Israel and to emphasize the positive answer that the question anticipates. Alternate translation: \"But you yourselves are guilty of sins of your own against Yahweh your God.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 28,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "But are you not guilty of sins of your own against Yahweh your God?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people use a rhetorical question to emphasize that they do not want the kings of Assyria to find their water. The question can be translated as a statement. Alternate translation: \"We do not want the kings of Assyria to come here and find a lot of water.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why should the kings of Assyria come and find a lot of water?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sennacherib uses a rhetorical question to cause the people to think about their situation. The question can be translated as a statement. Alternate translation: \"You are not able to endure a siege in Jerusalem.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What are you relying on in order to endure a siege in Jerusalem?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sennacherib uses a rhetorical question to cause the people of Jerusalem to think about their situation. It can be translated as a statement. Alternate translation: \"Hezekiah is misleading you ... king of Assyria.'\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Is not Hezekiah misleading you ... king of Assyria'?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sennacherib uses a rhetorical question to cause the people of Jerusalem to think about their situation. It can be translated as a statement. Alternate translation: \"You know very well what ... lands!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you not know what ... lands?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sennacherib uses a rhetorical question to cause the people of Jerusalem to think about their situation. It can be translated as a statement. Alternate translation: \"There was no god ... power!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Were the gods ... power?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sennacherib uses a rhetorical question to cause the people of Jerusalem to think about their situation. It can be translated as a statement. Alternate translation: \"There was no god among all the gods ... who ... hand!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Among all the gods ... was there any god who ... hand?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sennacherib uses a rhetorical question to cause the people of Jerusalem to think about their situation. It can be translated as a statement. Alternate translation: \"There is no reason your God should be able ... power!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why should your God be able ... power?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sennacherib uses a rhetorical question to cause the people of Jerusalem to think about their situation. It can be translated as a statement. Alternate translation: \"Your God will certainly not be able to rescue you from my hand!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 32,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How much less will your God rescue you from my hand?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Necho uses this rhetorical question to tell Josiah that he is not in conflict with him and that Josiah should not attack him. This question can be written as a statement. Alternate translation: \"You have no reason to attack me, king of Judah.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 35,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What have I to do with you, king of Judah?",
+      "occurrence": 0
+    }
+  }
+]

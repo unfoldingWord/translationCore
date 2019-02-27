@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words have similar meaning and emphasize how great his kingdom was. Alternate translation: \"the great wealth of his kingdom\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "the wealth of the splendor of his kingdom",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words have similar meaning and emphasize how great he was. Alternate translation: \"the splendor of his greatness\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "the honor of the glory of his greatness",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing and emphasize how much she pleased him. Alternate translation: \"The young girl greatly pleased him\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "The young girl pleased him, and she found favor with him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words mean the same thing and emphasize the completeness of the destruction. Alternate translation: \"completely destroy\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "annihilate, kill, and destroy",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"petition\" and \"request\" mean the same thing. She probably used these words together as a way of speaking very formally and respectfully to the king. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "My petition and my request",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here all three words have the same meaning and are used for emphasis. This can be stated in active form. Alternate translation: \"for our enemies to destroy, kill, and annihilate us\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "est",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "to be destroyed, killed, and annihilated",
+      "occurrence": 0
+    }
+  }
+]

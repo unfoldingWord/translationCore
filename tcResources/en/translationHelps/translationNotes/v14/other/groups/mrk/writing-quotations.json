@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In some languages speakers do not interrupt a quote to say who is speaking. Rather they say who is speaking at the beginning or end of the complete quote. Alternate translation: \"Jesus said to them, 'It was because ... this law.\" (See: [[rc://en/ta/man/translate/writing-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-quotations",
+      "glQuote": "\"It was because ... this law,\" Jesus said to them.",
+      "occurrence": 0
+    }
+  }
+]

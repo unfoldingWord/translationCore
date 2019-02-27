@@ -1,0 +1,344 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"he\" refers to Jesus. Except where otherwise noted, the word \"you\" in the book of Acts is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" is plural and refers to both Ananias and Sapphira. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" is plural and refers to the captain of the temple and the chief priests. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"they\" in this section refers to the captain and the officers. In the phrase \"feared that the people might stone them\" the word \"them\" refers to the captain and the officers. All other occurrences of \"them\" in this chunk refer to the apostles. Here the word \"you\" is plural and refers to the apostles. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" refers to the believers. The words \"us\" and \"we\" here refer to the 12 apostles. Where applicable, use the exclusive form in your language. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"our\" includes both Steven, the Jewish council to whom he spoke, and the entire audience. The word \"your\" is singular refers to Abraham. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" refers to the Jewish council and audience. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" here is singular and refers to Saul. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"him\" here refers to Cornelius. Here the words \"You\" and \"you\" are plural and include Cornelius as well as the Gentiles who were present. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In verses 31 and 32 Cornelius quotes what the angel had said to him when he appeared to him at the ninth hour. The words \"you\" and \"your\" are all singular. The word \"we\" here does not include Peter. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The first word \"them\" refers to apostles and elders ([Acts 15:6](../15/06.md)) and the other words \"them\" and \"their\" refer to the believing Gentiles. Here the word \"you\" is plural and refers to the apostles and elders present. The word \"he\" refers to God. Here \"us\" is plural and refers to Peter, the apostles and elders, and all Jewish believers in general. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"You\" and \"you\" refer to all the men present who were from Ephesus. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"They\" refers to the forty Jews in [Acts 23:13](../23/13.md). Here \"you\" is plural and refers to the chief priests and elders. Both \"us\" and \"we\" refer to the forty Jews who planned to kill Paul. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" is singular and refers to Governor Felix. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" refers to Felix, the governor. Here \"we\" refers to the citizens under Felix. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" is singular and refers to Governor Felix. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the first \"you\" is plural; the second \"you\" is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is plural and refers to the people who were listening to Paul. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" is plural and refers to the centurion and the Roman soldiers. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

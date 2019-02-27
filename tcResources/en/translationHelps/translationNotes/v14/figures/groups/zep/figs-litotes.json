@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This uses a negative statement to emphasize the positive truth that Yahweh's justice is always visible. Alternate translation: \"His justice is clearly shown to all\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "It will not be hidden in the light",
+      "occurrence": 0
+    }
+  }
+]

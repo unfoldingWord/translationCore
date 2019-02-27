@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Hiram refers to Solomon as \"my master\" and to himself and his own people as \"his servants.\" This is a way of showing respect. Alternate translation: \"of which you, my master, have spoken, please send these things to us, your servants\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "of which my master has spoken, let him send these things to his servants",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Solomon speaks to Yahweh as if he were speaking to someone else to show that he respects Yahweh. Alternate translation: \"Yahweh, you have said that you\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "Yahweh has said that he",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Solomon speaks about God in the third person to show his great respect for God. It can be stated in the second person. Alternate translation: \"But will you\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "But will God",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Solomon refers to himself as \"your servant\" to show that he respects Yahweh. This can be stated in first person. Alternate translation: \"the prayer that I, your servant, pray toward this place\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "the prayer your servant prays toward this place",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Solomon speaks of himself as \"your servant\" to show that he respects Yahweh. This can be stated in first person. Alternate translation: \"So listen to my requests and the requests of your people Israel\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 6,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "So listen to the requests of your servant and of your people Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Jehoshaphat speaks of himself in the third person. This can be translated in the first person. Alternate translation: \"of all my royal matters\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 19,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "of all the matters of the king",
+      "occurrence": 0
+    }
+  }
+]

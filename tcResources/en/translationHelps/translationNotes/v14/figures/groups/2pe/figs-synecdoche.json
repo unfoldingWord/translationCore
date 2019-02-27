@@ -1,0 +1,40 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"soul\" refers to Lot's thoughts and emotions. The immoral behavior of the citizens of Sodom and Gomorrah disturbed him emotionally. Alternate translation: \"was greatly disturbed\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "ψυχὴν δικαίαν ... ἐβασάνιζεν",
+      "glQuote": "was tormented in his righteous soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"souls\" refers to persons. Alternate translation: \"They entice unstable people\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "δελεάζοντες ψυχὰς ἀστηρίκτους",
+      "glQuote": "They entice unstable souls",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means seventy shekels of silver. A shekel weighs 11 grams. If it is necessary to translate this with modern measurements, you can translate it like this. Alternate translation: \"almost one kilo of silver\" (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "glQuote": "seventy pieces of silver",
+      "occurrence": 0
+    }
+  }
+]

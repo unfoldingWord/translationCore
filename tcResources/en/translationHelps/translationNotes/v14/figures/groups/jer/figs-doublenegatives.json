@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated in active form. Alternate translation: \"will certainly punish you\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 30,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "will certainly not leave you unpunished",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"will certainly punish you\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 46,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "will certainly not leave you unpunished",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"I will scatter the people of Elam to every nation on earth\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 49,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "There is no nation to which those scattered from Elam will not go",
+      "occurrence": 0
+    }
+  }
+]

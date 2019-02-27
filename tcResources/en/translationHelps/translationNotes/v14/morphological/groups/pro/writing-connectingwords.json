@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated with the word \"therefore\" to show that the woman wisdom laughs at them because they ignored her. Alternate translation: \"Therefore I will laugh\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "I will laugh",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This explains what is meant by \"riches and honor.\" This can be made clear with the connecting statement \"therefore.\" Alternate translation: \"therefore, I will give lasting wealth and righteousness to those who find me\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 8,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "lasting wealth and righteousness",
+      "occurrence": 0
+    }
+  }
+]

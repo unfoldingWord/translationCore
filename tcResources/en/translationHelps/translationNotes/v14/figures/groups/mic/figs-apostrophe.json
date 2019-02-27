@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This begins Micah's prophecy. Micah speaks to the people of Samaria as if all the people of the earth and even the earth itself were able to hear him. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "Listen, all you peoples. Listen, earth, and all that is in you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Micah speaks to the people of Jerusalem by speaking to the temple mount as if it could hear him. You may need to make explicit that Micah is giving his message to the people. Alternate translation: \"As for the temple mount, the place from which Yahweh watches over you, his sheep, the place that Jerusalem's people are most proud of—its former dominion will return\" (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "As for you, watchtower for the flock, hill of the daughter of Zion—to you it will come, your former dominion",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh speaks to the people of Judah, and especially to the people of Bethlehem, as if he were speaking to the town of Bethlehem itself. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "But you, Bethlehem Ephrathah",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Micah speaks to the people of Israel as if he were speaking to mountains that can hear him, so both instances of \"listen\" are plural. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "Now listen",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Micah speaks to the people of Israel as if he were speaking to mountains that can hear him, so both instances of \"listen\" are plural. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "Listen to Yahweh's lawsuit",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Micah speaks to the people of the city, who can hear him, as if he were speaking to the city itself, which cannot hear him. You may need to make explicit the words that the ellipsis omits. Alternate translation: \"I will make your city a ruin, and I will make you inhabitants an object of hissing\" or \"I will make you, city, a ruin, and I will cause everyone who sees you, inhabitants of the city, to hiss at you\" or \"I will make the city a ruin, and I will make people hiss at the inhabitants\" (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 6,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "I will make you, city, a ruin, and you inhabitants an object of hissing",
+      "occurrence": 0
+    }
+  }
+]

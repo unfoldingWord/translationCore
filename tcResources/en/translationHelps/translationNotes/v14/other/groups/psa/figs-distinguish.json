@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"worthless\" refers to all idols. This can be clarified in translation. Alternate translation: \"Idols are worthless. I hate those who serve them\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 31,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "I hate those who serve worthless idols",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase distinguishes the full grown bulls from other younger cows. Alternate translation: \"a bull that is full grown with horns and hooves\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 69,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "glQuote": "a bull that has horns and hooves",
+      "occurrence": 0
+    }
+  }
+]

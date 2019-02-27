@@ -1,0 +1,146 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the least powerful and least important people. Alternate translation: \"the least powerful people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the least",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the most powerful and most important people. Alternate translation: \"the greatest people\" or \"the most powerful people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the greatest",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the least powerful and least important people. Alternate translation: \"the least powerful people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the least",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the most powerful and most important people. Alternate translation: \"the greatest people\" or \"the most powerful people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the greatest",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to wicked people. Alternate translation: \"wicked people\" or \"those who are wicked\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the wicked",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to wicked people. Alternate translation: \"wicked people\" or \"those who are wicked\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the wicked",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a noun phrase. Alternate translation: \"the good things\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 29,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the good",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This nominal adjective can be stated as an adjective. Alternate translation: \"with those who were dead\" or \"with those they had killed\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 41,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "with the dead",
+      "occurrence": 0
+    }
+  }
+]

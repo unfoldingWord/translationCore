@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"1,000 cubits.\" This may be written in modern measurements. Alternate translation: \"460 meters\" (See: [[rc://en/ta/man/translate/translate-bdistance]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "glQuote": "a thousand cubits",
+      "occurrence": 0
+    }
+  }
+]

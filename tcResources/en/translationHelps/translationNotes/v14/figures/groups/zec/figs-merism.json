@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"earth\" and \"heaven\" form a merism that refer to the sky. It is implicit that the two women flew away with the basket. Alternate translation: \"They lifted the basket up into the sky and flew away\" (See: [[rc://en/ta/man/translate/figs-merism]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "They lifted up the basket between earth and heaven",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) this is a poetic way of expressing specific countries to which the people were exiled. Alternate translation: \"From the land to the east and from the land to the west\" or 2) this is a merism that means from all directions. Alternate translation: \"from all lands in every direction\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 8,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "from the land of the sunrise and from the land of the setting sun",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This merism refers to all of life's activities everywhere that anyone went. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "for anyone going or coming",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"right\" and \"left\" represent every direction. Alternate translation: \"in every direction\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 12,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "on their right and on their left",
+      "occurrence": 0
+    }
+  }
+]

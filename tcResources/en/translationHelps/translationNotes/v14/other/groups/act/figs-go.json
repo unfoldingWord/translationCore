@@ -1,0 +1,152 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"came\" can be translated as \"went.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": "κατήντησεν ... καὶ",
+      "glQuote": "Paul also came",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"came\" can be translated as \"went\" or \"arrived.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": "ἐλθόντες δὲ",
+      "glQuote": "When they came",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"came\" can be translated as \"went.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": "κατέβησαν",
+      "glQuote": "they came down",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"came to\" can be translated as \"went to\" or \"arrived at.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": "εἰς ... Νέαν Πόλιν",
+      "glQuote": "we came to Neapolis",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"came\" can be translated as \"went.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": "εἰσῆλθον πρὸς τὴν Λυδίαν",
+      "glQuote": "came to the house",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"came\" can be translated as \"went\" or \"arrived.\" Alternate translation: \"they came to the city\" or \"they arrived at the city\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": "ἦλθον εἰς Θεσσαλονίκην",
+      "glQuote": "they came to the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"came\" can be translated as \"went.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "glQuote": "The chief captain came",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"I came\" can be translated as \"I went.\" Alternate translation: \"I went to help my people by bringing them money as a gift\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "glQuote": "I came to bring help to my nation and gifts of money",
+      "occurrence": 0
+    }
+  }
+]

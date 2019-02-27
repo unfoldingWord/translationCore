@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main event. Here the author starts to tell a new part of the narrative. If you have a way of doing this in your language, consider using it here. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  }
+]

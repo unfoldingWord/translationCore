@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Being with someone in spirit is a metaphor for thinking continually about that person. Alternate translation: \"I continually think about you\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "τῷ πνεύματι σὺν ὑμῖν εἰμι",
+      "glQuote": "I am with you in spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words explain what it means to \"walk in him.\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἐρριζωμένοι ... ἐποικοδομούμενοι ... βεβαιούμενοι ... περισσεύοντες",
+      "glQuote": "Be rooted ... be built ... be established ... abound",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that means \"because.\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "εἰ οὖν",
+      "glQuote": "If then",
+      "occurrence": 1
+    }
+  }
+]

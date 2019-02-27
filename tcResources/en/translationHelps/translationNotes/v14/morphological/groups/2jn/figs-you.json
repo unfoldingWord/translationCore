@@ -1,0 +1,75 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Tradition identifies the apostle John as the writer of this letter. Though possibly addressed to an individual woman, because he writes that they should \"love one another,\" this is probably to a church. All instances of \"you\" and \"your\" in this letter are plural unless noted otherwise. In this letter, John includes himself and his readers by using the word \"us\" and \"our.\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"your\" is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "τῶν τέκνων σου",
+      "glQuote": "your children",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These instances of \"you\" are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "you, lady ... writing to you",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"you\" in verse 12 are singular. The word \"your\" in verse 13 is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

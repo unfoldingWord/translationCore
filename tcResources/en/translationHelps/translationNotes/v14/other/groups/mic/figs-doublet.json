@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the ruler descending from the ancient family of King David. The phrases \"from ancient times\" and \"from everlasting\" mean basically the same thing and emphasize how old this family line is. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "whose beginning is from ancient times, from everlasting",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing and emphasize that the \"remnant of Jacob\" will live in many different nations. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mic",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "glQuote": "among the nations, among many peoples",
+      "occurrence": 0
+    }
+  }
+]

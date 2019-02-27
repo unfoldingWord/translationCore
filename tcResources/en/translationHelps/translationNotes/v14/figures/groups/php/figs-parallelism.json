@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"standing firm in one spirit\" and \"with one mind striving together\" share similar meanings and emphasize the importance of unity. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": "ὅτι στήκετε ἐν ἑνὶ πνεύματι, μιᾷ ψυχῇ συναθλοῦντες τῇ πίστει τοῦ εὐαγγελίου",
+      "glQuote": "that you are standing firm in one spirit, with one mind striving together for the faith of the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"run in vain\" and \"labor in vain\" here mean the same thing. Paul uses them together to emphasize how hard he has worked to help people believe in Christ. Alternate translation: \"I did not work so hard for nothing\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": "οὐκ εἰς κενὸν ἔδραμον, οὐδὲ εἰς κενὸν ἐκοπίασα",
+      "glQuote": "I did not run in vain or labor in vain",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing. Paul uses them to emphasize that he has learned how to be content in any situation. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": "χορτάζεσθαι καὶ πεινᾶν, καὶ περισσεύειν καὶ ὑστερεῖσθαι",
+      "glQuote": "how to be well-fed or to be hungry, and how to have an abundance or to be in need",
+      "occurrence": 1
+    }
+  }
+]

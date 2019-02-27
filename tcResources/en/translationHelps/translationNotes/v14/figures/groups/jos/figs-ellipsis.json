@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joshua was asking if this is the reason God had brought them across the Jordan. Alternate translation: \"Did you do it in order to give us into the hands of the Amorites to destroy us?\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "To give us into the hands of the Amorites to destroy us?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The verb may be supplied from the previous phrase. Alternate translation: \"but he gave to them only certain cities to live in\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "but only certain cities to live in",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The verb may be supplied from the previous phrase. Alternate translation: \"to the east, one can reach Issachar\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "jos",
+        "chapter": 17,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "to the east, Issachar",
+      "occurrence": 0
+    }
+  }
+]

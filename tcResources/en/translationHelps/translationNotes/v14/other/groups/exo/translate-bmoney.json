@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"330 grams of silver.\" A shekel weighed eleven grams. (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 21,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "glQuote": "thirty shekels of silver",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"1/2 a shekel of silver.\" Translators may use a unit of measure that people understand and a round number: \"5.5 grams of silver\" or \"six grams of silver\" (See: [[rc://en/ta/man/translate/translate-bmoney]] and [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 30,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "glQuote": "half a shekel of silver",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Translators may use a unit of measure that people understand and a round number: \"the 5.5 grams of silver\" or \"the 6 grams of silver.\" See how you translated this in [Exodus 3:13](../03/13.md). (See: [[rc://en/ta/man/translate/translate-bmoney]] and [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 30,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "glQuote": "the half shekel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A shekel is a unit of weight equal to about 11 grams. (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 38,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "glQuote": "shekels",
+      "occurrence": 0
+    }
+  }
+]

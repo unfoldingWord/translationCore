@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to fill in the words that have been left out. Alternate translation: \"let their children tell the generation after them\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "their children the next generation",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is certain that destruction will come from the Almighty because these things have already happened. This can be translated in active form. Alternate translation: \"We know this is true because we have already seen the Almighty cut off our supply of food, and he has cut off joy and gladness from the house of our God.\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "Has not food been cut off from before our eyes, and joy and gladness from the house of our God?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to fill in the ellipsis. Alternate translation: \"joy and gladness have been cut off from the house of our God\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "joy and gladness from the house of our God",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"there will be\" is understood from earlier in the sentence. It can be repeated here. Alternate translation: \"among the survivors there will be those whom Yahweh calls\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "jol",
+        "chapter": 2,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "among the survivors, those whom Yahweh calls",
+      "occurrence": 0
+    }
+  }
+]

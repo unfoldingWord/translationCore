@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"our\" refers to the woman and the other people in the house with her. If she is speaking to herself, it is inclusive, but if she is speaking to the daughters of Jerusalem, whether she is referring to herself and her companions or to herself only in plural, as in \"We are glad ... We rejoice ... let us celebrate\" ([Song of Songs 1:4](../01/01.md)), it is exclusive. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "sng",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "our wall",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"us\" and \"our\" could possibly be 1) exclusive, referring to the woman herself, as in [Song of Songs 1:4](../01/01.md), or 2) inclusive, referring to the woman and the man, or 3) exclusive, referring to the woman and the rest of her family. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "sng",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "glQuote": "for us ... our vineyard",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Say \"a large amount of flour\" or use a term that your culture uses for measuring large amounts of flour. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "quote": "εἰς ἀλεύρου σάτα τρία",
+      "glQuote": "three measures of flour",
+      "occurrence": 1
+    }
+  }
+]

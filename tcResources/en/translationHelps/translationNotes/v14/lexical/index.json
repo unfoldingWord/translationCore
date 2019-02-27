@@ -1,0 +1,18 @@
+[
+  {
+    "id": "translate-numbers",
+    "name": "Numbers"
+  },
+  {
+    "id": "translate-ordinal",
+    "name": "Ordinal Numbers"
+  },
+  {
+    "id": "translate-bweight",
+    "name": "Biblical Weight"
+  },
+  {
+    "id": "translate-fraction",
+    "name": "Fractions"
+  }
+]

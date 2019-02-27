@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The noun \"creation\" can be translated with a verb. Alternate Translation: \"all that God created\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "πάσης κτίσεως",
+      "glQuote": "all creation",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"complaint\" can be stated as \"complain.\" Alternate translation: \"has a reason to complain against\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "πρός ... ἔχῃ μομφήν",
+      "glQuote": "has a complaint against",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"favoritism\" can be expressed with the verb \"favor.\" To favor some people is to judge them by different standards so the result is better for them than for others who do the same actions. Alternate translation: \"God does not favor anyone\" or \"God judges everyone by the same standard\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "οὐκ ἔστιν προσωπολημψία",
+      "glQuote": "there is no favoritism",
+      "occurrence": 1
+    }
+  }
+]

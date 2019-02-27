@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"1,000 shields.\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "sng",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "a thousand shields",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These numbers are to be large, then larger, and then beyond counting. Alternate translation: \"There are 60 queens, 80 concubines ... more young women than anyone could count\" or \"There are many queens, even more concubines, and more young women than anyone could count\" (See: [[rc://en/ta/man/translate/translate-numbers]] and [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "sng",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "There are sixty queens, eighty concubines ... young women without number",
+      "occurrence": 0
+    }
+  }
+]

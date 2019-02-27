@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"comes\" can be stated as \"goes.\" Alternate translation: \"goes for help\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "glQuote": "comes for help",
+      "occurrence": 0
+    }
+  }
+]

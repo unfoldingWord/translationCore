@@ -166,8 +166,10 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
       }
     },
     username: getUsername(state),
-    changeSelections: (selections, userName) => {
-      dispatch(changeSelections(selections, userName));
+    actions: {
+      changeSelections: (selections, userName) => {
+        dispatch(changeSelections(selections, userName));
+      }
     },
     // deprecated props
     readProjectDir: (...args) => {

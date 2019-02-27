@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that the men were from Jericho. Alternate translation: \"men from Jericho\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "men of Jericho",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that the wall was beside the Pool of Siloam. Alternate translation: \"the wall that surrounded the Pool of Siloam\" (See: [[rc://en/ta/man/translate/figs-possession]])",
+      "reference": {
+        "bookId": "neh",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "glQuote": "the wall of the Pool of Siloam",
+      "occurrence": 0
+    }
+  }
+]

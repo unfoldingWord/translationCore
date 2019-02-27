@@ -1,0 +1,116 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"souls\" refers to the whole person. The abstract noun \"salvation\" can be translated with a verb. Alternate translation: \"your salvation\" or \"God saving you\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "σωτηρίαν ψυχῶν",
+      "glQuote": "the salvation of your souls",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"soul\" refers to the whole person. Alternate translation: \"You made yourselves pure\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "τὰς ψυχὰς ὑμῶν ἡγνικότες",
+      "glQuote": "You made your souls pure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"eyes\" refers to the Lord's ability to know things. The Lord's approval of the righteous is spoken of as his seeing them. Alternate translation: \"The Lord sees the righteous\" or \"The Lord approves of the righteous\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "ὀφθαλμοὶ Κυρίου ἐπὶ δικαίους",
+      "glQuote": "The eyes of the Lord see the righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"ears\" refers to the Lord's awareness of what people say. That the Lord hears their requests implies that he also responds to them. Alternate translation: \"he hears their requests\" or \"he grants their requests\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "ὦτα αὐτοῦ εἰς δέησιν αὐτῶν",
+      "glQuote": "his ears hear their requests",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"face\" refers to the Lord's will to oppose his enemies. Opposing someone is spoken of as setting one's face against that person. Alternate translation: \"the Lord opposes\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "πρόσωπον ... Κυρίου ἐπὶ",
+      "glQuote": "the face of the Lord is against",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"souls\" refers to the whole person. Alternate translation: \"entrust themselves\" or \"entrust their lives\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "παρατιθέσθωσαν τὰς ψυχὰς αὐτῶν",
+      "glQuote": "entrust their souls",
+      "occurrence": 1
+    }
+  }
+]

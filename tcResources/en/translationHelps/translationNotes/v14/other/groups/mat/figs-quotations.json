@@ -1,0 +1,369 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a direct quotation. Alternate translation: \"men, and he asked them, 'When exactly did this star appear?'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "men to ask them exactly what time the star had appeared",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a direct quotation. Alternate translation: \"dream, saying, 'Do not go back to King Herod,' so\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "dream not to return to Herod, so",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You could translate this with a direct quotation. Alternate translation: \"say to these stones, 'Become bread.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "εἰπὲ ... οἱ λίθοι οὗτοι ἄρτοι γένωνται",
+      "glQuote": "command these stones to become bread.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"God will command his angels to take care of you, and\" This can be translated with a direct quotation. Alternate translation: \"God will say to his angels, 'Take care of him,' and\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "'He will command his angels to take care of you,' and",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The quotes can be translated as indirect quotes. Alternate translation: \"which is easier, to tell someone that his sins are forgiven, or to tell him to get up and walk?\" or \"you may think that it is easier to tell someone that his sins are forgiven than to tell him to get up and walk.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "τί γάρ ἐστιν εὐκοπώτερον εἰπεῖν, ἀφέωνται‘ σου αἱ ἁμαρτίαι’, ἢ εἰπεῖν, ἔγειρε‘ καὶ περιπάτει",
+      "glQuote": "which is easier, to say, 'Your sins are forgiven,' or to say, 'Get up and walk'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quote. Alternate translation: \"they say that he has a demon\" or \"they accuse him of having a demon\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "they say, 'He has a demon.'",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quote. Alternate translation: \"they say that he is a gluttonous man and a drunkard ... sinners.\" or \"they accuse him of eating and drinking too much and of being ... sinners.\" If you translated \"The Son of Man\" as \"I, the Son of man,\" you can state this as an indirect statement and use the first person. Alternate translation: \"they say that I am a gluttonous man and a drunkard ... sinners.\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "they say, 'Look, he is a gluttonous man and a drunkard ... sinners!'",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quotation. Alternate translation: \"Then Jesus commanded the man to stretch out his hand\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "Then Jesus said to the man, \"Stretch out your hand.\"",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quotation. Alternate translation: \"Someone told Jesus that his mother and brothers were outside and wanted to speak to him\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "εἶπεν ... τις αὐτῷ,\" ἰδοὺ, ἡ μήτηρ σου καὶ οἱ ἀδελφοί σου ἔξω ἑστήκασιν ζητοῦντές σοι λαλῆσαι",
+      "glQuote": "Someone said to him, \"Look, your mother and your brothers stand outside, seeking to speak to you.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this as an indirect quote (AT): \"I will tell the reapers to first gather up the weeds and tie them in bundles to burn them, and then gather the wheat into my barn\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "ἐρῶ τοῖς θερισταῖς,\" συλλέξατε πρῶτον τὰ ζιζάνια καὶ δήσατε αὐτὰ εἰς δέσμας πρὸς τὸ κατακαῦσαι αὐτά; τὸν δὲ σῖτον συναγάγετε εἰς τὴν ἀποθήκην μου",
+      "glQuote": "I will say to the reapers, \"First pull out the weeds and tie them in bundles to burn them, but gather the wheat into my barn.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If necessary, both direct quotations can be translated as indirect quotations. Alternate translation: \"Jesus asked them if they had understood all this, and they said that they did understand.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "Have you understood all these things?\" The disciples said to him, \"Yes.\"",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed as an indirect quote, if needed. Alternate translation: \"For John had said to Herod that it was not lawful for Herod to have Herodias as his wife.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "For John had said to him, \"It is not lawful for you to have her as your wife.\"",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If you translated Jesus' questions as statements in [Matthew 17:25](../17/25.md), you may need to give an alternate response here. You could also state it as an indirect quotation. Alternate translation: \"When Peter said, 'Yes, that is true. Kings collect taxes from foreigners,' Jesus said\" or \"After Peter agreed with Jesus, Jesus said\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "When he said, \"From others,\" Jesus said",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this direct quotation as an indirect quotation. This can also be stated in active form. Alternate translation: \"you will even be able to tell this mountain to get up and throw itself into the sea\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "κἂν τῷ ὄρει τούτῳ εἴπητε, ἄρθητι‘ καὶ βλήθητι εἰς τὴν θάλασσαν",
+      "glQuote": "you will even say to this mountain, 'Be taken up and thrown into the sea,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This direct quotation can be stated as an indirect quotation. Also, this can be stated in active form. Alternate translation: \"servants, ordering them to tell those whom he invited\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "δούλους λέγων, εἴπατε‘ τοῖς κεκλημένοις",
+      "glQuote": "servants, saying, 'Tell them who are invited",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the question that begins with the words \"have you not read\" in verse 31. Jesus asks this question to remind the religious leaders of what they know from scripture. \"I know you have read it, but you do not seem to understand what ... Jacob.'\" You can translate this direct quotation as an indirect quotation. \"God, who said to Moses that he is the God of Abraham, the God of Isaac, and the God of Jacob.\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "'I am the God ... Jacob'?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as an indirect quotation. Alternate translation: \"if someone tells you that the Christ is in the wilderness, do\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "ἐὰν οὖν εἴπωσιν ὑμῖν, ἰδοὺ‘, ἐν τῇ ἐρήμῳ ἐστίν’, μὴ ἐξέλθητε",
+      "glQuote": "if they say to you, 'Look, he is in the wilderness,' do",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as an indirect quotation. Alternate translation: \"Or, if someone tells you that the Christ is in the inner room,\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "Or, 'See, he is in the inner rooms,'",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This direct quotation can be stated as an indirect quotation. Alternate translation: \"saying that whomever he kissed was the one they should seize.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "saying, \"Whomever I kiss, he is the one. Seize him.\"",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This direct quotation can be stated as an indirect quotation. Alternate translation: \"Peter remembered that Jesus told him that before the rooster crowed, he would deny Jesus three times\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 75
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "Peter remembered the words that Jesus had said, \"Before the rooster crows you will deny me three times.\"",
+      "occurrence": 0
+    }
+  }
+]

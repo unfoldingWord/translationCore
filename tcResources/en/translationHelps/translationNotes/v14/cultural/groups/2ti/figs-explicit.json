@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is implicitly speaking of Christ's servants as if they were athletes. (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἀθλῇ τις, οὐ στεφανοῦται, ἐὰν μὴ νομίμως ἀθλήσῃ",
+      "glQuote": "as an athlete, he is not crowned unless he competes by the rules",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"this solemn command in the presence of God and Christ Jesus.\" It is implied that God and Jesus will be Paul's witnesses. Alternate translation: \"this solemn command having as my witnesses God and Christ Jesus\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "διαμαρτύρομαι ἐνώπιον τοῦ Θεοῦ καὶ Χριστοῦ Ἰησοῦ",
+      "glQuote": "this solemn command before God and Christ Jesus",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This may refer to a specific type of scroll. Alternate translation: \"especially those made from animal skins\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "μάλιστα τὰς μεμβράνας",
+      "glQuote": "especially the parchments",
+      "occurrence": 1
+    }
+  }
+]

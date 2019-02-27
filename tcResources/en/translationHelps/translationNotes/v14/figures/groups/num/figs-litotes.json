@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative statement is used to stress that the opposite is true. Alternate translation: \"they consider themselves to be a special nation\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 23,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "do not consider themselves as just an ordinary nation",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in a positive statement. \"we know for certain that every man is here\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 31,
+        "verse": 49
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "not one man is missing",
+      "occurrence": 0
+    }
+  }
+]

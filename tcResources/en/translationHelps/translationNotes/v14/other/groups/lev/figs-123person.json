@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"his\" and \"he\" refer to the person bringing an offering to Yahweh. It can be translated in the second person as it is in [Leviticus 1:2](../01/02.md). Alternate translation: \"If your offering ... you must offer\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "If his offering ... he must offer",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" refers to the one making the offering. It can be stated in second person. Alternate translation: \"Then you must kill the bull\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "Then he must kill the bull",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" refers to the person offering the sacrifice. It can be stated in second person. Alternate translation: \"Then you must cut it\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "lev",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "glQuote": "He is to cut it",
+      "occurrence": 0
+    }
+  }
+]

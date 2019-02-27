@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can state this with the connecting word \"by.\" This makes clear how the servant wants God to show covenant faithfulness. Alternate translation: \"Show covenant faithfulness to my master Abraham by granting me success today\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 24,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "grant me success today and show covenant faithfulness to my master Abraham",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The connecting word \"because\" can be used to show this is why the servant worshiped God. Alternate translation: \"because Yahweh led me\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 24,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "who had led me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here this word does not mean \"at this moment.\" It is indicating where the action in the story begins. It can be translated with the connecting word \"So\" to show that this is a result of what happened in [Genesis 26:12-14](./12.md). (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 26,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) this is another action to force Isaac and his people to leave. Alternate translation: \"Then Abimelech said\" or \"Finally Abimelech said\" or 2) Abimelech made this decision because he saw that his people were jealous and acting in a hostile way towards Isaac. Alternate translation: \"Therefore Abimelech said\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 26,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "Abimelech said",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This verse continues the background information that begins with the words \"Esau went ... bring it back\" in verse 5. It is background information for the description of the events that follow. After Esau leaves, Rebekah speaks to Jacob because of what she has heard. \"So when Esau went ... bring it back, Rebekah spoke to Jacob\" (See: [[rc://en/ta/man/translate/writing-connectingwords]] and [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 27,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "Rebekah spoke to Jacob",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The connecting word \"But\" can be used at the beginning to show that what Jacob is about to say contrasts with what he just said. Alternate translation: \"But if you will do this thing for me\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 30,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "If you will do this thing for me",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The second sentence states the reason for the first sentence. This can be made clear with \"for\" or \"because.\" Alternate translation: \"will praise you. For your hand\" or \"will praise you because your hand\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "gen",
+        "chapter": 49,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "glQuote": "will praise you. Your hand",
+      "occurrence": 0
+    }
+  }
+]

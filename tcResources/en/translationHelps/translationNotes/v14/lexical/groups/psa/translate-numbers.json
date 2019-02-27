@@ -1,0 +1,182 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"1,000 hills\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 50,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "thousand hills",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"12,000 Edomites\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 60,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "twelve thousand Edomites",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is probably not meant to be an exact number, but to indicate a large number. Alternate translation: \"many thousands\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 68,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "twenty thousand, thousands upon thousands",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"1,000\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 84,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "a thousand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"1,000 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 90,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "a thousand years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"70\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 90,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seventy",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"80\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 90,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "eighty",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 95,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "forty years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"1,000 generations\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 105,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "a thousand generations",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"thousands—even tens of thousands!—and fill up our fields\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "psa",
+        "chapter": 144,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "thousands and ten thousands in our fields",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here, \"willing\" and \"obedient\" are used together to express one idea. Alternate translation: \"If you willingly obey\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "glQuote": "If you are willing and obedient",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"glory\" describes \"majesty.\" Alternate translation: \"the beauty he has as king\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "glQuote": "the glory of his majesty",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heat\" describes the word \"sun.\" The people suffering from the sun's heat is spoken of as if the heat struck them. Alternate translation: \"nor will they suffer from the sun's heat\" (See: [[rc://en/ta/man/translate/figs-hendiadys]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 49,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "glQuote": "nor will the heat or sun beat on them",
+      "occurrence": 0
+    }
+  }
+]

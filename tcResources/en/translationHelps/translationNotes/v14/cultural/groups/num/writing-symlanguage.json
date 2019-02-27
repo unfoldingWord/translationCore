@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"star\" refers to an Israelite king that will rise in power. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 24,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "glQuote": "A star will come out of Jacob",
+      "occurrence": 0
+    }
+  }
+]

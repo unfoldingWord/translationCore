@@ -1,0 +1,452 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The assumed knowledge is that the original hearers would be aware of when a large earthquake had affected the area. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "two years before the earthquake",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The assumed knowledge is that Esau, from whom the people of Edom were descended, was the brother of Jacob, from whom the people of Israel were descended. Here \"his brother\" represents the people of Israel. Alternate translation: \"he pursued the people of Israel\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "he pursued his brother",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that the fast runner will not escape from his enemies. Alternate translation: \"the fast runner will be captured\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "the fast runner will not escape",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies that they should have obeyed him. This can be stated clearly. Alternate translation: \"I have chosen only you from all the families of the earth, so you should have obeyed me\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "I have chosen only you from all the families of the earth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated clearly that they did not obey God. Alternate translation: \"But you did not obey me. Therefore I will punish you for all your sins\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Therefore I will punish you for all your sins",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The purpose of sounding the trumpet is to warn people that enemies are about to attack the city. Alternate translation: \"If someone blows the trumpet in the city to warn the people about an enemy attack\" or \"If the warning trumpet is blown in the city\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "If a trumpet sounds in a city",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reason for trembling can be stated clearly. Alternate translation: \"tremble because they are afraid\" or \"be afraid of the enemy and tremble\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "tremble",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The relationship between this sentence and the rhetorical questions in [Amos 3:3](../03/03.md) to [Amos 3:6](./06.md) can be shown with the words \"So also.\" Alternate translation: \"So also, the Lord Yahweh will do nothing unless ... the prophets\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Surely the Lord Yahweh will do nothing unless ... the prophets",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"great confusion is in her\" refers to people's fear because of the fighting and rioting there. The word \"confusion\" can be translated with a verbal phrase to make this meaning explicit. Alternate translation: \"how the people in Samaria riot\" or \"how the people in Samaria fight against one another\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "what great confusion is in her",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated clearly who God was saying this to. Alternate translation: \"Therefore, this is what the Lord Yahweh says to the people of Israel living in Samaria\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Therefore, this is what the Lord Yahweh says",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated clearly that the shepherd tries to rescue the whole animal. Alternate translation: \"As the shepherd tries to rescue an animal from the lion's mouth, but is able to save only two legs or a piece of an ear\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "As the shepherd rescues out of the mouth of the lion two legs only, or a piece of an ear",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh rebukes them for being proud about their offerings and sacrifices. They think that God should be pleased with them, but he is not. Alternate translation: \"for this pleases you, you people of Israel. But it does not please me\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "for this pleases you, you people of Israel",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated clearly that the people needed the rain. Alternate translation: \"when there were still three months to the harvest and your crops needed the rain\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "when there were still three months to the harvest",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"a thousand\" and \"a hundred\" refer to a thousand soldiers and a hundred soldiers. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "The city that went out with a thousand will have a hundred left",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"The city that went out\" represents the soldiers of that city going out. It can be stated clearly why they went out. Alternate translation: \"The city out of which a thousand soldiers went to fight\" or \"The city that sent out a thousand soldiers to fight\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "The city that went out with a thousand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"their\" refers to the vineyards. This may imply that no one will make the wine, or even that there will not be enough good grapes to make wine. Alternate translation: \"you will not drink the wine that is made from the grapes in your vineyards\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "you will not drink their wine",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"turn aside the needy\" represents telling the needy people to leave. It can be made clear why the needy were at the city gate. Alternate translation: \"do not allow poor people to bring their cases to the judges in the city gate\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "turn aside the needy in the city gate",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "City gates were where business transactions occurred and judgments were made, because city walls were thick enough to have gateways that produced cool shade from the hot sun Alternate translation: \"in your courts\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "in the city gate",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies that they drink a lot of wine because they drink it from a large bowl rather than a regular wine cup. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "drink wine from bowls",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Yahweh hates the fortresses because the people believed the fortresses would keep them safe. Alternate translation: \"I hate the people of Israel because they trust in their fortresses, not in me, to protect them\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "I hate his fortresses",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This seems to imply that something terrible is happening, and these ten men go into the house to hide. Alternate translation: \"if ten men are hiding inside of a house, they will all still die\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "if there are ten men left in one house, they will all die",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The meaning of this is not clear. It seems to imply that the one who asked the question is afraid the one answering will mention Yahweh's name carelessly. If he does this, it may draw Yahweh's attention to them, and he may kill them too. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Then he will say, \"Be quiet, for we must not mention Yahweh's name.\"",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies the Dead Sea in the south and the Mediterranean Sea in the west. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 8,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "from sea to sea",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Yahweh is speaking about the pillars and foundations of a temple. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "Strike the tops of the pillars so that the foundations will shake",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"vault\" refers to the sky which biblical writers described as being a dome over the earth. Alternate translation: \"he sets the sky over the earth\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 9,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "glQuote": "has established his vault over the earth",
+      "occurrence": 0
+    }
+  }
+]

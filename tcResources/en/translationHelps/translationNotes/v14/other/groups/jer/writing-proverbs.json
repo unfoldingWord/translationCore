@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words are a proverb that Jeremiah heard people say when they were complaining that Yahweh was punishing children for the sins of their fathers. (See: [[rc://en/ta/man/translate/writing-proverbs]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 31,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-proverbs",
+      "glQuote": "Fathers have eaten sour grapes, but the children's teeth are dulled",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jeremiah restates the proverb so that it now means people will suffer as a consequence of their own behaviors. (See: [[rc://en/ta/man/translate/writing-proverbs]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 31,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-proverbs",
+      "glQuote": "everyone who eats sour grapes, his teeth will be dulled",
+      "occurrence": 0
+    }
+  }
+]

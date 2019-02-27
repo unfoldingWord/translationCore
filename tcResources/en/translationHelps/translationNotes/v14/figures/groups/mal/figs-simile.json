@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence gives the reason why no one will be able to resist God when he comes. God's power to judge the people and to stop them from sinning is spoken of as if it were the power of strong soap to clean clothes, or the power of fire to melt an object. These are ways of saying that God's power to do these things cannot be stopped. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mal",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "For he will be like a refiner's fire and like laundry soap",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here sitting implies the action of a metalworker, who sits down in order to purify small amounts of gold or silver. It also implies the action of a king, who sits down to judge people and give decrees. (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mal",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "He will sit",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here persuading people not to sin any longer is spoken of as if a metalworker were making gold and silver more pure. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mal",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "He will refine them like gold and silver",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the redeemed people of Yahweh are spoken of as if they were young bulls released from their stalls, allowed to go out into their pasture. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mal",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "glQuote": "You will go out, and you will leap like calves from the stall",
+      "occurrence": 0
+    }
+  }
+]

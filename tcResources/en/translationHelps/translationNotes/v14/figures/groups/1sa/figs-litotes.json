@@ -1,0 +1,164 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a litotes that can be stated in the positive form. Alternate translation: \"your rule will end soon\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 13,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "your rule will not continue",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is stated in a negative way to emphasize the slaughter. It can be stated in positive form. Alternate translation: \"let us kill every one of them\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 14,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "let us not leave one of them alive",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative statement emphasizes the completeness of the destruction. (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 15,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "Do not spare them",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is stated as a negative to emphasize that God tells the truth. This can be stated in positive form. Alternate translation: \"will always tell the truth and do what he says\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "will not lie nor change his mind",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is stated as a negative to emphasize that God is trustworthy. This can be stated in positive form. Alternate translation: \"he is God, and will do what he says he will do\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "he is not a man, that he should change his mind",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "David is pointing out how he and his men offered protection to Nabal's servants and flocks. This can be stated in positive form. Alternate translation: \"we kept them and all their property from harm\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 25,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "we did them no harm, and they missed nothing",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated positively and in active form. Alternate translation: \"he still has everything that was his\" (See: [[rc://en/ta/man/translate/figs-litotes]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 25,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "nothing was missed of all that belonged to him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Abigail is stating that if David chooses not to take revenge he will have a clear conscience when Yahweh makes him king of Israel. This can be stated in positive form. Alternate translation: \"You will always be glad you acted as you did-that you have not poured out innocent blood, or because my master did not attempt to rescue himself\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 25,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "This will not be a staggering burden for you—that you have poured out innocent blood, or because my master attempted to rescue himself",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"I know of nothing that he has done wrong\" or \"I am very pleased with him\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 29,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "I have found no fault with him",
+      "occurrence": 0
+    }
+  }
+]

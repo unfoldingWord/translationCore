@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "large, swift cats (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "hab",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "leopards",
+      "occurrence": 0
+    }
+  }
+]

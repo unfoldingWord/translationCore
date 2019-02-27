@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The prophet spoke to the altar as if it were a person who could hear him. He said this twice for emphasis. (See: [[rc://en/ta/man/translate/figs-apostrophe]] and [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "Altar, altar",
+      "occurrence": 0
+    }
+  }
+]

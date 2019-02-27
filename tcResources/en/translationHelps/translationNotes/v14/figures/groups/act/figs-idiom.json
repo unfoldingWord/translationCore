@@ -1,0 +1,967 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"all over the world\" or 2) \"to the places on earth that are farthest away\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "to the ends of the earth",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Going in and out among a group of people is a metaphor for openly being part of that group. Alternate translation: \"the Lord Jesus lived among us\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "the Lord Jesus went in and out among us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some people accuse the believers of having drunk too much wine. Alternate translation: \"They are drunk\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ὅτι\" γλεύκους μεμεστωμένοι εἰσίν",
+      "glQuote": "They are full of new wine",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"pour out\" mean to give generously and abundantly. Alternate translation: \"I will give my Spirit abundantly to all people\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "I will pour out my Spirit on all people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"pour out\" mean to give generously and abundantly. See how you translated this in [Acts 2:17](../02/17.md). Alternate translation: \"I will give my Spirit abundantly to all people\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "I will pour out my Spirit",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise up is an idiom for causing someone who has died to become alive again. Alternate translation: \"But God caused him to live again\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "But God raised him up",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"fruit\" refers to what \"his body\" produces. Alternate translation: \"one of his descendants\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἐκ‘ καρποῦ τῆς ὀσφύος αὐτοῦ",
+      "glQuote": "one of the fruit of his body",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"God caused him to live again\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἀνέστησεν ὁ Θεός",
+      "glQuote": "God raised him up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Right hand of God\" here is an idiom that means that Christ will rule as God, with God’s authority. Alternate translation: \"Christ is in the position of God\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "τῇ δεξιᾷ ... τοῦ Θεοῦ ὑψωθεὶς",
+      "glQuote": "having been exalted to the right hand of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"poured out\" mean that Jesus, who is God, made these events to happen. It is implicit that he does this by giving the Holy Spirit to the believers. Alternate translation: \"he has caused to happen these things that\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "he has poured out what",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"pour out\" mean to give generously and abundantly. See how you translated a similar phrase in [Acts 2:17](../02/17.md). Alternate translation: \"given abundantly\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἐξέχεεν",
+      "glQuote": "poured out",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the entire nation of Israel. Alternate translation: \"every Israelite\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "πᾶς οἶκος Ἰσραὴλ",
+      "glQuote": "all the house of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that the people felt guilty and became very sad. Alternate translation: \"deeply troubled\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "pierced in their hearts",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"received\" means that they accepted what Peter said to be true. Alternate translation: \"they believed what Peter said\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "they received his word",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"looking directly at him\" or 2) \"looking intently at him\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "fastening his eyes upon him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they looked intently at them without stopping. Alternate translation: \"stare at us\" or \"look at us\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "fix your eyes on us",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the phrase \"before the face of\" means \"in the presence of.\" Alternate translation: \"rejected in Pilate's presence\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "rejected before the face of Pilate",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"sons\" refers to heirs who will receive what the prophets and the covenant promised. Alternate translation: \"You are the heirs of the prophets and heirs of the covenant\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ὑμεῖς ἐστε οἱ υἱοὶ τῶν προφητῶν, καὶ τῆς διαθήκης",
+      "glQuote": "You are the sons of the prophets and of the covenant",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise up is an idiom for causing someone who has died to become alive again. Alternate translation: \"whom God caused to live again\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ὃν ... ὁ Θεὸς ἤγειρεν ἐκ νεκρῶν",
+      "glQuote": "whom God raised from the dead,",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a way of referring to everywhere in the world. Alternate translation: \"in the world\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ὑπὸ τὸν οὐρανὸν",
+      "glQuote": "under heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"look upon\" are a request for God to take notice of the way in which the Jewish leaders threatened the believers. Alternate translation: \"notice how they threaten to punish us\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "look upon their warnings",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they presented the money to the apostles. Alternate translation: \"presented it to the apostles\" or \"gave it to the apostles\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "laid it at the apostles' feet",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The apostles used this name to show that Joseph was a person who encouraged others. \"Son of\" is an idiom used to describe a person's behavior or character. Alternate translation: \"Encourager\" or \"one who encourages\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "υἱὸς παρακλήσεως",
+      "glQuote": "Son of Encouragement",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they presented to money to the apostles. See how you translated this in [Acts 4:35](../04/35.md). Alternate translation: \"presented it to the apostles\" or \"gave it to the apostles\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "laid it at the apostles' feet",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they presented to money to the apostles. See how you translated this in [Acts 4:35](../04/35.md). Alternate translation: \"presented it to the apostles\" or \"gave it to the apostles\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "laid it at the apostles' feet",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the phrase \"rose up\" means that the high priest decided to take action, not that he stood up from a seated position. Alternate translation: \"the high priest took action\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἀναστὰς ... ὁ ἀρχιερεὺς",
+      "glQuote": "the high priest rose up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that they seized the apostles by force. They would have ordered guards to do this. Alternate translation: \"had the guards arrest the apostles\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἐπέβαλον τὰς χεῖρας ἐπὶ τοὺς ἀποστόλους",
+      "glQuote": "laid hands on the apostles",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"raised up\" is an idiom. Alternate translation: \"The God of our fathers caused Jesus to live again\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ὁ Θεὸς τῶν πατέρων ἡμῶν ἤγειρεν Ἰησοῦν",
+      "glQuote": "The God of our fathers raised up Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that he persuaded some people to rebel with him against the Roman government. Alternate translation: \"caused many people to follow him\" or \"caused many people to join him in rebellion\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἀπέστησε λαὸν ὀπίσω αὐτοῦ",
+      "glQuote": "drew away some people after him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase means they could not prove false what he said. Alternate translation: \"could not argue against\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "οὐκ ἴσχυον ἀντιστῆναι",
+      "glQuote": "not able to stand against",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"handed down\" means \"passed on.\" Alternate translation: \"taught our ancestors\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "παρέδωκεν ἡμῖν",
+      "glQuote": "handed down to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that means they looked intently at him. Here \"eyes\" is a metonym for sight. Alternate translation: \"looked intently at him\" or \"stared at him\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "fixed their eyes on him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings for this phrase are 1) enough ground to stand on or 2) enough ground to take a step. Alternate translation: \"a very tiny piece of ground\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "enough to set a foot on",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom for helping someone. Alternate translation: \"helped him\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἦν ... μετ’ αὐτοῦ",
+      "glQuote": "was with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is an idiom that means Moses was very beautiful. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "very beautiful before God",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This does not mean their necks were stiff but rather that they were \"stubborn.\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "σκληροτράχηλοι",
+      "glQuote": "stiff-necked",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To \"cut to the heart\" is an idiom for making a person extremely angry. Alternate translation: \"were extremely angry\" or \"became very angry\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "were cut to the heart",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The idiom \"was with him\" means \"was helping him.\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ὁ Θεὸς ... ἦν μετ’ αὐτοῦ",
+      "glQuote": "God was with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise up is an idiom for causing someone who has died to become alive again. Alternate translation: \"God caused him to live again\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "τοῦτον ὁ Θεὸς ἤγειρεν",
+      "glQuote": "God raised him up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The hand is a synecdoche for the action of the whole person. Alternate translation: \"by having Barnabas and Saul take to them\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "διὰ χειρὸς Βαρναβᾶ καὶ Σαύλου",
+      "glQuote": "by the hand of Barnabas and Saul",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means Herod had the believers arrested. See how you translated this in [Acts 5:18](../05/18.md). Alternate translation: \"sent soldiers to arrest\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἐπέβαλεν ... τὰς χεῖρας ... τινας",
+      "glQuote": "laid hands on",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom. Alternate translation: \"When Peter became fully awake and alert\" or \"When Peter became aware that what had happened was real\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "καὶ ὁ Πέτρος ἐν ἑαυτῷ γενόμενος",
+      "glQuote": "When Peter came to himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"straight paths\" refer to the ways that are true. Alternate translation: \"the true ways of the Lord\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "τὰς ὁδοὺς τοῦ Κυρίου τὰς εὐθείας",
+      "glQuote": "the straight paths of the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This expression means he \"is a man who wants what I want.\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἄνδρα κατὰ τὴν καρδίαν μου",
+      "glQuote": "to be a man after my heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here, to raise up is an idiom for causing someone who has died to become alive again. Alternate translation: \"caused him to live again\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἤγειρεν αὐτὸν",
+      "glQuote": "raised him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise up is an idiom for causing someone who has died to become alive again. Alternate translation: \"by making Jesus alive again\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἀναστήσας Ἰησοῦν",
+      "glQuote": "by raising up Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise up is an idiom for causing someone who has died to become alive again. Alternate translation: \"God caused to live again\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ὁ Θεὸς ἤγειρεν",
+      "glQuote": "God raised up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"laid hands on\" means to \"seize\" or to \"grab.\" See how you translated \"laid hands on\" in [Acts 5:18](../05/18.md). Alternate translation: \"grabbed Paul\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἐπέβαλον ἐπ’ αὐτὸν τὰς χεῖρας",
+      "glQuote": "laid hands on him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a customary way of saying something happened immediately. Alternate translation: \"At that instant\" or \"Instantly\" or \"Immediately\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "In that very hour",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"faced his accusers\" is an idiom that means to meet with the people who accuse him. Alternate translation: \"before the person whom others have accused of a crime had met directly with those who accused him\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "before the accused had faced his accusers",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To \"stand trial\" is an idiom meaning to speak to a judge so the judge can decide if a person is right or wrong. Alternate translation: \"to go to trial about these charges\" or \"for a judge to decide if these charges against him are true or not\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "to stand trial there about these charges",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a customary way of saying no harm would come upon them. Alternate translation: \"every one of you will survive this disaster unharmed\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "glQuote": "not one of you will lose a single hair from his head",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A cor is 220 liters. Twenty thousand cors equals 4,400 kiloliters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "twenty thousand cors",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A bath is 22 liters. Twenty thousand baths equals 440 kiloliters. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "twenty thousand baths",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may convert this to a modern measure. The word translated here as \"measure\" is \"cor\" and is equivalent to 220 liters. Alternate translation: \"10,000 measures of wheat\" or \"2,200 kiloliters of wheat\" (See: [[rc://en/ta/man/translate/translate-bvolume]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "ten thousand measures of wheat",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may convert this to a modern measure. The word translated here as \"measure\" is \"cor\" and is equivalent to 220 liters. Alternate translation: \"10,000 measures of barley\" or \"2,200 kiloliters of barley\" (See: [[rc://en/ta/man/translate/translate-bvolume]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "ten thousand measures of barley",
+      "occurrence": 0
+    }
+  }
+]

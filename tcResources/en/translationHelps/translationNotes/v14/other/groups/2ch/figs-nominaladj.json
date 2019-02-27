@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to wicked people in general. Alternate translation: \"wicked people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the wicked",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nominal adjective \"good\" can be translated as an adjective. Alternate translation: \"because he had done good things in Judah for God and for God's temple\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 24,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "because he had done good in Israel, toward God, and to God's house",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to dead people. Alternate translation: \"dead people\" or \"those who are dead\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "2ch",
+        "chapter": 33,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "glQuote": "the dead",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the phrases \"the shepherd\" and \"the lion\" refer to any shepherd or lion. Alternate translation: \"As a shepherd ... a lion\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "As the shepherd ... the lion",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some of the wealthy people had two houses: one that they lived in during the winter and one that they lived in during the summer. This refers to any winter and summer houses. Alternate translation: \"the houses they live in during the winter and the houses they live in during the summer\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "the winter house with the summer house",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to any piece of land where it did not rain. Alternate translation: \"the pieces of land where it did not rain\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "the piece of land where it did not rain",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These phrases refer to any cities that sent out large numbers of soldiers. Alternate translation: \"Cities that went out with a thousand ... cities that went out with a hundred\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "amo",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "glQuote": "The city that went out with a thousand ... the one that went out with a hundred",
+      "occurrence": 0
+    }
+  }
+]

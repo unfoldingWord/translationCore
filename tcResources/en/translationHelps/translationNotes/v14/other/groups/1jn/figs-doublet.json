@@ -1,0 +1,40 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John uses the words \"seen\" and \"known\" to say that the person who sins has never met Christ in a spiritual sense. A person behaving according to his sinful nature cannot know Christ. Alternate translation: \"No one ... has ever truly believed in him\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "πᾶς ὁ ... ἁμαρτάνων οὐχ ἑώρακεν αὐτὸν, οὐδὲ ἔγνωκεν αὐτόν",
+      "glQuote": "No one ... has seen him or known him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"in word\" and \"in tongue\" both refer to what a person says. The word \"love\" is understood in the second part of the sentence. Alternate translation: \"do not just say that you love people, but show that you truly love people by helping them\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "μὴ ἀγαπῶμεν λόγῳ, μηδὲ τῇ γλώσσῃ, ἀλλὰ ἐν ἔργῳ καὶ ἀληθείᾳ",
+      "glQuote": "let us not love in word nor in tongue, but in actions and truth",
+      "occurrence": 1
+    }
+  }
+]

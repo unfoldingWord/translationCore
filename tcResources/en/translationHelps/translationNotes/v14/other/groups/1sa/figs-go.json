@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"came\" can be translated as \"went.\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "1sa",
+        "chapter": 16,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "glQuote": "David came to Saul",
+      "occurrence": 0
+    }
+  }
+]

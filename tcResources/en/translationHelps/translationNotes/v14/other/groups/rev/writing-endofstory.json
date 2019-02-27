@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "As the book of Revelation is ending, Jesus gives a closing greeting. (See: [[rc://en/ta/man/translate/writing-endofstory]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

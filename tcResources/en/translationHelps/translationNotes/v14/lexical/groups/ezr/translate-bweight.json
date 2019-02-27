@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A mina is a unit of weight. One mina equals 550 grams. Minas are normally linked with measuring silver. (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "ezr",
+        "chapter": 2,
+        "verse": 69
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "minas",
+      "occurrence": 0
+    }
+  }
+]

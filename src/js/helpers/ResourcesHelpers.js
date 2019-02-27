@@ -602,9 +602,9 @@ export function getFilesInResourcePath(resourcePath, ext=null) {
 function getFilteredSubFolders(folderPath) {
   const excludedItems = ["imports_processed", "imports", ".DS_Store"];
   if (fs.existsSync(folderPath)) {
-    return fs.readdirSync(folderPath).
-      filter(item => !excludedItems.includes(item)).
-      filter(file => fs.lstatSync(path.join(folderPath, file)).isDirectory());
+    return fs.readdirSync(folderPath)
+      .filter(item => !excludedItems.includes(item))
+      .filter(file => fs.lstatSync(path.join(folderPath, file)).isDirectory());
   }
   return [];
 }
@@ -638,22 +638,35 @@ function copyMissingSubfolders(source, destination) {
  * restores missing resources by language and bible and lexicon
  */
 export function getMissingResources() {
-  const tcResourcesFiles = getFilteredSubFolders(STATIC_RESOURCES_PATH);
-  const userResources = getFilteredSubFolders(USER_RESOURCES_PATH);
-  tcResourcesFiles.forEach((languageId) => {
-    // if a resource package with tC executable file is missing in the user resource directory
-    if (!userResources.includes(languageId)) {
-      const STATIC_RESOURCES = path.join(STATIC_RESOURCES_PATH, languageId);
-      const destinationPath = path.join(USER_RESOURCES_PATH, languageId);
-      fs.copySync(STATIC_RESOURCES, destinationPath);
-      const BIBLE_RESOURCES_PATH = path.join(destinationPath, "bibles");
-      const bibleIds = fs.readdirSync(BIBLE_RESOURCES_PATH).
-        filter(folder => folder !== ".DS_Store");
-      bibleIds.forEach(bibleId => {
-        let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleId);
-        extractZippedBooks(bibleDestinationPath);
+  const tcResourcesLanguages = getFilteredSubFolders(STATIC_RESOURCES_PATH);
+
+  tcResourcesLanguages.forEach((languageId) => {
+    console.log(`%c Checking for missing ${languageId} resources`, 'color: #00539C');
+    const STATIC_RESOURCES = path.join(STATIC_RESOURCES_PATH, languageId);
+    const USER_RESOURCES = path.join(USER_RESOURCES_PATH, languageId);
+    const resourceTypes = getFilteredSubFolders(STATIC_RESOURCES)
+      .filter(folder => folder !== "lexicons");
+
+    resourceTypes.forEach(resourceType => {// resourceType: bibles, lexicons or translationHelps
+      const resourceTypePath = path.join(STATIC_RESOURCES, resourceType);
+      const resourceIds = getFilteredSubFolders(resourceTypePath);
+      resourceIds.forEach(resourceId => {// resourceId: udb, ult, ugl, translationWords, translationNotes
+        const USER_RESOURCE_PATH = path.join(USER_RESOURCES, resourceType, resourceId);
+        const STATIC_RESOURCE_PATH = path.join(STATIC_RESOURCES, resourceType, resourceId);
+
+        if (!fs.existsSync(USER_RESOURCE_PATH)) {// if resources isnt found in user resources folder.
+          fs.copySync(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH);
+          console.log(
+            `%c Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
+            'color: #0D355A'
+          );
+          if (resourceType === "bibles") {
+            extractZippedBooks(USER_RESOURCE_PATH);
+          }
+        }
       });
-    }
+    });
+
     // TODO: this is temporary - eventually this will be packaged in catalog
     // check for lexicons packaged with tc executable
     const tcResourcesLexiconPath = path.join(STATIC_RESOURCES_PATH, languageId,

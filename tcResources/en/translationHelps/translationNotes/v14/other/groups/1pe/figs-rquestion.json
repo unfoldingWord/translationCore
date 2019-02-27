@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter asks this question to emphasize that there is nothing praiseworthy about suffering for doing something wrong. Alternate translation: \"For there is no credit ... while being punished.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ποῖον γὰρ κλέος, εἰ ἁμαρτάνοντες καὶ κολαφιζόμενοι ὑπομενεῖτε",
+      "glQuote": "For how much credit is there ... while being punished?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter asks this question to emphasize that it is unlikely that someone would harm them if they do good things. Alternate translation: \"No one will harm you if you do good things.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίς ὁ κακώσων ὑμᾶς, ἐὰν τοῦ ἀγαθοῦ ζηλωταὶ γένησθε",
+      "glQuote": "Who is the one who will harm you if you are eager to do what is good?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter use this question to emphasize that God's judgment will be more severe for people who reject the gospel than for believers. Alternate translation: \"If it begins with us, the outcome for those who do not obey God's gospel will be much worse.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "εἰ δὲ πρῶτον ἀφ’ ἡμῶν, τί τὸ τέλος τῶν ἀπειθούντων τῷ τοῦ Θεοῦ εὐαγγελίῳ",
+      "glQuote": "If it begins with us, what will be the outcome for those who do not obey God's gospel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter use this question to emphasize that sinners will suffer much more than believers do. Alternate translation: \"the righteous man ... the outcome will be much worse for the ungodly and the sinner.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ὁ δίκαιος … ὁ ἀσεβὴς καὶ ἁμαρτωλὸς ποῦ φανεῖται",
+      "glQuote": "the righteous ... what will become of the ungodly and the sinner?",
+      "occurrence": 1
+    }
+  }
+]

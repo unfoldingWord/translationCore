@@ -1,0 +1,1762 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John uses a question to rebuke the Pharisees and Sadducees because they were asking him to baptize them so that God would not punish them, but they did not want to stop sinning. Alternate translation: \"you cannot flee from God's wrath like this.\" or \"do not think that you can flee from God's wrath just because I baptize you.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίς ὑπέδειξεν ὑμῖν φυγεῖν ἀπὸ τῆς μελλούσης ὀργῆς",
+      "glQuote": "who warned you to flee from the wrath that is coming?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John uses a question to show his surprise at Jesus' request. Alternate translation: \"You are more important than I am. I should not baptize you. You should baptize me.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "I need to be baptized by you, and do you come to me?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"how can it be made useful again?\" Jesus uses a question to teach the disciples. Alternate translation: \"there is no way for it to become useful again.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "how can it be made salty again?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to teach the people that loving those who love them is not something special that God will reward them for. This rhetorical question can be translated as a statement. Alternative translation: \"you will get no reward.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "what reward do you get?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question can be translated as a statement. Alternative translation: \"Even the tax collectors do the same thing.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do not even the tax collectors do the same thing?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question can be translated as a statement. Alternate translation: \"you do nothing more than others.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "what do you do more than others?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question can be translated as a statement. Alternate translation: \"Even the Gentiles do the same thing.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do not even the Gentiles do the same thing?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach the people. Alternate translation: \"obviously life is more than what you eat, and your body is more than what you wear.\" or \"clearly there are things in life that are more imortant than food, and there are things concerning the body that are more important than clothes.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "is not life more than food, and the body more than clothes?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach the people. Alternate translation: \"Obviously you are more valuable than birds.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Are you not more valuable than they are?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach the people. Here to \"add one cubit to his lifespan\" is a metaphor for adding time to how long a person will live. Alternate translation: \"None of you can, just by worrying, add years to your life. You cannot add even one minute to your life! So you should not worry about things you need.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίς ... ἐξ ὑμῶν μεριμνῶν δύναται προσθεῖναι ἐπὶ τὴν ἡλικίαν αὐτοῦ πῆχυν ἕνα",
+      "glQuote": "Which one of you by being anxious can add one cubit to his lifespan?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach the people. Alternate translation: \"You should not be worried about what you will wear.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "περὶ ἐνδύματος τί μεριμνᾶτε",
+      "glQuote": "Why are you anxious about clothing?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to teach the people that God will provide what they need. Alternate translation: \"he will certainly clothe you ... faith.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "how much more will he clothe you ... faith?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to rebuke the people for paying attention to other people's sins and ignoring their own. Alternate translation: \"You look ... brother's eye, but you do not notice the log that is in your own eye.\" or \"Do not look ... brother's eye and ignore the log that is in your own eye.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why do you look ... brother's eye, but you do not notice the log that is in your own eye?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus asks this question to challenge the people to pay attention to their own sins before they pay attention to another person's sins. Alternate translation: \"You should not say ... your own eye.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How can you say ... your own eye?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach the people. Alternate translation: \"There is not one person among you ... a stone.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Or which one of you ... a stone?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus asks another question to teach the people. It is understood that Jesus is still referring to a man and his son. Alternate translation: \"And there is not one person among you, if his son asks for a fish, will give him a snake.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Or if he asks for a fish, will give him a snake?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach the people. Alternate translation: \"then your Father in heaven will most certainly give ... him.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "how much more will your Father in heaven give ... him?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach the people. The people would have known that the answer is no. Alternate translation: \"People do not gather ... thistles.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do people gather ... thistles?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people use a question to emphasize that they did these things. Alternate translation: \"we prophesied ... we drove out demons ... we did many mighty deeds.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "did we not prophesy ... drive out demons ... do many mighty deeds?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was rebuking the disciples with this rhetorical question. Alternate translation: \"You should not be afraid ... faith!\" or \"There is nothing for you to be afraid of ... faith!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τί δειλοί ἐστε, ὀλιγόπιστοι",
+      "glQuote": "Why are you afraid ... faith?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Even the winds and the sea obey him! What sort of man is this?\" This rhetorical question shows that the disciples were surprised. Alternate translation: \"This man is unlike any man we have ever seen! Even the wind and the waves obey him!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ποταπός ἐστιν οὗτος, ὅτι καὶ οἱ ἄνεμοι καὶ ἡ θάλασσα αὐτῷ ὑπακούουσιν",
+      "glQuote": "What sort of man is this, that even the winds and the sea obey him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The demons use a question but they are being hostile toward Jesus. Alternate translation: \"Do not bother us, Son of God!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What do we have to do with you, Son of God?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Again, the demons use a question in a hostile way. Alternate translation: \"You should not disobey God by punishing us before the specific time God has set when he will punish us!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ἦλθες ὧδε πρὸ καιροῦ βασανίσαι ἡμᾶς",
+      "glQuote": "Have you come here to torment us before the set time?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus used this question to rebuke the scribes. (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τί ἐνθυμεῖσθε πονηρὰ ἐν ταῖς καρδίαις ὑμῶν",
+      "glQuote": "Why are you thinking evil in your hearts?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to make the scribes think about what might prove whether or not he could really forgive sins. Alternate translation: \"I just said 'Your sins are forgiven.' You may think that it is harder to say 'Get up and walk,' because the proof of whether or not I can heal the man will be shown by whether or not he gets up and walks.\" or \"You may think that it is easier to say 'Your sins are forgiven' than it is to say 'Get up and walk.'\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τί γάρ ἐστιν εὐκοπώτερον εἰπεῖν, ἀφέωνται‘ σου αἱ ἁμαρτίαι’, ἢ εἰπεῖν, ἔγειρε‘ καὶ περιπάτει",
+      "glQuote": "For which is easier, to say, 'Your sins are forgiven,' or to say, 'Get up and walk'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Pharisees use this question to criticize what Jesus is doing. (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "διὰ τί μετὰ τῶν τελωνῶν καὶ ἁμαρτωλῶν ἐσθίει ὁ διδάσκαλος ὑμῶν",
+      "glQuote": "Why does your teacher eat with tax collectors and sinners?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to answer John's disciples. They all knew that people do not mourn and fast at a wedding celebration. Jesus uses this proverb to show that his disciples do not mourn because he is still there with them. (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/writing-proverbs]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Can wedding attendants be sorrowful while the bridegroom is still with them?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to cause the people to think about what kind of person John the Baptist is. Alternate translation: \"Surely you did not go out to the desert to see a reed ... wind!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What did you go out in the desert to see—a reed ... wind?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to cause the people to think about what kind of person John the Baptist is. Alternate translation: And, surely you did not go out to the desert to see a man ... clothing!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "But what did you go out to see—a man ... clothing?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to make the people think about what kind of man John the Baptist is. Alternate translation: \"But surely you went out to the desert to see a prophet!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ἀλλὰ τί ἐξήλθατε? προφήτην ἰδεῖν",
+      "glQuote": "But what did you go out to see—a prophet?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to introduce a comparison between the people of that day and what children might say in the marketplace. Alternate translation: \"This is what this generation is like\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίνι ... ὁμοιώσω τὴν γενεὰν ταύτην",
+      "glQuote": "To what should I compare this generation?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"do you think you will be raised up to heaven?\" Jesus uses a rhetorical question to rebuke the people of Capernaum for their pride. It can be stated in active form: Alternate translation: \"you cannot raise yourself up to heaven!\" or \"the praise of other people will not raise you up to heaven!\" or \"God will not bring you up to heaven like you think he will!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "do you think you will be exalted to heaven?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to respond to the criticism of the Pharisees. Jesus is challenging them to think about the meaning of the scriptures they have read. Alternate translation: \"I know you have read about ... with him\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Have you never read ... with him?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to respond to the criticism of the Pharisees. Jesus is challenging them to think about the meaning of what they have read in the scriptures. Alternate translation: \"Surely you have read in the law of Moses that ... but are guiltless.\" or \"You should know that the law teaches that ... but are guiltless.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Have you not read in the law that ... but are guiltless?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to respond to the Pharisees. He is challenging them to think about what kind of work they do on the Sabbath. Alternate translation: \"Every one of you, if you only had one sheep ... would grab the sheep and lift it out.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What man would there be among you, who, if he had just one sheep ... would not grasp hold of it and lift it out?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to show the Pharisees that what they were saying was illogical. Alternate translation: \"If Satan were divided against himself, his kingdom would not be able to stand!\" or \"If Satan were to fight against his own demons, his kingdom would not last!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "πῶς οὖν σταθήσεται ἡ βασιλεία αὐτοῦ",
+      "glQuote": "How then will his kingdom stand?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses another question to challenge the Pharisees. Alternate translation: \"then you must say your followers also drive out demons by the power of Beelzebul. But, you know this is not true.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "by whom do your sons drive them out?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach the Pharisees and the crowd. Alternate translation: \"No one can enter ... without tying up the strong man first.\" or \"If a person wants to enter ... he must first tie up the strong man.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How can anyone enter ... without tying up the strong man first?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to rebuke the Pharisees. Alternate translation: \"you cannot say good things.\" or \"you can only say evil things.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "how can you say good things?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses these questions to teach the people. Alternate translation: \"I will tell you who are really my mother and brothers\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίς ἐστιν ἡ μήτηρ μου καὶ τίνες εἰσὶν οἱ ἀδελφοί μου",
+      "glQuote": "Who is my mother and who are my brothers?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The servants used a question to emphasize their surprise. Alternate translation: \"you sowed good seed in your field!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "οὐχὶ καλὸν σπέρμα ἔσπειρας ἐν τῷ σῷ ἀγρῷ",
+      "glQuote": "did you not sow good seed in your field?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The crowd uses these questions to express their belief that they know who Jesus is and that he is just an ordinary man. Alternate translation: \"He is just the son of a carpenter. We know his mother Mary, and his brothers James, Joseph, Simon, and Judas.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 55
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Is not this man the carpenter's son? Is not his mother called Mary? Are not his brothers James, Joseph, Simon, and Judas?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The crowd uses these questions to express their belief that they know who Jesus is and that he is just an ordinary man. Alternate translation: \"And all his sisters are with us, too.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 56
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "αἱ ἀδελφαὶ αὐτοῦ οὐχὶ πᾶσαι πρὸς ἡμᾶς εἰσιν",
+      "glQuote": "Are not all his sisters with us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The crowd uses this question to show their understanding that Jesus must have gotten his abilities from somewhere. They were probably expressing their doubt that he got his abilities from God. Alternate translation: \"He must have gotten his ability to do these things from somewhere!\" or \"We do not know where he got these abilities!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 56
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Where did he get all these things?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to tell Peter than he should not have doubted. You can make explicit what Peter should not have doubted. Alternate translation: \"you should not have doubted that I could keep you from sinking.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "εἰς τί ἐδίστασας",
+      "glQuote": "why did you doubt?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Pharisees and scribes use this question to criticize Jesus and his disciples. Alternate translation: \"Your disciples do not respect the rules that our ancestors have given us.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "διὰ τί οἱ μαθηταί σου παραβαίνουσιν τὴν παράδοσιν τῶν πρεσβυτέρων",
+      "glQuote": "Why do your disciples violate the traditions of the elders?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus answers with a question to criticize what the religious leaders do. Alternate translation: \"And I see that you refuse to obey God's commands just so that you can follow what your ancestors taught you!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Then why do you violate the commandment of God for the sake of your traditions?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to rebuke the disciples for not understanding the parable. Also, the word \"you\" is emphasized. Jesus cannot believe his own disciples do not understand. Alternate translation: \"I am disappointed that you, my disciples, still do not understand what I teach!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ἀκμὴν καὶ ὑμεῖς ἀσύνετοί ἐστε",
+      "glQuote": "Are you also still without understanding?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to rebuke the disciples for not understanding the parable. Alternate translation: \"Surely you understand ... into the latrine\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you not see ... into the latrine?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The disciples use a question to state that there is nowhere to get food for the crowd. Alternate translation: \"There is nowhere nearby that we can get enough bread for such a large crowd.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Where can we get enough loaves of bread in such a deserted place to satisfy so large a crowd?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to rebuke his disciples for not understanding what he just said. Alternate translation: \"I am disappointed that you think it was because you forgot to bring bread that I talked about the yeast of the Pharisees and Sadducees.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "why do you reason ... taken no bread?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to rebuke the disciples. Alternate translation: \"Surely you remember ... you gathered up!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you not yet perceive or remember ... you gathered up?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Do you also not remember the seven loaves ... you took up?\" Jesus uses a question to rebuke his disciples. Alternate translation: \"Surely you also remember the seven loaves ... you took up!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Or the seven loaves ... you took up?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to rebuke the disciples. Alternate translation: \"You should have understood that I was not really speaking about bread.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How is it that you do not understand that I was not speaking to you about bread?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach his disciples. Alternate translation: \"It does not profit a person ... his life.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "For what does it profit a person ... his life?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach his disciples. Alternate translation: \"There is nothing that a person can give to regain his life.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What can a person give in exchange for his life?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These questions show Jesus is unhappy with the people. Alternate translation: \"I am tired of being with you! I am tired of your unbelief and corruption!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "how long will I have to stay with you? How long must I bear with you?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus asks these questions to teach Simon, not to gain information for himself. Alternate translation: \"Listen, Simon. We know that when kings collect taxes, they collect it from people who are not members of their own family\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τί σοι δοκεῖ, Σίμων? οἱ βασιλεῖς τῆς γῆς, ἀπὸ τίνων λαμβάνουσιν τέλη ἢ κῆνσον? ἀπὸ τῶν υἱῶν αὐτῶν ἢ ἀπὸ τῶν ἀλλοτρίων",
+      "glQuote": "\"What do you think, Simon? From whom do the kings of the earth collect tolls or taxes? From their sons or from others?\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to get people's attention. Alternate translation: \"Think about how people act.\" or \"Think about this.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τί ὑμῖν δοκεῖ",
+      "glQuote": "What do you think?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to teach his disciples. Alternate translation: \"he will always leave ... astray.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "does he not leave ... astray?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The king uses a question to scold the first servant. Alternate translation: \"You should have ... you!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Should you not have ... you?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to remind the Pharisees of what the scripture says about men, women, and marriage. Alternate translation: \"Surely you have read that in the beginning when God created people he made them male and female.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Have you not read that he who made them from the beginning made them male and female?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this rhetorical question to encourage the man to think about his reason for asking Jesus about what is good. Alternate translation: \"You ask me about what is good\" or \"Think about why you ask me about what is good.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why do you ask me about what is good?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The disciples use a question to emphasize their surprise. This can be stated in active form. Alternate translation: \"Then there is no one whom God will save!\" or \"Then there is no one who will receive eternal life!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίς ἄρα δύναται σωθῆναι",
+      "glQuote": "Who then can be saved?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The landowner uses a question to rebuke the workers who were complaining. Alternate translation: \"We already agreed that I would give you one denarius.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "οὐχὶ δηναρίου συνεφώνησάς μοι",
+      "glQuote": "Did you not agree with me for one denarius?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The landowner uses a question to correct the workers who were complaining. Alternate translation: \"I can do what I want with my own possessions.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do I not have the right to do as I want with what belongs to me?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The landowner uses a question to rebuke the workers who were complaining. Alternate translation: \"Do not be jealous when I am generous to other people.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Or are you envious because I am generous?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The chief priests and scribes ask this question to rebuke Jesus because they are angry with him. Alternate translation: \"You should not allow them to say these things about you!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ἀκούεις τί οὗτοι λέγουσιν",
+      "glQuote": "Do you hear what they are saying?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus asks this question to remind the chief priests and scribes of what they have studied in the scriptures. Alternate translation: \"Yes, I hear them, but you should remember what you read in the scriptures ... praise.'\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "But have you never read ... praise'?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The disciples use a question to emphasize how surprised they are. Alternate translation: \"We are astonished that the fig tree has dried up so quickly!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "How did the fig tree immediately wither away?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The religious leaders know that Jesus could scold them with this rhetorical question. Alternate translation: \"Then you should have believed John the Baptist\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "διὰ‘ τί οὖν οὐκ ἐπιστεύσατε αὐτῷ",
+      "glQuote": "Why then did you not believe him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to challenge the religious leaders to think deeply about the parable he will tell them. Alternate translation: \"Tell me what you think about what I am about to tell you.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τί δὲ ὑμῖν δοκεῖ",
+      "glQuote": "But what do you think?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to make his audience think deeply about what this scripture means. Alternate translation: \"Think about what you have read ... eyes.'\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Did you never read ... eyes'?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The king uses a question to scold the guest. Alternate translation: \"you are not wearing proper clothes for a wedding. You should not be here.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "how did you come in here without wedding clothes?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to scold those who were trying to trap him. Alternate translation: \"Do not test me, you hypocrites!\" or \"I know that you hypocrites are only trying to test me!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τί με πειράζετε, ὑποκριταί",
+      "glQuote": "Why are you testing me, you hypocrites?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to get the people to think deeply about what he is saying. Alternate translation: \"Tell me whose image and name you see on this coin.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Whose image and name are these?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus scolds the Sadducees by asking a question. He is not looking for an answer. Alternate translation: \"I know you have read ... God. You know that he said,\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "have you not read ... God, saying,",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to make the religious leaders think deeply about the Psalm he is about to quote. Alternate translation: \"Then, tell me why David in the Spirit calls him Lord\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "πῶς οὖν Δαυεὶδ ἐν Πνεύματι καλεῖ Κύριον αὐτὸν",
+      "glQuote": "How then does David in the Spirit call him Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to make the religious leaders think deeply about what he is saying. Alternate translation: \"David calls him 'Lord,' so the Christ has to be more than just a descendant of David.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "If David then calls the Christ 'Lord,' how is he David's son?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to rebuke the Pharisees because they treated the gold as if it were more important than the temple. Alternate translation: \"The temple that has dedicated the gold to God is more important than the gold!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τίς ... μείζων ἐστίν, ὁ χρυσὸς ἢ ὁ ναὸς ὁ ἁγιάσας τὸν χρυσόν",
+      "glQuote": "Which is greater, the gold or the temple that makes the gold holy?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to rebuke the Pharisees for treating the gift as if it were more important than the altar. Alternate translation: \"The altar that makes the gift holy is greater than the gift!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Which is greater, the gift or the altar that makes the gift holy?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question as a rebuke. Alternate translation: \"there is no way for you to escape the judgment of hell!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "πῶς φύγητε ... τῆς κρίσεως τῆς Γεέννης",
+      "glQuote": "how will you escape the judgment of hell?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to make the disciples think deeply about what he will tell them. Alternate translation: \"Let me tell you something about all these buildings.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you not see all these things?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to make his disciples think. Alternate translation: \"So who is the faithful and wise servant? He is the one whom his master ... time.\" or \"Be like the faithful and wise servant, whom his master ... time.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "So who is the faithful and wise servant whom his master ... time?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The disciples ask this question out of their anger over the woman's actions. Alternate translation: \"This woman has done a bad thing by wasting this ointment!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "εἰς τί ἡ ἀπώλεια αὕτη",
+      "glQuote": "What is the reason for this waste?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus asks this question as a rebuke of his disciples. Alternate translation: \"You should not be troubling this woman!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Why are you troubling this woman?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I am surely not the one, am I, Lord?\" Possible meanings are 1) this is a rhetorical question since the apostles were sure they would not betray Jesus. Alternate translation: \"Lord, I would never betray you!\" or 2) this was a sincere question since Jesus' statement probably troubled and confused them. (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Surely not I, Lord?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Rabbi, am I the one who will betray you?\" Judas may be using a rhetorical question to deny that he is the one who will betray Jesus. Alternate translation: \"Rabbi, surely I am not the one who will betray you\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Is it I, Rabbi?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to scold Peter, James, and John. Alternate translation: \"I am disappointed that you could not stay awake with me for one hour!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What, could you not watch with me for one hour?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to scold the disciples for going to sleep. Alternate translation: \"I am disappointed that you are still sleeping and resting!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Are you still sleeping and taking your rest?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to remind the person with the sword that Jesus could stop those who are arresting him. Alternate translation: \"Surely you know that I could call ... angels\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 53
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you think that I could not call ... angels?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a question to explain why he is letting these people arrest him. This can be stated in active form. Alternate translation: \"But if I did that, I would not be able to fulfill what God said in the scriptures must happen\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "But how then would the scriptures be fulfilled, that this must happen?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is using this question to point out the wrong actions of those arresting him. Alternate translation: \"You know that I am not a robber, so it is wrong for you to come out to me bringing swords and clubs\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 55
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "ὡς ... λῃστὴν ἐξήλθατε μετὰ μαχαιρῶν καὶ ξύλων συνλαβεῖν με",
+      "glQuote": "Have you come out with swords and clubs to seize me like a robber?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The high priest uses this question to emphasize that he and the members of the council do not need to hear from any more witnesses. Alternate translation: \"We do not need to hear from any more witnesses!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 65
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": "τί ἔτι χρείαν ἔχομεν μαρτύρων",
+      "glQuote": "Why do we still need witnesses?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jewish leaders use this question to emphasize that they do not care about what Judas said. Alternate translation: \"That is not our problem!\" or \"That is your problem!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "What is that to us?",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Pilate asks this question because he is surprised that Jesus remains silent. Alternate translation: \"I am surprised that you do not answer these people who accuse you of doing bad things!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "glQuote": "Do you not hear all the charges against you?",
+      "occurrence": 0
+    }
+  }
+]

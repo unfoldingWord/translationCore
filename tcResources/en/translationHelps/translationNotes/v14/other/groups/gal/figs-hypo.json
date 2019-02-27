@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is describing something that has not happened and should not happen. Alternate translation: \"would proclaim\" or \"were to proclaim\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": "εὐαγγελίζηται",
+      "glQuote": "should proclaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is describing a situation that never existed. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": "εἰ ... διὰ νόμου δικαιοσύνη, ἄρα Χριστὸς δωρεὰν ἀπέθανεν",
+      "glQuote": "if righteousness could be gained through the law, then Christ died for nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking of a situation that did not exist to emphasize that the inheritance came only by means of the promise. Alternate translation: \"the inheritance comes to us by means of the promise, because we could not keep the demands of God's law\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": "εἰ γὰρ ἐκ νόμου ἡ κληρονομία, οὐκέτι ἐξ ἐπαγγελίας",
+      "glQuote": "For if the inheritance comes by the law, then it no longer comes by promise",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is describing a situation that does not exist to emphasize that people persecute him because he is preaching that God forgives people because of Jesus' work on the cross. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": "ἄρα κατήργηται τὸ σκάνδαλον τοῦ σταυροῦ",
+      "glQuote": "In that case the stumbling block of the cross has been removed",
+      "occurrence": 1
+    }
+  }
+]

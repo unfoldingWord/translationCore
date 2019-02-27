@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" refers to the readers. If it is more natural in your language you can state it as an inclusive \"we.\" Alternate translation: \"that we may receive\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "that you may receive",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All of these commands are plural; Wisdom is addressing many people at the same time. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "Come ... eat ... drink",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All of these commands are plural; Wisdom is addressing many people at the same time. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "pro",
+        "chapter": 9,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "glQuote": "Leave ... live ... walk",
+      "occurrence": 0
+    }
+  }
+]

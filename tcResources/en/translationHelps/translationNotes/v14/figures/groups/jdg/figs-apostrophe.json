@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Deborah and Barak speak to the kings and leaders as if they were there listening to the song. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "jdg",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "glQuote": "Listen, you kings! Pay attention, you leaders",
+      "occurrence": 0
+    }
+  }
+]

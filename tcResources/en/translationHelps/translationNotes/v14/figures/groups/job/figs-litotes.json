@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative statement emphasizes the opposite. It can be stated in positive form. Alternate translation: \"he will fall down\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "it will not support him",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative statement emphasizes the opposite. It can be stated in positive form. Alternate translation: \"it will fall down\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "it does not stand",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative phrase can be expressed in positive form. Alternate translation: \"full of confusion\" or \"where all is confused\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "without any order",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Eliphaz emphasizes that their ancestors purposefully taught them these things. Alternate translation: \"their ancestors taught openly\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 15,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "their ancestors did not hide",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two litotes express that he will be the opposite of rich, that he will be poor. Alternate translation: \"he will be poor; all his money will disappear\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "He will not be rich; his wealth will not last",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated positively. Alternate translation: \"they even spit in my face\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 30,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "they do not refrain from spitting in my face",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated in positive form. Alternate translation: \"I will certainly speak about ... and about ... and about\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "job",
+        "chapter": 41,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "I will not keep silent concerning ... nor about ... nor about",
+      "occurrence": 0
+    }
+  }
+]

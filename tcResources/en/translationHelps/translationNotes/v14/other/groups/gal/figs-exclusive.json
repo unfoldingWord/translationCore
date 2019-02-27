@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This probably refers to Paul and others but not to the Galatians, who were primarily Gentiles. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "εἰδότες",
+      "glQuote": "we",
+      "occurrence": 1
+    }
+  }
+]

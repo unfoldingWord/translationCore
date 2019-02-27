@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exclamation that shows the author's sadness that this has happened. (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "lam",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "glQuote": "how the purest gold has changed",
+      "occurrence": 0
+    }
+  }
+]

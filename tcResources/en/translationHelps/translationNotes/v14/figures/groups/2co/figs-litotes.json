@@ -1,0 +1,149 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive terms. Alternate translation: \"we want you to know\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐ θέλομεν θέλομεν ὑμᾶς ἀγνοεῖν",
+      "glQuote": "we do not want you to be uninformed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses a negative expression to emphasize the opposite. Alternate translation: \"For we know his plans well\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐ γὰρ αὐτοῦ τὰ νοήματα ἀγνοοῦμεν ἀγνοοῦμεν",
+      "glQuote": "For we are not ignorant of his plans",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative phrase emphasizes the positive truth that he is trained in knowledge. The abstract noun \"knowledge\" can be translated with a verbal phrase. Alternate translation: \"I am certainly trained in knowledge\" or \"I am trained to know what they know\" (See: [[rc://en/ta/man/translate/figs-litotes]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "I am not untrained in knowledge",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By stating this in a negative form Paul is emphasizing that the Corinthians should expect to meet many \"false apostles\" ([2 Corinthians 11:13](../11/13.md)). Alternate translation: \"we should expect this\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "this is no surprise",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By stating this in a negative form Paul is emphasizing that the Corinthians should expect to meet many \"false apostles\" ([2 Corinthians 11:13](../11/13.md)). Alternate translation: \"We should certainly expect that\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "It is no great surprise if",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is using litotes to emphasize that he is telling the truth. Alternate translation: \"I am telling the absolute truth\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": "οὐ ψεύδομαι ψεύδομαι",
+      "glQuote": "I am not lying",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By using the negative form, Paul is saying strongly that those Corinthians who think that he is inferior are wrong. Alternate translation: \"For I am just as good as\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "For I was not at all inferior to",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"that you will not sin at all\" or \"that you will not refuse to listen to us when we correct you.\" Paul is emphasizing the opposite with his statement. Alternate translation: \"that you will do everything right\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "that you may not do any wrong",
+      "occurrence": 0
+    }
+  }
+]

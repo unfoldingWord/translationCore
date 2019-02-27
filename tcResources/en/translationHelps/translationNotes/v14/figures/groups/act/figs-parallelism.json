@@ -1,0 +1,75 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing. The second emphasizes the meaning of the first by repeating the same idea with different words. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": "γενηθήτω‘ ἡ ἔπαυλις αὐτοῦ ἔρημος, καὶ μὴ ἔστω ὁ κατοικῶν ἐν αὐτῇ",
+      "glQuote": "Let his field be made desolate, and do not let even one person live there",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two lines mean basically the same thing. The two lines emphasize the combined effort of the earth's rulers to oppose God. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "The kings of the earth set themselves together, and the rulers gathered together against the Lord",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Lord is giving one command in two different ways to emphasize that Paul should certainly continue preaching. Alternate translation: \"You must not be afraid and, instead, continue to speak and not become silent\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "Do not be afraid, but speak and do not be silent",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these phrases mean basically the same thing. They emphasize that the Jewish people will not understand God's plan. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "glQuote": "but not understand ... but will not perceive",
+      "occurrence": 0
+    }
+  }
+]

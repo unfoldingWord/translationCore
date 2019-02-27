@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The verb \"cut off\" applies to each of these phrases, but has been used only once to avoid repetition. Alternate translation: \"I will cut off every remnant ... I will cut off the names of the idolatrous people among the priests\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "I will cut off every remnant ... the names of the idolatrous people among the priests",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The verb \"cut off\" ([Zechariah 1:4] (./04.md)) applies to these phrases, but has been used only once to avoid repetition. Alternate translation: \"I will cut off the people who on the housetops ... I will cut off the people who worship and swear\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "zep",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "glQuote": "the people who on the housetops ... the people who worship and swear",
+      "occurrence": 0
+    }
+  }
+]

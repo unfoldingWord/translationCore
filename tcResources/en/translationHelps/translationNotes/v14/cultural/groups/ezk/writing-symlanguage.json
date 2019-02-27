@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Ezekiel was to do this symbolic action to get the people's attention. This was not applause. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "glQuote": "Clap your hands and stomp your foot",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the huge creature that lives in the water.\" Yahweh calls Pharaoh a monster that lives in the water. The monster is probably a crocodile. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 29,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "glQuote": "the great sea monster",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Yahweh continues giving Ezekiel his message to Pharaoh, speaking of him as though he were a monster in the water and the people of Egypt were fish. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "ezk",
+        "chapter": 29,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  }
+]

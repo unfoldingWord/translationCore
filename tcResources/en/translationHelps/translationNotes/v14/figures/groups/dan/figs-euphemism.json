@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"fell down\" is a euphemism that means they were destroyed.\" Alternate translation: \"which destroyed the three horns\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 7,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "before which the three horns fell down",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"sleep in the dust of the earth\" is another way of referring to those who have died. Here \"rise up\" is an idiom that means to come back to life. Alternate translation: \"those who have died will come back to life\" (See: [[rc://en/ta/man/translate/figs-euphemism]] and [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "those who sleep in the dust of the earth will rise up",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a gentle way of saying \"you will die.\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 12,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "you will rest",
+      "occurrence": 0
+    }
+  }
+]

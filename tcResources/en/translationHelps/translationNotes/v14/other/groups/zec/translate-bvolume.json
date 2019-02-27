@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "An \"ephah\" is a unit of measurement for dry materials and is equal to 22 liters. Here the word is a metonym for the container that would hold an ephah of dry material. Alternate translation: \"This is a measuring basket that is coming\" or \"This is a large container that is coming\" (See: [[rc://en/ta/man/translate/translate-bvolume]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 5,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "glQuote": "This is a basket containing an ephah that is coming",
+      "occurrence": 0
+    }
+  }
+]

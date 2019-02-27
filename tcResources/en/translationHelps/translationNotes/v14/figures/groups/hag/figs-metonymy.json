@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Wine\" and \"oil\" are metonyms for grapes and olives. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hag",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "upon the new wine, upon the oil",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The voice and the words are metonyms for the persons. Alternate translation: \"obeyed Yahweh and Haggai\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hag",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "obeyed the voice of Yahweh ... the words of Haggai",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Stirring the spirit is a metonym for making someone want to act. Alternate translation: \"Yahweh made the governor of Judah, Zerubbabel son of Shealtiel, and the high priest Joshua son of Jehozadak, and all the remnant of the people want to act\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hag",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "Yahweh stirred up the spirit of the governor of Judah, Zerubbabel son of Shealtiel, and the spirit of the high priest Joshua son of Jehozadak, and the spirit of all the remnant of the people",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The throne is a metonym for the person sitting on the throne. Alternate translation: \"I will take kings off of their thrones\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hag",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "I will overthrow the throne of kingdoms",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"throne\" is a metonym for the king who sits on it. Alternate translation: \"government ruled by kings\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hag",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "the throne of kingdoms",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The sword here is a metonym for violent death. Alternate translation: \"each one because his brother has killed him\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "hag",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "glQuote": "each one because of his brother's sword",
+      "occurrence": 0
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A \"cubit\" is a unit of measurement equal to 46 centimeters. Alternate translation: \"2.3 meters\" (See: [[rc://en/ta/man/translate/translate-bdistance]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "glQuote": "five cubits",
+      "occurrence": 0
+    }
+  }
+]

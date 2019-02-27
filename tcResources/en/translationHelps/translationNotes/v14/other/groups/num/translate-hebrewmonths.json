@@ -1,0 +1,290 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the second month of the Hebrew calendar. The first day is near the middle of April on Western calendars. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the first day of the second month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the second month of the Hebrew calendar. The first day is near the middle of April on Western calendars. See how you translated this in [Numbers 1:1](../01/01.md). (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the first day of the second month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the first month of the Hebrew calendar. It marks when God brought the people of Israel out of Egypt. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "in the first month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"on day 14 of the first month.\" This refers to time in the Jewish calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "in the first month, on the fourteenth day of the month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"day 14 of month 2.\" This refers to time in the Jewish calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the second month on the fourteenth day",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There are 12 months on the Hebrew calendar. The beginning phase of the moon with its sliver of light marked the beginning of each month in the lunar calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "at the beginnings of the months",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"on day 20 of month 2.\" This is the second month of the Hebrew calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "in the second month, on the twentieth day of the month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the first month of the Hebrew calendar. It marks when God rescued the Israelites from the Egyptians. The first month is during the last part of March and the first part of April on the Western calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the first month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"During the first month, on day 14 of the month.\" This refers to the first month of the Hebrew calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 28,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the first month, on the fourteenth day of the month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"On day 15 day of this month.\" This refers to the first month of the Hebrew calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 28,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "On the fifteenth day of this month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the seventh month of the Hebrew calendar. Alternate translation: \"On day 1 of month 7\" (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 29,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "In the seventh month, on the first day of the month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"in month 7 ... day 1 of each month.\" The word \"month\" refers to a month of the Hebrew calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 29,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "in the seventh month ... the first of each month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"day 10 of month 7\" The word \"month\" refers to those in the Hebrew calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 29,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the tenth day of the seventh month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"day 15 of month 7.\" The word \"month\" refer to those in the Hebrew calendar. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 29,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "the fifteenth day of the seventh month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"first\" is the ordinal number one and \"fifteenth\" is the ordinal number fifteen. This is the first month of the Hebrew calendar. The fifteenth day is near the beginning of April on Western calendars. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 33,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "during the first month, leaving on the fifteenth day of the first month",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This \"fifth\" is the ordinal number for five. This \"first\" is the ordinal number for one. This is the fifth month of the Hebrew calendar. The first day is near the middle of July on Western calendars. (See: [[rc://en/ta/man/translate/translate-hebrewmonths]] and [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 33,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-hebrewmonths",
+      "glQuote": "in the fifth month, on the first day of the month",
+      "occurrence": 0
+    }
+  }
+]

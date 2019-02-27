@@ -1,0 +1,128 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"70 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 29,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "seventy years",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Jonathan, who was a scribe.\" This is a man's name. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 37,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "Jonathan the scribe",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"30 men\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 38,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "thirty men",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"80 men\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 41,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "eighty men",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"three thousand and twenty-three\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 52,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "3023",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"teight hundred and thirty-two\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 52,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "832",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"seven hundred and forty-five ... four thousand six hundred\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "jer",
+        "chapter": 52,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "glQuote": "745 ... 4,600",
+      "occurrence": 0
+    }
+  }
+]

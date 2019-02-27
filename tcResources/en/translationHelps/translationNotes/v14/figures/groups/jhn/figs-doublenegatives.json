@@ -1,0 +1,207 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Unless ... not believe\" here is a double negative. In some languages it is more natural to translate this statement in a positive form. Alternate translation: \"Only if you see a miracle will you believe\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "ἐὰν μὴ σημεῖα καὶ τέρατα ἴδητε, οὐ μὴ πιστεύσητε",
+      "glQuote": "Unless you see signs and wonders, you will not believe",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated positively. Alternate translation: \"will be judged to be innocent\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "will not be condemned",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence uses a double negative pattern. \"Only a man from God could do something like that!\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "εἰ μὴ ἦν οὗτος παρὰ Θεοῦ ... ἠδύνατο ποιεῖν οὐδέν",
+      "glQuote": "If this man were not from God, he could do nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a double negative. In some languages it is more natural to use a positive statement. Alternate translation: \"comes only to steal\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "does not come if he would not steal",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Jesus states two negatives to convince Peter to allow him to wash his feet. Jesus implies that Peter must let him wash his feet if he wants to continue being a disciple. Alternate translation: \"If I wash you, you will always belong with me\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "ἐὰν μὴ νίψω σε, οὐκ ἔχεις μέρος μετ’ ἐμοῦ",
+      "glQuote": "If I do not wash you, you have no share with me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this double negative in a positive form. Alternate translation: \"Because I have done among them the works that no one else did, they have had sin, and\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "εἰ τὰ ἔργα μὴ ἐποίησα ἐν αὐτοῖς ἃ οὐδεὶς ἄλλος ἐποίησεν, ἁμαρτίαν οὐκ εἴχοσαν ... δὲ",
+      "glQuote": "If I had not done the works that no one else did among them, they would have no sin, but",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in a positive form. Alternate translation: \"the Comforter will come to you only if I go away\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "ἐὰν ... μὴ ἀπέλθω, ὁ Παράκλητος οὐκ ἐλεύσεται πρὸς ὑμᾶς",
+      "glQuote": "if I do not go away, the Comforter will not come to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this double negative in a positive form. Alternate translation: \"This man is an evil doer, and we had to bring him to you for punishment\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "εἰ μὴ ἦν οὗτος κακὸν ποιῶν, οὐκ ἄν σοι παρεδώκαμεν αὐτόν",
+      "glQuote": "If this man was not an evildoer, we would not have given him over to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this double negative in a positive and active form. Alternate translation: \"You are able to act against me only because God has made you able\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "You do not have any power over me except for what has been given to you from above",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this double negative in a positive form. Alternate translation: \"I will believe only if I see ... his side\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "glQuote": "Unless I see ... his side, I will not believe",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses the double negative \"Do not be unbelieving\" to emphasize the words that follow, \"but believe.\" If your language does not allow double negatives or the reader would not understand that Jesus is emphasizing the words that follow, you can leave these words untranslated. Alternate translation: \"This is what is most important for you to do: you must believe\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "μὴ γίνου ἄπιστος, ἀλλὰ πιστός",
+      "glQuote": "Do not be unbelieving, but believe",
+      "occurrence": 1
+    }
+  }
+]

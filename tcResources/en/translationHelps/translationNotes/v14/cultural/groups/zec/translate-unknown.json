@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a kind of small tree with colorful flowers (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "zec",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "glQuote": "myrtle trees",
+      "occurrence": 0
+    }
+  }
+]

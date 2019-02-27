@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A cubit is 46 centimeters. Alternate translation: \"about 27 meters tall and almost 3 meters wide\" (See: [[rc://en/ta/man/translate/translate-bdistance]])",
+      "reference": {
+        "bookId": "dan",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "glQuote": "sixty cubits tall and six cubits wide",
+      "occurrence": 0
+    }
+  }
+]

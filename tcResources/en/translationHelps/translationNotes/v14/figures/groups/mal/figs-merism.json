@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This double expression means \"everywhere.\" It is parallel to \"among the nations\" and \"in every place\" (See: [[rc://en/ta/man/translate/figs-merism]] and [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mal",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "from the rising of the sun to its setting",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This expression continues to speak of people as if they were plants or trees. So being deprived of all roots and branches stands for being completely killed off. Alternate translation: \"nothing will be left\" (See: [[rc://en/ta/man/translate/figs-merism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mal",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "glQuote": "it will leave them neither root nor branch",
+      "occurrence": 0
+    }
+  }
+]

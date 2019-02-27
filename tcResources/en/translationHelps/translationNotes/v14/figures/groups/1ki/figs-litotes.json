@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed positively. Alternate translation: \"They provided everything that Solomon needed\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 4,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "They let nothing be lacking",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated positively. Alternate translation: \"Yahweh has made every word of his good promises come true\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "1ki",
+        "chapter": 8,
+        "verse": 56
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "Not one word has failed out of all Yahweh's good promises",
+      "occurrence": 0
+    }
+  }
+]

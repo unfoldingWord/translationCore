@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This may be written in modern weights. Alternate translation: \"about 33 kilograms\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 12,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "a talent",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be written in modern units. Alternate translation: \"two and a half kilograms\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 14,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "two hundred shekels",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"300 shekels.\" This is about 3.4 kilograms. (See: [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "glQuote": "three hundred shekels",
+      "occurrence": 0
+    }
+  }
+]

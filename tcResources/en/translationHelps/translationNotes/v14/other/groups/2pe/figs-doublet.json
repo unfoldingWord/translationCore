@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words mean basically the same thing and emphasize that this person will not be productive or experience any benefits from knowing Jesus. Alternate translation: \"unproductive\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "ἀργοὺς οὐδὲ ἀκάρπους",
+      "glQuote": "barren or unfruitful",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"calling\" and \"election\" share similar meanings and refer to God's choosing them to belong to him. Alternate translation: \"make sure that God has really chosen you to belong to him\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "βεβαίαν ὑμῶν τὴν κλῆσιν καὶ ἐκλογὴν ποιεῖσθαι",
+      "glQuote": "make your calling and election sure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"spotless\" and \"blameless\" mean basically the same thing and emphasize moral purity. Alternate translation: \"completely pure\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": "ἄσπιλοι καὶ ἀμώμητοι",
+      "glQuote": "spotless and blameless",
+      "occurrence": 1
+    }
+  }
+]

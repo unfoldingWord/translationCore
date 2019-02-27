@@ -1,0 +1,163 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"now\" is used here to mark the change from the lists of descendants to background information about Reuben. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "now Reuben",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This verse finishes the background information about Reuben. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "General Information:",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is historical information. Saul had been their king before David. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "In the recent past",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"now\" is used to mark a break in the main story line. Here the narrator tells background information about Jerusalem. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now the Jebusites ... were there",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer adds this background information to explain what would happen to this bronze at a later time. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 18,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "It was with this bronze that Solomon later made the bronze basin called \"The Sea,\" the pillars, and the bronze equipment",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information from the author. It was harder to fight wars in the cold winter, so kings normally waited for spring to attack their enemies. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "at the time when kings normally go to war",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Verses 29-30 are background information to explain why David offered this sacrifice at the threshing floor instead of on the altar at the tabernacle. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 21,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now at that time",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Verses 29-30 are background information to explain why David offered this sacrifice at the threshing floor instead of on the altar at the tabernacle. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 21,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information to explain who provided so many logs. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "1ch",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "The Sidonians and the Tyrians brought too many cedar logs to David to count",
+      "occurrence": 0
+    }
+  }
+]

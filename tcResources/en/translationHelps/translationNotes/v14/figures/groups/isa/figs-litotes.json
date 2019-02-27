@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This negative statement emphasizes the positive. Alternate translation: \"every one is present\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 40,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "not one is missing",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means they are continually pleading to Yahweh or calling to each other. Alternate translation: \"they are earnestly praying to Yahweh throughout the entire day\" (See: [[rc://en/ta/man/translate/figs-litotes]] and [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 62,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "they are not silent day or night",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed positively. Alternate translation: \"I will spare some of them who are righteous\" (See: [[rc://en/ta/man/translate/figs-litotes]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 65,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "I will not ruin them all",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed positively. Alternate translation: \"will burn forever\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "isa",
+        "chapter": 66,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "glQuote": "will not be quenched",
+      "occurrence": 0
+    }
+  }
+]

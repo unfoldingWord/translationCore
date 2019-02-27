@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Now\" is used to mark a break in the main story line. The narrator tells background information about Moses' character. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now the man Moses",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This changes from the main story to background information about Balak. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now Balak son of Zippor was king of Moab at that time",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This switches from the main story line to background information about Zimri and Kozbi. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 25,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main story line. Here Moses tells background information about the tribes of Reuben and Gad. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "num",
+        "chapter": 32,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "glQuote": "Now",
+      "occurrence": 0
+    }
+  }
+]

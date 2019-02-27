@@ -1,0 +1,20 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"one-third of the army ... another third of the army.\" A \"third\" is one part out of three equal parts. (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "2sa",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "glQuote": "one-third ... another third",
+      "occurrence": 0
+    }
+  }
+]

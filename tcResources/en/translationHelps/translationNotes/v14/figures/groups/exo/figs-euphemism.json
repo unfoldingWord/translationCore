@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is possible that the word \"feet\" here may have been a more respectful way to refer to the genital area of the body. (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "to his feet",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses used a polite way of saying God was going to destroy the Egyptian army. Alternate translation: \"For God will kill the Egyptians\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "For you will never see again the Egyptians",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a polite way of talking about sleeping with their wives. Alternate translation: \"do not sleep with your wives\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "do not go near your wives",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This includes things that a husband must do for his wife, including sleeping with her. Alternate translation: \"and he must continue to sleep with her as before\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 21,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "or her marital rights",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Lying with someone is a euphemism for having sex. Alternate translation: \"if he has sex with her\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 22,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "if he lies with her",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a euphemism. Alternate translation: \"Whoever has sexual relations with an animal\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "exo",
+        "chapter": 22,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "glQuote": "Whoever lies with an animal",
+      "occurrence": 0
+    }
+  }
+]

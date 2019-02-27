@@ -1,0 +1,94 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a direct quote. Alternate translation: \"He ordered them strictly, 'No one should know about this!' Then\" or \"He ordered them strictly, 'Do not tell anyone about what I have done!' Then\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "διεστείλατο αὐτοῖς πολλὰ ἵνα μηδεὶς γνοῖ τοῦτο, καὶ",
+      "glQuote": "He strictly ordered them that no one should know about this. Then",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a direct quote. Alternate translation: \"And he told them, 'Give her something to eat.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "Then he told them to give her something to eat.",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be written as a direct quote. \"Jesus commanded the crowd, 'Sit down on the ground'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "He commanded the crowd to sit down on the ground",
+      "occurrence": 0
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Sadducees are quoting what Moses had written in the law. Moses' quote can be expressed as an indirect quote. Alternate translation: \"Moses wrote for us that if a man's brother dies\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": "Μωϋσῆς ἔγραψεν ἡμῖν ... ἐάν τινος‘ ἀδελφὸς ἀποθάνῃ",
+      "glQuote": "Moses wrote for us, 'If a man's brother dies",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be written as an indirect quote. Translate this so that it is a polite request. Alternate translation: \"Our Teacher would like to know where the guest room is where he may eat the Passover with his disciples.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "glQuote": "The Teacher says, \"Where is my guest room ... with my disciples?\"",
+      "occurrence": 0
+    }
+  }
+]
