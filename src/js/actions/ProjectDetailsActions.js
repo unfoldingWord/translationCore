@@ -16,7 +16,8 @@ import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 //reducers
 import Repo from '../helpers/Repo.js';
 import ProjectAPI from "../helpers/ProjectAPI";
-
+//Selectors
+import * as selectors from "../selectors/index";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -32,10 +33,11 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
   return (dispatch, getState) => {
     const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
-    const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
+    const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL, bookName);
     const project = new ProjectAPI(projectSaveLocation);
     let selectedCategories = project.getSelectedCategories(toolName);
-    selectedCategories = selectedCategories.filter((category) => availableCheckCategories[toolName] && availableCheckCategories[toolName].includes(category));
+    selectedCategories = selectedCategories.filter((category) => 
+      availableCheckCategories[toolName] && availableCheckCategories[toolName].includes(category));
     dispatch(setCategories(selectedCategories, toolName));
   };
 };
@@ -58,7 +60,7 @@ export const updateCheckSelection = (id, value, toolName) => {
     // TRICKY: tools with categories must have a selection.
     if(selectedCategories.length === 0) {
       const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
-      const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
+      const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL, selectors.getProjectBookId(getState()));
 
       // default to available
       if(availableCheckCategories.length > 0) {

@@ -160,7 +160,8 @@ class ToolCard extends Component {
             toolName={tool.name} 
             selectedCategories={selectedCategories} 
             checks={availableCategories} 
-            onChecked={updateCheckSelection} />}
+            onChecked={updateCheckSelection}
+            bookId={bookId} />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>

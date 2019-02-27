@@ -19,36 +19,42 @@ import ResourceAPI from "./ResourceAPI";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
-function noArticlesFilter(folders) {
-  let filterResult = [];
-  for( var idx = 0; idx < folders.length; idx++) {
-    if( folders[idx].indexOf("articles") <0 ) {
-      filterResult.push(folders[idx].replace(path.sep, '-'));
-    } 
-  }
-
-  return filterResult;
-}
-
-export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
+/**
+ * get intersection of possible categories and categories found in selected project
+ * 
+ * @param {*} currentProjectToolsSelectedGL - different list for each tool
+ * @param {*} bookId - categories are based on project 
+ */
+export function getAvailableCheckCategories(currentProjectToolsSelectedGL, bookId) {
   let availableCategories = {};
   Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
   // where to look for categories  
+    /* resources/<lang>/translationHelps/translationsNotes/<version>/<categories not other>/groups/<book>/<group>.json */
+
     const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
+console.log("getAvailableCheckCategories: bookId: ", bookId);
     if (fs.existsSync(versionDirectory)) {
-    // categories are 2 levels of sub directories of version  
-      const catFolders = readdir.readdirSync(versionDirectory, {deep:2} ).filter((dirName)=>
-        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory());
-        let noArt = noArticlesFilter(catFolders);
-        noArt.sort();
-        availableCategories[toolName] = noArt;
+    // sub categories are 4 levels of sub directories below version  
+      const reg = new RegExp('^([^\\' + path.sep + ']*$|.*.json$)');                      // doesnt have / or is json
+      const catFiles = readdir.readdirSync(versionDirectory, {deep: 4} )                  // everything under version
+        .filter(file => file.search(reg) >= 0)                                            // categories or groups
+        .filter(file => file.search(bookId) >=0 )                                         // for single project
+        .filter(file => file.search(/.*(articles|manifest.json|index.json).*/) < 0)       // none of these
+        .map(file => file.indexOf(path.sep) < 0 ? file :
+          file.substr(file.lastIndexOf(path.sep) + 1))                                    // basename
+        .sort().filter((val, idx, arr) => idx === arr.indexOf(val))                       // sort unique
+        .map(file => file.replace(".json", ""));                                          // Remove extension
+        
+      availableCategories[toolName] = catFiles;
+console.log("catFiles: ", catFiles);
     }
     if (!availableCategories[toolName]) {
       availableCategories[toolName] = [];
     }
   });
+
   return availableCategories;
 }
 

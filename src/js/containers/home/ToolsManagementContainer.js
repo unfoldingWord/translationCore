@@ -58,6 +58,7 @@ class ToolsManagementContainer extends Component {
       },
       translate
     } = this.props;
+ 
     const instructions = (
       <div>
         <p>{translate("tools.select_tool_from_list")}</p>
@@ -65,7 +66,7 @@ class ToolsManagementContainer extends Component {
           { app: translate("_.app_name") })}</p>
       </div>
     );
-    const availableCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
+    const availableCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL, this.bookId);
     return (
       <HomeContainerContentWrapper
         translate={translate}
