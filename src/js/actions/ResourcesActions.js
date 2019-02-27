@@ -418,11 +418,12 @@ export const loadArticleData = (resourceType, articleId, languageId, category=''
 
 /**
  * Finds the article file within a resoure type's path, looking at both the given language and default language in all possible category dirs
- * @param {String} resourceType - e.g. translationWords, translationAcademy
+ * @param {String} resourceType - e.g. translationWords, translationNotes
  * @param {String} articleId
  * @param {String} languageId - languageId will be first checked, and then we'll try the default GL
  * @param {String} category - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
  * @returns {String} - the path to the file, null if doesn't exist
+ * Note: resourceType is coming from a tool name
  */
 export const findArticleFilePath = (resourceType, articleId, languageId, category='') => {
   const languageDirs = [];
@@ -436,8 +437,9 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   if (! category ){
     if (resourceType === 'translationWords') {
       categories = ['kt', 'names', 'other'];
-    } else if (resourceType === 'translationAcademy') {
+    } else if (resourceType === 'translationNotes' || resourceType === 'translationAcademy') {
       categories = ['translate', 'checking', 'process', 'intro'];
+      resourceType = 'translationAcademy';
     } else {
       categories = ['content'];
     }

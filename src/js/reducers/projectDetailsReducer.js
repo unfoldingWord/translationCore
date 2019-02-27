@@ -11,7 +11,8 @@ const initialState = {
   currentProjectToolsSelectedGL: {},
   projectType: null,
   toolsCategories: {
-    translationWords: ['kt', 'other', 'names']
+    translationWords: ['kt', 'other', 'names'],
+    translationNotes: ['other']
   }
 };
 

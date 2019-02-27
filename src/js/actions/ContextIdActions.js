@@ -56,7 +56,7 @@ function firstContextId(state) {
   let groupsDataEmpty = Object.keys(groupsData).length === 0;
   if (!groupsIndexEmpty && !groupsDataEmpty) {
     let valid = false, i = 0;
-    while (!valid && i < groupsIndex.length - 1) {
+    while (!valid && i < groupsIndex.length - 1 || i === 0) {
       let groupId = groupsIndex[i].id;
       let data = groupsData[groupId];
       if (!!data && !!data[0]) contextId = data[0].contextId;

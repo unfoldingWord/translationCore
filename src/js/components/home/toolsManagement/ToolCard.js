@@ -128,6 +128,10 @@ class ToolCard extends Component {
         desc_key = 'tools.tw_part1_description';
         break;
 
+      case 'translationNotes':
+        showCheckBoxes = true;
+        break;
+
       default:
         break;
     }
