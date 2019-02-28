@@ -46,9 +46,9 @@ console.log("getAvailableCheckCategories: bookId: ", bookId);
           file.substr(file.lastIndexOf(path.sep) + 1))                                    // basename
         .sort().filter((val, idx, arr) => idx === arr.indexOf(val))                       // sort unique
         .map(file => file.replace(".json", ""));                                          // Remove extension
-        
+
       availableCategories[toolName] = catFiles;
-console.log("catFiles: ", catFiles);
+console.log("getAvailableCheckCategories: catFiles: ", catFiles);
     }
     if (!availableCategories[toolName]) {
       availableCategories[toolName] = [];

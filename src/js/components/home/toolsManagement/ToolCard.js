@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Card, CardHeader} from 'material-ui';
@@ -161,7 +162,8 @@ class ToolCard extends Component {
             selectedCategories={selectedCategories} 
             checks={availableCategories} 
             onChecked={updateCheckSelection}
-            bookId={bookId} />}
+            bookId={bookId}
+            translate={translate} />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>

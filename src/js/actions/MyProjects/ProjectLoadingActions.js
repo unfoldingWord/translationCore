@@ -91,8 +91,18 @@ export const openProject = (name, skipValidation=false) => {
         // copy group data
         // TRICKY: group data must be tied to the original language.
         const olForBook = BibleHelpers.getOLforBook(bookId);
-        const olID = (olForBook && olForBook.languageId) || 'grc';
-        copyGroupDataToProject(olID, t.name, validProjectDir);
+        
+        let olId;
+        if (olForBook)  {
+          olId = olForBook.languageId;
+        } else if (t.name === 'translationNotes') {
+          olId = 'en';
+        } else {
+          olId = 'grc';
+        }
+
+        //const olID = (olForBook && olForBook.languageId) || 'grc';
+        copyGroupDataToProject(olId, t.name, validProjectDir);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);

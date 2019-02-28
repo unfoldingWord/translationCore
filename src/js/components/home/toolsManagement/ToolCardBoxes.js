@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
 import { tNotesCategories } from "tsv-groupdata-parser";
+//import {getTranslate} from '../selectors';
 /**
 *  Checkboxnames are derived first by what is in Gateway language resource 
 *  translation notes FileFolder. This is mapped to the array in 
@@ -141,22 +142,38 @@ const checkBoxName = { // this will use translate
 };
 */
 
+/**
+ * turn group object of category objects in to set of objects
+ */
 function flattenNotesCategories() {
   let checkBoxNames = {};
-console.log("tNotesCategories: ", tNotesCategories);
+  let lookupNames = {};
+
   Object.keys(tNotesCategories).forEach( item => {
     checkBoxNames[item] = toolCardCategories[item]; 
-
+    lookupNames[item] = 'tool_card_categories.' + item;
     Object.keys(tNotesCategories[item]).forEach(subItem => {
       const group = subItem.substr(subItem.indexOf('-') + 1);
       checkBoxNames[item + '-' + group] = tNotesCategories[item][subItem];
+      lookupNames[group] = 'tool_card_categories.' + subItem.replace('-','_');
     });
   });
-console.log("tNotesCategories: ", tNotesCategories);
-  return checkBoxNames;
+
+  Object.keys(toolCardCategories).forEach( item => {
+    lookupNames[item] = 'tool_card_categories.' + item;
+  });
+
+  return [checkBoxNames, lookupNames];
 }
 
 
+/**
+ * Display a preconfigured chechbox with passed parms
+ * @param {*} selectedCategories 
+ * @param {*} id 
+ * @param {*} toolName 
+ * @param {*} onChecked 
+ */
 function localCheckBox(selectedCategories, id, toolName, onChecked) {
   return (
     <Checkbox
@@ -171,6 +188,15 @@ function localCheckBox(selectedCategories, id, toolName, onChecked) {
 }
 
 
+/**
+ * return letters after the dash
+ * @param {*} symbol - token containing a dash 
+ */
+function postPart(symbol) {
+  return symbol.substr( symbol.indexOf("-") + 1 );
+}
+
+
 class ToolCardBoxes extends React.Component {
   constructor(props) {
     super(props);
@@ -182,6 +208,9 @@ class ToolCardBoxes extends React.Component {
     this.showExpanded = this.showExpanded.bind(this);
   }
 
+  componentDidMount() {
+    
+  }
 
   showExpanded(id) {
     this.setState({
@@ -196,24 +225,24 @@ class ToolCardBoxes extends React.Component {
 
 // TBD sync with new file system
 //       limit to book
-// TBD   map to categories
+//       map to categories
 //       change from folders to files
 //       extend folder depth
 //       strip extensions
 //       strip prefix
-// TBD   use translate
+//       use translate
 // TBD   make checked boxes stick
 
   render() {  
     // Checks is DEPRECATED
-    const {checks, toolName, selectedCategories, onChecked} = this.props;
-    const checkBoxNames = flattenNotesCategories();
+    const {checks, toolName, selectedCategories, onChecked, translate} = this.props;
+    const [checkBoxNames, lookupNames] = flattenNotesCategories();
     let sortedChecks = [];
 //console.log("toolName: ", toolName);
 //console.log("selectedCategories: ", selectedCategories );
 //console.log("onChecked: ", onChecked);
-//console.log("checkBoxNames: ", checkBoxNames );
-
+console.log("checkBoxNames: ", checkBoxNames );
+console.log("lookupNames: ", lookupNames );
     if (toolName !== 'translationNotes') {  
       sortedChecks = checks.sort((a, b) => {
         return Object.keys(checkBoxNames).indexOf(a) > Object.keys(checkBoxNames).indexOf(b);
@@ -222,20 +251,20 @@ class ToolCardBoxes extends React.Component {
       sortedChecks = Object.getOwnPropertyNames(checkBoxNames);
     }
 
-//console.log("sortedChecks: ", sortedChecks );
+console.log("sortedChecks: ", sortedChecks );
 
     return (
       <div style={{ margin: '0 2% 0 6%', border: 'thin none black' }}>
         { 
           sortedChecks.map((id, index) =>  // outer loop of categories  
-            id.indexOf('-') <= -1 ? ( // not a sub-category
+            !id.includes('-') ? ( // not a sub-category
               <div style={{ display: 'flex', flexWrap: 'wrap',  border: 'thin none red', margin: '0 0 5 0', width: '100%'}} key={index}> 
                 <div style={{ display: 'flex', border: 'thin none green', width: '92%'}}>      
                   <div style={{border: "thin none brown", width: '38px' }} >
                     {localCheckBox( selectedCategories, id, toolName, onChecked)}
                   </div>
                   <div style={{border: "thin none brown"}} >
-                    {checkBoxNames[id] || id /* label */}
+                    {translate(lookupNames[id]) /* label */}
                   </div>
                 </div>
                 {
@@ -253,12 +282,12 @@ class ToolCardBoxes extends React.Component {
                       <div style={{display: 'flex', flexWrap: 'wrap', alignItems: 'left', 
                                    marginBottom: 5, border: 'thin none magenta', width: '100%'}} key={index}> 
                         {sortedChecks
-                          .filter(iid => iid.indexOf( id + '-' ) >= 0 ) 
+                          .filter(iid => iid.includes( id + '-' ) ) 
                           .map((id, index) => (               
                             <div style={{display: 'flex', border: 'thin none blue', width: '48%'}} key={index} >
                               <div style={{border: "thin none orange", marginLeft: '36px', width: '38px'}} >
-                                {localCheckBox( selectedCategories, id, toolName, onChecked)}</div>
-                              <div style={{border: "thin none green"}} >{checkBoxNames[id] || id}</div>
+                                {localCheckBox( selectedCategories, postPart(id), toolName, onChecked)}</div>
+                              <div style={{border: "thin none green"}} >{translate(lookupNames[postPart(id)])}</div>
                             </div>
                           ))
                         }
@@ -280,7 +309,8 @@ ToolCardBoxes.propTypes = {
   checks: PropTypes.array.isRequired,
   onChecked: PropTypes.func,
   selectedCategories: PropTypes.array.isRequired,
-  toolName: PropTypes.string.isRequired
+  toolName: PropTypes.string.isRequired,
+  translate: PropTypes.func.isRequired,
 };
 
 export default ToolCardBoxes;
