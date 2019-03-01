@@ -215,18 +215,10 @@ class ToolCardBoxes extends React.Component {
   showExpanded(id) {
     this.setState({
       expanded: {
-<<<<<<< HEAD
         ...this.state.expanded,
         [id]: !this.state.expanded[id]
       }
     });
-    
-    console.log("this.setState.expanded: ", this.setState.expanded );
-=======
-      ...this.state.expanded,
-      [id]: !this.state.expanded[id]
-    }});
->>>>>>> 0865cfc39bf75344a913a10979ae78657de062e5
   }
 
 // TBD sync with new file system
@@ -280,11 +272,7 @@ console.log("sortedChecks: ", sortedChecks );
                         <Glyphicon // ^ or v
                           style={{fontSize: '18px', margin: '0 12px 0 0',
                                   width: '20px', textAlign: 'right'}}
-<<<<<<< HEAD
                           glyph={this.state.expanded[id] ? 'chevron-up' : 'chevron-down'}
-=======
-                          glyph={index.onChecked ? 'chevron-up' : 'chevron-down'}
->>>>>>> 0865cfc39bf75344a913a10979ae78657de062e5
                           onClick={() => this.showExpanded(id)}
                         />
                       </div>
