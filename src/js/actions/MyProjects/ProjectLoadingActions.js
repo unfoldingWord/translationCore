@@ -12,6 +12,7 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { changeSelections } from '../SelectionsActions';
+import ResourceAPI from "../../helpers/ResourceAPI";
 
 import {
   getActiveLocaleLanguage,
@@ -130,11 +131,14 @@ export const openProject = (name, skipValidation=false) => {
 function makeToolProps(dispatch, state, projectDir, bookId) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
+  const resourceApi = ResourceAPI
   const {code} = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
 
   return {
+    //resource api
+    resources: resourceApi,
     // project api
     project: projectApi,
 

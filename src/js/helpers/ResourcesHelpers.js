@@ -48,7 +48,6 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
     }
 
     for (const category of categories) {
-      debugger;
       // TRICKY: some helps do not have groups nested under categories
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
       const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());

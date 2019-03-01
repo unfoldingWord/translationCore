@@ -8,7 +8,7 @@ import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
 import * as ProjectInformationCheckActions from "../actions/ProjectInformationCheckActions";
 import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
-import {getTranslate} from "../selectors";
+import {getTranslate, getSelectedToolApi} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
@@ -26,15 +26,11 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * @param {*} bookId - categories are based on project 
  */
 export function getAvailableCheckCategories(currentProjectToolsSelectedGL, bookId) {
-  let availableCategories = {};
-  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
   // where to look for categories  
     /* resources/<lang>/translationHelps/translationsNotes/<version>/<categories not other>/groups/<book>/<group>.json */
-
-    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
+     const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
-console.log("getAvailableCheckCategories: bookId: ", bookId);
     if (fs.existsSync(versionDirectory)) {
     // sub categories are 4 levels of sub directories below version  
       const reg = new RegExp('^([^\\' + path.sep + ']*$|.*.json$)');                      // doesnt have / or is json
@@ -46,16 +42,7 @@ console.log("getAvailableCheckCategories: bookId: ", bookId);
           file.substr(file.lastIndexOf(path.sep) + 1))                                    // basename
         .sort().filter((val, idx, arr) => idx === arr.indexOf(val))                       // sort unique
         .map(file => file.replace(".json", ""));                                          // Remove extension
-
-      availableCategories[toolName] = catFiles;
-console.log("getAvailableCheckCategories: catFiles: ", catFiles);
     }
-    if (!availableCategories[toolName]) {
-      availableCategories[toolName] = [];
-    }
-  });
-
-  return availableCategories;
 }
 
 /**

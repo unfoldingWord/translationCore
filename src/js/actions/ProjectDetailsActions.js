@@ -32,6 +32,7 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  */
 export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
   return (dispatch, getState) => {
+    debugger;
     const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
     const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL, bookName);
     const project = new ProjectAPI(projectSaveLocation);
@@ -60,6 +61,12 @@ export const updateCheckSelection = (id, value, toolName) => {
     // TRICKY: tools with categories must have a selection.
     if(selectedCategories.length === 0) {
       const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
+      const availableCategories = {};
+      currentProjectToolsSelectedGL.forEach((toolName) => {
+        const toolApi = selectors.getTools(getState())
+        if ( toolApi[toolName].methodExists('getAvailableCheckCategories'))
+          availableCategories[toolName] = toolApi[toolName].trigger('getAvailableCheckCategories', currentProjectToolsSelectedGL, bookId);
+      })
       const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL, selectors.getProjectBookId(getState()));
 
       // default to available
