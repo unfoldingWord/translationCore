@@ -30,15 +30,13 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * @param {String} projectSaveLocation - The project location to load from
  * i.e. ~/translationCore/projects/en_tit_reg
  */
-export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
+export const loadCurrentCheckCategories = (toolName, projectSaveLocation) => {
   return (dispatch, getState) => {
-    debugger;
-    const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
-    const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL, bookName);
+    const toolApis = selectors.getToolsByKey(getState());
+    const availableCheckCategories = toolApis[toolName].api.trigger('getAvailableCheckCategories') || [];  
     const project = new ProjectAPI(projectSaveLocation);
     let selectedCategories = project.getSelectedCategories(toolName);
-    selectedCategories = selectedCategories.filter((category) => 
-      availableCheckCategories[toolName] && availableCheckCategories[toolName].includes(category));
+    selectedCategories = selectedCategories.filter((category) => availableCheckCategories.includes(category));
     dispatch(setCategories(selectedCategories, toolName));
   };
 };
@@ -59,18 +57,15 @@ export const updateCheckSelection = (id, value, toolName) => {
     const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
 
     // TRICKY: tools with categories must have a selection.
-    if(selectedCategories.length === 0) {
+    if (selectedCategories.length === 0) {
       const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
-      const availableCategories = {};
+      const availableCheckCategories = {};
       currentProjectToolsSelectedGL.forEach((toolName) => {
-        const toolApi = selectors.getTools(getState())
-        if ( toolApi[toolName].methodExists('getAvailableCheckCategories'))
-          availableCategories[toolName] = toolApi[toolName].trigger('getAvailableCheckCategories', currentProjectToolsSelectedGL, bookId);
+        const toolApis = selectors.getToolsByKey(getState())
+        availableCheckCategories[toolName] = toolApis[toolName].trigger('getAvailableCheckCategories') || [];
       })
-      const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL, selectors.getProjectBookId(getState()));
-
       // default to available
-      if(availableCheckCategories.length > 0) {
+      if (availableCheckCategories.length > 0) {
         [].push.apply(selectedCategories, availableCheckCategories);
       }
     }
@@ -94,9 +89,9 @@ export const setCategories = (selectedCategories, toolName) => ({
  * @return {object} action object.
  */
 export const setSaveLocation = pathLocation => ({
-      type: consts.SET_SAVE_PATH_LOCATION,
-      pathLocation
-    });
+  type: consts.SET_SAVE_PATH_LOCATION,
+  pathLocation
+});
 
 export const resetProjectDetail = () => {
   return {

@@ -18,7 +18,6 @@ import { Card, CardText } from 'material-ui';
  * @param manifest
  * @param invalidatedReducer
  * @param toolsCategories
- * @param availableCategories
  * @returns {*}
  * @constructor
  */
@@ -33,8 +32,7 @@ const ToolsCards = ({
   currentProjectToolsProgress,
   manifest,
   invalidatedReducer,
-  toolsCategories,
-  availableCategories
+  toolsCategories
 }) => {
   if (!tools || tools.length === 0) {
     return (
@@ -67,11 +65,12 @@ const ToolsCards = ({
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
           tools.map((tool, i) => {
+            const availableCategories = tool.api.trigger('getAvailableCheckCategories') || [];
             return (
               <ToolCard
                 tool={tool}
                 onSelect={onSelectTool}
-                availableCategories={availableCategories[tool.name] || []}
+                availableCategories={availableCategories}
                 selectedCategories={toolsCategories[tool.name] || []}
                 translate={translate}
                 key={i}

@@ -435,7 +435,6 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
   describe('ProjectDetailsActions.loadCurrentCheckCategories', () => {
     const project_name = 'normal_project';
     const toolName = 'translationWords';
-    const bookName = 'tit';
     const projectSaveLocation = path.join(PROJECTS_PATH, project_name);
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     beforeAll(()=>{
@@ -469,7 +468,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       };
       mockGetSelectedCategories.mockReturnValue(["names"]);
       const store = mockStore(initialState);
-      store.dispatch(actions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation));
       expect(store.getActions()).toMatchObject(expectedActions);
     });
     test('should not load check categories that are not present in the resources', () => {
@@ -491,7 +490,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       };
       mockGetSelectedCategories.mockReturnValue(["names"]);
       const store = mockStore(initialState);
-      store.dispatch(actions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation));
       expect(store.getActions()).toMatchObject(expectedActions);
     });
   });
