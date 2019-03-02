@@ -34,30 +34,37 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
               return dispatch(
                 AlertModalActions.openAlertDialog(message, false));
             }
+            console.log("uploadProject: saving alignments");
             const filePath = path.join(projectPath, projectName + ".usfm");
             await dispatch(
               WordAlignmentActions.getUsfm3ExportFile(projectPath, filePath));
             const message = translate("projects.uploading_alert",
               { project_name: projectName, door43: translate("_.door43") });
             dispatch(AlertModalActions.openAlertDialog(message, true));
+            console.log("uploadProject: Creating Repo");
             const remoteRepo = await GogsApiHelpers.createRepo(user,
               projectName);
+            console.log("uploadProject: Creating Repo");
             const remoteUrl = GogsApiHelpers.getRepoOwnerUrl(user,
               remoteRepo.name);
+            console.log("uploadProject: Found remote Repo: " + (remoteRepo.name || "FAILED"));
 
             const repo = await Repo.open(projectPath, user);
             await repo.addRemote(remoteUrl, "origin");
+            console.log("uploadProject: saving changes to git");
             await repo.save("Commit before upload");
 
+            console.log("uploadProject: pushing git changes to remote");
             const response = await repo.push("origin");
             if (response.errors && response.errors.length) {
               // Handle innocuous errors.
-              console.error(response);
+              console.error("uploadProject: push failed", response);
               dispatch(AlertModalActions.openAlertDialog(
                 translate("projects.uploading_error",
                   { error: response.errors })));
 
             } else {
+              console.log("uploadProject: upload success");
               const userDcsUrl = GogsApiHelpers.getUserDoor43Url(user,
                 projectName);
               dispatch(
@@ -83,7 +90,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             }
           } catch (err) {
             // handle server and networking errors
-            console.error(err);
+            console.error("uploadProject ERROR", err);
             if (err.status === 401 || err.code === "ENOTFOUND" ||
               err.toString().includes("connect ETIMEDOUT") ||
               err.toString().includes("INTERNET_DISCONNECTED") ||
@@ -111,6 +118,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           }
         }));
       } else {
+        console.warn("uploadProject: User not logged in");
         const message = translate("projects.must_be_logged_in_alert",
           { door43: translate("_.door43") });
         dispatch(AlertModalActions.openAlertDialog(message));
