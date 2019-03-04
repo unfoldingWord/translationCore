@@ -41,14 +41,31 @@ export const login = (userObj) => {
  * @return {Promise} - Returns a promise with a repo object.
  */
 export const createRepo = (user, reponame) => {
+  console.log("createRepo: listing repos");
   return api.listRepos(user).then(function(repos) {
-    return repos.find((el) => el.full_name === user.username + "/" + reponame);
+    const matchRepo = user.username + "/" + reponame;
+    const found = repos.find((el) => el.full_name === matchRepo);
+    if (found) {
+      console.log("createRepo: user repo already exists: " + found.full_name);
+    } else {
+      console.log("createRepo: could not find user repo: " + matchRepo);
+    }
+    return found;
   }).then(function(repo) {
-    return repo ? repo : api.createRepo({
-      name: reponame,
-      description: "tc-desktop: " + reponame,
-      private: false
-    }, user);
+    if (!repo) {
+      console.log("createRepo: creating new repo: " + reponame);
+      repo = api.createRepo({
+        name: reponame,
+        description: "tc-desktop: " + reponame,
+        private: false
+      }, user);
+      if (!repo) {
+        console.log("createRepo: FAILED creating new repo: " + reponame);
+      } else {
+        console.log("createRepo: finished creating new repo: " + reponame);
+      }
+    }
+    return repo;
   });
 };
 
