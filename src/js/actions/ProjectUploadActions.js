@@ -21,6 +21,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
   return (dispatch, getState) => {
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
+      console.log("uploadProject: attempting to upload: " + projectPath);
       // if no Internet connection is found then alert the user and stop upload process
       if (!onLine) {
         dispatch(AlertModalActions.openAlertDialog(translate("no_internet")));
