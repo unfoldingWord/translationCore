@@ -301,10 +301,20 @@ export default class Repo {
         // skip ignored paths
         continue;
       }
-      const status = await git.status({
-        dir: this.dir,
-        filepath: paths[i]
-      });
+      let status = "";
+      try {
+        status = await git.status({
+          dir: this.dir,
+          filepath: paths[i]
+        });
+      } catch (e) {
+        if(e.code === "ResolveRefError") {
+          // TRICKY: if there are no commits we get a ref error
+          status = "*added";
+        } else {
+          throw e;
+        }
+      }
       if (["unmodified", "ignored"].indexOf(status) === -1) {
         return true;
       }
