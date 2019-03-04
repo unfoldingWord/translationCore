@@ -45,7 +45,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             console.log("uploadProject: Creating Repo");
             const remoteRepo = await GogsApiHelpers.createRepo(user,
               projectName);
-            console.log("uploadProject: Creating Repo");
+            console.log("uploadProject: Creating Repo Owner URL");
             const remoteUrl = GogsApiHelpers.getRepoOwnerUrl(user,
               remoteRepo.name);
             console.log("uploadProject: Found remote Repo: " + (remoteRepo.name || "FAILED"));
