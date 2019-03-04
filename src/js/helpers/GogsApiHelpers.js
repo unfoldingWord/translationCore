@@ -40,9 +40,9 @@ export const login = (userObj) => {
  * @param {String} reponame - The name of the repo to be created.
  * @return {Promise} - Returns a promise with a repo object.
  */
-export const createRepo = (user, reponame) => {
+export const createRepo = async (user, reponame) => {
   console.log("createRepo: listing repos");
-  return api.listRepos(user).then(function(repos) {
+  let repo = await api.listRepos(user).then(function (repos) {
     const matchRepo = user.username + "/" + reponame;
     const found = repos.find((el) => el.full_name === matchRepo);
     if (found) {
@@ -51,22 +51,21 @@ export const createRepo = (user, reponame) => {
       console.log("createRepo: could not find user repo: " + matchRepo);
     }
     return found;
-  }).then(function(repo) {
-    if (!repo) {
-      console.log("createRepo: creating new repo: " + reponame);
-      repo = api.createRepo({
-        name: reponame,
-        description: "tc-desktop: " + reponame,
-        private: false
-      }, user);
-      if (!repo) {
-        console.log("createRepo: FAILED creating new repo: " + reponame);
-      } else {
-        console.log("createRepo: finished creating new repo: " + reponame);
-      }
-    }
-    return repo;
   });
+  if (!repo) {
+    console.log("createRepo: creating new repo: " + reponame);
+    repo = await api.createRepo({
+      name: reponame,
+      description: "tc-desktop: " + reponame,
+      private: false
+    }, user);
+    if (!repo) {
+      console.error("createRepo: FAILED creating new repo: " + reponame);
+    } else {
+      console.log("createRepo: finished creating new repo: " + repo.fullname);
+    }
+  }
+  return repo;
 };
 
 /**
