@@ -46,7 +46,7 @@ export const createRepo = (user, reponame) => {
     const matchRepo = user.username + "/" + reponame;
     const found = repos.find((el) => el.full_name === matchRepo);
     if (found) {
-      console.log("createRepo: user repo already exists: " + found.full_name);
+      console.log("createRepo: user repo already exists, no need to recreate: " + found.full_name);
     } else {
       console.log("createRepo: could not find user repo: " + matchRepo);
     }
