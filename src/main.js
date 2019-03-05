@@ -84,7 +84,7 @@ function createMainSplash() {
     show: false
   });
 
-  // splashScreen.webContents.openDevTools();
+  splashScreen.webContents.openDevTools();
 
   splashScreen.loadURL(`file://${__dirname}/html/splash.html`);
 
