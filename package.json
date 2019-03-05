@@ -115,7 +115,7 @@
     "adm-zip": "^0.4.11",
     "agentkeepalive": "4.0.0",
     "archiver": "2.1.0",
-    "axios": "0.17.1",
+    "axios": "0.18.0",
     "babel-plugin-jest-hoist": "21.2.0",
     "babel-plugin-transform-async-to-generator": "6.24.1",
     "babel-plugin-transform-class-properties": "6.24.1",
