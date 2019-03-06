@@ -136,7 +136,7 @@
     "fs-extra": "4.0.3",
     "gogs-client": "0.5.2",
     "ignore": "^5.0.4",
-    "isomorphic-git": "^0.40.2",
+    "isomorphic-git": "^0.51.12",
     "json-stringify-safe": "5.0.1",
     "klaw": "^3.0.0",
     "konami-code-js": "0.8.0",
