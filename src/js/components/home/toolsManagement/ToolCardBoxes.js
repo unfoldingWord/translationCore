@@ -50,9 +50,10 @@ function flattenNotesCategories() {
  * @param {*} toolName 
  * @param {*} onChecked 
  */
-function localCheckBox(selectedCategories, id, toolName, onChecked, availableCategories = []) {
-  const isParent = !!availableCategories.length;
-  const allChildrenSelected = !(availableCategories.filter((subcategory) => !selectedCategories.includes(subcategory)).length > 0);
+function localCheckBox(selectedCategories, id, toolName, onChecked, availableCategoriesForParent = []) {
+  const isParent = !!availableCategoriesForParent.length;
+  //Finding if a child has not been selected, returning the negative of that
+  const allChildrenSelected = !(availableCategoriesForParent.filter((subcategory) => !selectedCategories.includes(subcategory)).length > 0);
   return (
     <Checkbox
       style={{width: 'unset'}}
@@ -60,7 +61,7 @@ function localCheckBox(selectedCategories, id, toolName, onChecked, availableCat
       checked={selectedCategories.includes(id) || (isParent && allChildrenSelected)}
       onCheck={(e) => {
         if (isParent) {
-          availableCategories.forEach((subcategory) => {
+          availableCategoriesForParent.forEach((subcategory) => {
             onChecked(subcategory, e.target.checked, toolName);
           })
         } else {
@@ -94,10 +95,6 @@ class ToolCardBoxes extends React.Component {
     this.showExpanded = this.showExpanded.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-
   showExpanded(id) {
     this.setState({
       expanded: {
@@ -115,12 +112,13 @@ class ToolCardBoxes extends React.Component {
         {
           Object.keys(availableCategories).map((parentCategory, index) => {
             return availableCategories[parentCategory].length > 0 &&
+            //TBD BMS only showing tN categories
               tNotesCategories[parentCategory] ?
               (
                 <div style={{display: 'flex', flexWrap: 'wrap', margin: '0 0 5 0', width: '100%'}} key={index}>
                   <div style={{display: 'flex', width: '92%'}}>
                     <div style={{width: '38px'}} >
-                      {localCheckBox(selectedCategories, parentCategory, toolName, onChecked,  availableCategories[parentCategory])}
+                      {localCheckBox(selectedCategories, parentCategory, toolName, onChecked, availableCategories[parentCategory])}
                     </div>
                     <div>
                       {translate(lookupNames[parentCategory]) /* label */}

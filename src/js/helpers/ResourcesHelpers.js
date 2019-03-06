@@ -55,6 +55,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
       // loading complete
       // TODO: I don't think this is necessary anymore
       if (toolName === 'translationNotes') {
+        //TBD BMS
         categories[category].forEach((subCategory) => {
           project.setCategoryLoaded(toolName, subCategory);
         })
