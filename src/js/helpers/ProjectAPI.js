@@ -283,6 +283,27 @@ export default class ProjectAPI {
     return [];
   }
 
+    /**
+   * Returns an array of categories that have been loaded for the given tool.
+   * @param toolName - The tool name. This is synonymous with translationHelp name
+   * @return {string[]} an array of category names
+   */
+  getLoadedCategories(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        const data = fs.readJsonSync(categoriesPath);
+        return data.loaded;
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    return [];
+  }
+
   /**
    * Sets the categories that have been selected for the the given tool.
    * Category selection controls which sets of help data will be loaded

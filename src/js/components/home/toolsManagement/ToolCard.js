@@ -159,7 +159,7 @@ class ToolCard extends Component {
           {showCheckBoxes && <ToolCardBoxes 
             toolName={tool.name} 
             selectedCategories={selectedCategories} 
-            checks={availableCategories} 
+            availableCategories={availableCategories} 
             onChecked={updateCheckSelection}
             bookId={bookId}
             translate={translate} />}

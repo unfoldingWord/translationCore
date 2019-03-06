@@ -13,11 +13,10 @@ import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
 //reducers
 import Repo from '../helpers/Repo.js';
 import ProjectAPI from "../helpers/ProjectAPI";
-//Selectors
-import * as selectors from "../selectors/index";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -30,11 +29,15 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * @param {String} projectSaveLocation - The project location to load from
  * i.e. ~/translationCore/projects/en_tit_reg
  */
-export const loadCurrentCheckCategories = (toolName, projectSaveLocation) => {
-  return (dispatch, getState) => {
-    const toolApis = selectors.getToolsByKey(getState());
-    const availableCheckCategories = toolApis[toolName].api.trigger('getAvailableCheckCategories') || [];  
+export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en') => {
+  return (dispatch) => {
     const project = new ProjectAPI(projectSaveLocation);
+    const availableCheckCategoriesObject = ResourcesHelpers.getAvailableCategories(currentGatewayLanguage, toolName, projectSaveLocation);
+    let availableCheckCategories = [];
+    Object.keys(availableCheckCategoriesObject)
+      .forEach((parentCategory) => {
+        availableCheckCategories.push(...availableCheckCategoriesObject[parentCategory]);
+      })
     let selectedCategories = project.getSelectedCategories(toolName);
     selectedCategories = selectedCategories.filter((category) => availableCheckCategories.includes(category));
     dispatch(setCategories(selectedCategories, toolName));
@@ -58,12 +61,7 @@ export const updateCheckSelection = (id, value, toolName) => {
 
     // TRICKY: tools with categories must have a selection.
     if (selectedCategories.length === 0) {
-      const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
-      const availableCheckCategories = {};
-      currentProjectToolsSelectedGL.forEach((toolName) => {
-        const toolApis = selectors.getToolsByKey(getState())
-        availableCheckCategories[toolName] = toolApis[toolName].trigger('getAvailableCheckCategories') || [];
-      })
+
       // default to available
       if (availableCheckCategories.length > 0) {
         [].push.apply(selectedCategories, availableCheckCategories);

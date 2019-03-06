@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui';
+import {getAvailableCategories} from '../../../helpers/ResourcesHelpers';
 
 /**
  * Renders a list of tools.
@@ -32,7 +33,8 @@ const ToolsCards = ({
   currentProjectToolsProgress,
   manifest,
   invalidatedReducer,
-  toolsCategories
+  toolsCategories,
+  currentProjectToolsSelectedGL
 }) => {
   if (!tools || tools.length === 0) {
     return (
@@ -65,7 +67,7 @@ const ToolsCards = ({
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
           tools.map((tool, i) => {
-            const availableCategories = tool.api.trigger('getAvailableCheckCategories') || [];
+            const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation);
             return (
               <ToolCard
                 tool={tool}
