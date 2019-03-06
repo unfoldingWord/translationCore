@@ -233,24 +233,28 @@ export const extractZippedBooks = (bibleDestinationPath) => {
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
 export function getTHelpsFromStaticPackage(force = false) {
-  getAllLanguageIdsFromResourceFolder(false).forEach(languageId => {
-    const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH,
-      languageId, "translationHelps");
-    if (fs.existsSync(staticTranslationHelpsPath)) {
-      const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH,
+  try {
+    getAllLanguageIdsFromResourceFolder(false).forEach(languageId => {
+      const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH,
         languageId, "translationHelps");
-      const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
-      tHelpsNames.forEach((tHelpName) => {
-        let tHelpSourcePath = path.join(staticTranslationHelpsPath,
-          tHelpName);
-        let tHelpDestinationPath = path.join(userTranslationHelpsPath,
-          tHelpName);
-        if (!fs.existsSync(tHelpDestinationPath) || force) {
-          fs.copySync(tHelpSourcePath, tHelpDestinationPath);
-        }
-      });
-    }
-  });
+      if (fs.existsSync(staticTranslationHelpsPath)) {
+        const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH,
+          languageId, "translationHelps");
+        const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
+        tHelpsNames.forEach((tHelpName) => {
+          let tHelpSourcePath = path.join(staticTranslationHelpsPath,
+            tHelpName);
+          let tHelpDestinationPath = path.join(userTranslationHelpsPath,
+            tHelpName);
+          if (!fs.existsSync(tHelpDestinationPath) || force) {
+            fs.copySync(tHelpSourcePath, tHelpDestinationPath);
+          }
+        });
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 /**
