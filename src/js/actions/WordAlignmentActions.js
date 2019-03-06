@@ -10,7 +10,7 @@ import * as exportHelpers from "../helpers/exportHelpers";
  * Wrapper for exporting project alignment data to usfm.
  * TODO: the alignment to usfm conversion will eventually get abstracted to a separate module.
  * @param {string} projectSaveLocation - Full path to the users project to be exported
- * @param {boolean} output - Flag to set whether export will write to fs
+ * @param {boolean|string} output - Flag to set whether export will write to fs
  * @param {boolean} resetAlignments - Flag to set whether export will reset alignments
  * automatically or ask user
  */
@@ -22,6 +22,7 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
       exportHelpers.makeSureUsfm3InHeader(projectSaveLocation, manifest);
       /** Convert alignments from the filesystem under the project alignments folder */
+      console.log("getUsfm3ExportFile: Saving Alignments to USFM");
       let usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
       ).catch(async (e) => {
@@ -46,10 +47,15 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
           }
         } else console.error(e);
       });
-      //Write converted usfm to specified location
-      if (output) WordAlignmentHelpers.writeToFS(output, usfm);
-      /** The flag output indicates that it is a silent upload */
-      if (!output) dispatch(AlertModalActions.closeAlertDialog());
+
+      if (output) { /** output indicates that it is a silent upload */
+        //Write converted usfm to specified location
+        console.log("getUsfm3ExportFile: Writing Alignments to " + output);
+        WordAlignmentHelpers.writeToFS(output, usfm);
+      } else {
+        dispatch(AlertModalActions.closeAlertDialog());
+      }
+      console.log("getUsfm3ExportFile: Conversion Complete");
       resolve(usfm);
     });
   };
