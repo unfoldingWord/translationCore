@@ -60,32 +60,25 @@ export function loadCheckData(loadPath, contextId) {
     files = files.filter(file => { // filter the filenames to only use .json
       return path.extname(file) === '.json';
     });
-    let sorted = files.sort().reverse(); // sort the files to use latest
-    let checkDataObjects = [];
+    let sorted = files.sort().reverse(); // sort the files to put latest first
 
     for (let i = 0, len = sorted.length; i < len; i++) {
       const file = sorted[i];
-      // get the json of all files to later filter by contextId
+      // check each file for contextId
       try {
         let readPath = path.join(loadPath, file);
         let _checkDataObject = fs.readJsonSync(readPath);
-        checkDataObjects.push(_checkDataObject);
+        if(_checkDataObject &&
+          _checkDataObject.contextId.groupId === contextId.groupId &&
+          _checkDataObject.contextId.quote === contextId.quote &&
+          _checkDataObject.contextId.occurrence === contextId.occurrence) {
+          checkDataObject = _checkDataObject; // return the first match since it is the latest modified one
+          break;
+        }
       } catch (err) {
         console.warn('File exists but could not be loaded \n', err);
-        checkDataObjects.push(undefined);
       }
     }
-
-    checkDataObjects = checkDataObjects.filter(_checkDataObject => {
-      // filter the checkDataObjects to only use the ones that match the current contextId
-      let keep = _checkDataObject &&
-                _checkDataObject.contextId.groupId === contextId.groupId &&
-                _checkDataObject.contextId.quote === contextId.quote &&
-                _checkDataObject.contextId.occurrence === contextId.occurrence;
-      return keep;
-    });
-    // return the first one since it is the latest modified one
-    checkDataObject = checkDataObjects[0];
   }
   /**
   * @description Will return undefined if checkDataObject was not populated
