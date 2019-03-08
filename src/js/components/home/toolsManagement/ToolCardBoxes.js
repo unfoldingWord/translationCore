@@ -63,7 +63,7 @@ function localCheckBox(selectedCategories, id, toolName, onChecked, availableCat
         if (isParent) {
           availableCategoriesForParent.forEach((subcategory) => {
             onChecked(subcategory, e.target.checked, toolName);
-          })
+          });
         } else {
           onChecked(id, e.target.checked, toolName);
         }
@@ -113,7 +113,7 @@ class ToolCardBoxes extends React.Component {
           Object.keys(availableCategories).map((parentCategory, index) => {
             return availableCategories[parentCategory].length > 0 &&
             //TBD BMS only showing tN categories
-              tNotesCategories[parentCategory] ?
+              tNotesCategories[parentCategory] || toolName == 'translationWords' ?
               (
                 <div style={{display: 'flex', flexWrap: 'wrap', margin: '0 0 5 0', width: '100%'}} key={index}>
                   <div style={{display: 'flex', width: '92%'}}>
@@ -125,16 +125,19 @@ class ToolCardBoxes extends React.Component {
                     </div>
                   </div>
                   <React.Fragment>
-                    <div style={{alignSelf: 'flex-end'}}>
-                      <Glyphicon // ^ or v
-                        style={{
-                          fontSize: '18px', margin: '0 12px 0 0',
-                          width: '20px', textAlign: 'right'
-                        }}
-                        glyph={this.state.expanded[parentCategory] ? 'chevron-up' : 'chevron-down'}
-                        onClick={() => this.showExpanded(parentCategory)}
-                      />
-                    </div>
+                    { toolName != 'translationWords' ? (
+                      <div style={{alignSelf: 'flex-end'}}>
+                        <Glyphicon // ^ or v
+                          style={{
+                            fontSize: '18px', margin: '0 12px 0 0',
+                            width: '20px', textAlign: 'right'
+                          }}
+                          glyph={this.state.expanded[parentCategory] ? 'chevron-up' : 'chevron-down'}
+                          onClick={() => this.showExpanded(parentCategory)}
+                        />
+                      </div>
+                      ) : null 
+                    }
                     {this.state.expanded[parentCategory] ? (
                       <div style={{
                         display: 'flex', flexWrap: 'wrap', alignItems: 'left',
@@ -152,12 +155,12 @@ class ToolCardBoxes extends React.Component {
                     ) : null}
                   </React.Fragment>
                 </div>
-              ) : null
+              ) : null;
           })
         }
       </div>
     );
-  }
+  } 
 }
 
 ToolCardBoxes.propTypes = {
