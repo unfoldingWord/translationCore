@@ -82,7 +82,7 @@ export const showSelectionsInvalidatedWarning = () => {
  * @param {Number} verseNumber - optional verse number of verse text being edited
  * @return {Array} - group data items that match
  */
-export const getGroupDataForGroupChapterVerse = (groupsDataReducer, groupId, chapterNumber, verseNumber) => {
+export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, chapterNumber, verseNumber) => {
   const matchedGroupData = [];
   const groupData = groupId &&
     groupsDataReducer && groupsDataReducer.groupsData &&
@@ -119,7 +119,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       let verseSelectionsChanged = false;
       const username = getUsername(state);
       // for this groupId, find every check for this chapter/verse
-      const matchedGroupData = getGroupDataForGroupChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
+      const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
       for (let i = 0, l = matchedGroupData.length; i < l; i++) {
         const groupObject = matchedGroupData[i];
         const selections = getSelectionsForContextID(projectSaveLocation, groupObject.contextId);
