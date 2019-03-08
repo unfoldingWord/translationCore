@@ -4,10 +4,11 @@ import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import {
   getSelectedToolApi,
+  getSelectedToolName,
   getSupportingToolApis,
   getUsername
 } from '../selectors';
-import {validateSelections} from "./SelectionsActions";
+import {getGroupDataForVerse, validateSelections} from "./SelectionsActions";
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -32,8 +33,8 @@ export const editSelectedTargetVerse = (before, after, tags, username=null) => {
  * Updates a verse in the target bible.
  * This thunk will record the edit to the disk and update the target bible resource.
  *
- * @param {int} chapter
- * @param {int} verse
+ * @param {int} chapterWithVerseEdit
+ * @param {int|string} verseWithVerseEdit
  * @param {string} before - the verse text before the edit
  * @param {string} after - the verse text after the edit
  * @param {string[]} tags - an array of tags indicating the reason for the edit
@@ -47,6 +48,7 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     const {contextId: currentCheckContextId} = contextIdReducer;
     const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
     let {bookId, chapter: currentCheckChapter, verse: currentCheckVerse} = currentCheckContextId.reference;
+    verseWithVerseEdit = (typeof verseWithVerseEdit === 'string') ? parseInt(verseWithVerseEdit) : verseWithVerseEdit; // make sure number
     const contextIdWithVerseEdit = {
       ...currentCheckContextId,
       reference: {
@@ -63,10 +65,26 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit));
     dispatch(recordTargetVerseEdit(bookId, chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote, currentCheckContextId));
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, after));
-    dispatch({
-      type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-      contextId:currentCheckContextId
-    });
+    if (getSelectedToolName(getState()) === 'translationWords') {
+      // set verse edit flag for every check in verse edited
+      const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
+      for (let groupItemKey of Object.keys(matchedGroupData)) {
+        const groupItem = matchedGroupData[groupItemKey];
+        if (groupItem) {
+          for (let check of groupItem) {
+            dispatch({
+              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+              contextId: check.contextId
+            });
+          }
+        }
+      }
+    } else {
+      dispatch({
+        type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+        contextId: contextIdWithVerseEdit
+      });
+    }
 
     // TRICKY: this is a temporary hack to validate verse edits.
     // TODO: This can be removed once the ScripturePane is updated to provide

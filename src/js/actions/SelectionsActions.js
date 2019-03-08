@@ -2,14 +2,14 @@ import types from './ActionTypes';
 import isEqual from 'deep-equal';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import { checkSelectionOccurrences } from 'selections';
+import {checkSelectionOccurrences} from 'selections';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
-import { generateTimestamp } from '../helpers/index';
+import {getSelectedToolName, getTranslate, getUsername} from '../selectors';
+import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
 import usfm from "usfm-js";
@@ -34,7 +34,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
         gatewayLanguageQuote
       } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
       if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
-        const modifiedTimestamp = generateTimestamp();       
+        const modifiedTimestamp = generateTimestamp();
         dispatch({
           type: types.CHANGE_SELECTIONS,
           modifiedTimestamp: modifiedTimestamp,
@@ -75,11 +75,36 @@ export const showSelectionsInvalidatedWarning = () => {
 };
 
 /**
+ * populates groupData with all groupData entries for groupId and chapter/verse
+ * @param {Object} groupsDataReducer
+ * @param {String} groupId
+ * @param {Number} chapterNumber - optional chapter number of verse text being edited
+ * @param {Number} verseNumber - optional verse number of verse text being edited
+ * @return {Array} - group data items that match
+ */
+export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, chapterNumber, verseNumber) => {
+  const matchedGroupData = [];
+  const groupData = groupId &&
+    groupsDataReducer && groupsDataReducer.groupsData &&
+    groupsDataReducer.groupsData[groupId];
+  if (groupData && groupData.length) {
+    for (let i = 0, l = groupData.length; i < l; i++) {
+      const groupObject = groupData[i];
+      if (isEqual(groupObject.contextId.reference.chapter, chapterNumber) &&
+        isEqual(groupObject.contextId.reference.verse, verseNumber)) {
+        matchedGroupData.push(groupObject);
+      }
+    }
+  }
+  return matchedGroupData;
+};
+
+/**
  * @description This method validates the current selections to see if they are still valid.
  * @param {String} targetVerse - target bible verse.
  * @param {Object} contextId - optional contextId to use, otherwise will use current
- * @param {String} chapterNumber - chapter number of verse text being edited
- * @param {String} verseNumber - verse number of verse text being edited
+ * @param {Number} chapterNumber - optional chapter number of verse text being edited, if not given will use contextId
+ * @param {Number} verseNumber - optional verse number of verse text being edited, if not given will use contextId
  * @return {Object} - dispatches the changeSelections action.
  */
 export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber) => {
@@ -87,22 +112,26 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     const state = getState();
     contextId = contextId || state.contextIdReducer.contextId;
     const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
-    const { bookId, chapter, verse } = contextId.reference;
+    const { chapter, verse } = contextId.reference;
+    chapterNumber = chapterNumber || chapter;
+    verseNumber = verseNumber || verse;
 
     if (getSelectedToolName(state) === 'translationWords') {
+      let verseSelectionsChanged = false;
       const username = getUsername(state);
-      const selections = getSelectionsFromChapterAndVerseCombo(
-        bookId,
-        chapterNumber || chapter,
-        verseNumber || verse,
-        projectSaveLocation
-      );
-      const validSelections = checkSelectionOccurrences(targetVerse, selections);
-      const selectionsChanged = (selections.length !== validSelections.length);
-      if (selectionsChanged) {
-        dispatch(changeSelections([], username, true, contextId)); // clear selections
+      // for this groupId, find every check for this chapter/verse
+      const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
+      for (let i = 0, l = matchedGroupData.length; i < l; i++) {
+        const groupObject = matchedGroupData[i];
+        const selections = getSelectionsForContextID(projectSaveLocation, groupObject.contextId);
+        const validSelections = checkSelectionOccurrences(targetVerse, selections);
+        const selectionsChanged = (selections.length !== validSelections.length);
+        if (selectionsChanged) {
+          dispatch(changeSelections([], username, true, groupObject.contextId)); // clear selections
+        }
+        verseSelectionsChanged = verseSelectionsChanged || selectionsChanged;
       }
-      const results = {selectionsChanged: selectionsChanged};
+      const results = {selectionsChanged: verseSelectionsChanged};
       dispatch(validateAllSelectionsForVerse(targetVerse, results, true, contextId, true));
     } else if (getSelectedToolName(state) === 'wordAlignment') {
       const bibleId = project.id;
@@ -183,7 +212,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
 };
 
 /**
- * @description gets the group data for the current verse from groupsDataReducer
+ * @description gets the group data for the verse reference in contextId from groupsDataReducer
  * @param {Object} state
  * @param {Object} contextId
  * @return {object} group data object.
@@ -227,50 +256,36 @@ export const sameContext = (contextId1, contextId2) => {
   return false;
 };
 
-//  TODO: this is not an action and should be moved elsewhere
-export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
+/**
+ * get selections for context ID
+ * @param {Object} contextId - contextId to use in lookup
+ * @param {String} projectSaveLocation
+ * @return {Array} - selections
+ */
+export const getSelectionsForContextID = (projectSaveLocation, contextId) => {
+  let selections = [];
   let loadPath = CheckDataLoadActions.generateLoadPath({projectSaveLocation}, {contextId}, 'selections');
   let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, contextId);
-  let selectionsArray = [];
-
   if (selectionsObject) {
-    const selections = selectionsObject.selections;
-
-    for (let i = 0, len = selections.length; i < len; i++) {
-      const selection = selections[i];
-      selectionsArray.push(selection.text);
-    }
+    selections = selectionsObject.selections;
   }
+  return selections;
+};
 
+/**
+ * get selections for context ID and return as string
+ * @param {Object} contextId - contextId to use in lookup
+ * @param {String} projectSaveLocation
+ * @return {string}
+ */
+//  TODO: this is not an action and should be moved elsewhere
+export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
+  const selections = getSelectionsForContextID(projectSaveLocation, contextId);
+  const selectionsArray = [];
+  for (let i = 0, len = selections.length; i < len; i++) {
+    const selection = selections[i];
+    selectionsArray.push(selection.text);
+  }
   return selectionsArray.join(" ");
 };
 
-
-export const getSelectionsFromChapterAndVerseCombo = (bookId, chapter, verse, projectSaveLocation) => {
-  let selectionsArray = [];
-  let selectionsObject;
-  const contextId = {
-    reference: {
-      bookId,
-      chapter,
-      verse
-    }
-  };
-  const selectionsPath = CheckDataLoadActions.generateLoadPath({projectSaveLocation}, {contextId}, 'selections');
-
-  if (fs.existsSync(selectionsPath)) {
-    let files = fs.readdirSync(selectionsPath);
-    files = files.filter(file => { // filter the filenames to only use .json
-      return path.extname(file) === '.json';
-    });
-    const sorted = files.sort().reverse(); // sort the files to use latest
-    const filename = sorted[0];
-    selectionsObject = fs.readJsonSync(path.join(selectionsPath, filename));
-  }
-
-  if (selectionsObject) {
-    selectionsArray = selectionsObject.selections;
-  }
-
-  return selectionsArray;
-};
