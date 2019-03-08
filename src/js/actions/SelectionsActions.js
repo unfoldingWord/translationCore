@@ -93,7 +93,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       verseNumber || verseFromContextId,
       projectSaveLocation
     );
-    const {selections, gatewayLanguageCode, gatewayLanguageQuote} = selectionsObject;
+    const {selections = [], gatewayLanguageCode, gatewayLanguageQuote} = selectionsObject;
     const validSelections = checkSelectionOccurrences(targetVerse, selections);
     const selectionsChanged = !isEqual(selections, validSelections);
     if (getSelectedToolName(state) === 'translationWords') {
