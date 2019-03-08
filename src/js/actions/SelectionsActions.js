@@ -112,8 +112,9 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     const state = getState();
     contextId = contextId || state.contextIdReducer.contextId;
     const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
-    chapterNumber = chapterNumber || contextId.reference.chapter;
-    verseNumber = verseNumber || contextId.reference.verse;
+    const { chapter, verse } = contextId.reference;
+    chapterNumber = chapterNumber || chapter;
+    verseNumber = verseNumber || verse;
 
     if (getSelectedToolName(state) === 'translationWords') {
       let verseSelectionsChanged = false;
