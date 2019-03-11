@@ -14,9 +14,10 @@ const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources'
 export function migrateResourcesFolder() {
   return (() => {
     if (!fs.existsSync(path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json'))) {
-      fs.removeSync(USER_RESOURCES_PATH);
-      copySourceContentUpdaterManifest();
-      getMissingResources();
+      // If found an old resources folder before source-content-updater implementation.
+      fs.removeSync(USER_RESOURCES_PATH);// Delete old resources folder
+      copySourceContentUpdaterManifest();// Add source-content-updater-manifest.json
+      getMissingResources();// Get missing resources.
     } else {
       getMissingResources();
     }
