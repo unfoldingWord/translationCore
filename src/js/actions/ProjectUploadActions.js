@@ -94,7 +94,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             const filePath = path.join(projectPath, projectName + ".usfm");
             await dispatch(
               WordAlignmentActions.getUsfm3ExportFile(projectPath, filePath));
-            dispatch(showStatus("Taking snapshot of changes"));
+            dispatch(showStatus(translate("projects.saving_file_changes_to_git")));
             const repo = await prepareProjectRepo(user, projectName, projectPath);
             const message = translate("projects.uploading_alert",
               { project_name: projectName, door43: translate("_.door43") });
