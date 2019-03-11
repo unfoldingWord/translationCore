@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
-import {getResourcesFromStaticPackage, getMissingResources} from '../helpers/ResourcesHelpers';
+import {copySourceContentUpdaterManifest, getMissingResources} from '../helpers/ResourcesHelpers';
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
@@ -15,7 +15,8 @@ export function migrateResourcesFolder() {
   return (() => {
     if (!fs.existsSync(path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json'))) {
       fs.removeSync(USER_RESOURCES_PATH);
-      getResourcesFromStaticPackage();
+      copySourceContentUpdaterManifest();
+      getMissingResources();
     } else {
       getMissingResources();
     }
