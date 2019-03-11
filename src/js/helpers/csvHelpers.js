@@ -1,12 +1,14 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from "ospath";
 import csv from 'csv';
 // helpers
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 import ResourceAPI from "./ResourceAPI";
-
-const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tcResources', 'en', 'translationHelps');
+// constants
+export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");
+const tHelpsPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
 let tWIndex = [];
 let tNIndex = [];
 

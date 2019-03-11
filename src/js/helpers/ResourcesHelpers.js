@@ -188,7 +188,9 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
   if (fs.existsSync(contentZipPath)) {
     const zip = new AdmZip(contentZipPath);
     zip.extractAllTo(versionPath, /*overwrite*/true);
-    fs.removeSync(contentZipPath);
+    if (fs.existsSync(contentZipPath)) {
+      fs.removeSync(contentZipPath);
+    }
   } else {
     console.log(`${contentZipPath}, Path Does not exist`);
   }
@@ -454,7 +456,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
 
 export function getGLQuote(languageId, groupId, toolName) {
   try {
-    const GLQuotePathWithoutVersion = path.join(STATIC_RESOURCES_PATH,
+    const GLQuotePathWithoutVersion = path.join(USER_RESOURCES_PATH,
       languageId, "translationHelps", toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(GLQuotePathWithoutVersion);
     const GLQuotePathIndex = path.join(versionDirectory, "kt", "index.json");
