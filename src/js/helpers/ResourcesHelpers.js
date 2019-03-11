@@ -189,7 +189,7 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
     const zip = new AdmZip(contentZipPath);
     zip.extractAllTo(versionPath, /*overwrite*/true);
     if (fs.existsSync(contentZipPath)) {
-      fs.removeSync(contentZipPath);
+      // fs.removeSync(contentZipPath);
     }
   } else {
     console.log(`${contentZipPath}, Path Does not exist`);

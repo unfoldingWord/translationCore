@@ -19,13 +19,10 @@ class AdmZip {
   extractAllTo(destinationPath, overwrite) {
     // using fs to mock saving the files in file system.
     const fileName = this.sourcePath.split(path.sep).pop();
-    const cleanedFilename = fileName.replace(path.extname(fileName), '');
-    const fileDestinationPath = path.join(destinationPath, cleanedFilename);
+    const fileDestinationPath = path.join(destinationPath, fileName);
     // fileDestinationPath is the path and the array is the files in the path
-    console.log('fileDestinationPath', fileDestinationPath);
     fs.__setMockFS({
       [TEMP_IMPORT_PATH]: ['id_tit_text_ulb', 'manifest.json', '.DS_Store'],
-      [destinationPath]: [],
       [fileDestinationPath]: ['01', '02', '03', 'front', 'LICENSE.md', 'manifest.json']
     });
   }

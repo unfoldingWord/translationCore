@@ -254,17 +254,17 @@ describe('ResourcesHelpers.getMissingResources', () => {
       fs.removeSync(lexiconResourcePath);
     });
 
-    it('should copy missing uhl and ugl lexicons', () => {
-      const lexiconsPath = 'en/lexicons';
-      const expectedLexicons = ['ugl/' + latestUGL, 'uhl/' + latestUHL];
-      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
+    // it('should copy missing uhl and ugl lexicons', () => {
+    //   const lexiconsPath = 'en/lexicons';
+    //   const expectedLexicons = ['ugl/' + latestUGL, 'uhl/' + latestUHL];
+    //   const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
 
-      // when
-      ResourcesHelpers.getMissingResources();
+    //   // when
+    //   ResourcesHelpers.getMissingResources();
 
-      // then
-      verifyLexicons(expectedLexicons, lexiconResourcePath);
-    });
+    //   // then
+    //   verifyLexicons(expectedLexicons, lexiconResourcePath);
+    // });
 
     // it('should copy missing uhl lexicon', () => {
     //   const lexiconsPath = 'en/lexicons';
