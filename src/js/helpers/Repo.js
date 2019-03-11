@@ -416,6 +416,9 @@ export default class Repo {
       dir: this.dir
     });
     for(let i = 0, len = stagedFiles.length; i < len; i ++) {
+      // TODO: this involves some i/o and introduces a considerable performance hit.
+      //  Manually maintaining a list of deleted files instead of searching for them
+      //  could boost performance by as much as 80%
       const status = await this.status(stagedFiles[i]);
       if(status === "*deleted") {
         await this.remove(stagedFiles[i]);
