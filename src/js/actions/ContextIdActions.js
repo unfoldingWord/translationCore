@@ -16,7 +16,7 @@ import {
   getGroupsData,
   getProjectSaveLocation
 } from "../selectors";
-import Repo from "../helpers/Repo";
+import Repo, {isSaving} from "../helpers/Repo";
 
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
@@ -56,7 +56,11 @@ export const changeCurrentContextId = contextId => {
       const dirty = await repo.isDirty(['/contextId.json', '/.categories']);
       if (dirty) {
         const { reference: { bookId, chapter, verse } } = contextId;
-        await repo.save(`Auto saving at ${bookId} ${chapter}:${verse}`);
+        if (isSaving()) {
+          console.log(`Saving already running, skipping save after ${bookId} ${chapter}:${verse}`);
+        } else {
+          await repo.save(`Auto saving at ${bookId} ${chapter}:${verse}`);
+        }
       }
     } catch(e) {
       console.error(`Failed to auto save`, contextId, e);

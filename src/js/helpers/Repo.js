@@ -8,6 +8,7 @@ git.plugins.set("fs", fs);
 
 const projectRegExp = new RegExp(
   /^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
+let doingSave = false;
 
 /**
  * Generates credentials from the user object
@@ -55,6 +56,14 @@ function makeAuthor(user) {
   return {
     name, email
   };
+}
+
+/**
+ * returns true if save is currently in operation
+ * @return {boolean}
+ */
+export function isSaving() {
+  return doingSave;
 }
 
 /**
@@ -411,22 +420,35 @@ export default class Repo {
    * @return {Promise<void>}
    */
   async save(message) {
-    // remove deleted files
-    const stagedFiles = await git.listFiles({
-      dir: this.dir
-    });
-    for(let i = 0, len = stagedFiles.length; i < len; i ++) {
-      // TODO: this involves some i/o and introduces a considerable performance hit.
-      //  Manually maintaining a list of deleted files instead of searching for them
-      //  could boost performance by as much as 80%
-      const status = await this.status(stagedFiles[i]);
-      if(status === "*deleted") {
-        await this.remove(stagedFiles[i]);
+    doingSave = true;
+    console.log("Repo.save(" + message + ")");
+    try {
+      // remove deleted files
+      const stagedFiles = await git.listFiles({
+        dir: this.dir
+      });
+
+      for (let i = 0, len = stagedFiles.length; i < len; i++) {
+        const filePath = path.join(this.dir, stagedFiles[i]);
+        const deleted = !fs.existsSync(filePath);
+        if (deleted) { // if deleted from file system, do double check if git needs to remove
+          const status = await this.status(stagedFiles[i]);
+          if (status === "*deleted") {
+            console.log("Repo.save() - removing deleted file: " + stagedFiles[i]);
+            await this.remove(stagedFiles[i]);
+          }
+        }
       }
+
+      // add all modifications and new files
+      await this.add(".");
+      // commit staged files
+      await this.commit(message, makeAuthor(this.user));
+    } catch(e) {
+      doingSave = false;
+      console.error("Error on Repo.save(" + message + ")", e);
+      throw(e);
     }
-    // add all modifications and new files
-    await this.add(".");
-    // commit staged files
-    await this.commit(message, makeAuthor(this.user));
+    doingSave = false;
   }
 }
