@@ -59,14 +59,6 @@ function makeAuthor(user) {
 }
 
 /**
- * returns true if save is currently in operation
- * @return {boolean}
- */
-export function isSaving() {
-  return doingSave;
-}
-
-/**
  * Recursively returns an array of file paths within the directory.
  * .gitignore is obeyed and the .git dir is always ignored.
  *
@@ -421,7 +413,6 @@ export default class Repo {
    */
   async save(message) {
     doingSave = true;
-    console.log("Repo.save(" + message + ")");
     try {
       // remove deleted files
       const stagedFiles = await git.listFiles({
@@ -432,11 +423,7 @@ export default class Repo {
         const filePath = path.join(this.dir, stagedFiles[i]);
         const deleted = !fs.existsSync(filePath);
         if (deleted) { // if deleted from file system, do double check if git needs to remove
-          const status = await this.status(stagedFiles[i]);
-          if (status === "*deleted") {
-            console.log("Repo.save() - removing deleted file: " + stagedFiles[i]);
-            await this.remove(stagedFiles[i]);
-          }
+          await this.remove(stagedFiles[i]);
         }
       }
 
@@ -445,10 +432,22 @@ export default class Repo {
       // commit staged files
       await this.commit(message, makeAuthor(this.user));
     } catch(e) {
-      doingSave = false;
-      console.error("Error on Repo.save(" + message + ")", e);
       throw(e);
+    } finally {
+      doingSave = false;
     }
-    doingSave = false;
+  }
+
+  /**
+   * Similar to save, but prevents overlapping saves
+   * @param {string} message - the commit message
+   * @return {Promise<boolean>} true if save started
+   */
+  async saveDebounced(message) {
+    let startSave = !doingSave; // if already saving then we don't start
+    if (startSave) {
+      await this.save(message);
+    }
+    return startSave;
   }
 }
