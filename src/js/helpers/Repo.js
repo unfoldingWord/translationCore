@@ -422,7 +422,7 @@ export default class Repo {
       for (let i = 0, len = stagedFiles.length; i < len; i++) {
         const filePath = path.join(this.dir, stagedFiles[i]);
         const deleted = !fs.existsSync(filePath);
-        if (deleted) { // if deleted from file system, do double check if git needs to remove
+        if (deleted) {
           await this.remove(stagedFiles[i]);
         }
       }

@@ -51,15 +51,11 @@ export const changeCurrentContextId = contextId => {
     // commit project changes
     const projectDir = getProjectSaveLocation(getState());
     try {
-      const repo = await Repo.open(projectDir,
-        getState().loginReducer.userdata);
-      const dirty = await repo.isDirty(['/contextId.json', '/.categories']);
-      if (dirty) {
-        const {reference: {bookId, chapter, verse}} = contextId;
-        const saveStarted = await repo.saveDebounced(`Auto saving at ${bookId} ${chapter}:${verse}`);
-        if (!saveStarted) {
-          console.log(`Saving already running, skipping save after ${bookId} ${chapter}:${verse}`);
-        }
+      const repo = await Repo.open(projectDir, getState().loginReducer.userdata);
+      const {reference: {bookId, chapter, verse}} = contextId;
+      const saveStarted = await repo.saveDebounced(`Auto saving at ${bookId} ${chapter}:${verse}`);
+      if (!saveStarted) {
+        console.log(`Saving already running, skipping save after ${bookId} ${chapter}:${verse}`);
       }
     } catch(e) {
       console.error(`Failed to auto save`, contextId, e);
