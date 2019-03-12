@@ -291,6 +291,7 @@ export default class Repo {
   /**
    * Checks if there are any file changes.
    * Paths can be ignored from this check which is helpful for constantly changing files like the current context id.
+   * WARNING: this will be slow if you have lots of files
    * @param {array} [ignored=[]] - an array of path expressions that will excluded from the check.
    * @returns {Promise<string>} the status
    */
@@ -301,20 +302,7 @@ export default class Repo {
         // skip ignored paths
         continue;
       }
-      let status = "";
-      try {
-        status = await git.status({
-          dir: this.dir,
-          filepath: paths[i]
-        });
-      } catch (e) {
-        if(e.code === "ResolveRefError") {
-          // TRICKY: if there are no commits we get a ref error
-          status = "*added";
-        } else {
-          throw e;
-        }
-      }
+      const status = await this.status(paths[i]);
       if (["unmodified", "ignored"].indexOf(status) === -1) {
         return true;
       }
@@ -361,41 +349,45 @@ export default class Repo {
    * @returns {Promise<void>}
    */
   async add(filepath) {
-    let status = "";
-    try {
-      status = await git.status({
-        dir: this.dir,
-        filepath: filepath
-      });
-    } catch (e) {
-      if(e.code === "ResolveRefError") {
-        // TRICKY: if there are no commits we get a ref error
-        status = "*added";
-      } else {
-        throw e;
-      }
-    }
-    if (["*deleted", "deleted"].indexOf(status) > -1) {
-      await git.remove({
-        dir: this.dir,
-        filepath
-      });
-    } else if(["*modified", "modified", "*added", "added"].indexOf(status) > -1) {
-      await git.add({
-        dir: this.dir,
-        filepath
-      });
-    }
+    await git.add({
+      dir: this.dir,
+      filepath
+    });
   }
 
   /**
-   * Adds all files to the git index
+   * Removes a file from the git index.
+   * This will not delete a file from the disk.
+   * @param {string} filepath - the relative path to the file being removed
    * @returns {Promise<void>}
    */
-  async addAll() {
-    const paths = await this.list();
-    for (let i = 0, size = paths.length; i < size; i++) {
-      await this.add(paths[i]);
+  async remove(filepath) {
+    await git.remove({
+      dir: this.dir,
+      filepath
+    });
+  }
+
+  /**
+   * Retrieves the status of a file.
+   * If there are no commits in the repo this will assume the file has been added but not staged.
+   * @param {string} filepath - the relative path of the file to stat.
+   * @returns {Promise<string>}
+   */
+  async status(filepath) {
+    try {
+      return await git.status({
+        dir: this.dir,
+        filepath
+      });
+    } catch(e) {
+      if(e.code === "ResolveRefError") {
+        // TRICKY: if there are no commits we get a ref error
+        return "*added";
+      } else {
+        // raise unhandled error
+        throw e;
+      }
     }
   }
 
@@ -419,7 +411,22 @@ export default class Repo {
    * @return {Promise<void>}
    */
   async save(message) {
-    await this.addAll();
+    // remove deleted files
+    const stagedFiles = await git.listFiles({
+      dir: this.dir
+    });
+    for(let i = 0, len = stagedFiles.length; i < len; i ++) {
+      // TODO: this involves some i/o and introduces a considerable performance hit.
+      //  Manually maintaining a list of deleted files instead of searching for them
+      //  could boost performance by as much as 80%
+      const status = await this.status(stagedFiles[i]);
+      if(status === "*deleted") {
+        await this.remove(stagedFiles[i]);
+      }
+    }
+    // add all modifications and new files
+    await this.add(".");
+    // commit staged files
     await this.commit(message, makeAuthor(this.user));
   }
 }
