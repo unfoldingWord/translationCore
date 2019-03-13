@@ -217,8 +217,10 @@ export default class ProjectAPI {
         let rawData = fs.readJsonSync(categoriesPath);
         // TRICKY: assert data structure before overwriting default to not propagate errors.
         if(loaded) {
-          rawData.loaded.push(category);
+          if (!rawData.loaded.includes(category))
+            rawData.loaded.push(category);
         } else {
+          //Removing the loaded category from list
           rawData.loaded = rawData.loaded.filter(c => c !== category);
         }
         data = rawData;
