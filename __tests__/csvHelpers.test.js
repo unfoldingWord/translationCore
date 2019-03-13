@@ -44,6 +44,8 @@ const autographaContextId = {
   "groupId": "1"
 };
 
+const isTest = true;
+
 describe('csvHelpers.flattenContextId', () => {
   test('should return a groupName for tW', () => {
     const _flatContextId = {
@@ -56,19 +58,19 @@ describe('csvHelpers.flattenContextId', () => {
       "quote": "apostle, apostles, apostleship",
       "occurrence": 1
     };
-    const flatContextId = csvHelpers.flattenContextId(tWContextId);
+    const flatContextId = csvHelpers.flattenContextId(tWContextId, isTest);
     expect(flatContextId).toEqual(_flatContextId);
   });
 });
 
 describe('csvHelpers.groupName', () => {
   test('should return a groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWContextId);
+    const groupName = csvHelpers.groupName(tWContextId, isTest);
     expect(groupName).toEqual('apostle, apostles, apostleship');
   });
 
   test('should return an `other` groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWotherContextId);
+    const groupName = csvHelpers.groupName(tWotherContextId, isTest);
     expect(groupName).toEqual('confidence, confident, confidently');
   });
 
@@ -78,7 +80,7 @@ describe('csvHelpers.groupName', () => {
   // });
 
   test('should return a groupId as groupName for Autographa', () => {
-    const groupName = csvHelpers.groupName(autographaContextId);
+    const groupName = csvHelpers.groupName(autographaContextId, isTest);
     expect(groupName).toEqual('1');
   });
 });
