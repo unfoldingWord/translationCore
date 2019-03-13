@@ -559,7 +559,6 @@ function copyMissingSubfolders(source, destination, languageId) {
 
 /**
  * check for lexicons packaged with tc executable.
- * TODO: this is temporary - eventually this will be packaged in catalog
  */
 const checkForNewLexicons = (languageId) => {
   const tcResourcesLexiconPath = path.join(STATIC_RESOURCES_PATH, languageId, "lexicons");
