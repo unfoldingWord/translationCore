@@ -117,7 +117,16 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
           gatewayLanguageQuote
         };
         const newFilename = modifiedTimestamp + '.json';
-        const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bookId, chapter.toString(), verse.toString());
+        const invalidatedCheckPath = path.join(
+          projectSaveLocation,
+          '.apps',
+          'translationCore',
+          'checkData',
+          'invalidated',
+          bookId,
+          chapterNumber.toString(),
+          verseNumber.toString()
+        );
         fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), invalidted);
       }
     }
