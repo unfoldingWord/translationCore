@@ -1,4 +1,4 @@
-<img src='https://raw.githubusercontent.com/unfoldingWord-dev/translationCore/develop/src/images/TC_Icon.png' height="325px" width="330px" alt='translationCore Logo'>
+<img src='https://raw.githubusercontent.com/unfoldingWord-dev/translationCore/develop/src/images/TC_Icon.png' height="205px" width="210px" alt='translationCore Logo'>
 
 # translationCore
 
