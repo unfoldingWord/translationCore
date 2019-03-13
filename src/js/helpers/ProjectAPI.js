@@ -1,5 +1,6 @@
 import path from "path-extra";
 import fs from "fs-extra";
+import {tNotesCategories} from "tsv-groupdata-parser";
 
 const PROJECT_TC_DIR = ".apps/translationCore/";
 
@@ -217,8 +218,10 @@ export default class ProjectAPI {
         let rawData = fs.readJsonSync(categoriesPath);
         // TRICKY: assert data structure before overwriting default to not propagate errors.
         if(loaded) {
-          rawData.loaded.push(category);
+          if (!rawData.loaded.includes(category))
+            rawData.loaded.push(category);
         } else {
+          //Removing the loaded category from list
           rawData.loaded = rawData.loaded.filter(c => c !== category);
         }
         data = rawData;
@@ -267,13 +270,29 @@ export default class ProjectAPI {
    * @param toolName - The tool name. This is synonymous with translationHelp name
    * @return {string[]} an array of category names
    */
-  getSelectedCategories(toolName) {
+  getSelectedCategories(toolName, withParent = false) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         const data = fs.readJsonSync(categoriesPath);
-        return data.current;
+        if (withParent) {
+          let objectWithParentCategories = {};
+          const subCategories = data.current;
+          subCategories.forEach((subCategorie) => {
+            Object.keys(tNotesCategories).forEach((categoryName) => {
+              if (tNotesCategories[categoryName][subCategorie]) {
+                //Sub categorie name is contained in this parent
+                if (!objectWithParentCategories[categoryName])
+                  objectWithParentCategories[categoryName] = [];
+                objectWithParentCategories[categoryName].push(subCategorie);
+              }
+            })
+          });
+          return objectWithParentCategories
+        } else {
+          return data.current;
+        }
       } catch (e) {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
