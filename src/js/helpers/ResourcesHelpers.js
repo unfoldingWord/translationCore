@@ -23,6 +23,7 @@ export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
   "resources");
 export const STATIC_RESOURCES_PATH = path.join(__dirname,
   "../../../tcResources");
+const testResourcesPath = path.join('__tests__', 'fixtures', 'resources');
 
 /**
  * Copies all of a tool's group data from the global resources into a project.
@@ -454,10 +455,10 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
   return resources;
 }
 
-export function getGLQuote(languageId, groupId, toolName) {
+export function getGLQuote(languageId, groupId, toolName, isTest) {
   try {
-    const GLQuotePathWithoutVersion = path.join(USER_RESOURCES_PATH,
-      languageId, "translationHelps", toolName);
+    const rootPath = isTest ? testResourcesPath : USER_RESOURCES_PATH;
+    const GLQuotePathWithoutVersion = path.join(rootPath, languageId, "translationHelps", toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(GLQuotePathWithoutVersion);
     const GLQuotePathIndex = path.join(versionDirectory, "kt", "index.json");
     const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);

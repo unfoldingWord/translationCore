@@ -122,22 +122,24 @@ describe('ResourcesHelpers sortVersions() tests', () => {
 
 describe('ResourcesHelpers getGLQuote() tests', () => {
   const toolName = 'translationWords';
-  const hindiExpectedData = [{
-    "id": "good",
-    "name": "अच्छा, भलाई"
-  },
-  {
-    "id": "iniquity",
-    "name": "अधर्म, अधर्मों"
-  },
-  {
-    "id": "unrighteous",
-    "name": "अधर्मी, अधर्म"
-  },
-  {
-    "id": "unjust",
-    "name": "अधर्मी, अन्याय से, अन्याय"
-  }];
+  const hindiExpectedData = [
+    {
+      "id": "good",
+      "name": "अच्छा, भलाई"
+    },
+    {
+      "id": "iniquity",
+      "name": "अधर्म, अधर्मों"
+    },
+    {
+      "id": "unrighteous",
+      "name": "अधर्मी, अधर्म"
+    },
+    {
+      "id": "unjust",
+      "name": "अधर्मी, अन्याय से, अन्याय"
+    }
+  ];
   const englishExpectedData = [
     {
       "id": "abomination",
@@ -154,24 +156,27 @@ describe('ResourcesHelpers getGLQuote() tests', () => {
     {
       "id": "almighty",
       "name": "Almighty"
-    }];
+    }
+  ];
+  const isTest = true;
+
   it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
     const currentGLLanguageID = 'en';
     for (var groupIndexObject of englishExpectedData) {
-      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(groupIndexObject.name);
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName, isTest)).toBe(groupIndexObject.name);
     }
   });
   it('Test getGLQuote() properly returns the hi gateway language quote for the groupId', () => {
     const currentGLLanguageID = 'hi';
     for (var groupIndexObject of hindiExpectedData) {
-      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(groupIndexObject.name);
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName, isTest)).toBe(groupIndexObject.name);
     }
   });
 
   it('Test getGLQuote() doesnt returns the gateway language quote for a non-existent language', () => {
     const currentGLLanguageID = 'languagewedonthaveyet';
     for (var groupIndexObject of hindiExpectedData) {
-      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(null);
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName, isTest)).toBe(null);
     }
   });
 });
