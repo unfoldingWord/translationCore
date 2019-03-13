@@ -181,9 +181,9 @@ export function loadProjectGroupIndex(
   if (helpDir) {
     // load indices
     const indices = [];
-    const categories = project.getSelectedCategories(toolName);
-    for (const category of categories) {
-      const categoryIndex = path.join(helpDir, category, "index.json");
+    const categories = project.getSelectedCategories(toolName, true);
+    for (const categoryName in categories) {
+      const categoryIndex = path.join(helpDir, categoryName, "index.json");
       if (fs.lstatSync(categoryIndex).isFile()) {
         try {
           indices.push.apply(indices, fs.readJsonSync(categoryIndex));

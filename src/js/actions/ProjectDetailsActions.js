@@ -38,9 +38,9 @@ export const loadCurrentCheckCategories = (toolName, projectSaveLocation, curren
       .forEach((parentCategory) => {
         availableCheckCategories.push(...availableCheckCategoriesObject[parentCategory]);
       })
-    let selectedCategories = project.getSelectedCategories(toolName);
-    selectedCategories = selectedCategories.filter((category) => availableCheckCategories.includes(category));
-    dispatch(setCategories(selectedCategories, toolName));
+    let subCategories = project.getSelectedCategories(toolName);
+    subCategories = subCategories.filter((category) => availableCheckCategories.includes(category));
+    dispatch(setCategories(subCategories, toolName));
   };
 };
 
