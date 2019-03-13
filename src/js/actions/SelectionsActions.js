@@ -136,31 +136,61 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     } else if (getSelectedToolName(state) === 'wordAlignment') {
       const bibleId = project.id;
       const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
-
       if (fs.existsSync(selectionsPath)) {
         let files = fs.readdirSync(selectionsPath);
         files = files.filter(file => { // filter the filenames to only use .json
           return path.extname(file) === '.json';
-        });
-        const sorted = files.sort().reverse(); // sort the files to use latest
-        const filename = sorted[0];
-        const selectionsData = fs.readJsonSync(path.join(selectionsPath, filename));
-        const validSelections = checkSelectionOccurrences(targetVerse, selectionsData.selections);
+        }).sort();
 
-        if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
-          const username = getUsername(state);
-          const modifiedTimestamp = generateTimestamp();
-          const invalidted = {
-            contextId: selectionsData.contextId,
-            invalidated: true,
-            userName: username,
-            modifiedTimestamp: modifiedTimestamp,
-            gatewayLanguageCode: selectionsData.gatewayLanguageCode,
-            gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
-          };
-          const newFilename = modifiedTimestamp + '.json';
-          const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
-          fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), invalidted);
+        // load all files keeping the latest for each context
+        const latestContext = {};
+        for (let i = 0, l = files.length; i < l; i++) {
+          const selectionsData = fs.readJsonSync(path.join(selectionsPath, files[i]));
+          const contextId = selectionsData.contextId;
+          if (contextId) {
+            const key = contextId.groupId + ":" + contextId.occurrence + ":" + contextId.quote;
+            latestContext[key] = selectionsData;
+          }
+        }
+        const userName = getUsername(state);
+        const modifiedTimestamp = generateTimestamp();
+        const keys = Object.keys(latestContext);
+        let selectionInvalidated = false;
+        for (let j = 0, l = keys.length; j < l; j++) {
+          const selectionsData = latestContext[keys[j]];
+          const validSelections = checkSelectionOccurrences(targetVerse, selectionsData.selections);
+          if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
+
+            // add invalidation entry
+            const newInvalidation = {
+              contextId: selectionsData.contextId,
+              invalidated: true,
+              userName,
+              modifiedTimestamp: modifiedTimestamp,
+              gatewayLanguageCode: selectionsData.gatewayLanguageCode,
+              gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
+            };
+            const newFilename = modifiedTimestamp + '.json';
+            const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
+            fs.ensureDirSync(invalidatedCheckPath);
+            fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), newInvalidation);
+
+            // add new selections entry with selections reset
+            const newSelectionsData = {
+              ...selectionsData,
+              userName,
+              modifiedTimestamp,
+              selections: []
+            };
+            const selectionsCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
+            fs.ensureDirSync(selectionsCheckPath);
+            fs.outputJSONSync(path.join(selectionsCheckPath, newFilename.replace(/[:"]/g, '_')), newSelectionsData);
+
+            selectionInvalidated = true;
+          }
+        }
+        if (selectionInvalidated) {
+          dispatch(showSelectionsInvalidatedWarning());
         }
       }
     }

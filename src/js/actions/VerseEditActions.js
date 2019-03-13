@@ -9,6 +9,8 @@ import {
   getUsername
 } from '../selectors';
 import {getGroupDataForVerse, validateSelections} from "./SelectionsActions";
+import path from "path-extra";
+import fs from "fs-extra";
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -26,6 +28,35 @@ export const editSelectedTargetVerse = (before, after, tags, username=null) => {
     const contextId = getState().contextIdReducer.contextId;
     let {chapter, verse} = contextId.reference;
     dispatch(editTargetVerse(chapter, verse, before, after, tags, username));
+  };
+};
+
+export const saveTwVerseEdit = (bookId, userAlias, before, after, tags, contextIdWithVerseEdit,
+  currentCheckChapter, currentCheckVerse, gatewayLanguageCode, gatewayLanguageQuote,
+  chapterWithVerseEdit, verseWithVerseEdit) => {
+
+  gatewayLanguageQuote = gatewayLanguageQuote || "";
+  return (dispatch, getState) => {
+    const {projectSaveLocation} = getState().projectDetailsReducer;
+    const modifiedTimestamp = generateTimestamp();
+    const verseEdit = {
+      verseBefore: before,
+      verseAfter: after,
+      tags,
+      userName: userAlias,
+      activeBook: bookId,
+      activeChapter: currentCheckChapter,
+      activeVerse: currentCheckVerse,
+      modifiedTimestamp: modifiedTimestamp,
+      gatewayLanguageCode,
+      gatewayLanguageQuote,
+      contextId: contextIdWithVerseEdit
+    };
+    const newFilename = modifiedTimestamp + '.json';
+    const verseEditsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'verseEdits',
+      bookId, chapterWithVerseEdit.toString(), verseWithVerseEdit.toString());
+    fs.ensureDirSync(verseEditsPath);
+    fs.outputJSONSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
   };
 };
 
@@ -84,6 +115,9 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
         type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
         contextId: contextIdWithVerseEdit
       });
+      dispatch(saveTwVerseEdit(bookId, userAlias, before, after, tags, contextIdWithVerseEdit,
+        currentCheckChapter, currentCheckVerse, gatewayLanguageCode, gatewayLanguageQuote,
+        chapterWithVerseEdit, verseWithVerseEdit));
     }
 
     // TRICKY: this is a temporary hack to validate verse edits.
