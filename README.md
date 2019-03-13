@@ -1,11 +1,11 @@
+<img src='https://raw.githubusercontent.com/unfoldingWord-dev/translationCore/develop/src/images/TC_Icon.png' height="325px" width="330px" alt='translationCore Logo'>
+
+# translationCore
+
 [![Travis branch](https://img.shields.io/travis/unfoldingWord-dev/translationCore/develop.svg)](https://travis-ci.org/unfoldingWord-dev/translationCore/)
 [![Releases](https://img.shields.io/github/downloads/unfoldingword-dev/translationCore/total.svg)](https://github.com/unfoldingWord-dev/translationCore/releases)
 [![Current Verison](https://img.shields.io/github/tag/unfoldingword-dev/translationCore.svg)](https://github.com/unfoldingWord-dev/translationCore/tags)
 [![codecov](https://codecov.io/gh/unfoldingWord-dev/translationCore/branch/develop/graph/badge.svg)](https://codecov.io/gh/unfoldingWord-dev/translationCore)
-
-# translationCore
-
-![Logo](https://unfoldingword.org/assets/img/icon-tc.png "translationCore")
 
 Purpose
 ---
