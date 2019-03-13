@@ -164,7 +164,7 @@ class ToolCardBoxes extends React.Component {
 }
 
 ToolCardBoxes.propTypes = {
-  availableCategories: PropTypes.array.isRequired,
+  availableCategories: PropTypes.object.isRequired,
   onChecked: PropTypes.func,
   selectedCategories: PropTypes.array.isRequired,
   toolName: PropTypes.string.isRequired,

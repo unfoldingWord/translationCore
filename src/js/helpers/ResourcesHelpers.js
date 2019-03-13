@@ -86,6 +86,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
   const resources = ResourceAPI.default();
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   // list help categories
+  
   if (helpDir) {
     const categories = fs.readdirSync(helpDir).filter(file => {
       return fs.lstatSync(path.join(helpDir, file)).isDirectory();
@@ -99,7 +100,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
       // TRICKY: some helps do not have groups nested under categories
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
       const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
-      const groupsDir = resourceCategoryDir;
+      let groupsDir = resourceCategoryDir;
       if (!fs.pathExistsSync(resourceCategoryDir)) {
         groupsDir = altResourceCategoryDir;
       }
@@ -114,7 +115,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
       }
       categoriesObj[category] = subCategories;
     }
-  }
+  } 
   return categoriesObj;
 }
 

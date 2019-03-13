@@ -1,8 +1,7 @@
 /* eslint-env jest */
+import * as ToolCardHelpers from   "../src/js/helpers/ToolCardHelpers";
 
-import * as ToolCardHelpers from "../src/js/helpers/ToolCardHelpers";
-
-describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch status',()=>{
+describe.skip('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch status',()=>{
   const translate = (key) => key;
 
   test('Should return the status that the book is supported for translationWords', () => {

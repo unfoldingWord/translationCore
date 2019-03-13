@@ -110,7 +110,6 @@ ToolsCards.propTypes = {
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
   toolsCategories: PropTypes.object.isRequired,
-  availableCategories: PropTypes.object.isRequired,
 };
 
 export default ToolsCards;

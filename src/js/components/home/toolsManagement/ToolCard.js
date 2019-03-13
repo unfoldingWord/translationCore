@@ -226,7 +226,7 @@ ToolCard.propTypes = {
     updateCheckSelection: PropTypes.func.isRequired
   }),
   selectedCategories: PropTypes.array.isRequired,
-  availableCategories: PropTypes.array.isRequired
+  availableCategories: PropTypes.object.isRequired,
 };
 
 ToolCard.contextTypes = {
