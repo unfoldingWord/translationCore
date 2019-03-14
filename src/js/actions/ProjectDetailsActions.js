@@ -31,7 +31,6 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  */
 export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en') => {
   return (dispatch) => {
-    debugger;
     const project = new ProjectAPI(projectSaveLocation);
     const availableCheckCategoriesObject = ResourcesHelpers.getAvailableCategories(currentGatewayLanguage, toolName, projectSaveLocation);
     let availableCheckCategories = [];

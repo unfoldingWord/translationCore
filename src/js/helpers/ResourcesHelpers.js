@@ -74,10 +74,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   }
 }
 
-export 
-
 export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir) {
-  debugger;
   const categoriesObj = {};
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
