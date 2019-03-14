@@ -65,12 +65,13 @@ export const changeSelections = (selections, userName, invalidated = false, cont
 
 /**
  * displays warning that selections have been invalidated
+ * @param {Function|Null} callback - optional callback after OK button clicked
  * @return {Function}
  */
-export const showSelectionsInvalidatedWarning = () => {
+export const showSelectionsInvalidatedWarning = (callback = null) => {
   return (dispatch, getState) => {
     const translate = getTranslate(getState());
-    dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
+    dispatch(AlertModalActions.openOptionDialog(translate('tools.selections_invalidated'), callback));
   };
 };
 
@@ -105,9 +106,10 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
  * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @param {Number} chapterNumber - optional chapter number of verse text being edited, if not given will use contextId
  * @param {Number} verseNumber - optional verse number of verse text being edited, if not given will use contextId
+ * @param {object} results - returns state of validations
  * @return {Object} - dispatches the changeSelections action.
  */
-export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber) => {
+export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber, results) => {
   return (dispatch, getState) => {
     const state = getState();
     contextId = contextId || state.contextIdReducer.contextId;
@@ -115,9 +117,9 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     const { chapter, verse } = contextId.reference;
     chapterNumber = chapterNumber || chapter;
     verseNumber = verseNumber || verse;
+    let selectionInvalidated = false;
 
     if (getSelectedToolName(state) === 'translationWords') {
-      let verseSelectionsChanged = false;
       const username = getUsername(state);
       // for this groupId, find every check for this chapter/verse
       const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
@@ -129,10 +131,11 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
         if (selectionsChanged) {
           dispatch(changeSelections([], username, true, groupObject.contextId)); // clear selections
         }
-        verseSelectionsChanged = verseSelectionsChanged || selectionsChanged;
+        selectionInvalidated = selectionInvalidated || selectionsChanged;
       }
-      const results = {selectionsChanged: verseSelectionsChanged};
-      dispatch(validateAllSelectionsForVerse(targetVerse, results, true, contextId, true));
+      const results_ = {selectionsChanged: selectionInvalidated};
+      dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false));
+      selectionInvalidated = selectionInvalidated || results_.selectionsChanged; // if new selections invalidated
     } else if (getSelectedToolName(state) === 'wordAlignment') {
       const bibleId = project.id;
       const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
@@ -155,7 +158,6 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
         const userName = getUsername(state);
         const modifiedTimestamp = generateTimestamp();
         const keys = Object.keys(latestContext);
-        let selectionInvalidated = false;
         for (let j = 0, l = keys.length; j < l; j++) {
           const selectionsData = latestContext[keys[j]];
           const validSelections = checkSelectionOccurrences(targetVerse, selectionsData.selections);
@@ -175,25 +177,12 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
             fs.ensureDirSync(invalidatedCheckPath);
             fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), newInvalidation);
 
-            // add new selections entry with selections reset
-            const newSelectionsData = {
-              ...selectionsData,
-              userName,
-              modifiedTimestamp,
-              selections: []
-            };
-            const selectionsCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
-            fs.ensureDirSync(selectionsCheckPath);
-            fs.outputJSONSync(path.join(selectionsCheckPath, newFilename.replace(/[:"]/g, '_')), newSelectionsData);
-
             selectionInvalidated = true;
           }
         }
-        if (selectionInvalidated) {
-          dispatch(showSelectionsInvalidatedWarning());
-        }
       }
     }
+    results.selectionsChanged = selectionInvalidated;
   };
 };
 
