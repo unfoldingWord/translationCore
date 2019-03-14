@@ -32,6 +32,7 @@ const shouldRun = (projectPath) => {
  * @return {null}
  */
 const run = (projectPath) => {
+  console.log("migrateToVersion4(" + projectPath + ")");
   updateAlignments(projectPath);
   Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };
