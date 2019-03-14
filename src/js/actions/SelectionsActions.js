@@ -106,10 +106,12 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
  * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @param {Number} chapterNumber - optional chapter number of verse text being edited, if not given will use contextId
  * @param {Number} verseNumber - optional verse number of verse text being edited, if not given will use contextId
+ * @param {Boolean} showInvalidation - if true then selections invalidation warning is shown - otherwise just set flag in results
  * @param {object} results - returns state of validations
  * @return {Object} - dispatches the changeSelections action.
  */
-export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber, results) => {
+export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber,
+                                   showInvalidation = true, results = {}) => {
   return (dispatch, getState) => {
     const state = getState();
     contextId = contextId || state.contextIdReducer.contextId;
@@ -183,6 +185,9 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       }
     }
     results.selectionsChanged = selectionInvalidated;
+    if (showInvalidation && selectionInvalidated) {
+      dispatch(showSelectionsInvalidatedWarning());
+    }
   };
 };
 

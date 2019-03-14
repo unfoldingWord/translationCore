@@ -128,11 +128,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = false;
 
     // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
 
     // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
     const actions = store.getActions();
     expect(actions.length).toEqual(0);
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
@@ -145,11 +148,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = false;
 
     // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
 
     // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
@@ -162,11 +168,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = true;
 
     // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
 
     // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
@@ -179,11 +188,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = false;
 
     // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
 
     // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
@@ -196,11 +208,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = true;
 
     // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
 
     // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
@@ -213,11 +228,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = true;
 
     // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse));
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
 
     // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
@@ -230,15 +248,20 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = true;
 
     // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, initialState.contextIdReducer.contextId));
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, initialState.contextIdReducer.contextId,
+      null, null, true, results));
 
     // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
   });
+
   it('all selections edited from different verse context', () => {
     // given
     const targetVerse = "";
@@ -249,11 +272,36 @@ describe('SelectionsActions.validateSelections', () => {
     initialState.contextIdReducer.contextId.reference.verse = "4";
     initialState.contextIdReducer.contextId.groupId = "faith";
     const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = true;
 
     // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, contextId));
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, contextId, null, null, true, results));
 
     // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+  });
+
+  it('all selections edited from different verse context - no warning', () => {
+    // given
+    const targetVerse = "";
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
+    initialState.contextIdReducer.contextId.reference.verse = "4";
+    initialState.contextIdReducer.contextId.groupId = "faith";
+    const store = mockStore(initialState);
+    const results = {};
+    const expectedSelectionsChanged = true;
+
+    // when
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, contextId, null, null, false, results));
+
+    // then
+    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
   });

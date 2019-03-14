@@ -144,7 +144,8 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
       userAlias = getUsername(getState());
     }
     const selectionsValidationResults = {};
-    dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit, selectionsValidationResults));
+    dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
+      false, selectionsValidationResults));
 
     const modifiedTimestamp = generateTimestamp();
     const verseEdit = {
