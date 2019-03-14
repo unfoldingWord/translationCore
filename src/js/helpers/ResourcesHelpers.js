@@ -5,7 +5,7 @@ import ospath from "ospath";
 import AdmZip from "adm-zip";
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
-import { getValidGatewayBiblesForTool } from "./gatewayLanguageHelpers";
+import { getValidGatewayBiblesForTool, getGlRequirementsForTool } from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from "./SettingsHelpers";
 import {
   getContext,
@@ -52,17 +52,11 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
         project.importCategoryGroupData(toolName, dataPath);
       })
       // TRICKY: gives the tool an index of which groups belong to which category
-      project.setCategoryGroupIds(toolName, category,  categories[category]);
+      project.setCategoryGroupIds(toolName, category, categories[category]);
       // loading complete
-      // TODO: I don't think this is necessary anymore
-      if (toolName === 'translationNotes') {
-        //TBD BMS
-        categories[category].forEach((subCategory) => {
-          project.setCategoryLoaded(toolName, subCategory);
-        })
-      } else {
-        project.setCategoryLoaded(toolName, category);
-      }
+      categories[category].forEach((subCategory) => {
+        project.setCategoryLoaded(toolName, subCategory);
+      })
     });
   } else {
     // generate chapter-based group data
@@ -85,6 +79,9 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
   const categoriesObj = {};
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
+  if (toolName === 'translationWords'){
+    gatewayLanguage = 'grc';
+  }
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   // list help categories
   
@@ -133,20 +130,14 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
   const resources = ResourceAPI.default();
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   let categories = [];
-  if(helpDir && project.getSelectedCategories(toolName).length === 0) {
-    if (toolName === 'translationNotes') {
-      let parentCategories = fs.readdirSync(helpDir).filter(file => {
-        return fs.lstatSync(path.join(helpDir, file)).isDirectory();
-      });
-      parentCategories.forEach((subCategory) => {
-        categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
-      })
-    } else {
-      categories = fs.readdirSync(helpDir).filter(file => {
+  if (helpDir && project.getSelectedCategories(toolName).length === 0) {
+    let parentCategories = fs.readdirSync(helpDir).filter(file => {
       return fs.lstatSync(path.join(helpDir, file)).isDirectory();
     });
-    }
-    if(categories.length > 0) {
+    parentCategories.forEach((subCategory) => {
+      categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
+    })
+    if (categories.length > 0) {
       project.setSelectedCategories(toolName, categories);
     }
   }
