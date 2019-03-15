@@ -9,6 +9,7 @@ import * as OnlineModeConfirmActions from "./OnlineModeConfirmActions";
 import * as WordAlignmentActions from "./WordAlignmentActions";
 // helpers
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+import {delay} from "../helpers/bodyUIHelpers";
 
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git
@@ -177,9 +178,3 @@ export const showStatus = async (message) => {
     await delay(500);
   });
 };
-
-function delay(ms) {
-  return new Promise((resolve) =>
-    setTimeout(resolve, ms)
-  );
-}

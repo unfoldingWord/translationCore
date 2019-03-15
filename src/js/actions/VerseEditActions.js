@@ -1,14 +1,19 @@
+import path from "path-extra";
+import fs from "fs-extra";
 import types from './ActionTypes';
+// actions
+import {getGroupDataForVerse, showSelectionsInvalidatedWarning, validateSelections} from "./SelectionsActions";
+import * as AlertModalActions from "./AlertModalActions";
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
+import {delay} from "../helpers/bodyUIHelpers";
 import {
   getSelectedToolApi,
   getSelectedToolName,
   getSupportingToolApis,
   getUsername
 } from '../selectors';
-import {getGroupDataForVerse, validateSelections} from "./SelectionsActions";
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -30,17 +35,124 @@ export const editSelectedTargetVerse = (before, after, tags, username=null) => {
 };
 
 /**
- * Updates a verse in the target bible.
- * This thunk will record the edit to the disk and update the target bible resource.
+ * save verse edit in translationWords to file system
+ * @param {{
+      verseBefore: String,
+      verseAfter: String,
+      tags: Array,
+      userName: String,
+      activeBook: String,
+      activeChapter: Number,
+      activeVerse: Number,
+      modifiedTimestamp: String,
+      gatewayLanguageCode: String,
+      gatewayLanguageQuote: String,
+      contextId: Object
+    }} verseEdit - record that is saved to file system
+ * @return {Function}
+ */
+export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
+  return (dispatch, getState) => {
+    verseEdit.gatewayLanguageQuote = verseEdit.gatewayLanguageQuote || "";
+    const {projectSaveLocation} = getState().projectDetailsReducer;
+    const newFilename = verseEdit.modifiedTimestamp + '.json';
+    const verseEditsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'verseEdits',
+      verseEdit.activeBook, verseEdit.contextId.reference.chapter.toString(),
+      verseEdit.contextId.reference.verse.toString());
+    fs.ensureDirSync(verseEditsPath);
+    fs.outputJSONSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
+  };
+};
+
+/**
+ * updates verse edit in group data reducer (and in file system if tw group data is not loaded) and
+ *   then does alignment validation checking
+ *
+ * @param {{
+      verseBefore: String,
+      verseAfter: String,
+      tags: Array,
+      userName: String,
+      activeBook: String,
+      activeChapter: Number,
+      activeVerse: Number,
+      modifiedTimestamp: String,
+      gatewayLanguageCode: String,
+      gatewayLanguageQuote: String,
+      contextId: Object
+    }} verseEdit - record to be saved to file system if in WA tool
+ * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
+ * @param {Object} currentCheckContextId - contextId of group menu item selected
+ * @return {Function}
+ */
+export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
+                                                        currentCheckContextId) => {
+  return (dispatch, getState) => {
+    const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
+    const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
+    dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
+        verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
+        verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
+    dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
+
+    if (getSelectedToolName(getState()) === 'translationWords') {
+      // in group data reducer set verse edit flag for every check of the verse edited
+      const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
+      for (let groupItemKey of Object.keys(matchedGroupData)) {
+        const groupItem = matchedGroupData[groupItemKey];
+        if (groupItem) {
+          for (let check of groupItem) {
+            dispatch({
+              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+              contextId: check.contextId
+            });
+          }
+        }
+      }
+    } else if (getSelectedToolName(getState()) === 'wordAlignment') {
+      // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
+      dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
+      // in group data reducer set verse edit flag for the verse edited
+      dispatch({
+        type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+        contextId: contextIdWithVerseEdit
+      });
+    }
+
+    // TRICKY: this is a temporary hack to validate verse edits.
+    // TODO: This can be removed once the ScripturePane is updated to provide
+    // callbacks for editing so that tools can manually perform the edit and
+    // trigger validation on the specific verse.
+    const newState = getState();
+    const apis = getSupportingToolApis(newState);
+    if ('wordAlignment' in apis && apis['wordAlignment'] !== null) {
+      // for other tools
+      apis['wordAlignment'].trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
+    } else {
+      // for wA
+      const api = getSelectedToolApi(newState);
+      if (api !== null &&
+          (verseEdit.activeChapter !== chapterWithVerseEdit || verseEdit.activeVerse !== verseWithVerseEdit)) {
+        api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
+      }
+    }
+  };
+};
+
+/**
+ * This is a called by tool when a verse has been edited.  It updates group data reducer for current tool
+ *   and updates file system for tools not loaded.
+ * This will first do TW selections validation and prompt user if invalidations are found.
+ * Then it calls updateVerseEditStatesAndCheckAlignments to saving verse edits and then validate alignments.
  *
  * @param {int} chapterWithVerseEdit
  * @param {int|string} verseWithVerseEdit
  * @param {string} before - the verse text before the edit
  * @param {string} after - the verse text after the edit
  * @param {string[]} tags - an array of tags indicating the reason for the edit
- * @param {string} [username=null] - The user's alias. If null the current username will be used.
+ * @param {string|null} username - The user's alias. If null the current username will be used.
  */
-export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, username=null) => {
+export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, username = null) => {
   return async (dispatch, getState) => {
     const {
       contextIdReducer
@@ -62,45 +174,35 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     if(userAlias === null) {
       userAlias = getUsername(getState());
     }
-    dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit));
-    dispatch(recordTargetVerseEdit(bookId, chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote, currentCheckContextId));
-    dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, after));
-    if (getSelectedToolName(getState()) === 'translationWords') {
-      // set verse edit flag for every check in verse edited
-      const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
-      for (let groupItemKey of Object.keys(matchedGroupData)) {
-        const groupItem = matchedGroupData[groupItemKey];
-        if (groupItem) {
-          for (let check of groupItem) {
-            dispatch({
-              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-              contextId: check.contextId
-            });
-          }
-        }
-      }
-    } else {
-      dispatch({
-        type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-        contextId: contextIdWithVerseEdit
-      });
-    }
+    const selectionsValidationResults = {};
+    dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
+      false, selectionsValidationResults));
 
-    // TRICKY: this is a temporary hack to validate verse edits.
-    // TODO: This can be removed once the ScripturePane is updated to provide
-    // callbacks for editing so that tools can manually perform the edit and
-    // trigger validation on the specific verse.
-    const newState = getState();
-    const apis = getSupportingToolApis(newState);
-    if('wordAlignment' in apis && apis['wordAlignment'] !== null) {
-      // for other tools
-      apis['wordAlignment'].trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
+    // create verse edit record to write to file system
+    const modifiedTimestamp = generateTimestamp();
+    const verseEdit = {
+      verseBefore: before,
+      verseAfter: after,
+      tags,
+      userName: userAlias,
+      activeBook: bookId,
+      activeChapter: currentCheckChapter,
+      activeVerse: currentCheckVerse,
+      modifiedTimestamp: modifiedTimestamp,
+      gatewayLanguageCode,
+      gatewayLanguageQuote,
+      contextId: contextIdWithVerseEdit
+    };
+
+    if (selectionsValidationResults.selectionsChanged) {
+      dispatch(showSelectionsInvalidatedWarning(() => {
+        dispatch(AlertModalActions.closeAlertDialog());
+        delay(500).then(() => { // wait for screen to update
+          dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
+        });
+      }));
     } else {
-      // for wA
-      const api = getSelectedToolApi(newState);
-      if(api !== null && (currentCheckChapter !== chapterWithVerseEdit || currentCheckVerse !== verseWithVerseEdit)) {
-        api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
-      }
+      dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
     }
   };
 };
@@ -110,7 +212,7 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
  * This will result in the verse text being written to the disk.
  * This is closely related to {@link updateTargetVerse}.
  *
- * @param {string} book - the id of the book receiving the edit
+ * @param {string} bookId - the id of the book receiving the edit
  * @param {int} chapter - the chapter receiving the edit
  * @param {int} verse - the verse that was edited
  * @param {string} before - the verse text before the edit
