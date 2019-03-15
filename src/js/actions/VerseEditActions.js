@@ -35,11 +35,23 @@ export const editSelectedTargetVerse = (before, after, tags, username=null) => {
 };
 
 /**
- * save verse edit record to file system
- * @param {Object} verseEdit record
+ * save verse edit in translationWords to file system
+ * @param {{
+      verseBefore: String,
+      verseAfter: String,
+      tags: Array,
+      userName: String,
+      activeBook: String,
+      activeChapter: Number,
+      activeVerse: Number,
+      modifiedTimestamp: String,
+      gatewayLanguageCode: String,
+      gatewayLanguageQuote: String,
+      contextId: Object
+    }} verseEdit - record that is saved to file system
  * @return {Function}
  */
-export const saveTwVerseEdit = (verseEdit) => {
+export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
   return (dispatch, getState) => {
     verseEdit.gatewayLanguageQuote = verseEdit.gatewayLanguageQuote || "";
     const {projectSaveLocation} = getState().projectDetailsReducer;
@@ -53,13 +65,28 @@ export const saveTwVerseEdit = (verseEdit) => {
 };
 
 /**
- * save verse edit and then do alignment validation checking
- * @param {Object} verseEdit record
+ * updates verse edit in group data reducer (and in file system if tw group data is not loaded) and
+ *   then does alignment validation checking
+ *
+ * @param {{
+      verseBefore: String,
+      verseAfter: String,
+      tags: Array,
+      userName: String,
+      activeBook: String,
+      activeChapter: Number,
+      activeVerse: Number,
+      modifiedTimestamp: String,
+      gatewayLanguageCode: String,
+      gatewayLanguageQuote: String,
+      contextId: Object
+    }} verseEdit - record to be saved to file system if in WA tool
  * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
  * @param {Object} currentCheckContextId - contextId of group menu item selected
  * @return {Function}
  */
-export const updateVerseEditAndCheckAlignments = (verseEdit, contextIdWithVerseEdit, currentCheckContextId) => {
+export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
+                                                        currentCheckContextId) => {
   return (dispatch, getState) => {
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
@@ -69,7 +96,7 @@ export const updateVerseEditAndCheckAlignments = (verseEdit, contextIdWithVerseE
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
     if (getSelectedToolName(getState()) === 'translationWords') {
-      // set verse edit flag for every check in verse edited
+      // in group data reducer set verse edit flag for every check of the verse edited
       const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
       for (let groupItemKey of Object.keys(matchedGroupData)) {
         const groupItem = matchedGroupData[groupItemKey];
@@ -82,8 +109,10 @@ export const updateVerseEditAndCheckAlignments = (verseEdit, contextIdWithVerseE
           }
         }
       }
-    } else {
-      dispatch(saveTwVerseEdit(verseEdit));
+    } else if (getSelectedToolName(getState()) === 'wordAlignment') {
+      // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
+      dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
+      // in group data reducer set verse edit flag for the verse edited
       dispatch({
         type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
         contextId: contextIdWithVerseEdit
@@ -147,6 +176,7 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
       false, selectionsValidationResults));
 
+    // create verse edit record to write to file system
     const modifiedTimestamp = generateTimestamp();
     const verseEdit = {
       verseBefore: before,
@@ -166,11 +196,11 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
       dispatch(showSelectionsInvalidatedWarning(() => {
         dispatch(AlertModalActions.closeAlertDialog());
         delay(500).then(() => { // wait for screen to update
-          dispatch(updateVerseEditAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
+          dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
         });
       }));
     } else {
-      dispatch(updateVerseEditAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
+      dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
     }
   };
 };
