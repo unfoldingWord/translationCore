@@ -23,6 +23,8 @@ Array [
   Object {
     "contextId": Object {
       "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀποστόλων",
       "reference": Object {
         "bookId": "tit",
         "chapter": 1,
@@ -43,6 +45,8 @@ Array [
     "boolean": false,
     "contextId": Object {
       "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀποστόλων",
       "reference": Object {
         "bookId": "tit",
         "chapter": 1,
@@ -236,7 +240,7 @@ Array [
 ]
 `;
 
-exports[`SelectionsActions.validateSelections "servant of God" selection with footnote and edited 1`] = `
+exports[`SelectionsActions.validateSelections Active Tool TW "servant of God" selection with footnote and edited 1`] = `
 Array [
   Object {
     "contextId": Object {
@@ -284,9 +288,9 @@ Array [
 ]
 `;
 
-exports[`SelectionsActions.validateSelections "servant of God" selection with footnote not edited 1`] = `Array []`;
+exports[`SelectionsActions.validateSelections Active Tool TW "servant of God" selection with footnote not edited 1`] = `Array []`;
 
-exports[`SelectionsActions.validateSelections all selections edited 1`] = `
+exports[`SelectionsActions.validateSelections Active Tool TW all selections edited 1`] = `
 Array [
   Object {
     "contextId": Object {
@@ -334,7 +338,7 @@ Array [
 ]
 `;
 
-exports[`SelectionsActions.validateSelections all selections edited current context 1`] = `
+exports[`SelectionsActions.validateSelections Active Tool TW all selections edited current context 1`] = `
 Array [
   Object {
     "contextId": Object {
@@ -382,7 +386,7 @@ Array [
 ]
 `;
 
-exports[`SelectionsActions.validateSelections all selections edited from different verse context - no warning 1`] = `
+exports[`SelectionsActions.validateSelections Active Tool TW all selections edited from different verse context - no warning 1`] = `
 Array [
   Object {
     "contextId": Object {
@@ -423,7 +427,7 @@ Array [
 ]
 `;
 
-exports[`SelectionsActions.validateSelections all selections edited from different verse context 1`] = `
+exports[`SelectionsActions.validateSelections Active Tool TW all selections edited from different verse context 1`] = `
 Array [
   Object {
     "contextId": Object {
@@ -471,9 +475,9 @@ Array [
 ]
 `;
 
-exports[`SelectionsActions.validateSelections apostle selection edited 1`] = `Array []`;
+exports[`SelectionsActions.validateSelections Active Tool TW apostle selection edited 1`] = `Array []`;
 
-exports[`SelectionsActions.validateSelections god selection edited in different context 1`] = `
+exports[`SelectionsActions.validateSelections Active Tool TW god selection edited in different context 1`] = `
 Array [
   Object {
     "contextId": Object {
@@ -511,6 +515,18 @@ Array [
     },
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
+  Object {
+    "alertMessage": "tools.selections_invalidated",
+    "buttonLinkText": null,
+    "callback": null,
+    "callback2": null,
+    "type": "OPEN_OPTION_DIALOG",
+  },
+]
+`;
+
+exports[`SelectionsActions.validateSelections Active Tool WA apostle selection edited 1`] = `
+Array [
   Object {
     "alertMessage": "tools.selections_invalidated",
     "buttonLinkText": null,

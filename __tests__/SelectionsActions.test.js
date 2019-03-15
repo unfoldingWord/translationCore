@@ -98,7 +98,7 @@ describe('SelectionsActions.validateSelections', () => {
   const selectionsReducer = {
     gatewayLanguageCode: "en",
     gatewayLanguageQuote: "authority",
-    "selections": [
+    selections: [
       {
         "text": "apostle",
         "occurrence": 1,
@@ -115,195 +115,250 @@ describe('SelectionsActions.validateSelections', () => {
   });
 
   afterEach(() => {
-    if(saveOtherContextSpy) {
+    if (saveOtherContextSpy) {
       saveOtherContextSpy.mockReset();
       saveOtherContextSpy.mockRestore();
     }
   });
 
-  it('No selection changes', () => {
-    // given
-    const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = false;
+  describe('Active Tool TW', () => {
 
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+    it('No selection changes', () => {
+      // given
+      const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = false;
 
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(actions.length).toEqual(0);
-    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(actions.length).toEqual(0);
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+    });
+
+    it('apostle selection edited', () => {
+      // given
+      const targetVerse = "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = false;
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+    });
+
+    it('god selection edited in different context', () => {
+      // given
+      const targetVerse = "Paul, a servant of Go and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = true;
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('"servant of God" selection with footnote not edited', () => {
+      // given
+      const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = false;
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+    });
+
+    it('"servant of God" selection with footnote and edited', () => {
+      // given
+      const targetVerse = "Paul, a servan of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = true;
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('all selections edited', () => {
+      // given
+      const targetVerse = "";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = true;
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('all selections edited current context', () => {
+      // given
+      const targetVerse = "";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = true;
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, initialState.contextIdReducer.contextId,
+        null, null, true, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('all selections edited from different verse context', () => {
+      // given
+      const targetVerse = "";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
+      initialState.contextIdReducer.contextId.reference.verse = "4";
+      initialState.contextIdReducer.contextId.groupId = "faith";
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = true;
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, contextId, null, null, true, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+    });
+
+    it('all selections edited from different verse context - no warning', () => {
+      // given
+      const targetVerse = "";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.selectionsReducer = selectionsReducer;
+      const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
+      initialState.contextIdReducer.contextId.reference.verse = "4";
+      initialState.contextIdReducer.contextId.groupId = "faith";
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = true;
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, contextId, null, null, false, results));
+
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+    });
   });
 
-  it('apostle selection edited', () => {
-    // given
-    const targetVerse =  "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = false;
+  describe('Active Tool WA', () => {
 
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+    it('No selection changes', () => {
+      // given
+      const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath, 'wordAlignment');
+      initialState.selectionsReducer = selectionsReducer;
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = false;
 
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(cleanOutDates(actions)).toMatchSnapshot();
-    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
-  });
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
 
-  it('god selection edited in different context', () => {
-    // given
-    const targetVerse =  "Paul, a servant of Go and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = true;
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(actions.length).toEqual(0);
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+    });
 
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
+    it('apostle selection edited', () => {
+      // given
+      const targetVerse = "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath, 'wordAlignment');
+      const newSelection = {
+        ...selectionsReducer,
+        contextId: initialState.contextIdReducer.contextId
+      };
+      const selectionsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'selections',
+                                        newSelection.contextId.reference.bookId,
+                                        newSelection.contextId.reference.chapter.toString(),
+                                        newSelection.contextId.reference.verse.toString());
+      fs.ensureDirSync(selectionsPath);
+      fs.outputJSONSync(path.join(selectionsPath, newSelection.modifiedTimestamp.replace(/[:"]/g, '_')) + ".json", newSelection);
+      const store = mockStore(initialState);
+      const results = {};
+      const expectedSelectionsChanged = true;
 
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(cleanOutDates(actions)).toMatchSnapshot();
-    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
-  });
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
 
-  it('"servant of God" selection with footnote not edited', () => {
-    // given
-    const targetVerse =  "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = false;
-
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
-
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(cleanOutDates(actions)).toMatchSnapshot();
-    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
-  });
-
-  it('"servant of God" selection with footnote and edited', () => {
-    // given
-    const targetVerse =  "Paul, a servan of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = true;
-
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
-
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(cleanOutDates(actions)).toMatchSnapshot();
-    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
-  });
-
-  it('all selections edited', () => {
-    // given
-    const targetVerse =  "";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = true;
-
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, null, null, null, true, results));
-
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(cleanOutDates(actions)).toMatchSnapshot();
-    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
-  });
-
-  it('all selections edited current context', () => {
-    // given
-    const targetVerse =  "";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = true;
-
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, initialState.contextIdReducer.contextId,
-      null, null, true, results));
-
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(cleanOutDates(actions)).toMatchSnapshot();
-    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
-  });
-
-  it('all selections edited from different verse context', () => {
-    // given
-    const targetVerse = "";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
-    initialState.contextIdReducer.contextId.reference.verse = "4";
-    initialState.contextIdReducer.contextId.groupId = "faith";
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = true;
-
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, contextId, null, null, true, results));
-
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(cleanOutDates(actions)).toMatchSnapshot();
-  });
-
-  it('all selections edited from different verse context - no warning', () => {
-    // given
-    const targetVerse = "";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const initialState = getInitialStateData(bookId, projectPath);
-    initialState.selectionsReducer = selectionsReducer;
-    const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
-    initialState.contextIdReducer.contextId.reference.verse = "4";
-    initialState.contextIdReducer.contextId.groupId = "faith";
-    const store = mockStore(initialState);
-    const results = {};
-    const expectedSelectionsChanged = true;
-
-    // when
-    store.dispatch(SelectionsActions.validateSelections(targetVerse, contextId, null, null, false, results));
-
-    // then
-    expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
-    const actions = store.getActions();
-    expect(cleanOutDates(actions)).toMatchSnapshot();
+      // then
+      expect(results.selectionsChanged).toEqual(expectedSelectionsChanged);
+      const actions = store.getActions();
+      expect(cleanOutDates(actions)).toMatchSnapshot();
+      expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+    });
   });
 });
 
@@ -388,7 +443,7 @@ function cleanOutDates(actions) {
   return cleanedActions;
 }
 
-function getInitialStateData(bookId, projectPath) {
+function getInitialStateData(bookId, projectPath, tool = 'translationWords') {
   const contextId = {
     reference: {
       bookId: bookId,
@@ -396,7 +451,9 @@ function getInitialStateData(bookId, projectPath) {
       verse: 1
     },
     groupId: 'apostle',
-    tool: 'translationWords'
+    quote: "ἀποστόλων",
+    occurrence: 1,
+    tool
   };
   const groupsDataReducer = fs.readJSONSync(path.join(projectPath, 'groupsDataReducer.json'));
   const groupsIndexReducer = fs.readJSONSync(path.join(projectPath, 'groupsIndexReducer.json'));
@@ -406,7 +463,7 @@ function getInitialStateData(bookId, projectPath) {
     groupsDataReducer,
     groupsIndexReducer,
     toolsReducer: {
-      selectedTool: 'translationWords'
+      selectedTool: tool
     },
     loginReducer: {
       loggedInUser: false,
