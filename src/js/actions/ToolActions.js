@@ -43,6 +43,7 @@ export const loadTools = (toolsDir) => (dispatch) => {
  */
 export const openTool = (name) => (dispatch, getData) => {
   const translate = getTranslate(getData());
+  console.log("openTool(" + name + ")");
 
   dispatch(ModalActions.showModalContainer(false));
   dispatch({ type: types.START_LOADING });
@@ -78,7 +79,7 @@ export const openTool = (name) => (dispatch, getData) => {
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));
     } catch (e) {
-      console.warn(e);
+      console.warn("openTool()", e);
       AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));
     }
   }, 100);

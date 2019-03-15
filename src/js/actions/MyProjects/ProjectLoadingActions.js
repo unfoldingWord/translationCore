@@ -52,6 +52,7 @@ export const openProject = (name, skipValidation=false) => {
   return async (dispatch, getState) => {
     const projectDir = path.join(PROJECTS_PATH, name);
     const translate = getTranslate(getState());
+    console.log("openProject() projectDir=" + projectDir);
 
     try {
       dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
@@ -73,8 +74,10 @@ export const openProject = (name, skipValidation=false) => {
 
       // TRICKY: validation may have changed the project path
       const validProjectDir = getProjectSaveLocation(getState());
+      console.log("openProject() validProjectDir=" + validProjectDir);
 
       // load target book
+      console.log("openProject() - loading target book");
       dispatch(loadTargetLanguageBook());
 
       // connect the tools
@@ -82,10 +85,12 @@ export const openProject = (name, skipValidation=false) => {
       const tools = getTools(getState());
       for (const t of tools) {
         // load source book translations
+        console.log(`openProject() - loading source book ${manifest.project.id} into ${t.name}`);
         await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
+        console.log("openProject() - copy group data");
         copyGroupDataToProject("grc", t.name, validProjectDir);
 
         // select default categories
@@ -93,14 +98,16 @@ export const openProject = (name, skipValidation=false) => {
         setDefaultProjectCategories(language, t.name, validProjectDir);
 
         // connect tool api
+        console.log("openProject() - connect tool api");
         const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
         t.api.triggerWillConnect(toolProps);
       }
 
       await dispatch(displayTools());
+      console.log("openProject() - project opened");
     } catch (e) {
       // TODO: clean this up
-      if (e.type !== 'div') console.warn(e);
+      if (e.type !== 'div') console.warn("openProject() error", e);
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
       dispatch(closeProject());

@@ -28,21 +28,27 @@ export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
       /** Check project for merge conflicts */
+      console.log("exportToUSFM(" + projectPath + ")");
       const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
       let projectName = exportHelpers.getUsfmExportName(manifest);
       try {
+        console.log("exportToUSFM() - checking for merge conflict");
         await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
+        console.log("exportToUSFM() - prompting for export options");
         /** Will be 'usfm2' if no alignments else takes users choice */
         const exportType = await dispatch(getExportType(projectPath));
         //Running migrations before exporting to attempt to fix any invalid alignments/usfm
         migrateProject(projectPath, null, getUsername(getState()));
         dispatch(BodyUIActions.dimScreen(true));
         let usfmExportFile;
+        console.log("exportToUSFM() - loading USFM");
         dispatch(displayLoadingUSFMAlert(manifest));
         setTimeout(async () => {
           if (exportType === 'usfm2') {
+            console.log("exportToUSFM() - getting USFM2");
             usfmExportFile = getUsfm2ExportFile(projectPath);
           } else if (exportType === 'usfm3') {
+            console.log("exportToUSFM() - getting USFM3");
             /** Exporting to usfm3 also checking for invalidated alignments */
             usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
           }
@@ -50,16 +56,20 @@ export function exportToUSFM(projectPath) {
           /** Last place the user saved usfm */
           const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
           /** File path from electron file chooser */
+          console.log("exportToUSFM() - getting output file path");
           const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
           /** Getting new project name to save in case the user changed the save file name */
           projectName = path.parse(filePath).base.replace('.usfm', '');
           /** Saving the location for future exports */
           dispatch(storeUSFMSaveLocation(filePath, projectName));
+          console.log("exportToUSFM() - writing usfm to: " + filePath);
           fs.writeFileSync(filePath, usfmExportFile);
           dispatch(displayUSFMExportFinishedDialog(projectName));
+          console.log("exportToUSFM() - USFM export finished");
           resolve();
         }, 200);
       } catch (err) {
+        console.log("exportToUSFM() - ERROR:", err);
         if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
         reject(err);
       }
