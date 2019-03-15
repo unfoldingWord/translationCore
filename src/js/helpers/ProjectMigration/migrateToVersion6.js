@@ -32,6 +32,7 @@ const shouldRun = (projectPath) => {
  * @return {null}
  */
 const run = (projectPath) => {
+  console.log("migrateToVersion6(" + projectPath + ")");
   migrateToVersion6(projectPath);
   Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };
