@@ -140,8 +140,10 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
 };
 
 /**
- * Updates a verse in the target bible.
- * This thunk will record the edit to the disk and update the target bible resource.
+ * This is a called by tool when a verse has been edited.  It updates group data reducer for current tool
+ *   and updates file system for tools not loaded.
+ * This will first do TW selections validation and prompt user if invalidations are found.
+ * Then it calls updateVerseEditStatesAndCheckAlignments to saving verse edits and then validate alignments.
  *
  * @param {int} chapterWithVerseEdit
  * @param {int|string} verseWithVerseEdit
