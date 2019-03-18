@@ -1,6 +1,5 @@
 import path from "path-extra";
 import fs from "fs-extra";
-import {tNotesCategories} from "tsv-groupdata-parser";
 
 const PROJECT_TC_DIR = ".apps/translationCore/";
 
@@ -40,6 +39,7 @@ export default class ProjectAPI {
     this.getGroupsData = this.getGroupsData.bind(this);
     this.getGroupData = this.getGroupData.bind(this);
     this.setCategoryGroupIds = this.setCategoryGroupIds.bind(this);
+    this.getAllCategoryMapping = this.getAllCategoryMapping.bind(this);
   }
 
   /**
@@ -265,6 +265,26 @@ export default class ProjectAPI {
     return [];
   }
 
+  getAllCategoryMapping(toolName) {
+    const parentCategoriesObject = {};
+    const indexPath = path.join(this.getCategoriesDir(toolName),
+      ".categoryIndex");
+    if (fs.pathExistsSync(indexPath)) {
+      try {
+        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
+        parentCategories.forEach((category) => {
+          const subCategoryPath = path.join(this.getCategoriesDir(toolName),
+            ".categoryIndex", `${category}.json`);
+          const arrayOfSubCategories = fs.readJSONSync(subCategoryPath);
+          parentCategoriesObject[category] = arrayOfSubCategories;
+        })
+      } catch (e) {
+        console.error(`Failed to read the category index at ${indexPath}`, e);
+      }
+    }
+    return parentCategoriesObject;
+  }
+
   /**
    * Returns an array of categories that have been selected for the given tool.
    * @param toolName - The tool name. This is synonymous with translationHelp name
@@ -279,13 +299,14 @@ export default class ProjectAPI {
         if (withParent) {
           let objectWithParentCategories = {};
           const subCategories = data.current;
-          subCategories.forEach((subCategorie) => {
-            Object.keys(tNotesCategories).forEach((categoryName) => {
-              if (tNotesCategories[categoryName][subCategorie]) {
+          subCategories.forEach((subCategory) => {
+            const parentCategoryMapping = this.getAllCategoryMapping(toolName);
+            Object.keys(parentCategoryMapping).forEach((categoryName) => {
+              if (parentCategoryMapping[categoryName].includes(subCategory)) {
                 //Sub categorie name is contained in this parent
                 if (!objectWithParentCategories[categoryName])
                   objectWithParentCategories[categoryName] = [];
-                objectWithParentCategories[categoryName].push(subCategorie);
+                objectWithParentCategories[categoryName].push(subCategory);
               }
             })
           });
