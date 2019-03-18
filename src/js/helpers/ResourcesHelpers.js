@@ -50,13 +50,13 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
       categories[category].forEach((subCategory) => {
         const dataPath = path.join(groupsDir, subCategory + '.json');
         project.importCategoryGroupData(toolName, dataPath);
-      })
+      });
       // TRICKY: gives the tool an index of which groups belong to which category
       project.setCategoryGroupIds(toolName, category, categories[category]);
       // loading complete
       categories[category].forEach((subCategory) => {
         project.setCategoryLoaded(toolName, subCategory);
-      })
+      });
     });
   } else {
     // generate chapter-based group data
@@ -136,7 +136,7 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
     });
     parentCategories.forEach((subCategory) => {
       categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
-    })
+    });
     if (categories.length > 0) {
       project.setSelectedCategories(toolName, categories);
     }

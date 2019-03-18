@@ -1,50 +1,211 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should have three boxes unchecked 1`] = `
+exports[`translationNotes should have many boxes unchecked 1`] = `
 <div
   style={
     Object {
-      "marginLeft": "6%",
+      "margin": "0 2% 0 6%",
     }
   }
 >
   <div
     style={
       Object {
-        "alignItems": "center",
         "display": "flex",
-        "marginBottom": 5,
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
       }
     }
   >
-    <div>
-      Key Terms
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      />
+      <div>
+        tool_card_categories.cultural
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-chevron-down"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
     </div>
   </div>
   <div
     style={
       Object {
-        "alignItems": "center",
         "display": "flex",
-        "marginBottom": 5,
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
       }
     }
   >
-    <div>
-      Other Terms
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      />
+      <div>
+        tool_card_categories.figures
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-chevron-down"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
     </div>
   </div>
   <div
     style={
       Object {
-        "alignItems": "center",
         "display": "flex",
-        "marginBottom": 5,
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
       }
     }
   >
-    <div>
-      Names
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      />
+      <div>
+        tool_card_categories.lexical
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-chevron-down"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      />
+      <div>
+        tool_card_categories.morphological
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-chevron-down"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
     </div>
   </div>
 </div>

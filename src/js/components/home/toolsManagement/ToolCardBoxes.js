@@ -107,9 +107,11 @@ class ToolCardBoxes extends React.Component {
   render() {
     const {availableCategories = {}, toolName, selectedCategories, onChecked, translate} = this.props;
     const lookupNames = flattenNotesCategories();
+console.log("expanded: ", this.state.expanded);
     return (
       <div style={{margin: '0 2% 0 6%'}}>
         {
+
           Object.keys(availableCategories).map((parentCategory, index) => {
             return availableCategories[parentCategory].length > 0 &&
             //TBD BMS only showing tN categories
@@ -121,7 +123,7 @@ class ToolCardBoxes extends React.Component {
                       {localCheckBox(selectedCategories, parentCategory, toolName, onChecked, availableCategories[parentCategory])}
                     </div>
                     <div>
-                      {translate(lookupNames[parentCategory]) /* label */}
+                      { translate(lookupNames[parentCategory])   /* category label */ }
                     </div>
                   </div>
                   <React.Fragment>
@@ -147,7 +149,7 @@ class ToolCardBoxes extends React.Component {
                           <div style={{display: 'flex', width: '48%'}} key={index} >
                             <div style={{marginLeft: '36px', width: '38px'}}>
                               {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}</div>
-                            <div>{translate(lookupNames[postPart(subcategory)])}</div>
+                            <div>{ translate(lookupNames[postPart(subcategory)]) }</div>
                           </div>
                         ))
                         }
