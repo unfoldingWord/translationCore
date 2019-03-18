@@ -59,15 +59,6 @@ export const updateCheckSelection = (id, value, toolName) => {
     const previousSelectedCategories = getToolCategories(state, toolName);
     const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
 
-    // TRICKY: tools with categories must have a selection.
-    if (selectedCategories.length === 0) {
-
-      // default to available
-      if (availableCheckCategories.length > 0) {
-        [].push.apply(selectedCategories, availableCheckCategories);
-      }
-    }
-
     dispatch(setCategories(selectedCategories, toolName));
     dispatch(getProjectProgressForTools(toolName));
     const project = new ProjectAPI(getProjectSaveLocation(state));
