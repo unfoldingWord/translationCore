@@ -1,27 +1,32 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from "ospath";
 import csv from 'csv';
 // helpers
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 import ResourceAPI from "./ResourceAPI";
-
-const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tcResources', 'en', 'translationHelps');
+// constants
+export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");
+const tHelpsPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
+const testThelpsPath = path.join('__tests__', 'fixtures', 'resources', 'en', 'translationHelps');
 let tWIndex = [];
 let tNIndex = [];
 
-/**
- * To prevent these files from being read in for every groupName lookup, read them in once.
- * @return {undefined}
- */
-function cacheIndicies() {
+ /**
+  * To prevent these files from being read in for every groupName lookup, read them in once.
+  * @param {string} isTest - for unit tests purposes
+  * @return {undefined}
+  */
+function cacheIndicies(isTest) {
   // skip loading if indicies have already been loaded
   if(tWIndex.length > 0 || tNIndex.length > 0) {
     return;
   }
 
   // load tW index
-  const tWpath = path.join(tHelpsPath, 'translationWords');
+  const thPath = isTest ? testThelpsPath : tHelpsPath;
+  const tWpath = path.join(thPath, 'translationWords');
   let tWversionPath = ResourceAPI.getLatestVersion(tWpath) || tWpath;
   const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
   const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
@@ -64,14 +69,14 @@ export function combineData(data, contextId, username, timestamp) {
 /**
  * @description - flattens the context id for csv usage
  * @param {object} contextId - contextID object that needs to go onto the csv row
- * @param {array} indexObject - Array of index.json with {id, name} keys
+ * @param {string} isTest - for unit tests purposes
  * @return {object}
  */
-export const flattenContextId = (contextId) => {
+export const flattenContextId = (contextId, isTest) => {
   const flatContextId = {
     tool: contextId.tool,
     groupId: contextId.groupId,
-    groupName: groupName(contextId),
+    groupName: groupName(contextId, isTest),
     occurrence: contextId.occurrence,
     quote: contextId.quote,
     bookId: contextId.reference.bookId,
@@ -85,9 +90,10 @@ export const flattenContextId = (contextId) => {
  * @description - Returns the corresponding group name i.e. Metaphor
  * given the group id such as figs_metaphor
  * @param {Object} contextId - context id to get toolName and groupName
+ * @param {string} isTest - for unit tests purposes
  */
-export const groupName = (contextId) => {
-  cacheIndicies();
+export const groupName = (contextId, isTest) => {
+  cacheIndicies(isTest);
 
   let indexArray;
   let {tool, groupId} = contextId;
