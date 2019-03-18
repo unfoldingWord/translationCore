@@ -1,4 +1,4 @@
-import Repo, { readGitDir } from "../Repo";
+import Repo, { isMatched, readGitDir } from "../Repo";
 import path from "path-extra";
 import fs from "fs-extra";
 
@@ -35,6 +35,21 @@ describe("static methods", () => {
     const dir = path.join(__dirname, "../../../../"); // use this repo as a benchmark
     expect(await Repo.isRepo(dir)).toEqual(true);
     expect(await Repo.isRepo("missing")).toEqual(false);
+  });
+
+  it("checks if a string matches expressions", () => {
+    const result = isMatched("/path/to/contextId.json", [".*/contextId.json"]);
+    expect(result).toBeTruthy();
+  });
+
+  it("checks if a string matches path", () => {
+    const result = isMatched("/path/to/contextId.json", ["/path/to/contextId.json"]);
+    expect(result).toBeTruthy();
+  });
+
+  it("checks if a string does not match an expression", () => {
+    const result = isMatched("/path/to/contextId.json", ["/something.json"]);
+    expect(result).not.toBeTruthy();
   });
 });
 

@@ -8,6 +8,7 @@ git.plugins.set("fs", fs);
 
 const projectRegExp = new RegExp(
   /^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
+let doingSave = false;
 
 /**
  * Generates credentials from the user object
@@ -23,6 +24,21 @@ function makeCredentials(user) {
     };
   }
   return {};
+}
+
+/**
+ * Checks if a string matches any of the expressions
+ * @param {string} string - the string to compare
+ * @param {array} expressions - an array of expressions to compare against the string
+ * @returns {boolean} true if any of the expressions match the string
+ */
+export function isMatched(string, expressions) {
+  for(const expr of expressions) {
+    if(expr === string || new RegExp(expr).exec(string)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
@@ -253,6 +269,49 @@ export default class Repo {
   }
 
   /**
+   * Lists all files in the git repo including ones that have been removed but not committed yet.
+   * @returns {Promise<string>}
+   */
+  async list() {
+    // files that git knows about
+    const stagedFiles = await git.listFiles({
+      dir: this.dir
+    });
+    // files that git may not know about
+    const paths = await readGitDir(this.dir);
+
+    // merge lists
+    for (let i = 0, len = stagedFiles.length; i < len; i++) {
+      if (paths.indexOf(stagedFiles[i]) === -1) {
+        paths.push(stagedFiles[i]);
+      }
+    }
+    return paths;
+  }
+
+  /**
+   * Checks if there are any file changes.
+   * Paths can be ignored from this check which is helpful for constantly changing files like the current context id.
+   * WARNING: this will be slow if you have lots of files
+   * @param {array} [ignored=[]] - an array of path expressions that will excluded from the check.
+   * @returns {Promise<string>} the status
+   */
+  async isDirty(ignored = []) {
+    const paths = await this.list();
+    for (let i = 0, size = paths.length; i < size; i++) {
+      if(isMatched(paths[i], ignored)) {
+        // skip ignored paths
+        continue;
+      }
+      const status = await this.status(paths[i]);
+      if (["unmodified", "ignored"].indexOf(status) === -1) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
    * Removes a named remote from this repo.
    * @param {string} [name="origin"] - the locale remote alias
    * @return {Promise<void>}
@@ -285,7 +344,8 @@ export default class Repo {
   }
 
   /**
-   * Adds a file to the git index
+   * Adds a file to the git index.
+   * If the file has been deleted it will be removed from the index.
    * @param {string} filepath - the relative path to the file being added.
    * @returns {Promise<void>}
    */
@@ -297,13 +357,38 @@ export default class Repo {
   }
 
   /**
-   * Adds all files to the git index
+   * Removes a file from the git index.
+   * This will not delete a file from the disk.
+   * @param {string} filepath - the relative path to the file being removed
    * @returns {Promise<void>}
    */
-  async addAll() {
-    const paths = await readGitDir(this.dir);
-    for (let i = 0, size = paths.length; i < size; i++) {
-      await this.add(paths[i]);
+  async remove(filepath) {
+    await git.remove({
+      dir: this.dir,
+      filepath
+    });
+  }
+
+  /**
+   * Retrieves the status of a file.
+   * If there are no commits in the repo this will assume the file has been added but not staged.
+   * @param {string} filepath - the relative path of the file to stat.
+   * @returns {Promise<string>}
+   */
+  async status(filepath) {
+    try {
+      return await git.status({
+        dir: this.dir,
+        filepath
+      });
+    } catch(e) {
+      if(e.code === "ResolveRefError") {
+        // TRICKY: if there are no commits we get a ref error
+        return "*added";
+      } else {
+        // raise unhandled error
+        throw e;
+      }
     }
   }
 
@@ -327,7 +412,42 @@ export default class Repo {
    * @return {Promise<void>}
    */
   async save(message) {
-    await this.addAll();
-    await this.commit(message, makeAuthor(this.user));
+    doingSave = true;
+    try {
+      // remove deleted files
+      const stagedFiles = await git.listFiles({
+        dir: this.dir
+      });
+
+      for (let i = 0, len = stagedFiles.length; i < len; i++) {
+        const filePath = path.join(this.dir, stagedFiles[i]);
+        const deleted = !fs.existsSync(filePath);
+        if (deleted) {
+          await this.remove(stagedFiles[i]);
+        }
+      }
+
+      // add all modifications and new files
+      await this.add(".");
+      // commit staged files
+      await this.commit(message, makeAuthor(this.user));
+    } catch(e) {
+      throw(e);
+    } finally {
+      doingSave = false;
+    }
+  }
+
+  /**
+   * Similar to save, but prevents overlapping saves
+   * @param {string} message - the commit message
+   * @return {Promise<boolean>} true if save started
+   */
+  async saveDebounced(message) {
+    let startSave = !doingSave; // if already saving then we don't start
+    if (startSave) {
+      await this.save(message);
+    }
+    return startSave;
   }
 }

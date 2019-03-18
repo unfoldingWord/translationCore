@@ -43,6 +43,6 @@ describe('WordAlignmentActions.getUsfm3ExportFile', () => {
     const res = await store.dispatch(actions.getUsfm3ExportFile(projectPath, false, true));
     expect(reset_spy).toHaveBeenCalledTimes(8);
     expect(convert_spy).toHaveBeenCalledTimes(9);
-    expect(res.split('zaln-s').length).toBe(121);
+    expect(res.split('zaln-s').length).toBe(116);
   }, 10000);
 });

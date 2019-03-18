@@ -270,6 +270,7 @@ fs.writeFileSync = writeFileSync;
 fs.readFileSync = jest.fn(readFileSync);
 fs.writeJSONSync = outputJsonSync;
 fs.outputJsonSync = jest.fn(outputJsonSync);
+fs.outputJSONSync = jest.fn(outputJsonSync);
 fs.readJsonSync = jest.fn(readJsonSync);
 fs.readJSONSync = readJsonSync;
 fs.existsSync = jest.fn(existsSync);
