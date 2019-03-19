@@ -107,14 +107,12 @@ class ToolCardBoxes extends React.Component {
   render() {
     const {availableCategories = {}, toolName, selectedCategories, onChecked, translate} = this.props;
     const lookupNames = flattenNotesCategories();
-console.log("expanded: ", this.state.expanded);
+
     return (
       <div style={{margin: '0 2% 0 6%'}}>
         {
-
           Object.keys(availableCategories).map((parentCategory, index) => {
             return availableCategories[parentCategory].length > 0 &&
-            //TBD BMS only showing tN categories
               tNotesCategories[parentCategory] || toolName == 'translationWords' ?
               (
                 <div style={{display: 'flex', flexWrap: 'wrap', margin: '0 0 5 0', width: '100%'}} key={index}>

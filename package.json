@@ -132,6 +132,7 @@
     "dotenv": "6.2.0",
     "electron-compile": "^6.4.4",
     "electron-prebuilt-compile": "^4.0.0",
+    "enzyme-to-json": "^3.3.5",
     "follow-redirects": "1.2.5",
     "fs-extra": "4.0.3",
     "gogs-client": "0.5.2",
