@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories, getCurrentProjectToolsSelectedGL} from "../selectors";
+import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ResourcesActions from './ResourcesActions';
 // helpers
@@ -37,7 +37,7 @@ export const loadCurrentCheckCategories = (toolName, projectSaveLocation, curren
     Object.keys(availableCheckCategoriesObject)
       .forEach((parentCategory) => {
         availableCheckCategories.push(...availableCheckCategoriesObject[parentCategory]);
-      })
+      });
     let subCategories = project.getSelectedCategories(toolName);
     subCategories = subCategories.filter((category) => availableCheckCategories.includes(category));
     dispatch(setCategories(subCategories, toolName));

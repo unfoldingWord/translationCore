@@ -5,7 +5,7 @@ import ospath from "ospath";
 import AdmZip from "adm-zip";
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
-import { getValidGatewayBiblesForTool, getGlRequirementsForTool } from "./gatewayLanguageHelpers";
+import { getValidGatewayBiblesForTool } from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from "./SettingsHelpers";
 import {
   getContext,
@@ -50,13 +50,13 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
       categories[category].forEach((subCategory) => {
         const dataPath = path.join(groupsDir, subCategory + '.json');
         project.importCategoryGroupData(toolName, dataPath);
-      })
+      });
       // TRICKY: gives the tool an index of which groups belong to which category
       project.setCategoryGroupIds(toolName, category, categories[category]);
       // loading complete
       categories[category].forEach((subCategory) => {
         project.setCategoryLoaded(toolName, subCategory);
-      })
+      });
     });
   } else {
     // generate chapter-based group data
@@ -97,7 +97,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
       // TRICKY: some helps do not have groups nested under categories
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
       const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
-      const groupsDir = resourceCategoryDir;
+      let groupsDir = resourceCategoryDir;
       if (!fs.pathExistsSync(resourceCategoryDir)) {
         groupsDir = altResourceCategoryDir;
       }
@@ -135,7 +135,7 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
     });
     parentCategories.forEach((subCategory) => {
       categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
-    })
+    });
     if (categories.length > 0) {
       project.setSelectedCategories(toolName, categories);
     }

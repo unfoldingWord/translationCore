@@ -7,7 +7,7 @@ import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
 import * as ProjectInformationCheckActions from "../actions/ProjectInformationCheckActions";
 import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
-import {getTranslate, getTools} from "../selectors";
+import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import * as manifestHelpers from "./manifestHelpers";
@@ -17,23 +17,6 @@ import ResourceAPI from "./ResourceAPI";
 //import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
-/**
- * get intersection of possible categories and categories found in selected project
- * 
- * @param {*} currentProjectToolsSelectedGL - different list for each tool
- * @param {*} bookId - categories are based on project 
- */
-export function getAvailableCheckCategories(currentProjectToolsSelectedGL, bookId) {
-  // where to look for categories  
-    /* resources/<lang>/translationHelps/translationsNotes/<version>/<categories not other>/groups/<book>/<group>.json */
-     const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
-    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-    const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
-    if (fs.existsSync(versionDirectory)) {
-      
-    }
-}
 
 /**
  * function to make the change in the array based on the passed params

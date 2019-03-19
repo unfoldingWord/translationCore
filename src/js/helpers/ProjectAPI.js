@@ -277,7 +277,7 @@ export default class ProjectAPI {
             ".categoryIndex", `${category}.json`);
           const arrayOfSubCategories = fs.readJSONSync(subCategoryPath);
           parentCategoriesObject[category] = arrayOfSubCategories;
-        })
+        });
       } catch (e) {
         console.error(`Failed to read the category index at ${indexPath}`, e);
       }
@@ -308,9 +308,9 @@ export default class ProjectAPI {
                   objectWithParentCategories[categoryName] = [];
                 objectWithParentCategories[categoryName].push(subCategory);
               }
-            })
+            });
           });
-          return objectWithParentCategories
+          return objectWithParentCategories;
         } else {
           return data.current;
         }
