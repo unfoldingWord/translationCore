@@ -132,7 +132,7 @@ export const openProject = (name, skipValidation=false) => {
 function makeToolProps(dispatch, state, projectDir, bookId) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
-  const resourceApi = ResourceAPI
+  const resourceApi = ResourceAPI;
   const {code} = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);

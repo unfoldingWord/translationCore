@@ -5,7 +5,7 @@ import ospath from "ospath";
 import AdmZip from "adm-zip";
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
-import { getValidGatewayBiblesForTool, getGlRequirementsForTool } from "./gatewayLanguageHelpers";
+import { getValidGatewayBiblesForTool } from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from "./SettingsHelpers";
 import {
   getContext,

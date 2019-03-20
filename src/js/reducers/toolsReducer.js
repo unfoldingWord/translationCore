@@ -86,7 +86,7 @@ export const getToolsByKey = state => {
      Object.keys(state.tools.byObject).forEach((index) => {
       const toolApi = state.tools.byObject[index];
       obj[toolApi.name] = toolApi;
-    })
+    });
     return obj;
   } else {
     return {};
