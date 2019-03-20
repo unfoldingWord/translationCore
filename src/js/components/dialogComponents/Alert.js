@@ -99,7 +99,9 @@ class Alert extends Component {
               <tr>
                 <td>
                   <img className={alertDialogLoading ? 'App-logo' : ''}
-                       src="./images/TC_Icon.png" height="100px"
+                       src="./images/TC_Icon.png"
+                       height="100px"
+                       width="90px"
                        style={{margin: '25px 20px 0px 55px'}}/>
                 </td>
                 <td>

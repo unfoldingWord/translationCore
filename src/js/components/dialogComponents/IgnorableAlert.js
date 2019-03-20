@@ -55,6 +55,7 @@ class IgnorableAlert extends React.Component {
           <img
             src={logoPath}
             height="100px"
+            width="115px"
             alt="translationCore Logo"
             style={{ paddingRight: padding }}
           />
