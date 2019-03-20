@@ -20,6 +20,8 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
         if (!manifest.target_language.book ||
             typeof manifest.target_language.book.name !== 'string' ||
             manifest.target_language.book.name.length === 0) {
+          console.log("migrateToAddTargetLanguageBookName(" + projectPath + ")");
+
           const titlePath = path.join(projectPath, 'front', 'title.txt');
           const titleAlternatePath = path.join(projectPath, '00', 'title.txt');
           const titleThirdPath = path.join(projectPath, '.apps', 'translationCore', 'importedSource', 'front', 'title.txt');

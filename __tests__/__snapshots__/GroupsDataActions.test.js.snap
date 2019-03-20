@@ -78,7 +78,10 @@ Array [
   },
   Object {
     "alertMessage": "tools.selections_invalidated",
-    "type": "OPEN_ALERT_DIALOG",
+    "buttonLinkText": null,
+    "callback": null,
+    "callback2": null,
+    "type": "OPEN_OPTION_DIALOG",
   },
 ]
 `;
@@ -123,7 +126,10 @@ Array [
   },
   Object {
     "alertMessage": "tools.selections_invalidated",
-    "type": "OPEN_ALERT_DIALOG",
+    "buttonLinkText": null,
+    "callback": null,
+    "callback2": null,
+    "type": "OPEN_OPTION_DIALOG",
   },
 ]
 `;
