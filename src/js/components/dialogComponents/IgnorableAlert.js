@@ -51,9 +51,8 @@ class IgnorableAlert extends React.Component {
           <img
             src={`data:image/png;base64,${logoData}`}
             height="100px"
-            width="90px"
             alt="translationCore Logo"
-            style={{ marginRight: padding }}
+            style={{ paddingRight: padding }}
           />
 
           <div style={{ color: 'var(--text-color-dark)', flexGrow: 1 }}>
