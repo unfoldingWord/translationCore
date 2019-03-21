@@ -9,6 +9,57 @@ import * as OnlineModeConfirmActions from "./OnlineModeConfirmActions";
 import * as WordAlignmentActions from "./WordAlignmentActions";
 // helpers
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+import {delay} from "../helpers/bodyUIHelpers";
+
+/**
+ * prepare project for upload. Initialize git if necessary and then commit changes to git
+ * @param {String} user
+ * @param {String} projectName
+ * @param {String} projectPath
+ * @return {Promise<Repo>}
+ */
+async function prepareProjectRepo(user, projectName, projectPath) {
+  let repo;
+  try {
+    console.log("uploadProject: Creating Repo");
+    const remoteRepo = await GogsApiHelpers.createRepo(user,
+      projectName);
+    console.log("uploadProject: Creating Repo Owner URL");
+    const remoteUrl = GogsApiHelpers.getRepoOwnerUrl(user,
+      remoteRepo.name);
+    console.log("uploadProject: Found remote Repo: " + (remoteRepo.name || "FAILED"));
+
+    repo = await Repo.open(projectPath, user);
+    await repo.addRemote(remoteUrl, "origin");
+    console.log("uploadProject: saving changes to git");
+    await repo.save("Commit before upload");
+  } catch (err) {
+    console.error("Error Preparing Repo", err);
+    throw(err);
+  }
+  return repo;
+}
+
+/**
+ * push repo to Door43 and catch errors
+ * @param {Repo} repo
+ * @return {Promise<*>}
+ */
+async function pushProjectRepo(repo) {
+  console.log("uploadProject: pushing git changes to remote");
+  let response = null;
+  try {
+    response = await repo.push("origin");
+  } catch (err) { // new isomorphic-git wrapper throws exceptions on errors rather than returning response
+    console.error("push ERROR", err);
+    if (err.errors) { // expected upload error type
+      response = err; // will handle
+    } else {
+      throw(err); // don't handle unexpected error here
+    }
+  }
+  return response;
+}
 
 /**
  * Upload project to door 43, based on currently logged in user.
@@ -21,12 +72,15 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
   return (dispatch, getState) => {
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
+      console.log("uploadProject: attempting to upload: " + projectPath);
       // if no Internet connection is found then alert the user and stop upload process
       if (!onLine) {
         dispatch(AlertModalActions.openAlertDialog(translate("no_internet")));
         resolve();
       } else if (!user.localUser) {
         dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          await delay(500); // for screen to update
           const projectName = projectPath.split(path.sep).pop();
           try {
             if (!user.token) {
@@ -34,30 +88,27 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
               return dispatch(
                 AlertModalActions.openAlertDialog(message, false));
             }
+            await delay(500);
+            dispatch(showStatus(translate("projects.loading_project_alert")));
+            await delay(500);
+            console.log("uploadProject: saving alignments");
             const filePath = path.join(projectPath, projectName + ".usfm");
             await dispatch(
               WordAlignmentActions.getUsfm3ExportFile(projectPath, filePath));
+            const repo = await prepareProjectRepo(user, projectName, projectPath);
             const message = translate("projects.uploading_alert",
               { project_name: projectName, door43: translate("_.door43") });
-            dispatch(AlertModalActions.openAlertDialog(message, true));
-            const remoteRepo = await GogsApiHelpers.createRepo(user,
-              projectName);
-            const remoteUrl = GogsApiHelpers.getRepoOwnerUrl(user,
-              remoteRepo.name);
-
-            const repo = await Repo.open(projectPath, user);
-            await repo.addRemote(remoteUrl, "origin");
-            await repo.save("Commit before upload");
-
-            const response = await repo.push("origin");
+            dispatch(showStatus(message));
+            let response = await pushProjectRepo(repo);
             if (response.errors && response.errors.length) {
               // Handle innocuous errors.
-              console.error(response);
+              console.error("uploadProject: push failed", response);
               dispatch(AlertModalActions.openAlertDialog(
                 translate("projects.uploading_error",
                   { error: response.errors })));
 
             } else {
+              console.log("uploadProject: upload success");
               const userDcsUrl = GogsApiHelpers.getUserDoor43Url(user,
                 projectName);
               dispatch(
@@ -83,7 +134,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             }
           } catch (err) {
             // handle server and networking errors
-            console.error(err);
+            console.error("uploadProject ERROR", err);
             if (err.status === 401 || err.code === "ENOTFOUND" ||
               err.toString().includes("connect ETIMEDOUT") ||
               err.toString().includes("INTERNET_DISCONNECTED") ||
@@ -111,6 +162,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           }
         }));
       } else {
+        console.warn("uploadProject: User not logged in");
         const message = translate("projects.must_be_logged_in_alert",
           { door43: translate("_.door43") });
         dispatch(AlertModalActions.openAlertDialog(message));
@@ -119,3 +171,10 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
     });
   };
 }
+
+export const showStatus = async (message) => {
+  return (async (dispatch) => {
+    dispatch(AlertModalActions.openAlertDialog(message, true));
+    await delay(500);
+  });
+};

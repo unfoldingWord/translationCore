@@ -23,6 +23,7 @@ const shouldRun = () => {
  * these need to be migrated to the new workflow of having them hidden
  */
 const run = (projectPath) => {
+  console.log("migrateAppsToDotApps(" + projectPath + ")");
   let projectDir = fs.readdirSync(projectPath);
   if (projectDir.includes('apps') && projectDir.includes('.apps')) {
     fs.removeSync(path.join(projectPath, '.apps'));
