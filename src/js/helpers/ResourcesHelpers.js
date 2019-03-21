@@ -84,6 +84,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
   }
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   // list help categories
+  
   if (helpDir) {
     const categories = fs.readdirSync(helpDir).filter(file => {
       return fs.lstatSync(path.join(helpDir, file)).isDirectory();
@@ -112,7 +113,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
       }
       categoriesObj[category] = subCategories;
     }
-  }
+  } 
   return categoriesObj;
 }
 
