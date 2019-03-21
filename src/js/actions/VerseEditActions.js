@@ -65,33 +65,58 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 };
 
 /**
- * after a delay it starts updating the verse edits for checks
- * @param {Object} contextId - contextId of verse being edited
+ * after a delay it starts updating the verse edit flags
+ * @param {{
+      verseBefore: String,
+      verseAfter: String,
+      tags: Array,
+      userName: String,
+      activeBook: String,
+      activeChapter: Number,
+      activeVerse: Number,
+      modifiedTimestamp: String,
+      gatewayLanguageCode: String,
+      gatewayLanguageQuote: String,
+      contextId: Object
+    }} verseEdit - record to be saved to file system if in WA tool
+ * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
+ * @param {Object} currentCheckContextId - contextId of group menu item selected
  * @return {function(*, *): Promise<T | never>}
  */
-export const backgroundUpdateVerseEditsForChecks = (contextId) => {
-  console.log("backgroundUpdateVerseEditsForChecks()");
+export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
+                                              currentCheckContextId) => {
+  console.log("doBackgroundVerseEditsUpdates()");
   return (dispatch, getState) => {
     return delay(1000).then( async () => { // wait till before updating
-      console.log("backgroundUpdateVerseEditsForChecks() - starting");
-      // in group data reducer set verse edit flag for every check of the verse edited
-      const matchedGroupData = getGroupDataForVerse(getState(), contextId);
-      const keys = Object.keys(matchedGroupData);
-      console.log("backgroundUpdateVerseEditsForChecks() - number of keys: " + keys.length);
+
+      console.log("doBackgroundVerseEditsUpdates() - recordTargetVerseEdit");
+      const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
+      const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
+      dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
+        verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
+        verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
       await delay(200);
-      for (let groupItemKey of keys) {
-        const groupItem = matchedGroupData[groupItemKey];
-        if (groupItem) {
-          for (let check of groupItem) {
-            dispatch({
-              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-              contextId: check.contextId
-            });
-            await delay(200);
+
+      if (getSelectedToolName(getState()) === 'translationWords') {
+        // in group data reducer set verse edit flag for every check of the verse edited
+        const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
+        const keys = Object.keys(matchedGroupData);
+        console.log("doBackgroundVerseEditsUpdates() - number of tw checks for verse: " + keys.length);
+        await delay(200);
+        for (let groupItemKey of keys) {
+          const groupItem = matchedGroupData[groupItemKey];
+          if (groupItem) {
+            for (let check of groupItem) {
+              dispatch({
+                type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+                contextId: check.contextId
+              });
+              await delay(200);
+            }
           }
         }
       }
-      console.log("backgroundUpdateVerseEditsForChecks() - finished");
+      console.log("doBackgroundVerseEditsUpdates() - finished");
     });
   };
 };
@@ -123,15 +148,10 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     console.log("updateVerseEditStatesAndCheckAlignments()");
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
-    console.log("updateVerseEditStatesAndCheckAlignments() - recordTargetVerseEdit");
-    dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
-        verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
-        verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
     console.log("updateVerseEditStatesAndCheckAlignments() - updateTargetVerse");
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
-    const selectedToolName = getSelectedToolName(getState());
-    if (selectedToolName === 'wordAlignment') {
+    if (getSelectedToolName(getState()) === 'wordAlignment') {
       // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
       dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
       // in group data reducer set verse edit flag for the verse edited
@@ -158,9 +178,8 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
         api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
       }
     }
-    if (selectedToolName === 'translationWords') {
-      dispatch(backgroundUpdateVerseEditsForChecks(contextIdWithVerseEdit));
-    }
+    dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
+                                           currentCheckContextId));
   };
 };
 
