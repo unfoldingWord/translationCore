@@ -70,6 +70,7 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
  * @return {function(*, *): Promise<T | never>}
  */
 export const backgroundUpdateVerseEditsForChecks = (contextId) => {
+  console.log("backgroundUpdateVerseEditsForChecks()");
   return (dispatch, getState) => {
     return delay(1000).then( async () => { // wait till before updating
       console.log("backgroundUpdateVerseEditsForChecks() - starting");
@@ -119,11 +120,14 @@ export const backgroundUpdateVerseEditsForChecks = (contextId) => {
 export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
                                                         currentCheckContextId) => {
   return (dispatch, getState) => {
+    console.log("updateVerseEditStatesAndCheckAlignments()");
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
+    console.log("updateVerseEditStatesAndCheckAlignments() - recordTargetVerseEdit");
     dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
         verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
         verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
+    console.log("updateVerseEditStatesAndCheckAlignments() - updateTargetVerse");
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
     const selectedToolName = getSelectedToolName(getState());
@@ -175,6 +179,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
  */
 export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, username = null) => {
   return async (dispatch, getState) => {
+    console.log("editTargetVerse()");
     const {
       contextIdReducer
     } = getState();
@@ -217,8 +222,11 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
 
     if (selectionsValidationResults.selectionsChanged) {
       dispatch(showSelectionsInvalidatedWarning(() => {
+        console.log("editTargetVerse() - clicked OK");
         dispatch(clearScreenAndContinue(() => {
+          console.log("editTargetVerse() - processing callback");
           dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
+          console.log("editTargetVerse() - DONE processing callback");
         }));
       }));
     } else {
@@ -231,7 +239,7 @@ export const clearScreenAndContinue = (callback) => {
   return async (dispatch) => {
     await delay(500); // wait for screen to update
     dispatch(AlertModalActions.closeAlertDialog());
-    await delay(1000); // wait for screen to update and close dialog
+    await delay(500); // wait for screen to update and close dialog
     callback();
   };
 };
