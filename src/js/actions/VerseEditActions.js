@@ -65,7 +65,8 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 };
 
 /**
- * after a delay it starts updating the verse edit flags
+ * after a delay it starts updating the verse edit flags.  There are also delays between operations
+ *   so we don't slow down UI interactions of user
  * @param {{
       verseBefore: String,
       verseAfter: String,
@@ -85,11 +86,9 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
  */
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                                               currentCheckContextId) => {
-  console.log("doBackgroundVerseEditsUpdates()");
   return (dispatch, getState) => {
     return delay(1000).then( async () => { // wait till before updating
 
-      console.log("doBackgroundVerseEditsUpdates() - recordTargetVerseEdit");
       const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
       const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
       dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
@@ -101,7 +100,6 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
         // in group data reducer set verse edit flag for every check of the verse edited
         const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
         const keys = Object.keys(matchedGroupData);
-        console.log("doBackgroundVerseEditsUpdates() - number of tw checks for verse: " + keys.length);
         await delay(200);
         for (let groupItemKey of keys) {
           const groupItem = matchedGroupData[groupItemKey];
@@ -116,7 +114,6 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
           }
         }
       }
-      console.log("doBackgroundVerseEditsUpdates() - finished");
     });
   };
 };
@@ -145,10 +142,8 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
 export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
                                                         currentCheckContextId) => {
   return (dispatch, getState) => {
-    console.log("updateVerseEditStatesAndCheckAlignments()");
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
-    console.log("updateVerseEditStatesAndCheckAlignments() - updateTargetVerse");
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
     if (getSelectedToolName(getState()) === 'wordAlignment') {
@@ -198,7 +193,6 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
  */
 export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, username = null) => {
   return async (dispatch, getState) => {
-    console.log("editTargetVerse()");
     const {
       contextIdReducer
     } = getState();
@@ -241,11 +235,8 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
 
     if (selectionsValidationResults.selectionsChanged) {
       dispatch(showSelectionsInvalidatedWarning(() => {
-        console.log("editTargetVerse() - clicked OK");
         dispatch(clearScreenAndContinue(() => {
-          console.log("editTargetVerse() - processing callback");
           dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
-          console.log("editTargetVerse() - DONE processing callback");
         }));
       }));
     } else {
