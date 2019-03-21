@@ -50,7 +50,7 @@ async function pushProjectRepo(repo) {
   let response = null;
   try {
     response = await repo.push("origin");
-  } catch (err) { // new isomorphic-git wrapper throws exceptions on errors rather than returning response
+  } catch (err) {
     console.error("push ERROR", err);
     if (err.errors) { // expected upload error type
       response = err; // will handle

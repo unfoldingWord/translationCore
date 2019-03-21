@@ -1,10 +1,6 @@
-import * as git from "isomorphic-git";
 import fs from "fs-extra";
 import path from "path-extra";
-import klaw from "klaw";
-import ignore from "ignore";
-
-git.plugins.set("fs", fs);
+import GitApi, {convertGitErrorMessage} from './GitApi';
 
 const projectRegExp = new RegExp(
   /^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
@@ -56,46 +52,6 @@ function makeAuthor(user) {
   return {
     name, email
   };
-}
-
-/**
- * Recursively returns an array of file paths within the directory.
- * .gitignore is obeyed and the .git dir is always ignored.
- *
- * This is not the fastest implementation but it should be good enough for for our use case.
- * Also this does not support nested .gitignores
- * @param {string} dir - the directory being read
- * @return {Promise<string[]>} an array of relative file paths within the directory
- */
-export function readGitDir(dir) {
-  return new Promise((resolve, reject) => {
-    const paths = [];
-    const ig = ignore().add([".git"]);
-
-    // load .gitignore
-    const ignorePath = path.join(dir, ".gitignore");
-    if (fs.pathExistsSync(ignorePath)) {
-      ig.add(fs.readFileSync(ignorePath).toString());
-    }
-
-    // filter files
-    const filter = item => {
-      const file = path.relative(dir, item);
-      return !ig.ignores(file);
-    };
-
-    // scan directory
-    klaw(dir, { filter }).
-      on("data", item => paths.push(path.relative(dir, item.path))).
-      on("error", (err, item) => {
-        reject(err.message, item.path);
-      }).
-      on("end", () => {
-        // remove directories from list
-        resolve(paths.filter(
-          file => !fs.statSync(path.join(dir, file)).isDirectory()));
-      });
-  });
 }
 
 /**
@@ -219,36 +175,42 @@ export default class Repo {
   }
 
   /**
-   * Clones a remote repository
+   * Clones a remote repository, throws exception on error
    * @param {string} url - the remote repository to be cloned
    * @param {string} dest - the local destination of the repository
-   * @param {string} [branch=master] - the branch to clone
    * @return {Promise<void>}
    */
-  static async clone(url, dest, branch = "master") {
-    const config = {
-      dir: dest,
-      url,
-      ref: branch,
-      singleBranch: true,
-      ...makeCredentials(this.user)
-    };
-
-    await git.clone(config);
+  static clone(url, dest) {
+    const repo = GitApi(dest);
+    return new Promise((resolve, reject) => {
+      repo.mirror(url, dest, err => {
+        if (err) {
+          fs.removeSync(dest);
+          console.warn("Repo.clone() - ERROR", err);
+          reject(convertGitErrorMessage(err, url));
+        } else {
+          resolve();
+        }
+      });
+    });
   }
 
   /**
-   * Pushes commits to a remote repository
+   * Pushes commits to a remote repository, throws exception on error
    * @param {string} [remote="origin"] - the name of the remote
    * @param {string} [branch="master"] - the branch to push
-   * @return {Promise<PushResponse>} - the error code if there is one
+   * @return {Promise<void>}
    */
-  async push(remote = "origin", branch = "master") {
-    return await git.push({
-      dir: this.dir,
-      remote,
-      ref: branch,
-      ...makeCredentials(this.user)
+  push(remote = "origin", branch = "master") {
+    const repo = GitApi(this.dir);
+    return new Promise((resolve, reject, ()) => {
+
+      repo.push({
+        dir: this.dir,
+        remote,
+        ref: branch,
+        ...makeCredentials(this.user)
+      });
     });
   }
 
