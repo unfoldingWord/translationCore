@@ -55,8 +55,6 @@ describe("copy group data", () => {
   it("has no group data", () => {
     mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
     fs.readdirSync.mockReturnValueOnce([]);
-
-    expect(() => copyGroupDataToProject("lang", "tool", "project/")).toThrow();
     expect(mockImportCategoryGroupData).not.toBeCalled(); // nothing to import
     expect(mockSetCategoryLoaded).not.toBeCalled();
     expect(generateChapterGroupData).not.toBeCalled();

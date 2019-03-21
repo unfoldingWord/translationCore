@@ -8,9 +8,10 @@ jest.mock('material-ui/Checkbox');
 test('translationWords should have three boxes unchecked', () => {
   const props = {
     toolName: 'translationWords',
-    selectedCategories: ['names'],
-    checks: ['kt', 'other', 'names'],
-    onChecked: jest.fn(() => {})
+    selectedCategories: {'names': ['hi']},
+    onChecked: jest.fn(() => {}),
+    availableCategories: [],
+    translate: jest.fn(() => {}),
   };
   const component = renderer.create(
     <ToolCardBoxes {...props}></ToolCardBoxes>,
