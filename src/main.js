@@ -36,15 +36,19 @@ function createMainWindow () {
     show: false,
   });
 
+  if (!mainWindow) console.error("createMainWindow() - FAILURE creating window");
+
   if('developer_mode' in p && p.developer_mode) {
+    console.log("createMainWindow() - openDevTools");
     mainWindow.webContents.openDevTools();
   }
 
   isGitInstalled().then(installed => {
     if(installed) {
+      console.log('createMainWindow() - Git is installed.');
       mainWindow.loadURL(`file://${__dirname}/index.html`);
     } else {
-      console.warn('Git is not installed. Prompting user.');
+      console.warn('createMainWindow() - Git is not installed. Prompting user.');
       splashScreen.hide();
       return showElectronGitSetup(dialog).then(() => {
         app.quit();
@@ -54,7 +58,7 @@ function createMainWindow () {
     }
   });
 
-  //Doesn't display until ready
+  // Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
     mainWindow.maximize();
@@ -76,12 +80,12 @@ function createMainWindow () {
         'electron-devtools-installer');
 
       installExtension(REACT_DEVELOPER_TOOLS).then((name) => {
-        console.log(`Added Extension: ${name}`);
+        console.log(`createMainWindow() - Added Extension: ${name}`);
       }).catch((err) => {
-        console.log('An error occurred: ', err);
+        console.warn('createMainWindow() - An error occurred: ', err);
       });
     } catch (e) {
-      console.error('Failed to load electron developer tools', e);
+      console.error('createMainWindow() - Failed to load electron developer tools', e);
     }
   }
 }
@@ -98,6 +102,8 @@ function createMainSplash() {
     show: false
   });
 
+  if (!splashScreen) console.error("createMainSplash() - FAILURE creating window");
+
   // splashScreen.webContents.openDevTools();
 
   splashScreen.loadURL(`file://${__dirname}/html/splash.html`);
@@ -108,6 +114,7 @@ function createMainSplash() {
 }
 
 function createHelperWindow(url) {
+  console.log("createHelperWindow(" + url + ")");
   helperWindow = new BrowserWindow({
     width: 950,
     height: 660,
@@ -119,6 +126,8 @@ function createHelperWindow(url) {
     show: true,
     frame: true
   });
+
+  if (!helperWindow) console.error("createHelperWindow() - FAILURE creating window");
 
   helperWindow.loadURL(url);
 
