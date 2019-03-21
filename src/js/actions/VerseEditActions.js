@@ -65,6 +65,37 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 };
 
 /**
+ * after a delay it starts updating the verse edits for checks
+ * @param {Object} contextId - contextId of verse being edited
+ * @return {function(*, *): Promise<T | never>}
+ */
+export const backgroundUpdateVerseEditsForChecks = (contextId) => {
+  return (dispatch, getState) => {
+    return delay(1000).then( async () => {
+      console.log("backgroundUpdateVerseEditsForChecks() - starting");
+      // in group data reducer set verse edit flag for every check of the verse edited
+      const matchedGroupData = getGroupDataForVerse(getState(), contextId);
+      const keys = Object.keys(matchedGroupData);
+      console.log("backgroundUpdateVerseEditsForChecks() - number of keys: " + keys.length);
+      await delay(200);
+      for (let groupItemKey of keys) {
+        const groupItem = matchedGroupData[groupItemKey];
+        if (groupItem) {
+          for (let check of groupItem) {
+            dispatch({
+              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+              contextId: check.contextId
+            });
+            await delay(200);
+          }
+        }
+      }
+      console.log("backgroundUpdateVerseEditsForChecks() - finished");
+    });
+  };
+};
+
+/**
  * updates verse edit in group data reducer (and in file system if tw group data is not loaded) and
  *   then does alignment validation checking
  *
@@ -95,21 +126,10 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
         verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
-    if (getSelectedToolName(getState()) === 'translationWords') {
-      // in group data reducer set verse edit flag for every check of the verse edited
-      const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
-      for (let groupItemKey of Object.keys(matchedGroupData)) {
-        const groupItem = matchedGroupData[groupItemKey];
-        if (groupItem) {
-          for (let check of groupItem) {
-            dispatch({
-              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-              contextId: check.contextId
-            });
-          }
-        }
-      }
-    } else if (getSelectedToolName(getState()) === 'wordAlignment') {
+    const selectedToolName = getSelectedToolName(getState());
+    if (selectedToolName === 'translationWords') {
+      dispatch(backgroundUpdateVerseEditsForChecks(contextIdWithVerseEdit));
+    } else if (selectedToolName === 'wordAlignment') {
       // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
       dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
       // in group data reducer set verse edit flag for the verse edited
