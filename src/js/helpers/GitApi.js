@@ -130,7 +130,7 @@ export default function GitApi(directory) {
     save: function(user, message, path, callback) {
       var _this = this;
       _this.init();
-      _this.add(function(err) {
+      _this.add(path, function(err) {
         if (err) callback(err);
         _this.commit(user, message, function(err) {
           if (err) callback(err);

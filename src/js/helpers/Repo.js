@@ -329,7 +329,6 @@ export default class Repo {
       await new Promise((resolve, reject) => {
         repo.save(this.user, message, ".", err => {
           if (err) {
-            console.warn("Repo.save() - ERROR", err);
             reject(err);
           } else {
             resolve();
@@ -337,6 +336,8 @@ export default class Repo {
         });
       });
     } catch(e) {
+      console.warn("Repo.save() - ERROR", e);
+      doingSave = false; // need to do here since throw will skip finally block
       throw(e);
     } finally {
       doingSave = false;
