@@ -61,9 +61,7 @@ function localCheckBox(selectedCategories, id, toolName, onChecked, availableCat
       checked={selectedCategories.includes(id) || (isParent && allChildrenSelected)}
       onCheck={(e) => {
         if (isParent) {
-          availableCategoriesForParent.forEach((subcategory) => {
-            onChecked(subcategory, e.target.checked, toolName);
-          });
+          onChecked(availableCategoriesForParent, e.target.checked, toolName);
         } else {
           onChecked(id, e.target.checked, toolName);
         }
@@ -121,11 +119,11 @@ class ToolCardBoxes extends React.Component {
                       {localCheckBox(selectedCategories, parentCategory, toolName, onChecked, availableCategories[parentCategory])}
                     </div>
                     <div>
-                      { translate(lookupNames[parentCategory])   /* category label */ }
+                      {translate(lookupNames[parentCategory])   /* category label */}
                     </div>
                   </div>
                   <React.Fragment>
-                    { toolName != 'translationWords' ? (
+                    {toolName != 'translationWords' ? (
                       <div style={{alignSelf: 'flex-end'}}>
                         <Glyphicon // ^ or v
                           style={{
@@ -136,7 +134,7 @@ class ToolCardBoxes extends React.Component {
                           onClick={() => this.showExpanded(parentCategory)}
                         />
                       </div>
-                      ) : null 
+                    ) : null
                     }
                     {this.state.expanded[parentCategory] ? (
                       <div style={{
@@ -147,7 +145,7 @@ class ToolCardBoxes extends React.Component {
                           <div style={{display: 'flex', width: '48%'}} key={index} >
                             <div style={{marginLeft: '36px', width: '38px'}}>
                               {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}</div>
-                            <div>{ translate(lookupNames[postPart(subcategory)]) }</div>
+                            <div>{translate(lookupNames[postPart(subcategory)])}</div>
                           </div>
                         ))
                         }
@@ -160,7 +158,7 @@ class ToolCardBoxes extends React.Component {
         }
       </div>
     );
-  } 
+  }
 }
 
 ToolCardBoxes.propTypes = {

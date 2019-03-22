@@ -57,8 +57,14 @@ export const updateCheckSelection = (id, value, toolName) => {
   return (dispatch, getState) => {
     const state = getState();
     const previousSelectedCategories = getToolCategories(state, toolName);
-    const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
-
+    let selectedCategories = previousSelectedCategories;
+    if (Array.isArray(id)) {
+      id.forEach((_id) => {
+        selectedCategories = ProjectDetailsHelpers.updateArray(selectedCategories, _id, value);
+      });
+    } else {
+      selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
+    }
     dispatch(setCategories(selectedCategories, toolName));
     dispatch(getProjectProgressForTools(toolName));
     const project = new ProjectAPI(getProjectSaveLocation(state));

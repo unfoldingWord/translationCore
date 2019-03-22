@@ -37,7 +37,6 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
-
   if (helpDir) {
     let categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
     Object.keys(categories).forEach((category) => {

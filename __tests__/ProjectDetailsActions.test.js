@@ -10,6 +10,10 @@ import * as actions from '../src/js/actions/ProjectDetailsActions';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
+jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
+  ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
+  getAvailableCategories: jest.fn(() => ({'names':['John']}))
+}));
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -452,7 +456,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       fs.__resetMockFS();
     });
     test('should load all the check categories from the project', () => {
-      const expectedActions = [{"selectedCategories": ["names"], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions = [{"selectedCategories": ["John"], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),
@@ -466,7 +470,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
           }
         }
       };
-      mockGetSelectedCategories.mockReturnValue(["names"]);
+      mockGetSelectedCategories.mockReturnValue(["John"]);
       const store = mockStore(initialState);
       store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation, 'en'));
       expect(store.getActions()).toMatchObject(expectedActions);
