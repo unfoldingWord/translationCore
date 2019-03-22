@@ -1,6 +1,5 @@
-import Repo, { isMatched, readGitDir } from "../Repo";
+import Repo, { isMatched } from "../Repo";
 import path from "path-extra";
-import fs from "fs-extra";
 
 jest.unmock("fs-extra");
 
@@ -28,21 +27,6 @@ describe("static methods", () => {
     }
     expect(exceptionThrown).toBeFalsy();
     expect(typeof data).toEqual("boolean");
-  });
-
-  it("lists files in a directory", async () => {
-    const readPath = path.normalize(__dirname);
-    const files = await readGitDir(readPath);
-    expect(files.length > 0).toBeTruthy();
-    for (const f of files) {
-      const abs_path = path.join(__dirname, f);
-      // must be relative
-      expect(f).not.toEqual(expect.stringContaining(__dirname));
-      // must not be dir
-      expect(fs.statSync(abs_path).isDirectory()).toBeFalsy();
-      // must not be the input path
-      expect(abs_path).not.toEqual(readPath);
-    }
   });
 
   it("check if the directory is a git repo", async () => {
