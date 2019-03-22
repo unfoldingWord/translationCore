@@ -36,10 +36,7 @@ function createMainWindow () {
     show: false,
   });
 
-  if (!mainWindow) console.error("createMainWindow() - FAILURE creating window");
-
   if('developer_mode' in p && p.developer_mode) {
-    console.log("createMainWindow() - openDevTools");
     mainWindow.webContents.openDevTools();
   }
 
@@ -102,8 +99,6 @@ function createMainSplash() {
     show: false
   });
 
-  if (!splashScreen) console.error("createMainSplash() - FAILURE creating window");
-
   // splashScreen.webContents.openDevTools();
 
   splashScreen.loadURL(`file://${__dirname}/html/splash.html`);
@@ -114,7 +109,6 @@ function createMainSplash() {
 }
 
 function createHelperWindow(url) {
-  console.log("createHelperWindow(" + url + ")");
   helperWindow = new BrowserWindow({
     width: 950,
     height: 660,
@@ -126,8 +120,6 @@ function createHelperWindow(url) {
     show: true,
     frame: true
   });
-
-  if (!helperWindow) console.error("createHelperWindow() - FAILURE creating window");
 
   helperWindow.loadURL(url);
 
