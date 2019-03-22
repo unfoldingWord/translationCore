@@ -16,6 +16,20 @@ describe("static methods", () => {
     });
   });
 
+  it("check if the directory is isDirty", async () => {
+    const dir = path.join(__dirname, "../../../../"); // use this repo as a benchmark
+    let exceptionThrown = false;
+    let data = null;
+    try {
+      const repo = new Repo(dir);
+      data = await repo.isDirty(dir);
+    } catch (e) {
+      exceptionThrown = true;
+    }
+    expect(exceptionThrown).toBeFalsy();
+    expect(typeof data).toEqual("boolean");
+  });
+
   it("lists files in a directory", async () => {
     const readPath = path.normalize(__dirname);
     const files = await readGitDir(readPath);

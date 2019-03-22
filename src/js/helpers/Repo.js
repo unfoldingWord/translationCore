@@ -203,13 +203,14 @@ export default class Repo {
    */
   push(remote = "origin", branch = "master") {
     const repo = GitApi(this.dir);
-    return new Promise((resolve, reject, ()) => {
-
-      repo.push({
-        dir: this.dir,
-        remote,
-        ref: branch,
-        ...makeCredentials(this.user)
+    return new Promise((resolve, reject) => {
+      repo.push(remote, branch, err => {
+        if (err) {
+          console.warn("Repo.push() - ERROR", err);
+          reject(err);
+        } else {
+          resolve();
+        }
       });
     });
   }
@@ -221,56 +222,53 @@ export default class Repo {
    * @param {string} [name="origin"] - the local remote alias
    * @return {Promise<void>}
    */
-  async addRemote(url, name = "origin") {
-    await git.addRemote({
-      dir: this.dir,
-      remote: name,
-      url: url,
-      force: true
+  addRemote(url, name = "origin") {
+    const repo = GitApi(this.dir);
+    return new Promise((resolve, reject) => {
+      repo.addRemote(name, url, err => {
+        if (err) {
+          console.warn("Repo.addRemote() - ERROR", err);
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
     });
-  }
-
-  /**
-   * Lists all files in the git repo including ones that have been removed but not committed yet.
-   * @returns {Promise<string>}
-   */
-  async list() {
-    // files that git knows about
-    const stagedFiles = await git.listFiles({
-      dir: this.dir
-    });
-    // files that git may not know about
-    const paths = await readGitDir(this.dir);
-
-    // merge lists
-    for (let i = 0, len = stagedFiles.length; i < len; i++) {
-      if (paths.indexOf(stagedFiles[i]) === -1) {
-        paths.push(stagedFiles[i]);
-      }
-    }
-    return paths;
   }
 
   /**
    * Checks if there are any file changes.
    * Paths can be ignored from this check which is helpful for constantly changing files like the current context id.
    * WARNING: this will be slow if you have lots of files
-   * @param {array} [ignored=[]] - an array of path expressions that will excluded from the check.
    * @returns {Promise<string>} the status
    */
-  async isDirty(ignored = []) {
-    const paths = await this.list();
-    for (let i = 0, size = paths.length; i < size; i++) {
-      if(isMatched(paths[i], ignored)) {
-        // skip ignored paths
-        continue;
-      }
-      const status = await this.status(paths[i]);
-      if (["unmodified", "ignored"].indexOf(status) === -1) {
-        return true;
-      }
-    }
-    return false;
+  async isDirty() {
+    const repo = GitApi(this.dir);
+    return new Promise((resolve, reject) => {
+      repo.status((err, data) => {
+        if (err) {
+          console.warn("Repo.isDirty() - git status ERROR", err);
+          reject(err);
+        } else {
+          let dirty = false;
+          if (!data) {
+            const message = "Repo.isDirty() - git status empty ERROR";
+            console.warn(message);
+            reject(message);
+          } else {
+            const checks = ["modified", "not_added", "deleted" ];
+            for (let i = 0, l = checks.length; i < l; i++) {
+              const check = checks[i];
+              if (data[check] && data[check].length) {
+                dirty = true;
+                break;
+              }
+            }
+            resolve(dirty);
+          }
+        }
+      });
+    });
   }
 
   /**

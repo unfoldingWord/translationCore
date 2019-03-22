@@ -148,6 +148,9 @@ export default function GitApi(directory) {
     remote: function(optionsArray, callback) {
       return git.remote(optionsArray, callback);
     },
+    status: function(callback) {
+      return git.status(callback);
+    },
     run: function(optionsArray, callback) {
       return git._run(optionsArray, callback);
     },
