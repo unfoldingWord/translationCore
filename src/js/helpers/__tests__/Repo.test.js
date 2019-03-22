@@ -22,7 +22,7 @@ describe("static methods", () => {
     let data = null;
     try {
       const repo = new Repo(dir);
-      data = await repo.isDirty(dir);
+      data = await repo.isDirty();
     } catch (e) {
       exceptionThrown = true;
     }

@@ -41,6 +41,7 @@ export default function GitApi(directory) {
     },
     /**
      * @description Commits items that have been added.
+     * @param {{full_name: String, username: String, email: String}} user
      * @param {string} message - The commit message to be used.
      * @param {function} callback - A callback to be run on complete.
      */
@@ -88,10 +89,11 @@ export default function GitApi(directory) {
     },
     /**
      * @description Stages the current working directory.
+     * @param {string} path - file or folder to be saved.
      * @param {function} callback - A callback to be run on complete.
      */
-    add: function(callback) {
-      git.add('./*', callback);
+    add: function(path, callback) {
+      git.add(path, callback);
     },
     /**
      * @description Pulls and pushes to a remote location
@@ -120,6 +122,7 @@ export default function GitApi(directory) {
     },
     /**
      * @description Adds and commits.
+     * @param {{full_name: String, username: String, email: String}} user
      * @param {string} message - Message for the commit.
      * @param {string} path - The local path of the repo
      * @param {function} callback - A callback to be run on complete.
@@ -147,9 +150,6 @@ export default function GitApi(directory) {
     },
     remote: function(optionsArray, callback) {
       return git.remote(optionsArray, callback);
-    },
-    status: function(callback) {
-      return git.status(callback);
     },
     run: function(optionsArray, callback) {
       return git._run(optionsArray, callback);
@@ -299,44 +299,4 @@ export const clearRemote = (projectPath, name) => {
   });
 };
 
-/**
- * @description Converts git error messages to human-readable error messages for tC users
- * @param {string} err - the git error message
- * @param {string} link - The url of the git repo
- * @returns {string} - The human-readable error message
- */
-export function convertGitErrorMessage(err, link) {
-  let errMessage = "An unknown problem occurred during import";
-  if (err.includes("fatal: unable to access")) {
-    errMessage = "Unable to connect to the server. Please check your Internet connection.";
-  } else if (err.includes("fatal: The remote end hung up")) {
-    errMessage = "Unable to connect to the server. Please check your Internet connection.";
-  } else if (err.includes("Failed to load")) {
-    errMessage = "Unable to connect to the server. Please check your Internet connection.";
-  } else if (err.includes("fatal: repository") && err.includes("not found")) {
-    errMessage = "Project not found: '" + link + "'";
-  }
-  return errMessage;
-}
-
-/**
- * @description Runs the git command to clone a repo.
- * @param {string} savePath - The location of the git repo
- * @param {string} link - The url of the git repo
- * @param {function} callback - The function to be run on complete
- * @param {module} gitHandler - optional for testing.  If not given will use git module
- */
-export function runGitCommand(savePath, link, gitHandler) {
-  return new Promise((resolve, reject) => {
-    gitHandler = gitHandler || GitApi;
-    gitHandler(savePath).mirror(link, savePath, function (err) {
-      if (err) {
-        fs.removeSync(savePath);
-        reject(convertGitErrorMessage(err, link));
-      } else {
-        resolve();
-      }
-    });
-  });
-}
 

@@ -1,26 +1,10 @@
 import fs from "fs-extra";
 import path from "path-extra";
-import GitApi, {convertGitErrorMessage} from './GitApi';
+import GitApi, {clearRemote, getSavedRemote, getRemoteRepoHead} from './GitApi';
 
 const projectRegExp = new RegExp(
   /^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
 let doingSave = false;
-
-/**
- * Generates credentials from the user object
- * @param {object} user
- * @returns {*}
- */
-function makeCredentials(user) {
-  if (user && user.username && (user.password || user.token)) {
-    return {
-      username: user.username,
-      password: user.password,
-      token: user.token
-    };
-  }
-  return {};
-}
 
 /**
  * Checks if a string matches any of the expressions
@@ -35,23 +19,6 @@ export function isMatched(string, expressions) {
     }
   }
   return false;
-}
-
-/**
- * Generates the commit author from the user object
- * @param user
- * @returns {{name: string, email: string}}
- */
-function makeAuthor(user) {
-  let name = "translationCore User";
-  let email = "Unknown";
-  if (user) {
-    name = user.full_name || user.username || name;
-    email = user.email || email;
-  }
-  return {
-    name, email
-  };
 }
 
 /**
@@ -152,17 +119,19 @@ export default class Repo {
   }
 
   /**
-   * List a remote servers branches, tags, and capabilities.
+   * determines if remote exists.
    * @param {string} url - the remote repo url
-   * @returns {Promise<object>}
+   * @returns {Promise<boolean>} true if exists
    */
-  static async getRemoteInfo(url) {
-    if (!url) return null;
-
-    return await git.getRemoteInfo({
-      url,
-      ...makeCredentials(this.user)
-    });
+  static async doesRemoteRepoExist(url) {
+    let exists = true;
+    try {
+      let data = await getRemoteRepoHead(url);
+      exists = !! data;
+    } catch (e) {
+      exists = false;
+    }
+    return exists;
   }
 
   /**
@@ -170,8 +139,18 @@ export default class Repo {
    * @param {string} dir - the file path to the local repository
    * @return {Promise<void>}
    */
-  static async init(dir) {
-    await git.init({ dir });
+  static init(dir) {
+    const repo = GitApi(dir);
+    return new Promise((resolve, reject) => {
+      repo.init(err => {
+        if (err) {
+          console.warn("Repo.init() - ERROR", err);
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
   }
 
   /**
@@ -240,9 +219,10 @@ export default class Repo {
    * Checks if there are any file changes.
    * Paths can be ignored from this check which is helpful for constantly changing files like the current context id.
    * WARNING: this will be slow if you have lots of files
-   * @returns {Promise<string>} the status
+   * @param {array} [ignored=[]] - an array of path expressions that will excluded from the check.
+   * @returns {Promise<void>} the status
    */
-  async isDirty() {
+  isDirty(ignored = []) {
     const repo = GitApi(this.dir);
     return new Promise((resolve, reject) => {
       repo.status((err, data) => {
@@ -259,8 +239,8 @@ export default class Repo {
             const checks = ["modified", "not_added", "deleted" ];
             for (let i = 0, l = checks.length; i < l; i++) {
               const check = checks[i];
-              if (data[check] && data[check].length) {
-                dirty = true;
+              dirty = Repo.hasChangedFilesForCheck(data, check, ignored);
+              if (dirty) {
                 break;
               }
             }
@@ -272,15 +252,40 @@ export default class Repo {
   }
 
   /**
+   * check status data to see if there are entries under check.  Skip ignored folders
+   * @param {Object} data - status data to check
+   * @param {String} check - key of check
+   * @param {[String]} ignored - files to ignore
+   * @return {boolean}
+   */
+  static hasChangedFilesForCheck(data, check, ignored) {
+    let changed = false;
+    let length = data[check] && data[check].length;
+    if (length) {
+      if (ignored.length) {
+        for (let j = 0, jLen = ignored.length; j < jLen; j++) {
+          const ignore = ignored[j];
+          const pos = data[check].indexOf(ignore);
+          if (pos >= 0) {
+            data[check].splice(pos, 1); // remove match
+          }
+        }
+        length = data[check].length; // update length
+      }
+      if (length) {
+        changed = true;
+      }
+    }
+    return changed;
+  }
+
+  /**
    * Removes a named remote from this repo.
    * @param {string} [name="origin"] - the locale remote alias
    * @return {Promise<void>}
    */
-  async removeRemote(name = "origin") {
-    await git.deleteRemote({
-      dir: this.dir,
-      remote: name
-    });
+  removeRemote(name = "origin") {
+    return clearRemote(this.dir, name);
   }
 
   /**
@@ -288,81 +293,27 @@ export default class Repo {
    * @param {string} [name="origin"] - the name of the remote
    * @returns {Promise<object>} the url of the remote
    */
-  async getRemote(name = "origin") {
-    const remotes = await git.listRemotes({
-      dir: this.dir
-    });
-    for (const r of remotes) {
-      if (r.remote === name) {
-        return {
-          ...r,
-          ...Repo.parseRemoteUrl(r.url)
-        };
-      }
-    }
-    return null;
+  getRemote(name = "origin") {
+    return getSavedRemote(this.dir, name);
   }
 
   /**
    * Adds a file to the git index.
    * If the file has been deleted it will be removed from the index.
-   * @param {string} filepath - the relative path to the file being added.
+   * @param {string} filepath - the relative path to the file/folder being added.
    * @returns {Promise<void>}
    */
-  async add(filepath) {
-    await git.add({
-      dir: this.dir,
-      filepath
-    });
-  }
-
-  /**
-   * Removes a file from the git index.
-   * This will not delete a file from the disk.
-   * @param {string} filepath - the relative path to the file being removed
-   * @returns {Promise<void>}
-   */
-  async remove(filepath) {
-    await git.remove({
-      dir: this.dir,
-      filepath
-    });
-  }
-
-  /**
-   * Retrieves the status of a file.
-   * If there are no commits in the repo this will assume the file has been added but not staged.
-   * @param {string} filepath - the relative path of the file to stat.
-   * @returns {Promise<string>}
-   */
-  async status(filepath) {
-    try {
-      return await git.status({
-        dir: this.dir,
-        filepath
+  add(filepath) {
+    const repo = GitApi(this.dir);
+    return new Promise((resolve, reject) => {
+      repo.add(filepath, err => {
+        if (err) {
+          console.warn("Repo.add() - ERROR", err);
+          reject(err);
+        } else {
+          resolve();
+        }
       });
-    } catch(e) {
-      if(e.code === "ResolveRefError") {
-        // TRICKY: if there are no commits we get a ref error
-        return "*added";
-      } else {
-        // raise unhandled error
-        throw e;
-      }
-    }
-  }
-
-  /**
-   * Commits added files
-   * @param {string} message - the commit message
-   * @param {object} [author] - details about the author.
-   * @returns {Promise<void>}
-   */
-  async commit(message, author = undefined) {
-    await git.commit({
-      dir: this.dir,
-      message,
-      author
     });
   }
 
@@ -374,23 +325,17 @@ export default class Repo {
   async save(message) {
     doingSave = true;
     try {
-      // remove deleted files
-      const stagedFiles = await git.listFiles({
-        dir: this.dir
+      const repo = GitApi(this.dir);
+      await new Promise((resolve, reject) => {
+        repo.save(this.user, message, ".", err => {
+          if (err) {
+            console.warn("Repo.save() - ERROR", err);
+            reject(err);
+          } else {
+            resolve();
+          }
+        });
       });
-
-      for (let i = 0, len = stagedFiles.length; i < len; i++) {
-        const filePath = path.join(this.dir, stagedFiles[i]);
-        const deleted = !fs.existsSync(filePath);
-        if (deleted) {
-          await this.remove(stagedFiles[i]);
-        }
-      }
-
-      // add all modifications and new files
-      await this.add(".");
-      // commit staged files
-      await this.commit(message, makeAuthor(this.user));
     } catch(e) {
       throw(e);
     } finally {
@@ -410,4 +355,24 @@ export default class Repo {
     }
     return startSave;
   }
+}
+
+/**
+ * @description Converts git error messages to human-readable error messages for tC users
+ * @param {string} err - the git error message
+ * @param {string} link - The url of the git repo
+ * @returns {string} - The human-readable error message
+ */
+export function convertGitErrorMessage(err, link) {
+  let errMessage = "An unknown problem occurred during import";
+  if (err.includes("fatal: unable to access")) {
+    errMessage = "Unable to connect to the server. Please check your Internet connection.";
+  } else if (err.includes("fatal: The remote end hung up")) {
+    errMessage = "Unable to connect to the server. Please check your Internet connection.";
+  } else if (err.includes("Failed to load")) {
+    errMessage = "Unable to connect to the server. Please check your Internet connection.";
+  } else if (err.includes("fatal: repository") && err.includes("not found")) {
+    errMessage = "Project not found: '" + link + "'";
+  }
+  return errMessage;
 }

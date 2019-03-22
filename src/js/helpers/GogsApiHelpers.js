@@ -169,13 +169,10 @@ export const createNewRepo = async (newName, projectPath, user) => {
  * @returns {Promise<boolean>} - resolves if the remote does not exist
  */
 export const throwIfRemoteRepoExists = async (repoOwnerUrl) => {
-  try {
-    await Repo.getRemoteInfo(repoOwnerUrl);
-  } catch (e) {
-    return true;
+  let exists = await Repo.doesRemoteRepoExist(repoOwnerUrl);
+  if (exists) {
+    throw new Error(`Remote repo ${repoOwnerUrl} already exists.`);
   }
-
-  throw new Error(`Remote repo ${repoOwnerUrl} already exists.`);
 };
 
 /**
