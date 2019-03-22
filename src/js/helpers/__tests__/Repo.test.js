@@ -2,6 +2,7 @@ import Repo, { isMatched } from "../Repo";
 import path from "path-extra";
 
 jest.unmock("fs-extra");
+jest.unmock("simple-git");
 
 describe("static methods", () => {
   it("should return the project name of a git.door43.org link", () => {
