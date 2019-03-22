@@ -179,12 +179,13 @@ export const parseRepoUrl = (ulr) => {
 /**
  * @description Returns the name information for the given repository
  * @param {string} projectPath The location of the repository root folder
- * @returns {Promise} - resolves the repo url and the name
+ * @param {string} remote
+ * @returns {Promise<{name: String, url: String}>} - resolves the repo url and the name
  * i.e. {name: 'en_tit', url:'https://github.com/user/en_tit'}
  */
-export const getRepoNameInfo = (projectPath) => {
+export const getRepoNameInfo = (projectPath, remote = "origin") => {
   return new Promise((resolve, reject) => {
-    exec(`git remote get-url origin`, {cwd: projectPath}, (err, stdout = '') => {
+    exec(`git remote get-url ${remote}`, {cwd: projectPath}, (err, stdout = '') => {
       if (!err) {
         const repoInfo = parseRepoUrl(stdout);
         resolve(repoInfo);
@@ -198,12 +199,13 @@ export const getRepoNameInfo = (projectPath) => {
  * @param {string} projectPath The location of the repository root folder
  * @param {Object} user
  * @param {string} repoName
+ * @param {string} branch
  */
-export const pushNewRepo = (projectPath, user, repoName) => {
+export const pushNewRepo = (projectPath, user, repoName, branch = "master") => {
   return new Promise((resolve) => {
     const git = GitApi(projectPath);
     const newRemote = GogsApiHelpers.getUserTokenDoor43Url(user, user.username + '/' + repoName);
-    git.push(newRemote, "master", (res) => {
+    git.push(newRemote, branch, (res) => {
       resolve(res);
     });
   });

@@ -47,9 +47,9 @@ async function prepareProjectRepo(user, projectName, projectPath) {
  */
 async function pushProjectRepo(repo) {
   console.log("uploadProject: pushing git changes to remote");
-  let response = null;
+  let response = {};
   try {
-    response = await repo.push("origin");
+    await repo.push("origin");
   } catch (err) {
     console.error("push ERROR", err);
     if (err.errors) { // expected upload error type

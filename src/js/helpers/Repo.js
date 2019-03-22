@@ -1,6 +1,7 @@
 import fs from "fs-extra";
 import path from "path-extra";
-import GitApi, {clearRemote, getSavedRemote, getRemoteRepoHead} from './GitApi';
+import GitApi from './GitApi';
+import * as gitApi from './GitApi';
 
 const projectRegExp = new RegExp(
   /^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
@@ -126,7 +127,7 @@ export default class Repo {
   static async doesRemoteRepoExist(url) {
     let exists = true;
     try {
-      let data = await getRemoteRepoHead(url);
+      let data = await gitApi.getRemoteRepoHead(url);
       exists = !! data;
     } catch (e) {
       exists = false;
@@ -181,16 +182,15 @@ export default class Repo {
    * @return {Promise<void>}
    */
   push(remote = "origin", branch = "master") {
-    const repo = GitApi(this.dir);
-    return new Promise((resolve, reject) => {
-      repo.push(remote, branch, err => {
-        if (err) {
-          console.warn("Repo.push() - ERROR", err);
-          reject(err);
-        } else {
-          resolve();
-        }
-      });
+    return new Promise(async (resolve, reject) => {
+      try {
+        const repoName = await gitApi.getRepoNameInfo(this.dir, remote);
+        const response = await gitApi.pushNewRepo(this.dir, this.user, repoName.name, branch);
+        resolve(response);
+      } catch (e) {
+        console.warn("Repo.push() - ERROR", e);
+        reject(e);
+      }
     });
   }
 
@@ -202,16 +202,18 @@ export default class Repo {
    * @return {Promise<void>}
    */
   addRemote(url, name = "origin") {
-    const repo = GitApi(this.dir);
-    return new Promise((resolve, reject) => {
-      repo.addRemote(name, url, err => {
-        if (err) {
-          console.warn("Repo.addRemote() - ERROR", err);
-          reject(err);
-        } else {
-          resolve();
+    return new Promise(async (resolve, reject) => {
+      try {
+        const oldUrl = await this.getRemote(name);
+        if (oldUrl) {
+          await this.removeRemote(name).catch(() => {}); // clear after deletion
         }
-      });
+        await gitApi.saveRemote(this.dir, name, url);
+        resolve();
+      } catch (e) {
+        console.warn("Repo.addRemote() - git ERROR", e);
+        reject(e);
+      }
     });
   }
 
@@ -285,7 +287,7 @@ export default class Repo {
    * @return {Promise<void>}
    */
   removeRemote(name = "origin") {
-    return clearRemote(this.dir, name);
+    return gitApi.clearRemote(this.dir, name);
   }
 
   /**
@@ -294,7 +296,7 @@ export default class Repo {
    * @returns {Promise<object>} the url of the remote
    */
   getRemote(name = "origin") {
-    return getSavedRemote(this.dir, name);
+    return gitApi.getSavedRemote(this.dir, name);
   }
 
   /**

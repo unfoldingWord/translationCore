@@ -107,7 +107,7 @@ export const getUserDoor43Url = (user, projectName) => {
  */
 export const renameRepo = async (newName, projectPath, user) => {
   try {
-    const repo = await Repo.open(projectPath);
+    const repo = await Repo.open(projectPath, user);
     const remote = await repo.getRemote();
     const newRemoteURL = getRepoOwnerUrl(user, newName);
 
