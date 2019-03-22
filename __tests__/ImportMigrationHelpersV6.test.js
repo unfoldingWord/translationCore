@@ -35,6 +35,11 @@ const base_manifest = {
 const PROJECT_PATH = path.join(__dirname, 'fixtures/project/migration/v1_project');
 
 describe('migrateToVersion6', () => {
+  let save_console = null;
+
+  beforeAll(() => {
+    save_console = global.console;
+  });
   beforeEach(() => {
     const manifest = JSON.parse(JSON.stringify(base_manifest)); // clone so we can modify
     // reset mock filesystem data
@@ -49,9 +54,14 @@ describe('migrateToVersion6', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
   });
+  afterAll(() => {
+    if(save_console) {
+      global.console = save_console; // restore unmocked
+    }
+  });
 
   it('with no tc_version expect to set', () => {
-    global.console = {error: jest.fn()};
+    global.console = {error: jest.fn(), log: jest.fn()};
     // given
 
     // when
@@ -65,7 +75,7 @@ describe('migrateToVersion6', () => {
   });
 
   it('with lower tc_version expect to update version', () => {
-    global.console = {error: jest.fn()};
+    global.console = {error: jest.fn(), log: jest.fn()};
     // given
     Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion6.MIGRATE_MANIFEST_VERSION - 1);
 

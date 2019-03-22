@@ -65,7 +65,11 @@ jest.mock('../../selectors', () => ({
         }
       }
     ];
-  }
+  },
+  getSelectedToolApi: jest.fn(),
+  getSupportingToolApis: jest.fn(() => {
+    return [];
+  })
 }));
 
 describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
