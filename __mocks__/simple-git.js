@@ -1,5 +1,3 @@
-var fs = require('fs-extra');
-jest.mock('fs-extra');
 const git = jest.fn();
 
 git.status = jest.fn(cb => {
