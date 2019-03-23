@@ -150,7 +150,7 @@ export const renameRepo = async (newName, projectPath, user) => {
 export const createNewRepo = async (newName, projectPath, user) => {
   try {
     const newRemoteURL = getUserDoor43Url(user, newName);
-    const repo = await Repo.open(projectPath);
+    const repo = await Repo.open(projectPath, user);
     await repo.removeRemote(TC_OLD_ORIGIN_KEY);// clear old connection since we are renaming
 
     await createRepo(user, newName);
