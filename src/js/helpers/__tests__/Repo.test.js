@@ -3,6 +3,7 @@ import path from "path-extra";
 
 jest.unmock("fs-extra");
 jest.unmock("simple-git");
+jest.unmock("../GitApi");
 
 describe("static methods", () => {
   it("should return the project name of a git.door43.org link", () => {
@@ -18,16 +19,20 @@ describe("static methods", () => {
 
   it("check if the directory is isDirty", async () => {
     const dir = path.join(__dirname, "../../../../"); // use this repo as a benchmark
+    const user = "dummy";
     let exceptionThrown = false;
     let data = null;
+    let repo = null;
     try {
-      const repo = new Repo(dir);
+      repo = new Repo(dir, user);
       data = await repo.isDirty();
     } catch (e) {
       exceptionThrown = true;
     }
     expect(exceptionThrown).toBeFalsy();
     expect(typeof data).toEqual("boolean");
+    expect(repo.dir).toEqual(dir);
+    expect(repo.user).toEqual(user);
   });
 
   it("check if the directory is a git repo", async () => {
