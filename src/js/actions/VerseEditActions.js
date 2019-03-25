@@ -24,8 +24,8 @@ import {
  * @param {string} before - Previous text version of the verse.
  * @param {string} after - New edited text version of the verse.
  * @param {string[]} tags - Array of tags used for verse Edit check boxes.
- * @param {string} [username=null] - The user's alias. If null the current username will be used.
- * @return {*}
+ * @param {string|null} [username=null] - The user's alias. If null the current username will be used.
+ * @return {Function}
  */
 export const editSelectedTargetVerse = (before, after, tags, username=null) => {
   return (dispatch, getState) => {
@@ -83,7 +83,7 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
     }} verseEdit - record to be saved to file system if in WA tool
  * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
  * @param {Object} currentCheckContextId - contextId of group menu item selected
- * @return {function(*, *): Promise<T | never>}
+ * @return {Function}
  */
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                                               currentCheckContextId) => {
@@ -263,7 +263,7 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
  * @param {string} modified - the edit timestamp
  * @param {string|null} [glCode=null] - the gateway language code
  * @param {string|null} [glQuote=null] - the gateway language code
- * @return {*}
+ * @return {Object} - record to save to file
  */
 export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null,
   {reference:{chapter:activeChapter, verse:activeVerse}, quote, groupId, occurrence}) => ({
