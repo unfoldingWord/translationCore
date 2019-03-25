@@ -180,11 +180,11 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
         api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
       }
     }
-    await delay(500);
-    dispatch(AlertModalActions.closeAlertDialog());
     if (showSelectionInvalidated) {
-      dispatch(showSelectionsInvalidatedWarning());
+      dispatch(showSelectionsInvalidatedWarning()); // no need to close alert, since this replaces it
       await delay(1000);
+    } else {
+      dispatch(AlertModalActions.closeAlertDialog());
     }
     dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
                                            currentCheckContextId));
