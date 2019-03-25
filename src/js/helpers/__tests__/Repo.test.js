@@ -6,8 +6,18 @@ jest.unmock("simple-git");
 jest.unmock("../GitApi");
 
 describe("static methods", () => {
-  it("should return the project name of a git.door43.org link", () => {
+  it("should return the project name of a git.door43.org link with '.git' extension", () => {
     let url = "https://git.door43.org/richmahn/en_tit_ulb.git";
+    let projectName = Repo.parseRemoteUrl(url);
+    expect(projectName).toEqual({
+      "full_name": "richmahn/en_tit_ulb",
+      "host": "https://git.door43.org/",
+      "name": "en_tit_ulb",
+      "owner": "richmahn"
+    });
+  });
+  it("should return the project name of a git.door43.org link without '.git' extension", () => {
+    let url = "https://git.door43.org/richmahn/en_tit_ulb";
     let projectName = Repo.parseRemoteUrl(url);
     expect(projectName).toEqual({
       "full_name": "richmahn/en_tit_ulb",

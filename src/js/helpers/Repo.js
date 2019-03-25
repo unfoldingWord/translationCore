@@ -4,7 +4,7 @@ import GitApi from './GitApi';
 import * as gitApi from './GitApi';
 
 const projectRegExp = new RegExp(
-  /^https?:\/\/git.door43.org\/([^/]+)\/([^/]+)\.git$/);
+  /^https?:\/\/git.door43.org\/([^/]+)\/([^/.]+)(\.git)?$/);
 let doingSave = false;
 
 /**
@@ -101,7 +101,15 @@ export default class Repo {
    * Parses a remote url and returns a object of information about the project.
    * The url must be a properly formatted git url.
    * @param {string} url
-   * @returns {object|null}
+   * @returns {null|
+   *  {
+   *    owner: String,
+   *    name: String,
+   *    full_name: String,
+   *    host: String,
+   *    url: String
+   *  }
+   * }
    */
   static parseRemoteUrl(url) {
     if (!url) return null;
@@ -114,7 +122,8 @@ export default class Repo {
         owner: matches[1],
         name: matches[2],
         full_name: `${matches[1]}/${matches[2]}`,
-        host: "https://git.door43.org/"
+        host: "https://git.door43.org/",
+        url
       };
     }
   }
@@ -293,10 +302,22 @@ export default class Repo {
   /**
    * Returns information regarding the registered remote
    * @param {string} [name="origin"] - the name of the remote
-   * @returns {Promise<object>} the url of the remote
+   * @returns {Promise<null|
+   *   {
+   *    owner: String,
+   *    name: String,
+   *    full_name: String,
+   *    host: String,
+   *    url: String
+   *   }
+   * >} the url of the remote
    */
-  getRemote(name = "origin") {
-    return gitApi.getSavedRemote(this.dir, name);
+  async getRemote(name = "origin") {
+    let remote = await gitApi.getSavedRemote(this.dir, name);
+    if (remote) { // if found get url from remote object
+      return Repo.parseRemoteUrl(remote.refs.push || remote.refs.fetch)
+    }
+    return null;
   }
 
   /**

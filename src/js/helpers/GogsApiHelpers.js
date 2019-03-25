@@ -62,7 +62,7 @@ export const createRepo = async (user, reponame) => {
     if (!repo) {
       console.error("createRepo: FAILED creating new repo: " + reponame);
     } else {
-      console.log("createRepo: finished creating new repo: " + repo.fullname);
+      console.log("createRepo: finished creating new repo: " + reponame);
     }
   }
   return repo;
@@ -326,8 +326,8 @@ export const hasGitHistoryForCurrentUser = async (
   try {
     if (login && login.userdata && login.loggedInUser) {
       if (fs.pathExistsSync(path.join(projectSaveLocation, ".git"))) {
-        const remoteUrl = await getSavedRemote(projectSaveLocation, "origin");
-        const info = Repo.parseRemoteUrl(remoteUrl);
+        const repo = await Repo.open(projectSaveLocation);
+        const info = await repo.getRemote("origin");
         if(info) {
           let { owner: user } = info;
           return (user === login.userdata.username);
