@@ -88,7 +88,7 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                                               currentCheckContextId) => {
   return async(dispatch, getState) => {
     console.log("doBackgroundVerseEditsUpdates()");
-    await delay(500); // wait till before updating
+    await delay(1000); // wait till before updating
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
     dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
@@ -180,11 +180,11 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
         api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
       }
     }
+    await delay(500);
     dispatch(AlertModalActions.closeAlertDialog());
     if (showSelectionInvalidated) {
-      await delay(500);
       dispatch(showSelectionsInvalidatedWarning());
-      await delay(500);
+      await delay(1000);
     }
     dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
                                            currentCheckContextId));
