@@ -13,6 +13,9 @@ export const mockParseRemoteUrl = jest.fn();
 export const mockOpen = jest.fn((dir, user) => {
   return new mock(dir, user);
 });
+export const mockDoesRemoteRepoExist = jest.fn(async (dir) => {
+  return !dir;
+});
 
 // instance
 const mock = jest.fn().mockImplementation(() => {
@@ -28,5 +31,6 @@ const mock = jest.fn().mockImplementation(() => {
 mock.open = mockOpen;
 mock.clone = mockClone;
 mock.parseRemoteUrl = mockParseRemoteUrl;
+mock.doesRemoteRepoExist = mockDoesRemoteRepoExist;
 
 export default mock;
