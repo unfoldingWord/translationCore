@@ -144,7 +144,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
                                                         currentCheckContextId, showSelectionInvalidated) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
-    dispatch(AlertModalActions.openAlertDialog(translate("tools.validating_word_alignments"), true));
+    dispatch(AlertModalActions.openAlertDialog(translate("tools.invalidation_checking"), true));
     await delay(500);
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
