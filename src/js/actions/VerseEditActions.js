@@ -234,25 +234,15 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     };
 
     if (selectionsValidationResults.selectionsChanged) {
-      dispatch(showSelectionsInvalidatedWarning(() => {
-        dispatch(clearScreenAndContinue(() => {
-          dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
-        }));
-      }));
+      dispatch(showSelectionsInvalidatedWarning());
+      delay(500).then(dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit,
+                                                                            currentCheckContextId)));
     } else {
       dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
     }
   };
 };
 
-export const clearScreenAndContinue = (callback) => {
-  return async (dispatch) => {
-    await delay(500); // wait for screen to update
-    dispatch(AlertModalActions.closeAlertDialog());
-    await delay(500); // wait for screen to update and close dialog
-    callback();
-  };
-};
 
 /**
  * Records an edit to a verse in the target language bible.
