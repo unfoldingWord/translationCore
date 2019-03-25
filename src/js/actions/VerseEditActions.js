@@ -94,13 +94,13 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
       dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
         verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
         verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
-      await delay(500);
+      await delay(200);
 
       if (getSelectedToolName(getState()) === 'translationWords') {
         // in group data reducer set verse edit flag for every check of the verse edited
         const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
         const keys = Object.keys(matchedGroupData);
-        await delay(500);
+        await delay(200);
         for (let groupItemKey of keys) {
           const groupItem = matchedGroupData[groupItemKey];
           if (groupItem) {
@@ -109,7 +109,7 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                 type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
                 contextId: check.contextId
               });
-              await delay(500);
+              await delay(200);
             }
           }
         }
@@ -234,9 +234,9 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     };
 
     if (selectionsValidationResults.selectionsChanged) {
-      dispatch(showSelectionsInvalidatedWarning());
-      delay(500).then(dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit,
-                                                                            currentCheckContextId)));
+      delay(1000).then(dispatch(showSelectionsInvalidatedWarning()));
+      dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit,
+                                                                            currentCheckContextId));
     } else {
       dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
     }
