@@ -13,7 +13,8 @@ describe("static methods", () => {
       "full_name": "richmahn/en_tit_ulb",
       "host": "https://git.door43.org/",
       "name": "en_tit_ulb",
-      "owner": "richmahn"
+      "owner": "richmahn",
+      url
     });
   });
   it("should return the project name of a git.door43.org link without '.git' extension", () => {
@@ -23,7 +24,8 @@ describe("static methods", () => {
       "full_name": "richmahn/en_tit_ulb",
       "host": "https://git.door43.org/",
       "name": "en_tit_ulb",
-      "owner": "richmahn"
+      "owner": "richmahn",
+      url
     });
   });
 

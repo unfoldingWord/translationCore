@@ -326,8 +326,8 @@ export const hasGitHistoryForCurrentUser = async (
   try {
     if (login && login.userdata && login.loggedInUser) {
       if (fs.pathExistsSync(path.join(projectSaveLocation, ".git"))) {
-        const repo = await Repo.open(projectSaveLocation);
-        const info = await repo.getRemote("origin");
+        const remoteUrl = await getSavedRemote(projectSaveLocation, "origin");
+        const info = Repo.parseRemoteUrl(remoteUrl);
         if(info) {
           let { owner: user } = info;
           return (user === login.userdata.username);

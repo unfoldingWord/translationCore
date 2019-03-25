@@ -315,7 +315,7 @@ export default class Repo {
   async getRemote(name = "origin") {
     let remote = await gitApi.getSavedRemote(this.dir, name);
     if (remote) { // if found get url from remote object
-      return Repo.parseRemoteUrl(remote.refs.push || remote.refs.fetch)
+      return Repo.parseRemoteUrl(remote.refs.push || remote.refs.fetch);
     }
     return null;
   }
