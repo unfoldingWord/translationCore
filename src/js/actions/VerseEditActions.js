@@ -12,6 +12,7 @@ import {
   getSelectedToolApi,
   getSelectedToolName,
   getSupportingToolApis,
+  getTranslate,
   getUsername
 } from '../selectors';
 
@@ -87,7 +88,6 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                                               currentCheckContextId) => {
   return async(dispatch, getState) => {
-    console.log("doBackgroundVerseEditsUpdates()");
     await delay(1000); // wait till before updating
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
@@ -115,7 +115,6 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
         }
       }
     }
-    console.log("doBackgroundVerseEditsUpdates() - done");
   };
 };
 
@@ -144,15 +143,14 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
 export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
                                                         currentCheckContextId, showSelectionInvalidated) => {
   return async (dispatch, getState) => {
-    dispatch(AlertModalActions.openAlertDialog("Checking Word Alignments", true));
+    const translate = getTranslate(getState());
+    dispatch(AlertModalActions.openAlertDialog(translate("tools.validating_word_alignments"), true));
     await delay(500);
-    console.log("updateVerseEditStatesAndCheckAlignments() - updateTargetVerse()");
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
     if (getSelectedToolName(getState()) === 'wordAlignment') {
-      console.log("updateVerseEditStatesAndCheckAlignments() - writeTranslationWordsVerseEditToFile()");
       // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
       dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
       // in group data reducer set verse edit flag for the verse edited
@@ -167,7 +165,6 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     // callbacks for editing so that tools can manually perform the edit and
     // trigger validation on the specific verse.
     const newState = getState();
-    console.log("updateVerseEditStatesAndCheckAlignments() - calling WA for checking()");
     const apis = getSupportingToolApis(newState);
     if ('wordAlignment' in apis && apis['wordAlignment'] !== null) {
       // for other tools
@@ -188,7 +185,6 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     }
     dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
                                            currentCheckContextId));
-    console.log("updateVerseEditStatesAndCheckAlignments() - Finished");
   };
 };
 
