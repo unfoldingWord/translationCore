@@ -87,20 +87,20 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                                               currentCheckContextId) => {
   return (dispatch, getState) => {
-    return delay(1000).then( async () => { // wait till before updating
+    return delay(500).then( async () => { // wait till before updating
 
       const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
       const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
       dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
         verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
         verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
-      await delay(200);
+      await delay(500);
 
       if (getSelectedToolName(getState()) === 'translationWords') {
         // in group data reducer set verse edit flag for every check of the verse edited
         const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
         const keys = Object.keys(matchedGroupData);
-        await delay(200);
+        await delay(500);
         for (let groupItemKey of keys) {
           const groupItem = matchedGroupData[groupItemKey];
           if (groupItem) {
@@ -109,7 +109,7 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                 type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
                 contextId: check.contextId
               });
-              await delay(200);
+              await delay(500);
             }
           }
         }
