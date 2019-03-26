@@ -365,7 +365,8 @@
     "menu": "Menu",
     "no_gl_available": "None available",
     "invalid_checks": "Invalidated checks",
-    "invalid_verse_alignments": "Verses with invalidated alignments."
+    "invalid_verse_alignments": "Verses with invalidated alignments.",
+    "invalidation_checking": "Doing Invalidation Checking"
   },
   "buttons": {
     "back_button": "Go Back",
