@@ -2,7 +2,6 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 jest.mock('fs-extra');
-jest.mock('isomorphic-git');
 
 import fs from 'fs-extra';
 import path from 'path-extra';

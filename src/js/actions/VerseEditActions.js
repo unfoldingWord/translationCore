@@ -12,6 +12,7 @@ import {
   getSelectedToolApi,
   getSelectedToolName,
   getSupportingToolApis,
+  getTranslate,
   getUsername
 } from '../selectors';
 
@@ -23,8 +24,8 @@ import {
  * @param {string} before - Previous text version of the verse.
  * @param {string} after - New edited text version of the verse.
  * @param {string[]} tags - Array of tags used for verse Edit check boxes.
- * @param {string} [username=null] - The user's alias. If null the current username will be used.
- * @return {*}
+ * @param {string|null} [username=null] - The user's alias. If null the current username will be used.
+ * @return {Function}
  */
 export const editSelectedTargetVerse = (before, after, tags, username=null) => {
   return (dispatch, getState) => {
@@ -65,6 +66,59 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 };
 
 /**
+ * after a delay it starts updating the verse edit flags.  There are also delays between operations
+ *   so we don't slow down UI interactions of user
+ * @param {{
+      verseBefore: String,
+      verseAfter: String,
+      tags: Array,
+      userName: String,
+      activeBook: String,
+      activeChapter: Number,
+      activeVerse: Number,
+      modifiedTimestamp: String,
+      gatewayLanguageCode: String,
+      gatewayLanguageQuote: String,
+      contextId: Object
+    }} verseEdit - record to be saved to file system if in WA tool
+ * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
+ * @param {Object} currentCheckContextId - contextId of group menu item selected
+ * @return {Function}
+ */
+export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
+                                              currentCheckContextId) => {
+  return async(dispatch, getState) => {
+    await delay(1000); // wait till before updating
+    const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
+    const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
+    dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
+      verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
+      verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
+    await delay(200);
+
+    if (getSelectedToolName(getState()) === 'translationWords') {
+      // in group data reducer set verse edit flag for every check of the verse edited
+      const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
+      const keys = Object.keys(matchedGroupData);
+      console.log(`doBackgroundVerseEditsUpdates() - found ${keys.length} checks`);
+      await delay(200);
+      for (let groupItemKey of keys) {
+        const groupItem = matchedGroupData[groupItemKey];
+        if (groupItem) {
+          for (let check of groupItem) {
+            dispatch({
+              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+              contextId: check.contextId
+            });
+            await delay(200);
+          }
+        }
+      }
+    }
+  };
+};
+
+/**
  * updates verse edit in group data reducer (and in file system if tw group data is not loaded) and
  *   then does alignment validation checking
  *
@@ -83,33 +137,20 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
     }} verseEdit - record to be saved to file system if in WA tool
  * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
  * @param {Object} currentCheckContextId - contextId of group menu item selected
+ * @param {Boolean} showSelectionInvalidated - if true then show prompt that selections invalidated
  * @return {Function}
  */
 export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
-                                                        currentCheckContextId) => {
-  return (dispatch, getState) => {
+                                                        currentCheckContextId, showSelectionInvalidated) => {
+  return async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    dispatch(AlertModalActions.openAlertDialog(translate("tools.invalidation_checking"), true));
+    await delay(500);
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
-    dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
-        verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
-        verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
-    if (getSelectedToolName(getState()) === 'translationWords') {
-      // in group data reducer set verse edit flag for every check of the verse edited
-      const matchedGroupData = getGroupDataForVerse(getState(), contextIdWithVerseEdit);
-      for (let groupItemKey of Object.keys(matchedGroupData)) {
-        const groupItem = matchedGroupData[groupItemKey];
-        if (groupItem) {
-          for (let check of groupItem) {
-            dispatch({
-              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-              contextId: check.contextId
-            });
-          }
-        }
-      }
-    } else if (getSelectedToolName(getState()) === 'wordAlignment') {
+    if (getSelectedToolName(getState()) === 'wordAlignment') {
       // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
       dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
       // in group data reducer set verse edit flag for the verse edited
@@ -136,6 +177,14 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
         api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
       }
     }
+    if (showSelectionInvalidated) {
+      dispatch(showSelectionsInvalidatedWarning()); // no need to close alert, since this replaces it
+      await delay(1000);
+    } else {
+      dispatch(AlertModalActions.closeAlertDialog());
+    }
+    dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
+                                           currentCheckContextId));
   };
 };
 
@@ -194,24 +243,8 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
       contextId: contextIdWithVerseEdit
     };
 
-    if (selectionsValidationResults.selectionsChanged) {
-      dispatch(showSelectionsInvalidatedWarning(() => {
-        dispatch(clearScreenAndContinue(() => {
-          dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
-        }));
-      }));
-    } else {
-      dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
-    }
-  };
-};
-
-export const clearScreenAndContinue = (callback) => {
-  return async (dispatch) => {
-    await delay(500); // wait for screen to update
-    dispatch(AlertModalActions.closeAlertDialog());
-    await delay(1000); // wait for screen to update and close dialog
-    callback();
+    dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId,
+        selectionsValidationResults.selectionsChanged));
   };
 };
 
@@ -230,7 +263,7 @@ export const clearScreenAndContinue = (callback) => {
  * @param {string} modified - the edit timestamp
  * @param {string|null} [glCode=null] - the gateway language code
  * @param {string|null} [glQuote=null] - the gateway language code
- * @return {*}
+ * @return {Object} - record to save to file
  */
 export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null,
   {reference:{chapter:activeChapter, verse:activeVerse}, quote, groupId, occurrence}) => ({

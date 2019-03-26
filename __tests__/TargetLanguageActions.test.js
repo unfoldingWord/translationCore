@@ -1,5 +1,6 @@
 jest.unmock('fs-extra');
 jest.unmock('adm-zip');
+jest.unmock("../src/js/helpers/GitApi");
 import path from 'path';
 import fs from 'fs-extra';
 import ncp from 'ncp';

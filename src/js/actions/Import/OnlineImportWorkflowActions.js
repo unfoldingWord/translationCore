@@ -75,11 +75,11 @@ export const onlineImport = () => {
 
           // check if we can import the project
           console.log("onlineImport() - check if we can import the project");
-          const errorMessage = translate('projects.online_import_error', {project_url: link, toPath: importProjectPath});
-          const isValid = verifyThisIsTCoreOrTStudioProject(importProjectPath, errorMessage);
+          const isValid = verifyThisIsTCoreOrTStudioProject(importProjectPath);
           if (!isValid) {
+            const errorMessage = translate('projects.online_import_error', {project_url: link, toPath: importProjectPath});
             console.warn("This is not a valid tStudio or tCore project we can migrate: ", errorMessage);
-            throw new Error(errorMessage);
+            throw errorMessage;
           }
 
           await isProjectSupported(importProjectPath, translate);
