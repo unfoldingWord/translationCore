@@ -196,14 +196,22 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
 
     if (selectionsValidationResults.selectionsChanged) {
       dispatch(showSelectionsInvalidatedWarning(() => {
-        dispatch(AlertModalActions.closeAlertDialog());
-        delay(500).then(() => { // wait for screen to update
+        dispatch(clearScreenAndContinue(() => {
           dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
-        });
+        }));
       }));
     } else {
       dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId));
     }
+  };
+};
+
+export const clearScreenAndContinue = (callback) => {
+  return async (dispatch) => {
+    await delay(500); // wait for screen to update
+    dispatch(AlertModalActions.closeAlertDialog());
+    await delay(1000); // wait for screen to update and close dialog
+    callback();
   };
 };
 
