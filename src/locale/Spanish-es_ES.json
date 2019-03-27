@@ -365,7 +365,8 @@
     "menu": "Menú",
     "no_gl_available": "Ninguno disponible",
     "invalid_checks": "Revisiones invalidadas",
-    "invalid_verse_alignments": "Versículos con alineaciones invalidadas."
+    "invalid_verse_alignments": "Versículos con alineaciones invalidadas.",
+    "invalidation_checking": "Doing Invalidation Checking"
   },
   "buttons": {
     "back_button": "Volver",
