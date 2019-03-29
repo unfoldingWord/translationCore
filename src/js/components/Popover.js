@@ -14,27 +14,28 @@ class PopoverComponent extends Component {
         <div>
           <Popover
             className='popover-root'
-            style={{ padding:0 , backgroundColor: "var(--background-color-light)" }}
+            style={{ padding: '1em', maxWidth: '400px', backgroundColor: "var(--background-color-light)" }}
             open={popoverVisibility}
             anchorEl={positionCoord}
             anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
             targetOrigin={{ horizontal: 'left', vertical: 'top' }}
             onRequestClose={onClosePopover}
           >
-            <div style={{ display: 'flex', alignItems:'center', padding:'5px 0px' }}>
-              <span style={{ marginLeft: 5 }}>
+            <div style={{display: 'flex', alignItems:'center', padding: 0 }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', marginLeft: 5, marginBottom: 10 }}>
                 {title}
               </span>
               <Glyphicon glyph={"remove"}
                 style={{
                   color: "var(--text-color-light)",
-                  cursor: 'pointer',alignItems: 'center',
+                  cursor: 'pointer',
+                  alignItems: 'center',
                   marginLeft: 'auto', marginRight: 5
                 }}
                 onClick={onClosePopover} />
             </div>
             <Divider />
-            <span style={{ padding: '0 20px' }}>
+            <span style={{  padding: '10px 0 15px 0' }}>
               {bodyText}
             </span>
           </Popover>
@@ -43,6 +44,10 @@ class PopoverComponent extends Component {
     }
   }
 }
+
+// all style  padding: '20px',
+// title style  fontWeight: 'bold', 
+// body style style={{ padding: '0 20px' }}
 
 PopoverComponent.propTypes = {
     popoverVisibility: PropTypes.any,

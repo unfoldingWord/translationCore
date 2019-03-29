@@ -103,23 +103,34 @@ class ToolCardBoxes extends React.Component {
   }
 
   onWordClick(event, category) {
+    const MAXTEXT = 450;
     const positionCoord = event.target;
 
-    const bodyText = ResourcesActions.loadArticleData(
+    const fullText = ResourcesActions.loadArticleData(
       'translationAcademy', 
       category,
       this.props.selectedGL 
     ); 
-    
-    const titleStart = bodyText.indexOf("#");
-    const titleEnd = bodyText.indexOf("#",titleStart+1);
 
+    let bodyText = "";
+    const overall = fullText.indexOf("Description");
+    
+    if( overall > 0) {
+       bodyText = fullText.substr(0, Math.min(overall, MAXTEXT));
+    } else {
+       bodyText = fullText.substr(0, MAXTEXT);
+    }
+
+    const titleStart = bodyText.indexOf("#");
+    const titleEnd = bodyText.indexOf("#", titleStart + 1);
+    const title = bodyText.substr(titleStart + 1, titleEnd - 1);
+ 
+    let intro = bodyText.substr(titleEnd + 1, (overall - titleEnd - 1) ).replace(/([#*]|<\/?u>)/gm, "");
+        //intro = intro.replace(/<.u>/g, "");
+    // bodyText.length > (MAXTEXT - titleEnd) ? "..." : "";
+  //debugger;
     // gets rid of markdown and removes "Description" from articles pulls title from start of text
-    this.props.showPopover(
-      bodyText.substr(titleStart + 1, titleEnd - 1),
-      bodyText.substr(titleEnd + 1, 512).replace(/[#*]/g, "").replace("Description", "") + "... ", 
-      positionCoord
-    );
+    this.props.showPopover(title, intro, positionCoord);
   }
 
   render() {

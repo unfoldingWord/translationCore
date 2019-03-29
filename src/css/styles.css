@@ -361,11 +361,6 @@ main modal. They basically override bootstrap styling for these components
   overflow: visible;
   box-shadow: none;
   left: -31415px;
-
-  max-width: 400px; /* bms for toolcardboxes */
-  padding: 10px!important;
-  font-family: "Noto Sans";
-  font-size: 14px;
 }
 
 .menu-text-root {
