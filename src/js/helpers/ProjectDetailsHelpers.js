@@ -14,7 +14,6 @@ import * as manifestHelpers from "./manifestHelpers";
 import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
 import ResourceAPI from "./ResourceAPI";
-//import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 

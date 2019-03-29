@@ -11,21 +11,7 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  toolsCategories: { 
-    translationWords: ['kt', 'other', 'names'],
-    translationNotes: ['cultural', 
-                         'cultural-symAct', 'cultural-symLang', 'cultural-cultInfo', 'cultural-unknown', 'cultural-plicit',
-                       'figures', 
-                         'figures-idiom', 'figures-irony',  'figures-metaphor', 'figures-rhet',     'figures-simile', 'figures-apos',
-                         'figures-euph',  'figures-hen',    'figures-hyper',    'figures-litotes',  'figures-merism', 'figures-meto',
-                         'figures-para',  'figures-person', 'figures-synec',    'figures-ellipsis', 'figures-neg',
-                       'lexical', 
-                         'lexical-wgt', 'lexical-num', 'lexical-frac', 'lexical-ord',
-                       'morphological',
-                         'morphological-you',      'morphological-we',   'morphological-they', 'morphological-actPas', 'morphological-gender', 
-                         'morphological-pronouns', 'morphological-conj', 'morphological-gen',  'morphological-honor'
-                       ]
-  }
+  toolsCategories: {}
 };
 
 const projectDetailsReducer = (state = initialState, action) => {

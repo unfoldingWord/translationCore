@@ -2,28 +2,22 @@ import {
   generateChapterGroupData,
   generateChapterGroupIndex
 } from "../groupDataHelpers";
-
 jest.mock("../groupDataHelpers");
 jest.mock("../ProjectAPI");
 jest.mock("../ResourceAPI");
 jest.mock("fs-extra");
-
+import path from 'path';
 import fs from "fs-extra";
-import path from "path-extra";
 import {
-  mockIsCategoryLoaded,
   mockSetCategoryLoaded,
   mockImportCategoryGroupData,
   mockGetCategoriesDir,
   mockGetBookId,
   mockGetSelectedCategories
 } from "../ProjectAPI";
-import { mockGetLatestTranslationHelp } from "../ResourceAPI";
+import {mockGetLatestTranslationHelp} from "../ResourceAPI";
 
-import {
-  copyGroupDataToProject,
-  loadProjectGroupIndex
-} from "../ResourcesHelpers";
+import {loadProjectGroupIndex, copyGroupDataToProject} from "../ResourcesHelpers";
 
 describe("copy group data", () => {
   beforeEach(() => {
@@ -32,29 +26,30 @@ describe("copy group data", () => {
 
   it("copies group data", () => {
     mockGetLatestTranslationHelp.mockReturnValueOnce(path.join("", "help", "dir"));
+    mockGetLatestTranslationHelp.mockReturnValueOnce(path.join("", "help", "dir"));
     fs.readdirSync.mockReturnValueOnce(["names", "other"]);
     fs.lstatSync.mockReturnValue({
       isDirectory: () => true
     });
     fs.pathExistsSync.mockReturnValue(true);
     mockGetBookId.mockReturnValue("tit");
-    mockIsCategoryLoaded.mockReturnValueOnce(false);
-    mockIsCategoryLoaded.mockReturnValueOnce(true); // other category is loaded and will be skipped
-    fs.readdirSync.mockReturnValueOnce(["group1.json", "group2.json", "folder"]);
-
+    fs.readdirSync.mockReturnValueOnce(["apostle.json", "authority.json"]);
     copyGroupDataToProject("lang", "tool", "project/");
     const groupPath =  path.join("", "help", "dir", "names", "groups", "tit");
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "group1.json"));
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "group2.json"));
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "authority.json"));
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "apostle.json"));
     expect(mockImportCategoryGroupData.mock.calls.length).toBe(2);
-    expect(mockSetCategoryLoaded).toBeCalledWith("tool", "names");
+    expect(mockSetCategoryLoaded).toBeCalledWith("tool", "authority");
+    expect(mockSetCategoryLoaded).toBeCalledWith("tool", "apostle");
     expect(mockSetCategoryLoaded.mock.calls.length).toBe(2);
     expect(generateChapterGroupData).not.toBeCalled();
   });
 
-  it("has no group data", () => {
-    mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
+  it.only("has no group data", () => {
+    mockGetLatestTranslationHelp.mockReturnValue("/help/dir");
     fs.readdirSync.mockReturnValueOnce([]);
+
+    expect(() => copyGroupDataToProject("lang", "tool", "project/")).toThrow();
     expect(mockImportCategoryGroupData).not.toBeCalled(); // nothing to import
     expect(mockSetCategoryLoaded).not.toBeCalled();
     expect(generateChapterGroupData).not.toBeCalled();
