@@ -53,6 +53,7 @@ export function verifyGroupDataMatchesWithFs() {
       });
       for( let i = 0, lenF = folders.length; i < lenF; i++) {
         const folderName = folders[i];
+        const isTwVerseEdit = (toolName === "translationWords") && (folderName === "verseEdits");
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
         if(!fs.existsSync(dataPath)) return;
 
@@ -71,15 +72,14 @@ export function verifyGroupDataMatchesWithFs() {
             let latestObjects = readLatestChecks(filePath);
             for( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
               const object = latestObjects[l];
-              const twVerseEdits = (toolName === "translationWords") && (folderName === "verseEdits");
-              if (twVerseEdits) {
+              if (isTwVerseEdit) {
                 // special handling for tW external verse edits, save edit verse
                 const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
                 if (chapter) {
                   const verse = object.contextId.reference.verse;
                   if (verse) {
                     const reference = {
-                      ...object.contextId.reference,
+                      bookId: object.contextId.reference.bookId,
                       chapter,
                       verse
                     };

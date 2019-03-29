@@ -210,9 +210,12 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     let filtered = null;
     results.selectionsChanged = false;
 
-    for (let groupItemKey of Object.keys(groupsDataForVerse)) {
+    const groupsDataKeys = Object.keys(groupsDataForVerse);
+    for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
+      const groupItemKey = groupsDataKeys[i];
       const groupItem = groupsDataForVerse[groupItemKey];
-      for (let checkingOccurrence of groupItem) {
+      for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
+        const checkingOccurrence = groupItem[j];
         const selections = checkingOccurrence.selections;
         if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
           if (selections && selections.length) {
@@ -245,10 +248,13 @@ export const getGroupDataForVerse = (state, contextId) => {
   const {groupsData} = state.groupsDataReducer;
   const filteredGroupData = {};
   if (groupsData) {
-    for (let groupItemKey of Object.keys(groupsData)) {
+    const groupsDataKeys = Object.keys(groupsData);
+    for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
+      const groupItemKey = groupsDataKeys[i];
       const groupItem = groupsData[groupItemKey];
       if (groupItem) {
-        for (let check of groupItem) {
+        for (let j = 0, l = groupItem.length; j < l; j++) {
+          const check = groupItem[j];
           try {
             if (isEqual(check.contextId.reference, contextId.reference)) {
               if (!filteredGroupData[groupItemKey]) {

@@ -67,6 +67,37 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 
 /**
  * set verse edit flag for all tw checks in verse if not set
+ * @param {Object} contextId - of verse edit
+ * @return {Function}
+ */
+export const setVerseEditsInTwGroupData = (contextId) => {
+  return async (dispatch, getState) => {
+    // in group data reducer set verse edit flag for every check of the verse edited
+    const matchedGroupData = getGroupDataForVerse(getState(), contextId);
+    const keys = Object.keys(matchedGroupData);
+    if (keys.length) {
+      await delay(200);
+      for (let i = 0, l = keys.length; i < l; i++) {
+        const groupItem = matchedGroupData[keys[i]];
+        if (groupItem) {
+          for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
+            const check = groupItem[j];
+            if (!check.verseEdits) { // only set if not yet set
+              dispatch({
+                type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+                contextId: check.contextId
+              });
+              await delay(200);
+            }
+          }
+        }
+      }
+    }
+  };
+};
+
+/**
+ * set verse edit flag for all tw checks in verse if not set
  * @param {Array} twVerseEdits - of verse edit contextIds
  * @return {Function}
  */
@@ -76,36 +107,6 @@ export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
       for (let i = 0, lenVE = twVerseEdits.length; i < lenVE; i++) {
         const contextId = twVerseEdits[i];
         await dispatch(setVerseEditsInTwGroupData(contextId));
-      }
-    }
-  };
-};
-
-/**
- * set verse edit flag for all tw checks in verse if not set
- * @param {Object} contextId - of verse edit
- * @return {Function}
- */
-export const setVerseEditsInTwGroupData = (contextId) => {
-  return async (dispatch, getState) => {
-    // in group data reducer set verse edit flag for every check of the verse edited
-    const matchedGroupData = getGroupDataForVerse(getState(), contextId);
-    const keys = Object.keys(matchedGroupData);
-    console.log(`doBackgroundVerseEditsUpdates() - found ${keys.length} checks`);
-    await delay(200);
-    for (let i = 0, l = keys.length; i < l; i++) {
-      const groupItem = matchedGroupData[keys[i]];
-      if (groupItem) {
-        for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
-          const check = groupItem[j];
-          if (!check.verseEdited) { // only set if not yet set
-            dispatch({
-              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-              contextId: check.contextId
-            });
-            await delay(200);
-          }
-        }
       }
     }
   };
