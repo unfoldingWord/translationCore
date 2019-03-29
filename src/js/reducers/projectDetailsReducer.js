@@ -1,6 +1,7 @@
 import consts from '../actions/ActionTypes';
 import path from 'path-extra';
 
+// TBD ToolsCategories need to go, they are dynamic
 const initialState = {
   projectSaveLocation: '',
   manifest: {
@@ -10,10 +11,7 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  toolsCategories: {
-    translationWords: ['kt', 'other', 'names'],
-    translationNotes: ['other']
-  }
+  toolsCategories: {}
 };
 
 const projectDetailsReducer = (state = initialState, action) => {

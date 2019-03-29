@@ -17,23 +17,6 @@ import ResourceAPI from "./ResourceAPI";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
-export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
-  const availableCategories = {};
-  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
-    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-    const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
-    if (fs.existsSync(versionDirectory))
-      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
-        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
-      );
-      if (!availableCategories[toolName]) {
-        availableCategories[toolName] = [];
-      }
-  });
-  return availableCategories;
-}
-
 /**
  * function to make the change in the array based on the passed params
  * i.e. If the value is present in the array and you pass the value of
