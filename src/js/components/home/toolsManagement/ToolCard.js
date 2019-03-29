@@ -156,7 +156,13 @@ class ToolCard extends Component {
             <ToolCardNotificationBadges tool={tool} translate={translate} selectedCategories={selectedCategories} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes toolName={tool.name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
+          {showCheckBoxes && <ToolCardBoxes 
+            toolName={tool.name} 
+            selectedCategories={selectedCategories} 
+            availableCategories={availableCategories} 
+            onChecked={updateCheckSelection}
+            bookId={bookId}
+            translate={translate} />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -220,7 +226,7 @@ ToolCard.propTypes = {
     updateCheckSelection: PropTypes.func.isRequired
   }),
   selectedCategories: PropTypes.array.isRequired,
-  availableCategories: PropTypes.array.isRequired
+  availableCategories: PropTypes.object.isRequired,
 };
 
 ToolCard.contextTypes = {

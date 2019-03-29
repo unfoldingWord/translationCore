@@ -12,6 +12,9 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 jest.mock('fs-extra');
 
 jest.mock('../../selectors', () => ({
+  getCurrentProjectToolsSelectedGL: () => {
+      return 'en';
+  },
   getActiveLocaleLanguage: () => {
     return {code: 'en'};
   },
@@ -145,7 +148,7 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   });
 });
 
-describe('loadProject', () => {
+describe.only('loadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
   const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
@@ -203,7 +206,7 @@ describe('loadProject', () => {
     expect(cleanupActions(store.getActions())).toMatchSnapshot();
   });
 
-  it('opens a valid project', async () => {
+  it.only('opens a valid project', async () => {
     // given
     const selectedProjectFilename = 'en_ult_tit_book';
     const resourceId = "ult";
