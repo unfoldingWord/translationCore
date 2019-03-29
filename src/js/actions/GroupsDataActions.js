@@ -8,6 +8,7 @@ import path from 'path-extra';
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
 import { getSelectedToolName } from "../selectors";
 import { readLatestChecks } from "../helpers/groupDataHelpers";
+import {setVerseEditsInTwGroupDataFromArray} from "./VerseEditActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -42,36 +43,58 @@ export function verifyGroupDataMatchesWithFs() {
         CHECKDATA_DIRECTORY
       );
     }
+    const twVerseEdits = [];
+
     // build the batch
     let actionsBatch = [];
     if (fs.existsSync(checkDataPath)) {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
       });
-      folders.forEach(folderName => {
+      for( let i = 0, lenF = folders.length; i < lenF; i++) {
+        const folderName = folders[i];
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
         if(!fs.existsSync(dataPath)) return;
 
         let chapters = fs.readdirSync(dataPath);
         chapters = filterAndSort(chapters);
-        chapters.forEach(chapterFolder => {
+        for( let j = 0, lenC = chapters.length; j < lenC; j++) {
+          const chapterFolder = chapters[j];
           const chapterDir = path.join(dataPath, chapterFolder);
           if(!fs.existsSync(chapterDir)) return;
 
           let verses = fs.readdirSync(chapterDir);
           verses = filterAndSort(verses);
-          verses.forEach(verseFolder => {
+          for( let k = 0, lenV = verses.length; k < lenV; k++) {
+            const verseFolder = verses[k];
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
             let latestObjects = readLatestChecks(filePath);
-            latestObjects.forEach(object => {
-              if (object.contextId.tool === toolName) {
+            for( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
+              const object = latestObjects[l];
+              const twVerseEdits = (toolName === "translationWords") && (folderName === "verseEdits");
+              if (twVerseEdits) {
+                // special handling for tW external verse edits, save edit verse
+                const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
+                if (chapter) {
+                  const verse = object.contextId.reference.verse;
+                  if (verse) {
+                    const reference = {
+                      ...object.contextId.reference,
+                      chapter,
+                      verse
+                    };
+                    twVerseEdits.push({ reference });
+                  }
+                }
+              } else if ( object.contextId.tool === toolName) {
                 let action = toggleGroupDataItems(folderName, object);
                 if (action) actionsBatch.push(action);
               }
-            });
-          });
-        });
-      });
+            }
+          }
+        }
+      }
+      dispatch(setVerseEditsInTwGroupDataFromArray(twVerseEdits));
       // run the batch
       dispatch(batchActions(actionsBatch));
       dispatch(validateBookSelections());
