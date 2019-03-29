@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
 import {tNotesCategories} from "tsv-groupdata-parser";
+import * as ResourcesActions from "../../../actions/ResourcesActions"; 
 
 /**
 *  Checkboxnames are derived first by what is in Gateway language resource 
@@ -11,7 +12,6 @@ import {tNotesCategories} from "tsv-groupdata-parser";
 *  Finally it is mapped to this object to deterime category names to show the 
 *  user
 */
-
 const toolCardCategories = {
   'kt': 'Key Terms',
   'names': 'Names',
@@ -104,6 +104,26 @@ class ToolCardBoxes extends React.Component {
     });
   }
 
+  onWordClick(event, category) {
+    const positionCoord = event.target;
+
+    const bodyText = ResourcesActions.loadArticleData(
+      'translationAcademy', 
+      category,
+      this.props.selectedGL 
+    ); 
+    
+    const titleStart = bodyText.indexOf("#");
+    const titleEnd = bodyText.indexOf("#",titleStart+1);
+
+    // gets rid of markdown and removes "Description" from articles pulls title from start of text
+    this.props.showPopover(
+      bodyText.substr(titleStart + 1, titleEnd - 1),
+      bodyText.substr(titleEnd + 1, 512).replace(/[#*]/g, "").replace("Description", "") + "... ", 
+      positionCoord
+    );
+  }
+
   render() {
     const {availableCategories = {}, toolName, selectedCategories, onChecked, translate} = this.props;
     const lookupNames = flattenNotesCategories();
@@ -146,8 +166,12 @@ class ToolCardBoxes extends React.Component {
                         {availableCategories[parentCategory].map((subcategory, index) => (
                           <div style={{display: 'flex', width: '48%'}} key={index} >
                             <div style={{marginLeft: '36px', width: '38px'}}>
-                              {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}</div>
-                            <div>{ translate(lookupNames[postPart(subcategory)]) }</div>
+                              {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}
+                            </div>
+                            <span onClick={(event) => this.onWordClick(event, subcategory)} 
+                                style={{cursor: "pointer"}} >          
+                              { translate(lookupNames[postPart(subcategory)]) } 
+                            </span>
                           </div>
                         ))
                         }
@@ -166,9 +190,13 @@ class ToolCardBoxes extends React.Component {
 ToolCardBoxes.propTypes = {
   availableCategories: PropTypes.object.isRequired,
   onChecked: PropTypes.func,
-  selectedCategories: PropTypes.object.isRequired,
+  selectedCategories: PropTypes.array.isRequired,
   toolName: PropTypes.string.isRequired,
   translate: PropTypes.func.isRequired,
+  targetOrigin: PropTypes.string,
+  selectedGL: PropTypes.string.isRequired,
+  showPopover: PropTypes.func.isRequired,
+  closePopover: PropTypes.func.isRequired
 };
 
 export default ToolCardBoxes;

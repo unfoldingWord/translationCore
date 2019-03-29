@@ -108,12 +108,14 @@ class ToolCard extends Component {
       translate,
       developerMode,
       actions: {
-        updateCheckSelection
+        updateCheckSelection,
+        showPopover,
+        closePopover
       },
       selectedCategories,
       availableCategories
     } = this.props;
-    const {progress} = this.state;
+    const {progress, selectedGL} = this.state;
 
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
@@ -162,7 +164,11 @@ class ToolCard extends Component {
             availableCategories={availableCategories} 
             onChecked={updateCheckSelection}
             bookId={bookId}
-            translate={translate} />}
+            translate={translate}
+            selectedGL={selectedGL}
+            showPopover={showPopover}
+            closePopover={closePopover}
+          />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -226,7 +232,7 @@ ToolCard.propTypes = {
     updateCheckSelection: PropTypes.func.isRequired
   }),
   selectedCategories: PropTypes.array.isRequired,
-  availableCategories: PropTypes.object.isRequired,
+  availableCategories: PropTypes.object.isRequired
 };
 
 ToolCard.contextTypes = {
