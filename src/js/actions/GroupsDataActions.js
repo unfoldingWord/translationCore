@@ -55,14 +55,14 @@ export function verifyGroupDataMatchesWithFs() {
         const folderName = folders[i];
         const isTwVerseEdit = (toolName === "translationWords") && (folderName === "verseEdits");
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
-        if(!fs.existsSync(dataPath)) return;
+        if(!fs.existsSync(dataPath)) continue;
 
         let chapters = fs.readdirSync(dataPath);
         chapters = filterAndSort(chapters);
         for( let j = 0, lenC = chapters.length; j < lenC; j++) {
           const chapterFolder = chapters[j];
           const chapterDir = path.join(dataPath, chapterFolder);
-          if(!fs.existsSync(chapterDir)) return;
+          if(!fs.existsSync(chapterDir)) continue;
 
           let verses = fs.readdirSync(chapterDir);
           verses = filterAndSort(verses);

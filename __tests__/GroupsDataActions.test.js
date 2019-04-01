@@ -6,13 +6,13 @@ import path from 'path-extra';
 import { generateTimestamp } from '../src/js/helpers';
 import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
+import * as VerseEditActions from "../src/js/actions/VerseEditActions";
 
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const CHECK_DATA_PATH = path.join(__dirname, 'fixtures', 'checkData');
 const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'project', 'en_tit');
-let mock_addNewBible = jest.fn();
 
 describe('GroupsDataActions.validateBookSelections', () => {
   const bookId = 'tit';
@@ -34,6 +34,7 @@ describe('GroupsDataActions.validateBookSelections', () => {
   beforeEach(() => {
     saveOtherContextSpy = jest.spyOn(saveMethods,
       'saveSelectionsForOtherContext');
+    fs.__resetMockFS();
     fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
     fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
   });
@@ -87,6 +88,60 @@ describe('GroupsDataActions.validateBookSelections', () => {
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(expectedSelectionChanges);
   });
+});
+
+describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
+  const bookId = 'tit';
+  const selectionsReducer = {
+    gatewayLanguageCode: 'en',
+    gatewayLanguageQuote: 'authority, authorities',
+    'selections': [
+      {
+        'text': 'apostle',
+        'occurrence': 1,
+        'occurrences': 1
+      }
+    ],
+    username: 'dummy-test',
+    modifiedTimestamp: generateTimestamp()
+  };
+  let setVerseEditsInTwGroupDataFromArraySpy = null;
+  const projectCheckDataPath = path.join(PROJECTS_PATH, ".apps/translationCore/checkData");
+
+  beforeEach(() => {
+    setVerseEditsInTwGroupDataFromArraySpy = jest.spyOn(VerseEditActions,
+      'setVerseEditsInTwGroupDataFromArray');
+    fs.__resetMockFS();
+    fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
+    fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
+    fs.__loadDirIntoMockFs(path.join(CHECK_DATA_PATH, 'en_tit/.apps/translationCore/checkData'), projectCheckDataPath);
+  });
+
+  afterEach(() => {
+    removeSpy(setVerseEditsInTwGroupDataFromArraySpy);
+  });
+
+  it('tW Should Recognize WA edit', () => {
+    // given
+    const store = initiMockStore(bookId, selectionsReducer);
+    const expectedSetVerseEditsCalls = 1;
+    const expectedVerseEdits = [
+      { reference: {
+          "bookId": "tit",
+          "chapter": 1,
+          "verse": 1
+        }
+      }
+    ];
+
+    // when
+    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+
+    // then
+    expect(setVerseEditsInTwGroupDataFromArraySpy).toHaveBeenCalledTimes(expectedSetVerseEditsCalls);
+    expect(setVerseEditsInTwGroupDataFromArraySpy).toHaveBeenCalledWith(expectedVerseEdits);
+  });
+
 });
 
 //
