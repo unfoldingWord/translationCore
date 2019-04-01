@@ -99,6 +99,9 @@ class ToolCardBoxes extends React.Component {
   }
 
 
+  /**
+   * Load first 600 characters of tA articles for available categories in this project
+   */
   loadArticles(){
     let fullText = "";
     let articles = {};
@@ -141,17 +144,9 @@ console.log( "articles: ", articles );
 
   onWordClick(event, category) {
     const MAX_TEXT = 450;
-    //const MIN_DESCRIPTION = 50;
     const positionCoord = event.target;
-
     const fullText = this.state.articles[category];
-/*
-    const fullText = ResourcesActions.loadArticleData(
-      'translationAcademy', 
-      category,
-      this.props.selectedGL 
-    ); 
-*/
+
     // get title from start of text
     const parts = fullText.split("#");
     const title = parts[1].trim();
