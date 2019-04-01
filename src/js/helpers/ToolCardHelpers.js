@@ -31,15 +31,16 @@ export function isToolSupported(bookId, developerMode) {
 
 
 /**
- * simplifies markdown formatted tA article for uss as an abstract in tN toolcard
- * @param {*} fullText - unparsed text from tA article 
- * @return title, intro - parses out introductory material
+ * @Description simplify markdown formatted tA article for uss as an abstract in tN toolcard
+ * @param {string} fullText - unparsed text from tA article 
+ * @return {array} [title, intro] - parses out introductory material
+ * 
  * tA articles are generally of the form: 
  * 
  * <title>
  * [<introductory material>]
  * [Description]
- * [<descriptive material>]
+ * <descriptive material>
  * 
  * where
  *   <variable> 
@@ -49,7 +50,7 @@ export function isToolSupported(bookId, developerMode) {
  * returns descriptive material if no introductory material
  * removes other markdown notation
  * truncates to MAX_TEXT
- * adds ... if greater than MAX_TEXT
+ * adds "..." if longer than MAX_TEXT
  */
 export function parseArticleAbstract(fullText) {
   const MAX_TEXT = 450;
