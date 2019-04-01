@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {Popover, Divider} from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 
-// overflow-y: hidden !important; 
 class PopoverComponent extends Component {
   render() {
     let { popoverVisibility, title, bodyText, positionCoord, onClosePopover } = this.props;

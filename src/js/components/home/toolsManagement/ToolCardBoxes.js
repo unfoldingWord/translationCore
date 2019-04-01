@@ -4,7 +4,7 @@ import {Checkbox} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
 import {tNotesCategories} from "tsv-groupdata-parser";
 import * as ResourcesActions from "../../../actions/ResourcesActions"; 
-import {parseArticleAbstract} from "../../../helpers/toolCardhelpers";
+import {parseArticleAbstract} from "../../../helpers/toolCardHelpers";
 /**
 *  Checkboxnames are derived first by what is in Gateway language resource 
 *  translation notes FileFolder. This is mapped to the array in 

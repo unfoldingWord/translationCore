@@ -363,7 +363,7 @@ main modal. They basically override bootstrap styling for these components
   left: -31415px;
 }
 
-.popover-root > div:nth-child(1) { /* removes scrollbar from popover-roots child set by material-ui */
+.popover-root > div:nth-child(1) { /* removes unhelpfull scrollbar from popover-roots child auto set by material-ui */
   overflow-y: hidden !important;
 }
 
