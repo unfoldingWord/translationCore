@@ -45,9 +45,6 @@ class PopoverComponent extends Component {
   }
 }
 
-// all style  padding: '20px',
-// title style  fontWeight: 'bold', 
-// body style style={{ padding: '0 20px' }}
 
 PopoverComponent.propTypes = {
     popoverVisibility: PropTypes.any,

@@ -4,7 +4,7 @@ import {Checkbox} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
 import {tNotesCategories} from "tsv-groupdata-parser";
 import * as ResourcesActions from "../../../actions/ResourcesActions"; 
-
+import {parseArticleAbstract} from "../../../helpers/toolCardhelpers";
 /**
 *  Checkboxnames are derived first by what is in Gateway language resource 
 *  translation notes FileFolder. This is mapped to the array in 
@@ -82,6 +82,7 @@ function postPart(symbol) {
 }
 
 
+
 class ToolCardBoxes extends React.Component {
   constructor(props) {
     super(props);
@@ -104,19 +105,12 @@ class ToolCardBoxes extends React.Component {
    */
   loadArticles(){
     let fullText = "";
-    let articles = {};
-
-    console.log( "availableCategories: ", this.props.availableCategories );  
-    //const keys = this.props.availableCategories.keys;
-    //console.log( "keys: ", keys );  
+    let articles = {}; 
 
     for(var cat in this.props.availableCategories) { 
       let category  = this.props.availableCategories[cat];
 
       for(var group in category ) {
-        //let groups = this.props.availableCategories[category];
-        //let group = groups[idx];
-
         fullText = ResourcesActions.loadArticleData(
           'translationAcademy', 
           category[group],
@@ -127,8 +121,7 @@ class ToolCardBoxes extends React.Component {
       }
     }
 
-    this.setState( {"articles": articles} );
-console.log( "articles: ", articles );    
+    this.setState( {"articles": articles} );   
   }
 
 
@@ -143,42 +136,9 @@ console.log( "articles: ", articles );
 
 
   onWordClick(event, category) {
-    const MAX_TEXT = 450;
     const positionCoord = event.target;
     const fullText = this.state.articles[category];
-
-    // get title from start of text
-    const parts = fullText.split("#");
-    const title = parts[1].trim();
-
-    // get introduction or description if no introduction
-    const bodyParts = parts.slice(2, parts.length);
-    const wholeBody = bodyParts.join(" ");
-    let description = wholeBody.split("Description");
-    let partial = "";
-
-    if(description.length>0) {
-      // has description
-      if (description[0].length < 10) {
-        partial = description[1];
-      } else {
-        partial = description[0];
-      }
-    } else {
-      partial = description[0];
-    }
-
-    // remove markup
-    const stripped = partial.replace(/([#*]|<\/?u>)/gm, "").trim();
-    let intro = stripped;
-
-    // trucate with ellipsis
-    if(stripped.length > MAX_TEXT) {
-      const truncated = stripped.substr(0, MAX_TEXT);
-      const lastSpace = truncated.lastIndexOf(" ");
-      intro = truncated.substr(0, MAX_TEXT - (MAX_TEXT - lastSpace)) + "...";
-    }
-
+    const [title, intro] = parseArticleAbstract(fullText);
     this.props.showPopover(title, intro, positionCoord);
   }
 
