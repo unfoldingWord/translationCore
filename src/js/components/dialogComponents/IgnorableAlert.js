@@ -1,10 +1,8 @@
 import React from 'react';
 import BaseDialog from './BaseDialog';
 import PropTypes from 'prop-types';
-import { Checkbox } from 'material-ui';
-import path from 'path-extra';
-
-// import logo from "../../../images/TC_Icon.png";
+import {Checkbox} from 'material-ui';
+import {logoData} from "./Alert";
 
 /**
  * A generic alert dialog that can be ignored.
@@ -37,8 +35,6 @@ class IgnorableAlert extends React.Component {
     const padding = 25;
     const isIgnorable = ignoreText && typeof onIgnore === 'function';
 
-    const logoPath = path.join(__dirname, '../../../images/TC_Icon.png');
-
     return (
       <BaseDialog
         open={open}
@@ -53,7 +49,7 @@ class IgnorableAlert extends React.Component {
       >
         <div style={{ display: 'flex' }}>
           <img
-            src={logoPath}
+            src={`data:image/png;base64,${logoData}`}
             height="100px"
             alt="translationCore Logo"
             style={{ paddingRight: padding }}
