@@ -185,9 +185,16 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
             translated: tool_card_categories.figs_explicit
-          </div>
+          </span>
         </div>
         <div
           key="1"
@@ -224,9 +231,16 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
             translated: tool_card_categories.translate_symaction
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -359,9 +373,16 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
             translated: tool_card_categories.figs_apostrophe
-          </div>
+          </span>
         </div>
         <div
           key="1"
@@ -398,9 +419,16 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
             translated: tool_card_categories.figs_doublenegatives
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -533,9 +561,16 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
             translated: tool_card_categories.translate_numbers
-          </div>
+          </span>
         </div>
         <div
           key="1"
@@ -572,9 +607,16 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
             translated: tool_card_categories.translate_ordinal
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -707,9 +749,16 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
             translated: tool_card_categories.figs_activepassive
-          </div>
+          </span>
         </div>
         <div
           key="1"
@@ -746,9 +795,16 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
             translated: tool_card_categories.figs_gendernotations
-          </div>
+          </span>
         </div>
       </div>
     </div>
