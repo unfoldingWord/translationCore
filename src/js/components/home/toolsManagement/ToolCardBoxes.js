@@ -92,6 +92,42 @@ class ToolCardBoxes extends React.Component {
 
     this.showExpanded = this.showExpanded.bind(this);
   }
+  
+
+  componentWillMount() {
+    this.loadArticles();
+  }
+
+
+  loadArticles(){
+    let fullText = "";
+    let articles = {};
+
+    console.log( "availableCategories: ", this.props.availableCategories );  
+    //const keys = this.props.availableCategories.keys;
+    //console.log( "keys: ", keys );  
+
+    for(var cat in this.props.availableCategories) { 
+      let category  = this.props.availableCategories[cat];
+
+      for(var group in category ) {
+        //let groups = this.props.availableCategories[category];
+        //let group = groups[idx];
+
+        fullText = ResourcesActions.loadArticleData(
+          'translationAcademy', 
+          category[group],
+          this.props.selectedGL 
+        ); 
+
+        articles[category[group]] = fullText.substr(0,600) ;  
+      }
+    }
+
+    this.setState( {"articles": articles} );
+console.log( "articles: ", articles );    
+  }
+
 
   showExpanded(id) {
     this.setState({
@@ -102,36 +138,55 @@ class ToolCardBoxes extends React.Component {
     });
   }
 
+
   onWordClick(event, category) {
-    const MAXTEXT = 450;
+    const MAX_TEXT = 450;
+    //const MIN_DESCRIPTION = 50;
     const positionCoord = event.target;
 
+    const fullText = this.state.articles[category];
+/*
     const fullText = ResourcesActions.loadArticleData(
       'translationAcademy', 
       category,
       this.props.selectedGL 
     ); 
+*/
+    // get title from start of text
+    const parts = fullText.split("#");
+    const title = parts[1].trim();
 
-    let bodyText = "";
-    const overall = fullText.indexOf("Description");
-    
-    if( overall > 0) {
-       bodyText = fullText.substr(0, Math.min(overall, MAXTEXT));
+    // get introduction or description if no introduction
+    const bodyParts = parts.slice(2, parts.length);
+    const wholeBody = bodyParts.join(" ");
+    let description = wholeBody.split("Description");
+    let partial = "";
+
+    if(description.length>0) {
+      // has description
+      if (description[0].length < 10) {
+        partial = description[1];
+      } else {
+        partial = description[0];
+      }
     } else {
-       bodyText = fullText.substr(0, MAXTEXT);
+      partial = description[0];
     }
 
-    const titleStart = bodyText.indexOf("#");
-    const titleEnd = bodyText.indexOf("#", titleStart + 1);
-    const title = bodyText.substr(titleStart + 1, titleEnd - 1);
- 
-    let intro = bodyText.substr(titleEnd + 1, (overall - titleEnd - 1) ).replace(/([#*]|<\/?u>)/gm, "");
-        //intro = intro.replace(/<.u>/g, "");
-    // bodyText.length > (MAXTEXT - titleEnd) ? "..." : "";
-  //debugger;
-    // gets rid of markdown and removes "Description" from articles pulls title from start of text
+    // remove markup
+    const stripped = partial.replace(/([#*]|<\/?u>)/gm, "").trim();
+    let intro = stripped;
+
+    // trucate with ellipsis
+    if(stripped.length > MAX_TEXT) {
+      const truncated = stripped.substr(0, MAX_TEXT);
+      const lastSpace = truncated.lastIndexOf(" ");
+      intro = truncated.substr(0, MAX_TEXT - (MAX_TEXT - lastSpace)) + "...";
+    }
+
     this.props.showPopover(title, intro, positionCoord);
   }
+
 
   render() {
     const {availableCategories = {}, toolName, selectedCategories, onChecked, translate} = this.props;
@@ -205,7 +260,7 @@ ToolCardBoxes.propTypes = {
   targetOrigin: PropTypes.string,
   selectedGL: PropTypes.string.isRequired,
   showPopover: PropTypes.func.isRequired,
-  closePopover: PropTypes.func.isRequired
+  closePopover: PropTypes.func
 };
 
 export default ToolCardBoxes;

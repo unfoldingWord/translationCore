@@ -159,6 +159,7 @@ class ToolCard extends Component {
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
           {showCheckBoxes && <ToolCardBoxes 
+            key={selectedGL}
             toolName={tool.name} 
             selectedCategories={selectedCategories} 
             availableCategories={availableCategories} 
