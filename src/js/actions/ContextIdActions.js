@@ -56,9 +56,10 @@ export const changeCurrentContextId = contextId => {
       } catch(e) { console.log("changeCurrentContextId() - setting new contextId") }
       const repo = await Repo.open(projectDir, getState().loginReducer.userdata);
       const {reference: {bookId, chapter, verse}} = contextId;
-      const saveStarted = await repo.saveDebounced(`Auto saving at ${bookId} ${chapter}:${verse}`);
+      const refStr = `${bookId} ${chapter}:${verse}`;
+      const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
       if (!saveStarted) {
-        console.log(`Saving already running, skipping save after ${bookId} ${chapter}:${verse}`);
+        console.log(`Saving already running, skipping save after ${refStr}`);
       }
     } catch(e) {
       console.error(`Failed to auto save`, contextId, e);

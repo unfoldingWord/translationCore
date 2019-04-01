@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-env jest */
 jest.unmock('fs-extra');
+jest.unmock("../src/js/helpers/GitApi");
 import ncp from 'ncp';
 import path from 'path';
 import fs from 'fs-extra';
