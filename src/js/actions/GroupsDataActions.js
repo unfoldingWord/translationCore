@@ -94,7 +94,9 @@ export function verifyGroupDataMatchesWithFs() {
           }
         }
       }
-      dispatch(setVerseEditsInTwGroupDataFromArray(twVerseEdits));
+      if (twVerseEdits.length) {
+        dispatch(setVerseEditsInTwGroupDataFromArray(twVerseEdits));
+      }
       // run the batch
       dispatch(batchActions(actionsBatch));
       dispatch(validateBookSelections());
