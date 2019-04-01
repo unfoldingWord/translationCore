@@ -1,4 +1,6 @@
 const electron = require('electron');
+const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
+const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const p = require('../package.json');
 const {download} = require('@neutrinog/electron-dl');
 const DownloadManager = require('./js/DownloadManager');
@@ -38,9 +40,22 @@ function createMainWindow () {
     mainWindow.webContents.openDevTools();
   }
 
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  isGitInstalled().then(installed => {
+    if(installed) {
+      console.log('createMainWindow() - Git is installed.');
+      mainWindow.loadURL(`file://${__dirname}/index.html`);
+    } else {
+      console.warn('createMainWindow() - Git is not installed. Prompting user.');
+      splashScreen.hide();
+      return showElectronGitSetup(dialog).then(() => {
+        app.quit();
+      }).catch(() => {
+        app.quit();
+      });
+    }
+  });
 
-  //Doesn't display until ready
+  // Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
     mainWindow.maximize();
@@ -62,12 +77,12 @@ function createMainWindow () {
         'electron-devtools-installer');
 
       installExtension(REACT_DEVELOPER_TOOLS).then((name) => {
-        console.log(`Added Extension: ${name}`);
+        console.log(`createMainWindow() - Added Extension: ${name}`);
       }).catch((err) => {
-        console.log('An error occurred: ', err);
+        console.warn('createMainWindow() - An error occurred: ', err);
       });
     } catch (e) {
-      console.error('Failed to load electron developer tools', e);
+      console.error('createMainWindow() - Failed to load electron developer tools', e);
     }
   }
 }

@@ -58,7 +58,7 @@ export const projectHasTstudioOrTcoreFileExtension = (sourceProjectPath) => {
  */
 export const getSafeErrorMessage = (error, defaultErrorMessage) => {
   let errorMessage = error || defaultErrorMessage;
-  if (error && (error.type !== 'div')) {
+  if (error && (error.type !== 'div') && (error.type !== 'span')) {
     if (error.stack) {
       console.warn(error.stack); // log error before replacing with translated message
       errorMessage = defaultErrorMessage;

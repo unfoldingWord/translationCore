@@ -62,7 +62,7 @@ export const createRepo = async (user, reponame) => {
     if (!repo) {
       console.error("createRepo: FAILED creating new repo: " + reponame);
     } else {
-      console.log("createRepo: finished creating new repo: " + repo.fullname);
+      console.log("createRepo: finished creating new repo: " + reponame);
     }
   }
   return repo;
@@ -107,7 +107,7 @@ export const getUserDoor43Url = (user, projectName) => {
  */
 export const renameRepo = async (newName, projectPath, user) => {
   try {
-    const repo = await Repo.open(projectPath);
+    const repo = await Repo.open(projectPath, user);
     const remote = await repo.getRemote();
     const newRemoteURL = getRepoOwnerUrl(user, newName);
 
@@ -150,7 +150,7 @@ export const renameRepo = async (newName, projectPath, user) => {
 export const createNewRepo = async (newName, projectPath, user) => {
   try {
     const newRemoteURL = getUserDoor43Url(user, newName);
-    const repo = await Repo.open(projectPath);
+    const repo = await Repo.open(projectPath, user);
     await repo.removeRemote(TC_OLD_ORIGIN_KEY);// clear old connection since we are renaming
 
     await createRepo(user, newName);
@@ -169,13 +169,10 @@ export const createNewRepo = async (newName, projectPath, user) => {
  * @returns {Promise<boolean>} - resolves if the remote does not exist
  */
 export const throwIfRemoteRepoExists = async (repoOwnerUrl) => {
-  try {
-    await Repo.getRemoteInfo(repoOwnerUrl);
-  } catch (e) {
-    return true;
+  let exists = await Repo.doesRemoteRepoExist(repoOwnerUrl);
+  if (exists) {
+    throw new Error(`Remote repo ${repoOwnerUrl} already exists.`);
   }
-
-  throw new Error(`Remote repo ${repoOwnerUrl} already exists.`);
 };
 
 /**
