@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "brother",
+      "quote": "לְ⁠אָחִ֖י⁠נוּ",
+      "strong": [
+        "l:H0251"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "brother",
+      "quote": "לֶ⁠אֱלִימֶ֑לֶךְ",
+      "strong": [
+        "l:H0458"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "brother",
+      "quote": "לֶֽ⁠אֱלִימֶ֔לֶךְ",
+      "strong": [
+        "l:H0458"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "brother",
+      "quote": "אֶחָ֖י⁠ו",
+      "strong": [
+        "H0251"
+      ],
+      "occurrence": 1
+    }
+  }
+]

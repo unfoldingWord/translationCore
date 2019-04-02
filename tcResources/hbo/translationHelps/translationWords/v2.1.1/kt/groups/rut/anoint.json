@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "anoint",
+      "quote": "וָ⁠סַ֗כְתְּ",
+      "strong": [
+        "c:H5480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

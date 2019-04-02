@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "house",
+      "quote": "לְ⁠בֵ֣ית",
+      "strong": [
+        "l:H1004b"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "house",
+      "quote": "בֵּ֣ית",
+      "strong": [
+        "H1004b"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "house",
+      "quote": "הַ⁠בַּ֖יִת",
+      "strong": [
+        "d:H1004b"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "house",
+      "quote": "בֵּיתֶ֗⁠ךָ",
+      "strong": [
+        "H1004b"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "house",
+      "quote": "בֵּ֣ית",
+      "strong": [
+        "H1004b"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "house",
+      "quote": "בֵֽיתְ⁠ךָ֙",
+      "strong": [
+        "H1004b"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "house",
+      "quote": "כְּ⁠בֵ֣ית",
+      "strong": [
+        "k:H1004b"
+      ],
+      "occurrence": 1
+    }
+  }
+]

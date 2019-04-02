@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "ט֣וֹב",
+      "strong": [
+        "H2896a"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "טוֹב֙",
+      "strong": [
+        "H2896a"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "good",
+      "quote": "ט֣וֹבָה",
+      "strong": [
+        "H2896a"
+      ],
+      "occurrence": 1
+    }
+  }
+]
