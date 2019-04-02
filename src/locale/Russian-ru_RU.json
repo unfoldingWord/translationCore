@@ -166,7 +166,7 @@
     "upload_successful_alert": "${username}, your project was successfully uploaded.",
     "upload_modified_error": "${project_name} cannot be uploaded because there have been changes to the translation of that project on your ${door43} account.",
     "merge_export_error": "This project has merge conflicts and cannot be exported. Select the project to resolve the merge conflicts, then try again.",
-    "exporting_file_alert": "Exporting ${file_name}. Please wait...",
+    "exporting_file_alert": "Экспорт ${file_name}. Подождите...",
     "project_already_exists": "The project you selected (${project_name}) already exists.",
     "project_overwrite_no_alignment_message": "Select \"${over_write}\" if you would like to overwrite the text of your existing project with this import. All check data will be retained, except where the text has been changed. In this case, the check will be invalidated and have to be redone.",
     "project_overwrite_has_alignment_message": "The project being imported will overwrite your existing alignment data if there are conflicts.",
