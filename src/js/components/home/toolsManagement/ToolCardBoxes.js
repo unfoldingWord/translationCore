@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
 import {tNotesCategories} from "tsv-groupdata-parser";
-
+import * as ResourcesActions from "../../../actions/ResourcesActions"; 
+import {parseArticleAbstract} from "../../../helpers/ToolCardHelpers";
 /**
 *  Checkboxnames are derived first by what is in Gateway language resource 
 *  translation notes FileFolder. This is mapped to the array in 
@@ -11,7 +12,6 @@ import {tNotesCategories} from "tsv-groupdata-parser";
 *  Finally it is mapped to this object to deterime category names to show the 
 *  user
 */
-
 const toolCardCategories = {
   'kt': 'Key Terms',
   'names': 'Names',
@@ -82,6 +82,7 @@ function postPart(symbol) {
 }
 
 
+
 class ToolCardBoxes extends React.Component {
   constructor(props) {
     super(props);
@@ -92,6 +93,37 @@ class ToolCardBoxes extends React.Component {
 
     this.showExpanded = this.showExpanded.bind(this);
   }
+  
+
+  componentWillMount() {
+    this.loadArticles();
+  }
+
+
+  /**
+   * Load first 600 characters of tA articles for available categories in this project
+   */
+  loadArticles(){
+    let fullText = "";
+    let articles = {}; 
+
+    for(var cat in this.props.availableCategories) { 
+      let category  = this.props.availableCategories[cat];
+
+      for(var group in category ) {
+        fullText = ResourcesActions.loadArticleData(
+          'translationAcademy', 
+          category[group],
+          this.props.selectedGL 
+        ); 
+
+        articles[category[group]] = fullText.substr(0,600) ;  
+      }
+    }
+
+    this.setState( {"articles": articles} );   
+  }
+
 
   showExpanded(id) {
     this.setState({
@@ -101,6 +133,15 @@ class ToolCardBoxes extends React.Component {
       }
     });
   }
+
+
+  onWordClick(event, category) {
+    const positionCoord = event.target;
+    const fullText = this.state.articles[category];
+    const [title, intro] = parseArticleAbstract(fullText);
+    this.props.showPopover(title, intro, positionCoord);
+  }
+
 
   render() {
     const {availableCategories = {}, toolName, selectedCategories, onChecked, translate} = this.props;
@@ -144,8 +185,12 @@ class ToolCardBoxes extends React.Component {
                         {availableCategories[parentCategory].map((subcategory, index) => (
                           <div style={{display: 'flex', width: '48%'}} key={index} >
                             <div style={{marginLeft: '36px', width: '38px'}}>
-                              {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}</div>
-                            <div>{translate(lookupNames[postPart(subcategory)])}</div>
+                              {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}
+                            </div>
+                            <span onClick={(event) => this.onWordClick(event, subcategory)} 
+                                style={{cursor: "pointer"}} >          
+                              { translate(lookupNames[postPart(subcategory)]) } 
+                            </span>
                           </div>
                         ))
                         }
@@ -164,9 +209,13 @@ class ToolCardBoxes extends React.Component {
 ToolCardBoxes.propTypes = {
   availableCategories: PropTypes.object.isRequired,
   onChecked: PropTypes.func,
-  selectedCategories: PropTypes.object.isRequired,
+  selectedCategories: PropTypes.array.isRequired,
   toolName: PropTypes.string.isRequired,
   translate: PropTypes.func.isRequired,
+  targetOrigin: PropTypes.string,
+  selectedGL: PropTypes.string.isRequired,
+  showPopover: PropTypes.func.isRequired,
+  closePopover: PropTypes.func
 };
 
 export default ToolCardBoxes;

@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import * as ToolCardHelpers from   "../src/js/helpers/ToolCardHelpers";
 
-describe.skip('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch status',()=>{
+describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch status',()=>{
   const translate = (key) => key;
 
   test('Should return the status that the book is supported for translationWords', () => {
@@ -137,6 +137,63 @@ describe.skip('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch
 
     //then
     expect(status).toEqual(expectedStatus);
+  });
+
+  test('Parse tA article with description', () => {
+    //given
+    const rawText = `# Abstract Nouns #
+
+    Abstract nouns are nouns that refer to attitudes, qualities, events, situations, or 
+    even to relationships among these ideas. These are things that cannot be seen or 
+    need a different way to express it. For example, "What is its <u>weight</u>?" 
+    could be expressed as "How much does it <u>weigh</u>?" or "How <u>heavy</u> is it?"
+    
+    ### Description
+    
+    Remember that nouns are words that refer to a person, place, thing, or idea. 
+    **Abstract Nouns** are the nouns that refer to ideas. These can be attitudes, 
+    peace, creation, goodness, contentment, justice, truth, freedom, `;
+
+
+    //when
+    const [title, intro] = ToolCardHelpers.parseArticleAbstract(rawText);
+    const combined = title + intro;
+    //then
+    expect(combined).toMatchSnapshot();
+  });
+
+  test('Parse tA article with no intro', () => {
+    //given
+    const rawText = `# Abstract Nouns #
+
+    ### Description
+    
+    Remember that nouns are words that refer to a person, place, thing, or idea. 
+    **Abstract Nouns** are the nouns that refer to ideas. These can be attitudes, 
+    peace, creation, goodness, contentment, justice, truth, freedom, `;
+
+
+    //when
+    const [title, intro] = ToolCardHelpers.parseArticleAbstract(rawText);
+    const combined = title + intro;
+    //then
+    expect(combined).toMatchSnapshot();
+  });
+
+  test('Parse tA article with no intro and no description', () => {
+    //given
+    const rawText = `# Abstract Nouns #
+    
+    Remember that nouns are words that refer to a person, place, thing, or idea. 
+    **Abstract Nouns** are the nouns that refer to ideas. These can be attitudes, 
+    peace, creation, goodness, contentment, justice, truth, freedom, `;
+
+
+    //when
+    const [title, intro] = ToolCardHelpers.parseArticleAbstract(rawText);
+    const combined = title + intro;
+    //then
+    expect(combined).toMatchSnapshot();
   });
 });
 

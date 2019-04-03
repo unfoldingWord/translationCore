@@ -11,6 +11,7 @@ import {
 } from "../../selectors";
 import { openTool } from "../../actions/ToolActions";
 import { openAlertDialog } from "../../actions/AlertModalActions";
+import * as PopoverActions from "../../actions/PopoverActions";
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -124,9 +125,11 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
       },
       updateCheckSelection: (id, value, toolName) => {
-        dispatch(
-          ProjectDetailsActions.updateCheckSelection(id, value, toolName));
-      }
+        dispatch(ProjectDetailsActions.updateCheckSelection(id, value, toolName));
+      },
+      showPopover: (title, bodyText, positionCoord) => {
+        dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
+      } 
     }
   };
 };
