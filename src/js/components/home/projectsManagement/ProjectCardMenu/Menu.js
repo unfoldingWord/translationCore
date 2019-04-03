@@ -53,7 +53,7 @@ class Menu extends React.Component {
     const glyphStyle = { fontSize: 'large', margin: '0 14px 0 4px' };
     return (
       <div style={{ cursor: 'pointer' }}>
-        <div onTouchTap={this.handleTouchTap}>
+        <div onClick={this.handleTouchTap}>
           <Glyphicon glyph="option-vertical" style={{ fontSize: 'large' }}/>
         </div>
         <Popover
