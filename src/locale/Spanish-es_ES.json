@@ -366,7 +366,7 @@
     "no_gl_available": "Ninguno disponible",
     "invalid_checks": "Revisiones invalidadas",
     "invalid_verse_alignments": "Versículos con alineaciones invalidadas.",
-    "invalidation_checking": "Haciendo Invalidación De Cheques"
+    "invalidation_checking": "Haciendo Cheques de Invalidación"
   },
   "buttons": {
     "back_button": "Volver",
@@ -413,12 +413,12 @@
     "names": "Names",
     "other": "Other Terms",
     "lexical": "Lexical",
-    "translate_bweight": "Measures and Weights",
-    "translate_numbers": "Numbers",
-    "translate_fraction": "Fractions",
-    "translate_ordinal": "Ordinal Numbers",
+    "translate_bweight": "Medidas y pesos",
+    "translate_numbers": "Números",
+    "translate_fraction": "Fracciones",
+    "translate_ordinal": "Números ordinales",
     "figures": "Figures of Speech",
-    "figs_idiom": "Idiom",
+    "figs_idiom": "Dicho",
     "figs_irony": "Irony",
     "figs_metaphor": "Metaphor",
     "figs_rquestions": "Rhetorical Questions",
