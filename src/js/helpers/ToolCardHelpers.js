@@ -28,3 +28,64 @@ export function getToolCardLaunchStatus(language, bookId, developerMode, transla
 export function isToolSupported(bookId, developerMode) {
   return developerMode || isValidBibleBook(bookId);
 }
+
+
+/**
+ * @Description simplify markdown formatted tA article for uss as an abstract in tN toolcard
+ * @param {string} fullText - unparsed text from tA article 
+ * @return {array} [title, intro] - parses out introductory material
+ * 
+ * tA articles are generally of the form: 
+ * 
+ * <title>
+ * [<introductory material>]
+ * [Description]
+ * <descriptive material>
+ * 
+ * where
+ *   <variable> 
+ *   [optional]
+ * 
+ * parser returns introductory material if there is any
+ * returns descriptive material if no introductory material
+ * removes other markdown notation
+ * truncates to MAX_TEXT
+ * adds "..." if longer than MAX_TEXT
+ */
+export function parseArticleAbstract(fullText) {
+  const MAX_TEXT = 450;
+ 
+  // get title from start of text
+  const parts = fullText.split("#");
+  const title = parts[1].trim();
+
+  // get introduction or description if no introduction
+  const bodyParts = parts.slice(2, parts.length);
+  const wholeBody = bodyParts.join(" ");
+  let description = wholeBody.split("Description");
+  let partial = "";
+
+  if(description.length>0) {
+    // has description
+    if (description[0].length < 10) {
+      partial = description[1];
+    } else {
+      partial = description[0];
+    }
+  } else {
+    partial = description[0];
+  }
+
+  // remove markup
+  const stripped = partial.replace(/([#*]|<\/?u>)/gm, "").trim();
+  let intro = stripped;
+
+  // trucate with ellipsis
+  if(stripped.length > MAX_TEXT) {
+    const truncated = stripped.substr(0, MAX_TEXT);
+    const lastSpace = truncated.lastIndexOf(" ");
+    intro = truncated.substr(0, MAX_TEXT - (MAX_TEXT - lastSpace)) + "...";
+  }
+
+  return [title, intro];
+}

@@ -39,6 +39,7 @@ export default class ProjectAPI {
     this.getGroupsData = this.getGroupsData.bind(this);
     this.getGroupData = this.getGroupData.bind(this);
     this.setCategoryGroupIds = this.setCategoryGroupIds.bind(this);
+    this.getAllCategoryMapping = this.getAllCategoryMapping.bind(this);
   }
 
   /**
@@ -217,8 +218,10 @@ export default class ProjectAPI {
         let rawData = fs.readJsonSync(categoriesPath);
         // TRICKY: assert data structure before overwriting default to not propagate errors.
         if(loaded) {
-          rawData.loaded.push(category);
+          if (!rawData.loaded.includes(category))
+            rawData.loaded.push(category);
         } else {
+          //Removing the loaded category from list
           rawData.loaded = rawData.loaded.filter(c => c !== category);
         }
         data = rawData;
@@ -262,18 +265,76 @@ export default class ProjectAPI {
     return [];
   }
 
+  getAllCategoryMapping(toolName) {
+    const parentCategoriesObject = {};
+    const indexPath = path.join(this.getCategoriesDir(toolName),
+      ".categoryIndex");
+    if (fs.pathExistsSync(indexPath)) {
+      try {
+        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
+        parentCategories.forEach((category) => {
+          const subCategoryPath = path.join(this.getCategoriesDir(toolName),
+            ".categoryIndex", `${category}.json`);
+          const arrayOfSubCategories = fs.readJSONSync(subCategoryPath);
+          parentCategoriesObject[category] = arrayOfSubCategories;
+        });
+      } catch (e) {
+        console.error(`Failed to read the category index at ${indexPath}`, e);
+      }
+    }
+    return parentCategoriesObject;
+  }
+
   /**
    * Returns an array of categories that have been selected for the given tool.
    * @param toolName - The tool name. This is synonymous with translationHelp name
    * @return {string[]} an array of category names
    */
-  getSelectedCategories(toolName) {
+  getSelectedCategories(toolName, withParent = false) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         const data = fs.readJsonSync(categoriesPath);
-        return data.current;
+        if (withParent) {
+          let objectWithParentCategories = {};
+          const subCategories = data.current;
+          subCategories.forEach((subCategory) => {
+            const parentCategoryMapping = this.getAllCategoryMapping(toolName);
+            Object.keys(parentCategoryMapping).forEach((categoryName) => {
+              if (parentCategoryMapping[categoryName].includes(subCategory)) {
+                //Sub categorie name is contained in this parent
+                if (!objectWithParentCategories[categoryName])
+                  objectWithParentCategories[categoryName] = [];
+                objectWithParentCategories[categoryName].push(subCategory);
+              }
+            });
+          });
+          return objectWithParentCategories;
+        } else {
+          return data.current;
+        }
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    return [];
+  }
+
+    /**
+   * Returns an array of categories that have been loaded for the given tool.
+   * @param toolName - The tool name. This is synonymous with translationHelp name
+   * @return {string[]} an array of category names
+   */
+  getLoadedCategories(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        const data = fs.readJsonSync(categoriesPath);
+        return data.loaded;
       } catch (e) {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);

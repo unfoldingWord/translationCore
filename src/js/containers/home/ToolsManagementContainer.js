@@ -5,12 +5,13 @@ import ToolsCards from "../../components/home/toolsManagement/ToolsCards";
 import HomeContainerContentWrapper
   from "../../components/home/HomeContainerContentWrapper";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
-import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import {
-  getTools, getIsUserLoggedIn, getProjectSaveLocation, getProjectBookId
+  getTools, getIsUserLoggedIn, getProjectSaveLocation, getProjectBookId,
+  getToolGatewayLanguage
 } from "../../selectors";
 import { openTool } from "../../actions/ToolActions";
 import { openAlertDialog } from "../../actions/AlertModalActions";
+import * as PopoverActions from "../../actions/PopoverActions";
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -24,7 +25,8 @@ class ToolsManagementContainer extends Component {
     const bookId = getProjectBookId(reducers);
     if (projectSaveLocation && bookId) {
       tools.forEach(({name:toolName}) => {
-        this.props.actions.loadCurrentCheckCategories(toolName, bookId, projectSaveLocation);
+        const currentGatewayLanguage = getToolGatewayLanguage(reducers, toolName);
+        this.props.actions.loadCurrentCheckCategories(toolName, projectSaveLocation, currentGatewayLanguage);
       });
     }
   }
@@ -48,16 +50,17 @@ class ToolsManagementContainer extends Component {
       reducers: {
         loginReducer: { loggedInUser },
         projectDetailsReducer: {
+          currentProjectToolsSelectedGL,
           manifest,
           projectSaveLocation,
           currentProjectToolsProgress,
-          currentProjectToolsSelectedGL,
           toolsCategories
         },
         invalidatedReducer
       },
       translate
     } = this.props;
+ 
     const instructions = (
       <div>
         <p>{translate("tools.select_tool_from_list")}</p>
@@ -65,7 +68,6 @@ class ToolsManagementContainer extends Component {
           { app: translate("_.app_name") })}</p>
       </div>
     );
-    const availableCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
     return (
       <HomeContainerContentWrapper
         translate={translate}
@@ -76,7 +78,6 @@ class ToolsManagementContainer extends Component {
           <ToolsCards
             tools={tools}
             onSelectTool={this.handleSelectTool}
-            availableCategories={availableCategories}
             toolsCategories={toolsCategories}
             manifest={manifest}
             translate={translate}
@@ -85,6 +86,7 @@ class ToolsManagementContainer extends Component {
             actions={{
               ...this.props.actions
             }}
+            currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
@@ -113,8 +115,8 @@ const mapDispatchToProps = (dispatch) => {
     openTool: name => dispatch(openTool(name)),
     openAlertDialog: message => dispatch(openAlertDialog(message)),
     actions: {
-      loadCurrentCheckCategories: (toolName, bookName, projectSaveLocation) => {
-        dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
+        dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
       },
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
@@ -123,9 +125,11 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
       },
       updateCheckSelection: (id, value, toolName) => {
-        dispatch(
-          ProjectDetailsActions.updateCheckSelection(id, value, toolName));
-      }
+        dispatch(ProjectDetailsActions.updateCheckSelection(id, value, toolName));
+      },
+      showPopover: (title, bodyText, positionCoord) => {
+        dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
+      } 
     }
   };
 };

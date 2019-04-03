@@ -11,11 +11,17 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
+import { changeSelections } from '../SelectionsActions';
+import ResourceAPI from "../../helpers/ResourceAPI";
+
 import {
+  getCurrentProjectToolsSelectedGL,
   getActiveLocaleLanguage,
   getProjectManifest,
-  getProjectSaveLocation, getSelectedToolApi,
-  getSourceBook, getSupportingToolApis,
+  getProjectSaveLocation,
+  getSelectedToolApi,
+  getSourceBook,
+  getSupportingToolApis,
   getTargetBook,
   getToolGatewayLanguage,
   getTools,
@@ -33,6 +39,7 @@ import {
   copyGroupDataToProject,
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
+import * as BibleHelpers from "../../helpers/bibleHelpers";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -83,15 +90,20 @@ export const openProject = (name, skipValidation=false) => {
       // connect the tools
       const manifest = getProjectManifest(getState());
       const tools = getTools(getState());
+      const bookId = (manifest && manifest.project && manifest.project.id) || '';
       for (const t of tools) {
         // load source book translations
-        console.log(`openProject() - loading source book ${manifest.project.id} into ${t.name}`);
-        await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
+        console.log(`openProject() - loading source book ${bookId} into ${t.name}`);
+        await dispatch(loadSourceBookTranslations(bookId, t.name));
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
         console.log("openProject() - copy group data");
-        copyGroupDataToProject("grc", t.name, validProjectDir);
+        const olForBook = BibleHelpers.getOLforBook(bookId);
+        let helpDir = (olForBook && olForBook.languageId) || 'grc';
+        if (t.name === "translationNotes")
+          helpDir = "en";
+        copyGroupDataToProject(helpDir, t.name, validProjectDir);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
@@ -99,7 +111,7 @@ export const openProject = (name, skipValidation=false) => {
 
         // connect tool api
         console.log("openProject() - connect tool api");
-        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
+        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
         t.api.triggerWillConnect(toolProps);
       }
 
@@ -129,11 +141,14 @@ export const openProject = (name, skipValidation=false) => {
 function makeToolProps(dispatch, state, projectDir, bookId) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
+  const resourceApi = ResourceAPI;
   const {code} = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
 
   return {
+    //resource api
+    resources: resourceApi,
     // project api
     project: projectApi,
 
@@ -166,7 +181,13 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
         verse: "1"
       }
     },
-
+    username: getUsername(state),
+    currentProjectToolsSelectedGL: getCurrentProjectToolsSelectedGL(state),
+    actions: {
+      changeSelections: (selections, userName) => {
+        dispatch(changeSelections(selections, userName));
+      }
+    },
     // deprecated props
     readProjectDir: (...args) => {
       console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');

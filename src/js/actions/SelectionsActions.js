@@ -8,7 +8,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {getSelectedToolName, getTranslate, getUsername} from '../selectors';
+import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
@@ -26,7 +26,7 @@ import usfm from "usfm-js";
 export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
     let state = getState();
-    if (getSelectedToolName(state) === 'translationWords') {
+    if (getSelectedToolName(state) === 'translationWords' || getSelectedToolName(state) === 'translationNotes') {
       const currentContextId = state.contextIdReducer.contextId;
       contextId = contextId || currentContextId; // use current if contextId is not passed
       const {
@@ -43,7 +43,6 @@ export const changeSelections = (selections, userName, invalidated = false, cont
           selections,
           userName
         });
-
         dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
       } else {
         saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
@@ -262,7 +261,7 @@ export const getGroupDataForVerse = (state, contextId) => {
               }
               filteredGroupData[groupItemKey].push(check);
             }
-          } catch(e) {
+          } catch (e) {
             console.warn(`Corrupt check found in group "${groupItemKey}"`, check);
           }
         }

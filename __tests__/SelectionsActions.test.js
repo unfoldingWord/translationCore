@@ -6,6 +6,7 @@ import fs from "fs-extra";
 import {generateTimestamp} from "../src/js/helpers";
 import * as SelectionsActions from '../src/js/actions/SelectionsActions';
 import * as saveMethods from "../src/js/localStorage/saveMethods";
+import * as selections from 'selections';
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -141,6 +142,25 @@ describe('SelectionsActions.validateSelections', () => {
       const actions = store.getActions();
       expect(actions.length).toEqual(0);
       expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
+    });
+
+    it('No previous selection changes', () => {
+      // given
+      const targetVerse = "A verse";
+      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const initialState = getInitialStateData(bookId, projectPath);
+      initialState.contextIdReducer.contextId.reference.verse = 15;
+      initialState.contextIdReducer.contextId.groupId = 'believe';
+      const store = mockStore(initialState);
+      const checkSelectionOccurrencesSpy = jest.spyOn(selections, 'checkSelectionOccurrences');
+
+      // when
+      store.dispatch(SelectionsActions.validateSelections(targetVerse));
+
+      // then
+      const actions = store.getActions();
+      expect(actions.length).toEqual(0);
+      expect(checkSelectionOccurrencesSpy).toHaveBeenCalledWith('A verse', expect.any(Array));
     });
 
     it('apostle selection edited', () => {
