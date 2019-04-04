@@ -196,7 +196,7 @@
     "nickname": "Название проекта",
     "current_project": "Проект: ${project}",
     "renamed_project": "Ваш локальный проект был назван<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
+    "dcs_rename_project": "Ваш проект был переименован<br/><b>${project}</b><br/>Что вы хотите сделать с существующим хранилищем Door43?",
     "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
     "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
@@ -228,13 +228,13 @@
     "add_checker": "Добавить проверяющего",
     "merge_conflicts_found": "Some merge conflicts were found inside of your project. Please review and resolve these conflicts before continuing.",
     "merge_conflicts": "Конфликты слияния",
-    "merge_conflict": "Merge Conflict ${conflict_number}",
+    "merge_conflict": "Конфликт слияния ${conflict_number}",
     "conflict_reference": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
     "missing_verses_instructions": "Some verses are missing from your project.",
     "only_nt_supported": "This version of ${app} only supports New Testament projects.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
+    "old_project_unsupported": "Этот проект содержит данные из старой версии ${app}, которая здесь не поддерживается. Для помощи в открытии этого проекта или перезапуске проверки, пожалуйста, свяжитесь с help@door43.org.",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
+      "info": "(аббревиатура из 3 или 4 латинских букв<br />, например,  KJV, NIV и т. д.)",
       "field_invalid_length": "Должно быть 3-4 буквы",
       "invalid_characters": "Only basic Latin Letters supported"
     },
