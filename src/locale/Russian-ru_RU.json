@@ -45,9 +45,9 @@
   "using_internet": "You are about to transmit data over the Internet. Are you sure you want to do that?",
   "do_not_show_again": "Больше не показывать это предупреждение.",
   "quit_app": "Выйти из ${app}",
-  "toggle_developer_tools": "Toggle developer tools",
+  "toggle_developer_tools": "Переключить инструменты разработчика",
   "actions": "Действия",
-  "running_latest_version": "You are running the latest version of ${app}.",
+  "running_latest_version": "Вы используете последнюю версию ${app}.",
   "user_locale": "Язык интерфейса",
   "changing_locale_effects": "Изменение языка пользовательского интерфейса повлияет на язык в меню, диалоговых окнах и настройках проекта.",
   "changing_locale_note": "Примечание: Для изменения языка проверки и перевода, пожалуйста, при выборе инструмента, выберите другой язык инструмента.",
@@ -121,13 +121,13 @@
     "not_conflict": "Добавьте только то содержимое, которое не противоречит Утверждению веры.",
     "statement_of_faith": "Утверждение веры.",
     "release_contributions": "Release your contributions to the content under a Creative Commons Attribution-ShareAlike 4.0 International License.",
-    "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International License."
+    "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 Международная лицензия."
   },
   "projects": {
     "zip_files": "Zip файл",
     "error_setting_up_project": "Хм! Мы столкнулись с проблемой установки вашего проекта при загрузке. Пожалуйста, свяжитесь со Справочным бюро (${email}) для помощи.",
     "error_loading": "Хм! Мы столкнулись с проблемой загрузки вашего проекта. Пожалуйста, свяжитесь со Справочным бюро (${email}) для помощи.",
-    "no_project": "No project was selected",
+    "no_project": "Ни один проект не был выбран",
     "import_from_d43": "Импорт из ${door43}",
     "select_project_from_list": "Выберите проект из списка.",
     "to_import_project": "Для импорта проекта, нажмите",
@@ -230,13 +230,13 @@
     "merge_conflicts": "Конфликты слияния",
     "merge_conflict": "Конфликт слияния ${conflict_number}",
     "conflict_reference": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
-    "missing_verses_instructions": "Some verses are missing from your project.",
-    "only_nt_supported": "This version of ${app} only supports New Testament projects.",
+    "missing_verses_instructions": "Некоторые стихи отсутствуют в вашем проекте.",
+    "only_nt_supported": "Эта версия ${app} поддерживает только проекты Нового Завета.",
     "old_project_unsupported": "Этот проект содержит данные из старой версии ${app}, которая здесь не поддерживается. Для помощи в открытии этого проекта или перезапуске проверки, пожалуйста, свяжитесь с help@door43.org.",
     "resource_id": {
       "info": "(аббревиатура из 3 или 4 латинских букв<br />, например,  KJV, NIV и т. д.)",
       "field_invalid_length": "Должно быть 3-4 буквы",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "invalid_characters": "Поддерживаются только основные латинские буквы"
     },
     "conflicting_project": "Проект с таким идентификатором уже существует для этого языка и книги"
   },
