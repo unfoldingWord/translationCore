@@ -109,7 +109,7 @@
     "visible": "Это видно для публики",
     "read_and_agree": "Я прочитал условия и согласен с ними.",
     "attention": "Внимание",
-    "known_as_username": "You have chosen to be known as <strong>${username}</strong>. This username will be publicly viewable.",
+    "known_as_username": "Вы будете известны как <strong>${username}</strong>. Это имя пользователя будет общедоступным.",
     "known_not_comfortable": "Если вас не устраивает, что вы будете известны как <strong>${username}</strong>, вы можете нажать на кнопку <strong>Отменить</strong> и ввести другое имя.",
     "logged_in_as": "Вы вошли как: <strong>${username}</strong>.",
     "how_to_proceed": "Вы готовы продолжить?",
