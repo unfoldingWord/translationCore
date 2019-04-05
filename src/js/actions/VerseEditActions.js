@@ -15,6 +15,8 @@ import {
   getTranslate,
   getUsername
 } from '../selectors';
+import {batchActions} from "redux-batched-actions";
+import {saveGroupsData} from "../localStorage/saveMethods";
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -66,36 +68,56 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 };
 
 /**
- * set verse edit flag for all tw checks in verse if not set
- * @param {Object} contextId - of verse edit
+ * processed batched groups actions
+ * @param {Array} actionsBatch - array populate with verse edits to be batched
  * @return {Function}
  */
-export const setVerseEditsInTwGroupData = (contextId) => {
+export const processGroupDataBatch = (actionsBatch) => {
   return async (dispatch, getState) => {
-    console.log("setVerseEditsInTwGroupData()");
-    // in group data reducer set verse edit flag for every check of the verse edited
-    const matchedGroupData = getGroupDataForVerse(getState(), contextId);
-    const keys = Object.keys(matchedGroupData);
-    if (keys.length) {
-      await delay(200);
-      for (let i = 0, l = keys.length; i < l; i++) {
-        const groupItem = matchedGroupData[keys[i]];
-        if (groupItem) {
-          for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
-            const check = groupItem[j];
-            if (!check.verseEdits) { // only set if not yet set
-              console.log("setVerseEditsInTwGroupData() - TOGGLE_VERSE_EDITS_IN_GROUPDATA");
-              dispatch({
-                type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-                contextId: check.contextId
-              });
-              await delay(200);
-            }
+    if (actionsBatch.length) {
+      const old_state = getState();
+      console.log(`processGroupDataBatch() processing group batch, count=${actionsBatch.length}`);
+      await delay(500);
+      dispatch(batchActions(actionsBatch));
+      console.log(`processGroupDataBatch() finished group batch, saving`);
+      await delay(500);
+      saveGroupsData(getState(), old_state);
+      console.log("processGroupDataBatch() - saving is finished");
+    }
+  };
+};
+
+/**
+ * batch setting verse edit flags for all tw checks in verse if not set
+ * @param {Object} state - current state
+ * @param {Object} contextId - of verse edit
+ * @param {Array} actionsBatch - array append with verse edits to be batched
+ */
+export const getVerseEditsInTwGroupData = (state, contextId, actionsBatch) => {
+  // in group data reducer set verse edit flag for every check of the verse edited
+  const matchedGroupData = getGroupDataForVerse(state, contextId);
+  const keys = Object.keys(matchedGroupData);
+  let changedCount = 0;
+  if (keys.length) {
+    for (let i = 0, l = keys.length; i < l; i++) {
+      const groupItem = matchedGroupData[keys[i]];
+      if (groupItem) {
+        for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
+          const check = groupItem[j];
+          if (!check.verseEdits) { // only set if not yet set
+            actionsBatch.push({
+              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+              contextId: check.contextId
+            });
+            changedCount++;
           }
         }
       }
     }
-  };
+    if (changedCount) {
+      console.log(`getVerseEditsInTwGroupData() chapter=${contextId.reference.chapter}, verse=${contextId.reference.verse}, keys=${keys.length}, changedCount=${changedCount}`);
+    }
+  }
 };
 
 /**
@@ -104,11 +126,16 @@ export const setVerseEditsInTwGroupData = (contextId) => {
  * @return {Function}
  */
 export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     if (twVerseEdits && twVerseEdits.length) {
+      const state = getState();
+      const actionsBatch = [];
       for (let i = 0, lenVE = twVerseEdits.length; i < lenVE; i++) {
         const contextId = twVerseEdits[i];
-        await dispatch(setVerseEditsInTwGroupData(contextId));
+        getVerseEditsInTwGroupData(state, contextId, actionsBatch);
+      }
+      if (actionsBatch.length) {
+        dispatch(processGroupDataBatch(actionsBatch));
       }
     }
   };
@@ -146,9 +173,12 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
       verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
     await delay(200);
 
-    if (getSelectedToolName(getState()) === 'translationWords') {
-      await dispatch(setVerseEditsInTwGroupData(contextIdWithVerseEdit));
-      console.log("doBackgroundVerseEditsUpdates() - setVerseEditsInTwGroupData() is finished");
+    const state = getState();
+    if (getSelectedToolName(state) === 'translationWords') {
+      const actionsBatch = [];
+      getVerseEditsInTwGroupData(state, contextIdWithVerseEdit, actionsBatch);
+      dispatch(processGroupDataBatch(actionsBatch));
+      console.log("doBackgroundVerseEditsUpdates() - getVerseEditsInTwGroupData() is finished");
     }
   };
 };
