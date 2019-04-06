@@ -75,6 +75,29 @@ export const showSelectionsInvalidatedWarning = (callback = null) => {
 };
 
 /**
+ * displays warning that selections, alignments, or both have been invalidated
+ * @param {boolean} showSelectionInvalidated
+ * @param {boolean} showALignmentsInvalidated
+ * @param {Function|Null} callback - optional callback after OK button clicked
+ * @return {Function}
+ */
+export const showInvalidatedWarnings = (showSelectionInvalidated, showALignmentsInvalidated,
+                                        callback = null) => {
+  return (dispatch, getState) => {
+    let message = null;
+    if (showSelectionInvalidated && showALignmentsInvalidated) {
+      message = 'tools.invalid_verse_alignments_and_selections';
+    } else if (showSelectionInvalidated) {
+      message = 'tools.selections_invalidated';
+    } else { // (showALignmentsInvalidated)
+      message = 'tools.alignments_reset_wa_tool';
+    }
+    const translate = getTranslate(getState());
+    dispatch(AlertModalActions.openOptionDialog(translate(message), callback));
+  };
+};
+
+/**
  * populates groupData with all groupData entries for groupId and chapter/verse
  * @param {Object} groupsDataReducer
  * @param {String} groupId

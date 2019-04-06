@@ -2,7 +2,7 @@ import path from "path-extra";
 import fs from "fs-extra";
 import types from './ActionTypes';
 // actions
-import {getGroupDataForVerse, showSelectionsInvalidatedWarning, validateSelections} from "./SelectionsActions";
+import {getGroupDataForVerse, showInvalidatedWarnings, validateSelections} from "./SelectionsActions";
 import * as AlertModalActions from "./AlertModalActions";
 // helpers
 import {generateTimestamp} from '../helpers/index';
@@ -225,6 +225,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
         contextId: contextIdWithVerseEdit
       });
     }
+    let showALignmentsInvalidated = false;
 
     // TRICKY: this is a temporary hack to validate verse edits.
     // TODO: This can be removed once the ScripturePane is updated to provide
@@ -235,18 +236,20 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     console.log("updateVerseEditStatesAndCheckAlignments() - calling api.validateVerse");
     if ('wordAlignment' in apis && apis['wordAlignment'] !== null) {
       // for other tools
-      apis['wordAlignment'].trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
+      showALignmentsInvalidated = !apis['wordAlignment'].trigger('validateVerse',
+                                                                  chapterWithVerseEdit, verseWithVerseEdit, true);
     } else {
       // for wA
       const api = getSelectedToolApi(newState);
       if (api !== null &&
           (verseEdit.activeChapter !== chapterWithVerseEdit || verseEdit.activeVerse !== verseWithVerseEdit)) {
-        api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
+        showALignmentsInvalidated = !api.trigger('validateVerse',
+                                                  chapterWithVerseEdit, verseWithVerseEdit, true);
       }
     }
     console.log("updateVerseEditStatesAndCheckAlignments() - api.validateVerse - done");
-    if (showSelectionInvalidated) {
-      dispatch(showSelectionsInvalidatedWarning()); // no need to close alert, since this replaces it
+    if (showSelectionInvalidated || showALignmentsInvalidated) {
+      dispatch(showInvalidatedWarnings(showSelectionInvalidated, showALignmentsInvalidated)); // no need to close alert, since this replaces it
       await delay(1000);
     } else {
       dispatch(AlertModalActions.closeAlertDialog());
