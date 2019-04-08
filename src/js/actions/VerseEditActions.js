@@ -169,7 +169,7 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
       verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
     await delay(200);
 
-    const actionsBatch = batchGroupData || [];
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     const state = getState();
     if (getSelectedToolName(state) === 'translationWords') {
       getVerseEditsInTwGroupData(state, contextIdWithVerseEdit, actionsBatch);
@@ -207,7 +207,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
                                                         batchGroupData = null) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
-    const actionsBatch = batchGroupData || [];
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     dispatch(AlertModalActions.openAlertDialog(translate("tools.invalidation_checking"), true));
     await delay(500);
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;

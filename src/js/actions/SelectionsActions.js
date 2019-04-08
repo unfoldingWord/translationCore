@@ -51,7 +51,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
         saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
       }
 
-      const actionsBatch = batchGroupData || [];
+      const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
       actionsBatch.push({
         type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId,
@@ -62,7 +62,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
         contextId,
         boolean: invalidated
       });
-      if (!batchGroupData) { // if we are not returning batch, then process actions now
+      if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
         dispatch(processGroupDataBatch(actionsBatch));
       }
     }
@@ -150,7 +150,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     chapterNumber = chapterNumber || chapter;
     verseNumber = verseNumber || verse;
     let selectionInvalidated = false;
-    const actionsBatch = batchGroupData || [];
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
 
     if (getSelectedToolName(state) === 'translationWords') {
       const username = getUsername(state);
@@ -167,7 +167,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
         selectionInvalidated = selectionInvalidated || selectionsChanged;
       }
       const results_ = {selectionsChanged: selectionInvalidated};
-      dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false));
+      dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false, actionsBatch));
       selectionInvalidated = selectionInvalidated || results_.selectionsChanged; // if new selections invalidated
     } else if (getSelectedToolName(state) === 'wordAlignment') {
       const bibleId = project.id;
@@ -215,7 +215,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
         }
       }
     }
-    if (!batchGroupData) { // if we are not returning batch, then process actions now
+    if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
       dispatch(processGroupDataBatch(actionsBatch));
     }
     results.selectionsChanged = selectionInvalidated;
@@ -245,7 +245,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
     let filtered = null;
     results.selectionsChanged = false;
-    const actionsBatch = batchGroupData || [];
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
 
     const groupsDataKeys = Object.keys(groupsDataForVerse);
     for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
@@ -270,7 +270,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
       }
     }
 
-    if (!batchGroupData) { // if we are not returning batch, then process actions now
+    if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
       dispatch(processGroupDataBatch(actionsBatch));
     }
     if (warnOnError && (initialSelectionsChanged || results.selectionsChanged)) {
