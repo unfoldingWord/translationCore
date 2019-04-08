@@ -16,7 +16,6 @@ import {
   getUsername
 } from '../selectors';
 import {batchActions} from "redux-batched-actions";
-import {saveGroupsData} from "../localStorage/saveMethods";
 
 /**
  * Records an edit to the currently selected verse in the target bible.
