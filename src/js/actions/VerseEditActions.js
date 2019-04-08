@@ -73,16 +73,12 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
  * @return {Function}
  */
 export const processGroupDataBatch = (actionsBatch) => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     if (actionsBatch.length) {
-      const old_state = getState();
       console.log(`processGroupDataBatch() processing group batch, count=${actionsBatch.length}`);
       await delay(500);
       dispatch(batchActions(actionsBatch));
       console.log(`processGroupDataBatch() finished group batch, saving`);
-      await delay(500);
-      saveGroupsData(getState(), old_state);
-      console.log("processGroupDataBatch() - saving is finished");
     }
   };
 };
@@ -159,10 +155,11 @@ export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
     }} verseEdit - record to be saved to file system if in WA tool
  * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
  * @param {Object} currentCheckContextId - contextId of group menu item selected
+ * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
  * @return {Function}
  */
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
-                                              currentCheckContextId) => {
+                                              currentCheckContextId, batchGroupData) => {
   return async(dispatch, getState) => {
     console.log("doBackgroundVerseEditsUpdates() - recordTargetVerseEdit");
     await delay(1000); // wait till before updating
@@ -173,13 +170,13 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
       verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
     await delay(200);
 
+    const actionsBatch = batchGroupData || [];
     const state = getState();
     if (getSelectedToolName(state) === 'translationWords') {
-      const actionsBatch = [];
       getVerseEditsInTwGroupData(state, contextIdWithVerseEdit, actionsBatch);
-      dispatch(processGroupDataBatch(actionsBatch));
-      console.log("doBackgroundVerseEditsUpdates() - getVerseEditsInTwGroupData() is finished");
     }
+    dispatch(processGroupDataBatch(actionsBatch));
+    console.log("doBackgroundVerseEditsUpdates() - getVerseEditsInTwGroupData() is finished");
   };
 };
 
@@ -203,12 +200,15 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
  * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
  * @param {Object} currentCheckContextId - contextId of group menu item selected
  * @param {Boolean} showSelectionInvalidated - if true then show prompt that selections invalidated
+ * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
  * @return {Function}
  */
 export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
-                                                        currentCheckContextId, showSelectionInvalidated) => {
+                                                        currentCheckContextId, showSelectionInvalidated,
+                                                        batchGroupData = null) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
+    const actionsBatch = batchGroupData || [];
     dispatch(AlertModalActions.openAlertDialog(translate("tools.invalidation_checking"), true));
     await delay(500);
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
@@ -225,7 +225,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
         contextId: contextIdWithVerseEdit
       });
     }
-    let showALignmentsInvalidated = false;
+    let showAlignmentsInvalidated = false;
 
     // TRICKY: this is a temporary hack to validate verse edits.
     // TODO: This can be removed once the ScripturePane is updated to provide
@@ -236,26 +236,26 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     console.log("updateVerseEditStatesAndCheckAlignments() - calling api.validateVerse");
     if ('wordAlignment' in apis && apis['wordAlignment'] !== null) {
       // for other tools
-      showALignmentsInvalidated = !apis['wordAlignment'].trigger('validateVerse',
+      showAlignmentsInvalidated = !apis['wordAlignment'].trigger('validateVerse',
                                                                   chapterWithVerseEdit, verseWithVerseEdit, true);
     } else {
       // for wA
       const api = getSelectedToolApi(newState);
       if (api !== null &&
           (verseEdit.activeChapter !== chapterWithVerseEdit || verseEdit.activeVerse !== verseWithVerseEdit)) {
-        showALignmentsInvalidated = !api.trigger('validateVerse',
+        showAlignmentsInvalidated = !api.trigger('validateVerse',
                                                   chapterWithVerseEdit, verseWithVerseEdit, true);
       }
     }
     console.log("updateVerseEditStatesAndCheckAlignments() - api.validateVerse - done");
-    if (showSelectionInvalidated || showALignmentsInvalidated) {
-      dispatch(showInvalidatedWarnings(showSelectionInvalidated, showALignmentsInvalidated)); // no need to close alert, since this replaces it
+    if (showSelectionInvalidated || showAlignmentsInvalidated) {
+      dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated)); // no need to close alert, since this replaces it
       await delay(1000);
     } else {
       dispatch(AlertModalActions.closeAlertDialog());
     }
     dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
-                                           currentCheckContextId));
+                                           currentCheckContextId, actionsBatch));
   };
 };
 
@@ -296,8 +296,9 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     }
     const selectionsValidationResults = {};
     console.log("editTargetVerse() - calling validateSelections()");
+    const actionsBatch = [];
     dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
-      false, selectionsValidationResults));
+      false, selectionsValidationResults, actionsBatch));
     console.log("editTargetVerse() - validateSelections() - done");
 
     // create verse edit record to write to file system
@@ -317,7 +318,7 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     };
 
     dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId,
-        selectionsValidationResults.selectionsChanged));
+        selectionsValidationResults.selectionsChanged, actionsBatch));
   };
 };
 
