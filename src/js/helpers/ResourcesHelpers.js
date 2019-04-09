@@ -36,6 +36,8 @@ const testResourcesPath = path.join('__tests__', 'fixtures', 'resources');
 export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
+  if (toolName === "translationNotes")
+    gatewayLanguage = "en";
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   if (helpDir) {
     let categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);

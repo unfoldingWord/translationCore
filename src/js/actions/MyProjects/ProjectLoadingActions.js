@@ -101,8 +101,6 @@ export const openProject = (name, skipValidation=false) => {
         console.log("openProject() - copy group data");
         const olForBook = BibleHelpers.getOLforBook(bookId);
         let helpDir = (olForBook && olForBook.languageId) || 'grc';
-        if (t.name === "translationNotes")
-          helpDir = "en";
         copyGroupDataToProject(helpDir, t.name, validProjectDir);
 
         // select default categories
