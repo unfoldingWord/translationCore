@@ -8,6 +8,18 @@ import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
 import * as VerseEditActions from "../src/js/actions/VerseEditActions";
 
+jest.mock('redux-batched-actions', () => ({
+  batchActions: (actionsBatch) => {
+    return (dispatch) => {
+      if (actionsBatch.length) {
+        for (let action of actionsBatch) {
+          dispatch(action);
+        }
+      }
+    };
+  }
+}));
+
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
