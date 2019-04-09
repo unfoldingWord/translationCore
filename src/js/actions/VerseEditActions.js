@@ -76,7 +76,6 @@ export const getVerseEditsInTwGroupData = (state, contextId, actionsBatch) => {
   // in group data reducer set verse edit flag for every check of the verse edited
   const matchedGroupData = getGroupDataForVerse(state, contextId);
   const keys = Object.keys(matchedGroupData);
-  let changedCount = 0;
   if (keys.length) {
     for (let i = 0, l = keys.length; i < l; i++) {
       const groupItem = matchedGroupData[keys[i]];
@@ -88,13 +87,9 @@ export const getVerseEditsInTwGroupData = (state, contextId, actionsBatch) => {
               type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
               contextId: check.contextId
             });
-            changedCount++;
           }
         }
       }
-    }
-    if (changedCount) {
-      console.log(`getVerseEditsInTwGroupData() chapter=${contextId.reference.chapter}, verse=${contextId.reference.verse}, keys=${keys.length}, changedCount=${changedCount}`);
     }
   }
 };
@@ -145,7 +140,6 @@ export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                                               currentCheckContextId, batchGroupData) => {
   return async(dispatch, getState) => {
-    console.log("doBackgroundVerseEditsUpdates() - recordTargetVerseEdit");
     await delay(1000); // wait till before updating
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
@@ -161,7 +155,6 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
     }
     await delay(500);
     dispatch(batchActions(actionsBatch));
-    console.log("doBackgroundVerseEditsUpdates() - getVerseEditsInTwGroupData() is finished");
   };
 };
 
@@ -198,7 +191,6 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     await delay(500);
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
-    console.log("updateVerseEditStatesAndCheckAlignments() - calling updateTargetVerse");
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
     if (getSelectedToolName(getState()) === 'wordAlignment') {
@@ -218,7 +210,6 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     // trigger validation on the specific verse.
     const newState = getState();
     const apis = getSupportingToolApis(newState);
-    console.log("updateVerseEditStatesAndCheckAlignments() - calling api.validateVerse");
     if ('wordAlignment' in apis && apis['wordAlignment'] !== null) {
       // for other tools
       showAlignmentsInvalidated = !apis['wordAlignment'].trigger('validateVerse',
@@ -231,7 +222,6 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
                                                   chapterWithVerseEdit, verseWithVerseEdit, true);
       }
     }
-    console.log("updateVerseEditStatesAndCheckAlignments() - api.validateVerse - done");
     if (showSelectionInvalidated || showAlignmentsInvalidated) {
       dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated)); // no need to close alert, since this replaces it
       await delay(1000);
@@ -279,11 +269,9 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
       userAlias = getUsername(getState());
     }
     const selectionsValidationResults = {};
-    console.log("editTargetVerse() - calling validateSelections()");
     const actionsBatch = [];
     dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
       false, selectionsValidationResults, actionsBatch));
-    console.log("editTargetVerse() - validateSelections() - done");
 
     // create verse edit record to write to file system
     const modifiedTimestamp = generateTimestamp();
