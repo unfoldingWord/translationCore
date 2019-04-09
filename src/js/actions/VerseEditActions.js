@@ -4,6 +4,7 @@ import types from './ActionTypes';
 // actions
 import {getGroupDataForVerse, showInvalidatedWarnings, validateSelections} from "./SelectionsActions";
 import * as AlertModalActions from "./AlertModalActions";
+import {batchActions} from "redux-batched-actions";
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
@@ -15,7 +16,6 @@ import {
   getTranslate,
   getUsername
 } from '../selectors';
-import {batchActions} from "redux-batched-actions";
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -63,21 +63,6 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
       verseEdit.contextId.reference.verse.toString());
     fs.ensureDirSync(verseEditsPath);
     fs.outputJSONSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
-  };
-};
-
-/**
- * processed batched groups actions
- * @param {Array} actionsBatch - array populate with verse edits to be batched
- * @return {Function}
- */
-export const processGroupDataBatch = (actionsBatch) => {
-  return (dispatch) => {
-    if (actionsBatch.length) {
-      console.log(`processGroupDataBatch() processing group batch, count=${actionsBatch.length}`);
-      dispatch(batchActions(actionsBatch));
-      console.log(`processGroupDataBatch() finished group batch, saving`);
-    }
   };
 };
 
@@ -130,7 +115,7 @@ export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
       }
       if (actionsBatch.length) {
         await delay(500);
-        dispatch(processGroupDataBatch(actionsBatch));
+        dispatch(batchActions(actionsBatch));
       }
     }
   };
@@ -175,7 +160,7 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
       getVerseEditsInTwGroupData(state, contextIdWithVerseEdit, actionsBatch);
     }
     await delay(500);
-    dispatch(processGroupDataBatch(actionsBatch));
+    dispatch(batchActions(actionsBatch));
     console.log("doBackgroundVerseEditsUpdates() - getVerseEditsInTwGroupData() is finished");
   };
 };
@@ -241,8 +226,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     } else {
       // for wA
       const api = getSelectedToolApi(newState);
-      if (api !== null &&
-          (verseEdit.activeChapter !== chapterWithVerseEdit || verseEdit.activeVerse !== verseWithVerseEdit)) {
+      if (api !== null) {
         showAlignmentsInvalidated = !api.trigger('validateVerse',
                                                   chapterWithVerseEdit, verseWithVerseEdit, true);
       }

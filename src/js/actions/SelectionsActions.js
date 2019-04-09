@@ -7,13 +7,13 @@ import {checkSelectionOccurrences} from 'selections';
 import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
+import {batchActions} from "redux-batched-actions";
 // helpers
 import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
 import usfm from "usfm-js";
-import {processGroupDataBatch} from "./VerseEditActions";
 
 /**
  * This method adds a selection array to the selections reducer.
@@ -63,7 +63,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
         boolean: invalidated
       });
       if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
-        dispatch(processGroupDataBatch(actionsBatch));
+        dispatch(batchActions(actionsBatch));
       }
     }
   });
@@ -216,7 +216,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       }
     }
     if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
-      dispatch(processGroupDataBatch(actionsBatch));
+      dispatch(batchActions(actionsBatch));
     }
     results.selectionsChanged = selectionInvalidated;
     if (showInvalidation && selectionInvalidated) {
@@ -271,7 +271,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     }
 
     if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
-      dispatch(processGroupDataBatch(actionsBatch));
+      dispatch(batchActions(actionsBatch));
     }
     if (warnOnError && (initialSelectionsChanged || results.selectionsChanged)) {
       dispatch(showSelectionsInvalidatedWarning());
