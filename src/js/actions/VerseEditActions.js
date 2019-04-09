@@ -72,10 +72,9 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
  * @return {Function}
  */
 export const processGroupDataBatch = (actionsBatch) => {
-  return async (dispatch) => {
+  return (dispatch) => {
     if (actionsBatch.length) {
       console.log(`processGroupDataBatch() processing group batch, count=${actionsBatch.length}`);
-      await delay(500);
       dispatch(batchActions(actionsBatch));
       console.log(`processGroupDataBatch() finished group batch, saving`);
     }
@@ -130,6 +129,7 @@ export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
         getVerseEditsInTwGroupData(state, contextId, actionsBatch);
       }
       if (actionsBatch.length) {
+        await delay(500);
         dispatch(processGroupDataBatch(actionsBatch));
       }
     }
@@ -174,6 +174,7 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
     if (getSelectedToolName(state) === 'translationWords') {
       getVerseEditsInTwGroupData(state, contextIdWithVerseEdit, actionsBatch);
     }
+    await delay(500);
     dispatch(processGroupDataBatch(actionsBatch));
     console.log("doBackgroundVerseEditsUpdates() - getVerseEditsInTwGroupData() is finished");
   };
