@@ -52,7 +52,7 @@ function delay(ms) {
 
 /**
  * This thunk opens a project and prepares it for use in tools.
- * @param {string} name -  the name of the project
+ * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
  */
 export const openProject = (name, skipValidation=false) => {
@@ -62,14 +62,13 @@ export const openProject = (name, skipValidation=false) => {
     console.log("openProject() projectDir=" + projectDir);
 
     try {
+      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
       dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
       dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
-
       dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
 
       // TRICKY: prevent dialog from flashing on small projects
-      await delay(200);
+      await delay(300);
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
 

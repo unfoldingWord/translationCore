@@ -3,7 +3,6 @@ import { loadToolsInDir } from "../helpers/toolHelper";
 import { getToolGatewayLanguage, getTranslate, getProjectSaveLocation } from "../selectors";
 import * as ModalActions from "./ModalActions";
 import * as AlertModalActions from "./AlertModalActions";
-import * as GroupsDataActions from "./GroupsDataActions";
 import { loadCurrentContextId } from "./ContextIdActions";
 import * as BodyUIActions from "./BodyUIActions";
 import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
@@ -42,18 +41,16 @@ export const loadTools = (toolsDir) => (dispatch) => {
  * @returns {Function}
  */
 export const openTool = (name) => (dispatch, getData) => {
-  const translate = getTranslate(getData());
   console.log("openTool(" + name + ")");
-
+  const translate = getTranslate(getData());
   dispatch(ModalActions.showModalContainer(false));
   dispatch({ type: types.START_LOADING });
+
   setTimeout(() => {
     try {
-
       dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_DATA });
       dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_INDEX });
       dispatch({ type: types.CLEAR_CONTEXT_ID });
-
       dispatch({
         type: types.OPEN_TOOL,
         name
@@ -71,10 +68,6 @@ export const openTool = (name) => (dispatch, getData) => {
       const language = getToolGatewayLanguage(getData(), name);
       const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
       dispatch(loadGroupsIndex(groupIndex));
-
-      // verify stuff. TODO: why do we need this?
-      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-
       dispatch(loadCurrentContextId());
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));
