@@ -372,8 +372,17 @@ export const loadSourceBookTranslations = (bookId, toolName) => async (dispatch,
   dispatch(updateOlPaneSettings(bookId));
 
   const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);
-  for (let i = 0, len = resources.length; i < len; i++) {
-    const resource = resources[i];
+  const bibles = getBibles(getState());
+  // Filter out bible resources that are already in the resources reducer
+  const filteredResources = resources.filter(resource => {
+    const isOriginalLanguage = resource.languageId === "hbo" || resource.languageId === "grc";
+    const languageId = isOriginalLanguage ? 'originalLanguage' : resource.languageId;
+    const biblesForLanguage = bibles[languageId];
+    return !(biblesForLanguage && biblesForLanguage[resource.bibleId]);
+  });
+
+  for (let i = 0, len = filteredResources.length; i < len; i++) {
+    const resource = filteredResources[i];
     dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
   }
 };

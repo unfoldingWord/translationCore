@@ -111,6 +111,7 @@ export const openProject = (name, skipValidation=false) => {
         // connect tool api
         console.log("openProject() - connect tool api");
         const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
+
         t.api.triggerWillConnect(toolProps);
       }
 
