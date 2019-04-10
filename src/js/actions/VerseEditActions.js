@@ -7,7 +7,7 @@ import * as AlertModalActions from "./AlertModalActions";
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import {delay} from "../helpers/bodyUIHelpers";
+import {delay} from "../common/utils";
 import {
   getSelectedToolApi,
   getSelectedToolName,

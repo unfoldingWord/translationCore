@@ -40,15 +40,9 @@ import {
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
 import * as BibleHelpers from "../../helpers/bibleHelpers";
-
+import {delay} from '../../common/utils';
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
-function delay(ms) {
-  return new Promise ((resolve) =>
-    setTimeout(resolve, ms)
-  );
-}
 
 /**
  * This thunk opens a project and prepares it for use in tools.
