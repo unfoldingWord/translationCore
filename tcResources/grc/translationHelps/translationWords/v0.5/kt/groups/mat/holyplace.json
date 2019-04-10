@@ -1,0 +1,24 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "holyplace",
+      "quote": "τόπῳ ἁγίῳ",
+      "strong": [
+        "G51170",
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  }
+]

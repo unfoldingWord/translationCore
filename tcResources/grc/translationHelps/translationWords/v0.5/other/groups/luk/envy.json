@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "envy",
+      "quote": "πλεονεξίας",
+      "strong": [
+        "G41240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

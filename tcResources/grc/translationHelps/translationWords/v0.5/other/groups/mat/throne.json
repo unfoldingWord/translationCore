@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "throne",
+      "quote": "θρόνος",
+      "strong": [
+        "G23620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "throne",
+      "quote": "θρόνου",
+      "strong": [
+        "G23620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "throne",
+      "quote": "θρόνους",
+      "strong": [
+        "G23620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "throne",
+      "quote": "θρόνῳ",
+      "strong": [
+        "G23620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "throne",
+      "quote": "θρόνου",
+      "strong": [
+        "G23620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

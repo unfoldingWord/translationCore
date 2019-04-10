@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαῶν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῖς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαῶν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαόν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοὶ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαός",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοὶ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

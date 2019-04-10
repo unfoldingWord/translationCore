@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δεῖπνον",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δείπνου",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δείπνου",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δείπνῳ",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

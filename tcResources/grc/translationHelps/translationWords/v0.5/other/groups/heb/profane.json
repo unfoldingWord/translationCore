@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "profane",
+      "quote": "βέβηλος",
+      "strong": [
+        "G09520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

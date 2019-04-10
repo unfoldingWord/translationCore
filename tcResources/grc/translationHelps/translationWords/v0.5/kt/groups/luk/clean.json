@@ -1,0 +1,317 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἐκαθαρίσθη",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκαθάρτου",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκαθάρτοις",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίσαι",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίσθητι",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρισμοῦ",
+      "strong": [
+        "G25120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκαθάρτων",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίζονται",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκαθάρτῳ",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκαθάρτῳ",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκάθαρτον",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίζετε",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρὰ",
+      "strong": [
+        "G25130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἐκαθαρίσθησαν",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἐκαθαρίσθησαν",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

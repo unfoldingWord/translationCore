@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "πληρῶσαι",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "πληροῖς",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

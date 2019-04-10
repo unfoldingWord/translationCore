@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "kiss",
+      "quote": "φιλήσω",
+      "strong": [
+        "G53680"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "kiss",
+      "quote": "κατεφίλησεν",
+      "strong": [
+        "G27050"
+      ],
+      "occurrence": 1
+    }
+  }
+]

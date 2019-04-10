@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 11,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "παιδευόμεθα",
+      "strong": [
+        "G38110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

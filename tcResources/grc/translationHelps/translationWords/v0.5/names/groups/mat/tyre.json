@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "tyre",
+      "quote": "Τύρῳ",
+      "strong": [
+        "G51840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "tyre",
+      "quote": "Τύρῳ",
+      "strong": [
+        "G51840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "tyre",
+      "quote": "Τύρου",
+      "strong": [
+        "G51840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

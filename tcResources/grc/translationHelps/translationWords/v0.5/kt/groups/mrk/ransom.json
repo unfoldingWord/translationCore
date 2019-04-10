@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "ransom",
+      "quote": "λύτρον",
+      "strong": [
+        "G30830"
+      ],
+      "occurrence": 1
+    }
+  }
+]

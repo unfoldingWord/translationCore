@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "σαπρὸν",
+      "strong": [
+        "G45500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "σαπρὸν",
+      "strong": [
+        "G45500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "σαπρὸν",
+      "strong": [
+        "G45500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "σαπρόν",
+      "strong": [
+        "G45500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "σαπρὰ",
+      "strong": [
+        "G45500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

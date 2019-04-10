@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "works",
+      "quote": "ἔργον",
+      "strong": [
+        "G20410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "works",
+      "quote": "ἔργῳ",
+      "strong": [
+        "G20410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "works",
+      "quote": "ἔργα",
+      "strong": [
+        "G20410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

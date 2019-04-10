@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέρας",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

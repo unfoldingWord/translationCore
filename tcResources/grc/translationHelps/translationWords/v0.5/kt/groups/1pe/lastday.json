@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "καιρῷ ἐσχάτῳ",
+      "strong": [
+        "G25400",
+        "G20780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάτου τῶν χρόνων",
+      "strong": [
+        "G20780",
+        "G35880",
+        "G55500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

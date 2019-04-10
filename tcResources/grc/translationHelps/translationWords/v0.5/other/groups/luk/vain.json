@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "vain",
+      "quote": "κενούς",
+      "strong": [
+        "G27560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "vain",
+      "quote": "κενόν",
+      "strong": [
+        "G27560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "vain",
+      "quote": "κενόν",
+      "strong": [
+        "G27560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

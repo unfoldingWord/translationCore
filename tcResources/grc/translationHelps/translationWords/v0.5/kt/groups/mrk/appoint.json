@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ἐποίησεν",
+      "strong": [
+        "G41600"
+      ],
+      "occurrence": 1
+    }
+  }
+]

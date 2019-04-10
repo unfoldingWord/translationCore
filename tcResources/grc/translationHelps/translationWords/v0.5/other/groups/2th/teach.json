@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "ἐδιδάχθητε",
+      "strong": [
+        "G13210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

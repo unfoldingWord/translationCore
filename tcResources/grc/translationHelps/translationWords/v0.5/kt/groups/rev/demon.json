@@ -1,0 +1,110 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνια",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "πνεύματα τρία ἀκάθαρτα",
+      "strong": [
+        "G41510",
+        "G51400",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμονίων",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμονίων",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "πνεύματος ἀκαθάρτου",
+      "strong": [
+        "G41510",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

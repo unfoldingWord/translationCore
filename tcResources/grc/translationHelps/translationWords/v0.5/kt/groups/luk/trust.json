@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "trust",
+      "quote": "ἐπεποίθει",
+      "strong": [
+        "G39820"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "trust",
+      "quote": "πιστεύσει",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "trust",
+      "quote": "πεποιθότας",
+      "strong": [
+        "G39820"
+      ],
+      "occurrence": 1
+    }
+  }
+]

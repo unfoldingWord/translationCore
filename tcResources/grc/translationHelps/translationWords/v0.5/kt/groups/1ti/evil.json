@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "πονηραί",
+      "strong": [
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "evil",
+      "quote": "κακῶν",
+      "strong": [
+        "G25560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

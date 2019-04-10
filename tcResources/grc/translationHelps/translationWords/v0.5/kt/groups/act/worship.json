@@ -1,0 +1,296 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνεῖν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσων",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσεκύνησεν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σεβομένων",
+      "strong": [
+        "G45760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σεβομένας",
+      "strong": [
+        "G45760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σεβομένη",
+      "strong": [
+        "G45760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σεβομένων",
+      "strong": [
+        "G45760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σεβομένοις",
+      "strong": [
+        "G45760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σεβάσματα",
+      "strong": [
+        "G45740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "εὐσεβεῖτε",
+      "strong": [
+        "G21510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σεβομένου",
+      "strong": [
+        "G45760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σέβεσθαι",
+      "strong": [
+        "G45760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "σέβεται",
+      "strong": [
+        "G45760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσων",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

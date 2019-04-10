@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "blameless",
+      "quote": "ἀνεγκλήτους",
+      "strong": [
+        "G04100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "blameless",
+      "quote": "ἀπρόσκοποι",
+      "strong": [
+        "G06770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

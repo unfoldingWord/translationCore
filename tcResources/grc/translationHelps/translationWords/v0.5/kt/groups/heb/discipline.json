@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "παιδείας",
+      "strong": [
+        "G38090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "παιδεύει",
+      "strong": [
+        "G38110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "παιδείαν",
+      "strong": [
+        "G38090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "παιδεύει",
+      "strong": [
+        "G38110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "παιδείας",
+      "strong": [
+        "G38090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "παιδευτὰς",
+      "strong": [
+        "G38100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "ἐπαίδευον",
+      "strong": [
+        "G38110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "discipline",
+      "quote": "παιδεία",
+      "strong": [
+        "G38090"
+      ],
+      "occurrence": 1
+    }
+  }
+]

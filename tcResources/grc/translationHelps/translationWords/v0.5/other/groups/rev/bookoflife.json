@@ -1,0 +1,143 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "bookoflife",
+      "quote": "βίβλου τῆς ζωῆς",
+      "strong": [
+        "G09760",
+        "G35880",
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "bookoflife",
+      "quote": "βιβλίῳ τῆς ζωῆς",
+      "strong": [
+        "G09750",
+        "G35880",
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "bookoflife",
+      "quote": "βιβλίον τῆς ζωῆς",
+      "strong": [
+        "G09750",
+        "G35880",
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "bookoflife",
+      "quote": "βιβλίον ἠνεῴχθη ὅ ἐστιν τῆς ζωῆς",
+      "strong": [
+        "G09750",
+        "G04550",
+        "G37390",
+        "G15100",
+        "G35880",
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "bookoflife",
+      "quote": "βίβλῳ τῆς ζωῆς",
+      "strong": [
+        "G09760",
+        "G35880",
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "bookoflife",
+      "quote": "βιβλίῳ τῆς ζωῆς",
+      "strong": [
+        "G09750",
+        "G35880",
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

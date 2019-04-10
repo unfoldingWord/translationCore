@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "elisha",
+      "quote": "Ἐλισαίου",
+      "strong": [
+        "G16660"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "shame",
+      "quote": "αἰσχρόν",
+      "strong": [
+        "G01500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "pharisee",
+      "quote": "Φαρισαῖος",
+      "strong": [
+        "G53300"
+      ],
+      "occurrence": 1
+    }
+  }
+]

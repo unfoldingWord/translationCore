@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "loins",
+      "quote": "ὀσφύος",
+      "strong": [
+        "G37510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

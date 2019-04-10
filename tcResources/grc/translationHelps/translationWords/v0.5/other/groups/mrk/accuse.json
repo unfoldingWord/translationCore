@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγορήσωσιν",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγόρουν",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγοροῦσιν",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  }
+]

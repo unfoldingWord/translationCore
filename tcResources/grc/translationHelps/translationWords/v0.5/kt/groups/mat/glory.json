@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξαν",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δοξάσωσιν",
+      "strong": [
+        "G13920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δοξασθῶσιν",
+      "strong": [
+        "G13920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξῃ",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "ἐδόξασαν",
+      "strong": [
+        "G13920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "ἐδόξασαν",
+      "strong": [
+        "G13920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξῃ",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξης",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξης",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξῃ",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξης",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

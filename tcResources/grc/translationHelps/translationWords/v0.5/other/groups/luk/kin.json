@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "kin",
+      "quote": "συγγενίς",
+      "strong": [
+        "G47735"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 58
+      },
+      "tool": "translationWords",
+      "groupId": "kin",
+      "quote": "συγγενεῖς",
+      "strong": [
+        "G47730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 61
+      },
+      "tool": "translationWords",
+      "groupId": "kin",
+      "quote": "συγγενείας",
+      "strong": [
+        "G47720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "kin",
+      "quote": "συγγενεῦσιν",
+      "strong": [
+        "G47730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "kin",
+      "quote": "συγγενεῖς",
+      "strong": [
+        "G47730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "kin",
+      "quote": "συγγενῶν",
+      "strong": [
+        "G47730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

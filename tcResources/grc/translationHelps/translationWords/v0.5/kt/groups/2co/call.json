@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐπικαλοῦμαι",
+      "strong": [
+        "G19410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

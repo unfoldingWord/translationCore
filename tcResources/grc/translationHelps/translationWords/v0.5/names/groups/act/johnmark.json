@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "johnmark",
+      "quote": "Ἰωάννου τοῦ ἐπικαλουμένου Μάρκου",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G19410",
+        "G31380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "johnmark",
+      "quote": "Ἰωάννην τὸν ἐπικληθέντα Μᾶρκον",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G19410",
+        "G31380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "johnmark",
+      "quote": "Ἰωάννην",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "johnmark",
+      "quote": "Ἰωάννης",
+      "strong": [
+        "G24910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "johnmark",
+      "quote": "Ἰωάννην τὸν καλούμενον Μᾶρκον",
+      "strong": [
+        "G24910",
+        "G35880",
+        "G25640",
+        "G31380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "johnmark",
+      "quote": "Μᾶρκον",
+      "strong": [
+        "G31380"
+      ],
+      "occurrence": 1
+    }
+  }
+]

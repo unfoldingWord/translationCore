@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λαμπάδες",
+      "strong": [
+        "G29850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

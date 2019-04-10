@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "trample",
+      "quote": "καταπατεῖσθαι",
+      "strong": [
+        "G26620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "trample",
+      "quote": "καταπατήσουσιν",
+      "strong": [
+        "G26620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

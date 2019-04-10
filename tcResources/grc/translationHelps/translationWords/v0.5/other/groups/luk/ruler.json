@@ -1,0 +1,254 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "δυνάστας",
+      "strong": [
+        "G14130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχων",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχοντι",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἀρχὰς",
+      "strong": [
+        "G07460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 58
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχοντα",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἀρχόντων",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχων",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἀρχῇ",
+      "strong": [
+        "G07460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "κυριεύουσιν",
+      "strong": [
+        "G29610"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχοντας",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχοντες",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχοντες",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "fig",
+      "quote": "σῦκα",
+      "strong": [
+        "G48100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "fig",
+      "quote": "συκῆν",
+      "strong": [
+        "G48080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "fig",
+      "quote": "συκῇ",
+      "strong": [
+        "G48080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "fig",
+      "quote": "συκῆν",
+      "strong": [
+        "G48080"
+      ],
+      "occurrence": 1
+    }
+  }
+]

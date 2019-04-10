@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρισμοῦ",
+      "strong": [
+        "G25120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

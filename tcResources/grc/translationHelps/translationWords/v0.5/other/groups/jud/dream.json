@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "dream",
+      "quote": "ἐνυπνιαζόμενοι",
+      "strong": [
+        "G17970"
+      ],
+      "occurrence": 1
+    }
+  }
+]

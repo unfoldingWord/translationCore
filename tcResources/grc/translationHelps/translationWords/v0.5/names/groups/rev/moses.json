@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "moses",
+      "quote": "Μωϋσέως",
+      "strong": [
+        "G34750"
+      ],
+      "occurrence": 1
+    }
+  }
+]

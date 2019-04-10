@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νόμου",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νόμον",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νόμους",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νόμους",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,822 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 59
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 61
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 62
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "καλεῖσθαι",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 63
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὠνόμασεν",
+      "strong": [
+        "G36870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὠνόμασεν",
+      "strong": [
+        "G36870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομά",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματί",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματί",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματί",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "καλουμένη",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομά",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι καλούμενος",
+      "strong": [
+        "G36860",
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματί",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματός",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομά",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὄνομα",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "name",
+      "quote": "ὀνόματι",
+      "strong": [
+        "G36860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

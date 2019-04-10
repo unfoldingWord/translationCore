@@ -1,0 +1,45 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "satan",
+      "quote": "Σατανᾶ",
+      "strong": [
+        "G45660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "satan",
+      "quote": "τοῦ πονηροῦ",
+      "strong": [
+        "G35880",
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

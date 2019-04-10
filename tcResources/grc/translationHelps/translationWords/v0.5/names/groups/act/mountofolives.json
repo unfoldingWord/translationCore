@@ -1,0 +1,26 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "mountofolives",
+      "quote": "ὄρους τοῦ καλουμένου Ἐλαιῶνος",
+      "strong": [
+        "G37350",
+        "G35880",
+        "G25640",
+        "G16380"
+      ],
+      "occurrence": 1
+    }
+  }
+]

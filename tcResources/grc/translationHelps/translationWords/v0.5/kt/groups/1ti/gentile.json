@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "gentile",
+      "quote": "ἐθνῶν",
+      "strong": [
+        "G14840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

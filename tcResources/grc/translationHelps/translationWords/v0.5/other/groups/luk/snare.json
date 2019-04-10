@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "snare",
+      "quote": "θηρεῦσαί",
+      "strong": [
+        "G23400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "snare",
+      "quote": "παγίς",
+      "strong": [
+        "G38030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

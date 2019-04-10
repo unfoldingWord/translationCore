@@ -1,0 +1,26 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "jamessonofalphaeus",
+      "quote": "Ἰάκωβον τὸν τοῦ Ἁλφαίου",
+      "strong": [
+        "G23850",
+        "G35880",
+        "G35880",
+        "G02560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

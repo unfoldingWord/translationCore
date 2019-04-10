@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "simonthezealot",
+      "quote": "Σίμων ὁ Καναναῖος",
+      "strong": [
+        "G46130",
+        "G35880",
+        "G25805"
+      ],
+      "occurrence": 1
+    }
+  }
+]

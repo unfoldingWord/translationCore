@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "miracle",
+      "quote": "δυνάμεσι",
+      "strong": [
+        "G14110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "miracle",
+      "quote": "δυνάμεις",
+      "strong": [
+        "G14110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "miracle",
+      "quote": "δυνάμεις",
+      "strong": [
+        "G14110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

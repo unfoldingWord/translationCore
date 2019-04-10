@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "conceive",
+      "quote": "καταβολὴν",
+      "strong": [
+        "G26020"
+      ],
+      "occurrence": 1
+    }
+  }
+]

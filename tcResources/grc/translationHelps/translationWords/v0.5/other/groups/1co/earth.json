@@ -1,0 +1,150 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "earth",
+      "quote": "γῆς",
+      "strong": [
+        "G10930"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "earth",
+      "quote": "γῆ",
+      "strong": [
+        "G10930"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "earth",
+      "quote": "ἐπίγεια",
+      "strong": [
+        "G19190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "earth",
+      "quote": "ἐπιγείων",
+      "strong": [
+        "G19190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "earth",
+      "quote": "γῆς χοϊκός",
+      "strong": [
+        "G10930",
+        "G55170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "earth",
+      "quote": "χοϊκοί",
+      "strong": [
+        "G55170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "earth",
+      "quote": "χοϊκοῦ",
+      "strong": [
+        "G55170"
+      ],
+      "occurrence": 1
+    }
+  }
+]

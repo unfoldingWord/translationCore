@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "oppress",
+      "quote": "καταπονούμενον",
+      "strong": [
+        "G26690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

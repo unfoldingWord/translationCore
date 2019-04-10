@@ -1,0 +1,296 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρήσῃ",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρήσῃ",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρῶ",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρεῖ",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "φυλάξῃ",
+      "strong": [
+        "G54420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρήσετε",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρῶν",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρήσει",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρεῖ",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρήσητε",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τετήρηκα",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "ἐτήρησαν",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τηρήσουσιν",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "τετήρηκαν",
+      "strong": [
+        "G50830"
+      ],
+      "occurrence": 1
+    }
+  }
+]

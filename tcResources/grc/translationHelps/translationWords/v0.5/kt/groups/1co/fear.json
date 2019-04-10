@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "φόβῳ",
+      "strong": [
+        "G54010"
+      ],
+      "occurrence": 1
+    }
+  }
+]

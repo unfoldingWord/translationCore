@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "ἀνόμων",
+      "strong": [
+        "G04590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "ἐξὸν",
+      "strong": [
+        "G18260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "ἔξεστιν",
+      "strong": [
+        "G18260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "ἔξεστίν",
+      "strong": [
+        "G18260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "lawful",
+      "quote": "ἔξεστιν",
+      "strong": [
+        "G18260"
+      ],
+      "occurrence": 1
+    }
+  }
+]

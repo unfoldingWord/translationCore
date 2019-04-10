@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "guilt",
+      "quote": "αἴτιον",
+      "strong": [
+        "G01590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "guilt",
+      "quote": "αἴτιον",
+      "strong": [
+        "G01590"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "guilt",
+      "quote": "αἴτιον",
+      "strong": [
+        "G01590"
+      ],
+      "occurrence": 1
+    }
+  }
+]

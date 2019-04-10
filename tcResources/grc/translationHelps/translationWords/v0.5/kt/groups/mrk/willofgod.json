@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "θέλημα τοῦ Θεοῦ",
+      "strong": [
+        "G23070",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

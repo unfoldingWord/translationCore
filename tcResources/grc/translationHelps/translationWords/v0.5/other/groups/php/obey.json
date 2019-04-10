@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "ὑπήκοος",
+      "strong": [
+        "G52550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "obey",
+      "quote": "ὑπηκούσατε",
+      "strong": [
+        "G52190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

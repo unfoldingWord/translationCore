@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "ἀσύνετοί",
+      "strong": [
+        "G08010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "ἀφροσύνη",
+      "strong": [
+        "G08770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

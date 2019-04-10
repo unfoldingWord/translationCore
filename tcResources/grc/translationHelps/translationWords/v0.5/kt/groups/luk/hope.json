@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "hope",
+      "quote": "ἤλπιζέν",
+      "strong": [
+        "G16790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "hope",
+      "quote": "ἠλπίζομεν",
+      "strong": [
+        "G16790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

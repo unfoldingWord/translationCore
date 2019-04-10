@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "armor",
+      "quote": "ὅπλων",
+      "strong": [
+        "G36960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "armor",
+      "quote": "ὅπλα",
+      "strong": [
+        "G36960"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,380 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κέκραγεν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "βοῶντος",
+      "strong": [
+        "G09940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραξεν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραξεν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαύσῃ",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίουσαν",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίοντας",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐδάκρυσεν",
+      "strong": [
+        "G11450"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραξεν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαύσετε",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐκραύγασαν",
+      "strong": [
+        "G29050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐκραύγασαν",
+      "strong": [
+        "G29050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐκραύγασαν",
+      "strong": [
+        "G29050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐκραύγασαν",
+      "strong": [
+        "G29050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίουσα",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκλαιεν",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίεις",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίεις",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

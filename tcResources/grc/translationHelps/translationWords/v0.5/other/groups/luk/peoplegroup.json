@@ -1,0 +1,779 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 68
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαῷ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 77
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαῷ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαῷ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαῶν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαόν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "ὄχλου",
+      "strong": [
+        "G37930"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαόν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαῷ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαόν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 66
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαόν",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαὸς",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαοῦ",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

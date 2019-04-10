@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "pentecost",
+      "quote": "Πεντηκοστῆς",
+      "strong": [
+        "G40050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "pentecost",
+      "quote": "Πεντηκοστῆς",
+      "strong": [
+        "G40050"
+      ],
+      "occurrence": 1
+    }
+  }
+]

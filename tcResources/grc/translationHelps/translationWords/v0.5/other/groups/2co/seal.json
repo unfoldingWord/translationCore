@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "seal",
+      "quote": "σφραγισάμενος",
+      "strong": [
+        "G49720"
+      ],
+      "occurrence": 1
+    }
+  }
+]

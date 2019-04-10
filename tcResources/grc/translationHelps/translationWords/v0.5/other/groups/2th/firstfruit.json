@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "firstfruit",
+      "quote": "ἀπαρχὴν",
+      "strong": [
+        "G05360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

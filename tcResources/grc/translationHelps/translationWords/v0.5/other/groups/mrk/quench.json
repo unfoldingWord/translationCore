@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "quench",
+      "quote": "σβέννυται",
+      "strong": [
+        "G45700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

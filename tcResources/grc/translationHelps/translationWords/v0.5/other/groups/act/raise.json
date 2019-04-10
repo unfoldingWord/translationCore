@@ -1,0 +1,1241 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστησεν",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστησεν",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστήσει",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστήσας",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστάντες",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστη",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστη",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστησαν",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστη",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστήσει",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστηθι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστηθι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἠγέρθη",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστηθι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστη",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστηθι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστησεν",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστάς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστηθι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστῆναι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστάς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστα",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστήσας",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστησεν",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστηθι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγένετο",
+      "strong": [
+        "G10960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστῆναι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστήσας",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγένετο",
+      "strong": [
+        "G10960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστήσονται",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστὰς",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀναστάντες",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "γινομένης",
+      "strong": [
+        "G10960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρει",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστηθι",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστη",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "patient",
+      "quote": "μακροθυμεῖτε",
+      "strong": [
+        "G31140"
+      ],
+      "occurrence": 1
+    }
+  }
+]

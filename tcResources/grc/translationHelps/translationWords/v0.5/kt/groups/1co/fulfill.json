@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἀποδιδότω",
+      "strong": [
+        "G05910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

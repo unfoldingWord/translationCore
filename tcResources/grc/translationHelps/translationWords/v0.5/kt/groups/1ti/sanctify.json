@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "sanctify",
+      "quote": "ἁγιάζεται",
+      "strong": [
+        "G00370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

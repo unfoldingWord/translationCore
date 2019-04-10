@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "exult",
+      "quote": "ἀγαλλιᾶσθε",
+      "strong": [
+        "G00210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

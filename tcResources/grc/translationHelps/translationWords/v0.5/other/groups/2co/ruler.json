@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "κυριεύομεν",
+      "strong": [
+        "G29610"
+      ],
+      "occurrence": 1
+    }
+  }
+]

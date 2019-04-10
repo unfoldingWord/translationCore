@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "warrior",
+      "quote": "στρατευόμενοι",
+      "strong": [
+        "G47540"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "warrior",
+      "quote": "στρατιώτας",
+      "strong": [
+        "G47570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "warrior",
+      "quote": "στρατεύμασιν",
+      "strong": [
+        "G47530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "warrior",
+      "quote": "στρατιῶται",
+      "strong": [
+        "G47570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

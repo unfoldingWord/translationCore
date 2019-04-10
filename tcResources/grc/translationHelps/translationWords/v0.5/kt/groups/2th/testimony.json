@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτύριον",
+      "strong": [
+        "G31420"
+      ],
+      "occurrence": 1
+    }
+  }
+]

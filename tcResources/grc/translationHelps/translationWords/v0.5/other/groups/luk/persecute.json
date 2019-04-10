@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώξουσιν",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώξουσιν",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "offspring",
+      "quote": "σπέρματος",
+      "strong": [
+        "G46900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "offspring",
+      "quote": "γένος",
+      "strong": [
+        "G10850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "offspring",
+      "quote": "γένος",
+      "strong": [
+        "G10850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

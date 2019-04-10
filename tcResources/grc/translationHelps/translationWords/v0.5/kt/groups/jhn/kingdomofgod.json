@@ -1,0 +1,111 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "Βασιλείαν τοῦ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 3
+    }
+  }
+]

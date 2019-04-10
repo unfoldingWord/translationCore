@@ -1,0 +1,464 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐξεγερεῖ",
+      "strong": [
+        "G18250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνέστησαν",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγήγερται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγήγερται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγήγερται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγήγερται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἤγειρεν",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρονται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρονται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγήγερται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγήγερται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγήγερται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρονται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρονται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρονται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρεται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρεται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρεται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρεται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγερθήσονται",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

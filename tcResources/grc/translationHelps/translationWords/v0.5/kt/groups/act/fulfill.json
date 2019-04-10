@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "πληρωθῆναι",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἐπλήρωσεν",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἐπληροῦτο",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "πληρώσαντες",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἐπλήρου",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἐπλήρωσαν",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἐκπεπλήρωκεν",
+      "strong": [
+        "G16030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἐπλήρωσαν",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἐπληρώθη",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "ἐκπλήρωσιν",
+      "strong": [
+        "G16040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

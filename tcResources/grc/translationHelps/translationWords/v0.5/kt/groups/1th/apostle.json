@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "apostle",
+      "quote": "ἀπόστολοι",
+      "strong": [
+        "G06520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "curtain",
+      "quote": "καταπέτασμα",
+      "strong": [
+        "G26650"
+      ],
+      "occurrence": 1
+    }
+  }
+]

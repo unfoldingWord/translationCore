@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "exult",
+      "quote": "ἀγαλλίασις",
+      "strong": [
+        "G00200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "exult",
+      "quote": "ἀγαλλιάσει",
+      "strong": [
+        "G00200"
+      ],
+      "occurrence": 1
+    }
+  }
+]

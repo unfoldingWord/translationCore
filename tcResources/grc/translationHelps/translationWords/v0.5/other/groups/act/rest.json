@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "rest",
+      "quote": "καταπαύσεώς",
+      "strong": [
+        "G26630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "rest",
+      "quote": "ἄνεσιν",
+      "strong": [
+        "G04250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

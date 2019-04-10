@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "run",
+      "quote": "τρέχει",
+      "strong": [
+        "G51430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "run",
+      "quote": "προέδραμεν",
+      "strong": [
+        "G43900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

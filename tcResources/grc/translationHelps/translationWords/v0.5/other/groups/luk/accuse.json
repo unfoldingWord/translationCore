@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "συκοφαντήσητε",
+      "strong": [
+        "G48110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγορεῖν",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγορεῖν",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγοροῦντες",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγορεῖτε",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  }
+]

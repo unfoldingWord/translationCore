@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "camel",
+      "quote": "κάμηλον",
+      "strong": [
+        "G25740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

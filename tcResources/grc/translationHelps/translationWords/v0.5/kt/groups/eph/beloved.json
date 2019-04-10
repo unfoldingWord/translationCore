@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "beloved",
+      "quote": "ἀγαπητά",
+      "strong": [
+        "G00270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "beloved",
+      "quote": "ἀγαπητὸς",
+      "strong": [
+        "G00270"
+      ],
+      "occurrence": 1
+    }
+  }
+]
