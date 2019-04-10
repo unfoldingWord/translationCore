@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "voice",
+      "quote": "φωνὴν",
+      "strong": [
+        "G54560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "voice",
+      "quote": "φωνὴν",
+      "strong": [
+        "G54560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "voice",
+      "quote": "φωνῶν",
+      "strong": [
+        "G54560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "voice",
+      "quote": "φωνῆς",
+      "strong": [
+        "G54560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "arrogant",
+      "quote": "ὑπέρογκα",
+      "strong": [
+        "G52460"
+      ],
+      "occurrence": 1
+    }
+  }
+]

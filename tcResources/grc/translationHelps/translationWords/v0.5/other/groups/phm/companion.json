@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "companion",
+      "quote": "συνεργῷ",
+      "strong": [
+        "G49040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "companion",
+      "quote": "συνεργοί",
+      "strong": [
+        "G49040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "συνεπιμαρτυροῦντος",
+      "strong": [
+        "G49010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "διεμαρτύρατο",
+      "strong": [
+        "G12630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτύριον",
+      "strong": [
+        "G31420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτυρούμενος",
+      "strong": [
+        "G31400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτυρεῖται",
+      "strong": [
+        "G31400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτυρεῖ",
+      "strong": [
+        "G31400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μάρτυσιν",
+      "strong": [
+        "G31440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "ἐμαρτυρήθη",
+      "strong": [
+        "G31400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτυροῦντος",
+      "strong": [
+        "G31400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτυρηθέντες",
+      "strong": [
+        "G31400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "μαρτύρων",
+      "strong": [
+        "G31440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

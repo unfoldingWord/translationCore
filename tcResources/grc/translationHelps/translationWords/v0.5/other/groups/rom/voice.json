@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "voice",
+      "quote": "φθόγγος",
+      "strong": [
+        "G53530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

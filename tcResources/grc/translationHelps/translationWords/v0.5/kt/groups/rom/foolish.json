@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "ἀνοήτοις",
+      "strong": [
+        "G04530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "ἀσύνετος",
+      "strong": [
+        "G08010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "ἐμωράνθησαν",
+      "strong": [
+        "G34710"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "ἀσυνέτους",
+      "strong": [
+        "G08010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "ἀφρόνων",
+      "strong": [
+        "G08780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "foolish",
+      "quote": "ἀσυνέτῳ",
+      "strong": [
+        "G08010"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "angel",
+      "quote": "ἀγγέλοις",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "angel",
+      "quote": "ἀγγέλων",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

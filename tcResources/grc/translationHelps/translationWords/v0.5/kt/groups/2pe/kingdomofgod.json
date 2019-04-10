@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "βασιλείαν τοῦ Κυρίου",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

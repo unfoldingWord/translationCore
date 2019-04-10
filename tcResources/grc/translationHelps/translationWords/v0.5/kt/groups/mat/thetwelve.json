@@ -1,0 +1,197 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα μαθητὰς",
+      "strong": [
+        "G14270",
+        "G31010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα ἀποστόλων",
+      "strong": [
+        "G14270",
+        "G06520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα",
+      "strong": [
+        "G14270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα μαθηταῖς",
+      "strong": [
+        "G14270",
+        "G31010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "τοὺς δώδεκα μαθητὰς",
+      "strong": [
+        "G35880",
+        "G14270",
+        "G31010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα",
+      "strong": [
+        "G14270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα",
+      "strong": [
+        "G14270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα",
+      "strong": [
+        "G14270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "ἕνδεκα μαθηταὶ",
+      "strong": [
+        "G17330",
+        "G31010"
+      ],
+      "occurrence": 1
+    }
+  }
+]

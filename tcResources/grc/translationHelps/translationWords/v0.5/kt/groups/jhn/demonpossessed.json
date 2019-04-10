@@ -1,0 +1,89 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "demonpossessed",
+      "quote": "δαιμόνιον ἔχεις",
+      "strong": [
+        "G11400",
+        "G21920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "demonpossessed",
+      "quote": "δαιμόνιον ἔχεις",
+      "strong": [
+        "G11400",
+        "G21920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "demonpossessed",
+      "quote": "δαιμόνιον ἔχει",
+      "strong": [
+        "G11400",
+        "G21920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "demonpossessed",
+      "quote": "δαιμονιζομένου",
+      "strong": [
+        "G11390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

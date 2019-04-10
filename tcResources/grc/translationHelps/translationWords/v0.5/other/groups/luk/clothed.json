@@ -1,0 +1,465 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματίου",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτιον",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτιον",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματίοις",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἠμφιεσμένον",
+      "strong": [
+        "G02940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνεδύσατο",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτιον",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματισμένον",
+      "strong": [
+        "G24390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματίου",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύσησθε",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύματος",
+      "strong": [
+        "G17420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "περιεβάλετο",
+      "strong": [
+        "G40160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἀμφιέζει",
+      "strong": [
+        "G02940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύσατε",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνεδιδύσκετο",
+      "strong": [
+        "G17370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτια",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτια",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτιον",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "περιβαλὼν ἐσθῆτα",
+      "strong": [
+        "G40160",
+        "G20660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτια",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐσθῆτι",
+      "strong": [
+        "G20660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύσησθε",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  }
+]

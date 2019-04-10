@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "foundation",
+      "quote": "καταβολῆς",
+      "strong": [
+        "G26020"
+      ],
+      "occurrence": 1
+    }
+  }
+]

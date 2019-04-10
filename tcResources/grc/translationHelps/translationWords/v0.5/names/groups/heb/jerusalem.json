@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "jerusalem",
+      "quote": "Ἰερουσαλὴμ",
+      "strong": [
+        "G24140"
+      ],
+      "occurrence": 1
+    }
+  }
+]

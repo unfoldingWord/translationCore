@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "παραιτοῦ",
+      "strong": [
+        "G38680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

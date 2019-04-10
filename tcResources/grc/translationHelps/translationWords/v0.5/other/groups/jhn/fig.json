@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "fig",
+      "quote": "συκῆν",
+      "strong": [
+        "G48080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "fig",
+      "quote": "συκῆς",
+      "strong": [
+        "G48080"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "hang",
+      "quote": "ἀπήγξατο",
+      "strong": [
+        "G05190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

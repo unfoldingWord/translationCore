@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "exult",
+      "quote": "ἀγαλλιῶμεν",
+      "strong": [
+        "G00210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

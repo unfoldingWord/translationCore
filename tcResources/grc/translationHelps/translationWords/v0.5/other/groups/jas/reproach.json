@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "ὀνειδίζοντος",
+      "strong": [
+        "G36790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

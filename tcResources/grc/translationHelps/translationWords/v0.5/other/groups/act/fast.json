@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "fast",
+      "quote": "νηστευόντων",
+      "strong": [
+        "G35220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "fast",
+      "quote": "νηστεύσαντες",
+      "strong": [
+        "G35220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "fast",
+      "quote": "νηστειῶν",
+      "strong": [
+        "G35210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "fast",
+      "quote": "νηστείαν",
+      "strong": [
+        "G35210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

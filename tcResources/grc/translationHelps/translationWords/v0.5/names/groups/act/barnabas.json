@@ -1,0 +1,506 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Ἰωσὴφ",
+      "strong": [
+        "G25010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶς",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶς",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶν",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶ",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶς",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶς",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶν",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶν",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾷ",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶς",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶν",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶν",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶς",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾷ",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾷ",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶν",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶ",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾷ",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾷ",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶς",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶν",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶς",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "barnabas",
+      "quote": "Βαρναβᾶν",
+      "strong": [
+        "G09210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

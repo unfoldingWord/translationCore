@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "judea",
+      "quote": "Ἰουδαίαν",
+      "strong": [
+        "G24490"
+      ],
+      "occurrence": 1
+    }
+  }
+]

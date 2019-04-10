@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διωγμὸς",
+      "strong": [
+        "G13750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώκοντας",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

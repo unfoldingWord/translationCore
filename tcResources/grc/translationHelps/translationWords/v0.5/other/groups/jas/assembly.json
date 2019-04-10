@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "assembly",
+      "quote": "συναγωγὴν",
+      "strong": [
+        "G48640"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,380 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεὺς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεὺς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεὺς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερατείαν",
+      "strong": [
+        "G24050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερωσύνης",
+      "strong": [
+        "G24200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερέα",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερωσύνης",
+      "strong": [
+        "G24200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερέων",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεὺς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεὺς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεῖς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεὺς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεῖς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερωσύνην",
+      "strong": [
+        "G24200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεύς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεῖς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεὺς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερέα",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  }
+]

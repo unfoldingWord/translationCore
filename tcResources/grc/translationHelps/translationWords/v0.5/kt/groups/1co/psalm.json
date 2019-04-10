@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "psalm",
+      "quote": "ψαλμὸν",
+      "strong": [
+        "G55680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

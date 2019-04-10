@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "camel",
+      "quote": "καμήλου",
+      "strong": [
+        "G25740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "camel",
+      "quote": "κάμηλον",
+      "strong": [
+        "G25740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

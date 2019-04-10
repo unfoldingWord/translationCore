@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "firstborn",
+      "quote": "πρωτότοκον",
+      "strong": [
+        "G44160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

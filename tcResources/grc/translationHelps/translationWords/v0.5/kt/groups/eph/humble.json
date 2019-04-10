@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "humble",
+      "quote": "ταπεινοφροσύνης",
+      "strong": [
+        "G50120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

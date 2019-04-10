@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιπατεῖτε",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιπατείτω",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

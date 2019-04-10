@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρύσσων",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρύσσειν",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρύσσων",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρύσσων",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρύσσετε",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρύξατε",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρύσσειν",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "εὐαγγελίζονται",
+      "strong": [
+        "G20970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κήρυγμα",
+      "strong": [
+        "G27820"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρυχθήσεται",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "preach",
+      "quote": "κηρυχθῇ",
+      "strong": [
+        "G27840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

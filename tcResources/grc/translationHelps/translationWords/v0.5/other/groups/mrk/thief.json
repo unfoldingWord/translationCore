@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "λῃστῶν",
+      "strong": [
+        "G30270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "λῃστὴν",
+      "strong": [
+        "G30270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "λῃστάς",
+      "strong": [
+        "G30270"
+      ],
+      "occurrence": 1
+    }
+  }
+]

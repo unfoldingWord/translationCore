@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νόμος",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νόμος",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "law",
+      "quote": "νόμον",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

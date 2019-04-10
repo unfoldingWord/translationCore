@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "golgotha",
+      "quote": "Γολγοθᾶ",
+      "strong": [
+        "G11150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

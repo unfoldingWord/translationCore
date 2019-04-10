@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "olive",
+      "quote": "Ἐλαιῶνος",
+      "strong": [
+        "G16380"
+      ],
+      "occurrence": 1
+    }
+  }
+]

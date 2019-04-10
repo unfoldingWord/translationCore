@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "test",
+      "quote": "ἐκπειράσεις",
+      "strong": [
+        "G15980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "test",
+      "quote": "πειράζοντες",
+      "strong": [
+        "G39850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "test",
+      "quote": "πειράζετε",
+      "strong": [
+        "G39850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "test",
+      "quote": "πειράζων",
+      "strong": [
+        "G39850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "labor",
+      "quote": "ἐργαζόμενος",
+      "strong": [
+        "G20380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "labor",
+      "quote": "ἐργάζομαι",
+      "strong": [
+        "G20380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "labor",
+      "quote": "ἠργάζοντο",
+      "strong": [
+        "G20380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "labor",
+      "quote": "ἐργάτας",
+      "strong": [
+        "G20400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "labor",
+      "quote": "κοπιῶντας",
+      "strong": [
+        "G28720"
+      ],
+      "occurrence": 1
+    }
+  }
+]

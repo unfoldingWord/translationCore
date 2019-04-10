@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "altarofincense",
+      "quote": "θυσιαστηρίου τοῦ θυμιάματος",
+      "strong": [
+        "G23790",
+        "G35880",
+        "G23680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

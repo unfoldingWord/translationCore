@@ -1,0 +1,884 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζήσεται",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴν",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῳοποιοῦντος",
+      "strong": [
+        "G22270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωῇ",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωῇ",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωῆς",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴν",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζήσομεν",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωῆς",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "συνζήσομεν",
+      "strong": [
+        "G48000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῇ",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῇ",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶντας",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶντας",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴν",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴ",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῇ",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶντι",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶντος",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ἔζων",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴν",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωῆς",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴ",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴ",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῳοποιήσει",
+      "strong": [
+        "G22270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῆν",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῆτε",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζήσεσθε",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴ",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶντος",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζήσεται",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ψυχήν",
+      "strong": [
+        "G55900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζωὴ",
+      "strong": [
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶσαν",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῇ",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶμεν",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶμεν",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶμεν",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 3
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ἔζησεν",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζώντων",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ζῶ",
+      "strong": [
+        "G21980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "life",
+      "quote": "ψυχῆς",
+      "strong": [
+        "G55900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

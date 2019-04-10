@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχύοντες",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχυροῦ",
+      "strong": [
+        "G24780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχυρὸν",
+      "strong": [
+        "G24780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἴσχυεν",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἴσχυσαν",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχύος",
+      "strong": [
+        "G24790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχύος",
+      "strong": [
+        "G24790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἴσχυσας",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  }
+]

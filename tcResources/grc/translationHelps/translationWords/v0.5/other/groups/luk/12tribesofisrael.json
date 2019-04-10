@@ -1,0 +1,27 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "12tribesofisrael",
+      "quote": "δώδεκα φυλὰς κρίνοντες τοῦ Ἰσραήλ",
+      "strong": [
+        "G14270",
+        "G54430",
+        "G29190",
+        "G35880",
+        "G24740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

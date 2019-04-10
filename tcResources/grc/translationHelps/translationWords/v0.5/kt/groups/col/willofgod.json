@@ -1,0 +1,70 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "θελήματος Θεοῦ",
+      "strong": [
+        "G23070",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "τοῦ θελήματος αὐτοῦ",
+      "strong": [
+        "G35880",
+        "G23070",
+        "G08460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "willofgod",
+      "quote": "θελήματι τοῦ Θεοῦ",
+      "strong": [
+        "G23070",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

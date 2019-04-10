@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "israel",
+      "quote": "Ἰσραὴλ",
+      "strong": [
+        "G24740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "israel",
+      "quote": "Ἰσραὴλ",
+      "strong": [
+        "G24740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "israel",
+      "quote": "Ἰσραὴλ",
+      "strong": [
+        "G24740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

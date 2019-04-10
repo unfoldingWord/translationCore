@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "reverence",
+      "quote": "εὐλαβηθεὶς",
+      "strong": [
+        "G21250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "reverence",
+      "quote": "δέους",
+      "strong": [
+        "G11895"
+      ],
+      "occurrence": 1
+    }
+  }
+]

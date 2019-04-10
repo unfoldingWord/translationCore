@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "προσκυνήσουσιν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "πεσοῦνται",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσαν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσαν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσαν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσαν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσαν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσα",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσα",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  }
+]

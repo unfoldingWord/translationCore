@@ -1,0 +1,24 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "sonsofgod",
+      "quote": "υἱέ μου",
+      "strong": [
+        "G52070",
+        "G14730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

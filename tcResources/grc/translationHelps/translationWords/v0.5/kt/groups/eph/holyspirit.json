@@ -1,0 +1,241 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματι τῆς ἐπαγγελίας τῷ Ἁγίῳ",
+      "strong": [
+        "G41510",
+        "G35880",
+        "G18600",
+        "G35880",
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματος",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματος",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεῦμα τὸ Ἅγιον τοῦ Θεοῦ",
+      "strong": [
+        "G41510",
+        "G35880",
+        "G00400",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματος",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "holyspirit",
+      "quote": "Πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

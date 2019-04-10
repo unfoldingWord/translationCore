@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "pig",
+      "quote": "χοίρων",
+      "strong": [
+        "G55190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "pig",
+      "quote": "χοίρους",
+      "strong": [
+        "G55190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "pig",
+      "quote": "χοίρους",
+      "strong": [
+        "G55190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "pig",
+      "quote": "χοῖροι",
+      "strong": [
+        "G55190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

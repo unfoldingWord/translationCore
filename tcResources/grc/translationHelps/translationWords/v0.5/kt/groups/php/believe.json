@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύειν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  }
+]

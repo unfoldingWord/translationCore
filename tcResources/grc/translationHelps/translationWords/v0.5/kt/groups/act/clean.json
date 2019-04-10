@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκαθάρτων",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκάθαρτα",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκάθαρτον",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἐκαθάρισεν",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκάθαρτον",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκάθαρτον",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἐκαθάρισεν",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίσας",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρὸς",
+      "strong": [
+        "G25130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἡγνισμένον",
+      "strong": [
+        "G00480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

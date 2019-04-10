@@ -1,0 +1,527 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "κληθήσῃ",
+      "strong": [
+        "G25640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "φωνῆσαι",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "φωνεῖ",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγομένην",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "φώνησον",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐπιλεγομένη",
+      "strong": [
+        "G19510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐφώνησαν",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐφώνησαν",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "φωνεῖ",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐφώνησεν",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "φωνεῖ",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγομένην",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐφώνησεν",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "φωνεῖτέ",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λέγω",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "εἴρηκα",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "ἐφώνησεν",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενον",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενον",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λέγεται",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "call",
+      "quote": "λεγόμενος",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

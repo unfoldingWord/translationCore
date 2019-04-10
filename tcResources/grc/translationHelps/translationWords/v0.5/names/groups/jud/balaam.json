@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "balaam",
+      "quote": "Βαλαὰμ",
+      "strong": [
+        "G09030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

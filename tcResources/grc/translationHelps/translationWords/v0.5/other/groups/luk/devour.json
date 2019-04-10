@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "devour",
+      "quote": "κατέφαγεν",
+      "strong": [
+        "G27190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "devour",
+      "quote": "καταφαγών",
+      "strong": [
+        "G27190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "devour",
+      "quote": "κατεσθίουσιν",
+      "strong": [
+        "G27190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

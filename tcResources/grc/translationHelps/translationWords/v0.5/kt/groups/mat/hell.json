@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "hell",
+      "quote": "Γέενναν",
+      "strong": [
+        "G10670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "hell",
+      "quote": "Γέενναν",
+      "strong": [
+        "G10670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "hell",
+      "quote": "Γέενναν",
+      "strong": [
+        "G10670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "hell",
+      "quote": "Γεέννῃ",
+      "strong": [
+        "G10670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "hell",
+      "quote": "Γέενναν",
+      "strong": [
+        "G10670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "hell",
+      "quote": "Γεέννης",
+      "strong": [
+        "G10670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "hell",
+      "quote": "Γεέννης",
+      "strong": [
+        "G10670"
+      ],
+      "occurrence": 1
+    }
+  }
+]

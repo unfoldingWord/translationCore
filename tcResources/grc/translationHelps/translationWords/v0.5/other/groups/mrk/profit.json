@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "profit",
+      "quote": "ὠφεληθεῖσα",
+      "strong": [
+        "G56230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "profit",
+      "quote": "ὠφεληθῇς",
+      "strong": [
+        "G56230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "profit",
+      "quote": "ὠφελεῖ",
+      "strong": [
+        "G56230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "profit",
+      "quote": "κερδήσῃ",
+      "strong": [
+        "G27700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

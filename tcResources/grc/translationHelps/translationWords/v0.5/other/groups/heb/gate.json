@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πύλης",
+      "strong": [
+        "G44390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

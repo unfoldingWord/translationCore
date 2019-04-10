@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "endure",
+      "quote": "ὑπεμείνατε",
+      "strong": [
+        "G52780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "endure",
+      "quote": "ὑπομονῆς",
+      "strong": [
+        "G52810"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "endure",
+      "quote": "ἐκαρτέρησεν",
+      "strong": [
+        "G25940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "endure",
+      "quote": "ὑπομονῆς",
+      "strong": [
+        "G52810"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "endure",
+      "quote": "ὑπέμεινεν",
+      "strong": [
+        "G52780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "endure",
+      "quote": "ὑπομεμενηκότα",
+      "strong": [
+        "G52780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "endure",
+      "quote": "ὑπομένετε",
+      "strong": [
+        "G52780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

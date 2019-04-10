@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "labor",
+      "quote": "κοπιῶ",
+      "strong": [
+        "G28720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "labor",
+      "quote": "ἐργάζεσθε",
+      "strong": [
+        "G20380"
+      ],
+      "occurrence": 1
+    }
+  }
+]

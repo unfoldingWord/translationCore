@@ -1,0 +1,464 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίναντος",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνατε",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρινῶ",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "δικαστὴν",
+      "strong": [
+        "G13480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "δικαστήν",
+      "strong": [
+        "G13480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίσις",
+      "strong": [
+        "G29200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνετε",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνω",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κεκριμένα",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κεκρίκατέ",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνειν",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίναντες",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνων",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνομαι",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνομαι",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίματος",
+      "strong": [
+        "G29170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κριθῆναι",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνεσθαι",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "καταδίκην",
+      "strong": [
+        "G26135"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνεσθαι",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρινόμενος",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνεται",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

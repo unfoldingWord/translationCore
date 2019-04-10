@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "blasphemy",
+      "quote": "βλασφημεῖ",
+      "strong": [
+        "G09870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "blasphemy",
+      "quote": "βλασφημίαι",
+      "strong": [
+        "G09880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "blasphemy",
+      "quote": "βλασφημήσωσιν",
+      "strong": [
+        "G09870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "blasphemy",
+      "quote": "βλασφημήσῃ",
+      "strong": [
+        "G09870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "blasphemy",
+      "quote": "βλασφημία",
+      "strong": [
+        "G09880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 64
+      },
+      "tool": "translationWords",
+      "groupId": "blasphemy",
+      "quote": "βλασφημίας",
+      "strong": [
+        "G09880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "blasphemy",
+      "quote": "ἐβλασφήμουν",
+      "strong": [
+        "G09870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "cain",
+      "quote": "Κάϊν",
+      "strong": [
+        "G25350"
+      ],
+      "occurrence": 1
+    }
+  }
+]

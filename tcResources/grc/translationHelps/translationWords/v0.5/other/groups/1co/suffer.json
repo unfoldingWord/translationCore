@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "suffer",
+      "quote": "ζημιωθήσεται",
+      "strong": [
+        "G22100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "suffer",
+      "quote": "πάσχει",
+      "strong": [
+        "G39580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "suffer",
+      "quote": "συνπάσχει",
+      "strong": [
+        "G48410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

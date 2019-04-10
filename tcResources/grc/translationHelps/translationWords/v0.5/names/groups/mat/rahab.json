@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "rahab",
+      "quote": "Ῥαχάβ",
+      "strong": [
+        "G44770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

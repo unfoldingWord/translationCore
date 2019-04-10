@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "ruth",
+      "quote": "Ῥούθ",
+      "strong": [
+        "G45030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

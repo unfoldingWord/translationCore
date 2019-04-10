@@ -1,0 +1,27 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "βασιλείᾳ τοῦ Χριστοῦ καὶ Θεοῦ",
+      "strong": [
+        "G09320",
+        "G35880",
+        "G55470",
+        "G25320",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

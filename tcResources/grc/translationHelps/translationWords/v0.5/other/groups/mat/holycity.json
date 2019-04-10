@@ -1,0 +1,46 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "holycity",
+      "quote": "ἁγίαν πόλιν",
+      "strong": [
+        "G00400",
+        "G41720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "holycity",
+      "quote": "ἁγίαν πόλιν",
+      "strong": [
+        "G00400",
+        "G41720"
+      ],
+      "occurrence": 1
+    }
+  }
+]

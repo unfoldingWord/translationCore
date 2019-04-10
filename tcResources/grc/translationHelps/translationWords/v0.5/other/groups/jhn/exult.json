@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "exult",
+      "quote": "ἀγαλλιαθῆναι",
+      "strong": [
+        "G00210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "exult",
+      "quote": "ἠγαλλιάσατο",
+      "strong": [
+        "G00210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,359 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαία",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίᾳ",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίᾳ",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 69
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίου",
+      "strong": [
+        "G10570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

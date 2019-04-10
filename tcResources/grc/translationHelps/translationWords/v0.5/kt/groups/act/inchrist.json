@@ -1,0 +1,70 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "εἰς αὐτὸν",
+      "strong": [
+        "G15190",
+        "G08460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "εἰς τὸν Ἰησοῦν",
+      "strong": [
+        "G15190",
+        "G35880",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "inchrist",
+      "quote": "εἰς Χριστὸν Ἰησοῦν",
+      "strong": [
+        "G15190",
+        "G55470",
+        "G24240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "δωρεὰν",
+      "strong": [
+        "G14310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "δωρεὰν",
+      "strong": [
+        "G14310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "δωρεὰ",
+      "strong": [
+        "G14310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "gift",
+      "quote": "δωρεὰν",
+      "strong": [
+        "G14310"
+      ],
+      "occurrence": 1
+    }
+  }
+]

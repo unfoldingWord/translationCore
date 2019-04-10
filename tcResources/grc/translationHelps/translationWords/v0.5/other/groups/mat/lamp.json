@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνον",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνος",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λαμπάδας",
+      "strong": [
+        "G29850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λαμπάδας",
+      "strong": [
+        "G29850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λαμπάδων",
+      "strong": [
+        "G29850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λαμπάδας",
+      "strong": [
+        "G29850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λαμπάδες",
+      "strong": [
+        "G29850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

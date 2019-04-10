@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχεύειν",
+      "strong": [
+        "G34310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχεύεις",
+      "strong": [
+        "G34310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχαλὶς",
+      "strong": [
+        "G34280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχαλίδα",
+      "strong": [
+        "G34280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχεύσεις",
+      "strong": [
+        "G34310"
+      ],
+      "occurrence": 1
+    }
+  }
+]

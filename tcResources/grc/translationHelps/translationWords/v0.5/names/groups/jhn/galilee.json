@@ -1,0 +1,380 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαῖοι",
+      "strong": [
+        "G10570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίᾳ",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίᾳ",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

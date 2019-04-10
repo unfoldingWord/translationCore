@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "pit",
+      "quote": "φρέατος",
+      "strong": [
+        "G54210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "pit",
+      "quote": "φρέαρ",
+      "strong": [
+        "G54210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "pit",
+      "quote": "φρέατος",
+      "strong": [
+        "G54210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "pit",
+      "quote": "φρέατος",
+      "strong": [
+        "G54210"
+      ],
+      "occurrence": 2
+    }
+  }
+]

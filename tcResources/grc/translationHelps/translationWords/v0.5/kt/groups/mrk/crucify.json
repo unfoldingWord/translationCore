@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταύρωσον",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταύρωσον",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταυρωθῇ",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταυρώσωσιν",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταυρώσαντες",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "ἐσταύρωσαν",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταυροῦσιν",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "συνεσταυρωμένοι",
+      "strong": [
+        "G49570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 16,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "ἐσταυρωμένον",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  }
+]

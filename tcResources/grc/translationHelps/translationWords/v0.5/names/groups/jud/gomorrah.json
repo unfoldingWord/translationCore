@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "gomorrah",
+      "quote": "Γόμορρα",
+      "strong": [
+        "G11160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

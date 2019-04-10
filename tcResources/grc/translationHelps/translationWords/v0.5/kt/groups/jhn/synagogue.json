@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 59
+      },
+      "tool": "translationWords",
+      "groupId": "synagogue",
+      "quote": "συναγωγῇ",
+      "strong": [
+        "G48640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "synagogue",
+      "quote": "συναγωγῇ",
+      "strong": [
+        "G48640"
+      ],
+      "occurrence": 1
+    }
+  }
+]

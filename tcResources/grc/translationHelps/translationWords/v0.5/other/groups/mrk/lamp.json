@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνος",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  }
+]

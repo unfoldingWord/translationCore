@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "miracle",
+      "quote": "δυνάμεις",
+      "strong": [
+        "G14110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "miracle",
+      "quote": "δύναμιν",
+      "strong": [
+        "G14110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "miracle",
+      "quote": "δυνάμεις",
+      "strong": [
+        "G14110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "miracle",
+      "quote": "δύναμιν",
+      "strong": [
+        "G14110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "banquet",
+      "quote": "δοχὴν",
+      "strong": [
+        "G14030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "banquet",
+      "quote": "δοχὴν",
+      "strong": [
+        "G14030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "camel",
+      "quote": "καμήλου",
+      "strong": [
+        "G25740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "camel",
+      "quote": "κάμηλον",
+      "strong": [
+        "G25740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "camel",
+      "quote": "κάμηλον",
+      "strong": [
+        "G25740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,359 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σάλπιγγος",
+      "strong": [
+        "G45360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σάλπιγγος",
+      "strong": [
+        "G45360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σάλπιγγες",
+      "strong": [
+        "G45360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σάλπιγγας",
+      "strong": [
+        "G45360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σαλπίσωσιν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "ἐσάλπισεν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "ἐσάλπισεν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "ἐσάλπισεν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "ἐσάλπισεν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σάλπιγγος",
+      "strong": [
+        "G45360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σαλπίζειν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "ἐσάλπισεν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "ἐσάλπισεν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σάλπιγγα",
+      "strong": [
+        "G45360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σαλπίζειν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "ἐσάλπισεν",
+      "strong": [
+        "G45370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "trumpet",
+      "quote": "σαλπιστῶν",
+      "strong": [
+        "G45380"
+      ],
+      "occurrence": 1
+    }
+  }
+]

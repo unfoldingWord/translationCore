@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "dayofthelord",
+      "quote": "ἡμέρᾳ τοῦ Κυρίου",
+      "strong": [
+        "G22500",
+        "G35880",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  }
+]
