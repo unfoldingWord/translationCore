@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "mock",
+      "quote": "διαχλευάζοντες",
+      "strong": [
+        "G13155"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "mock",
+      "quote": "ἐχλεύαζον",
+      "strong": [
+        "G55120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

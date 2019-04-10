@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "rest",
+      "quote": "ἀνάπαυσιν",
+      "strong": [
+        "G03720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "rest",
+      "quote": "ἀνάπαυσιν",
+      "strong": [
+        "G03720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "rest",
+      "quote": "λοιπὸν",
+      "strong": [
+        "G30620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

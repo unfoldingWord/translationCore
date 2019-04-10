@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ἔθετο",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ἔθετο",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

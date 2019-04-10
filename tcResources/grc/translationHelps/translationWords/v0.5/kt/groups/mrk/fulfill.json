@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "πεπλήρωται",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "πληρωθῶσιν",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγορούντων",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "ἐγκαλέσει κατὰ",
+      "strong": [
+        "G14580",
+        "G25960"
+      ],
+      "occurrence": 1
+    }
+  }
+]

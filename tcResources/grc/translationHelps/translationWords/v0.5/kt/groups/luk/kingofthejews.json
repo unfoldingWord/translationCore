@@ -1,0 +1,71 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "kingofthejews",
+      "quote": "βασιλεὺς τῶν Ἰουδαίων",
+      "strong": [
+        "G09350",
+        "G35880",
+        "G24530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "kingofthejews",
+      "quote": "Βασιλεὺς τῶν Ἰουδαίων",
+      "strong": [
+        "G09350",
+        "G35880",
+        "G24530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "kingofthejews",
+      "quote": "Βασιλεὺς τῶν Ἰουδαίων",
+      "strong": [
+        "G09350",
+        "G35880",
+        "G24530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

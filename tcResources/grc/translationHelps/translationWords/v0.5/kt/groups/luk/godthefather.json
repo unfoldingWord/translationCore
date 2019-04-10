@@ -1,0 +1,340 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Κύριος ὁ Θεὸς",
+      "strong": [
+        "G29620",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "πατρός",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατὴρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατρὸς",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πάτερ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατήρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατρός",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατήρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατὴρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πάτερ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατὴρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατὴρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατὴρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατήρ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πάτερ",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "godthefather",
+      "quote": "Πατρός",
+      "strong": [
+        "G39620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

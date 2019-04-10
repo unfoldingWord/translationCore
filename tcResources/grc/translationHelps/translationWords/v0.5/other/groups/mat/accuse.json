@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "ἀντίδικος",
+      "strong": [
+        "G04760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγορήσωσιν",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγορεῖσθαι",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  }
+]

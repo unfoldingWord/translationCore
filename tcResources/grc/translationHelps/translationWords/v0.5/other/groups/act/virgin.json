@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "virgin",
+      "quote": "παρθένοι",
+      "strong": [
+        "G39330"
+      ],
+      "occurrence": 1
+    }
+  }
+]

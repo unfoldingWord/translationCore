@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "δυναμούμενοι",
+      "strong": [
+        "G14120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

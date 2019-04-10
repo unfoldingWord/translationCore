@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχοντι",
+      "strong": [
+        "G07580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "ruler",
+      "quote": "ἄρχειν",
+      "strong": [
+        "G07570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "consume",
+      "quote": "καταφάγεταί",
+      "strong": [
+        "G27190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

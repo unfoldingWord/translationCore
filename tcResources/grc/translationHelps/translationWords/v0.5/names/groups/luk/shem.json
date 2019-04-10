@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "shem",
+      "quote": "Σὴμ",
+      "strong": [
+        "G45900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

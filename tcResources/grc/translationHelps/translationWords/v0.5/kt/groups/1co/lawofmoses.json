@@ -1,0 +1,192 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμος",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "Μωϋσέως νόμῳ",
+      "strong": [
+        "G34750",
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμον",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμον",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμον",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 3
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμον",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 4
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμῳ",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμος",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμος",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

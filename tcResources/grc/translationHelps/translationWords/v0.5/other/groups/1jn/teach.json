@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "διδάσκῃ",
+      "strong": [
+        "G13210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "διδάσκει",
+      "strong": [
+        "G13210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "ἐδίδαξεν",
+      "strong": [
+        "G13210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

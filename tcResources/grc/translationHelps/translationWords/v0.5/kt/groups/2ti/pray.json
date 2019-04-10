@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "pray",
+      "quote": "δεήσεσίν",
+      "strong": [
+        "G11620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

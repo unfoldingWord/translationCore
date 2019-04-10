@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 72
+      },
+      "tool": "translationWords",
+      "groupId": "covenant",
+      "quote": "διαθήκης",
+      "strong": [
+        "G12420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "covenant",
+      "quote": "διαθήκη",
+      "strong": [
+        "G12420"
+      ],
+      "occurrence": 1
+    }
+  }
+]

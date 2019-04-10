@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "gird",
+      "quote": "περιεζωσμένον",
+      "strong": [
+        "G40240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "gird",
+      "quote": "περιεζωσμένοι",
+      "strong": [
+        "G40240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "bold",
+      "quote": "ἀποτολμᾷ",
+      "strong": [
+        "G06620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "bold",
+      "quote": "τολμηρότερον",
+      "strong": [
+        "G51120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

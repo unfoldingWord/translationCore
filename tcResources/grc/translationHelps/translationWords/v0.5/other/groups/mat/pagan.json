@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "pagan",
+      "quote": "ἐθνικοί",
+      "strong": [
+        "G14820"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "pagan",
+      "quote": "ἐθνικὸς",
+      "strong": [
+        "G14820"
+      ],
+      "occurrence": 1
+    }
+  }
+]

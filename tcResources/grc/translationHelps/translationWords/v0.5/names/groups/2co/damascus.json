@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "damascus",
+      "quote": "Δαμασκῷ",
+      "strong": [
+        "G11540"
+      ],
+      "occurrence": 1
+    }
+  }
+]

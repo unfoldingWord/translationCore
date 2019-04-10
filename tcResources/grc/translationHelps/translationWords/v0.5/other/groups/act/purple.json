@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "purple",
+      "quote": "πορφυρόπωλις",
+      "strong": [
+        "G42110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

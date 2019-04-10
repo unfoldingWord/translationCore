@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "defile",
+      "quote": "κεκοίνωκεν",
+      "strong": [
+        "G28400"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσει",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

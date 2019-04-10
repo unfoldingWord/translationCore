@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "avenge",
+      "quote": "ἐκδίκησις",
+      "strong": [
+        "G15570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

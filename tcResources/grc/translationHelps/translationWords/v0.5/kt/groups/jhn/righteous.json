@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δικαία",
+      "strong": [
+        "G13420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δικαίαν",
+      "strong": [
+        "G13420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δικαιοσύνης",
+      "strong": [
+        "G13430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δικαιοσύνης",
+      "strong": [
+        "G13430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δίκαιε",
+      "strong": [
+        "G13420"
+      ],
+      "occurrence": 1
+    }
+  }
+]

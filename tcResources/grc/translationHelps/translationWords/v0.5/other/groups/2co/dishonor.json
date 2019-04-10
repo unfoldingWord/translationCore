@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "dishonor",
+      "quote": "ἀτιμίας",
+      "strong": [
+        "G08190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "dishonor",
+      "quote": "ἀτιμίαν",
+      "strong": [
+        "G08190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

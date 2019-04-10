@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "jamessonofzebedee",
+      "quote": "Ἰάκωβος",
+      "strong": [
+        "G23850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "jamessonofzebedee",
+      "quote": "Ἰάκωβον",
+      "strong": [
+        "G23850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

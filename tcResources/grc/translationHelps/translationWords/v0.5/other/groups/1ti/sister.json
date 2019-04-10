@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "sister",
+      "quote": "ἀδελφὰς",
+      "strong": [
+        "G00790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

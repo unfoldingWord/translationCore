@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνήμασιν",
+      "strong": [
+        "G34180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνημεῖα",
+      "strong": [
+        "G34190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνημεῖα",
+      "strong": [
+        "G34190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνήματι",
+      "strong": [
+        "G34180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνημεῖον",
+      "strong": [
+        "G34190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνῆμα",
+      "strong": [
+        "G34180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνημείου",
+      "strong": [
+        "G34190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνημείου",
+      "strong": [
+        "G34190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνημεῖον",
+      "strong": [
+        "G34190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνημεῖον",
+      "strong": [
+        "G34190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "tomb",
+      "quote": "μνημεῖον",
+      "strong": [
+        "G34190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "mourn",
+      "quote": "ἐπενθήσατε",
+      "strong": [
+        "G39960"
+      ],
+      "occurrence": 1
+    }
+  }
+]

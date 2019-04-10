@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "reconcile",
+      "quote": "διαλλάγηθι",
+      "strong": [
+        "G12590"
+      ],
+      "occurrence": 1
+    }
+  }
+]

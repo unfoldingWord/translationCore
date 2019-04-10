@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "redeem",
+      "quote": "ἐλυτρώθητε",
+      "strong": [
+        "G30840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

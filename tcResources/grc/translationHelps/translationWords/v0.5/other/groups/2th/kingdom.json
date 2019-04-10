@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

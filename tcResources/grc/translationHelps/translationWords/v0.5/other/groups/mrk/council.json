@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "council",
+      "quote": "συνέδρια",
+      "strong": [
+        "G48920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "council",
+      "quote": "Συνέδριον",
+      "strong": [
+        "G48920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "council",
+      "quote": "συμβούλιον",
+      "strong": [
+        "G48240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "council",
+      "quote": "Συνέδριον",
+      "strong": [
+        "G48920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "council",
+      "quote": "βουλευτής",
+      "strong": [
+        "G10100"
+      ],
+      "occurrence": 1
+    }
+  }
+]

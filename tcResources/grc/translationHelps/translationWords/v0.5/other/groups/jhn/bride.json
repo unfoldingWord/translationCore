@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bride",
+      "quote": "νύμφην",
+      "strong": [
+        "G35650"
+      ],
+      "occurrence": 1
+    }
+  }
+]

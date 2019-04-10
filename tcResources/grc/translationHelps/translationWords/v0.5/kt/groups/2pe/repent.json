@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "repent",
+      "quote": "μετάνοιαν",
+      "strong": [
+        "G33410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

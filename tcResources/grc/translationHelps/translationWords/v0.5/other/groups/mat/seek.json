@@ -1,0 +1,359 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητεῖν",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητοῦντες",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ἐπιζητοῦσιν",
+      "strong": [
+        "G19340"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητεῖτε",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητεῖτε",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητῶν",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ἐπιζητεῖ",
+      "strong": [
+        "G19340"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητοῦν",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητοῦντες",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητοῦντές",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητοῦντι",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ἐπιζητεῖ",
+      "strong": [
+        "G19340"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητεῖ",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητοῦντες",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ἐζήτει",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 59
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ἐζήτουν",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ζητεῖτε",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

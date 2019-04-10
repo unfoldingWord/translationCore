@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "γάμων",
+      "strong": [
+        "G10620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "γάμους",
+      "strong": [
+        "G10620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δεῖπνον",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δεῖπνον",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δείπνου",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δείπνου",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δείπνοις",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "innocent",
+      "quote": "ἀκέραιοι",
+      "strong": [
+        "G01850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "innocent",
+      "quote": "ἀναίτιοί",
+      "strong": [
+        "G03380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "innocent",
+      "quote": "ἀναιτίους",
+      "strong": [
+        "G03380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "innocent",
+      "quote": "ἀθῷον",
+      "strong": [
+        "G01210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "innocent",
+      "quote": "ἀθῷός",
+      "strong": [
+        "G01210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

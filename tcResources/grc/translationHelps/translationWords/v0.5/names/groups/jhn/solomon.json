@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "solomon",
+      "quote": "Σολομῶνος",
+      "strong": [
+        "G46720"
+      ],
+      "occurrence": 1
+    }
+  }
+]

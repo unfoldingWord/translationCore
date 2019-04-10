@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "humiliate",
+      "quote": "ταπεινώσει",
+      "strong": [
+        "G50140"
+      ],
+      "occurrence": 1
+    }
+  }
+]

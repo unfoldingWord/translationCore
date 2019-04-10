@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "cilicia",
+      "quote": "Κιλικίας",
+      "strong": [
+        "G27910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "cilicia",
+      "quote": "Κιλικίαν",
+      "strong": [
+        "G27910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "cilicia",
+      "quote": "Κιλικίας",
+      "strong": [
+        "G27910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "cilicia",
+      "quote": "Κιλικίας",
+      "strong": [
+        "G27910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "cilicia",
+      "quote": "Κιλικίας",
+      "strong": [
+        "G27910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "cilicia",
+      "quote": "Κιλικίαν",
+      "strong": [
+        "G27910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

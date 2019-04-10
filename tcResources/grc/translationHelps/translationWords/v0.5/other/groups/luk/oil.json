@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "oil",
+      "quote": "μύρου",
+      "strong": [
+        "G34640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "oil",
+      "quote": "μύρῳ",
+      "strong": [
+        "G34640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "oil",
+      "quote": "ἐλαίῳ",
+      "strong": [
+        "G16370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "oil",
+      "quote": "μύρῳ",
+      "strong": [
+        "G34640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "oil",
+      "quote": "ἔλαιον",
+      "strong": [
+        "G16370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "oil",
+      "quote": "ἐλαίου",
+      "strong": [
+        "G16370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

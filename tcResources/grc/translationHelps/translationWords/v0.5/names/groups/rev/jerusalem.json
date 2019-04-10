@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "jerusalem",
+      "quote": "Ἰερουσαλήμ",
+      "strong": [
+        "G24140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "jerusalem",
+      "quote": "Ἰερουσαλὴμ",
+      "strong": [
+        "G24140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "jerusalem",
+      "quote": "Ἰερουσαλὴμ",
+      "strong": [
+        "G24140"
+      ],
+      "occurrence": 1
+    }
+  }
+]

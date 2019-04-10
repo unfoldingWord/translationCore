@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "enslave",
+      "quote": "καταδουλοῖ",
+      "strong": [
+        "G26150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

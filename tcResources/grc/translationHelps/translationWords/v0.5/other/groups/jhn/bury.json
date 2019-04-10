@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "bury",
+      "quote": "ἐνταφιασμοῦ",
+      "strong": [
+        "G17800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "bury",
+      "quote": "ἐνταφιάζειν",
+      "strong": [
+        "G17790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

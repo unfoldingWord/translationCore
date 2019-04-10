@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀνάστασιν",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀναστάσει",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

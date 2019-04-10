@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "tribe",
+      "quote": "φυλὰς",
+      "strong": [
+        "G54430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "tribe",
+      "quote": "φυλαὶ",
+      "strong": [
+        "G54430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

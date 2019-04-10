@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "pierce",
+      "quote": "κατενύγησαν",
+      "strong": [
+        "G26600"
+      ],
+      "occurrence": 1
+    }
+  }
+]

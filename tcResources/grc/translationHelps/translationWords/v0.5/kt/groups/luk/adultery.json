@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχεύει",
+      "strong": [
+        "G34310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχεύει",
+      "strong": [
+        "G34310"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχοί",
+      "strong": [
+        "G34320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "adultery",
+      "quote": "μοιχεύσῃς",
+      "strong": [
+        "G34310"
+      ],
+      "occurrence": 1
+    }
+  }
+]

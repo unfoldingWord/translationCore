@@ -1,0 +1,255 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δίκαιαι",
+      "strong": [
+        "G13420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δικαιώματά",
+      "strong": [
+        "G13450"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δίκαιος",
+      "strong": [
+        "G13420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δίκαιαι",
+      "strong": [
+        "G13420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δίκαιαι",
+      "strong": [
+        "G13420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δικαιώματα",
+      "strong": [
+        "G13450"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δικαιοσύνῃ",
+      "strong": [
+        "G13430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "ἀδικῶν",
+      "strong": [
+        "G00910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "ἀδικησάτω",
+      "strong": [
+        "G00910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δίκαιος",
+      "strong": [
+        "G13420"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δικαιοσύνην",
+      "strong": [
+        "G13430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "righteous",
+      "quote": "δίκαιος δικαιοσύνην",
+      "strong": [
+        "G13420",
+        "G13430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

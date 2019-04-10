@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Ἀνδρέαν",
+      "strong": [
+        "G04060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

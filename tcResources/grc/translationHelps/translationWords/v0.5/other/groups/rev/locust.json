@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "locust",
+      "quote": "ἀκρίδες",
+      "strong": [
+        "G02000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "locust",
+      "quote": "ἀκρίδων",
+      "strong": [
+        "G02000"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλεύθερος",
+      "strong": [
+        "G16580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθέρους",
+      "strong": [
+        "G16580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθέρων",
+      "strong": [
+        "G16580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "λυθῆναι",
+      "strong": [
+        "G30890"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "δωρεάν",
+      "strong": [
+        "G14320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "δωρεάν",
+      "strong": [
+        "G14320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

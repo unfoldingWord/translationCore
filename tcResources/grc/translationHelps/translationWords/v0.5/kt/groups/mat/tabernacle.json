@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "tabernacle",
+      "quote": "σκηνάς",
+      "strong": [
+        "G46330"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐλεγχόμενοι",
+      "strong": [
+        "G16510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

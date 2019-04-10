@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ἔθηκα",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

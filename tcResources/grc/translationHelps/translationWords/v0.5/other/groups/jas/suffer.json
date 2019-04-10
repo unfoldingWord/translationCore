@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "suffer",
+      "quote": "κακοπαθεῖ",
+      "strong": [
+        "G25530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

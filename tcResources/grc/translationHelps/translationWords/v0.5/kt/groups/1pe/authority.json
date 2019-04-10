@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "authority",
+      "quote": "ἐξουσιῶν",
+      "strong": [
+        "G18490"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "citizen",
+      "quote": "πολίτης",
+      "strong": [
+        "G41770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "citizen",
+      "quote": "πολιτείαν",
+      "strong": [
+        "G41740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "citizen",
+      "quote": "πεπολίτευμαι",
+      "strong": [
+        "G41760"
+      ],
+      "occurrence": 1
+    }
+  }
+]
