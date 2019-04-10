@@ -100,6 +100,9 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
 
           // if tool currently opened then load new bible resources
           if (toolName) {
+            //groups data only becomes stale when the tool is open
+            //if a tool is not open groups data will be reintialized 
+            //when its opened again
             const projectSaveLocation = getProjectSaveLocation(getState());
             const bookId = getProjectBookId(getState());
             const olForBook = getOLforBook(bookId);

@@ -40,6 +40,9 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
     gatewayLanguage = "en";
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   if (helpDir) {
+    if (project.hasNewGroupsData(toolName)) {
+      project.resetLoadedCategories(toolName);
+    }
     let categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
     Object.keys(categories).forEach((category) => {
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());

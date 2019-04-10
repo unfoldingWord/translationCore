@@ -1,6 +1,9 @@
 import path from "path-extra";
+import ospath from "ospath";
 import fs from "fs-extra";
-
+import {generateTimestamp} from "./TimestampGenerator";
+export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
+  "resources");
 const PROJECT_TC_DIR = ".apps/translationCore/";
 
 /**
@@ -198,6 +201,46 @@ export default class ProjectAPI {
     return false;
   }
 
+  hasNewGroupsData(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+    ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        let rawData = fs.readJsonSync(categoriesPath);
+        const lastTimeDataUpdated = rawData.timestamp;
+        if (!lastTimeDataUpdated) {
+          return true;
+        }
+        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH,'source-content-updater-manifest.json');
+        const lastTimeDataDownloaded = sourceContentManifestPath.modified;
+        return new Date(lastTimeDataDownloaded) > new Date(lastTimeDataUpdated);
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    } else { 
+      return true;
+    }
+  }
+
+  /**
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   */
+  resetLoadedCategories(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+    ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        let rawData = fs.readJsonSync(categoriesPath);
+        rawData.loaded = [];
+        fs.outputJsonSync(categoriesPath, rawData);
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+  }
+
   /**
    * Marks a category as having been loaded into the project.
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
@@ -230,7 +273,7 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-
+    data.timestamp = generateTimestamp();
     fs.outputJsonSync(categoriesPath, data);
   }
 
@@ -356,7 +399,8 @@ export default class ProjectAPI {
       ".categories");
     let data = {
       current: categories,
-      loaded: []
+      loaded: [],
+      timestamp: generateTimestamp()
     };
 
     if (fs.pathExistsSync(categoriesPath)) {
