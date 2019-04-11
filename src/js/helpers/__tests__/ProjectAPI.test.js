@@ -136,7 +136,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["other", "category"]});
+        {"current": [], "loaded": ["other", "category"], timestamp: expect.any(String)});
     });
 
     it('removes loaded', () => {
@@ -151,7 +151,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["other"]});
+        {"current": [], "loaded": ["other"], timestamp: expect.any(String)});
     });
 
     it('rebuilds missing file', () => {
@@ -165,7 +165,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["category"]});
+        {"current": [], "loaded": ["category"], timestamp: expect.any(String)});
     });
 
     it('rebuilds corrupt file', () => {
@@ -180,7 +180,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["category"]});
+        {"current": [], "loaded": ["category"], timestamp: expect.any(String)});
     });
   });
 
@@ -248,7 +248,7 @@ describe('ProjectAPI', () => {
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": ["category"], "loaded": []}
+        {"current": ["category"], "loaded": [], timestamp: expect.any(String)}
       );
       expect(console.warn).not.toBeCalled();
     });
@@ -264,7 +264,7 @@ describe('ProjectAPI', () => {
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": ["category"], "loaded": []}
+        {"current": ["category"], "loaded": [], timestamp: expect.any(String)}
       );
       expect(console.warn).toBeCalled();
     });
