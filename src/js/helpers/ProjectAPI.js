@@ -81,14 +81,11 @@ export default class ProjectAPI {
     const dir = this.getCategoriesDir(toolName);
 
     if (fs.pathExistsSync(dir) && fs.lstatSync(dir).isDirectory()) {
-      const files = fs.readdirSync(dir);
+      const files = fs.readdirSync(dir)
+        .filter(item => path.extname(item) === '.json');
 
       for (let i = 0, len = files.length; i < len; i++) {
         const dataPath = path.join(dir, files[i]);
-        if (path.extname(dataPath) !== ".json") {
-          continue;
-        }
-
         const groupName = path.basename(dataPath, ".json");
         try {
           data[groupName] = fs.readJsonSync(dataPath);

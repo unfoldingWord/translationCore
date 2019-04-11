@@ -1,14 +1,10 @@
 /**
  * @module Actions/GroupsData
  */
-import { batchActions } from 'redux-batched-actions';
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
-import { getSelectedToolName } from "../selectors";
-import { readLatestChecks } from "../helpers/groupDataHelpers";
-import {setVerseEditsInTwGroupDataFromArray} from "./VerseEditActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -26,83 +22,6 @@ export const addGroupData = (groupId, groupsData) => {
     groupsData
   };
 };
-
-/**
- * @description verifies that the data in the checkdata folder is reflected in the menu.
- * @return {object} action object.
- */
-export function verifyGroupDataMatchesWithFs() {
-  return ((dispatch, getState) => {
-    const state = getState();
-    const toolName = getSelectedToolName(state);
-    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let checkDataPath;
-    if (PROJECT_SAVE_LOCATION) {
-      checkDataPath = path.join(
-        PROJECT_SAVE_LOCATION,
-        CHECKDATA_DIRECTORY
-      );
-    }
-    const twVerseEdits = [];
-
-    // build the batch
-    let actionsBatch = [];
-    if (fs.existsSync(checkDataPath)) {
-      let folders = fs.readdirSync(checkDataPath).filter(folder => {
-        return folder !== ".DS_Store";
-      });
-      for( let i = 0, lenF = folders.length; i < lenF; i++) {
-        const folderName = folders[i];
-        const isTwVerseEdit = (toolName === "translationWords") && (folderName === "verseEdits");
-        let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
-        if(!fs.existsSync(dataPath)) continue;
-
-        let chapters = fs.readdirSync(dataPath);
-        chapters = filterAndSort(chapters);
-        for( let j = 0, lenC = chapters.length; j < lenC; j++) {
-          const chapterFolder = chapters[j];
-          const chapterDir = path.join(dataPath, chapterFolder);
-          if(!fs.existsSync(chapterDir)) continue;
-
-          let verses = fs.readdirSync(chapterDir);
-          verses = filterAndSort(verses);
-          for( let k = 0, lenV = verses.length; k < lenV; k++) {
-            const verseFolder = verses[k];
-            let filePath = path.join(dataPath, chapterFolder, verseFolder);
-            let latestObjects = readLatestChecks(filePath);
-            for( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
-              const object = latestObjects[l];
-              if (isTwVerseEdit) {
-                // special handling for tW external verse edits, save edit verse
-                const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
-                if (chapter) {
-                  const verse = object.contextId.reference.verse;
-                  if (verse) {
-                    const reference = {
-                      bookId: object.contextId.reference.bookId,
-                      chapter,
-                      verse
-                    };
-                    twVerseEdits.push({ reference });
-                  }
-                }
-              } else if ( object.contextId.tool === toolName) {
-                let action = toggleGroupDataItems(folderName, object);
-                if (action) actionsBatch.push(action);
-              }
-            }
-          }
-        }
-      }
-      if (twVerseEdits.length) {
-        dispatch(setVerseEditsInTwGroupDataFromArray(twVerseEdits));
-      }
-      // run the batch
-      dispatch(batchActions(actionsBatch));
-      dispatch(validateBookSelections());
-    }
-  });
-}
 
 /**
  * verifies all the selections for current book to make sure they are still valid
@@ -166,7 +85,7 @@ function validateChapterSelections(chapter, results) {
  * @param {string} checkDataName - comments, reminders, selections and verseEdits folders.
  * @return {string} path/directory to be use to load a file.
  */
-function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataName) {
+export function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataName) {
   if (PROJECT_SAVE_LOCATION && state) {
     let bookAbbreviation = state.projectDetailsReducer.manifest.project.id;
     let loadPath = path.join(
@@ -183,7 +102,7 @@ function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataName) {
  * @param {array} array - array to be filtered and sorted.
  * @return {array} filtered and sorted array.
  */
-function filterAndSort(array) {
+export function filterAndSort(array) {
   let filteredArray = array.filter(folder => {
     return folder !== ".DS_Store";
   }).sort((a, b) => {
@@ -200,7 +119,7 @@ function filterAndSort(array) {
  * @param {object} fileObject - checkdata object.
  * @param {function} dispatch - redux action dispatcher.
  */
-function toggleGroupDataItems(label, fileObject) {
+export function toggleGroupDataItems(label, fileObject) {
   let action;
   switch (label) {
     case "comments":
