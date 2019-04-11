@@ -200,7 +200,12 @@ export default class ProjectAPI {
 
     return false;
   }
-
+  /**
+   * Method to check if project groups data is out of date in relation
+   * to the last source content update
+   * @param {string} toolName - the tool name. This is synonymous with translationHelp name
+   * @returns {Boolean}
+   */
   hasNewGroupsData(toolName) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
     ".categories");
@@ -224,6 +229,8 @@ export default class ProjectAPI {
   }
 
   /**
+   * Resets the `loaded` array of groups data
+   * Useful for forcing a reinitialization of groups data from resources into project
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
    */
   resetLoadedCategories(toolName) {
