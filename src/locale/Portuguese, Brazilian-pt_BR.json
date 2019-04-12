@@ -366,7 +366,9 @@
     "no_gl_available": "Nenhum disponível",
     "invalid_checks": "Verificações invalidadas",
     "invalid_verse_alignments": "Versículos com alinhamentos invalidados.",
-    "invalidation_checking": "Verificando Invalidatão"
+    "invalidation_checking": "Checking if this edit conflicts with saved selections and alignments...",
+    "alignments_reset_wa_tool": "Changes have been detected in your project which have invalidated some of your alignments.\nThese verses display an icon of a broken chain next to the reference in the side menu.",
+    "invalid_verse_alignments_and_selections": "Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu."
   },
   "buttons": {
     "back_button": "Voltar",
