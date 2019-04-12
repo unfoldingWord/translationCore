@@ -158,11 +158,11 @@ class ToolCard extends Component {
             <ToolCardNotificationBadges tool={tool} translate={translate} selectedCategories={selectedCategories} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes 
+          {showCheckBoxes && <ToolCardBoxes
             key={selectedGL}
-            toolName={tool.name} 
-            selectedCategories={selectedCategories} 
-            availableCategories={availableCategories} 
+            toolName={tool.name}
+            selectedCategories={selectedCategories}
+            availableCategories={availableCategories}
             onChecked={updateCheckSelection}
             bookId={bookId}
             translate={translate}
