@@ -92,7 +92,7 @@ export const openProject = (name, skipValidation=false) => {
         // copy group data
         // TRICKY: group data must be tied to the original language.
         console.log("openProject() - copy group data");
-        const olForBook = BibleHelpers.getOLforBook(bookId);
+        const olForBook = BibleHelpers.getOrigLangforBook(bookId);
         let helpDir = (olForBook && olForBook.languageId) || 'grc';
         if (t.name === "translationNotes")
           helpDir = "en";
@@ -114,10 +114,11 @@ export const openProject = (name, skipValidation=false) => {
     } catch (e) {
       // TODO: clean this up
       if (e.type !== 'div') console.warn("openProject() error", e);
+      let message = e.stack ? e.message : e; // if crash dump, need to clean up message so it doesn't crash alert
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
       dispatch(closeProject());
-      dispatch(openAlertDialog(e));
+      dispatch(openAlertDialog(message));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     }
   };

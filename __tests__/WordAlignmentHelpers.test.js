@@ -80,13 +80,13 @@ describe('WordAlignmentHelpers.getAlignmentDataFromPath', () => {
 
   it('should not get corresponding chpater JSON objects for the target language text and source/target alignments\
   if they do not exist', () => {
-      const chapterFile = '0.json';
-      let {chapterAlignmentJSON, targetLanguageChapterJSON} = WordAlignmentHelpers.getAlignmentDataFromPath(
-        wordAlignmentDataPath, projectTargetLanguagePath, chapterFile
-      );
-      expect(chapterAlignmentJSON).toEqual({});
-      expect(targetLanguageChapterJSON).toEqual({});
-    });
+    const chapterFile = '0.json';
+    let {chapterAlignmentJSON, targetLanguageChapterJSON} = WordAlignmentHelpers.getAlignmentDataFromPath(
+      wordAlignmentDataPath, projectTargetLanguagePath, chapterFile
+    );
+    expect(chapterAlignmentJSON).toEqual({});
+    expect(targetLanguageChapterJSON).toEqual({});
+  });
 });
 
 describe('WordAlignmentHelpers.setVerseObjectsInAlignmentJSON', () => {
@@ -258,106 +258,6 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
   });
 });
 
-describe('WordAlignmentHelpers.checkVerseForChanges', () => {
-  const bookId = 'matt';
-  const chapter = 1;
-  let verse = 1;
-  const verseObjects = require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`);
-  const {alignment, wordBank, verseString} = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}a.json`);
-  const verseAlignments = {alignments: alignment, wordBank};
-  it('should not find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
-      {"alignmentChangesType": null, "alignmentsInvalid": false, showDialog: true}
-    );
-  });
-  it('should find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, 'Some changed verse.')).toEqual(
-      {"alignmentChangesType": 'target language', "alignmentsInvalid": true, showDialog: true}
-    );
-  });
-});
-
-describe('Should check checkVerseForChanges in many different types of use cases', () => {
-  it('should check for verse changes with alignments that are many to one', () => {
-    checkForChangesTest('manyToOne');
-  });
-  it('should check for verse changes with alignments that are many to many', () => {
-    checkForChangesTest('manyToMany');
-  });
-  it('should check for verse changes with alignments that are one to many', () => {
-    checkForChangesTest('oneToMany');
-  });
-  it('should check for verse changes with alignments that are one to none', () => {
-    checkForChangesTest('oneToNone', false);
-  });
-  it('should check for verse changes with alignments that are one to one', () => {
-    checkForChangesTest('oneToOne');
-  });
-  it('should check for verse changes with alignments that are non contiguous and contiguous', () => {
-    checkForChangesTest('contiguousAndNonContiguous');
-  });
-  it('should check for verse changes with alignments that are out of order', () => {
-    checkForChangesTest('outOfOrder');
-  });
-  it('should check for verse changes with alignments that are non contiguous', () => {
-    checkForChangesTest('noncontiguous');
-  });
-  it('should check for verse changes with alignments that are from matt 1-1', () => {
-    checkForChangesTest('matt1-1');
-  });
-  it('should check for verse changes with alignments that are from matt 1-1a', () => {
-    checkForChangesTest('matt1-1a');
-  });
-  it('should check for verse changes with alignments that are from matt 1-1b', () => {
-    checkForChangesTest('matt1-1b');
-  });
-  it('should check for verse changes with alignments that are from tit-1-1', () => {
-    checkForChangesTest('tit1-1');
-  });
-});
-
-/**
- * Reads a usfm file from the resources dir
- * @param {string} filePath relative path to usfm file
- * @return {string} sdv
- */
-const readJSON = filename => {
-  const fullPath = path.join(RESOURCES, filename);
-  if (fs.__actual.existsSync(fullPath)) {
-    const json = fs.__actual.readJsonSync(fullPath);
-    return json;
-  } else {
-    console.log('File not found.');
-    return false;
-  }
-};
-
-const createMockGreekVerseObjectsFromString = (alignedString) => {
-  alignedString = alignedString.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "");
-  return alignedString.split(' ')
-    .map((word) => {
-      return {
-        text: word,
-        tag: "w",
-        type: "word"
-      };
-    });
-};
-
-/**
- * Generator for testing merging of alignment into verseObjects
- * @param {string} name - the name of the test files to use. e.g. `valid` will test `valid.usfm` to `valid.json`
- */
-const checkForChangesTest = (name = {}, showDialog = true) => {
-  const json = readJSON(`${name}.json`);
-  expect(json).toBeTruthy();
-  const {alignment, verseString, wordBank, alignedVerseString} = json;
-  const verseAlignments = {alignments: alignment, wordBank};
-  let verseObjects = createMockGreekVerseObjectsFromString(alignedVerseString);
-  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
-    {"alignmentChangesType": null, "alignmentsInvalid": false, showDialog}
-  );
-};
 
 describe('WordAlignmentHelpers.getTargetLanguageVerse', () => {
   const targetLanguageVerse = "ते बरदाश्त केरने बैली, पवित्र, घरेरो कारोबार केरने बैल्ली, भलाई केरने बैली ते अपने अपने मुन्शाँ केरे आधीन रहने बैली भोंन, ताकि परमेशरेरे वचनेरी निन्दा न भोए|";

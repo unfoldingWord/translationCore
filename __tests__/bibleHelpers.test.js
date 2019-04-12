@@ -1,6 +1,6 @@
 import * as bibleHelpers from '../src/js/helpers/bibleHelpers';
 
-describe('test isOldTestament(), isNewTestament() and getOLforBook()', () => {
+describe('test isOldTestament(), isNewTestament() and getOrigLangforBook()', () => {
   test('jon should be OT', () => {
     // given
     const bookID = 'jon';
@@ -12,7 +12,7 @@ describe('test isOldTestament(), isNewTestament() and getOLforBook()', () => {
     // when
     const resultsOT = bibleHelpers.isOldTestament(bookID);
     const resultsNT = bibleHelpers.isNewTestament(bookID);
-    const {languageId, bibleId} = bibleHelpers.getOLforBook(bookID);
+    const {languageId, bibleId} = bibleHelpers.getOrigLangforBook(bookID);
 
     // then
     expect(resultsOT).toEqual(expectOT);
@@ -32,7 +32,7 @@ describe('test isOldTestament(), isNewTestament() and getOLforBook()', () => {
     // when
     const resultsOT = bibleHelpers.isOldTestament(bookID);
     const resultsNT = bibleHelpers.isNewTestament(bookID);
-    const {languageId, bibleId} = bibleHelpers.getOLforBook(bookID);
+    const {languageId, bibleId} = bibleHelpers.getOrigLangforBook(bookID);
 
     // then
     expect(resultsOT).toEqual(expectOT);
@@ -52,7 +52,7 @@ describe('test isOldTestament(), isNewTestament() and getOLforBook()', () => {
     // when
     const resultsOT = bibleHelpers.isOldTestament(bookID);
     const resultsNT = bibleHelpers.isNewTestament(bookID);
-    const {languageId, bibleId} = bibleHelpers.getOLforBook(bookID);
+    const {languageId, bibleId} = bibleHelpers.getOrigLangforBook(bookID);
 
     // then
     expect(resultsOT).toEqual(expectOT);
