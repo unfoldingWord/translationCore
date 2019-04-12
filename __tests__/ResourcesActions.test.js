@@ -28,7 +28,7 @@ describe('ResourcesActions', () => {
     const expectedResources = ['ult', 'ust'];
 
     loadMockFsWithProjectAndResources();
-    fs.copySync(path.join(RESOURCE_PATH, "grc/bibles/ugnt"), path.join(RESOURCE_PATH, "hi/bibles/uhb"));
+    fs.copySync(path.join(RESOURCE_PATH, "el-x-koine/bibles/ugnt"), path.join(RESOURCE_PATH, "hi/bibles/uhb"));
 
     const ugnt = require("./fixtures/project/en_gal/bibleData.json");
 
@@ -292,7 +292,7 @@ function loadMockFsWithProjectAndResources() {
   const copyResourceFiles = [
     'en/bibles/ult',
     'en/bibles/ust',
-    'grc/bibles/ugnt',
+    'el-x-koine/bibles/ugnt',
     'en/translationHelps/translationWords',
     'en/translationHelps/translationAcademy',
     'hi/translationHelps/translationWords'];

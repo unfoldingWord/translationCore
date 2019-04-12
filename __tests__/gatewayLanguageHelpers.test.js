@@ -28,7 +28,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return English & Hindi for Titus', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       // fake a hindi bible
@@ -42,9 +42,9 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return English for Joel', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb', 'grc'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb', 'el-x-koine'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-      fakeHelpsByCopying('grc', 'hbo');
+      fakeHelpsByCopying('el-x-koine', 'hbo');
 
       // fake the book of Joel
       fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
@@ -56,9 +56,9 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return English for Joel with unaligned hi', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb', 'grc'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb', 'el-x-koine'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-      fakeHelpsByCopying('grc', 'hbo');
+      fakeHelpsByCopying('el-x-koine', 'hbo');
 
       // fake the book of joel
       fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
@@ -99,7 +99,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return an empty list for Titus if ULT not checked', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
       const jsonPath = path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1/manifest.json');
       const json = fs.readJSONSync(jsonPath);
@@ -111,7 +111,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return an empty list for Titus if ULT not checking 3', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
       setCheckingLevel(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1/manifest.json'), 2);
 
@@ -120,9 +120,9 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return an empty list for Titus if UGNT not checking 2', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-      const ugntVersionPath = ResourceAPI.getLatestVersion(path.join(RESOURCE_PATH, 'grc/bibles/ugnt'));
+      const ugntVersionPath = ResourceAPI.getLatestVersion(path.join(RESOURCE_PATH, 'el-x-koine/bibles/ugnt'));
       setCheckingLevel(path.join(ugntVersionPath, 'manifest.json'), 1);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
@@ -150,7 +150,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return an empty list for Luke (NT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('luk', toolName);
@@ -174,7 +174,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should return English & Hindi for Titus', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       // fake a hindi bible
@@ -211,7 +211,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should default to english for Titus if no alignments', () => {
-      const copyFiles = ['en/bibles/ult/v11', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v11', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
@@ -220,7 +220,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should default to english for gal with Hindi (gal is not aligned in en or hi here)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('gal', toolName);
@@ -241,7 +241,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should default to english for Titus if ULT not checked', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
       const jsonPath = path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1/manifest.json');
       const json = fs.readJSONSync(jsonPath);
@@ -254,7 +254,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should default to english for Titus if ULT not checking 3', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
       setCheckingLevel(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1/manifest.json'), 2);
 
@@ -276,7 +276,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
     });
 
     test('should default to english for Luke (NT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('luk', toolName);

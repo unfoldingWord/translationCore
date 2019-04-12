@@ -93,7 +93,7 @@ export const openProject = (name, skipValidation=false) => {
         // TRICKY: group data must be tied to the original language.
         console.log("openProject() - copy group data");
         const olForBook = BibleHelpers.getOrigLangforBook(bookId);
-        let helpDir = (olForBook && olForBook.languageId) || 'grc';
+        let helpDir = (olForBook && olForBook.languageId) || 'el-x-koine';
         if (t.name === "translationNotes")
           helpDir = "en";
         copyGroupDataToProject(helpDir, t.name, validProjectDir);

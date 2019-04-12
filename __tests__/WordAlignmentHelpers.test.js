@@ -270,32 +270,6 @@ describe('WordAlignmentHelpers.getTargetLanguageVerse', () => {
   });
 });
 
-describe('WordAlignmentHelpers.getCurrentGreekVerseFromAlignments', () => {
-  it('should properly get a verse string from verse objects', () => {
-    const {alignment, alignedVerseString} = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
-    const alignments = alignment;
-    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({alignments})).toBe(alignedVerseString);
-  });
-  it('should get a empty verse string from empty alignments', () => {
-    const alignments = [];
-    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({alignments})).toBe('');
-  });
-  it('should get undefined from no alignments object given', () => {
-    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({})).toBe(undefined);
-  });
-});
-
-describe('WordAlignmentHelpers.getGreekVerse', () => {
-  it('should properly get a greek verse string from verse objects', () => {
-    const expectedGreekString = 'Τίτῳ γνησίῳ τέκνῳ κατὰ κοινὴν πίστιν χάρις καὶ εἰρήνη ἀπὸ Θεοῦ Πατρὸς καὶ Χριστοῦ Ἰησοῦ τοῦ Σωτῆρος ἡμῶν';
-    const bookId = 'tit';
-    const chapter = 1;
-    let verse = 4;
-    const verseObjects = require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`);
-    expect(WordAlignmentHelpers.getGreekVerse(verseObjects)).toBe(expectedGreekString);
-  });
-});
-
 describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should correctly retrieve target language if verse string matches 100%', () => {
     const {verseString, alignment, wordBank} = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');

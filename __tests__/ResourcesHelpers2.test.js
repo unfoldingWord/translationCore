@@ -278,7 +278,7 @@ function loadMockFsWithProjectAndResources() {
   const copyResourceFiles = [
     'en/bibles/ult',
     'en/bibles/ust',
-    'grc/bibles/ugnt',
+    'el-x-koine/bibles/ugnt',
     'hbo/bibles/uhb',
     'en/translationHelps/translationWords',
     'en/translationHelps/translationAcademy',

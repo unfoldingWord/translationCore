@@ -22,7 +22,7 @@ const bookCache = new SimpleCache();
 
 /**
  * Adds a bible to the resources reducer.
- * @param {String} languageId - language id: en, hi, grc, he.
+ * @param {String} languageId - language id: en, hi, el-x-koine, he.
  * @param {String} bibleId - name/label for bible: ult, udt, ust, ugnt.
  * @param {object} bibleData - data being saved in the bible property.
  */

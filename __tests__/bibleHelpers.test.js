@@ -26,7 +26,7 @@ describe('test isOldTestament(), isNewTestament() and getOrigLangforBook()', () 
     const bookID = 'jas';
     const expectOT = false;
     const expectNT = true;
-    const expectLanguageId = 'grc';
+    const expectLanguageId = 'el-x-koine';
     const expectBibleId = 'ugnt';
 
     // when
@@ -46,7 +46,7 @@ describe('test isOldTestament(), isNewTestament() and getOrigLangforBook()', () 
     const bookID = 'zzz';
     const expectOT = false;
     const expectNT = false;
-    const expectLanguageId = 'grc';
+    const expectLanguageId = 'el-x-koine';
     const expectBibleId = 'ugnt';
 
     // when

@@ -531,7 +531,7 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
         }
       }
     }
-    const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
+    const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'el-x-koine', 'ugnt');
     totalChecks = Object.keys(expectedVerses[chapterNum]).length;
     if (totalChecks) {
       return checked / totalChecks;
