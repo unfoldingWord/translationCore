@@ -127,8 +127,9 @@ export default class ProjectAPI {
     const destDir = this.getCategoriesDir(toolName);
     const groupName = path.basename(dataPath);
     const destFile = path.join(destDir, groupName);
-
-    if (!fs.pathExistsSync(destFile)) {
+    const groupsDataLoaded = this.getLoadedCategories(toolName);
+    const subCategory = path.parse(dataPath).name;
+    if (!groupsDataLoaded.includes(subCategory)) {
       fs.copySync(dataPath, destFile);
       return true;
     }
@@ -240,6 +241,26 @@ export default class ProjectAPI {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
         rawData.loaded = [];
+        fs.outputJsonSync(categoriesPath, rawData);
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+  }
+
+  removeStaleCategoriesFromCurrent(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+    ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        let rawData = fs.readJsonSync(categoriesPath);
+        rawData.current.forEach((category, index) => {
+          if (!rawData.loaded.includes(category)) {
+            //There is something that is selected that is not loaded
+            rawData.current.splice(index, 1);
+          }
+        });
         fs.outputJsonSync(categoriesPath, rawData);
       } catch (e) {
         console.warn(
@@ -421,7 +442,6 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-
     fs.outputJsonSync(categoriesPath, data);
   }
 

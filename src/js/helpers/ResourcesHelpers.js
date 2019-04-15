@@ -62,6 +62,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
         project.setCategoryLoaded(toolName, subCategory);
       });
     });
+    project.removeStaleCategoriesFromCurrent(toolName);
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
