@@ -2,12 +2,13 @@ import path from "path-extra";
 import fs from "fs-extra";
 import types from './ActionTypes';
 // actions
-import {getGroupDataForVerse, showSelectionsInvalidatedWarning, validateSelections} from "./SelectionsActions";
+import {getGroupDataForVerse, showInvalidatedWarnings, validateSelections} from "./SelectionsActions";
 import * as AlertModalActions from "./AlertModalActions";
+import {batchActions} from "redux-batched-actions";
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import {delay} from "../helpers/bodyUIHelpers";
+import {delay} from "../common/utils";
 import {
   getSelectedToolApi,
   getSelectedToolName,
@@ -66,34 +67,31 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
 };
 
 /**
- * set verse edit flag for all tw checks in verse if not set
+ * batch setting verse edit flags for all tw checks in verse if not set
+ * @param {Object} state - current state
  * @param {Object} contextId - of verse edit
- * @return {Function}
+ * @param {Array} actionsBatch - array append with verse edits to be batched
  */
-export const setVerseEditsInTwGroupData = (contextId) => {
-  return async (dispatch, getState) => {
-    // in group data reducer set verse edit flag for every check of the verse edited
-    const matchedGroupData = getGroupDataForVerse(getState(), contextId);
-    const keys = Object.keys(matchedGroupData);
-    if (keys.length) {
-      await delay(200);
-      for (let i = 0, l = keys.length; i < l; i++) {
-        const groupItem = matchedGroupData[keys[i]];
-        if (groupItem) {
-          for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
-            const check = groupItem[j];
-            if (!check.verseEdits) { // only set if not yet set
-              dispatch({
-                type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-                contextId: check.contextId
-              });
-              await delay(200);
-            }
+export const getVerseEditsInTwGroupData = (state, contextId, actionsBatch) => {
+  // in group data reducer set verse edit flag for every check of the verse edited
+  const matchedGroupData = getGroupDataForVerse(state, contextId);
+  const keys = Object.keys(matchedGroupData);
+  if (keys.length) {
+    for (let i = 0, l = keys.length; i < l; i++) {
+      const groupItem = matchedGroupData[keys[i]];
+      if (groupItem) {
+        for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
+          const check = groupItem[j];
+          if (!check.verseEdits) { // only set if not yet set
+            actionsBatch.push({
+              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+              contextId: check.contextId
+            });
           }
         }
       }
     }
-  };
+  }
 };
 
 /**
@@ -102,11 +100,17 @@ export const setVerseEditsInTwGroupData = (contextId) => {
  * @return {Function}
  */
 export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     if (twVerseEdits && twVerseEdits.length) {
+      const state = getState();
+      const actionsBatch = [];
       for (let i = 0, lenVE = twVerseEdits.length; i < lenVE; i++) {
         const contextId = twVerseEdits[i];
-        await dispatch(setVerseEditsInTwGroupData(contextId));
+        getVerseEditsInTwGroupData(state, contextId, actionsBatch);
+      }
+      if (actionsBatch.length) {
+        await delay(500);
+        dispatch(batchActions(actionsBatch));
       }
     }
   };
@@ -130,10 +134,11 @@ export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
     }} verseEdit - record to be saved to file system if in WA tool
  * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
  * @param {Object} currentCheckContextId - contextId of group menu item selected
+ * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
  * @return {Function}
  */
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
-                                              currentCheckContextId) => {
+                                              currentCheckContextId, batchGroupData) => {
   return async(dispatch, getState) => {
     await delay(1000); // wait till before updating
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
@@ -143,9 +148,13 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
       verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
     await delay(200);
 
-    if (getSelectedToolName(getState()) === 'translationWords') {
-      await dispatch(setVerseEditsInTwGroupData(contextIdWithVerseEdit));
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
+    const state = getState();
+    if (getSelectedToolName(state) === 'translationWords') {
+      getVerseEditsInTwGroupData(state, contextIdWithVerseEdit, actionsBatch);
     }
+    await delay(500);
+    dispatch(batchActions(actionsBatch));
   };
 };
 
@@ -169,12 +178,15 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
  * @param {Object} contextIdWithVerseEdit - contextId of verse being edited
  * @param {Object} currentCheckContextId - contextId of group menu item selected
  * @param {Boolean} showSelectionInvalidated - if true then show prompt that selections invalidated
+ * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
  * @return {Function}
  */
 export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
-                                                        currentCheckContextId, showSelectionInvalidated) => {
+                                                        currentCheckContextId, showSelectionInvalidated,
+                                                        batchGroupData = null) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     dispatch(AlertModalActions.openAlertDialog(translate("tools.invalidation_checking"), true));
     await delay(500);
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
@@ -190,6 +202,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
         contextId: contextIdWithVerseEdit
       });
     }
+    let showAlignmentsInvalidated = false;
 
     // TRICKY: this is a temporary hack to validate verse edits.
     // TODO: This can be removed once the ScripturePane is updated to provide
@@ -199,23 +212,24 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     const apis = getSupportingToolApis(newState);
     if ('wordAlignment' in apis && apis['wordAlignment'] !== null) {
       // for other tools
-      apis['wordAlignment'].trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
+      showAlignmentsInvalidated = !apis['wordAlignment'].trigger('validateVerse',
+                                                                  chapterWithVerseEdit, verseWithVerseEdit, true);
     } else {
       // for wA
       const api = getSelectedToolApi(newState);
-      if (api !== null &&
-          (verseEdit.activeChapter !== chapterWithVerseEdit || verseEdit.activeVerse !== verseWithVerseEdit)) {
-        api.trigger('validateVerse', chapterWithVerseEdit, verseWithVerseEdit);
+      if (api !== null) {
+        showAlignmentsInvalidated = !api.trigger('validateVerse',
+                                                  chapterWithVerseEdit, verseWithVerseEdit, true);
       }
     }
-    if (showSelectionInvalidated) {
-      dispatch(showSelectionsInvalidatedWarning()); // no need to close alert, since this replaces it
+    if (showSelectionInvalidated || showAlignmentsInvalidated) {
+      dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated)); // no need to close alert, since this replaces it
       await delay(1000);
     } else {
       dispatch(AlertModalActions.closeAlertDialog());
     }
     dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
-                                           currentCheckContextId));
+                                           currentCheckContextId, actionsBatch));
   };
 };
 
@@ -255,8 +269,9 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
       userAlias = getUsername(getState());
     }
     const selectionsValidationResults = {};
+    const actionsBatch = [];
     dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
-      false, selectionsValidationResults));
+      false, selectionsValidationResults, actionsBatch));
 
     // create verse edit record to write to file system
     const modifiedTimestamp = generateTimestamp();
@@ -275,7 +290,7 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     };
 
     dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId,
-        selectionsValidationResults.selectionsChanged));
+        selectionsValidationResults.selectionsChanged, actionsBatch));
   };
 };
 

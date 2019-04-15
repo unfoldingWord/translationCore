@@ -40,19 +40,13 @@ import {
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
 import * as BibleHelpers from "../../helpers/bibleHelpers";
-
+import {delay} from '../../common/utils';
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
-function delay(ms) {
-  return new Promise ((resolve) =>
-    setTimeout(resolve, ms)
-  );
-}
-
 /**
  * This thunk opens a project and prepares it for use in tools.
- * @param {string} name -  the name of the project
+ * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
  */
 export const openProject = (name, skipValidation=false) => {
@@ -62,14 +56,13 @@ export const openProject = (name, skipValidation=false) => {
     console.log("openProject() projectDir=" + projectDir);
 
     try {
+      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
       dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
       dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
-
       dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
 
       // TRICKY: prevent dialog from flashing on small projects
-      await delay(200);
+      await delay(300);
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
 
@@ -110,6 +103,7 @@ export const openProject = (name, skipValidation=false) => {
         // connect tool api
         console.log("openProject() - connect tool api");
         const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
+
         t.api.triggerWillConnect(toolProps);
       }
 

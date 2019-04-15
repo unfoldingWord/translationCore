@@ -9,7 +9,8 @@ import { getValidGatewayBiblesForTool } from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from "./SettingsHelpers";
 import {
   getContext,
-  getToolGatewayLanguage
+  getToolGatewayLanguage,
+  getBibles
 } from "../selectors";
 import _ from "lodash";
 import ProjectAPI from "./ProjectAPI";
@@ -89,7 +90,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
   }
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   // list help categories
-  
+
   if (helpDir) {
     const categories = fs.readdirSync(helpDir).filter(file => {
       return fs.lstatSync(path.join(helpDir, file)).isDirectory();
@@ -118,7 +119,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
       }
       categoriesObj[category] = subCategories;
     }
-  } 
+  }
   return categoriesObj;
 }
 
@@ -477,8 +478,13 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
   }
   addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
   const gatewayLangId = getToolGatewayLanguage(state, toolName);
-  const validBibles = getValidGatewayBiblesForTool(toolName, gatewayLangId,
-    bookId);
+  const biblesLoaded = getBibles(state);
+  const validBibles = getValidGatewayBiblesForTool(
+    toolName,
+    gatewayLangId,
+    bookId,
+    biblesLoaded
+  );
   if (Array.isArray(validBibles)) {
     for (let bible of validBibles) {
       addResource(resources, gatewayLangId, bible);

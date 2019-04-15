@@ -247,11 +247,12 @@ export function hasValidOL(bookId, minimumCheckingLevel = 0) {
  * @param {String} toolName - name of current tool
  * @param {String} langCode - language to check
  * @param {string} bookId - optionally filter on book
+ * @param {Object} biblesLoaded - bibles already loaded in the state
  * @return {Array} valid bibles that can be used for Gateway language
  */
-export function getValidGatewayBiblesForTool(toolName, langCode, bookId) {
+export function getValidGatewayBiblesForTool(toolName, langCode, bookId, biblesLoaded = {}) {
   const glRequirements = getGlRequirementsForTool(toolName);
-  const validBibles = getValidGatewayBibles(langCode, bookId, glRequirements);
+  const validBibles = getValidGatewayBibles(langCode, bookId, glRequirements, biblesLoaded);
   return validBibles;
 }
 
@@ -335,12 +336,17 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
  * @param {String} langCode - language to check
  * @param {string} bookId - optionally filter on book
  * @param {Object} glRequirements - helpsPaths - see getGlRequirementsForTool() jsDocs for format
+ * @param {Object} biblesLoaded - bibles already loaded in the state
  * @return {Array} valid bibles that can be used for Gateway language
  */
-export function getValidGatewayBibles(langCode, bookId, glRequirements = {}) {
+export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, biblesLoaded = {}) {
   const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
-  const bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
+  let bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
+  bibles = bibles.filter(bibleId => {
+    return !(biblesLoaded[langCode] && biblesLoaded[langCode][bibleId]);
+  });
+
   const validBibles = bibles.filter(bible => {
     if (!fs.lstatSync(path.join(biblesPath, bible)).isDirectory()) { // verify it's a valid directory
       return false;

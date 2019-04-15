@@ -8,6 +8,18 @@ import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
 import * as VerseEditActions from "../src/js/actions/VerseEditActions";
 
+jest.mock('redux-batched-actions', () => ({
+  batchActions: (actionsBatch) => {
+    return (dispatch) => {
+      if (actionsBatch.length) {
+        for (let action of actionsBatch) {
+          dispatch(action);
+        }
+      }
+    };
+  }
+}));
+
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -88,60 +100,6 @@ describe('GroupsDataActions.validateBookSelections', () => {
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(expectedSelectionChanges);
   });
-});
-
-describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
-  const bookId = 'tit';
-  const selectionsReducer = {
-    gatewayLanguageCode: 'en',
-    gatewayLanguageQuote: 'authority, authorities',
-    'selections': [
-      {
-        'text': 'apostle',
-        'occurrence': 1,
-        'occurrences': 1
-      }
-    ],
-    username: 'dummy-test',
-    modifiedTimestamp: generateTimestamp()
-  };
-  let setVerseEditsInTwGroupDataFromArraySpy = null;
-  const projectCheckDataPath = path.join(PROJECTS_PATH, ".apps/translationCore/checkData");
-
-  beforeEach(() => {
-    setVerseEditsInTwGroupDataFromArraySpy = jest.spyOn(VerseEditActions,
-      'setVerseEditsInTwGroupDataFromArray');
-    fs.__resetMockFS();
-    fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
-    fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
-    fs.__loadDirIntoMockFs(path.join(CHECK_DATA_PATH, 'en_tit/.apps/translationCore/checkData'), projectCheckDataPath);
-  });
-
-  afterEach(() => {
-    removeSpy(setVerseEditsInTwGroupDataFromArraySpy);
-  });
-
-  it('tW Should Recognize WA edit', () => {
-    // given
-    const store = initiMockStore(bookId, selectionsReducer);
-    const expectedSetVerseEditsCalls = 1;
-    const expectedVerseEdits = [
-      { reference: {
-          "bookId": "tit",
-          "chapter": 1,
-          "verse": 1
-        }
-      }
-    ];
-
-    // when
-    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-
-    // then
-    expect(setVerseEditsInTwGroupDataFromArraySpy).toHaveBeenCalledTimes(expectedSetVerseEditsCalls);
-    expect(setVerseEditsInTwGroupDataFromArraySpy).toHaveBeenCalledWith(expectedVerseEdits);
-  });
-
 });
 
 //

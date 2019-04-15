@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import {Checkbox} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
 import {tNotesCategories} from "tsv-groupdata-parser";
-import * as ResourcesActions from "../../../actions/ResourcesActions"; 
+import * as ResourcesActions from "../../../actions/ResourcesActions";
 import {parseArticleAbstract} from "../../../helpers/ToolCardHelpers";
 /**
-*  Checkboxnames are derived first by what is in Gateway language resource 
-*  translation notes FileFolder. This is mapped to the array in 
-*  projectDetailsReducer which determines the order of folders that exist. 
-*  Finally it is mapped to this object to deterime category names to show the 
+*  Checkboxnames are derived first by what is in Gateway language resource
+*  translation notes FileFolder. This is mapped to the array in
+*  projectDetailsReducer which determines the order of folders that exist.
+*  Finally it is mapped to this object to deterime category names to show the
 *  user
 */
 const toolCardCategories = {
@@ -17,10 +17,11 @@ const toolCardCategories = {
   'names': 'Names',
   'other': 'Other Terms',
 
-  'cultural': 'Cultural',
+  'culture': 'Culture',
   'figures': 'Figures of Speech',
-  'lexical': 'Lexical',
-  'morphological': 'Morphological'
+  'numbers': 'Numbers',
+  'discourse': 'Discourse',
+  'grammar': 'Grammar'
 };
 
 /**
@@ -32,7 +33,7 @@ function flattenNotesCategories() {
     lookupNames[item] = 'tool_card_categories.' + item;
     Object.keys(tNotesCategories[item]).forEach(subItem => {
       const group = subItem.substr(subItem.indexOf('-') + 1);
-      lookupNames[group] = 'tool_card_categories.' + subItem.replace('-', '_');
+      lookupNames[group] = 'tool_card_categories.' + subItem;
     });
   });
 
@@ -45,10 +46,10 @@ function flattenNotesCategories() {
 
 /**
  * Display a preconfigured chechbox with passed parms
- * @param {*} selectedCategories 
- * @param {*} id 
- * @param {*} toolName 
- * @param {*} onChecked 
+ * @param {*} selectedCategories
+ * @param {*} id
+ * @param {*} toolName
+ * @param {*} onChecked
  */
 function localCheckBox(selectedCategories, id, toolName, onChecked, availableCategoriesForParent = []) {
   const isParent = !!availableCategoriesForParent.length;
@@ -73,7 +74,7 @@ function localCheckBox(selectedCategories, id, toolName, onChecked, availableCat
 
 /**
  * return letters after the dash
- * @param {*} symbol - token containing a dash 
+ * @param {*} symbol - token containing a dash
  */
 function postPart(symbol) {
   return symbol.includes('-') ?
@@ -93,7 +94,7 @@ class ToolCardBoxes extends React.Component {
 
     this.showExpanded = this.showExpanded.bind(this);
   }
-  
+
 
   componentWillMount() {
     this.loadArticles();
@@ -105,23 +106,23 @@ class ToolCardBoxes extends React.Component {
    */
   loadArticles(){
     let fullText = "";
-    let articles = {}; 
+    let articles = {};
 
-    for(var cat in this.props.availableCategories) { 
+    for(var cat in this.props.availableCategories) {
       let category  = this.props.availableCategories[cat];
 
       for(var group in category ) {
         fullText = ResourcesActions.loadArticleData(
-          'translationAcademy', 
+          'translationAcademy',
           category[group],
-          this.props.selectedGL 
-        ); 
+          this.props.selectedGL
+        );
 
-        articles[category[group]] = fullText.substr(0,600) ;  
+        articles[category[group]] = fullText.substr(0,600) ;
       }
     }
 
-    this.setState( {"articles": articles} );   
+    this.setState( {"articles": articles} );
   }
 
 
@@ -187,9 +188,9 @@ class ToolCardBoxes extends React.Component {
                             <div style={{marginLeft: '36px', width: '38px'}}>
                               {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}
                             </div>
-                            <span onClick={(event) => this.onWordClick(event, subcategory)} 
-                                style={{cursor: "pointer"}} >          
-                              { translate(lookupNames[postPart(subcategory)]) } 
+                            <span onClick={(event) => this.onWordClick(event, subcategory)}
+                                style={{cursor: "pointer"}} >
+                              { translate(lookupNames[postPart(subcategory)]) }
                             </span>
                           </div>
                         ))
