@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "kidronvalley",
-      "quote": "χειμάρρου τοῦ Κεδρὼν",
+      "quote": [
+        {
+          "word": "χειμάρρου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κεδρὼν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G54930",
         "G35880",

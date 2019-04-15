@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαῷ τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λαῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G35880",
@@ -36,7 +49,20 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "μοι εἰς λαόν",
+      "quote": [
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "λαόν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14730",
         "G15190",
@@ -80,7 +106,20 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαῷ τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λαῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G35880",

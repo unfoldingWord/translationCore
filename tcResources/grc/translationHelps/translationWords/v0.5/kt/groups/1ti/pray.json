@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "pray",
-      "quote": "δεήσεις προσευχάς ἐντεύξεις",
+      "quote": [
+        {
+          "word": "δεήσεις",
+          "occurrence": 1
+        },
+        {
+          "word": "προσευχάς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐντεύξεις",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G11620",
         "G43350",

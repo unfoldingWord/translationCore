@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "prison",
-      "quote": "τηρήσει δημοσίᾳ",
+      "quote": [
+        {
+          "word": "τηρήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "δημοσίᾳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G50840",
         "G12190"

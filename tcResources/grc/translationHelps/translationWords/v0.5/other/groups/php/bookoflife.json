@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "bookoflife",
-      "quote": "βίβλῳ ζωῆς",
+      "quote": [
+        {
+          "word": "βίβλῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09760",
         "G22220"

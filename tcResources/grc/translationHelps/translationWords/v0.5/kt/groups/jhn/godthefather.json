@@ -2344,7 +2344,16 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Πάτερ Ἅγιε",
+      "quote": [
+        {
+          "word": "Πάτερ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅγιε",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G39620",
         "G00400"

@@ -97,7 +97,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὲ τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -183,7 +196,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Θεοῦ Υἱὸς",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G52070"
@@ -205,7 +227,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸς τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -270,7 +305,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸς τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -335,7 +383,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Θεοῦ Υἱὸς",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G52070"

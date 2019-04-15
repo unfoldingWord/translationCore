@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "mountofolives",
-      "quote": "Ὄρος τῶν Ἐλαιῶν",
+      "quote": [
+        {
+          "word": "Ὄρος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G37350",
         "G35880",
@@ -36,7 +49,20 @@
       },
       "tool": "translationWords",
       "groupId": "mountofolives",
-      "quote": "Ὄρος τῶν Ἐλαιῶν",
+      "quote": [
+        {
+          "word": "Ὄρος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G37350",
         "G35880",
@@ -59,7 +85,20 @@
       },
       "tool": "translationWords",
       "groupId": "mountofolives",
-      "quote": "Ὄρος τῶν Ἐλαιῶν",
+      "quote": [
+        {
+          "word": "Ὄρος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G37350",
         "G35880",

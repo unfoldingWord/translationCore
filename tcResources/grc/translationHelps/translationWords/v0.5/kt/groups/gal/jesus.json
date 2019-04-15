@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -57,7 +75,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -100,7 +127,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -143,7 +179,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦς Χριστὸς",
+      "quote": [
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -165,7 +210,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G55470",
         "G24240"
@@ -187,7 +241,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -251,7 +314,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Χριστὸν Ἰησοῦν",
+      "quote": [
+        {
+          "word": "Χριστὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G55470",
         "G24240"
@@ -273,7 +345,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G55470",
         "G24240"
@@ -295,7 +376,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Χριστοῦ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G55470",
         "G24240"
@@ -317,7 +407,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Χριστοῦ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G55470",
         "G24240"
@@ -339,7 +438,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -382,7 +490,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"

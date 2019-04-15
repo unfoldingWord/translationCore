@@ -55,7 +55,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεύματι Ἁγίῳ",
+      "quote": [
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G00400"
@@ -245,7 +254,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεῦμα τῆς ἀληθείας",
+      "quote": [
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -268,7 +290,28 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Παράκλητος τὸ Πνεῦμα τὸ Ἅγιον",
+      "quote": [
+        {
+          "word": "Παράκλητος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G38750",
         "G35880",
@@ -293,7 +336,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεῦμα τῆς ἀληθείας",
+      "quote": [
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -316,7 +372,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεῦμα τῆς ἀληθείας",
+      "quote": [
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -339,7 +408,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεῦμα Ἅγιον",
+      "quote": [
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G00400"

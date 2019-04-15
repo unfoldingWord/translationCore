@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸς Ὑψίστου",
+      "quote": [
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὑψίστου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G53100"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸς Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G23160"
@@ -120,7 +138,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸς τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -143,7 +174,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὲ τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -166,7 +210,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱός μου",
+      "quote": [
+        {
+          "word": "Υἱός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G14730"
@@ -251,7 +304,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸς τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",

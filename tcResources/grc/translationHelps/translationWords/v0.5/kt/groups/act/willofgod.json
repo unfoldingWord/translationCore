@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θελήματά μου",
+      "quote": [
+        {
+          "word": "θελήματά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G14730"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "Κυρίου τὸ θέλημα",
+      "quote": [
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλημα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29620",
         "G35880",
@@ -58,7 +80,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θέλημα αὐτοῦ",
+      "quote": [
+        {
+          "word": "θέλημα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G08460"

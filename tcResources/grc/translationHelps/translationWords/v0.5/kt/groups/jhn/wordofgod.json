@@ -139,7 +139,28 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "Θεὸς τὰ ῥήματα τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G35880",
@@ -311,7 +332,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "ῥήματα τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "ῥήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G44870",
         "G35880",
@@ -355,7 +389,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγος τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",
@@ -714,7 +761,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγος τοῦ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",

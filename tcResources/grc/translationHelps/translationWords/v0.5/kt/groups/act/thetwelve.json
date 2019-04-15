@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "thetwelve",
-      "quote": "τῶν ἕνδεκα ἀποστόλων",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕνδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστόλων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35880",
         "G17330",

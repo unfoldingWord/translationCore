@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "judasiscariot",
-      "quote": "Ἰούδαν Σίμωνος Ἰσκαριώτου",
+      "quote": [
+        {
+          "word": "Ἰούδαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Σίμωνος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσκαριώτου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24550",
         "G46130",
@@ -36,7 +49,20 @@
       },
       "tool": "translationWords",
       "groupId": "judasiscariot",
-      "quote": "Ἰούδας ὁ Ἰσκαριώτης",
+      "quote": [
+        {
+          "word": "Ἰούδας",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσκαριώτης",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24550",
         "G35880",
@@ -59,7 +85,20 @@
       },
       "tool": "translationWords",
       "groupId": "judasiscariot",
-      "quote": "Ἰούδας Σίμωνος Ἰσκαριώτης",
+      "quote": [
+        {
+          "word": "Ἰούδας",
+          "occurrence": 1
+        },
+        {
+          "word": "Σίμωνος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσκαριώτης",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24550",
         "G46130",
@@ -82,7 +121,20 @@
       },
       "tool": "translationWords",
       "groupId": "judasiscariot",
-      "quote": "Ἰούδᾳ Σίμωνος Ἰσκαριώτη",
+      "quote": [
+        {
+          "word": "Ἰούδᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σίμωνος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσκαριώτη",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24550",
         "G46130",

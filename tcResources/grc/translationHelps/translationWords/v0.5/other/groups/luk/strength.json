@@ -160,7 +160,16 @@
       },
       "tool": "translationWords",
       "groupId": "strength",
-      "quote": "οὐκ ἰσχύω",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰσχύω",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G37560",
         "G24800"

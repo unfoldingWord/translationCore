@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "mountofolives",
-      "quote": "ὄρους τοῦ καλουμένου Ἐλαιῶνος",
+      "quote": [
+        {
+          "word": "ὄρους",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καλουμένου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶνος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G37350",
         "G35880",

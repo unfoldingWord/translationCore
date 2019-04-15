@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "altarofincense",
-      "quote": "θυσιαστηρίου τοῦ θυμιάματος",
+      "quote": [
+        {
+          "word": "θυσιαστηρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "θυμιάματος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23790",
         "G35880",

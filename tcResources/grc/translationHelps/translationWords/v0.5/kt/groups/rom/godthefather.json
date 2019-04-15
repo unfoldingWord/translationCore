@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεοῦ Πατρὸς",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πατρὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G39620"
@@ -77,7 +86,20 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεὸν καὶ Πατέρα",
+      "quote": [
+        {
+          "word": "Θεὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατέρα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G25320",

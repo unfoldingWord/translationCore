@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "12tribesofisrael",
-      "quote": "δώδεκα φυλὰς τοῦ Ἰσραήλ",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14270",
         "G54430",

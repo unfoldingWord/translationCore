@@ -769,7 +769,16 @@
       },
       "tool": "translationWords",
       "groupId": "servant",
-      "quote": "δούλους ἑαυτοῦ",
+      "quote": [
+        {
+          "word": "δούλους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14010",
         "G14380"

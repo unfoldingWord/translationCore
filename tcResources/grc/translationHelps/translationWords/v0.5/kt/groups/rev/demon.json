@@ -34,7 +34,20 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεύματα τρία ἀκάθαρτα",
+      "quote": [
+        {
+          "word": "πνεύματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G51400",
@@ -99,7 +112,16 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεύματος ἀκαθάρτου",
+      "quote": [
+        {
+          "word": "πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθάρτου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G01690"

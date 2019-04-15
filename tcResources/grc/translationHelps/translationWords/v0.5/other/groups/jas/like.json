@@ -202,7 +202,16 @@
       },
       "tool": "translationWords",
       "groupId": "like",
-      "quote": "καθ’ ὁμοίωσιν",
+      "quote": [
+        {
+          "word": "καθ’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁμοίωσιν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G25960",
         "G36690"

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαῷ αὐτοῦ",
+      "quote": [
+        {
+          "word": "λαῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G08460"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαῷ αὐτοῦ",
+      "quote": [
+        {
+          "word": "λαῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G08460"
@@ -57,7 +75,20 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαοῦ σου Ἰσραήλ",
+      "quote": [
+        {
+          "word": "λαοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G47710",
@@ -80,7 +111,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαὸν αὐτοῦ",
+      "quote": [
+        {
+          "word": "λαὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G08460"

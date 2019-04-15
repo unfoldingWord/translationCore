@@ -34,7 +34,24 @@
       },
       "tool": "translationWords",
       "groupId": "seize",
-      "quote": "ἐπέβαλον τὰς χεῖρας ἐπὶ",
+      "quote": [
+        {
+          "word": "ἐπέβαλον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G19110",
         "G35880",

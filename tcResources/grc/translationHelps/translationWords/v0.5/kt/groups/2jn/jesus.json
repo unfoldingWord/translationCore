@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦν Χριστὸν ἐρχόμενον",
+      "quote": [
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρχόμενον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470",

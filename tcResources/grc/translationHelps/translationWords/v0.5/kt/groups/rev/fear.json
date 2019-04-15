@@ -139,7 +139,16 @@
       },
       "tool": "translationWords",
       "groupId": "fear",
-      "quote": "φοβηθῇ Κύριε",
+      "quote": [
+        {
+          "word": "φοβηθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G53990",
         "G29620"

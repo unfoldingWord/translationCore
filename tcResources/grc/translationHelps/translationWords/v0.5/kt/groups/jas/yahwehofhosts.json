@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "yahwehofhosts",
-      "quote": "Κυρίου Σαβαὼθ",
+      "quote": [
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Σαβαὼθ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29620",
         "G45190"

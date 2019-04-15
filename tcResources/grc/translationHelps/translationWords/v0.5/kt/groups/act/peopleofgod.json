@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαοῦ μου",
+      "quote": [
+        {
+          "word": "λαοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G14730"

@@ -727,7 +727,24 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Πατήρ μου ὁ οὐράνιος",
+      "quote": [
+        {
+          "word": "Πατήρ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐράνιος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G39620",
         "G14730",

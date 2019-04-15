@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "seal",
-      "quote": "κατεσφραγισμένον σφραγῖσιν",
+      "quote": [
+        {
+          "word": "κατεσφραγισμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖσιν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G26960",
         "G49730"

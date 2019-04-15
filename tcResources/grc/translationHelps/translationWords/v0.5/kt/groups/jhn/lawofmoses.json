@@ -97,7 +97,16 @@
       },
       "tool": "translationWords",
       "groupId": "lawofmoses",
-      "quote": "νόμος Μωϋσέως",
+      "quote": [
+        {
+          "word": "νόμος",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσέως",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35510",
         "G34750"

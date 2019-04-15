@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θέλημά σου",
+      "quote": [
+        {
+          "word": "θέλημά",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G47710"

@@ -25,6 +25,7 @@
     "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tcResources/**/*.json'",
     "doc": "jsdoc -c jsdoc/jsdoc.json",
     "update-resources": "node scripts/resources/updateResources.js tcResources en hi grc hbo",
+    "update-resources-grc": "node scripts/resources/updateResources.js tcResources grc",
     "overwrite-resources": "rm -rf tcResources/en/bibles tcResources/en/translationHelps tcResources/grc tcResources/hi && npm run update-resources"
   },
   "jest": {
@@ -176,10 +177,10 @@
     "simple-git": "1.43.0",
     "string-punctuation-tokenizer": "0.9.4",
     "sudo-prompt": "6.2.1",
-    "tc-source-content-updater": "0.3.6",
+    "tc-source-content-updater": "github:translationCoreApps/tc-source-content-updater#bugfix-mcleanb-5970",
     "tc-strings": "0.1.7",
     "tc-tool": "2.1.0",
-    "tc-ui-toolkit": "0.13.20",
+    "tc-ui-toolkit": "github:translationCoreApps/tc-ui-toolkit#bugfix-mcleanb-5970",
     "truncate-utf8-bytes": "1.0.2",
     "usfm-js": "2.0.1",
     "uuid": "3.2.1",

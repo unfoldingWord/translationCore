@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θελήματι τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "θελήματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G35880",
@@ -36,7 +49,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "τὸ θέλημα",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλημα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35880",
         "G23070"
@@ -58,7 +80,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "βουλήματι αὐτοῦ",
+      "quote": [
+        {
+          "word": "βουλήματι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G10130",
         "G08460"
@@ -80,7 +111,20 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θέλημα τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "θέλημα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G35880",
@@ -103,7 +147,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θελήματος Θεοῦ",
+      "quote": [
+        {
+          "word": "θελήματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G23160"

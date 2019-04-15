@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "12tribesofisrael",
-      "quote": "δώδεκα φυλῶν υἱῶν Ἰσραήλ",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14270",
         "G54430",

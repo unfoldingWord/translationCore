@@ -475,7 +475,16 @@
       },
       "tool": "translationWords",
       "groupId": "call",
-      "quote": "ἐφώνησεν λέγων",
+      "quote": [
+        {
+          "word": "ἐφώνησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G54550",
         "G30040"

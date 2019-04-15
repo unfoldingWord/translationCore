@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -56,7 +65,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦν Χριστὸν",
+      "quote": [
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -99,7 +117,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστοῦ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -121,7 +148,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦν Χριστὸν",
+      "quote": [
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -227,7 +263,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦς Χριστός",
+      "quote": [
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστός",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"
@@ -249,7 +294,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦ Χριστῷ",
+      "quote": [
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G55470"

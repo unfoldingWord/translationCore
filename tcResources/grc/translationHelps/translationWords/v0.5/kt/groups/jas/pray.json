@@ -139,7 +139,16 @@
       },
       "tool": "translationWords",
       "groupId": "pray",
-      "quote": "προσευχῇ προσηύξατο",
+      "quote": [
+        {
+          "word": "προσευχῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσηύξατο",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G43350",
         "G43360"

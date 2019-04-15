@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofman",
-      "quote": "Υἱὸν τοῦ Ἀνθρώπου",
+      "quote": [
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",

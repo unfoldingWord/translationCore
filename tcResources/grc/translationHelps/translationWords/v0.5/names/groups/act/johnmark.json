@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "johnmark",
-      "quote": "Ἰωάννου τοῦ ἐπικαλουμένου Μάρκου",
+      "quote": [
+        {
+          "word": "Ἰωάννου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπικαλουμένου",
+          "occurrence": 1
+        },
+        {
+          "word": "Μάρκου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24910",
         "G35880",
@@ -37,7 +54,24 @@
       },
       "tool": "translationWords",
       "groupId": "johnmark",
-      "quote": "Ἰωάννην τὸν ἐπικληθέντα Μᾶρκον",
+      "quote": [
+        {
+          "word": "Ἰωάννην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπικληθέντα",
+          "occurrence": 1
+        },
+        {
+          "word": "Μᾶρκον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24910",
         "G35880",
@@ -103,7 +137,24 @@
       },
       "tool": "translationWords",
       "groupId": "johnmark",
-      "quote": "Ἰωάννην τὸν καλούμενον Μᾶρκον",
+      "quote": [
+        {
+          "word": "Ἰωάννην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καλούμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "Μᾶρκον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24910",
         "G35880",

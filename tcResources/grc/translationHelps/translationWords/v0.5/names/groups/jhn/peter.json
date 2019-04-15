@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμωνος Πέτρου",
+      "quote": [
+        {
+          "word": "Σίμωνος",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -140,7 +149,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμωνος Πέτρου",
+      "quote": [
+        {
+          "word": "Σίμωνος",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -162,7 +180,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -184,7 +211,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμωνα Πέτρον",
+      "quote": [
+        {
+          "word": "Σίμωνα",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -227,7 +263,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -249,7 +294,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -271,7 +325,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -314,7 +377,20 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων οὖν Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G37670",
@@ -358,7 +434,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -464,7 +549,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -528,7 +622,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμωνα Πέτρον",
+      "quote": [
+        {
+          "word": "Σίμωνα",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -592,7 +695,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -614,7 +726,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -636,7 +757,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -721,7 +851,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -743,7 +882,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμωνι Πέτρῳ",
+      "quote": [
+        {
+          "word": "Σίμωνι",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -765,7 +913,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Ἰωάννου",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωάννου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G24910"
@@ -787,7 +944,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Ἰωάννου",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωάννου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G24910"
@@ -809,7 +975,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Ἰωάννου",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωάννου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G24910"

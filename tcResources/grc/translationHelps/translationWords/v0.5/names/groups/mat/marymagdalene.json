@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "marymagdalene",
-      "quote": "Μαρία ἡ Μαγδαληνὴ",
+      "quote": [
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G31370",
         "G35880",
@@ -36,7 +49,20 @@
       },
       "tool": "translationWords",
       "groupId": "marymagdalene",
-      "quote": "Μαριὰμ ἡ Μαγδαληνὴ",
+      "quote": [
+        {
+          "word": "Μαριὰμ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G31370",
         "G35880",
@@ -59,7 +85,20 @@
       },
       "tool": "translationWords",
       "groupId": "marymagdalene",
-      "quote": "Μαρία ἡ Μαγδαληνὴ",
+      "quote": [
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G31370",
         "G35880",

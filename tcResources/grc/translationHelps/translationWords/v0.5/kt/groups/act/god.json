@@ -983,7 +983,7 @@
       "strong": [
         "G23160"
       ],
-      "occurrence": 1
+      "occurrence": 2
     }
   },
   {
@@ -2449,7 +2449,20 @@
       },
       "tool": "translationWords",
       "groupId": "god",
-      "quote": "Θεοῦ τοῦ Ὑψίστου",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὑψίστου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G35880",

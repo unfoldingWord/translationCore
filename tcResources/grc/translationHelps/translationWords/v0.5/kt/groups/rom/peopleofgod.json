@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαόν μου",
+      "quote": [
+        {
+          "word": "λαόν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G14730"
@@ -35,12 +44,21 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαόν μου",
+      "quote": [
+        {
+          "word": "λαόν",
+          "occurrence": 2
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G29920",
         "G14730"
       ],
-      "occurrence": 2
+      "occurrence": 1
     }
   },
   {
@@ -57,7 +75,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαός μου",
+      "quote": [
+        {
+          "word": "λαός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G14730"
@@ -79,7 +106,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαὸν αὐτοῦ",
+      "quote": [
+        {
+          "word": "λαὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G08460"
@@ -101,7 +137,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαὸν αὐτοῦ",
+      "quote": [
+        {
+          "word": "λαὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G08460"
@@ -123,7 +168,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαοῦ αὐτοῦ",
+      "quote": [
+        {
+          "word": "λαοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G08460"

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "hard",
-      "quote": "κόπον καὶ",
+      "quote": [
+        {
+          "word": "κόπον",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G28730",
         "G25320"

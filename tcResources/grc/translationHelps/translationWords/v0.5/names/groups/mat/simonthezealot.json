@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "simonthezealot",
-      "quote": "Σίμων ὁ Καναναῖος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Καναναῖος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G35880",

@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G23160"

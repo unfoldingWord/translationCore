@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "onhigh",
-      "quote": "ἐν ὑψηλοῖς",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑψηλοῖς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G53080"

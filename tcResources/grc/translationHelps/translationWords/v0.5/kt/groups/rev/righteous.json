@@ -244,7 +244,16 @@
       },
       "tool": "translationWords",
       "groupId": "righteous",
-      "quote": "δίκαιος δικαιοσύνην",
+      "quote": [
+        {
+          "word": "δίκαιος",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G13420",
         "G13430"

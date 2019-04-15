@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεύματι ἀκαθάρτῳ",
+      "quote": [
+        {
+          "word": "πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθάρτῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G01690"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεῦμα τὸ ἀκάθαρτον",
+      "quote": [
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -58,7 +80,20 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεύμασι τοῖς ἀκαθάρτοις",
+      "quote": [
+        {
+          "word": "πνεύμασι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθάρτοις",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -144,7 +179,20 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεύματα τὰ ἀκάθαρτα",
+      "quote": [
+        {
+          "word": "πνεύματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -230,7 +278,16 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεῦμα ἀκάθαρτον",
+      "quote": [
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G01690"
@@ -252,7 +309,16 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεύματι ἀκαθάρτῳ",
+      "quote": [
+        {
+          "word": "πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθάρτῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G01690"
@@ -274,7 +340,20 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεῦμα τὸ ἀκάθαρτον",
+      "quote": [
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -297,7 +376,20 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεύματα τὰ ἀκάθαρτα",
+      "quote": [
+        {
+          "word": "πνεύματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -320,7 +412,20 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνευμάτων τῶν ἀκαθάρτων",
+      "quote": [
+        {
+          "word": "πνευμάτων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθάρτων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -364,7 +469,16 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεῦμα ἀκάθαρτον",
+      "quote": [
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G01690"
@@ -449,7 +563,20 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "πνεύματι τῷ ἀκαθάρτῳ",
+      "quote": [
+        {
+          "word": "πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθάρτῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",

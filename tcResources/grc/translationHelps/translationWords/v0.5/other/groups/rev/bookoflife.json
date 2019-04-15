@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "bookoflife",
-      "quote": "βίβλου τῆς ζωῆς",
+      "quote": [
+        {
+          "word": "βίβλου",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09760",
         "G35880",
@@ -36,7 +49,20 @@
       },
       "tool": "translationWords",
       "groupId": "bookoflife",
-      "quote": "βιβλίῳ τῆς ζωῆς",
+      "quote": [
+        {
+          "word": "βιβλίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09750",
         "G35880",
@@ -59,7 +85,20 @@
       },
       "tool": "translationWords",
       "groupId": "bookoflife",
-      "quote": "βιβλίον τῆς ζωῆς",
+      "quote": [
+        {
+          "word": "βιβλίον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09750",
         "G35880",
@@ -82,7 +121,32 @@
       },
       "tool": "translationWords",
       "groupId": "bookoflife",
-      "quote": "βιβλίον ἠνεῴχθη ὅ ἐστιν τῆς ζωῆς",
+      "quote": [
+        {
+          "word": "βιβλίον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠνεῴχθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09750",
         "G04550",
@@ -108,7 +172,20 @@
       },
       "tool": "translationWords",
       "groupId": "bookoflife",
-      "quote": "βίβλῳ τῆς ζωῆς",
+      "quote": [
+        {
+          "word": "βίβλῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09760",
         "G35880",
@@ -131,7 +208,20 @@
       },
       "tool": "translationWords",
       "groupId": "bookoflife",
-      "quote": "βιβλίῳ τῆς ζωῆς",
+      "quote": [
+        {
+          "word": "βιβλίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09750",
         "G35880",

@@ -643,7 +643,16 @@
       },
       "tool": "translationWords",
       "groupId": "name",
-      "quote": "ὀνόματι καλούμενος",
+      "quote": [
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "καλούμενος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G36860",
         "G25640"

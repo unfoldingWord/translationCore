@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "compassion",
-      "quote": "σπλάγχνα ἐλέους",
+      "quote": [
+        {
+          "word": "σπλάγχνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλέους",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46980",
         "G16560"

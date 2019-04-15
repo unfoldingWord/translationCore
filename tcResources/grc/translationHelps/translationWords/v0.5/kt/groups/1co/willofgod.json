@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θελήματος Θεοῦ",
+      "quote": [
+        {
+          "word": "θελήματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G23160"

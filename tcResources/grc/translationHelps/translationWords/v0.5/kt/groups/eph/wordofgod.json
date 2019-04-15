@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "ῥῆμα Θεοῦ",
+      "quote": [
+        {
+          "word": "ῥῆμα",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G44870",
         "G23160"

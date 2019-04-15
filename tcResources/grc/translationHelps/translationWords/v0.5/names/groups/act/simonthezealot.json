@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "simonthezealot",
-      "quote": "Σίμων ὁ Ζηλωτὴς",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ζηλωτὴς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G35880",

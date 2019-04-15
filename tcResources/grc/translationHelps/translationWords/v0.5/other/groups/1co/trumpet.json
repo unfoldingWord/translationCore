@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "trumpet",
-      "quote": "σάλπιγγι σαλπίσει",
+      "quote": [
+        {
+          "word": "σάλπιγγι",
+          "occurrence": 1
+        },
+        {
+          "word": "σαλπίσει",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G45360",
         "G45370"

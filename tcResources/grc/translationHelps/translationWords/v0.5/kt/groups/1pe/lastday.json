@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "καιρῷ ἐσχάτῳ",
+      "quote": [
+        {
+          "word": "καιρῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσχάτῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G25400",
         "G20780"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάτου τῶν χρόνων",
+      "quote": [
+        {
+          "word": "ἐσχάτου",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "χρόνων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G35880",

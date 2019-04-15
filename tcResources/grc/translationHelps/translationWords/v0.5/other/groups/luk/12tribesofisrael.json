@@ -13,7 +13,28 @@
       },
       "tool": "translationWords",
       "groupId": "12tribesofisrael",
-      "quote": "δώδεκα φυλὰς κρίνοντες τοῦ Ἰσραήλ",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14270",
         "G54430",

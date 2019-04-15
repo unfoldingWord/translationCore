@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "houseofgod",
-      "quote": "οἶκον τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "οἶκον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G36240",
         "G35880",

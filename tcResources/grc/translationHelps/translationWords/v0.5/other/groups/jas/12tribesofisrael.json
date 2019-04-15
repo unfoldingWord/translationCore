@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "12tribesofisrael",
-      "quote": "δώδεκα φυλαῖς",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλαῖς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14270",
         "G54430"

@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "Βασιλεία τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09320",
         "G35880",
@@ -36,7 +49,16 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "Θεοῦ Βασιλείαν",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G09320"
@@ -58,7 +80,16 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "Βασιλείαν Θεοῦ",
+      "quote": [
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09320",
         "G23160"
@@ -80,7 +111,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "Βασιλείαν τῷ Θεῷ",
+      "quote": [
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09320",
         "G35880",
@@ -103,7 +147,16 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "Βασιλείαν Θεοῦ",
+      "quote": [
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09320",
         "G23160"

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "time",
-      "quote": "καιρὸν ὥρας",
+      "quote": [
+        {
+          "word": "καιρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥρας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G25400",
         "G56100"

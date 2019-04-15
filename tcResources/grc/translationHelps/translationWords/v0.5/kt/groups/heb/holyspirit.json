@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεύματος Ἁγίου",
+      "quote": [
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G00400"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεῦμα τὸ Ἅγιον",
+      "quote": [
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -58,7 +80,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεύματος Ἁγίου",
+      "quote": [
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G00400"
@@ -80,7 +111,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεύματος τοῦ Ἁγίου",
+      "quote": [
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -124,7 +168,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεῦμα τὸ Ἅγιον",
+      "quote": [
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",

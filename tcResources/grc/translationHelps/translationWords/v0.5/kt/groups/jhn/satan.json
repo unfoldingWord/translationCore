@@ -97,7 +97,16 @@
       },
       "tool": "translationWords",
       "groupId": "satan",
-      "quote": "τοῦ πονηροῦ",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πονηροῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35880",
         "G41900"

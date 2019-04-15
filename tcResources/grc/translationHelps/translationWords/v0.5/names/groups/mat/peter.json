@@ -181,7 +181,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Πέτρος",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G40740"
@@ -203,7 +212,16 @@
       },
       "tool": "translationWords",
       "groupId": "peter",
-      "quote": "Σίμων Βαριωνᾶ",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαριωνᾶ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G09200"

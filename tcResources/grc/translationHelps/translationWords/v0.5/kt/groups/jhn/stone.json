@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "stone",
-      "quote": "βάλωσιν ἐπ’ αὐτόν",
+      "quote": [
+        {
+          "word": "βάλωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09060",
         "G19090",

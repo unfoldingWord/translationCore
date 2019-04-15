@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "joy",
-      "quote": "χαρᾷ χαίρει",
+      "quote": [
+        {
+          "word": "χαρᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "χαίρει",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G54790",
         "G54630"

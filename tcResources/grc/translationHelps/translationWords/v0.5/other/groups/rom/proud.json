@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "proud",
-      "quote": "ὑψηλὰ φρονοῦντες",
+      "quote": [
+        {
+          "word": "ὑψηλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "φρονοῦντες",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G53080",
         "G54260"

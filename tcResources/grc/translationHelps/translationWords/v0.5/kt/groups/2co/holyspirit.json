@@ -34,7 +34,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεύματι Θεοῦ ζῶντος",
+      "quote": [
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῶντος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G23160",
@@ -204,7 +217,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεύματι Ἁγίῳ",
+      "quote": [
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G00400"
@@ -247,7 +269,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Ἁγίου Πνεύματος",
+      "quote": [
+        {
+          "word": "Ἁγίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G00400",
         "G41510"

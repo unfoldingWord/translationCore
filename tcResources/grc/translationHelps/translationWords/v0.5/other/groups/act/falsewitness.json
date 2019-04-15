@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "falsewitness",
-      "quote": "μάρτυρας ψευδεῖς",
+      "quote": [
+        {
+          "word": "μάρτυρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ψευδεῖς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G31440",
         "G55710"

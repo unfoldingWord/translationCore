@@ -118,7 +118,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸν τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -183,7 +196,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸν τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -206,7 +232,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱῷ τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -250,7 +289,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonofgod",
-      "quote": "Υἱὸν τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",

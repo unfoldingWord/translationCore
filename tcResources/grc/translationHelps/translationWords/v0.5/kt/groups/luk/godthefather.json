@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Κύριος ὁ Θεὸς",
+      "quote": [
+        {
+          "word": "Κύριος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29620",
         "G35880",

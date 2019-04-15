@@ -55,7 +55,16 @@
       },
       "tool": "translationWords",
       "groupId": "thetwelve",
-      "quote": "δώδεκα ἀποστόλων",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀποστόλων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14270",
         "G06520"

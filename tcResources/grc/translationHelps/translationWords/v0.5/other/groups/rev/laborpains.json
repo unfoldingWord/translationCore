@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "laborpains",
-      "quote": "ὠδίνουσα καὶ βασανιζομένη τεκεῖν",
+      "quote": [
+        {
+          "word": "ὠδίνουσα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "βασανιζομένη",
+          "occurrence": 1
+        },
+        {
+          "word": "τεκεῖν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G56050",
         "G25320",

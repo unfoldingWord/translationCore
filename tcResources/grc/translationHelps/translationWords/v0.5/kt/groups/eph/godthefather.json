@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεοῦ Πατρὸς",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G39620"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεὸς καὶ Πατὴρ",
+      "quote": [
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G25320",
@@ -58,7 +80,16 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "ὁ Πατὴρ",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35880",
         "G39620"
@@ -122,7 +153,20 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεὸς καὶ Πατὴρ",
+      "quote": [
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G25320",
@@ -145,7 +189,20 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεῷ καὶ Πατρί",
+      "quote": [
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρί",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G25320",
@@ -168,7 +225,16 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεοῦ Πατρὸς",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G39620"

@@ -76,7 +76,16 @@
       },
       "tool": "translationWords",
       "groupId": "robe",
-      "quote": "περιβεβλημένος ἱμάτιον",
+      "quote": [
+        {
+          "word": "περιβεβλημένος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱμάτιον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G40160",
         "G24400"

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "judasiscariot",
-      "quote": "Ἰούδαν Ἰσκαριώθ",
+      "quote": [
+        {
+          "word": "Ἰούδαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσκαριώθ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24550",
         "G24690"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "judasiscariot",
-      "quote": "Ἰούδας Ἰσκαριὼθ",
+      "quote": [
+        {
+          "word": "Ἰούδας",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσκαριὼθ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24550",
         "G24690"

@@ -76,7 +76,16 @@
       },
       "tool": "translationWords",
       "groupId": "heal",
-      "quote": "ὑγιῆ ἐποίησα",
+      "quote": [
+        {
+          "word": "ὑγιῆ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐποίησα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G51990",
         "G41600"

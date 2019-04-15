@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "redsea",
-      "quote": "Ἐρυθρὰν Θάλασσαν",
+      "quote": [
+        {
+          "word": "Ἐρυθρὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θάλασσαν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20630",
         "G22810"

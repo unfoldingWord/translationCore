@@ -1105,7 +1105,16 @@
       },
       "tool": "translationWords",
       "groupId": "lawofmoses",
-      "quote": "νόμῳ Θεοῦ",
+      "quote": [
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35510",
         "G23160"

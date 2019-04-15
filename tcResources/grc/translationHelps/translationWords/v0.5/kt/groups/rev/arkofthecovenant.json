@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "arkofthecovenant",
-      "quote": "κιβωτὸς τῆς διαθήκης",
+      "quote": [
+        {
+          "word": "κιβωτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "διαθήκης",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G27870",
         "G35880",

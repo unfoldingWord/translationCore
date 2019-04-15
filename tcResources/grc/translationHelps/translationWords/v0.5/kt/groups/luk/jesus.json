@@ -1273,7 +1273,20 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Ἰησοῦς ὁ Ναζωραῖος",
+      "quote": [
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ναζωραῖος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24240",
         "G35880",
@@ -1758,7 +1771,16 @@
       },
       "tool": "translationWords",
       "groupId": "jesus",
-      "quote": "Κυρίου Ἰησοῦ",
+      "quote": [
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29620",
         "G24240"

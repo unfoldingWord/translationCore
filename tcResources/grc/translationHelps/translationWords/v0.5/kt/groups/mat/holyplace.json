@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyplace",
-      "quote": "τόπῳ ἁγίῳ",
+      "quote": [
+        {
+          "word": "τόπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G51170",
         "G00400"

@@ -97,7 +97,16 @@
       },
       "tool": "translationWords",
       "groupId": "earth",
-      "quote": "γῆς χοϊκός",
+      "quote": [
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "χοϊκός",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G10930",
         "G55170"

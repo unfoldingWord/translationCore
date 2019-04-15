@@ -97,7 +97,16 @@
       },
       "tool": "translationWords",
       "groupId": "time",
-      "quote": "παντὶ χρόνῳ",
+      "quote": [
+        {
+          "word": "παντὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "χρόνῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G39560",
         "G55500"

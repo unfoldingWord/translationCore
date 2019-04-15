@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "accuse",
-      "quote": "ἐγκαλέσει κατὰ",
+      "quote": [
+        {
+          "word": "ἐγκαλέσει",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14580",
         "G25960"

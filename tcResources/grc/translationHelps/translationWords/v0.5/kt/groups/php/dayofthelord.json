@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "dayofthelord",
-      "quote": "ἡμέρας Χριστοῦ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22500",
         "G55470",
@@ -36,7 +49,16 @@
       },
       "tool": "translationWords",
       "groupId": "dayofthelord",
-      "quote": "ἡμέραν Χριστοῦ",
+      "quote": [
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22500",
         "G55470"
@@ -58,7 +80,16 @@
       },
       "tool": "translationWords",
       "groupId": "dayofthelord",
-      "quote": "ἡμέραν Χριστοῦ",
+      "quote": [
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22500",
         "G55470"

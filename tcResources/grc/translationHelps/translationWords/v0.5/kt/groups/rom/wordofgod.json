@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "Γραφαῖς ἁγίαις",
+      "quote": [
+        {
+          "word": "Γραφαῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίαις",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G11240",
         "G00400"
@@ -56,7 +65,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγος τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",

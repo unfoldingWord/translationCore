@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "call",
-      "quote": "καλέσαντος κλήσει",
+      "quote": [
+        {
+          "word": "καλέσαντος",
+          "occurrence": 1
+        },
+        {
+          "word": "κλήσει",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G25640",
         "G28210"

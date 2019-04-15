@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "jamessonofalphaeus",
-      "quote": "Ἰάκωβος ὁ τοῦ Ἁλφαίου",
+      "quote": [
+        {
+          "word": "Ἰάκωβος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁλφαίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23850",
         "G35880",

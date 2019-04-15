@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingofthejews",
-      "quote": "βασιλεὺς τῶν Ἰουδαίων",
+      "quote": [
+        {
+          "word": "βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09350",
         "G35880",
@@ -36,7 +49,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingofthejews",
-      "quote": "Βασιλέα τῶν Ἰουδαίων",
+      "quote": [
+        {
+          "word": "Βασιλέα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09350",
         "G35880",
@@ -59,7 +85,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingofthejews",
-      "quote": "Βασιλεὺς τῶν Ἰουδαίων",
+      "quote": [
+        {
+          "word": "Βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09350",
         "G35880",
@@ -82,7 +121,16 @@
       },
       "tool": "translationWords",
       "groupId": "kingofthejews",
-      "quote": "βασιλεὺς ὑμῶν",
+      "quote": [
+        {
+          "word": "βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09350",
         "G47710"
@@ -104,7 +152,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingofthejews",
-      "quote": "Βασιλεὺς τῶν Ἰουδαίων",
+      "quote": [
+        {
+          "word": "Βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09350",
         "G35880",
@@ -127,7 +188,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingofthejews",
-      "quote": "Βασιλεὺς τῶν Ἰουδαίων",
+      "quote": [
+        {
+          "word": "Βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G09350",
         "G35880",
@@ -150,7 +224,24 @@
       },
       "tool": "translationWords",
       "groupId": "kingofthejews",
-      "quote": "Βασιλεὺς εἰμι τῶν Ἰουδαίων",
+      "quote": [
+        {
+          "word": "Βασιλεὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 3
+        }
+      ],
       "strong": [
         "G09350",
         "G15100",

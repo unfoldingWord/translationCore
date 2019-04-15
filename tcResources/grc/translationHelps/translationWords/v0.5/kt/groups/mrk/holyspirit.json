@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεύματι Ἁγίῳ",
+      "quote": [
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G00400"
@@ -77,7 +86,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεῦμα τὸ Ἅγιον",
+      "quote": [
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -100,7 +122,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεύματι τῷ ἁγίῳ",
+      "quote": [
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
@@ -123,7 +158,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyspirit",
-      "quote": "Πνεῦμα τὸ Ἅγιον",
+      "quote": [
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41510",
         "G35880",
