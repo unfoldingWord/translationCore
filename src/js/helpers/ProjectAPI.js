@@ -342,11 +342,11 @@ export default class ProjectAPI {
       ".categoryIndex");
     if (fs.pathExistsSync(indexPath)) {
       try {
-        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
+        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name.trim());
         parentCategories.forEach((category) => {
           const subCategoryPath = path.join(this.getCategoriesDir(toolName),
             ".categoryIndex", `${category}.json`);
-          const arrayOfSubCategories = fs.readJSONSync(subCategoryPath);
+          const arrayOfSubCategories = fs.readJsonSync(subCategoryPath);
           parentCategoriesObject[category] = arrayOfSubCategories;
         });
       } catch (e) {

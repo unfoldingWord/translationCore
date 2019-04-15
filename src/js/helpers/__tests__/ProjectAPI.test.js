@@ -201,6 +201,19 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
     });
 
+    it('with parent', () => {
+      const p = new ProjectAPI('/root');
+      jest.spyOn(global.console, 'warn');
+      fs.readFileSync.mockReturnValue(`{"project":{"id":"book"}}`);
+      fs.pathExistsSync.mockReturnValue(true);
+      fs.readJsonSync.mockReturnValueOnce({current: ["category"]});
+      fs.readdirSync.mockReturnValueOnce(['parent.json']);
+      fs.readJsonSync.mockReturnValueOnce(["category", "category2"]);
+
+      expect( p.getSelectedCategories('tool', true)).toMatchObject({parent:['category']});
+      expect(console.warn).not.toBeCalled();
+    });
+
     it('is missing file', () => {
       const p = new ProjectAPI('/root');
 
