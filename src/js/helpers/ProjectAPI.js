@@ -109,7 +109,7 @@ export default class ProjectAPI {
               );
 
               const { selections } = loadCheckData(loadPath, groupDataItem.contextId);
-              groupDataItem.selections = selections;
+              groupDataItem.selections = selections || false;
               return groupDataItem;
             }
             return groupDataItem;
