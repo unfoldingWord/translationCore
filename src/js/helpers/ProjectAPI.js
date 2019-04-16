@@ -339,7 +339,7 @@ export default class ProjectAPI {
       ".categoryIndex");
     if (fs.pathExistsSync(indexPath)) {
       try {
-        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name.trim());
+        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
         parentCategories.forEach((category) => {
           const subCategoryPath = path.join(this.getCategoriesDir(toolName),
             ".categoryIndex", `${category}.json`);
