@@ -1,4 +1,7 @@
 /* eslint-env jest */
+
+// ResourcesHelpers tests without mocking
+
 import path from 'path';
 jest.unmock('fs-extra');
 // helpers
