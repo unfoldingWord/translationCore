@@ -20,6 +20,18 @@ jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
   }
 }));
 
+jest.mock('redux-batched-actions', () => ({
+  batchActions: (actionsBatch) => {
+    return (dispatch) => {
+      if (actionsBatch.length) {
+        for (let action of actionsBatch) {
+          dispatch(action);
+        }
+      }
+    };
+  }
+}));
+
 const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 
 fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);

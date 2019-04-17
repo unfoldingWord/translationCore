@@ -60,7 +60,7 @@ class ToolsManagementContainer extends Component {
       },
       translate
     } = this.props;
- 
+
     const instructions = (
       <div>
         <p>{translate("tools.select_tool_from_list")}</p>
@@ -129,7 +129,7 @@ const mapDispatchToProps = (dispatch) => {
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
-      } 
+      }
     }
   };
 };
