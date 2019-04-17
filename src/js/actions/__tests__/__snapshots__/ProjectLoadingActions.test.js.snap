@@ -1314,7 +1314,7 @@ Array [
     "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
-    "alertMessage": [TypeError: (0 , _selectors.getBibles) is not a function],
+    "alertMessage": "(0 , _selectors.getBibles) is not a function",
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },
