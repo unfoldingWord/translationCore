@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "אֲדֹנִ⁠י֙",
+      "strong": [
+        "H0113"
+      ],
+      "occurrence": 1
+    }
+  }
+]

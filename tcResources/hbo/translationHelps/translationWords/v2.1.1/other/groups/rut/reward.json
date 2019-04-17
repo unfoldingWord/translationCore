@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "reward",
+      "quote": "מַשְׂכֻּרְתֵּ֜⁠ךְ",
+      "strong": [
+        "H4909"
+      ],
+      "occurrence": 1
+    }
+  }
+]

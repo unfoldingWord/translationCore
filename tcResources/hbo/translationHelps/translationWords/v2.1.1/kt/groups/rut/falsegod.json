@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "falsegod",
+      "quote": "אֱלֹהֶ֑י⁠הָ",
+      "strong": [
+        "H0430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

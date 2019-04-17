@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "וַ⁠תִּשְׁתַּ֖חוּ",
+      "strong": [
+        "c:H7812"
+      ],
+      "occurrence": 1
+    }
+  }
+]

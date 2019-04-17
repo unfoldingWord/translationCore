@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "fear",
+      "quote": "תִּ֣ירְאִ֔י",
+      "strong": [
+        "H3372"
+      ],
+      "occurrence": 1
+    }
+  }
+]
