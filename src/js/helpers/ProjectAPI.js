@@ -255,6 +255,7 @@ export default class ProjectAPI {
         rawData.current.forEach((category, index) => {
           if (!rawData.loaded.includes(category)) {
             //There is something that is selected that is not loaded
+            //Or there is something that is selected that is not in the current resources folder
             rawData.current.splice(index, 1);
           }
         });
@@ -300,6 +301,13 @@ export default class ProjectAPI {
     }
     data.timestamp = generateTimestamp();
     fs.outputJsonSync(categoriesPath, data);
+  }
+
+  resetCategoryGroupIds(toolName) {
+    const indexPath = path.join(this.getCategoriesDir(toolName),
+    ".categoryIndex");
+    fs.removeSync(indexPath);
+    fs.mkdirSync(indexPath);
   }
 
   /**

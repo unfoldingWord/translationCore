@@ -41,6 +41,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
     gatewayLanguage = "en";
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   if (helpDir) {
+    project.resetCategoryGroupIds(toolName);
     if (project.hasNewGroupsData(toolName)) {
       project.resetLoadedCategories(toolName);
     }
