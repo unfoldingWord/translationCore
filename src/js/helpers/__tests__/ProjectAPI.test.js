@@ -27,16 +27,20 @@ describe('ProjectAPI', () => {
         isDirectory: () => true
       });
       fs.readdirSync.mockReturnValueOnce(["file1.json", "file2.json", "something.else"]);
-      fs.readJsonSync.mockReturnValueOnce({hello: "world1"});
-      fs.readJsonSync.mockReturnValueOnce({hello: "world2"});
+      fs.readJsonSync.mockReturnValueOnce([{hello: "world1"}]);
+      fs.readJsonSync.mockReturnValueOnce([{hello: "world2"}]);
 
       expect(p.getGroupsData('tool')).toEqual({
-        file1: {
-          hello: "world1"
-        },
-        file2: {
-          hello: "world2"
-        }
+        file1: [
+          {
+            hello: "world1"
+          }
+        ],
+        file2: [
+          {
+            hello: "world2"
+          }
+        ]
       });
     });
 
