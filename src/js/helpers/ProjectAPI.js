@@ -4,7 +4,11 @@ import fs from "fs-extra";
 import {generateTimestamp} from "./TimestampGenerator";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
   "resources");
-const PROJECT_TC_DIR = ".apps/translationCore/";
+// actions
+import { loadCheckData } from '../actions/CheckDataLoadActions';
+// constants
+const PROJECT_TC_DIR = path.join('.apps', 'translationCore');
+const CHECKDATA_DIRECTORY = path.join(PROJECT_TC_DIR, 'checkData');
 
 /**
  * Provides an interface with which tools can interact with a project.
@@ -91,9 +95,32 @@ export default class ProjectAPI {
         const dataPath = path.join(dir, files[i]);
         const groupName = path.basename(dataPath, ".json");
         try {
-          data[groupName] = fs.readJsonSync(dataPath);
+          let groupData = fs.readJsonSync(dataPath);
+
+          // check & fix corrupted selections value for each group data item.
+          groupData = groupData.map(groupDataItem => {
+            if (groupDataItem.selections === true) {// if selections is true then find selections array.
+              const { bookId, chapter, verse } = groupDataItem.contextId.reference;
+              const loadPath = path.join(
+                this._projectPath,
+                CHECKDATA_DIRECTORY,
+                'selections',
+                bookId,
+                chapter.toString(),
+                verse.toString()
+              );
+
+              const { selections } = loadCheckData(loadPath, groupDataItem.contextId);
+              groupDataItem.selections = selections || false;
+              return groupDataItem;
+            }
+            return groupDataItem;
+          });
+
+          data[groupName] = groupData;
         } catch (e) {
           console.error(`Failed to load group data from ${dataPath}`);
+          console.error(e);
         }
       }
     }
