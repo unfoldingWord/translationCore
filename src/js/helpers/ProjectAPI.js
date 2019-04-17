@@ -246,6 +246,10 @@ export default class ProjectAPI {
     }
   }
 
+  /**
+   * Removes categories from the currently selected that are not in the loaded array
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   */
   removeStaleCategoriesFromCurrent(toolName) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
     ".categories");
@@ -303,6 +307,11 @@ export default class ProjectAPI {
     fs.outputJsonSync(categoriesPath, data);
   }
 
+  /**
+   * Removes category index from project, and creates empty directory
+   * Useful for getting rid of stale data after a resource update
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   */
   resetCategoryGroupIds(toolName) {
     const indexPath = path.join(this.getCategoriesDir(toolName),
     ".categoryIndex");
