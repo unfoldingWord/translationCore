@@ -1,5 +1,4 @@
 import fs from 'fs-extra';
-import isEqual from 'deep-equal';
 import path from 'path-extra';
 import usfmjs from 'usfm-js';
 //helpers
@@ -8,8 +7,9 @@ import * as exportHelpers from './exportHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
-import wordaligner, {VerseObjectUtils, ArrayUtils} from 'word-aligner';
+import wordaligner, {VerseObjectUtils} from 'word-aligner';
 import ResourceAPI from "./ResourceAPI";
+import * as BibleHelpers from "./bibleHelpers";
 const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 
 /**
@@ -20,13 +20,14 @@ const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
  * @param verse
  * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
  */
-export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) => {
+export const getOriginalVerseFromResources = (projectSaveLocation, chapter, verse) => {
   const {project} = manifestHelpers.getProjectManifest(projectSaveLocation);
-  const greekChapterPath = ResourceAPI.getLatestVersion(path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt'));
-  const greekChapterPathWithBook = path.join(greekChapterPath, project.id, chapter + '.json');
+  const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(project.id);
+  const origLangChapterPath = ResourceAPI.getLatestVersion(path.join(STATIC_RESOURCES_PATH, languageId, 'bibles', bibleId));
+  const origLangChapterPathWithBook = path.join(origLangChapterPath, project.id, chapter + '.json');
   //greek path from tcResources
-  if (fs.existsSync(greekChapterPathWithBook)) {
-    return fs.readJSONSync(greekChapterPathWithBook)[verse];
+  if (fs.existsSync(origLangChapterPathWithBook)) {
+    return fs.readJSONSync(origLangChapterPathWithBook)[verse];
   }
 };
 
@@ -219,24 +220,6 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 };
 
 /**
- * Wrapper method to get the greek verse objects from the resources and
- * then convert them to a verse string.
- * Note: This verse string does not contain punctuation, or special tags
- * simply contains all the greek words in the verse.
- * @param {object} ugntVerse - Array of verse objects containing ugnt words
- * @returns {array} - Greek verse obejcts for the current book/chapter/verse
- */
-export const getGreekVerse = (ugntVerse) => {
-  if (ugntVerse) {
-    ugntVerse = VerseObjectUtils.getWordsFromVerseObjects(ugntVerse);
-    const greekVerseArray = ugntVerse.filter(({type}) => {
-      return type === 'word';
-    }).map((word) => VerseObjectUtils.wordVerseObjectFromBottomWord(word, 'text'));
-    return VerseObjectUtils.combineVerseArray(greekVerseArray);
-  }
-};
-
-/**
  * Wrapper method to retrieve the target language verse according to specified book/chapter
  *
  * @param {string} targetLanguageVerse - Current target language verse from the bibles
@@ -250,47 +233,6 @@ export const getTargetLanguageVerse = (targetLanguageVerse) => {
     const {newVerseObjects} = VerseObjectUtils.getOrderedVerseObjectsFromString(targetLanguageVerse);
     const verseObjectsCleaned = VerseObjectUtils.getWordList(newVerseObjects);
     return VerseObjectUtils.combineVerseArray(verseObjectsCleaned);
-  }
-};
-
-/**
- * Wrapper method to retrieve relevant data from alignments and do string comparison.
- *
- * @param {object} verseAlignments - The verse vese alignments object
- * @param {array} verseAlignments.alignments
- * @param {array} verseAlignments.wordBank
- * @param {object} ugnt - Array of verse objects containing ugnt words
- * @param {string} targetLanguageVerse - Current target language string from the bibles reducer
- * @returns {object} - If there were verse changes or not, which bible the changes were in, and
- * whether or not to show the dialog
- */
-export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse) => {
-  const showDialog = wordaligner.verseHasAlignments(verseAlignments);
-  const targetLanguageVerseCleaned = getTargetLanguageVerse(targetLanguageVerse);
-  const staticGreekVerse = getGreekVerse(ugnt.verseObjects);
-  const currentGreekVerse = getCurrentGreekVerseFromAlignments(verseAlignments);
-  const currentTargetLanguageVerse = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, targetLanguageVerseCleaned);
-  const greekChanged = !isEqual(staticGreekVerse, currentGreekVerse);
-  const targetLanguageChanged = !isEqual(targetLanguageVerseCleaned, currentTargetLanguageVerse);
-  return {
-    alignmentsInvalid: greekChanged || targetLanguageChanged,
-    alignmentChangesType: greekChanged ? 'ugnt' : targetLanguageChanged ? 'target language' : null,
-    showDialog
-  };
-};
-
-/**
- * Helper method to parse the greek words from an alignments object
- *
- * @param {array} alignments - alignments object with array of top words/bottom words
- * @returns {string} - Greek verse words combined, without punctation
- */
-export const getCurrentGreekVerseFromAlignments = ({alignments}) => {
-  if (alignments) {
-    const greekVerseArray = ArrayUtils.flattenArray(alignments.map(({topWords}) => {
-      return topWords.map(word => VerseObjectUtils.wordVerseObjectFromBottomWord(word));
-    }));
-    return VerseObjectUtils.combineVerseArray(greekVerseArray);
   }
 };
 
@@ -362,11 +304,11 @@ export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
       const {projectTargetLanguagePath, wordAlignmentDataPath} = getAlignmentPathsFromProject(projectSaveLocation);
       const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapter + '.json'));
       const targetLanguageVerse = targetLanguageChapterJSON[verse];
-      const ugntVerseObjects = getGreekVerseFromResources(projectSaveLocation, chapter, verse);
-      const ugntVerseObjectsWithoutPunctuation = ugntVerseObjects && ugntVerseObjects.verseObjects ? ugntVerseObjects.verseObjects.filter(({type}) => {
+      const origLangVerseObjects = getOriginalVerseFromResources(projectSaveLocation, chapter, verse);
+      const origLangVerseObjectsWithoutPunctuation = origLangVerseObjects && origLangVerseObjects.verseObjects ? origLangVerseObjects.verseObjects.filter(({type}) => {
         return type === 'word';
       }) : [];
-      const resetVerseAlignments = wordaligner.getBlankAlignmentDataForVerse(ugntVerseObjectsWithoutPunctuation, targetLanguageVerse);
+      const resetVerseAlignments = wordaligner.getBlankAlignmentDataForVerse(origLangVerseObjectsWithoutPunctuation, targetLanguageVerse);
       const wordAlignmentPathWithChapter = path.join(wordAlignmentDataPath, chapter + '.json');
       const wordAignmentChapterJSON = fs.readJSONSync(wordAlignmentPathWithChapter);
       wordAignmentChapterJSON[verse] = resetVerseAlignments;

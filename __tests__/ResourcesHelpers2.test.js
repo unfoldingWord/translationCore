@@ -1,4 +1,7 @@
 /* eslint-env jest */
+
+// ResourcesHelpers tests with mocking
+
 import ResourceAPI from "../src/js/helpers/ResourceAPI";
 import path from 'path';
 import ospath from "ospath";
@@ -11,6 +14,7 @@ import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 
 jest.mock('fs-extra');
 jest.mock('adm-zip');
+
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -235,6 +239,86 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
   });
 });
 
+describe('ResourcesHelpers.getMissingResources', () => {
+  describe('areResourcesNewer()', () => {
+
+    beforeEach(() => {
+      fs.__resetMockFS();
+    });
+
+    test('same date should return false', () => {
+      // given
+      const bundledDate = "2019-04-02T19:10:02.492Z";
+      const userDate = "2019-04-02T19:10:02.492Z";
+      const expectedNewer = false;
+      loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+      // when
+      const results = ResourcesHelpers.areResourcesNewer();
+
+      // then
+      expect(results).toEqual(expectedNewer);
+    });
+
+    test('newer bundled date should return true', () => {
+      // given
+      const bundledDate = "2019-04-02T19:10:02.492Z";
+      const userDate = "2018-04-02T19:10:02.492Z";
+      const expectedNewer = true;
+      loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+      // when
+      const results = ResourcesHelpers.areResourcesNewer();
+
+      // then
+      expect(results).toEqual(expectedNewer);
+    });
+
+    test('newer user date should return false', () => {
+      // given
+      const bundledDate = "2019-04-02T19:10:02.492Z";
+      const userDate = "2019-08-02T19:10:02.492Z";
+      const expectedNewer = false;
+      loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+      // when
+      const results = ResourcesHelpers.areResourcesNewer();
+
+      // then
+      expect(results).toEqual(expectedNewer);
+    });
+
+    test('missing user resource manifest should return true', () => {
+      // given
+      const bundledDate = "2019-04-02T19:10:02.492Z";
+      const userDate = null;
+      const expectedNewer = true;
+      loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+      // when
+      const results = ResourcesHelpers.areResourcesNewer();
+
+      // then
+      expect(results).toEqual(expectedNewer);
+    });
+
+    test('missing bundled resource manifest should return false', () => {
+      // given
+      const bundledDate = null;
+      const userDate = "2019-04-02T19:10:02.492Z";
+      const expectedNewer = false;
+      loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+      // when
+      const results = ResourcesHelpers.areResourcesNewer();
+
+      // then
+      expect(results).toEqual(expectedNewer);
+    });
+
+  });
+});
+
 describe('ResourcesHelpers.extractZippedResourceContent', () => {
   it('works as expected', () => {
     const EN_ULB_PATH = path.join(RESOURCE_PATH, 'en', 'ult');
@@ -278,7 +362,7 @@ function loadMockFsWithProjectAndResources() {
   const copyResourceFiles = [
     'en/bibles/ult',
     'en/bibles/ust',
-    'grc/bibles/ugnt',
+    'el-x-koine/bibles/ugnt',
     'hbo/bibles/uhb',
     'en/translationHelps/translationWords',
     'en/translationHelps/translationAcademy',
@@ -291,6 +375,19 @@ function loadMockFsWithlexicons() {
   const resourcesPath = STATIC_RESOURCES_PATH;
   const copyResourceFiles = ['en/lexicons'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
+}
+
+function loadSourceContentUpdaterManifests(bundledDate, userDate) {
+  const bundledResourcesManifestPath = path.join(STATIC_RESOURCES_PATH, "source-content-updater-manifest.json");
+  fs.ensureDirSync(STATIC_RESOURCES_PATH);
+  if (bundledDate) {
+    fs.outputJsonSync(bundledResourcesManifestPath, {modified: bundledDate});
+  }
+  const resourcesManifestPath = path.join(RESOURCE_PATH, "source-content-updater-manifest.json");
+  fs.ensureDirSync(RESOURCE_PATH);
+  if (userDate) {
+    fs.outputJsonSync(resourcesManifestPath, {modified: userDate});
+  }
 }
 
 function verifyLexicons(expectedLexicons, lexiconResourcePath) {

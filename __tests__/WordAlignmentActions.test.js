@@ -26,7 +26,7 @@ describe('WordAlignmentActions.getUsfm3ExportFile', () => {
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const copyResourceFiles = [
       'en/bibles/ult',
-      'grc/bibles/ugnt'
+      'el-x-koine/bibles/ugnt'
     ];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, STATIC_RESOURCE_PATH);
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, USER_RESOURCE_PATH);
