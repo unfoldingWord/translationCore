@@ -626,15 +626,21 @@ export function getMissingResources() {
           extractZippedResourceContent(USER_RESOURCE_PATH, resourceType === "bibles");
         } else if (!fs.existsSync(USER_RESOURCE_PATH)) {// if resource isnt found in user resources folder.
           copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
-        } else {
+        } else {// compare resources manifest modified time
           const userResourceVersionPath = ResourceAPI.getLatestVersion(USER_RESOURCE_PATH);
-          const statisResourceVersionPath = ResourceAPI.getLatestVersion(STATIC_RESOURCE_PATH);
-          const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceVersionPath) || {};
-          const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(statisResourceVersionPath) || {};
-          const isOldResource = userModifiedTime < staticModifiedTime;
-          if (isOldResource) {
-            fs.removeSync(USER_RESOURCE_PATH);
-            copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
+          const staticResourceVersionPath = ResourceAPI.getLatestVersion(STATIC_RESOURCE_PATH);
+          const filename = 'manifest.json';
+          const userResourceManifestPath = path.join(userResourceVersionPath, filename);
+          const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
+
+          if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
+            const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
+            const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
+            const isOldResource = userModifiedTime < staticModifiedTime;
+            if (isOldResource) {
+              fs.removeSync(USER_RESOURCE_PATH);
+              copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
+            }
           }
         }
       });
