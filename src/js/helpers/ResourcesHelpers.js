@@ -659,15 +659,36 @@ export function getMissingResources() {
           checkForNewLexicons(languageId);
           extractZippedResourceContent(USER_RESOURCE_PATH, resourceType === "bibles");
         } else if (!fs.existsSync(USER_RESOURCE_PATH)) {// if resource isnt found in user resources folder.
-          fs.copySync(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH);
-          console.log(
-            `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
-            'color: #00aced'
-          );
-          // extract zippped contents
-          extractZippedResourceContent(USER_RESOURCE_PATH, resourceType === "bibles");
+          copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
+        } else {// compare resources manifest modified time
+          const userResourceVersionPath = ResourceAPI.getLatestVersion(USER_RESOURCE_PATH);
+          const staticResourceVersionPath = ResourceAPI.getLatestVersion(STATIC_RESOURCE_PATH);
+          const filename = 'manifest.json';
+          const userResourceManifestPath = path.join(userResourceVersionPath, filename);
+          const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
+
+          if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
+            const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
+            const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
+            const isOldResource = userModifiedTime < staticModifiedTime;
+            if (isOldResource) {
+              fs.removeSync(USER_RESOURCE_PATH);
+              copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
+            }
+          }
         }
       });
     });
   });
+}
+
+
+function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType) {
+  fs.copySync(staticResourcePath, userResourcePath);
+  console.log(
+    `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
+    'color: #00aced'
+  );
+  // extract zippped contents
+  extractZippedResourceContent(userResourcePath, resourceType === "bibles");
 }
