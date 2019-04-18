@@ -41,6 +41,7 @@ import {
 } from "../../helpers/ResourcesHelpers";
 import * as BibleHelpers from "../../helpers/bibleHelpers";
 import {delay} from '../../common/utils';
+import * as Bible from "../../common/BooksOfTheBible";
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -92,8 +93,8 @@ export const openProject = (name, skipValidation=false) => {
         // copy group data
         // TRICKY: group data must be tied to the original language.
         console.log("openProject() - copy group data");
-        const olForBook = BibleHelpers.getOLforBook(bookId);
-        let helpDir = (olForBook && olForBook.languageId) || 'grc';
+        const olForBook = BibleHelpers.getOrigLangforBook(bookId);
+        let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
         copyGroupDataToProject(helpDir, t.name, validProjectDir);
 
         // select default categories

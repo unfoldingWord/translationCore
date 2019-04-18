@@ -57,6 +57,194 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
     }
   >
     <div
+      key="0"
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "margin": "0 0 5 0",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "width": "92%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "width": "38px",
+            }
+          }
+        >
+          <Checkbox
+            checked={true}
+            disabled={false}
+            iconStyle={
+              Object {
+                "fill": "black",
+                "margin": "0, 0, 0, 0",
+              }
+            }
+            labelPosition="right"
+            onCheck={[Function]}
+            style={
+              Object {
+                "width": "unset",
+              }
+            }
+          />
+        </div>
+        <div>
+          translated: tool_card_categories.cultural
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignSelf": "flex-end",
+          }
+        }
+      >
+        <Glyphicon
+          bsClass="glyphicon"
+          glyph="chevron-up"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontSize": "18px",
+              "margin": "0 12px 0 0",
+              "textAlign": "right",
+              "width": "20px",
+            }
+          }
+        >
+          <span
+            className="glyphicon glyphicon-chevron-up"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontSize": "18px",
+                "margin": "0 12px 0 0",
+                "textAlign": "right",
+                "width": "20px",
+              }
+            }
+          />
+        </Glyphicon>
+      </div>
+      <div
+        key="0"
+        style={
+          Object {
+            "alignItems": "left",
+            "display": "flex",
+            "flexWrap": "wrap",
+            "marginBottom": 5,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          key="0"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-explicit
+          </span>
+        </div>
+        <div
+          key="1"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.translate-symaction
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
       key="1"
       style={
         Object {
@@ -240,6 +428,382 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
             }
           >
             translated: tool_card_categories.figs-doublenegatives
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      key="2"
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "margin": "0 0 5 0",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "width": "92%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "width": "38px",
+            }
+          }
+        >
+          <Checkbox
+            checked={false}
+            disabled={false}
+            iconStyle={
+              Object {
+                "fill": "black",
+                "margin": "0, 0, 0, 0",
+              }
+            }
+            labelPosition="right"
+            onCheck={[Function]}
+            style={
+              Object {
+                "width": "unset",
+              }
+            }
+          />
+        </div>
+        <div>
+          translated: tool_card_categories.lexical
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignSelf": "flex-end",
+          }
+        }
+      >
+        <Glyphicon
+          bsClass="glyphicon"
+          glyph="chevron-up"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontSize": "18px",
+              "margin": "0 12px 0 0",
+              "textAlign": "right",
+              "width": "20px",
+            }
+          }
+        >
+          <span
+            className="glyphicon glyphicon-chevron-up"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontSize": "18px",
+                "margin": "0 12px 0 0",
+                "textAlign": "right",
+                "width": "20px",
+              }
+            }
+          />
+        </Glyphicon>
+      </div>
+      <div
+        key="2"
+        style={
+          Object {
+            "alignItems": "left",
+            "display": "flex",
+            "flexWrap": "wrap",
+            "marginBottom": 5,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          key="0"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.numbers
+          </span>
+        </div>
+        <div
+          key="1"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={false}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.translate-ordinal
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      key="3"
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "margin": "0 0 5 0",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "width": "92%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "width": "38px",
+            }
+          }
+        >
+          <Checkbox
+            checked={false}
+            disabled={false}
+            iconStyle={
+              Object {
+                "fill": "black",
+                "margin": "0, 0, 0, 0",
+              }
+            }
+            labelPosition="right"
+            onCheck={[Function]}
+            style={
+              Object {
+                "width": "unset",
+              }
+            }
+          />
+        </div>
+        <div>
+          translated: tool_card_categories.morphological
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignSelf": "flex-end",
+          }
+        }
+      >
+        <Glyphicon
+          bsClass="glyphicon"
+          glyph="chevron-up"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontSize": "18px",
+              "margin": "0 12px 0 0",
+              "textAlign": "right",
+              "width": "20px",
+            }
+          }
+        >
+          <span
+            className="glyphicon glyphicon-chevron-up"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontSize": "18px",
+                "margin": "0 12px 0 0",
+                "textAlign": "right",
+                "width": "20px",
+              }
+            }
+          />
+        </Glyphicon>
+      </div>
+      <div
+        key="3"
+        style={
+          Object {
+            "alignItems": "left",
+            "display": "flex",
+            "flexWrap": "wrap",
+            "marginBottom": 5,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          key="0"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-activepassive
+          </span>
+        </div>
+        <div
+          key="1"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={false}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-gendernotations
           </span>
         </div>
       </div>

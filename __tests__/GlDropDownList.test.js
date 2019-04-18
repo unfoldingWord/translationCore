@@ -25,7 +25,7 @@ describe('Test Gateway Language Drop Down List',() => {
   });
 
   test('Comparing dropdownlist Component render with snapshot', () => {
-    const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+    const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
     const props = {

@@ -45,7 +45,7 @@ describe("copy group data", () => {
     expect(generateChapterGroupData).not.toBeCalled();
   });
 
-  it.only("has no group data", () => {
+  it("has no group data", () => {
     mockGetLatestTranslationHelp.mockReturnValue("/help/dir");
     fs.readdirSync.mockReturnValueOnce([]);
 

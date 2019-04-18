@@ -3,6 +3,7 @@ import Path from 'path-extra';
 import fs from 'fs-extra';
 import BooksOfBible from '../../../tcResources/books';
 import BooksOfTheBible from '../common/BooksOfTheBible';
+import * as Bible from '../common/BooksOfTheBible';
 import ResourceAPI from "./ResourceAPI";
 
 /**
@@ -42,14 +43,14 @@ export function isValidBibleBook(bookId) {
 }
 
 /**
- * determine
+ * determine Original Language and Original Language bible for book
  * @param bookId
  * @return {{resourceLanguage: string, bibleID: string}}
  */
-export function getOLforBook(bookId) {
+export function getOrigLangforBook(bookId) {
   const isOT = isOldTestament(bookId);
-  const languageId = (isOT) ? 'hbo' : 'grc';
-  const bibleId = (isOT) ? 'uhb' : 'ugnt';
+  const languageId = (isOT) ? Bible.OT_ORIG_LANG : Bible.NT_ORIG_LANG;
+  const bibleId = (isOT) ? Bible.OT_ORIG_LANG_BIBLE : Bible.NT_ORIG_LANG_BIBLE;
   return {languageId, bibleId};
 }
 

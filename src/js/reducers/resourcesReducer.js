@@ -1,4 +1,5 @@
 import consts from '../actions/ActionTypes';
+import * as Bible from "../common/BooksOfTheBible";
 
 const initialState = {
   bibles: {},
@@ -106,7 +107,8 @@ export const getTargetBook = state => {
  * @returns {*}
  */
 export const getSourceBook = state => {
-  return state.bibles.originalLanguage && (state.bibles.originalLanguage.ugnt || state.bibles.originalLanguage.uhb);
+  return state.bibles.originalLanguage && (state.bibles.originalLanguage[Bible.NT_ORIG_LANG_BIBLE] ||
+    state.bibles.originalLanguage[Bible.OT_ORIG_LANG_BIBLE]);
 };
 
 /**
