@@ -1,10 +1,16 @@
 import path from "path-extra";
 import fs from "fs-extra";
+import isEqual from 'deep-equal';
 // actions
 import { loadCheckData } from '../actions/CheckDataLoadActions';
+import ospath from "ospath";
+import ResourceAPI from "./ResourceAPI";
+import * as BibleHelpers from "./bibleHelpers";
 // constants
 const PROJECT_TC_DIR = path.join('.apps', 'translationCore');
 const CHECKDATA_DIRECTORY = path.join(PROJECT_TC_DIR, 'checkData');
+export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
+  "resources");
 
 /**
  * Provides an interface with which tools can interact with a project.
@@ -80,7 +86,9 @@ export default class ProjectAPI {
    */
   getGroupsData(toolName) {
     const data = {};
+    const checkCache = {};
     const dir = this.getCategoriesDir(toolName);
+    const resources = ResourceAPI.default();
 
     if (fs.pathExistsSync(dir) && fs.lstatSync(dir).isDirectory()) {
       const files = fs.readdirSync(dir);
@@ -112,6 +120,10 @@ export default class ProjectAPI {
               groupDataItem.selections = selections || false;
               return groupDataItem;
             }
+            if (groupDataItem.contextId && groupDataItem.contextId.quote && groupDataItem.contextId.groupId &&
+                (groupDataItem.contextId.tool === "translationWords")) {
+              this.validateQuote(groupDataItem, checkCache, resources, toolName);
+            }
             return groupDataItem;
           });
 
@@ -124,6 +136,53 @@ export default class ProjectAPI {
     }
 
     return data;
+  }
+
+  /**
+   * makes sure the quote is valid format - string if single word or array if multiple word.  If not correct format
+   *    then we reload from recent resources
+   * @param {Object} groupDataItem
+   * @param {Object} checkCache - to persist resources read
+   * @param {Object} resources
+   * @param {String} toolName
+   */
+  validateQuote(groupDataItem, checkCache, resources, toolName) {
+    const quote = groupDataItem.contextId.quote;
+    if (!Array.isArray(quote)) {
+      if ((typeof quote !== 'string') || quote.split(' ').length > 1) { // if not string or multiword string
+        // update from OrigLang
+        const groupId = groupDataItem.contextId.groupId;
+        let checks = checkCache[groupId];
+        if (!checks) {
+          const bookId = groupDataItem.contextId.reference.bookId;
+          const {languageId} = BibleHelpers.getOLforBook(bookId);
+          const helpDir = resources.getLatestTranslationHelp(languageId, toolName);
+          if (fs.pathExistsSync(helpDir)) {
+            const availableCategories = fs.readdirSync(helpDir).filter((dirName) =>
+              fs.lstatSync(path.join(helpDir, dirName)).isDirectory()
+            );
+            for (let i = 0, l = availableCategories.length; i < l; i++) {
+              const twPath = path.join(helpDir, availableCategories[i], "groups", bookId, groupId + ".json");
+              if (fs.pathExistsSync(twPath)) {
+                checks = fs.readJSONSync(twPath);
+                checkCache[groupId] = checks;
+                break;
+              }
+            }
+          }
+        }
+        if (checks) {
+          for (let i = 0, l = checks.length; i < l; i++) {
+            const item = checks[i];
+            if (isEqual(item.contextId.reference, groupDataItem.contextId.reference) &&
+                  (item.contextId.occurrence === groupDataItem.contextId.occurrence)) {
+              groupDataItem.contextId.quote = item.contextId.quote; // update the quote
+              break;
+            }
+          }
+        }
+      }
+    }
   }
 
   /**
