@@ -58,7 +58,7 @@ describe('getProjectProgressForTools() should create an action to get the projec
     }
   };
   fs.__setMockFS({
-    [path.join(path.homedir(), 'translationCore/resources/grc/bibles/ugnt/v11/index.json')]: {}
+    [path.join(path.homedir(), 'translationCore/resources/el-x-koine/bibles/ugnt/v11/index.json')]: {}
   });
 
   it('should fail if no toolName is given', () => {
@@ -402,7 +402,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
     fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const resourcesPath = RESOURCE_PATH;
-    const copyResourceFiles = ['grc'];
+    const copyResourceFiles = ['el-x-koine'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
 
@@ -448,7 +448,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       const copyFiles = [project_name];
       fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
       const resourcesPath = RESOURCE_PATH;
-      const copyResourceFiles = ['grc', 'en'];
+      const copyResourceFiles = ['el-x-koine', 'en'];
       fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
     });
 

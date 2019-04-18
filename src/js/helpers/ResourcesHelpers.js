@@ -19,6 +19,7 @@ import {
   generateChapterGroupData,
   generateChapterGroupIndex
 } from "./groupDataHelpers";
+import * as Bible from "../common/BooksOfTheBible";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
   "resources");
@@ -75,12 +76,21 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   }
 }
 
+/**
+ * get available categories
+ * @param {String} gatewayLanguage
+ * @param {String} toolName
+ * @param {String} projectDir
+ */
 export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir) {
   const categoriesObj = {};
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
   if (toolName === 'translationWords'){
-    gatewayLanguage = 'grc';
+    const manifest = project.getManifest();
+    const bookId = manifest && manifest.project && manifest.project.id;
+    const {languageId} = BibleHelpers.getOrigLangforBook(bookId);
+    gatewayLanguage = languageId;
   }
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   // list help categories
@@ -209,6 +219,32 @@ export const copySourceContentUpdaterManifest = () => {
   }
 };
 
+/**
+ * checks if bundled resources are newer than installed resources
+ * @return {boolean} - true if bundled resources are newer
+ */
+export const areResourcesNewer = () => {
+  const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
+    "source-content-updater-manifest.json");
+  if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
+    return true;
+  }
+
+  const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
+    "source-content-updater-manifest.json");
+  if (!fs.existsSync(sourceContentUpdaterManifestPath)) {
+    console.error("sourceContentUpdaterManifest does not exist");
+    return false;
+  }
+  const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
+  const bundledModified = bundledManifest && bundledManifest.modified;
+  const userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
+  const userModified = userManifest && userManifest.modified;
+
+  const newer = bundledModified > userModified;
+  return newer;
+};
+
 export const extractZippedResourceContent = (resourceDestinationPath, isBible) => {
   const versionPath = ResourceAPI.getLatestVersion(resourceDestinationPath);
   const filename = isBible ? 'books.zip' : 'contents.zip';
@@ -316,9 +352,9 @@ export function getLanguageIdsFromResourceFolder(bookId) {
     let languageIds = getFilesInResourcePath(USER_RESOURCES_PATH);
     // if its an old testament project remove greek from languageIds.
     if (BibleHelpers.isOldTestament(bookId)) {
-      languageIds = languageIds.filter(languageId => languageId !== "grc");
+      languageIds = languageIds.filter(languageId => languageId !== Bible.NT_ORIG_LANG);
     } else { // else if its a new testament project remove hebrew from languageIds.
-      languageIds = languageIds.filter(languageId => languageId !== "hbo");
+      languageIds = languageIds.filter(languageId => languageId !== Bible.OT_ORIG_LANG);
     }
     languageIds = languageIds.filter(languageID => {
       let valid = (fs.lstatSync(path.join(USER_RESOURCES_PATH, languageID)).
@@ -403,7 +439,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
                   path.join(bibleLatestVersion, bookId, "1.json"));
                 if (manifestExists && bookExists) {
                   let languageId_ = languageId;
-                  if ((languageId.toLowerCase() === 'grc') || (languageId.toLowerCase() === 'hbo')) {
+                  if ((languageId.toLowerCase() === Bible.NT_ORIG_LANG) || (languageId.toLowerCase() === Bible.OT_ORIG_LANG)) {
                     languageId_ = 'originalLanguage';
                   }
                   const manifest = fs.readJsonSync(pathToBibleManifestFile);
@@ -442,10 +478,8 @@ export function getAvailableScripturePaneSelections(resourceList) {
  */
 export function getResourcesNeededByTool(state, bookId, toolName) {
   const resources = [];
-  const olLanguageID = BibleHelpers.isOldTestament(bookId) ? "hbo" : "grc";
-  const olBibleId = BibleHelpers.isOldTestament(bookId) ? "uhb" : "ugnt";
-  const currentPaneSettings = _.cloneDeep(
-    SettingsHelpers.getCurrentPaneSetting(state));
+  const {languageId: olLanguageID, bibleId: olBibleId} = BibleHelpers.getOrigLangforBook(bookId);
+  const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
 
   // TODO: hardcoded fixed for 1.1.0, the En ULT is used by the expanded scripture pane & if
   // not found throws an error. Should be addressed later by 4858.

@@ -105,13 +105,6 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
   const supportedLanguageCodes = Object.keys(languageBookData);
   const supportedLanguages = supportedLanguageCodes.map(code => {
     let lang = getLanguageByCodeSelection(code);
-    if (!lang && (code === 'grc')) { // add special handling for greek - even though it is an Original Language, it can be used as a gateway Language also
-      lang = {
-        code,
-        name: 'Greek',
-        ltr: true
-      };
-    }
     if (lang) {
       lang = _.cloneDeep(lang); // make duplicate before modifying
       const bookData = languageBookData[code];
@@ -210,7 +203,7 @@ function getValidResourcePath(langPath, subpath) {
  * @return {String}
  */
 export function getOlBookPath(bookId) {
-  const {languageId, bibleId} = BibleHelpers.getOLforBook(bookId);
+  const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(bookId);
   const originalSubPath = `${languageId}/bibles/${bibleId}`;
   const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
   return origPath;
@@ -237,7 +230,7 @@ export function hasValidOL(bookId, minimumCheckingLevel = 0) {
  *      - supported bible:
  *          - contains the book, and which must have alignments
  *          - bible has a manifest
- *      - the book must also be present in the Original Language (such as grc).
+ *      - the book must also be present in the Original Language (such as el-x-koine).
  *    for other tools (with helpsChecks) have the requirements above plus:
  *       - the Original Language for book must be at least checking level 2 (in manifest).
  *       - the aligned bible in the gateway Language:
@@ -326,7 +319,7 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
  *      - supported bible:
  *          - contains the book, and which must have alignments
  *          - bible has a manifest
- *      - the book must also be present in the Original Language (such as grc).
+ *      - the book must also be present in the Original Language (such as el-x-koine).
  *    for other tools (with helpsChecks) have the requirements above plus:
  *       - the Original Language for book must be at least checking level 2 (in manifest).
  *       - the aligned bible in the gateway Language:
@@ -361,7 +354,7 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
           isBibleValidSource = isBibleValidSource && isValidOrig;
 
           if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
-            const olBook = BibleHelpers.getOLforBook(bookId);
+            const olBook = BibleHelpers.getOrigLangforBook(bookId);
             const olPath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, olBook.languageId);
             isBibleValidSource = isBibleValidSource && hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId);
           }
