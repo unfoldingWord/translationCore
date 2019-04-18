@@ -295,9 +295,9 @@ export default class ProjectAPI {
         const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
         currentGroupsData.forEach((category) => {
           if (!rawData.loaded.includes(path.parse(category).name)) {
-            fs.removeSync(path.join(groupsPath, category))
+            fs.removeSync(path.join(groupsPath, category));
           }
-        })
+        });
       } catch (e) {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
