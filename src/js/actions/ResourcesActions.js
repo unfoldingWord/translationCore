@@ -244,17 +244,16 @@ function removeBibleFromList(resources, bibleId, languageId) {
  * @return {Array} array of resource in scripture panel
  */
 export const updateOlPaneSettings = (bookId) => (dispatch, getState) => {
-  const isOT = BibleHelpers.isOldTestament(bookId);
-  const olBibleId = isOT ? 'uhb' : 'ugnt';
+  const {bibleId} = BibleHelpers.getOrigLangforBook(bookId);
   const newCurrentPaneSettings = SettingsHelpers.getCurrentPaneSetting(getState());
   let changed = false;
   if (Array.isArray(newCurrentPaneSettings)) {
     for (let setting of newCurrentPaneSettings) {
       let languageId = setting.languageId;
       if (languageId === "originalLanguage") {
-        if (setting.bibleId !== olBibleId) { // if we have switched testaments
+        if (setting.bibleId !== bibleId) { // if we have switched testaments
           changed = true;
-          setting.bibleId = olBibleId;
+          setting.bibleId = bibleId;
         }
       }
     }
