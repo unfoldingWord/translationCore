@@ -531,7 +531,8 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
         }
       }
     }
-    const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'el-x-koine', 'ugnt');
+    const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(bookId);
+    const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, languageId, bibleId);
     totalChecks = Object.keys(expectedVerses[chapterNum]).length;
     if (totalChecks) {
       return checked / totalChecks;
