@@ -625,15 +625,30 @@ export function getMissingResources() {
           checkForNewLexicons(languageId);
           extractZippedResourceContent(USER_RESOURCE_PATH, resourceType === "bibles");
         } else if (!fs.existsSync(USER_RESOURCE_PATH)) {// if resource isnt found in user resources folder.
-          fs.copySync(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH);
-          console.log(
-            `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
-            'color: #00aced'
-          );
-          // extract zippped contents
-          extractZippedResourceContent(USER_RESOURCE_PATH, resourceType === "bibles");
+          copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
+        } else {
+          const userResourceVersionPath = ResourceAPI.getLatestVersion(USER_RESOURCE_PATH);
+          const statisResourceVersionPath = ResourceAPI.getLatestVersion(STATIC_RESOURCE_PATH);
+          const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceVersionPath) || {};
+          const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(statisResourceVersionPath) || {};
+          const isOldResource = userModifiedTime < staticModifiedTime;
+          if (isOldResource) {
+            fs.removeSync(USER_RESOURCE_PATH);
+            copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
+          }
         }
       });
     });
   });
+}
+
+
+function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType) {
+  fs.copySync(staticResourcePath, userResourcePath);
+  console.log(
+    `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
+    'color: #00aced'
+  );
+  // extract zippped contents
+  extractZippedResourceContent(userResourcePath, resourceType === "bibles");
 }
