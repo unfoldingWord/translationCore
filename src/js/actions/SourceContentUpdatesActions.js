@@ -11,6 +11,7 @@ import { generateTimestamp } from '../helpers/TimestampGenerator';
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
 import {copyGroupDataToProject} from '../helpers/ResourcesHelpers';
 import {getOLforBook} from '../helpers/bibleHelpers';
+import * as Bible from "../common/BooksOfTheBible";
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
@@ -103,7 +104,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
             const projectSaveLocation = getProjectSaveLocation(getState());
             const bookId = getProjectBookId(getState());
             const olForBook = getOLforBook(bookId);
-            let helpDir = (olForBook && olForBook.languageId) || 'grc';
+            let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
             await dispatch(loadBookTranslations(contextId.reference.bookId));
             //Tool is open so we need to update existing group data
             copyGroupDataToProject(helpDir, toolName, projectSaveLocation);
