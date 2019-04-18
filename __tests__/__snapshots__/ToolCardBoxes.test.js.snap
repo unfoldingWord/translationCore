@@ -4,48 +4,69 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
 <ToolCardBoxes
   availableCategories={
     Object {
-      "cultural": Array [
+      "culture": Array [
         "figs-explicit",
-        "translate-symaction",
+      ],
+      "discourse": Array [
+        "writing-background",
+        "writing-endofstory",
       ],
       "figures": Array [
+        "figs-idiom",
+        "figs-irony",
+        "figs-metaphor",
+        "figs-rquestion",
+        "figs-simile",
         "figs-apostrophe",
-        "figs-doublenegatives",
+        "figs-euphemism",
       ],
-      "lexical": Array [
-        "translate-numbers",
-        "translate-ordinal",
-      ],
-      "morphological": Array [
+      "grammar": Array [
+        "figs-hypo",
         "figs-activepassive",
         "figs-gendernotations",
-      ],
-      "other": Array [
+        "figs-pronouns",
+        "figs-you",
         "figs-123person",
         "figs-abstractnouns",
+        "figs-distinguish",
+      ],
+      "numbers": Array [
+        "translate-numbers",
+        "translate-fraction",
       ],
     }
   }
-  bookId="mat"
+  bookId="tit"
   checks={
     Array [
-      "kt",
-      "other",
-      "names",
+      "figs-gendernotations",
+      "figs-pronouns",
+      "figs-irony",
     ]
   }
   onChecked={[Function]}
   selectedCategories={
     Array [
-      "figs-explicit",
-      "translate-symaction",
+      "writing-background",
       "translate-numbers",
+      "translate-fraction",
+      "figs-idiom",
+      "figs-irony",
+      "figs-metaphor",
+      "figs-rquestion",
+      "figs-simile",
       "figs-apostrophe",
-      "figs-doublenegatives",
+      "figs-explicit",
+      "figs-hypo",
       "figs-activepassive",
+      "figs-pronouns",
+      "figs-you",
       "figs-123person",
+      "figs-abstractnouns",
     ]
   }
+  selectedGL="en"
+  showPopover={[Function]}
   toolName="translationNotes"
   translate={[Function]}
 >
@@ -83,7 +104,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
           }
         >
           <Checkbox
-            checked={true}
+            checked={false}
             disabled={false}
             iconStyle={
               Object {
@@ -101,7 +122,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
           />
         </div>
         <div>
-          translated: tool_card_categories.cultural
+          translated: tool_card_categories.discourse
         </div>
       </div>
       <div
@@ -193,7 +214,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             }
           >
-            translated: tool_card_categories.figs-explicit
+            translated: tool_card_categories.writing-background
           </span>
         </div>
         <div
@@ -214,7 +235,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
             }
           >
             <Checkbox
-              checked={true}
+              checked={false}
               disabled={false}
               iconStyle={
                 Object {
@@ -239,7 +260,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             }
           >
-            translated: tool_card_categories.translate-symaction
+            translated: tool_card_categories.writing-endofstory
           </span>
         </div>
       </div>
@@ -289,7 +310,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
           />
         </div>
         <div>
-          translated: tool_card_categories.figures
+          translated: tool_card_categories.numbers
         </div>
       </div>
       <div
@@ -381,7 +402,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             }
           >
-            translated: tool_card_categories.figs-apostrophe
+            translated: tool_card_categories.numbers
           </span>
         </div>
         <div
@@ -427,7 +448,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             }
           >
-            translated: tool_card_categories.figs-doublenegatives
+            translated: tool_card_categories.translate-fraction
           </span>
         </div>
       </div>
@@ -477,7 +498,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
           />
         </div>
         <div>
-          translated: tool_card_categories.lexical
+          translated: tool_card_categories.figures
         </div>
       </div>
       <div
@@ -569,11 +590,241 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             }
           >
-            translated: tool_card_categories.numbers
+            translated: tool_card_categories.figs-idiom
           </span>
         </div>
         <div
           key="1"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-irony
+          </span>
+        </div>
+        <div
+          key="2"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-metaphor
+          </span>
+        </div>
+        <div
+          key="3"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-rquestion
+          </span>
+        </div>
+        <div
+          key="4"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-simile
+          </span>
+        </div>
+        <div
+          key="5"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-apostrophe
+          </span>
+        </div>
+        <div
+          key="6"
           style={
             Object {
               "display": "flex",
@@ -615,13 +866,96 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             }
           >
-            translated: tool_card_categories.translate-ordinal
+            translated: tool_card_categories.figs-euphemism
           </span>
         </div>
       </div>
     </div>
     <div
       key="3"
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "margin": "0 0 5 0",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "width": "92%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "width": "38px",
+            }
+          }
+        >
+          <Checkbox
+            checked={true}
+            disabled={false}
+            iconStyle={
+              Object {
+                "fill": "black",
+                "margin": "0, 0, 0, 0",
+              }
+            }
+            labelPosition="right"
+            onCheck={[Function]}
+            style={
+              Object {
+                "width": "unset",
+              }
+            }
+          />
+        </div>
+        <div>
+          translated: tool_card_categories.culture
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignSelf": "flex-end",
+          }
+        }
+      >
+        <Glyphicon
+          bsClass="glyphicon"
+          glyph="chevron-down"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontSize": "18px",
+              "margin": "0 12px 0 0",
+              "textAlign": "right",
+              "width": "20px",
+            }
+          }
+        >
+          <span
+            className="glyphicon glyphicon-chevron-down"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontSize": "18px",
+                "margin": "0 12px 0 0",
+                "textAlign": "right",
+                "width": "20px",
+              }
+            }
+          />
+        </Glyphicon>
+      </div>
+    </div>
+    <div
+      key="4"
       style={
         Object {
           "display": "flex",
@@ -665,7 +999,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
           />
         </div>
         <div>
-          translated: tool_card_categories.morphological
+          translated: tool_card_categories.grammar
         </div>
       </div>
       <div
@@ -703,7 +1037,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
         </Glyphicon>
       </div>
       <div
-        key="3"
+        key="4"
         style={
           Object {
             "alignItems": "left",
@@ -757,11 +1091,57 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             }
           >
-            translated: tool_card_categories.figs-activepassive
+            translated: tool_card_categories.figs-hypo
           </span>
         </div>
         <div
           key="1"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-activepassive
+          </span>
+        </div>
+        <div
+          key="2"
           style={
             Object {
               "display": "flex",
@@ -804,6 +1184,236 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
             }
           >
             translated: tool_card_categories.figs-gendernotations
+          </span>
+        </div>
+        <div
+          key="3"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-pronouns
+          </span>
+        </div>
+        <div
+          key="4"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-you
+          </span>
+        </div>
+        <div
+          key="5"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-123person
+          </span>
+        </div>
+        <div
+          key="6"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={true}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-abstractnouns
+          </span>
+        </div>
+        <div
+          key="7"
+          style={
+            Object {
+              "display": "flex",
+              "width": "48%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": "36px",
+                "width": "38px",
+              }
+            }
+          >
+            <Checkbox
+              checked={false}
+              disabled={false}
+              iconStyle={
+                Object {
+                  "fill": "black",
+                  "margin": "0, 0, 0, 0",
+                }
+              }
+              labelPosition="right"
+              onCheck={[Function]}
+              style={
+                Object {
+                  "width": "unset",
+                }
+              }
+            />
+          </div>
+          <span
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            translated: tool_card_categories.figs-distinguish
           </span>
         </div>
       </div>
