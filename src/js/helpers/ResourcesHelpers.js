@@ -219,6 +219,32 @@ export const copySourceContentUpdaterManifest = () => {
   }
 };
 
+/**
+ * checks if bundled resources are newer than installed resources
+ * @return {boolean} - true if bundled resources are newer
+ */
+export const areResourcesNewer = () => {
+  const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
+    "source-content-updater-manifest.json");
+  if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
+    return true;
+  }
+
+  const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
+    "source-content-updater-manifest.json");
+  if (!fs.existsSync(sourceContentUpdaterManifestPath)) {
+    console.error("sourceContentUpdaterManifest does not exist");
+    return false;
+  }
+  const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
+  const bundledModified = bundledManifest && bundledManifest.modified;
+  const userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
+  const userModified = userManifest && userManifest.modified;
+
+  const newer = bundledModified > userModified;
+  return newer;
+};
+
 export const extractZippedResourceContent = (resourceDestinationPath, isBible) => {
   const versionPath = ResourceAPI.getLatestVersion(resourceDestinationPath);
   const filename = isBible ? 'books.zip' : 'contents.zip';
