@@ -350,7 +350,7 @@ export default class ProjectAPI {
     const indexPath = path.join(this.getCategoriesDir(toolName),
       ".categoryIndex");
     fs.removeSync(indexPath);
-    fs.mkdirSync(indexPath);
+    fs.ensureDirSync(indexPath);
   }
 
   /**
