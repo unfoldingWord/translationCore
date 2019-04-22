@@ -61,6 +61,9 @@ describe('ProjectAPI', () => {
   });
 
   describe('import group data', () => {
+    beforeEach(() => {
+      jest.resetAllMocks();
+    });
     it('imports new group data', () => {
       const p = new ProjectAPI('/root');
 
@@ -76,8 +79,9 @@ describe('ProjectAPI', () => {
 
       fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
       fs.pathExistsSync.mockReturnValueOnce(true); // file already exists
+      fs.readJsonSync.mockReturnValueOnce({loaded: ["group"]});
 
-      p.importCategoryGroupData('tool', 'src/path');
+      p.importCategoryGroupData('tool', 'src/path/group.json');
       expect(fs.copySync).not.toBeCalled();
     });
   });
@@ -140,7 +144,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["other", "category"]});
+        {"current": [], "loaded": ["other", "category"], timestamp: expect.any(String)});
     });
 
     it('removes loaded', () => {
@@ -155,7 +159,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["other"]});
+        {"current": [], "loaded": ["other"], timestamp: expect.any(String)});
     });
 
     it('rebuilds missing file', () => {
@@ -169,7 +173,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["category"]});
+        {"current": [], "loaded": ["category"], timestamp: expect.any(String)});
     });
 
     it('rebuilds corrupt file', () => {
@@ -184,7 +188,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["category"]});
+        {"current": [], "loaded": ["category"], timestamp: expect.any(String)});
     });
   });
 
@@ -198,6 +202,19 @@ describe('ProjectAPI', () => {
       fs.readJsonSync.mockReturnValueOnce({current: ["category"]});
 
       expect(p.getSelectedCategories('tool')).toEqual(["category"]);
+      expect(console.warn).not.toBeCalled();
+    });
+
+    it('with parent', () => {
+      const p = new ProjectAPI('/root');
+      jest.spyOn(global.console, 'warn');
+      fs.readFileSync.mockReturnValue(`{"project":{"id":"book"}}`);
+      fs.pathExistsSync.mockReturnValue(true);
+      fs.readJsonSync.mockReturnValueOnce({current: ["category"]});
+      fs.readdirSync.mockReturnValueOnce(['parent.json']);
+      fs.readJsonSync.mockReturnValueOnce(["category", "category2"]);
+
+      expect( p.getSelectedCategories('tool', true)).toMatchObject({parent:['category']});
       expect(console.warn).not.toBeCalled();
     });
 
@@ -252,7 +269,7 @@ describe('ProjectAPI', () => {
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": ["category"], "loaded": []}
+        {"current": ["category"], "loaded": [], timestamp: expect.any(String)}
       );
       expect(console.warn).not.toBeCalled();
     });
@@ -268,7 +285,7 @@ describe('ProjectAPI', () => {
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": ["category"], "loaded": []}
+        {"current": ["category"], "loaded": [], timestamp: expect.any(String)}
       );
       expect(console.warn).toBeCalled();
     });
