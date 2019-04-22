@@ -1,16 +1,14 @@
 import path from "path-extra";
-import fs from "fs-extra";
-import isEqual from 'deep-equal';
-// actions
-import { loadCheckData } from '../actions/CheckDataLoadActions';
 import ospath from "ospath";
-import ResourceAPI from "./ResourceAPI";
-import * as BibleHelpers from "./bibleHelpers";
+import fs from "fs-extra";
+import {generateTimestamp} from "./TimestampGenerator";
+export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
+  "resources");
+// actions
+import {loadCheckData} from '../actions/CheckDataLoadActions';
 // constants
 const PROJECT_TC_DIR = path.join('.apps', 'translationCore');
 const CHECKDATA_DIRECTORY = path.join(PROJECT_TC_DIR, 'checkData');
-export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
-  "resources");
 
 /**
  * Provides an interface with which tools can interact with a project.
@@ -48,6 +46,7 @@ export default class ProjectAPI {
     this.getGroupsData = this.getGroupsData.bind(this);
     this.getGroupData = this.getGroupData.bind(this);
     this.setCategoryGroupIds = this.setCategoryGroupIds.bind(this);
+    this.getAllCategoryMapping = this.getAllCategoryMapping.bind(this);
   }
 
   /**
@@ -86,19 +85,14 @@ export default class ProjectAPI {
    */
   getGroupsData(toolName) {
     const data = {};
-    const checkCache = {};
     const dir = this.getCategoriesDir(toolName);
-    const resources = ResourceAPI.default();
 
     if (fs.pathExistsSync(dir) && fs.lstatSync(dir).isDirectory()) {
-      const files = fs.readdirSync(dir);
+      const files = fs.readdirSync(dir)
+        .filter(item => path.extname(item) === '.json');
 
       for (let i = 0, len = files.length; i < len; i++) {
         const dataPath = path.join(dir, files[i]);
-        if (path.extname(dataPath) !== ".json") {
-          continue;
-        }
-
         const groupName = path.basename(dataPath, ".json");
         try {
           let groupData = fs.readJsonSync(dataPath);
@@ -106,7 +100,7 @@ export default class ProjectAPI {
           // check & fix corrupted selections value for each group data item.
           groupData = groupData.map(groupDataItem => {
             if (groupDataItem.selections === true) {// if selections is true then find selections array.
-              const { bookId, chapter, verse } = groupDataItem.contextId.reference;
+              const {bookId, chapter, verse} = groupDataItem.contextId.reference;
               const loadPath = path.join(
                 this._projectPath,
                 CHECKDATA_DIRECTORY,
@@ -116,13 +110,9 @@ export default class ProjectAPI {
                 verse.toString()
               );
 
-              const { selections } = loadCheckData(loadPath, groupDataItem.contextId);
+              const {selections} = loadCheckData(loadPath, groupDataItem.contextId);
               groupDataItem.selections = selections || false;
               return groupDataItem;
-            }
-            if (groupDataItem.contextId && groupDataItem.contextId.quote && groupDataItem.contextId.groupId &&
-                (groupDataItem.contextId.tool === "translationWords")) {
-              this.validateQuote(groupDataItem, checkCache, resources, toolName);
             }
             return groupDataItem;
           });
@@ -136,53 +126,6 @@ export default class ProjectAPI {
     }
 
     return data;
-  }
-
-  /**
-   * makes sure the quote is valid format - string if single word or array if multiple word.  If not correct format
-   *    then we reload from recent resources
-   * @param {Object} groupDataItem
-   * @param {Object} checkCache - to persist resources read
-   * @param {Object} resources
-   * @param {String} toolName
-   */
-  validateQuote(groupDataItem, checkCache, resources, toolName) {
-    const quote = groupDataItem.contextId.quote;
-    if (!Array.isArray(quote)) {
-      if ((typeof quote !== 'string') || quote.split(' ').length > 1) { // if not string or multiword string
-        // update from OrigLang
-        const groupId = groupDataItem.contextId.groupId;
-        let checks = checkCache[groupId];
-        if (!checks) {
-          const bookId = groupDataItem.contextId.reference.bookId;
-          const {languageId} = BibleHelpers.getOLforBook(bookId);
-          const helpDir = resources.getLatestTranslationHelp(languageId, toolName);
-          if (fs.pathExistsSync(helpDir)) {
-            const availableCategories = fs.readdirSync(helpDir).filter((dirName) =>
-              fs.lstatSync(path.join(helpDir, dirName)).isDirectory()
-            );
-            for (let i = 0, l = availableCategories.length; i < l; i++) {
-              const twPath = path.join(helpDir, availableCategories[i], "groups", bookId, groupId + ".json");
-              if (fs.pathExistsSync(twPath)) {
-                checks = fs.readJSONSync(twPath);
-                checkCache[groupId] = checks;
-                break;
-              }
-            }
-          }
-        }
-        if (checks) {
-          for (let i = 0, l = checks.length; i < l; i++) {
-            const item = checks[i];
-            if (isEqual(item.contextId.reference, groupDataItem.contextId.reference) &&
-                  (item.contextId.occurrence === groupDataItem.contextId.occurrence)) {
-              groupDataItem.contextId.quote = item.contextId.quote; // update the quote
-              break;
-            }
-          }
-        }
-      }
-    }
   }
 
   /**
@@ -208,8 +151,9 @@ export default class ProjectAPI {
     const destDir = this.getCategoriesDir(toolName);
     const groupName = path.basename(dataPath);
     const destFile = path.join(destDir, groupName);
-
-    if (!fs.pathExistsSync(destFile)) {
+    const groupsDataLoaded = this.getLoadedCategories(toolName);
+    const subCategory = path.parse(dataPath).name;
+    if (!groupsDataLoaded.includes(subCategory)) {
       fs.copySync(dataPath, destFile);
       return true;
     }
@@ -247,7 +191,7 @@ export default class ProjectAPI {
    */
   getBookName() {
     const manifest = this.getManifest();
-    if(manifest.target_language && manifest.target_language.book && manifest.target_language.book.name) {
+    if (manifest.target_language && manifest.target_language.book && manifest.target_language.book.name) {
       return manifest.target_language.book.name;
     } else {
       return manifest.project.name;
@@ -281,6 +225,85 @@ export default class ProjectAPI {
 
     return false;
   }
+  /**
+   * Method to check if project groups data is out of date in relation
+   * to the last source content update
+   * @param {string} toolName - the tool name. This is synonymous with translationHelp name
+   * @returns {Boolean}
+   */
+  hasNewGroupsData(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        let rawData = fs.readJsonSync(categoriesPath);
+        const lastTimeDataUpdated = rawData.timestamp;
+        if (!lastTimeDataUpdated) {
+          return true;
+        }
+        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+        const {modified: lastTimeDataDownloaded} = fs.readJSONSync(sourceContentManifestPath);
+        return new Date(lastTimeDataDownloaded) > new Date(lastTimeDataUpdated);
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    } else {
+      return true;
+    }
+  }
+
+  /**
+   * Resets the `loaded` array of groups data
+   * Useful for forcing a reinitialization of groups data from resources into project
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   */
+  resetLoadedCategories(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        let rawData = fs.readJsonSync(categoriesPath);
+        rawData.loaded = [];
+        fs.outputJsonSync(categoriesPath, rawData);
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+  }
+
+  /**
+   * Removes categories from the currently selected that are not in the loaded array
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   */
+  removeStaleCategoriesFromCurrent(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    const groupsPath = this.getCategoriesDir(toolName);
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        let rawData = fs.readJsonSync(categoriesPath);
+        rawData.current.forEach((category, index) => {
+          if (!rawData.loaded.includes(category)) {
+            //There is something that is selected that is not loaded
+            //Or there is something that is selected that is not in the current resources folder
+            rawData.current.splice(index, 1);
+          }
+        });
+        fs.outputJsonSync(categoriesPath, rawData);
+        const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
+        currentGroupsData.forEach((category) => {
+          if (!rawData.loaded.includes(path.parse(category).name)) {
+            fs.removeSync(path.join(groupsPath, category));
+          }
+        });
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+  }
 
   /**
    * Marks a category as having been loaded into the project.
@@ -289,7 +312,7 @@ export default class ProjectAPI {
    * @param {boolean} [loaded=true] - indicates if the category is loaded
    * @returns {boolean}
    */
-  setCategoryLoaded(toolName, category, loaded=true) {
+  setCategoryLoaded(toolName, category, loaded = true) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     let data = {
@@ -301,9 +324,11 @@ export default class ProjectAPI {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
         // TRICKY: assert data structure before overwriting default to not propagate errors.
-        if(loaded) {
-          rawData.loaded.push(category);
+        if (loaded) {
+          if (!rawData.loaded.includes(category))
+            rawData.loaded.push(category);
         } else {
+          //Removing the loaded category from list
           rawData.loaded = rawData.loaded.filter(c => c !== category);
         }
         data = rawData;
@@ -312,8 +337,20 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-
+    data.timestamp = generateTimestamp();
     fs.outputJsonSync(categoriesPath, data);
+  }
+
+  /**
+   * Removes category index from project, and creates empty directory
+   * Useful for getting rid of stale data after a resource update
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   */
+  resetCategoryGroupIds(toolName) {
+    const indexPath = path.join(this.getCategoriesDir(toolName),
+      ".categoryIndex");
+    fs.removeSync(indexPath);
+    fs.mkdirSync(indexPath);
   }
 
   /**
@@ -337,7 +374,7 @@ export default class ProjectAPI {
   getCategoryGroupIds(toolName, category) {
     const indexPath = path.join(this.getCategoriesDir(toolName),
       ".categoryIndex", `${category}.json`);
-    if(fs.pathExistsSync(indexPath)) {
+    if (fs.pathExistsSync(indexPath)) {
       try {
         return fs.readJsonSync(indexPath);
       } catch (e) {
@@ -347,18 +384,82 @@ export default class ProjectAPI {
     return [];
   }
 
+  getAllCategoryMapping(toolName) {
+    const parentCategoriesObject = {};
+    const indexPath = path.join(this.getCategoriesDir(toolName),
+      ".categoryIndex");
+    if (fs.pathExistsSync(indexPath)) {
+      try {
+        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
+        parentCategories.forEach((category) => {
+          const subCategoryPath = path.join(this.getCategoriesDir(toolName),
+            ".categoryIndex", `${category}.json`);
+          const arrayOfSubCategories = fs.readJsonSync(subCategoryPath);
+          parentCategoriesObject[category] = arrayOfSubCategories;
+        });
+      } catch (e) {
+        console.error(`Failed to read the category index at ${indexPath}`, e);
+      }
+    }
+    return parentCategoriesObject;
+  }
+
   /**
    * Returns an array of categories that have been selected for the given tool.
    * @param toolName - The tool name. This is synonymous with translationHelp name
    * @return {string[]} an array of category names
    */
-  getSelectedCategories(toolName) {
+  getSelectedCategories(toolName, withParent = false) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         const data = fs.readJsonSync(categoriesPath);
-        return data.current;
+        if (withParent) {
+          let objectWithParentCategories = {};
+          const subCategories = data.current;
+          subCategories.forEach((subCategory) => {
+            const parentCategoryMapping = this.getAllCategoryMapping(toolName);
+            Object.keys(parentCategoryMapping).forEach((categoryName) => {
+              if (toolName === "translationWords") {
+                if (subCategory === categoryName) {
+                  objectWithParentCategories[categoryName] = parentCategoryMapping[categoryName];
+                }
+              } else {
+                if (parentCategoryMapping[categoryName].includes(subCategory)) {
+                  //Sub categorie name is contained in this parent
+                  if (!objectWithParentCategories[categoryName])
+                    objectWithParentCategories[categoryName] = [];
+                  objectWithParentCategories[categoryName].push(subCategory);
+                }
+              }
+            });
+          });
+          return objectWithParentCategories;
+        } else {
+          return data.current;
+        }
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+      }
+    }
+
+    return [];
+  }
+
+  /**
+ * Returns an array of categories that have been loaded for the given tool.
+ * @param toolName - The tool name. This is synonymous with translationHelp name
+ * @return {string[]} an array of category names
+ */
+  getLoadedCategories(toolName) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName),
+      ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        const data = fs.readJsonSync(categoriesPath);
+        return data.loaded;
       } catch (e) {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
@@ -375,12 +476,13 @@ export default class ProjectAPI {
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
    * @param {string[]} [categories=[]] - an array of category names
    */
-  setSelectedCategories(toolName, categories=[]) {
+  setSelectedCategories(toolName, categories = []) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     let data = {
       current: categories,
-      loaded: []
+      loaded: [],
+      timestamp: generateTimestamp()
     };
 
     if (fs.pathExistsSync(categoriesPath)) {
@@ -394,7 +496,6 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-
     fs.outputJsonSync(categoriesPath, data);
   }
 
