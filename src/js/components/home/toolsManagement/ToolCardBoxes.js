@@ -147,7 +147,6 @@ class ToolCardBoxes extends React.Component {
   render() {
     const {availableCategories = {}, toolName, selectedCategories, onChecked, translate} = this.props;
     const lookupNames = flattenNotesCategories();
-
     return (
       <div style={{margin: '0 2% 0 6%'}}>
         {
