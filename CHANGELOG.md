@@ -1,5 +1,56 @@
 # Change Log
 
+## [v1.1.3](https://github.com/unfoldingWord-dev/translationCore/tree/v1.1.3) (2019-04-23)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v1.1.2...v1.1.3)
+
+**Implemented enhancements:**
+
+- Zip translationHelps & lexicon files in tC static resources  [\#5846](https://github.com/unfoldingWord-dev/translationCore/issues/5846)
+
+**Fixed bugs:**
+
+- tC is displaying footnotes as text in the UGNT [\#5964](https://github.com/unfoldingWord-dev/translationCore/issues/5964)
+- Need an indicator of processing when user selects to upload to Door43 [\#5892](https://github.com/unfoldingWord-dev/translationCore/issues/5892)
+- Scripture pane should not break lines on a zero width joiner [\#5863](https://github.com/unfoldingWord-dev/translationCore/issues/5863)
+- Cannot upload to Door43 using Linux [\#5853](https://github.com/unfoldingWord-dev/translationCore/issues/5853)
+- Verse edit is broken [\#5835](https://github.com/unfoldingWord-dev/translationCore/issues/5835)
+- The wrong verse is tagged as being edited when using the expanded scripture pane to edit a non-selected verse. [\#5776](https://github.com/unfoldingWord-dev/translationCore/issues/5776)
+- Alignment completions are not maintained in USFM3 exports [\#5692](https://github.com/unfoldingWord-dev/translationCore/issues/5692)
+- Bookmark in side menu not matching up with toggle in tW tool [\#5262](https://github.com/unfoldingWord-dev/translationCore/issues/5262)
+- The target language is not selectable from the resources dropdown. If the user deletes it from the scripture pane there is no way get it back. [\#5054](https://github.com/unfoldingWord-dev/translationCore/issues/5054)
+
+**Closed issues:**
+
+- Revert tC back to native Git [\#5911](https://github.com/unfoldingWord-dev/translationCore/issues/5911)
+- tC log file does not capture vital data [\#5889](https://github.com/unfoldingWord-dev/translationCore/issues/5889)
+- 1.1.2 \(134656f\) App hangs on loading screen on fresh install [\#5867](https://github.com/unfoldingWord-dev/translationCore/issues/5867)
+- Cannot load project in wA in v1.2 [\#5860](https://github.com/unfoldingWord-dev/translationCore/issues/5860)
+- Performance issues in 1.2 during 'Loading your project data' process [\#5859](https://github.com/unfoldingWord-dev/translationCore/issues/5859)
+-  Verify that the `Index.JSON` file is being generated dynamically [\#5817](https://github.com/unfoldingWord-dev/translationCore/issues/5817)
+- Pull in updates to 1.1.3 [\#5816](https://github.com/unfoldingWord-dev/translationCore/issues/5816)
+- Make git commit every time the menu changes [\#5806](https://github.com/unfoldingWord-dev/translationCore/issues/5806)
+- Missing Data on OT USFM3 Export [\#5805](https://github.com/unfoldingWord-dev/translationCore/issues/5805)
+- In USFM3, Quote marks need to be on the same line as the word they touch [\#5799](https://github.com/unfoldingWord-dev/translationCore/issues/5799)
+- Performance issues downloading from  and uploading to Door43 in v1.1.0 [\#5798](https://github.com/unfoldingWord-dev/translationCore/issues/5798)
+- Load GroupData/GroupIndex base on GL selected for tN [\#5797](https://github.com/unfoldingWord-dev/translationCore/issues/5797)
+- Update UHB [\#5790](https://github.com/unfoldingWord-dev/translationCore/issues/5790)
+- Increase Hebrew font size in wA tool [\#5789](https://github.com/unfoldingWord-dev/translationCore/issues/5789)
+- Update script to add the tN data to the code base \(in build, getting the latest data from the Catalog\) [\#5758](https://github.com/unfoldingWord-dev/translationCore/issues/5758)
+- Add TSV parser to the Source Content Updater [\#5757](https://github.com/unfoldingWord-dev/translationCore/issues/5757)
+- Create the initial tN tool - tW tool with tN data \(for testing SPIKES\) [\#5753](https://github.com/unfoldingWord-dev/translationCore/issues/5753)
+- Parsing the TSV and generating the GroupIndex and GroupData \(NPM Module\) [\#5752](https://github.com/unfoldingWord-dev/translationCore/issues/5752)
+- Upgrade Electron to latest version [\#5745](https://github.com/unfoldingWord-dev/translationCore/issues/5745)
+- Connect new GroupedMenu to tW [\#5710](https://github.com/unfoldingWord-dev/translationCore/issues/5710)
+- The user is not warned that edits made in wA have invalidated tW selections until the project is opened in tW [\#5687](https://github.com/unfoldingWord-dev/translationCore/issues/5687)
+- Add progress and invalid check count APIs to tW tool [\#5599](https://github.com/unfoldingWord-dev/translationCore/issues/5599)
+- Put translationCore app on a diet with Electrino \(If possible\) [\#5477](https://github.com/unfoldingWord-dev/translationCore/issues/5477)
+- Resolve remaining issues that are still causing some level of memory leak in the scripture pane [\#5403](https://github.com/unfoldingWord-dev/translationCore/issues/5403)
+- Having loaded 7 projects from door43, all include tc\_version: 6 in manifest. [\#5275](https://github.com/unfoldingWord-dev/translationCore/issues/5275)
+- Test [\#5203](https://github.com/unfoldingWord-dev/translationCore/issues/5203)
+- Add Menu Filtering for the Word Alignment Tool [\#4443](https://github.com/unfoldingWord-dev/translationCore/issues/4443)
+- Bookmark should not affect progress percentage complete [\#4257](https://github.com/unfoldingWord-dev/translationCore/issues/4257)
+- Verse Change Notification system [\#3562](https://github.com/unfoldingWord-dev/translationCore/issues/3562)
+
 ## [v1.1.0](https://github.com/unfoldingWord-dev/translationCore/tree/v1.1.0) (2019-02-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v1.0.2...v1.1.0)
 
