@@ -3,15 +3,18 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ToolCardBoxes from '../src/js/components/home/toolsManagement/ToolCardBoxes';
+import {tNotesCategories} from "tsv-groupdata-parser";
 jest.mock('material-ui/Checkbox');
 
 test('translationWords should have three boxes unchecked', () => {
   const props = {
     toolName: 'translationWords',
-    selectedCategories: {'names': ['hi']},
+    selectedCategories: [],
     onChecked: jest.fn(() => {}),
-    availableCategories: [],
+    availableCategories: {},
     translate: jest.fn(() => {}),
+    selectedGL: 'en',
+    showPopover: jest.fn(() => {})
   };
   const component = renderer.create(
     <ToolCardBoxes {...props}></ToolCardBoxes>,
@@ -21,44 +24,70 @@ test('translationWords should have three boxes unchecked', () => {
 });
 
 test('translationNotes should have 4 boxes checked', () => {
-    const availableCategories = {
-      cultural:      ["figs-explicit", "translate-symaction" ],
-      figures:       ["figs-apostrophe", "figs-doublenegatives" ],
-      lexical:       ["translate-numbers", "translate-ordinal" ],
-      morphological: ["figs-activepassive", "figs-gendernotations" ],
-      other:         ["figs-123person", "figs-abstractnouns" ]
-    };
-  
-    const selectedCategories = [
-      "figs-explicit", 
-      "translate-symaction", 
-      "translate-numbers", 
-      "figs-apostrophe",
-      "figs-doublenegatives",
-      "figs-activepassive",
-      "figs-123person" 
-    ];
-  
-    const props = {
-      toolName: 'translationNotes',
-      selectedCategories: selectedCategories,
-      availableCategories: availableCategories,
-      checks: ['kt', 'other', 'names'],
-      onChecked: jest.fn(() => {}),
-      bookId: 'mat',
-      translate: jest.fn((txt) => {return "translated: " + txt})
-    };
-  
+  const availableCategories = {
+    discourse: ['writing-background', 'writing-endofstory'],
+    numbers: ['translate-numbers', 'translate-fraction'],
+    figures: [
+      'figs-idiom',
+      'figs-irony',
+      'figs-metaphor',
+      'figs-rquestion',
+      'figs-simile',
+      'figs-apostrophe',
+      'figs-euphemism'
+    ],
+    culture: ['figs-explicit'],
+    grammar: [
+      'figs-hypo',
+      'figs-activepassive',
+      'figs-gendernotations',
+      'figs-pronouns',
+      'figs-you',
+      'figs-123person',
+      'figs-abstractnouns',
+      'figs-distinguish'
+    ]
+  }
+  const selectedCategories = [
+    'writing-background',
+    'translate-numbers',
+    'translate-fraction',
+    'figs-idiom',
+    'figs-irony',
+    'figs-metaphor',
+    'figs-rquestion',
+    'figs-simile',
+    'figs-apostrophe',
+    'figs-explicit',
+    'figs-hypo',
+    'figs-activepassive',
+    'figs-pronouns',
+    'figs-you',
+    'figs-123person',
+    'figs-abstractnouns'
+  ]
+  const props = {
+    toolName: 'translationNotes',
+    selectedCategories,
+    availableCategories,
+    checks: ['figs-gendernotations', 'figs-pronouns', 'figs-irony'],
+    onChecked: jest.fn(() => {}),
+    bookId: 'tit',
+    translate: jest.fn((txt) => {return "translated: " + txt}),
+    selectedGL: 'en',
+    showPopover: jest.fn(() => {})
+  };
+
   const component = mount(
     <ToolCardBoxes {...props}></ToolCardBoxes>,
   );
 
-  component.setState( {
+  component.setState({
     expanded: {
-      cultural: true,
+      grammar: true,
       figures: true,
-      lexical: true,
-      morphological: true
+      discourse: true,
+      numbers: true
     }
   });
 

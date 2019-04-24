@@ -38,8 +38,14 @@ const testResourcesPath = path.join('__tests__', 'fixtures', 'resources');
 export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
+  if (toolName === "translationNotes")
+    gatewayLanguage = "en";
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   if (helpDir) {
+    project.resetCategoryGroupIds(toolName);
+    if (project.hasNewGroupsData(toolName)) {
+      project.resetLoadedCategories(toolName);
+    }
     let categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
     Object.keys(categories).forEach((category) => {
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
@@ -59,6 +65,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
         project.setCategoryLoaded(toolName, subCategory);
       });
     });
+    project.removeStaleCategoriesFromCurrent(toolName);
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
