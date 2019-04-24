@@ -278,9 +278,9 @@ export default class ProjectAPI {
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
    */
   removeStaleCategoriesFromCurrent(toolName) {
-    const categoriesPath = path.join(this.getCategoriesDir(toolName),
-      ".categories");
     const groupsPath = this.getCategoriesDir(toolName);
+    const categoriesPath = path.join(groupsPath,
+      ".categories");
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
@@ -292,9 +292,22 @@ export default class ProjectAPI {
           }
         });
         fs.outputJsonSync(categoriesPath, rawData);
+        const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
+        if (fs.existsSync(contextIdPath)) {
+          try {
+            const currentContextId = fs.readJSONSync(contextIdPath);
+            const currentContextIdGroup = currentContextId.groupId;
+            if (!rawData.loaded.includes(currentContextIdGroup)) {
+              fs.removeSync(contextIdPath);
+            }
+          } catch (e) {
+            console.log('Could not reset current context id');
+          }
+        }
         const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
         currentGroupsData.forEach((category) => {
           if (!rawData.loaded.includes(path.parse(category).name)) {
+            //removing groups data files that are not in loaded
             fs.removeSync(path.join(groupsPath, category));
           }
         });
