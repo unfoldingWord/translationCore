@@ -278,31 +278,42 @@ export default class ProjectAPI {
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
    */
   removeStaleCategoriesFromCurrent(toolName) {
-    if (toolName !== 'translationWords') {
-      const categoriesPath = path.join(this.getCategoriesDir(toolName),
-        ".categories");
-      const groupsPath = this.getCategoriesDir(toolName);
-      if (fs.pathExistsSync(categoriesPath)) {
-        try {
-          let rawData = fs.readJsonSync(categoriesPath);
-          rawData.current.forEach((category, index) => {
-            if (!rawData.loaded.includes(category)) {
-              //There is something that is selected that is not loaded
-              //Or there is something that is selected that is not in the current resources folder
-              rawData.current.splice(index, 1);
+    const groupsPath = this.getCategoriesDir(toolName);
+    const categoriesPath = path.join(groupsPath,
+      ".categories");
+    if (fs.pathExistsSync(categoriesPath)) {
+      try {
+        let rawData = fs.readJsonSync(categoriesPath);
+        rawData.current.forEach((category, index) => {
+          if (!rawData.loaded.includes(category)) {
+            //There is something that is selected that is not loaded
+            //Or there is something that is selected that is not in the current resources folder
+            rawData.current.splice(index, 1);
+          }
+        });
+        fs.outputJsonSync(categoriesPath, rawData);
+        const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
+        if (fs.existsSync(contextIdPath)) {
+          try {
+            const currentContextId = fs.readJSONSync(contextIdPath);
+            const currentContextIdGroup = currentContextId.groupId;
+            if (!rawData.loaded.includes(currentContextIdGroup)) {
+              fs.removeSync(contextIdPath);
             }
-          });
-          fs.outputJsonSync(categoriesPath, rawData);
-          const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
-          currentGroupsData.forEach((category) => {
-            if (!rawData.loaded.includes(path.parse(category).name)) {
-              fs.removeSync(path.join(groupsPath, category));
-            }
-          });
-        } catch (e) {
-          console.warn(
-            `Failed to parse tool categories index at ${categoriesPath}.`, e);
+          } catch (e) {
+            console.log('Could not reset current context id');
+          }
         }
+        const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
+        currentGroupsData.forEach((category) => {
+          if (!rawData.loaded.includes(path.parse(category).name)) {
+            //removing groups data files that are not in loaded
+            fs.removeSync(path.join(groupsPath, category));
+          }
+        });
+      } catch (e) {
+        console.warn(
+          `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
   }
