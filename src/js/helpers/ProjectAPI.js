@@ -284,13 +284,6 @@ export default class ProjectAPI {
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
-        rawData.current.forEach((category, index) => {
-          if (!rawData.loaded.includes(category)) {
-            //There is something that is selected that is not loaded
-            //Or there is something that is selected that is not in the current resources folder
-            rawData.current.splice(index, 1);
-          }
-        });
         fs.outputJsonSync(categoriesPath, rawData);
         const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
         if (fs.existsSync(contextIdPath)) {
