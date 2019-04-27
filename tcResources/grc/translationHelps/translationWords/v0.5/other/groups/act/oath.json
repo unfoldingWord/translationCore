@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "oath",
-      "quote": "ὅρκῳ ὤμοσεν",
+      "quote": [
+        {
+          "word": "ὅρκῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὤμοσεν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G37270",
         "G36600"

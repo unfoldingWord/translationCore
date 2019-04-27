@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "name",
-      "quote": "ὀνόματος ὀνομαζομένου",
+      "quote": [
+        {
+          "word": "ὀνόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνομαζομένου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G36860",
         "G36870"

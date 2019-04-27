@@ -55,7 +55,24 @@
       },
       "tool": "translationWords",
       "groupId": "jamessonofzebedee",
-      "quote": "Ἰάκωβον τὸν τοῦ Ζεβεδαίου",
+      "quote": [
+        {
+          "word": "Ἰάκωβον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ζεβεδαίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23850",
         "G35880",

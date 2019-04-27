@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "lawofmoses",
-      "quote": "νόμον Μωϋσέως",
+      "quote": [
+        {
+          "word": "νόμον",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσέως",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35510",
         "G34750"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "lawofmoses",
-      "quote": "νόμῳ Κυρίου",
+      "quote": [
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35510",
         "G29620"
@@ -57,7 +75,16 @@
       },
       "tool": "translationWords",
       "groupId": "lawofmoses",
-      "quote": "νόμῳ Κυρίου",
+      "quote": [
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35510",
         "G29620"
@@ -100,7 +127,16 @@
       },
       "tool": "translationWords",
       "groupId": "lawofmoses",
-      "quote": "νόμον Κυρίου",
+      "quote": [
+        {
+          "word": "νόμον",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35510",
         "G29620"
@@ -185,7 +221,16 @@
       },
       "tool": "translationWords",
       "groupId": "lawofmoses",
-      "quote": "νόμῳ Μωϋσέως",
+      "quote": [
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσέως",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35510",
         "G34750"

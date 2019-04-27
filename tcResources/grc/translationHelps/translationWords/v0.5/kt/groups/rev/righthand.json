@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "righthand",
-      "quote": "δεξιᾷ χειρὶ",
+      "quote": [
+        {
+          "word": "δεξιᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὶ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G11880",
         "G54950"
@@ -140,7 +149,24 @@
       },
       "tool": "translationWords",
       "groupId": "righthand",
-      "quote": "χεῖρα αὐτοῦ τὴν δεξιὰν",
+      "quote": [
+        {
+          "word": "χεῖρα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "δεξιὰν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G54950",
         "G08460",
@@ -164,7 +190,24 @@
       },
       "tool": "translationWords",
       "groupId": "righthand",
-      "quote": "χειρὸς αὐτῶν τῆς δεξιᾶς",
+      "quote": [
+        {
+          "word": "χειρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "δεξιᾶς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G54950",
         "G08460",

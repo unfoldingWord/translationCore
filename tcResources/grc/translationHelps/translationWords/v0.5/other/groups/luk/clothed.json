@@ -391,7 +391,16 @@
       },
       "tool": "translationWords",
       "groupId": "clothed",
-      "quote": "περιβαλὼν ἐσθῆτα",
+      "quote": [
+        {
+          "word": "περιβαλὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσθῆτα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G40160",
         "G20660"

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonsofgod",
-      "quote": "υἱοί Θεοῦ",
+      "quote": [
+        {
+          "word": "υἱοί",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G52070",
         "G23160"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonsofgod",
-      "quote": "υἱῶν τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "υἱῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G35880",
@@ -58,7 +80,20 @@
       },
       "tool": "translationWords",
       "groupId": "sonsofgod",
-      "quote": "υἱοὶ Θεοῦ ζῶντος",
+      "quote": [
+        {
+          "word": "υἱοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῶντος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G23160",

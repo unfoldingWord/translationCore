@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "βασιλείαν καὶ δόξαν",
+      "quote": [
+        {
+          "word": "βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "δόξαν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09320",
         "G25320",

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "sinai",
-      "quote": "Ὄρους Σινά",
+      "quote": [
+        {
+          "word": "Ὄρους",
+          "occurrence": 1
+        },
+        {
+          "word": "Σινά",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G37350",
         "G46140"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "sinai",
-      "quote": "Σινά Ὄρος",
+      "quote": [
+        {
+          "word": "Σινά",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὄρος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46140",
         "G37350"

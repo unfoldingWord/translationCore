@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "luke",
-      "quote": "Λουκᾶς ὁ ἰατρὸς",
+      "quote": [
+        {
+          "word": "Λουκᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰατρὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30650",
         "G35880",

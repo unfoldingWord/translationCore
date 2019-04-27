@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "holyplace",
-      "quote": "τόπου τοῦ ἁγίου",
+      "quote": [
+        {
+          "word": "τόπου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁγίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G51170",
         "G35880",
@@ -36,7 +49,16 @@
       },
       "tool": "translationWords",
       "groupId": "holyplace",
-      "quote": "ἅγιον τόπον",
+      "quote": [
+        {
+          "word": "ἅγιον",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G00400",
         "G51170"

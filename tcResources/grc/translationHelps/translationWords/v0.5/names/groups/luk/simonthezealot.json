@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "simonthezealot",
-      "quote": "Σίμωνα τὸν καλούμενον Ζηλωτὴν",
+      "quote": [
+        {
+          "word": "Σίμωνα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καλούμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "Ζηλωτὴν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46130",
         "G35880",

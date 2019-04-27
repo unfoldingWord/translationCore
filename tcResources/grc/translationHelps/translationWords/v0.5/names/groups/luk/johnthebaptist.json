@@ -223,7 +223,20 @@
       },
       "tool": "translationWords",
       "groupId": "johnthebaptist",
-      "quote": "Ἰωάννης ὁ Βαπτιστὴς",
+      "quote": [
+        {
+          "word": "Ἰωάννης",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαπτιστὴς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24910",
         "G35880",
@@ -351,7 +364,20 @@
       },
       "tool": "translationWords",
       "groupId": "johnthebaptist",
-      "quote": "Ἰωάννης ὁ Βαπτιστὴς",
+      "quote": [
+        {
+          "word": "Ἰωάννης",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαπτιστὴς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24910",
         "G35880",
@@ -416,7 +442,20 @@
       },
       "tool": "translationWords",
       "groupId": "johnthebaptist",
-      "quote": "Ἰωάννην τὸν Βαπτιστήν",
+      "quote": [
+        {
+          "word": "Ἰωάννην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαπτιστήν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24910",
         "G35880",

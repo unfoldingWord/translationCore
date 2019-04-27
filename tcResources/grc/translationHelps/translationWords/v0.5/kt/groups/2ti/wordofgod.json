@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγος τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",
@@ -36,7 +49,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγος τῆς ἀληθείας",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",
@@ -59,7 +85,16 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "ἱερὰ γράμματα",
+      "quote": [
+        {
+          "word": "ἱερὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "γράμματα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24130",
         "G11210"

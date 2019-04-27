@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγου Θεοῦ",
+      "quote": [
+        {
+          "word": "λόγου",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G23160"

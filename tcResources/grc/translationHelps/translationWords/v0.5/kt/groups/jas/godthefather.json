@@ -34,7 +34,20 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεῷ καὶ Πατρί",
+      "quote": [
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πατρί",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G25320",

@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "ῥῆμα Θεοῦ",
+      "quote": [
+        {
+          "word": "ῥῆμα",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G44870",
         "G23160"
@@ -77,7 +86,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγον τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",
@@ -100,7 +122,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγος τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",
@@ -186,7 +221,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγον τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",
@@ -209,7 +257,20 @@
       },
       "tool": "translationWords",
       "groupId": "wordofgod",
-      "quote": "λόγον τοῦ Θεοῦ",
+      "quote": [
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30560",
         "G35880",

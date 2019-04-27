@@ -35,47 +35,34 @@ export const STATIC_RESOURCES_PATH = path.join(__dirname,
 export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
+  if (toolName === "translationNotes")
+    gatewayLanguage = "en";
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
-
   if (helpDir) {
-    // list help categories
-    const categories = fs.readdirSync(helpDir).filter(file => {
-      return fs.lstatSync(path.join(helpDir, file)).isDirectory();
-    });
-
-    if(categories.length === 0) {
-      throw new Error(`Missing translationHelp categories for ${toolName}`);
+    project.resetCategoryGroupIds(toolName);
+    if (project.hasNewGroupsData(toolName)) {
+      project.resetLoadedCategories(toolName);
     }
-
-    for (const category of categories) {
-      // TRICKY: some helps do not have groups nested under categories
+    let categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+    Object.keys(categories).forEach((category) => {
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
       const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
-
       let groupsDir = resourceCategoryDir;
-      if(!fs.pathExistsSync(resourceCategoryDir)) {
+      if (!fs.pathExistsSync(resourceCategoryDir)) {
         groupsDir = altResourceCategoryDir;
       }
-
-      // copy un-loaded category group data into project
-      if(fs.pathExistsSync(groupsDir)) {
-        const files = fs.readdirSync(groupsDir);
-        const groups = [];
-        for (const f of files) {
-          if(path.extname(f).toLowerCase() === ".json") {
-            groups.push(path.basename(f.toLowerCase(), ".json"));
-            const dataPath = path.join(groupsDir, f);
-            project.importCategoryGroupData(toolName, dataPath);
-          }
-        }
-        // loading complete
-        // TODO: I don't think this is necessary anymore
-        project.setCategoryLoaded(toolName, category);
-
-        // TRICKY: gives the tool an index of which groups belong to which category
-        project.setCategoryGroupIds(toolName, category, groups);
-      }
-    }
+      categories[category].forEach((subCategory) => {
+        const dataPath = path.join(groupsDir, subCategory + '.json');
+        project.importCategoryGroupData(toolName, dataPath);
+      });
+      // TRICKY: gives the tool an index of which groups belong to which category
+      project.setCategoryGroupIds(toolName, category, categories[category]);
+      // loading complete
+      categories[category].forEach((subCategory) => {
+        project.setCategoryLoaded(toolName, subCategory);
+      });
+    });
+    project.removeStaleCategoriesFromCurrent(toolName);
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
@@ -94,6 +81,58 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
 }
 
 /**
+ * get available categories
+ * @param {String} gatewayLanguage
+ * @param {String} toolName
+ * @param {String} projectDir
+ */
+export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir) {
+  const categoriesObj = {};
+  const project = new ProjectAPI(projectDir);
+  const resources = ResourceAPI.default();
+  if (toolName === 'translationWords'){
+    const manifest = project.getManifest();
+    const bookId = manifest && manifest.project && manifest.project.id;
+    const {languageId} = BibleHelpers.getOLforBook(bookId);
+    gatewayLanguage = languageId;
+  }
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+  // list help categories
+
+  if (helpDir) {
+    const categories = fs.readdirSync(helpDir).filter(file => {
+      return fs.lstatSync(path.join(helpDir, file)).isDirectory();
+    });
+
+    if (categories.length === 0) {
+      throw new Error(`Missing translationHelp categories for ${toolName}`);
+    }
+    for (let category of categories) {
+      const subCategories = [];
+      // TRICKY: some helps do not have groups nested under categories
+      const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
+      const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
+      let groupsDir = resourceCategoryDir;
+      if (!fs.pathExistsSync(resourceCategoryDir)) {
+        groupsDir = altResourceCategoryDir;
+      }
+      // copy un-loaded category group data into project
+      if (fs.pathExistsSync(groupsDir)) {
+        const files = fs.readdirSync(groupsDir);
+        for (const f of files) {
+          if (path.extname(f).toLowerCase() === ".json") {
+            subCategories.push(path.basename(f.toLowerCase(), ".json"));
+          }
+        }
+      }
+      categoriesObj[category] = subCategories;
+    }
+  }
+  return categoriesObj;
+}
+
+
+/**
  * Configures the project have selected the default categories.
  * If category selections already exist this method will be a no-op.
  * @param {string} gatewayLanguage - the gateway language code
@@ -104,12 +143,15 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
-
-  if(helpDir && project.getSelectedCategories(toolName).length === 0) {
-    const categories = fs.readdirSync(helpDir).filter(file => {
+  let categories = [];
+  if (helpDir && project.getSelectedCategories(toolName).length === 0) {
+    let parentCategories = fs.readdirSync(helpDir).filter(file => {
       return fs.lstatSync(path.join(helpDir, file)).isDirectory();
     });
-    if(categories.length > 0) {
+    parentCategories.forEach((subCategory) => {
+      categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
+    });
+    if (categories.length > 0) {
       project.setSelectedCategories(toolName, categories);
     }
   }
@@ -146,9 +188,9 @@ export function loadProjectGroupIndex(
   if (helpDir) {
     // load indices
     const indices = [];
-    const categories = project.getSelectedCategories(toolName);
-    for (const category of categories) {
-      const categoryIndex = path.join(helpDir, category, "index.json");
+    const categories = project.getSelectedCategories(toolName, true);
+    for (const categoryName in categories) {
+      const categoryIndex = path.join(helpDir, categoryName, "index.json");
       if (fs.lstatSync(categoryIndex).isFile()) {
         try {
           indices.push.apply(indices, fs.readJsonSync(categoryIndex));

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "manofgod",
-      "quote": "ἄνθρωπε Θεοῦ",
+      "quote": [
+        {
+          "word": "ἄνθρωπε",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G04440",
         "G23160"

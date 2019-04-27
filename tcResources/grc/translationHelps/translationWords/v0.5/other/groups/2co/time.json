@@ -55,7 +55,16 @@
       },
       "tool": "translationWords",
       "groupId": "time",
-      "quote": "νῦν καιρῷ",
+      "quote": [
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "καιρῷ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35680",
         "G25400"

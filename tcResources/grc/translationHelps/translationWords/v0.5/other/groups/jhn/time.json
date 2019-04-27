@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "time",
-      "quote": "πολὺν ἤδη χρόνον",
+      "quote": [
+        {
+          "word": "πολὺν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤδη",
+          "occurrence": 1
+        },
+        {
+          "word": "χρόνον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41830",
         "G22350",

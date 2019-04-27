@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonsofgod",
-      "quote": "υἱέ μου",
+      "quote": [
+        {
+          "word": "υἱέ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G14730"

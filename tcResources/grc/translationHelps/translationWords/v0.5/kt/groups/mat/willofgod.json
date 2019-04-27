@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θέλημά σου",
+      "quote": [
+        {
+          "word": "θέλημά",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G23070",
         "G47710"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θέλημα τοῦ Πατρός",
+      "quote": [
+        {
+          "word": "θέλημα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G35880",
@@ -58,7 +80,20 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θέλημα τοῦ Πατρός",
+      "quote": [
+        {
+          "word": "θέλημα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G35880",
@@ -81,7 +116,24 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θέλημα ἔμπροσθεν τοῦ Πατρὸς",
+      "quote": [
+        {
+          "word": "θέλημα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὸς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G17150",
@@ -105,7 +157,16 @@
       },
       "tool": "translationWords",
       "groupId": "willofgod",
-      "quote": "θέλημά σου",
+      "quote": [
+        {
+          "word": "θέλημά",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23070",
         "G47710"

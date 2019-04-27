@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G17220",
         "G55470",
@@ -36,7 +49,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G55470",
@@ -59,7 +85,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G55470",
@@ -82,7 +121,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G55470",
@@ -105,7 +157,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G55470",
@@ -128,7 +193,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G55470",
@@ -151,7 +229,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Χριστῷ Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G55470",

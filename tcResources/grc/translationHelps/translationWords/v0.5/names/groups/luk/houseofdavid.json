@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "houseofdavid",
-      "quote": "οἴκου Δαυεὶδ",
+      "quote": [
+        {
+          "word": "οἴκου",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G36240",
         "G11380"

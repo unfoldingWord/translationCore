@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "judgmentday",
-      "quote": "τῇ ἡμέρᾳ",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35880",
         "G22500"

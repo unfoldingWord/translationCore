@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonofman",
-      "quote": "Υἱὸν Ἀνθρώπου",
+      "quote": [
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G04440"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "sonofman",
-      "quote": "Υἱὸν Ἀνθρώπου",
+      "quote": [
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G52070",
         "G04440"

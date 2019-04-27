@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "lust",
-      "quote": "πάθει ἐπιθυμίας",
+      "quote": [
+        {
+          "word": "πάθει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιθυμίας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G38060",
         "G19390"

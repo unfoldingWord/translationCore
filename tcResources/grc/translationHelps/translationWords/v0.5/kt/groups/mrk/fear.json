@@ -76,7 +76,16 @@
       },
       "tool": "translationWords",
       "groupId": "fear",
-      "quote": "ἐφοβήθησαν φόβον",
+      "quote": [
+        {
+          "word": "ἐφοβήθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "φόβον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G53990",
         "G54010"

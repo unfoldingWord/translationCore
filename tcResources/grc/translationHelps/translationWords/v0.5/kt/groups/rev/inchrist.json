@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Ἰησοῦ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G24240"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "ἐν Κυρίῳ",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίῳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G29620"

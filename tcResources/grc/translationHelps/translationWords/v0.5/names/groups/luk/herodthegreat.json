@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "herodthegreat",
-      "quote": "Ἡρῴδου βασιλέως",
+      "quote": [
+        {
+          "word": "Ἡρῴδου",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλέως",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22640",
         "G09350"

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "daughterofzion",
-      "quote": "θυγατρὶ Σιών",
+      "quote": [
+        {
+          "word": "θυγατρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σιών",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23640",
         "G46220"

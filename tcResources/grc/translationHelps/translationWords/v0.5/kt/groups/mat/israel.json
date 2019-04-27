@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "israel",
-      "quote": "λαόν μου τὸν Ἰσραήλ",
+      "quote": [
+        {
+          "word": "λαόν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G14730",

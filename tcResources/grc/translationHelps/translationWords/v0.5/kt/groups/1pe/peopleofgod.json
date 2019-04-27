@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαὸς Θεοῦ",
+      "quote": [
+        {
+          "word": "λαὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G23160"

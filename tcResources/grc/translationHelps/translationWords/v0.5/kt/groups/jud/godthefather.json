@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "godthefather",
-      "quote": "Θεῷ Πατρὶ",
+      "quote": [
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὶ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23160",
         "G39620"

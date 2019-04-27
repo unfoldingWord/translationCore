@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "stumblingblock",
-      "quote": "λίθῳ τοῦ προσκόμματος",
+      "quote": [
+        {
+          "word": "λίθῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσκόμματος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30370",
         "G35880",
@@ -36,7 +49,16 @@
       },
       "tool": "translationWords",
       "groupId": "stumblingblock",
-      "quote": "λίθον προσκόμματος",
+      "quote": [
+        {
+          "word": "λίθον",
+          "occurrence": 1
+        },
+        {
+          "word": "προσκόμματος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30370",
         "G43480"

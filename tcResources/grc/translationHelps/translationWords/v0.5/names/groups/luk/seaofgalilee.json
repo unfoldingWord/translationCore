@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "seaofgalilee",
-      "quote": "λίμνην Γεννησαρέτ",
+      "quote": [
+        {
+          "word": "λίμνην",
+          "occurrence": 1
+        },
+        {
+          "word": "Γεννησαρέτ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30410",
         "G10820"

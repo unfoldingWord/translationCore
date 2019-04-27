@@ -307,7 +307,20 @@
       },
       "tool": "translationWords",
       "groupId": "philip",
-      "quote": "Φιλίππου τοῦ εὐαγγελιστοῦ",
+      "quote": [
+        {
+          "word": "Φιλίππου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐαγγελιστοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G53760",
         "G35880",

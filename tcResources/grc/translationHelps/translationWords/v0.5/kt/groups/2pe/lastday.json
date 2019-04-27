@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάτων τῶν ἡμερῶν",
+      "quote": [
+        {
+          "word": "ἐσχάτων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμερῶν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G35880",

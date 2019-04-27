@@ -97,7 +97,16 @@
       },
       "tool": "translationWords",
       "groupId": "israel",
-      "quote": "λαῷ Ἰσραὴλ",
+      "quote": [
+        {
+          "word": "λαῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G24740"
@@ -119,7 +128,16 @@
       },
       "tool": "translationWords",
       "groupId": "israel",
-      "quote": "λαοῖς Ἰσραήλ",
+      "quote": [
+        {
+          "word": "λαοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G24740"
@@ -309,7 +327,20 @@
       },
       "tool": "translationWords",
       "groupId": "israel",
-      "quote": "λαοῦ τῶν Ἰουδαίων",
+      "quote": [
+        {
+          "word": "λαοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G35880",
@@ -395,7 +426,16 @@
       },
       "tool": "translationWords",
       "groupId": "israel",
-      "quote": "λαῷ Ἰσραήλ",
+      "quote": [
+        {
+          "word": "λαῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29920",
         "G24740"

@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "thomas",
-      "quote": "Θωμᾶς ὁ λεγόμενος Δίδυμος",
+      "quote": [
+        {
+          "word": "Θωμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λεγόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δίδυμος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23810",
         "G35880",
@@ -142,7 +159,24 @@
       },
       "tool": "translationWords",
       "groupId": "thomas",
-      "quote": "Θωμᾶς ὁ λεγόμενος Δίδυμος",
+      "quote": [
+        {
+          "word": "Θωμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λεγόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δίδυμος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G23810",
         "G35880",

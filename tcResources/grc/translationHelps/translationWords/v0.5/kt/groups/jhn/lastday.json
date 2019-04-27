@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "quote": [
+        {
+          "word": "ἐσχάτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G22500"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "quote": [
+        {
+          "word": "ἐσχάτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G22500"
@@ -57,7 +75,16 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "quote": [
+        {
+          "word": "ἐσχάτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G22500"
@@ -79,7 +106,16 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "quote": [
+        {
+          "word": "ἐσχάτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G22500"
@@ -101,7 +137,16 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "quote": [
+        {
+          "word": "ἐσχάτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G22500"
@@ -123,7 +168,16 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάτῃ ἡμέρᾳ",
+      "quote": [
+        {
+          "word": "ἐσχάτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G22500"

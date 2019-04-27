@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "samuel",
-      "quote": "Σαμουὴλ προφήτου",
+      "quote": [
+        {
+          "word": "Σαμουὴλ",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήτου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G45450",
         "G43960"

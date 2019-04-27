@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "seaofgalilee",
-      "quote": "θάλασσαν τῆς Γαλιλαίας",
+      "quote": [
+        {
+          "word": "θάλασσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Γαλιλαίας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22810",
         "G35880",
@@ -40,7 +53,7 @@
       "strong": [
         "G22810"
       ],
-      "occurrence": 1
+      "occurrence": 2
     }
   },
   {
@@ -204,7 +217,20 @@
       },
       "tool": "translationWords",
       "groupId": "seaofgalilee",
-      "quote": "θάλασσαν τῆς Γαλιλαίας",
+      "quote": [
+        {
+          "word": "θάλασσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Γαλιλαίας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22810",
         "G35880",

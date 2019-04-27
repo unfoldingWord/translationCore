@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "λαὸν αὐτοῦ",
+      "quote": [
+        {
+          "word": "λαὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        }
+      ],
       "strong": [
         "G29920",
         "G08460"

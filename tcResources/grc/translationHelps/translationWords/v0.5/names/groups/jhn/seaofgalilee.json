@@ -13,7 +13,28 @@
       },
       "tool": "translationWords",
       "groupId": "seaofgalilee",
-      "quote": "θαλάσσης τῆς Γαλιλαίας τῆς Τιβεριάδος",
+      "quote": [
+        {
+          "word": "θαλάσσης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "Γαλιλαίας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 3
+        },
+        {
+          "word": "Τιβεριάδος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22810",
         "G35880",
@@ -164,7 +185,20 @@
       },
       "tool": "translationWords",
       "groupId": "seaofgalilee",
-      "quote": "θαλάσσης τῆς Τιβεριάδος",
+      "quote": [
+        {
+          "word": "θαλάσσης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "Τιβεριάδος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22810",
         "G35880",

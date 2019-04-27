@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "judassonofjames",
-      "quote": "Ἰούδαν Ἰακώβου",
+      "quote": [
+        {
+          "word": "Ἰούδαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰακώβου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G24550",
         "G23850"

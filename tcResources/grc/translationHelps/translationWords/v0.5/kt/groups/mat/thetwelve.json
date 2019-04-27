@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "thetwelve",
-      "quote": "δώδεκα μαθητὰς",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητὰς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14270",
         "G31010"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "thetwelve",
-      "quote": "δώδεκα ἀποστόλων",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστόλων",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14270",
         "G06520"
@@ -78,7 +96,16 @@
       },
       "tool": "translationWords",
       "groupId": "thetwelve",
-      "quote": "δώδεκα μαθηταῖς",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταῖς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G14270",
         "G31010"
@@ -100,7 +127,20 @@
       },
       "tool": "translationWords",
       "groupId": "thetwelve",
-      "quote": "τοὺς δώδεκα μαθητὰς",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητὰς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G35880",
         "G14270",
@@ -186,7 +226,16 @@
       },
       "tool": "translationWords",
       "groupId": "thetwelve",
-      "quote": "ἕνδεκα μαθηταὶ",
+      "quote": [
+        {
+          "word": "ἕνδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταὶ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17330",
         "G31010"

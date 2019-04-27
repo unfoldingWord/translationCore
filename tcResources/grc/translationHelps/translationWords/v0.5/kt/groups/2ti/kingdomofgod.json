@@ -34,7 +34,24 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "βασιλείαν αὐτοῦ τὴν ἐπουράνιον",
+      "quote": [
+        {
+          "word": "βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπουράνιον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09320",
         "G08460",

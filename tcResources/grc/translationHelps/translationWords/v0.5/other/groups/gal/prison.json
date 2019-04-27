@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "prison",
-      "quote": "ἐφρουρούμεθα συνκλειόμενοι",
+      "quote": [
+        {
+          "word": "ἐφρουρούμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "συνκλειόμενοι",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G54320",
         "G47880"

@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "dayofthelord",
-      "quote": "ἡμέρᾳ τοῦ Κυρίου",
+      "quote": [
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22500",
         "G35880",

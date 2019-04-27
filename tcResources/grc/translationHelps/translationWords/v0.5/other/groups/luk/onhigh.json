@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "onhigh",
-      "quote": "ἐν ὑψίστοις",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑψίστοις",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G17220",
         "G53100"

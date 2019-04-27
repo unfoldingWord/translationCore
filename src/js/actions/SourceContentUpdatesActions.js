@@ -3,12 +3,15 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
 import consts from './ActionTypes';
-import {getTranslate, getContext, getSelectedToolName} from '../selectors';
+import {getTranslate, getContext, getSelectedToolName, getProjectSaveLocation, getProjectBookId} from '../selectors';
 import {openAlertDialog, closeAlertDialog, openOptionDialog} from './AlertModalActions';
 import { loadBookTranslations } from './ResourcesActions';
 // helpers
 import { generateTimestamp } from '../helpers/TimestampGenerator';
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
+import {copyGroupDataToProject} from '../helpers/ResourcesHelpers';
+import {getOLforBook} from '../helpers/bibleHelpers';
+import * as Bible from "../common/BooksOfTheBible";
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
@@ -97,7 +100,15 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
           fs.writeJsonSync(sourceContentManifestPath, { modified: generateTimestamp() });
 
           // if tool currently opened then load new bible resources
-          if (toolName) await dispatch(loadBookTranslations(contextId.reference.bookId));
+          if (toolName) {
+            const projectSaveLocation = getProjectSaveLocation(getState());
+            const bookId = getProjectBookId(getState());
+            const olForBook = getOLforBook(bookId);
+            let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+            await dispatch(loadBookTranslations(contextId.reference.bookId));
+            //Tool is open so we need to update existing group data
+            copyGroupDataToProject(helpDir, toolName, projectSaveLocation);
+          }
           dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         })
         .catch((err) => {

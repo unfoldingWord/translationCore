@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "Βασιλείαν Θεοῦ",
+      "quote": [
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09320",
         "G23160"

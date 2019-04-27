@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "pilate",
-      "quote": "Ποντίου Πειλάτου",
+      "quote": [
+        {
+          "word": "Ποντίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Πειλάτου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41940",
         "G40910"

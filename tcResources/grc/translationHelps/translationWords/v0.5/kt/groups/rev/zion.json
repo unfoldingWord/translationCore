@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "zion",
-      "quote": "Ὄρος Σιών",
+      "quote": [
+        {
+          "word": "Ὄρος",
+          "occurrence": 1
+        },
+        {
+          "word": "Σιών",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G37350",
         "G46220"

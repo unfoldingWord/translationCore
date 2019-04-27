@@ -34,7 +34,20 @@
       },
       "tool": "translationWords",
       "groupId": "herodantipas",
-      "quote": "Ἡρῴδης ὁ βασιλεὺς",
+      "quote": [
+        {
+          "word": "Ἡρῴδης",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλεὺς",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22640",
         "G35880",
@@ -141,7 +154,20 @@
       },
       "tool": "translationWords",
       "groupId": "herodantipas",
-      "quote": "Ἡρῴδου τοῦ τετράρχου",
+      "quote": [
+        {
+          "word": "Ἡρῴδου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τετράρχου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G22640",
         "G35880",

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "biblicaltimehour",
-      "quote": "ὥρα ἤδη",
+      "quote": [
+        {
+          "word": "ὥρα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤδη",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G56100",
         "G22350"

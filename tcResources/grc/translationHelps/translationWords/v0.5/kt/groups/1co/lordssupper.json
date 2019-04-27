@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "lordssupper",
-      "quote": "Κυριακὸν δεῖπνον",
+      "quote": [
+        {
+          "word": "Κυριακὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖπνον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G29600",
         "G11730"

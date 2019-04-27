@@ -13,7 +13,20 @@
       },
       "tool": "translationWords",
       "groupId": "kingdomofgod",
-      "quote": "βασιλείαν τοῦ Κυρίου",
+      "quote": [
+        {
+          "word": "βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G09320",
         "G35880",

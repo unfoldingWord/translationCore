@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "partial",
-      "quote": "εἰς πρόσωπον",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G15190",
         "G43830"

@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "pilate",
-      "quote": "Πόντιος Πειλᾶτος",
+      "quote": [
+        {
+          "word": "Πόντιος",
+          "occurrence": 1
+        },
+        {
+          "word": "Πειλᾶτος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41940",
         "G40910"

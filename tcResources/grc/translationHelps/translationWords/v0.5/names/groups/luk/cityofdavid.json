@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "cityofdavid",
-      "quote": "πόλιν Δαυεὶδ",
+      "quote": [
+        {
+          "word": "πόλιν",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41720",
         "G11380"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "cityofdavid",
-      "quote": "πόλει Δαυείδ",
+      "quote": [
+        {
+          "word": "πόλει",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυείδ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G41720",
         "G11380"

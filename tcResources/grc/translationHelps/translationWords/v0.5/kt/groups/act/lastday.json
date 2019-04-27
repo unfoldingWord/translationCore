@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "lastday",
-      "quote": "ἐσχάταις ἡμέραις",
+      "quote": [
+        {
+          "word": "ἐσχάταις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραις",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20780",
         "G22500"

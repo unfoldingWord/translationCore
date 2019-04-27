@@ -55,7 +55,28 @@
       },
       "tool": "translationWords",
       "groupId": "seize",
-      "quote": "ἐπέβαλεν ἐπ’ αὐτὸν τὴν χεῖρα",
+      "quote": [
+        {
+          "word": "ἐπέβαλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G19110",
         "G19090",
@@ -122,7 +143,28 @@
       },
       "tool": "translationWords",
       "groupId": "seize",
-      "quote": "ἐπέβαλεν ἐπ’ αὐτὸν τὰς χεῖρας",
+      "quote": [
+        {
+          "word": "ἐπέβαλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G19110",
         "G19090",

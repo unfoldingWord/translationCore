@@ -34,7 +34,16 @@
       },
       "tool": "translationWords",
       "groupId": "compassion",
-      "quote": "σπλάγχνα οἰκτιρμοῦ",
+      "quote": [
+        {
+          "word": "σπλάγχνα",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκτιρμοῦ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G46980",
         "G36280"

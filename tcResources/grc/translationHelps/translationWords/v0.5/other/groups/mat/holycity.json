@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "holycity",
-      "quote": "ἁγίαν πόλιν",
+      "quote": [
+        {
+          "word": "ἁγίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλιν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G00400",
         "G41720"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "holycity",
-      "quote": "ἁγίαν πόλιν",
+      "quote": [
+        {
+          "word": "ἁγίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλιν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G00400",
         "G41720"

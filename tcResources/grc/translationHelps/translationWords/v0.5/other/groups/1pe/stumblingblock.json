@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "stumblingblock",
-      "quote": "λίθος προσκόμματος",
+      "quote": [
+        {
+          "word": "λίθος",
+          "occurrence": 1
+        },
+        {
+          "word": "προσκόμματος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30370",
         "G43480"

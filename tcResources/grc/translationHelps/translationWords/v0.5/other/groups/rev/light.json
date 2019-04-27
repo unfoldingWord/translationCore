@@ -76,7 +76,16 @@
       },
       "tool": "translationWords",
       "groupId": "light",
-      "quote": "φωτὸς λύχνου",
+      "quote": [
+        {
+          "word": "φωτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "λύχνου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G54570",
         "G30880"

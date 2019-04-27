@@ -244,7 +244,16 @@
       },
       "tool": "translationWords",
       "groupId": "demon",
-      "quote": "ἀκάθαρτον πνεῦμα",
+      "quote": [
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        },
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G01690",
         "G41510"

@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "redsea",
-      "quote": "Ἐρυθρᾷ Θαλάσσῃ",
+      "quote": [
+        {
+          "word": "Ἐρυθρᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θαλάσσῃ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G20630",
         "G22810"

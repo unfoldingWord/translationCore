@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "joy",
-      "quote": "ἐχάρησαν χαρὰν",
+      "quote": [
+        {
+          "word": "ἐχάρησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρὰν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G54630",
         "G54790"

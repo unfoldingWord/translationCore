@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "demonpossessed",
-      "quote": "δαιμόνιον ἔχεις",
+      "quote": [
+        {
+          "word": "δαιμόνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχεις",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G11400",
         "G21920"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "demonpossessed",
-      "quote": "δαιμόνιον ἔχεις",
+      "quote": [
+        {
+          "word": "δαιμόνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχεις",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G11400",
         "G21920"
@@ -57,7 +75,16 @@
       },
       "tool": "translationWords",
       "groupId": "demonpossessed",
-      "quote": "δαιμόνιον ἔχει",
+      "quote": [
+        {
+          "word": "δαιμόνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G11400",
         "G21920"

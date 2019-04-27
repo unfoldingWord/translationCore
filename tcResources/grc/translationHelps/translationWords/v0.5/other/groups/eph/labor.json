@@ -55,7 +55,16 @@
       },
       "tool": "translationWords",
       "groupId": "labor",
-      "quote": "κοπιάτω ἐργαζόμενος",
+      "quote": [
+        {
+          "word": "κοπιάτω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐργαζόμενος",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G28720",
         "G20380"

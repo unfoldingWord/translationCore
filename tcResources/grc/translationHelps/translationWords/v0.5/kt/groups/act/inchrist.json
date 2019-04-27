@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "εἰς αὐτὸν",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G15190",
         "G08460"
@@ -35,7 +44,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "εἰς τὸν Ἰησοῦν",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G15190",
         "G35880",
@@ -58,7 +80,20 @@
       },
       "tool": "translationWords",
       "groupId": "inchrist",
-      "quote": "εἰς Χριστὸν Ἰησοῦν",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G15190",
         "G55470",

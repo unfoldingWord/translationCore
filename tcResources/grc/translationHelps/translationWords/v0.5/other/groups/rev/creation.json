@@ -139,7 +139,16 @@
       },
       "tool": "translationWords",
       "groupId": "creation",
-      "quote": "καταβολῆς κόσμου",
+      "quote": [
+        {
+          "word": "καταβολῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G26020",
         "G28890"
@@ -161,7 +170,16 @@
       },
       "tool": "translationWords",
       "groupId": "creation",
-      "quote": "καταβολῆς κόσμου",
+      "quote": [
+        {
+          "word": "καταβολῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G26020",
         "G28890"

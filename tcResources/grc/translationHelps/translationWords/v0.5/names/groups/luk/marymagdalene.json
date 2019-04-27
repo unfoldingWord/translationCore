@@ -13,7 +13,24 @@
       },
       "tool": "translationWords",
       "groupId": "marymagdalene",
-      "quote": "Μαρία ἡ καλουμένη Μαγδαληνή",
+      "quote": [
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "καλουμένη",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνή",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G31370",
         "G35880",
@@ -37,7 +54,16 @@
       },
       "tool": "translationWords",
       "groupId": "marymagdalene",
-      "quote": "Μαγδαληνὴ Μαρία",
+      "quote": [
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G30940",
         "G31370"

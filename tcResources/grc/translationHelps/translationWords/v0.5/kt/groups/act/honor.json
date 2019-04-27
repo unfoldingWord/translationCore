@@ -76,7 +76,16 @@
       },
       "tool": "translationWords",
       "groupId": "honor",
-      "quote": "τιμαῖς ἐτίμησαν",
+      "quote": [
+        {
+          "word": "τιμαῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐτίμησαν",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "G50920",
         "G50910"
