@@ -478,6 +478,24 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
 };
 
 /**
+ * gets the quote as a string array
+ * @param {Object} contextId
+ * @return {Array}
+ */
+export function getQuoteAsArray(contextId) {
+  let quoteArray = [];
+  if (Array.isArray(contextId.quote)) {
+    for (let i = 0, l = contextId.quote.length; i < l; i++) {
+      const wordItem = contextId.quote[i];
+      quoteArray.push(wordItem.word);
+    }
+  } else {
+    quoteArray = contextId.quote.split(' ');
+  }
+  return quoteArray;
+}
+
+/**
  * get the selected text from the GL resource for this context
  * @param {*} currentProjectToolsSelectedGL
  * @param {*} contextId
@@ -493,7 +511,7 @@ export function getAlignedGLText(currentProjectToolsSelectedGL, contextId, bible
     const bible = bibles[selectedGL][sortedBibleIds[i]];
     if (bible && bible[contextId.reference.chapter] && bible[contextId.reference.chapter][contextId.reference.verse] && bible[contextId.reference.chapter][contextId.reference.verse].verseObjects) {
       const verseObjects = bible[contextId.reference.chapter][contextId.reference.verse].verseObjects;
-      const wordsToMatch = contextId.quote.split(' ');
+      const wordsToMatch = getQuoteAsArray(contextId);
       const alignedText = getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
       if (alignedText)
         return alignedText;
