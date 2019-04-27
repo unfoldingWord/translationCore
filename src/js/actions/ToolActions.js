@@ -1,14 +1,14 @@
 import types from "./ActionTypes";
-import { loadToolsInDir } from "../helpers/toolHelper";
 import { getToolGatewayLanguage, getTranslate, getProjectSaveLocation } from "../selectors";
 import * as ModalActions from "./ModalActions";
 import * as AlertModalActions from "./AlertModalActions";
-import * as GroupsDataActions from "./GroupsDataActions";
 import { loadCurrentContextId } from "./ContextIdActions";
 import * as BodyUIActions from "./BodyUIActions";
 import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
 import { loadGroupsIndex } from "./GroupsIndexActions";
-
+// helpers
+import { loadToolsInDir } from "../helpers/toolHelper";
+import {delay} from "../common/utils";
 /**
  * Registers a tool that has been loaded from the disk.
  * @param {object} tool - a tc-tool.
@@ -41,19 +41,18 @@ export const loadTools = (toolsDir) => (dispatch) => {
  * @param {string} name - the name of the tool to open
  * @returns {Function}
  */
-export const openTool = (name) => (dispatch, getData) => {
-  const translate = getTranslate(getData());
+export const openTool = (name) => async (dispatch, getData) => {
   console.log("openTool(" + name + ")");
-
+  const translate = getTranslate(getData());
   dispatch(ModalActions.showModalContainer(false));
+  await delay(200);
   dispatch({ type: types.START_LOADING });
+
   setTimeout(() => {
     try {
-
       dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_DATA });
       dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_INDEX });
       dispatch({ type: types.CLEAR_CONTEXT_ID });
-
       dispatch({
         type: types.OPEN_TOOL,
         name
@@ -71,10 +70,6 @@ export const openTool = (name) => (dispatch, getData) => {
       const language = getToolGatewayLanguage(getData(), name);
       const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
       dispatch(loadGroupsIndex(groupIndex));
-
-      // verify stuff. TODO: why do we need this?
-      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-
       dispatch(loadCurrentContextId());
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));

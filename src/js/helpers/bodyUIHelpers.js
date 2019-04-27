@@ -6,9 +6,3 @@ export function getIconColorFromIndex(stepIndex, steps = []) {
   colorsArray.push(stepIndex === 3 ? "black" : steps[3] ? "var(--accent-color-dark)" : 3 > stepIndex ? "grey" : "var(--accent-color-dark)");
   return colorsArray;
 }
-
-export function delay(ms) {
-  return new Promise((resolve) =>
-    setTimeout(resolve, ms)
-  );
-}

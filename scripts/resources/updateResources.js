@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 const path = require('path-extra');
 const sourceContentUpdater = require('tc-source-content-updater').default;
 const updateResourcesHelpers = require('./updateResourcesHelpers');
-const zipBibles = require('./zipHelpers').zipBibles;
+const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
 const updateResources = async (languages, resourcesPath) => {
   const SourceContentUpdater = new sourceContentUpdater();
@@ -29,7 +29,7 @@ const updateResources = async (languages, resourcesPath) => {
 const executeResourcesUpdate = async (languages, resourcesPath) => {
   await updateResources(languages, resourcesPath);
 
-  languages.forEach(async (languageId) => await zipBibles(resourcesPath, languageId));
+  languages.forEach(async (languageId) => await zipResourcesContent(resourcesPath, languageId));
 
   // update source content updater manifest
   const sourceContentManifestPath = path.join(resourcesPath,'source-content-updater-manifest.json');

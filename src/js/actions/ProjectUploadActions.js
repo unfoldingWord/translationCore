@@ -9,7 +9,7 @@ import * as OnlineModeConfirmActions from "./OnlineModeConfirmActions";
 import * as WordAlignmentActions from "./WordAlignmentActions";
 // helpers
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
-import {delay} from "../helpers/bodyUIHelpers";
+import {delay} from "../common/utils";
 
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git

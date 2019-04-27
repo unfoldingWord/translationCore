@@ -1,6 +1,7 @@
 import consts from '../actions/ActionTypes';
 import path from 'path-extra';
 
+// TBD ToolsCategories need to go, they are dynamic
 const initialState = {
   projectSaveLocation: '',
   manifest: {
@@ -10,21 +11,19 @@ const initialState = {
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null,
-  toolsCategories: {
-    translationWords: ['kt', 'other', 'names']
-  }
+  toolsCategories: {}
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.SET_CHECK_CATEGORIES:
-    return {
-      ...state,
-      toolsCategories: {
-        ...state.toolsCategories,
-        [action.toolName]: action.selectedCategories
-      }
-    };
+      return {
+        ...state,
+        toolsCategories: {
+          ...state.toolsCategories,
+          [action.toolName]: action.selectedCategories
+        }
+      };
     case consts.SET_SAVE_PATH_LOCATION:
       return {
         ...state,

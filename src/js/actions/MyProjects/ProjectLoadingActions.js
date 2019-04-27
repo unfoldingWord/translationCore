@@ -11,11 +11,17 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
+import { changeSelections } from '../SelectionsActions';
+import ResourceAPI from "../../helpers/ResourceAPI";
+
 import {
+  getCurrentProjectToolsSelectedGL,
   getActiveLocaleLanguage,
   getProjectManifest,
-  getProjectSaveLocation, getSelectedToolApi,
-  getSourceBook, getSupportingToolApis,
+  getProjectSaveLocation,
+  getSelectedToolApi,
+  getSourceBook,
+  getSupportingToolApis,
   getTargetBook,
   getToolGatewayLanguage,
   getTools,
@@ -34,19 +40,14 @@ import {
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
 import * as BibleHelpers from "../../helpers/bibleHelpers";
-
+import {delay} from '../../common/utils';
+import * as Bible from "../../common/BooksOfTheBible";
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
-function delay(ms) {
-  return new Promise ((resolve) =>
-    setTimeout(resolve, ms)
-  );
-}
-
 /**
  * This thunk opens a project and prepares it for use in tools.
- * @param {string} name -  the name of the project
+ * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
  */
 export const openProject = (name, skipValidation=false) => {
@@ -56,14 +57,13 @@ export const openProject = (name, skipValidation=false) => {
     console.log("openProject() projectDir=" + projectDir);
 
     try {
+      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
       dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
       dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
-
       dispatch(initializeReducersForProjectOpenValidation());
-      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
 
       // TRICKY: prevent dialog from flashing on small projects
-      await delay(200);
+      await delay(300);
       await isProjectSupported(projectDir, translate);
       migrateProject(projectDir, null, getUsername(getState()));
 
@@ -84,16 +84,18 @@ export const openProject = (name, skipValidation=false) => {
       // connect the tools
       const manifest = getProjectManifest(getState());
       const tools = getTools(getState());
+      const bookId = (manifest && manifest.project && manifest.project.id) || '';
       for (const t of tools) {
         // load source book translations
-        console.log(`openProject() - loading source book ${manifest.project.id} into ${t.name}`);
-        await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
+        console.log(`openProject() - loading source book ${bookId} into ${t.name}`);
+        await dispatch(loadSourceBookTranslations(bookId, t.name));
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
         console.log("openProject() - copy group data");
-        const {languageId} = BibleHelpers.getOLforBook(manifest.project.id);
-        copyGroupDataToProject(languageId, t.name, validProjectDir);
+        const olForBook = BibleHelpers.getOrigLangforBook(bookId);
+        let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+        copyGroupDataToProject(helpDir, t.name, validProjectDir);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
@@ -103,7 +105,8 @@ export const openProject = (name, skipValidation=false) => {
 
         // connect tool api
         console.log("openProject() - connect tool api");
-        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
+        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
+
         t.api.triggerWillConnect(toolProps);
       }
 
@@ -134,11 +137,14 @@ export const openProject = (name, skipValidation=false) => {
 function makeToolProps(dispatch, state, projectDir, bookId) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
+  const resourceApi = ResourceAPI;
   const {code} = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
 
   return {
+    //resource api
+    resources: resourceApi,
     // project api
     project: projectApi,
 
@@ -171,7 +177,13 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
         verse: "1"
       }
     },
-
+    username: getUsername(state),
+    currentProjectToolsSelectedGL: getCurrentProjectToolsSelectedGL(state),
+    actions: {
+      changeSelections: (selections, userName) => {
+        dispatch(changeSelections(selections, userName));
+      }
+    },
     // deprecated props
     readProjectDir: (...args) => {
       console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');

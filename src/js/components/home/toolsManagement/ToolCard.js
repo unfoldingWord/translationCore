@@ -108,12 +108,14 @@ class ToolCard extends Component {
       translate,
       developerMode,
       actions: {
-        updateCheckSelection
+        updateCheckSelection,
+        showPopover,
+        closePopover
       },
       selectedCategories,
       availableCategories
     } = this.props;
-    const {progress} = this.state;
+    const {progress, selectedGL} = this.state;
 
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
@@ -126,6 +128,10 @@ class ToolCard extends Component {
       case 'translationWords':
         showCheckBoxes = true;
         desc_key = 'tools.tw_part1_description';
+        break;
+
+      case 'translationNotes':
+        showCheckBoxes = true;
         break;
 
       default:
@@ -152,7 +158,18 @@ class ToolCard extends Component {
             <ToolCardNotificationBadges tool={tool} translate={translate} selectedCategories={selectedCategories} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes toolName={tool.name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
+          {showCheckBoxes && <ToolCardBoxes
+            key={selectedGL}
+            toolName={tool.name}
+            selectedCategories={selectedCategories}
+            availableCategories={availableCategories}
+            onChecked={updateCheckSelection}
+            bookId={bookId}
+            translate={translate}
+            selectedGL={selectedGL}
+            showPopover={showPopover}
+            closePopover={closePopover}
+          />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -216,7 +233,7 @@ ToolCard.propTypes = {
     updateCheckSelection: PropTypes.func.isRequired
   }),
   selectedCategories: PropTypes.array.isRequired,
-  availableCategories: PropTypes.array.isRequired
+  availableCategories: PropTypes.object.isRequired
 };
 
 ToolCard.contextTypes = {

@@ -284,6 +284,13 @@ export default class ProjectAPI {
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
+        rawData.current.forEach((category, index) => {
+          if (!rawData.loaded.includes(category)) {
+            //There is something that is selected that is not loaded
+            //Or there is something that is selected that is not in the current resources folder
+            rawData.current.splice(index, 1);
+          }
+        });
         fs.outputJsonSync(categoriesPath, rawData);
         const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
         if (fs.existsSync(contextIdPath)) {
@@ -427,17 +434,11 @@ export default class ProjectAPI {
           subCategories.forEach((subCategory) => {
             const parentCategoryMapping = this.getAllCategoryMapping(toolName);
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
-              if (toolName === "translationWords") {
-                if (subCategory === categoryName) {
-                  objectWithParentCategories[categoryName] = parentCategoryMapping[categoryName];
-                }
-              } else {
-                if (parentCategoryMapping[categoryName].includes(subCategory)) {
-                  //Sub categorie name is contained in this parent
-                  if (!objectWithParentCategories[categoryName])
-                    objectWithParentCategories[categoryName] = [];
-                  objectWithParentCategories[categoryName].push(subCategory);
-                }
+              if (parentCategoryMapping[categoryName].includes(subCategory)) {
+                //Sub categorie name is contained in this parent
+                if (!objectWithParentCategories[categoryName])
+                  objectWithParentCategories[categoryName] = [];
+                objectWithParentCategories[categoryName].push(subCategory);
               }
             });
           });

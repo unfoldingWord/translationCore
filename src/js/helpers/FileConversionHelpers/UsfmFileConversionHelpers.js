@@ -102,7 +102,7 @@ export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifes
  * @return {Object} resources for chapter
  */
 export const getOriginalLanguageChapterResources = function (projectBibleID, chapter) {
-  const {languageId, bibleId} = BibleHelpers.getOLforBook(projectBibleID);
+  const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(projectBibleID);
   return ResourcesActions.loadChapterResource(bibleId, projectBibleID, languageId, chapter);
 };
 

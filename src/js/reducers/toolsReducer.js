@@ -76,6 +76,25 @@ export const getTools = state => {
 };
 
 /**
+ * Returns the loaded tools
+ * @param state
+ * @returns {object[]}
+ */
+export const getToolsByKey = state => {
+  const obj = {};
+  if(state) {
+     Object.keys(state.tools.byObject).forEach((index) => {
+      const toolApi = state.tools.byObject[index];
+      obj[toolApi.name] = toolApi;
+    });
+    return obj;
+  } else {
+    return {};
+  }
+};
+
+
+/**
  * Returns an array of tool names
  * @param state
  * @returns {*}

@@ -17,23 +17,6 @@ import ResourceAPI from "./ResourceAPI";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
-export function getAvailableCheckCategories(currentProjectToolsSelectedGL) {
-  const availableCategories = {};
-  Object.keys(currentProjectToolsSelectedGL).forEach((toolName) => {
-    const gatewayLanguage = currentProjectToolsSelectedGL[toolName] || 'en';
-    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', toolName);
-    const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
-    if (fs.existsSync(versionDirectory))
-      availableCategories[toolName] = fs.readdirSync(versionDirectory).filter((dirName)=>
-        fs.lstatSync(path.join(versionDirectory, dirName)).isDirectory()
-      );
-      if (!availableCategories[toolName]) {
-        availableCategories[toolName] = [];
-      }
-  });
-  return availableCategories;
-}
-
 /**
  * function to make the change in the array based on the passed params
  * i.e. If the value is present in the array and you pass the value of
@@ -392,7 +375,12 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
       return file !== '.DS_Store' && path.extname(file) === '.json';
     });
     let availableCheckCategories = [];
-    const languageId = toolName === 'translationWords' ? 'grc' : 'en';
+    let languageId = 'en';
+    if (toolName === 'translationWords'){
+      const {languageId: origLang} = BibleHelpers.getOrigLangforBook(bookAbbreviation);
+      languageId = origLang;
+    }
+
     //Note: translationWords only uses checks that are also available in the greek (OL)
     const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', toolName);
     const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) || toolResourcePath;
@@ -467,7 +455,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   const groupsObject = {};
   let checked = 0;
   let totalChecks = 0;
-  const {languageId, bibleId} = BibleHelpers.getOLforBook(bookId);
+  const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(bookId);
   const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, languageId, bibleId);
   if (expectedVerses && fs.existsSync(pathToWordAlignmentData)) {
     let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
@@ -543,7 +531,8 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
         }
       }
     }
-    const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
+    const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(bookId);
+    const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, languageId, bibleId);
     totalChecks = Object.keys(expectedVerses[chapterNum]).length;
     if (totalChecks) {
       return checked / totalChecks;

@@ -266,7 +266,7 @@ export default class Repo {
    * check status data to see if there are entries under check.  Skip ignored folders
    * @param {Object} data - status data to check
    * @param {String} check - key of check
-   * @param {[String]} ignored - files to ignore
+   * @param {array} ignored - files to ignore
    * @return {boolean}
    */
   static hasChangedFilesForCheck(data, check, ignored) {

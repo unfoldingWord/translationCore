@@ -117,7 +117,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const resourcesPath = RESOURCE_PATH;
-    const copyResourceFiles = ['grc/bibles/ugnt'];
+    const copyResourceFiles = ['el-x-koine/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
 
@@ -192,7 +192,7 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const resourcesPath = RESOURCE_PATH;
-    const copyResourceFiles = ['grc'];
+    const copyResourceFiles = ['el-x-koine'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
 
@@ -218,7 +218,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const resourcesPath = RESOURCE_PATH;
-    const copyResourceFiles = ['grc/bibles/ugnt'];
+    const copyResourceFiles = ['el-x-koine/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
 
