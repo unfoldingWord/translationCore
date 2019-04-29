@@ -5,6 +5,7 @@ import {Glyphicon} from 'react-bootstrap';
 import {tNotesCategories} from "tsv-groupdata-parser";
 import * as ResourcesActions from "../../../actions/ResourcesActions";
 import {parseArticleAbstract} from "../../../helpers/ToolCardHelpers";
+import Hint from "../../Hint";
 /**
 *  Checkboxnames are derived first by what is in Gateway language resource
 *  translation notes FileFolder. This is mapped to the array in
@@ -135,14 +136,11 @@ class ToolCardBoxes extends React.Component {
     });
   }
 
-
-  onWordClick(event, category) {
-    const positionCoord = event.target;
+  getArticleText(category) {
     const fullText = this.state.articles[category];
-    const [title, intro] = parseArticleAbstract(fullText);
-    this.props.showPopover(title, intro, positionCoord);
+    const {title, intro} = parseArticleAbstract(fullText);
+    return title + ": " + intro;
   }
-
 
   render() {
     const {availableCategories = {}, toolName, selectedCategories, onChecked, translate} = this.props;
@@ -164,7 +162,7 @@ class ToolCardBoxes extends React.Component {
                     </div>
                   </div>
                   <React.Fragment>
-                    {toolName != 'translationWords' ? (
+                    {toolName !== 'translationWords' ? (
                       <div style={{alignSelf: 'flex-end'}}>
                         <Glyphicon // ^ or v
                           style={{
@@ -187,10 +185,11 @@ class ToolCardBoxes extends React.Component {
                             <div style={{marginLeft: '36px', width: '38px'}}>
                               {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}
                             </div>
-                            <span onClick={(event) => this.onWordClick(event, subcategory)}
-                                style={{cursor: "pointer"}} >
-                              { translate(lookupNames[postPart(subcategory)]) }
-                            </span>
+                            <Hint position={((index % 2) === 1) ? 'top-left' : 'top-right'} label={this.getArticleText(subcategory)} size={'large'}>
+                              <span style={{cursor: "pointer"}} >
+                                {translate(lookupNames[postPart(subcategory)])}
+                              </span>
+                            </Hint>
                           </div>
                         ))
                         }
