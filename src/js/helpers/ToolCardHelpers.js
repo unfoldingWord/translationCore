@@ -53,7 +53,7 @@ export function isToolSupported(bookId, developerMode) {
  * adds "..." if longer than MAX_TEXT
  */
 export function parseArticleAbstract(fullText) {
-  const MAX_TEXT = 300;
+  const MAX_TEXT = 350;
 
   // get title from start of text
   const parts = fullText.split("#");
@@ -77,8 +77,22 @@ export function parseArticleAbstract(fullText) {
   }
 
   // remove markup
-  const stripped = partial.replace(/([#*]|<\/?u>)/gm, "").trim();
-  let intro = stripped;
+  let stripped = partial;
+  const replacements = [
+    {
+      match: /([#*]|<\/?u>|<\/?sup>)/gm,
+      replace: ""
+    },
+    {
+      match: /(\n>)|(\n\d.)/gm,
+      replace: "\n"
+    }
+  ];
+  for (let i = 0, l= replacements.length; i < l; i++) {
+    const r = replacements[i];
+    stripped = stripped.replace(r.match, r.replace);
+  }
+  let intro = stripped.trim();
 
   // trucate with ellipsis
   if(stripped.length > MAX_TEXT) {
