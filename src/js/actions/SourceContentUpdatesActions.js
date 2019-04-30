@@ -10,7 +10,7 @@ import { loadBookTranslations } from './ResourcesActions';
 import { generateTimestamp } from '../helpers/TimestampGenerator';
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
 import {copyGroupDataToProject} from '../helpers/ResourcesHelpers';
-import {getOLforBook} from '../helpers/bibleHelpers';
+import {getOrigLangforBook} from '../helpers/bibleHelpers';
 import * as Bible from "../common/BooksOfTheBible";
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
@@ -103,7 +103,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
           if (toolName) {
             const projectSaveLocation = getProjectSaveLocation(getState());
             const bookId = getProjectBookId(getState());
-            const olForBook = getOLforBook(bookId);
+            const olForBook = getOrigLangforBook(bookId);
             let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
             await dispatch(loadBookTranslations(contextId.reference.bookId));
             //Tool is open so we need to update existing group data
