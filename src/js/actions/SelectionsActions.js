@@ -4,7 +4,7 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import {checkSelectionOccurrences} from 'selections';
 // actions
-import * as AlertModalActions from './AlertModalActions';
+import * as AlertActions from './AlertActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 import {batchActions} from "redux-batched-actions";
@@ -75,10 +75,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
  * @return {Function}
  */
 export const showSelectionsInvalidatedWarning = (callback = null) => {
-  return (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    dispatch(AlertModalActions.openOptionDialog(translate('tools.selections_invalidated'), callback));
-  };
+  return showInvalidatedWarnings(true, false, callback);
 };
 
 /**
@@ -100,7 +97,7 @@ export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignments
       message = 'tools.alignments_reset_wa_tool';
     }
     const translate = getTranslate(getState());
-    dispatch(AlertModalActions.openOptionDialog(translate(message), callback));
+    dispatch(AlertActions.openIgnorableAlert(message, translate(message), {onConfirm: callback}));
   };
 };
 
