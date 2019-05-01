@@ -67,7 +67,10 @@ const dataSourceConfig = {
 export const getErrorMessage = (translate, languageName = "", languageId = "") => {
   let message = (!languageName) ? translate('project_validation.field_required') : "";
   if (!message) {
-    const language = LangHelpers.getLanguageByNameSelection(languageName, languageId);
+    let language = LangHelpers.getLanguageByNameSelection(languageName, languageId);
+    if (!language) { // fall back to partial match
+      language = LangHelpers.getLanguageByNameSelection(languageName);
+    }
     if (!language) {
       message = translate('project_validation.invalid_language_name');
     } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
