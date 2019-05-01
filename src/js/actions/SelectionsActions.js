@@ -97,7 +97,7 @@ export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignments
       message = 'tools.alignments_reset_wa_tool';
     }
     const translate = getTranslate(getState());
-    dispatch(AlertActions.openIgnorableAlert(message, translate(message), {onConfirm: callback}));
+    dispatch(AlertActions.openIgnorableAlert('alignments_reset', translate(message), {onConfirm: callback}));
   };
 };
 
