@@ -248,9 +248,8 @@ export default class ProjectAPI {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
-    } else {
-      return true;
     }
+    return true; // return true if file missing or error
   }
 
   /**
@@ -276,8 +275,9 @@ export default class ProjectAPI {
   /**
    * Removes categories from the currently selected that are not in the loaded array
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   * @param {Object} availableCategories - categories available in resources
    */
-  removeStaleCategoriesFromCurrent(toolName) {
+  removeStaleCategoriesFromCurrent(toolName, availableCategories) {
     const groupsPath = this.getCategoriesDir(toolName);
     const categoriesPath = path.join(groupsPath,
       ".categories");
@@ -297,9 +297,18 @@ export default class ProjectAPI {
             console.log('Could not reset current context id');
           }
         }
+        let loadedSubCategories = rawData.loaded;
+        if (toolName === "translationWords") {
+          // for tW we don't select by subcategories, so need to get subcategories for the available categories
+          loadedSubCategories = [];
+          const keys = Object.keys(availableCategories);
+          for (let i = 0, l = keys.length; i < l; i++) {
+            loadedSubCategories.push.apply(loadedSubCategories,availableCategories[keys[i]]);
+          }
+        }
         const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
         currentGroupsData.forEach((category) => {
-          if (!rawData.loaded.includes(path.parse(category).name)) {
+          if (!loadedSubCategories.includes(path.parse(category).name)) {
             //removing groups data files that are not in loaded
             fs.removeSync(path.join(groupsPath, category));
           }
