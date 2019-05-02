@@ -366,7 +366,7 @@
     "no_gl_available": "Ninguno disponible",
     "invalid_checks": "Revisiones invalidadas",
     "invalid_verse_alignments": "Versículos con alineaciones invalidadas.",
-    "invalidation_checking": "Comprobando si esta edición entra en conflicto con las selecciones y alineaciones ya guardadas...",
+    "invalidation_checking": "Comprobando sí esta edición entra en conflicto con selecciones y alineaciones guardadas...",
     "alignments_reset_wa_tool": "Se han detectado cambios en su proyecto que han invalidado algunas de sus alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral.",
     "invalid_verse_alignments_and_selections": "Se han detectado unos cambios en su proyecto que han invalidado algunas de sus selecciones y algunas alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral."
   },
@@ -415,7 +415,7 @@
     "names": "Nombres",
     "other": "Otros Términos",
     "translate-manuscripts": "Manuscritos originales",
-    "guidelines-sonofgodprinciples": "Traducción de Hijo y Padre",
+    "guidelines-sonofgodprinciples": "Traduciendo Hijo y Padre",
     "translate-textvariants": "Variantes textuales",
     "translate-transliterate": "Copy or Borrow Words",
     "numbers": "Números",
