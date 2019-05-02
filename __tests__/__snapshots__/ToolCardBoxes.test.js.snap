@@ -206,16 +206,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: writing-background: Could not find article for writing-background"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.writing-background
-          </span>
+            <span
+              aria-label="Article Not Found: writing-background: Could not find article for writing-background"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.writing-background
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="1"
@@ -252,16 +262,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: writing-endofstory: Could not find article for writing-endofstory"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.writing-endofstory
-          </span>
+            <span
+              aria-label="Article Not Found: writing-endofstory: Could not find article for writing-endofstory"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.writing-endofstory
+              </span>
+            </span>
+          </Hint>
         </div>
       </div>
     </div>
@@ -394,16 +414,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: translate-numbers: Could not find article for translate-numbers"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.numbers
-          </span>
+            <span
+              aria-label="Article Not Found: translate-numbers: Could not find article for translate-numbers"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.numbers
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="1"
@@ -440,16 +470,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: translate-fraction: Could not find article for translate-fraction"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.translate-fraction
-          </span>
+            <span
+              aria-label="Article Not Found: translate-fraction: Could not find article for translate-fraction"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.translate-fraction
+              </span>
+            </span>
+          </Hint>
         </div>
       </div>
     </div>
@@ -582,16 +622,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-idiom: Could not find article for figs-idiom"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.figs-idiom
-          </span>
+            <span
+              aria-label="Article Not Found: figs-idiom: Could not find article for figs-idiom"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-idiom
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="1"
@@ -628,16 +678,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-irony: Could not find article for figs-irony"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.figs-irony
-          </span>
+            <span
+              aria-label="Article Not Found: figs-irony: Could not find article for figs-irony"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-irony
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="2"
@@ -674,16 +734,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-metaphor: Could not find article for figs-metaphor"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.figs-metaphor
-          </span>
+            <span
+              aria-label="Article Not Found: figs-metaphor: Could not find article for figs-metaphor"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-metaphor
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="3"
@@ -720,16 +790,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-rquestion: Could not find article for figs-rquestion"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.figs-rquestion
-          </span>
+            <span
+              aria-label="Article Not Found: figs-rquestion: Could not find article for figs-rquestion"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-rquestion
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="4"
@@ -766,16 +846,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-simile: Could not find article for figs-simile"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.figs-simile
-          </span>
+            <span
+              aria-label="Article Not Found: figs-simile: Could not find article for figs-simile"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-simile
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="5"
@@ -812,16 +902,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-apostrophe: Could not find article for figs-apostrophe"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.figs-apostrophe
-          </span>
+            <span
+              aria-label="Article Not Found: figs-apostrophe: Could not find article for figs-apostrophe"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-apostrophe
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="6"
@@ -858,16 +958,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-euphemism: Could not find article for figs-euphemism"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.figs-euphemism
-          </span>
+            <span
+              aria-label="Article Not Found: figs-euphemism: Could not find article for figs-euphemism"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-euphemism
+              </span>
+            </span>
+          </Hint>
         </div>
       </div>
     </div>
@@ -1083,16 +1193,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-hypo: Could not find article for figs-hypo"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.figs-hypo
-          </span>
+            <span
+              aria-label="Article Not Found: figs-hypo: Could not find article for figs-hypo"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-hypo
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="1"
@@ -1129,16 +1249,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-activepassive: Could not find article for figs-activepassive"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.figs-activepassive
-          </span>
+            <span
+              aria-label="Article Not Found: figs-activepassive: Could not find article for figs-activepassive"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-activepassive
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="2"
@@ -1175,16 +1305,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-gendernotations: Could not find article for figs-gendernotations"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.figs-gendernotations
-          </span>
+            <span
+              aria-label="Article Not Found: figs-gendernotations: Could not find article for figs-gendernotations"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-gendernotations
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="3"
@@ -1221,16 +1361,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-pronouns: Could not find article for figs-pronouns"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.figs-pronouns
-          </span>
+            <span
+              aria-label="Article Not Found: figs-pronouns: Could not find article for figs-pronouns"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-pronouns
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="4"
@@ -1267,16 +1417,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-you: Could not find article for figs-you"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.figs-you
-          </span>
+            <span
+              aria-label="Article Not Found: figs-you: Could not find article for figs-you"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-you
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="5"
@@ -1313,16 +1473,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-123person: Could not find article for figs-123person"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.figs-123person
-          </span>
+            <span
+              aria-label="Article Not Found: figs-123person: Could not find article for figs-123person"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-123person
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="6"
@@ -1359,16 +1529,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-abstractnouns: Could not find article for figs-abstractnouns"
+            position="top-right"
+            size="large"
           >
-            translated: tool_card_categories.figs-abstractnouns
-          </span>
+            <span
+              aria-label="Article Not Found: figs-abstractnouns: Could not find article for figs-abstractnouns"
+              className="hint--top-right hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-abstractnouns
+              </span>
+            </span>
+          </Hint>
         </div>
         <div
           key="7"
@@ -1405,16 +1585,26 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
               }
             />
           </div>
-          <span
-            onClick={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <Hint
+            label="Article Not Found: figs-distinguish: Could not find article for figs-distinguish"
+            position="top-left"
+            size="large"
           >
-            translated: tool_card_categories.figs-distinguish
-          </span>
+            <span
+              aria-label="Article Not Found: figs-distinguish: Could not find article for figs-distinguish"
+              className="hint--top-left hint--large"
+            >
+              <span
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                translated: tool_card_categories.figs-distinguish
+              </span>
+            </span>
+          </Hint>
         </div>
       </div>
     </div>
