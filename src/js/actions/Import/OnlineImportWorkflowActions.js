@@ -34,8 +34,12 @@ import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import migrateProject from "../../helpers/ProjectMigration";
 import fs from "fs-extra";
 import Repo from "../../helpers/Repo";
-import { isProjectSupported } from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
+import {
+  isProjectSupported,
+  tc_MIN_VERSION_ERROR
+} from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import { openProject } from "../MyProjects/ProjectLoadingActions";
+import {showInvalidVersionError} from "../MyProjects/ProjectLoadingActions";
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -143,7 +147,11 @@ export const onlineImport = () => {
 export const recoverFailedOnlineImport = (errorMessage) => (dispatch) => {
   // TRICKY: clear last project first to avoid triggering autos-saving.
   dispatch(ProjectLoadingActions.closeProject());
-  dispatch(AlertModalActions.openAlertDialog(errorMessage));
+  if (errorMessage === tc_MIN_VERSION_ERROR) {
+    dispatch(showInvalidVersionError());
+  } else {
+    dispatch(AlertModalActions.openAlertDialog(errorMessage));
+  }
   dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   dispatch({ type: "LOADED_ONLINE_FAILED" });
   dispatch(deleteImportProjectForLink());

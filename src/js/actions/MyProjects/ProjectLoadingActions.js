@@ -50,6 +50,25 @@ function delay(ms) {
 }
 
 /**
+ * show Invalid Version Error
+ * @return {Function}
+ */
+export const showInvalidVersionError = () => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const cancelText = translate("buttons.cancel_button");
+    const upgradeText = translate("buttons.update");
+    dispatch(openOptionDialog(translate("project_validation.newer_project"),
+      (result) => {
+        dispatch(closeAlertDialog());
+        if (result === upgradeText) {
+          dispatch(openSoftwareUpdate());
+        }
+      }, cancelText, upgradeText));
+  };
+};
+
+/**
  * This thunk opens a project and prepares it for use in tools.
  * @param {string} name -  the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
@@ -122,20 +141,7 @@ export const openProject = (name, skipValidation=false) => {
       // to avoid triggering autosaving.
       dispatch(closeProject());
       if (message === tc_MIN_VERSION_ERROR) {
-        const cancelText = translate("buttons.cancel_button");
-        const upgradeText = translate("buttons.update");
-        dispatch(openOptionDialog(translate("project_validation.newer_project"),
-          (result) => {
-            dispatch(closeAlertDialog());
-            switch (result) {
-              case upgradeText:
-                dispatch(openSoftwareUpdate());
-                break;
-
-              default:
-                break;
-            }
-          }, cancelText, upgradeText));
+        dispatch(showInvalidVersionError());
       } else {
         dispatch(openAlertDialog(message));
       }
