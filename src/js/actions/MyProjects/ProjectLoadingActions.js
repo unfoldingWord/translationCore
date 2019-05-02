@@ -6,9 +6,14 @@ import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
-import {openAlertDialog} from '../AlertModalActions';
+import {
+  openAlertDialog,
+  openOptionDialog,
+  closeAlertDialog
+} from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
+import { openSoftwareUpdate } from "../SoftwareUpdateActions";
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
@@ -22,7 +27,7 @@ import {
   getTranslate,
   getUsername
 } from "../../selectors";
-import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {isProjectSupported, tc_MIN_VERSION_ERROR} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
   loadSourceBookTranslations,
   loadTargetLanguageBook
@@ -116,7 +121,24 @@ export const openProject = (name, skipValidation=false) => {
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
       dispatch(closeProject());
-      dispatch(openAlertDialog(message));
+      if (message === tc_MIN_VERSION_ERROR) {
+        const cancelText = translate("buttons.cancel_button");
+        const upgradeText = translate("buttons.update");
+        dispatch(openOptionDialog(translate("project_validation.newer_project"),
+          (result) => {
+            dispatch(closeAlertDialog());
+            switch (result) {
+              case upgradeText:
+                dispatch(openSoftwareUpdate());
+                break;
+
+              default:
+                break;
+            }
+          }, cancelText, upgradeText));
+      } else {
+        dispatch(openAlertDialog(message));
+      }
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     }
   };
