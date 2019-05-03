@@ -76,6 +76,7 @@ class ToolCard extends Component {
   }
 
   getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories) {
+    const toolsWithCategories = ['translationWords' , 'translationNotes'];
     let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
     if (!launchDisableMessage) { // if no errors, make sure we have original language
       const olBookPath = hasValidOL(id);
@@ -87,9 +88,10 @@ class ToolCard extends Component {
       const gatewayLanguageList = getGatewayLanguageList(id, name);
       launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
     }
-    if (!launchDisableMessage && (name === 'translationWords' && selectedCategories.length === 0)) {
+    if (!launchDisableMessage && (toolsWithCategories.includes(name) && selectedCategories.length === 0)) {
       launchDisableMessage = translate('tools.no_checks_selected');
     }
+
     return launchDisableMessage;
   }
 
