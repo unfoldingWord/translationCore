@@ -13,7 +13,7 @@ import {APP_VERSION} from "../../containers/home/HomeContainer";
 import semver from "semver";
 
 export const tc_EDIT_VERSION_KEY = "tc_edit_version";
-export const tc_MIN_COMPATIBLE_VERSION_KEY = "tc_min_project_version";
+export const tc_MIN_COMPATIBLE_VERSION_KEY = "tc_min_compatible_version";
 export const tc_MIN_VERSION_ERROR = "TC_MIN_VERSION_ERROR";
 
 /**

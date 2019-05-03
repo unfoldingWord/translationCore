@@ -13,7 +13,7 @@ import {
 } from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
-import { openSoftwareUpdate } from "../SoftwareUpdateActions";
+import {openSoftwareUpdate} from "../SoftwareUpdateActions";
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
@@ -84,8 +84,8 @@ export const updateProjectVersion = () => {
     const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
     const editVersion = manifest[tc_EDIT_VERSION_KEY];
     if ((editVersion !== APP_VERSION) || (minVersion !== MIN_COMPATIBLE_VERSION)) {
-      ProjectDetailsActions.addObjectPropertyToManifest(tc_MIN_COMPATIBLE_VERSION_KEY, MIN_COMPATIBLE_VERSION);
-      ProjectDetailsActions.addObjectPropertyToManifest(tc_EDIT_VERSION_KEY, APP_VERSION);
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_EDIT_VERSION_KEY, APP_VERSION));
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_MIN_COMPATIBLE_VERSION_KEY, MIN_COMPATIBLE_VERSION));
     }
   };
 };
@@ -118,7 +118,6 @@ export const openProject = (name, skipValidation=false) => {
       if(!skipValidation) {
         await dispatch(validateProject(projectDir));
       }
-      dispatch(updateProjectVersion());
 
       // TRICKY: validation may have changed the project path
       const validProjectDir = getProjectSaveLocation(getState());
@@ -155,6 +154,7 @@ export const openProject = (name, skipValidation=false) => {
       }
 
       await dispatch(displayTools());
+      dispatch(updateProjectVersion());
       console.log("openProject() - project opened");
     } catch (e) {
       // TODO: clean this up
