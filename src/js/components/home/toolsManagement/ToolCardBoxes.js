@@ -15,6 +15,7 @@ const styles = {
     '&$checked': {
       color: 'var(--accent-color-dark)',
     },
+    padding: '0px',
   },
   checked: {},
 };
@@ -39,7 +40,7 @@ const toolCardCategories = {
 };
 
 /**
- * turn group object of category objects in to set of objects
+ * turn group object of category objects into set of objects
  */
 function flattenNotesCategories() {
   let lookupNames = {};
@@ -59,7 +60,7 @@ function flattenNotesCategories() {
 
 
 /**
- * Display a preconfigured chechbox with passed parms
+ * Display a preconfigured checkbox with passed params
  * @param {*} selectedCategories
  * @param {*} id
  * @param {*} toolName
@@ -107,19 +108,15 @@ function postPart(symbol) {
 class ToolCardBoxes extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       expanded: {}
     };
-
     this.showExpanded = this.showExpanded.bind(this);
   }
-
 
   componentWillMount() {
     this.loadArticles();
   }
-
 
   /**
    * Load first 600 characters of tA articles for available categories in this project
@@ -129,7 +126,7 @@ class ToolCardBoxes extends React.Component {
     let articles = {};
 
     for(var cat in this.props.availableCategories) {
-      let category  = this.props.availableCategories[cat];
+      const category = this.props.availableCategories[cat];
 
       for(var group in category ) {
         fullText = ResourcesActions.loadArticleData(
@@ -144,7 +141,6 @@ class ToolCardBoxes extends React.Component {
 
     this.setState( {"articles": articles} );
   }
-
 
   showExpanded(id) {
     this.setState({
@@ -171,17 +167,19 @@ class ToolCardBoxes extends React.Component {
       classes,
     } = this.props;
     const lookupNames = flattenNotesCategories();
+
     return (
       <div style={{margin: '0 2% 0 6%'}}>
         {
           Object.keys(availableCategories).map((parentCategory, index) => {
-            return availableCategories[parentCategory].length > 0 &&
+            const subcategories = availableCategories[parentCategory];
+            return subcategories.length > 0 &&
               tNotesCategories[parentCategory] || toolName == 'translationWords' ?
               (
                 <div style={{display: 'flex', flexWrap: 'wrap', margin: '0 0 5 0', width: '100%'}} key={index}>
                   <div style={{display: 'flex', width: '92%'}}>
                     <div style={{width: '38px'}} >
-                      {localCheckBox(classes, selectedCategories, parentCategory, toolName, onChecked, availableCategories[parentCategory])}
+                      {localCheckBox(classes, selectedCategories, parentCategory, toolName, onChecked, subcategories)}
                     </div>
                     <div>
                       {translate(lookupNames[parentCategory])   /* category label */}
@@ -206,7 +204,13 @@ class ToolCardBoxes extends React.Component {
                         display: 'flex', flexWrap: 'wrap', alignItems: 'left',
                         marginBottom: 5, width: '100%'
                       }} key={index}>
-                        {availableCategories[parentCategory].map((subcategory, index) => (
+                        {subcategories.sort((a, b) => {
+                          a = translate(lookupNames[postPart(a)]);
+                          b = translate(lookupNames[postPart(b)]);
+                          if (a < b) return -1;
+                          else if (a > b) return 1;
+                          return 0;
+                        }).map((subcategory, index) => (
                           <div style={{display: 'flex', width: '48%'}} key={index} >
                             <div style={{marginLeft: '36px', width: '38px'}}>
                               {localCheckBox(classes, selectedCategories, subcategory, toolName, onChecked)}
