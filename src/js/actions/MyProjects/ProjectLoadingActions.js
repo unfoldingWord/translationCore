@@ -74,6 +74,10 @@ export const showInvalidVersionError = () => {
   };
 };
 
+/**
+ * make sure that the edit versions and minimum compatible versions are up to date in manifest
+ * @return {Function}
+ */
 export const updateProjectVersion = () => {
   return async (dispatch, getState) => {
     const manifest = getProjectManifest(getState());
@@ -114,6 +118,7 @@ export const openProject = (name, skipValidation=false) => {
       if(!skipValidation) {
         await dispatch(validateProject(projectDir));
       }
+      dispatch(updateProjectVersion());
 
       // TRICKY: validation may have changed the project path
       const validProjectDir = getProjectSaveLocation(getState());
