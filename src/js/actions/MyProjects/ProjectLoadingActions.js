@@ -27,7 +27,12 @@ import {
   getTranslate,
   getUsername
 } from "../../selectors";
-import {isProjectSupported, tc_MIN_VERSION_ERROR} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {
+  isProjectSupported,
+  tc_MIN_COMPATIBLE_VERSION_KEY,
+  tc_EDIT_VERSION_KEY,
+  tc_MIN_VERSION_ERROR
+} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
   loadSourceBookTranslations,
   loadTargetLanguageBook
@@ -39,6 +44,7 @@ import {
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
 import * as BibleHelpers from "../../helpers/bibleHelpers";
+import {APP_VERSION, MIN_COMPATIBLE_VERSION} from "../../containers/home/HomeContainer";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -65,6 +71,18 @@ export const showInvalidVersionError = () => {
           dispatch(openSoftwareUpdate());
         }
       }, cancelText, upgradeText));
+  };
+};
+
+export const updateProjectVersion = () => {
+  return async (dispatch, getState) => {
+    const manifest = getProjectManifest(getState());
+    const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
+    const editVersion = manifest[tc_EDIT_VERSION_KEY];
+    if ((editVersion !== APP_VERSION) || (minVersion !== MIN_COMPATIBLE_VERSION)) {
+      ProjectDetailsActions.addObjectPropertyToManifest(tc_MIN_COMPATIBLE_VERSION_KEY, MIN_COMPATIBLE_VERSION);
+      ProjectDetailsActions.addObjectPropertyToManifest(tc_EDIT_VERSION_KEY, APP_VERSION);
+    }
   };
 };
 

@@ -25,7 +25,7 @@ import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 
 export const APP_VERSION = packagefile.version;
-export const MIN_PROJECT_VERSION = packagefile.minProjectversion;
+export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
 
 // TRICKY: because this component is heavily coupled with callbacks to set content
 // we need to connect locale state change events.
