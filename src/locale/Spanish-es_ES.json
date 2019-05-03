@@ -148,7 +148,7 @@
     "import_local_project": "Importar un Proyecto Local",
     "import_online_project": "Importar un Proyecto Online",
     "searching_alert": "Buscando. Por favor espere...",
-    "books_available": "En esta versión de ${app}, el translationWords herramienta de apoyo a proyectos en el Nuevo Testamento y la Palabra de la herramienta de Alineación apoya proyectos de toda la Biblia.",
+    "books_available": "En esta versión de ${app}, el translationWords es una herramienta de apoyo a proyectos en el Nuevo Testamento y la Word Alignment es una herramienta de apoya a proyectos de toda la Biblia.",
     "enter_url": "Escriba la URL",
     "or": "O",
     "language_code": "Código De Idioma",
@@ -366,7 +366,7 @@
     "no_gl_available": "Ninguno disponible",
     "invalid_checks": "Revisiones invalidadas",
     "invalid_verse_alignments": "Versículos con alineaciones invalidadas.",
-    "invalidation_checking": "Comprobando si esta edición entra en conflicto con las selecciones y alineaciones ya guardadas...",
+    "invalidation_checking": "Comprobando sí esta edición entra en conflicto con selecciones y alineaciones guardadas...",
     "alignments_reset_wa_tool": "Se han detectado cambios en su proyecto que han invalidado algunas de sus alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral.",
     "invalid_verse_alignments_and_selections": "Se han detectado unos cambios en su proyecto que han invalidado algunas de sus selecciones y algunas alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral."
   },
@@ -415,7 +415,7 @@
     "names": "Nombres",
     "other": "Otros Términos",
     "translate-manuscripts": "Manuscritos originales",
-    "guidelines-sonofgodprinciples": "Traducción de Hijo y Padre",
+    "guidelines-sonofgodprinciples": "Traduciendo Hijo y Padre",
     "translate-textvariants": "Variantes textuales",
     "translate-transliterate": "Copy or Borrow Words",
     "numbers": "Números",
@@ -439,7 +439,7 @@
     "figs-personification": "Personification",
     "figs-synecdoche": "Synecdoche",
     "figs-ellipsis": "Ellipsis",
-    "figs-doublenegatives": "Dobles negativos",
+    "figs-doublenegatives": "Doble negativos",
     "figs-doublet": "Doublet",
     "culture": "Cultura",
     "figs-explicit": "Información Implícita y Explícita",
@@ -479,7 +479,7 @@
     "figs-activepassive": "Activo o Pasivo",
     "figs-gendernotations": "Género",
     "figs-pronouns": "Pronombres",
-    "figs-you": "Formas de Usted",
+    "figs-you": "Tus Formularios",
     "figs-123person": "Primera, Segunda, o Tercera Persona",
     "figs-abstractnouns": "Abstract Nouns",
     "figs-distinguish": "Distinguishing versus Informing or Reminding",
@@ -489,7 +489,7 @@
     "figs-nominaladj": "Nominal Adjectives",
     "figs-possession": "Posesión",
     "figs-rpronouns": "Pronombres Reflexivos",
-    "figs-we": "Formas de Nosotros",
-    "figs-they": "Formas de Ellos"
+    "figs-we": "Nuestros Formularios",
+    "figs-they": "Formularios de Ellos"
   }
 }
