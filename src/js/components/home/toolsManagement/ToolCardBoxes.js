@@ -1,10 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Checkbox} from 'material-ui';
+import Checkbox from '@material-ui/core/Checkbox';
+import isEqual from 'deep-equal';
+import { withStyles } from '@material-ui/core/styles';
 import {Glyphicon} from 'react-bootstrap';
 import {tNotesCategories} from "tsv-groupdata-parser";
 import * as ResourcesActions from "../../../actions/ResourcesActions";
 import {parseArticleAbstract} from "../../../helpers/ToolCardHelpers";
+
+const styles = {
+  root: {
+    color: 'var(--accent-color-dark)',
+    '&$checked': {
+      color: 'var(--accent-color-dark)',
+    },
+  },
+  checked: {},
+};
 /**
 *  Checkboxnames are derived first by what is in Gateway language resource
 *  translation notes FileFolder. This is mapped to the array in
@@ -51,16 +63,22 @@ function flattenNotesCategories() {
  * @param {*} toolName
  * @param {*} onChecked
  */
-function localCheckBox(selectedCategories, id, toolName, onChecked, availableCategoriesForParent = []) {
+function localCheckBox(classes, selectedCategories, id, toolName, onChecked, availableCategoriesForParent = []) {
   const isParent = !!availableCategoriesForParent.length;
-  //Finding if a child has not been selected, returning the negative of that
-  const allChildrenSelected = !(availableCategoriesForParent.filter((subcategory) => !selectedCategories.includes(subcategory)).length > 0);
+  const currentCategoriesSelected = availableCategoriesForParent.filter((subcategory) => selectedCategories.includes(subcategory));
+  const allChildrenSelected = isEqual(availableCategoriesForParent, currentCategoriesSelected);
+  const allChildrenUnselected = currentCategoriesSelected.length === 0;
+  const showIndeterminate = !allChildrenUnselected && currentCategoriesSelected.length > 0 && !allChildrenSelected;
+
   return (
     <Checkbox
-      style={{width: 'unset'}}
-      iconStyle={{fill: 'black', margin: "0, 0, 0, 0"}}
       checked={selectedCategories.includes(id) || (isParent && allChildrenSelected)}
-      onCheck={(e) => {
+      indeterminate={isParent && showIndeterminate}
+      classes={{
+        root: classes.root,
+        checked: classes.checked,
+      }}
+      onChange={(e) => {
         if (isParent) {
           onChecked(availableCategoriesForParent, e.target.checked, toolName);
         } else {
@@ -69,6 +87,21 @@ function localCheckBox(selectedCategories, id, toolName, onChecked, availableCat
       }}
     />
   );
+
+  // return (
+  //   <Checkbox
+  //     style={{width: 'unset'}}
+  //     iconStyle={{fill: 'black', margin: "0, 0, 0, 0"}}
+  //     checked={selectedCategories.includes(id) || (isParent && allChildrenSelected)}
+  //     onCheck={(e) => {
+  //       if (isParent) {
+  //         onChecked(availableCategoriesForParent, e.target.checked, toolName);
+  //       } else {
+  //         onChecked(id, e.target.checked, toolName);
+  //       }
+  //     }}
+  //   />
+  // );
 }
 
 
@@ -145,7 +178,14 @@ class ToolCardBoxes extends React.Component {
 
 
   render() {
-    const {availableCategories = {}, toolName, selectedCategories, onChecked, translate} = this.props;
+    const {
+      availableCategories = {},
+      toolName,
+      selectedCategories,
+      onChecked,
+      translate,
+      classes,
+    } = this.props;
     const lookupNames = flattenNotesCategories();
     return (
       <div style={{margin: '0 2% 0 6%'}}>
@@ -157,7 +197,7 @@ class ToolCardBoxes extends React.Component {
                 <div style={{display: 'flex', flexWrap: 'wrap', margin: '0 0 5 0', width: '100%'}} key={index}>
                   <div style={{display: 'flex', width: '92%'}}>
                     <div style={{width: '38px'}} >
-                      {localCheckBox(selectedCategories, parentCategory, toolName, onChecked, availableCategories[parentCategory])}
+                      {localCheckBox(classes, selectedCategories, parentCategory, toolName, onChecked, availableCategories[parentCategory])}
                     </div>
                     <div>
                       {translate(lookupNames[parentCategory])   /* category label */}
@@ -185,7 +225,7 @@ class ToolCardBoxes extends React.Component {
                         {availableCategories[parentCategory].map((subcategory, index) => (
                           <div style={{display: 'flex', width: '48%'}} key={index} >
                             <div style={{marginLeft: '36px', width: '38px'}}>
-                              {localCheckBox(selectedCategories, subcategory, toolName, onChecked)}
+                              {localCheckBox(classes, selectedCategories, subcategory, toolName, onChecked)}
                             </div>
                             <span onClick={(event) => this.onWordClick(event, subcategory)}
                                 style={{cursor: "pointer"}} >
@@ -215,7 +255,8 @@ ToolCardBoxes.propTypes = {
   targetOrigin: PropTypes.string,
   selectedGL: PropTypes.string.isRequired,
   showPopover: PropTypes.func.isRequired,
-  closePopover: PropTypes.func
+  closePopover: PropTypes.func,
+  classes: PropTypes.object.isRequired,
 };
 
-export default ToolCardBoxes;
+export default withStyles(styles)(ToolCardBoxes);
