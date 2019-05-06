@@ -198,13 +198,13 @@ class ToolCardBoxes extends React.Component {
                           return 0;
                         }).map((subcategory, index) => (
                           <div style={{display: 'flex', width: '48%'}} key={index} >
-                            <div style={{marginLeft: '36px', width: '38px'}}>
+                            <div style={{marginLeft: '36px', marginRight: '10px'}}>
                               {localCheckBox(classes, selectedCategories, subcategory, toolName, onChecked)}
                             </div>
                             <Hint position={((index % 2) === 1) ? 'top-left' : 'top-right'} label={this.getArticleText(subcategory)} size={'large'}>
-                              <span style={{cursor: "pointer"}} >
+                              <div style={{cursor: "pointer"}} >
                                 {translate(lookupNames[subcategory])}
-                              </span>
+                              </div>
                             </Hint>
                           </div>
                         ))
