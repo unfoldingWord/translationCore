@@ -222,11 +222,11 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
                                                   chapterWithVerseEdit, verseWithVerseEdit, true);
       }
     }
+    dispatch(AlertModalActions.closeAlertDialog());
     if (showSelectionInvalidated || showAlignmentsInvalidated) {
-      dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated)); // no need to close alert, since this replaces it
+      await delay(250);
+      dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
       await delay(1000);
-    } else {
-      dispatch(AlertModalActions.closeAlertDialog());
     }
     dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
                                            currentCheckContextId, actionsBatch));

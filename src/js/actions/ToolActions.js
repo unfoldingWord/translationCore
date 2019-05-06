@@ -1,12 +1,14 @@
 import types from "./ActionTypes";
 import { getToolGatewayLanguage, getTranslate, getProjectSaveLocation } from "../selectors";
+// actions
 import * as ModalActions from "./ModalActions";
 import * as AlertModalActions from "./AlertModalActions";
+import * as GroupsDataActions from "./GroupsDataActions";
 import { loadCurrentContextId } from "./ContextIdActions";
 import * as BodyUIActions from "./BodyUIActions";
-import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
 import { loadGroupsIndex } from "./GroupsIndexActions";
 // helpers
+import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
 import { loadToolsInDir } from "../helpers/toolHelper";
 import {delay} from "../common/utils";
 /**
@@ -70,6 +72,10 @@ export const openTool = (name) => async (dispatch, getData) => {
       const language = getToolGatewayLanguage(getData(), name);
       const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
       dispatch(loadGroupsIndex(groupIndex));
+
+      // verify stuff in case of external edits and old projects
+      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+
       dispatch(loadCurrentContextId());
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));
