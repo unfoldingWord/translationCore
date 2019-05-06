@@ -7,6 +7,7 @@ import migrateToVersion4 from './migrateToVersion4';
 import migrateToVersion5 from './migrateToVersion5';
 import migrateToVersion6 from './migrateToVersion6';
 import migrateToVersion7 from './migrateToVersion7';
+import migrateOldProjects from './migrateOldProjects';
 
 /**
  * Migrates a project to the current version.
@@ -15,6 +16,7 @@ import migrateToVersion7 from './migrateToVersion7';
  * @param {String} link - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
  */
 const migrateProject = (projectSaveLocation, link, userName) => {
+  migrateOldProjects(projectSaveLocation);
   migrateToAddTargetLanguageBookName(projectSaveLocation);
   migrateAppsToDotApps(projectSaveLocation);
   migrateToVersion1(projectSaveLocation, link);
