@@ -196,7 +196,7 @@ export function loadProjectGroupIndex(
       const categoryIndex = path.join(helpDir, categoryName, "index.json");
       if (fs.lstatSync(categoryIndex).isFile()) {
         try {
-          const selectedSubcategories = categories[categoryName] || [];
+          const selectedSubcategories = categories[categoryName];
           // For categories with subcategories need to filter out not selected items.
           const categoryIndices = fs.readJsonSync(categoryIndex).filter(item => selectedSubcategories.includes(item.id));
           indices.push.apply(indices, categoryIndices);

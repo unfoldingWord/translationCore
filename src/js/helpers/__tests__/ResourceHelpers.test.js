@@ -84,13 +84,14 @@ describe("load group index", () => {
 
     global.console = {error: jest.fn(), warn: jest.fn()};
     mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
-    mockGetSelectedCategories.mockReturnValueOnce(["category"]);
+    mockGetSelectedCategories.mockReturnValueOnce(["hello"]);
     fs.lstatSync.mockReturnValue({
       isFile: () => true
     });
     fs.readJsonSync.mockReturnValueOnce([{id: "hello", name: "World"}]);
+    const result = loadProjectGroupIndex("lang", "tool", "dir/", translate);
 
-    expect(loadProjectGroupIndex("lang", "tool", "dir/", translate)).toEqual(expectedResult);
+    expect(result).toEqual(expectedResult);
     expect(generateChapterGroupIndex).not.toBeCalled();
     expect(console.error).not.toBeCalled();
     expect(console.warn).not.toBeCalled();
