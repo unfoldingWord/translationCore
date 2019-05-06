@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`translationNotes should have 4 boxes checked 1`] = `
-<ToolCardBoxes
+<WithStyles(ToolCardBoxes)
   availableCategories={
     Object {
       "culture": Array [
@@ -70,291 +70,386 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
   toolName="translationNotes"
   translate={[Function]}
 >
-  <div
-    style={
+  <ToolCardBoxes
+    availableCategories={
       Object {
-        "margin": "0 2% 0 6%",
+        "culture": Array [
+          "figs-explicit",
+        ],
+        "discourse": Array [
+          "writing-background",
+          "writing-endofstory",
+        ],
+        "figures": Array [
+          "figs-idiom",
+          "figs-irony",
+          "figs-metaphor",
+          "figs-rquestion",
+          "figs-simile",
+          "figs-apostrophe",
+          "figs-euphemism",
+        ],
+        "grammar": Array [
+          "figs-hypo",
+          "figs-activepassive",
+          "figs-gendernotations",
+          "figs-pronouns",
+          "figs-you",
+          "figs-123person",
+          "figs-abstractnouns",
+          "figs-distinguish",
+        ],
+        "numbers": Array [
+          "translate-numbers",
+          "translate-fraction",
+        ],
       }
     }
+    bookId="tit"
+    checks={
+      Array [
+        "figs-gendernotations",
+        "figs-pronouns",
+        "figs-irony",
+      ]
+    }
+    classes={
+      Object {
+        "checked": "ToolCardBoxes-checked-2",
+        "root": "ToolCardBoxes-root-1",
+      }
+    }
+    onChecked={[Function]}
+    selectedCategories={
+      Array [
+        "writing-background",
+        "translate-numbers",
+        "translate-fraction",
+        "figs-idiom",
+        "figs-irony",
+        "figs-metaphor",
+        "figs-rquestion",
+        "figs-simile",
+        "figs-apostrophe",
+        "figs-explicit",
+        "figs-hypo",
+        "figs-activepassive",
+        "figs-pronouns",
+        "figs-you",
+        "figs-123person",
+        "figs-abstractnouns",
+      ]
+    }
+    selectedGL="en"
+    showPopover={[Function]}
+    toolName="translationNotes"
+    translate={[Function]}
   >
     <div
-      key="0"
       style={
         Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-          "margin": "0 0 5 0",
-          "width": "100%",
+          "margin": "0 2% 0 6%",
         }
       }
     >
       <div
-        style={
-          Object {
-            "display": "flex",
-            "width": "92%",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "width": "38px",
-            }
-          }
-        >
-          <Checkbox
-            checked={false}
-            disabled={false}
-            iconStyle={
-              Object {
-                "fill": "black",
-                "margin": "0, 0, 0, 0",
-              }
-            }
-            labelPosition="right"
-            onCheck={[Function]}
-            style={
-              Object {
-                "width": "unset",
-              }
-            }
-          />
-        </div>
-        <div>
-          translated: tool_card_categories.discourse
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "alignSelf": "flex-end",
-          }
-        }
-      >
-        <Glyphicon
-          bsClass="glyphicon"
-          glyph="chevron-up"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": "18px",
-              "margin": "0 12px 0 0",
-              "textAlign": "right",
-              "width": "20px",
-            }
-          }
-        >
-          <span
-            className="glyphicon glyphicon-chevron-up"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontSize": "18px",
-                "margin": "0 12px 0 0",
-                "textAlign": "right",
-                "width": "20px",
-              }
-            }
-          />
-        </Glyphicon>
-      </div>
-      <div
         key="0"
         style={
           Object {
-            "alignItems": "left",
             "display": "flex",
             "flexWrap": "wrap",
-            "marginBottom": 5,
+            "margin": "0 0 5 0",
             "width": "100%",
           }
         }
       >
         <div
-          key="0"
           style={
             Object {
               "display": "flex",
-              "width": "48%",
+              "width": "92%",
             }
           }
         >
           <div
             style={
               Object {
-                "marginLeft": "36px",
                 "width": "38px",
               }
             }
           >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: writing-background: Could not find article for writing-background"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: writing-background: Could not find article for writing-background"
-              className="hint--top-right hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.writing-background
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="1"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
+            <WithStyles(Checkbox)
               checked={false}
-              disabled={false}
-              iconStyle={
+              classes={
                 Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
+                  "checked": "ToolCardBoxes-checked-2",
+                  "root": "ToolCardBoxes-root-1",
                 }
               }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: writing-endofstory: Could not find article for writing-endofstory"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: writing-endofstory: Could not find article for writing-endofstory"
-              className="hint--top-left hint--large"
+              indeterminate={true}
+              onChange={[Function]}
             >
-              <span
-                style={
+              <Checkbox
+                checked={false}
+                checkedIcon={<pure(CheckBox) />}
+                classes={
                   Object {
-                    "cursor": "pointer",
+                    "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                    "colorPrimary": "MuiCheckbox-colorPrimary-7",
+                    "colorSecondary": "MuiCheckbox-colorSecondary-8",
+                    "disabled": "MuiCheckbox-disabled-5",
+                    "indeterminate": "MuiCheckbox-indeterminate-6",
+                    "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1",
                   }
                 }
+                color="secondary"
+                icon={<pure(CheckBoxOutlineBlank) />}
+                indeterminate={true}
+                indeterminateIcon={<pure(IndeterminateCheckBox) />}
+                onChange={[Function]}
               >
-                translated: tool_card_categories.writing-endofstory
-              </span>
-            </span>
-          </Hint>
+                <WithStyles(WithFormControlContext(SwitchBase))
+                  checked={false}
+                  checkedIcon={<pure(IndeterminateCheckBox) />}
+                  className="MuiCheckbox-indeterminate-6"
+                  classes={
+                    Object {
+                      "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                      "disabled": "MuiCheckbox-disabled-5",
+                      "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                    }
+                  }
+                  icon={<pure(IndeterminateCheckBox) />}
+                  inputProps={
+                    Object {
+                      "data-indeterminate": true,
+                    }
+                  }
+                  onChange={[Function]}
+                  type="checkbox"
+                >
+                  <WithFormControlContext(SwitchBase)
+                    checked={false}
+                    checkedIcon={<pure(IndeterminateCheckBox) />}
+                    className="MuiCheckbox-indeterminate-6"
+                    classes={
+                      Object {
+                        "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                        "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                        "input": "MuiPrivateSwitchBase-input-12",
+                        "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                      }
+                    }
+                    icon={<pure(IndeterminateCheckBox) />}
+                    inputProps={
+                      Object {
+                        "data-indeterminate": true,
+                      }
+                    }
+                    onChange={[Function]}
+                    type="checkbox"
+                  >
+                    <SwitchBase
+                      checked={false}
+                      checkedIcon={<pure(IndeterminateCheckBox) />}
+                      className="MuiCheckbox-indeterminate-6"
+                      classes={
+                        Object {
+                          "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                          "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                          "input": "MuiPrivateSwitchBase-input-12",
+                          "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                        }
+                      }
+                      icon={<pure(IndeterminateCheckBox) />}
+                      inputProps={
+                        Object {
+                          "data-indeterminate": true,
+                        }
+                      }
+                      onChange={[Function]}
+                      type="checkbox"
+                    >
+                      <WithStyles(IconButton)
+                        className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                        component="span"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        tabIndex={null}
+                      >
+                        <IconButton
+                          className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                          classes={
+                            Object {
+                              "colorInherit": "MuiIconButton-colorInherit-14",
+                              "colorPrimary": "MuiIconButton-colorPrimary-15",
+                              "colorSecondary": "MuiIconButton-colorSecondary-16",
+                              "disabled": "MuiIconButton-disabled-17",
+                              "label": "MuiIconButton-label-18",
+                              "root": "MuiIconButton-root-13",
+                            }
+                          }
+                          color="default"
+                          component="span"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          tabIndex={null}
+                        >
+                          <WithStyles(ButtonBase)
+                            centerRipple={true}
+                            className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                            component="span"
+                            disabled={false}
+                            focusRipple={true}
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
+                          >
+                            <ButtonBase
+                              centerRipple={true}
+                              className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                              classes={
+                                Object {
+                                  "disabled": "MuiButtonBase-disabled-20",
+                                  "focusVisible": "MuiButtonBase-focusVisible-21",
+                                  "root": "MuiButtonBase-root-19",
+                                }
+                              }
+                              component="span"
+                              disableRipple={false}
+                              disableTouchRipple={false}
+                              disabled={false}
+                              focusRipple={true}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              <span
+                                className="MuiButtonBase-root-19 MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                                onBlur={[Function]}
+                                onContextMenu={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                tabIndex={null}
+                              >
+                                <span
+                                  className="MuiIconButton-label-18"
+                                >
+                                  <pure(IndeterminateCheckBox)>
+                                    <IndeterminateCheckBox>
+                                      <WithStyles(SvgIcon)>
+                                        <SvgIcon
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction-25",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                              "colorError": "MuiSvgIcon-colorError-26",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary-23",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary-24",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-28",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-30",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-29",
+                                              "root": "MuiSvgIcon-root-22",
+                                            }
+                                          }
+                                          color="inherit"
+                                          component="svg"
+                                          fontSize="default"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root-22"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
+                                            />
+                                          </svg>
+                                        </SvgIcon>
+                                      </WithStyles(SvgIcon)>
+                                    </IndeterminateCheckBox>
+                                  </pure(IndeterminateCheckBox)>
+                                  <input
+                                    checked={false}
+                                    className="MuiPrivateSwitchBase-input-12"
+                                    data-indeterminate={true}
+                                    onChange={[Function]}
+                                    type="checkbox"
+                                  />
+                                </span>
+                                <NoSsr
+                                  defer={false}
+                                  fallback={null}
+                                >
+                                  <WithStyles(TouchRipple)
+                                    center={true}
+                                    innerRef={[Function]}
+                                  >
+                                    <TouchRipple
+                                      center={true}
+                                      classes={
+                                        Object {
+                                          "child": "MuiTouchRipple-child-35",
+                                          "childLeaving": "MuiTouchRipple-childLeaving-36",
+                                          "childPulsate": "MuiTouchRipple-childPulsate-37",
+                                          "ripple": "MuiTouchRipple-ripple-32",
+                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-34",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-33",
+                                          "root": "MuiTouchRipple-root-31",
+                                        }
+                                      }
+                                    >
+                                      <TransitionGroup
+                                        childFactory={[Function]}
+                                        className="MuiTouchRipple-root-31"
+                                        component="span"
+                                        enter={true}
+                                        exit={true}
+                                      >
+                                        <span
+                                          className="MuiTouchRipple-root-31"
+                                        />
+                                      </TransitionGroup>
+                                    </TouchRipple>
+                                  </WithStyles(TouchRipple)>
+                                </NoSsr>
+                              </span>
+                            </ButtonBase>
+                          </WithStyles(ButtonBase)>
+                        </IconButton>
+                      </WithStyles(IconButton)>
+                    </SwitchBase>
+                  </WithFormControlContext(SwitchBase)>
+                </WithStyles(WithFormControlContext(SwitchBase))>
+              </Checkbox>
+            </WithStyles(Checkbox)>
+          </div>
+          <div>
+            translated: tool_card_categories.discourse
+          </div>
         </div>
-      </div>
-    </div>
-    <div
-      key="1"
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-          "margin": "0 0 5 0",
-          "width": "100%",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "width": "92%",
-          }
-        }
-      >
         <div
           style={
             Object {
-              "width": "38px",
+              "alignSelf": "flex-end",
             }
           }
         >
-          <Checkbox
-            checked={true}
-            disabled={false}
-            iconStyle={
-              Object {
-                "fill": "black",
-                "margin": "0, 0, 0, 0",
-              }
-            }
-            labelPosition="right"
-            onCheck={[Function]}
-            style={
-              Object {
-                "width": "unset",
-              }
-            }
-          />
-        </div>
-        <div>
-          translated: tool_card_categories.numbers
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "alignSelf": "flex-end",
-          }
-        }
-      >
-        <Glyphicon
-          bsClass="glyphicon"
-          glyph="chevron-up"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": "18px",
-              "margin": "0 12px 0 0",
-              "textAlign": "right",
-              "width": "20px",
-            }
-          }
-        >
-          <span
-            className="glyphicon glyphicon-chevron-up"
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="chevron-down"
             onClick={[Function]}
             style={
               Object {
@@ -364,205 +459,320 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
                 "width": "20px",
               }
             }
-          />
-        </Glyphicon>
+          >
+            <span
+              className="glyphicon glyphicon-chevron-down"
+              onClick={[Function]}
+              style={
+                Object {
+                  "fontSize": "18px",
+                  "margin": "0 12px 0 0",
+                  "textAlign": "right",
+                  "width": "20px",
+                }
+              }
+            />
+          </Glyphicon>
+        </div>
       </div>
       <div
         key="1"
         style={
           Object {
-            "alignItems": "left",
             "display": "flex",
             "flexWrap": "wrap",
-            "marginBottom": 5,
+            "margin": "0 0 5 0",
             "width": "100%",
           }
         }
       >
         <div
-          key="0"
           style={
             Object {
               "display": "flex",
-              "width": "48%",
+              "width": "92%",
             }
           }
         >
           <div
             style={
               Object {
-                "marginLeft": "36px",
                 "width": "38px",
               }
             }
           >
-            <Checkbox
+            <WithStyles(Checkbox)
               checked={true}
-              disabled={false}
-              iconStyle={
+              classes={
                 Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
+                  "checked": "ToolCardBoxes-checked-2",
+                  "root": "ToolCardBoxes-root-1",
                 }
               }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: translate-numbers: Could not find article for translate-numbers"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: translate-numbers: Could not find article for translate-numbers"
-              className="hint--top-right hint--large"
+              indeterminate={false}
+              onChange={[Function]}
             >
-              <span
-                style={
+              <Checkbox
+                checked={true}
+                checkedIcon={<pure(CheckBox) />}
+                classes={
                   Object {
-                    "cursor": "pointer",
+                    "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                    "colorPrimary": "MuiCheckbox-colorPrimary-7",
+                    "colorSecondary": "MuiCheckbox-colorSecondary-8",
+                    "disabled": "MuiCheckbox-disabled-5",
+                    "indeterminate": "MuiCheckbox-indeterminate-6",
+                    "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1",
                   }
                 }
+                color="secondary"
+                icon={<pure(CheckBoxOutlineBlank) />}
+                indeterminate={false}
+                indeterminateIcon={<pure(IndeterminateCheckBox) />}
+                onChange={[Function]}
               >
-                translated: tool_card_categories.numbers
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="1"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: translate-fraction: Could not find article for translate-fraction"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: translate-fraction: Could not find article for translate-fraction"
-              className="hint--top-left hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
+                <WithStyles(WithFormControlContext(SwitchBase))
+                  checked={true}
+                  checkedIcon={<pure(CheckBox) />}
+                  className=""
+                  classes={
+                    Object {
+                      "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                      "disabled": "MuiCheckbox-disabled-5",
+                      "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                    }
                   }
-                }
-              >
-                translated: tool_card_categories.translate-fraction
-              </span>
-            </span>
-          </Hint>
+                  icon={<pure(CheckBoxOutlineBlank) />}
+                  inputProps={
+                    Object {
+                      "data-indeterminate": false,
+                    }
+                  }
+                  onChange={[Function]}
+                  type="checkbox"
+                >
+                  <WithFormControlContext(SwitchBase)
+                    checked={true}
+                    checkedIcon={<pure(CheckBox) />}
+                    className=""
+                    classes={
+                      Object {
+                        "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                        "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                        "input": "MuiPrivateSwitchBase-input-12",
+                        "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                      }
+                    }
+                    icon={<pure(CheckBoxOutlineBlank) />}
+                    inputProps={
+                      Object {
+                        "data-indeterminate": false,
+                      }
+                    }
+                    onChange={[Function]}
+                    type="checkbox"
+                  >
+                    <SwitchBase
+                      checked={true}
+                      checkedIcon={<pure(CheckBox) />}
+                      className=""
+                      classes={
+                        Object {
+                          "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                          "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                          "input": "MuiPrivateSwitchBase-input-12",
+                          "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                        }
+                      }
+                      icon={<pure(CheckBoxOutlineBlank) />}
+                      inputProps={
+                        Object {
+                          "data-indeterminate": false,
+                        }
+                      }
+                      onChange={[Function]}
+                      type="checkbox"
+                    >
+                      <WithStyles(IconButton)
+                        className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                        component="span"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        tabIndex={null}
+                      >
+                        <IconButton
+                          className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                          classes={
+                            Object {
+                              "colorInherit": "MuiIconButton-colorInherit-14",
+                              "colorPrimary": "MuiIconButton-colorPrimary-15",
+                              "colorSecondary": "MuiIconButton-colorSecondary-16",
+                              "disabled": "MuiIconButton-disabled-17",
+                              "label": "MuiIconButton-label-18",
+                              "root": "MuiIconButton-root-13",
+                            }
+                          }
+                          color="default"
+                          component="span"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          tabIndex={null}
+                        >
+                          <WithStyles(ButtonBase)
+                            centerRipple={true}
+                            className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                            component="span"
+                            disabled={false}
+                            focusRipple={true}
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
+                          >
+                            <ButtonBase
+                              centerRipple={true}
+                              className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                              classes={
+                                Object {
+                                  "disabled": "MuiButtonBase-disabled-20",
+                                  "focusVisible": "MuiButtonBase-focusVisible-21",
+                                  "root": "MuiButtonBase-root-19",
+                                }
+                              }
+                              component="span"
+                              disableRipple={false}
+                              disableTouchRipple={false}
+                              disabled={false}
+                              focusRipple={true}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              <span
+                                className="MuiButtonBase-root-19 MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                                onBlur={[Function]}
+                                onContextMenu={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                tabIndex={null}
+                              >
+                                <span
+                                  className="MuiIconButton-label-18"
+                                >
+                                  <pure(CheckBox)>
+                                    <CheckBox>
+                                      <WithStyles(SvgIcon)>
+                                        <SvgIcon
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction-25",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                              "colorError": "MuiSvgIcon-colorError-26",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary-23",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary-24",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-28",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-30",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-29",
+                                              "root": "MuiSvgIcon-root-22",
+                                            }
+                                          }
+                                          color="inherit"
+                                          component="svg"
+                                          fontSize="default"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root-22"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                                            />
+                                          </svg>
+                                        </SvgIcon>
+                                      </WithStyles(SvgIcon)>
+                                    </CheckBox>
+                                  </pure(CheckBox)>
+                                  <input
+                                    checked={true}
+                                    className="MuiPrivateSwitchBase-input-12"
+                                    data-indeterminate={false}
+                                    onChange={[Function]}
+                                    type="checkbox"
+                                  />
+                                </span>
+                                <NoSsr
+                                  defer={false}
+                                  fallback={null}
+                                >
+                                  <WithStyles(TouchRipple)
+                                    center={true}
+                                    innerRef={[Function]}
+                                  >
+                                    <TouchRipple
+                                      center={true}
+                                      classes={
+                                        Object {
+                                          "child": "MuiTouchRipple-child-35",
+                                          "childLeaving": "MuiTouchRipple-childLeaving-36",
+                                          "childPulsate": "MuiTouchRipple-childPulsate-37",
+                                          "ripple": "MuiTouchRipple-ripple-32",
+                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-34",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-33",
+                                          "root": "MuiTouchRipple-root-31",
+                                        }
+                                      }
+                                    >
+                                      <TransitionGroup
+                                        childFactory={[Function]}
+                                        className="MuiTouchRipple-root-31"
+                                        component="span"
+                                        enter={true}
+                                        exit={true}
+                                      >
+                                        <span
+                                          className="MuiTouchRipple-root-31"
+                                        />
+                                      </TransitionGroup>
+                                    </TouchRipple>
+                                  </WithStyles(TouchRipple)>
+                                </NoSsr>
+                              </span>
+                            </ButtonBase>
+                          </WithStyles(ButtonBase)>
+                        </IconButton>
+                      </WithStyles(IconButton)>
+                    </SwitchBase>
+                  </WithFormControlContext(SwitchBase)>
+                </WithStyles(WithFormControlContext(SwitchBase))>
+              </Checkbox>
+            </WithStyles(Checkbox)>
+          </div>
+          <div>
+            translated: tool_card_categories.numbers
+          </div>
         </div>
-      </div>
-    </div>
-    <div
-      key="2"
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-          "margin": "0 0 5 0",
-          "width": "100%",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "width": "92%",
-          }
-        }
-      >
         <div
           style={
             Object {
-              "width": "38px",
+              "alignSelf": "flex-end",
             }
           }
         >
-          <Checkbox
-            checked={false}
-            disabled={false}
-            iconStyle={
-              Object {
-                "fill": "black",
-                "margin": "0, 0, 0, 0",
-              }
-            }
-            labelPosition="right"
-            onCheck={[Function]}
-            style={
-              Object {
-                "width": "unset",
-              }
-            }
-          />
-        </div>
-        <div>
-          translated: tool_card_categories.figures
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "alignSelf": "flex-end",
-          }
-        }
-      >
-        <Glyphicon
-          bsClass="glyphicon"
-          glyph="chevron-up"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": "18px",
-              "margin": "0 12px 0 0",
-              "textAlign": "right",
-              "width": "20px",
-            }
-          }
-        >
-          <span
-            className="glyphicon glyphicon-chevron-up"
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="chevron-down"
             onClick={[Function]}
             style={
               Object {
@@ -572,485 +782,643 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
                 "width": "20px",
               }
             }
-          />
-        </Glyphicon>
+          >
+            <span
+              className="glyphicon glyphicon-chevron-down"
+              onClick={[Function]}
+              style={
+                Object {
+                  "fontSize": "18px",
+                  "margin": "0 12px 0 0",
+                  "textAlign": "right",
+                  "width": "20px",
+                }
+              }
+            />
+          </Glyphicon>
+        </div>
       </div>
       <div
         key="2"
         style={
           Object {
-            "alignItems": "left",
             "display": "flex",
             "flexWrap": "wrap",
-            "marginBottom": 5,
+            "margin": "0 0 5 0",
             "width": "100%",
           }
         }
       >
         <div
-          key="0"
           style={
             Object {
               "display": "flex",
-              "width": "48%",
+              "width": "92%",
             }
           }
         >
           <div
             style={
               Object {
-                "marginLeft": "36px",
                 "width": "38px",
               }
             }
           >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-idiom: Could not find article for figs-idiom"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-idiom: Could not find article for figs-idiom"
-              className="hint--top-right hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-idiom
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="1"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-irony: Could not find article for figs-irony"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-irony: Could not find article for figs-irony"
-              className="hint--top-left hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-irony
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="2"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-metaphor: Could not find article for figs-metaphor"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-metaphor: Could not find article for figs-metaphor"
-              className="hint--top-right hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-metaphor
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="3"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-rquestion: Could not find article for figs-rquestion"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-rquestion: Could not find article for figs-rquestion"
-              className="hint--top-left hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-rquestion
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="4"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-simile: Could not find article for figs-simile"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-simile: Could not find article for figs-simile"
-              className="hint--top-right hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-simile
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="5"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-apostrophe: Could not find article for figs-apostrophe"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-apostrophe: Could not find article for figs-apostrophe"
-              className="hint--top-left hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-apostrophe
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="6"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
+            <WithStyles(Checkbox)
               checked={false}
-              disabled={false}
-              iconStyle={
+              classes={
                 Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
+                  "checked": "ToolCardBoxes-checked-2",
+                  "root": "ToolCardBoxes-root-1",
                 }
               }
-              labelPosition="right"
-              onCheck={[Function]}
+              indeterminate={true}
+              onChange={[Function]}
+            >
+              <Checkbox
+                checked={false}
+                checkedIcon={<pure(CheckBox) />}
+                classes={
+                  Object {
+                    "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                    "colorPrimary": "MuiCheckbox-colorPrimary-7",
+                    "colorSecondary": "MuiCheckbox-colorSecondary-8",
+                    "disabled": "MuiCheckbox-disabled-5",
+                    "indeterminate": "MuiCheckbox-indeterminate-6",
+                    "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1",
+                  }
+                }
+                color="secondary"
+                icon={<pure(CheckBoxOutlineBlank) />}
+                indeterminate={true}
+                indeterminateIcon={<pure(IndeterminateCheckBox) />}
+                onChange={[Function]}
+              >
+                <WithStyles(WithFormControlContext(SwitchBase))
+                  checked={false}
+                  checkedIcon={<pure(IndeterminateCheckBox) />}
+                  className="MuiCheckbox-indeterminate-6"
+                  classes={
+                    Object {
+                      "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                      "disabled": "MuiCheckbox-disabled-5",
+                      "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                    }
+                  }
+                  icon={<pure(IndeterminateCheckBox) />}
+                  inputProps={
+                    Object {
+                      "data-indeterminate": true,
+                    }
+                  }
+                  onChange={[Function]}
+                  type="checkbox"
+                >
+                  <WithFormControlContext(SwitchBase)
+                    checked={false}
+                    checkedIcon={<pure(IndeterminateCheckBox) />}
+                    className="MuiCheckbox-indeterminate-6"
+                    classes={
+                      Object {
+                        "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                        "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                        "input": "MuiPrivateSwitchBase-input-12",
+                        "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                      }
+                    }
+                    icon={<pure(IndeterminateCheckBox) />}
+                    inputProps={
+                      Object {
+                        "data-indeterminate": true,
+                      }
+                    }
+                    onChange={[Function]}
+                    type="checkbox"
+                  >
+                    <SwitchBase
+                      checked={false}
+                      checkedIcon={<pure(IndeterminateCheckBox) />}
+                      className="MuiCheckbox-indeterminate-6"
+                      classes={
+                        Object {
+                          "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                          "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                          "input": "MuiPrivateSwitchBase-input-12",
+                          "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                        }
+                      }
+                      icon={<pure(IndeterminateCheckBox) />}
+                      inputProps={
+                        Object {
+                          "data-indeterminate": true,
+                        }
+                      }
+                      onChange={[Function]}
+                      type="checkbox"
+                    >
+                      <WithStyles(IconButton)
+                        className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                        component="span"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        tabIndex={null}
+                      >
+                        <IconButton
+                          className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                          classes={
+                            Object {
+                              "colorInherit": "MuiIconButton-colorInherit-14",
+                              "colorPrimary": "MuiIconButton-colorPrimary-15",
+                              "colorSecondary": "MuiIconButton-colorSecondary-16",
+                              "disabled": "MuiIconButton-disabled-17",
+                              "label": "MuiIconButton-label-18",
+                              "root": "MuiIconButton-root-13",
+                            }
+                          }
+                          color="default"
+                          component="span"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          tabIndex={null}
+                        >
+                          <WithStyles(ButtonBase)
+                            centerRipple={true}
+                            className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                            component="span"
+                            disabled={false}
+                            focusRipple={true}
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
+                          >
+                            <ButtonBase
+                              centerRipple={true}
+                              className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                              classes={
+                                Object {
+                                  "disabled": "MuiButtonBase-disabled-20",
+                                  "focusVisible": "MuiButtonBase-focusVisible-21",
+                                  "root": "MuiButtonBase-root-19",
+                                }
+                              }
+                              component="span"
+                              disableRipple={false}
+                              disableTouchRipple={false}
+                              disabled={false}
+                              focusRipple={true}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              <span
+                                className="MuiButtonBase-root-19 MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                                onBlur={[Function]}
+                                onContextMenu={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                tabIndex={null}
+                              >
+                                <span
+                                  className="MuiIconButton-label-18"
+                                >
+                                  <pure(IndeterminateCheckBox)>
+                                    <IndeterminateCheckBox>
+                                      <WithStyles(SvgIcon)>
+                                        <SvgIcon
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction-25",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                              "colorError": "MuiSvgIcon-colorError-26",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary-23",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary-24",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-28",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-30",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-29",
+                                              "root": "MuiSvgIcon-root-22",
+                                            }
+                                          }
+                                          color="inherit"
+                                          component="svg"
+                                          fontSize="default"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root-22"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
+                                            />
+                                          </svg>
+                                        </SvgIcon>
+                                      </WithStyles(SvgIcon)>
+                                    </IndeterminateCheckBox>
+                                  </pure(IndeterminateCheckBox)>
+                                  <input
+                                    checked={false}
+                                    className="MuiPrivateSwitchBase-input-12"
+                                    data-indeterminate={true}
+                                    onChange={[Function]}
+                                    type="checkbox"
+                                  />
+                                </span>
+                                <NoSsr
+                                  defer={false}
+                                  fallback={null}
+                                >
+                                  <WithStyles(TouchRipple)
+                                    center={true}
+                                    innerRef={[Function]}
+                                  >
+                                    <TouchRipple
+                                      center={true}
+                                      classes={
+                                        Object {
+                                          "child": "MuiTouchRipple-child-35",
+                                          "childLeaving": "MuiTouchRipple-childLeaving-36",
+                                          "childPulsate": "MuiTouchRipple-childPulsate-37",
+                                          "ripple": "MuiTouchRipple-ripple-32",
+                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-34",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-33",
+                                          "root": "MuiTouchRipple-root-31",
+                                        }
+                                      }
+                                    >
+                                      <TransitionGroup
+                                        childFactory={[Function]}
+                                        className="MuiTouchRipple-root-31"
+                                        component="span"
+                                        enter={true}
+                                        exit={true}
+                                      >
+                                        <span
+                                          className="MuiTouchRipple-root-31"
+                                        />
+                                      </TransitionGroup>
+                                    </TouchRipple>
+                                  </WithStyles(TouchRipple)>
+                                </NoSsr>
+                              </span>
+                            </ButtonBase>
+                          </WithStyles(ButtonBase)>
+                        </IconButton>
+                      </WithStyles(IconButton)>
+                    </SwitchBase>
+                  </WithFormControlContext(SwitchBase)>
+                </WithStyles(WithFormControlContext(SwitchBase))>
+              </Checkbox>
+            </WithStyles(Checkbox)>
+          </div>
+          <div>
+            translated: tool_card_categories.figures
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "alignSelf": "flex-end",
+            }
+          }
+        >
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="chevron-down"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontSize": "18px",
+                "margin": "0 12px 0 0",
+                "textAlign": "right",
+                "width": "20px",
+              }
+            }
+          >
+            <span
+              className="glyphicon glyphicon-chevron-down"
+              onClick={[Function]}
               style={
                 Object {
-                  "width": "unset",
+                  "fontSize": "18px",
+                  "margin": "0 12px 0 0",
+                  "textAlign": "right",
+                  "width": "20px",
                 }
               }
             />
-          </div>
-          <Hint
-            label="Article Not Found: figs-euphemism: Could not find article for figs-euphemism"
-            position="top-right"
-            size="large"
+          </Glyphicon>
+        </div>
+      </div>
+      <div
+        key="3"
+        style={
+          Object {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "margin": "0 0 5 0",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "width": "92%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "width": "38px",
+              }
+            }
           >
-            <span
-              aria-label="Article Not Found: figs-euphemism: Could not find article for figs-euphemism"
-              className="hint--top-right hint--large"
+            <WithStyles(Checkbox)
+              checked={true}
+              classes={
+                Object {
+                  "checked": "ToolCardBoxes-checked-2",
+                  "root": "ToolCardBoxes-root-1",
+                }
+              }
+              indeterminate={false}
+              onChange={[Function]}
             >
-              <span
-                style={
+              <Checkbox
+                checked={true}
+                checkedIcon={<pure(CheckBox) />}
+                classes={
                   Object {
-                    "cursor": "pointer",
+                    "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                    "colorPrimary": "MuiCheckbox-colorPrimary-7",
+                    "colorSecondary": "MuiCheckbox-colorSecondary-8",
+                    "disabled": "MuiCheckbox-disabled-5",
+                    "indeterminate": "MuiCheckbox-indeterminate-6",
+                    "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1",
                   }
                 }
+                color="secondary"
+                icon={<pure(CheckBoxOutlineBlank) />}
+                indeterminate={false}
+                indeterminateIcon={<pure(IndeterminateCheckBox) />}
+                onChange={[Function]}
               >
-                translated: tool_card_categories.figs-euphemism
-              </span>
-            </span>
-          </Hint>
+                <WithStyles(WithFormControlContext(SwitchBase))
+                  checked={true}
+                  checkedIcon={<pure(CheckBox) />}
+                  className=""
+                  classes={
+                    Object {
+                      "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                      "disabled": "MuiCheckbox-disabled-5",
+                      "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                    }
+                  }
+                  icon={<pure(CheckBoxOutlineBlank) />}
+                  inputProps={
+                    Object {
+                      "data-indeterminate": false,
+                    }
+                  }
+                  onChange={[Function]}
+                  type="checkbox"
+                >
+                  <WithFormControlContext(SwitchBase)
+                    checked={true}
+                    checkedIcon={<pure(CheckBox) />}
+                    className=""
+                    classes={
+                      Object {
+                        "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                        "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                        "input": "MuiPrivateSwitchBase-input-12",
+                        "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                      }
+                    }
+                    icon={<pure(CheckBoxOutlineBlank) />}
+                    inputProps={
+                      Object {
+                        "data-indeterminate": false,
+                      }
+                    }
+                    onChange={[Function]}
+                    type="checkbox"
+                  >
+                    <SwitchBase
+                      checked={true}
+                      checkedIcon={<pure(CheckBox) />}
+                      className=""
+                      classes={
+                        Object {
+                          "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                          "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                          "input": "MuiPrivateSwitchBase-input-12",
+                          "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                        }
+                      }
+                      icon={<pure(CheckBoxOutlineBlank) />}
+                      inputProps={
+                        Object {
+                          "data-indeterminate": false,
+                        }
+                      }
+                      onChange={[Function]}
+                      type="checkbox"
+                    >
+                      <WithStyles(IconButton)
+                        className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                        component="span"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        tabIndex={null}
+                      >
+                        <IconButton
+                          className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                          classes={
+                            Object {
+                              "colorInherit": "MuiIconButton-colorInherit-14",
+                              "colorPrimary": "MuiIconButton-colorPrimary-15",
+                              "colorSecondary": "MuiIconButton-colorSecondary-16",
+                              "disabled": "MuiIconButton-disabled-17",
+                              "label": "MuiIconButton-label-18",
+                              "root": "MuiIconButton-root-13",
+                            }
+                          }
+                          color="default"
+                          component="span"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          tabIndex={null}
+                        >
+                          <WithStyles(ButtonBase)
+                            centerRipple={true}
+                            className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                            component="span"
+                            disabled={false}
+                            focusRipple={true}
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
+                          >
+                            <ButtonBase
+                              centerRipple={true}
+                              className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                              classes={
+                                Object {
+                                  "disabled": "MuiButtonBase-disabled-20",
+                                  "focusVisible": "MuiButtonBase-focusVisible-21",
+                                  "root": "MuiButtonBase-root-19",
+                                }
+                              }
+                              component="span"
+                              disableRipple={false}
+                              disableTouchRipple={false}
+                              disabled={false}
+                              focusRipple={true}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              <span
+                                className="MuiButtonBase-root-19 MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2"
+                                onBlur={[Function]}
+                                onContextMenu={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                tabIndex={null}
+                              >
+                                <span
+                                  className="MuiIconButton-label-18"
+                                >
+                                  <pure(CheckBox)>
+                                    <CheckBox>
+                                      <WithStyles(SvgIcon)>
+                                        <SvgIcon
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction-25",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                              "colorError": "MuiSvgIcon-colorError-26",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary-23",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary-24",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-28",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-30",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-29",
+                                              "root": "MuiSvgIcon-root-22",
+                                            }
+                                          }
+                                          color="inherit"
+                                          component="svg"
+                                          fontSize="default"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root-22"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                                            />
+                                          </svg>
+                                        </SvgIcon>
+                                      </WithStyles(SvgIcon)>
+                                    </CheckBox>
+                                  </pure(CheckBox)>
+                                  <input
+                                    checked={true}
+                                    className="MuiPrivateSwitchBase-input-12"
+                                    data-indeterminate={false}
+                                    onChange={[Function]}
+                                    type="checkbox"
+                                  />
+                                </span>
+                                <NoSsr
+                                  defer={false}
+                                  fallback={null}
+                                >
+                                  <WithStyles(TouchRipple)
+                                    center={true}
+                                    innerRef={[Function]}
+                                  >
+                                    <TouchRipple
+                                      center={true}
+                                      classes={
+                                        Object {
+                                          "child": "MuiTouchRipple-child-35",
+                                          "childLeaving": "MuiTouchRipple-childLeaving-36",
+                                          "childPulsate": "MuiTouchRipple-childPulsate-37",
+                                          "ripple": "MuiTouchRipple-ripple-32",
+                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-34",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-33",
+                                          "root": "MuiTouchRipple-root-31",
+                                        }
+                                      }
+                                    >
+                                      <TransitionGroup
+                                        childFactory={[Function]}
+                                        className="MuiTouchRipple-root-31"
+                                        component="span"
+                                        enter={true}
+                                        exit={true}
+                                      >
+                                        <span
+                                          className="MuiTouchRipple-root-31"
+                                        />
+                                      </TransitionGroup>
+                                    </TouchRipple>
+                                  </WithStyles(TouchRipple)>
+                                </NoSsr>
+                              </span>
+                            </ButtonBase>
+                          </WithStyles(ButtonBase)>
+                        </IconButton>
+                      </WithStyles(IconButton)>
+                    </SwitchBase>
+                  </WithFormControlContext(SwitchBase)>
+                </WithStyles(WithFormControlContext(SwitchBase))>
+              </Checkbox>
+            </WithStyles(Checkbox)>
+          </div>
+          <div>
+            translated: tool_card_categories.culture
+          </div>
         </div>
-      </div>
-    </div>
-    <div
-      key="3"
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-          "margin": "0 0 5 0",
-          "width": "100%",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "width": "92%",
-          }
-        }
-      >
         <div
           style={
             Object {
-              "width": "38px",
+              "alignSelf": "flex-end",
             }
           }
         >
-          <Checkbox
-            checked={true}
-            disabled={false}
-            iconStyle={
-              Object {
-                "fill": "black",
-                "margin": "0, 0, 0, 0",
-              }
-            }
-            labelPosition="right"
-            onCheck={[Function]}
-            style={
-              Object {
-                "width": "unset",
-              }
-            }
-          />
-        </div>
-        <div>
-          translated: tool_card_categories.culture
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "alignSelf": "flex-end",
-          }
-        }
-      >
-        <Glyphicon
-          bsClass="glyphicon"
-          glyph="chevron-down"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": "18px",
-              "margin": "0 12px 0 0",
-              "textAlign": "right",
-              "width": "20px",
-            }
-          }
-        >
-          <span
-            className="glyphicon glyphicon-chevron-down"
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="chevron-down"
             onClick={[Function]}
             style={
               Object {
@@ -1060,556 +1428,348 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
                 "width": "20px",
               }
             }
-          />
-        </Glyphicon>
-      </div>
-    </div>
-    <div
-      key="4"
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-          "margin": "0 0 5 0",
-          "width": "100%",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "display": "flex",
-            "width": "92%",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "width": "38px",
-            }
-          }
-        >
-          <Checkbox
-            checked={false}
-            disabled={false}
-            iconStyle={
-              Object {
-                "fill": "black",
-                "margin": "0, 0, 0, 0",
+          >
+            <span
+              className="glyphicon glyphicon-chevron-down"
+              onClick={[Function]}
+              style={
+                Object {
+                  "fontSize": "18px",
+                  "margin": "0 12px 0 0",
+                  "textAlign": "right",
+                  "width": "20px",
+                }
               }
-            }
-            labelPosition="right"
-            onCheck={[Function]}
-            style={
-              Object {
-                "width": "unset",
-              }
-            }
-          />
+            />
+          </Glyphicon>
         </div>
-        <div>
-          translated: tool_card_categories.grammar
-        </div>
-      </div>
-      <div
-        style={
-          Object {
-            "alignSelf": "flex-end",
-          }
-        }
-      >
-        <Glyphicon
-          bsClass="glyphicon"
-          glyph="chevron-up"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": "18px",
-              "margin": "0 12px 0 0",
-              "textAlign": "right",
-              "width": "20px",
-            }
-          }
-        >
-          <span
-            className="glyphicon glyphicon-chevron-up"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontSize": "18px",
-                "margin": "0 12px 0 0",
-                "textAlign": "right",
-                "width": "20px",
-              }
-            }
-          />
-        </Glyphicon>
       </div>
       <div
         key="4"
         style={
           Object {
-            "alignItems": "left",
             "display": "flex",
             "flexWrap": "wrap",
-            "marginBottom": 5,
+            "margin": "0 0 5 0",
             "width": "100%",
           }
         }
       >
         <div
-          key="0"
           style={
             Object {
               "display": "flex",
-              "width": "48%",
+              "width": "92%",
             }
           }
         >
           <div
             style={
               Object {
-                "marginLeft": "36px",
                 "width": "38px",
               }
             }
           >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-hypo: Could not find article for figs-hypo"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-hypo: Could not find article for figs-hypo"
-              className="hint--top-right hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-hypo
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="1"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-activepassive: Could not find article for figs-activepassive"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-activepassive: Could not find article for figs-activepassive"
-              className="hint--top-left hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-activepassive
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="2"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
+            <WithStyles(Checkbox)
               checked={false}
-              disabled={false}
-              iconStyle={
+              classes={
                 Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
+                  "checked": "ToolCardBoxes-checked-2",
+                  "root": "ToolCardBoxes-root-1",
                 }
               }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-gendernotations: Could not find article for figs-gendernotations"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-gendernotations: Could not find article for figs-gendernotations"
-              className="hint--top-right hint--large"
+              indeterminate={true}
+              onChange={[Function]}
             >
-              <span
-                style={
+              <Checkbox
+                checked={false}
+                checkedIcon={<pure(CheckBox) />}
+                classes={
                   Object {
-                    "cursor": "pointer",
+                    "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                    "colorPrimary": "MuiCheckbox-colorPrimary-7",
+                    "colorSecondary": "MuiCheckbox-colorSecondary-8",
+                    "disabled": "MuiCheckbox-disabled-5",
+                    "indeterminate": "MuiCheckbox-indeterminate-6",
+                    "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1",
                   }
                 }
+                color="secondary"
+                icon={<pure(CheckBoxOutlineBlank) />}
+                indeterminate={true}
+                indeterminateIcon={<pure(IndeterminateCheckBox) />}
+                onChange={[Function]}
               >
-                translated: tool_card_categories.figs-gendernotations
-              </span>
-            </span>
-          </Hint>
+                <WithStyles(WithFormControlContext(SwitchBase))
+                  checked={false}
+                  checkedIcon={<pure(IndeterminateCheckBox) />}
+                  className="MuiCheckbox-indeterminate-6"
+                  classes={
+                    Object {
+                      "checked": "MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                      "disabled": "MuiCheckbox-disabled-5",
+                      "root": "MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                    }
+                  }
+                  icon={<pure(IndeterminateCheckBox) />}
+                  inputProps={
+                    Object {
+                      "data-indeterminate": true,
+                    }
+                  }
+                  onChange={[Function]}
+                  type="checkbox"
+                >
+                  <WithFormControlContext(SwitchBase)
+                    checked={false}
+                    checkedIcon={<pure(IndeterminateCheckBox) />}
+                    className="MuiCheckbox-indeterminate-6"
+                    classes={
+                      Object {
+                        "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                        "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                        "input": "MuiPrivateSwitchBase-input-12",
+                        "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                      }
+                    }
+                    icon={<pure(IndeterminateCheckBox) />}
+                    inputProps={
+                      Object {
+                        "data-indeterminate": true,
+                      }
+                    }
+                    onChange={[Function]}
+                    type="checkbox"
+                  >
+                    <SwitchBase
+                      checked={false}
+                      checkedIcon={<pure(IndeterminateCheckBox) />}
+                      className="MuiCheckbox-indeterminate-6"
+                      classes={
+                        Object {
+                          "checked": "MuiPrivateSwitchBase-checked-10 MuiCheckbox-checked-4 ToolCardBoxes-checked-2",
+                          "disabled": "MuiPrivateSwitchBase-disabled-11 MuiCheckbox-disabled-5",
+                          "input": "MuiPrivateSwitchBase-input-12",
+                          "root": "MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8",
+                        }
+                      }
+                      icon={<pure(IndeterminateCheckBox) />}
+                      inputProps={
+                        Object {
+                          "data-indeterminate": true,
+                        }
+                      }
+                      onChange={[Function]}
+                      type="checkbox"
+                    >
+                      <WithStyles(IconButton)
+                        className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                        component="span"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        tabIndex={null}
+                      >
+                        <IconButton
+                          className="MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                          classes={
+                            Object {
+                              "colorInherit": "MuiIconButton-colorInherit-14",
+                              "colorPrimary": "MuiIconButton-colorPrimary-15",
+                              "colorSecondary": "MuiIconButton-colorSecondary-16",
+                              "disabled": "MuiIconButton-disabled-17",
+                              "label": "MuiIconButton-label-18",
+                              "root": "MuiIconButton-root-13",
+                            }
+                          }
+                          color="default"
+                          component="span"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          tabIndex={null}
+                        >
+                          <WithStyles(ButtonBase)
+                            centerRipple={true}
+                            className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                            component="span"
+                            disabled={false}
+                            focusRipple={true}
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
+                          >
+                            <ButtonBase
+                              centerRipple={true}
+                              className="MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                              classes={
+                                Object {
+                                  "disabled": "MuiButtonBase-disabled-20",
+                                  "focusVisible": "MuiButtonBase-focusVisible-21",
+                                  "root": "MuiButtonBase-root-19",
+                                }
+                              }
+                              component="span"
+                              disableRipple={false}
+                              disableTouchRipple={false}
+                              disabled={false}
+                              focusRipple={true}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              <span
+                                className="MuiButtonBase-root-19 MuiIconButton-root-13 MuiPrivateSwitchBase-root-9 MuiCheckbox-root-3 ToolCardBoxes-root-1 MuiCheckbox-colorSecondary-8 MuiCheckbox-indeterminate-6"
+                                onBlur={[Function]}
+                                onContextMenu={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                tabIndex={null}
+                              >
+                                <span
+                                  className="MuiIconButton-label-18"
+                                >
+                                  <pure(IndeterminateCheckBox)>
+                                    <IndeterminateCheckBox>
+                                      <WithStyles(SvgIcon)>
+                                        <SvgIcon
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction-25",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                              "colorError": "MuiSvgIcon-colorError-26",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary-23",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary-24",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-28",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-30",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-29",
+                                              "root": "MuiSvgIcon-root-22",
+                                            }
+                                          }
+                                          color="inherit"
+                                          component="svg"
+                                          fontSize="default"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root-22"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
+                                            />
+                                          </svg>
+                                        </SvgIcon>
+                                      </WithStyles(SvgIcon)>
+                                    </IndeterminateCheckBox>
+                                  </pure(IndeterminateCheckBox)>
+                                  <input
+                                    checked={false}
+                                    className="MuiPrivateSwitchBase-input-12"
+                                    data-indeterminate={true}
+                                    onChange={[Function]}
+                                    type="checkbox"
+                                  />
+                                </span>
+                                <NoSsr
+                                  defer={false}
+                                  fallback={null}
+                                >
+                                  <WithStyles(TouchRipple)
+                                    center={true}
+                                    innerRef={[Function]}
+                                  >
+                                    <TouchRipple
+                                      center={true}
+                                      classes={
+                                        Object {
+                                          "child": "MuiTouchRipple-child-35",
+                                          "childLeaving": "MuiTouchRipple-childLeaving-36",
+                                          "childPulsate": "MuiTouchRipple-childPulsate-37",
+                                          "ripple": "MuiTouchRipple-ripple-32",
+                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate-34",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-33",
+                                          "root": "MuiTouchRipple-root-31",
+                                        }
+                                      }
+                                    >
+                                      <TransitionGroup
+                                        childFactory={[Function]}
+                                        className="MuiTouchRipple-root-31"
+                                        component="span"
+                                        enter={true}
+                                        exit={true}
+                                      >
+                                        <span
+                                          className="MuiTouchRipple-root-31"
+                                        />
+                                      </TransitionGroup>
+                                    </TouchRipple>
+                                  </WithStyles(TouchRipple)>
+                                </NoSsr>
+                              </span>
+                            </ButtonBase>
+                          </WithStyles(ButtonBase)>
+                        </IconButton>
+                      </WithStyles(IconButton)>
+                    </SwitchBase>
+                  </WithFormControlContext(SwitchBase)>
+                </WithStyles(WithFormControlContext(SwitchBase))>
+              </Checkbox>
+            </WithStyles(Checkbox)>
+          </div>
+          <div>
+            translated: tool_card_categories.grammar
+          </div>
         </div>
         <div
-          key="3"
           style={
             Object {
-              "display": "flex",
-              "width": "48%",
+              "alignSelf": "flex-end",
             }
           }
         >
-          <div
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="chevron-down"
+            onClick={[Function]}
             style={
               Object {
-                "marginLeft": "36px",
-                "width": "38px",
+                "fontSize": "18px",
+                "margin": "0 12px 0 0",
+                "textAlign": "right",
+                "width": "20px",
               }
             }
           >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
+            <span
+              className="glyphicon glyphicon-chevron-down"
+              onClick={[Function]}
               style={
                 Object {
-                  "width": "unset",
+                  "fontSize": "18px",
+                  "margin": "0 12px 0 0",
+                  "textAlign": "right",
+                  "width": "20px",
                 }
               }
             />
-          </div>
-          <Hint
-            label="Article Not Found: figs-pronouns: Could not find article for figs-pronouns"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-pronouns: Could not find article for figs-pronouns"
-              className="hint--top-left hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-pronouns
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="4"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-you: Could not find article for figs-you"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-you: Could not find article for figs-you"
-              className="hint--top-right hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-you
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="5"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-123person: Could not find article for figs-123person"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-123person: Could not find article for figs-123person"
-              className="hint--top-left hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-123person
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="6"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={true}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-abstractnouns: Could not find article for figs-abstractnouns"
-            position="top-right"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-abstractnouns: Could not find article for figs-abstractnouns"
-              className="hint--top-right hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-abstractnouns
-              </span>
-            </span>
-          </Hint>
-        </div>
-        <div
-          key="7"
-          style={
-            Object {
-              "display": "flex",
-              "width": "48%",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "marginLeft": "36px",
-                "width": "38px",
-              }
-            }
-          >
-            <Checkbox
-              checked={false}
-              disabled={false}
-              iconStyle={
-                Object {
-                  "fill": "black",
-                  "margin": "0, 0, 0, 0",
-                }
-              }
-              labelPosition="right"
-              onCheck={[Function]}
-              style={
-                Object {
-                  "width": "unset",
-                }
-              }
-            />
-          </div>
-          <Hint
-            label="Article Not Found: figs-distinguish: Could not find article for figs-distinguish"
-            position="top-left"
-            size="large"
-          >
-            <span
-              aria-label="Article Not Found: figs-distinguish: Could not find article for figs-distinguish"
-              className="hint--top-left hint--large"
-            >
-              <span
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                translated: tool_card_categories.figs-distinguish
-              </span>
-            </span>
-          </Hint>
+          </Glyphicon>
         </div>
       </div>
     </div>
-  </div>
-</ToolCardBoxes>
+  </ToolCardBoxes>
+</WithStyles(ToolCardBoxes)>
 `;
 
 exports[`translationWords should have three boxes unchecked 1`] = `
