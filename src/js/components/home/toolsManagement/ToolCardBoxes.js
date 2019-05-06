@@ -47,8 +47,7 @@ function flattenNotesCategories() {
   Object.keys(tNotesCategories).forEach(item => {
     lookupNames[item] = 'tool_card_categories.' + item;
     Object.keys(tNotesCategories[item]).forEach(subItem => {
-      const group = subItem.substr(subItem.indexOf('-') + 1);
-      lookupNames[group] = 'tool_card_categories.' + subItem;
+      lookupNames[subItem] = 'tool_card_categories.' + subItem;
     });
   });
 
@@ -91,19 +90,6 @@ function localCheckBox(classes, selectedCategories, id, toolName, onChecked, ava
     />
   );
 }
-
-
-/**
- * return letters after the dash
- * @param {*} symbol - token containing a dash
- */
-function postPart(symbol) {
-  return symbol.includes('-') ?
-    symbol.substr(symbol.indexOf("-") + 1) :
-    symbol;
-}
-
-
 
 class ToolCardBoxes extends React.Component {
   constructor(props) {
@@ -205,8 +191,8 @@ class ToolCardBoxes extends React.Component {
                         marginBottom: 5, width: '100%'
                       }} key={index}>
                         {subcategories.sort((a, b) => {
-                          a = translate(lookupNames[postPart(a)]);
-                          b = translate(lookupNames[postPart(b)]);
+                          a = translate(lookupNames[a]);
+                          b = translate(lookupNames[b]);
                           if (a < b) return -1;
                           else if (a > b) return 1;
                           return 0;
@@ -217,7 +203,7 @@ class ToolCardBoxes extends React.Component {
                             </div>
                             <Hint position={((index % 2) === 1) ? 'top-left' : 'top-right'} label={this.getArticleText(subcategory)} size={'large'}>
                               <span style={{cursor: "pointer"}} >
-                                {translate(lookupNames[postPart(subcategory)])}
+                                {translate(lookupNames[subcategory])}
                               </span>
                             </Hint>
                           </div>
