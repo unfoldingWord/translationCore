@@ -67,7 +67,10 @@ const dataSourceConfig = {
 export const getErrorMessage = (translate, languageName = "", languageId = "") => {
   let message = (!languageName) ? translate('project_validation.field_required') : "";
   if (!message) {
-    const language = LangHelpers.getLanguageByNameSelection(languageName);
+    let language = LangHelpers.getLanguageByNameSelection(languageName, languageId);
+    if (!language) { // fall back to partial match
+      language = LangHelpers.getLanguageByNameSelection(languageName);
+    }
     if (!language) {
       message = translate('project_validation.invalid_language_name');
     } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
@@ -97,11 +100,15 @@ const updateLanguage = (language, updateLanguageSettings) => {
  */
 export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings) => {
   if (index >= 0) { // if language in list, update all fields
-    const language = LangHelpers.getLanguagesSortedByName()[index];
-    if (language) {
-      updateLanguage(language, updateLanguageSettings);
+    if (chosenRequest && chosenRequest.name && chosenRequest.code) {
+      updateLanguage(chosenRequest, updateLanguageSettings);
+    } else { // fall back to find in list
+      const language = LangHelpers.getLanguagesSortedByName()[index];
+      if (language) {
+        updateLanguage(language, updateLanguageSettings);
+      }
     }
-  } else {
+  } else { // chosenRequest should be string here
     const language = LangHelpers.getLanguageByNameSelection(chosenRequest); // try case insensitive search
     if (language) {
       updateLanguage(language, updateLanguageSettings);

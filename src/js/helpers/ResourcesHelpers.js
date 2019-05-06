@@ -45,32 +45,30 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
     }
     const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
     const categoryKeys = Object.keys(categories);
-    if (toolName === "translationWords") {
-      // for tW we don't select by subcategories
-      categoryKeys.forEach((category) => {
-        project.setCategoryLoaded(toolName, category);
+    categoryKeys.forEach((category) => {
+      const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
+      const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
+      let groupsDir = resourceCategoryDir;
+      if (!fs.pathExistsSync(resourceCategoryDir)) {
+        groupsDir = altResourceCategoryDir;
+      }
+      categories[category].forEach((subCategory) => {
+        const dataPath = path.join(groupsDir, subCategory + '.json');
+        project.importCategoryGroupData(toolName, dataPath);
       });
-    } else {
-      categoryKeys.forEach((category) => {
-        const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
-        const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
-        let groupsDir = resourceCategoryDir;
-        if (!fs.pathExistsSync(resourceCategoryDir)) {
-          groupsDir = altResourceCategoryDir;
-        }
-        categories[category].forEach((subCategory) => {
-          const dataPath = path.join(groupsDir, subCategory + '.json');
-          project.importCategoryGroupData(toolName, dataPath);
-        });
-        // TRICKY: gives the tool an index of which groups belong to which category
-        project.setCategoryGroupIds(toolName, category, categories[category]);
-        // loading complete
+      // TRICKY: gives the tool an index of which groups belong to which category
+      project.setCategoryGroupIds(toolName, category, categories[category]);
+      // loading complete
+      if (toolName === "translationWords") {
+        // for tW we don't select by subcategories
+        project.setCategoryLoaded(toolName, category);
+      } else {
         categories[category].forEach((subCategory) => {
           project.setCategoryLoaded(toolName, subCategory);
         });
-      });
-    }
-    project.removeStaleCategoriesFromCurrent(toolName);
+      }
+    });
+    project.removeStaleCategoriesFromCurrent(toolName, categories);
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
