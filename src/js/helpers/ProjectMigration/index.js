@@ -16,7 +16,11 @@ import migrateOldProjects from './migrateOldProjects';
  * @param {String} link - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
  */
 const migrateProject = async (projectSaveLocation, link, userName) => {
-  await migrateOldProjects(projectSaveLocation, userName);
+  try {
+    await migrateOldProjects(projectSaveLocation, userName);
+  } catch(e) {
+    console.error("migrateOldProjects() - migration error", e);
+  }
   try {
     await migrateToAddTargetLanguageBookName(projectSaveLocation);
   } catch(e) {

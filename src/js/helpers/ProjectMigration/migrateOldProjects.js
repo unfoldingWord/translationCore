@@ -32,7 +32,7 @@ const shouldRun = (projectPath) => {
   if (manifest) {
     const manifestVersion = manifest[tc_EDIT_VERSION_KEY] || "";
     if (manifestVersion !== packagefile.version) {
-      console.log(`migrateOldProjects.shouldRun(${projectPath}) - saved project version of '${manifestVersion}' does not match '${packagefile.version}'`);
+      console.log(`migrateOldProjects.shouldRun(${projectPath}) - saved project version of '${manifestVersion}' does not match APP version '${packagefile.version}'`);
       return true;
     }
   }

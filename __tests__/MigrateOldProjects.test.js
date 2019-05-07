@@ -106,7 +106,7 @@ describe('Test ability to translate bookname into target language fom manifest g
     const results = await migrateOldProjects(projectPath, user);
 
     // then
-    expect(results).toEqual(expectMigrate);
+    expect(results).toEqual(expectMigrate); // NOTE: if tc_EDIT_VERSION_KEY is changed this will fail - set it back to original value
     expect( mockOpen).toHaveBeenCalledTimes(1);
     expect( mockSave).toHaveBeenCalledTimes(1);
   });
