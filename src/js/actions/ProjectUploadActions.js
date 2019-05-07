@@ -10,6 +10,7 @@ import * as WordAlignmentActions from "./WordAlignmentActions";
 // helpers
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 import {delay} from "../helpers/bodyUIHelpers";
+import migrateOldProjects from "../helpers/ProjectMigration/migrateOldProjects";
 
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git
@@ -62,6 +63,19 @@ async function pushProjectRepo(repo) {
 }
 
 /**
+ * make sure old projects archived before modifying
+ * @param {String} projectPath - Path to the project to upload
+ * @return {Promise<void>}
+ */
+async function archiveOldProjects(projectPath) {
+  try {
+    await migrateOldProjects(projectPath);
+  } catch (e) {
+    console.error("uploadProject: migrateOldProjects() - migration error", e);
+  }
+}
+
+/**
  * Upload project to door 43, based on currently logged in user.
  * @param {String} projectPath - Path to the project to upload
  * @param {Object} user - currently logged in user
@@ -91,6 +105,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             await delay(500);
             dispatch(showStatus(translate("projects.loading_project_alert")));
             await delay(500);
+            await archiveOldProjects(projectPath);
             console.log("uploadProject: saving alignments");
             const filePath = path.join(projectPath, projectName + ".usfm");
             await dispatch(

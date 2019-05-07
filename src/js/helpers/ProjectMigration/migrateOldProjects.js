@@ -12,7 +12,7 @@ export const tc_EDIT_VERSION_KEY = "tc_edit_version";
  * @param {String} projectPath
  * @return {Boolean} if needed migration
  */
-export default async (projectPath) => {
+export const migrateOldProjects = async (projectPath) => {
   const ifShouldRun = shouldRun(projectPath);
   if (ifShouldRun) {
     await run(projectPath);
@@ -51,3 +51,5 @@ const run = async (projectPath) => {
   await repo.save(`Migrating Old Project`);
   console.log("migrateOldProjects.run() - git save complete");
 };
+
+export default migrateOldProjects;
