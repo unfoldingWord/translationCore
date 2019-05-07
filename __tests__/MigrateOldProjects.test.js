@@ -2,7 +2,7 @@ jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from "lodash";
-import migrateOldProjects from '../src/js/helpers/ProjectMigration/migrateOldProjects';
+import migrateSaveChangesInOldProjects from '../src/js/helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import Repo from '../src/js/helpers/Repo';
 import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
 import {tc_EDIT_VERSION_KEY} from "../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers";
@@ -59,7 +59,7 @@ describe('Test ability to translate bookname into target language fom manifest g
     const expectMigrate = true;
 
     // when
-    const results = await migrateOldProjects(projectPath, user);
+    const results = await migrateSaveChangesInOldProjects(projectPath, user);
 
     // then
     expect(results).toEqual(expectMigrate);
@@ -73,7 +73,7 @@ describe('Test ability to translate bookname into target language fom manifest g
     fs.outputJsonSync(directoryToManifest, manifest);
 
     // when
-    const results = await migrateOldProjects(projectPath, user);
+    const results = await migrateSaveChangesInOldProjects(projectPath, user);
 
     // then
     expect(results).toEqual(expectMigrate);
@@ -88,7 +88,7 @@ describe('Test ability to translate bookname into target language fom manifest g
     fs.outputJsonSync(directoryToManifest, manifest);
 
     // when
-    const results = await migrateOldProjects(projectPath, user);
+    const results = await migrateSaveChangesInOldProjects(projectPath, user);
 
     // then
     expect(results).toEqual(expectMigrate);
@@ -103,7 +103,7 @@ describe('Test ability to translate bookname into target language fom manifest g
     fs.outputJsonSync(directoryToManifest, manifest);
 
     // when
-    const results = await migrateOldProjects(projectPath, user);
+    const results = await migrateSaveChangesInOldProjects(projectPath, user);
 
     // then
     expect(results).toEqual(expectMigrate); // NOTE: if tc_EDIT_VERSION_KEY is changed this will fail - set it back to original value

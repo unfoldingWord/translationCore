@@ -10,7 +10,7 @@ import * as WordAlignmentActions from "./WordAlignmentActions";
 // helpers
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 import {delay} from "../helpers/bodyUIHelpers";
-import migrateOldProjects from "../helpers/ProjectMigration/migrateOldProjects";
+import migrateSaveChangesInOldProjects from "../helpers/ProjectMigration/migrateSaveChangesInOldProjects";
 
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git
@@ -63,15 +63,15 @@ async function pushProjectRepo(repo) {
 }
 
 /**
- * make sure old projects archived before modifying
+ * make sure old project changes are saved to git before modifying
  * @param {String} projectPath - Path to the project to upload
  * @return {Promise<void>}
  */
-async function archiveOldProjects(projectPath) {
+async function saveChangesInOldProjects(projectPath) {
   try {
-    await migrateOldProjects(projectPath);
+    await migrateSaveChangesInOldProjects(projectPath);
   } catch (e) {
-    console.error("uploadProject: migrateOldProjects() - migration error", e);
+    console.error("uploadProject: migrateSaveChangesInOldProjects() - migration error", e);
   }
 }
 
@@ -105,7 +105,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             await delay(500);
             dispatch(showStatus(translate("projects.loading_project_alert")));
             await delay(500);
-            await archiveOldProjects(projectPath);
+            await saveChangesInOldProjects(projectPath);
             console.log("uploadProject: saving alignments");
             const filePath = path.join(projectPath, projectName + ".usfm");
             await dispatch(

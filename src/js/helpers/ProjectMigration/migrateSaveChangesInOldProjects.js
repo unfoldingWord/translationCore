@@ -1,5 +1,10 @@
 /* eslint-disable no-console */
 
+/***
+ * migration that makes sure that all changes in old projects are saved to git.  This is called before any migrations
+ *  are made to project.
+ */
+
 import * as manifestUtils from "./manifestUtils";
 import packagefile from '../../../../package';
 import Repo from "../Repo";
@@ -7,12 +12,11 @@ import Repo from "../Repo";
 export const tc_EDIT_VERSION_KEY = "tc_edit_version";
 
 /**
- * @description
- * function that conditionally runs the migration if needed
+ * @description - function that conditionally runs the migration if needed
  * @param {String} projectPath
  * @return {Boolean} if needed migration
  */
-export const migrateOldProjects = async (projectPath) => {
+export const migrateSaveChangesInOldProjects = async (projectPath) => {
   const ifShouldRun = shouldRun(projectPath);
   if (ifShouldRun) {
     await run(projectPath);
@@ -21,8 +25,7 @@ export const migrateOldProjects = async (projectPath) => {
 };
 
 /**
- * @description
- * function that checks to see if the migration should be run
+ * @description - function that checks to see if the migration should be run
  * @param {String} projectPath
  * @return {Boolean} if needed migration
  */
@@ -31,7 +34,7 @@ const shouldRun = (projectPath) => {
   if (manifest) {
     const manifestVersion = manifest[tc_EDIT_VERSION_KEY] || "";
     if (manifestVersion !== packagefile.version) {
-      console.log(`migrateOldProjects.shouldRun(${projectPath}) - saved project version of '${manifestVersion}' does not match APP version '${packagefile.version}'`);
+      console.log(`migrateOldProjects.shouldRun(${projectPath}) - saved project version of '${manifestVersion}' does not match APP version '${packagefile.version}', will save changes in git`);
       return true;
     }
   }
@@ -39,17 +42,16 @@ const shouldRun = (projectPath) => {
 };
 
 /**
- * @description - Legacy projects have a apps folder not hidden
- * these need to be migrated to the new workflow of having them hidden
+ * @description - make sure project changes saved to git.  Throws exception on error.
  * @param {String} projectPath
  */
 const run = async (projectPath) => {
   console.log(`migrateOldProjects.run(${projectPath})`);
   // do git commit
   const repo = await Repo.open(projectPath);
-  console.log("migrateOldProjects.run() - doing git save");
+  console.log("migrateSaveChangesInOldProjects.run() - doing git save");
   await repo.save(`Migrating Old Project`);
-  console.log("migrateOldProjects.run() - git save complete");
+  console.log("migrateSaveChangesInOldProjects.run() - git save complete");
 };
 
-export default migrateOldProjects;
+export default migrateSaveChangesInOldProjects;

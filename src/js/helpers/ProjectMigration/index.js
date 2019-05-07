@@ -7,7 +7,7 @@ import migrateToVersion4 from './migrateToVersion4';
 import migrateToVersion5 from './migrateToVersion5';
 import migrateToVersion6 from './migrateToVersion6';
 import migrateToVersion7 from './migrateToVersion7';
-import migrateOldProjects from './migrateOldProjects';
+import migrateSaveChangesInOldProjects from './migrateSaveChangesInOldProjects';
 
 /**
  * Migrates a project to the current version.
@@ -18,9 +18,10 @@ import migrateOldProjects from './migrateOldProjects';
  */
 const migrateProject = async (projectSaveLocation, link, userName) => {
   try {
-    await migrateOldProjects(projectSaveLocation);
+    // this should be first item in migration
+    await migrateSaveChangesInOldProjects(projectSaveLocation);
   } catch(e) {
-    console.error("migrateOldProjects() - migration error", e);
+    console.error("migrateSaveChangesInOldProjects() - migration error", e);
   }
   try {
     await migrateToAddTargetLanguageBookName(projectSaveLocation);
