@@ -15,9 +15,13 @@ import migrateOldProjects from './migrateOldProjects';
  * @param {String} projectSaveLocation - path to project
  * @param {String} link - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
  */
-const migrateProject = (projectSaveLocation, link, userName) => {
-  migrateOldProjects(projectSaveLocation);
-  migrateToAddTargetLanguageBookName(projectSaveLocation);
+const migrateProject = async (projectSaveLocation, link, userName) => {
+  await migrateOldProjects(projectSaveLocation, userName);
+  try {
+    await migrateToAddTargetLanguageBookName(projectSaveLocation);
+  } catch(e) {
+    console.error("migrateToAddTargetLanguageBookName() - migration error", e);
+  }
   migrateAppsToDotApps(projectSaveLocation);
   migrateToVersion1(projectSaveLocation, link);
   migrateToVersion2(projectSaveLocation, link);
