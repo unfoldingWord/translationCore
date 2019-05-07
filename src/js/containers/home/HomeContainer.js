@@ -24,6 +24,9 @@ import * as ProjectInformationCheckActions from '../../actions/ProjectInformatio
 import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 
+export const APP_VERSION = packagefile.version;
+export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
+
 // TRICKY: because this component is heavily coupled with callbacks to set content
 // we need to connect locale state change events.
 class HomeContainer extends Component {
@@ -74,7 +77,7 @@ class HomeContainer extends Component {
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <HomeScreenNavigation translate={translate} {...this.props} />
-                    <AppVersion actions={this.props.actions} version={`${packagefile.version} (${process.env.BUILD})`} />
+                    <AppVersion actions={this.props.actions} version={`${APP_VERSION} (${process.env.BUILD})`} />
                   </div>
                 </div>
               </div>
@@ -82,7 +85,7 @@ class HomeContainer extends Component {
         }
         <LicenseModal
           translate={translate}
-          version={`${packagefile.version} (${process.env.BUILD})`}
+          version={`${APP_VERSION} (${process.env.BUILD})`}
           actions={this.props.actions}
           showLicenseModal={showLicenseModal}
         />

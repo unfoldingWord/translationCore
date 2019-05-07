@@ -4,12 +4,17 @@ import React from 'react';
 import {getTranslate} from '../../selectors';
 //helpers
 import * as usfmHelpers from '../usfmHelpers';
+import {getProjectManifest} from "../manifestHelpers";
+import {isValidBibleBook} from "../bibleHelpers";
 //static
 import books from '../../../../tcResources/books';
 //common
-import {getProjectManifest} from "../manifestHelpers";
-import {isValidBibleBook} from "../bibleHelpers";
+import {APP_VERSION} from "../../containers/home/HomeContainer";
+import semver from "semver";
 
+export const tc_EDIT_VERSION_KEY = "tc_edit_version";
+export const tc_MIN_COMPATIBLE_VERSION_KEY = "tc_min_compatible_version";
+export const tc_MIN_VERSION_ERROR = "TC_MIN_VERSION_ERROR";
 
 /**
  * Wrapper function for detecting invalid folder/file structures for expected
@@ -204,6 +209,25 @@ export function verifyValidBetaProject(state) {
 }
 
 /**
+ * compare version numbers in format `1.2.3`.  Returns -1 if a is less than b, 0 if same,
+ *      and +1 if a is greater than b
+ * @param {String} a
+ * @param {String} b
+ */
+export function versionCompare(a, b) {
+  const cleanA = semver.coerce(a);
+  const cleanB = semver.coerce(b);
+
+  if(semver.lt(cleanA, cleanB)) {
+    return -1;
+  } else if(semver.gt(cleanA, cleanB)) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+/**
  * Checks if the project is supported by this version of tC.
  * @param {string} projectDir - the path to the project directory
  * @param translate
@@ -221,9 +245,16 @@ export function isProjectSupported(projectDir, translate) {
     if (!greaterThanVersion_0_8_0 && testForCheckingData(projectDir)) {
       // if old and has some checking data, it cannot be opened
       reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
-    } else {
-      resolve(true);
+      return;
     }
+
+    const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
+    if (minVersion && (versionCompare(APP_VERSION, minVersion) < 0)) {
+      reject(tc_MIN_VERSION_ERROR);
+      return;
+    }
+
+    resolve(true);
   });
 }
 

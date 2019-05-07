@@ -6,9 +6,14 @@ import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
-import {openAlertDialog} from '../AlertModalActions';
+import {
+  openAlertDialog,
+  openOptionDialog,
+  closeAlertDialog
+} from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
+import {openSoftwareUpdate} from "../SoftwareUpdateActions";
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
@@ -22,7 +27,12 @@ import {
   getTranslate,
   getUsername
 } from "../../selectors";
-import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {
+  isProjectSupported,
+  tc_MIN_COMPATIBLE_VERSION_KEY,
+  tc_EDIT_VERSION_KEY,
+  tc_MIN_VERSION_ERROR
+} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
   loadSourceBookTranslations,
   loadTargetLanguageBook
@@ -34,6 +44,7 @@ import {
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
 import * as BibleHelpers from "../../helpers/bibleHelpers";
+import {APP_VERSION, MIN_COMPATIBLE_VERSION} from "../../containers/home/HomeContainer";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -43,6 +54,41 @@ function delay(ms) {
     setTimeout(resolve, ms)
   );
 }
+
+/**
+ * show Invalid Version Error
+ * @return {Function}
+ */
+export const showInvalidVersionError = () => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const cancelText = translate("buttons.cancel_button");
+    const upgradeText = translate("buttons.update");
+    dispatch(openOptionDialog(translate("project_validation.newer_project"),
+      (result) => {
+        dispatch(closeAlertDialog());
+        if (result === upgradeText) {
+          dispatch(openSoftwareUpdate());
+        }
+      }, cancelText, upgradeText));
+  };
+};
+
+/**
+ * make sure that the edit versions and minimum compatible versions are up to date in manifest
+ * @return {Function}
+ */
+export const updateProjectVersion = () => {
+  return async (dispatch, getState) => {
+    const manifest = getProjectManifest(getState());
+    const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
+    const editVersion = manifest[tc_EDIT_VERSION_KEY];
+    if ((editVersion !== APP_VERSION) || (minVersion !== MIN_COMPATIBLE_VERSION)) {
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_EDIT_VERSION_KEY, APP_VERSION));
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_MIN_COMPATIBLE_VERSION_KEY, MIN_COMPATIBLE_VERSION));
+    }
+  };
+};
 
 /**
  * This thunk opens a project and prepares it for use in tools.
@@ -108,6 +154,7 @@ export const openProject = (name, skipValidation=false) => {
       }
 
       await dispatch(displayTools());
+      dispatch(updateProjectVersion());
       console.log("openProject() - project opened");
     } catch (e) {
       // TODO: clean this up
@@ -116,7 +163,11 @@ export const openProject = (name, skipValidation=false) => {
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
       dispatch(closeProject());
-      dispatch(openAlertDialog(message));
+      if (message === tc_MIN_VERSION_ERROR) {
+        dispatch(showInvalidVersionError());
+      } else {
+        dispatch(openAlertDialog(message));
+      }
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     }
   };

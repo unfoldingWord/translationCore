@@ -22,6 +22,15 @@ import * as fromMyProjectsReducer from '../reducers/myProjectsReducer';
 import * as fromAlert from '../reducers/alerts';
 import * as fromGrouspIndex from '../reducers/groupsIndexReducer';
 import * as fromGroupsData from '../reducers/groupsDataReducer';
+import * as fromSoftwareUpdateReducer from '../reducers/softwareUpdateReducer';
+
+/**
+ * checks if the software update dialog is open
+ * @param state
+ * @return {boolean}
+ */
+export const getIsSoftwareUpdateOpen = state =>
+  fromSoftwareUpdateReducer.getIsOpen(state.softwareUpdateReducer);
 
 /**
  * Retrieves active alerts
