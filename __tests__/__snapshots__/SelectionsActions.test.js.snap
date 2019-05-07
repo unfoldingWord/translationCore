@@ -279,11 +279,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "alignments_reset",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -329,11 +332,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "alignments_reset",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -377,11 +383,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "alignments_reset",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -466,11 +475,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "alignments_reset",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -516,11 +528,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "alignments_reset",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -528,11 +543,14 @@ Array [
 exports[`SelectionsActions.validateSelections Active Tool WA apostle selection edited 1`] = `
 Array [
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "alignments_reset",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
