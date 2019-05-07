@@ -4,7 +4,11 @@ import path from 'path-extra';
 import _ from "lodash";
 import migrateOldProjects from '../src/js/helpers/ProjectMigration/migrateOldProjects';
 import Repo from '../src/js/helpers/Repo';
+import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
+import {tc_EDIT_VERSION_KEY} from "../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers";
+import {getPreviousVersion} from "./ProjectStructureValidationHelpers.test";
 
+// mock Repo
 const mockSave = jest.fn();
 jest.mock("../src/js/helpers/Repo", () => {
   // mocks Class initialization
@@ -13,9 +17,6 @@ jest.mock("../src/js/helpers/Repo", () => {
   });
 });
 const mockOpen = jest.fn((dir, user) => {
-  // return new Promise(resolve => {
-  //   resolve(new Repo(dir, user));
-  // });
   return new Repo(dir, user);
 });
 Repo.open = mockOpen; // add static to class
@@ -80,11 +81,10 @@ describe('Test ability to translate bookname into target language fom manifest g
     expect( mockSave).toHaveBeenCalledTimes(1);
   });
 
-
   test('Project with same edit version should not migrate', async () => {
     // given
     const expectMigrate = false;
-    manifest["tc_edit_version"] = "1.1.4";
+    manifest[tc_EDIT_VERSION_KEY] = APP_VERSION;
     fs.outputJsonSync(directoryToManifest, manifest);
 
     // when
@@ -96,4 +96,18 @@ describe('Test ability to translate bookname into target language fom manifest g
     expect( mockSave).toHaveBeenCalledTimes(0);
   });
 
+  test('Project with different edit version should migrate', async () => {
+    // given
+    const expectMigrate = true;
+    manifest[tc_EDIT_VERSION_KEY] = getPreviousVersion(APP_VERSION);
+    fs.outputJsonSync(directoryToManifest, manifest);
+
+    // when
+    const results = await migrateOldProjects(projectPath, user);
+
+    // then
+    expect(results).toEqual(expectMigrate);
+    expect( mockOpen).toHaveBeenCalledTimes(1);
+    expect( mockSave).toHaveBeenCalledTimes(1);
+  });
 });

@@ -346,11 +346,11 @@ describe('versionCompare', () => {
 // helpers
 //
 
-function versionToString(version) {
+export function versionToString(version) {
   return ((version.major || '0') + '.' + (version.minor || '0') + '.' + (version.patch || '0'));
 }
 
-function getSemVersion(version) {
+export function getSemVersion(version) {
   let version_;
   if (typeof version === 'string') {
     version_ = semver.parse(version);
@@ -360,7 +360,7 @@ function getSemVersion(version) {
   return version_;
 }
 
-function getPreviousVersion(version) {
+export function getPreviousVersion(version) {
   let version_ = getSemVersion(version);
   if( --version_.patch < 0) {
     version_.patch = 0;
@@ -372,7 +372,7 @@ function getPreviousVersion(version) {
   return versionToString(version_);
 }
 
-function getNextVersion(version) {
+export function getNextVersion(version) {
   let version_ = getSemVersion(version);
   ++version_.patch;
   return versionToString(version_);

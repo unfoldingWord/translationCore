@@ -111,7 +111,7 @@ export const openProject = (name, skipValidation=false) => {
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
       await isProjectSupported(projectDir, translate);
-      migrateProject(projectDir, null, getUsername(getState()));
+      await migrateProject(projectDir, null, getUsername(getState()));
 
       // TODO: this is a temporary hack. Eventually we will always validate the project
       // but we need to refactored the online and local import functions first so there is no duplication.
