@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 // containers
 import HomeContainer from './HomeContainer';
 import ToolContainer from '../ToolContainer';
-import { getActiveLocaleLanguage } from '../../selectors';
+import { getActiveLocaleLanguage, getIsSoftwareUpdateOpen } from '../../selectors';
 import { withLocale } from '../Locale';
+import SoftwareUpdatesDialog from "../SoftwareUpdateDialog";
+import { closeSoftwareUpdate } from "../../actions/SoftwareUpdateActions";
 
 const styles = {
   root: {
@@ -39,6 +41,7 @@ class BodyContainer extends Component {
       error: null,
       errorInfo: null
     };
+    this.handleCloseSoftwareUpdate=this.handleCloseSoftwareUpdate.bind(this);
   }
 
   componentDidCatch(error, info) {
@@ -48,10 +51,20 @@ class BodyContainer extends Component {
     });
   }
 
+  handleCloseSoftwareUpdate() {
+    this.props.closeSoftwareUpdate();
+  }
+
   render () {
-    const {currentLanguage, translate} = this.props;
+    const {currentLanguage, translate, isSoftwareUpdateOpen} = this.props;
     const {displayHomeView} = this.props.reducers.homeScreenReducer;
     const { error, errorInfo } = this.state;
+
+    const softwareUpdateDialog = (
+      <SoftwareUpdatesDialog open={isSoftwareUpdateOpen}
+        translate={translate}
+        onClose={this.handleCloseSoftwareUpdate}/>
+    );
 
     if(error !== null) {
       return (
@@ -69,6 +82,7 @@ class BodyContainer extends Component {
         <div style={styles.root}>
           <HomeContainer translate={translate}
                          currentLanguage={currentLanguage}/>
+          {softwareUpdateDialog}
         </div>
       );
     } else {
@@ -76,6 +90,7 @@ class BodyContainer extends Component {
         <div style={styles.root}>
           <ToolContainer currentLanguage={currentLanguage}
                          translate={translate}/>
+          {softwareUpdateDialog}
         </div>
       );
     }
@@ -87,14 +102,21 @@ const mapStateToProps = (state) => {
     reducers: {
       homeScreenReducer: state.homeScreenReducer
     },
-    currentLanguage: getActiveLocaleLanguage(state)
+    currentLanguage: getActiveLocaleLanguage(state),
+    isSoftwareUpdateOpen: getIsSoftwareUpdateOpen(state)
   };
+};
+
+const mapDispatchToProps =  {
+  closeSoftwareUpdate
 };
 
 BodyContainer.propTypes = {
   reducers: PropTypes.object.isRequired,
   currentLanguage: PropTypes.object,
-  translate: PropTypes.func
+  translate: PropTypes.func,
+  isSoftwareUpdateOpen: PropTypes.bool.isRequired,
+  closeSoftwareUpdate: PropTypes.func.isRequired
 };
 
-export default withLocale(connect(mapStateToProps)(BodyContainer));
+export default withLocale(connect(mapStateToProps, mapDispatchToProps)(BodyContainer));
