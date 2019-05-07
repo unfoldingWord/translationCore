@@ -411,9 +411,10 @@
     "retry": "Retry"
   },
   "tool_card_categories": {
-    "kt":       "Key Terms",
-    "names":    "Names",
-    "other":    "Other Terms",
+    "kt": "Key Terms",
+    "names": "Names",
+    "other_terms": "Other Terms",
+    "other": "Other",
     "translate-manuscripts": "Original Manuscripts",
     "guidelines-sonofgodprinciples": "Translating Son and Father",
     "translate-textvariants": "Textual Variants",
