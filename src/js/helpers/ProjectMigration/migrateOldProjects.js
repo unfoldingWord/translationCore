@@ -10,13 +10,12 @@ export const tc_EDIT_VERSION_KEY = "tc_edit_version";
  * @description
  * function that conditionally runs the migration if needed
  * @param {String} projectPath
- * @param {String} userName
  * @return {Boolean} if needed migration
  */
-export default async (projectPath, userName) => {
-  const ifShouldRun = shouldRun(projectPath, userName);
+export default async (projectPath) => {
+  const ifShouldRun = shouldRun(projectPath);
   if (ifShouldRun) {
-    await run(projectPath, userName);
+    await run(projectPath);
   }
   return ifShouldRun;
 };
@@ -43,12 +42,11 @@ const shouldRun = (projectPath) => {
  * @description - Legacy projects have a apps folder not hidden
  * these need to be migrated to the new workflow of having them hidden
  * @param {String} projectPath
- * @param {String} userName
  */
-const run = async (projectPath, userName) => {
+const run = async (projectPath) => {
   console.log(`migrateOldProjects.run(${projectPath})`);
   // do git commit
-  const repo = await Repo.open(projectPath, userName);
+  const repo = await Repo.open(projectPath);
   console.log("migrateOldProjects.run() - doing git save");
   await repo.save(`Migrating Old Project`);
   console.log("migrateOldProjects.run() - git save complete");

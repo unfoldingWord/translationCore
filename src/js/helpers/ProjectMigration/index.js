@@ -14,10 +14,11 @@ import migrateOldProjects from './migrateOldProjects';
  * This will perform the necessary migrations from previous versions up to the current version.
  * @param {String} projectSaveLocation - path to project
  * @param {String} link - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
+ * @param {String} userName
  */
 const migrateProject = async (projectSaveLocation, link, userName) => {
   try {
-    await migrateOldProjects(projectSaveLocation, userName);
+    await migrateOldProjects(projectSaveLocation);
   } catch(e) {
     console.error("migrateOldProjects() - migration error", e);
   }
