@@ -30,13 +30,14 @@ const styles = {
 const toolCardCategories = {
   'kt': 'Key Terms',
   'names': 'Names',
-  'other': 'Other Terms',
+  'other_terms': 'Other Terms',
 
   'culture': 'Culture',
   'figures': 'Figures of Speech',
   'numbers': 'Numbers',
   'discourse': 'Discourse',
-  'grammar': 'Grammar'
+  'grammar': 'Grammar',
+  'other': 'Other'
 };
 
 /**
@@ -159,8 +160,10 @@ class ToolCardBoxes extends React.Component {
         {
           Object.keys(availableCategories).map((parentCategory, index) => {
             const subcategories = availableCategories[parentCategory];
+            parentCategory = parentCategory === 'other' && toolName == 'translationWords' ?
+              'other_terms' : parentCategory;
             return subcategories.length > 0 &&
-              tNotesCategories[parentCategory] || toolName == 'translationWords' ?
+              tNotesCategories[parentCategory] || toolName === 'translationWords' ?
               (
                 <div style={{display: 'flex', flexWrap: 'wrap', margin: '0 0 5 0', width: '100%'}} key={index}>
                   <div style={{display: 'flex', width: '92%'}}>
