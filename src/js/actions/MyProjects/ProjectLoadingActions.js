@@ -143,9 +143,7 @@ export const openProject = (name, skipValidation=false) => {
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
-        if (t.name !== "translationWords") {
-          setDefaultProjectCategories(language, t.name, validProjectDir);
-        }
+        setDefaultProjectCategories(language, t.name, validProjectDir);
 
         // connect tool api
         console.log("openProject() - connect tool api");
