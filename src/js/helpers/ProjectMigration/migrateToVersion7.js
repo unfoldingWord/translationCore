@@ -10,7 +10,7 @@ export const MIGRATE_MANIFEST_VERSION = 7;
  * @description
  * function that conditionally runs the migration if needed
  * @param {String} projectPath - path to project
- * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
+ * @param {String} userName
  */
 export default (projectPath, userName) => {
   Version.getVersionFromManifest(projectPath); // ensure manifest converted for tc
@@ -31,6 +31,7 @@ const shouldRun = (projectPath) => {
 /**
  * @description - update manifest version to this version
  * @param {String} projectPath - path to project
+ * @param {String} userName
  * @return {null}
  */
 const run = (projectPath, userName) => {
@@ -43,7 +44,8 @@ const run = (projectPath, userName) => {
  * @description Makes sure that any verse with verseEdits are in sync with the actual text
  * since in 1.0 they could have reimported verses that have had external edits
  *
- * @param {*} projectPath - Project where all related documentation resides
+ * @param {String} projectPath - Project where all related documentation resides
+ * @param {String} userName
  */
 const migrateToVersion7 = (projectPath, userName) => {
   try {

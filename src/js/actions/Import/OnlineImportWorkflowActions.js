@@ -88,7 +88,7 @@ export const onlineImport = () => {
 
           await isProjectSupported(importProjectPath, translate);
           const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
-          migrateProject(importProjectPath, link, getUsername(getState()));
+          await migrateProject(importProjectPath, link, getUsername(getState()));
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
           console.log("onlineImport() - start project validation");
