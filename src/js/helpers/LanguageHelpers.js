@@ -17,7 +17,8 @@ export const getLanguagesSortedByCode = () => {
     languages = [];
     const languageCodes = getLanguageCodes();
     languageCodeList = Object.keys(languageCodes.local).sort();
-    for (let code of languageCodeList) {
+    for (let i = 0, l = languageCodeList.length; i < l; i++) {
+      const code = languageCodeList[i];
       if ( languageCodes.english[code] ) {
         languages.push(languageCodes.english[code]);
       }
@@ -36,19 +37,20 @@ export const getLanguagesSortedByName = () => {
   if (!languageListByName) {
     const languageCodes = getLanguageCodes();
     languageNames = {};
-    for (let code of Object.keys(languageCodes.local).sort()) {
+    languageListByName = [];
+    const codes = Object.keys(languageCodes.local).sort();
+    for (let i = 0, l = codes.length; i < l; i++) {
+      const code = codes[i];
       if ( languageCodes.english[code] ) {
         const language = languageCodes.english[code];
         languageNames[language.name] = language;
+        languageListByName.push(language);
       }
-      const language = languageCodes.local[code];
-      languageNames[language.name] = language;
-    }
-
-    // create sorted list by name
-    languageListByName = [];
-    for (let name of Object.keys(languageNames)) {
-      languageListByName.push(languageNames[name]);
+      if ( languageCodes.local[code] ) {
+        const language = languageCodes.local[code];
+        languageNames[language.name] = language;
+        languageListByName.push(language);
+      }
     }
   }
   languageListByName = sortByNamesCaseInsensitive(languageListByName);
@@ -82,7 +84,8 @@ export const getLanguageCodes = () => {
     const localCodes = {};
     const englishCodes = {};
     languageCodes = { local: localCodes, english: englishCodes};
-    for (let language of langList) {
+    for (let i = 0, l = langList.length; i < l; i++) {
+      const language = langList[i];
       const code = language.lc;
       const english = language.ang;
       const name = language.ln || english || code;
@@ -137,7 +140,7 @@ export const getLanguageByCode = (code) => {
 };
 
 /**
- * @description - searches language array to do case insensitive match of language name.
+ * @description - searches language array for exact match.
  * @param {string} name
  * @return {array} language entry matched or null if no match
  */
@@ -162,25 +165,33 @@ export const isLanguageCodeValid = (languageID) => {
 /**
  * @description get language by name or prompt
  * @param {string} name - language name
+ * @param {string} code - optional language ID to also match in case of duplicates anglicized names
  * @return {object} found language or null
  */
-export const getLanguageByNameSelection = (name) => {
+export const getLanguageByNameSelection = (name, code = "") => {
   let language = getLanguageByName(name);
   if (language != null) {
-    return language;
+    if (!code || (code === language.code)) {
+      return language;
+    }
   }
   if (name) { // fallback to use prompt
     language = languageNamePrompts[name];
     if (language != null) {
-      return language;
+      if (!code || (code === language.code)) {
+        return language;
+      }
     }
 
     // now try case insensitive search
     const nameLC = name.toLowerCase();
     const languageList = getLanguagesSortedByName();
-    for (let language of languageList) {
+    for (let i = 0, l = languageList.length; i < l; i++) {
+      const language = languageList[i];
       if ((language.name.toLowerCase() === nameLC) || (language.namePrompt.toLowerCase() === nameLC)) {
-        return language;
+        if (!code || (code === language.code)) {
+          return language;
+        }
       }
     }
   }

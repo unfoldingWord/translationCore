@@ -54,7 +54,7 @@ export const localImport = () => {
       console.log("localImport() - converting project");
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
-      migrateProject(importProjectPath, null, getUsername(getState()));
+      await migrateProject(importProjectPath, null, getUsername(getState()));
       console.log("localImport() - start project validation");
       dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validateProject(importProjectPath));

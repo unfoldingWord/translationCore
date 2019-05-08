@@ -2,8 +2,11 @@ import fs from 'fs-extra';
 import path from "path-extra";
 import ospath from "ospath";
 import _ from "lodash";
+import semver from "semver";
 import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
+import packagefile from '../package.json';
+import {tc_MIN_VERSION_ERROR} from "../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers";
 
 // projects
 const obs_project_1 = path.join(__dirname, 'fixtures/project/projectVerification/obs_project_1');
@@ -18,6 +21,8 @@ const en_ta_project = path.join(__dirname, 'fixtures/project/projectVerification
 const en_tw_project = path.join(__dirname, 'fixtures/project/projectVerification/en_tw');
 const en_tn_project = path.join(__dirname, 'fixtures/project/projectVerification/en_tn');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+
+const APP_VERSION = packagefile.version;
 
 describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
   const projectName = "en_tit";
@@ -85,6 +90,63 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
   test('should allow import of tStudio project', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectTstudio(projectPath);
+    return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
+  });
+
+  test('should allow import of project editing with current APP version', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    const minVersion = APP_VERSION;
+    const editVersion = minVersion;
+    makeProject_version(projectPath, editVersion, minVersion);
+    return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
+  });
+
+  test('should allow import of project edited with older APP version', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    const minVersion = getPreviousVersion(APP_VERSION);
+    const editVersion = minVersion;
+    makeProject_version(projectPath, editVersion, minVersion);
+    return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
+  });
+
+  test('should not allow import of project edited with newer APP version', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    const minVersion = getNextVersion(APP_VERSION);
+    const editVersion = minVersion;
+    const expectedRejection = tc_MIN_VERSION_ERROR;
+    makeProject_version(projectPath, editVersion, minVersion);
+    return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).rejects.toEqual(expectedRejection);
+  });
+
+  test('should allow import of project edited with newer APP version but compatible with this version', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    const minVersion = APP_VERSION;
+    const editVersion = getNextVersion(APP_VERSION);
+    makeProject_version(projectPath, editVersion, minVersion);
+    return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
+  });
+
+  test('should allow import of project edited with newer APP version but compatible with older version', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    const minVersion = getPreviousVersion(APP_VERSION);
+    const editVersion = getNextVersion(APP_VERSION);
+    makeProject_version(projectPath, editVersion, minVersion);
+    return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
+  });
+
+  test('should allow import of project edited with older APP version with no version info in manifest', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    const minVersion = null;
+    const editVersion = null;
+    makeProject_version(projectPath, editVersion, minVersion);
+    return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
+  });
+
+  test('should allow import of project edited with APP version with no min version info in manifest', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    const minVersion = null;
+    const editVersion = getNextVersion(APP_VERSION);
+    makeProject_version(projectPath, editVersion, minVersion);
     return expect(ProjectStructureValidationHelpers.isProjectSupported(projectPath, translate)).resolves.toEqual(true);
   });
 });
@@ -237,9 +299,106 @@ describe('verifyValidBetaProject', () => {
     });
 });
 
+describe('versionCompare', () => {
+
+  test('1.1.4 === 1.1.4', () => {
+    const a = "1.1.4";
+    const b = "1.1.4";
+    const expectedCompare = 0;
+    const compare = ProjectStructureValidationHelpers.versionCompare(a, b);
+    expect(compare).toEqual(expectedCompare);
+  });
+
+  test('1.1.3 < 1.1.4', () => {
+    const a = "1.1.3";
+    const b = "1.1.4";
+    const expectedCompare = -1;
+    const compare = ProjectStructureValidationHelpers.versionCompare(a, b);
+    expect(compare).toEqual(expectedCompare);
+  });
+
+  test('1.1.1 > 1.1.0', () => {
+    const a = "1.1.1";
+    const b = "1.1.0";
+    const expectedCompare = 1;
+    const compare = ProjectStructureValidationHelpers.versionCompare(a, b);
+    expect(compare).toEqual(expectedCompare);
+  });
+
+  test('0.10.0 < 0.10.1', () => {
+    const a = "0.10.0";
+    const b = "0.10.1";
+    const expectedCompare = -1;
+    const compare = ProjectStructureValidationHelpers.versionCompare(a, b);
+    expect(compare).toEqual(expectedCompare);
+  });
+
+  test('1.0.0 > 0.10.1', () => {
+    const a = "1.0.0";
+    const b = "0.10.1";
+    const expectedCompare = 1;
+    const compare = ProjectStructureValidationHelpers.versionCompare(a, b);
+    expect(compare).toEqual(expectedCompare);
+  });
+});
+
 //
 // helpers
 //
+
+export function versionToString(version) {
+  return ((version.major || '0') + '.' + (version.minor || '0') + '.' + (version.patch || '0'));
+}
+
+export function getSemVersion(version) {
+  let version_;
+  if (typeof version === 'string') {
+    version_ = semver.parse(version);
+  } else {
+    version_ = _.cloneDeep(version);
+  }
+  return version_;
+}
+
+export function getPreviousVersion(version) {
+  let version_ = getSemVersion(version);
+  if( --version_.patch < 0) {
+    version_.patch = 0;
+    if( --version_.minor < 0) {
+      version_.minor = 0;
+      --version_.major;
+    }
+  }
+  return versionToString(version_);
+}
+
+export function getNextVersion(version) {
+  let version_ = getSemVersion(version);
+  ++version_.patch;
+  return versionToString(version_);
+}
+
+function getNextMajorVersion(version) {
+  let version_ = getSemVersion(version);
+  version_.inc('major');
+  return versionToString(version_);
+}
+
+function makeProject_version(projectPath, editVersion, minVersion) {
+  const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
+  manifest.tc_version = 5;
+  if (minVersion !== null) {
+    manifest[ProjectStructureValidationHelpers.tc_MIN_COMPATIBLE_VERSION_KEY] = minVersion;
+  } else {
+    delete manifest[ProjectStructureValidationHelpers.tc_MIN_COMPATIBLE_VERSION_KEY];
+  }
+  if (editVersion !== null) {
+    manifest[ProjectStructureValidationHelpers.tc_EDIT_VERSION_KEY] = editVersion;
+  } else {
+    delete manifest[ProjectStructureValidationHelpers.tc_EDIT_VERSION_KEY];
+  }
+  manifestUtils.saveProjectManifest(projectPath, manifest);
+}
 
 function makeProject_0_8_0(projectPath) {
   const manifest = manifestUtils.getProjectManifest(projectPath, undefined);

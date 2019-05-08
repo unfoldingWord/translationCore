@@ -238,7 +238,8 @@
       "field_invalid_length": "Must be 3-4 letters long",
       "invalid_characters": "Only basic Latin Letters supported"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book"
+    "conflicting_project": "A project with this identifier already exists for this language and book",
+    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
   },
   "book_list": {
     "ot": {
@@ -490,6 +491,7 @@
     "figs-possession": "Possession",
     "figs-rpronouns": "Reflexive Pronouns",
     "figs-we": "Forms of We",
-    "figs-they": "Forms of They"
+    "figs-they": "Forms of They",
+    "update": "Update to latest version"
   }
 }

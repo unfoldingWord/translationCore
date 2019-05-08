@@ -244,6 +244,16 @@ Array [
     "stepIndex": 3,
     "type": "GO_TO_STEP",
   },
+  Object {
+    "propertyName": "tc_edit_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_APP_VERSION",
+  },
+  Object {
+    "propertyName": "tc_min_compatible_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_MIN_COMPATIBLE_VERSION",
+  },
 ]
 `;
 
@@ -642,6 +652,16 @@ Array [
   Object {
     "stepIndex": 3,
     "type": "GO_TO_STEP",
+  },
+  Object {
+    "propertyName": "tc_edit_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_APP_VERSION",
+  },
+  Object {
+    "propertyName": "tc_min_compatible_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
 ]
 `;
@@ -1042,6 +1062,16 @@ Array [
     "stepIndex": 3,
     "type": "GO_TO_STEP",
   },
+  Object {
+    "propertyName": "tc_edit_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_APP_VERSION",
+  },
+  Object {
+    "propertyName": "tc_min_compatible_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_MIN_COMPATIBLE_VERSION",
+  },
 ]
 `;
 
@@ -1382,6 +1412,16 @@ Array [
       },
     ],
     "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "propertyName": "tc_edit_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_APP_VERSION",
+  },
+  Object {
+    "propertyName": "tc_min_compatible_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
 ]
 `;

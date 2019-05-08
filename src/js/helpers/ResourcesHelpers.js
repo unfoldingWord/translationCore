@@ -46,26 +46,35 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
     if (project.hasNewGroupsData(toolName)) {
       project.resetLoadedCategories(toolName);
     }
-    let categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
-    Object.keys(categories).forEach((category) => {
+    const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+    const categoryKeys = Object.keys(categories);
+    for (let i = 0, l = categoryKeys.length; i < l; i++) {
+      const category = categoryKeys[i];
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
       const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
       let groupsDir = resourceCategoryDir;
       if (!fs.pathExistsSync(resourceCategoryDir)) {
         groupsDir = altResourceCategoryDir;
       }
-      categories[category].forEach((subCategory) => {
+      for (let j = 0, l2 = categories[category].length; j < l2; j++) {
+        const subCategory = categories[category][j];
         const dataPath = path.join(groupsDir, subCategory + '.json');
         project.importCategoryGroupData(toolName, dataPath);
-      });
+      }
       // TRICKY: gives the tool an index of which groups belong to which category
       project.setCategoryGroupIds(toolName, category, categories[category]);
       // loading complete
-      categories[category].forEach((subCategory) => {
-        project.setCategoryLoaded(toolName, subCategory);
-      });
-    });
-    project.removeStaleCategoriesFromCurrent(toolName);
+      if (toolName === "translationWords") {
+        // for tW we don't select by subcategories
+        project.setCategoryLoaded(toolName, category);
+      } else {
+        for (let k = 0, l3 = categories[category].length; k < l3; k++) {
+          const subCategory = categories[category][k];
+          project.setCategoryLoaded(toolName, subCategory);
+        }
+      }
+    }
+    project.removeStaleCategoriesFromCurrent(toolName, categories);
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
@@ -148,14 +157,20 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   let categories = [];
   if (helpDir && project.getSelectedCategories(toolName).length === 0) {
-    let parentCategories = fs.readdirSync(helpDir).filter(file => {
-      return fs.lstatSync(path.join(helpDir, file)).isDirectory();
-    });
-    parentCategories.forEach((subCategory) => {
-      categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
-    });
-    if (categories.length > 0) {
-      project.setSelectedCategories(toolName, categories);
+    if (toolName === "translationWords") { // for tW we select by parent categories
+      const parentCategories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+      project.setSelectedCategories(toolName, Object.keys(parentCategories));
+    } else {
+      let parentCategories = fs.readdirSync(helpDir).filter(file => {
+        return fs.lstatSync(path.join(helpDir, file)).isDirectory();
+      });
+      for (let i = 0, l = parentCategories.length; i < l; i++) {
+        const subCategory = parentCategories[i];
+        categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
+      }
+      if (categories.length > 0) {
+        project.setSelectedCategories(toolName, categories);
+      }
     }
   }
 }
