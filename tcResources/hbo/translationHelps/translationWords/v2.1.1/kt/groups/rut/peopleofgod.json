@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "peopleofgod",
-      "quote": "אֶת עַמּ֔⁠וֹ",
+      "quote": [
+        {
+          "word": "אֶת",
+          "occurrence": 1
+        },
+        {
+          "word": "עַמּ֔⁠וֹ",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "H0853",
         "H5971a"
