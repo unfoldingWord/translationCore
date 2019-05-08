@@ -77,7 +77,7 @@ jest.mock('../../selectors', () => ({
   })
 }));
 
-// TODO: this was skipped in the develop branch, using the only on `describe('loadProject'`, need to talk to Jay why this was enabled
+// TODO: this was skipped in the develop branch by using `describe.only('loadProject'`, need to talk to Jay why this was disabled
 describe.skip('ProjectLoadingActions.migrateValidateLoadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
