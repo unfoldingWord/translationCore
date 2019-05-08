@@ -57,12 +57,6 @@ import {APP_VERSION, MIN_COMPATIBLE_VERSION} from "../../containers/home/HomeCon
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
-function delay(ms) {
-  return new Promise ((resolve) =>
-    setTimeout(resolve, ms)
-  );
-}
-
 /**
  * show Invalid Version Error
  * @return {Function}
