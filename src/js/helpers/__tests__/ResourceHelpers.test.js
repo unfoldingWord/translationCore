@@ -25,8 +25,7 @@ describe("copy group data", () => {
   });
 
   it("copies group data", () => {
-    mockGetLatestTranslationHelp.mockReturnValueOnce(path.join("", "help", "dir"));
-    mockGetLatestTranslationHelp.mockReturnValueOnce(path.join("", "help", "dir"));
+    mockGetLatestTranslationHelp.mockReturnValue(path.join("", "help", "dir"));
     fs.readdirSync.mockReturnValueOnce(["names", "other"]);
     fs.lstatSync.mockReturnValue({
       isDirectory: () => true
