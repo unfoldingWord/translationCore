@@ -456,7 +456,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       fs.__resetMockFS();
     });
     test('should load all the check categories from the project', () => {
-      const expectedActions = [{"selectedCategories": ["names"], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions = [{"selectedCategories": ["John"], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),
@@ -470,7 +470,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
           }
         }
       };
-      mockGetSelectedCategories.mockReturnValue(["names"]);
+      mockGetSelectedCategories.mockReturnValue(["John"]);
       const store = mockStore(initialState);
       store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation, 'en'));
       expect(store.getActions()).toMatchObject(expectedActions);
@@ -492,7 +492,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
           }
         }
       };
-      mockGetSelectedCategories.mockReturnValue(["kt"]);
+      mockGetSelectedCategories.mockReturnValue(["names"]);
       const store = mockStore(initialState);
       store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation, 'en'));
       expect(store.getActions()).toMatchObject(expectedActions);

@@ -229,10 +229,9 @@ export default class ProjectAPI {
    * Method to check if project groups data is out of date in relation
    * to the last source content update
    * @param {string} toolName - the tool name. This is synonymous with translationHelp name
-   * @param {array} availableCategories
    * @returns {Boolean}
    */
-  hasNewGroupsData(toolName, availableCategories) {
+  hasNewGroupsData(toolName) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     if (fs.pathExistsSync(categoriesPath)) {
@@ -241,14 +240,6 @@ export default class ProjectAPI {
         const lastTimeDataUpdated = rawData.timestamp;
         if (!lastTimeDataUpdated) {
           return true;
-        }
-        if (toolName === "translationWords") { // check if loaded categories are no longer valid
-          for (let i = 0, l = rawData.loaded.length; i < l; i++) {
-            const loaded = rawData.loaded[i];
-            if (!availableCategories.includes(loaded)) {
-              return true;
-            }
-          }
         }
         const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
         const {modified: lastTimeDataDownloaded} = fs.readJSONSync(sourceContentManifestPath);
@@ -284,9 +275,8 @@ export default class ProjectAPI {
   /**
    * Removes categories from the currently selected that are not in the loaded array
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
-   * @param {Object} availableCategories - categories available in resources
    */
-  removeStaleCategoriesFromCurrent(toolName, availableCategories) {
+  removeStaleCategoriesFromCurrent(toolName) {
     const groupsPath = this.getCategoriesDir(toolName);
     const categoriesPath = path.join(groupsPath,
       ".categories");
@@ -309,18 +299,9 @@ export default class ProjectAPI {
             console.log('Could not reset current context id');
           }
         }
-        let loadedSubCategories = rawData.loaded;
-        if (toolName === "translationWords") {
-          // for tW we don't select by subcategories, so need to get subcategories for the available categories
-          loadedSubCategories = [];
-          const keys = Object.keys(availableCategories);
-          for (let i = 0, l = keys.length; i < l; i++) {
-            loadedSubCategories.push.apply(loadedSubCategories,availableCategories[keys[i]]);
-          }
-        }
         const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
         currentGroupsData.forEach((category) => {
-          if (!loadedSubCategories.includes(path.parse(category).name)) {
+          if (!rawData.loaded.includes(path.parse(category).name)) {
             //removing groups data files that are not in loaded
             fs.removeSync(path.join(groupsPath, category));
           }
@@ -448,17 +429,11 @@ export default class ProjectAPI {
           subCategories.forEach((subCategory) => {
             const parentCategoryMapping = this.getAllCategoryMapping(toolName);
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
-              if (toolName === "translationWords") {
-                if (subCategory === categoryName) {
-                  objectWithParentCategories[categoryName] = parentCategoryMapping[categoryName];
-                }
-              } else {
-                if (parentCategoryMapping[categoryName].includes(subCategory)) {
-                  //Sub categorie name is contained in this parent
-                  if (!objectWithParentCategories[categoryName])
-                    objectWithParentCategories[categoryName] = [];
-                  objectWithParentCategories[categoryName].push(subCategory);
-                }
+              if (parentCategoryMapping[categoryName].includes(subCategory)) {
+                //Sub categorie name is contained in this parent
+                if (!objectWithParentCategories[categoryName])
+                  objectWithParentCategories[categoryName] = [];
+                objectWithParentCategories[categoryName].push(subCategory);
               }
             });
           });
