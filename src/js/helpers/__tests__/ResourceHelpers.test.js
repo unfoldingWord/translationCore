@@ -46,7 +46,7 @@ describe("copy group data", () => {
   });
 
   it("has no group data", () => {
-    mockGetLatestTranslationHelp.mockReturnValue("/help/dir");
+    mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
     fs.readdirSync.mockReturnValueOnce([]);
 
     expect(() => copyGroupDataToProject("lang", "tool", "project/")).toThrow();
