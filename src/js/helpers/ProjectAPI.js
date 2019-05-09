@@ -229,7 +229,7 @@ export default class ProjectAPI {
    * Method to check if project groups data is out of date in relation
    * to the last source content update
    * @param {string} toolName - the tool name. This is synonymous with translationHelp name
-   * @param {[String]} availableCategories
+   * @param {array} availableCategories
    * @returns {Boolean}
    */
   hasNewGroupsData(toolName, availableCategories) {
