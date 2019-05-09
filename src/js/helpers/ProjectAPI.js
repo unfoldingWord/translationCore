@@ -229,9 +229,10 @@ export default class ProjectAPI {
    * Method to check if project groups data is out of date in relation
    * to the last source content update
    * @param {string} toolName - the tool name. This is synonymous with translationHelp name
+   * @param {[String]} availableCategories
    * @returns {Boolean}
    */
-  hasNewGroupsData(toolName) {
+  hasNewGroupsData(toolName, availableCategories) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
       ".categories");
     if (fs.pathExistsSync(categoriesPath)) {
@@ -240,6 +241,14 @@ export default class ProjectAPI {
         const lastTimeDataUpdated = rawData.timestamp;
         if (!lastTimeDataUpdated) {
           return true;
+        }
+        if (toolName === "translationWords") { // check if loaded categories are no longer valid
+          for (let i = 0, l = rawData.loaded.length; i < l; i++) {
+            const loaded = rawData.loaded[i];
+            if (!availableCategories.includes(loaded)) {
+              return true;
+            }
+          }
         }
         const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
         const {modified: lastTimeDataDownloaded} = fs.readJSONSync(sourceContentManifestPath);
@@ -284,12 +293,8 @@ export default class ProjectAPI {
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
-        rawData.current.forEach((category, index) => {
-          if (!rawData.loaded.includes(category)) {
-            //There is something that is selected that is not loaded
-            //Or there is something that is selected that is not in the current resources folder
-            rawData.current.splice(index, 1);
-          }
+        rawData.current = rawData.current.filter((category) => {
+          return (rawData.loaded.includes(category)); // only include valid categories
         });
         fs.outputJsonSync(categoriesPath, rawData);
         const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');

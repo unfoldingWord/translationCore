@@ -40,14 +40,14 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   const resources = ResourceAPI.default();
   if (toolName === "translationNotes")
     gatewayLanguage = "en";
+  const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+  const categoryKeys = Object.keys(categories);
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   if (helpDir) {
     project.resetCategoryGroupIds(toolName);
-    if (project.hasNewGroupsData(toolName)) {
+    if (project.hasNewGroupsData(toolName, categoryKeys)) {
       project.resetLoadedCategories(toolName);
     }
-    const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
-    const categoryKeys = Object.keys(categories);
     for (let i = 0, l = categoryKeys.length; i < l; i++) {
       const category = categoryKeys[i];
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());

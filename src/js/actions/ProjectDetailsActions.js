@@ -36,7 +36,12 @@ export const loadCurrentCheckCategories = (toolName, projectSaveLocation, curren
     let availableCheckCategories = [];
     Object.keys(availableCheckCategoriesObject)
       .forEach((parentCategory) => {
-        availableCheckCategories.push(...availableCheckCategoriesObject[parentCategory]);
+        if (toolName === "translationWords") {
+          // for tW we don't select by subcategories, so add parent
+          availableCheckCategories.push(parentCategory);
+        } else {
+          availableCheckCategories.push(...availableCheckCategoriesObject[parentCategory]);
+        }
       });
     let subCategories = project.getSelectedCategories(toolName);
     subCategories = subCategories.filter((category) => availableCheckCategories.includes(category));
