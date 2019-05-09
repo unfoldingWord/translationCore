@@ -17,6 +17,7 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 jest.mock('fs-extra');
 
 jest.mock('../../selectors', () => ({
+  ...require.requireActual('../../selectors/'),
   getCurrentProjectToolsSelectedGL: () => {
       return 'en';
   },
@@ -78,7 +79,7 @@ jest.mock('../../selectors', () => ({
 }));
 
 // TODO: this was skipped in the develop branch by using `describe.only('loadProject'`, need to talk to Jay why this was disabled
-describe.skip('ProjectLoadingActions.migrateValidateLoadProject', () => {
+describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
   const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
@@ -91,6 +92,7 @@ describe.skip('ProjectLoadingActions.migrateValidateLoadProject', () => {
     const manifest = manifestUtils.getProjectManifest(projectPath);
 
     initialState = {
+      resourcesReducer: { bibles: {} },
       homeScreenReducer: {
         stepper: {
           stepIndex: 1,
