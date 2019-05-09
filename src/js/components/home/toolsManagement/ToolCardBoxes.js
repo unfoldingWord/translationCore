@@ -68,6 +68,9 @@ function flattenNotesCategories() {
  */
 function localCheckBox(classes, selectedCategories, id, toolName, onChecked, availableCategoriesForParent = []) {
   const isParent = !!availableCategoriesForParent.length;
+  if (isParent && (toolName === "translationWords") && (id === "other_terms")) {
+    id = "other"; // need to remap 'other_terms' in tW
+  }
   const currentCategoriesSelected = availableCategoriesForParent.filter((subcategory) => selectedCategories.includes(subcategory));
   const allChildrenSelected = isEqual(availableCategoriesForParent, currentCategoriesSelected);
   const allChildrenUnselected = currentCategoriesSelected.length === 0;
