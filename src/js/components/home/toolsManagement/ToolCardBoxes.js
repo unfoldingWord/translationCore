@@ -75,6 +75,8 @@ function localCheckBox(classes, selectedCategories, id, toolName, onChecked, ava
   const allChildrenSelected = isEqual(availableCategoriesForParent, currentCategoriesSelected);
   const allChildrenUnselected = currentCategoriesSelected.length === 0;
   const showIndeterminate = !allChildrenUnselected && currentCategoriesSelected.length > 0 && !allChildrenSelected;
+  const selectParentOnly = (toolName === "translationWords");
+  const parentSelectCategories = selectParentOnly ? id : availableCategoriesForParent;
 
   return (
     <Checkbox
@@ -86,7 +88,7 @@ function localCheckBox(classes, selectedCategories, id, toolName, onChecked, ava
       }}
       onChange={(e) => {
         if (isParent) {
-          onChecked(availableCategoriesForParent, e.target.checked, toolName);
+          onChecked(parentSelectCategories, e.target.checked, toolName);
         } else {
           onChecked(id, e.target.checked, toolName);
         }
