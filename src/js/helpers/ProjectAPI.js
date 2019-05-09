@@ -443,11 +443,17 @@ export default class ProjectAPI {
           subCategories.forEach((subCategory) => {
             const parentCategoryMapping = this.getAllCategoryMapping(toolName);
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
-              if (parentCategoryMapping[categoryName].includes(subCategory)) {
-                //Sub categorie name is contained in this parent
-                if (!objectWithParentCategories[categoryName])
-                  objectWithParentCategories[categoryName] = [];
-                objectWithParentCategories[categoryName].push(subCategory);
+              if (toolName === "translationWords") {
+                if (subCategory === categoryName) {
+                  objectWithParentCategories[categoryName] = parentCategoryMapping[categoryName];
+                }
+              } else {
+                if (parentCategoryMapping[categoryName].includes(subCategory)) {
+                  //Sub categorie name is contained in this parent
+                  if (!objectWithParentCategories[categoryName])
+                    objectWithParentCategories[categoryName] = [];
+                  objectWithParentCategories[categoryName].push(subCategory);
+                }
               }
             });
           });
