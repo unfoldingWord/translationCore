@@ -1087,7 +1087,7 @@ Array [
     "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
-    "alertMessage": "(0 , _selectors.getBibles) is not a function",
+    "alertMessage": "Cannot read property 'bibles' of undefined",
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -1428,7 +1428,7 @@ Array [
     "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
-    "alertMessage": "(0 , _selectors.getBibles) is not a function",
+    "alertMessage": "Cannot read property 'bibles' of undefined",
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },
