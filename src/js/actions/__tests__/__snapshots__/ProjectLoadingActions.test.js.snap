@@ -3,6 +3,11 @@
 exports[`ProjectLoadingActions.migrateValidateLoadProject should just open project if project name is valid 1`] = `
 Array [
   Object {
+    "alertMessage": "projects.loading_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
@@ -17,11 +22,6 @@ Array [
   Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
-    "alertMessage": "projects.loading_project_alert",
-    "loading": true,
-    "type": "OPEN_ALERT_DIALOG",
   },
   Object {
     "type": "CLOSE_ALERT_DIALOG",
@@ -260,6 +260,11 @@ Array [
 exports[`ProjectLoadingActions.migrateValidateLoadProject should open to details screen if project name is not valid 1`] = `
 Array [
   Object {
+    "alertMessage": "projects.loading_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
@@ -274,11 +279,6 @@ Array [
   Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
-    "alertMessage": "projects.loading_project_alert",
-    "loading": true,
-    "type": "OPEN_ALERT_DIALOG",
   },
   Object {
     "type": "CLOSE_ALERT_DIALOG",
@@ -1087,7 +1087,7 @@ Array [
     "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
-    "alertMessage": "(0 , _selectors.getBibles) is not a function",
+    "alertMessage": "Cannot read property 'bibles' of undefined",
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -1428,7 +1428,7 @@ Array [
     "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
-    "alertMessage": "(0 , _selectors.getBibles) is not a function",
+    "alertMessage": "Cannot read property 'bibles' of undefined",
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },

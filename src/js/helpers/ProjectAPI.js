@@ -249,7 +249,7 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-    return true; // return true if file missing or error
+    return true;
   }
 
   /**
@@ -283,8 +283,12 @@ export default class ProjectAPI {
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
-        rawData.current = rawData.current.filter((category) => {
-          return (rawData.loaded.includes(category)); // only include valid categories
+        rawData.current.forEach((category, index) => {
+          if (!rawData.loaded.includes(category)) {
+            //There is something that is selected that is not loaded
+            //Or there is something that is selected that is not in the current resources folder
+            rawData.current.splice(index, 1);
+          }
         });
         fs.outputJsonSync(categoriesPath, rawData);
         const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');

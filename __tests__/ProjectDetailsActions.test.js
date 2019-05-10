@@ -1,7 +1,7 @@
 /* eslint-env jest */
 jest.mock('fs-extra');
 jest.mock('../src/js/helpers/ProjectAPI');
-jest.mock('../')
+jest.mock('../');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -470,7 +470,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
           }
         }
       };
-      mockGetSelectedCategories.mockReturnValue(["John"]);
+      mockGetSelectedCategories.mockReturnValueOnce(["John"]);
       const store = mockStore(initialState);
       store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation, 'en'));
       expect(store.getActions()).toMatchObject(expectedActions);
@@ -492,7 +492,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
           }
         }
       };
-      mockGetSelectedCategories.mockReturnValue(["names"]);
+      mockGetSelectedCategories.mockReturnValueOnce(["names"]);
       const store = mockStore(initialState);
       store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation, 'en'));
       expect(store.getActions()).toMatchObject(expectedActions);
