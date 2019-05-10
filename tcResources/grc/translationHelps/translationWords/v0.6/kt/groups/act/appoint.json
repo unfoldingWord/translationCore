@@ -1,0 +1,338 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ἔθετο",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "προκεχειρισμένον",
+      "strong": [
+        "G44000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "καταστήσομεν",
+      "strong": [
+        "G25250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "κατέστησεν",
+      "strong": [
+        "G25250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "κατέστησεν",
+      "strong": [
+        "G25250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "κατέστησεν",
+      "strong": [
+        "G25250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "τέθεικά",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "τεταγμένοι",
+      "strong": [
+        "G50210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ἔταξαν",
+      "strong": [
+        "G50210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "προστεταγμένους",
+      "strong": [
+        "G43670"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ὥρισεν",
+      "strong": [
+        "G37240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ἔθετο",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "τέτακταί",
+      "strong": [
+        "G50210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "προεχειρίσατό",
+      "strong": [
+        "G44000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "προχειρίσασθαί",
+      "strong": [
+        "G44000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "appoint",
+      "quote": "ταξάμενοι",
+      "strong": [
+        "G50210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

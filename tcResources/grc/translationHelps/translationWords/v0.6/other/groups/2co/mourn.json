@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "mourn",
+      "quote": "πενθήσω",
+      "strong": [
+        "G39960"
+      ],
+      "occurrence": 1
+    }
+  }
+]

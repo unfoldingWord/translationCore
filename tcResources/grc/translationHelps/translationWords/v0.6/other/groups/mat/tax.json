@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελῶναι",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελώνιον",
+      "strong": [
+        "G50580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελῶναι",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελωνῶν",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελώνης",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελωνῶν",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τέλη",
+      "strong": [
+        "G50560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελώνης",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελῶναι",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελῶναι",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

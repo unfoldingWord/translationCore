@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "hard",
+      "quote": "συνέχομαι",
+      "strong": [
+        "G49120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

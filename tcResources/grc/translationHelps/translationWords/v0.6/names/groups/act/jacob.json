@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Ἰακώβ",
+      "strong": [
+        "G23840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Ἰακώβ",
+      "strong": [
+        "G23840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Ἰακὼβ",
+      "strong": [
+        "G23840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Ἰακὼβ",
+      "strong": [
+        "G23840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Ἰακὼβ",
+      "strong": [
+        "G23840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Ἰακὼβ",
+      "strong": [
+        "G23840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Ἰακώβ",
+      "strong": [
+        "G23840"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "jacob",
+      "quote": "Ἰακώβ",
+      "strong": [
+        "G23840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

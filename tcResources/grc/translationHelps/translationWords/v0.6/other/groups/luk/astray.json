@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "πλανηθῆτε",
+      "strong": [
+        "G41050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "διαστρέφοντα",
+      "strong": [
+        "G12940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "astray",
+      "quote": "ἀποστρέφοντα",
+      "strong": [
+        "G06540"
+      ],
+      "occurrence": 1
+    }
+  }
+]

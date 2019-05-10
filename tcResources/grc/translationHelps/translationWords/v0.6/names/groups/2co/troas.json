@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "troas",
+      "quote": "Τρῳάδα",
+      "strong": [
+        "G51740"
+      ],
+      "occurrence": 1
+    }
+  }
+]

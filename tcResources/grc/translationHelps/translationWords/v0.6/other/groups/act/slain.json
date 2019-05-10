@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "slain",
+      "quote": "σφάγια",
+      "strong": [
+        "G49680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

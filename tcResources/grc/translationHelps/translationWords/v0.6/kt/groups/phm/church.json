@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "church",
+      "quote": "ἐκκλησίᾳ",
+      "strong": [
+        "G15770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

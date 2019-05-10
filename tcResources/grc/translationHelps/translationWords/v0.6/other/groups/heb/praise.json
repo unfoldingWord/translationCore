@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "praise",
+      "quote": "αἰνέσεως",
+      "strong": [
+        "G01330"
+      ],
+      "occurrence": 1
+    }
+  }
+]

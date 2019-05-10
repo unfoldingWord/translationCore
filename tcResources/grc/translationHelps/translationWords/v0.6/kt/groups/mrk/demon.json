@@ -1,0 +1,609 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθάρτῳ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G35880",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεύμασι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκαθάρτοις",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G35880",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνια",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνια",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνια",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεύματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκάθαρτα",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G35880",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνια",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμονίων",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνια",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθάρτῳ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G35880",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεύματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκάθαρτα",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G35880",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνευμάτων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκαθάρτων",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G35880",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνια",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνιον",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνιον",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνιον",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": [
+        {
+          "word": "πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκαθάρτῳ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41510",
+        "G35880",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "δαιμόνια",
+      "strong": [
+        "G11400"
+      ],
+      "occurrence": 1
+    }
+  }
+]

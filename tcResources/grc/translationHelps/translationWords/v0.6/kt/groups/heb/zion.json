@@ -1,0 +1,33 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "zion",
+      "quote": [
+        {
+          "word": "Σιὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὄρει",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G46220",
+        "G37350"
+      ],
+      "occurrence": 1
+    }
+  }
+]

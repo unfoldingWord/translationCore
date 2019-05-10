@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "σκολιὰ",
+      "strong": [
+        "G46460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "διεστραμμένη",
+      "strong": [
+        "G12940"
+      ],
+      "occurrence": 1
+    }
+  }
+]

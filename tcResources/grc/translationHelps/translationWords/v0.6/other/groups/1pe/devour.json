@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "devour",
+      "quote": "καταπιεῖν",
+      "strong": [
+        "G26660"
+      ],
+      "occurrence": 1
+    }
+  }
+]

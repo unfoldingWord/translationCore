@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "descendant",
+      "quote": "σπέρμα",
+      "strong": [
+        "G46900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "descendant",
+      "quote": "σπέρμα",
+      "strong": [
+        "G46900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

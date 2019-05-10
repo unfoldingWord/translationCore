@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "berea",
+      "quote": "Βέροιαν",
+      "strong": [
+        "G09600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "berea",
+      "quote": "Βεροίᾳ",
+      "strong": [
+        "G09600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "berea",
+      "quote": "Βεροιαῖος",
+      "strong": [
+        "G09610"
+      ],
+      "occurrence": 1
+    }
+  }
+]

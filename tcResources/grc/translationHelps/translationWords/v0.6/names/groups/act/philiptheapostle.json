@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "philiptheapostle",
+      "quote": "Φίλιππος",
+      "strong": [
+        "G53760"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "defile",
+      "quote": "κοινοῖ",
+      "strong": [
+        "G28400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "defile",
+      "quote": "κοινοῖ",
+      "strong": [
+        "G28400"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "defile",
+      "quote": "κοινοῖ",
+      "strong": [
+        "G28400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "defile",
+      "quote": "κοινοῦντα",
+      "strong": [
+        "G28400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "defile",
+      "quote": "κοινοῖ",
+      "strong": [
+        "G28400"
+      ],
+      "occurrence": 1
+    }
+  }
+]

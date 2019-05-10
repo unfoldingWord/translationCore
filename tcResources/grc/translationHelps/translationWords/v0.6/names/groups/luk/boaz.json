@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "boaz",
+      "quote": "Βόος",
+      "strong": [
+        "G10030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

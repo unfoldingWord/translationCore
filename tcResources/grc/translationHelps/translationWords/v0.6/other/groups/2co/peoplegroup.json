@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "peoplegroup",
+      "quote": "λαός",
+      "strong": [
+        "G29920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

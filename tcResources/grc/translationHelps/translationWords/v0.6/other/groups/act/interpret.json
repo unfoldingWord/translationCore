@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "interpret",
+      "quote": "μεθερμηνευόμενον",
+      "strong": [
+        "G31770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "interpret",
+      "quote": "διερμηνευομένη",
+      "strong": [
+        "G13290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "interpret",
+      "quote": "μεθερμηνεύεται",
+      "strong": [
+        "G31770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "teacher",
+      "quote": "διδασκάλους",
+      "strong": [
+        "G13200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "teacher",
+      "quote": "διδάσκαλοι",
+      "strong": [
+        "G13200"
+      ],
+      "occurrence": 1
+    }
+  }
+]

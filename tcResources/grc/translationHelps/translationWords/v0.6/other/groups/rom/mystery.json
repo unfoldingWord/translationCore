@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "mystery",
+      "quote": "μυστήριον",
+      "strong": [
+        "G34660"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "mystery",
+      "quote": "μυστηρίου",
+      "strong": [
+        "G34660"
+      ],
+      "occurrence": 1
+    }
+  }
+]

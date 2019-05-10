@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "γάμους",
+      "strong": [
+        "G10620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "γάμους",
+      "strong": [
+        "G10620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "γάμους",
+      "strong": [
+        "G10620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "γάμος",
+      "strong": [
+        "G10620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "γάμους",
+      "strong": [
+        "G10620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "δείπνοις",
+      "strong": [
+        "G11730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "feast",
+      "quote": "γάμους",
+      "strong": [
+        "G10620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

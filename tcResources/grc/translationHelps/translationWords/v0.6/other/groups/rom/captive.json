@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "captive",
+      "quote": "αἰχμαλωτίζοντά",
+      "strong": [
+        "G01630"
+      ],
+      "occurrence": 1
+    }
+  }
+]

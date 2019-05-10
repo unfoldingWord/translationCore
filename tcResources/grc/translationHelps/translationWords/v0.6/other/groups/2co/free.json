@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθερία",
+      "strong": [
+        "G16570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "δωρεὰν",
+      "strong": [
+        "G14320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

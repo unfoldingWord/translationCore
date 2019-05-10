@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "ἐταράχθη",
+      "strong": [
+        "G50150"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "διεταράχθη",
+      "strong": [
+        "G12980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "ἐνοχλούμενοι",
+      "strong": [
+        "G17760"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "σκύλλου",
+      "strong": [
+        "G46600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "σκύλλε",
+      "strong": [
+        "G46600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "θορυβάζῃ",
+      "strong": [
+        "G23495"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "κόπους",
+      "strong": [
+        "G28730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "κόπον",
+      "strong": [
+        "G28730"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "trouble",
+      "quote": "τεταραγμένοι",
+      "strong": [
+        "G50150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

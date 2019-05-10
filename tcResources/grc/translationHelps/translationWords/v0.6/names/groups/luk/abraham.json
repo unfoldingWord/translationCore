@@ -1,0 +1,317 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραὰμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 73
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραὰμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραάμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραάμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραὰμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραὰμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραὰμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραάμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραὰμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραάμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραάμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραάμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραάμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραάμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "abraham",
+      "quote": "Ἀβραὰμ",
+      "strong": [
+        "G00110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

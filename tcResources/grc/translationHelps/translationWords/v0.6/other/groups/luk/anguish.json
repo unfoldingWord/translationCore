@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "anguish",
+      "quote": "ὀδυνῶμαι",
+      "strong": [
+        "G36000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "anguish",
+      "quote": "ὀδυνᾶσαι",
+      "strong": [
+        "G36000"
+      ],
+      "occurrence": 1
+    }
+  }
+]

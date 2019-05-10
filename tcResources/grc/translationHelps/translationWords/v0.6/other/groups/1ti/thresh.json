@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "thresh",
+      "quote": "ἀλοῶντα",
+      "strong": [
+        "G02480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,674 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρά",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρήσονται",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαῖρε",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐσκίρτησεν",
+      "strong": [
+        "G46400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἠγαλλίασεν",
+      "strong": [
+        "G00210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 58
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "συνέχαιρον",
+      "strong": [
+        "G47960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰν",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χάρητε",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρᾶς",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρᾶς",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρετε",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρετε",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἠγαλλιάσατο",
+      "strong": [
+        "G00210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφραίνου",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἔχαιρεν",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρων",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "συνχάρητέ",
+      "strong": [
+        "G47960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰ",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "συνχάρητέ",
+      "strong": [
+        "G47960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρὰ",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφρανθῶμεν",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφραίνεσθαι",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφρανθῶ",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφρανθῆναι",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρῆναι",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφραινόμενος",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρων",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίροντες",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐχάρησαν",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "ἐχάρη",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρᾶς",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαρᾶς",
+      "strong": [
+        "G54790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

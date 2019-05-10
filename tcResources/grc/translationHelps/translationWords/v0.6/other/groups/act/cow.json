@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "ἐμοσχοποίησαν",
+      "strong": [
+        "G34470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "ταύρους",
+      "strong": [
+        "G50220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

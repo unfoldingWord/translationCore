@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "altar",
+      "quote": "θυσιαστηρίῳ",
+      "strong": [
+        "G23790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "altar",
+      "quote": "θυσιαστήριον",
+      "strong": [
+        "G23790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

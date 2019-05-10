@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 73
+      },
+      "tool": "translationWords",
+      "groupId": "oath",
+      "quote": "ὅρκον",
+      "strong": [
+        "G37270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 73
+      },
+      "tool": "translationWords",
+      "groupId": "oath",
+      "quote": "ὤμοσεν",
+      "strong": [
+        "G36600"
+      ],
+      "occurrence": 1
+    }
+  }
+]

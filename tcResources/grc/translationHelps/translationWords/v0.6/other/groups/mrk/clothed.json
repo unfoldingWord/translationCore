@@ -1,0 +1,380 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδεδυμένος",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτιον",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματισμένον",
+      "strong": [
+        "G24390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματίου",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματίων",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματίων",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδύσησθε",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱματίου",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτια",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτιον",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτια",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτια",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτιον",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνδιδύσκουσιν",
+      "strong": [
+        "G17370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἐνέδυσαν",
+      "strong": [
+        "G17460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτια",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "ἱμάτια",
+      "strong": [
+        "G24400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 16,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "clothed",
+      "quote": "περιβεβλημένον",
+      "strong": [
+        "G40160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

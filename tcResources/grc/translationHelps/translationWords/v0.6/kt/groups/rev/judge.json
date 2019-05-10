@@ -1,0 +1,317 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνεις",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κριθῆναι",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίσεως",
+      "strong": [
+        "G29200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "ἔκρινας",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίσεις",
+      "strong": [
+        "G29200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνας",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίσις",
+      "strong": [
+        "G29200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "ἔκρινεν",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίμα",
+      "strong": [
+        "G29170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίσεις",
+      "strong": [
+        "G29200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "ἔκρινεν",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίνει",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "κρίμα",
+      "strong": [
+        "G29170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "ἐκρίθησαν",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "judge",
+      "quote": "ἐκρίθησαν",
+      "strong": [
+        "G29190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρουσιν",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφραίνονται",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφραίνεσθε",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "εὐφραίνου",
+      "strong": [
+        "G21650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρωμεν",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  }
+]

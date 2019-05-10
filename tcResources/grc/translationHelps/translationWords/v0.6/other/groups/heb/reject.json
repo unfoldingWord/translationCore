@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "ἀθετήσας",
+      "strong": [
+        "G01140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "ἀπεδοκιμάσθη",
+      "strong": [
+        "G05930"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "παραιτήσησθε",
+      "strong": [
+        "G38680"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "παραιτησάμενοι",
+      "strong": [
+        "G38680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "image",
+      "quote": "εἰκὼν",
+      "strong": [
+        "G15040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

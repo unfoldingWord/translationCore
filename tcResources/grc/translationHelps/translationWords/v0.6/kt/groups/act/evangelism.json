@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "evangelism",
+      "quote": "εὐαγγελιστοῦ",
+      "strong": [
+        "G20990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

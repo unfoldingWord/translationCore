@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλληνικῇ",
+      "strong": [
+        "G16730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "innocent",
+      "quote": "ἁγνοὺς",
+      "strong": [
+        "G00530"
+      ],
+      "occurrence": 1
+    }
+  }
+]

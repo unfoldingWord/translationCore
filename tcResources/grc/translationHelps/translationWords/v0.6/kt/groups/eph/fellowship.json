@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "fellowship",
+      "quote": "συνκοινωνεῖτε",
+      "strong": [
+        "G47900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

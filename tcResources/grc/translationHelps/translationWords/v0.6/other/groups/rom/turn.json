@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐξέκλιναν",
+      "strong": [
+        "G15780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐκκλίνετε",
+      "strong": [
+        "G15780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

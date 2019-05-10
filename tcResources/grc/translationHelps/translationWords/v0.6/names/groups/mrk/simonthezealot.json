@@ -1,0 +1,38 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "simonthezealot",
+      "quote": [
+        {
+          "word": "Σίμωνα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "Καναναῖον",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G46130",
+        "G35880",
+        "G25805"
+      ],
+      "occurrence": 1
+    }
+  }
+]

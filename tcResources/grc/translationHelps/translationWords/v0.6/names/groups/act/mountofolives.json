@@ -1,0 +1,43 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "mountofolives",
+      "quote": [
+        {
+          "word": "ὄρους",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καλουμένου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶνος",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G37350",
+        "G35880",
+        "G25640",
+        "G16380"
+      ],
+      "occurrence": 1
+    }
+  }
+]

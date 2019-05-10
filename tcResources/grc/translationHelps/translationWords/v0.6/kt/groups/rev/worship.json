@@ -1,0 +1,485 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσουσιν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσεκύνησαν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσεκύνησαν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσουσιν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνοῦντας",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσεκύνησαν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσεκύνησαν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσεκύνησαν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσουσιν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσουσιν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσωσιν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσατε",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνεῖ",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνοῦντες",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνήσουσιν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνοῦντας",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσεκύνησαν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνῆσαι",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκύνησον",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνοῦντας",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσεκύνησαν",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκυνῆσαι",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "worship",
+      "quote": "προσκύνησον",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

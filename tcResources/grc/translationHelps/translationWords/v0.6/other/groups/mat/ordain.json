@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "ordain",
+      "quote": "κατηρτίσω",
+      "strong": [
+        "G26750"
+      ],
+      "occurrence": 1
+    }
+  }
+]

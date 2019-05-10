@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "seize",
+      "quote": "πιάσαι",
+      "strong": [
+        "G40840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

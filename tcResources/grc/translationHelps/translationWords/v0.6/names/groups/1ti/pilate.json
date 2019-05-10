@@ -1,0 +1,33 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "pilate",
+      "quote": [
+        {
+          "word": "Ποντίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Πειλάτου",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G41940",
+        "G40910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

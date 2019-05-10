@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "babylon",
+      "quote": "Βαβυλῶνι",
+      "strong": [
+        "G08970"
+      ],
+      "occurrence": 1
+    }
+  }
+]

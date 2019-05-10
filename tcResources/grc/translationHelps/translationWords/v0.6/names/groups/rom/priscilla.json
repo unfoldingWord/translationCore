@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "priscilla",
+      "quote": "Πρίσκαν",
+      "strong": [
+        "G42510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

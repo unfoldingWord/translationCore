@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "terror",
+      "quote": "πτοηθῆτε",
+      "strong": [
+        "G44220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "terror",
+      "quote": "ἐμφόβων",
+      "strong": [
+        "G17190"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "terror",
+      "quote": "πτοηθέντες",
+      "strong": [
+        "G44220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

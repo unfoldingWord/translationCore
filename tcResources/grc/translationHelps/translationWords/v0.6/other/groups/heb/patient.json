@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "patient",
+      "quote": "μακροθυμίας",
+      "strong": [
+        "G31150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

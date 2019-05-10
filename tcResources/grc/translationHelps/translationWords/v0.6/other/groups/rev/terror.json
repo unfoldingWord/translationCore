@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "terror",
+      "quote": "ἔμφοβοι",
+      "strong": [
+        "G17190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

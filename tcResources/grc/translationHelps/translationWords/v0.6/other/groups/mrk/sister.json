@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "sister",
+      "quote": "ἀδελφὴ",
+      "strong": [
+        "G00790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "sister",
+      "quote": "ἀδελφαὶ",
+      "strong": [
+        "G00790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "sister",
+      "quote": "ἀδελφὰς",
+      "strong": [
+        "G00790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "sister",
+      "quote": "ἀδελφὰς",
+      "strong": [
+        "G00790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

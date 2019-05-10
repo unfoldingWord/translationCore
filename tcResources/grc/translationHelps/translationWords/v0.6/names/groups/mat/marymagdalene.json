@@ -1,0 +1,110 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": [
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G31370",
+        "G35880",
+        "G30940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 61
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": [
+        {
+          "word": "Μαριὰμ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G31370",
+        "G35880",
+        "G30940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": [
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G31370",
+        "G35880",
+        "G30940"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἐστερεώθησαν",
+      "strong": [
+        "G47320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἐστερέωσεν",
+      "strong": [
+        "G47320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἴσχυον",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἐνισχύθη",
+      "strong": [
+        "G17650"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἐνεδυναμοῦτο",
+      "strong": [
+        "G17430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἐπιστηρίζοντες",
+      "strong": [
+        "G19910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἰσχύσαμεν",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἐπεστήριξαν",
+      "strong": [
+        "G19910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἐπιστηρίζων",
+      "strong": [
+        "G19910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἐστερεοῦντο",
+      "strong": [
+        "G47320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "στηρίζων",
+      "strong": [
+        "G47410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "strength",
+      "quote": "ἴσχυεν",
+      "strong": [
+        "G24800"
+      ],
+      "occurrence": 1
+    }
+  }
+]

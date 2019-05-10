@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "goat",
+      "quote": "ἐρίφων",
+      "strong": [
+        "G20560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "goat",
+      "quote": "ἐρίφια",
+      "strong": [
+        "G20550"
+      ],
+      "occurrence": 1
+    }
+  }
+]
