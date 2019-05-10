@@ -1,0 +1,401 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμά",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 80
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύμασιν",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνευμάτων",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνευμάτων",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνευμάτων",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύματι",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύματα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεύματα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "Πνεῦμά",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "spirit",
+      "quote": "πνεῦμα",
+      "strong": [
+        "G41510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

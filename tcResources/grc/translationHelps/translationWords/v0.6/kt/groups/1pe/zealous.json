@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "zealous",
+      "quote": "ζηλωταὶ",
+      "strong": [
+        "G22070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

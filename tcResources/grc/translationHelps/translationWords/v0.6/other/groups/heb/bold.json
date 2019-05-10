@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "bold",
+      "quote": "παρρησίας",
+      "strong": [
+        "G39540"
+      ],
+      "occurrence": 1
+    }
+  }
+]

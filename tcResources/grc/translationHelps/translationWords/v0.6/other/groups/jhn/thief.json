@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "κλέπτης",
+      "strong": [
+        "G28120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "λῃστής",
+      "strong": [
+        "G30270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "κλέπται",
+      "strong": [
+        "G28120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "λῃσταί",
+      "strong": [
+        "G30270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "κλέπτης",
+      "strong": [
+        "G28120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "κλέπτης",
+      "strong": [
+        "G28120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "thief",
+      "quote": "λῃστής",
+      "strong": [
+        "G30270"
+      ],
+      "occurrence": 1
+    }
+  }
+]

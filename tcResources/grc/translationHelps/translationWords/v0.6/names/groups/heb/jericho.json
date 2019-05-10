@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "jericho",
+      "quote": "Ἰερειχὼ",
+      "strong": [
+        "G24100"
+      ],
+      "occurrence": 1
+    }
+  }
+]

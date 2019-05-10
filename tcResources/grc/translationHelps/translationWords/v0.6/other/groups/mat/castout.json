@@ -1,0 +1,506 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλω",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἔκβαλε",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβαλεῖν",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐξεβάλομεν",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβληθήσονται",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐξέβαλεν",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλεις",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐξεβλήθη",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβληθέντος",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλει",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλειν",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλετε",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλῃ",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλει",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλει",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλω",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλουσιν",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλω",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλλεται",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβαλεῖν",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐξέβαλεν",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐξέβαλον",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλετε",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "castout",
+      "quote": "ἐκβάλετε",
+      "strong": [
+        "G15440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

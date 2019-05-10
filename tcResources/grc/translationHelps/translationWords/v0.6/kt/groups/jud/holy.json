@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἁγίαις",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἁγιωτάτῃ",
+      "strong": [
+        "G00425"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "Ἁγίῳ",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  }
+]

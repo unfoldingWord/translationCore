@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ἀπέχετε",
+      "strong": [
+        "G05680"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπάρχοντες",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπαρχόντων",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπάρχοντα",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπαρχόντων",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπάρχοντα",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπάρχουσιν",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπάρχουσιν",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπάρχοντα",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "possess",
+      "quote": "ὑπαρχόντων",
+      "strong": [
+        "G52250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

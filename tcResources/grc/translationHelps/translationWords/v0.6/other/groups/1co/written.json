@@ -1,0 +1,254 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "ἐγράφη",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "ἐγράφη",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γέγραπται",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "written",
+      "quote": "γεγραμμένος",
+      "strong": [
+        "G11250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

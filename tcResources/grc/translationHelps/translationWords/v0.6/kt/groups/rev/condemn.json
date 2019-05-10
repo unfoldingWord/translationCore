@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "κρίμα",
+      "strong": [
+        "G29170"
+      ],
+      "occurrence": 1
+    }
+  }
+]

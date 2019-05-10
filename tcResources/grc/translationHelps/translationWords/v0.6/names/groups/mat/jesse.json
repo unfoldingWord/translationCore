@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "jesse",
+      "quote": "Ἰεσσαί",
+      "strong": [
+        "G24210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "jesse",
+      "quote": "Ἰεσσαὶ",
+      "strong": [
+        "G24210"
+      ],
+      "occurrence": 1
+    }
+  }
+]

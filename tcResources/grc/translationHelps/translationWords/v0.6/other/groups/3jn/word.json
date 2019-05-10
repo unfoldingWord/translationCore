@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "word",
+      "quote": "λόγοις",
+      "strong": [
+        "G30560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "sow",
+      "quote": "σπείρεται",
+      "strong": [
+        "G46870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

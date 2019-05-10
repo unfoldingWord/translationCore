@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "kind",
+      "quote": "χρηστότητος",
+      "strong": [
+        "G55440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "kind",
+      "quote": "χρηστὸν",
+      "strong": [
+        "G55430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "kind",
+      "quote": "χρηστότητα",
+      "strong": [
+        "G55440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "kind",
+      "quote": "χρηστότης",
+      "strong": [
+        "G55440"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "kind",
+      "quote": "χρηστότητι",
+      "strong": [
+        "G55440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

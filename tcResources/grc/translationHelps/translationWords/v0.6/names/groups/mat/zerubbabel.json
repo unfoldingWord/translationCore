@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "zerubbabel",
+      "quote": "Ζοροβαβέλ",
+      "strong": [
+        "G22160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "zerubbabel",
+      "quote": "Ζοροβαβὲλ",
+      "strong": [
+        "G22160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

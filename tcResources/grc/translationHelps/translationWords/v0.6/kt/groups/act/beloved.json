@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "beloved",
+      "quote": "ἀγαπητοῖς",
+      "strong": [
+        "G00270"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "pit",
+      "quote": "βόθυνον",
+      "strong": [
+        "G09990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

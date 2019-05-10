@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "setapart",
+      "quote": "ἀφωρισμένος",
+      "strong": [
+        "G08730"
+      ],
+      "occurrence": 1
+    }
+  }
+]

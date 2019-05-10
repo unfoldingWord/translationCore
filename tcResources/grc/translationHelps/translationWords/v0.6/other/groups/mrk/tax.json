@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελώνιον",
+      "strong": [
+        "G50580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελῶναι",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελωνῶν",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "tax",
+      "quote": "τελωνῶν",
+      "strong": [
+        "G50570"
+      ],
+      "occurrence": 2
+    }
+  }
+]

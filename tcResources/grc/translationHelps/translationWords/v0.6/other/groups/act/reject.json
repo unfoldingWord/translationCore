@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "ἐξουθενηθεὶς",
+      "strong": [
+        "G18480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "ἀπώσατο",
+      "strong": [
+        "G06830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "ἠρνήσαντο",
+      "strong": [
+        "G07200"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "ἀπώσαντο",
+      "strong": [
+        "G06830"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "reject",
+      "quote": "ἀπωθεῖσθε",
+      "strong": [
+        "G06830"
+      ],
+      "occurrence": 1
+    }
+  }
+]

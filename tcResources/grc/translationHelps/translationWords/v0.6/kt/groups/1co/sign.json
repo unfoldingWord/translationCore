@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖα",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "sign",
+      "quote": "σημεῖόν",
+      "strong": [
+        "G45920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

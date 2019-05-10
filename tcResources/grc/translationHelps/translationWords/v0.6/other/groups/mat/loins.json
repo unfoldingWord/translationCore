@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "loins",
+      "quote": "ὀσφὺν",
+      "strong": [
+        "G37510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

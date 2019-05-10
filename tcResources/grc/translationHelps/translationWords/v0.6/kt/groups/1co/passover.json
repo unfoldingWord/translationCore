@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "passover",
+      "quote": "Πάσχα",
+      "strong": [
+        "G39570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

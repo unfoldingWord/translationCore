@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "foundation",
+      "quote": "καταβολῆς",
+      "strong": [
+        "G26020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "foundation",
+      "quote": "θεμελιώσει",
+      "strong": [
+        "G23110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

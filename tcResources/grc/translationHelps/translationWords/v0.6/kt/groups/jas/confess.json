@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "confess",
+      "quote": "ἐξομολογεῖσθε",
+      "strong": [
+        "G18430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

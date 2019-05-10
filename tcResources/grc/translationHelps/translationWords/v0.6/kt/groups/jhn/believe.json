@@ -1,0 +1,2081 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσωσιν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύουσιν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύεις",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πεπίστευκεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πίστευέ",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύομεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεῦσαι",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσωμέν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 64
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύουσιν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 64
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύοντες",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 69
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πεπιστεύκαμεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευον",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσαντες",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πεπιστευκότας",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετέ",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετέ",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύεις",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσω",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύω",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετέ",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύεις",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πεπίστευκα",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσῃς",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσωσιν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσουσιν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευον",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευον",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύειν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύει",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύεις",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετέ",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύουσιν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πεπιστεύκατε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύομεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύετε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσαν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστευόντων",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύῃ",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἐπίστευσεν",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσω",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "ἄπιστος",
+      "strong": [
+        "G05710"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστός",
+      "strong": [
+        "G41030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πεπίστευκας",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύσαντες",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύητε",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "believe",
+      "quote": "πιστεύοντες",
+      "strong": [
+        "G41000"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "βοῶντος",
+      "strong": [
+        "G09940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἀνέκραξεν",
+      "strong": [
+        "G03490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "φωνῆσαν",
+      "strong": [
+        "G54550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραζον",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κράζων",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κράξας",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίοντας",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κλαίετε",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἀνέκραξαν",
+      "strong": [
+        "G03490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κράξας",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κράξας",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "κράζειν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραζεν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραζον",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 72
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκλαιεν",
+      "strong": [
+        "G27990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἀναβὰς",
+      "strong": [
+        "G03050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραξαν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἔκραξαν",
+      "strong": [
+        "G28960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "ἐβόησεν",
+      "strong": [
+        "G09940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "cry",
+      "quote": "φωνὴν",
+      "strong": [
+        "G54560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

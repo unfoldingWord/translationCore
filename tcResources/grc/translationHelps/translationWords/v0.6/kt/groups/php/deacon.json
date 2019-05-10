@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "deacon",
+      "quote": "διακόνοις",
+      "strong": [
+        "G12490"
+      ],
+      "occurrence": 1
+    }
+  }
+]

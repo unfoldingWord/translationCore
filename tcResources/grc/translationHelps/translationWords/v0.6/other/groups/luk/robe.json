@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "robe",
+      "quote": "στολὴν",
+      "strong": [
+        "G47490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "robe",
+      "quote": "στολαῖς",
+      "strong": [
+        "G47490"
+      ],
+      "occurrence": 1
+    }
+  }
+]

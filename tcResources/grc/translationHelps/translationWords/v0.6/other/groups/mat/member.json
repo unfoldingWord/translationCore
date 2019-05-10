@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "member",
+      "quote": "μελῶν",
+      "strong": [
+        "G31960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "member",
+      "quote": "μελῶν",
+      "strong": [
+        "G31960"
+      ],
+      "occurrence": 1
+    }
+  }
+]

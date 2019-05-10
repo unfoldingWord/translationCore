@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "lots",
+      "quote": "λάχωμεν",
+      "strong": [
+        "G29750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "lots",
+      "quote": "κλῆρον",
+      "strong": [
+        "G28190"
+      ],
+      "occurrence": 1
+    }
+  }
+]

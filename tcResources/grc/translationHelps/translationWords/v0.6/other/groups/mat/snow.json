@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "snow",
+      "quote": "χιών",
+      "strong": [
+        "G55100"
+      ],
+      "occurrence": 1
+    }
+  }
+]

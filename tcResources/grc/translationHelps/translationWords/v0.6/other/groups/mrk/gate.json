@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "θυρωρῷ",
+      "strong": [
+        "G23770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

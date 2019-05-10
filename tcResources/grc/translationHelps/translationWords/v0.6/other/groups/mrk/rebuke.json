@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐπετίμησεν",
+      "strong": [
+        "G20080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐπετίμα",
+      "strong": [
+        "G20080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐπετίμησεν",
+      "strong": [
+        "G20080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐπιτιμᾶν",
+      "strong": [
+        "G20080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐπετίμησεν",
+      "strong": [
+        "G20080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐπετίμησεν",
+      "strong": [
+        "G20080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐπετίμησαν",
+      "strong": [
+        "G20080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "rebuke",
+      "quote": "ἐπετίμων",
+      "strong": [
+        "G20080"
+      ],
+      "occurrence": 1
+    }
+  }
+]

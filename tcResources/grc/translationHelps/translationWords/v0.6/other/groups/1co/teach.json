@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "διδακτοῖς",
+      "strong": [
+        "G13180"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "διδακτοῖς",
+      "strong": [
+        "G13180"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "διδάσκω",
+      "strong": [
+        "G13210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "παραδόσεις",
+      "strong": [
+        "G38620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "διδάσκει",
+      "strong": [
+        "G13210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "διδαχῇ",
+      "strong": [
+        "G13220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "teach",
+      "quote": "διδαχὴν",
+      "strong": [
+        "G13220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

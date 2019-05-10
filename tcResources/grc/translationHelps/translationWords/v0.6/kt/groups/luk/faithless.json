@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "faithless",
+      "quote": "ἀπιστούντων",
+      "strong": [
+        "G05690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

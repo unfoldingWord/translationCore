@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "instruct",
+      "quote": "παιδείαν",
+      "strong": [
+        "G38090"
+      ],
+      "occurrence": 1
+    }
+  }
+]

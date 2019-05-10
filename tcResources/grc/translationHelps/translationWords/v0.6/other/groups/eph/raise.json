@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἐγείρας",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "συνήγειρεν",
+      "strong": [
+        "G48910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἔγειρε",
+      "strong": [
+        "G14530"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "raise",
+      "quote": "ἀνάστα",
+      "strong": [
+        "G04500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

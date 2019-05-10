@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "sorcery",
+      "quote": "φαρμάκων",
+      "strong": [
+        "G53325"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "sorcery",
+      "quote": "φαρμακείᾳ",
+      "strong": [
+        "G53310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "sorcery",
+      "quote": "φαρμάκοις",
+      "strong": [
+        "G53330"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "sorcery",
+      "quote": "φάρμακοι",
+      "strong": [
+        "G53330"
+      ],
+      "occurrence": 1
+    }
+  }
+]

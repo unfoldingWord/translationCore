@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Ἀνδρέας",
+      "strong": [
+        "G04060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Ἀνδρέου",
+      "strong": [
+        "G04060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Ἀνδρέας",
+      "strong": [
+        "G04060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Ἀνδρέᾳ",
+      "strong": [
+        "G04060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "andrew",
+      "quote": "Ἀνδρέας",
+      "strong": [
+        "G04060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

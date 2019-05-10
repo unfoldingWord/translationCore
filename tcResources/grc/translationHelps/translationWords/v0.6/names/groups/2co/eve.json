@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "eve",
+      "quote": "Εὕαν",
+      "strong": [
+        "G20960"
+      ],
+      "occurrence": 1
+    }
+  }
+]

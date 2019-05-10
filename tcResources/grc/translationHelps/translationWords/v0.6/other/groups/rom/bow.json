@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔκαμψαν",
+      "strong": [
+        "G25780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "σύνκαμψον",
+      "strong": [
+        "G47810"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "κάμψει",
+      "strong": [
+        "G25780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

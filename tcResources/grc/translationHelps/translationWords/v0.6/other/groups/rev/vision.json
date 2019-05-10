@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "vision",
+      "quote": "ὁράσει",
+      "strong": [
+        "G37060"
+      ],
+      "occurrence": 1
+    }
+  }
+]

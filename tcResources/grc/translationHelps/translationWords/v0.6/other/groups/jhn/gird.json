@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "gird",
+      "quote": "διέζωσεν",
+      "strong": [
+        "G12410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "gird",
+      "quote": "διεζωσμένος",
+      "strong": [
+        "G12410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "gird",
+      "quote": "διεζώσατο",
+      "strong": [
+        "G12410"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "gird",
+      "quote": "ἐζώννυες",
+      "strong": [
+        "G22240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "gird",
+      "quote": "ζώσει",
+      "strong": [
+        "G22240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

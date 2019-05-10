@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "zebedee",
+      "quote": "Ζεβεδαίου",
+      "strong": [
+        "G21990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "terror",
+      "quote": "φόβος",
+      "strong": [
+        "G54010"
+      ],
+      "occurrence": 1
+    }
+  }
+]

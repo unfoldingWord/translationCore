@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "sadducee",
+      "quote": "Σαδδουκαῖοι",
+      "strong": [
+        "G45230"
+      ],
+      "occurrence": 1
+    }
+  }
+]

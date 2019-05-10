@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "ὀνειδίζεσθε",
+      "strong": [
+        "G36790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

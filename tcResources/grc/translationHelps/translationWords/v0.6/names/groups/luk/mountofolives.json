@@ -1,0 +1,156 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "mountofolives",
+      "quote": [
+        {
+          "word": "ὄρος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "καλούμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶν",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G37350",
+        "G35880",
+        "G25640",
+        "G16380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "mountofolives",
+      "quote": [
+        {
+          "word": "Ὄρους",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶν",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G37350",
+        "G35880",
+        "G16360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "mountofolives",
+      "quote": [
+        {
+          "word": "ὄρος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "καλούμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶν",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G37350",
+        "G35880",
+        "G25640",
+        "G16380"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "mountofolives",
+      "quote": [
+        {
+          "word": "Ὄρος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐλαιῶν",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G37350",
+        "G35880",
+        "G16360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

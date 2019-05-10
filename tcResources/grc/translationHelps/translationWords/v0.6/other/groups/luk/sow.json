@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "sow",
+      "quote": "σπείρων",
+      "strong": [
+        "G46870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "sow",
+      "quote": "σπεῖραι",
+      "strong": [
+        "G46870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "sow",
+      "quote": "σπείρειν",
+      "strong": [
+        "G46870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "sow",
+      "quote": "σπείρουσιν",
+      "strong": [
+        "G46870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "sow",
+      "quote": "ἔσπειρας",
+      "strong": [
+        "G46870"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "sow",
+      "quote": "ἔσπειρα",
+      "strong": [
+        "G46870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "elect",
+      "quote": "ἐξελέξατο",
+      "strong": [
+        "G15860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

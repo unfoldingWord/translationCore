@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "πεσόντες",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "πεσὼν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "προσεκύνει",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσαν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "πεσὼν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "πεσὼν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "προσκυνοῦσα",
+      "strong": [
+        "G43520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "ἔπεσεν",
+      "strong": [
+        "G40980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bow",
+      "quote": "γονυπετήσαντες",
+      "strong": [
+        "G11200"
+      ],
+      "occurrence": 1
+    }
+  }
+]

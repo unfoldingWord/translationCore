@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": [
+        {
+          "word": "Μαρία",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 4
+        },
+        {
+          "word": "Μαγδαληνή",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G31370",
+        "G35880",
+        "G30940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": [
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G31370",
+        "G35880",
+        "G30940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": "Μαρία",
+      "strong": [
+        "G31370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": "Μαριάμ",
+      "strong": [
+        "G31370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": [
+        {
+          "word": "Μαριὰμ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G31370",
+        "G35880",
+        "G30940"
+      ],
+      "occurrence": 1
+    }
+  }
+]

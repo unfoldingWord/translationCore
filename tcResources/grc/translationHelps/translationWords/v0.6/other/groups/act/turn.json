@@ -1,0 +1,317 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέψατε",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἀποστρέφειν",
+      "strong": [
+        "G06540"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐστράφησαν",
+      "strong": [
+        "G47620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἔστρεψεν",
+      "strong": [
+        "G47620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπέστρεψαν",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέψας",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπέστρεψεν",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "στρεφόμεθα",
+      "strong": [
+        "G47620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέφειν",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέφουσιν",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέψαντες",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέψας",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέψαι",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέφειν",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "turn",
+      "quote": "ἐπιστρέψωσιν",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  }
+]

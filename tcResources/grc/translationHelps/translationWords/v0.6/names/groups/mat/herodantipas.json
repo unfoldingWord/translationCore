@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "herodantipas",
+      "quote": "Ἡρῴδης",
+      "strong": [
+        "G22640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "herodantipas",
+      "quote": "Ἡρῴδης",
+      "strong": [
+        "G22640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "herodantipas",
+      "quote": "Ἡρῴδου",
+      "strong": [
+        "G22640"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "herodantipas",
+      "quote": "Ἡρῴδῃ",
+      "strong": [
+        "G22640"
+      ],
+      "occurrence": 1
+    }
+  }
+]

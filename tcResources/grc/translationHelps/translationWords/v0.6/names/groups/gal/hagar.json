@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "hagar",
+      "quote": "Ἁγάρ",
+      "strong": [
+        "G00280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "hagar",
+      "quote": "Ἁγὰρ",
+      "strong": [
+        "G00280"
+      ],
+      "occurrence": 1
+    }
+  }
+]

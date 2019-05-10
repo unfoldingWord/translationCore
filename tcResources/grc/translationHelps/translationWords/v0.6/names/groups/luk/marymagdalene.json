@@ -1,0 +1,74 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": [
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "καλουμένη",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαγδαληνή",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G31370",
+        "G35880",
+        "G25640",
+        "G30940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "marymagdalene",
+      "quote": [
+        {
+          "word": "Μαγδαληνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G30940",
+        "G31370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

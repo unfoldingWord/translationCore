@@ -1,0 +1,33 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "falsewitness",
+      "quote": [
+        {
+          "word": "μάρτυρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ψευδεῖς",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G31440",
+        "G55710"
+      ],
+      "occurrence": 1
+    }
+  }
+]

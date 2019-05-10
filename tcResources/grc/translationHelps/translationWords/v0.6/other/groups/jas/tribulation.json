@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "tribulation",
+      "quote": "θλίψει",
+      "strong": [
+        "G23470"
+      ],
+      "occurrence": 1
+    }
+  }
+]

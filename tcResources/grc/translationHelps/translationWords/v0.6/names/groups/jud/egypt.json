@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "egypt",
+      "quote": "Αἰγύπτου",
+      "strong": [
+        "G01250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

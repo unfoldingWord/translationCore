@@ -1,0 +1,64 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "dayofthelord",
+      "quote": [
+        {
+          "word": "ἡμέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G22500",
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "dayofthelord",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G23160",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "famine",
+      "quote": "λιμοὶ",
+      "strong": [
+        "G30420"
+      ],
+      "occurrence": 1
+    }
+  }
+]

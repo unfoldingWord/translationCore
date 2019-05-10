@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρίας",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρίας",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρία",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρίας",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρίαν",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρίου",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 59
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρίαν",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 67
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρίας",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "zechariahnt",
+      "quote": "Ζαχαρίου",
+      "strong": [
+        "G21970"
+      ],
+      "occurrence": 1
+    }
+  }
+]

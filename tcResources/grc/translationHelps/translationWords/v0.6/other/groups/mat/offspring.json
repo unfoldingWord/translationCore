@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "offspring",
+      "quote": "γεννήματα",
+      "strong": [
+        "G10810"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "offspring",
+      "quote": "σπέρμα",
+      "strong": [
+        "G46900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "offspring",
+      "quote": "σπέρμα",
+      "strong": [
+        "G46900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "offspring",
+      "quote": "γεννήματα",
+      "strong": [
+        "G10810"
+      ],
+      "occurrence": 1
+    }
+  }
+]

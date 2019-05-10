@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμὴν",
+      "strong": [
+        "G50920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμὴ",
+      "strong": [
+        "G50920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμὴν",
+      "strong": [
+        "G50920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμῇ",
+      "strong": [
+        "G50920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμὴν",
+      "strong": [
+        "G50920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμήν",
+      "strong": [
+        "G50920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

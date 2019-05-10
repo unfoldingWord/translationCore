@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "word",
+      "quote": "ῥημάτων",
+      "strong": [
+        "G44870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατήγορος",
+      "strong": [
+        "G27250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "accuse",
+      "quote": "κατηγορῶν",
+      "strong": [
+        "G27230"
+      ],
+      "occurrence": 1
+    }
+  }
+]

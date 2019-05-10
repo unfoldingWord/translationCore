@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "altar",
+      "quote": "βωμὸν",
+      "strong": [
+        "G10410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

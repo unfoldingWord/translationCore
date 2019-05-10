@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "exalt",
+      "quote": "ὑψωθήσῃ",
+      "strong": [
+        "G53120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "exalt",
+      "quote": "ὑψώσει",
+      "strong": [
+        "G53120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "exalt",
+      "quote": "ὑψωθήσεται",
+      "strong": [
+        "G53120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

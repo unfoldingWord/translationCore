@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "governor",
+      "quote": "ἡγεμόνων",
+      "strong": [
+        "G22320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

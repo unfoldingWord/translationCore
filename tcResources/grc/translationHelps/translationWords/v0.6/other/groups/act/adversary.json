@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "adversary",
+      "quote": "ἐχθρούς",
+      "strong": [
+        "G21900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "adversary",
+      "quote": "ἐχθρὲ",
+      "strong": [
+        "G21900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

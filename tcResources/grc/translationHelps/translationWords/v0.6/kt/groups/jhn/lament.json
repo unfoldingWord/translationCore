@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "lament",
+      "quote": "θρηνήσετε",
+      "strong": [
+        "G23540"
+      ],
+      "occurrence": 1
+    }
+  }
+]

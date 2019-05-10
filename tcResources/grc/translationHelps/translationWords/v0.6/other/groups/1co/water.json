@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "ἐπότισεν",
+      "strong": [
+        "G42220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "ποτίζων",
+      "strong": [
+        "G42220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "ποτίζων",
+      "strong": [
+        "G42220"
+      ],
+      "occurrence": 1
+    }
+  }
+]
