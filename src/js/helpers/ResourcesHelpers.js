@@ -18,11 +18,14 @@ import {
   generateChapterGroupData,
   generateChapterGroupIndex
 } from "./groupDataHelpers";
+import {APP_VERSION} from "../containers/home/HomeContainer";
+import {generateTimestamp} from "./TimestampGenerator";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
   "resources");
 export const STATIC_RESOURCES_PATH = path.join(__dirname,
   "../../../tcResources");
+export const TC_VERSION = "tc_version";
 
 /**
  * Copies all of a tool's group data from the global resources into a project.
@@ -236,15 +239,33 @@ export const getResourcesFromStaticPackage = (force) => {
 };
 
 /**
+ * makes sure the source-content-updater-manifest.json has latest time and tCore version
+ * @param dateStr - optional date string to use, if not given with use current
+ */
+export const updateSourceContentUpdaterManifest = (dateStr = null) => {
+    const manifest = {
+      modified: generateTimestamp(dateStr),
+      [TC_VERSION]: APP_VERSION
+    };
+    const destinationPath = path.join(USER_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    fs.ensureDirSync(USER_RESOURCES_PATH);
+    fs.outputJsonSync(destinationPath, manifest);
+};
+
+/**
  * copies the source-content-updater-manifest.json from tc to the users folder
  */
 export const copySourceContentUpdaterManifest = () => {
   const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
     "source-content-updater-manifest.json");
   if (fs.existsSync(sourceContentUpdaterManifestPath)) {
+    const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
+    bundledManifest[TC_VERSION] = APP_VERSION; // add app version to resource
     const destinationPath = path.join(USER_RESOURCES_PATH,
       "source-content-updater-manifest.json");
-    fs.copySync(sourceContentUpdaterManifestPath, destinationPath);
+    fs.ensureDirSync(USER_RESOURCES_PATH);
+    fs.outputJsonSync(destinationPath, bundledManifest);
   }
 };
 
@@ -269,6 +290,11 @@ export const areResourcesNewer = () => {
   const bundledModified = bundledManifest && bundledManifest.modified;
   const userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
   const userModified = userManifest && userManifest.modified;
+
+  const tCoreVersion = userManifest && userManifest[TC_VERSION];
+  if (tCoreVersion !== APP_VERSION) { // TRICKY: for safety we refresh on any difference of version dates in case resources not compatible with newer or older version of tCore
+    return true;
+  }
 
   const newer = bundledModified > userModified;
   return newer;
