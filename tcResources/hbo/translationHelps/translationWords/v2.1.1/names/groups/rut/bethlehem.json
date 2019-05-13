@@ -13,7 +13,16 @@
       },
       "tool": "translationWords",
       "groupId": "bethlehem",
-      "quote": "מִ⁠בֵּ֧ית לֶ֣חֶם",
+      "quote": [
+        {
+          "word": "מִ⁠בֵּ֧ית",
+          "occurrence": 1
+        },
+        {
+          "word": "לֶ֣חֶם",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "m:H1035",
         "H1035"
@@ -35,7 +44,16 @@
       },
       "tool": "translationWords",
       "groupId": "bethlehem",
-      "quote": "מִ⁠בֵּ֥ית לֶ֖חֶם",
+      "quote": [
+        {
+          "word": "מִ⁠בֵּ֥ית",
+          "occurrence": 1
+        },
+        {
+          "word": "לֶ֖חֶם",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "m:H1035",
         "H1035"
@@ -57,7 +75,16 @@
       },
       "tool": "translationWords",
       "groupId": "bethlehem",
-      "quote": "בֵּ֣ית לָ֑חֶם",
+      "quote": [
+        {
+          "word": "בֵּ֣ית",
+          "occurrence": 1
+        },
+        {
+          "word": "לָ֑חֶם",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "H1035",
         "H1035"
@@ -79,7 +106,16 @@
       },
       "tool": "translationWords",
       "groupId": "bethlehem",
-      "quote": "בֵּ֣ית לֶ֔חֶם",
+      "quote": [
+        {
+          "word": "בֵּ֣ית",
+          "occurrence": 2
+        },
+        {
+          "word": "לֶ֔חֶם",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "H1035",
         "H1035"
@@ -101,7 +137,16 @@
       },
       "tool": "translationWords",
       "groupId": "bethlehem",
-      "quote": "בֵּ֣ית לֶ֔חֶם",
+      "quote": [
+        {
+          "word": "בֵּ֣ית",
+          "occurrence": 1
+        },
+        {
+          "word": "לֶ֔חֶם",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "H1035",
         "H1035"
@@ -123,7 +168,16 @@
       },
       "tool": "translationWords",
       "groupId": "bethlehem",
-      "quote": "מִ⁠בֵּ֣ית לֶ֔חֶם",
+      "quote": [
+        {
+          "word": "מִ⁠בֵּ֣ית",
+          "occurrence": 1
+        },
+        {
+          "word": "לֶ֔חֶם",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "m:H1035",
         "H1035"
@@ -166,7 +220,16 @@
       },
       "tool": "translationWords",
       "groupId": "bethlehem",
-      "quote": "בְּ⁠בֵ֥ית לָֽחֶם",
+      "quote": [
+        {
+          "word": "בְּ⁠בֵ֥ית",
+          "occurrence": 1
+        },
+        {
+          "word": "לָֽחֶם",
+          "occurrence": 1
+        }
+      ],
       "strong": [
         "b:H1035",
         "H1035"
