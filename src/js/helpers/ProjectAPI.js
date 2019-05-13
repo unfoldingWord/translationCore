@@ -248,9 +248,8 @@ export default class ProjectAPI {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
-    } else {
-      return true;
     }
+    return true;
   }
 
   /**
