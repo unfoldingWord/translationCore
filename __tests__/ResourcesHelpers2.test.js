@@ -482,6 +482,32 @@ describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
   });
 });
 
+describe('ResourcesHelpers.copySourceContentUpdaterManifest()', () => {
+
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+
+  test('should update app version after copy', () => {
+    // given
+    const dateStr = '1997-12-17T08:24:00.000Z';
+    loadSourceContentUpdaterManifests(dateStr, null, null);
+    const staticManifestPath = path.join(STATIC_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    expect(fs.existsSync(staticManifestPath)).toBeTruthy();
+
+    // when
+    ResourcesHelpers.copySourceContentUpdaterManifest(dateStr);
+
+    // then
+    const manifestPath = path.join(USER_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    const manifest = fs.readJSONSync(manifestPath);
+    expect(manifest[TC_VERSION]).toEqual(APP_VERSION);
+    expect(manifest.modified).toEqual(dateStr);
+  });
+});
+
 describe('ResourcesHelpers.extractZippedBooks', () => {
   it('works as expected', () => {
     const EN_ULB_PATH = path.join(RESOURCE_PATH, 'en', 'ult');
