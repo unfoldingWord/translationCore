@@ -238,7 +238,8 @@
       "field_invalid_length": "Debe tener 3-4 letras de largo",
       "invalid_characters": "Sólo se admiten las letras básicas del Latín"
     },
-    "conflicting_project": "Ya existe un proyecto con este identificador para este idioma y libro"
+    "conflicting_project": "Ya existe un proyecto con este identificador para este idioma y libro",
+    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
   },
   "book_list": {
     "ot": {
@@ -408,7 +409,8 @@
     "rename_local": "Renombrar Proyecto Local",
     "do_not_rename": "No Cambie el Nombre",
     "contact_helpdesk": "Póngase en contacto con el Helpdesk",
-    "retry": "Intente de nuevo"
+    "retry": "Intente de nuevo",
+    "update": "Update to latest version"
   },
   "tool_card_categories": {
     "kt": "Términos Claves",
