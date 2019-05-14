@@ -106,7 +106,23 @@ const getLocalResourceList = resourcesPath => {
   }
 };
 
+/**
+ *  update the date in the SourceContentUpdaterManifest
+ * @param {String} resourcesPath
+ */
+const updateSourceContentUpdaterManifest = resourcesPath => {
+  const sourceContentManifestPath = path.join(resourcesPath, 'source-content-updater-manifest.json');
+  let manifest = {};
+  if (fs.existsSync(sourceContentManifestPath)) {
+    manifest = fs.readJSONSync(sourceContentManifestPath);
+  }
+  fs.ensureDirSync(resourcesPath);
+  manifest.modified = (new Date()).toJSON();
+  fs.outputJsonSync(sourceContentManifestPath, manifest);
+};
+
 module.exports = {
   getLocalResourceList,
-  getLatestVersionInPath
+  getLatestVersionInPath,
+  updateSourceContentUpdaterManifest
 };

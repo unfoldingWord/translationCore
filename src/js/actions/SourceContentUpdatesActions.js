@@ -1,4 +1,3 @@
-import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
@@ -7,9 +6,8 @@ import {getTranslate, getContext, getSelectedToolName, getProjectSaveLocation, g
 import {openAlertDialog, closeAlertDialog, openOptionDialog} from './AlertModalActions';
 import { loadBookTranslations } from './ResourcesActions';
 // helpers
-import { generateTimestamp } from '../helpers/TimestampGenerator';
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
-import {copyGroupDataToProject} from '../helpers/ResourcesHelpers';
+import {copyGroupDataToProject, updateSourceContentUpdaterManifest} from '../helpers/ResourcesHelpers';
 import {getOrigLangforBook} from '../helpers/bibleHelpers';
 import * as Bible from "../common/BooksOfTheBible";
 // constants
@@ -96,8 +94,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
 
       await SourceContentUpdater.downloadResources(languageIdListToDownload, USER_RESOURCES_PATH)
         .then(async () => {
-          const sourceContentManifestPath = path.join(USER_RESOURCES_PATH,'source-content-updater-manifest.json');
-          fs.writeJsonSync(sourceContentManifestPath, { modified: generateTimestamp() });
+          updateSourceContentUpdaterManifest();
 
           // if tool currently opened then load new bible resources
           if (toolName) {
