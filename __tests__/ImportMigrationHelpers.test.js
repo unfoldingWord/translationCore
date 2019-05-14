@@ -165,8 +165,8 @@ describe('ProjectMigration/migrate', () => {
     fs.__resetMockFS();
   });
 
-  it('expect migration to update to current version', () => {
-    migrateProject(LEGACY);
+  it('expect migration to update to current version', async () => {
+    await migrateProject(LEGACY);
     const manifestVersion = Version.getVersionFromManifest(LEGACY);
     const version = Version.getCurrentManifestVersion();
 
@@ -176,9 +176,9 @@ describe('ProjectMigration/migrate', () => {
     expect(manifest.tcInitialized).toBeTruthy();
   });
 
-  it('expect migration of ts version 3 manifest to update version', () => {
+  it('expect migration of ts version 3 manifest to update version', async () => {
     fs.outputJsonSync(path.join(LEGACY, 'manifest.json'), manifest_v3);
-    migrateProject(LEGACY);
+    await migrateProject(LEGACY);
     const manifestVersion = Version.getVersionFromManifest(LEGACY);
     const version = Version.getCurrentManifestVersion();
 

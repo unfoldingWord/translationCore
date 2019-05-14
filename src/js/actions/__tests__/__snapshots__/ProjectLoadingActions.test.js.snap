@@ -3,6 +3,11 @@
 exports[`ProjectLoadingActions.migrateValidateLoadProject should just open project if project name is valid 1`] = `
 Array [
   Object {
+    "alertMessage": "projects.loading_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
@@ -17,11 +22,6 @@ Array [
   Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
-    "alertMessage": "projects.loading_project_alert",
-    "loading": true,
-    "type": "OPEN_ALERT_DIALOG",
   },
   Object {
     "type": "CLOSE_ALERT_DIALOG",
@@ -244,12 +244,27 @@ Array [
     "stepIndex": 3,
     "type": "GO_TO_STEP",
   },
+  Object {
+    "propertyName": "tc_edit_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_APP_VERSION",
+  },
+  Object {
+    "propertyName": "tc_min_compatible_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_MIN_COMPATIBLE_VERSION",
+  },
 ]
 `;
 
 exports[`ProjectLoadingActions.migrateValidateLoadProject should open to details screen if project name is not valid 1`] = `
 Array [
   Object {
+    "alertMessage": "projects.loading_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
@@ -264,11 +279,6 @@ Array [
   Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
-    "alertMessage": "projects.loading_project_alert",
-    "loading": true,
-    "type": "OPEN_ALERT_DIALOG",
   },
   Object {
     "type": "CLOSE_ALERT_DIALOG",
@@ -642,12 +652,27 @@ Array [
   Object {
     "stepIndex": 3,
     "type": "GO_TO_STEP",
+  },
+  Object {
+    "propertyName": "tc_edit_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_APP_VERSION",
+  },
+  Object {
+    "propertyName": "tc_min_compatible_version",
+    "type": "ADD_MANIFEST_PROPERTY",
+    "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
 ]
 `;
 
-exports[`loadProject displays the details screen of an invalid project 1`] = `
+exports[`loadProject displays the details screen of an invalid project name 1`] = `
 Array [
+  Object {
+    "alertMessage": "projects.loading_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
   Object {
     "type": "CLEAR_RESOURCES_REDUCER",
   },
@@ -663,11 +688,6 @@ Array [
   Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
-    "alertMessage": "projects.loading_project_alert",
-    "loading": true,
-    "type": "OPEN_ALERT_DIALOG",
   },
   Object {
     "type": "CLOSE_ALERT_DIALOG",
@@ -1039,8 +1059,102 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "stepIndex": 3,
-    "type": "GO_TO_STEP",
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLOSE_TOOL",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
+  },
+  Object {
+    "alertMessage": "Cannot read property 'bibles' of undefined",
+    "loading": undefined,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "showProjectValidationStepper": false,
+    "type": "TOGGLE_PROJECT_VALIDATION_STEPPER",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLOSE_TOOL",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
+  },
+  Object {
+    "type": "CLEAR_COPYRIGHT_CHECK_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_MERGE_CONFLICTS_REDUCER",
+  },
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "projects": Array [
+      Object {
+        "accessTimeAgo": "now",
+        "bookAbbr": "tit",
+        "bookName": "Titus",
+        "isSelected": true,
+        "projectName": "en_tit",
+        "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_tit",
+        "target_language": Object {
+          "book": Object {
+            "name": "Titus",
+          },
+          "direction": "ltr",
+          "id": "en",
+          "name": "English",
+        },
+      },
+    ],
+    "type": "GET_MY_PROJECTS",
   },
 ]
 `;
@@ -1314,7 +1428,7 @@ Array [
     "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
-    "alertMessage": "(0 , _selectors.getBibles) is not a function",
+    "alertMessage": "Cannot read property 'bibles' of undefined",
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },

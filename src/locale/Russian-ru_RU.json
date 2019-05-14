@@ -238,7 +238,8 @@
       "field_invalid_length": "Должно быть 3-4 буквы",
       "invalid_characters": "Поддерживаются только основные латинские буквы"
     },
-    "conflicting_project": "Проект с таким идентификатором уже существует для этого языка и книги"
+    "conflicting_project": "Проект с таким идентификатором уже существует для этого языка и книги",
+    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
   },
   "book_list": {
     "ot": {
@@ -408,7 +409,8 @@
     "rename_local": "Переименовать проект",
     "do_not_rename": "Не переименовывайте",
     "contact_helpdesk": "Связаться со службой поддержки",
-    "retry": "Повторить"
+    "retry": "Повторить",
+    "update": "Update to latest version"
   },
   "tool_card_categories": {
     "kt": "Ключевые термины",

@@ -38,7 +38,7 @@ export function exportToUSFM(projectPath) {
         /** Will be 'usfm2' if no alignments else takes users choice */
         const exportType = await dispatch(getExportType(projectPath));
         //Running migrations before exporting to attempt to fix any invalid alignments/usfm
-        migrateProject(projectPath, null, getUsername(getState()));
+        await migrateProject(projectPath, null, getUsername(getState()));
         dispatch(BodyUIActions.dimScreen(true));
         let usfmExportFile;
         console.log("exportToUSFM() - loading USFM");

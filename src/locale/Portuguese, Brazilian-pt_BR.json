@@ -238,7 +238,8 @@
       "field_invalid_length": "São precisos, no mínimo, 3 ou 4 letras",
       "invalid_characters": "Apenas as letras básicas do Latim são suportadas"
     },
-    "conflicting_project": "Já existe um projeto com este identificador para este idioma e livro"
+    "conflicting_project": "Já existe um projeto com este identificador para este idioma e livro",
+    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
   },
   "book_list": {
     "ot": {
@@ -408,7 +409,8 @@
     "rename_local": "Renomear Projeto Local",
     "do_not_rename": "Não Renomear",
     "contact_helpdesk": "Contatar Suporte",
-    "retry": "Tentar novamente"
+    "retry": "Tentar novamente",
+    "update": "Update to latest version"
   },
   "tool_card_categories": {
     "kt": "Termos-Chave",
