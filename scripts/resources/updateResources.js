@@ -31,9 +31,8 @@ const executeResourcesUpdate = async (languages, resourcesPath) => {
 
   languages.forEach(async (languageId) => await zipResourcesContent(resourcesPath, languageId));
 
-  // update source content updater manifest
-  const sourceContentManifestPath = path.join(resourcesPath,'source-content-updater-manifest.json');
-  fs.writeJsonSync(sourceContentManifestPath, { modified: (new Date()).toJSON() });
+  // update source content updater manifest, but don't clobber tCore version
+  updateResourcesHelpers.updateSourceContentUpdaterManifest(resourcesPath);
 };
 
 // run as main
