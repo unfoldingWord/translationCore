@@ -25,37 +25,9 @@ class ToolCard extends Component {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-    this.loadProgress = _.debounce(this.loadProgress.bind(this), 200);
     this.state = {
-      showDescription: false,
-      progress: 0
+      showDescription: false
     };
-  }
-
-  loadProgress() {
-    const {tool, selectedCategories} = this.props;
-    const {progress} = this.state;
-
-    if(tool.api.methodExists("getProgress")) {
-      setTimeout(() => {
-        const toolProgress = tool.api.trigger("getProgress", selectedCategories);
-        if(progress !== toolProgress) {
-          this.setState({
-            progress: toolProgress ? toolProgress : 0
-          });
-        }
-      }, 0);
-    }
-  }
-
-  componentDidMount() {
-    this.loadProgress();
-  }
-
-  componentDidUpdate(prevProps) {
-    if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
-      this.loadProgress();
-    }
   }
 
   componentWillMount() {
@@ -115,9 +87,11 @@ class ToolCard extends Component {
         closePopover
       },
       selectedCategories,
-      availableCategories
+      availableCategories,
+      currentProjectToolsProgress
     } = this.props;
-    const {progress, selectedGL} = this.state;
+    const {selectedGL} = this.state;
+    const progress = currentProjectToolsProgress && currentProjectToolsProgress[tool.name] || 0;
 
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
@@ -235,7 +209,8 @@ ToolCard.propTypes = {
     updateCheckSelection: PropTypes.func.isRequired
   }),
   selectedCategories: PropTypes.array.isRequired,
-  availableCategories: PropTypes.object.isRequired
+  availableCategories: PropTypes.object.isRequired,
+  currentProjectToolsProgress: PropTypes.object.isRequired
 };
 
 ToolCard.contextTypes = {

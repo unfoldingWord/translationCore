@@ -53,6 +53,7 @@ import * as BibleHelpers from "../../helpers/bibleHelpers";
 import {delay} from '../../common/utils';
 import * as Bible from "../../common/BooksOfTheBible";
 import {APP_VERSION, MIN_COMPATIBLE_VERSION} from "../../containers/home/HomeContainer";
+import {getProjectProgressForTools} from "../ProjectDetailsActions";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -147,6 +148,7 @@ export const openProject = (name, skipValidation=false) => {
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
         setDefaultProjectCategories(language, t.name, validProjectDir);
+        dispatch(getProjectProgressForTools(t.name));
 
         // connect tool api
         console.log("openProject() - connect tool api");
