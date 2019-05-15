@@ -199,7 +199,7 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
   test('should get the progress for a non alignment tool', () => {
     let toolName = 'translationWords';
     let bookId = 'tit';
-    let userSelectedCategories = ['kt'];
+    let userSelectedCategories = ["apostle", "authority", "clean"];
     const pathToCheckDataFiles = path.join(translationWordsProject, INDEX_FOLDER_PATH, toolName, bookId);
     expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, userSelectedCategories, bookId)).toBe(0.25);
   });

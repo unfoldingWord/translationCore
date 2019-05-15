@@ -418,13 +418,13 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
             id: 'tit'
           }
         },
-        toolsCategories: {translationWords: ['kt']}
+        toolsCategories: {translationWords: ["apostle", "authority", "clean"]}
       }
     };
     const expectedActions = [{
       type: 'SET_CHECK_CATEGORIES',
       toolName: 'translationWords',
-      selectedCategories: ['kt']
+      selectedCategories: ["apostle", "authority", "clean"]
     },
     {
       type: 'SET_PROJECT_PROGRESS_FOR_TOOL',
@@ -432,7 +432,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       progress: 0.25
     }];
     const store = mockStore(initialState);
-    store.dispatch(actions.updateCheckSelection('kt', true, 'translationWords'));
+    store.dispatch(actions.updateCheckSelection(["apostle", "authority", "clean"], true, 'translationWords'));
     expect(store.getActions()).toMatchObject(expectedActions);
   });
 
