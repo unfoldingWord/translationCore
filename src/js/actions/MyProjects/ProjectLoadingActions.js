@@ -148,7 +148,6 @@ export const openProject = (name, skipValidation=false) => {
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
         setDefaultProjectCategories(language, t.name, validProjectDir);
-        dispatch(getProjectProgressForTools(t.name));
 
         // connect tool api
         console.log("openProject() - connect tool api");

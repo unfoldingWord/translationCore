@@ -53,7 +53,6 @@ class ToolsManagementContainer extends Component {
           currentProjectToolsSelectedGL,
           manifest,
           projectSaveLocation,
-          currentProjectToolsProgress,
           toolsCategories
         },
         invalidatedReducer
@@ -89,7 +88,6 @@ class ToolsManagementContainer extends Component {
             currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
-            currentProjectToolsProgress={currentProjectToolsProgress}
           />
         </div>
       </HomeContainerContentWrapper>
@@ -118,8 +116,8 @@ const mapDispatchToProps = (dispatch) => {
       loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
         dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
       },
-      getProjectProgressForTools: (toolName) => {
-        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
+      getProjectProgressForTools: (toolName, results) => {
+        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName, results));
       },
       setProjectToolGL: (toolName, selectedGL) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));

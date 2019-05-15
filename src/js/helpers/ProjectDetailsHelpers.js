@@ -14,6 +14,7 @@ import * as manifestHelpers from "./manifestHelpers";
 import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
 import ResourceAPI from "./ResourceAPI";
+import {getFoldersInResourceFolder} from "./ResourcesHelpers";
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -359,6 +360,17 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
 }
 
 /**
+ * get list of json files in folder
+ * @param {String} folderPath
+ * @return {*}
+ */
+export function getJsonFilesInPath(folderPath) {
+  return fs.readdirSync(folderPath).filter(file => {
+    return path.extname(file) === '.json';
+  });
+}
+
+/**
  * Gets a tool's progress
  * @param {string} pathToProjectGroupsDataFiles
  * @param toolName
@@ -371,9 +383,7 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     //Getting all the groups data that exist in the project
     //Note: Not all of these may be used for the counting because
     //Some groups here are not apart of the currently selected categories
-    let projectGroupsData = fs.readdirSync(pathToProjectGroupsDataFiles).filter(file => {
-      return file !== '.DS_Store' && path.extname(file) === '.json';
-    });
+    const projectGroupsData = getJsonFilesInPath(pathToProjectGroupsDataFiles);
     let availableCheckCategories = [];
     let languageId = 'en';
     if (toolName === 'translationWords'){
@@ -384,16 +394,21 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     //Note: translationWords only uses checks that are also available in the greek (OL)
     const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', toolName);
     const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) || toolResourcePath;
-    userSelectedCategories.forEach((category) => {
+    const parentCategories = getFoldersInResourceFolder(versionPath);
+    parentCategories.forEach((category) => {
       const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
       const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
       if (fs.existsSync(groupsDataSourcePath)) {
-        //Here we are categorizing the checks in the OL by their respective category i.e. "kt"
+        let subCategories = getJsonFilesInPath(groupsDataSourcePath);
+        subCategories = subCategories.filter(subCategory => {
+          const name = path.parse(subCategory).name;
+          return userSelectedCategories.includes(name);
+        });
         //Note: All checks here need to be accounted for in the progress because the
-        //user selected these categories and it exist in the greek
+        //user selected these categories and it exist in the resources
         availableCheckCategories = availableCheckCategories.concat({
           category,
-          checksToBeCounted: fs.readdirSync(groupsDataSourcePath)
+          checksToBeCounted: subCategories
         });
       }
     });
@@ -408,7 +423,7 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
       checksToBeCounted.forEach((groupDataFileName) => {
         if (projectGroupsData.includes(groupDataFileName)) {
           //This means that the user has opened the tool with these checks selected before and
-          //They are avialable to read from the project folder
+          //They are available to read from the project folder
             const groupData = fs.readJsonSync(path.join(pathToProjectGroupsDataFiles, groupDataFileName));
             groupsDataToBeCounted[groupDataFileName.replace('.json', '')] = groupData;
         } else {

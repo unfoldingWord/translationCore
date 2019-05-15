@@ -110,7 +110,13 @@ export function setProjectToolGL(toolName, selectedGL) {
   };
 }
 
-export function getProjectProgressForTools(toolName) {
+/**
+ * calculate project progress for specific tool and save results
+ * @param {String} toolName
+ * @param {Object} results - optional object to return progress calculation
+ * @return {Function}
+ */
+export function getProjectProgressForTools(toolName, results=null) {
   return (dispatch, getState) => {
     const {
       projectDetailsReducer: {
@@ -130,6 +136,10 @@ export function getProjectProgressForTools(toolName) {
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     } else {
       progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
+    }
+
+    if (results) {
+      results.progress = progress;
     }
 
     dispatch({

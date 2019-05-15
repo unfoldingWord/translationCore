@@ -30,7 +30,6 @@ const ToolsCards = ({
   bookName,
   loggedInUser,
   projectSaveLocation,
-  currentProjectToolsProgress,
   manifest,
   invalidatedReducer,
   toolsCategories,
@@ -68,7 +67,7 @@ const ToolsCards = ({
         {
           tools.map((tool, i) => {
             const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation);
-        
+
             return (
               <ToolCard
                 tool={tool}
@@ -88,7 +87,6 @@ const ToolsCards = ({
                   name: tool.name
                 }}
                 invalidatedReducer={invalidatedReducer}
-                currentProjectToolsProgress={currentProjectToolsProgress}
                 manifest={manifest}
               />
             );
@@ -107,7 +105,6 @@ ToolsCards.propTypes = {
   bookName: PropTypes.string.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
-  currentProjectToolsProgress: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
   toolsCategories: PropTypes.object.isRequired,
