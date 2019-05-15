@@ -53,7 +53,6 @@ import * as BibleHelpers from "../../helpers/bibleHelpers";
 import {delay} from '../../common/utils';
 import * as Bible from "../../common/BooksOfTheBible";
 import {APP_VERSION, MIN_COMPATIBLE_VERSION} from "../../containers/home/HomeContainer";
-import {getProjectProgressForTools} from "../ProjectDetailsActions";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
