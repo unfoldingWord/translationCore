@@ -52,9 +52,10 @@ export function verifyGroupDataMatchesWithFs() {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
       });
+      const isCheckTool =  (toolName === 'translationWords' || toolName === 'translationNotes');
       for( let i = 0, lenF = folders.length; i < lenF; i++) {
         const folderName = folders[i];
-        const isCheckVerseEdit = (toolName !== "wordAlignment") && (folderName === "verseEdits");
+        const isCheckVerseEdit = isCheckTool && (folderName === "verseEdits");
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
         if(!fs.existsSync(dataPath)) continue;
 

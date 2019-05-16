@@ -150,7 +150,8 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
 
     const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     const state = getState();
-    if (getSelectedToolName(state) !== 'wordAlignment') {
+    const toolName = getSelectedToolName(state);
+    if (toolName === 'translationWords' || toolName === 'translationNotes') {
       getCheckVerseEditsInGroupData(state, contextIdWithVerseEdit, actionsBatch);
     }
     await delay(500);
