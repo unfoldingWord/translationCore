@@ -195,7 +195,11 @@ export default class Repo {
       try {
         const repoName = await gitApi.getRepoNameInfo(this.dir, remote);
         const response = await gitApi.pushNewRepo(this.dir, this.user, repoName.name, branch);
-        resolve(response);
+        if (response) { // TRICKY: we get a response if there was an error
+          reject(convertGitErrorMessage(response, this.url));
+        } else { // if null then no error
+          resolve(response);
+        }
       } catch (e) {
         console.warn("Repo.push() - ERROR", e);
         reject(e);
@@ -213,6 +217,7 @@ export default class Repo {
   addRemote(url, name = "origin") {
     return new Promise(async (resolve, reject) => {
       try {
+        this.url = url;
         const oldUrl = await this.getRemote(name);
         if (oldUrl) {
           await this.removeRemote(name).catch(() => {}); // clear after deletion
@@ -388,6 +393,7 @@ export default class Repo {
  * @returns {string} - The human-readable error message
  */
 export function convertGitErrorMessage(err, link) {
+  console.warn("convertGitErrorMessage()", {err, link});
   let errMessage = "An unknown problem occurred during import";
   if (err.includes("fatal: unable to access")) {
     errMessage = "Unable to connect to the server. Please check your Internet connection.";
@@ -397,6 +403,9 @@ export function convertGitErrorMessage(err, link) {
     errMessage = "Unable to connect to the server. Please check your Internet connection.";
   } else if (err.includes("fatal: repository") && err.includes("not found")) {
     errMessage = "Project not found: '" + link + "'";
+  } else if (err.includes("error: failed to push some refs")) {
+    errMessage = "not a simple fast-forward";
   }
+  console.warn("convertGitErrorMessage() returning message:", errMessage);
   return errMessage;
 }
