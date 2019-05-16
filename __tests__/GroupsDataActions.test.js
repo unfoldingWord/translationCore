@@ -89,6 +89,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
       }
     };
     const store = mockStore(initStore);
+    // add verse edit
     const verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:4","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":1,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":4},"tool":"wordAlignment","groupId":"chapter_1"}};
     const verseEditPath = path.join(PROJECTS_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "4");
     fs.ensureDirSync(verseEditPath);
