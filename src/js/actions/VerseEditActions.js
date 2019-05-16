@@ -72,7 +72,7 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
  * @param {Object} contextId - of verse edit
  * @param {Array} actionsBatch - array append with verse edits to be batched
  */
-export const getVerseEditsInTwGroupData = (state, contextId, actionsBatch) => {
+export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) => {
   // in group data reducer set verse edit flag for every check of the verse edited
   const matchedGroupData = getGroupDataForVerse(state, contextId);
   const keys = Object.keys(matchedGroupData);
@@ -95,18 +95,18 @@ export const getVerseEditsInTwGroupData = (state, contextId, actionsBatch) => {
 };
 
 /**
- * set verse edit flag for all tw checks in verse if not set
- * @param {Array} twVerseEdits - of verse edit contextIds
+ * make sure verse edit flag is set for all tw checks in verses
+ * @param {Array} twVerseEdits - of contextIds for each verse edit
  * @return {Function}
  */
-export const setVerseEditsInTwGroupDataFromArray = (twVerseEdits) => {
+export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
   return async (dispatch, getState) => {
     if (twVerseEdits && twVerseEdits.length) {
       const state = getState();
       const actionsBatch = [];
       for (let i = 0, lenVE = twVerseEdits.length; i < lenVE; i++) {
         const contextId = twVerseEdits[i];
-        getVerseEditsInTwGroupData(state, contextId, actionsBatch);
+        getCheckVerseEditsInGroupData(state, contextId, actionsBatch);
       }
       if (actionsBatch.length) {
         await delay(500);
@@ -150,8 +150,8 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
 
     const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     const state = getState();
-    if (getSelectedToolName(state) === 'translationWords') {
-      getVerseEditsInTwGroupData(state, contextIdWithVerseEdit, actionsBatch);
+    if (getSelectedToolName(state) !== 'wordAlignment') {
+      getCheckVerseEditsInGroupData(state, contextIdWithVerseEdit, actionsBatch);
     }
     await delay(500);
     dispatch(batchActions(actionsBatch));
