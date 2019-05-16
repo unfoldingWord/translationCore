@@ -4,6 +4,7 @@ import types from './ActionTypes';
 // actions
 import {getGroupDataForVerse, showSelectionsInvalidatedWarning, validateSelections} from "./SelectionsActions";
 import * as AlertModalActions from "./AlertModalActions";
+import {batchActions} from "redux-batched-actions";
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
@@ -62,6 +63,56 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
       verseEdit.contextId.reference.verse.toString());
     fs.ensureDirSync(verseEditsPath);
     fs.outputJSONSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
+  };
+};
+
+/**
+ * batch setting verse edit flags for all tw checks in verse if not set
+ * @param {Object} state - current state
+ * @param {Object} contextId - of verse edit
+ * @param {Array} actionsBatch - array append with verse edits to be batched
+ */
+export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) => {
+  // in group data reducer set verse edit flag for every check of the verse edited
+  const matchedGroupData = getGroupDataForVerse(state, contextId);
+  const keys = Object.keys(matchedGroupData);
+  if (keys.length) {
+    for (let i = 0, l = keys.length; i < l; i++) {
+      const groupItem = matchedGroupData[keys[i]];
+      if (groupItem) {
+        for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
+          const check = groupItem[j];
+          if (!check.verseEdits) { // only set if not yet set
+            actionsBatch.push({
+              type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+              contextId: check.contextId
+            });
+          }
+        }
+      }
+    }
+  }
+};
+
+/**
+ * make sure verse edit flag is set for all tw checks in verses
+ * @param {Array} twVerseEdits - of contextIds for each verse edit
+ * @return {Function}
+ */
+export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
+  return async (dispatch, getState) => {
+    if (twVerseEdits && twVerseEdits.length) {
+      const state = getState();
+      const actionsBatch = [];
+      for (let i = 0, lenVE = twVerseEdits.length; i < lenVE; i++) {
+        const contextId = twVerseEdits[i];
+        getCheckVerseEditsInGroupData(state, contextId, actionsBatch);
+      }
+      if (actionsBatch.length) {
+        await delay(500);
+        dispatch(batchActions(actionsBatch));
+      }
+    }
   };
 };
 
