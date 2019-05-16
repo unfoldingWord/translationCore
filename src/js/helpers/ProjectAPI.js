@@ -243,7 +243,7 @@ export default class ProjectAPI {
         }
         const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
         const {modified: lastTimeDataDownloaded} = fs.readJSONSync(sourceContentManifestPath);
-        return new Date(lastTimeDataDownloaded) > new Date(lastTimeDataUpdated);
+        return new Date(lastTimeDataDownloaded) != new Date(lastTimeDataUpdated);
       } catch (e) {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
@@ -349,7 +349,9 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-    data.timestamp = generateTimestamp();
+    const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+    const {modified: lastTimeDataDownloaded} = fs.readJSONSync(sourceContentManifestPath);
+    data.timestamp = lastTimeDataDownloaded;
     fs.outputJsonSync(categoriesPath, data);
   }
 
