@@ -8,6 +8,7 @@ import path from 'path-extra';
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
 import { getSelectedToolName } from "../selectors";
 import { readLatestChecks } from "../helpers/groupDataHelpers";
+import {setCheckVerseEditsInGroupDataFromArray} from "./VerseEditActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -31,6 +32,7 @@ export const addGroupData = (groupId, groupsData) => {
  * @return {object} action object.
  */
 export function verifyGroupDataMatchesWithFs() {
+  console.log("verifyGroupDataMatchesWithFs()");
   return ((dispatch, getState) => {
     const state = getState();
     const toolName = getSelectedToolName(state);
@@ -42,39 +44,66 @@ export function verifyGroupDataMatchesWithFs() {
         CHECKDATA_DIRECTORY
       );
     }
+    const checkVerseEdits = [];
+
     // build the batch
     let actionsBatch = [];
     if (fs.existsSync(checkDataPath)) {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
       });
-      folders.forEach(folderName => {
+      for( let i = 0, lenF = folders.length; i < lenF; i++) {
+        const folderName = folders[i];
+        const isCheckVerseEdit = (toolName !== "wordAlignment") && (folderName === "verseEdits");
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
-        if(!fs.existsSync(dataPath)) return;
+        if(!fs.existsSync(dataPath)) continue;
 
         let chapters = fs.readdirSync(dataPath);
         chapters = filterAndSort(chapters);
-        chapters.forEach(chapterFolder => {
+        for( let j = 0, lenC = chapters.length; j < lenC; j++) {
+          const chapterFolder = chapters[j];
           const chapterDir = path.join(dataPath, chapterFolder);
-          if(!fs.existsSync(chapterDir)) return;
+          if(!fs.existsSync(chapterDir)) continue;
 
           let verses = fs.readdirSync(chapterDir);
           verses = filterAndSort(verses);
-          verses.forEach(verseFolder => {
+          for( let k = 0, lenV = verses.length; k < lenV; k++) {
+            const verseFolder = verses[k];
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
             let latestObjects = readLatestChecks(filePath);
-            latestObjects.forEach(object => {
-              if (object.contextId.tool === toolName) {
+            for( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
+              const object = latestObjects[l];
+              if (isCheckVerseEdit) {
+                // special handling for check external verse edits, save edit verse
+                const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
+                if (chapter) {
+                  const verse = object.contextId.reference.verse;
+                  if (verse) {
+                    const reference = {
+                      bookId: object.contextId.reference.bookId,
+                      chapter,
+                      verse
+                    };
+                    checkVerseEdits.push({ reference });
+                  }
+                }
+              } else if ( object.contextId.tool === toolName) {
                 let action = toggleGroupDataItems(folderName, object);
                 if (action) actionsBatch.push(action);
               }
-            });
-          });
-        });
-      });
-      // run the batch
-      dispatch(batchActions(actionsBatch));
-      dispatch(validateBookSelections());
+            }
+          }
+        }
+      }
+      if (checkVerseEdits.length) {
+        dispatch(setCheckVerseEditsInGroupDataFromArray(checkVerseEdits));
+      }
+      // run the batch of queue actions
+      if (actionsBatch.length) {
+        console.log("verifyGroupDataMatchesWithFs() - processing batch size: " + actionsBatch.length);
+        dispatch(batchActions(actionsBatch));
+      }
+      console.log("verifyGroupDataMatchesWithFs() - done");
     }
   });
 }
