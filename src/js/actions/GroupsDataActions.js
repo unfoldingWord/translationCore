@@ -8,7 +8,7 @@ import path from 'path-extra';
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
 import { getSelectedToolName } from "../selectors";
 import { readLatestChecks } from "../helpers/groupDataHelpers";
-import {setCheckVerseEditsInGroupDataFromArray} from "./VerseEditActions";
+import {ensureCheckVerseEditsInGroupData} from "./VerseEditActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -96,7 +96,7 @@ export function verifyGroupDataMatchesWithFs() {
         }
       }
       if (checkVerseEdits.length) {
-        dispatch(setCheckVerseEditsInGroupDataFromArray(checkVerseEdits));
+        dispatch(ensureCheckVerseEditsInGroupData(checkVerseEdits));
       }
       // run the batch of queue actions
       if (actionsBatch.length) {

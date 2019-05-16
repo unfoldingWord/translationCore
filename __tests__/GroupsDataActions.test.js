@@ -7,12 +7,69 @@ import { generateTimestamp } from '../src/js/helpers';
 import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
 
+jest.mock('redux-batched-actions', () => ({
+  batchActions: (actionsBatch) => {
+    return (dispatch) => {
+      if (actionsBatch.length) {
+        for (let action of actionsBatch) {
+          dispatch(action);
+        }
+      }
+    };
+  }
+}));
+
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const CHECK_DATA_PATH = path.join(__dirname, 'fixtures', 'checkData');
 const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'project', 'en_tit');
-let mock_addNewBible = jest.fn();
+
+describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
+  let saveOtherContextSpy = null;
+
+  beforeEach(() => {
+    saveOtherContextSpy = jest.spyOn(saveMethods,
+      'saveSelectionsForOtherContext');
+    fs.__resetMockFS();
+    fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
+    fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
+  });
+
+  afterEach(() => {
+    removeSpy(saveOtherContextSpy);
+  });
+
+  it('should succeed without external verse edits', () => {
+    // given
+    const bookId = 'tit';
+    const groupsDataReducer = fs.readJsonSync(path.join(CHECK_DATA_PATH, 'en_tit', 'groupsDataReducer.json'));
+    const initStore = {
+      groupsDataReducer,
+      toolsReducer: {
+        selectedTool: 'translationWords'
+      },
+      projectDetailsReducer: {
+        manifest: {
+          project: {
+            id: bookId
+          }
+        },
+        projectSaveLocation: PROJECTS_PATH
+      }
+    };
+    const store = mockStore(initStore);
+    const expectedSelectionChanges = 0;
+
+    // when
+    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(expectedSelectionChanges);
+  });
+});
 
 describe('GroupsDataActions.validateBookSelections', () => {
   const bookId = 'tit';
@@ -34,6 +91,7 @@ describe('GroupsDataActions.validateBookSelections', () => {
   beforeEach(() => {
     saveOtherContextSpy = jest.spyOn(saveMethods,
       'saveSelectionsForOtherContext');
+    fs.__resetMockFS();
     fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
     fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
   });

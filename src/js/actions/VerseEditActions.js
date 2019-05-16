@@ -95,11 +95,11 @@ export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) =>
 };
 
 /**
- * set verse edit flag for all tw checks in verse if not set
- * @param {Array} twVerseEdits - of verse edit contextIds
+ * make sure verse edit flag is set for all tw checks in verses
+ * @param {Array} twVerseEdits - of contextIds for each verse edit
  * @return {Function}
  */
-export const setCheckVerseEditsInGroupDataFromArray = (twVerseEdits) => {
+export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
   return async (dispatch, getState) => {
     if (twVerseEdits && twVerseEdits.length) {
       const state = getState();

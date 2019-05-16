@@ -133,3 +133,44 @@ Array [
   },
 ]
 `;
+
+exports[`GroupsDataActions.verifyGroupDataMatchesWithFs should succeed without external verse edits 1`] = `
+Array [
+  Object {
+    "boolean": true,
+    "contextId": Object {
+      "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀπόστολος",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G06520",
+      ],
+      "tool": "translationWords",
+    },
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+  Object {
+    "contextId": Object {
+      "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀπόστολος",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G06520",
+      ],
+      "tool": "translationWords",
+    },
+    "selections": Array [],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+]
+`;
