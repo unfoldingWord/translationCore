@@ -8,7 +8,7 @@ import path from 'path-extra';
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
 import { getSelectedToolName } from "../selectors";
 import { readLatestChecks } from "../helpers/groupDataHelpers";
-import {setVerseEditsInTwGroupDataFromArray} from "./VerseEditActions";
+import {ensureCheckVerseEditsInGroupData} from "./VerseEditActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -44,7 +44,7 @@ export function verifyGroupDataMatchesWithFs() {
         CHECKDATA_DIRECTORY
       );
     }
-    const twVerseEdits = [];
+    const checkVerseEdits = [];
 
     // build the batch
     let actionsBatch = [];
@@ -52,9 +52,10 @@ export function verifyGroupDataMatchesWithFs() {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
       });
+      const isCheckTool =  (toolName === 'translationWords' || toolName === 'translationNotes');
       for( let i = 0, lenF = folders.length; i < lenF; i++) {
         const folderName = folders[i];
-        const isTwVerseEdit = (toolName === "translationWords") && (folderName === "verseEdits");
+        const isCheckVerseEdit = isCheckTool && (folderName === "verseEdits");
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
         if(!fs.existsSync(dataPath)) continue;
 
@@ -73,8 +74,8 @@ export function verifyGroupDataMatchesWithFs() {
             let latestObjects = readLatestChecks(filePath);
             for( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
               const object = latestObjects[l];
-              if (isTwVerseEdit) {
-                // special handling for tW external verse edits, save edit verse
+              if (isCheckVerseEdit) {
+                // special handling for check external verse edits, save edit verse
                 const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
                 if (chapter) {
                   const verse = object.contextId.reference.verse;
@@ -84,7 +85,7 @@ export function verifyGroupDataMatchesWithFs() {
                       chapter,
                       verse
                     };
-                    twVerseEdits.push({ reference });
+                    checkVerseEdits.push({ reference });
                   }
                 }
               } else if ( object.contextId.tool === toolName) {
@@ -95,8 +96,8 @@ export function verifyGroupDataMatchesWithFs() {
           }
         }
       }
-      if (twVerseEdits.length) {
-        dispatch(setVerseEditsInTwGroupDataFromArray(twVerseEdits));
+      if (checkVerseEdits.length) {
+        dispatch(ensureCheckVerseEditsInGroupData(checkVerseEdits));
       }
       // run the batch of queue actions
       if (actionsBatch.length) {
