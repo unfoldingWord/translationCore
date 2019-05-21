@@ -2,7 +2,6 @@ import fs from "fs-extra";
 import path from "path-extra";
 import { getTranslation } from "./localizationHelpers";
 import ResourceAPI from "./ResourceAPI";
-import isEqual from "deep-equal";
 
 export const STATIC_RESOURCES_PATH = path.join(__dirname,
   "../../../tcResources");
@@ -104,8 +103,10 @@ export function isCheckUnique(checkData, loadedChecks) {
   const checkContextId = checkData.contextId;
   if (checkContextId) {
     for (const check of loadedChecks) {
-      if (check.contextId && isEqual(check.contextId, checkContextId)) {
-         return false;
+      if (check.contextId && check.contextId.groupId === checkContextId.groupId
+        && check.contextId.quote === checkContextId.quote
+        && check.contextId.occurrence === checkContextId.occurrence) {
+          return false;
       }
     }
   }
