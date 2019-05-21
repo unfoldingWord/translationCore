@@ -290,7 +290,9 @@ export default class ProjectAPI {
           try {
             const currentContextId = fs.readJSONSync(contextIdPath);
             const currentContextIdGroup = currentContextId.groupId;
-            if (!rawData.loaded.includes(currentContextIdGroup)) {
+            // TRICKY: this is for 1.1.4 only, in 1.2.0 it is all changed
+            const parentCategory = Object.keys(availableCategories).find(key => (availableCategories[key].includes(currentContextIdGroup)));
+            if (!rawData.loaded.includes(parentCategory)) {
               fs.removeSync(contextIdPath);
             }
           } catch (e) {
