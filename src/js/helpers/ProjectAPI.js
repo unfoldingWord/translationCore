@@ -145,15 +145,18 @@ export default class ProjectAPI {
    * Group data that already exists will not be overwritten.
    * @param {string} toolName - the name of the tool that the categories belong to
    * @param {string} dataPath - the path to the group data file
+   * @param {string} parentCategory - parent category
    * @returns {boolean} true if the group data was imported. false if already imported.
    */
-  importCategoryGroupData(toolName, dataPath) {
+  importCategoryGroupData(toolName, dataPath, parentCategory) {
     const destDir = this.getCategoriesDir(toolName);
     const groupName = path.basename(dataPath);
     const destFile = path.join(destDir, groupName);
     const groupsDataLoaded = this.getLoadedCategories(toolName);
     const subCategory = path.parse(dataPath).name;
-    if (!groupsDataLoaded.includes(subCategory)) {
+    // TRICKY: this change is for v1.1.4 only, 1.2.0 handles categories differently
+    const category = (toolName === "translationWords") ? parentCategory : subCategory;
+    if (!groupsDataLoaded.includes(category)) {
       fs.copySync(dataPath, destFile);
       return true;
     }
@@ -290,7 +293,9 @@ export default class ProjectAPI {
           try {
             const currentContextId = fs.readJSONSync(contextIdPath);
             const currentContextIdGroup = currentContextId.groupId;
-            if (!rawData.loaded.includes(currentContextIdGroup)) {
+            // TRICKY: this is for 1.1.4 only, in 1.2.0 it is all changed
+            const parentCategory = Object.keys(availableCategories).find(key => (availableCategories[key].includes(currentContextIdGroup)));
+            if (!rawData.loaded.includes(parentCategory)) {
               fs.removeSync(contextIdPath);
             }
           } catch (e) {

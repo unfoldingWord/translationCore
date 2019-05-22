@@ -72,10 +72,12 @@ export const openTool = (name) => (dispatch, getData) => {
       const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
       dispatch(loadGroupsIndex(groupIndex));
 
-      // verify stuff. TODO: why do we need this?
+      dispatch(loadCurrentContextId());
+
+      // verify stuff. We need this to pick up external edits and when checks data is updated.
+      // TRICKY: this must be after loadCurrentContextId() for group data changes to be saved to file
       dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
 
-      dispatch(loadCurrentContextId());
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));
     } catch (e) {
