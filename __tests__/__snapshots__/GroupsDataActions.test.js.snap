@@ -209,6 +209,11 @@ Array [
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
   Object {
+    "alertMessage": "loading_verse_edits",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
     "contextId": Object {
       "groupId": "christ",
       "occurrence": 1,
@@ -363,6 +368,9 @@ Array [
     },
     "type": "TOGGLE_VERSE_EDITS_IN_GROUPDATA",
   },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
 ]
 `;
 
@@ -439,6 +447,11 @@ Array [
     },
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "alertMessage": "loading_verse_edits",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
   },
   Object {
     "contextId": Object {
@@ -610,6 +623,9 @@ Array [
       "tool": "translationWords",
     },
     "type": "TOGGLE_VERSE_EDITS_IN_GROUPDATA",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
   },
 ]
 `;

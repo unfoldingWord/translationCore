@@ -105,6 +105,7 @@ export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) =>
  */
 export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
   return async (dispatch, getState) => {
+    await delay(400);
     const versesEdited = Object.keys(twVerseEdits);
     if (versesEdited && versesEdited.length) {
       const state = getState();
@@ -117,7 +118,6 @@ export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
       if (editedChecks) {
         const groupIds = Object.keys(editedChecks);
         let count = 0;
-        await delay(500);
         // process by group
         for (let j = 0, l = groupIds.length; j < l; j++) {
           const groupId = groupIds[j];
@@ -136,10 +136,14 @@ export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
           }
         }
         if (batch.length) {
+          const translate = getTranslate(getState());
+          dispatch(AlertModalActions.openAlertDialog(translate("loading_verse_edits"), true));
+          await delay(400);
           console.log("ensureCheckVerseEditsInGroupData() - edited verses=" + versesEdited.length);
           dispatch(batchActions(batch));
           console.log("ensureCheckVerseEditsInGroupData() - total checks changed=" + count);
           console.log("ensureCheckVerseEditsInGroupData() - batch finished, groupId's edited=" + groupIds.length);
+          dispatch(AlertModalActions.closeAlertDialog());
         }
       }
     }
