@@ -93,7 +93,7 @@ const groupsDataReducer = (state = initialState, action) => {
 /**
  *
  * @param {Object} state
- * @param {{groupId:String, references:Array}} action
+ * @param {{groupId:String, references:Array, type:String}} action
  * @return {*} updated group data for groupId
  */
 function setMultipleVerseEdits(state, action) {

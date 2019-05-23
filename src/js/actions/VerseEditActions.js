@@ -122,11 +122,11 @@ export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
         for (let j = 0, l = groupIds.length; j < l; j++) {
           const groupId = groupIds[j];
           const verseEdits = editedChecks[groupId];
-          if (verseEdits.length === 1) { // if only one, then don't need to group
-            batch.push(verseEdits[0]);
+          if (verseEdits.length === 1) { // if only one, then don't need to combine
+            batch.push(verseEdits[0]); // batch the only verse edit
             count += 1;
           } else { // combine multiple verse edits into one call
-            const references = verseEdits.map(item => (item.contextId.reference));
+            const references = verseEdits.map(item => (item.contextId.reference)); // just get all the references to change
             batch.push({
               type: types.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
               groupId,

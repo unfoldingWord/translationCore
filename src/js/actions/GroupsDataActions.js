@@ -79,7 +79,7 @@ export function verifyGroupDataMatchesWithFs() {
                 if (chapter) {
                   const verse = object.contextId.reference.verse;
                   if (verse) {
-                    const verseKey = chapter + ":" + verse; // save by key to remove duplicates
+                    const verseKey = chapter + ":" + verse; // save by chapter:verse to remove duplicates
                     if (!checkVerseEdits[verseKey]) {
                       const reference = {
                         bookId: object.contextId.reference.bookId,

@@ -1,5 +1,6 @@
 'use strict';
 import path from 'path-extra';
+import _ from "lodash";
 const fsActual = require.requireActual('fs-extra'); // for copying test files into mock
 const fs = jest.genMockFromModule('fs-extra');
 let mockFS = Object.create(null);
@@ -89,7 +90,7 @@ function addFileToParentDirectory(filePath) {
 
 function outputJsonSync(filePath, data) {
   addFileToParentDirectory(filePath);
-  mockFS[filePath] = data;
+  mockFS[filePath] = _.cloneDeep(data);
 }
 
 function readJsonSync(filePath) {
