@@ -70,7 +70,7 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
  * batch setting verse edit flags for all tw checks in verse if not set
  * @param {Object} state - current state
  * @param {Object} contextId - of verse edit
- * @param {Array} actionsBatch - array append with verse edits to be batched
+ * @param {Object} actionsBatch - gets loaded with verse edits to be batched (indexed by groupId)
  */
 export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) => {
   // in group data reducer set verse edit flag for every check of the verse edited
@@ -83,7 +83,11 @@ export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) =>
         for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
           const check = groupItem[j];
           if (!check.verseEdits) { // only set if not yet set
-            actionsBatch.push({
+            const groupId = check.contextId.groupId;
+            if (!actionsBatch[groupId]) {
+              actionsBatch[groupId] = [];
+            }
+            actionsBatch[groupId].push({
               type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
               contextId: check.contextId
             });
@@ -96,21 +100,51 @@ export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) =>
 
 /**
  * make sure verse edit flag is set for all tw checks in verses
- * @param {Array} twVerseEdits - of contextIds for each verse edit
+ * @param {Object} twVerseEdits - indexed by verse - contextIds for each verse edit
  * @return {Function}
  */
 export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
   return async (dispatch, getState) => {
-    if (twVerseEdits && twVerseEdits.length) {
+    await delay(400);
+    const versesEdited = Object.keys(twVerseEdits);
+    if (versesEdited && versesEdited.length) {
       const state = getState();
-      const actionsBatch = [];
-      for (let i = 0, lenVE = twVerseEdits.length; i < lenVE; i++) {
-        const contextId = twVerseEdits[i];
-        getCheckVerseEditsInGroupData(state, contextId, actionsBatch);
+      const editedChecks = {};
+      for (let i = 0, lenVE = versesEdited.length; i < lenVE; i++) {
+        const contextId = twVerseEdits[versesEdited[i]];
+        getCheckVerseEditsInGroupData(state, contextId, editedChecks);
       }
-      if (actionsBatch.length) {
-        await delay(500);
-        dispatch(batchActions(actionsBatch));
+      const batch = [];
+      if (editedChecks) {
+        const groupIds = Object.keys(editedChecks);
+        let count = 0;
+        // process by group
+        for (let j = 0, l = groupIds.length; j < l; j++) {
+          const groupId = groupIds[j];
+          const verseEdits = editedChecks[groupId];
+          if (verseEdits.length === 1) { // if only one, then don't need to combine
+            batch.push(verseEdits[0]); // batch the only verse edit
+            count += 1;
+          } else { // combine multiple verse edits into one call
+            const references = verseEdits.map(item => (item.contextId.reference)); // just get all the references to change
+            batch.push({
+              type: types.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
+              groupId,
+              references
+            });
+            count += references.length;
+          }
+        }
+        if (batch.length) {
+          const translate = getTranslate(getState());
+          dispatch(AlertModalActions.openAlertDialog(translate("loading_verse_edits"), true));
+          await delay(400);
+          console.log("ensureCheckVerseEditsInGroupData() - edited verses=" + versesEdited.length);
+          dispatch(batchActions(batch));
+          console.log("ensureCheckVerseEditsInGroupData() - total checks changed=" + count);
+          console.log("ensureCheckVerseEditsInGroupData() - batch finished, groupId's edited=" + groupIds.length);
+          dispatch(AlertModalActions.closeAlertDialog());
+        }
       }
     }
   };
