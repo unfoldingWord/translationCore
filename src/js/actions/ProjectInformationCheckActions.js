@@ -102,7 +102,7 @@ export function validate(results = {}) {
  */
 export function finalize() {
   return (async (dispatch, getState) => {
-    console.log('finalize()');
+    console.log('ProjectInformationCheckActions.finalize()');
     const translate = getTranslate(getState());
     dispatch(AlertModalActions.openAlertDialog(translate("projects.preparing_project_alert"), true));
     await delay(200);
