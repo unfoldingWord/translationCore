@@ -103,7 +103,50 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
-  });});
+  });
+
+  it('should succeed with multiple external verse edits', async () => {
+    // given
+    const bookId = 'tit';
+    const groupsDataReducer = fs.readJsonSync(path.join(CHECK_DATA_PATH, 'en_tit', 'groupsDataReducer.json'));
+    const initStore = {
+      groupsDataReducer,
+      toolsReducer: {
+        selectedTool: 'translationWords'
+      },
+      projectDetailsReducer: {
+        manifest: {
+          project: {
+            id: bookId
+          }
+        },
+        projectSaveLocation: PROJECTS_PATH
+      }
+    };
+    const store = mockStore(initStore);
+    // add verse edit
+    let verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:4","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":1,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":4},"tool":"wordAlignment","groupId":"chapter_1"}};
+    let verseEditPath = path.join(PROJECTS_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "4");
+    fs.ensureDirSync(verseEditPath);
+    let fileName = generateTimestamp() + ".json";
+    fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
+
+    // add 2nd verse edit
+    verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:7","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":7,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":7},"tool":"wordAlignment","groupId":"chapter_1"}};
+    verseEditPath = path.join(PROJECTS_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "7");
+    fs.ensureDirSync(verseEditPath);
+    fileName = generateTimestamp() + ".json";
+    fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
+
+    // when
+    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+    await delay(1000);
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+  });
+});
 
 describe('GroupsDataActions.validateBookSelections', () => {
   const bookId = 'tit';
