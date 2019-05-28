@@ -4,6 +4,7 @@ import fs from "fs-extra";
 import {generateTimestamp} from "./TimestampGenerator";
 // actions
 import {loadCheckData} from '../actions/CheckDataLoadActions';
+import {SOURCE_CONTENT_UPDATER_MANIFEST} from '../helpers/ResourcesHelpers';
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
   "resources");
@@ -241,7 +242,7 @@ export default class ProjectAPI {
         if (!lastTimeDataUpdated) {
           return true;
         }
-        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
         const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
         return new Date(lastTimeDataDownloaded).getTime() !== new Date(lastTimeDataUpdated).getTime();
       } catch (e) {
@@ -349,7 +350,7 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-    const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+    const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
     const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
     data.timestamp = lastTimeDataDownloaded;
     fs.outputJsonSync(categoriesPath, data);
