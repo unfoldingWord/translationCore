@@ -11,6 +11,7 @@ import { loadGroupsIndex } from "./GroupsIndexActions";
 import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
 import { loadToolsInDir } from "../helpers/toolHelper";
 import {delay} from "../common/utils";
+
 /**
  * Registers a tool that has been loaded from the disk.
  * @param {object} tool - a tc-tool.
@@ -73,10 +74,12 @@ export const openTool = (name) => async (dispatch, getData) => {
       const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
       dispatch(loadGroupsIndex(groupIndex));
 
-      // verify stuff in case of external edits and old projects
+      dispatch(loadCurrentContextId());
+
+      // verify stuff. We need this to pick up external edits and when checks data is updated.
+      // TRICKY: this must be after loadCurrentContextId() for group data changes to be saved to file
       dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
 
-      dispatch(loadCurrentContextId());
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));
     } catch (e) {

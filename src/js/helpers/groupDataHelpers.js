@@ -73,7 +73,7 @@ export function readLatestChecks(dir) {
   let checks = [];
   if (!fs.existsSync(dir)) return [];
 
-  // list sorted json files
+  // list sorted json files - most recents are in front of list
   const files = fs.readdirSync(dir).filter(file => {
     return path.extname(file) === ".json";
   }).sort().reverse();
@@ -100,9 +100,14 @@ export function readLatestChecks(dir) {
  * @returns {boolean} - true if the check has not been loaded yet.
  */
 export function isCheckUnique(checkData, loadedChecks) {
-  for(const check of loadedChecks) {
-    if(check.groupId === checkData.groupId && check.quote === checkData.quote) {
-      return false;
+  const checkContextId = checkData.contextId;
+  if (checkContextId) {
+    for (const check of loadedChecks) {
+      if (check.contextId && check.contextId.groupId === checkContextId.groupId
+        && check.contextId.quote === checkContextId.quote
+        && check.contextId.occurrence === checkContextId.occurrence) {
+          return false;
+      }
     }
   }
   return true;

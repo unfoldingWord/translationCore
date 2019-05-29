@@ -64,6 +64,7 @@
   "include_app_logs": "Отправить журналы приложения",
   "alignment_prompt": "Вы хотите экспортировать данные выравнивания с вашим текстом?",
   "include_alignment_check": "Включить данные сопоставления",
+  "loading_verse_edits": "Loading Verse Edits",
   "updates": {
     "check_for_newer_app": "Проверить обновления программного обеспечения",
     "check_for_content_updates": "Проверить обновления содержимого",
@@ -160,6 +161,7 @@
     "cancel_import_alert": "Отмена прервёт процесс импорта, и проект необходимо будет повторно импортировать, прежде чем его можно будет использовать.",
     "project_already_identified": "Этот проект был определен как проект ${originalBook}. Вы уверены, что хотите изменить его на проект ${suggestedBook}?",
     "loading_project_alert": "Загружаются данные вашего проекта.",
+    "preparing_project_alert": "Preparing your project data.",
     "exported_alert": "${project_name} успешно экспортирован в ${file_path}.",
     "must_be_logged_in_alert": "Вы должны войти в систему с помощью учетной записи ${door43} для загрузки проектов. Пожалуйста, выйдите из системы и затем войдите в учетную запись ${door43}.",
     "uploading_alert": "Загрузка проекта ${project_name} в ${door43}. Пожалуйста, подождите...",
