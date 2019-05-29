@@ -58,7 +58,7 @@ export const onlineImport = () => {
         try {
           ProjectFilesystemHelpers.deleteImportsFolder();
           // Must allow online action before starting actions that access the internet
-          link = getState().importOnlineReducer.importLink;
+          link = getState().importOnlineReducer.importLink.trim();
           console.log("onlineImport() - link=" + link);
 
           dispatch(clearLink());
