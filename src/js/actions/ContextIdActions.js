@@ -51,7 +51,7 @@ export const changeCurrentContextId = contextId => {
       const apis = getToolsByKey(state);
       const {reference: {chapter, verse} } = contextId;
       for (var toolName in apis) {
-        apis[toolName].api.trigger('validateVerse', chapter, verse);
+        apis[toolName].api.trigger('validateVerse', chapter, verse, null, getGroupsData(state));
       }
     }
     // commit project changes
