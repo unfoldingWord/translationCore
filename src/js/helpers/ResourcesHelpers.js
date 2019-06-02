@@ -29,6 +29,7 @@ export const STATIC_RESOURCES_PATH = path.join(__dirname,
   "../../../tcResources");
 const testResourcesPath = path.join('__tests__', 'fixtures', 'resources');
 export const TC_VERSION = "tc_version";
+export const SOURCE_CONTENT_UPDATER_MANIFEST = "source-content-updater-manifest.json";
 
 /**
  * Copies all of a tool's group data from the global resources into a project.
@@ -233,8 +234,8 @@ export const updateSourceContentUpdaterManifest = (dateStr = null) => {
       modified: generateTimestamp(dateStr),
       [TC_VERSION]: APP_VERSION
     };
-    const destinationPath = path.join(USER_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+  const destinationPath = path.join(USER_RESOURCES_PATH,
+      SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
     fs.outputJsonSync(destinationPath, manifest);
 };
@@ -244,12 +245,12 @@ export const updateSourceContentUpdaterManifest = (dateStr = null) => {
  */
 export const copySourceContentUpdaterManifest = () => {
   const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
-    "source-content-updater-manifest.json");
+    SOURCE_CONTENT_UPDATER_MANIFEST);
   if (fs.existsSync(sourceContentUpdaterManifestPath)) {
     const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
     bundledManifest[TC_VERSION] = APP_VERSION; // add app version to resource
     const destinationPath = path.join(USER_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+      SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
     fs.outputJsonSync(destinationPath, bundledManifest);
   }
@@ -261,13 +262,13 @@ export const copySourceContentUpdaterManifest = () => {
  */
 export const areResourcesNewer = () => {
   const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
-    "source-content-updater-manifest.json");
+    SOURCE_CONTENT_UPDATER_MANIFEST);
   if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
     return true;
   }
 
   const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
-    "source-content-updater-manifest.json");
+    SOURCE_CONTENT_UPDATER_MANIFEST);
   if (!fs.existsSync(sourceContentUpdaterManifestPath)) {
     console.error("sourceContentUpdaterManifest does not exist");
     return false;

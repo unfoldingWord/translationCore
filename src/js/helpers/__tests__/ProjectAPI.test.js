@@ -2,6 +2,7 @@ jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from "path-extra";
 import ProjectAPI from "../ProjectAPI";
+import {APP_VERSION} from "../../containers/home/HomeContainer";
 
 describe('ProjectAPI', () => {
 
@@ -132,63 +133,70 @@ describe('ProjectAPI', () => {
   });
 
   describe('set category loaded', () => {
+    const manifest = { "modified":"2019-05-10T17:13:50.393Z","tc_version":APP_VERSION};
+
+    beforeEach(() => {
+      jest.resetAllMocks();
+    });
+
     it('adds loaded', () => {
       const p = new ProjectAPI('/root');
-
       jest.spyOn(global.console, 'warn');
       fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
       fs.pathExistsSync.mockReturnValueOnce(true);
-      fs.readJsonSync.mockReturnValueOnce({current: [], loaded: ["other"]});
+      fs.readJsonSync.mockReturnValueOnce({current: [], loaded: ["other"]}).mockReturnValueOnce(manifest);
 
       p.setCategoryLoaded('tool', 'category');
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["other", "category"], timestamp: expect.any(String)});
+        {"current": [], "loaded": ["other", "category"], timestamp: manifest.modified});
     });
 
     it('removes loaded', () => {
       const p = new ProjectAPI('/root');
-
       jest.spyOn(global.console, 'warn');
       fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
       fs.pathExistsSync.mockReturnValueOnce(true);
-      fs.readJsonSync.mockReturnValueOnce({current: [], loaded: ["category", "other"]});
+      fs.readJsonSync.mockReturnValueOnce({current: [], loaded: ["category", "other"]}).mockReturnValueOnce(manifest);
 
       p.setCategoryLoaded('tool', 'category', false);
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["other"], timestamp: expect.any(String)});
+        {"current": [], "loaded": ["other"], timestamp: manifest.modified});
     });
 
     it('rebuilds missing file', () => {
       const p = new ProjectAPI('/root');
-
       jest.spyOn(global.console, 'warn');
       fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
       fs.pathExistsSync.mockReturnValueOnce(false); // metadata file is missing
+      fs.readJsonSync.mockReturnValueOnce(manifest);
 
       p.setCategoryLoaded('tool', 'category');
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["category"], timestamp: expect.any(String)});
+        {"current": [], "loaded": ["category"], timestamp: manifest.modified});
     });
 
     it('rebuilds corrupt file', () => {
       const p = new ProjectAPI('/root');
-
       global.console = {warn: jest.fn()};
       fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
       fs.pathExistsSync.mockReturnValueOnce(true);
-      fs.readJsonSync.mockImplementation(() => {throw new Error()});
+      fs.readJsonSync.mockImplementation(() => {
+        fs.readJsonSync.mockRestore();
+        fs.readJsonSync.mockReturnValueOnce(manifest); // set return
+        throw new Error();
+      });
       p.setCategoryLoaded('tool', 'category');
 
       expect(console.warn).toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["category"], timestamp: expect.any(String)});
+        {"current": [], "loaded": ["category"], timestamp: manifest.modified});
     });
   });
 
@@ -291,4 +299,117 @@ describe('ProjectAPI', () => {
     });
   });
 
+  describe('hasNewGroupsData()', () => {
+    const manifest_ = { "modified":"2019-05-10T17:13:50.393Z","tc_version":APP_VERSION};
+    const categories_ = {"current":["kt","names","other"],"loaded":["kt","names","other"],"timestamp":"2019-05-10T17:13:50.393Z"};
+
+    beforeEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('same date does not need updating', () => {
+      // given
+      const expectHasNewGroupsData = false;
+      const p = new ProjectAPI('/root');
+      p.getBookId = jest.fn(() => ('tit'));
+      const manifest = { ...manifest_ };
+      const categories = { ...categories_ };
+      fs.pathExistsSync.mockReturnValueOnce(true);
+      fs.readJsonSync.mockReturnValueOnce(categories).mockReturnValueOnce(manifest);
+
+      // when
+      const results = p.hasNewGroupsData('tool');
+
+      // then
+      expect(results).toEqual(expectHasNewGroupsData);
+    });
+
+    it('older categories timestamp needs updating', () => {
+      // given
+      const expectHasNewGroupsData = true;
+      const p = new ProjectAPI('/root');
+      p.getBookId = jest.fn(() => ('tit'));
+      const manifest = { ...manifest_ };
+      const categories = { ...categories_ };
+      categories.timestamp = "2019-05-10T17:13:50.300Z";
+      fs.pathExistsSync.mockReturnValueOnce(true);
+      fs.readJsonSync.mockReturnValueOnce(categories).mockReturnValueOnce(manifest);
+
+      // when
+      const results = p.hasNewGroupsData('tool');
+
+      // then
+      expect(results).toEqual(expectHasNewGroupsData);
+    });
+
+    it('newer categories timestamp needs updating', () => {
+      // given
+      const expectHasNewGroupsData = true;
+      const p = new ProjectAPI('/root');
+      p.getBookId = jest.fn(() => ('tit'));
+      const manifest = { ...manifest_ };
+      const categories = { ...categories_ };
+      categories.timestamp = "2019-05-10T17:13:50.400Z";
+      fs.pathExistsSync.mockReturnValueOnce(true);
+      fs.readJsonSync.mockReturnValueOnce(categories).mockReturnValueOnce(manifest);
+
+      // when
+      const results = p.hasNewGroupsData('tool');
+
+      // then
+      expect(results).toEqual(expectHasNewGroupsData);
+    });
+
+    it('missing categories timestamp needs updating', () => {
+      // given
+      const expectHasNewGroupsData = true;
+      const p = new ProjectAPI('/root');
+      p.getBookId = jest.fn(() => ('tit'));
+      const manifest = { ...manifest_ };
+      const categories = { ...categories_ };
+      delete categories.timestamp;
+      fs.pathExistsSync.mockReturnValueOnce(true);
+      fs.readJsonSync.mockReturnValueOnce(categories).mockReturnValueOnce(manifest);
+
+      // when
+      const results = p.hasNewGroupsData('tool');
+
+      // then
+      expect(results).toEqual(expectHasNewGroupsData);
+    });
+
+    it('missing updater manifest modified time needs updating', () => {
+      // given
+      const expectHasNewGroupsData = true;
+      const p = new ProjectAPI('/root');
+      p.getBookId = jest.fn(() => ('tit'));
+      const manifest = { ...manifest_ };
+      delete manifest.modified;
+      const categories = { ...categories_ };
+      fs.pathExistsSync.mockReturnValueOnce(true);
+      fs.readJsonSync.mockReturnValueOnce(categories).mockReturnValueOnce(manifest);
+
+      // when
+      const results = p.hasNewGroupsData('tool');
+
+      // then
+      expect(results).toEqual(expectHasNewGroupsData);
+    });
+    it('missing categories file needs updating', () => {
+      // given
+      const expectHasNewGroupsData = true;
+      const p = new ProjectAPI('/root');
+      p.getBookId = jest.fn(() => ('tit'));
+      const manifest = { ...manifest_ };
+      const categories = { ...categories_ };
+      fs.pathExistsSync.mockReturnValueOnce(false);
+      fs.readJsonSync.mockReturnValueOnce(categories).mockReturnValueOnce(manifest);
+
+      // when
+      const results = p.hasNewGroupsData('tool');
+
+      // then
+      expect(results).toEqual(expectHasNewGroupsData);
+    });
+  });
 });
