@@ -6,7 +6,7 @@ import path from 'path-extra';
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
-import {delay} from "../helpers/bodyUIHelpers";
+import {delay} from "../common/utils";
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
