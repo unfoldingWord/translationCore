@@ -44,7 +44,7 @@ export function verifyGroupDataMatchesWithFs() {
         CHECKDATA_DIRECTORY
       );
     }
-    const checkVerseEdits = [];
+    const checkVerseEdits = {};
 
     // build the batch
     let actionsBatch = [];
@@ -80,12 +80,15 @@ export function verifyGroupDataMatchesWithFs() {
                 if (chapter) {
                   const verse = object.contextId.reference.verse;
                   if (verse) {
-                    const reference = {
-                      bookId: object.contextId.reference.bookId,
-                      chapter,
-                      verse
-                    };
-                    checkVerseEdits.push({ reference });
+                    const verseKey = chapter + ":" + verse; // save by chapter:verse to remove duplicates
+                    if (!checkVerseEdits[verseKey]) {
+                      const reference = {
+                        bookId: object.contextId.reference.bookId,
+                        chapter,
+                        verse
+                      };
+                      checkVerseEdits[verseKey] = {reference};
+                    }
                   }
                 }
               } else if ( object.contextId.tool === toolName) {
@@ -96,7 +99,7 @@ export function verifyGroupDataMatchesWithFs() {
           }
         }
       }
-      if (checkVerseEdits.length) {
+      if (Object.keys(checkVerseEdits).length) {
         dispatch(ensureCheckVerseEditsInGroupData(checkVerseEdits));
       }
       // run the batch of queue actions

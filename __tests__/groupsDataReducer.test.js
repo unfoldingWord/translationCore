@@ -202,6 +202,298 @@ describe('groupsDataReducer', () => {
     expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
   });
 
+  describe('TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA', () => {
+    test('should handle single edit', () => {
+      const verseEdits = true;
+      const initialState = {
+        groupsData: {
+          authority: [{
+            contextId: {
+              groupId: "authority",
+              reference: { bookId: "mat", chapter: "1", verse: "2"}
+            }
+          }]
+        },
+        loadedFromFileSystem: false
+      };
+
+      const expectedState = {
+        groupsData: {
+          authority: [{
+            contextId: {
+              groupId: "authority",
+              reference: { bookId: "mat", chapter: "1", verse: "2"}
+            },
+            verseEdits
+          }]
+        },
+        loadedFromFileSystem: false
+      };
+
+      const newState = groupsDataReducer(initialState, {
+        type: consts.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
+        groupId: "authority",
+        references: [{ bookId: "mat", chapter: "1", verse: "2"}]
+      });
+      expect(newState).toEqual(expectedState);
+      expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
+    });
+
+    test('should handle multiple occurrence edit', () => {
+      const verseEdits = true;
+      const initialState = {
+        groupsData: {
+          authority: [
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 2
+              }
+            }],
+          god: [
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "1"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            }]
+        },
+        loadedFromFileSystem: false
+      };
+
+      const expectedState = {
+        groupsData: {
+          authority: [
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              },
+              verseEdits
+            },
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 2
+              },
+              verseEdits
+            }],
+          god: [
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "1"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            }]
+        },
+        loadedFromFileSystem: false
+      };
+
+      const newState = groupsDataReducer(initialState, {
+        type: consts.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
+        groupId: "authority",
+        references: [{ bookId: "mat", chapter: "1", verse: "2"}]
+      });
+      expect(newState).toEqual(expectedState);
+      expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
+    });
+
+    test('should handle single edit out of 2', () => {
+      const verseEdits = true;
+      const initialState = {
+        groupsData: {
+          authority: [
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 2
+              }
+            }],
+          god: [
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "1"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            }]
+        },
+        loadedFromFileSystem: false
+      };
+
+      const expectedState = {
+        groupsData: {
+          authority: [
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 2
+              }
+            }],
+          god: [
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "1"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              },
+              verseEdits
+            }]
+        },
+        loadedFromFileSystem: false
+      };
+
+      const newState = groupsDataReducer(initialState, {
+        type: consts.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
+        groupId: "god",
+        references: [{ bookId: "mat", chapter: "1", verse: "2"}]
+      });
+      expect(newState).toEqual(expectedState);
+      expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
+    });
+
+    test('should handle multiple edits', () => {
+      const verseEdits = true;
+      const initialState = {
+        groupsData: {
+          authority: [
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 2
+              }
+            }],
+          god: [
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "1"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            }]
+        },
+        loadedFromFileSystem: false
+      };
+
+      const expectedState = {
+        groupsData: {
+          authority: [
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              }
+            },
+            {
+              contextId: {
+                groupId: "authority",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 2
+              }
+            }],
+          god: [
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "1"},
+                occurrence: 1
+              },
+              verseEdits
+            },
+            {
+              contextId: {
+                groupId: "god",
+                reference: { bookId: "mat", chapter: "1", verse: "2"},
+                occurrence: 1
+              },
+              verseEdits
+            }]
+        },
+        loadedFromFileSystem: false
+      };
+
+      const newState = groupsDataReducer(initialState, {
+        type: consts.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
+        groupId: "god",
+        references: [{ bookId: "mat", chapter: "1", verse: "2"},{ bookId: "mat", chapter: "1", verse: "1"}]
+      });
+      expect(newState).toEqual(expectedState);
+      expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
+    });
+  });
+
   test('should handle TOGGLE_COMMENTS_IN_GROUPDATA', () => {
     const comments = ['stuff', 'more stuff'];
     const initialState = {

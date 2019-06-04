@@ -2,11 +2,12 @@ import path from "path-extra";
 import ospath from "ospath";
 import fs from "fs-extra";
 import {generateTimestamp} from "./TimestampGenerator";
-export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
-  "resources");
 // actions
 import {loadCheckData} from '../actions/CheckDataLoadActions';
+import {SOURCE_CONTENT_UPDATER_MANIFEST} from '../helpers/ResourcesHelpers';
 // constants
+export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
+  "resources");
 const PROJECT_TC_DIR = path.join('.apps', 'translationCore');
 const CHECKDATA_DIRECTORY = path.join(PROJECT_TC_DIR, 'checkData');
 
@@ -229,7 +230,7 @@ export default class ProjectAPI {
    * Method to check if project groups data is out of date in relation
    * to the last source content update
    * @param {string} toolName - the tool name. This is synonymous with translationHelp name
-   * @returns {Boolean}
+   * @returns {Boolean} returns true if group data needs to be updated
    */
   hasNewGroupsData(toolName) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
@@ -241,9 +242,9 @@ export default class ProjectAPI {
         if (!lastTimeDataUpdated) {
           return true;
         }
-        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
-        const {modified: lastTimeDataDownloaded} = fs.readJSONSync(sourceContentManifestPath);
-        return new Date(lastTimeDataDownloaded) > new Date(lastTimeDataUpdated);
+        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
+        const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
+        return new Date(lastTimeDataDownloaded).getTime() !== new Date(lastTimeDataUpdated).getTime();
       } catch (e) {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
@@ -349,7 +350,9 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-    data.timestamp = generateTimestamp();
+    const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
+    const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
+    data.timestamp = lastTimeDataDownloaded;
     fs.outputJsonSync(categoriesPath, data);
   }
 

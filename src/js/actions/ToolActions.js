@@ -11,6 +11,7 @@ import {loadGroupsIndex} from "./GroupsIndexActions";
 import {loadProjectGroupData, loadProjectGroupIndex} from "../helpers/ResourcesHelpers";
 import {loadToolsInDir} from "../helpers/toolHelper";
 import {delay} from "../common/utils";
+
 /**
  * Registers a tool that has been loaded from the disk.
  * @param {object} tool - a tc-tool.
