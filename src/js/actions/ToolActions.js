@@ -44,46 +44,49 @@ export const loadTools = (toolsDir) => (dispatch) => {
  * @param {string} name - the name of the tool to open
  * @returns {Function}
  */
-export const openTool = (name) => async (dispatch, getData) => {
-  console.log("openTool(" + name + ")");
-  const translate = getTranslate(getData());
-  dispatch(ModalActions.showModalContainer(false));
-  await delay(200);
-  dispatch({ type: types.START_LOADING });
+export const openTool = (name) => (dispatch, getData) => {
+  return new Promise(async (resolve) => {
+    console.log("openTool(" + name + ")");
+    const translate = getTranslate(getData());
+    dispatch(ModalActions.showModalContainer(false));
+    await delay(200);
+    dispatch({type: types.START_LOADING});
 
-  setTimeout(() => {
-    try {
-      dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_DATA });
-      dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_INDEX });
-      dispatch({ type: types.CLEAR_CONTEXT_ID });
-      dispatch({
-        type: types.OPEN_TOOL,
-        name
-      });
+    setTimeout(() => {
+      try {
+        dispatch({type: types.CLEAR_PREVIOUS_GROUPS_DATA});
+        dispatch({type: types.CLEAR_PREVIOUS_GROUPS_INDEX});
+        dispatch({type: types.CLEAR_CONTEXT_ID});
+        dispatch({
+          type: types.OPEN_TOOL,
+          name
+        });
 
-      // load group data
-      const projectDir = getProjectSaveLocation(getData());
-      const groupData = loadProjectGroupData(name, projectDir);
-      dispatch({
-        type: types.LOAD_GROUPS_DATA_FROM_FS,
-        allGroupsData: groupData
-      });
+        // load group data
+        const projectDir = getProjectSaveLocation(getData());
+        const groupData = loadProjectGroupData(name, projectDir);
+        dispatch({
+          type: types.LOAD_GROUPS_DATA_FROM_FS,
+          allGroupsData: groupData
+        });
 
-      // load group index
-      const language = getToolGatewayLanguage(getData(), name);
-      const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
-      dispatch(loadGroupsIndex(groupIndex));
+        // load group index
+        const language = getToolGatewayLanguage(getData(), name);
+        const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
+        dispatch(loadGroupsIndex(groupIndex));
 
-      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-      dispatch(loadCurrentContextId());
-      //TRICKY: need to verify groups data before and after the contextId has been loaded
-      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+        dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+        dispatch(loadCurrentContextId());
+        //TRICKY: need to verify groups data before and after the contextId has been loaded
+        dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
 
-      dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
-      dispatch(BodyUIActions.toggleHomeView(false));
-    } catch (e) {
-      console.warn("openTool()", e);
-      AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));
-    }
-  }, 100);
+        dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
+        dispatch(BodyUIActions.toggleHomeView(false));
+      } catch (e) {
+        console.warn("openTool()", e);
+        AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));
+      }
+      resolve();
+    }, 100);
+  });
 };
