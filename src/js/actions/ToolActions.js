@@ -1,15 +1,15 @@
 import types from "./ActionTypes";
-import {getToolGatewayLanguage, getTranslate, getProjectSaveLocation} from "../selectors";
+import { getToolGatewayLanguage, getTranslate, getProjectSaveLocation } from "../selectors";
 // actions
 import * as ModalActions from "./ModalActions";
 import * as AlertModalActions from "./AlertModalActions";
 import * as GroupsDataActions from "./GroupsDataActions";
-import {loadCurrentContextId} from "./ContextIdActions";
+import { loadCurrentContextId } from "./ContextIdActions";
 import * as BodyUIActions from "./BodyUIActions";
-import {loadGroupsIndex} from "./GroupsIndexActions";
+import { loadGroupsIndex } from "./GroupsIndexActions";
 // helpers
-import {loadProjectGroupData, loadProjectGroupIndex} from "../helpers/ResourcesHelpers";
-import {loadToolsInDir} from "../helpers/toolHelper";
+import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
+import { loadToolsInDir } from "../helpers/toolHelper";
 import {delay} from "../common/utils";
 
 /**
@@ -32,7 +32,7 @@ export const loadTools = (toolsDir) => (dispatch) => {
   // TRICKY: push this off the render thread just for a moment to simulate threading.
   setTimeout(() => {
     loadToolsInDir(toolsDir).then((tools) => {
-      for (let i = 0, len = tools.length; i < len; i++) {
+      for(let i = 0, len = tools.length; i < len; i ++) {
         dispatch(registerTool(tools[i]));
       }
     });
@@ -49,13 +49,13 @@ export const openTool = (name) => async (dispatch, getData) => {
   const translate = getTranslate(getData());
   dispatch(ModalActions.showModalContainer(false));
   await delay(200);
-  dispatch({type: types.START_LOADING});
+  dispatch({ type: types.START_LOADING });
 
-  setTimeout(async () => {
+  setTimeout(() => {
     try {
-      dispatch({type: types.CLEAR_PREVIOUS_GROUPS_DATA});
-      dispatch({type: types.CLEAR_PREVIOUS_GROUPS_INDEX});
-      dispatch({type: types.CLEAR_CONTEXT_ID});
+      dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_DATA });
+      dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_INDEX });
+      dispatch({ type: types.CLEAR_CONTEXT_ID });
       dispatch({
         type: types.OPEN_TOOL,
         name
@@ -78,6 +78,7 @@ export const openTool = (name) => async (dispatch, getData) => {
       dispatch(loadCurrentContextId());
       //TRICKY: need to verify groups data before and after the contextId has been loaded
       dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+
       dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
       dispatch(BodyUIActions.toggleHomeView(false));
     } catch (e) {
