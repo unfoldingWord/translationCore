@@ -22,6 +22,15 @@ import * as fromMyProjectsReducer from '../reducers/myProjectsReducer';
 import * as fromAlert from '../reducers/alerts';
 import * as fromGrouspIndex from '../reducers/groupsIndexReducer';
 import * as fromGroupsData from '../reducers/groupsDataReducer';
+import * as fromSoftwareUpdateReducer from '../reducers/softwareUpdateReducer';
+
+/**
+ * checks if the software update dialog is open
+ * @param state
+ * @return {boolean}
+ */
+export const getIsSoftwareUpdateOpen = state =>
+  fromSoftwareUpdateReducer.getIsOpen(state.softwareUpdateReducer);
 
 /**
  * Retrieves active alerts
@@ -472,11 +481,14 @@ export const getToolCategories = (state, toolName) =>
 export const getProjectToolProgress = (state, toolName) =>
   fromProjectDetailsReducer.getToolProgress(state.projectDetailsReducer, toolName);
 
-export const getCurrentProjectToolsSelectedGL = (state) => 
+export const getCurrentProjectToolsSelectedGL = (state) =>
   fromProjectDetailsReducer.getCurrentProjectToolsSelectedGL(state.projectDetailsReducer);
 
-export const getGroupsIndex = (state) => 
+export const getGroupsIndex = (state) =>
   fromGrouspIndex.getGroupsIndex(state.groupsIndexReducer);
 
-export const getGroupsData = (state) => 
+export const getGroupsData = (state) =>
   fromGroupsData.getGroupsData(state.groupsDataReducer);
+
+export const getBibles = (state) =>
+  fromResourcesReducer.getBibles(state.resourcesReducer);

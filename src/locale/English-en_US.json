@@ -64,6 +64,7 @@
   "include_app_logs": "Include application logs",
   "alignment_prompt": "Would you like to export the alignment data with your text?",
   "include_alignment_check": "Include alignment data",
+  "loading_verse_edits": "Loading Verse Edits",
   "updates": {
     "check_for_newer_app": "Check for software updates",
     "check_for_content_updates": "Check for content updates",
@@ -148,7 +149,7 @@
     "import_local_project": "Import Local Project",
     "import_online_project": "Import Online Project",
     "searching_alert": "Searching, please wait...",
-    "books_available": "In this version of ${app}, the translationWords tool and the Word Alignment tool support New Testament projects.",
+    "books_available": "In this version of ${app}, the translationWords tool supports projects from the New Testament and the Word Alignment tool supports projects from the whole Bible.",
     "enter_url": "Enter URL",
     "or": "Or",
     "language_code": "Language Code",
@@ -160,6 +161,7 @@
     "cancel_import_alert": "Canceling now will abort the import process and the project will need to be re-imported before it can be used.",
     "project_already_identified": "This project has been identified as a ${originalBook} project. Are you sure you want to change it to a ${suggestedBook} project?",
     "loading_project_alert": "Loading your project data.",
+    "preparing_project_alert": "Preparing your project data.",
     "exported_alert": "${project_name} has been successfully exported to ${file_path}.",
     "must_be_logged_in_alert": "You must be logged in with a ${door43} account to upload projects. Please log out and then back in with a ${door43} user account.",
     "uploading_alert": "Uploading ${project_name} to ${door43}. Please wait...",
@@ -238,7 +240,8 @@
       "field_invalid_length": "Must be 3-4 letters long",
       "invalid_characters": "Only basic Latin Letters supported"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book"
+    "conflicting_project": "A project with this identifier already exists for this language and book",
+    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
   },
   "book_list": {
     "ot": {
@@ -365,7 +368,8 @@
     "menu": "Menu",
     "no_gl_available": "None available",
     "invalid_checks": "Invalidated checks",
-    "invalid_verse_alignments": "Verses with invalidated alignments."
+    "invalid_verse_alignments": "Verses with invalidated alignments.",
+    "invalidation_checking": "Doing Invalidation Checking"
   },
   "buttons": {
     "back_button": "Go Back",
@@ -405,6 +409,7 @@
     "rename_local": "Rename Local Project",
     "do_not_rename": "Do Not Rename",
     "contact_helpdesk": "Contact Helpdesk",
-    "retry": "Retry"
+    "retry": "Retry",
+    "update": "Update to latest version"
   }
 }

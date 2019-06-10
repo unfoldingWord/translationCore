@@ -10,6 +10,7 @@ import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 import * as manifestHelpers from './manifestHelpers';
 import * as bibleHelpers from './bibleHelpers';
 import * as LoadHelpers from "./LoadHelpers";
+import * as FileConversionHelpers from "./FileConversionHelpers";
 
 /**
  * Prompts the user to enter a location/name to save the usfm project.
@@ -69,16 +70,16 @@ export function getHeaderTags(projectSaveLocation) {
   const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
   const bookName = manifest.project.id;
 
-  /**Has fields such as "language_id": "en" and "resource_id": "ult" and 
-   * "direction":"ltr" manifest.resource is for target id which is 
+  /**Has fields such as "language_id": "en" and "resource_id": "ult" and
+   * "direction":"ltr" manifest.resource is for target id which is
    * "Translation Id" and name which contains "nickname" */
   let sourceTranslation = manifest.source_translations[0];
   let targetResource = manifest.resource;
-  let resourceName = sourceTranslation && sourceTranslation.language_id && 
+  let resourceName = sourceTranslation && sourceTranslation.language_id &&
       targetResource.id ?
       `${sourceTranslation.language_id.toUpperCase()}_${targetResource.id.toUpperCase()}` :
       'N/A';
-      
+
   /**This will look like: EN_ULB sw_Kiswahili_ltr to be included in the usfm id.
    * This will make it easier to read for tC later on */
   let targetLanguageCode = manifest.target_language ?
@@ -86,11 +87,11 @@ export function getHeaderTags(projectSaveLocation) {
         .split(' ')
         .join('⋅')}_${manifest.target_language.direction}` :
     'N/A';
-   
-  /**Date object when project was las changed in FS */
+
+  /**Date object when project was last changed in FS */
   let lastEdited = fs.statSync(path.join(projectSaveLocation), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
-  let headers = LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 
+  let headers = LoadHelpers.loadFile(path.join(projectSaveLocation, bookName),
     'headers.json');
   headers = headers || [];
   const idHeaderTag = headers.find(({tag}) => tag === 'id');
@@ -104,7 +105,7 @@ export function getHeaderTags(projectSaveLocation) {
     preservedIDTag = ' ' + preservedIDTag.replace(new RegExp(bookNameUppercase, 'i'), '').trim();
   }
 
-  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/ 
+  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
   const id = {
     "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode}${preservedIDTag} ${lastEdited} tc`,
     "tag": "id"
@@ -130,5 +131,78 @@ export function getUsfmExportName(manifest) {
     const bookAbbrv = manifest.project.id;
     const index = BIBLES_ABBRV_INDEX[bookAbbrv];
     return `${index}-${bookAbbrv.toUpperCase()}`;
+  }
+}
+
+/**
+ * reads the header.json for project
+ * @param {String} projectSaveLocation
+ * @param {String} bookName
+ * @return {Object}
+ */
+export function getProjectHeaderData(projectSaveLocation, bookName) {
+  return LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 'headers.json');
+}
+
+/**
+ * saves the header.json for project
+ * @param {String} projectSaveLocation
+ * @param {String} bookName
+ * @param {Array} headers
+ */
+export function saveProjectHeaderData(projectSaveLocation, bookName, headers) {
+  fs.ensureDirSync(path.join(projectSaveLocation, bookName));
+  fs.outputJsonSync(path.join(projectSaveLocation, bookName, 'headers.json'),
+    headers);
+}
+
+/**
+ * search for specific tag in header
+ * @param {Array} headers
+ * @param {String} matchTag - to match
+ * @return {*}
+ */
+export function findUsfmTagInHeader(headers, matchTag) {
+  const matchedHeader = headers.find(({tag}) => tag === matchTag);
+  return matchedHeader;
+}
+
+/**
+ * search for specific tag in header
+ * @param {String} projectSaveLocation
+ * @param {object} manifest
+ */
+export function makeSureUsfm3InHeader(projectSaveLocation, manifest) {
+  let folderForHeader = projectSaveLocation;
+  try {
+    const bookAbbrv = manifest && manifest.project && manifest.project.id;
+    folderForHeader = path.join(projectSaveLocation, bookAbbrv);
+    const headers = getProjectHeaderData(projectSaveLocation, bookAbbrv);
+    if (!headers) {
+      console.log("Empty Project Header at '" + folderForHeader);
+    }
+    let updateHeader = true;
+    const matchedHeader = findUsfmTagInHeader(headers, 'usfm');
+    if (matchedHeader) {
+      if (matchedHeader.content !== '3.0') {
+        matchedHeader.content = '3.0';
+      } else {
+        updateHeader = false;
+      }
+    } else {
+      const usfmTag = {tag: 'usfm', content: '3.0'};
+      if (headers.length < 2) {
+        headers.push(usfmTag);
+      } else {
+        headers.splice(1, 0, usfmTag);
+      }
+    }
+
+    if (updateHeader) {
+      saveProjectHeaderData(projectSaveLocation, bookAbbrv, headers);
+    }
+  } catch (e) {
+    const errorMessage = FileConversionHelpers.getSafeErrorMessage(e, 'Error updating Project Header');
+    console.error("Error updating Project Header at '" + folderForHeader + "' " + errorMessage);
   }
 }

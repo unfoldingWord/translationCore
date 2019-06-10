@@ -1,0 +1,33 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "12tribesofisrael",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλαῖς",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G14270",
+        "G54430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -384,19 +384,32 @@ export const getAlignedText = (verseObjects, wordsToMatch, occurrenceToMatch, is
 };
 
 /**
+ * gets the quote as a string array
+ * @param {Object} contextId
+ * @return {Array}
+ */
+export function getQuoteAsArray(contextId) {
+  let quoteArray = [];
+  if (Array.isArray(contextId.quote)) {
+    for (let i = 0, l = contextId.quote.length; i < l; i++) {
+      const wordItem = contextId.quote[i];
+      quoteArray.push(wordItem.word);
+    }
+  } else {
+    quoteArray = contextId.quote.split(' ');
+  }
+  return quoteArray;
+}
+
+/**
  * get the selected text from the GL resource for this context
- * @param {*} currentProjectToolsSelectedGL 
- * @param {*} contextId 
+ * @param {*} currentProjectToolsSelectedGL
+ * @param {*} contextId
  * @param {*} bibles - list of resources
  * @param {*} currentToolName - such as translationWords
  */
 export function getAlignedGLText(currentProjectToolsSelectedGL, contextId, bibles, currentToolName) {
-console.log("currentProjectToolsSelectedGL: ", currentProjectToolsSelectedGL);
-console.log("contextId: ", contextId);
-console.log("bibles: ", bibles);
-console.log("currentToolName: ", currentToolName);
   const selectedGL = currentProjectToolsSelectedGL[currentToolName];
-console.log("selectedGL: ", selectedGL);
   if (! contextId.quote || ! bibles || ! bibles[selectedGL] || ! Object.keys(bibles[selectedGL]).length)
     return contextId.quote;
   const sortedBibleIds = Object.keys(bibles[selectedGL]).sort(bibleIdSort);
@@ -404,7 +417,7 @@ console.log("selectedGL: ", selectedGL);
     const bible = bibles[selectedGL][sortedBibleIds[i]];
     if(bible && bible[contextId.reference.chapter] && bible[contextId.reference.chapter][contextId.reference.verse] && bible[contextId.reference.chapter][contextId.reference.verse].verseObjects) {
       const verseObjects = bible[contextId.reference.chapter][contextId.reference.verse].verseObjects;
-      const wordsToMatch = contextId.quote.split(' ');
+      const wordsToMatch = getQuoteAsArray(contextId);
       const alignedText = getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
       if (alignedText)
         return alignedText;

@@ -1,4 +1,7 @@
 /* eslint-env jest */
+
+// ResourcesHelpers tests with mocking
+
 import ResourceAPI from "../src/js/helpers/ResourceAPI";
 import path from 'path';
 import ospath from "ospath";
@@ -8,9 +11,13 @@ import configureMockStore from "redux-mock-store";
 import _ from "lodash";
 // helpers
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
+import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
+import {TC_VERSION} from "../src/js/helpers/ResourcesHelpers";
+import {USER_RESOURCES_PATH} from "../src/js/helpers/ResourcesHelpers";
 
 jest.mock('fs-extra');
 jest.mock('adm-zip');
+
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -68,7 +75,124 @@ describe('ResourcesHelpers.getResourcesNeededByTool', () => {
 });
 
 describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
+  beforeAll(() => {
+    fs.__resetMockFS();
+    loadMockFsWithProjectAndResources();
+    fs.ensureDirSync(path.join(RESOURCE_PATH, 'en'));
+  });
+
   it('getAvailableScripturePaneSelections() should work', () => {
+    const bookId = 'gal';
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {
+          targetLanguage: {
+            targetBible: {
+              manifest: {}
+            }
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: {
+          reference: {
+            bookId: bookId,
+            chapter:1
+          }
+        }
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: "targetBible",
+                languageId: "targetLanguage"
+              }, {
+                bibleId: "ugnt",
+                languageId: "originalLanguage"
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      }
+    });
+    const resourceList = [];
+
+    // when
+    store.dispatch(
+      ResourcesHelpers.getAvailableScripturePaneSelections(resourceList)
+    );
+
+    // then
+    expect(cleanupResources(resourceList)).toMatchSnapshot();
+  });
+
+  it('getAvailableScripturePaneSelections() should work OT', () => {
+    const bookId = 'jol';
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {
+          targetLanguage: {
+            targetBible: {
+              manifest: {}
+            }
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: {
+          reference: {
+            bookId: bookId,
+            chapter:1
+          }
+        }
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: "targetBible",
+                languageId: "targetLanguage"
+              }, {
+                bibleId: "uhb",
+                languageId: "originalLanguage"
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      }
+    });
+
+    const resourceList = [];
+
+    // when
+    store.dispatch(
+      ResourcesHelpers.getAvailableScripturePaneSelections(resourceList)
+    );
+
+    // then
+    expect(cleanupResources(resourceList)).toMatchSnapshot();
+  });
+
+  it('getAvailableScripturePaneSelections() should work without targetBible loaded into resources', () => {
     const bookId = 'gal';
     const store =  mockStore({
       resourcesReducer: {
@@ -106,7 +230,6 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
         }
       }
     });
-    loadMockFsWithProjectAndResources();
     const resourceList = [];
 
     // when
@@ -191,6 +314,198 @@ describe('ResourcesHelpers.getMissingResources', () => {
       verifyLexicons(expectedLexicons, lexiconResourcePath);
     });
   });
+ });
+
+describe('ResourcesHelpers.areResourcesNewer()', () => {
+
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+
+  test('same date should return false', () => {
+    // given
+    const bundledDate = "2019-04-02T19:10:02.492Z";
+    const userDate = "2019-04-02T19:10:02.492Z";
+    const expectedNewer = false;
+    loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+    // when
+    const results = ResourcesHelpers.areResourcesNewer();
+
+    // then
+    expect(results).toEqual(expectedNewer);
+  });
+
+  test('newer bundled date should return true', () => {
+    // given
+    const bundledDate = "2019-04-02T19:10:02.492Z";
+    const userDate = "2018-04-02T19:10:02.492Z";
+    const expectedNewer = true;
+    loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+    // when
+    const results = ResourcesHelpers.areResourcesNewer();
+
+    // then
+    expect(results).toEqual(expectedNewer);
+  });
+
+  test('newer user date should return false', () => {
+    // given
+    const bundledDate = "2019-04-02T19:10:02.492Z";
+    const userDate = "2019-08-02T19:10:02.492Z";
+    const expectedNewer = false;
+    loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+    // when
+    const results = ResourcesHelpers.areResourcesNewer();
+
+    // then
+    expect(results).toEqual(expectedNewer);
+  });
+
+  test('missing user resource manifest should return true', () => {
+    // given
+    const bundledDate = "2019-04-02T19:10:02.492Z";
+    const userDate = null;
+    const expectedNewer = true;
+    loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+    // when
+    const results = ResourcesHelpers.areResourcesNewer();
+
+    // then
+    expect(results).toEqual(expectedNewer);
+  });
+
+  test('missing bundled resource manifest should return false', () => {
+    // given
+    const bundledDate = null;
+    const userDate = "2019-04-02T19:10:02.492Z";
+    const expectedNewer = false;
+    loadSourceContentUpdaterManifests(bundledDate, userDate);
+
+    // when
+    const results = ResourcesHelpers.areResourcesNewer();
+
+    // then
+    expect(results).toEqual(expectedNewer);
+  });
+
+  test('same date, but missing version should return true', () => {
+    // given
+    const bundledDate = "2019-04-02T19:10:02.492Z";
+    const userDate = "2019-04-02T19:10:02.492Z";
+    const expectedNewer = true;
+    const appVersion = null;
+    loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion);
+
+    // when
+    const results = ResourcesHelpers.areResourcesNewer();
+
+    // then
+    expect(results).toEqual(expectedNewer);
+  });
+
+  test('same date, but different version should return true', () => {
+    // given
+    const bundledDate = "2019-04-02T19:10:02.492Z";
+    const userDate = "2019-04-02T19:10:02.492Z";
+    const expectedNewer = true;
+    const appVersion = "1.1.0";
+    loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion);
+
+    // when
+    const results = ResourcesHelpers.areResourcesNewer();
+
+    // then
+    expect(results).toEqual(expectedNewer);
+  });
+});
+
+describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
+
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+
+  test('should update date and app version if manifest missing', () => {
+    // given
+    const dateStr = '1997-12-17T08:24:00.000Z';
+    const manifestPath = path.join(USER_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    expect(fs.existsSync(manifestPath)).not.toBeTruthy();
+
+    // when
+    ResourcesHelpers.updateSourceContentUpdaterManifest(dateStr);
+
+    // then
+    const manifest = fs.readJSONSync(manifestPath);
+    expect(manifest[TC_VERSION]).toEqual(APP_VERSION);
+    expect(manifest.modified).toEqual(dateStr);
+  });
+
+  test('should update date if manifest present', () => {
+    // given
+    const dateStr = '1997-12-17T08:24:00.000Z';
+    const userDate = "2019-04-02T19:10:02.492Z";
+    loadSourceContentUpdaterManifests("", userDate);
+    const manifestPath = path.join(USER_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    expect(fs.existsSync(manifestPath)).toBeTruthy();
+
+    // when
+    ResourcesHelpers.updateSourceContentUpdaterManifest(dateStr);
+
+    // then
+    const manifest = fs.readJSONSync(manifestPath);
+    expect(manifest[TC_VERSION]).toEqual(APP_VERSION);
+    expect(manifest.modified).toEqual(dateStr);
+  });
+
+  test('should update app version if manifest present', () => {
+    // given
+    const dateStr = '1997-12-17T08:24:00.000Z';
+    const initialAppVersion = "1.0.1";
+    loadSourceContentUpdaterManifests("", dateStr, initialAppVersion);
+    const manifestPath = path.join(USER_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    expect(fs.existsSync(manifestPath)).toBeTruthy();
+
+    // when
+    ResourcesHelpers.updateSourceContentUpdaterManifest(dateStr);
+
+    // then
+    const manifest = fs.readJSONSync(manifestPath);
+    expect(manifest[TC_VERSION]).toEqual(APP_VERSION);
+    expect(manifest.modified).toEqual(dateStr);
+  });
+});
+
+describe('ResourcesHelpers.copySourceContentUpdaterManifest()', () => {
+
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+
+  test('should update app version after copy', () => {
+    // given
+    const dateStr = '1997-12-17T08:24:00.000Z';
+    loadSourceContentUpdaterManifests(dateStr, null, null);
+    const staticManifestPath = path.join(STATIC_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    expect(fs.existsSync(staticManifestPath)).toBeTruthy();
+
+    // when
+    ResourcesHelpers.copySourceContentUpdaterManifest(dateStr);
+
+    // then
+    const manifestPath = path.join(USER_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    const manifest = fs.readJSONSync(manifestPath);
+    expect(manifest[TC_VERSION]).toEqual(APP_VERSION);
+    expect(manifest.modified).toEqual(dateStr);
+  });
 });
 
 describe('ResourcesHelpers.extractZippedBooks', () => {
@@ -236,6 +551,7 @@ function loadMockFsWithProjectAndResources() {
     'en/bibles/ult',
     'en/bibles/ust',
     'grc/bibles/ugnt',
+    'hbo/bibles/uhb',
     'en/translationHelps/translationWords',
     'en/translationHelps/translationAcademy',
     'hi/translationHelps/translationWords'];
@@ -247,6 +563,23 @@ function loadMockFsWithlexicons() {
   const resourcesPath = STATIC_RESOURCES_PATH;
   const copyResourceFiles = ['en/lexicons'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
+}
+
+function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = APP_VERSION) {
+  const bundledResourcesManifestPath = path.join(STATIC_RESOURCES_PATH, "source-content-updater-manifest.json");
+  fs.ensureDirSync(STATIC_RESOURCES_PATH);
+  if (bundledDate) {
+    fs.outputJsonSync(bundledResourcesManifestPath, {modified: bundledDate});
+  }
+  const resourcesManifestPath = path.join(RESOURCE_PATH, "source-content-updater-manifest.json");
+  fs.ensureDirSync(RESOURCE_PATH);
+  if (userDate) {
+    const manifest = {modified: userDate};
+    if (typeof appVersion === 'string') {
+      manifest[TC_VERSION] = appVersion; // add app version to resource
+    }
+    fs.outputJsonSync(resourcesManifestPath, manifest);
+  }
 }
 
 function verifyLexicons(expectedLexicons, lexiconResourcePath) {

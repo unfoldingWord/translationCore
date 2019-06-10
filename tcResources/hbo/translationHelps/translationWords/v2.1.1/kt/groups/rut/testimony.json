@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "testimony",
+      "quote": "עָ֣נָה",
+      "strong": [
+        "H6030b"
+      ],
+      "occurrence": 1
+    }
+  }
+]

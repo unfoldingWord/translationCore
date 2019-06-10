@@ -1,0 +1,147 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G30560",
+        "G35880",
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G30560",
+        "G35880",
+        "G02250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": [
+        {
+          "word": "ἱερὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "γράμματα",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G24130",
+        "G11210"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": "Γραφὴ",
+      "strong": [
+        "G11240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": "λόγον",
+      "strong": [
+        "G30560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

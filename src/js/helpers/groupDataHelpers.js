@@ -63,3 +63,52 @@ export const generateChapterGroupIndex = (translate, numChapters = 150) => {
     };
   });
 };
+
+/**
+ * Reads the latest unique checks from the directory.
+ * @param {string} dir - directory where check data is saved.
+ * @return {array} - array of the most recent check data
+ */
+export function readLatestChecks(dir) {
+  let checks = [];
+  if (!fs.existsSync(dir)) return [];
+
+  // list sorted json files - most recents are in front of list
+  const files = fs.readdirSync(dir).filter(file => {
+    return path.extname(file) === ".json";
+  }).sort().reverse();
+
+  for(let i = 0, len = files.length; i < len; i ++) {
+    const checkPath = path.join(dir, files[i]);
+    try {
+      const data = fs.readJsonSync(checkPath);
+      if(isCheckUnique(data, checks)) {
+        checks.push(data);
+      }
+    } catch (err) {
+      console.error(`Check data could not be loaded from ${checkPath}`, err);
+    }
+  }
+
+  return checks;
+}
+
+/**
+ * Evaluates whether a check has already been loaded
+ * @param {object} checkData - the json check data
+ * @param {array} loadedChecks - an array of loaded unique checks
+ * @returns {boolean} - true if the check has not been loaded yet.
+ */
+export function isCheckUnique(checkData, loadedChecks) {
+  const checkContextId = checkData.contextId;
+  if (checkContextId) {
+    for (const check of loadedChecks) {
+      if (check.contextId && check.contextId.groupId === checkContextId.groupId
+        && check.contextId.quote === checkContextId.quote
+        && check.contextId.occurrence === checkContextId.occurrence) {
+          return false;
+      }
+    }
+  }
+  return true;
+}

@@ -47,16 +47,6 @@ class ToolContainer extends Component {
     this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
-  componentWillUnmount () {
-    const { toolApi, supportingToolApis } = this.props;
-    for (const key of Object.keys(supportingToolApis)) {
-      supportingToolApis[key].triggerWillDisconnect();
-    }
-    if (toolApi) {
-      toolApi.triggerWillDisconnect();
-    }
-  }
-
   componentWillReceiveProps (nextProps) {
     const { contextId: nextContext, toolApi, supportingToolApis, selectedToolName } = nextProps;
     // if contextId does not match current tool, then remove contextId

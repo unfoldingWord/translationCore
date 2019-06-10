@@ -86,4 +86,41 @@ describe('Test LanguageHelpers',()=>{
     expect(dupsFound).toBeLessThan(1);
     expect(sorted.length).toBeGreaterThan(2000);
   });
+
+  describe('getLanguageByNameSelection()',()=>{
+    test('Nepali ne should succeed', () => {
+      const code = "ne";
+      const name = "Nepali";
+      let foundLanguage = LanguageHelpers.getLanguageByNameSelection(name, code);
+
+      expect(foundLanguage.name).toEqual(name);
+      expect(foundLanguage.code).toEqual(code);
+    });
+
+    test('Nepali npi should succeed', () => {
+      const code = "npi";
+      const name = "Nepali";
+      let foundLanguage = LanguageHelpers.getLanguageByNameSelection(name, code);
+
+      expect(foundLanguage.name).toEqual(name);
+      expect(foundLanguage.code).toEqual(code);
+    });
+
+    test('"Nepali [ne]" should succeed', () => {
+      const expectedCode = "ne";
+      const name = "Nepali [ne]";
+      let foundLanguage = LanguageHelpers.getLanguageByNameSelection(name);
+
+      expect(foundLanguage.code).toEqual(expectedCode);
+    });
+
+    test('"Nepali [npi]" should succeed', () => {
+      const expectedCode = "npi";
+      const name = "Nepali [npi]";
+      let foundLanguage = LanguageHelpers.getLanguageByNameSelection(name);
+
+      expect(foundLanguage.code).toEqual(expectedCode);
+    });
+
+  });
 });

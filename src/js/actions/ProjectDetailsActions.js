@@ -7,6 +7,7 @@ import ospath from 'ospath';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories, getCurrentProjectToolsSelectedGL} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
+import * as ResourcesActions from './ResourcesActions';
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
@@ -99,6 +100,9 @@ export function setProjectToolGL(toolName, selectedGL) {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
+
+    dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
+
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
       toolName,
@@ -333,7 +337,7 @@ export function updateProjectNameIfNecessaryAndDoPrompting() {
     const renamingResults = {};
     await dispatch(updateProjectNameIfNecessary(renamingResults));
     if (renamingResults.repoRenamed) {
-      dispatch(doRenamePrompting());
+      await dispatch(doRenamePrompting());
     }
   });
 }

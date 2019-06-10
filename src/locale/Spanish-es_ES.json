@@ -148,7 +148,7 @@
     "import_local_project": "Importar un Proyecto Local",
     "import_online_project": "Importar un Proyecto Online",
     "searching_alert": "Buscando. Por favor espere...",
-    "books_available": "En esta versión de ${app}, la herramienta translationWords y la herramienta Word Alignment son compatibles con los proyectos del Nuevo Testamento.",
+    "books_available": "En esta versión de ${app}, el translationWords herramienta de apoyo a proyectos en el Nuevo Testamento y la Palabra de la herramienta de Alineación apoya proyectos de toda la Biblia.",
     "enter_url": "Escriba la URL",
     "or": "O",
     "language_code": "Código De Idioma",
@@ -363,7 +363,10 @@
     "verse_edit": "Edición del verso",
     "comments": "Comentarios",
     "menu": "Menú",
-    "no_gl_available": "Ninguno disponible"
+    "no_gl_available": "Ninguno disponible",
+    "invalid_checks": "Revisiones invalidadas",
+    "invalid_verse_alignments": "Versículos con alineaciones invalidadas.",
+    "invalidation_checking": "Haciendo Chequeos de Invalidación"
   },
   "buttons": {
     "back_button": "Volver",

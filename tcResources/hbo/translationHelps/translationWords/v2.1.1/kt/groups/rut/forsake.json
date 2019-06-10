@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "forsake",
+      "quote": "עָזַ֣ב",
+      "strong": [
+        "H5800a"
+      ],
+      "occurrence": 1
+    }
+  }
+]

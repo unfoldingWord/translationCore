@@ -1,0 +1,69 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "holyplace",
+      "quote": [
+        {
+          "word": "τόπου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁγίου",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G51170",
+        "G35880",
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "holyplace",
+      "quote": [
+        {
+          "word": "ἅγιον",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπον",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G00400",
+        "G51170"
+      ],
+      "occurrence": 1
+    }
+  }
+]

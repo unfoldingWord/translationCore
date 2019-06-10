@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "winnow",
+      "quote": "זֹרֶ֛ה",
+      "strong": [
+        "H2219"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -2,7 +2,6 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 jest.mock('fs-extra');
-jest.mock('isomorphic-git');
 
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -46,7 +45,7 @@ jest.mock('../ProjectImportFilesystemActions', () => ({
 }));
 jest.mock('../../MyProjects/MyProjectsActions', () => ({ getMyProjects: () => ({ type: 'GET_MY_PROJECTS' }) }));
 jest.mock('../../MyProjects/ProjectLoadingActions', () => ({
-  clearLastProject: () => ({ type: 'CLEAR_LAST_PROJECT' }),
+  closeProject: () => ({ type: 'CLEAR_LAST_PROJECT' }),
   displayTools: jest.fn(() => ({ type: 'DISPLAY_TOOLS' }))
 }));
 jest.mock('../../../helpers/TargetLanguageHelpers', ()=> ({

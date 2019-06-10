@@ -1,0 +1,246 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητὰς",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G14270",
+        "G31010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστόλων",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G14270",
+        "G06520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα",
+      "strong": [
+        "G14270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταῖς",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G14270",
+        "G31010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητὰς",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G35880",
+        "G14270",
+        "G31010"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα",
+      "strong": [
+        "G14270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα",
+      "strong": [
+        "G14270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": "δώδεκα",
+      "strong": [
+        "G14270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "thetwelve",
+      "quote": [
+        {
+          "word": "ἕνδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταὶ",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G17330",
+        "G31010"
+      ],
+      "occurrence": 1
+    }
+  }
+]

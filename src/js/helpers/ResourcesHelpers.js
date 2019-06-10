@@ -18,11 +18,14 @@ import {
   generateChapterGroupData,
   generateChapterGroupIndex
 } from "./groupDataHelpers";
+import {APP_VERSION} from "../containers/home/HomeContainer";
+import {generateTimestamp} from "./TimestampGenerator";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
   "resources");
 export const STATIC_RESOURCES_PATH = path.join(__dirname,
   "../../../tcResources");
+export const TC_VERSION = "tc_version";
 
 /**
  * Copies all of a tool's group data from the global resources into a project.
@@ -35,47 +38,43 @@ export const STATIC_RESOURCES_PATH = path.join(__dirname,
 export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
+  if (toolName === "translationNotes")
+    gatewayLanguage = "en";
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
-
   if (helpDir) {
-    // list help categories
-    const categories = fs.readdirSync(helpDir).filter(file => {
-      return fs.lstatSync(path.join(helpDir, file)).isDirectory();
-    });
-
-    if(categories.length === 0) {
-      throw new Error(`Missing translationHelp categories for ${toolName}`);
+    project.resetCategoryGroupIds(toolName);
+    if (project.hasNewGroupsData(toolName)) {
+      project.resetLoadedCategories(toolName);
     }
-
-    for (const category of categories) {
-      // TRICKY: some helps do not have groups nested under categories
+    const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+    const categoryKeys = Object.keys(categories);
+    for (let i = 0, l = categoryKeys.length; i < l; i++) {
+      const category = categoryKeys[i];
       const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
       const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
-
       let groupsDir = resourceCategoryDir;
-      if(!fs.pathExistsSync(resourceCategoryDir)) {
+      if (!fs.pathExistsSync(resourceCategoryDir)) {
         groupsDir = altResourceCategoryDir;
       }
-
-      // copy un-loaded category group data into project
-      if(fs.pathExistsSync(groupsDir)) {
-        const files = fs.readdirSync(groupsDir);
-        const groups = [];
-        for (const f of files) {
-          if(path.extname(f).toLowerCase() === ".json") {
-            groups.push(path.basename(f.toLowerCase(), ".json"));
-            const dataPath = path.join(groupsDir, f);
-            project.importCategoryGroupData(toolName, dataPath);
-          }
-        }
-        // loading complete
-        // TODO: I don't think this is necessary anymore
+      for (let j = 0, l2 = categories[category].length; j < l2; j++) {
+        const subCategory = categories[category][j];
+        const dataPath = path.join(groupsDir, subCategory + '.json');
+        project.importCategoryGroupData(toolName, dataPath, category);
+      }
+      // TRICKY: gives the tool an index of which groups belong to which category
+      project.setCategoryGroupIds(toolName, category, categories[category]);
+      // loading complete
+      if (toolName === "translationWords") {
+        // for tW we don't select by subcategories
         project.setCategoryLoaded(toolName, category);
-
-        // TRICKY: gives the tool an index of which groups belong to which category
-        project.setCategoryGroupIds(toolName, category, groups);
+      } else {
+        for (let k = 0, l3 = categories[category].length; k < l3; k++) {
+          const subCategory = categories[category][k];
+          project.setCategoryLoaded(toolName, subCategory);
+        }
       }
     }
+    project.removeStaleCategoriesFromCurrent(toolName, categories);
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
@@ -94,6 +93,58 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
 }
 
 /**
+ * get available categories
+ * @param {String} gatewayLanguage
+ * @param {String} toolName
+ * @param {String} projectDir
+ */
+export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir) {
+  const categoriesObj = {};
+  const project = new ProjectAPI(projectDir);
+  const resources = ResourceAPI.default();
+  if (toolName === 'translationWords'){
+    const manifest = project.getManifest();
+    const bookId = manifest && manifest.project && manifest.project.id;
+    const {languageId} = BibleHelpers.getOLforBook(bookId);
+    gatewayLanguage = languageId;
+  }
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+  // list help categories
+
+  if (helpDir) {
+    const categories = fs.readdirSync(helpDir).filter(file => {
+      return fs.lstatSync(path.join(helpDir, file)).isDirectory();
+    });
+
+    if (categories.length === 0) {
+      throw new Error(`Missing translationHelp categories for ${toolName}`);
+    }
+    for (let category of categories) {
+      const subCategories = [];
+      // TRICKY: some helps do not have groups nested under categories
+      const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
+      const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
+      let groupsDir = resourceCategoryDir;
+      if (!fs.pathExistsSync(resourceCategoryDir)) {
+        groupsDir = altResourceCategoryDir;
+      }
+      // copy un-loaded category group data into project
+      if (fs.pathExistsSync(groupsDir)) {
+        const files = fs.readdirSync(groupsDir);
+        for (const f of files) {
+          if (path.extname(f).toLowerCase() === ".json") {
+            subCategories.push(path.basename(f.toLowerCase(), ".json"));
+          }
+        }
+      }
+      categoriesObj[category] = subCategories;
+    }
+  }
+  return categoriesObj;
+}
+
+
+/**
  * Configures the project have selected the default categories.
  * If category selections already exist this method will be a no-op.
  * @param {string} gatewayLanguage - the gateway language code
@@ -104,13 +155,22 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
-
-  if(helpDir && project.getSelectedCategories(toolName).length === 0) {
-    const categories = fs.readdirSync(helpDir).filter(file => {
-      return fs.lstatSync(path.join(helpDir, file)).isDirectory();
-    });
-    if(categories.length > 0) {
-      project.setSelectedCategories(toolName, categories);
+  let categories = [];
+  if (helpDir && project.getSelectedCategories(toolName).length === 0) {
+    if (toolName === "translationWords") { // for tW we select by parent categories
+      const parentCategories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+      project.setSelectedCategories(toolName, Object.keys(parentCategories));
+    } else {
+      let parentCategories = fs.readdirSync(helpDir).filter(file => {
+        return fs.lstatSync(path.join(helpDir, file)).isDirectory();
+      });
+      for (let i = 0, l = parentCategories.length; i < l; i++) {
+        const subCategory = parentCategories[i];
+        categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
+      }
+      if (categories.length > 0) {
+        project.setSelectedCategories(toolName, categories);
+      }
     }
   }
 }
@@ -146,9 +206,9 @@ export function loadProjectGroupIndex(
   if (helpDir) {
     // load indices
     const indices = [];
-    const categories = project.getSelectedCategories(toolName);
-    for (const category of categories) {
-      const categoryIndex = path.join(helpDir, category, "index.json");
+    const categories = project.getSelectedCategories(toolName, true);
+    for (const categoryName in categories) {
+      const categoryIndex = path.join(helpDir, categoryName, "index.json");
       if (fs.lstatSync(categoryIndex).isFile()) {
         try {
           indices.push.apply(indices, fs.readJsonSync(categoryIndex));
@@ -179,16 +239,65 @@ export const getResourcesFromStaticPackage = (force) => {
 };
 
 /**
+ * makes sure the source-content-updater-manifest.json has latest time and tCore version
+ * @param dateStr - optional date string to use, if not given with use current
+ */
+export const updateSourceContentUpdaterManifest = (dateStr = null) => {
+    const manifest = {
+      modified: generateTimestamp(dateStr),
+      [TC_VERSION]: APP_VERSION
+    };
+    const destinationPath = path.join(USER_RESOURCES_PATH,
+      "source-content-updater-manifest.json");
+    fs.ensureDirSync(USER_RESOURCES_PATH);
+    fs.outputJsonSync(destinationPath, manifest);
+};
+
+/**
  * copies the source-content-updater-manifest.json from tc to the users folder
  */
 export const copySourceContentUpdaterManifest = () => {
   const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
     "source-content-updater-manifest.json");
   if (fs.existsSync(sourceContentUpdaterManifestPath)) {
+    const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
+    bundledManifest[TC_VERSION] = APP_VERSION; // add app version to resource
     const destinationPath = path.join(USER_RESOURCES_PATH,
       "source-content-updater-manifest.json");
-    fs.copySync(sourceContentUpdaterManifestPath, destinationPath);
+    fs.ensureDirSync(USER_RESOURCES_PATH);
+    fs.outputJsonSync(destinationPath, bundledManifest);
   }
+};
+
+/**
+ * checks if bundled resources are newer than installed resources
+ * @return {boolean} - true if bundled resources are newer
+ */
+export const areResourcesNewer = () => {
+  const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
+    "source-content-updater-manifest.json");
+  if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
+    return true;
+  }
+
+  const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
+    "source-content-updater-manifest.json");
+  if (!fs.existsSync(sourceContentUpdaterManifestPath)) {
+    console.error("sourceContentUpdaterManifest does not exist");
+    return false;
+  }
+  const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
+  const bundledModified = bundledManifest && bundledManifest.modified;
+  const userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
+  const userModified = userManifest && userManifest.modified;
+
+  const tCoreVersion = userManifest && userManifest[TC_VERSION];
+  if (tCoreVersion !== APP_VERSION) { // TRICKY: for safety we refresh on any difference of version dates in case resources not compatible with newer or older version of tCore
+    return true;
+  }
+
+  const newer = bundledModified > userModified;
+  return newer;
 };
 
 /**
@@ -424,8 +533,20 @@ export function getAvailableScripturePaneSelections(resourceList) {
     try {
       resourceList.splice(0, resourceList.length); // remove any pre-existing elements
       const contextId = getContext(getState());
+      const {resourcesReducer: {bibles}} = getState();
       const bookId = contextId && contextId.reference.bookId;
       const languagesIds = getLanguageIdsFromResourceFolder(bookId);
+
+      // add target Bible if in resource reducer
+      if (bibles && bibles["targetLanguage"] && bibles["targetLanguage"]["targetBible"]) {
+        const resource = {
+          bookId,
+          bibleId: "targetBible",
+          languageId: "targetLanguage",
+          manifest: bibles["targetLanguage"]["targetBible"].manifest
+        };
+        resourceList.push(resource);
+      }
 
       // load source bibles
       languagesIds.forEach((languageId) => {
@@ -444,12 +565,16 @@ export function getAvailableScripturePaneSelections(resourceList) {
                 const bookExists = fs.existsSync(
                   path.join(bibleLatestVersion, bookId, "1.json"));
                 if (manifestExists && bookExists) {
+                  let languageId_ = languageId;
+                  if ((languageId.toLowerCase() === 'grc') || (languageId.toLowerCase() === 'hbo')) {
+                    languageId_ = 'originalLanguage';
+                  }
                   const manifest = fs.readJsonSync(pathToBibleManifestFile);
                   if (Object.keys(manifest).length) {
                     const resource = {
                       bookId,
                       bibleId,
-                      languageId,
+                      languageId: languageId_,
                       manifest
                     };
                     resourceList.push(resource);

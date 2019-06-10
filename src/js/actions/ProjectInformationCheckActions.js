@@ -6,7 +6,7 @@ import path from 'path-extra';
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
-
+import {delay} from "../helpers/bodyUIHelpers";
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
@@ -17,6 +17,7 @@ import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
 import {getTranslate} from '../selectors';
 import BooksOfBible from '../../../tcResources/books';
+import { closeProject } from "./MyProjects/ProjectLoadingActions";
 
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
@@ -101,6 +102,11 @@ export function validate(results = {}) {
  */
 export function finalize() {
   return (async (dispatch, getState) => {
+    console.log('finalize()');
+    const translate = getTranslate(getState());
+    dispatch(AlertModalActions.openAlertDialog(translate("projects.preparing_project_alert"), true));
+    await delay(200);
+
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
         dispatch(ProjectDetailsActions.updateProjectTargetLanguageBookFolderName());
@@ -108,10 +114,11 @@ export function finalize() {
         dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
         dispatch(ProjectImportStepperActions.updateStepperIndex());
         dispatch(MissingVersesActions.validate());
+        dispatch(AlertModalActions.closeAlertDialog());
       } catch (error) {
         dispatch(AlertModalActions.openAlertDialog(error));
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-        dispatch(ProjectLoadingActions.clearLastProject());
+        dispatch(closeProject());
       }
     }
   });
@@ -480,9 +487,10 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false});
-      dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()).then(() => {
-        dispatch(MyProjectsActions.getMyProjects());
-      });
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting());
+      // TRICKY: close the project so that changes can be re-loaded by the tools.
+      dispatch(closeProject());
+      dispatch(MyProjectsActions.getMyProjects());
     }
   });
 }

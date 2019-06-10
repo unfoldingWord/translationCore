@@ -45,14 +45,17 @@ export const localImport = () => {
       selectedProjectFilename,
       sourceProjectPath
     } = getState().localImportReducer;
+    console.log("localImport() - importing project: " + sourceProjectPath);
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
 
     deleteImportsFolder();
     try {
       // convert file to tC acceptable project format
+      console.log("localImport() - converting project");
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
-      migrateProject(importProjectPath, null, getUsername(getState()));
+      await migrateProject(importProjectPath, null, getUsername(getState()));
+      console.log("localImport() - start project validation");
       dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validateProject(importProjectPath));
       const manifest = getProjectManifest(getState());
@@ -60,10 +63,12 @@ export const localImport = () => {
       ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
       if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
         dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
+        console.log("localImport() - generate bible from path: " + updatedImportPath);
         TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await delay(200);
         dispatch(AlertModalActions.closeAlertDialog());
+        console.log("localImport() - validate project");
         await dispatch(ProjectValidationActions.validateProject(updatedImportPath));
       }
       await delay(200); // to make sure project details have been saved
@@ -92,18 +97,20 @@ export const localImport = () => {
         // TODO: refactor this localImport method to remove project opening logic so we are not duplicating logic.
 
         const finalProjectPath = getProjectSaveLocation(getState());
+        console.log("localImport() - project import complete: " + finalProjectPath);
         await dispatch(openProject(path.basename(finalProjectPath), true));
         dispatch(AlertModalActions.closeAlertDialog());
         return;
       }
     } catch (error) { // Catch all errors in nested functions above
+      console.log("localImport() - ERROR:", error);
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.local_import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
     }
     // Either import was canceled or error occurred. We clean up here.
     // clear last project must be called before any other action.
     // to avoid triggering auto-saving.
-    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(ProjectLoadingActions.closeProject());
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     // remove failed project import
     const projectName = getState().localImportReducer.selectedProjectFilename;

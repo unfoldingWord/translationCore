@@ -1,0 +1,33 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "cornerstone",
+      "quote": [
+        {
+          "word": "κεφαλὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γωνίας",
+          "occurrence": 1
+        }
+      ],
+      "strong": [
+        "G27760",
+        "G11370"
+      ],
+      "occurrence": 1
+    }
+  }
+]

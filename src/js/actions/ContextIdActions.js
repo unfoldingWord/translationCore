@@ -10,7 +10,13 @@ import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpe
 // actions
 import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
 import { saveContextId } from '../helpers/contextIdHelpers';
-import { getSelectedToolName, getGroupsIndex, getGroupsData } from "../selectors";
+import {
+  getSelectedToolName,
+  getGroupsIndex,
+  getGroupsData,
+  getProjectSaveLocation
+} from "../selectors";
+import Repo from "../helpers/Repo";
 
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
@@ -32,7 +38,7 @@ function loadCheckData(dispatch) {
  * @return {object} New state for contextId reducer.
  */
 export const changeCurrentContextId = contextId => {
-  return ((dispatch, getState) => {
+  return async (dispatch, getState) => {
     dispatch({
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
@@ -42,7 +48,23 @@ export const changeCurrentContextId = contextId => {
       let state = getState();
       saveContextId(state, contextId);
     }
-  });
+    // commit project changes
+    const projectDir = getProjectSaveLocation(getState());
+    try {
+      try {
+        console.log("changeCurrentContextId() - setting new contextId to: " + JSON.stringify(contextId));
+      } catch(e) { console.log("changeCurrentContextId() - setting new contextId") }
+      const repo = await Repo.open(projectDir, getState().loginReducer.userdata);
+      const {reference: {bookId, chapter, verse}} = contextId;
+      const refStr = `${bookId} ${chapter}:${verse}`;
+      const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
+      if (!saveStarted) {
+        console.log(`Saving already running, skipping save after ${refStr}`);
+      }
+    } catch(e) {
+      console.error(`Failed to auto save`, contextId, e);
+    }
+  };
 };
 /**
  * @description this action changes the contextId to the first check.

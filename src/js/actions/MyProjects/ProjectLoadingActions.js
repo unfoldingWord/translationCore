@@ -6,23 +6,33 @@ import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
-import {openAlertDialog} from '../AlertModalActions';
+import {
+  openAlertDialog,
+  openOptionDialog,
+  closeAlertDialog
+} from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
+import {openSoftwareUpdate} from "../SoftwareUpdateActions";
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import {
   getActiveLocaleLanguage,
   getProjectManifest,
-  getProjectSaveLocation,
-  getSourceBook,
+  getProjectSaveLocation, getSelectedToolApi,
+  getSourceBook, getSupportingToolApis,
   getTargetBook,
   getToolGatewayLanguage,
   getTools,
   getTranslate,
   getUsername
 } from "../../selectors";
-import {isProjectSupported} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {
+  isProjectSupported,
+  tc_MIN_COMPATIBLE_VERSION_KEY,
+  tc_EDIT_VERSION_KEY,
+  tc_MIN_VERSION_ERROR
+} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
   loadSourceBookTranslations,
   loadTargetLanguageBook
@@ -33,6 +43,8 @@ import {
   copyGroupDataToProject,
   setDefaultProjectCategories
 } from "../../helpers/ResourcesHelpers";
+import * as BibleHelpers from "../../helpers/bibleHelpers";
+import {APP_VERSION, MIN_COMPATIBLE_VERSION} from "../../containers/home/HomeContainer";
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -44,6 +56,41 @@ function delay(ms) {
 }
 
 /**
+ * show Invalid Version Error
+ * @return {Function}
+ */
+export const showInvalidVersionError = () => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const cancelText = translate("buttons.cancel_button");
+    const upgradeText = translate("buttons.update");
+    dispatch(openOptionDialog(translate("project_validation.newer_project"),
+      (result) => {
+        dispatch(closeAlertDialog());
+        if (result === upgradeText) {
+          dispatch(openSoftwareUpdate());
+        }
+      }, cancelText, upgradeText));
+  };
+};
+
+/**
+ * make sure that the edit versions and minimum compatible versions are up to date in manifest
+ * @return {Function}
+ */
+export const updateProjectVersion = () => {
+  return async (dispatch, getState) => {
+    const manifest = getProjectManifest(getState());
+    const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
+    const editVersion = manifest[tc_EDIT_VERSION_KEY];
+    if ((editVersion !== APP_VERSION) || (minVersion !== MIN_COMPATIBLE_VERSION)) {
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_EDIT_VERSION_KEY, APP_VERSION));
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_MIN_COMPATIBLE_VERSION_KEY, MIN_COMPATIBLE_VERSION));
+    }
+  };
+};
+
+/**
  * This thunk opens a project and prepares it for use in tools.
  * @param {string} name -  the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
@@ -52,6 +99,7 @@ export const openProject = (name, skipValidation=false) => {
   return async (dispatch, getState) => {
     const projectDir = path.join(PROJECTS_PATH, name);
     const translate = getTranslate(getState());
+    console.log("openProject() projectDir=" + projectDir);
 
     try {
       dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
@@ -63,7 +111,7 @@ export const openProject = (name, skipValidation=false) => {
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
       await isProjectSupported(projectDir, translate);
-      migrateProject(projectDir, null, getUsername(getState()));
+      await migrateProject(projectDir, null, getUsername(getState()));
 
       // TODO: this is a temporary hack. Eventually we will always validate the project
       // but we need to refactored the online and local import functions first so there is no duplication.
@@ -73,8 +121,10 @@ export const openProject = (name, skipValidation=false) => {
 
       // TRICKY: validation may have changed the project path
       const validProjectDir = getProjectSaveLocation(getState());
+      console.log("openProject() validProjectDir=" + validProjectDir);
 
       // load target book
+      console.log("openProject() - loading target book");
       dispatch(loadTargetLanguageBook());
 
       // connect the tools
@@ -82,29 +132,40 @@ export const openProject = (name, skipValidation=false) => {
       const tools = getTools(getState());
       for (const t of tools) {
         // load source book translations
+        console.log(`openProject() - loading source book ${manifest.project.id} into ${t.name}`);
         await dispatch(loadSourceBookTranslations(manifest.project.id, t.name));
 
         // copy group data
         // TRICKY: group data must be tied to the original language.
-        copyGroupDataToProject("grc", t.name, validProjectDir);
+        console.log("openProject() - copy group data");
+        const {languageId} = BibleHelpers.getOLforBook(manifest.project.id);
+        copyGroupDataToProject(languageId, t.name, validProjectDir);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
         setDefaultProjectCategories(language, t.name, validProjectDir);
 
         // connect tool api
+        console.log("openProject() - connect tool api");
         const toolProps = makeToolProps(dispatch, getState(), validProjectDir, manifest.project.id);
         t.api.triggerWillConnect(toolProps);
       }
 
       await dispatch(displayTools());
+      dispatch(updateProjectVersion());
+      console.log("openProject() - project opened");
     } catch (e) {
       // TODO: clean this up
-      if (e.type !== 'div') console.warn(e);
+      if (e.type !== 'div') console.warn("openProject() error", e);
+      let message = e.stack ? e.message : e; // if crash dump, need to clean up message so it doesn't crash alert
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
-      dispatch(clearLastProject());
-      dispatch(openAlertDialog(e));
+      dispatch(closeProject());
+      if (message === tc_MIN_VERSION_ERROR) {
+        dispatch(showInvalidVersionError());
+      } else {
+        dispatch(openAlertDialog(message));
+      }
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     }
   };
@@ -216,8 +277,19 @@ export function displayTools() {
  * @description - Wrapper to clear everything in the store that could
  * prevent a new project from loading
  */
-export function clearLastProject() {
-  return (dispatch) => {
+export function closeProject() {
+  return (dispatch, getState) => {
+    // disconnect from the tools
+    const state = getState();
+    const toolApi = getSelectedToolApi(state);
+    const supportingToolApis = getSupportingToolApis(state);
+    for (const key of Object.keys(supportingToolApis)) {
+      supportingToolApis[key].triggerWillDisconnect();
+    }
+    if (toolApi) {
+      toolApi.triggerWillDisconnect();
+    }
+
     /**
      * ATTENTION: THE project details reducer must be reset
      * before any other action being called to avoid
