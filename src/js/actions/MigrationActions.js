@@ -3,7 +3,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
 import {
-  getResourcesFromStaticPackage,
+  copySourceContentUpdaterManifest,
   getMissingResources,
   areResourcesNewer
 } from '../helpers/ResourcesHelpers';
@@ -19,8 +19,10 @@ export function migrateResourcesFolder() {
   return (() => {
     console.log("migrateResourcesFolder");
     if (areResourcesNewer()) {
+      console.log("migrateResourcesFolder: copying newer resources");
       fs.removeSync(USER_RESOURCES_PATH);
-      getResourcesFromStaticPackage();
+      getMissingResources();
+      copySourceContentUpdaterManifest();// Add source-content-updater-manifest.json
     } else {
       getMissingResources();
     }

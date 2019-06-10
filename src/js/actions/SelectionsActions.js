@@ -4,11 +4,12 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import {checkSelectionOccurrences} from 'selections';
 // actions
-import * as AlertModalActions from './AlertModalActions';
+import * as AlertActions from './AlertActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
+import {batchActions} from "redux-batched-actions";
 // helpers
-import {getSelectedToolName, getTranslate, getUsername} from '../selectors';
+import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
@@ -20,13 +21,15 @@ import usfm from "usfm-js";
  * @param {String} userName - The username of the author of the selection.
  * @param {Boolean} invalidated - if true then selection if flagged as invalidated, otherwise it is not flagged as invalidated
  * @param {Object} contextId - optional contextId to use, otherwise will use current
+ * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
  * @return {Object} - An action object, consisting of a timestamp, action type,
  *                    a selection array, and a username.
  */
-export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
+export const changeSelections = (selections, userName, invalidated = false, contextId = null,
+                                 batchGroupData = null) => {
   return ((dispatch, getState) => {
     let state = getState();
-    if (getSelectedToolName(state) === 'translationWords') {
+    if (getSelectedToolName(state) === 'translationWords' || getSelectedToolName(state) === 'translationNotes') {
       const currentContextId = state.contextIdReducer.contextId;
       contextId = contextId || currentContextId; // use current if contextId is not passed
       const {
@@ -43,22 +46,25 @@ export const changeSelections = (selections, userName, invalidated = false, cont
           selections,
           userName
         });
-
         dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
       } else {
         saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
       }
 
-      dispatch({
+      const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
+      actionsBatch.push({
         type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId,
         selections
       });
-      dispatch({
+      actionsBatch.push({
         type: types.SET_INVALIDATION_IN_GROUPDATA,
         contextId,
         boolean: invalidated
       });
+      if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
+        dispatch(batchActions(actionsBatch));
+      }
     }
   });
 };
@@ -69,9 +75,29 @@ export const changeSelections = (selections, userName, invalidated = false, cont
  * @return {Function}
  */
 export const showSelectionsInvalidatedWarning = (callback = null) => {
+  return showInvalidatedWarnings(true, false, callback);
+};
+
+/**
+ * displays warning that selections, alignments, or both have been invalidated
+ * @param {boolean} showSelectionInvalidated
+ * @param {boolean} showAlignmentsInvalidated
+ * @param {Function|Null} callback - optional callback after OK button clicked
+ * @return {Function}
+ */
+export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignmentsInvalidated,
+                                        callback = null) => {
   return (dispatch, getState) => {
+    let message = null;
+    if (showSelectionInvalidated && showAlignmentsInvalidated) {
+      message = 'tools.invalid_verse_alignments_and_selections';
+    } else if (showSelectionInvalidated) {
+      message = 'tools.selections_invalidated';
+    } else { // (showAlignmentsInvalidated)
+      message = 'tools.alignments_reset_wa_tool';
+    }
     const translate = getTranslate(getState());
-    dispatch(AlertModalActions.openOptionDialog(translate('tools.selections_invalidated'), callback));
+    dispatch(AlertActions.openIgnorableAlert('alignments_reset', translate(message), {onConfirm: callback}));
   };
 };
 
@@ -108,10 +134,11 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
  * @param {Number} verseNumber - optional verse number of verse text being edited, if not given will use contextId
  * @param {Boolean} showInvalidation - if true then selections invalidation warning is shown - otherwise just set flag in results
  * @param {object} results - returns state of validations
+ * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
  * @return {Object} - dispatches the changeSelections action.
  */
 export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber,
-                                   showInvalidation = true, results = {}) => {
+                                   showInvalidation = true, results = {}, batchGroupData = null) => {
   return (dispatch, getState) => {
     const state = getState();
     contextId = contextId || state.contextIdReducer.contextId;
@@ -120,6 +147,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     chapterNumber = chapterNumber || chapter;
     verseNumber = verseNumber || verse;
     let selectionInvalidated = false;
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
 
     if (getSelectedToolName(state) === 'translationWords') {
       const username = getUsername(state);
@@ -131,12 +159,12 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
         const validSelections = checkSelectionOccurrences(targetVerse, selections);
         const selectionsChanged = (selections.length !== validSelections.length);
         if (selectionsChanged) {
-          dispatch(changeSelections([], username, true, groupObject.contextId)); // clear selections
+          dispatch(changeSelections([], username, true, groupObject.contextId, actionsBatch)); // clear selections
         }
         selectionInvalidated = selectionInvalidated || selectionsChanged;
       }
       const results_ = {selectionsChanged: selectionInvalidated};
-      dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false));
+      dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false, actionsBatch));
       selectionInvalidated = selectionInvalidated || results_.selectionsChanged; // if new selections invalidated
     } else if (getSelectedToolName(state) === 'wordAlignment') {
       const bibleId = project.id;
@@ -184,6 +212,9 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
         }
       }
     }
+    if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
+      dispatch(batchActions(actionsBatch));
+    }
     results.selectionsChanged = selectionInvalidated;
     if (showInvalidation && selectionInvalidated) {
       dispatch(showSelectionsInvalidatedWarning());
@@ -198,9 +229,11 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
  * @param {Boolean} skipCurrent - if true, then skip over validation of current contextId
  * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @param {Boolean} warnOnError - if true, then will show message on selection change
+ * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
  * @return {Function}
  */
-export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent = false, contextId = null, warnOnError = false) => {
+export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent = false, contextId = null,
+                                              warnOnError = false, batchGroupData = null) => {
   return (dispatch, getState) => {
     const state = getState();
     const username = getUsername(state);
@@ -209,10 +242,14 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
     let filtered = null;
     results.selectionsChanged = false;
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
 
-    for (let groupItemKey of Object.keys(groupsDataForVerse)) {
+    const groupsDataKeys = Object.keys(groupsDataForVerse);
+    for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
+      const groupItemKey = groupsDataKeys[i];
       const groupItem = groupsDataForVerse[groupItemKey];
-      for (let checkingOccurrence of groupItem) {
+      for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
+        const checkingOccurrence = groupItem[j];
         const selections = checkingOccurrence.selections;
         if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
           if (selections && selections.length) {
@@ -222,13 +259,17 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
             const validSelections = checkSelectionOccurrences(filtered, selections);
             if (selections.length !== validSelections.length) {
               results.selectionsChanged = true;
-              dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear selection
+              dispatch(changeSelections([], username, true,
+                                        checkingOccurrence.contextId, actionsBatch)); // clear selection
             }
           }
         }
       }
     }
 
+    if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
+      dispatch(batchActions(actionsBatch));
+    }
     if (warnOnError && (initialSelectionsChanged || results.selectionsChanged)) {
       dispatch(showSelectionsInvalidatedWarning());
     }
@@ -245,10 +286,13 @@ export const getGroupDataForVerse = (state, contextId) => {
   const {groupsData} = state.groupsDataReducer;
   const filteredGroupData = {};
   if (groupsData) {
-    for (let groupItemKey of Object.keys(groupsData)) {
+    const groupsDataKeys = Object.keys(groupsData);
+    for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
+      const groupItemKey = groupsDataKeys[i];
       const groupItem = groupsData[groupItemKey];
       if (groupItem) {
-        for (let check of groupItem) {
+        for (let j = 0, l = groupItem.length; j < l; j++) {
+          const check = groupItem[j];
           try {
             if (isEqual(check.contextId.reference, contextId.reference)) {
               if (!filteredGroupData[groupItemKey]) {
@@ -256,7 +300,7 @@ export const getGroupDataForVerse = (state, contextId) => {
               }
               filteredGroupData[groupItemKey].push(check);
             }
-          } catch(e) {
+          } catch (e) {
             console.warn(`Corrupt check found in group "${groupItemKey}"`, check);
           }
         }

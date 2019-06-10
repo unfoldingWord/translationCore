@@ -17,6 +17,10 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 jest.mock('fs-extra');
 
 jest.mock('../../selectors', () => ({
+  ...require.requireActual('../../selectors/'),
+  getCurrentProjectToolsSelectedGL: () => {
+      return 'en';
+  },
   getActiveLocaleLanguage: () => {
     return {code: 'en'};
   },
@@ -74,6 +78,7 @@ jest.mock('../../selectors', () => ({
   })
 }));
 
+// TODO: this was skipped in the develop branch by using `describe.only('loadProject'`, need to talk to Jay why this was disabled
 describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
@@ -87,6 +92,7 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
     const manifest = manifestUtils.getProjectManifest(projectPath);
 
     initialState = {
+      resourcesReducer: { bibles: {} },
       homeScreenReducer: {
         stepper: {
           stepIndex: 1,
@@ -114,7 +120,19 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
         oldSelectedProjectFileName: null
       },
       projectInformationCheckReducer: {alreadyImported:true},
-      settingsReducer: { currentSettings: {}},
+      settingsReducer: {
+        currentSettings: {},
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ],
+          }
+        }
+      },
       projectValidationReducer: {
         projectValidationStepsArray: [ ]
       }
@@ -294,14 +312,26 @@ describe('loadProject', () => {
         oldSelectedProjectFileName: null
       },
       projectInformationCheckReducer: {alreadyImported:true},
-      settingsReducer: { currentSettings: {}},
+      settingsReducer: {
+        currentSettings: {},
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ],
+          }
+        }
+      },
       projectValidationReducer: {
         projectValidationStepsArray: [ ]
       }
     };
   });
 
-  it('displays the details screen of an invalid project', async () => {
+  it('displays the details screen of an invalid project name', async () => {
     // given
     const store = mockStore(initialState);
 

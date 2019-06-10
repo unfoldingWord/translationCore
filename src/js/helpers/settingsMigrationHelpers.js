@@ -1,3 +1,4 @@
+import * as Bible from "../common/BooksOfTheBible";
 
 /**
  * This function migrates the current pane settings from being an array of
@@ -13,7 +14,9 @@ export function migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings) {
   const newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
     let languageId;
     switch (bibleId) {
+      case Bible.NT_ORIG_LANG_BIBLE:
       case 'ugnt':
+      case Bible.OT_ORIG_LANG_BIBLE:
       case 'uhb':
         languageId = 'originalLanguage';
         break;

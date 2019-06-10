@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories, getCurrentProjectToolsSelectedGL} from "../selectors";
+import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ResourcesActions from './ResourcesActions';
 // helpers
@@ -13,10 +13,10 @@ import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
 //reducers
 import Repo from '../helpers/Repo.js';
 import ProjectAPI from "../helpers/ProjectAPI";
-
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -29,14 +29,18 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * @param {String} projectSaveLocation - The project location to load from
  * i.e. ~/translationCore/projects/en_tit_reg
  */
-export const loadCurrentCheckCategories = (toolName, bookName, projectSaveLocation) => {
-  return (dispatch, getState) => {
-    const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
-    const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
+export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en') => {
+  return (dispatch) => {
     const project = new ProjectAPI(projectSaveLocation);
-    let selectedCategories = project.getSelectedCategories(toolName);
-    selectedCategories = selectedCategories.filter((category) => availableCheckCategories[toolName] && availableCheckCategories[toolName].includes(category));
-    dispatch(setCategories(selectedCategories, toolName));
+    const availableCheckCategoriesObject = ResourcesHelpers.getAvailableCategories(currentGatewayLanguage, toolName, projectSaveLocation);
+    let availableCheckCategories = [];
+    Object.keys(availableCheckCategoriesObject)
+      .forEach((parentCategory) => {
+        availableCheckCategories.push(...availableCheckCategoriesObject[parentCategory]);
+      });
+    let subCategories = project.getSelectedCategories(toolName);
+    subCategories = subCategories.filter((category) => availableCheckCategories.includes(category));
+    dispatch(setCategories(subCategories, toolName));
   };
 };
 
@@ -53,19 +57,14 @@ export const updateCheckSelection = (id, value, toolName) => {
   return (dispatch, getState) => {
     const state = getState();
     const previousSelectedCategories = getToolCategories(state, toolName);
-    const selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
-
-    // TRICKY: tools with categories must have a selection.
-    if(selectedCategories.length === 0) {
-      const currentProjectToolsSelectedGL = getCurrentProjectToolsSelectedGL(getState());
-      const availableCheckCategories = ProjectDetailsHelpers.getAvailableCheckCategories(currentProjectToolsSelectedGL);
-
-      // default to available
-      if(availableCheckCategories.length > 0) {
-        [].push.apply(selectedCategories, availableCheckCategories);
-      }
+    let selectedCategories = previousSelectedCategories;
+    if (Array.isArray(id)) {
+      id.forEach((_id) => {
+        selectedCategories = ProjectDetailsHelpers.updateArray(selectedCategories, _id, value);
+      });
+    } else {
+      selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
     }
-
     dispatch(setCategories(selectedCategories, toolName));
     dispatch(getProjectProgressForTools(toolName));
     const project = new ProjectAPI(getProjectSaveLocation(state));
@@ -85,9 +84,9 @@ export const setCategories = (selectedCategories, toolName) => ({
  * @return {object} action object.
  */
 export const setSaveLocation = pathLocation => ({
-      type: consts.SET_SAVE_PATH_LOCATION,
-      pathLocation
-    });
+  type: consts.SET_SAVE_PATH_LOCATION,
+  pathLocation
+});
 
 export const resetProjectDetail = () => {
   return {
@@ -111,7 +110,13 @@ export function setProjectToolGL(toolName, selectedGL) {
   };
 }
 
-export function getProjectProgressForTools(toolName) {
+/**
+ * calculate project progress for specific tool and save results
+ * @param {String} toolName
+ * @param {Object} results - optional object to return progress calculation
+ * @return {Function}
+ */
+export function getProjectProgressForTools(toolName, results=null) {
   return (dispatch, getState) => {
     const {
       projectDetailsReducer: {
@@ -131,6 +136,10 @@ export function getProjectProgressForTools(toolName) {
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     } else {
       progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
+    }
+
+    if (results) {
+      results.progress = progress;
     }
 
     dispatch({

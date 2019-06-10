@@ -21,7 +21,7 @@ import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import {deleteImportsFolder, deleteProjectFromImportsFolder} from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
 import { openProject } from "../MyProjects/ProjectLoadingActions";
-
+import { delay } from '../../common/utils';
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -159,10 +159,4 @@ export function selectLocalProject(startLocalImport = localImport) {
       }
     });
   };
-}
-
-function delay(ms) {
-  return new Promise((resolve) =>
-    setTimeout(resolve, ms)
-  );
 }

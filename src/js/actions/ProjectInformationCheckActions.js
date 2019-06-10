@@ -6,7 +6,7 @@ import path from 'path-extra';
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
-import {delay} from "../helpers/bodyUIHelpers";
+import {delay} from "../common/utils";
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
@@ -102,7 +102,7 @@ export function validate(results = {}) {
  */
 export function finalize() {
   return (async (dispatch, getState) => {
-    console.log('finalize()');
+    console.log('ProjectInformationCheckActions.finalize()');
     const translate = getTranslate(getState());
     dispatch(AlertModalActions.openAlertDialog(translate("projects.preparing_project_alert"), true));
     await delay(200);

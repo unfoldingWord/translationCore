@@ -4,6 +4,7 @@ import path from 'path-extra';
 import * as SettingsActions from './SettingsActions';
 // helpers
 import * as settingsMigrationHelpers from '../helpers/settingsMigrationHelpers';
+import * as Bible from "../common/BooksOfTheBible";
 // constants
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
@@ -62,7 +63,7 @@ export function migrateCurrentPaneSettings2() {
     if (ScripturePane && currentPaneSettings && currentPaneSettings.includes('bhp')) {
       let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
         if (bibleId === 'bhp') {
-          return 'ugnt';
+          return Bible.NT_ORIG_LANG_BIBLE;
         } else {
           return bibleId;
         }

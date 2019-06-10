@@ -25,8 +25,7 @@ describe("copy group data", () => {
   });
 
   it("copies group data", () => {
-    mockGetLatestTranslationHelp.mockReturnValueOnce(path.join("", "help", "dir"));
-    mockGetLatestTranslationHelp.mockReturnValueOnce(path.join("", "help", "dir"));
+    mockGetLatestTranslationHelp.mockReturnValue(path.join("", "help", "dir"));
     fs.readdirSync.mockReturnValueOnce(["names", "other"]);
     fs.lstatSync.mockReturnValue({
       isDirectory: () => true
@@ -36,8 +35,8 @@ describe("copy group data", () => {
     fs.readdirSync.mockReturnValueOnce(["apostle.json", "authority.json"]);
     copyGroupDataToProject("lang", "tool", "project/");
     const groupPath =  path.join("", "help", "dir", "names", "groups", "tit");
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "authority.json"), "names");
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "apostle.json"), "names");
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "authority.json"));
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "apostle.json"));
     expect(mockImportCategoryGroupData.mock.calls.length).toBe(2);
     expect(mockSetCategoryLoaded).toBeCalledWith("tool", "authority");
     expect(mockSetCategoryLoaded).toBeCalledWith("tool", "apostle");
@@ -84,13 +83,14 @@ describe("load group index", () => {
 
     global.console = {error: jest.fn(), warn: jest.fn()};
     mockGetLatestTranslationHelp.mockReturnValueOnce("/help/dir");
-    mockGetSelectedCategories.mockReturnValueOnce(["category"]);
+    mockGetSelectedCategories.mockReturnValueOnce(["hello"]);
     fs.lstatSync.mockReturnValue({
       isFile: () => true
     });
     fs.readJsonSync.mockReturnValueOnce([{id: "hello", name: "World"}]);
+    const result = loadProjectGroupIndex("lang", "tool", "dir/", translate);
 
-    expect(loadProjectGroupIndex("lang", "tool", "dir/", translate)).toEqual(expectedResult);
+    expect(result).toEqual(expectedResult);
     expect(generateChapterGroupIndex).not.toBeCalled();
     expect(console.error).not.toBeCalled();
     expect(console.warn).not.toBeCalled();

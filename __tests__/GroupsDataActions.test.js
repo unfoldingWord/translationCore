@@ -6,7 +6,7 @@ import path from 'path-extra';
 import { generateTimestamp } from '../src/js/helpers';
 import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
-import {delay} from "../src/js/helpers/bodyUIHelpers";
+import {delay} from "../src/js/common/utils";
 
 jest.mock('redux-batched-actions', () => ({
   batchActions: (actionsBatch) => {

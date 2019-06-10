@@ -1,13 +1,16 @@
 import types from "./ActionTypes";
-import { loadToolsInDir } from "../helpers/toolHelper";
 import { getToolGatewayLanguage, getTranslate, getProjectSaveLocation } from "../selectors";
+// actions
 import * as ModalActions from "./ModalActions";
 import * as AlertModalActions from "./AlertModalActions";
 import * as GroupsDataActions from "./GroupsDataActions";
 import { loadCurrentContextId } from "./ContextIdActions";
 import * as BodyUIActions from "./BodyUIActions";
-import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
 import { loadGroupsIndex } from "./GroupsIndexActions";
+// helpers
+import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
+import { loadToolsInDir } from "../helpers/toolHelper";
+import {delay} from "../common/utils";
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -41,19 +44,18 @@ export const loadTools = (toolsDir) => (dispatch) => {
  * @param {string} name - the name of the tool to open
  * @returns {Function}
  */
-export const openTool = (name) => (dispatch, getData) => {
-  const translate = getTranslate(getData());
+export const openTool = (name) => async (dispatch, getData) => {
   console.log("openTool(" + name + ")");
-
+  const translate = getTranslate(getData());
   dispatch(ModalActions.showModalContainer(false));
+  await delay(200);
   dispatch({ type: types.START_LOADING });
+
   setTimeout(() => {
     try {
-
       dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_DATA });
       dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_INDEX });
       dispatch({ type: types.CLEAR_CONTEXT_ID });
-
       dispatch({
         type: types.OPEN_TOOL,
         name

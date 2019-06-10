@@ -14,7 +14,8 @@ import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
 import {
-  getProjectBookId, getSetting,
+  getProjectBookId,
+  getSetting,
   getToolGatewayLanguage
 } from "../../../selectors";
 import { connect } from "react-redux";
@@ -33,19 +34,19 @@ class ToolCard extends Component {
   }
 
   loadProgress() {
-    const {tool, selectedCategories} = this.props;
+    const {tool, actions} = this.props;
     const {progress} = this.state;
 
-    if(tool.api.methodExists("getProgress")) {
-      setTimeout(() => {
-        const toolProgress = tool.api.trigger("getProgress", selectedCategories);
-        if(progress !== toolProgress) {
-          this.setState({
-            progress: toolProgress ? toolProgress : 0
-          });
-        }
-      }, 0);
-    }
+    setTimeout(() => {
+      const results = {};
+      actions.getProjectProgressForTools(tool.name, results);
+      const toolProgress = results.progress;
+      if(progress !== toolProgress) {
+        this.setState({
+          progress: toolProgress ? toolProgress : 0
+        });
+      }
+    }, 0);
   }
 
   componentDidMount() {
@@ -76,6 +77,7 @@ class ToolCard extends Component {
   }
 
   getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories) {
+    const toolsWithCategories = ['translationWords' , 'translationNotes'];
     let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
     if (!launchDisableMessage) { // if no errors, make sure we have original language
       const olBookPath = hasValidOL(id);
@@ -87,9 +89,10 @@ class ToolCard extends Component {
       const gatewayLanguageList = getGatewayLanguageList(id, name);
       launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
     }
-    if (!launchDisableMessage && (name === 'translationWords' && selectedCategories.length === 0)) {
+    if (!launchDisableMessage && (toolsWithCategories.includes(name) && selectedCategories.length === 0)) {
       launchDisableMessage = translate('tools.no_checks_selected');
     }
+
     return launchDisableMessage;
   }
 
@@ -108,12 +111,14 @@ class ToolCard extends Component {
       translate,
       developerMode,
       actions: {
-        updateCheckSelection
+        updateCheckSelection,
+        showPopover,
+        closePopover
       },
       selectedCategories,
       availableCategories
     } = this.props;
-    const {progress} = this.state;
+    const {progress, selectedGL} = this.state;
 
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
@@ -126,6 +131,10 @@ class ToolCard extends Component {
       case 'translationWords':
         showCheckBoxes = true;
         desc_key = 'tools.tw_part1_description';
+        break;
+
+      case 'translationNotes':
+        showCheckBoxes = true;
         break;
 
       default:
@@ -152,7 +161,18 @@ class ToolCard extends Component {
             <ToolCardNotificationBadges tool={tool} translate={translate} selectedCategories={selectedCategories} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes toolName={tool.name} selectedCategories={selectedCategories} checks={availableCategories} onChecked={updateCheckSelection} />}
+          {showCheckBoxes && <ToolCardBoxes
+            key={selectedGL}
+            toolName={tool.name}
+            selectedCategories={selectedCategories}
+            availableCategories={availableCategories}
+            onChecked={updateCheckSelection}
+            bookId={bookId}
+            translate={translate}
+            selectedGL={selectedGL}
+            showPopover={showPopover}
+            closePopover={closePopover}
+          />}
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -216,7 +236,7 @@ ToolCard.propTypes = {
     updateCheckSelection: PropTypes.func.isRequired
   }),
   selectedCategories: PropTypes.array.isRequired,
-  availableCategories: PropTypes.array.isRequired
+  availableCategories: PropTypes.object.isRequired,
 };
 
 ToolCard.contextTypes = {

@@ -40,6 +40,7 @@ import {
 } from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import { openProject } from "../MyProjects/ProjectLoadingActions";
 import {showInvalidVersionError} from "../MyProjects/ProjectLoadingActions";
+import {delay} from '../../common/utils';
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -187,10 +188,3 @@ export function getLink(importLink) {
     importLink
   };
 }
-
-function delay(ms) {
-  return new Promise((resolve) =>
-    setTimeout(resolve, ms)
-  );
-}
-

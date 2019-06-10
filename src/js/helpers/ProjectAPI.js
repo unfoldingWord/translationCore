@@ -2,11 +2,12 @@ import path from "path-extra";
 import ospath from "ospath";
 import fs from "fs-extra";
 import {generateTimestamp} from "./TimestampGenerator";
-export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
-  "resources");
 // actions
 import {loadCheckData} from '../actions/CheckDataLoadActions';
+import {SOURCE_CONTENT_UPDATER_MANIFEST} from '../helpers/ResourcesHelpers';
 // constants
+export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
+  "resources");
 const PROJECT_TC_DIR = path.join('.apps', 'translationCore');
 const CHECKDATA_DIRECTORY = path.join(PROJECT_TC_DIR, 'checkData');
 
@@ -145,18 +146,15 @@ export default class ProjectAPI {
    * Group data that already exists will not be overwritten.
    * @param {string} toolName - the name of the tool that the categories belong to
    * @param {string} dataPath - the path to the group data file
-   * @param {string} parentCategory - parent category
    * @returns {boolean} true if the group data was imported. false if already imported.
    */
-  importCategoryGroupData(toolName, dataPath, parentCategory) {
+  importCategoryGroupData(toolName, dataPath) {
     const destDir = this.getCategoriesDir(toolName);
     const groupName = path.basename(dataPath);
     const destFile = path.join(destDir, groupName);
     const groupsDataLoaded = this.getLoadedCategories(toolName);
     const subCategory = path.parse(dataPath).name;
-    // TRICKY: this change is for v1.1.4 only, 1.2.0 handles categories differently
-    const category = (toolName === "translationWords") ? parentCategory : subCategory;
-    if (!groupsDataLoaded.includes(category)) {
+    if (!groupsDataLoaded.includes(subCategory)) {
       fs.copySync(dataPath, destFile);
       return true;
     }
@@ -232,7 +230,7 @@ export default class ProjectAPI {
    * Method to check if project groups data is out of date in relation
    * to the last source content update
    * @param {string} toolName - the tool name. This is synonymous with translationHelp name
-   * @returns {Boolean}
+   * @returns {Boolean} returns true if group data needs to be updated
    */
   hasNewGroupsData(toolName) {
     const categoriesPath = path.join(this.getCategoriesDir(toolName),
@@ -244,15 +242,15 @@ export default class ProjectAPI {
         if (!lastTimeDataUpdated) {
           return true;
         }
-        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
-        const {modified: lastTimeDataDownloaded} = fs.readJSONSync(sourceContentManifestPath);
-        return new Date(lastTimeDataDownloaded) > new Date(lastTimeDataUpdated);
+        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
+        const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
+        return new Date(lastTimeDataDownloaded).getTime() !== new Date(lastTimeDataUpdated).getTime();
       } catch (e) {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-    return true; // return true if file missing or error
+    return true;
   }
 
   /**
@@ -278,42 +276,37 @@ export default class ProjectAPI {
   /**
    * Removes categories from the currently selected that are not in the loaded array
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
-   * @param {Object} availableCategories - categories available in resources
    */
-  removeStaleCategoriesFromCurrent(toolName, availableCategories) {
+  removeStaleCategoriesFromCurrent(toolName) {
     const groupsPath = this.getCategoriesDir(toolName);
     const categoriesPath = path.join(groupsPath,
       ".categories");
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
+        rawData.current.forEach((category, index) => {
+          if (!rawData.loaded.includes(category)) {
+            //There is something that is selected that is not loaded
+            //Or there is something that is selected that is not in the current resources folder
+            rawData.current.splice(index, 1);
+          }
+        });
         fs.outputJsonSync(categoriesPath, rawData);
         const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
         if (fs.existsSync(contextIdPath)) {
           try {
             const currentContextId = fs.readJSONSync(contextIdPath);
             const currentContextIdGroup = currentContextId.groupId;
-            // TRICKY: this is for 1.1.4 only, in 1.2.0 it is all changed
-            const parentCategory = Object.keys(availableCategories).find(key => (availableCategories[key].includes(currentContextIdGroup)));
-            if (!rawData.loaded.includes(parentCategory)) {
+            if (!rawData.loaded.includes(currentContextIdGroup)) {
               fs.removeSync(contextIdPath);
             }
           } catch (e) {
             console.log('Could not reset current context id');
           }
         }
-        let loadedSubCategories = rawData.loaded;
-        if (toolName === "translationWords") {
-          // for tW we don't select by subcategories, so need to get subcategories for the available categories
-          loadedSubCategories = [];
-          const keys = Object.keys(availableCategories);
-          for (let i = 0, l = keys.length; i < l; i++) {
-            loadedSubCategories.push.apply(loadedSubCategories,availableCategories[keys[i]]);
-          }
-        }
         const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
         currentGroupsData.forEach((category) => {
-          if (!loadedSubCategories.includes(path.parse(category).name)) {
+          if (!rawData.loaded.includes(path.parse(category).name)) {
             //removing groups data files that are not in loaded
             fs.removeSync(path.join(groupsPath, category));
           }
@@ -357,7 +350,9 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-    data.timestamp = generateTimestamp();
+    const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
+    const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
+    data.timestamp = lastTimeDataDownloaded;
     fs.outputJsonSync(categoriesPath, data);
   }
 
@@ -441,17 +436,11 @@ export default class ProjectAPI {
           subCategories.forEach((subCategory) => {
             const parentCategoryMapping = this.getAllCategoryMapping(toolName);
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
-              if (toolName === "translationWords") {
-                if (subCategory === categoryName) {
-                  objectWithParentCategories[categoryName] = parentCategoryMapping[categoryName];
-                }
-              } else {
-                if (parentCategoryMapping[categoryName].includes(subCategory)) {
-                  //Sub categorie name is contained in this parent
-                  if (!objectWithParentCategories[categoryName])
-                    objectWithParentCategories[categoryName] = [];
-                  objectWithParentCategories[categoryName].push(subCategory);
-                }
+              if (parentCategoryMapping[categoryName].includes(subCategory)) {
+                //Sub categorie name is contained in this parent
+                if (!objectWithParentCategories[categoryName])
+                  objectWithParentCategories[categoryName] = [];
+                objectWithParentCategories[categoryName].push(subCategory);
               }
             });
           });

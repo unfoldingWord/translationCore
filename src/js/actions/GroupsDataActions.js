@@ -52,9 +52,10 @@ export function verifyGroupDataMatchesWithFs() {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
       });
+      const isCheckTool =  (toolName === 'translationWords' || toolName === 'translationNotes');
       for( let i = 0, lenF = folders.length; i < lenF; i++) {
         const folderName = folders[i];
-        const isCheckVerseEdit = (toolName !== "wordAlignment") && (folderName === "verseEdits");
+        const isCheckVerseEdit = isCheckTool && (folderName === "verseEdits");
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
         if(!fs.existsSync(dataPath)) continue;
 
@@ -173,7 +174,7 @@ function validateChapterSelections(chapter, results) {
  * @param {string} checkDataName - comments, reminders, selections and verseEdits folders.
  * @return {string} path/directory to be use to load a file.
  */
-function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataName) {
+export function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataName) {
   if (PROJECT_SAVE_LOCATION && state) {
     let bookAbbreviation = state.projectDetailsReducer.manifest.project.id;
     let loadPath = path.join(
@@ -190,7 +191,7 @@ function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataName) {
  * @param {array} array - array to be filtered and sorted.
  * @return {array} filtered and sorted array.
  */
-function filterAndSort(array) {
+export function filterAndSort(array) {
   let filteredArray = array.filter(folder => {
     return folder !== ".DS_Store";
   }).sort((a, b) => {
@@ -207,7 +208,7 @@ function filterAndSort(array) {
  * @param {object} fileObject - checkdata object.
  * @param {function} dispatch - redux action dispatcher.
  */
-function toggleGroupDataItems(label, fileObject) {
+export function toggleGroupDataItems(label, fileObject) {
   let action;
   switch (label) {
     case "comments":

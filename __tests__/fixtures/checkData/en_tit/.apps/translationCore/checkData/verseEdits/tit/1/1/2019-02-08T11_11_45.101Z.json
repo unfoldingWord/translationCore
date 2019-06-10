@@ -1,0 +1,24 @@
+{
+  "verseBefore": "Paul, a servant of God and the apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ",
+  "verseAfter": "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ",
+  "tags": [
+    "other"
+  ],
+  "userName": "photonomad1",
+  "activeBook": "tit",
+  "activeChapter": 1,
+  "activeVerse": 1,
+  "modifiedTimestamp": "2019-02-08T11:11:45.101Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": null,
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 1,
+      "groupId": "chapter_1"
+    },
+    "tool": "wordAlignment",
+    "groupId": "chapter_1"
+  }
+}

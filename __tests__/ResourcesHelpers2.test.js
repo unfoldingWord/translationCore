@@ -242,82 +242,7 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
   });
 });
 
-describe('ResourcesHelpers.getMissingResources', () => {
-  describe('restore lexicons', () => {
-    let latestUGL = null;
-    let latestUHL = null;
-
-    beforeAll(() => {
-      fs.__resetMockFS();
-      loadMockFsWithlexicons();
-      fs.ensureDirSync(path.join(RESOURCE_PATH, 'en'));
-      latestUGL = path.basename(ResourceAPI.getLatestVersion(path.join(STATIC_RESOURCES_PATH, 'en/lexicons/ugl')));
-      latestUHL = path.basename(ResourceAPI.getLatestVersion(path.join(STATIC_RESOURCES_PATH, 'en/lexicons/uhl')));
-    });
-
-    beforeEach(() => {
-      const lexiconsPath = 'en/lexicons';
-      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
-      fs.removeSync(lexiconResourcePath);
-    });
-
-    it('should copy missing uhl and ugl lexicons', () => {
-      const lexiconsPath = 'en/lexicons';
-      const expectedLexicons = ['ugl/' + latestUGL, 'uhl/' + latestUHL];
-      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
-
-      // when
-      ResourcesHelpers.getMissingResources();
-
-      // then
-      verifyLexicons(expectedLexicons, lexiconResourcePath);
-    });
-
-    it('should copy missing uhl lexicon', () => {
-      const lexiconsPath = 'en/lexicons';
-      const expectedLexicons = ['ugl/' + latestUGL, 'uhl/' + latestUHL];
-      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
-      fs.ensureDirSync(path.join(lexiconResourcePath, 'ugl', latestUGL));
-
-      // when
-      ResourcesHelpers.getMissingResources();
-
-      // then
-      verifyLexicons(expectedLexicons, lexiconResourcePath);
-    });
-
-    it('should copy latest uhl lexicon', () => {
-      const lexiconsPath = 'en/lexicons';
-      const expectedLexicons = ['ugl/' + latestUGL, 'uhl/' + latestUHL];
-      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
-      fs.ensureDirSync(path.join(lexiconResourcePath, 'ugl', latestUGL));
-      fs.ensureDirSync(path.join(lexiconResourcePath, 'uhl', 'v0'));
-
-      // when
-      ResourcesHelpers.getMissingResources();
-
-      // then
-      verifyLexicons(expectedLexicons, lexiconResourcePath);
-    });
-
-    it('should work with no missing lexicons', () => {
-      const lexiconsPath = 'en/lexicons';
-      const expectedLexicons = ['ugl/' + latestUGL, 'uhl/' + latestUHL];
-      const lexiconResourcePath = path.join(RESOURCE_PATH, lexiconsPath);
-      fs.ensureDirSync(path.join(lexiconResourcePath, 'ugl', latestUGL));
-      fs.ensureDirSync(path.join(lexiconResourcePath, 'uhl', latestUHL));
-
-      // when
-      ResourcesHelpers.getMissingResources();
-
-      // then
-      verifyLexicons(expectedLexicons, lexiconResourcePath);
-    });
-  });
- });
-
 describe('ResourcesHelpers.areResourcesNewer()', () => {
-
   beforeEach(() => {
     fs.__resetMockFS();
   });
@@ -508,11 +433,12 @@ describe('ResourcesHelpers.copySourceContentUpdaterManifest()', () => {
   });
 });
 
-describe('ResourcesHelpers.extractZippedBooks', () => {
+describe('ResourcesHelpers.extractZippedResourceContent', () => {
   it('works as expected', () => {
     const EN_ULB_PATH = path.join(RESOURCE_PATH, 'en', 'ult');
     const versionPath = path.join(RESOURCE_PATH, 'en', 'ult', 'v11');
     const zippedBooks = path.join(EN_ULB_PATH, 'v11', 'books.zip');
+    const isBible = true;
 
     fs.__setMockFS({
       [EN_ULB_PATH]: ['v11'],
@@ -520,7 +446,7 @@ describe('ResourcesHelpers.extractZippedBooks', () => {
       [zippedBooks]: []
     });
 
-    ResourcesHelpers.extractZippedBooks(EN_ULB_PATH);
+    ResourcesHelpers.extractZippedResourceContent(EN_ULB_PATH, isBible);
     expect(fs.existsSync(zippedBooks)).toBeFalsy();
   });
 });
@@ -550,7 +476,7 @@ function loadMockFsWithProjectAndResources() {
   const copyResourceFiles = [
     'en/bibles/ult',
     'en/bibles/ust',
-    'grc/bibles/ugnt',
+    'el-x-koine/bibles/ugnt',
     'hbo/bibles/uhb',
     'en/translationHelps/translationWords',
     'en/translationHelps/translationAcademy',

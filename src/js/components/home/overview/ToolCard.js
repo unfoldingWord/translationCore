@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 // components
 import TemplateCard from '../TemplateCard';
 import ToolCardProgress from '../toolsManagement/ToolCardProgress';
-import { getSelectedTool, getSelectedToolName, getToolCategories } from "../../../selectors";
+import {
+  getSelectedTool,
+  getSelectedToolName,
+  getProjectToolProgress
+} from "../../../selectors";
 import { connect } from "react-redux";
 
 class ToolCard extends Component {
@@ -23,7 +27,7 @@ class ToolCard extends Component {
       this.props.actions.getProjectProgressForTools(selectedToolName);
     }
   }
-  
+
   /**
   * @description generates the heading for the component
   * @param {function} callback - action for link
@@ -47,9 +51,8 @@ class ToolCard extends Component {
     const tool = getSelectedTool(state);
     let content; // content can be empty to fallback to empty button/message
     let progress = 0;
-    if (tool && tool.api.methodExists("getProgress")) {
-      const selectedCategories =  getToolCategories(state, tool.name);
-      progress = tool.api.trigger("getProgress", selectedCategories);
+    if (tool && tool.name) {
+      progress = getProjectToolProgress(state, tool.name);
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
           <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
