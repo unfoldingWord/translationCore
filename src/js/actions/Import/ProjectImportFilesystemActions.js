@@ -4,8 +4,10 @@ import ospath from 'ospath';
 import { getTranslate } from '../../selectors';
 // helpers
 import * as ProjectImportFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
-//actions
+import {delay} from "../../common/utils";
+// actions
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
+import * as AlertModalActions from '../AlertModalActions';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -16,6 +18,8 @@ export const move = () => {
   return ((dispatch, getState) => {
     return new Promise(async(resolve, reject) => {
       const translate = getTranslate(getState());
+      dispatch(AlertModalActions.openAlertDialog(translate("projects.preparing_project_alert"), true));
+      await delay(200);
       try {
         const projectName = getState().localImportReducer.selectedProjectFilename;
         console.log("ProjectImportFilesystemActions.move() - moving project from import folder");
@@ -23,6 +27,7 @@ export const move = () => {
         console.log("ProjectImportFilesystemActions.move() - moving project from import folder to: " + projectPath);
         dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
         fs.removeSync(path.join(IMPORTS_PATH, projectName));
+        dispatch(AlertModalActions.closeAlertDialog());
         resolve();
       } catch (error) {
         if (error && error.message && error.data) {
