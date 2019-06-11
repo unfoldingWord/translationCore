@@ -14,7 +14,8 @@ import {
   getSelectedToolName,
   getGroupsIndex,
   getGroupsData,
-  getProjectSaveLocation
+  getProjectSaveLocation,
+  getToolsByKey
 } from "../selectors";
 import Repo from "../helpers/Repo";
 
@@ -47,6 +48,11 @@ export const changeCurrentContextId = contextId => {
       loadCheckData(dispatch);
       let state = getState();
       saveContextId(state, contextId);
+      const apis = getToolsByKey(state);
+      const {reference: {chapter, verse} } = contextId;
+      for (var toolName in apis) {
+        apis[toolName].api.trigger('validateVerse', chapter, verse, null, getGroupsData(state));
+      }
     }
     // commit project changes
     const projectDir = getProjectSaveLocation(getState());
