@@ -4,7 +4,7 @@ import ospath from 'ospath';
 import { getTranslate } from '../../selectors';
 // helpers
 import * as ProjectImportFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
-import {delay} from "../../helpers/bodyUIHelpers";
+import {delay} from "../../common/utils";
 // actions
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as AlertModalActions from '../AlertModalActions';
