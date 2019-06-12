@@ -2,7 +2,8 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   selections: [],
-  userName: null,
+  nothingToSelect: false,
+  username: null,
   modifiedTimestamp: null,
   gatewayLanguageCode: null,
   gatewayLanguageQuote: null
@@ -14,7 +15,16 @@ const selectionsReducer = (state = initialState, action) => {
       return {
         ...state,
         selections: action.selections,
-        userName: action.userName,
+        username: action.username,
+        modifiedTimestamp: action.modifiedTimestamp,
+        gatewayLanguageCode: action.gatewayLanguageCode,
+        gatewayLanguageQuote: action.gatewayLanguageQuote
+      };
+    case consts.UPDATE_NOTHING_TO_SELECT:
+      return {
+        ...state,
+        nothingToSelect: action.nothingToSelect,
+        username: action.username,
         modifiedTimestamp: action.modifiedTimestamp,
         gatewayLanguageCode: action.gatewayLanguageCode,
         gatewayLanguageQuote: action.gatewayLanguageQuote

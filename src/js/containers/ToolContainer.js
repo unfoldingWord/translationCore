@@ -6,7 +6,7 @@ import { showPopover } from '../actions/PopoverActions';
 import { addComment } from '../actions/CommentsActions';
 import { editTargetVerse } from '../actions/VerseEditActions';
 import { toggleReminder } from '../actions/RemindersActions';
-import { changeSelections, getSelectionsFromContextId, validateSelections } from '../actions/SelectionsActions';
+import { changeSelections, getSelectionsFromContextId, validateSelections, toggleNothingToSelect } from '../actions/SelectionsActions';
 import { changeCurrentContextId, changeToNextContextId, changeToPreviousContextId, loadCurrentContextId } from '../actions/ContextIdActions';
 import { addGroupData } from '../actions/GroupsDataActions';
 import { loadGroupsIndex, updateRefreshCount } from '../actions/GroupsIndexActions';
@@ -348,6 +348,7 @@ const mapDispatchToProps = (dispatch) => {
       makeSureBiblesLoadedForTool: () => {
         dispatch(ResourcesActions.makeSureBiblesLoadedForTool());
       },
+      toggleNothingToSelect: nothingToSelect => dispatch(toggleNothingToSelect(nothingToSelect)),
       // TODO: these are not actions and should be inserted directly into the tool
       getWordListForVerse: VerseObjectUtils.getWordListForVerse,
       getGLQuote: getGLQuote,
