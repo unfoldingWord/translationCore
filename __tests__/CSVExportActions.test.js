@@ -54,8 +54,9 @@ describe('csv export actions', () => {
   describe('csvExportActions.saveToolDataToCSV', () => {
 
     test('should resolve true for checksPerformedPath', () => {
+      const translate = (key) => key;
       return csvExportActions.saveToolDataToCSV('translationWords',
-        checksPerformedPath)
+        checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
@@ -72,8 +73,9 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
+      const translate = (key) => key;
       return csvExportActions.saveToolDataToCSV('translationWords',
-        bogusFilesInCheckDataPath)
+        bogusFilesInCheckDataPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath('translationWords',
@@ -161,7 +163,7 @@ describe('csv export actions', () => {
 
           // verify that gatewayLanguageQuote might exist if test files were created correctly
           let csvData = fs.readFileSync(filePath, 'utf8' );
-          expect(csvData).toContain('1,adoption,eph'); // quote is between instance and bookid in csv data 
+          expect(csvData).toContain('1,adoption,eph'); // quote is between instance and bookid in csv data
           expect(fs.existsSync(filePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         })
@@ -221,7 +223,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveAllCSVData', () => {
     test('should resolve true for checksPerformedPath', () => {
-      return csvExportActions.saveAllCSVData(checksPerformedPath)
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(checksPerformedPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
@@ -233,7 +236,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for noChecksPerformedPath', () => {
-      return csvExportActions.saveAllCSVData(noChecksPerformedPath)
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(noChecksPerformedPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath(noChecksPerformedPath);
@@ -245,7 +249,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveAllCSVData(bogusFilesInCheckDataPath)
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(bogusFilesInCheckDataPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
@@ -257,7 +262,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for projectOpenedAutographa', () => {
-      return csvExportActions.saveAllCSVData(projectOpenedAutographa)
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(projectOpenedAutographa, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath(projectOpenedAutographa);
@@ -276,8 +282,9 @@ describe('csv export actions', () => {
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
       try {
+        const translate = (key) => key;
         const resolve = await csvExportActions.exportToCSVZip(
-          checksPerformedPath, zipPath);
+          checksPerformedPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -293,8 +300,9 @@ describe('csv export actions', () => {
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
       try {
+        const translate = (key) => key;
         const resolve = await csvExportActions.exportToCSVZip(
-          noChecksPerformedPath, zipPath);
+          noChecksPerformedPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -310,8 +318,9 @@ describe('csv export actions', () => {
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
       try {
+        const translate = (key) => key;
         const resolve = await csvExportActions.exportToCSVZip(
-          bogusFilesInCheckDataPath, zipPath);
+          bogusFilesInCheckDataPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }

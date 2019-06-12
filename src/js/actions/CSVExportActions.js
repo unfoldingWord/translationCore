@@ -18,6 +18,9 @@ import * as ProjectImportStepperActions from '../actions/ProjectImportStepperAct
 import * as csvHelpers from '../helpers/csvHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as groupsIndexHelpers from '../helpers/groupsIndexHelpers';
+import ProjectAPI from "../helpers/ProjectAPI";
+import {groupName} from "../helpers/csvHelpers";
+import {flattenQuote} from "../helpers/csvHelpers";
 
 /**
  * @description - Wrapper function to handle exporting to CSV
@@ -57,7 +60,7 @@ export function exportToCSV(projectPath) {
       let message = translate('projects.exporting_file_alert', {file_name: projectName});
       dispatch(AlertModalActions.openAlertDialog(message, true));
       // export the csv and zip it
-      exportToCSVZip(projectPath, filePath)
+      exportToCSVZip(projectPath, filePath, translate)
         .then(() => {
           message = translate('projects.exported_alert', {project_name: projectName, file_path:filePath});
           dispatch(AlertModalActions.openAlertDialog(message, false));
@@ -95,11 +98,12 @@ export const getDefaultPath = (csvSaveLocation, projectName) => {
  * @description - Chain of saving csv data then zipping it up and saving
  * @param {string} projectPath - Path to current project
  * @param {string} filePath - Path to save the zip file
+ * @param {function} translate
  */
-export const exportToCSVZip = (projectPath, filePath) => {
+export const exportToCSVZip = (projectPath, filePath, translate) => {
   return new Promise((resolve, reject) => {
     Promise.resolve(true)
-      .then(() => saveAllCSVData(projectPath))
+      .then(() => saveAllCSVData(projectPath, translate))
       .then(() => zipCSVData(projectPath, filePath))
       .then(() => {
         csvHelpers.cleanupTmpPath(projectPath);
@@ -131,8 +135,9 @@ export const zipCSVData = (projectPath, filePath) => {
 /**
  * @description - Chain of saving all csv data
  * @param {string} projectPath - Path to current project
+ * @param {function} translate - translation function
  */
-export const saveAllCSVData = (projectPath) => {
+export const saveAllCSVData = (projectPath, translate) => {
   return new Promise((resolve, reject) => {
     const toolNames = csvHelpers.getToolFolderNames(projectPath);
     if (!toolNames || !toolNames.length) {
@@ -141,7 +146,7 @@ export const saveAllCSVData = (projectPath) => {
     let iterablePromises = [];
     toolNames.forEach((toolName) => {
       const p = new Promise((_resolve) => {
-        return saveToolDataToCSV(toolName, projectPath)
+        return saveToolDataToCSV(toolName, projectPath, translate)
           .then(_resolve);
       });
       iterablePromises.push(p);
@@ -159,11 +164,12 @@ export const saveAllCSVData = (projectPath) => {
  * @ description - Saves teh Tool data to csv
  * @param {string} toolName - current tool name
  * @param {string} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveToolDataToCSV = (toolName, projectPath) => {
+export const saveToolDataToCSV = (toolName, projectPath, translate) => {
   return new Promise((resolve, reject) => {
     loadGroupsData(toolName, projectPath)
-      .then((object) => saveGroupsToCSV(object, toolName, projectPath))
+      .then((object) => saveGroupsToCSV(object, toolName, projectPath, translate))
       .then(() => {
         resolve(true);
       })
@@ -206,28 +212,47 @@ export function loadGroupsData(toolName, projectPath) {
 /**
  * @description - Creates csv from object and saves it.
  * @param {object} obj - object to save to the filesystem
- * @param {string} projectPath - path of the project
  * @param {string} toolName - name of the tool being saved i.e. translationNotes
+ * @param {string} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveGroupsToCSV = (obj, toolName, projectPath) => {
+export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => {
   return new Promise((resolve, reject) => {
-    let objectArray = [];
+    let dataArray = [];
     try {
-      const groupNames = Object.keys(obj);
-      groupNames.forEach(groupName => {
-        obj[groupName].forEach(groupData => {
-          const object = groupData;
-          const data = {priority: object.priority};
-          const flatContextId = csvHelpers.flattenContextId(object.contextId);
-          const newObject = Object.assign({}, data, flatContextId);
-          objectArray.push(newObject);
+      const groupIds = Object.keys(obj);
+      const project = new ProjectAPI(projectPath);
+      groupIds.forEach(groupId => {
+        const category = translate('tool_card_categories.' + project.getCategoryByGroupId(toolName, groupId));
+        obj[groupId].forEach(groupData => {
+          const contextId = groupData.contextId;
+          const data = {
+            priority: (groupData.priority?groupData.priority:1),
+            tool: contextId.tool,
+            type: category,
+            groupId: contextId.groupId,
+            groupName: groupName(contextId),
+            occurrence: contextId.occurrence,
+            quote: flattenQuote(contextId.quote),
+            glQuote: contextId.glQuote,
+            occurrenceNote: contextId.occurrenceNote,
+            bookId: contextId.reference.bookId,
+            chapter: contextId.reference.chapter,
+            verse: contextId.reference.verse
+          };
+          // remove fields only relevant to tN
+          if (toolName != 'translationNotes') {
+            delete data['glQuote'];
+            delete data['occurrenceNote'];
+          }
+          dataArray.push(data);
         });
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', toolName +
         '_CheckInformation.csv');
 
-      csvHelpers.generateCSVFile(objectArray, filePath)
+      csvHelpers.generateCSVFile(dataArray, filePath)
         .then(() => {
           return resolve(true);
         })

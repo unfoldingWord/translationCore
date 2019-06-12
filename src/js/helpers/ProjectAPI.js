@@ -48,6 +48,7 @@ export default class ProjectAPI {
     this.getGroupData = this.getGroupData.bind(this);
     this.setCategoryGroupIds = this.setCategoryGroupIds.bind(this);
     this.getAllCategoryMapping = this.getAllCategoryMapping.bind(this);
+    this.getCategoryByGroupId = this.getCategoryByGroupId.bind(this);
   }
 
   /**
@@ -399,6 +400,17 @@ export default class ProjectAPI {
     return [];
   }
 
+  getCategoryByGroupId(toolName, groupId) {
+    const parentCategoryMapping = this.getAllCategoryMapping(toolName);
+    let category = null;
+    Object.keys(parentCategoryMapping).forEach(categoryName => {
+      if (parentCategoryMapping[categoryName].includes(groupId)) {
+        category = categoryName;
+      }
+    });
+    return category;
+  }
+
   getAllCategoryMapping(toolName) {
     const parentCategoriesObject = {};
     const indexPath = path.join(this.getCategoriesDir(toolName),
@@ -437,7 +449,7 @@ export default class ProjectAPI {
             const parentCategoryMapping = this.getAllCategoryMapping(toolName);
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
               if (parentCategoryMapping[categoryName].includes(subCategory)) {
-                //Sub categorie name is contained in this parent
+                // Subcategory name is contained in this parent
                 if (!objectWithParentCategories[categoryName])
                   objectWithParentCategories[categoryName] = [];
                 objectWithParentCategories[categoryName].push(subCategory);
