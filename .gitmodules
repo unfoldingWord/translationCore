@@ -4,3 +4,6 @@
 [submodule "tC_apps/translationNotes"]
 	path = tC_apps/translationNotes
 	url = https://github.com/translationCoreApps/translationNotes.git
+[submodule "tC_apps/translationWords"]
+	path = tC_apps/translationWords
+	url = https://github.com/translationCoreApps/translationWords.git
