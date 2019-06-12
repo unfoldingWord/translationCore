@@ -1,6 +1,3 @@
-[submodule "tC_apps/translationWords"]
-    path = tC_apps/translationWords
-    url = https://github.com/translationCoreApps/translationWords_Check_plugin.git
 [submodule "tC_apps/wordAlignment"]
 	path = tC_apps/wordAlignment
 	url = https://github.com/translationCoreApps/word-alignment-tool.git
