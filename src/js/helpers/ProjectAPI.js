@@ -11,6 +11,8 @@ export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
 const PROJECT_TC_DIR = path.join('.apps', 'translationCore');
 const CHECKDATA_DIRECTORY = path.join(PROJECT_TC_DIR, 'checkData');
 
+const toolCategoryMapping = {};
+
 /**
  * Provides an interface with which tools can interact with a project.
  */
@@ -412,23 +414,24 @@ export default class ProjectAPI {
   }
 
   getAllCategoryMapping(toolName) {
-    const parentCategoriesObject = {};
-    const indexPath = path.join(this.getCategoriesDir(toolName),
-      ".categoryIndex");
-    if (fs.pathExistsSync(indexPath)) {
-      try {
-        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
-        parentCategories.forEach((category) => {
-          const subCategoryPath = path.join(this.getCategoriesDir(toolName),
-            ".categoryIndex", `${category}.json`);
-          const arrayOfSubCategories = fs.readJsonSync(subCategoryPath);
-          parentCategoriesObject[category] = arrayOfSubCategories;
-        });
-      } catch (e) {
-        console.error(`Failed to read the category index at ${indexPath}`, e);
+    if (toolCategoryMapping[toolName] == undefined) {
+      toolCategoryMapping[toolName] = {};
+      const indexPath = path.join(this.getCategoriesDir(toolName), ".categoryIndex");
+      if (fs.pathExistsSync(indexPath)) {
+        try {
+          const categoryFiles = fs.readdirSync(indexPath);
+          categoryFiles.forEach((categoryFile) => {
+            const categoryPath = path.join(indexPath, categoryFile);
+            const category = path.parse(categoryFile).name;
+            toolCategoryMapping[toolName][category] = fs.readJsonSync(categoryPath);
+          });
+        } catch (e) {
+          console.error(`Failed to read the category index at ${indexPath}`, e);
+        }
       }
     }
-    return parentCategoriesObject;
+
+    return toolCategoryMapping[toolName];
   }
 
   /**
