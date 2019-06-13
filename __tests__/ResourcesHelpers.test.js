@@ -146,7 +146,7 @@ describe('ResourcesHelpers getGLQuote() tests', () => {
   const englishExpectedData = [
     {
       "id": "abomination",
-      "name": "abomination, abominations, abominable"
+      "name": "abomination, abominable"
     },
     {
       "id": "adoption",
@@ -154,7 +154,7 @@ describe('ResourcesHelpers getGLQuote() tests', () => {
     },
     {
       "id": "adultery",
-      "name": "adultery, adulterous, adulterer, adulteress, adulterers, adulteresses"
+      "name": "adultery, adulterous, adulterer, adulteress"
     },
     {
       "id": "almighty",

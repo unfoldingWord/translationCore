@@ -54,7 +54,7 @@ describe('csvHelpers.flattenContextId', () => {
       "verse": 1,
       "tool": "translationWords",
       "groupId": "apostle",
-      "groupName": "apostle, apostles, apostleship",
+      "groupName": "apostle, apostleship",
       "quote": "apostle, apostles, apostleship",
       "occurrence": 1
     };
@@ -81,12 +81,12 @@ describe('csvHelpers.flattenQuote', () => {
 describe('csvHelpers.groupName', () => {
   test('should return a groupName for tW', () => {
     const groupName = csvHelpers.groupName(tWContextId, isTest);
-    expect(groupName).toEqual('apostle, apostles, apostleship');
+    expect(groupName).toEqual('apostle, apostleship');
   });
 
   test('should return an `other` groupName for tW', () => {
     const groupName = csvHelpers.groupName(tWotherContextId, isTest);
-    expect(groupName).toEqual('confidence, confident, confidently');
+    expect(groupName).toEqual('confidence, confident');
   });
 
   // test('should return a groupName for tN', () => {
@@ -109,7 +109,7 @@ describe('csvHelpers.combineData', () => {
       verse: 1,
       tool: "translationWords",
       groupId: "apostle",
-      groupName: "apostle, apostles, apostleship",
+      groupName: "apostle, apostleship",
       quote: "apostle, apostles, apostleship",
       occurrence: 1,
       username: 'klappy'
@@ -128,7 +128,7 @@ describe('csvHelpers.combineData', () => {
 describe('csvHelpers.getToolFolderNames', () => {
   test('should return tool folders', () => {
     const toolNames = csvHelpers.getToolFolderNames(checksPerformedPath);
-    const _toolNames = [ 'translationNotes', 'translationWords' ];
+    const _toolNames = [ 'translationNotes', 'translationWords', 'wordAlignment' ];
     expect(toolNames).toEqual(_toolNames);
   });
 });
