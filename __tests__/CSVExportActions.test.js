@@ -54,7 +54,7 @@ beforeAll(() =>
 
 describe('csv export actions', () => {
 
-  describe('csvExportActions.saveToolDataToCSV', () => {
+  describe('csvExportActions.saveToolDataToCSV for translationWords', () => {
 
     test('should resolve true for checksPerformedPath', () => {
       const translate = (key) => key;
@@ -68,9 +68,12 @@ describe('csv export actions', () => {
           console.log(err);
           expect(err).toEqual('');
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
-          const filePath = path.join(dataPath, 'output',
+          const tWFilePath = path.join(dataPath, 'output',
             'translationWords_CheckData.csv');
-          expect(fs.existsSync(filePath)).toEqual(true);
+          expect(fs.existsSync(tWFilePath)).toEqual(true);
+          const tNFilePath = path.join(dataPath, 'output',
+            'translationNotes_CheckData.csv');
+          expect(fs.existsSync(tNFilePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         });
     });
@@ -82,6 +85,44 @@ describe('csv export actions', () => {
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath('translationWords',
+            bogusFilesInCheckDataPath);
+        })
+        .catch(err => {
+          console.log(err);
+          expect(err).toEqual('');
+          csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+        });
+    });
+  });
+
+  describe('csvExportActions.saveToolDataToCSV for translationNotes', () => {
+
+    test('should resolve true for checksPerformedPath', () => {
+      const translate = (key) => key;
+      return csvExportActions.saveToolDataToCSV('translationNotes',
+        checksPerformedPath, translate)
+        .then((value) => {
+          expect(value).toEqual(true);
+          csvHelpers.cleanupTmpPath(checksPerformedPath);
+        })
+        .catch(err => {
+          console.log(err);
+          expect(err).toEqual('');
+          const dataPath = csvHelpers.dataPath(checksPerformedPath);
+          const tNFilePath = path.join(dataPath, 'output',
+            'translationNotes_CheckData.csv');
+          expect(fs.existsSync(tNFilePath)).toEqual(true);
+          csvHelpers.cleanupTmpPath(checksPerformedPath);
+        });
+    });
+
+    test('should resolve true for bogusFilesInCheckDataPath', () => {
+      const translate = (key) => key;
+      return csvExportActions.saveToolDataToCSV('translationNotes',
+        bogusFilesInCheckDataPath, translate)
+        .then((resolve) => {
+          expect(resolve).toEqual(true);
+          csvHelpers.cleanupTmpPath('translationNotes',
             bogusFilesInCheckDataPath);
         })
         .catch(err => {
@@ -286,8 +327,7 @@ describe('csv export actions', () => {
       expect.assertions(1);
       try {
         const translate = (key) => key;
-        const resolve = await csvExportActions.exportToCSVZip(
-          checksPerformedPath, zipPath, translate);
+        const resolve = await csvExportActions.exportToCSVZip(checksPerformedPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -304,8 +344,7 @@ describe('csv export actions', () => {
       expect.assertions(1);
       try {
         const translate = (key) => key;
-        const resolve = await csvExportActions.exportToCSVZip(
-          noChecksPerformedPath, zipPath, translate);
+        const resolve = await csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -322,8 +361,7 @@ describe('csv export actions', () => {
       expect.assertions(1);
       try {
         const translate = (key) => key;
-        const resolve = await csvExportActions.exportToCSVZip(
-          bogusFilesInCheckDataPath, zipPath, translate);
+        const resolve = await csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
