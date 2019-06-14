@@ -1,5 +1,7 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
+import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
+
 jest.unmock('fs-extra');
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
@@ -30,14 +32,14 @@ const tWotherContextId = {
   "quote": "confidence, confident",
   "occurrence": 1
 };
-// const tNContextId = {
-//   "information": undefined,
-//   "reference": { "bookId": "tit", "chapter": 1, "verse": 3 },
-//   "tool": "translationNotes",
-//   "groupId": "figs_metaphor",
-//   "quote": "he revealed his word",
-//   "occurrence": 1
-// };
+const tNContextId = {
+  "information": undefined,
+  "reference": { "bookId": "tit", "chapter": 1, "verse": 3 },
+  "tool": "translationNotes",
+  "groupId": "figs-metaphor",
+  "quote": "he revealed his word",
+  "occurrence": 1
+};
 const autographaContextId = {
   "reference": { "bookId": "tit", "chapter": 1, "verse": "1" },
   "tool": "Autographa",
@@ -89,10 +91,10 @@ describe('csvHelpers.groupName', () => {
     expect(groupName).toEqual('confidence, confident');
   });
 
-  // test('should return a groupName for tN', () => {
-  //   const groupName = csvHelpers.groupName(tNContextId);
-  //   expect(groupName).toEqual('Metaphor');
-  // });
+  test('should return a groupName for tN', () => {
+    const groupName = csvHelpers.groupName(tNContextId, isTest);
+    expect(groupName).toEqual('Metaphor');
+  });
 
   test('should return a groupId as groupName for Autographa', () => {
     const groupName = csvHelpers.groupName(autographaContextId, isTest);

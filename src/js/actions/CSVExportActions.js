@@ -223,7 +223,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => {
       const groupIds = Object.keys(obj);
       const project = new ProjectAPI(projectPath);
       groupIds.forEach(groupId => {
-        const category = translate('tool_card_categories.' + project.getCategoryByGroupId(toolName, groupId));
+        const category = translate('tool_card_categories.' + project.getParentCategory(toolName, groupId));
         obj[groupId].forEach(groupData => {
           const contextId = groupData.contextId;
           const data = {

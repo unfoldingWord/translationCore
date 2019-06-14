@@ -9,36 +9,38 @@ import ResourceAPI from "./ResourceAPI";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");
 const tHelpsPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
-const testThelpsPath = path.join('__tests__', 'fixtures', 'resources', 'en', 'translationHelps');
+export const TestThelpsPath = path.join('__tests__', 'fixtures', 'resources', 'en', 'translationHelps');
 let tWIndex = [];
 let tNIndex = [];
+let cachedForTest = false;
 
  /**
   * To prevent these files from being read in for every groupName lookup, read them in once.
-  * @param {string} isTest - for unit tests purposes
-  * @return {undefined}
+  * @param {boolean} isTest - for unit tests purposes
   */
 function cacheIndicies(isTest) {
   // skip loading if indicies have already been loaded
-  if(tWIndex.length > 0 || tNIndex.length > 0) {
+   // unless previously for a test or this is a test, then we want to reload
+  if(! cachedForTest && tWIndex.length > 0 && tNIndex.length > 0) {
     return;
   }
   // load tW indices
   tWIndex = loadToolIndices('translationWords', isTest);
   // load tN indices
   tNIndex = loadToolIndices('translationNotes', isTest);
+  cachedForTest = isTest;
 }
 
 /**
  * Loops through a tool's category subdirs to make a flattened list of the indexes with id and name
  * @param {string} toolName - the name of the tool in the same case as its resource directory
- * @param isTest - for unit test purposes
+ * @param {boolean} isTest - for unit test purposes
  * @return {array}
  */
 function loadToolIndices(toolName, isTest) {
   let index = [];
   try {
-    const thPath = isTest ? testThelpsPath : tHelpsPath;
+    const thPath = isTest ? TestThelpsPath : tHelpsPath;
     const toolPath = path.join(thPath, toolName);
     let versionPath = ResourceAPI.getLatestVersion(toolPath) || toolPath;
     if (fs.pathExistsSync(versionPath)) {
@@ -115,7 +117,8 @@ export const flattenQuote = quote => {
  * @description - Returns the corresponding group name i.e. Metaphor
  * given the group id such as figs_metaphor
  * @param {Object} contextId - context id to get toolName and groupName
- * @param {string} isTest - for unit tests purposes
+ * @param {boolean} isTest - for unit tests purposes
+ * @return {string}
  */
 export const groupName = (contextId, isTest) => {
   cacheIndicies(isTest);
