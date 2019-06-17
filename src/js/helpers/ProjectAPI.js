@@ -410,13 +410,11 @@ export default class ProjectAPI {
    */
   getParentCategory(toolName, groupId) {
     const parentCategoryMapping = this.getAllCategoryMapping(toolName);
-    let parentCategoryName = null;
-    Object.keys(parentCategoryMapping).forEach(pcn => {
-      if (parentCategoryMapping[pcn].includes(groupId)) {
-        parentCategoryName = pcn;
+    for (let parentCategoryName in parentCategoryMapping) {
+      if (parentCategoryMapping[parentCategoryName].includes(groupId)) {
+        return parentCategoryName;
       }
-    });
-    return parentCategoryName;
+    }
   }
 
   /**

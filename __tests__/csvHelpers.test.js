@@ -1,7 +1,5 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
-import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
-
 jest.unmock('fs-extra');
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';

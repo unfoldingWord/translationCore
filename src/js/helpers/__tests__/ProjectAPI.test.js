@@ -412,4 +412,27 @@ describe('ProjectAPI', () => {
       expect(results).toEqual(expectHasNewGroupsData);
     });
   });
+
+  describe('getParentCategory()', () => {
+    it('parent category exists for groupId', () => {
+      const p = new ProjectAPI('/root');
+      p.getAllCategoryMapping = jest.fn(() => {
+        return {'name1': ['groupId1', 'groupId2']};
+      });
+      const expectedParentCategory = "name1";
+      const parentCategory = p.getParentCategory('tool', 'groupId2');
+      expect(parentCategory).toEqual(expectedParentCategory);
+      jest.resetAllMocks();
+    });
+
+    it('parent category does not exist for groupId', () => {
+      const p = new ProjectAPI('/root');
+      p.getAllCategoryMapping = jest.fn(() => {
+        return {'name1': ['groupId1', 'groupId2']};
+      });
+      const parentCategory = p.getParentCategory('tool', 'groupId3');
+      expect(parentCategory).toBeUndefined();
+      jest.resetAllMocks();
+    });
+  });
 });
