@@ -322,7 +322,6 @@ export const saveSelectionsToCSV = (projectPath) => {
           if (data.selections.length > 0) {
             // add selections to csv
             data.selections.forEach(selection => {
-              const nothingToSelect = !!data.nothingToSelect;
               const _data = {
                 text: selection.text,
                 'selection/occurrence': selection.occurrence,

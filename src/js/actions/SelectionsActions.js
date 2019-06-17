@@ -10,7 +10,7 @@ import * as AlertActions from './AlertActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {getTranslate, getUsername, getSelectedToolName, getContext } from '../selectors';
+import {getTranslate, getUsername, getSelectedToolName } from '../selectors';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
