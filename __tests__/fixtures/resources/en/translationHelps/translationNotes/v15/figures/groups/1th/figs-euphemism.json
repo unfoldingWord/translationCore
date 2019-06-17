@@ -1,0 +1,106 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"sleep\" is a euphemism for being dead. Alternate translation: \"those who have died\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κοιμωμένων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who sleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"fallen asleep\" is a polite way to refer to having died. (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "κοιμηθέντας",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who have fallen asleep in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are polite ways of saying alive or dead. Alternate translation: \"whether we are alive or dead\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "εἴτε",
+          "occurrence": 1
+        },
+        {
+          "word": "γρηγορῶμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴτε",
+          "occurrence": 2
+        },
+        {
+          "word": "καθεύδωμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whether we are awake or asleep",
+      "occurrence": 1
+    }
+  }
+]

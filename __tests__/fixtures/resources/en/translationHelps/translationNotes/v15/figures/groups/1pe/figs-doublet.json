@@ -1,0 +1,198 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"inquired carefully\" mean basically the same thing as \"searched.\" Together these words emphasize how hard the prophets tried to understand this salvation. Alternate translation: \"examined very carefully\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἐξεζήτησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξηραύνησαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "searched and inquired carefully",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter expresses the same idea in two different ways to emphasize Christ's purity. Alternate translation: \"with no imperfections\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἀμώμου",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσπίλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "without blemish or spot",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two words mean basically the same thing. Peter speaks of his readers as people who are living in foreign lands away from their home. See how you translated \"foreigners\" in [1 Peter 1:1](../01/01.md). (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "παροίκους",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρεπιδήμους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "foreigners and exiles",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"good\" and \"gentle\" share similar meanings and emphasize that such masters treat their servants kindly. Alternate translation: \"the very kind masters\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγαθοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιεικέσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the good and gentle masters",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing and emphasize the intensity of joy. Alternate translation: \"rejoice even more\" or \"be very glad\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "χαρῆτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαλλιώμενοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "rejoice and be glad",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"ungodly\" and \"sinner\" mean basically the same thing and emphasize the wickedness of these people. Alternate translation: \"ungodly sinners\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀσεβὴς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁμαρτωλὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ungodly and the sinner",
+      "occurrence": 1
+    }
+  }
+]

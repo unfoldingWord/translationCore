@@ -1,0 +1,4422 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"His mother, Mary, was going to marry Joseph.\" Parents normally arranged the marriages of their children. Alternate translation: \"The parents of Mary, the mother of Jesus, had promised her in marriage to Joseph\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μνηστευθείσης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "μητρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαρίας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωσήφ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "His mother, Mary, was engaged to marry Joseph",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Translate in a way that makes it clear that Jesus was not already born when Mary was engaged to Joseph. Alternate translation: \"Mary, who would be the mother of Jesus, was engaged\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μνηστευθείσης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "μητρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαρίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "His mother, Mary, was engaged",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joseph had not married Mary yet, but when a man and woman promised to marry each other, Jews considered them husband and wife though they did not live together. Alternate translation: \"Joseph, who was supposed to marry Mary\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Ἰωσὴφ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Joseph, her husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There were many prophets. Matthew was speaking of Isaiah. Alternate translation: \"the prophet Isaiah\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the prophet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the learned men told him when the star appeared. Alternate translation: \"what time the star had appeared. The learned men told Herod when the star first appeared\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "χρόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "φαινομένου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀστέρος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the exact time the star had appeare",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of this statement can be made explicit. Alternate translation: \"until I tell you it is safe to come back\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπω",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "until I tell you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Joseph, Mary, and Jesus remained in Egypt. Alternate translation: \"They remained\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἦν",
+      "glQuote": "He was",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Herod did not kill the children himself. Alternate translation: \"He gave orders for his soldiers to kill all the boys\" or \"He sent soldiers there to kill all the boy babies\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀποστείλας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀνεῖλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντας",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "παῖδας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he sent and killed all the male children",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Abraham is our ancestor\" or \"We are descendants of Abraham.\" The Jewish leaders thought that God would not punish them since they were descendants of Abraham. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πατέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀβραάμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We have Abraham for our father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Zebulun\" and \"Naphtali\" are the names of the tribes that lived in these territories many years earlier before foreigners took control of the land of Israel. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁρίοις",
+          "occurrence": 1
+        },
+        {
+          "word": "Ζαβουλὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Νεφθαλείμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the territories of Zebulun and Naphtali",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of this statement can be made explicit. Alternate translation: \"throwing a net into the water to catch fish\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "βάλλοντας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀμφίβληστρον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "θάλασσαν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "casting a net into the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "At night when it is dark, people can see the city lights shining. This can be stated in active form. Alternate translation: \"During the night, no one can hide the lights that shine from a city on a hill\" or \"Everyone sees the lights of a city on a hill\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλις",
+          "occurrence": 1
+        },
+        {
+          "word": "κρυβῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπάνω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄρους",
+          "occurrence": 1
+        },
+        {
+          "word": "κειμένη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A city set on a hill cannot be hidden",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The jot was the smallest Hebrew letter, and the tittle was a small mark that was the difference between two Hebrew letters. Alternate translation: \"not even the smallest written letter or the smallest part of a letter\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἰῶτα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἓν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "μία",
+          "occurrence": 1
+        },
+        {
+          "word": "κερέα",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "one jot or one tittle will certainly not",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"all things\" refers to everything in the law. Alternate translation: \"everything in the law\" or \"all that is written in the law\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "πάντα",
+      "glQuote": "all things",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the judgment\" implies that a judge will condemn the person to die. Alternate translation: \"A judge will condemn anyone who kills another person\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "φονεύσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἔνοχος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Whoever kills will be in danger of the judgment",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It seems here Jesus is not referring to a human judge but rather to God condemning the person who is angry with his brother. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔνοχος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "will be in danger of the judgment",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that this is God's altar at the temple in Jerusalem. Alternate translation: \"to God at the altar in the temple\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "θυσιαστήριον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "at the altar",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Anyone who.\" The context implies that he is speaking about a Roman soldier. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ὅστις",
+      "glQuote": "Whoever",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that those who see the person will honor him. This can be stated in active form. Alternate translation: \"in front of people just so that they can see you and give you honor for what you have done\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "θεαθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "before people to be seen by them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that those who see them will give them honor. This can be stated in active form. Alternate translation: \"so that people will see them and give them honor\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅπως",
+          "occurrence": 1
+        },
+        {
+          "word": "φανῶσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώποις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that they may be seen by people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied here that \"judge\" has the strong meaning of \"condemn harshly\" or \"declare guilty.\" Alternate translation: \"Do not condemn people harshly\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not judge",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus said \"that day\" knowing his hearers would understand he was referring to the day of judgment. You should include \"the day of judgment\" only if your readers would not understand otherwise. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείνῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in that day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jewish law required that the person show his healed skin to the priest, who would then allow him or her to return to the community, to be with other people. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "σεαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "δεῖξον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "show yourself to the priest",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The law of Moses required that someone healed of leprosy give a thanksgiving offering to the priest. When the priest accepted the gift, people would know that the man had been healed. Lepers were ostracized, banned from the community, until they had proof of their healing. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "προσένεγκον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "δῶρον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσέταξεν",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτύριον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "offer the gift that Moses commanded, for a testimony to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus' hearers would have thought that the Jews in Israel, who claim to be children of God, would have greater faith than anyone. Jesus is saying they are wrong and that the centurion's faith was greater. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "παρ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδενὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοσαύτην",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὗρον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have not found such great faith in anyone in Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Because Jews did not work or travel on the Sabbath, \"evening\" may imply after the Sabbath. They waited until evening to bring people to Jesus. You do not need to mention the Sabbath unless you need to avoid wrong meaning. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὀψίας",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "γενομένης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now when evening had come",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the demons knew that Jesus was going to cast them out. Alternate translation: \"Because you are going to cast us out\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκβάλλεις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If you cast us out",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "According to Jewish law, because she was bleeding she was not supposed to touch anyone. She touches his clothes so that Jesus' power would heal her and yet (she thought) he would not know that she touched him. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "μόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅψωμαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱματίου",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If only I touch his clothes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that they wanted Jesus to heal them. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐλέησον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Have mercy on us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of the statement can be made explicit. Alternate translation: \"stay in that person's house until you leave the town or village\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κἀκεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "μείνατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐξέλθητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "stay there until you leave",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If necessary, you can make explicit how the disciple becomes like the teacher. Alternate translation: \"know as much as his teacher knows\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "γένηται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάσκαλος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "be like his teacher",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If necessary, you can make explicit how the servant becomes like the master. Alternate translation: \"the servant should be satisfied to become only as important as his master\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "δοῦλος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "κύριος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "the servant like his master",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means they sang sad songs like women did at funerals. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἐθρηνήσαμεν",
+      "glQuote": "We mourned",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implicit information can be made explicit. Alternate translation: \"than for you, because you did not repent and believe in me, even though you saw me do miracles\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "than for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is sacred bread that priests placed before God in the tabernacle. Alternate translation: \"bread that the priest placed before God\" or \"the sacred bread\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρτους",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Προθέσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bread of the presence",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Jesus quotes scripture. Alternate translation: \"The prophet Hosea wrote this long ago: 'I desire mercy and not sacrifice.' If you had understood what this meant, you would not have condemned the guiltless\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγνώκειτε",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλεος",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλω",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "θυσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "κατεδικάσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναιτίους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If you had known what this meant, 'I desire mercy and not sacrifice,' you would not have condemned the guiltless",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They did not just want to accuse Jesus in front of the people. The Pharisees wanted Jesus to give an answer that contradicted the law of Moses so they could take him before a judge and legally charge him with breaking the law. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "κατηγορήσωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that they might accuse him of sinning",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The means that God's servant will tell the Gentiles that there will be justice. It can be stated clearly that God is the one who will bring about justice, and the abstract noun \"justice\" can be expressed as \"what is right.\" Alternate translation: \"he will announce to the nations that God will do for them what is right\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κρίσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπαγγελεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he will proclaim justice to the Gentiles",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit why they want to see a sign. Alternate translation: \"to see a sign from you that proves what you say is true\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σημεῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to see a sign from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit the implicit meaning of Jesus' statement. Alternate translation: \"than Jonah is here, yet you still have not repented, which is why God will condemn you\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Ἰωνᾶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὧδε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "than Jonah is here",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit the implicit meaning of Jesus' statement. Alternate translation: \"than Solomon is here, yet you do not listen. That is why God will condemn you\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Σολομῶνος",
+          "occurrence": 2
+        },
+        {
+          "word": "ὧδε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "than Solomon is here",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that he sat down to teach the people. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐκάθητο",
+          "occurrence": 1
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "θάλασσαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sat beside the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Jesus got into a boat because it would make it easier to teach the people. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὥστε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πλοῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμβάντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so he got into a boat",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"You will hear things, but you will not understand them.\" You can make explicit what the people will hear. Alternate translation: \"You will hear what God says through the prophets, but you will not understand its true meaning\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀκοῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούσετε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνῆτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You will indeed hear, but you will certainly not understand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit what the people will see. Alternate translation: \"you will see what God does through the prophets, but you will not understand it\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "βλέποντες",
+          "occurrence": 1
+        },
+        {
+          "word": "βλέψετε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἴδητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will indeed see, but you will certainly not perceive",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit what they have seen. Alternate translation: \"the things you have seen me do\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἃ",
+          "occurrence": 1
+        },
+        {
+          "word": "βλέπετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the things that you see",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit what they have heard. Alternate translation: \"the things you have heard me say\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἃ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκούετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the things that you hear",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Satan. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πονηρὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the evil one",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"what was sown\" refers to seed that fell. Alternate translation: \"The seed that fell on rocky ground\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πετρώδη",
+          "occurrence": 1
+        },
+        {
+          "word": "σπαρείς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "That which was sown on rocky ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to seed that was sown or that fell. Alternate translation: \"The seed that was sown\" or \"The seed that fell\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σπαρείς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "That which was sown",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"good food seeds\" or \"good grain seeds.\" The audience probably thought that Jesus was talking about wheat. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καλὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "σπέρμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "good seed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Mustard seeds were the smallest seeds known to the original hearers. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "μικρότερον",
+          "occurrence": 1
+        },
+        {
+          "word": "μέν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "σπερμάτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is indeed the smallest of all seeds",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that the yeast and the three measures of flour were made into dough for baking. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐζυμώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "until all the dough had risen",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that the person buys the field to take possession of the hidden treasure. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πωλεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀγοράζει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖνον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sells everything that he possesses, and buys that field",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"his hometown.\" This refers to the town of Nazareth, where Jesus grew up. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρίδα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his own region",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people believed that Jesus was just an ordinary man. They use this question to express their amazement that he was so wise and was able to do miracles. Alternate translation: \"How can an ordinary man like this be so wise and do such great miracles?\" or \"It is strange that he is able to speak with such wisdom and do these miracles!\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πόθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφία",
+          "occurrence": 1
+        },
+        {
+          "word": "αὕτη",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμεις",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Where does this man get this wisdom and these miraculous powers?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Philip was still alive when Herod married Herodias. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξεστίν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is not lawful",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit the implicit information. Alternate translation: \"in the midst of the guests attending the birthday celebration\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "μέσῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in their midst",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of this statement can be made explicit. Alternate translation: \"the disciples of John went and told Jesus what had happened to John the Baptist\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐλθόντες",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀπήγγειλαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they went and told Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"he left\" or \"he went away from the crowd.\" It is implied that Jesus' disciples went with him. Alternate translation: \"Jesus and his disciples left\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἀνεχώρησεν",
+      "glQuote": "he withdrew",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This washing is not only to clean hands. This refers to a ceremonial washing according to the tradition of the elders. Alternate translation: \"they do not wash their hands properly\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "νίπτονται",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they do not wash their hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that \"his father\" means \"his parents.\" This means the religious leaders taught that a person does not need to show respect to his parents by taking care of them. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τιμήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he does not need to honor his father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Isaiah is speaking what God told him. Alternate translation: \"when he told what God said\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "λέγων",
+      "glQuote": "saying",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the disciples went with Jesus. Alternate translation: \"Jesus and his disciples went away\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐξελθὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus went away",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase implies that she is requesting that Jesus heal her daughter. Alternate translation: \"Have mercy and heal my daughter\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐλέησόν",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Have mercy on me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The name Peter means \"rock.\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you are Peter",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The disciples are referring to the belief that Elijah will come back to life and return to the people of Israel before the Messiah comes. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "γραμματεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἠλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλθεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why then do the scribes say that Elijah must come first?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the man wants Jesus to heal his son. Alternate translation: \"have mercy on my son and heal him\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐλέησόν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "have mercy on my son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Fishermen tied hooks to the end of a line, then threw it in the water to catch fish. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "βάλε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄγκιστρον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "throw in a hook",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jewish teachers taught that only the most important angels could be in God's presence. Jesus means that the most important angels speak to God about these little ones. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄγγελοι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παντὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "βλέπουσι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐρανοῖς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "that in heaven their angels always look on the face of my Father who is in heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"treat him as you would treat a Gentile or tax collector.\" This implies that they should remove him from the community of believers. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔστω",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥσπερ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθνικὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "τελώνης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "let him be to you as a Gentile and a tax collector",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Jesus means \"if at least two of you\" or \"if two or more of you.\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "δύο",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if two of you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Jesus means \"two or more\" or \"at least two.\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δύο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "two or three",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"gave him over.\" Most likely the king himself did not take the first servant to the torturers. Alternate translation: \"he ordered his servants to give him over\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "παρέδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "handed him over",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is part of what Jesus expected the Pharisees to have understood from the scripture. The direct quotation can be expressed as an indirect quotation. Alternate translation: \"And surely you know that God also said that for this reason ... flesh\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕνεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        },
+        {
+          "word": "μίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He also said, 'For this reason ... one flesh.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit the implicit information. Alternate translation: \"For there are different reasons that men do not marry. For instance, there are men who were born eunuchs\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰσὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐνοῦχοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οἵτινες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "κοιλίας",
+          "occurrence": 1
+        },
+        {
+          "word": "μητρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγεννήθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For there are eunuchs who were that way from their mother's womb",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the disciples were amazed.\" It is implied that they were astonished because they believed having riches was proof that God approved of someone. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἐξεπλήσσοντο",
+      "glQuote": "they were very astonished",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If necessary, you can make explicit why the ten disciples were angry. Alternate translation: \"they were very angry with the two brothers because each of them also wanted to sit in a place of honor next to Jesus\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἠγανάκτησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δύο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they were very angry with the two brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit how the donkey is tied. Alternate translation: \"tied up there to a post\" or \"tied up there to a tree\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "δεδεμένην",
+      "glQuote": "tied up there",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There were many prophets. Matthew was speaking of Zechariah. Alternate translation: \"the prophet Zechariah\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "through the prophet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are ways to show honor to Jesus as he was entering Jerusalem. (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὄχλος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστρωσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱμάτια",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄλλοι",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔκοπτον",
+          "occurrence": 1
+        },
+        {
+          "word": "κλάδους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δένδρων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστρώννυον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁδῷ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "crowd spread their cloaks on the road, and others cut branches from the trees and spread them in the road",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus did not enter the actual temple. He entered the courtyard around the temple. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰσῆλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus entered into the temple",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that they were angry because they did not believe Jesus was the Christ and they did not want other people praising him. Alternate translation: \"they became very angry because people were praising him\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἠγανάκτησαν",
+      "glQuote": "they became very angry",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Jesus did not enter the actual temple. He entered the courtyard around the temple. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐλθόντος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When he had come into the temple",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the animals are cooked and ready to eat. This can be stated in active form. Alternate translation: \"My servants have killed and cooked my oxen and my fattened calves\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῦροί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σιτιστὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τεθυμένα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "My oxen and fattened calves have been killed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the king's soldiers killed the murderers. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπώλεσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "φονεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείνους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "killed those murderers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The disciples of the Pharisees supported paying taxes only to Jewish authorities. The Herodians supported paying taxes to the Roman authorities. It is implied that the Pharisees believed that no matter what Jesus said, he would offend one of these groups. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἡρῳδιανῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "their disciples ... the Herodians",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "People did not pay taxes directly to Caesar but to one of his tax collectors. Alternate translation: \"to pay the taxes that Caesar requires\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δοῦναι",
+          "occurrence": 1
+        },
+        {
+          "word": "κῆνσον",
+          "occurrence": 1
+        },
+        {
+          "word": "Καίσαρι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to pay taxes to Caesar",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Jesus means that they are mistaken about what they think about the resurrection. Alternate translation: \"You are mistaken about the resurrection\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "πλανᾶσθε",
+      "glQuote": "You are mistaken",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that no one asked him the kind of questions that were intended to make him say something wrong so the religious leaders could arrest him. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπερωτῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκέτι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to question him any longer",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these are things the Pharisees do to appear as if they honor God more than other people. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πλατύνουσι",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "φυλακτήρια",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μεγαλύνουσι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 3
+        },
+        {
+          "word": "κράσπεδα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For they make their phylacteries wide, and they enlarge the edges of their garments",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"tombs that someone has painted white.\" The Jews would paint tombs white so that people would easily see them and avoid touching them. Touching a tomb would make a person ceremonially unclean. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τάφοις",
+          "occurrence": 1
+        },
+        {
+          "word": "κεκονιαμένοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whitewashed tombs",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Jesus was not in the temple itself. He was in the courtyard around the temple. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱεροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the temple",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that enemy soldiers will tear down the stones. This can be stated in active form. Alternate translation: \"when the enemy soldiers come, they will tear down every stone in these buildings\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφεθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὧδε",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 3
+        },
+        {
+          "word": "καταλυθήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "certainly one stone will not be left on another here, that will not be torn down",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your coming\" refers to when Jesus will come in power, establishing God's reign on earth and bringing this age to an end. Alternate translation: \"What will be the sign that you are about to come and that the world is about to end\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σημεῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "σῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "παρουσίας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "συντελείας",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "αἰῶνος",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What will be the sign of your coming and of the end of the age?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implicit information can be stated explicitly. Alternate translation: \"open the door for us so we can come inside\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἄνοιξον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "open for us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implicit information can be stated explicitly. Alternate translation: \"according to each servant's skill in managing wealth\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναμιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "according to his own ability",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the person who possesses something also uses it wisely. Alternate translation: \"who uses well what he has\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔχοντι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to everyone who possesses",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the person does possess something but he does not use it wisely. Alternate translation: \"from anyone does not use well what he has\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from anyone who does not possess anything",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that this is a man whom Jesus had healed from leprosy. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Σίμωνος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "λεπροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Simon the leper",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"I\" refers to God. It is implied that God will cause or allow people to harm and kill Jesus. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "πατάξω",
+      "glQuote": "I will strike",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Jesus was not in the actual temple. He was in the courtyard around the temple. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 55
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the temple",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reason the high priest called Jesus' statement blasphemy is probably that he understood Jesus' words in [Matthew 26:64](../26/64.md) as a claim to be equal with God. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 65
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἐβλασφήμησεν",
+      "glQuote": "He has spoken blasphemy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jewish leaders were planning how they could convince the Roman leaders to kill Jesus. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "συμβούλιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαβον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὥστε",
+          "occurrence": 1
+        },
+        {
+          "word": "θανατῶσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "plotted against Jesus to put him to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the place they kept the money they used to provide for things needed for the temple and the priests. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κορβανᾶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the treasury",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) by saying this, Jesus implied that he is the King of the Jews. Alternate translation: \"Yes, as you said, I am\" or \"Yes. It is as you said\" or 2) by saying this, Jesus was saying that Pilate, not Jesus, was the one calling him the King of the Jews. Alternate translation: \"You yourself have said so\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 2
+        },
+        {
+          "word": "λέγεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is as you say",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Pilate ordered his soldiers to scourge Jesus. Handing Jesus over to be crucified is a metaphor for ordering his soldiers to crucify Jesus. Alternate translation: \"he ordered his soldiers to scourge Jesus and to crucify him\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-metaphor )]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "φραγελλώσας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "παρέδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "σταυρωθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but he scourged Jesus and handed him over to be crucified",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means Jesus and the soldiers came out of the city. Alternate translation: \"As they came out of Jerusalem\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἐξερχόμενοι",
+      "glQuote": "As they came out",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These were the clothes Jesus had been wearing. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱμάτια",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his garments",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They did not believe that Jesus is the Son of God, so they wanted him to prove it if it was true. Alternate translation: \"If you are the Son of God, prove it by coming down from the cross\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "κατάβηθι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "σταυροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If you are the Son of God, come down from the cross",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"those who were guarding Jesus.\" This refers to the other soldiers who were guarding Jesus with the centurion. Alternate translation: \"the other soldiers with him who were guarding Jesus\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τηροῦντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who were watching Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Joseph had workers who cut the tomb into the rock. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 60
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλατόμησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "πέτρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that he had cut into the rock",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Most likely Joseph had other people there to help him roll the stone. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 60
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "προσκυλίσας",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθον",
+          "occurrence": 1
+        },
+        {
+          "word": "μέγαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then he rolled a large stone",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated explicitly what the disciples doubted. Alternate translation: \"some doubted that he was really Jesus and that he had become alive again\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδίστασαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but some doubted",
+      "occurrence": 1
+    }
+  }
+]

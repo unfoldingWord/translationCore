@@ -1,0 +1,109 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This double negative emphasizes that James was the only apostle whom Paul saw. Alternate translation: \"the only other apostle I saw was James\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "ἕτερον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστόλων",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶδον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰάκωβον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I saw none of the other apostles except James",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses running as a metaphor for work, and he uses a double negative to emphasize that the work he had done was profitable. Alternate translation: \"I was doing, or had done, profitable work\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "μή",
+          "occurrence": 1
+        },
+        {
+          "word": "πως",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "κενὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τρέχω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔδραμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I was not running—or had not run—in vain",
+      "occurrence": 1
+    }
+  }
+]

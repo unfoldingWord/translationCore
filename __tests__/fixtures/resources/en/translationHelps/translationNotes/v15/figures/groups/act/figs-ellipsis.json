@@ -1,0 +1,541 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies someone went to the jail. Alternate translation: \"sent someone to the jail to bring the apostles\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀπέστειλαν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "δεσμωτήριον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀχθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sent to the jail to have the apostles brought ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"it\" refers to \"this plan or work.\" Alternate translation: \"if God has devised this plan or commanded these men to do this work\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if it is of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to add more information. Alternate translation: \"the ministry of teaching and preaching the message\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "διακονίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ministry of the word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Jacob became the father.\" Stephen shortened this. (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "Ἰακὼβ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jacob the father ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter leaves out some things to keep the story short. Alternate translation: \"the Holy Spirit came on the Gentile believers, just as he came on the Jewish believers at Pentecost\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἐπέπεσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὥσπερ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀρχῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Holy Spirit came on them, just as on us in the beginning ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"guard\" is understood from the previous phrase. Alternate translation: \"and the second guard\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δευτέραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and the second ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The second group mentioned agreed with the message about grace. It may be helpful to restate the verb. Alternate translation: \"sided with the apostles\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "σὺν",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀποστόλοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with the apostles ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"in Christ\" are understood. Alternate translation: \"who believed in Christ\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "πιστῆς",
+      "glQuote": "who believed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"cloth\" is understood. Alternate translation: \"a merchant who sold purple cloth\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "πορφυρόπωλις",
+      "glQuote": "a seller of purple ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this as a complete sentence. Alternate translation: \"We received the kind of baptism about which John taught\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "οὐδ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠκούσαμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Into John's baptism ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hands\" can refer to the whole person. Alternate translation: \"He is saying that the idols that people make are not real gods\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "θεοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "γινόμενοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He is saying that there are no gods that are made with hands ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul taught people in various private homes. The words \"I taught\" are understood. Alternate translation: \"I also taught when I was in your homes\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "κατ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "οἴκους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from house to house ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to make explicit what they could not persuade Paul not to do. Alternate translation: \"persuaded not to go up to Jerusalem\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "πειθομένου",
+      "glQuote": "persuaded",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"were shouting\" are understood from the previous phrase. Alternate translation: \"and others were shouting another\" or \"and others in the crowd were shouting something else\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ἄλλο",
+      "glQuote": "and others another ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"about me\" are understood. Alternate translation: \"bear witness about me in Rome\" or \"testify about me in Rome\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "Ῥώμην",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτυρῆσαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bear witness in Rome ",
+      "occurrence": 1
+    }
+  }
+]

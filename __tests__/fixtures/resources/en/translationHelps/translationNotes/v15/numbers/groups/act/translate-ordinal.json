@@ -1,0 +1,106 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"On their next trip\" (See: [[rc://en/ta/man/translate/translate-ordinal ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "δευτέρῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "On their second trip ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The ordinal number \"fourteenth\" can be translated as \"fourteen\" or \"14.\" Alternate translation: \"After 14 days since the storm started, that night\" (See: [[rc://en/ta/man/translate/translate-ordinal]] and [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τεσσαρεσκαιδεκάτη",
+          "occurrence": 1
+        },
+        {
+          "word": "νὺξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When the fourteenth night had come ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The ordinal number \"fourteenth\" can be stated as \"fourteen.\" Alternate translation: \"For 14 days\" (See: [[rc://en/ta/man/translate/translate-ordinal]] and [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τεσσαρεσκαιδεκάτην",
+          "occurrence": 1
+        },
+        {
+          "word": "σήμερον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This day is the fourteenth day that ",
+      "occurrence": 1
+    }
+  }
+]

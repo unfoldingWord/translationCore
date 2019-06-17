@@ -1,0 +1,185 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Micah was speaking to the people of Bethlehem as if they were with him but they were not. Also, \"are not the least\" can be translated with a positive phrase. Alternate translation: \"you, people of Bethlehem, ... your town is among the most important towns in Judah\" (See: [[rc://en/ta/man/translate/figs-apostrophe]] and [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": [
+        {
+          "word": "σύ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βηθλέεμ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐδαμῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλαχίστη",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡγεμόσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰούδα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you, Bethlehem, ... are not the least among the leaders of Judah",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks as if the people of the cities of Chorazin and Bethsaida were there listening to him, but they were not. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": [
+        {
+          "word": "οὐαί",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Χοραζείν",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐαί",
+          "occurrence": 2
+        },
+        {
+          "word": "σοι",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Βηθσαϊδάν",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Woe to you, Chorazin! Woe to you, Bethsaida!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus now speaks to the people in the city of Capernaum as if they were listening to him, but they were not. The pronoun \"you\" is singular and refers to Capernaum throughout these two verses. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": [
+        {
+          "word": "σύ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Καφαρναούμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You, Capernaum",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks to the people of Jerusalem as though they were the city itself. (See: [[rc://en/ta/man/translate/figs-apostrophe]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": [
+        {
+          "word": "Ἰερουσαλὴμ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰερουσαλήμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jerusalem, Jerusalem",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a Roman province in the southern part of modern-day Greece. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀχαΐᾳ",
+      "glQuote": "Achaia",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is another name for the devil. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βελιάρ",
+      "glQuote": "Beliar",
+      "occurrence": 1
+    }
+  }
+]

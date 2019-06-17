@@ -1,0 +1,61 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul was not counting words, but used exaggeration to emphasize that a few understandable words are far more valuable than even a great number of words in a language that people cannot understand. Alternate translation: \"10,000 words\" or \"a great many words\" (See: [[rc://en/ta/man/translate/translate-numbers]] and [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "μυρίους",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγους",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "γλώσσῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "than ten thousand words in a tongue",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "500 (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": "πεντακοσίοις",
+      "glQuote": "five hundred",
+      "occurrence": 1
+    }
+  }
+]

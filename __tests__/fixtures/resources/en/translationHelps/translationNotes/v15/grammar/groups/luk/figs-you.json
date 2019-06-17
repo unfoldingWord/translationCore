@@ -1,0 +1,820 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the people in the Old Testament who received God's Law. You could use the singular form of 'you' because each person was to obey it, or you could use the plural form of 'you' because all of the people were to obey it. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "προσκυνήσεις",
+      "glQuote": "You will worship",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was speaking to the scribes and Pharisees. The word \"you\" is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "εἰδῆτε",
+      "glQuote": "you may know",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"your\" is singular because God was speaking to the Messiah in the quotation. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "σου",
+      "glQuote": "your",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is speaking to the crowd, so \"you\" is plural. Jesus uses this phrase to emphasize the truth of the surprising thing he is about to say next. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is plural. Jesus uses these questions to express his sadness that the people did not believe. They can be written as statements. Alternate translation: \"I have been with you so long, yet you do not believe. I wonder how long I must put up with you.\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "πότε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσομαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνέξομαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how long must I be with you and put up with you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your\" is singular. Jesus is speaking directly to the father who addressed him. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "προσάγαγε",
+          "occurrence": 1
+        },
+        {
+          "word": "ὧδε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Bring your son here",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was speaking to the disciples. The word \"you\" is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus gives these commands to encourage his disciples to pray continually. Some languages may also require more information with these verbs. Use the form of \"you\" that would be most appropriate in this context. Alternate translation: \"keep asking for what you need ... keep seeking what you need from God ... find it ... keep knocking on the door\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "αἰτεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ζητεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κρούετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "ask ... seek ... knock",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Though Jesus is talking to a crowd, the situation he is presenting is something that a person would go through alone. So in some languages the word \"you\" would be singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 58
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑπάγεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when you are going",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was talking to a crowd. The form of \"you\" is plural. He is addressing them as if they will not enter through the narrow door into the kingdom. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἄρξησθε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑστάναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will begin to stand outside",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These occurrences of \"you\" are singular. Jesus is speaking to the group as if to each individual person. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "κληθῇς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When you ... than you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These occurrences of \"you\" and \"your\" are singular. Jesus is speaking to the group as if to each individual person. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἐρεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἄρξῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he will say to you ... you will proceed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"you\" is singular because Jesus is speaking directly to the Pharisee that invited him. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιῇς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When you give",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" is plural, so it is unclear to whom it is addressed. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was talking to a group of people, so languages that have a plural form of \"you\" would use that. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύνασθε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δουλεύειν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "You cannot serve",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was speaking to his disciples, so languages that have a plural form of \"you\" would use it. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you also",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" is singular because Jesus is speaking to the city. But if this would be unnatural in your language, you could use a plural form of \"you\" to refer to the people of the city. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ἔγνως",
+      "glQuote": "you had known",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" is singular because Jesus is speaking to the city as he would to a woman. But if this would be unnatural in your language, you could use a plural form of \"you\" to refer to the people of the city. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "σὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you ... your",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was talking to his disciples. The word \"you\" is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was talking to his disciples. The word \"you\" is plural. Alternate translation: \"that you do not believe lies\" or \"that no one deceives you\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλανηθῆτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you are not deceived",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was talking to his disciples. The word \"you\" is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὑμᾶς",
+      "glQuote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" refers to all of the apostles. Languages that have different forms of \"you\" should use the plural form. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὑμᾶς",
+      "glQuote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" here refers specifically to Simon. Languages that have different forms of you should use the singular form. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδεήθην",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But I have prayed for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was talking to his apostles. So languages that have different forms of \"you\" should use the plural form. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὅτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέστειλα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When I sent you out",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is plural, referring to the women who came. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητεῖτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why do you seek",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" is plural. It refers to the women and possibly the other disciples in addition. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὑμῖν",
+      "glQuote": "to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "σὺ",
+      "glQuote": "e you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"May you have peace\" or \"May God give you peace!\" The word \"you\" is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "εἰρήνη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Peace be to you",
+      "occurrence": 1
+    }
+  }
+]

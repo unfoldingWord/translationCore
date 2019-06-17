@@ -1,0 +1,70 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James is making a generalized statement. (See: [[rc://en/ta/man/translate/figs-genericnoun ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλοὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Not many of you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the people who do what is right. They do not.\" Here \"the righteous person\" refers to righteous people in general and not to a specific person. Alternate translation: \"righteous people. They do not\" (See: [[rc://en/ta/man/translate/figs-genericnoun ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "δίκαιον",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀντιτάσσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the righteous person. He does not ",
+      "occurrence": 1
+    }
+  }
+]

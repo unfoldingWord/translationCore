@@ -1,0 +1,154 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If your language does not allow quotes within quotes you can rewrite it as a single quote. Alternate translation: \"This man said that he is able to destroy ... days.\" (See: [[rc://en/ta/man/translate/writing-quotations]] and [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 61
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-quotations",
+      "quote": [
+        {
+          "word": "εἶπον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔφη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "δύναμαι",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "καταλῦσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τριῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμερῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκοδομῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        }
+      ],
+      "glQuote": "This man said, 'I am able to destroy ... rebuild it in three days.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If your language does not allow quotations within quotations you may translate this as a single quote. Alternate translation: \"Tell others that Jesus' disciples came ... while you were sleeping\" (See: [[rc://en/ta/man/translate/writing-quotations]] and [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-quotations",
+      "quote": [
+        {
+          "word": "εἴπατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐλθόντες",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κοιμωμένων",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Say, 'His disciples came ... while we were sleeping.' ",
+      "occurrence": 1
+    }
+  }
+]

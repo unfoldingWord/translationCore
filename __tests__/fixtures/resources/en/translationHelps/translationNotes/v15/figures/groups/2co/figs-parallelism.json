@@ -1,0 +1,238 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases express the same idea in two different ways. Both phrases refer to God. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκτιρμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "πάσης",
+          "occurrence": 1
+        },
+        {
+          "word": "παρακλήσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Father of mercies and the God of all comfort",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an Old Testament quotation speaks of God being with the people in two different ways. The words \"dwell among\" speak of living where others live, while the words \"walk among\" speak of being with them as they go about their lives. Alternate translation: \"I will be with them and help them\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνοικήσω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐνπεριπατήσω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I will dwell among them and walk among them.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is saying much the same thing twice. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "αὐτοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑαυτοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "μετροῦντες",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνκρίνοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοὺς",
+          "occurrence": 3
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "they measure themselves by one another and compare themselves with each other",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) Paul is saying almost the same thing three times for emphasis. Alternate translation: \"did not stop commiting the sexual sins that they practiced\" or 2) Paul is speaking of three different sins. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετανοησάντων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθαρσίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πορνείᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀσελγείᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "\\",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "did not repent of the impurity and sexual immorality and lustful indulgence",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This coin was worth a day's wages. Alternate translation: \"one silver coin\" or \"the pay for one day of work\" (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": "δηναρίου",
+      "glQuote": "one denarius",
+      "occurrence": 1
+    }
+  }
+]

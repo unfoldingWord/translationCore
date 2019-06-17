@@ -1,0 +1,109 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is repeated for emphasis. Alternate translation: \"which we ourselves have seen\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἑωράκαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 4
+        },
+        {
+          "word": "ἐθεασάμεθα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "which we have seen ... we have looked at",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing. John uses them to emphasize that God will surely forgive our sins. Alternate translation: \"and will completely forgive us of what we have done wrong\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁμαρτίας",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "καθαρίσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάσης",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδικίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to forgive us our sins and cleanse us from all unrighteousness",
+      "occurrence": 1
+    }
+  }
+]

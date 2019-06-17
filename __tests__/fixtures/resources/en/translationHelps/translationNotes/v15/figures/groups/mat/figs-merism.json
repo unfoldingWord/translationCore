@@ -1,0 +1,249 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heaven\" and \"earth\" refer to the entire universe. Alternate translation: \"as long as the universe lasts\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "παρέλθῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "until heaven and earth pass away",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Using the opposites \"east\" and \"west\" is a way of saying \"everywhere.\" Alternate translation: \"from everywhere\" or \"from far away in every direction\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνατολῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δυσμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the east and the west",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Lord who rules over heaven and earth.\" The phrase \"heaven and earth\" is a merism that refers to all people and things in the universe. Alternate translation: \"Lord who rules over the whole universe\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Lord of heaven and earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"day\" and \"night\" mean complete 24-hour periods. Alternate translation: \"three complete days\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "τρεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρεῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "νύκτας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "three days and three nights",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Abel was the first righteous victim of murder, and Zechariah, who was murdered by Jews in the temple, was probably thought to be the last. These two men represent all the righteous people who have been murdered. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "Ἂβελ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ζαχαρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Abel ... Zechariah",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heaven\" and \"earth\" are used together to mean everyone and everything in heaven and earth. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in heaven and on earth",
+      "occurrence": 1
+    }
+  }
+]

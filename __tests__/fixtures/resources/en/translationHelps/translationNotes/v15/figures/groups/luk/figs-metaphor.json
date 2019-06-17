@@ -1,0 +1,4435 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Fear is described as if it was something that attacked or overpowered Zechariah. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "φόβος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπέπεσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fear fell on him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"be turned\" is a metaphor for a person repenting and worshiping the Lord. This can be stated in active form. Alternate translation: \"He will cause many of the people of Israel to repent and worship the Lord their God\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιστρέψει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He will turn many of the sons of Israel back to the Lord their God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The heart is spoken of as if it is something that can be turned to go in a different direction. This refers to changing someone's attitude toward something. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐπιστρέψαι",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to turn back the hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Mary's baby is spoken of as if it is the fruit that a plant produces. Alternate translation: \"the baby in your womb\" or \"the baby you will bear\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρπὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "κοιλίας",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the fruit of your womb",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this word picture, people who are important are higher than people who are less important. Alternate translation: \"has made humble people important\" or \"has given honor to people whom others have not honored\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὕψωσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταπεινούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he has raised up those of low condition",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"these matters were spread\" is a metaphor for people talking about them. The passive verb here can also be translated in active form. Alternate translation: \"All these matters were talked about by people throughout all the hill country of Judea\" or \"People throughout the hill country of Judea talked about all these matters\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 65
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀρεινῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίας",
+          "occurrence": 1
+        },
+        {
+          "word": "διελαλεῖτο",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all these matters were being talked about throughout all the hill country of Judea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Thinking often about things that have happened is spoken of as putting those things safely in their hearts. Alternate translation: \"thought carefully about these matters\" or \"thought a lot about these events\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 66
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἔθεντο",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "stored them in their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The horn of an animal is a symbol of its power to defend itself. To raise up here is to bring into existence or to enable to act. The Messiah is spoken of as if he were a horn with the power to save Israel. Alternate translation: \"He has brought to us someone with the power to save us\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 69
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἤγειρεν",
+          "occurrence": 1
+        },
+        {
+          "word": "κέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "σωτηρίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He has raised up a horn of salvation for us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metaphor that means that John will prepare the people to listen to and believe the Lord's message. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 76
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἑτοιμάσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to prepare his paths",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Light is often a metaphor for truth. Here, the spiritual truth the Savior will provide is spoken of as if it is a sunrise that lights up the earth. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 78
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀνατολὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὕψους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the sunrise from on high",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Light is often a metaphor for truth. Here, the spiritual truth that the Savior will provide is spoken of as if it is a sunrise that lights up the earth (verse 78). (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 79
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἐπιφᾶναι",
+      "glQuote": "to shine",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Darkness is here a metaphor for the absence of spiritual truth. Here, people who lack spiritual truth are spoken of as if they are sitting in darkness. Alternate translation: \"people who do not know the truth\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 79
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "σκότει",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καθημένοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who sit in darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"guide\" is a metaphor for teaching, and \"path of peace\" is a metaphor for living at peace with God. The phrase \"our feet\" is a synecdoche that represents the whole person. Alternate translation: \"teach us how to live at peace with God\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 79
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "κατευθῦναι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to guide our feet into the path of peace",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words could refer to a literal army of angels, or it could be a metaphor for an organized group of angels. Alternate translation: \"a large group of angels from heaven\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πλῆθος",
+          "occurrence": 1
+        },
+        {
+          "word": "στρατιᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a great multitude from heavena multitude of the heavenly army",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A person who thinks is something is very valuable or precious is \"treasuring\" it. Mary considered the things she was told about her son to be very precious. Alternate translation: \"carefully remembering them\" or \"joyfully remembering them\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "συμβάλλουσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "pondering them in her heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor means that the child will help people to understand God's will. The Gentiles understanding God's will is spoken of as if it were people using physical light to see a solid object. You may need to make explicit what it is that the Gentiles will see. Alternate translation: \"This child will enable the Gentiles to understand God's will as light allows people to see clearly\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "φῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκάλυψιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A light for revelation to the Gentiles",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"downfall\" and \"rising up\" express turning away from God and drawing closer to God. Alternate translation: \"this child will cause many people in Israel to fall away from God or to rise closer to God\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "κεῖται",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πτῶσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀνάστασιν",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this child is appointed for the downfall and rising up of many people in Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer speaks of God's message as though it were a person who moved toward those who heard it. Alternate translation: \"God spoke his message\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥῆμα",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word of God came",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Get the road ready for the Lord.\" Doing this represents preparing to hear the Lord's message when he comes. People do this by repenting of their sins. Alternate translation: \"Prepare to hear the Lord's message when he comes\" or \"Repent and be ready for the Lord to come\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἑτοιμάσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Make ready the way of the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "When people prepare the road for an important person who is coming, they cut down the high places and fill in the low places so that the road will be level. This is part of the metaphor started in the previous verse. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πᾶσα",
+          "occurrence": 1
+        },
+        {
+          "word": "φάραγξ",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄρος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "βουνὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταπεινωθήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Every valley will be filled ... every mountain and hill will be made low",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metaphor. Here \"offspring\" means \"having the characteristic of.\" Vipers are poisonous snakes that are dangerous and represent evil. Alternate translation: \"You evil poisonous snakes\" or \"You are evil, like poisonous snakes (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "γεννήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐχιδνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You offspring of vipers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this metaphor, a person's behavior is compared to fruit. Just as a plant is expected to produce fruit that is appropriate for that kind of plant, a person who says that he has repented is expected to live righteously. Alternate translation: \"produce the kind of fruit that shows that you have repented\" or \"do the good things that show that you have turned away from your sin\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ποιήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καρποὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀξίους",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "μετανοίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "produce fruits that are worthy of repentance",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor compares literal baptism that brings a person into contact with water to a spiritual baptism that brings them into contact with the Holy Spirit and with fire. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 2
+        },
+        {
+          "word": "βαπτίσει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πυρί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He will baptize you with the Holy Spirit and with fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"fire\" may refer to 1) judgment or 2) purification. It is preferred to leave it as \"fire\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "πυρί",
+      "glQuote": "fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"He is holding a winnowing fork because he is ready.\" John speaks of the Christ coming to judge people as if he were a farmer who is ready to separate wheat grain from chaff. Alternate translation: \"He is ready to judge people like a farmer who is ready\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πτύον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "His winnowing fork is in his hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In the Old Testament, ceremonial oil was poured on a person when they were given power and authority to do a special task. Jesus uses this metaphor to refer to the Holy Spirit being on him to prepare him for this work. Alternate translation: \"the Holy Spirit is upon me to empower me\" or \"the Holy Spirit gave me power and authority\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἔχρισέν",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he anointed me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metaphor. The sky is pictured as a ceiling that was closed, and so no rain would fall from it. Alternate translation: \"when no rain fell down from the sky\" or \"when there was no rain at all\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὅτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλείσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when the sky was shut up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The image of catching fish is being used as a metaphor for gathering people to follow Christ. Alternate translation: \"you will fish for people\" or \"you will gather people for me\" or \"you will bring people to be my disciples\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀνθρώπους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωγρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will be catching men",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is comparing himself to the bridegroom, and the disciples to the wedding attendants. He does not explain the metaphor, so the translation should explain it only if necessary. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀπαρθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "νυμφίος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the bridegroom will be taken away from them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor contrasts the old teaching of the religious leaders against the new teaching of Jesus. The point is that people who are used to the old teaching are not willing to listen to the new things that Jesus is teaching. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πιὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "παλαιὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλει",
+          "occurrence": 1
+        },
+        {
+          "word": "νέον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "after drinking old wine wants the new",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks either of God or of people giving generously as if he were speaking of a generous grain merchant. Alternate translation: \"God will pour into your lap a generous amount—pressed down, shaken together and spilling over\" or \"Like a generous grain merchant who presses down the grain and shakes it together and pours in so much grain that it spills over, they will give generously to you\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "μέτρον",
+          "occurrence": 1
+        },
+        {
+          "word": "καλὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "πεπιεσμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "σεσαλευμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπερεκχυννόμενον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "δώσουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόλπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A good measure—pressed down, shaken together, spilling over—they will pour into your lap",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The person who is \"blind\" is a metaphor for a person who has not been taught as a disciple. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "τυφλὸς",
+      "glQuote": "blind man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metaphor that refers to the less important faults of a fellow believer. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κάρφος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the tiny piece of straw that is in your brother's eye",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metaphor for a person's most important faults. A log could not literally go into a person's eye. Jesus exaggerates to emphasize that a person should pay attention to his own more important faults before he deals with another person's less important faults. (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δοκὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἰδίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμῷ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "the log that is in your own eye",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the good thoughts of a person are spoken of as if they are treasures stored in the heart of that person, and \"his heart\" is a metonym for the person's inner being. Alternate translation: \"the good things he keeps deep inside himself\" or \"the good things he values very intensely\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαθοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "θησαυροῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the good treasure of his heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Producing what is good is a metaphor for doing what is good. Alternate translation: \"does what is good\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "προφέρει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαθόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "produces what is good",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the evil thoughts of a person are spoken of as if they are evil things stored in the heart of that person, and \"his heart\" is a metonym the person's inner being. Alternate translation: \"the evil things he keeps deep inside himself\" or \"the evil things he values very intensely\" (See: [[rc://en/ta/man/translate/figs-metaphor (See- figs-metonymy)]] and ",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πονηροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the evil treasure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings of this metaphor are 1) a person who easily changes his mind, as reeds are easily moved by the wind, or 2) a person who talks a lot but does not say anything important, as reeds rattle when the wind blows. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "κάλαμον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνέμου",
+          "occurrence": 1
+        },
+        {
+          "word": "σαλευόμενον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A reed shaken by the wind",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"among those to whom a woman has given birth.\" This is a metaphor that refers to all people. Alternate translation: \"of all the people who have ever lived\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "γεννητοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "γυναικῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "among those born of women",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In the parable this was a metaphor of a bird snatching away the seeds. Try to use words in your language that keep that image. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "αἴρει",
+      "glQuote": "takes away",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor refers to the way weeds cut off light and nutrients from plants and keep them from growing. Alternate translation: \"as weeds prevent good plants from growing, the cares, riches, and pleasures of this life keep these people from becoming mature\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μεριμνῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πλούτου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἡδονῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βίου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "πορευόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "συνπνίγονται",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "τελεσφοροῦσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they are choked by the cares and riches and pleasures of this life, and they do not produce mature fruit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"they do not bear ripe fruit.\" Mature fruit is a metaphor for good works. Alternate translation: \"so like a plant that does not produce mature fruit, they do not produce good works\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "τελεσφοροῦσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they do not produce mature fruit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"produce fruit by enduring patiently\" or \"produce fruit by continued effort.\" Fruit is a metaphor for good works. Alternate translation: \"like healthy plants that produce good fruit, they produce good works by persevering\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "καρποφοροῦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "ὑπομονῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bear fruit with patient endurance",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor expresses that the people who were coming to listen to Jesus were as important to him as his own family was. Alternate translation: \"Those who hear the word of God and obey it are like a mother and brothers to me\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "μήτηρ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὗτοί",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ποιοῦντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "My mother and my brothers are those who hear the word of God and do it",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"follow me.\" Coming after Jesus represents being one of his disciples. Alternate translation: \"be my disciple\" or \"be one of my disciples\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὀπίσω",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔρχεσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "come after me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Following Jesus here represents obeying him. Alternate translation: \"obey me\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀκολουθείτω",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "follow me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor could also be stated as a simile. Alternate translation: \"in my name, it is like he is welcoming me\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "δέχεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in my name, welcomes me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus does not mean literally that dead people will bury other dead people. Possible meanings of \"the dead\" are 1) it is a metaphor for those who will soon die, or 2) it is a metaphor for those who do not follow Jesus and are spiritually dead. The main point is that a disciple must not let anything delay him from following Jesus. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 60
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἄφες",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκροὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "θάψαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑαυτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let the dead bury their own dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"There is a big crop, but not enough workers to bring it in.\" Jesus means there are many people ready to enter God's kingdom, but there are not enough disciples to go teach and help the people. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "θερισμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "πολύς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐργάται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀλίγοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The harvest is plentiful, but the laborers are few",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"authority to trample on snakes and crush scorpions.\" Possible meanings are 1) snakes and scorpions are a metaphor for evil spirits. Alternate translation: \"the right to defeat evil spirits\" or 2) this refers to actual snakes and scorpions. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπάνω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄφεων",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκορπίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "authority to tread on serpents and scorpions",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To knock at a door is to hit it a few times to let a person inside the house know you are standing outside. It can also be translated using the way people in your culture show that they have arrived, such as \"call out\" or \"cough\" or \"clap.\" Here, it means a person should keep praying to God until he answers. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "κρούετε",
+      "glQuote": "knock",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"crashes down and is destroyed.\" This image of the house collapsing refers to the destruction of a family when the members fight each other. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "πίπτει",
+      "glQuote": "falls",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks about Jesus defeating Satan and his demons as if Jesus were a stronger man who takes what belongs to a strong man. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰσχυρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπάρχοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When a strong man ... his possessions are safe",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks about Jesus defeating Satan and his demons as if Jesus were a stronger man who takes what belongs to a strong man. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐπὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἰσχυρότερος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκῦλα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "διαδίδωσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when one who is stronger than him  ... divide his possessions",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the person in which he used to live. Alternate translation: \"the person in whom I used to live\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶκόν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ὅθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξῆλθον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my house from which I came",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this part of the metaphor, the things they saw Jesus do provided understanding just as an eye provides light for the body. Alternate translation: \"Your eye is like the lamp of the body\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λύχνος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σώματός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀφθαλμός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The lamp of the body is your eye",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This part of the metaphor contrasts the careful way they clean the outside of the dishes with the way they ignore their own internal condition. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσωθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "γέμει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁρπαγῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πονηρίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but the inside of you is filled with greed and evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"you put burdens on people that are too heavy and they cannot carry them.\" Jesus speaks about someone giving people many rules as if the person were giving them heavy things to carry. Alternate translation: \"you burden people by giving them too many rules to follow\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "φορτίζετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπους",
+          "occurrence": 1
+        },
+        {
+          "word": "φορτία",
+          "occurrence": 1
+        },
+        {
+          "word": "δυσβάστακτα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you put people under burdens that are hard to carry",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks about God's truth as if it were in a house that the teachers refuse to enter and will not let others have the key to enter either. This means the teachers do not truly know God, and they prevent others from knowing him as well. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἤρατε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κλεῖδα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γνώσεως",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσερχομένους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκωλύσατε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you have taken away the key of knowledge ... hinder those who are entering",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means they wanted Jesus to say something wrong so that they could accuse him. The scribes and Pharisees did not argue in order to defend their views, but to try to trap Jesus so they could accuse him of breaking the law of God. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "θηρεῦσαί",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to trap him in something from his mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Just as yeast spreads through a whole lump of bread dough, their hypocrisy was spreading through the whole community. Alternate translation: \"Guard yourself against the hypocrisy of the Pharisees, which is like yeast\" or \"Be careful that you do not become hypocrites like the Pharisees. Their evil behavior influences everyone just as yeast affects a lump of dough\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "προσέχετε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζύμης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "Φαρισαίων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ἥτις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπόκρισις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Guard yourselves from the yeast of the Pharisees, which is hypocrisy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metaphor because a cubit is a measure of length, rather than of time. The image is of a person's life stretched out as if it were a board, a rope, or some other physical object. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡλικίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσθεῖναι",
+          "occurrence": 1
+        },
+        {
+          "word": "πῆχυν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "add a cubit to his lifespan",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"If God clothes the grass in the field like that, and it\" or \"If God gives the grass in the field such beautiful clothing, and it.\" God making the grass beautiful is spoken of as if God were putting beautiful clothes on the grass. Alternate translation: \"If God makes the grass in the field beautiful like this, and it\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγρῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "χόρτον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now if God so clothes the grass in the field, which exists",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is calling his disciples a flock. A flock is a group of sheep or goats that a shepherd cares for. As a shepherd cares for his sheep, God cares for Jesus' disciples. Alternate translation: \"small group\" or \"dear group\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μικρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποίμνιον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "little flock",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The purses and treasure in the heavens are the same thing. They both represent God's blessing in heaven. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ποιήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "βαλλάντια",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "θησαυρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Make for yourselves purses ... treasure in the heavens",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I came to throw fire on the earth\" or \"I came to set the earth on fire.\" Possible meanings are 1) Jesus has come to judge people or 2) Jesus has come to purify believers or 3) Jesus has come to cause division among people. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 49
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πῦρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦλθον",
+          "occurrence": 1
+        },
+        {
+          "word": "βαλεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I came to cast fire upon the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"baptism\" refers to what Jesus must suffer. Just as water covers a person during baptism, suffering will overwhelm Jesus. Alternate translation: \"I must go through a baptism of terrible suffering\" or \"I must be overwhelmed by suffering as a person being baptized is covered by water\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "βάπτισμα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔχω",
+          "occurrence": 1
+        },
+        {
+          "word": "βαπτισθῆναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have a baptism to be baptized with",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus compares people tying animals to the way Satan restricted the woman with this disease. Alternate translation: \"whom Satan kept crippled by her illness\" or \"whom Satan bound with this disease\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἣν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔδησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σατανᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whom Satan bound",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Work hard to go through the narrow doorway.\" Jesus is speaking about the entrance to God's kingdom as if it were a small doorway to a house. Since Jesus is talking to a group, the \"you\" implied in this command is plural. (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀγωνίζεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσελθεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "στενῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "θύρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Struggle to enter through the narrow door",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the owner of the house with the narrow door in the previous verses. This is a metaphor for God as the ruler of the kingdom. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκοδεσπότης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the owner of the house",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It was common to speak of the joy in God's kingdom as a feast. Alternate translation: \"they will feast in the kingdom of God\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνατολῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "δυσμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "βορρᾶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "νότου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "be seated at a table in the kingdom of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Being first represents being important or honored. Alternate translation: \"will be the most important ... will be the least important\" or \"God will honor ... God will shame\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἔσονται",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔσονται",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσχατοι",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "will be first ... will be last",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was calling Herod a fox. A fox is a small wild dog. Possible meanings are 1) Herod was not much of a threat at all 2) Herod was deceptive. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλώπεκι",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that fox",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This describes how a hen protects her young from harm by covering them with her wings. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "τρόπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄρνις",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "νοσσιὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πτέρυγας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the way a hen gathers her brood under her wings",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a prophecy about something that would happen soon. It means that God has stopped protecting the people of Jerusalem, so enemies can attack them and drive them away. Possible meanings are 1) God will abandon them. Alternate translation: \"God will abandon you\" or 2) their city will be empty. Alternate translation: \"your house will be abandoned\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀφίεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶκος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your house is abandoned",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus does not mean every Christian must be crucified. The Romans often made people carry their own crosses before they crucified them as a sign of their submission to Rome. This metaphor means they must submit to God and be willing to suffer in any way to be Jesus' disciples. (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "βαστάζει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "σταυρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "carry his own cross",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Salt is useful.\" Jesus is teaching a lesson about those who want to be his disciple. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "καλὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅλας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "So salt is good",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor speaks of the son being gone as if he were dead. Alternate translation: \"it is as if my son were dead and became alive again\" or \"I felt like my son had died, but he is now alive\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνέζησεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this son of mine was dead, and now is alive",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor speaks of the son being gone as if he were lost. Alternate translation: \"It is as if my son were lost and now I found him\" or \"My son was lost and has returned home\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀπολωλὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "εὑρέθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he was lost, and now is found",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Food is a metaphor for money. After one eats food, the food is no longer there and there is nothing to eat. The money that the brother had received was no longer there and there was no more to spend. Alternate translation: \"wasted all your wealth\" or \"thrown away all your money\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "καταφαγών",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "βίον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who has devoured your living",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor speaks of the brother being gone as if he were dead. See how you translated this phrase in [Luke 15:24](../15/24.md). Alternate translation: \"it was as if this brother of yours were dead and became alive again\" or \"this brother of yours had died, but he is now alive\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "νεκρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔζησεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this brother of yours was dead, and is now alive",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor speaks of the son being gone as if he were lost. See how you translated this phrase in [Luke 15:24](../15/24.md). Alternate translation: \"it is as if he were lost and now I found him\" or \"he was lost and has returned home\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀπολωλὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "εὑρέθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he was lost, and now is found",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"light\" is a metaphor for everything godly. Alternate translation: \"the people of God\" or \"godly people\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "φωτὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the sons of light",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The idea of days coming represents something being soon. Alternate translation: \"A time is coming when\" or \"Soon\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐλεύσονται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The days will come when",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"receive life that does not end.\" The term \"inherit\" usually refers to the property that a man left to his children when he dies. Therefore, this metaphor may mean he understood himself to be a child of God and desired for God to give him eternal life. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ζωὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰώνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "κληρονομήσω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "inherit eternal life",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was probably a proverb. A person who takes out of storage or out of a bank things that he did not put in is a metaphor for someone who benefits from other people's hard work. Alternate translation: \"You take out what you did not put in\" or \"You are like a person how takes out what other people put in\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "αἴρεις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθηκας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You take up what you did not put down",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was probably a proverb. A person who harvests food that someone else has planted is a metaphor for someone who benefits from other people's hard work. Alternate translation: \"you are like a person who reaps the fruit of what other people sowed\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "θερίζεις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσπειρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you reap what you did not sow",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks of the temple as if it were a place where thieves come together. Alternate translation: \"a place where thieves hide\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "σπήλαιον",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 2
+        },
+        {
+          "word": "λῃστῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a den of robbers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "An empty hand is a metaphor for \"nothing.\" Alternate translation: \"sent him away without paying him\" or \"sent him away without the grapes\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐξαπέστειλαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κενόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sent him away empty-handed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Having an empty hand is a metaphor for having nothing. Alternate translation: \"sent him away without paying him\" or \"sent him away without any grapes\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐξαπέστειλαν",
+          "occurrence": 1
+        },
+        {
+          "word": "κενόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sent him away empty-handed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the first of three metaphors in a prophecy from the book of Psalms. This one refers to the Messiah as if he were a stone that builders chose not to use, but that God made the most important stone. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "λίθον",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεδοκίμασαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκοδομοῦντες",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγενήθη",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "κεφαλὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γωνίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The stone that the builders rejected has become the cornerstone",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This second metaphor speaks of people who reject the Messiah as if they fall over a stone and are injured. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεσὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "συνθλασθήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Every one who falls ... broken to pieces",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"But whomever that stone falls on.\" This third metaphor speaks about the Messiah judging those who reject him as if he were a large stone that would crush them. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "δ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 3
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "πέσῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But on whomever it falls",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Messiah's enemies are spoken of as if they were furniture on which he would rest his feet. This was an image of submission. Alternate translation: \"until I make your enemies like a footstool for you\" or \"until I conquer your enemies for you\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "θῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐχθρούς",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑποπόδιον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποδῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "until I make your enemies a footstool for your feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"They also eat up widows' houses.\" The scribes are spoken of as if they were hungry animals that eat up the widows' houses. The word \"houses\" is a synecdoche for both where the widow lives and all the possessions she puts in her home. Alternate translation: \"They also take away from widows all their possessions\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οἳ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατεσθίουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "χηρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They devour the houses of widows",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor speaks of Jerusalem as if the people of other nations was walking on it and crushing it down with their feet. This refers to domination. Alternate translation: \"conquered by the Gentiles\" or \"destroyed by the other nations\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πατουμένη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "trampled by the Gentiles",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus here speaks of the following sins as if they were a physical weight that a person had to carry. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "μήποτε",
+          "occurrence": 1
+        },
+        {
+          "word": "βαρηθῶσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that ... are not burdened",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The surface of the earth is spoken of as if it were the outward part of the face of a person. Alternate translation: \"on the surface of the whole earth\" or \"on the entire earth\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "πάσης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "on the face of the whole earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Older people were respected in that culture. The leaders were usually older people and were called \"elders.\" The youngest person would be the least likely to lead, and the least important. Alternate translation: \"the least important\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "νεώτερος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the youngest",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that Satan wanted to test the disciples to find something wrong. Alternate translation: \"test you like someone passes grain through a sieve\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σινιάσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "σῖτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to sift you as wheat",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"turned back again\" is a metaphor for starting to believe in someone again. Alternate translation: \"After you start believing in me again\" or \"After you start serving me again\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ποτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιστρέψας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when you have turned back",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus refers to what he will soon experience as if it were a cup of bitter liquid that he would have to drink. Alternate translation: \"allow me to not drink from this cup\" or \"allow me to not experience what is about to happen\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "παρένεγκε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποτήριον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "remove this cup from me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To appear before someone means to enter into their authority. Alternate translation: \"to be judged by Pilate\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πειλᾶτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "before Pilate",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The green tree is a metaphor for something that is good. If your language has a similar metaphor, you should use it here. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑγρῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ξύλῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the tree is green",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The dry wood is a metaphor for something that will be useful only to burn. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ξηρῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it is dry",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "For the Jews, the day began at sunset. Alternate translation: \"it was soon going to be sunset, the start of the Sabbath\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "Σάββατον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπέφωσκεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Sabbath was about to begin",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They use a question to emphasize how amazed they were about their encounter with Jesus. The intense feelings they had while talking to Jesus are spoken of as if they were a fire burning inside them. Alternate translation: \"Our hearts were burning ... scriptures.\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὐχὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καιομένη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφάς",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Was not our heart burning ... the scriptures?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God's power will cover them in the same way that clothes cover a person. This can be stated in active form. Alternate translation: \"you receive power\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 49
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐνδύσησθε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δύναμιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you are clothed with power",
+      "occurrence": 1
+    }
+  }
+]

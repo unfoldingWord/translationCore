@@ -1,0 +1,153 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"we\" refers to Paul and Timothy, but not to the Corinthians. This can be stated in active form. Alternate translation: \"But if people afflict us\" (See: [[rc://en/ta/man/translate/figs-exclusive]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "εἴτε",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "θλιβόμεθα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But if we are afflicted",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"we\" refers to Paul and his coworker, but not to the Corinthians. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "ἔχοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "having this ministry",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"we\" refers to Paul and his coworkers, but not to the Corinthians. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "ἔχομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But we have",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"we\" refers to Paul and Timothy but not to the Corinthians or Titus. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "ἐλθόντων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Μακεδονίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When we came to Macedonia",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All instances of these words refer to Paul's ministry team but not the Corinthians. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "ἐσμεν",
+      "glQuote": "we are",
+      "occurrence": 1
+    }
+  }
+]

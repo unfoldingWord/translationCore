@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words mean basically the same thing here. Paul uses them together to emphasize that all spiritual understanding comes from Christ. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφίας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "γνώσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "wisdom and knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words mean almost the same thing and are used to emphasize the things that are morally correct. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "δίκαιον",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰσότητα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "right and fair",
+      "occurrence": 1
+    }
+  }
+]

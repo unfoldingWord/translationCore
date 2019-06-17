@@ -1,0 +1,122 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Earthly riches do not last nor do they have any eternal value. James speaks of these events as if they had already happened. Alternate translation: \"Your riches will rot, and your clothes will be eaten by moths.\" (See: [[rc://en/ta/man/translate/figs-pastforfuture ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pastforfuture",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλοῦτος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "σέσηπεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱμάτια",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "σητόβρωτα",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγονεν",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Your riches have rotted, and your clothes have become moth-eaten. ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Earthly riches do not last nor do they have any eternal value. James speaks of these events as if they had already happened. Alternate translation: \"Your riches will rot, and your clothes will be eaten by moths. Your gold and silver will become tarnished\" (See: [[rc://en/ta/man/translate/figs-pastforfuture ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pastforfuture",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "χρυσὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄργυρος",
+          "occurrence": 1
+        },
+        {
+          "word": "κατίωται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Your gold and your silver have become tarnished ",
+      "occurrence": 1
+    }
+  }
+]

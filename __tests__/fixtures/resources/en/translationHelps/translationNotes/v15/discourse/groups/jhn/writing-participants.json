@@ -1,0 +1,92 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a new part of the story and to introduce Nicodemus. (See: [[rc://en/ta/man/translate/writing-participants ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a way to introduce a new character to the story. If you have a way to do this in your language, you can use it here. (See: [[rc://en/ta/man/translate/writing-participants ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 49
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "εἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain man among them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"now certain\" marks the introduction of new characters to the story. (See: [[rc://en/ta/man/translate/writing-participants ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἕλληνές",
+          "occurrence": 1
+        },
+        {
+          "word": "τινες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now certain Greeks ",
+      "occurrence": 1
+    }
+  }
+]

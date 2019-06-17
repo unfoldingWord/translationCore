@@ -1,0 +1,529 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"salvation\" can be expressed with the verbs \"save\" or \"rescue.\" Alternate translation: \"from long ago). He will save us from our enemies\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 71
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "σωτηρίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐχθρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "salvation from our enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be restated to remove the abstract nouns \"holiness\" and \"righteousness.\" Possible meanings are 1) we would serve God in holy and righteous ways. Alternate translation: \"doing what is holy and righteous\" or 2) we would be holy and righteous. Alternate translation: \"being holy and righteous\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 75
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁσιότητι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in holiness and righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The terms \"baptism\" and \"repentance\" could be stated as actions. Alternate translation: \"and he preached that people should be baptized to show that they were repenting\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "κηρύσσων",
+          "occurrence": 1
+        },
+        {
+          "word": "βάπτισμα",
+          "occurrence": 1
+        },
+        {
+          "word": "μετανοίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "preaching a baptism of repentance",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They would repent so that God would forgive their sins. The term \"forgiveness\" can be stated as an action. Alternate translation: \"so that their sins would be forgiven\" or \"so that God would forgive their sins\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄφεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτιῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the forgiveness of sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as an action. Alternate translation: \"learn how God saves people from sin\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ὄψεται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σωτήριον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "will see the salvation of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Because of your faith, you are saved.\" The abstract noun \"faith\" could be stated as an action. Alternate translation: \"Because you believe, you are saved\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστις",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "σέσωκέν",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Your faith has saved you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"because of your faith, you have become well.\" The abstract noun \"faith\" could be stated as an action. Alternate translation: \"because you believe, you are healed\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστις",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "σέσωκέν",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your faith has made you well",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"kingdom\" can be expressed with the verbs \"reign\" or \"rule.\" Possible meanings are 1) the kingdom of God will begin soon. Alternate translation: \"God will soon rule everywhere as king\" or 2) the activities of kingdom of God are happening all around you. Alternate translation: \"The proof that God is reigning is all around you\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἤγγικεν",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The kingdom of God has come close to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"kingdom\" can be expressed with the verbs \"reign\" or \"rule.\" See how you translated a similar sentence in [Luke 10:8](../10/08.md). Alternate translation: \"God will soon rule everywhere as king\" or \"The proof that God is reigning is all around you\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἤγγικεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The kingdom of God has come near",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase can be reworded to eliminate the abstract noun \"persistence.\" Alternate translation: \"because you persist shamelessly\" or \"because you boldly continue to ask him\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "διά",
+          "occurrence": 1
+        },
+        {
+          "word": "γε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναίδειαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "yet because of your shameless persistence",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Because of your faith you have become well.\" The idea of \"faith\" can be expressed with the verb \"believe.\" Alternate translation: \"Because you believe, you are well again\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστις",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "σέσωκέν",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Your faith has made you well",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The idea of the noun \"kingdom\" can be expressed with the verb \"rules.\" Alternate translation: \"God rules within you\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐντὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the kingdom of God is in the midst of you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It was understood that salvation comes from God. Alternate translation: \"God has saved this household\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "σωτηρία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἴκῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "salvation has come to this house",
+      "occurrence": 1
+    }
+  }
+]

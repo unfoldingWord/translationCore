@@ -1,0 +1,90 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter uses two proverbs to illustrate how the false teachers, although they have known \"the way of righteousness,\" have turned back to the things that make them morally and spiritually impure. (See: [[rc://en/ta/man/translate/writing-proverbs]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-proverbs",
+      "quote": [
+        {
+          "word": "κύων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιστρέψας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἴδιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξέραμα",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "\"",
+          "occurrence": 3
+        },
+        {
+          "word": "ὗς",
+          "occurrence": 1
+        },
+        {
+          "word": "λουσαμένη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "κυλισμὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "βορβόρου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A dog returns to its own vomit, and a washed pig returns to the mud",
+      "occurrence": 1
+    }
+  }
+]

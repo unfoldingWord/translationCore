@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The angel speaks as if Babylon were there listening to him. Alternate translation: \"in Babylon\" (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "σοὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in you",
+      "occurrence": 1
+    }
+  }
+]

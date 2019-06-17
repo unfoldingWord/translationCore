@@ -1,0 +1,196 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Mary used this polite expression to say that she had not engaged in sexual activity. Alternate translation: \"I am a virgin\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "ἄνδρα",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γινώσκω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have not known a man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words are a euphemism for God. Alternate translation: \"who serves the Most High\" or \"who speaks for God Most High\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 76
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "Ὑψίστου",
+      "glQuote": "of the Most High",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a euphemism meaning \"die\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "ἀπολύεις",
+      "glQuote": "let ... depart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"had a flow of blood.\" She was probably bleeding from her womb even when it was not the normal time for it. Some cultures may have a polite way of referring to this condition. (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥύσει",
+          "occurrence": 1
+        },
+        {
+          "word": "αἵματος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with a flow of blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"his leaving\" or \"how Jesus would leave this world.\" This was a polite way of talking about his death. Alternate translation: \"his death\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξοδον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his departure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"soul\" refers to the life of a person. Alternate translation: \"you will die tonight\" or \"I will take your life from you tonight\" (See: [[rc://en/ta/man/translate/figs-euphemism]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "ταύτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "νυκτὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχήν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπαιτοῦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this very night your soul is required of you",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,283 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"himself\" is here used to emphasize that Simon believed. Alternate translation: \"Simon was also one of those who believed\" (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίστευσεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Simon himself believed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"by itself\" means neither Peter nor the angel opened it. Alternate translation: \"the gate swung open for them\" or \"the gate opened itself for them\" (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ἥτις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτομάτη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠνοίγη",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it opened for them by itself ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"themselves\" is used for emphasis. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "λάθρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκβάλλουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "οὔ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let them come themselves ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"because he himself.\" The word \"himself\" is added for emphasis. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "διδοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "since he himself ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is repeated for emphasis. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": "αὐτὸς",
+      "glQuote": "he himself ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"ourselves\" adds emphasis and separates Luke and his traveling companions from Paul, who did not travel by boat. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "προελθόντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We ourselves went ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Himself is used to emphasize that this is what Paul wanted. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": "διατεταγμένος",
+      "glQuote": "he himself desired ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"yourselves\" is used for emphasis. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": "ὑμεῖς",
+      "glQuote": "You yourselves ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"yourselves\" is used here to add emphasis. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": "αὐτοὶ",
+      "glQuote": "You yourselves ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"themselves\" is used for emphasis. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίστανται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they themselves know ",
+      "occurrence": 1
+    }
+  }
+]

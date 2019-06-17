@@ -1,0 +1,90 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul compares suffering for Christ Jesus to the suffering that a good soldier endures. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "καλὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "στρατιώτης",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as a good soldier of Christ Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Cancer quickly spreads in a person's body and destroys it. This is a metaphor that means what those people were saying would spread from person to person and harm the faith of those who heard it. Alternate translation: \"What they say will spread like an infectious disease\" or \"Their talk will spread quickly and cause destruction like cancer\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "γάγγραινα",
+          "occurrence": 1
+        },
+        {
+          "word": "νομὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕξει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Their talk will spread like cancer",
+      "occurrence": 1
+    }
+  }
+]

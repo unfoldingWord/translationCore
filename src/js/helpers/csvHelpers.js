@@ -43,7 +43,7 @@ function cacheIndicies(isTest) {
   tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
 
   // load tN index
-  const tNpath = path.join(tHelpsPath, 'translationNotes');
+  const tNpath = path.join(thPath, 'translationNotes');
   const tNversionPath = ResourceAPI.getLatestVersion(tNpath) || tNpath;
   const categories = fs.readdirSync(tNversionPath)
     .filter(file => { return fs.lstatSync(path.join(tNversionPath, file)).isDirectory() });

@@ -1,0 +1,82 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The negative phrase \"no end\" emphasizes that it continues forever. It could also be stated with a positive phrase. Alternate translation: \"his kingdom will never end\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλείας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "τέλος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there will be no end to his kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"without failing\" emphasizes that this should always be done. This can be stated in positive form. Alternate translation: \"and to always do the other good things as well\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "κἀκεῖνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρεῖναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and not to neglect those things",
+      "occurrence": 1
+    }
+  }
+]

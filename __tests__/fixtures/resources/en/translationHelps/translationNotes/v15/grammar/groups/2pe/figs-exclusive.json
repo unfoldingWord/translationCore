@@ -1,0 +1,117 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"we\" refers to Peter and the other apostles, but not to those to whom he is writing. Alternate translation: \"we apostles have received\" (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "ἡμῖν",
+      "glQuote": "we have received",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"we\" refers to Peter and the other apostles, but not to his readers. Alternate translation: \"For we apostles did not follow cleverly made-up stories\" (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "σεσοφισμένοις",
+          "occurrence": 1
+        },
+        {
+          "word": "μύθοις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξακολουθήσαντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For we did not follow cleverly invented myths",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "With the word \"We,\" Peter is referring to himself and to the disciples James and John, who heard the voice of God. Alternate translation: \"We ourselves heard this voice that came from heaven\" (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "ταύτην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠκούσαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνεχθεῖσαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We ourselves heard this voice brought from heaven",
+      "occurrence": 1
+    }
+  }
+]

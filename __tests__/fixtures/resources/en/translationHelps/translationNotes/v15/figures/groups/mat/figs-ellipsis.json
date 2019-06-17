@@ -1,0 +1,1407 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"was\" is understood. Alternate translation: \"Isaac was the father ... Jacob was the father\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "Ἰσαὰκ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰακὼβ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Isaac became the father ... Jacob became the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"was\" is understood. Alternate translation: \"Perez was the father ... Hezron was the father\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "Φαρὲς",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἑσρὼμ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "Perez became the father ... Hezron became the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"was\" is understood. Alternate translation: \"Amminadab was the father ... Nahshon was the father\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "Ἀμιναδὰβ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ναασσὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "Amminadab became the father ... Nahshon became the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"was\" is understood. Alternate translation: \"Boaz was the father ... Obed was the father\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "Βόες",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰωβὴδ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "Boaz became the father ... Obed became the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"was\" is understood. \"David was the father of Solomon, and Solomon's mother was Uriah's wife\" or \"David and the wife of Uriah were the parents of Solomon\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Σολομῶνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Οὐρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "David became the father of Solomon by the wife of Uriah",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"was\" is understood in both of these phrases. Alternate translation: \"Rehoboam was the father of Abijah, and Abijah was the father of Asa\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "Ῥοβοὰμ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀβιά",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀβιὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγέννησεν",
+          "occurrence": 3
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 3
+        },
+        {
+          "word": "Ἀσάφ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Rehoboam became the father of Abijah, Abijah became the father of Asa",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"need a physician\" is understood. Alternate translation: \"people who are sick need a physician\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "κακῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who are sick",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full content of their answer is not stated, but it is understood. Alternate translation: \"Yes, Lord, we believe you can heal us\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ναί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Yes, Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus did not state what the disciples had received or were to give. Some languages may require this information in the sentence. Here \"freely\" means that there was no payment. Alternate translation: \"Freely you have received these things, freely give them to others\" or \"You received these things without paying, so give them to others without making them pay\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "δωρεὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλάβετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "δωρεὰν",
+          "occurrence": 2
+        },
+        {
+          "word": "δότε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Freely you have received, freely give",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words can be translated as a complete sentence. Alternate translation: \"fathers will deliver up their children to death\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "πατὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a father his child",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit the information that is understood. Alternate translation: \"I will also acknowledge before my Father who is in heaven that that person belongs to me\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ὁμολογήσω",
+          "occurrence": 1
+        },
+        {
+          "word": "κἀγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "οὐρανοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I will also confess him before my Father who is in heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit the information that is understood. Alternate translation: \"I will deny before my Father who is in heaven that this person belongs to me\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀρνήσομαι",
+          "occurrence": 1
+        },
+        {
+          "word": "κἀγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I will also deny him before my Father who is in heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a complete sentence. Alternate translation: \"he is not an ordinary prophet\" or \"he is more important than a normal prophet\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "περισσότερον",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "much more than a prophet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The details of the message the person told Jesus are understood and not repeated here. Alternate translation: \"who told Jesus that his mother and brothers wanted to speak to him\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγοντι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the one who told him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"seeds,\" \"produced,\" and \"crop\" are understood from the previous phrase. These can be expressed clearly. Alternate translation: \"some seeds produced one hundred times as much crop, some seeds produced sixty times as much crop, and some seeds produced thirty times as much crop\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑξήκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 3
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 3
+        },
+        {
+          "word": "τριάκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "some one hundred times as much, some sixty, and some thirty",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"as much as was planted\" is understood following each of these numbers. See how you translated this in [Matthew 13:8](../13/08.md). Alternate translation: \"Some people produce 100 times as much as was planted, some produce 60 times as much, and some produce 30 times as much\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑξήκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 3
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 3
+        },
+        {
+          "word": "τριάκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "some yielding one hundred times as much as was planted, some sixty, and some thirty times as much",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be made clear. Alternate translation: \"Seven loaves of bread, and a few small fish\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἑπτά",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀλίγα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰχθύδια",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Seven, and a few small fish",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make clear the understood information. Alternate translation: \"the other side of the lake\" or \"the other side of the Sea of Galilee\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πέραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the other side",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be made clear. Alternate translation: \"but it was my Father in heaven who revealed this to you\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πατήρ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but my Father who is in heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make clear the understood information. Alternate translation: \"marries another woman\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "γαμήσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄλλην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "marries another",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make clear the understood information. Alternate translation: \"but to serve other people\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονῆσαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but to serve",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make clear the understood information. Alternate translation: \"for many people\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀντὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for many",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make clear the understood information in their response. Alternate translation: \"The coin has Caesar's image and name on it\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "Καίσαρος",
+      "glQuote": "Caesar's",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be made clear. Alternate translation: \"And you also say\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "καί",
+      "glQuote": "And",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be stated clearly. Alternate translation: \"to buy more oil\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ἀγοράσαι",
+      "glQuote": "to buy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"talents\" is understood from the previous phrase. Alternate translation: \"to another he gave two talents of gold ... gave one talent of gold\" or \"to another he gave two bags of gold ... gave one bag of gold\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ᾧ",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύο",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἕν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to another he gave two ... he gave one talent",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be stated clearly. Alternate translation: \"received back my own money\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἐκομισάμην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "would have received back my money",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be stated clearly. Alternate translation: \"Or when did we see you thirsty\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "διψῶντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Or thirsty",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of a series of questions that begins in verse 37. The understood information can be stated clearly. Alternate translation: \"Or when did we see you naked\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "γυμνὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Or naked",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"I was\" preceding \"naked\" are understood. Alternate translation: \"I was naked, but you did not give me clothes\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "γυμνὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "περιεβάλετέ",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "naked, but you did not clothe me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"I was\" preceding \"sick\" are understood. Alternate translation: \"I was sick and in prison\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀσθενὴς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλακῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sick and in prison",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be made clear. Alternate translation: \"but the King will send the righteous to the place where they will live forever with God\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "δίκαιοι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "ζωὴν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but the righteous into eternal life",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "What the leaders did not want to do during the feast can be made clearer. Alternate translation: \"We should not kill Jesus during the feast\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑορτῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Not during the feast",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed as a full sentence. Alternate translation: \"But do not do what I want; instead, do what you want\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "πλὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "σύ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Yet, not as I will, but as you will",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be stated clearly. Alternate translation: \"and if they deceive people by saying that, it will be worse than the way he deceived people before when he said that he was the Christ\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 64
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσχάτη",
+          "occurrence": 1
+        },
+        {
+          "word": "πλάνη",
+          "occurrence": 1
+        },
+        {
+          "word": "χείρων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "πρώτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and the last deception will be worse than the first",
+      "occurrence": 1
+    }
+  }
+]

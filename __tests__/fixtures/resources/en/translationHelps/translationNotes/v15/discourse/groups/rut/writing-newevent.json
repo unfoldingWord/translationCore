@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"It came about.\" This is marking a new story line. (See: [[rc://en/ta/man/translate/writing-newevent]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "וַ⁠יְהִ֗י",
+      "glQuote": "It happened that",
+      "occurrence": 1
+    }
+  }
+]

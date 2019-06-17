@@ -1,0 +1,411 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the words \"times\" and \"seasons\" refer to different kinds of time. Alternate translation: \"the general period of time or the specific date\" or 2) the two words are basically synonymous. Alternate translation: \"the exact time\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "χρόνους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "καιροὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the times or the seasons ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"apostleship\" defines what kind of \"ministry\" this is. Alternate translation: \"to take Judas' place in this apostolic ministry\" or \"to take Judas' place in serving as an apostle\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "λαβεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτης",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστολῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to take the place in this ministry and apostleship ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two words share similar meanings. Together they emphasize the intensity of amazement. Alternate translation: \"They were greatly amazed\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἐξίσταντο",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθαύμαζον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They were amazed and marveled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two words share similar meanings. Together they emphasize that the people could not understand what was happening. Alternate translation: \"surprised and confused\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἐξίσταντο",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "διηποροῦντο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "amazed and perplexed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"great\" and \"remarkable\" share similar meanings and emphasize the intensity of greatness. Alternate translation: \"the very great day\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μεγάλην",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπιφανῆ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the great and remarkable day ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"he seriously told them and begged them.\" Here the words \"testified\" and \"urged\" share similar meanings and emphasize that Peter urged them strongly to respond to what he was saying. Alternate translation: \"he strongly urged them\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "διεμαρτύρατο",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρεκάλει",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he testified and urged them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"wonder\" and \"amazement\" share similar meanings and emphasize the intensity of the people's amazement. Alternate translation: \"they were extremely amazed\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἐπλήσθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "θάμβους",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκστάσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they were filled with wonder and amazement ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"ordinary\" and \"uneducated\" share similar meanings. They emphasize that Peter and John had received no formal training in Jewish law. (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἄνθρωποι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγράμματοί",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἰδιῶτα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "ordinary, uneducated men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"part\" and \"share\" mean the same thing and are used for emphasis. Alternate translation: \"You may not participate in this work\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "μερὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "κλῆρος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You have no part or share in this matter ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Lord gives the same command in two different ways to strongly command Paul to speak. Alternate translation: \"you must certainly continue to speak\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "λάλει",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "σιωπήσῃς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "speak and do not be silent ",
+      "occurrence": 1
+    }
+  }
+]

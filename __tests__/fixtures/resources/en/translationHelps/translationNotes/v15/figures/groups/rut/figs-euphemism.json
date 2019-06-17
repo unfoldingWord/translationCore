@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a euphemism that refers to having sexual intercourse. Alternate translation: \"He had sexual relations with her\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "וַ",
+          "occurrence": 3
+        },
+        {
+          "word": "יָּבֹ֖א",
+          "occurrence": 1
+        },
+        {
+          "word": "אֵלֶ֑י",
+          "occurrence": 1
+        },
+        {
+          "word": "הָ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He went in to her",
+      "occurrence": 1
+    }
+  }
+]

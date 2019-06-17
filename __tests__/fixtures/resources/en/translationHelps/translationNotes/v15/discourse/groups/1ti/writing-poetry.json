@@ -1,0 +1,45 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is most likely a song or poem that Paul is quoting. If your language has a way of indicating that this is poetry you could use it here. If not, you could translate this as regular prose rather than poetry. (See: [[rc://en/ta/man/translate/writing-poetry]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-poetry",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφανερώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀνελήμφθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 5
+        },
+        {
+          "word": "δόξῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He appeared ... up in glory",
+      "occurrence": 1
+    }
+  }
+]

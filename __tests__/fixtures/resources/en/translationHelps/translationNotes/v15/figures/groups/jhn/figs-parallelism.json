@@ -1,0 +1,122 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two clauses mean nearly the same thing, said twice for emphasis, first in the negative and then in the positive. Some languages may indicate emphasis in a different way. Alternate translation: God's real reason for sending his Son into the world was to save it\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-doublenegatives ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέστειλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 3
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 2
+        },
+        {
+          "word": "σωθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For God did not send the Son into the world in order to condemn the world, but in order to save the world through him ",
+      "occurrence": 1
+    }
+  }
+]

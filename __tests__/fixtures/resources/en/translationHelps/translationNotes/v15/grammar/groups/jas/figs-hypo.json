@@ -1,0 +1,69 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James starts to describe a situation where the believers might give more honor to a rich person than to a poor person. (See: [[rc://en/ta/man/translate/figs-hypo ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀνὴρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Suppose that someone ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James describes a hypothetical situation where someone objects to his teaching. James seeks to correct his audience's understanding of faith and works. (See: [[rc://en/ta/man/translate/figs-hypo ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Yet someone may say ",
+      "occurrence": 1
+    }
+  }
+]

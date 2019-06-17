@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is writing here as if he were addressing a Jewish person who is arguing with him. Paul is doing this to teach his audience that God will punish everyone who continually sins, whether Jew or Gentile. (See: [[rc://en/ta/man/translate/figs-apostrophe ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": "εἶ",
+      "glQuote": "you are ",
+      "occurrence": 1
+    }
+  }
+]

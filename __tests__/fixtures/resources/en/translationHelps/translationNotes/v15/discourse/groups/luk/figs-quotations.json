@@ -1,0 +1,618 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Consider natural ways of introducing direct quotes in your language. Alternate translation: \"prophesied and said\" or \"prophesied, and this is what he said\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 67
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἐπροφήτευσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "prophesied, saying",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a direct quote: \"Do not tell anyone\" There is implied information that can also be stated explicitly (AT): \"do not tell anyone that you have been healed\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "μηδενὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰπεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to tell no one",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence can be rewritten so that it only has one direct quote. Alternate translation: \"the men said that John the Baptist had sent them to him to ask, 'Are you the one who is coming, or should we look for another?'\" or \"the men said, 'John the Baptist has sent us to you to ask if you are the one who is coming, or if we should look for another.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνδρες",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωάννης",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαπτιστὴς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέστειλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "σὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄλλον",
+          "occurrence": 1
+        },
+        {
+          "word": "προσδοκῶμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "the men said, \"John the Baptist has sent us to you to say, 'Are you ... or should we look for another?'\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was quoting what people were saying about John. This can be stated without the direct quote. Alternate translation: \"you say that he has a demon.\" or \"you accuse him of having a demon.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "λέγετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "δαιμόνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you say, 'He has a demon.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quote. If you translated \"The Son of Man\" as \"I, the Son of man,\" you can state this as an indirect statement and use the first person. Alternate translation: \"you say that he is a gluttonous man and a drunkard ... sinners.\" or \"you accuse him of eating and drinking too much and of being ... sinners.\" or \"you say that I am a gluttonous man and a drunkard ... sinners.\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "λέγετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": "φάγος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "οἰνοπότης",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἁμαρτωλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you say, 'Look, he is a gluttonous man and a drunkard ... sinners!'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"not to tell anyone\" or \"that they should not tell anyone.\" This could be stated as a direct quote. Alternate translation: them, \"'Do not tell anyone.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μηδενὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγειν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "them to tell this to no one.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some languages might prefer an indirect quote. Alternate translation: \"If we say that John's authority is from heaven, he\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπωμεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐρεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If we say, 'From heaven,' he will say",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some languages might prefer an indirect quote. Alternate translation: \"if we say that John's authority is from men,\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἴπωμεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if we say, 'From men,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This could be stated as a direct quote. Alternate translation: \"they said, 'We do not know where it came from.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἀπεκρίθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰδέναι",
+          "occurrence": 1
+        },
+        {
+          "word": "πόθεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they answered that they did not know where it was from.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The quote beginning with \"Where is the guest room\" is a direct quote of what Jesus, the teacher, wants to say to the master of his house. It can be translated as an indirect quotation. Alternate translation: \"Our teacher asks where the guest room is in which he will eat the Passover with his disciples.\" or \"Our teacher says to show us the guest room where he will eat the Passover with us and the rest of his disciples.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάσκαλος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ποῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατάλυμα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πάσχα",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "φάγω",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "The Teacher says to you, \"Where is the guest room, where I will eat the Passover with my disciples?\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the beginning of an indirect quote. It can also be translated with a direct quote as in the UST. (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that the Son of Man",
+      "occurrence": 1
+    }
+  }
+]

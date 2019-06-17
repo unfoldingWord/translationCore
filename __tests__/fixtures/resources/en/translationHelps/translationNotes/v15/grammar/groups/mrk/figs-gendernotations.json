@@ -1,0 +1,62 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"man\" or \"people\" or \"the needs of people.\" This word here refers to both men and women. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "mankind",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to both brothers and sisters. Alternate translation: \"People ... their siblings\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ἀδελφὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "\\",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Brother ... brother",
+      "occurrence": 1
+    }
+  }
+]

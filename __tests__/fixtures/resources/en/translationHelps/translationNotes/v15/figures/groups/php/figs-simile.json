@@ -1,0 +1,50 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Fathers and sons love each other and work together. Timothy was not really Paul's son, but he worked with Paul as a son works with his father. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "σὺν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδούλευσεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as a son with his father, so he served with me",
+      "occurrence": 1
+    }
+  }
+]

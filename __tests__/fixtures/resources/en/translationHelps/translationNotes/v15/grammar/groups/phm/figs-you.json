@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"your\" here refers to Philemon and all who met in his house. The words \"your spirit\" are a synecdoche and represent the people themselves. Alternate translation: \"May our Lord Jesus Christ be kind to you\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάρις",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "May the grace of our Lord Jesus Christ be with your spirit",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,374 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next seal\" or \"seal number two\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖδα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "δευτέραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the second seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next living creature\" or \"living creature number two\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δευτέρου",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῴου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the second living creature",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next seal\" or \"seal number three\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖδα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "τρίτην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next living creature\" or \"living creature number three\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτου",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῴου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third living creature",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next seal\" or \"seal number four\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖδα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "τετάρτην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the fourth seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next living creature\" or \"living creature number four\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τετάρτου",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῴου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the fourth living creature",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next seal\" or \"seal number five\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "πέμπτην",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖδα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the fifth seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next seal\" or \"seal number six\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖδα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἕκτην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the sixth seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the last of the seven seals on the scroll. Alternate translation: \"the next seal\" or \"the final seal\" or \"seal number seven\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖδα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑβδόμην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the seventh seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"The next angel\" or \"Angel number two\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεύτερος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄγγελος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The second angel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the last of the seven angels. See how you translated \"seventh\" in [Revelation 8.1](../08/01.md). Alternate translation: \"the final angel\" or \"angel number seven\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕβδομος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄγγελος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the seventh angel",
+      "occurrence": 1
+    }
+  }
+]

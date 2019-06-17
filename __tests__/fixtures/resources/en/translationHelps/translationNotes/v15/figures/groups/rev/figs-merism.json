@@ -1,0 +1,434 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the eternal nature of Jesus. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἐγώ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσχατος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am the first and the last",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the eternal nature of Jesus. See how you translated this in [Revelation 1:17](../01/17.md). (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσχατος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the first and the last",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means everywhere: the place where God and the angels live, the place where people and animals live, and the place where those who have died are. Alternate translation: \"anywhere in heaven or on the earth or under the earth\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑποκάτω",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "in heaven or on the earth or under the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means everywhere: the place where God and the angels live, the place where people and animals live, and the place where those who have died are. See how you translated this in [Revelation 5:3](../05/03.md). (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὑποκάτω",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "in heaven and on the earth and under the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two parts of the day are used together to mean \"all the time\" or \"without stopping\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "νυκτὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "day and night",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two parts of the day are used together to mean \"all the time\" or \"without stopping\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 5
+        },
+        {
+          "word": "νυκτός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "day and night",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The speaker uses these words together to mean all of God's people. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 3
+        },
+        {
+          "word": "μικροὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 4
+        },
+        {
+          "word": "μεγάλοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "both the small and the great",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The angel uses these two sets of opposite-meaning words together to mean all people. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἐλευθέρων",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 6
+        },
+        {
+          "word": "δούλων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 7
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 7
+        },
+        {
+          "word": "μικρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 8
+        },
+        {
+          "word": "μεγάλων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "both free and slaves, and small and great",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the eternal nature of Jesus. See how you translated this in [Revelation 1:17](../01/17.md). (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσχατος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the first and the last",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"we are children\" are understood from the previous phrase. This can be translated as a separate sentence. Alternate translation: \"Rather, we are children of the free woman\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλευθέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but of the free woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"have been crucified\" are understood from the phrase before this. Alternate translation: \"and I have been crucified to the world\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "κἀγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I to the world",
+      "occurrence": 1
+    }
+  }
+]

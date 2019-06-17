@@ -1,0 +1,90 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two extremes are given to emphasize that the elect will be gathered from the entire earth. Alternate translation: \"from every place on earth\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄκρου",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄκρου",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the ends of the earth to the ends of the sky",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The two extremes are given to refer to all of the sky, including the sun, moon, stars, and planets, and all of the earth. Alternate translation: \"The sky, the earth, and everything in them\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Heaven and earth",
+      "occurrence": 1
+    }
+  }
+]

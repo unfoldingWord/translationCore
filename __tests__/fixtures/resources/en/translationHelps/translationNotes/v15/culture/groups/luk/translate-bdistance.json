@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"eleven kilometers.\" A \"stadium\" was 185 meters. (See: [[rc://en/ta/man/translate/translate-bdistance]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "quote": [
+        {
+          "word": "σταδίους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑξήκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sixty stadia",
+      "occurrence": 1
+    }
+  }
+]

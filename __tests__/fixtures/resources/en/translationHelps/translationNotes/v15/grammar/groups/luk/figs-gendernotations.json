@@ -1,0 +1,242 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"men\" is used in the generic sense the includes all people. Alternate translation: \"when all people speak\" or \"when everyone speaks\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἴπωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωποι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when all men speak",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"man\" here refers to a person, male or female. Alternate translation: \"good person\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ἀγαθὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "good man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This includes both men and woman. Alternate translation: \"The people\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": "ἄνδρες",
+      "glQuote": "The men",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"People who are faithful ... are also faithful ... people who are unrighteous ... are also unrighteous.\" This would include women. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πιστός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἄδικος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἄδικός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "He who is faithful ... is also faithful ... he who is unrighteous ... is also unrighteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words can refer to anyone, to women as well as to men. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τράχηλον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔρριπται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σκανδαλίσῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for him ... his neck ... he were thrown ... he should cause to stumble",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers here to \"people\" in general. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": "ἄνθρωπον",
+      "glQuote": "man",
+      "occurrence": 1
+    }
+  }
+]

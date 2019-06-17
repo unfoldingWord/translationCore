@@ -1,0 +1,491 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"to have someone circumcise him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "περιτμηθῆναι",
+      "glQuote": "to be circumcised",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God trusted me\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "πεπίστευμαι",
+      "glQuote": "I had been entrusted",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the grace that God had given to me\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "δοθεῖσάν",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the grace that had been given to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God added it\" or \"God added the law\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "προσετέθη",
+      "glQuote": "It was added",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God issued the law with the help of angels, and a mediator put it into force\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "διαταγεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγγέλων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μεσίτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The law was put into force through angels by a mediator",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form, and the abstract noun \"life\" can be translated with the verb \"live.\" Alternate translation: \"if God had given a law that enabled those who kept it to live\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐδόθη",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμος",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "δυνάμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῳοποιῆσαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if a law had been given that could give life",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the law held us captive and we were in prison\" or \"the law held us captive in prison\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφρουρούμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "συνκλειόμενοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we were held captive under the law, imprisoned",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form, and who this faith is in can be stated clearly. Alternate translation: \"until God would reveal that he justifies those who have faith in Christ\" or \"until God would reveal that he justifies those who trust in Christ\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "μέλλουσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀποκαλυφθῆναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "until faith should be revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Before Christ came, God had planned to justify us. When Christ came, he carried out his plan to justify us. This can be stated in active form. Alternate translation: \"so that God would declare us to be righteous\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δικαιωθῶμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that we might be justified",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God knows you\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "γνωσθέντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you are known by God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the teaching about the cross has no stumbling block\" or \"there is nothing in the teaching of the cross that would cause people to stumble\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κατήργηται",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκάνδαλον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σταυροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the stumbling block of the cross has been removed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed in an active form. Alternate translation: \"Christ has called you to freedom\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλευθερίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλήθητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you were called to freedom",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"so that nothing will tempt you also to sin\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "πειρασθῇς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so you also may not be tempted",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"I think of the world as already dead\" or \"I treat the world like a criminal God has killed on a cross\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσταύρωται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world has been crucified to me",
+      "occurrence": 1
+    }
+  }
+]

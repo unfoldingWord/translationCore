@@ -1,0 +1,57 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"our\" and \"us\" refer to Peter and those to whom he is writing. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀναγεννήσας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our Lord Jesus Christ ... has given us new birth",
+      "occurrence": 1
+    }
+  }
+]

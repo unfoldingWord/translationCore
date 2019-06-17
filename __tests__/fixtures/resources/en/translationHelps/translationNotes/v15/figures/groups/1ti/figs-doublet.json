@@ -1,0 +1,206 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"peaceful\" and \"quiet\" mean the same thing. Paul wants all believers to be able to live calm lives without trouble from the authorities. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἤρεμον",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡσύχιον",
+          "occurrence": 1
+        },
+        {
+          "word": "βίον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a peaceful and quiet life",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these words mean basically the same thing. Paul is emphasizing that women should wear clothes that are appropriate and do not attract improper attention from men. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰδοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σωφροσύνης",
+          "occurrence": 1
+        },
+        {
+          "word": "-",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with modesty and self-control",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"struggle\" and \"work very hard\" mean basically the same thing. Paul uses them together to emphasize the intensity with which they serve God. (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "κοπιῶμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγωνιζόμεθα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "struggle and work very hard",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two words mean basically the same thing. Paul uses them together to emphasize how much these widows pray. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "δεήσεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "προσευχαῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "requests and prayers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"partiality\" and \"favoritism\" mean basically the same thing. Paul is emphasizing that Timothy must judge honestly and be fair to everyone. Alternate translation: \"to keep these rules without being partial or showing favor to anyone\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλάξῃς",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "προκρίματος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "μηδὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσκλισιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to keep these commands without partiality, and to do nothing out of favoritism",
+      "occurrence": 1
+    }
+  }
+]

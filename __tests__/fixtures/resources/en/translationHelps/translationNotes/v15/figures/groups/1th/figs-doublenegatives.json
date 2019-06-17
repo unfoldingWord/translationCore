@@ -1,0 +1,105 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed in a positive manner. Alternate translation: \"was very worthwhile\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "κενὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγονεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "was not useless",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"God called us to cleanness and holiness\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐκάλεσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθαρσίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγιασμῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God did not call us to uncleanness, but to holiness",
+      "occurrence": 1
+    }
+  }
+]

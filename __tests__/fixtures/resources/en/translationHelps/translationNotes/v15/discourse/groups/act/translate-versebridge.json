@@ -1,0 +1,46 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to rearrange the parts of this sentence, which begins in verse 32. \"God has fulfilled for us, their children, these promises that he made to our ancestors, by\" (See: [[rc://en/ta/man/translate/translate-versebridge ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-versebridge",
+      "quote": [
+        {
+          "word": "ἐκπεπλήρωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνοις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναστήσας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he has fulfilled for us, their children, by ",
+      "occurrence": 1
+    }
+  }
+]

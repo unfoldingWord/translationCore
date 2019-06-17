@@ -1,0 +1,77 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"your\" is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνων",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your children",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These instances of \"you\" are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "κυρία",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γράφων",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you, lady ... writing to you",
+      "occurrence": 1
+    }
+  }
+]

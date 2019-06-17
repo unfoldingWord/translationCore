@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I do not need to remind you\" or \"You already know.\" Paul says he does not need to tell Philemon this, but then continues to tell him anyway. This emphasizes the truth of what Paul is telling him. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not to mention",
+      "occurrence": 1
+    }
+  }
+]

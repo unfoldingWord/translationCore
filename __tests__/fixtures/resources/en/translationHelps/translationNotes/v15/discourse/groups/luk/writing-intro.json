@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"certain city\" is a way to let the listener know that the narrative that follows takes place in a city, but the name of the city itself is not important. (See: [[rc://en/ta/man/translate/writing-intro]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-intro",
+      "quote": [
+        {
+          "word": "τινι",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain city",
+      "occurrence": 1
+    }
+  }
+]

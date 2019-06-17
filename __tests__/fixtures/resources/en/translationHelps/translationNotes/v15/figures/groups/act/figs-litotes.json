@@ -1,0 +1,461 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in a positive way. Alternate translation: \"forgive them for this sin\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 60
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "στήσῃς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "do not hold this sin against them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used to emphasize what really happened. This could be said in a positive way. Alternate translation: \"there was a great disturbance among the soldiers over what had happened to Peter\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "τάραχος",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀλίγος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "στρατιώταις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there was no small disturbance among the soldiers over what had happened to Peter ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This could also be stated in positive form. Alternate translation: \"God has certainly left a witness\" or \"God has indeed testified\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀμάρτυρον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὑτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφῆκεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he did not leave himself without witness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"not good\" are used to say the opposite of good. Alternate translation: \"Paul thought that taking Mark would be bad\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "Παῦλος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἠξίου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "συνπαραλαμβάνειν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Paul thought it was not good to take Mark ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an understatement to emphasize that many leading women joined them. Alternate translation: \"many leading women\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "γυναικῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "πρώτων",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀλίγαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not a few of the leading women ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"Yet he is very near to everyone of us\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "καί",
+          "occurrence": 1
+        },
+        {
+          "word": "γε",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μακρὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑνὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑκάστου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπάρχοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Yet he is not far from each one of us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The town clerk uses \"not\" to emphasize that all of the people knew this. (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γινώσκει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who does not know ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"For I did not keep silent and not tell you.\" This can be stated in positive form. Alternate translation: \"For I certainly declared to you\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπεστειλάμην",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναγγεῖλαι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For I did not hold back from declaring to you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This statement is made in the negative to emphasize the positive equivalent. Alternate translation: \"he should die immediately\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῆν",
+          "occurrence": 1
+        },
+        {
+          "word": "μηκέτι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he should no longer live ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used to emphasize the opposite of what is said. Alternate translation: \"a great deal of kindness\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "τυχοῦσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "φιλανθρωπίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not just ordinary kindness ",
+      "occurrence": 1
+    }
+  }
+]

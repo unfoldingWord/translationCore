@@ -1,0 +1,158 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" is a metonym for a person's emotions or inner being. This can be stated in active form. Alternate translation: \"you have encouraged believers\" or \"you have helped the believers\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπλάγχνα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναπέπαυται",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the hearts of the saints have been refreshed by you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Prisoners were often bound in chains. Paul was in prison when he taught Onesimus and was still in prison when he wrote this letter. Alternate translation: \"while I was in prison ... while I am in prison\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "δεσμοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in my chains",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's emotions. The phrase \"who is my very heart\" is a metaphor for loving someone. Paul was saying this about Onesimus. Alternate translation: \"whom I love dearly\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦτ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπλάγχνα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who is my very heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Prisoners were often bound in chains. Paul was in prison when he taught Onesimus and was still in prison when he wrote this letter. Alternate translation: \"while I am in prison\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "δεσμοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "while I am in chains",
+      "occurrence": 1
+    }
+  }
+]

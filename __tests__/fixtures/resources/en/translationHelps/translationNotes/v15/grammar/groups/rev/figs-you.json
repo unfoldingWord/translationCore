@@ -1,0 +1,77 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These refer to the believers in the seven churches. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὑμῶν",
+      "glQuote": "your",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"You\" refers to God. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "δίκαιος",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You are righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" is plural. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "μαρτυρῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to testify to you",
+      "occurrence": 1
+    }
+  }
+]

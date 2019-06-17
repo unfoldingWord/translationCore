@@ -1,0 +1,616 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This hypothetical statement explains the reason why a person would not actually mend a garment in that way. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μή",
+          "occurrence": 1
+        },
+        {
+          "word": "γε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "If he did that",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is describing a situation that could have happened in the past but did not. Alternate translation: \"If someone had performed the miracles for the people of Tyre and Sidon that I performed for you\" (See: [[rc://en/ta/man/translate/figs-hypo]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Τύρῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σιδῶνι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγενήθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμεις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "γενόμεναι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For if the mighty works which were done in you had been done in Tyre and Sidon",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a hypothetical situation to teach the crowd. His point is that they should resolve the things they are able to resolve without involving the public courts. This can be restated to make it clear it might not happen. Alternate translation: \"For if you were to go ... into prison\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 58
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπάγεις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλακήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For when you are going ... into prison",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the hypothetical situation, which begins in verse 58, that Jesus uses to teach the crowd. His point is that they should resolve the things they are able to resolve without involving the public courts. This can be restated to make it clear it might not happen. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 59
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσχατον",
+          "occurrence": 1
+        },
+        {
+          "word": "λεπτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποδῷς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I say to you ... you have paid the very last bit of money",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a hypothetical situation and not a story about a real woman. Some languages have ways of showing this. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολέσῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if she would lose",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This describes a situation that has not happened, but that the rich man would like to happen. Alternate translation: \"if a person who has died would go to them\" or \"if someone who has died would go and warn them\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἐάν",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πορευθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if someone would go to them from the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Abraham states what would happen if the hypothetical situation occurred. It can be stated in active form. Alternate translation: \"neither will a person who comes back from the dead be able to convince them\" or \"they will not believe even if a person comes back from the dead\" (See: [[rc://en/ta/man/translate/figs-hypo]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "οὐδ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐάν",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναστῇ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "πεισθήσονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "neither will they be persuaded if someone would rise from the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a hypothetical situation. It means that this person's punishment for causing people to sin will be worse than if they had drowned in the sea. No one has put a stone around his neck, and Jesus is not saying that anyone will do so. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "λυσιτελεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It would be better for him if",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a hypothetical future situation. It may never happen, but even if it does, Jesus tells people to forgive. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑπτάκις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἁμαρτήσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "σὲ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If he sins against you seven times",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus tells the disciples how to answer a question that has not yet been asked. However, people in the village will soon ask the question. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐάν",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "χρείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If anyone asks you ... has need of it",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a hypothetical situation. Some translators may need to make it clear what Jesus was implying when he said this: \"no, I will not rebuke them, for if these people were to be silent ... cry out\" (See: [[rc://en/ta/man/translate/figs-hypo]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "σιωπήσουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθοι",
+          "occurrence": 1
+        },
+        {
+          "word": "κράξουσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if these were silent, the stones would cry out",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the first of two hypothetical statements by Jesus. It was a way for Jesus to respond without giving them a reason to say that he was guilty of blasphemy. Your language may have a way of indicating that the action has not actually happened. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 67
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύσητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If I tell you, you will certainly not believe",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the second hypothetical statement. It was a way for Jesus to rebuke them without giving them a reason to convict him. These words, along with \"If I tell you, you will not believe\" (verse 67), show that Jesus did not believe that the council was really looking for the truth. Your language may have a way of indicating that the action has not actually happened. Jesus is saying that whether he speaks or asks them to speak, they will not respond correctly. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 68
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐρωτήσω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκριθῆτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if I ask you, you will certainly not answer",
+      "occurrence": 1
+    }
+  }
+]

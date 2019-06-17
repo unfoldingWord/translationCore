@@ -1,0 +1,61 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"flesh\" is a synecdoche for the whole person. Alternate translation: \"no person\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σάρξ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Mount Sinai\" here is a synecdoche for the law that Moses gave to the Israelites there. Alternate translation: \"Mount Sinai, where Moses gave the law to Israel\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "Ὄρους",
+          "occurrence": 1
+        },
+        {
+          "word": "Σινά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Mount Sinai",
+      "occurrence": 1
+    }
+  }
+]

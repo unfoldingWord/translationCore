@@ -1,0 +1,138 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here this refers to believers in Christ, including males and females. Alternate translation: \"many believers\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "πολλοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "many sons",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here this refers to all who have believed in Jesus, including both men and women. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": "ἀδελφοὺς",
+      "glQuote": "brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word translated \"sons\" and \"son\" is specifically the word for a male child. In that culture the family line continued through the sons, not normally through the daughters. However, as stated by the UST and some English versions, the author is directing his words to both males and females. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "υἱέ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as sons ... My son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All occurrences of these words may be stated to include males and females. Alternate translation: \"children ... child\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "υἱὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sons ... son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to all the believers to whom he is writing whether male or female. Alternate translation: \"fellow believers\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": "ἀδελφοί",
+      "glQuote": "brothers",
+      "occurrence": 1
+    }
+  }
+]

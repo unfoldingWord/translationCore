@@ -1,0 +1,1114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἑτοιμάσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐθείας",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίβους",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Make ready the way of the Lord ... make his paths straight",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This basically has the same meaning as the first part of the sentence. Here \"those who sat in the region and shadow of death\" is a metaphor. It represents those who did not know God. These people were in danger of dying and being separated from God forever. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καθημένοις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "χώρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σκιᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "θανάτου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "φῶς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνέτειλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to those who sat in the region and shadow of death, upon them has a light arisen",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these phrases mean basically the same thing. They emphasize that a person cannot love and be devoted both to God and money at the same time. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μισήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἕτερον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπήσει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑνὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθέξεται",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑτέρου",
+          "occurrence": 1
+        },
+        {
+          "word": "καταφρονήσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for either he will hate the one and love the other, or else he will be devoted to one and despise the other",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Matthew is quoting the prophet Isaiah. These two phrases mean basically the same thing and emphasize that he healed all of our diseases. Alternate translation: \"healed those who were sick and made them well\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσθενείας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαβεν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 2
+        },
+        {
+          "word": "νόσους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐβάστασεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "took our sickness and bore our diseases",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these statements mean the same thing. Jesus is emphasizing that the disciples should tell everyone what he tells the disciples in private. Alternate translation: \"Tell people in the daylight what I tell you in the darkness, and proclaim upon the housetops what you hear softly in your ear\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκοτίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "φωτί",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "κηρύξατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δωμάτων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What I tell you in the darkness, say in the daylight, and what you hear softly in your ear, proclaim upon the housetops",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these phrases mean the same thing. Jesus is emphasizing that it is easier to obey him than it is the Jewish law. Alternate translation: \"For what I place on you, you will be able to carry because it is light\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζυγός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "χρηστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "φορτίον",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐλαφρόν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For my yoke is easy and my burden is light",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these statements mean the same thing. They are metaphors emphasizing that God's servant will be gentle and kind. Both \"bruised reed\" and \"smoking flax\" represent weak and hurting people. If the metaphor is confusing, you could translate the literal meaning. Alternate translation: \"He will be kind to weak people, and he will be gentle to those who are hurting\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "άλαμον",
+          "occurrence": 1
+        },
+        {
+          "word": "συντετριμμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατεάξει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "λίνον",
+          "occurrence": 1
+        },
+        {
+          "word": "τυφόμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "σβέσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He will not break a bruised reed; he will not quench a smoking flax",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This begins a quote from the prophet Isaiah about the unbelieving people of Isaiah's day. Jesus uses this quote to describe the very crowd that was listening to him. These statements are again parallel and emphasize that the people refused to understand God's truth. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἀκοῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούσετε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνῆτε",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "βλέποντες",
+          "occurrence": 1
+        },
+        {
+          "word": "βλέψετε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἴδητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You will indeed hear, but you will certainly not understand; you will indeed see, but you will certainly not perceive.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these statements mean the same thing. Jesus is emphasizing that they have pleased God because they have believed what Jesus has said and done. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "μακάριοι",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "βλέπουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκούουσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But blessed are your eyes, for they see; and your ears, for they hear",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both sentences mean the same thing. They are combined to emphasize that Jesus taught the crowds only with parables. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλάλησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "παραβολαῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλοις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "παραβολῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλάλει",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "All these things Jesus spoke to the crowds in parables; and he spoke nothing to them without a parable",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means basically the same thing as the previous sentence. It is a metaphor that means the Christ will have the final judgment and will destroy everyone who rebels against him. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "δ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "πέσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "λικμήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But anyone on whom it falls, it will crush him.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these mean the same thing. Jesus is emphasizing that people everywhere will fight each other. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐγερθήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνος",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "βασιλείαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For nation will rise against nation, and kingdom against kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these mean the same thing. They are idioms that mean \"from everywhere.\" Alternate translation: \"from all over the world\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τεσσάρων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνέμων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄκρων",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄκρων",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the four winds, from one end of the sky to the other end of it",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these statements mean the same thing. They emphasize that the master will come when the servant is not expecting him. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾗ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσδοκᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὥρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾗ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "γινώσκει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "on a day that the servant does not expect and at an hour that he does not know",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"reap where you did not sow\" and \"harvest where you did not scatter\" mean the same thing. They refer to a farmer who gathers crops that other people have planted. The servant uses this metaphor to accuse the master of taking what rightfully belongs to others. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "θερίζων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσπειρας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "συνάγων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "διεσκόρπισας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You reap where you did not sow, and you harvest where you did not scatter",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"reap where I have not sowed\" and \"harvest where I have not scattered\" mean the same thing. They refer to a farmer who gathers crops that people who work for him have planted. See how you translated this in [Matthew 25:24](../25/24.md), where the servant uses these words to accuse the farmer. The readers should understand that the farmer is acknowledging that he does indeed gather what others have planted but is saying that he is right to do so. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "θερίζω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσπειρα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "συνάγω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "διεσκόρπισα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I reap where I have not sowed and harvest where I have not scattered",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,668 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John speaks of death as if it were a person or animal that could run away. Alternate translation: \"they will not be able to die\" or \"they will not die\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "φεύγει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "θάνατος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "death will flee from them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The earth is spoken of as if it were a living thing, and a hole in the earth is spoken of as if it were a mouth that could drink up the water. Alternate translation: \"A hole in the ground opened up and the water went down into the hole\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἤνοιξεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "γῆ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόμα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "κατέπιεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποταμὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔβαλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δράκων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The earth opened its mouth and swallowed the river that the dragon was pouring out of his mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Babylon is spoken of as if it were a prostitute who has caused other people to sin along with her. This may well have a double meaning: literal sexual immorality and also the worship of false gods. (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "θυμοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πορνείας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "her immoral passion",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These deeds are spoken of as if they were alive and able to follow those who did them. Possible meanings are 1) \"others will know the good deeds these people have done\" or 2) \"God will reward them for their deeds\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔργα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκολουθεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 3
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "their deeds will follow them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John speaks about the sun as if it were a person. This can be stated in active form. Alternate translation: \"and caused the sun to severely burn the people\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἐδόθη",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "καυματίσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it was given permission to scorch the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Babylon is spoken of as if it were a prostitute who has caused other people to sin along with her. This may well have a double meaning: literal sexual immorality and also the worship of false gods. (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "θυμοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πορνείας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "her immoral passion",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John speaks of the \"voice\" as if it were a person. Alternate translation: \"someone spoke from the throne\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "φωνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "θρόνου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξῆλθεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a voice came out from the throne",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John describes \"death\" as a person with power. Alternate translation: \"These people will not experience the second death\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "δεύτερος",
+          "occurrence": 1
+        },
+        {
+          "word": "θάνατος",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Over these the second death has no power",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John speaks of fire as if it were alive. Alternate translation: \"God sent fire from heaven to burn them up\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "κατέβη",
+          "occurrence": 1
+        },
+        {
+          "word": "πῦρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 5
+        },
+        {
+          "word": "κατέφαγεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fire came down from heaven and devoured them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John describes heaven and earth as if they were people who were trying to escape God's judgment. This means that God completely destroyed the old heaven and earth. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔφυγεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανός",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "τόπος",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὑρέθη",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The earth and the heaven fled away from his presence, but there was no place for them to go",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John speaks of the sea, death, and Hades as if they were living persons. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἔδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "θάλασσα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκροὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "θάνατος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ᾍδης",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔδωκαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 3
+        },
+        {
+          "word": "νεκροὺς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "The sea gave up the dead ... Death and Hades gave up the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The angel speaks of Jerusalem as if it were a woman who is about to marry her groom, the Lamb. Jerusalem is metonymy for those who believers who will inhabit it. (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "νύμφην",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "γυναῖκα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀρνίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the bride, the wife of the Lamb",
+      "occurrence": 1
+    }
+  }
+]

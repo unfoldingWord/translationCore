@@ -1,0 +1,82 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The setting changes from John being in heaven to being in a wilderness. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἀπήνεγκέν",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔρημον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "carried me away in the Spirit to a wilderness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The setting changes as John is taken to a high mountain where he can see the city of Jerusalem. See how you translated this phrase in [Revelation 17:3](../17/03.md). (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἀπήνεγκέν",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "carried me away in the Spirit",
+      "occurrence": 1
+    }
+  }
+]

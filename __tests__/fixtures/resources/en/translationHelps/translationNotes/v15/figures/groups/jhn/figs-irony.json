@@ -1,0 +1,142 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John uses irony in this statement. The people believe that Jesus is from Nazareth. They do not know that God sent him from heaven and that he was born in Bethlehem. Alternate translation: \"You all know me and you think you know where I come from\" (See: [[rc://en/ta/man/translate/figs-irony ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "κἀμὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἴδατε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οἴδατε",
+          "occurrence": 2
+        },
+        {
+          "word": "πόθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You both know me and know where I come from ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question uses irony. Jesus knows the Jewish leaders do not want to stone him because he has done good works. (See: [[rc://en/ta/man/translate/figs-irony ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "λιθάζετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For which of those works are you stoning me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The greeting \"Hail\" with a raised hand was only used to greet Caesar. As the soldiers use the crown of thorns and the purple robe to mock Jesus, it is ironic that they do not recognize that he is indeed a king. (See: [[rc://en/ta/man/translate/figs-irony ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "χαῖρε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Hail, King of the Jews ",
+      "occurrence": 1
+    }
+  }
+]

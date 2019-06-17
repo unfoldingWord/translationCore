@@ -1,0 +1,1268 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of peace as if it were an object that could increase in size or numbers. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "χάρις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνη",
+          "occurrence": 1
+        },
+        {
+          "word": "πληθυνθείη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "May grace and peace increase",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of people not suffering from the corruption that wicked desires cause as if they were escaping from that corruption. The word \"corruption\" is an abstract noun that can be translated with a verbal phrase. Alternate translation: \"and so that the wicked desires in this world will no longer corrupt you\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀποφυγόντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπιθυμίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "φθορᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "having escaped the corruption in the world that is caused by evil desires",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of a person who does not possess these qualities as if he is a field that will not produce a crop. This can be stated in positive terms. Alternate translation: \"you will produce and be fruitful\" or \"you will be effective\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀργοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάρπους",
+          "occurrence": 1
+        },
+        {
+          "word": "καθίστησιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will not be barren or unfruitful",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of a person who does not possess these qualities as if he were a nearsighted or blind person because he does not understand their value. Alternate translation: \"is like a shortsighted person who cannot see their importance\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τυφλός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "μυωπάζων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "is so nearsighted that he is blind",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"stumble\" refers either to 1) committing sin. Alternate translation: \"you will not practice sinful behavior\" or 2) becoming unfaithful to Christ. Alternate translation: \"you will not become unfaithful to Christ\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πταίσητέ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will not stumble",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"stir\" means to awaken someone from sleep. Peter speaks of causing his readers to think about these things as if he were waking them from sleep. Alternate translation: \"to remind you of these things so that you will think about them\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "διεγείρειν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑπομνήσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to stir you up by way of reminder",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of his body as if it were a tent that he is wearing and will take off. Being in his body represents being alive, and taking it off represents dying. Alternate translation: \"as long as I am in this body\" or \"as long as I am alive\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅσον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκηνώματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as long as I am in this tent",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of his body as if it were a tent that he is wearing and will take off. Being in his body represents being alive, and taking it off represents dying. Alternate translation: \"I will soon take off this body\" or \"I will die soon\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ταχινή",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπόθεσις",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκηνώματός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the putting off of my tent will be soon",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of his death as if he were leaving one place to go to another. Alternate translation: \"after my death\" or \"after I die\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξοδον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "after my departure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of Christ as the \"morning star,\" which indicates that daybreak and the end of darkness is near. Christ will bring light into the hearts of believers, ending all doubt and bringing full understanding of who he is. Here \"hearts\" is a metonym for people's minds. Alternate translation: \"Christ shines his light into your hearts like the morning star shines its light into the world\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "φωσφόρος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνατείλῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the morning star rises in your hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of the Holy Spirit helping the prophets to write what God wanted them to write as if the Holy Spirit was carrying them from one place to another. Alternate translation: \"men spoke from God as the Holy Spirit directed them\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίου",
+          "occurrence": 1
+        },
+        {
+          "word": "φερόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐλάλησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωποι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "men spoke from God when they were carried along by the Holy Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"master\" here refers to a person who owns slaves. Peter speaks of Jesus as the owner of people whom he has bought, the price being his death. (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγοράσαντα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "Δεσπότην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the master who bought them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"in chains in a very dark place\" or 2) \"in very deep darkness that imprisons them like chains.\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "σειροῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζόφου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in chains of lower darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The idea that angels could accuse them is spoken of as if they could attack them using accusations as weapons. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "φέρουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "κατ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "βλάσφημον",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bring insulting judgments against them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Just as animals cannot reason, these men cannot be reasoned with. Alternate translation: \"these false teachers are like unreasoning animals who are made to be captured and destroyed\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὗτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄλογα",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῷα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "γεγεννημένα",
+          "occurrence": 1
+        },
+        {
+          "word": "φυσικὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅλωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "φθοράν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "these unreasoning animals are naturally made for capture and destruction.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"stains\" and \"blemishes\" share similar meanings. Peter speaks of the false teachers as if they were stains on a garment that cause shame for those who wear it. Alternate translation: \"They are like stains and blemishes on clothes, which cause disgrace\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "σπίλοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μῶμοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They are stains and blemishes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Right behavior that honors God is spoken of as if it were a path to follow. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "εὐθεῖαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the right way",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Springs flowing with water promise refreshment for thirsty people, but \"springs without water\" will leave the thirsty disappointed. In the same way, false teachers, although they promise many things, are unable to do what they promise. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὗτοί",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "πηγαὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνυδροι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "These men are springs without water",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "When people see storm clouds, they expect rain to fall. When the winds from the storm blow the clouds away before the rain can fall, the people are disappointed. In the same way, false teachers, although they promise many things, are unable to do what they promise. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁμίχλαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "λαίλαπος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλαυνόμεναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "mists driven by a storm",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of people who live sinfully as if they are slaves to sin who need to be released from their captivity. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀλίγως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποφεύγοντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "people who try to escape",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Freedom\" here is an idiom for the ability to live exactly as one wants. Alternate translation: \"They promise to give them the ability to live exactly as they want to live, but they themselves cannot escape their own sinful desires\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐλευθερίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαγγελλόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δοῦλοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπάρχοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "φθορᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They promise freedom to them, but they themselves are slaves of corruption",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of people who live sinfully as if they are slaves to sin who need to be released from their captivity. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐλευθερίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐπαγγελλόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δοῦλοι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "φθορᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "promise freedom ... slaves of corruption",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of a person as a slave when anything has control over that person, and that thing as the master of that person. Alternate translation: \"For if something has control over a person, that person becomes like a slave to that thing\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἥττηται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεδούλωται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For a man is a slave to whatever overcomes him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of life as a \"way\" or path. This phrase refers to living a life that is according to God's will. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the way of righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"turn away from\" is a metaphor that means to stop doing something. Alternate translation: \"stop obeying the holy commandment\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὑποστρέψαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἁγίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐντολῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "turn away from the holy commandment",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of causing his readers to think about these things as if he were waking them from sleep. Alternate translation: \"to cause you to think pure thoughts\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "διεγείρω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰλικρινῆ",
+          "occurrence": 1
+        },
+        {
+          "word": "διάνοιαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to stir up your sincere mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here this stands for \"faultless.\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἄσπιλοι",
+      "glQuote": "spotless",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"led astray\" is a metaphor for being persuaded to do something wrong. This can be stated in active form. Alternate translation: \"so that lawless people do not deceive you and cause you do something wrong\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀθέσμων",
+          "occurrence": 1
+        },
+        {
+          "word": "πλάνῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "συναπαχθέντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that you are not led astray by the deceit of lawless people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Faithfulness is spoken of as if it were a possession that believers could lose. Alternate translation: \"you stop being faithful\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐκπέσητε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδίου",
+          "occurrence": 1
+        },
+        {
+          "word": "στηριγμοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you lose your own faithfulness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here growing in the grace and knowledge of the Lord represents experiencing his grace more and knowing him more. The abstract noun \"grace\" can be expressed with the phrase \"act kindly.\" Alternate translation: \"receive more of the grace of our Lord and Savior Jesus Christ, and know him more\" or \"be more aware of how our Lord and Savior Jesus Christ acts kindly toward you, and know him better\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "αὐξάνετε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "γνώσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Σωτῆρος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "grow in the grace and knowledge of our Lord and Savior Jesus Christ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are beautiful and valuable white balls that people use as jewelry. They are formed inside the shell of a certain kind of small animal that lives in the ocean. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "μαργαρίταις",
+      "glQuote": "pearls",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a sleeve that goes over an animal's snout and mouth to prevent it from eating while it is doing work (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "φιμώσεις",
+      "glQuote": "muzzle",
+      "occurrence": 1
+    }
+  }
+]

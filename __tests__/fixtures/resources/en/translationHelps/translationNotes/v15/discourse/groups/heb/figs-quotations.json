@@ -1,0 +1,102 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This direct quotation can be stated as an indirect quotation. Alternate translation: \"They will not need to teach their neighbors or brothers to know me\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάξωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕκαστος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πολίτην",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕκαστος",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀδελφὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "γνῶθι",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 3
+        },
+        {
+          "word": "Κύριον",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They will not teach each one his neighbor and each one his brother, saying, 'Know the Lord.'",
+      "occurrence": 1
+    }
+  }
+]

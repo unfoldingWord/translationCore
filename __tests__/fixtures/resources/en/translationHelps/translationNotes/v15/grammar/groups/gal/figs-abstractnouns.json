@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"grace\" can be translated as the verb \"be kind.\" Alternate translation: \"understood that God had been kind to me\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "γνόντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "δοθεῖσάν",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "understood the grace that had been given to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"those who have faith.\" The meaning of the noun \"faith\" can be expressed with the verb \"believe.\" Alternate translation: \"those who believe\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those of faith",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,528 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are valuable stones. Jasper may have been clear like glass or crystal, and carnelian may have been red. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "λίθῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰάσπιδι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σαρδίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "jasper and carnelian",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a green, valuable stone (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "σμαραγδίνῳ",
+      "glQuote": "emerald",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Wormwood is a shrub that tastes bitter. People made medicine out of it, but they also believed that it was poisonous. Alternate translation: \"The name of the star is Bitterness\" or \"The name of the star is Bitter Medicine\" (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀστέρος",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἄψινθος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The name of the star is Wormwood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "insects that fly together in large groups. People fear them because they can eat up all the leaves in gardens and on trees. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "ἀκρίδες",
+      "glQuote": "locusts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "small insects with poisonous stingers on their tails. Their sting is extremely painful and the pain lasts a long time. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "σκορπίοι",
+      "glQuote": "scorpions",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Why they will wear sackcloth can be made explicit. Alternate translation: \"days, wearing rough mourning clothes\" or \"days: they will wear scratchy clothes to show that they are very sad\" (See: [[rc://en/ta/man/translate/translate-unknown]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "περιβεβλημένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "σάκκους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "days, clothed in sackcloth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a tool with a curved blade used for cutting grass, grain, and vines (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "δρέπανον",
+      "glQuote": "sickle",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "beautiful and valuable white beads. They are formed inside the shell of a certain kind of small animal that lives in the ocean. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "μαργαρίταις",
+      "glQuote": "pearls",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If your language does not divide the day into 24 hours, you may need to use a more general expression. Alternate translation: \"for a very short time\" or \"for a very small part of a day\" (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "μίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for one hour",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Purple is a very dark red cloth that is very expensive. Silk is a soft, strong cloth made from the fine string that silkworms make when they make their cocoons. Scarlet is an expensive red cloth. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "πορφύρας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 6
+        },
+        {
+          "word": "σιρικοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 7
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 7
+        },
+        {
+          "word": "κοκκίνου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "purple, silk, scarlet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a beautiful hard, white material that people get from the tusks or teeth of very large animals such as elephants or walruses. Alternate translation: \"tusks\" or \"valuable animal teeth\" (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "ἐλεφάντινον",
+      "glQuote": "ivory",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a precious stone used for building (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "μαρμάρου",
+      "glQuote": "marble",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "beautiful and valuable white beads. They are formed inside the shell of a certain kind of small animal that lives in the ocean. See how you translated this in [Revelation 17:4](../17/04.md). (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "μαργαρίτῃ",
+      "glQuote": "pearls",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a valuable stone. Jasper may have been clear like glass or crystal. See how you translated this in [Revelation 4:3](../04/03.md). (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "ἰάσπιδι",
+      "glQuote": "jasper",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a valuable stone. Jasper may have been clear like glass or crystal. See how you translated this in [Revelation 4:3](../04/03.md). (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "ἴασπις",
+      "glQuote": "jasper",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are valuable stones. Jasper may have been clear like glass or crystal. See how you translated it in [Revelation 4:3](../04/03.md). (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "ἴασπις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σάπφειρος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "χαλκηδών",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σμάραγδος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "jasper ... sapphire ... agate ... emerald",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are all precious gems. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "σαρδόνυξ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σάρδιον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "χρυσόλιθος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "βήρυλλος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοπάζιον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "χρυσόπρασος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὑάκινθος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀμέθυστος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "onyx ... chrysolite ... beryl ... topaz ... chrysoprase ... jacinth ... amethyst",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "beautiful and valuable white beads. They are formed inside the shell of a certain kind of small animal that lives in the ocean. See how you translated this in [Revelation 17:4](../17/04.md). (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "μαργαρῖται",
+      "glQuote": "pearls",
+      "occurrence": 1
+    }
+  }
+]

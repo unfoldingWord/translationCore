@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "An ephah is a unit of measurement equal to about 22 liters. Alternate translation: \"about 22 liters of barley\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "quote": [
+        {
+          "word": "כְּ",
+          "occurrence": 1
+        },
+        {
+          "word": "אֵיפָ֥ה",
+          "occurrence": 1
+        },
+        {
+          "word": "שְׂעֹרִֽים",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about an ephah of barley",
+      "occurrence": 1
+    }
+  }
+]

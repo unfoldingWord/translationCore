@@ -1,0 +1,53 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"denarii\" is the plural of \"denarius. \"Alternate translation: \"The amount of bread that cost two hundred days' wages\" (See: [[rc://en/ta/man/translate/translate-bmoney ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": [
+        {
+          "word": "διακοσίων",
+          "occurrence": 1
+        },
+        {
+          "word": "δηναρίων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρτοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Two hundred denarii worth of bread ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A denarius was the amount of silver that a common laborer could earn in one day of work. (See: [[rc://en/ta/man/translate/translate-bmoney ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": "δηναρίων",
+      "glQuote": "denarii",
+      "occurrence": 1
+    }
+  }
+]

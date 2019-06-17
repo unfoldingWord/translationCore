@@ -1,0 +1,152 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of \"condemnation\" and \"destruction\" as if they are persons who act. The two phrases mean basically the same thing and emphasize how soon the false teachers will be condemned. (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "οἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίμα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀργεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπώλεια",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "νυστάζει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "their condemnation has not been idle, and their destruction is not asleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of the day when God will judge everyone as if it were a thief who will unexpectedly and take people by surprise. (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἥξει",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "κλέπτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the day of the Lord will come as a thief",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of \"righteousness\" as if it were a person. This is a metonym for people who are righteous. Alternate translation: \"where righteous people will dwell\" or \"where people will live righteously\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνη",
+          "occurrence": 1
+        },
+        {
+          "word": "κατοικεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "where righteousness will dwell",
+      "occurrence": 1
+    }
+  }
+]

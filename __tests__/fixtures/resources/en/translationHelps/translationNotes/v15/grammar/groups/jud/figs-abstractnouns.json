@@ -1,0 +1,58 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"may mercy, peace, and love be increased many times for you.\" These ideas are spoken of as if they were objects that could grow in size or number. This can be restate to remove the abstract nouns \"mercy,\" \"peace,\" and \"love.\" Alternate translation: \"May God continue to be merciful to you so that you live peacefully and love one another more and more (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἔλεος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγάπη",
+          "occurrence": 1
+        },
+        {
+          "word": "πληθυνθείη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "May mercy and peace and love be multiplied to you",
+      "occurrence": 1
+    }
+  }
+]

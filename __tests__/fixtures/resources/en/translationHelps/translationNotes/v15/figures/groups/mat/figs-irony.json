@@ -1,0 +1,200 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is using irony. He does not think there are any people who are righteous and do not need to repent. Alternate translation: \"those who think they are righteous\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": "δικαίους",
+      "glQuote": "the righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is using irony. He does not think these people are really wise. Alternate translation: \"people who think they are wise and understanding\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "σοφῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "συνετῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the wise and understanding",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Those hitting Jesus do not really think he is the Christ. They call him this to mock him. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 68
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": "Χριστέ",
+      "glQuote": "Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They were saying this to mock Jesus. They were calling Jesus \"King of the Jews,\" but they did not really believe he was a king. And yet what they were saying was true. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "χαῖρε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Hail, King of the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the Jewish leaders do not believe that Jesus saved others or that he can save himself, or 2) they believe he did save others but are laughing at him because now he cannot save himself. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "ἄλλους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσωσεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "σῶσαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He saved others, but he cannot save himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The leaders are mocking Jesus. They call him \"King of Israel,\" but they do not really believe he is king. Alternate translation: \"He says that he is the King of Israel\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "Βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "He is the King of Israel!",
+      "occurrence": 1
+    }
+  }
+]

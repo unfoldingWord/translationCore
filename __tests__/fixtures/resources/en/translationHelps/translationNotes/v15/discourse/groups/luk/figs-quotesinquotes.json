@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The inner quote can also be translated as an indirect quote. Alternate translation: \"If any one asks you why you are untying it, say\" (See: [[rc://en/ta/man/translate/figs-quotesinquotes]] and [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐάν",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρωτᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "λύετε",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρεῖτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If anyone asks you, 'Why are you untying it?' you will say thus",
+      "occurrence": 1
+    }
+  }
+]

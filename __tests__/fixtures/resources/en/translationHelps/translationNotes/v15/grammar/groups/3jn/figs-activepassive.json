@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"All who know Demetrius bear witness of him\" or \"Every believer who knows Demetrius speaks well of him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "Δημητρίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "μεμαρτύρηται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Demetrius is borne witness to by all",
+      "occurrence": 1
+    }
+  }
+]

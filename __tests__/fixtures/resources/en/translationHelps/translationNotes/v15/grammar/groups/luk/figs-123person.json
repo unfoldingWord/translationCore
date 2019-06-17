@@ -1,0 +1,920 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be made clear that Elizabeth was calling Mary \"the mother of my Lord\" by adding the word \"you.\" Alternate translation: \"you, the mother of my Lord\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "μήτηρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the mother of my Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Elizabeth is talking about Mary to Mary. Alternate translation: \"Blessed are you who believed ... that were told you from the Lord\"(See: [[rc://en/ta/man/translate/figs-123person]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μακαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύσασα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "λελαλημένοις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Blessed is she who believed ... that were told her from the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus expected the people to understand that he was referring to himself. Alternate translation: \"I, the Son of Man\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is referring to himself. Alternate translation: \"I, the Son of Man ... and I will\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "ἀποκτανθῆναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Son of Man ... and he will be killed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was speaking about himself. Alternate translation: \"I, the Son of Man ... when I come\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλθῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man ... when he comes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was speaking to the people he was talking about. Alternate translation: \"before you see\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἴδωσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "before they see",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is speaking about himself in the third person. The word \"hands\" is a synecdoche for the people whose hands they are or a metonym for the power that uses those hands. You may need to make explicit who these men are. Alternate translation: \"I, the Son of Man will be betrayed into the hands of men\" or \"The Son of Man will be betrayed into the power of his enemies\" or \"I, the Son of Man will be betrayed to my enemies\" (See: [[rc://en/ta/man/translate/figs-123person]] and [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "μέλλει",
+          "occurrence": 1
+        },
+        {
+          "word": "παραδίδοσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the Son of Man will be betrayed into the hands of men",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is speaking about himself in the third person. Alternate translation: \"I, the Son of Man, have ... my head\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 58
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κεφαλὴν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man has ... his head",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is referring to himself in the third person. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since the parable starts with \"Which one of you,\" some languages would continue the parable in the second person. Alternate translation: \"Which one of you, if you have a hundred sheep\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόβατα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Which man among you, having a hundred sheep",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is speaking about himself. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"But first the Son of Man must suffer.\" Jesus is speaking about himself in the third person. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "παθεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But first he must suffer",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is speaking about himself. Alternate translation: \"I, the Son of Man, am revealed\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκαλύπτεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man is revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is referring to himself. Alternate translation: \"I, the Son of Man come, will I indeed find\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλθὼν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἆρα",
+          "occurrence": 1
+        },
+        {
+          "word": "εὑρήσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man comes, will he indeed find",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks of himself as \"the Son of Man.\" Alternate translation: \"me, the Son of Man,\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks of himself as \"the Son of Man.\" Alternate translation: \"I\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": "παραδοθήσεται",
+      "glQuote": "he will be handed over",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks of himself as \"the Son of Man.\" Alternate translation: \"me ... me ... I\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀναστήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "him ... he will rise again",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is referring to himself. Alternate translation: \"me, the Son Man, coming\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρχόμενον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man coming",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is speaking about himself in the third person. Alternate translation: \"I, the Son of Man, indeed go\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πορεύεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man indeed goes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is using this term to refer to himself. Alternate translation: \"me, the Son of Man, with\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this phrase to refer to himself. Alternate translation: \"I, the Son of Man, will\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 69
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of Man will be",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These usages of \"we\" refer only to the two criminals, and not to Jesus or the other people. (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐπράξαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολαμβάνομεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We indeed ... we are receiving ... we did",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,246 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the palace guards and many other people in Rome know that I am in chains for the sake of Christ\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "δεσμούς",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "φανεροὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "πραιτωρίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "λοιποῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my chains in Christ came to light ... guard ... everyone else",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Possible meanings are 1) \"God chose me to defend the gospel\" or 2) \"I am in prison because I defend the gospel.\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολογίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐαγγελίου",
+          "occurrence": 1
+        },
+        {
+          "word": "κεῖμαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am put here for the defense of the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"A priest circumcised me\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "περιτομῇ",
+      "glQuote": "I was circumcised",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) Paul wants to be like Christ by dying as Christ died or 2) Paul wants his desire to sin to become as dead as Jesus was before he was raised. (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "συμμορφιζόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "θανάτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "becoming like him in his death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"body. He will change our bodies with the same power he uses to control all things\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "σώματι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνέργειαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύνασθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑποτάξαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὑτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "body, formed by the might of his power to subject all things to himself",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is stating a hypothetical situation in which something would certainly happen if something else that is not true were true. In this case, he would certainly raise the temple up if the Jewish authorities were to destroy it. He is not commanding the Jewish authorities to tear down the actual temple building. You can translate the words \"destroy\" and \"raise\" using the usual words for tearing down and rebuilding a building. Alternate translation: \"If you destroy this temple, I will certainly raise it up\" or \"You can be certain that if you were to destroy this temple, I would raise it up\" (See: [[rc://en/ta/man/translate/figs-hypo]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "λύσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ναὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τρισὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγερῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Destroy this temple, ... I will raise it up ",
+      "occurrence": 1
+    }
+  }
+]

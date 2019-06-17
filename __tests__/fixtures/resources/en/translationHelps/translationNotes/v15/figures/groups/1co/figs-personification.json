@@ -1,0 +1,238 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of food as though it were a person who could make God welcome us. Alternate translation: \"food does not give us favor with God\" or \"the food we eat does not make God pleased with us\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "βρῶμα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "παραστήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "food will not present us to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He is speaking of the way people in society normally act as if it were a person who teaches. Alternate translation: \"You know just from looking at the way people normally act ... for him.\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "φύσις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάσκει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Does not even nature itself teach you ... for him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks about love as if it were a person. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγάπη",
+          "occurrence": 1
+        },
+        {
+          "word": "μακροθυμεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 3
+        },
+        {
+          "word": "φυσιοῦται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Love is patient and kind ... It is not arrogant",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the body is spoken of as if it were a person, and becoming imperishable is spoken of as if being imperishable was clothing that a body would wear. Alternate translation: \"when this perishable body has become imperishable\" or \"when this body that can rot can no longer rot\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "φθαρτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνδύσηται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφθαρσίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when this perishable body has put on what is imperishable",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the body is spoken of as if it were a person, and becoming immortal is spoken of as if being immortal was clothing that a body would wear. Alternate translation: \"when this mortal body has become immortal\" or \"when this body that can die can no longer die\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "θνητὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐνδύσηται",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀθανασίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this mortal body has put on immortality",
+      "occurrence": 1
+    }
+  }
+]

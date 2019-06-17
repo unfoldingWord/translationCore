@@ -1,0 +1,48 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can also be put into the active voice. Alternate translation: \"men whom God chose to condemn\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "προγεγραμμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "men who were marked out for condemnation",
+      "occurrence": 1
+    }
+  }
+]

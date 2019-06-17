@@ -1,0 +1,4962 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"as they watched.\" The apostles \"were looking up\" at Jesus because Jesus rose into the sky. Alternate translation: \"as they were looking up at the sky\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "βλεπόντων",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as they were looking up ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the distance which, according to Rabbinical tradition, a person was allowed to walk on a Sabbath day. Alternate translation: \"about one kilometer away\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Σαββάτου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a Sabbath day's journey ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the money that he earned from the evil thing that he did.\" The words \"his wickedness\" refer to Judas Iscariot's betraying Jesus to the people who killed him. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μισθοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδικίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the earnings he received for his wickedness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This suggests that Judas fell from a high place, rather than just falling down. The fall was severe enough to cause his body to burst open. Other passages of scripture mention that he hanged himself. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πρηνὴς",
+          "occurrence": 1
+        },
+        {
+          "word": "γενόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐλάκησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "μέσος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐξεχύθη",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπλάγχνα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there he fell headfirst, and his body burst open, and all his intestines poured out ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"They\" refers to all of the believers who were present. Alternate translation: \"They proposed two men who fulfilled the requirements that Peter listed\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔστησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "δύο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They put forward two men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"They\" refers to all of the believers, but it was probably one of the apostles who spoke these words. Alternate translation: \"The believers prayed together and one of the apostles said\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "προσευξάμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They prayed and said ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"It is only nine o'clock in the morning.\" Peter expected his audience to know that people do not get drunk that early in the day. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὥρα",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτη",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it is only the third hour of the day ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"see\" means to experience something. The word \"decay\" refers to the decomposition of his body after death. Alternate translation: \"to decay\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἰδεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "διαφθοράν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to see decay ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"see\" means to experience something. The word \"decay\" refers to the decomposition of his body after death. See how you translated this in [Acts 2:27](../02/27.md). Alternate translation: \"nor did his flesh decay\" or \"nor did he remain dead long enough for his flesh to decay\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὔτε",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὰρξ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶδεν",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 2
+        },
+        {
+          "word": "διαφθοράν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "nor did his flesh see decay ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implication is that God will punish \"this wicked generation.\" Alternate translation: \"Save yourselves from the punishment that these wicked people will suffer\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "σώθητε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γενεᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "σκολιᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Save yourselves from this wicked generation ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is understood that Peter has the ability to heal the man. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔχω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what I do have ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"They were very angry.\" The Sadducees, in particular, would have been angry about what Peter and John were saying because they did not believe in resurrection. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "διαπονούμενοι",
+      "glQuote": "They were deeply troubled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the abstract noun \"boldness\" refers to the way in which Peter and John responded to the Jewish leaders, and can be translated with an adverb or an adjective. Alternate translation: \"how boldly Peter and John had spoken\" or \"how bold Peter and John were\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρου",
+          "occurrence": 1
+        },
+        {
+          "word": "παρρησίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωάννου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the boldness of Peter and John ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jewish leaders \"realized\" this because of the way Peter and John spoke. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καταλαβόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωποι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγράμματοί",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἰδιῶται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "realized that they were ordinary, uneducated men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"it\" refers to any miracles or teaching Peter and John might continue to do. Alternate translation: \"in order that news of this miracle spreads no further\" or \"in order that no more people hear about this miracle\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλεῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "διανεμηθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in order that it spreads no further ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"their own people\" refers to the rest of the believers. Alternate translation: \"went to the other believers\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἦλθον",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδίους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "came to their own people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These \"useless things\" consist of plans to oppose God. Alternate translation: \"the peoples imagine useless things against God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "λαοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμελέτησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "κενά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the peoples imagine useless things ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies that Ananias had told the apostles that he was giving the entire amount that he had received from selling his land. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ψεύσασθαί",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "νοσφίσασθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τιμῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to lie to the Holy Spirit and to keep back part of the price ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that God would heal them if Peter's shadow touched them. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκιὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπισκιάσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τινὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his shadow might fall on some of them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase here refers to the temple courtyard, not to the temple building where only the priests were allowed. Alternate translation: \"in the temple courtyard\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the temple ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They went into the temple courtyard, not into the temple building where only the priests were allowed. Alternate translation: \"into the temple courtyard\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "into the temple ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"no one\" refer to the apostles. This implies that there was no one else in the jail cell besides the apostles. Alternate translation: \"we did not find them inside\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔσω",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδένα",
+          "occurrence": 1
+        },
+        {
+          "word": "εὕρομεν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "we found no one inside ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They did not go into the part of the temple building where only the priests were allowed. Alternate translation: \"standing in the temple courtyard\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἑστῶτες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "standing in the temple ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Gamaliel is telling the Jewish leaders no to punish the apostles any more or to put them back in jail. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπόστητε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτων",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄφετε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "keep away from these men and let them alone ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They did not go into the temple building where only the priests went. Alternate translation: \"in the temple courtyard and in different people's houses\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶκον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the temple and from house to house ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are Greek names, and suggest that all of the men elected were from the Grecian Jewish group of believers. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Στέφανον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "Φίλιππον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 5
+        },
+        {
+          "word": "Πρόχορον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 6
+        },
+        {
+          "word": "Νικάνορα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Stephen ... and Nicolaus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"grace\" and \"power\" here refer to power from God. This could be stated explicitly. Alternate translation: \"God was giving Stephen power to do\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Στέφανος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πλήρης",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμεως",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐποίει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Stephen, full of grace and power, was doing ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They were given money to give false testimony. Alternate translation: \"some men to lie and say\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἄνδρας",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγοντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "some men to say ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews would have understood that this covenant required Abraham to circumcise the males of his family. Alternate translation: \"made a covenant with Abraham to circumcise the males of his family\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "διαθήκην",
+          "occurrence": 1
+        },
+        {
+          "word": "περιτομῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "gave Abraham the covenant of circumcision ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews knew their ancestors sold Joseph to be a slave in Egypt. Alternate translation: \"sold him as a slave in Egypt\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπέδοντο",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Αἴγυπτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sold him into Egypt ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers Jacob and his sons, who were the ancestors of the Jewish people. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our fathers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to his people, and not just to his family. Alternate translation: \"see how his own people, the children of Israel, were doing\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπισκέψασθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "υἱοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "visit his brothers, the children of Israel ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The audience would have known from the account in Exodus that these were two men, but Stephen does not specify that. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "αὐτοῖς",
+      "glQuote": "some Israelites ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that Moses understood that the Israelites knew that he had killed an Egyptian the day before ([Acts 7:28](../07/28.md)). (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "after hearing this ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"After 40 years passed.\" This was the amount of time Moses had been in Midian. Alternate translation: \"Forty years after Moses fled from Egypt\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθέντων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When forty years were past ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Stephen's audience knew that God spoke through the angel. The UST makes this explicit. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὤφθη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἄγγελος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "an angel appeared ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses was surprised that the bush was not burning up in the fire. This was previously known by Stephen's audience. Alternate translation: \"because the bush was not burning up\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐθαύμασεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅραμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he marveled at the sight ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses shook from fear. This can be made clear. Alternate translation: \"Moses trembled with fear\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔντρομος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γενόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Moses trembled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that where God is present, the immediate area around God is considered or made holy by God. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕστηκας",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστίν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the place where you are standing is holy ground ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Stephen's audience knew about the forty years the Israelites spent in the wilderness. Alternate translation: \"during the 40 years that the Israelite people lived in the wilderness\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        },
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "during forty years ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Stephen's audience knew the calf they made was a statue. Alternate translation: \"they made a statue that looked like a calf\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἐμοσχοποίησαν",
+      "glQuote": "they made a calf ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that they took these idols with them as they traveled in the wilderness. Alternate translation: \"you carried with you from place to place\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἀνελάβετε",
+      "glQuote": "You accepted ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "People normally experienced the glory of God as a bright light. Alternate translation: \"saw a bright light from God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 55
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἶδεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "saw the glory of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This statement implies that the apostles remained in Jerusalem even though they also experienced this great persecution. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πλὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστόλων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "except the apostles ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to men and women who believed in Jesus. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἄνδρας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "γυναῖκας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "men and women ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies that he was a Gentile who believed in God and had come to worship at the Jewish temple. Alternate translation: \"He had come to worship God at the temple in Jerusalem\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐληλύθει",
+          "occurrence": 1
+        },
+        {
+          "word": "προσκυνήσων",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰερουσαλήμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He had come to Jerusalem to worship ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied here that Philip agreed to travel down the road with him to explain the scriptures. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "παρεκάλεσέν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Φίλιππον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀναβάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "καθίσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He begged Philip to ... sit with him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"he might take them as prisoners to Jerusalem.\" Paul's purpose can be made clear by adding \"so that the Jewish leaders could judge and punish them\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δεδεμένους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγάγῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰερουσαλήμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he might bring them bound to Jerusalem ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies that he had closed his eyes because the light was too bright. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀνεῳγμένων",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when he opened his eyes ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the extent of the power and authority granted Saul was limited to the Jewish people at this point in time. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὧδε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "authority ... to arrest everyone here ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Caesarea was a seaport. They brothers probably sent Saul to Tarsus by ship. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐξαπέστειλαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "Ταρσόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sent him away to Tarsus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the time when Peter was in Joppa. This can be stated. Alternate translation: \"It came about while Peter was nearby\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείναις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It came about in those days ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that his gifts and prayers had been accepted by God. Alternate translation: \"God is pleased by your prayers and your gifts ... a memorial offering to him\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσευχαί",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐλεημοσύναι",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 7
+        },
+        {
+          "word": "ἀνέβησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "μνημόσυνον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Your prayers and your gifts ... a memorial offering into God's presence ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "From Peter's response in the next verse, it can be implied that the law of Moses commanded the Jews not to eat some of them. Alternate translation: \"animals and birds that the Mosaic laws forbade Jews to eat\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τετράποδα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑρπετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πετεινὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all kinds of four-footed animals ... birds of the sky ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that some the animals in the container were unclean as defined by the law of Moses and were not to be eaten by believers who lived before Christ died. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐδέποτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔφαγον",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κοινὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have never eaten anything that was defiled and unclean ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"stood before the gate to the house.\" It is implied that this house had a wall with a gate in it to enter the property. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπέστησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πυλῶνα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "stood before the gate ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"many Gentile people gathered together.\" It is implied that these people Cornelius had invited were Gentiles. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "συνεληλυθότας",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "many people gathered together ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the Jewish Christians were the ones who would baptize them. Alternate translation: \"Peter commanded the Gentile believers to allow the Jewish Christians to baptize them\" or \"Peter commanded the Jewish Christians to baptize them\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "προσέταξεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "βαπτισθῆναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he commanded them to be baptized ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "From Peter's response, it can be implied that the law of Moses commanded the Jews not to eat some of them. See how you translated a similar phrase in [Acts 10:12](../10/12.md). Alternate translation: \"animals and birds that the Mosaic laws forbade Jews to eat\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τετράποδα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "four-legged animals of earth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These Greek-speaking people were Gentiles, not Jews. Alternate translation: \"also spoke to Gentiles who spoke Greek\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐλάλουν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἑλληνιστάς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "spoke also to Greeks ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Luke's audience would know that Claudius was the emperor of Rome at that time. Alternate translation: \"when Claudius was the Roman emperor\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κλαυδίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the days of Claudius ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Only James and Peter are specified, which implies that these were leaders of the church in Jerusalem. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τινας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκκλησίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "some who belonged to the church ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "That Herod planned to execute him can be clarified. Alternate translation: \"The happened on the day before Herod was going to bring Peter out from prison to put him on trial and then to execute him\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἤμελλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "προαγαγεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἡρῴδης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "νυκτὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείνῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "On the night before Herod was going to bring him out for trial ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the soldiers were not able to see Peter and the angel as they walked by. Alternate translation: \"The first and second guards did not see them as they passed by, and then\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "διελθόντες",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρώτην",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλακὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δευτέραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "After they had passed by the first guard and the second ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They probably purchased this food. Alternate translation: \"the people of Tyre and Sidon bought all their food from the people that Herod ruled\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρέφεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χώραν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλικῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "their country received its food from the king's country ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Herod restricted this supply of food because he was angry with the people of Tyre and Sidon. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρέφεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "received its food ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers back to when they brought money from the believers at Antioch in [Acts 11:29-30](../11/29.md). Alternate translation: \"delivered the money to the church leaders in Jerusalem\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πληρώσαντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "completed their mission ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They went back to Antioch from Jerusalem. Alternate translation: \"Barnabas and Saul returned to Antioch\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὑπέστρεψαν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰερουσαλὴμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they returned from Jerusalem ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John was referring to the Messiah, whom they were expecting to come. Alternate translation: \"I am not the Messiah\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγώ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am not the one ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This also refers to the Messiah. Alternate translation: \"The Messiah will soon come\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔρχεται",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμὲ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "one is coming after me ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to explicitly say Jesus died before this happened. Alternate translation: \"they killed Jesus and then took him down from the cross after he died\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καθελόντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ξύλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they took him down from the tree ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"from the cross.\" This was another way people at that time referred to the cross. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ξύλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the tree ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul's audience would have understood that this Psalm refers to the Messiah. Alternate translation: \"In another Psalm of David, he also says about the Messiah\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "διότι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑτέρῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This is why he also says in another Psalm ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that the thing they should be careful about is Paul's message. Alternate translation: \"give close attention to the things I have said\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "βλέπετε",
+      "glQuote": "be careful ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that they believed Paul's message that Jesus was the Messiah. Alternate translation: \"to continue to trust that God kindly forgives people's sins because of what Jesus did\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "προσμένειν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to continue in the grace of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Paul and Barnabas were the ones who spoke the word of the Lord. Alternate translation: \"to hear Paul and Barnabas speak about the Lord Jesus\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀκοῦσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to hear the word of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies that God had commanded this be done. Alternate translation: \"God commanded\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναγκαῖον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It was necessary ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"we will go to the Gentiles.\" Paul and Barnadas were implying that they would preach to the Gentiles. Alternate translation: \"we will leave you and start preaching to the Gentiles\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "στρεφόμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we will turn to the Gentiles ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"spoke so powerfully.\" It may be helpful to state that they spoke the message about Jesus. Alternate translation: \"spoke the message about Jesus so powerfully\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "λαλῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "spoke in such a way ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A large number of people believed Paul and Barnabas were their pagan gods who had come down from heaven. Alternate translation: \"The gods have come down from heaven to us\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "θεοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κατέβησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The gods have come down to us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to include additional information about the priest. Alternate translation: \"There was a temple just outside the city where the people worshiped Zeus. When the priest who served in the temple heard what Paul and Barnabas had done, he brought\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅ",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Διὸς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὄντος",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλεως",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐνέγκας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The priest of Zeus, whose temple was just outside the city, brought ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It my be helpful to explicitly state what they persuaded the crowd to do. Alternate translation: \"persuaded the people not to believe Paul and Barnabas, and to turn against them\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πείσαντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "persuaded the crowds ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Some men.\" You can make explicit that these men were Jews who believed in Christ. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "τινες",
+      "glQuote": "Some men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"brothers\" stands for believers in Christ. It is implied that they were in Antioch. Alternate translation: \"taught the believers at Antioch\" or \"were teaching the believers at Antioch\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐδίδασκον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "taught the brothers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit in what way James does not want to trouble the Gentiles. Alternate translation: \"we should not require the Gentiles to become circumcised and obey the laws of Moses\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρενοχλεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we should not trouble those of the Gentiles ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This possibly refers to eating the meat of an animal that someone has sacrificed to an idol or to anything to do with idol worship. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀλισγημάτων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰδώλων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "pollution of idols ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God did not allow Jews to eat meat that still had the blood in it. Also, even earlier in Moses' writings in Genesis, God had forbidden the drinking of blood. Therefore, they could not eat an animal that someone strangled because the blood was not properly drained from the body of the animal. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "πνικτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "αἵματος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the meat of strangled animals, and from blood ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James is implying that Gentiles know how important these rules are because Jews preach them in every city where there is a synagogue. It also implies the Gentiles can go to the teachers from the synagogues to learn more about these rules. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "γενεῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχαίων",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "κηρύσσοντας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "συναγωγαῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Σάββατον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναγινωσκόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Moses has been proclaimed in every city ... and he is read in the synagogues every Sabbath ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"church\" refers to the people who are a part of the church in Jerusalem. Alternate translation: \"the church in Jerusalem\" or \"the whole community of believers in Jerusalem\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅλῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκκλησίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the whole church ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase emphasizes that Judas and Silas will say the same things that the apostles and elders had written. Alternate translation: \"who themselves will tell you the same things about which we have written\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπαγγέλλοντας",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who will tell you the same thing themselves in their own words ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to drinking blood or eating meat from which the blood has not been drained. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "αἵματος",
+      "glQuote": "blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The previous sentence implies that Silas was with Paul. Alternate translation: \"they went\" or \"Paul and Silas went\" or \"Paul took Silas and went\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "διήρχετο",
+      "glQuote": "he went ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since Greek men did not have their sons circumcised, the Jews would have known Timothy was not circumcised, and they would have rejected Paul and Timothy before hearing their message about Christ. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ᾔδεισαν",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅπαντες",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἕλλην",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "πατὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπῆρχεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for they all knew that his father was a Greek ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a city outside of Italy where many people who came from Rome lived. The people there had the same rights and freedoms as people who lived in cities in Italy. They could govern themselves and they did not have to pay taxes. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "κολωνία",
+      "glQuote": "a Roman colony ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated clearly why they no longer hoped to make money. Alternate translation: \"When her masters saw that she could no longer earn money for them by telling fortunes\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἰδόντες",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "κύριοι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξῆλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐργασίας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When her masters saw that their opportunity to make money was now gone ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reason why the jailer needed light can be made explicit. Alternate translation: \"called for someone to bring light so he could see who was still in the prison\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "αἰτήσας",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "φῶτα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "called for lights ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Probably Paul is speaking to the jailer, but he intends for the jailer to tell the magistrates what he says. Alternate translation: \"said to the jailer\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔφη",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "said to them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To be a Roman meant to be a legal citizens of the Empire. Citizenship provided freedom from torture and the right to a fair trial. The city leaders were afraid that more important Roman authorities might learn how the city leaders had mistreated Paul and Silas. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐφοβήθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀκούσαντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ῥωμαῖοί",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when they heard that Paul and Silas were Romans, they were afraid ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul explained what the scriptures means in order to prove to the Jews that Jesus is the Messiah. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "διελέξατο",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "reasoned with them from the scriptures ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated explicitly that these Jews were jealous because some of the Jews and Greeks believed Paul's message. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ζηλώσαντες",
+      "glQuote": "with jealousy ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated explicitly what the Lord wants Paul to speak. Alternate translation: \"do not stop speaking about the gospel\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "σιωπήσῃς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "do not be silent ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is made explicit in the next few verses that Paul remains in Ephesus. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπέσχεν",
+          "occurrence": 1
+        },
+        {
+          "word": "χρόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀσίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But he himself stayed in Asia for a while ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit that Alexander was showing the crowd that he wanted them to be quiet. Alternate translation: \"gestured to the crowd to be quiet\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κατασείσας",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "motioned with his hand ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Apparently here there are some Jews that are distorting what Paul is teaching. He does not discourage the Jews from obeying the law of Moses. His message is that circumcision and the other customs are not necessary for Jesus to save them. You can make explicit that the leaders of the Jewish believers in Jerusalem knew that Paul was teaching God's true message. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κατηχήθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστασίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάσκεις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσέως",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνη",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντας",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίους",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "περιτέμνειν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "τέκνα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "μηδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "περιπατεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They have been told about you ... not to follow the old customs ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They had to make themselves ritually pure so they could worship in the temple. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τούτους",
+          "occurrence": 1
+        },
+        {
+          "word": "παραλαβὼν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγνίσθητι",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Take these men and purify yourself with them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"pay for what they will need.\" The expenses would go toward buying a male and female lamb, a ram, and grain and drink offerings. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δαπάνησον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "pay their expenses for them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All of these are rules about what they can eat. They are forbidden to eat meat of animals sacrificed to an idol, meat with blood still in it, and meat from a strangled animal because it would still have blood in the meat. See how you translated similar phrases in [Acts 15:20](../15/20.md). (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "φυλάσσεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τό",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰδωλόθυτον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πνικτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they should keep themselves from things sacrificed to idols, from blood, from what is strangled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. You can also state explicitly the assumed information about strangled animals. Alternate translation: \"from animals that a person has strangled\" or \"from animals that a person killed for food but did not drain its blood\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "πνικτὸν",
+      "glQuote": "from what is strangled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Only Jewish males were allowed in certain areas of the courtyard of the Jerusalem temple. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔτι",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "Ἕλληνας",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσήγαγεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Besides, he has also brought Greeks into the temple ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They shut the doors so that there would not be rioting in the temple area. This can be stated in active form. Alternate translation: \"Some of the Jews immediately shut the temple doors\" or \"The temple guards immediately shut the doors\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εὐθέως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλείσθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "θύραι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the doors were immediately shut ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Shortly before Paul's visit, an unnamed man from Egypt had launched a revolt against Rome in Jerusalem. Later he escaped into the wilderness and the commander wonders if Paul might be the same man. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρα",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Αἰγύπτιος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are you not then the Egyptian ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be stated explicitly why Paul motioned with the hand. Alternate translation: \"motioned with his hand for the people to be quiet\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κατέσεισε",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "λαῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "motioned with the hand to the people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is about to quote what Moses wrote in the law. This can be stated in active form. Alternate translation: \"For Moses wrote in the law\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"Nazarene sect\" is another name for the Christians. Alternate translation: \"He also leads the entire group whom people call the followers of the Nazarene\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πρωτοστάτην",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ναζωραίων",
+          "occurrence": 1
+        },
+        {
+          "word": "αἱρέσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He is a leader of the Nazarene sect ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a separate new sentence. Alternate translation: \"I had not gathered a crowd nor was I trying to start a riot\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "θορύβου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not with a crowd or an uproar ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means a female Jew. Alternate translation: \"who was a Jew\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "Ἰουδαίᾳ",
+      "glQuote": "a Jewess ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit what kinds of questions this means. Alternate translation: \"questions about religious matters\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ζητημάτων",
+      "glQuote": "questions",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit that Christ must also die. Alternate translation: \"that Christ must suffer and die\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παθητὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that Christ must suffer ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit that they got off of the ship in Myra. Alternate translation: \"came to Myra, a city of Lycia, where we got off the ship\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κατήλθαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Μύρρα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Λυκίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we landed at Myra, a city of Lycia ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that a crew would sail the ship to Italy. Alternate translation: \"found a ship that a crew had sailed from Alexandria and was about to sail to Italy\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εὑρὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πλοῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀλεξανδρῖνον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πλέον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰταλίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "found a ship from Alexandria that was going to sail to Italy ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit that the reason they were sailing slowly and with difficulty was because the wind was blowing against them. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "βραδυπλοοῦντες",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μόλις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "γενόμενοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When we had sailed slowly ... finally arrived with difficulty ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit that even though the winds were not as strong as before, they were still strong enough to make sailing difficult. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μόλις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "παραλεγόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὴν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We sailed along the coast with difficulty ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"they\" refers to the sailors. It is implied that Luke, Paul, and those with them had not eaten either. Alternate translation: \"When we had gone a long time without food\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πολλῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσιτίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπαρχούσης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When they had gone long without food ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the sailors. It is implied that Paul also means that he and those with him will not die either. Alternate translation: \"none of us will die\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀποβολὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ψυχῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδεμία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there will be no loss of life among you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"justice\" refers to the name of a god that they worshiped. Alternate translation: \"the god called Justice\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "δίκη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἴασεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "yet justice ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in a positive form. Alternate translation: \"you will be able to do anything\" (See: [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "οὐδὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδυνατήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "nothing will be impossible for you",
+      "occurrence": 1
+    }
+  }
+]

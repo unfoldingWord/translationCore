@@ -1,0 +1,476 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"For by him God created all things\" or \"God caused the Son to create all things\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκτίσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For by him all things were created",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. God caused the Son to create all things for the Son's glory. Alternate translation: \"For by him and for him God created all things\" or \"God caused him to create all things for himself\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 4
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 2
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔκτισται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all things were created by him and for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking here of the Son controlling all things as if he were physically holding them together. \"he holds everything together\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνέστηκεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in him all things hold together",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "that believers proclaimed (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "κηρυχθέντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that was proclaimed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"This is the secret truth that God had hidden\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μυστήριον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀποκεκρυμμένον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This is the secret truth that was hidden",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"now God has revealed it\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐφανερώθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "now it has been revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Only Christ can reveal God's true wisdom and knowledge. This can be stated in active form. Alternate translation: \"God has hidden all the treasures of wisdom and knowledge in Christ\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "θησαυροὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφίας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "γνώσεως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπόκρυφοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In him all the treasures of wisdom and knowledge are hidden",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise up is an idiom for causing someone who has died to become alive again. This can be stated in active form. Alternate translation: \"God raised you up\" or \"God caused you to live again\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "συνηγέρθητε",
+      "glQuote": "you were raised up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul says that sinful ways of thinking make a person arrogant. Alternate translation: \"puffs himself up by means of his fleshly thinking\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "φυσιούμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "νοὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "becomes puffed up by his fleshly thinking",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of people's lives as if they were objects that can be hidden in containers and speaks of God as if he were a container. Alternate translation: Possible meanings are 1) \"it is as though God has taken your life and concealed it with Christ in God's presence\" or 2) \"only God knows what your true life really is, and he will reveal it when he reveals Christ\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κέκρυπται",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your life is hidden with Christ in God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be made active. Alternate translation: \"as those whom God has chosen for himself, whom he desires to see live for him alone, and whom he loves\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλεκτοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅγιοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠγαπημένοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as God's chosen ones, holy and beloved",
+      "occurrence": 1
+    }
+  }
+]

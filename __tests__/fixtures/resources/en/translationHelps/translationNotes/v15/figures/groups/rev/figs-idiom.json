@@ -1,0 +1,217 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John speaks of being influenced by God's Spirit as if he were in the Spirit. Alternate translation: \"I was influenced by the Spirit\" or \"The Spirit influenced me\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἐγενόμην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I was in the Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an expression about punishment and reward. Alternate translation: \"I will punish or reward each one of you\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "δώσω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑκάστῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I will give to each one of you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John speaks of being influenced by God's Spirit as if he were in the Spirit. See how you translated this in [Revelation 1:10](../01/10.md). Alternate translation: \"I was influenced by the Spirit\" or \"The Spirit influenced me\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἐγενόμην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I was in the Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"fell on their faces\" is an idiom that means hey lay down facing the ground. See how you translated \"prostrated themselves\" in [Revelation 4:10](../04/10.md). Alternate translation: \"they bowed down\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἔπεσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they fell on their faces",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that means they lay down facing the ground. See how you translated \"prostrated themselves\" in [Revelation 4:10](../04/10.md). Alternate translation: \"they bowed down\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἔπεσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "fell upon their faces",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom, meaning to be in God's presence. Alternate translation: \"They will be in God's presence\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ὄψονται",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They will see his face",
+      "occurrence": 1
+    }
+  }
+]

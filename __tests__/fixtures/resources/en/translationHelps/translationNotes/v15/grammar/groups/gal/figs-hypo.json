@@ -1,0 +1,184 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is describing something that has not happened and should not happen. Alternate translation: \"would proclaim\" or \"were to proclaim\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": "εὐαγγελίζηται",
+      "glQuote": "should proclaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is describing a situation that never existed. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρα",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "δωρεὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέθανεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if righteousness could be gained through the law, then Christ died for nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking of a situation that did not exist to emphasize that the inheritance came only by means of the promise. Alternate translation: \"the inheritance comes to us by means of the promise, because we could not keep the demands of God's law\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "κληρονομία",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκέτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαγγελίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For if the inheritance comes by the law, then it no longer comes by promise",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is describing a situation that does not exist to emphasize that people persecute him because he is preaching that God forgives people because of Jesus' work on the cross. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἄρα",
+          "occurrence": 1
+        },
+        {
+          "word": "κατήργηται",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκάνδαλον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σταυροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In that case the stumbling block of the cross has been removed",
+      "occurrence": 1
+    }
+  }
+]

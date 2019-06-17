@@ -1,0 +1,70 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Walking on a path is a metaphor for how a person lives his life. Alternate translation: \"you are living your life according to God's truth\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείᾳ",
+          "occurrence": 2
+        },
+        {
+          "word": "περιπατεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you walk in truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John speaks of those he taught to believe in Jesus as though they were his children. This emphasizes his love and concern for them. It could also be that he himself led them to the Lord. Alternate translation: \"my spiritual children\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my children",
+      "occurrence": 1
+    }
+  }
+]

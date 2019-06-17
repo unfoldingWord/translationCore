@@ -1,0 +1,56 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"But\" connects this verse to the previous verse about the hypocrisy of the Pharisees. (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": [
+        {
+          "word": "οὐδὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But nothing is",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Because of this,\" referring to everything Jesus has said, beginning in [Luke 21:10](../21/10.md). (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": "οὖν",
+      "glQuote": "Therefore",
+      "occurrence": 1
+    }
+  }
+]
