@@ -226,7 +226,6 @@ export function toggleGroupDataItems(label, fileObject) {
       };
       break;
     case "selections":
-      console.log('fileObject', fileObject);
       action = {
         type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId: fileObject.contextId,
