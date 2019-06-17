@@ -127,6 +127,67 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
 };
 
 /**
+ * does validation for tools not loaded into group reducer
+ * @param {String} projectSaveLocation
+ * @param {String} bibleId
+ * @param {String|Number} chapter
+ * @param {String|Number} verse
+ * @param {Object} state
+ * @param {String} targetVerse - new verse text
+ * @param {Boolean} selectionInvalidated
+ * @return {Boolean} - updated value for selectionInvalidated
+ */
+function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated) {
+  const currentTool = getSelectedToolName(state);
+  const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
+  if (fs.existsSync(selectionsPath)) {
+    let files = fs.readdirSync(selectionsPath);
+    files = files.filter(file => { // filter the filenames to only use .json
+      return path.extname(file) === '.json';
+    }).sort();
+
+    // load all files keeping the latest for each context
+    const latestContext = {};
+    for (let i = 0, l = files.length; i < l; i++) {
+      const selectionsData = fs.readJsonSync(path.join(selectionsPath, files[i]));
+      const contextId = selectionsData.contextId;
+      if (contextId) {
+        if (currentTool !== contextId.tool) {
+          const key = contextId.groupId + ":" + contextId.occurrence + ":" + contextId.quote;
+          latestContext[key] = selectionsData;
+        }
+      }
+    }
+    const userName = getUsername(state);
+    const modifiedTimestamp = generateTimestamp();
+    const keys = Object.keys(latestContext);
+    for (let j = 0, l = keys.length; j < l; j++) {
+      const selectionsData = latestContext[keys[j]];
+      const validSelections = checkSelectionOccurrences(targetVerse, selectionsData.selections);
+      if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
+
+        // add invalidation entry
+        const newInvalidation = {
+          contextId: selectionsData.contextId,
+          invalidated: true,
+          userName,
+          modifiedTimestamp: modifiedTimestamp,
+          gatewayLanguageCode: selectionsData.gatewayLanguageCode,
+          gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
+        };
+        const newFilename = modifiedTimestamp + '.json';
+        const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
+        fs.ensureDirSync(invalidatedCheckPath);
+        fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), newInvalidation);
+
+        selectionInvalidated = true;
+      }
+    }
+  }
+  return selectionInvalidated;
+}
+
+/**
  * @description This method validates the current selections to see if they are still valid.
  * @param {String} targetVerse - target bible verse.
  * @param {Object} contextId - optional contextId to use, otherwise will use current
@@ -146,10 +207,11 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     const { chapter, verse } = contextId.reference;
     chapterNumber = chapterNumber || chapter;
     verseNumber = verseNumber || verse;
+    const bibleId = project.id;
     let selectionInvalidated = false;
     const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
 
-    if (getSelectedToolName(state) === 'translationWords') {
+    if (getSelectedToolName(state) !== 'wordAlignment') {
       const username = getUsername(state);
       // for this groupId, find every check for this chapter/verse
       const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
@@ -166,51 +228,9 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       const results_ = {selectionsChanged: selectionInvalidated};
       dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false, actionsBatch));
       selectionInvalidated = selectionInvalidated || results_.selectionsChanged; // if new selections invalidated
-    } else if (getSelectedToolName(state) === 'wordAlignment') {
-      const bibleId = project.id;
-      const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
-      if (fs.existsSync(selectionsPath)) {
-        let files = fs.readdirSync(selectionsPath);
-        files = files.filter(file => { // filter the filenames to only use .json
-          return path.extname(file) === '.json';
-        }).sort();
-
-        // load all files keeping the latest for each context
-        const latestContext = {};
-        for (let i = 0, l = files.length; i < l; i++) {
-          const selectionsData = fs.readJsonSync(path.join(selectionsPath, files[i]));
-          const contextId = selectionsData.contextId;
-          if (contextId) {
-            const key = contextId.groupId + ":" + contextId.occurrence + ":" + contextId.quote;
-            latestContext[key] = selectionsData;
-          }
-        }
-        const userName = getUsername(state);
-        const modifiedTimestamp = generateTimestamp();
-        const keys = Object.keys(latestContext);
-        for (let j = 0, l = keys.length; j < l; j++) {
-          const selectionsData = latestContext[keys[j]];
-          const validSelections = checkSelectionOccurrences(targetVerse, selectionsData.selections);
-          if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
-
-            // add invalidation entry
-            const newInvalidation = {
-              contextId: selectionsData.contextId,
-              invalidated: true,
-              userName,
-              modifiedTimestamp: modifiedTimestamp,
-              gatewayLanguageCode: selectionsData.gatewayLanguageCode,
-              gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
-            };
-            const newFilename = modifiedTimestamp + '.json';
-            const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
-            fs.ensureDirSync(invalidatedCheckPath);
-            fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), newInvalidation);
-
-            selectionInvalidated = true;
-          }
-        }
-      }
+      selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, [getSelectedToolName(state)]);
+    } else { // wordAlignment tool
+      selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated);
     }
     if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
       dispatch(batchActions(actionsBatch));
