@@ -2,18 +2,18 @@ import types from './ActionTypes';
 import isEqual from 'deep-equal';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import usfm from "usfm-js";
+import usfm from 'usfm-js';
 import {checkSelectionOccurrences} from 'selections';
-import {batchActions} from "redux-batched-actions";
+import {batchActions} from 'redux-batched-actions';
 // actions
 import * as AlertActions from './AlertActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {getTranslate, getUsername, getSelectedToolName } from '../selectors';
+import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import * as saveMethods from "../localStorage/saveMethods";
+import * as saveMethods from '../localStorage/saveMethods';
 /**
  * This method adds a selection array to the selections reducer.
  * @param {Array} selections - An array of selections.
@@ -53,7 +53,6 @@ export const changeSelections = (selections, userName, invalidated = false, cont
       }
 
       const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
-      console.log('actionsBatch selections', selections);
       actionsBatch.push({
         type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId,

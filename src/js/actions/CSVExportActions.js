@@ -317,8 +317,6 @@ export const saveSelectionsToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = [];
         array.forEach(data => {
-          console.log('data', data);
-
           if (data.selections.length > 0) {
             // add selections to csv
             data.selections.forEach(selection => {
