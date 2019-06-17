@@ -68,27 +68,24 @@ function loadToolIndices(toolName, isTest) {
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
  * @param {object} contextId - to be merged in
- * @param {object} indexObject - to be used to get groupName
- * @param {array} indexObject - Array of index.json with {id, name} keys
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
- * @param {boolean} - This is a temporary flag to hide bad data
+ * @param {boolean} isTest - for unit tests purposes
  * @return {object}
  */
-export function combineData(data, contextId, username, timestamp) {
-  const flatContextId = flattenContextId(contextId);
+export function combineData(data, contextId, username, timestamp, isTest) {
+  const flatContextId = flattenContextId(contextId, isTest);
   const userTimestamp = userTimestampObject(username, timestamp);
-  const combinedData = Object.assign({}, data, flatContextId, userTimestamp);
-  return combinedData;
+  return Object.assign({}, data, flatContextId, userTimestamp);
 }
 /**
  * @description - flattens the context id for csv usage
  * @param {object} contextId - contextID object that needs to go onto the csv row
- * @param {string} isTest - for unit tests purposes
+ * @param {boolean} isTest - for unit tests purposes
  * @return {object}
  */
 export const flattenContextId = (contextId, isTest) => {
-  const flatContextId = {
+  return {
     tool: contextId.tool,
     groupId: contextId.groupId,
     groupName: groupName(contextId, isTest),
@@ -98,7 +95,6 @@ export const flattenContextId = (contextId, isTest) => {
     chapter: contextId.reference.chapter,
     verse: contextId.reference.verse
   };
-  return flatContextId;
 };
 
 /**

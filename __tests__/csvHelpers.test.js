@@ -119,7 +119,7 @@ describe('csvHelpers.combineData', () => {
       // time: '22:33:45'
     };
     const data = {enabled: true};
-    const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z');
+    const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z', isTest);
     // Due to timezone issues this is a pain to test.
     _combinedData.date = combinedData.date;
     _combinedData.time = combinedData.time;
