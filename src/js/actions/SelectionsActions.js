@@ -17,15 +17,16 @@ import * as saveMethods from "../localStorage/saveMethods";
 /**
  * This method adds a selection array to the selections reducer.
  * @param {Array} selections - An array of selections.
- * @param {String} username - The username of the author of the selection.
+ * @param {String} userName - The username of the author of the selection.
  * @param {Boolean} invalidated - if true then selection if flagged as invalidated, otherwise it is not flagged as invalidated
  * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
+ * @param {Boolean} nothingToSelect - nothing to select checkbox.
  * @return {Object} - An action object, consisting of a timestamp, action type,
  *                    a selection array, and a username.
  */
-export const changeSelections = (selections, username, invalidated = false, contextId = null,
-                                 batchGroupData = null) => {
+export const changeSelections = (selections, userName, invalidated = false, contextId = null,
+                                 batchGroupData = null, nothingToSelect = false) => {
   return ((dispatch, getState) => {
     let state = getState();
     if (getSelectedToolName(state) === 'translationWords' || getSelectedToolName(state) === 'translationNotes') {
@@ -43,18 +44,21 @@ export const changeSelections = (selections, username, invalidated = false, cont
           gatewayLanguageCode,
           gatewayLanguageQuote,
           selections,
-          username
+          nothingToSelect,
+          userName
         });
-        dispatch(InvalidatedActions.set(username, modifiedTimestamp, invalidated));
+        dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
       } else {
-        saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, username, contextId);
+        saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
       }
 
       const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
+      console.log('actionsBatch selections', selections);
       actionsBatch.push({
         type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId,
-        selections
+        selections,
+        nothingToSelect
       });
       actionsBatch.push({
         type: types.SET_INVALIDATION_IN_GROUPDATA,
@@ -355,28 +359,4 @@ export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
     selectionsArray.push(selection.text);
   }
   return selectionsArray.join(" ");
-};
-
-/**
- * Toggles the nothing to select field to tru or false for the specified check.
- * @param {Boolean} nothingToSelect
- */
-export const toggleNothingToSelect = (nothingToSelect) => {
-  return (dispatch, getState) => {
-    const state = getState();
-    const contextId = getContext(state);
-    const username = getUsername(state);
-    const {
-      gatewayLanguageCode,
-      gatewayLanguageQuote
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
-    dispatch({
-      type: types.UPDATE_NOTHING_TO_SELECT,
-      nothingToSelect,
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-      username,
-      modifiedTimestamp: generateTimestamp(),
-    });
-  };
 };

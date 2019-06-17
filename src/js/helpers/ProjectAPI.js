@@ -98,6 +98,7 @@ export default class ProjectAPI {
         try {
           let groupData = fs.readJsonSync(dataPath);
 
+          console.log('groupData', groupData);
           // check & fix corrupted selections value for each group data item.
           groupData = groupData.map(groupDataItem => {
             if (groupDataItem.selections === true) {// if selections is true then find selections array.
@@ -112,6 +113,7 @@ export default class ProjectAPI {
               );
 
               const {selections} = loadCheckData(loadPath, groupDataItem.contextId);
+              console.log('116', loadCheckData(loadPath, groupDataItem.contextId));
               groupDataItem.selections = selections || false;
               return groupDataItem;
             }

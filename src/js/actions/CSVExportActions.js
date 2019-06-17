@@ -317,17 +317,37 @@ export const saveSelectionsToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = [];
         array.forEach(data => {
-          data.selections.forEach(selection => {
+          console.log('data', data);
+
+          if (data.selections.length > 0) {
+            // add selections to csv
+            data.selections.forEach(selection => {
+              const nothingToSelect = !!data.nothingToSelect;
+              const _data = {
+                text: selection.text,
+                'selection/occurrence': selection.occurrence,
+                'selection/occurrences': selection.occurrences,
+                'No selection needed': '',
+                'gateway Language Code': data.gatewayLanguageCode || 'en',
+                'gateway Language Quote': data.gatewayLanguageQuote
+              };
+              const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+              objectArray.push(newObject);
+            });
+          } else if (data.nothingToSelect) {
+            // add no selection needed items to csv
+            const nothingToSelect = !!data.nothingToSelect;
             const _data = {
-              text: selection.text,
-              'selection/occurrence': selection.occurrence,
-              'selection/occurrences': selection.occurrences,
+              text: '',
+              'selection/occurrence': '',
+              'selection/occurrences': '',
+              'No selection needed': nothingToSelect.toString(),
               'gateway Language Code': data.gatewayLanguageCode || 'en',
               'gateway Language Quote': data.gatewayLanguageQuote
             };
             const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
             objectArray.push(newObject);
-          });
+          }
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'Selections.csv');

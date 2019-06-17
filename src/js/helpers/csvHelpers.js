@@ -43,10 +43,15 @@ function cacheIndicies(isTest) {
   tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
 
   // load tN index
-  //const tNpath = path.join(tHelpsPath, 'translationNotes');
-  //let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
-  //const tNIndexPath = path.join(tNversionPath, 'index.json');
-  //tNIndex = fs.readJsonSync(tNIndexPath);
+  const tNpath = path.join(tHelpsPath, 'translationNotes');
+  const tNversionPath = ResourceAPI.getLatestVersion(tNpath) || tNpath;
+  const categories = fs.readdirSync(tNversionPath)
+    .filter(file => { return fs.lstatSync(path.join(tNversionPath, file)).isDirectory() });
+  categories.forEach(category => {
+    const tNIndexPath = path.join(tNversionPath, category, 'index.json');
+    const categoryIndex = fs.readJsonSync(tNIndexPath);
+    tNIndex = [...tNIndex, ...categoryIndex];
+  });
 }
 
 /**
@@ -111,7 +116,7 @@ export const groupName = (contextId, isTest) => {
   let indexObject = {};
   let groupName;
   if (indexArray) {
-    indexArray.forEach( group => {
+    indexArray.forEach(group => {
       indexObject[group.id] = group.name;
     });
     groupName = indexObject[groupId];
@@ -176,9 +181,9 @@ export function getToolFolderNames(projectPath) {
     let toolNames = fs.readdirSync(toolsPath)
     .filter(file => { return fs.lstatSync(path.join(toolsPath, file)).isDirectory() });
     return toolNames;
-    // TODO! check to see if it is a directory and only return those
+    // TODO: check to see if it is a directory and only return those
   } else {
-    console.log('Could not find index path for tool information');
+    console.warn('Could not find index path for tool information');
   }
 }
 export const dataPath = (projectPath) => {
@@ -247,7 +252,7 @@ export const generateCSVFile = (objectArray, filePath) => {
   return new Promise(function(resolve, reject) {
     generateCSVString(objectArray, (err, csvString) => {
       if (err) {
-        console.log(err);
+        console.error(err);
         reject(err);
       } else {
         try {
@@ -256,7 +261,7 @@ export const generateCSVFile = (objectArray, filePath) => {
           }
           resolve(true);
         } catch (_err) {
-          console.log(_err);
+          console.error(_err);
           reject(_err);
         }
       }

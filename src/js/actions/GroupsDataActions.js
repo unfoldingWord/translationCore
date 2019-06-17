@@ -226,10 +226,12 @@ export function toggleGroupDataItems(label, fileObject) {
       };
       break;
     case "selections":
+      console.log('fileObject', fileObject);
       action = {
         type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId: fileObject.contextId,
-        selections: fileObject.selections
+        selections: fileObject.selections,
+        nothingToSelect: fileObject.nothingToSelect
       };
       break;
     case "verseEdits":
