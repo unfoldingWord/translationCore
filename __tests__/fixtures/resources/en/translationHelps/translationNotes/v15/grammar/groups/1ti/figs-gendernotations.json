@@ -1,0 +1,49 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"man\" includes both male and female. Alternate translation: \"a righteous person\" or \"a good person\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": "δικαίῳ",
+      "glQuote": "a righteous man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to all believers whether male or female. (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the brothers",
+      "occurrence": 1
+    }
+  }
+]

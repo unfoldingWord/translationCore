@@ -1,0 +1,81 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to anyone there who had epilepsy, not to a particular epileptic. Alternate translation: \"those who sometimes had seizures\" or \"those who sometimes became unconscious and moved uncontrollably\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "quote": "σεληνιαζομένους",
+      "glQuote": "the epileptic",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to anyone there who was paralyzed, not to a particular paralytic. Alternate translation: \"and any who were paralyzed\" or \"and those who could not walk\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 6
+        },
+        {
+          "word": "παραλυτικούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and paralytic",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"neighbor\" does not refer to a specific neighbor, but to any members of one's community or people group. These are people whom one usually desires to treat kindly or at least believes he ought to treat kindly. Alternate translation: \"your countrymen\" or \"those who belong to your people group\" (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πλησίον",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your neighbor",
+      "occurrence": 1
+    }
+  }
+]

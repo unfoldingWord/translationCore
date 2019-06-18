@@ -1,0 +1,82 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Babylon. The reflexive pronoun \"herself\" is used to add emphasis. (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "from her hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"on him, and only he knows the meaning of that name\" (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶδεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that no one knows but himself",
+      "occurrence": 1
+    }
+  }
+]

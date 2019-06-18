@@ -1,0 +1,125 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word shows that the author is about to describe a new event. (See: [[rc://en/ta/man/translate/writing-newevent ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": "καὶ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses these words to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": [
+        {
+          "word": "πρὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἓξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμερῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πάσχα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Six days before the Passover ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses these words to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαύριον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "On the next day ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses these words to mark the beginning of a new event. (See: [[rc://en/ta/man/translate/writing-newevent ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-newevent",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰπὼν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "After Jesus spoke these words ",
+      "occurrence": 1
+    }
+  }
+]

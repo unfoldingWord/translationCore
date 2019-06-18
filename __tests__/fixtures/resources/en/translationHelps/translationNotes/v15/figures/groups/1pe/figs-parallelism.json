@@ -1,0 +1,261 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing and emphasize the desire to have a good life. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ζωὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαθὰς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to love life and see good days",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"tongue\" and \"lips\" refer to the person who is speaking. These two phrases mean basically the same thing and emphasize the command not to lie. Alternate translation: \"stop saying evil and deceitful things\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "παυσάτω",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γλῶσσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κακοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "χείλη",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "δόλον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "stop his tongue from evil and his lips from speaking deceit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases share similar meanings and emphasize that believers should not be afraid of those who persecute them. Alternate translation: \"Do not be afraid of what people might do to you\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "φόβον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "φοβηθῆτε",
+          "occurrence": 1
+        },
+        {
+          "word": "μηδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταραχθῆτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not fear what they fear. Do not be troubled",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing. Peter uses them to emphasize the need to think clearly about life since the end of the world is near. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "σωφρονήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "νήψατε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "be of sound mind, and be sober in your thinking",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these refer to the Holy Spirit. Alternate translation: \"the Spirit of glory, who is the Spirit of God\" or \"the glorious Spirit of God\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξης",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Spirit of glory and the Spirit of God",
+      "occurrence": 1
+    }
+  }
+]

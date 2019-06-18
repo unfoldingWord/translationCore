@@ -1,0 +1,640 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so all instances of \"you\" here are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔχεις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔλαβες",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔλαβες",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καυχᾶσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "λαβών",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "between you ... do you have that you did not ... you have freely ... do you boast ... you had not",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so all instances of \"you\" and \"your\" here are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "οἶδας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "γύναι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνδρα",
+          "occurrence": 1
+        },
+        {
+          "word": "σώσεις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἶδας",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἄνερ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γυναῖκα",
+          "occurrence": 1
+        },
+        {
+          "word": "σώσεις",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "do you know, woman ... you will save your husband ... do you know, man ... you will save your wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so all instances of \"you\" and the command \"be\" here are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἐκλήθης",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δύνασαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Were you ... called you? Do not be ... you can become",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so these words are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἴδῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sees the one who has",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so the word \"your\" here is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "σῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "γνώσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses was speaking to the Israelites as if they were one person, so this command is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "φιμώσεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not put a muzzle on",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some translations put this verse, continuing to \"and not yours\" in the next verse, in parentheses because 1) the forms of \"you\" and \"eat\" here are singular, but Paul uses the plural form immediately before and after this sentence, and 2) the words \"For why should my freedom be judged by another's conscience?\" in the next verse seem to build on \"eat whatever is set before you without asking questions of conscience\" ([1 Corinthians 10:27](../10/27.md)) rather than \"the conscience of the other man.\" (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "δέ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσθίετε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "μηνύσαντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But if someone says to you ... do not eat ... who informed you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so the word \"you\" and the command \"do not eat\" here are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσθίετε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "μηνύσαντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "says to you ... do not eat ... informed you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some translations put these words, along with the words in the verse before this one, in parentheses because 1) the form of \"yours\" here is singular, but Paul uses the plural form immediately before and after this sentence, and 2) the words \"For why should my freedom be judged by another's conscience?\" in this verse seem to build on \"eat whatever is set before you without asking questions of conscience\" ([1 Corinthians 10:27](../10/27.md)) rather than \"the conscience of the other man.\" (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "συνείδησιν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐχὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the conscience of the other man, I mean, and not yours",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so the word \"yours\" here is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "οὐχὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and not yours",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Though \"you\" is singular here, Paul is addressing everyone who prays only in the spirit, but not with the mind. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "εὐλογῇς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "σῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐχαριστίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "λέγεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you praise God ... you are giving thanks ... you are saying",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so the word \"you\" here is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εὐχαριστεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you certainly give",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so both instances of \"you\" here are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἄφρων",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπείρεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You are so foolish! What you sow",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking to the Corinthians as if they were one person, so the word \"you\" here is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπείρεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What you sow",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 55
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "your ... your",
+      "occurrence": 1
+    }
+  }
+]

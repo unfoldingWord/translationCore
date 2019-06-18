@@ -1,0 +1,682 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the blood\" refers to the death of Jesus. Just as Moses sprinkled blood on the people of Israel to symbolize their covenant with God, believers are in covenant with God because of Jesus' death. (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ῥαντισμὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἵματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the sprinkling of the blood of Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"blood\" stands for Christ's death on the cross. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τιμίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἵματι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the precious blood of Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's thoughts or emotions. To love someone \"from the heart\" means to love some one completely with total commitment. Alternate translation: \"love one another earnestly and completely\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλήλους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκτενῶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "love one another earnestly from the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of God's word as if it were alive forever. In reality, it is God who lives forever, and whose instructions and promises last eternally. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγου",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῶντος",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μένοντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "through the living and remaining word of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"flesh\" refers to humanity. The prophet Isaiah compares humanity to grass that grows and dies quickly. Alternate translation: \"All people will die like grass dies, and all their\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πᾶσα",
+          "occurrence": 1
+        },
+        {
+          "word": "σὰρξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "χόρτος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσα",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "All flesh is like grass, and all its",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the position of priesthood stands for the priests who fulfill its duties. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἱεράτευμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅγιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνενέγκαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πνευματικὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "θυσίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a holy priesthood that offers the spiritual sacrifices",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"soul\" refers to a person's spiritual life. Peter speaks of sinful desires as soldiers that are trying to destroy the spiritual life of believers. Alternate translation: \"seek to destroy your spiritual life\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "στρατεύονται",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "make war against your soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"deceit\" refers to words that a person speaks that are intended to deceive other people. Alternate translation: \"neither did he speak any lies\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὑρέθη",
+          "occurrence": 1
+        },
+        {
+          "word": "δόλος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "neither was any deceit found in his mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"carried our sins\" means he suffered the punishment for our sins. Alternate translation: \"suffered the punishment for our sins in his body on the tree\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀνήνεγκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "σώματι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ξύλον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "carried our sins in his body to the tree",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a reference to the cross on which Jesus died, which was made of wood. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ξύλον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the tree",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the word\" refers to the gospel message. To disobey means that they do not believe. See how you translated a similar phrase in [1 Peter 2:8](../02/08.md). Alternate translation: \"some men do not believe the message about Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τινες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπειθοῦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "some men are disobedient to the word",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"inner person\" and \"heart\" refer to the inward character and personality of a person. Alternate translation: \"what you really are on the inside\" (See: [[rc://en/ta/man/translate/figs-metonymy (See- figs-doublet]] and ",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρυπτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the inner person of the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To be at the \"right hand of God\" is a symbol that God has given Jesus greatest honor and authority over all others. AT: \"Christ is beside God in the place of honor and authority\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὅς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "δεξιᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Christ is at the right hand of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hand\" refers to God's power to save the humble and punish the proud. Alternate translation: \"under God's great power so\" or \"before God, realizing that he has great power, so\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 5,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κραταιὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "under God's mighty hand so",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Standing is a metonym for fighting. Alternate translation: \"Fight against him\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀντίστητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Stand against him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I have written about the true grace of God.\" Here the word \"grace\" refers to the gospel message, which tells of the kind things that God has done for believers. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ταύτην",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶναι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθῆ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what I have written is the true grace of God",
+      "occurrence": 1
+    }
+  }
+]

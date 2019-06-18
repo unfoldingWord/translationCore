@@ -1,0 +1,97 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The verb may be supplied from the previous question. Alternate translation: \"Or what is a son of man\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Or a son of man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To whom God is speaking can be stated clearly. Alternate translation: \"he also says to Christ\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he also says",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can state clearly the understood information. Alternate translation: \"also pursue the holiness\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγιασμόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "also the holiness",
+      "occurrence": 1
+    }
+  }
+]

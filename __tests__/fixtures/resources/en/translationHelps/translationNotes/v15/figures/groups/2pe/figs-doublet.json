@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words mean basically the same thing and emphasize that this person will not be productive or experience any benefits from knowing Jesus. Alternate translation: \"unproductive\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἀργοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάρπους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "barren or unfruitful",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"calling\" and \"election\" share similar meanings and refer to God's choosing them to belong to him. Alternate translation: \"make sure that God has really chosen you to belong to him\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "βεβαίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κλῆσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλογὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιεῖσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "make your calling and election sure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"spotless\" and \"blameless\" mean basically the same thing and emphasize moral purity. Alternate translation: \"completely pure\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἄσπιλοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀμώμητοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "spotless and blameless",
+      "occurrence": 1
+    }
+  }
+]

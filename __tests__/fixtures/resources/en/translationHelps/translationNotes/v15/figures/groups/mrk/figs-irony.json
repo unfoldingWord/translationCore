@@ -1,0 +1,201 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus expects his hearers to understand he came for those who want help. Alternate translation: \"I came for people who understand they are sinful, not for people who believe they are righteous\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦλθον",
+          "occurrence": 1
+        },
+        {
+          "word": "καλέσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαίους",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτωλούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I did not come to call righteous people, but sinners",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this ironic statement to rebuke his listeners for forsaking God's commandment. Alternate translation: \"You think you have done well in how you have rejected the commandment of God so you may keep your own traditions, but what you have done is not good at all\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "καλῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀθετεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐντολὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "παράδοσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τηρήσητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How well you reject the commandment ... keep your tradition",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The greeting \"Hail\" with a raised hand was only used to greet the Roman emperor. The soldiers did not believe that Jesus was the king of the Jews. Rather they said this to mock him. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "Χαῖρε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Βασιλεῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Hail, King of the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The leaders did not believe that Jesus is the Christ, the King of Israel. Alternate translation: \"He calls himself the Christ and the King of Israel. So let him come down\" or \"If he is really the Christ and the King of Israel, he should come down\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        },
+        {
+          "word": "καταβάτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let the Christ, the King of Israel, come down",
+      "occurrence": 1
+    }
+  }
+]

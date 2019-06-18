@@ -1,0 +1,54 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"You kill\" expresses how badly the people behave in order to get what they want. It can be translated as \"You do all kinds of evil things to get what you cannot have\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "φονεύετε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ζηλοῦτε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύνασθε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιτυχεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You kill and covet, and you are not able to obtain ",
+      "occurrence": 1
+    }
+  }
+]

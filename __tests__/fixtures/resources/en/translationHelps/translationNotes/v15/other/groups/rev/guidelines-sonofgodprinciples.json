@@ -1,0 +1,185 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for God that describes the relationship between God and Jesus. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "Πατρί",
+      "glQuote": "Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Son of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for God that describes the relationship between God and Jesus. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for God that describes the relationship between God and Jesus. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for God that describes the relationship between God and Jesus. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "my Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for God that describes the relationship between God and Jesus. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "his Father",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Word of man\" here is a synecdoche for \"a message that comes simply from a man.\" Alternate translation: \"(it is) not a message that is made up by a man\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not as the word of man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your face\" means the entire person. Alternate translation: \"to see you\" or \"to be with you\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἰδεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to see your face",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"face\" refers to their whole person. Alternate translation: \"visit you\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "see your face",
+      "occurrence": 1
+    }
+  }
+]

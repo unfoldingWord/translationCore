@@ -1,0 +1,1482 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers back to the fear of their enemies. Alternate translation: \"without being afraid of our enemies\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 74
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ἀφόβως",
+      "glQuote": "without fear",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"share extra food just as you shared the extra tunic.\" This refers back to giving food to those in need. Alternate translation: \"give food to someone who does not have any\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ὁμοίως",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιείτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "should do the same",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is clear that the reason they could not enter was that the crowd was so large that there was no room for them. (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "because of the crowd",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is understood that they believe Jesus can heal the paralyzed man. This can be stated. Alternate translation: \"When Jesus perceived that they believed that he could heal the man, he said to him\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Seeing their faith, he said",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"discuss this\" or \"reason about this.\" What they questioned can be stated. Alternate translation: \"discuss whether or not Jesus had authority to forgive sins\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "διαλογίζεσθαι",
+      "glQuote": "to question this",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The unspoken implication is that one thing is \"easier to say because no one will know what has happened,\" but the other thing is \"harder to say because everyone will know what has happened.\" People could not see if the man's sins were forgiven, but they would all know he was healed if he got up and walked. (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "εὐκοπώτερον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰπεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "easier to say",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to supply the words that have been omitted. Alternate translation: \"only those who are sick need a physician\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "κακῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but those who are sick",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This does not mean they were to only love their enemies and not their friends. This can be stated. Alternate translation: \"Love your enemies, not only your friends\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀγαπᾶτε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐχθροὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "love your enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to state what the attacker will do to the person. Alternate translation: \"turn your face so that he can strike the other cheek also\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "πάρεχε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄλλην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "offer him also the other",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is understood that these were the people the centurion sent. This can be stated. Alternate translation: \"the people whom the Roman officer had sent to Jesus\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεμφθέντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who had been sent",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to restate the healing. Alternate translation: \"he healed them from evil spirits\" or \"he set people free from evil spirits\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "πνευμάτων",
+          "occurrence": 1
+        },
+        {
+          "word": "πονηρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from evil spirits",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means a hundred times more than the seeds that were sown. (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ἑκατονταπλασίονα",
+      "glQuote": "a hundred times greater",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is clear from the context that Jesus is talking about understanding and believing. This can be stated clearly and changed to active form. Alternate translation: \"whoever has understanding will be given more understanding\" or \"God will enable those who believe the truth to understand even more\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔχῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "δοθήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to whoever has, more will be given to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is clear from the context that Jesus is talking about understanding and believing. This can be stated clearly and changed to active form. Alternate translation: \"But whoever does not have understanding will lose even what understanding he thinks he has\" or \"But God will cause those who do not believe the truth not to understand even the little that they think they have understood\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχῃ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀρθήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but whoever does not have ... will be taken away from him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to state explicitly that they were afraid of Jesus. Alternate translation: \"they were afraid of Jesus\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ἐφοβήθησαν",
+      "glQuote": "they were afraid",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The destination can be stated. Alternate translation: \"go back across the lake\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ὑπέστρεψεν",
+      "glQuote": "to return",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"that she could not keep secret what she had done.\" It may be helpful to state what she did. Alternate translation: \"that she could not keep it a secret that she was the one who had touched Jesus\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαθεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that she could not escape notice",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"said\" is understood from the previous phrase. Alternate translation: \"still others said that one of the prophets of long ago had risen\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἄλλων",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 2
+        },
+        {
+          "word": "προφήτης",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχαίων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνέστη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but by others that one of the ancient prophets had risen",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to restate part of the question here. Alternate translation: \"Some say you are John the Baptist\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "Ἰωάννην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαπτιστήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "John the Baptist",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to restate the entire phrase. Alternate translation: \"if there is no person of peace there\" or \"if the owner of the house is not a peaceful person\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μή",
+          "occurrence": 1
+        },
+        {
+          "word": "γε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if not",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies that they would do this and not be injured. Alternate translation: \"walk on snakes and scorpions and they will not hurt you\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπάνω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄφεων",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκορπίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to tread on serpents and scorpions",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I have given you authority to crush the power of the enemy\" or \"I have given you authority to defeat the enemy.\" The enemy is Satan. (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "δύναμιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐχθροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "over all the power of the enemy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to those who may not have much education but who are willing to accept Jesus' teachings in the same way that little children willingly listen to those they trust. Alternate translation: \"people who may have little education, but who listen to God as little children do\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "νηπίοις",
+      "glQuote": "to little children",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It might be helpful to give more information. Alternate translation: \"In the same way, you should also go and help people as much as you can\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "πορεύου",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποίει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁμοίως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Go and you do the same",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to add extra information. Alternate translation: \"Jesus was driving a demon out of a person\" or \"Jesus was making a demon leave a person\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκβάλλων",
+          "occurrence": 1
+        },
+        {
+          "word": "δαιμόνιον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus was driving out a demon",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to add extra information. Alternate translation: \"when the demon had gone out of the man\" or \"when the demon left the man\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δαιμονίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξελθόντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when the demon had gone out",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"first\" refers to the condition of the man while he had the unclean spirit before it left him. Alternate translation: \"worse than his condition was before the spirit left\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "χείρονα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρώτων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "worse than the first",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood subject and verb in this clause may be supplied. Alternate translation: \"but a person places it on a lampstand\" or \"but a person puts it on a table\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "λυχνίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but on the lampstand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to state what they receive. Alternate translation: \"give to poor people the money you earn from the sales\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "δότε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλεημοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "give to the poor",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to state that this refers to people. Alternate translation: \"there will be five people in one house\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἔσονται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πέντε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑνὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἴκῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there will be five in one house",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to state what will happen. Alternate translation: \"If it has figs on it next year, we can allow it to keep growing\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "κἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιήσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρπὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μέλλον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If indeed it bears fruit in that time, good",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to give more information. Alternate translation: \"If he does not first count the cost\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μήποτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Otherwise",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to state more information. Alternate translation: \"If he realizes that he will not be able to defeat the other king\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "μή",
+          "occurrence": 1
+        },
+        {
+          "word": "γε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But if not",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Remember what happened to Lot's wife\" This is a warning. She looked back toward Sodom and God punished her along with the people of Sodom. Alternate translation: \"Do not do what Lot's wife did\"(See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "μνημονεύετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γυναικὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Λώτ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Remember Lot's wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"give\" is understood from the previous phrase. It can be repeated here. Alternate translation: \"and give to God\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus kept the story short by not repeating many of the details. Alternate translation: \"the second married her and the same thing happened\" or \"the second brother married her and died without having any children\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεύτερος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and the second",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They did not repeat many of the details to keep the story short. Alternate translation: \"in the same way the rest of the seven brothers married her and had no children and died\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ὡσαύτως",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑπτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατέλιπον",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀπέθανον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "likewise the seven also left no children, and died",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"will rise\" are understood from the previous phrase and mean attack. Alternate translation: \"kingdom will rise against kingdom\" or \"the people of some kingdoms will attack the people of other kingdoms\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλείαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "kingdom against kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"there will be\" are understood from the previous phrase. Alternate translation: \"there will be famines and plagues in many places\" or \"there will be times of hunger and diseases in different places\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπους",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "λιμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "λοιμοὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "famines and plagues in various places",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to some audiences to include more about the conversation. Alternate translation: \"We did not lack anything\" or \"We had everything we needed\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "οὐθενός",
+      "glQuote": "Nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to repeat the reference to time. \"Darkness\" is a metonym for Satan. Alternate translation: \"the time of the authority of darkness\" or \"the time when God is allowing Satan to do whatever he wants\" (See: [[rc://en/ta/man/translate/figs-ellipsis]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 53
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐξουσία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκότους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the authority of the darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It may be helpful to add information that is not included in the short statement. Alternate translation: \"Even Herod does not think he is guilty\" or \"Even Herod thinks he is innocent\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἡρῴδης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But neither did Herod",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Words are left out to keep the phrase short. Alternate translation: \"they will say to the hills\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "βουνοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to the hills",
+      "occurrence": 1
+    }
+  }
+]

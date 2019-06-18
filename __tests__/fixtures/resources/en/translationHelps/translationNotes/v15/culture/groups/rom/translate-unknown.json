@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Abba\" is \"Father\" in the Aramaic language. (See: [[rc://en/ta/man/translate/translate-unknown]] and [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "Ἀββά",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατήρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Abba, Father ",
+      "occurrence": 1
+    }
+  }
+]

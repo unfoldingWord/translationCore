@@ -1,0 +1,148 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a comment about what happened after the story that was caused by the events within the story itself. (See: [[rc://en/ta/man/translate/writing-endofstory]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξεπορεύετο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦχος",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "περιχώρου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "So news about him began to spread ... the surrounding region",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is information that tells what happened after the story as a result of the events in the story itself. (See: [[rc://en/ta/man/translate/writing-endofstory]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσίγησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὧν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑώρακαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They kept silent ... of what they had seen",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ongoing action that continues after this part of the story ends. (See: [[rc://en/ta/man/translate/writing-endofstory]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "quote": [
+        {
+          "word": "ἐζήτει",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐκαιρίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "παραδοῦναι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄτερ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλου",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "began seeking an opportunity to deliver him to them away from the crowd",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The mockers exaggerate with the word \"all\", and they argue that since nothing in the world has ever changed, it cannot be true that Jesus will return. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "διαμένει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀρχῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "κτίσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all things have stayed the same, since the beginning of creation",
+      "occurrence": 1
+    }
+  }
+]

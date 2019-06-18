@@ -1,0 +1,2363 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Luke wrote this book to a man named Theophilus. Some translations follow their own culture's way of addressing a letter and write \"Dear Theophilus\" at the beginning of the sentence. Theophilus means \"friend of God\" (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ὦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεόφιλε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Theophilus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of people groups. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Πάρθοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Μῆδοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἐλαμεῖται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Parthians ... Medes ... Elamites ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of large areas of land. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Μεσοποταμίαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Ἰουδαίαν",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Καππαδοκίαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "Πόντον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἀσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Mesopotamia ... Judea ... Cappadocia ... Pontus ... Asia ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of large areas of land. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Φρυγίαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Παμφυλίαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Αἴγυπτον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Λιβύης",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Κυρήνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Phrygia ... Pamphylia ... Egypt ... Libya ... Cyrene ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of people groups. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Κρῆτες",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἄραβες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Cretans ... Arabians ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a title for the queens of Ethiopia. It is similar to the way the word Pharaoh was used for the kings of Egypt. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κανδάκης",
+      "glQuote": "Candace",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Tabitha is her name in the Aramaic language, and Dorcas is her name in the Greek language. Both names mean \"gazelle.\" Alternate translation: \"Her name in the Greek language was Dorcas\" (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ταβειθά",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἣ",
+          "occurrence": 1
+        },
+        {
+          "word": "διερμηνευομένη",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγεται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "Δορκάς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Tabitha, which is translated as \"Dorcas.\" ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Blastus was an assistant to or an officer of King Herod. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βλάστον",
+      "glQuote": "Blastus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are men's names. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Συμεὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Νίγερ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Λούκιος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Μαναήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Simeon ... Niger ... Lucius ... Manaen ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Bar Jesus\" means \"Son of Jesus.\" There is no relation between this man and Jesus Christ. Jesus was a common name at that time. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαριησοῦς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whose name was Bar Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was Bar-Jesus, who was also called \"the magician.\" (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἐλύμας",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "μάγος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Elymas \"the magician\" ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A district in Asia Minor (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Λυκαονίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Lycaonia",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A city in Asia Minor south of Iconium and north of Derbe (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Λύστραν",
+      "glQuote": "Lystra",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A city in Asia Minor south of Iconium and Lystra (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δέρβην",
+      "glQuote": "Derbe",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Zeus was the king over all the other pagan gods. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δία",
+      "glQuote": "Zeus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Hermes was the pagan god who brought messages to people from Zeus and the other gods. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἑρμῆν",
+      "glQuote": "Hermes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. \"Barsabbas\" is a second name that people called him. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἰούδαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καλούμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαρσαββᾶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Judas called Barsabbas ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a province on the coast in Asia Minor north of the Island of Cyprus. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κιλικίαν",
+      "glQuote": "Cilicia",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are two more regions in Asia. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Μυσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Βιθυνίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Mysia ... Bithynia ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are coastal cities near Phillipi in Macedonia. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σαμοθρᾴκην",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Νέαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πόλιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Samothrace ... Neapolis ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Θυατείρων",
+      "glQuote": "Thyatira",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are coastal cities in Macedonia. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀμφίπολιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀπολλωνίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "cities of Amphipolis and Apollonia ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἰάσονος",
+      "glQuote": "Jason",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These people believed all things were formed by chance and that the gods were too busy being happy to be bothered with governing the universe. They rejected the resurrection and wanted only simple pleasures. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἐπικουρίων",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Στοϊκῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "φιλοσόφων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Epicurean and Stoic philosophers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These people believed freedom comes from resigning oneself to fate. They rejected a personal loving God and the resurrection. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Στοϊκῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "φιλοσόφων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Stoic philosophers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a prominent rock outcropping or hill in Athens upon which the supreme court of Athens may have met. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἄρειον",
+          "occurrence": 1
+        },
+        {
+          "word": "Πάγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Areopagus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Athenians\" are people from Athens, a city near the coast below Macedonia (present day Greece). (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἀθηναῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all the Athenians ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Dionysius is a man's name. Areopagite implies that Dionysius was one of the judges at the council of Areopagus. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Διονύσιος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀρεοπαγίτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Dionysius the Areopagite ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a woman. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δάμαρις",
+      "glQuote": "Damaris",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Pontus was a province on the southern coast of the Black Sea. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ποντικὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "γένει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a native of Pontus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of land. Rome is the capital city of Italy. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰταλίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Italy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Τιτίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰούστου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Titius Justus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κρίσπος",
+      "glQuote": "Crispus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Γαλλίωνος",
+      "glQuote": "Gallio",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Sosthenes\" was the Jewish ruler of the synagogue at Corinth. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σωσθένην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχισυνάγωγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Sosthenes, the ruler of the synagogue ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"a man who was born in the city of Alexandria.\" This was a city in Egypt on the north coast of Africa. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἀλεξανδρεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "γένει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "an Alexandrian by birth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Τυράννου",
+      "glQuote": "Tyrannus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Σκευᾶ",
+      "glQuote": "Sceva",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἔραστον",
+      "glQuote": "Erastus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. Demetrius was a silversmith in Ephesus who was against Paul and the local church. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Δημήτριος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "named Demetrius ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of men. Gaius and Aristarchus came from Macedonia but were working with Paul in Ephesus at this time. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Γάϊον",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀρίσταρχον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Gaius and Aristarchus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀλέξανδρον",
+      "glQuote": "Alexander",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of men. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σώπατρος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Πύρρου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Σεκοῦνδος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Τυχικὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Τρόφιμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Sopater ... Pyrrhus ... Secundus ... Tychicus ... Trophimus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of places. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Βεροιαῖος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Δερβαῖος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Berea ... Derbe ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a place. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Τρῳάδι",
+      "glQuote": "Troas",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Εὔτυχος",
+      "glQuote": "Eutychus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Assos is a town located directly below present day Behram in Turkey on the coast of the Aegean sea. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ἀνήχθημεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἆσσον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sailed away to Assos ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Mitylene is a town located in present day Mitilini in Turkey on the coast of the Aegean sea. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ἤλθομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "Μιτυλήνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "went to Mitylene ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Chios is an island off the coast of modern day Turkey in the Aegean Sea. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Χίου",
+      "glQuote": "the island of Chios ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Samos is an island south of Chios in the Aegean Sea off the coast of modern day Turkey. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Σάμον",
+      "glQuote": "island of Samos ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Miletus was a port city in western Asia Minor near the mouth of the Meander River. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Μίλητον",
+      "glQuote": "the city of Miletus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul sailed south past the port city of Ephesus, further south in order to land at Miletus. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "κεκρίκει",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Παῦλος",
+          "occurrence": 1
+        },
+        {
+          "word": "παραπλεῦσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἔφεσον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For Paul had decided to sail past Ephesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Miletus was a port city in western Asia Minor near the mouth of the Meander River. See how you translated this in [Acts 20:15](../20/15.md). (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Μιλήτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Miletus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Cos is a Greek island off the coast of modern day Turkey in the South Aegean Sea region. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κῶ",
+      "glQuote": "city of Cos ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Rhodes is a Greek island off the coast of modern day Turkey in the South Aegean Sea region south of Cos and northeast of Crete. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ῥόδον",
+      "glQuote": "city of Rhodes ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Patara is a city on the southwest coast of modern day Turkey south of the Aegean Sea in the Mediterranean Sea. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Πάταρα",
+      "glQuote": "city of Patara ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Ptolemaic was a city south of Tyre, Lebanon. Ptolemaic is modern day Acre, Israel. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "κατηντήσαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Πτολεμαΐδα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we arrived at Ptolemais ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Agabus was a man from Judea. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅγαβος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "named Agabus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Mnason is a man from the island of Cyprus. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Μνάσωνί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τινι",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυπρίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Mnason, a man from Cyprus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Though this is not the same Ananias who died earlier in Acts [Acts 5:3](../05/03.md), you may translate it the same way though as you did in [Acts 5:1](../05/01.md). (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἁνανίας",
+      "glQuote": "Ananias",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. Though this is the same name, this not the same Ananias as in [Acts 5:1](../05/01.md) nor the same Ananias as in [Acts 9:10](../09/10.md). (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἁνανίας",
+      "glQuote": "Ananias",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. This is not the same Ananias as in [Acts 5:1](../05/01.md) nor the same Ananias as in [Acts 9:10](../09/10.md). See how you translated this in [Acts 23:1](../23/01.md). (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἁνανίας",
+      "glQuote": "Ananias",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Τερτύλλου",
+      "glQuote": "Tertullus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Drusilla is a woman's name. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Δρουσίλλῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γυναικὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Drusilla his wife ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was the new roman Governor who replaced Felix. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πόρκιον",
+          "occurrence": 1
+        },
+        {
+          "word": "Φῆστον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Porcius Festus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Julius is a man's name. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ἑκατοντάρχῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουλίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a centurion named Julius ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was the name of the battalion or army from which the centurion came. Some versions translate this as \"the Augustan Regiment.\" (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "σπείρης",
+          "occurrence": 1
+        },
+        {
+          "word": "Σεβαστῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Imperial Regiment ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Myra is the name of a city. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "κατήλθαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Μύρρα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "landed at Myra ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Lycia was a Roman province, located on the southwestern coast of modern-day Turkey. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Λυκίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a city of Lycia ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀλεξανδρῖνον",
+      "glQuote": "Alexandria",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ancient settlement located in modern-day Turkey. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κνίδον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "near Cnidus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a coastal city in Crete. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "Σαλμώνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "opposite Salmone ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a port near Lasea, located on the south coast of Crete. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Καλοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "Λιμένας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Fair Havens ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a coastal city in Crete. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ἐγγὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Λασαία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "near the city of Lasea ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Phoenix is a city port on the south coast of Crete. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Φοίνικα",
+      "glQuote": "city of Phoenix ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This island was located on the south coast of Crete. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "νησίον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑποδραμόντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a small island called Cauda ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sandbars are very shallow areas in the sea where ships can get stuck in the sand. Syrtis is located on the coast of Libya, northern Africa. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Σύρτιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sandbars of Syrtis ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the sea between Italy and Greece. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀδρίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Adriatic Sea ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Malta is an island located south of the modern-day island of Sicily. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Μελίτη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "νῆσος",
+          "occurrence": 1
+        },
+        {
+          "word": "καλεῖται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the island was called Malta ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ποπλίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a man named Publius ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Syracuse is a city on the southeast coast of the modern-day island of Sicily, just southwest of Italy. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Συρακούσας",
+      "glQuote": "city of Syracuse ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the port city located at the southwestern tip of Italy. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ῥήγιον",
+      "glQuote": "city of Rhegium ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Puteoli is located in modern-day Naples on the west coast of Italy. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ποτιόλους",
+      "glQuote": "city of Puteoli ",
+      "occurrence": 1
+    }
+  }
+]

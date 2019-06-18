@@ -5,6 +5,7 @@ Array [
   Object {
     "gatewayLanguageCode": "en",
     "gatewayLanguageQuote": "authority",
+    "nothingToSelect": false,
     "selections": Array [
       Object {
         "occurrence": 1,
@@ -32,6 +33,7 @@ Array [
       },
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [
       Object {
         "occurrence": 1,
@@ -70,6 +72,7 @@ Array [
         "verse": 1,
       },
     },
+    "nothingToSelect": false,
     "selections": Array [
       Object {
         "occurrence": 1,
@@ -99,6 +102,7 @@ Array [
   Object {
     "gatewayLanguageCode": "en",
     "gatewayLanguageQuote": "authority",
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
     "userName": "dummy-test",
@@ -125,6 +129,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -161,6 +166,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -190,6 +196,7 @@ Array [
   Object {
     "gatewayLanguageCode": "en",
     "gatewayLanguageQuote": "authority",
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
     "userName": "dummy-test",
@@ -216,6 +223,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -257,6 +265,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -310,6 +319,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -361,6 +371,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -412,6 +423,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -453,6 +465,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -506,6 +519,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },

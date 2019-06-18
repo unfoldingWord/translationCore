@@ -1,0 +1,164 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"heaven\" and \"earth\" represent everything that exists. Alternate translation: \"Master over everyone and everything in heaven and earth\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Lord of heaven and earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"day\" and \"hour\" form a merism of time that refers to any time, and the words \"expect\" and \"know\" have similar meanings, so the two phrases here are parallel to emphasize that the coming of the lord will be a total surprise to the servant. However, the phrases should not be combined unless your language has no different words for \"know\" and \"expect\" or \"day\" and \"hour.\" Alternate translation: \"at a time when the servant is not expecting him\" (See: [[rc://en/ta/man/translate/figs-merism]] and [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾗ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσδοκᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὥρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾗ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "γινώσκει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in a day when he does not expect, and in an hour that he does not know",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means \"from every direction.\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνατολῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δυσμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "βορρᾶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "νότου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from east and west, and from north and south",
+      "occurrence": 1
+    }
+  }
+]

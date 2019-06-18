@@ -1,0 +1,4632 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question in order to add emphasis. Alternate translation: \"No good thing can come out of Nazareth!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ναζαρὲτ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναταί",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαθὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Can any good thing come out of Nazareth? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to provide emphasis. Alternate translation: \"You believe because I said, 'I saw you underneath the fig tree'! (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 2
+        },
+        {
+          "word": "εἶδόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑποκάτω",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "συκῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "πιστεύεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Because I said to you ... do you believe? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question is asked to provide emphasis. Alternate translation: \"this has nothing to do with me.\" or \"you should not tell me what to do.\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "why do you come to me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to show that the Jewish authorities understand that Jesus wants to tear down the temple and build it again in three days. \"Raise\" is an idiom for \"establish.\" Alternate translation: \"you will establish it in three days?\" or \"you cannot possibly rebuild it in three days!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τρισὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγερεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will raise it up in three days? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Nicodemus uses this question to emphasize that this cannot happen. Alternate translation: \"A man certainly cannot be born again when he is old!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": "γεννηθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "γέρων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὤν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How can a man be born when he is old? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Nicodemus also uses this question to emphasize his belief that a second birth is impossible. \"Certainly, he cannot enter a second time into his mother's womb! (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κοιλίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "μητρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεύτερον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσελθεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "γεννηθῆναι",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "He cannot enter a second time into his mother's womb and be born, can he? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question adds emphasis to the statement. Alternate translation: \"This cannot be!\" or \"This is not able to happen!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "γενέσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How can these things be? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus knows that Nicodemus is a teacher. He is not looking for information. Alternate translation: \"You are a teacher of Israel, so I am surprised you do not understand these things!\" or \"You are a teacher of Israel, so you should understand these things!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάσκαλος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γινώσκεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are you a teacher of Israel, and yet you do not understand these things? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question emphasizes the disbelief of Nicodemus and the Jews. Alternate translation: \"you certainly will not believe if I tell you about heavenly things!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 2
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπουράνια",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "πιστεύσετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how will you believe if I tell you about heavenly things? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to express the Samaritan woman's surprise that Jesus asked her for a drink. Alternate translation: \"I cannot believe that you, being a Jew, are asking a Samaritan for a drink!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὢν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "παρ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰτεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How is it that you, being a Jew, are asking ... for something to drink? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark occurs in the form of a question to add emphasis. Alternate translation: \"You are not greater than our father Jacob ... cattle!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "μείζων",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰακώβ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "φρέαρ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔπιεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "θρέμματα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "You are not greater, are you, than our father Jacob ... cattle? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The disciples think Jesus is talking about literal \"food.\" They begin asking each other this question, expecting a \"no\" response. Alternate translation: \"Surely no one brought him any food while we were in town!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μή",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤνεγκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "φαγεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "No one has brought him anything to eat, have they? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question in order to add emphasis. Alternate translation: \"There is no way you can believe because you accept praise ... God!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δύνασθε",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεῦσαι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξαν",
+          "occurrence": 1
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλήλων",
+          "occurrence": 1
+        },
+        {
+          "word": "λαμβάνοντες",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξαν",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μόνου",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How can you believe, you who accept praise ... God? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to provide emphasis. Alternate translation: \"You do not believe his writings, so you will never believe my words!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείνου",
+          "occurrence": 1
+        },
+        {
+          "word": "γράμμασιν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήμασιν",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύσετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If you do not believe his writings, how are you going to believe my words? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize that they do not have enough food to feed everyone. Alternate translation: \"these few loaves and fishes are not enough to feed so many people!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοσούτους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what are these among so many? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize that the Jewish leaders believe that Jesus is no one special. Alternate translation: \"This is just Jesus, the son of Joseph, whose father and mother we know! (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωσήφ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἴδαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μητέρα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Is not this Jesus ... whose father and mother we know? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize that the Jewish leaders do not believe that Jesus came from heaven. Alternate translation: \"He is lying when he says that he came from heaven!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καταβέβηκα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How then does he now say, 'I have come down from heaven'? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize that the Jewish leaders are reacting negatively to what Jesus has said about \"his flesh.\" Alternate translation: \"There is no way that this man can give us his flesh to eat!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "δοῦναι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        },
+        {
+          "word": "φαγεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How can this man give us his flesh to eat? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize that the disciples have difficulty understanding what Jesus has said. Alternate translation: \"no one can accept it!\" or \"it is too hard to understand!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 60
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκούειν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who can accept it? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus offers this remark in the form of a question to emphasize that his disciples will see other things that are also hard to understand. Alternate translation: \"Then you will not know what to think when you see me, the Son of Man, going up into heaven!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 62
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "θεωρῆτε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναβαίνοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρότερον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then what if you should see the Son of Man going up to where he was before? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Simon Peter gives this remark in the form of a question to emphasize that he desires to follow only Jesus. Alternate translation: \"Lord, we could never follow anyone but you!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 68
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τίνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπελευσόμεθα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Lord, to whom shall we go? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus gives this remark in the form of a question to draw attention to the fact that one of the disciples will betray him. Alternate translation: \"I chose you all myself, yet one of you is a servant of Satan!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 70
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξελεξάμην",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "διάβολός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Did not I choose you, the twelve, and one of you is a devil? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The remark appears in the form of a question to emphasize the Jewish leaders' surprise that Jesus has so much knowledge. Alternate translation: \"He cannot possibly know so much about the scriptures!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "γράμματα",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶδε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How does this man know so much? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"It was Moses who gave you the law\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δέδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Did not Moses give you the law? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus questions the motives of the Jewish leaders who want to kill him for breaking the law of Moses. He implies that the leaders themselves do not keep that same Law. Alternate translation: \"You break the Law yourselves and yet you want to kill me!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκτεῖναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why do you seek to kill me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"No one is trying to kill you!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκτεῖναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Who seeks to kill you? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"you should not be angry with me because I made a man completely well on the Sabbath!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "χολᾶτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑγιῆ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐποίησα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "Σαββάτῳ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "why are you angry with me because I made a man completely healthy on the Sabbath? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"This is Jesus whom they are seeking to kill!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητοῦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκτεῖναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Is not this the one they seek to kill? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"Maybe they have decided that he is truly the Messiah!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μήποτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔγνωσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρχοντες",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It cannot be that the rulers indeed know that this is the Christ, can it? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"When the Christ comes, surely he will not be able to do more signs than this man has done!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλθῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλείονα",
+          "occurrence": 1
+        },
+        {
+          "word": "σημεῖα",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὧν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐποίησεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When the Christ comes, will he do more signs than what this one has done? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"The Christ cannot come from Galilee!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Γαλιλαίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔρχεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Does the Christ come from Galilee? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"The scriptures teach that Christ will come from the line of David and from Bethlehem, the village where David was!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπέρματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βηθλέεμ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "κώμης",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἔρχεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Have the scriptures not said that the Christ will come from the descendants of David and from Bethlehem, the village where David was? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The remark appears in the form of a question to add emphasis. The Pharisees are shocked at the response of the officers. Alternate translation: \"You have been deceived too!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "πεπλάνησθε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Have you also been deceived? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"None of the rulers or Pharisees have believed in him!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχόντων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίστευσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "Φαρισαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Have any of the rulers believed in him, or any of the Pharisees? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. This can be translated as a statement. Alternate translation: \"Our Jewish law does not allow us to judge a man ... what he does!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκούσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "παρ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "γνῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Does our law judge a man ... what he does? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jewish leaders know that Nicodemus is not from Galilee. They ask this question as a way of scoffing at him. Alternate translation: \"You must also be one of those inferior persons from Galilee!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Γαλιλαίας",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are you also from Galilee? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to express the Jewish leaders' shock at what Jesus has said. Alternate translation: \"We do not need to be set free!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγεις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλεύθεροι",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "γενήσεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how can you say, 'You will be set free'? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is using this question mainly to rebuke the Jewish leaders for not listening to him. Alternate translation: \"I will tell you why you do not understand what I say!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλιὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γινώσκετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why do you not understand my words? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to emphasize that he has never sinned. Alternate translation: \"None of you can show that I have ever sinned!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλέγχει",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Which one of you convicts me of sin? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question to scold the Jewish leaders for their unbelief. Alternate translation: \"you have no reason for not believing in me!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύετέ",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "why do you not believe me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jewish leaders use this question to accuse Jesus and to dishonor him. Alternate translation: \"We are certainly right in saying that you are a Samaritan and that a demon lives in you!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "καλῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "Σαμαρείτης",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "δαιμόνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do we not truly say that you are a Samaritan and have a demon? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jewish leaders use this question to emphasize that Jesus is not greater than Abraham. Alternate translation: \"You are certainly not greater than our father Abraham who indeed died!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 53
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "μείζων",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀβραάμ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅστις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέθανεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You are not greater than our father Abraham who died, are you? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews use this question to rebuke Jesus for thinking that he is more important than Abraham. Alternate translation: \"You should not think that you are so important!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 53
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίνα",
+          "occurrence": 1
+        },
+        {
+          "word": "σεαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Who do you make yourself out to be? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jewish leaders use this question to express their shock that Jesus claims to have seen Abraham. Alternate translation: \"You are less than fifty years old. You could not have seen Abraham!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 57
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πεντήκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        },
+        {
+          "word": "οὔπω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχεις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀβραὰμ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑώρακας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You are not yet fifty years old, and you have seen Abraham? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to express the surprise of the people. Alternate translation: \"This man is the one who used to sit and beg!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "καθήμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "προσαιτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Is not this the man that used to sit and beg? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize that Jesus' signs prove he is not a sinner. Alternate translation: \"A sinner can not do such signs!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁμαρτωλὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοιαῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "σημεῖα",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How can a man who is a sinner do such signs? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to express the man's amazement that the Jewish leaders have asked him to tell them again what happened. Alternate translation: \"I am surprised that you want to hear again what happened to me!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "πάλιν",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλετε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούειν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why do you want to hear it again? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add irony to the man's statement. He knows that the Jewish leaders do not want to follow Jesus. Here he ridicules them. Alternate translation: \"It sounds like you also want to become his disciples!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-irony ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλετε",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "γενέσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You do not want to become his disciples too, do you? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. It also implies that the man was born blind because of the sins of his parents. Alternate translation: \"You were born as a result of your parents' sins. You are not qualified to teach us!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγεννήθης",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 2
+        },
+        {
+          "word": "διδάσκεις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You were completely born in sins, and you are teaching us? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize the point that the people should not listen to Jesus. Alternate translation: \"Do not listen to him!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why do you listen to him? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"Certainly a demon cannot cause a blind man to see!\" or \"Certainly a demon cannot give sight to blind people!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "δαιμόνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "τυφλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνοῖξαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Can a demon open the eyes of the blind? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"You should already know that it is written in your law that I said, 'you are gods.'\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "γεγραμμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        },
+        {
+          "word": "θεοί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Is it not written ... gods\"'? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus used this question to rebuke his opponents for saying that he was blaspheming when he called himself \"the Son of God.\" Alternate translation: \"you should not say to the very one whom the Father set apart to send into the world, 'You are blaspheming,' when I say that I am the Son of God!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡγίασεν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέστειλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "βλασφημεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 2
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "do you say to him whom the Father set apart and sent into the world, 'You are blaspheming,' because I said, 'I am the Son of God'? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize that the disciples do not want Jesus to go to Jerusalem. Alternate translation: \"Teacher, you surely do not want to go back there! The Jews were trying to stone you the last time you were there!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "Ῥαββεί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐζήτουν",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "λιθάσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάλιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπάγεις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Rabbi, right now the Jews are trying to stone you, and you are going back there again? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"You know that the day has twelve hours of light!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐχὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὧραί",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are there not twelve hours of light in a day? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to express the Jews' surprise that Jesus did not heal Lazarus. Alternate translation: \"He could heal a man who was blind, so he should have been able to heal this man so he would not have died!\" or \"Since he did not keep this man from dying, maybe he did not really heal the man who was born blind, as they say he did!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδύνατο",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνοίξας",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τυφλοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ποιῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποθάνῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Could not this man, who opened the eyes of a blind man, also have made this man not die? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis to the point that God is about to do something wonderful. Alternate translation: \"I told you that if you trusted me, you would see what God can do!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύσῃς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὄψῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Did I not say to you that, if you believed, you would see the glory of God? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are rhetorical questions that express a strong element of doubt that Jesus will come to the Passover Festival. The second question is an ellipsis that leaves out the words \"do you think.\" The speakers here were wondering if Jesus would come to the festival since there was the danger of his being arrested. Alternate translation: \"Jesus will probably not come to the festival. He might be afraid of getting arrested!\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 56
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "δοκεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλθῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑορτήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What do you think? That he will not come to the festival? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a rhetorical question. You can translate it as a strong statement. Alternate translation: \"This perfume could have been sold for three hundred denarii and the money could have been given to the poor!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μύρον",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπράθη",
+          "occurrence": 1
+        },
+        {
+          "word": "τριακοσίων",
+          "occurrence": 1
+        },
+        {
+          "word": "δηναρίων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδόθη",
+          "occurrence": 1
+        },
+        {
+          "word": "πτωχοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why was this perfume not sold for three hundred denarii and given to the poor? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a rhetorical question. Although Jesus desires to avoid crucifixion, he chooses to be obedient to God and to be killed. Alternate translation: \"I will not pray, 'Father, save me from this hour!'\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Πάτερ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "σῶσόν",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what should I say? 'Father, save me from this hour'? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This appears in the form of two rhetorical questions to express the prophet's dismay that the people do not believe his message.They may be stated as a single rhetorical question, Alternate translation: \"Lord, hardly anyone has believed our message, even though they have seen that you are powerfully able to save them!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίστευσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκοῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "βραχίων",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "τίνι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεκαλύφθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Lord, who has believed our report, and to whom has the arm of the Lord been revealed? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter's question shows that he is not willing for Jesus to wash his feet. Alternate translation: \"Lord, it is not right for you to wash the feet of me, a sinner!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "σύ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "νίπτεις",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Lord, are you going to wash my feet? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question so Jesus can emphasize the importance of what he is teaching his disciples. Alternate translation: \"You need to understand what I have done for you!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "γινώσκετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "πεποίηκα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do you know what I have done for you? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis to Jesus' statement. Alternate translation: \"You say that you will die for me, but the truth is that you will not!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχήν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "θήσεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Will you lay down your life for me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis to Jesus' words. Alternate translation: \"Philip, I have been with you disciples already for a very long time. You should know me by now!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τοσοῦτον",
+          "occurrence": 1
+        },
+        {
+          "word": "χρόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "μεθ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔγνωκάς",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "Φίλιππε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have been with you for so long and you still do not know me, Philip? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize Jesus' words to Philip. Alternate translation: \"So you really should not be saying, 'Show us the Father!'\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγεις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "δεῖξον",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "Πατέρα",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "How can you say, 'Show us the Father'? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to emphasize Jesus' words to Philip. Alternate translation: \"You really should believe ... in me.\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύεις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμοί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do you not believe ... in me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this question so his disciples will focus on what he has just told them, so he can explain further. Alternate translation: \"You are asking yourselves what I meant when I said, ... see me.'\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτου",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλήλων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 2
+        },
+        {
+          "word": "εἶπον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "μικρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "θεωρεῖτέ",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "πάλιν",
+          "occurrence": 1
+        },
+        {
+          "word": "μικρὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "ὄψεσθέ",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Is this what you are asking yourselves, what I meant by saying, ... see me'? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remarks appears in the form of a question to show that Jesus is puzzled that his disciples are only now ready to trust him. Alternate translation: \"So, now you finally place your trust in me! (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἄρτι",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do you believe now? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis to Jesus' statement. Alternate translation: \"I must surely drink the cup that the Father has given to me!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποτήριον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "δέδωκέν",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίω",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτό",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Should I not drink the cup that the Father has given me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This appears in the form of a question to enable the servant to express her remark somewhat cautiously. Alternate translation: \"You are also one of the arrested man's disciples! Are you not?\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are you not also one of the disciples of this man? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis to what Jesus is saying. Alternate translation: \"You should not be asking me these questions!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρωτᾷς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why did you ask me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"That is not how you should answer the high priest!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκρίνῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀρχιερεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Is that how you answer the high priest? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis to what Jesus is saying. Alternate translation: \"if I said only what was right, you should not be hitting me!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καλῶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "δέρεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if rightly, why do you hit me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"You are also one of his disciples!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are you not also one of his disciples? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Here the word \"him\" refers to Jesus. Alternate translation: \"I saw you in the olive tree grove with the man they arrested! Did I not?\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγώ",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶδον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κήπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Did I not see you in the garden with him? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question so Pilate can emphasize his complete lack of interest in the cultural affairs of the Jewish people. Alternate translation: \"Well I am certainly not a Jew, and I have no interest in these matters!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μήτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖός",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am not a Jew, am I? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to reflect Pilate's belief that no one really knows what truth is. Alternate translation: \"No one can know what is true!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλήθεια",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What is truth? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question. Here Pilate expresses his surprise that Jesus does not take the opportunity to defend himself. Alternate translation: \"I cannot believe you are refusing to speak to me!\" or \"Answer me!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are you not speaking to me? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to add emphasis. Alternate translation: \"You should know that I am able to release you or to order my soldiers to crucify you!\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶδας",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολῦσαί",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔχω",
+          "occurrence": 2
+        },
+        {
+          "word": "σταυρῶσαί",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Do you not know that I have power to release you, and power to crucify you? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This remark appears in the form of a question to express a mild rebuke. Alternate translation: \"that is not your concern.\" or \"you should not be concerned about that.\" (See: [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "σέ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what is that to you? ",
+      "occurrence": 1
+    }
+  }
+]

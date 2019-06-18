@@ -1,0 +1,138 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are two phrases in parallel with each other. (See: [[rc://en/ta/man/translate/figs-parallelism ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "καθαρίσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁμαρτωλοί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁγνίσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "δίψυχοι",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Cleanse your hands, you sinners, and purify your hearts, you double-minded ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is saying the same thing in different ways for emphasis. The abstract nouns \"laughter,\" \"sadness,\" \"joy,\" and \"gloom\" can be translated as verbs or adjectives. Alternate translation: \"Stop laughing and be sad. Stop being joyful and be gloomy\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "γέλως",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πένθος",
+          "occurrence": 1
+        },
+        {
+          "word": "μετατραπήτω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "κατήφειαν",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Let your laughter turn into sadness and your joy into gloom ",
+      "occurrence": 1
+    }
+  }
+]

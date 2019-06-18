@@ -1,0 +1,145 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"us\" and \"our\" include the Corinthians. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "παρακαλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "θλίψει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "comforts us in all our affliction",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"us\" refers to all believers, including Paul and the Corinthians. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now we all",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"our\" and \"we\" are inclusive and refer to all believers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "us ... we",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"us\" includes the Corinthian believers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "συναποθανεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for us to die",
+      "occurrence": 1
+    }
+  }
+]

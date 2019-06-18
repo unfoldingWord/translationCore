@@ -1,0 +1,372 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"ungodliness\" and \"unrighteousness\" are abstract nouns that can be expressed using the adjectives \"ungodly,\" which describes the people, and \"unrighteous,\" which describes their deeds. These nouns are metonyms for the people with whom God is angry. You can translate this in active form. Alternate translation: \"God reveals from heaven how angry he is with people because they are ungodly and do unrighteous deeds\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἀποκαλύπτεται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὀργὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσέβειαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδικίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the wrath of God is revealed from heaven against all ungodliness and unrighteousness of people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"faith\" is an abstract noun that refers to the person believing in God. The \"person\" here is any person. This can be translated in active form. Alternate translation: \"God justifies any person who believes in God\" or \"when God justifies a person, he does so because the person believes in God\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "δικαιοῦσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a person is justified by faith ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be restated to remove the abstract noun \"trespass.\" Alternate translation: \"no one can break the law\" or \"it is impossible to disobey the law\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "παράβασις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there is no trespass ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract nouns can be expressed with verb phrases. Here \"sword\" is a metonym that represents being killed violently. Alternate translation: \"Even if people cause us trouble, hurt us, take away our clothes and food, or kill us, they cannot separate us from the love of Christ.\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "θλῖψις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "στενοχωρία",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 2
+        },
+        {
+          "word": "διωγμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 3
+        },
+        {
+          "word": "λιμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 4
+        },
+        {
+          "word": "γυμνότης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 5
+        },
+        {
+          "word": "κίνδυνος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 6
+        },
+        {
+          "word": "μάχαιρα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Tribulation, or distress, or persecution, or hunger, or nakedness, or danger, or sword? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be restated to remove the abstract nouns \"severity\" and \"kindness.\" Alternate translation: \"God dealt harshly with the Jews who fell ... but God acts kindly toward you\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πεσόντας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀποτομία",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σὲ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "χρηστότης",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "severity came on the Jews who fell ... God's kindness comes on you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be restated to remove the abstract noun \"kindness.\" Alternate translation: \"if you continue doing what is right so that he continues being kind to you\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιμένῃς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "χρηστότητι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if you continue in his kindness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"obedience\" and \"faith\" are abstract nouns. You can use the verbs \"obey\" and \"trust\" in your translation. You may need to make explicit who will obey and trust. Alternate translation: \"so that all nations will obey God because they trust in him\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπακοὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to bring about the obedience of faith ",
+      "occurrence": 1
+    }
+  }
+]

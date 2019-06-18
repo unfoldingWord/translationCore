@@ -1,0 +1,145 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in a positive way. Alternate translation: \"a completely truthful man\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "δόλος",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in whom is no deceit ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence states the opposite of what it means for emphasis. Alternate translation: \"I will keep everyone who comes to me\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρχόμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "πρός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμὲ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκβάλω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he who comes to me I will certainly not throw out ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here litotes is used to emphasize that Jesus will keep everyone that God gives to him. Alternate translation: \"I should keep all of them\" (See: [[rc://en/ta/man/translate/figs-litotes ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-litotes",
+      "quote": [
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολέσω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I would lose not one of all those ",
+      "occurrence": 1
+    }
+  }
+]

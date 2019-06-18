@@ -83,6 +83,7 @@ describe('groupsDataReducer', () => {
               groupId: "authority",
               reference: {bookId: "book", chapter: 1, verse: 1}
             },
+            nothingToSelect: false,
             selections: null
           },
           {
@@ -119,6 +120,7 @@ describe('groupsDataReducer', () => {
               groupId: "authority",
               reference: {bookId: "book", chapter: 1, verse: 1}
             },
+            nothingToSelect: false,
             selections: null
           },
           {
@@ -127,6 +129,7 @@ describe('groupsDataReducer', () => {
             groupId: "authority",
             reference: {bookId: "book", chapter: 1, verse: 2}
           },
+          nothingToSelect: false,
           selections: null
         }]
       },
@@ -158,6 +161,7 @@ describe('groupsDataReducer', () => {
         authority: [{contextId: {
             groupId: "authority"
           },
+          nothingToSelect: false,
           selections
         }]
       },

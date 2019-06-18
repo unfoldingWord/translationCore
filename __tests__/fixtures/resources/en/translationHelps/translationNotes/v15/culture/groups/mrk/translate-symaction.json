@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is quoting a psalm. Here God is speaking to the Christ. To sit at the \"right hand of God\" is a symbolic action of receiving great honor and authority from God. Alternate translation: \"Sit in the place of honor beside me\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "κάθου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεξιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Sit at my right hand",
+      "occurrence": 1
+    }
+  }
+]

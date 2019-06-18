@@ -1,0 +1,1438 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a direct quotation. Alternate translation: \"men, and he asked them, 'When exactly did this star appear?'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἠκρίβωσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "παρ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "χρόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "φαινομένου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀστέρος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to ask them exactly what time the star had appeared",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a direct quotation. Alternate translation: \"dream, saying, 'Do not go back to King Herod,' so\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "κατ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄναρ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνακάμψαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἡρῴδην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in a dream not to return to Herod, so",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You could translate this with a direct quotation. Alternate translation: \"say to these stones, 'Become bread.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "εἰπὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθοι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "γένωνται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "command that these stones become bread.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"God will command his angels to take care of you, and\" This can be translated with a direct quotation. Alternate translation: \"God will say to his angels, 'Take care of him,' and\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγγέλοις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐντελεῖται",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "'He will command his angels to take care of you,' and",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The quotes can be translated as indirect quotes. Alternate translation: \"which is easier, to tell someone that his sins are forgiven, or to tell him to get up and walk?\" or \"you may think that it is easier to tell someone that his sins are forgiven than to tell him to get up and walk.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐκοπώτερον",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰπεῖν",
+          "occurrence": 3
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἀφέωνται",
+          "occurrence": 2
+        },
+        {
+          "word": "‘",
+          "occurrence": 3
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁμαρτίαι",
+          "occurrence": 2
+        },
+        {
+          "word": "’",
+          "occurrence": 3
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰπεῖν",
+          "occurrence": 4
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "ἔγειρε",
+          "occurrence": 2
+        },
+        {
+          "word": "‘",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "περιπάτει",
+          "occurrence": 2
+        },
+        {
+          "word": "?",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "which is easier, to say, 'Your sins are forgiven,' or to say, 'Get up and walk'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quote. Alternate translation: \"they say that he has a demon\" or \"they accuse him of having a demon\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "λέγουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "δαιμόνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they say, 'He has a demon.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quote. Alternate translation: \"they say that he is a gluttonous man and a drunkard ... sinners.\" or \"they accuse him of eating and drinking too much and of being ... sinners.\" If you translated \"The Son of Man\" as \"I, the Son of man,\" you can state this as an indirect statement and use the first person. Alternate translation: \"they say that I am a gluttonous man and a drunkard ... sinners.\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "λέγουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "φάγος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "οἰνοπότης",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἁμαρτωλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they say, 'Look, he is a gluttonous man and a drunkard ... sinners!'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quotation. Alternate translation: \"Then Jesus commanded the man to stretch out his hand\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "τότε",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔκτεινόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρα",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Then Jesus said to the man, \"Stretch out your hand.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as an indirect quotation. Alternate translation: \"Someone told Jesus that his mother and brothers were outside and wanted to speak to him\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δέ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "μήτηρ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοί",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔξω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑστήκασιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητοῦντές",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Someone said to him, \"Look, your mother and your brothers stand outside, seeking to speak to you.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this as an indirect quote (AT): \"I will tell the reapers to first gather up the weeds and tie them in bundles to burn them, and then gather the wheat into my barn\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἐρῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "θερισταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "συλλέξατε",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζιζάνια",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "δήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "δέσμας",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατακαῦσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτά",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "σῖτον",
+          "occurrence": 1
+        },
+        {
+          "word": "συναγάγετε",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποθήκην",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "I will say to the reapers, \"First pull out the weeds and tie them in bundles to burn them, but gather the wheat into my barn.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If necessary, both direct quotations can be translated as indirect quotations. Alternate translation: \"Jesus asked them if they had understood all this, and they said that they did understand.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "συνήκατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        },
+        {
+          "word": "ναί",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "Have you understood all these things?\" The disciples said to him, \"Yes.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed as an indirect quote, if needed. Alternate translation: \"For John had said to Herod that it was not lawful for Herod to have Herodias as his wife.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἔλεγεν",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωάννης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξεστίν",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχειν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτήν",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "For John had said to him, \"It is not lawful for you to have her.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If you translated Jesus' questions as statements in [Matthew 17:25](../17/25.md), you may need to give an alternate response here. You could also state it as an indirect quotation. Alternate translation: \"When Peter said, 'Yes, that is true. Kings collect taxes from foreigners,' Jesus said\" or \"After Peter agreed with Jesus, Jesus said\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "εἰπόντος",
+          "occurrence": 1
+        },
+        {
+          "word": "δέ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλοτρίων",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔφη",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When he said, \"From others,\" Jesus said to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this direct quotation as an indirect quotation. This can also be stated in active form. Alternate translation: \"you will even be able to tell this mountain to get up and throw itself into the sea\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "κἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄρει",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπητε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 7
+        },
+        {
+          "word": "ἄρθητι",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "βλήθητι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "θάλασσαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will even say to this mountain, 'Be taken up and thrown into the sea,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This direct quotation can be stated as an indirect quotation. Also, this can be stated in active form. Alternate translation: \"servants, ordering them to tell those whom he invited\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "δούλους",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπατε",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "κεκλημένοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "servants, saying, 'Tell them who are invited",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the question that begins with the words \"have you not read\" in verse 31. Jesus asks this question to remind the religious leaders of what they know from scripture. \"I know you have read it, but you do not seem to understand what ... Jacob.'\" You can translate this direct quotation as an indirect quotation. \"God, who said to Moses that he is the God of Abraham, the God of Isaac, and the God of Jacob.\" (See: [[rc://en/ta/man/translate/figs-quotations]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἐγώ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰακώβ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "'I am the God ... Jacob'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as an indirect quotation. Alternate translation: \"if someone tells you that the Christ is in the wilderness, do\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἴπωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρήμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστίν",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if they say to you, 'Look, he is in the wilderness,' do not",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as an indirect quotation. Alternate translation: \"Or, if someone tells you that the Christ is in the inner room,\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 2
+        },
+        {
+          "word": "‘",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταμείοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Or, 'See, he is in the inner rooms,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This direct quotation can be stated as an indirect quotation. Alternate translation: \"saying that whomever he kissed was the one they should seize.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "φιλήσω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "αὐτός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "κρατήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "saying, \"Whomever I kiss, he is the one. Seize him.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This direct quotation can be stated as an indirect quotation. Alternate translation: \"Peter remembered that Jesus told him that before the rooster crowed, he would deny Jesus three times\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 75
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμνήσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρηκότος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλέκτορα",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπαρνήσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Then Peter remembered the words that Jesus had said, \"Before the rooster crows you will deny me three times.\"",
+      "occurrence": 1
+    }
+  }
+]

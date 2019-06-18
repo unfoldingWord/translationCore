@@ -1,0 +1,65 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the afflicted\" is a nominal adjective that can be stated as an adjective. Alternate translation: \"has helped those who are suffering\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "θλιβομένοις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπήρκεσεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "has relieved the afflicted",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"rich\" is a nominal adjective. It can be stated as an adjective. Alternate translation: \"Tell those who are rich\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "πλουσίοις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "παράγγελλε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Tell the rich",
+      "occurrence": 1
+    }
+  }
+]

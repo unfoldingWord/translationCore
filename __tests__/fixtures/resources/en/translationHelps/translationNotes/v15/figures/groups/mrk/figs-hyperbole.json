@@ -1,0 +1,373 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"all\" is an exaggeration to emphasize the great number of people who came. Alternate translation: \"many who were sick or possessed by demons\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "πάντας",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "κακῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "δαιμονιζομένους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all who were sick or possessed by demons",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Everyone\" is an exaggeration to emphasize the very many people who were looking for Jesus. Alternate translation: \"Many people are looking for you\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητοῦσίν",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Everyone is looking for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"throughout all\" are an exaggeration used to emphasize that Jesus went to many locations during his ministry. Alternate translation: \"He went to many places in Galilee\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἦλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅλην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Γαλιλαίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He went throughout all of Galilee",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"everywhere\" is a hyperbole used to emphasize how very many places the people came from. Alternate translation: \"from all over the region\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": "πάντοθεν",
+      "glQuote": "from everywhere",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration to emphasize how shallow the roots were. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ῥίζαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no root",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"everything\" is an exaggeration. He explained all his parables. Alternate translation: \"he explained all his parables\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἐπέλυεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he explained everything",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) literal, \"they may lose consciousness temporarily\" or 2) hyperbolic exaggeration, \"they may become weak.\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": "ἐκλυθήσονται",
+      "glQuote": "they may faint",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"no\" is an exaggeration. The disciples did have one loaf of bread ([Mark 8:14](../08/14.md)), but that was not much different from having no bread at all. Alternate translation: \"very little bread\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἄρτους",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχουσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we do not have bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"the whole world\" are an exaggeration for great riches. Alternate translation: \"to gain everything he ever wanted\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "κερδήσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to gain the whole world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses an exaggeration to emphasize how very difficult it is for rich people to get into the kingdom of God. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "εὐκοπώτερόν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσελθεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is easier ... to enter into the kingdom of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is exaggerating because he feels so much distress and sorrow that he feels like he is about to die, though he knows he will not die until after the sun rises. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "θανάτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "even to the point of death",
+      "occurrence": 1
+    }
+  }
+]

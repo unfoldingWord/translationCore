@@ -1,0 +1,346 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words are used to show that there is a specific, chosen time and not just any time. Alternate translation: \"for that exact time\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥραν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "μῆνα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "ἐνιαυτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for that hour, that day, that month, and that year",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing and emphasize that God will, indeed, live among men. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκηνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σκηνώσει",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The dwelling place of God is with human beings, and he will live with them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing and emphasize God's eternal nature. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἄλφα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ὦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "τέλος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the alpha and the omega, the beginning and the end",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing. The second emphasizes the brilliance of Jerusalem by naming a specific jewel. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὅμοιος",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τιμιωτάτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθῳ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἰάσπιδι",
+          "occurrence": 1
+        },
+        {
+          "word": "κρυσταλλίζοντι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like a very precious jewel, like a stone of crystal-clear jasper",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These three phrases share similar meanings and emphasize that Jesus has and will exist for all time. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 22,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἄλφα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ὦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσχατος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "τέλος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the alpha and the omega, the first and the last, the beginning and the end",
+      "occurrence": 1
+    }
+  }
+]

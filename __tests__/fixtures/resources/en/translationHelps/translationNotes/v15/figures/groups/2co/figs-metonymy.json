@@ -1,0 +1,802 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"fleshly\" represents human. Alternate translation: \"We have not relied on human wisdom but on the grace of God\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "σοφίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκικῇ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "χάριτι",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "not relying on fleshly wisdom but on the grace of God.",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hearts\" refers to the innermost part of a person. Alternate translation: \"gave us the Spirit to live within each of us\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "δοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρραβῶνα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he gave us the pledge of the Spirit in our hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heart\" refers to the location of the emotions. Alternate translation: \"with extreme sorrow\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "συνοχῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with anguish of heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Word\" here is a metonym for \"message.\" Alternate translation: \"who sell God's message\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "καπηλεύοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who sell the word of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hearts\" refers to their thoughts and emotions. Possible meanings are 1) Paul and his coworkers are sure about the Corinthians being their letter of recommendation or 2) Paul and his coworkers care very deeply for the Corinthians. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐνγεγραμμένη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "written on our hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"Moses\" refers to the Old Testament law. This can be stated in active form. Alternate translation: \"whenever someone reads the Mosaic law\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἡνίκα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναγινώσκηται",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whenever Moses is read",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hearts\" represents what people think, and the people being unable to understand the old covenant is spoken of as if they have a veil that covers their hearts the way a physical veil would cover their eyes. Alternate translation: \"they are unable to understand what they are hearing\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κάλυμμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κεῖται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a veil lies over their heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hearts\" refers to the mind and thoughts. Alternate translation: \"in our minds\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in our hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"appearances\" refers to outward expressions of things like ability and status. The word \"heart\" refers to the inward character of a person. Alternate translation: \"those who praise their own actions, but do not care about what they really are in their inner being\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "προσώπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "καυχωμένους",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who boast about appearances but not about what is in the heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"world\" refers to people in the world. Alternate translation: \"in Christ, God is reconciling mankind to himself\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        },
+        {
+          "word": "καταλλάσσων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in Christ God is reconciling the world to himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"Achaia\" refers to the people who live in this province, and specifically to the people of the church in Corinth. Alternate translation: \"the people of Achaia have been preparing\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "Ἀχαΐα",
+          "occurrence": 1
+        },
+        {
+          "word": "παρεσκεύασται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Achaia has been ready",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heart\" refers to the thoughts and emotions. Alternate translation: \"give as he has determined\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἕκαστος",
+          "occurrence": 1
+        },
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "προῄρηται",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "let each one give as he has decided in his heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"bread\" refers to food in general. Alternate translation: \"food to eat\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἄρτον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "βρῶσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bread for food",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"flesh\" is a metonym for sinful human nature. \"we are acting from human motives\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        },
+        {
+          "word": "περιπατοῦντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as walking according to the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"walk\" is an metaphor for \"live\" and \"flesh\" is a metonym for physical life. Alternate translation: \"we live our lives in physical bodies\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        },
+        {
+          "word": "περιπατοῦντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as walking according to the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the word \"flesh\" is a metonym for physical life. Alternate translation: \"fight against our enemies using physical weapons\" or 2) the word \"flesh\" is a metonym for sinful human nature. Alternate translation: \"wage war in sinful ways\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        },
+        {
+          "word": "στρατευόμεθα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "wage war according to the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the word \"fleshly\" is a metonym for merely physical. Alternate translation: \"are not physical\" or 2) the word \"fleshly\" is a metonym for sinful human nature. Alternate translation: \"are not sinful\" or \"do not enable us to do wrong\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκικὰ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "are not fleshly",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"act of disobedience\" are a metonym for the people who commit those acts. Alternate translation: \"punish every one of you who disobey us\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκδικῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "παρακοήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to avenge every act of disobedience",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the metonym \"flesh\" refers to man in his sinful nature and his achievements. Alternate translation: \"about their own human achievements\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        },
+        {
+          "word": "στρατευόμεθα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "according to the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses the governor's hands as metonymy for the governor. Alternate translation: \"from the governor\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from his hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"souls\" is a metonym for the people themselves. Alternate translation: \"for you\" or \"so you will live well\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for your souls",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses an exclamation to emphasize that we should obey God the Father. This can be expressed as a statement. Alternate translation: \"Therefore even more so, we should obey the Father of spirits and live.\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "quote": [
+        {
+          "word": "πολὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μᾶλλον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑποταγησόμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πνευμάτων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ζήσομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How much more should we submit to the Father of spirits and live!",
+      "occurrence": 1
+    }
+  }
+]

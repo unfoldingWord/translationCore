@@ -1,0 +1,68 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Σαλήμ",
+      "glQuote": "Salem",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βαράκ",
+      "glQuote": "Barak",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a region at that time. Rome was the then-capital city of Italy. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰταλίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Italy",
+      "occurrence": 1
+    }
+  }
+]

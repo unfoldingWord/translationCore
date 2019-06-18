@@ -1,0 +1,182 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"breath\" represents the power of God. Alternate translation: \"by the power of his spoken word\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with the breath of his mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" represents the seat of emotions. Alternate translation: \"comfort you and strengthen you for\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "παρακαλέσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "στηρίξαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "comfort and establish your hearts in",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's thoughts or mind. Alternate translation: \"cause you to understand\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κατευθύναι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "direct your hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Name\" here is a metonym for the person of Jesus Christ. Alternate translation: \"as if our Lord Jesus Christ himself were speaking\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the name of our Lord Jesus Christ",
+      "occurrence": 1
+    }
+  }
+]

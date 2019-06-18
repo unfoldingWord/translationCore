@@ -2,6 +2,7 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   selections: [],
+  nothingToSelect: false,
   userName: null,
   modifiedTimestamp: null,
   gatewayLanguageCode: null,
@@ -14,6 +15,7 @@ const selectionsReducer = (state = initialState, action) => {
       return {
         ...state,
         selections: action.selections,
+        nothingToSelect: !!action.nothingToSelect,// if undefined make it false
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp,
         gatewayLanguageCode: action.gatewayLanguageCode,

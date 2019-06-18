@@ -1,0 +1,237 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of not being guilty as if his conscience were a person that could speak. Alternate translation: \"We know by our conscience\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτύριον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "συνειδήσεως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "the testimony of our conscience",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the Old Testament law as a person who kills. Following that law leads to spiritual death. Alternate translation: \"the written law leads to death\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γράμμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκτέννει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the letter kills",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of death and life as if they are persons who can work. This means that they are always in danger of physical death so that the Corinthians can have spiritual life. (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "θάνατος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνεργεῖται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "death is at work in us, but life is at work in you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"joy\" and \"poverty\" as if they were living things that can produce generosity. Alternate translation: \"because of the people's great joy and extreme poverty, they have become very generous\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "περισσεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "βάθους",
+          "occurrence": 1
+        },
+        {
+          "word": "πτωχεία",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπερίσσευσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλοῦτος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁπλότητος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "the abundance of their joy and the extremity of their poverty have produced great riches of generosity",
+      "occurrence": 1
+    }
+  }
+]

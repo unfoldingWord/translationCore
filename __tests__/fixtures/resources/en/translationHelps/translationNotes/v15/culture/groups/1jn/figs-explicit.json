@@ -1,0 +1,278 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that a person who claims to be without sin would be calling God a liar since he said that everyone is a sinner. Alternate translation: \"it is the same as calling him a liar, because he said we have all sinned\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ψεύστην",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιοῦμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we make him out to be a liar",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"advocate\" here refers to Jesus. Alternate translation: \"we have Jesus Christ, the one who is righteous, who speaks to the Father and asks him to forgive us\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Παράκλητον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατέρα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "δίκαιον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we have an advocate with the Father, Jesus Christ, the one who is righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here, \"beginning\" refers to when they decided to follow Christ. Alternate translation: \"from when you first believed in Christ\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀρχῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the beginning",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Jesus. Alternate translation: \"Jesus, the Holy One\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Holy One",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"remember and believe what you have heard from the beginning.\" How they heard it, what they heard, and what \"the beginning\" means can be made explicit: Alternate translation: \"continue to trust what we have taught you about Jesus just as you have trusted since you first became believers\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠκούσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "μενέτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "let what you have heard from the beginning remain in you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The translator can state more clearly the implied reason about why we should believe what God says: Alternate translation: \"If we believe what people say, then we should believe what God says because he always tells the truth\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτυρίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        },
+        {
+          "word": "λαμβάνομεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτυρία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μείζων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστίν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If we receive the witness of men, the witness of God is greater",
+      "occurrence": 1
+    }
+  }
+]

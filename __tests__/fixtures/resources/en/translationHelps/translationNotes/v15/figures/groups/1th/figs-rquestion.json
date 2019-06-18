@@ -1,0 +1,246 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses questions to emphasize the reasons he wants to come see the Thessalonian believers. Alternate translation: \"For you are our confidence for the future, and joy, and crown of pride in front of our Lord Jesus at his coming.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 2
+        },
+        {
+          "word": "στέφανος",
+          "occurrence": 1
+        },
+        {
+          "word": "καυχήσεως",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 3
+        },
+        {
+          "word": "οὐχὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρουσίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "For what is our hope, or joy, or crown of pride in front of our Lord Jesus at his coming? Is it not you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question can be expressed as a statement. Alternate translation: \"We cannot thank God enough for what he has done for you! We greatly rejoice over you when we pray to our God!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίνα",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐχαριστίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνταποδοῦναι",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾗ",
+          "occurrence": 1
+        },
+        {
+          "word": "χαίρομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For what thanks can we give to God for you, for all the joy that we have before our God over you?",
+      "occurrence": 1
+    }
+  }
+]

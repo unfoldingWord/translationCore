@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some copies of this text say \"Son of God\"; others say \"chosen one of God.\" (See: [[rc://en/ta/man/translate/translate-textvariants ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-textvariants",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Son of God ",
+      "occurrence": 1
+    }
+  }
+]

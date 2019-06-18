@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may convert this to a modern measure. Alternate translation: \"33 kilograms\" (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "quote": "ταλαντιαία",
+      "glQuote": "a talent",
+      "occurrence": 1
+    }
+  }
+]

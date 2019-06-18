@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses two words that mean almost the same thing to emphasize the idea of perfection. Alternate translation: \"perfect\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἀμώμους",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνεγκλήτους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "blameless, and above reproach",
+      "occurrence": 1
+    }
+  }
+]

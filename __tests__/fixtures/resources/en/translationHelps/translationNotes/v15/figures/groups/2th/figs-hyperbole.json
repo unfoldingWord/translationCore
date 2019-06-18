@@ -1,0 +1,84 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses \"always\" as a generalization meaning \"often\" or \"regularly. The sentence emphasizes the greatness of what God is doing in the lives of the Thessalonian believers. Alternate translation: \"We should often give thanks to God\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "εὐχαριστεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφείλομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντοτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We should always give thanks to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"always\" is a generalization. Alternate translation: \"we should continually give thanks\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὀφείλομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐχαριστεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πάντοτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we should always give thanks",
+      "occurrence": 1
+    }
+  }
+]

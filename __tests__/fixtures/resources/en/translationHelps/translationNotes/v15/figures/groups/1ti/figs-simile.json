@@ -1,0 +1,80 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses these similes to tell Timothy that he should treat fellow believers with sincere love and respect. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀδελφούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as if he were a father ... as brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses these similes to tell Timothy that he should treat fellow believers with sincere love and respect. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "μητέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀδελφὰς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as mothers ... as sisters",
+      "occurrence": 1
+    }
+  }
+]

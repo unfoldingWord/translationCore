@@ -1,0 +1,94 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"how\" marks this phrase as an exclamation, not as a question. Alternate translation: \"then the service of righteousness must abound in so much more glory!\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "quote": [
+        {
+          "word": "πολλῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "μᾶλλον",
+          "occurrence": 1
+        },
+        {
+          "word": "περισσεύει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνης",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how much more does the ministry of righteousness abound in glory!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"How\" makes this statement an exclamation. Alternate translation: \"Your determination to prove you were innocent was very great!\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "quote": [
+        {
+          "word": "σπουδήν",
+          "occurrence": 1
+        },
+        {
+          "word": ":",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολογίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what earnestness, what eagerness to defend yourselves",
+      "occurrence": 1
+    }
+  }
+]

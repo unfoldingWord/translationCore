@@ -1,0 +1,468 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑπτὰ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "seven years",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) she had been a widow for 84 years or 2) she was a widow and was now 84 years old. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "χήρα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀγδοήκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "τεσσάρων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "was a widow for eighty-four years",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"30 years old\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τριάκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "thirty years old",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "forty days",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"about 5,000 men.\" This number does not include the women and children who might have been present. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ὡσεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνδρες",
+          "occurrence": 1
+        },
+        {
+          "word": "πεντακισχίλιοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about five thousand men",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"50 each\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἀνὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεντήκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fifty each",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"70.\" Some versions say \"seventy-two\" or \"72.\" You may want to include a footnote that says that. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": "ἑβδομήκοντα",
+      "glQuote": "seventy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may want to add a footnote: \"Some versions have '72' instead of '70.'\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": "ἑβδομήκοντα",
+      "glQuote": "seventy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"18 people\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεκαοκτὼ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "eighteen people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"18 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        },
+        {
+          "word": "δεκαοκτώ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "eighteen years",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"18 long years.\" The word \"long\" here emphasizes that eighteen years was a very long time for the woman to suffer. Other languages may have other ways of emphasizing this. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "δέκα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀκτὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "eighteen long years",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"10,000 ... 20,000\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "δέκα",
+          "occurrence": 1
+        },
+        {
+          "word": "χιλιάσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἴκοσι",
+          "occurrence": 1
+        },
+        {
+          "word": "χιλιάδων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "ten thousand ... twenty thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"100 ... 99\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐνενήκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐννέα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "hundred ... ninety-nine",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"99\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἐνενήκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐννέα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "ninety-nine",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"100 ... 50\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πεντήκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a hundred ... fifty",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"80\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": "ὀγδοήκοντα",
+      "glQuote": "eighty",
+      "occurrence": 1
+    }
+  }
+]

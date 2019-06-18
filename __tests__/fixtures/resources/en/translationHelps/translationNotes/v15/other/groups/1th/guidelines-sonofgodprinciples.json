@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus that describes his relationship to God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his Son",
+      "occurrence": 1
+    }
+  }
+]

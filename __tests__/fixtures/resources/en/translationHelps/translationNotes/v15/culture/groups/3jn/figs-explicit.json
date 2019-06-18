@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to John, the apostle and disciple of Jesus. He refers to himself as \"elder\" either because of his old age or because he is a leader in the church. The name of the author can be made explicit: \"I, John the elder, am writing.\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρεσβύτερος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The elder",
+      "occurrence": 1
+    }
+  }
+]

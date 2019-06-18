@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" refers to the Thessalonian believers. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "εἰρήνη",
+      "glQuote": "peace be to you",
+      "occurrence": 1
+    }
+  }
+]

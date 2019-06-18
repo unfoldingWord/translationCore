@@ -1,0 +1,73 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate these phrases with verbs in positive terms. Alternate translation: \"God will soon condemn them; he is ready to destroy them\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "οἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίμα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀργεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπώλεια",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "νυστάζει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "their condemnation has not been idle, and their destruction is not asleep",
+      "occurrence": 1
+    }
+  }
+]

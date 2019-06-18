@@ -1,0 +1,118 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is using irony and a rhetorical question to say that the Galatians are acting as though someone has put a spell on them. He does not really believe that someone has put a spell on them. Alternate translation: \"You behave as if someone has put a spell on you!\" (See: [[rc://en/ta/man/translate/figs-irony]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐβάσκανεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Who has put a spell on you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This continues the irony from verse 1. Paul knows the answers to the rhetorical questions he is about to ask. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "μόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλω",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This is the only thing I want to learn from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking ironically here. He actually teaches that no one can be justified by trying to do the deeds required by the law. Alternate translation: \"all you who think you can be justified by doing the deeds required by the law\" or \"you who want to be justified by the law\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "οἵτινες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοῦσθε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you who would be justified by the law",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in the positive. Alternate translation: \"with complete certainty that God will answer\" (See: [[rc://en/ta/man/translate/figs-doublenegatives ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "μηδὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "διακρινόμενος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in faith, doubting nothing ",
+      "occurrence": 1
+    }
+  }
+]

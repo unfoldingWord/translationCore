@@ -1,0 +1,1186 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"there was a particular\" or \"there was a.\" This is a way of introducing a new character in a story. Consider how your language does this. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἱερεύς",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there was a certain priest",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces Mary as a new character in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 2
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "παρθένου",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαριάμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the name of the virgin was Mary",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces Joseph as a new participant in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωσὴφ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Joseph also",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Mary traveled with Joseph from Nazareth. It is likely that women were also taxed, so Mary would have needed to travel and be registered as well. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "σὺν",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαριὰμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with Mary",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to a new person in the story. Your language may have a way of doing this. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": "ἰδοὺ",
+      "glQuote": "Behold",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new participant into the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἅννα",
+          "occurrence": 1
+        },
+        {
+          "word": "προφῆτις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A prophetess named Anna was also there",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used to mark the introduction of a new character into the story; in this case, a demon-possessed man. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now ... there was a man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"a man who was covered with leprosy.\" This introduces a new character in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἀνὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλήρης",
+          "occurrence": 1
+        },
+        {
+          "word": "λέπρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a man full of leprosy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are new people in the story. Your language may have a way of showing that these are new people. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνδρες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now there were some men",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new character in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "There was a man there",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus now begins to speak to the entire crowd, rather than just to his disciples. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούουσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to you who are listening",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to the introduction of the dead man into the story. Your language may have a way of doing this. Alternate translation: \"there was a dead man who\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τεθνηκὼς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "behold, a man who had died",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to a new person in the story. Your language may have a way of doing this. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "γυνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now behold, there was a woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new character in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "γυνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖσα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there was a woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to the new person in the story. Your language may have a way of doing this. English uses \"There was a man in the crowd who\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Behold, a man from the crowd",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"You see\" introduces us to the evil spirit in the man's story. Your language may have a way of doing this. Alternate translation: \"There is an evil spirit that\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "See, a spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new character in the parable. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἄνθρωπός",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A certain man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This expression introduces a new person in the story, but does not identify him by name. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἱερεύς",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain priest",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new person in the story without giving his name. We know only that he was from Samaria. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "Σαμαρείτης",
+          "occurrence": 1
+        },
+        {
+          "word": "δέ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But a certain Samaritan",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces Martha as a new character. Your language may have a way of introducing new people. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "γυνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Μάρθα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain woman named Martha",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new character into the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "νομικῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "one of the teachers of the law",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" here alerts us to a new person in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "γυνὴ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there was a woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to a new person in the story. Your language may have a way of doing this. English uses \"There in front of him was a man\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπός",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now there in front of him was a man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new person. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "συνανακειμένων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "one of those who reclined at table",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new character in the parable. Some languages might say \"There was a man who\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἄνθρωπός",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A certain man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new character in the parable. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἄνθρωπός",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "πλούσιος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "There was a certain rich man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase introduces a person in Jesus' story. It is not clear if this is a real person or if it is simply a person in a story that Jesus tells in order to make a point. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πλούσιος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain rich man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase introduces another person in Jesus' story. It is not clear if this is a real person or simply a person in a story that Jesus tells in order to make a point. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "πτωχὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Λάζαρος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain poor man named Lazarus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses this phrase to introduce a new character to the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "χήρα",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now there was a widow",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a new character in the story. It only identifies him by his position. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἄρχων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain ruler",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"there was a blind man sitting.\" Here \"certain\" means only that the man is an important new participant to the story but Luke does not mention his name. He is a new participant in the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "τυφλός",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκάθητο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain blind man was sitting",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to a new person in the story. Your language may have a way of doing this. Alternate translation: \"There was a man who was\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνὴρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now, there was a man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a way of introducing a new character to the story. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "τινα",
+          "occurrence": 1
+        },
+        {
+          "word": "χήραν",
+          "occurrence": 1
+        },
+        {
+          "word": "πενιχρὰν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain poor widow",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to a new group in the story. Your language may have a way of doing this. Alternate translation: \"there was a crowd that appeared\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὄχλος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "behold, a crowd appeared",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"behold\" alerts us to a new person in the story. Your language may have a way of doing this. Alternate translation: \"There was a man who was\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδοὺ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνὴρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now there was a man",
+      "occurrence": 1
+    }
+  }
+]

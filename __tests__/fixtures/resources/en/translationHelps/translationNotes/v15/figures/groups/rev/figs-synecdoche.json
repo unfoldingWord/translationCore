@@ -1,0 +1,321 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since people see with the eyes, the word \"eye\" is used to refer to people. Alternate translation: \"every person\" or \"everyone\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "every eye",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the person speaking. Alternate translation: \"who\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἥτις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whose voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"feet\" represent the person before whom these people bow down. Alternate translation: \"before you\" or \"to you\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐνώπιον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ποδῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "before your feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The voice refers to the one who was speaking. John does not say who the speaker was, but it may have been God. Alternate translation: \"I heard someone speaking\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἤκουσα",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I heard a voice from",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The voice refers to the speaker. Alternate translation: \"The speaker said\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "λέγουσαν",
+      "glQuote": "The voice said",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"voice\" refers to words spoken by someone other than the angel. Alternate translation: \"but I heard someone speaking from heaven\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἤκουσα",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but I heard a voice from heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"voice\" refers to the speaker. Alternate translation: \"The one I heard speak from heaven\" or \"The one who had spoken to me from heaven\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἣν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤκουσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The voice I heard from heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to all the salt water lakes and oceans. (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "θάλασσαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to all bodies of fresh water. (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ποταμοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πηγὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑδάτων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the rivers and the springs of water",
+      "occurrence": 1
+    }
+  }
+]

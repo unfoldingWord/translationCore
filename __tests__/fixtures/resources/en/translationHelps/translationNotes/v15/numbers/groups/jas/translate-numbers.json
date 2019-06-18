@@ -1,0 +1,33 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"3 ... 6\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τρεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἕξ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "three ... six ",
+      "occurrence": 1
+    }
+  }
+]

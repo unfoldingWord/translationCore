@@ -1,0 +1,113 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"By word\" here is a synecdoche for \"by instructions\" or \"by teachings.\" You can make clear the implicit information. Alternate translation: \"whether by what we taught you in person or by what we wrote to you in a letter\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἴτε",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "εἴτε",
+          "occurrence": 2
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιστολῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whether by word or by our letter",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit that this is Paul's prayer for the Thessalonians. Alternate translation: \"I pray that the Lord of peace himself gives you\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "δῴη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "may the Lord of peace himself give you",
+      "occurrence": 1
+    }
+  }
+]

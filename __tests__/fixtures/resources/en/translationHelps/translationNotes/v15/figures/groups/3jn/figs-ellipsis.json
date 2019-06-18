@@ -1,0 +1,69 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There are words left out but they are understood. Alternate translation: \"but imitate the good things that people do\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγαθόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but what is good",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "What John is confirming is implied and can be made specific here. Alternate translation: \"We also speak well of Demetrius\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μαρτυροῦμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We also bear witness",
+      "occurrence": 1
+    }
+  }
+]

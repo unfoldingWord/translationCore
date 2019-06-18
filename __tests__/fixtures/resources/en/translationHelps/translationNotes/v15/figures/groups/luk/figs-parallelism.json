@@ -1,0 +1,279 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing and are repeated to emphasize how strongly their enemies are against them. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 71
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐχθρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μισούντων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our enemies ... of all those who hate us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are two ways of saying that this is a comparison. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὁμοιώσω",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τίνι",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰσὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅμοιοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I compare ... What are they like",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means the same thing as the first part of the sentence in order to emphasize its truth. It can also be stated in active form. Alternate translation: \"people will learn about everything that others try to hide\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρυπτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γνωσθήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "nor hidden that will not be known",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is basically the same as the previous question. Some languages can use both questions, and some would use only one. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "τίνι",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁμοιώσω",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτήν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what can I compare it to?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two sentences have similar meaning and they are combined for emphasis. Some languages emphasize in a different way. Alternate translation: \"You must certainly allow the children to come to me\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἄφετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παιδία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔρχεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πρός",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "κωλύετε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Permit the little children to come to me, and do not forbid them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two sentences have similar meaning said twice for emphasis. Some languages have different ways of showing emphasis. Alternate translation: \"the Lord is the God of living people only\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζώντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he is not the God of the dead, but of the living",
+      "occurrence": 1
+    }
+  }
+]

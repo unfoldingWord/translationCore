@@ -1,0 +1,86 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "forty years",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "forty years",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἑπτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "seven days",
+      "occurrence": 1
+    }
+  }
+]

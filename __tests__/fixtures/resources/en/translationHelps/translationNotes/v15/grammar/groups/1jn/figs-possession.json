@@ -1,0 +1,54 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Possible meanings are 1) \"the love of God\" refers to a person loving God, and \"perfected\" represents completely or fully. Alternate translation: \"it is that person who loves God completely\" or 2) \"the love of God\" refers to God loving people, and \"perfected\" represents completing its purpose. Alternate translation: \"God's love has achieved its purpose in that person's life\" (See: [[rc://en/ta/man/translate/figs-possession]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-possession",
+      "quote": [
+        {
+          "word": "ἀληθῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγάπη",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τετελείωται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in him truly the love of God has been perfected",
+      "occurrence": 1
+    }
+  }
+]

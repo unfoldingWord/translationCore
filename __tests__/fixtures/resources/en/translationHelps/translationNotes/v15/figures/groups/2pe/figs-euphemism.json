@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"fathers\" refers to ancestors who lived long ago. Falling asleep is a euphemism for dying. Alternate translation: \"our ancestors died\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκοιμήθησαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our fathers fell asleep",
+      "occurrence": 1
+    }
+  }
+]

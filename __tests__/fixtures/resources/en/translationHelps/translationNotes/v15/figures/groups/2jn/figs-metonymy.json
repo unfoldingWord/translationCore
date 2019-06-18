@@ -1,0 +1,42 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Coming in the flesh is a metonym for being a real person. Alternate translation: \"Jesus Christ came as a real human\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρχόμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus Christ came in the flesh",
+      "occurrence": 1
+    }
+  }
+]

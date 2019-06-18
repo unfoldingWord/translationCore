@@ -1,0 +1,216 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"How about us soldiers, what must we do?\" John is not included in the words \"us\" and \"we.\" The soldiers have implied that John had told the crowd and the tax collector what they must do and want to know what they as soldiers are to do. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιήσωμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "And what should we do?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John speaks of himself but not Jesus, so \"we\" here is exclusive. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 49
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "εἴδομέν",
+      "glQuote": "we saw",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since Jesus was sending these people out in groups of two, it would be two people saying this. So languages that have a dual form of \"we\" would use it. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "ἀπομασσόμεθα",
+      "glQuote": "we wipe off",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"we\" refers only to the spies. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "οἴδαμεν",
+      "glQuote": "we know",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"us\" does not include Jesus. Jesus would not be part of the group that would prepare the meal. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "θέλεις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑτοιμάσωμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you want us to make preparations",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"We\" refers only the Council members, and not to Pilate of any other people nearby. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "εὕρομεν",
+      "glQuote": "We found",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Herod sent Jesus to return to us.\" The word \"us\" refers to Pilate, his soldiers, and the priests and scribes, but not those who were listening to Pilate. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "ἀνέπεμψεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he sent him back to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"us\" refers to the crowd only, and not to Pilate and his soldiers. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "ἀπόλυσον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "release to us",
+      "occurrence": 1
+    }
+  }
+]

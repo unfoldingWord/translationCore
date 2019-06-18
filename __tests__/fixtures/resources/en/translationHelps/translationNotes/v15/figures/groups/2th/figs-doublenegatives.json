@@ -1,0 +1,138 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses a double negative to emphasize the positive. This can be stated as a positive. Alternate translation: \"We lived among you as those who had much discipline\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠτακτήσαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We did not live among you as those who had no discipline",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses a double negative to emphasize the positive. This can be stated as a positive. Alternate translation: \"We certainly have the right to receive food from you, but instead we worked for our food\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We did this not because we have no authority. Instead, we did",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive form. Alternate translation: \"If a person wants to eat, he must work\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐργάζεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "μηδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσθιέτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The one who is unwilling to work must not eat",
+      "occurrence": 1
+    }
+  }
+]

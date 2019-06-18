@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise up is an idiom for causing someone who has died to become alive again. Possible meanings are 1) because God has caused Christ to come alive again, God has already given the believers in Colossae new spiritual life. Alternate translation: \"God has given you new life because you belong to Christ\" or 2) because God has caused Christ to come alive again, the believers in Colossae can know that after they die they will live with Christ, and Paul can speak of the believers living again as if it has already happened. Alternate translation: \"you can be sure that God will give you life as he has caused Christ to come alive again\" (See: [[rc://en/ta/man/translate/figs-pastforfuture]] and [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pastforfuture",
+      "quote": [
+        {
+          "word": "συνηγέρθητε",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God has raised you with Christ",
+      "occurrence": 1
+    }
+  }
+]

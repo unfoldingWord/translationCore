@@ -1,0 +1,318 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two words mean basically the same thing. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "παράβασις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "παρακοὴ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "trespass and disobedience",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two words mean basically the same thing and emphasize that nothing is hidden from God. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "γυμνὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τετραχηλισμένα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bare and open",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these words mean basically the same thing. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "δεήσεις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱκετηρίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "prayers and requests",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"secure\" and \"reliable\" mean basically the same thing and emphasize the complete reliability of the anchor. Alternate translation: \"a completely reliable anchor\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἄγκυραν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀσφαλῆ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "βεβαίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a secure and reliable anchor",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both of these refer to fellow Israelites. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πολίτην",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀδελφὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "neighbor ... brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"sins\" and \"lawless deeds\" mean basically the same thing. Together they emphasize how bad the sin is. Alternate translation: \"The things they did that were forbidden and how they broke the law\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνομιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Their sins and lawless deeds",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"foreigners\" and \"exiles\" mean basically the same thing. This emphasizes that this earth was not their true home. They were waiting for their true home that God would make for them. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ξένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "παρεπίδημοί",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they were foreigners and exiles on earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"reverence\" and \"awe\" share similar meanings and emphasize the greatness of reverence due to God. Alternate translation: \"with great respect and dread\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐλαβείας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δέους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with reverence and awe",
+      "occurrence": 1
+    }
+  }
+]

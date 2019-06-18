@@ -1,0 +1,106 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases refer to everyone from one extreme to the other. Alternate translation: \"no matter how important they were\" (See: [[rc://en/ta/man/translate/figs-merism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μικροῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "μεγάλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the least to the greatest ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"heaven\" and \"earth\" are used together to mean all beings and things in heaven and earth. (See: [[rc://en/ta/man/translate/figs-merism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "of heaven and earth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The extremes \"night\" and \"day\" mean they \"worshiped God continually.\" (See: [[rc://en/ta/man/translate/figs-merism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "νύκτα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        },
+        {
+          "word": "λατρεῦον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "worshiped God night and day ",
+      "occurrence": 1
+    }
+  }
+]

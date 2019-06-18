@@ -1,0 +1,158 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an Aramaic sentence, which Jesus spoke to the little girl in her language. Write these words as is with your alphabet. (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "quote": [
+        {
+          "word": "ταλιθὰ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "κοῦμ",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Talitha, koum!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Corban\" here is a Hebrew word that refers to things that people promise to give to God. Translators normally transliterate it using the target language alphabet. Some translators translate its meaning, and then leave out Mark's explanation of the meaning that follows. Alternate translation: \"is a gift to God\" or \"belongs to God\" (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "quote": "κορβᾶν",
+      "glQuote": "is Corban",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the author refers to something by an Aramaic word. This word should be copied as is into your language using your alphabet. (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "quote": "ἐφφαθά",
+      "glQuote": "Ephphatha",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word means \"save us,\" but people also shouted it joyfully when they wanted to praise God. You can translate it according to how it was used, or you can write \"Hosanna\" using your language's way of spelling that word. Alternate translation: \"Praise God\" (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "quote": "ὡσαννά",
+      "glQuote": "Hosanna",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a term used by Jewish children to address their father. Since it is followed by \"Father,\" it is best to transliterate this word. (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "quote": "Ἀββά",
+      "glQuote": "Abba",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are Aramaic words that should be copied as is into your language with similar sounds. (See: [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "quote": [
+        {
+          "word": "Ἐλωῒ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "Ἐλωῒ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "λεμὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σαβαχθάνει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Eloi, Eloi, lama sabachthani",
+      "occurrence": 1
+    }
+  }
+]

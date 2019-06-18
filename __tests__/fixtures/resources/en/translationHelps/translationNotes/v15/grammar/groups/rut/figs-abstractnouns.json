@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"the barley harvest\" can be translated with a verbal phrase. Alternate translation: \"when the farmers were just beginning to harvest barley\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "בִּ",
+          "occurrence": 1
+        },
+        {
+          "word": "תְחִלַּ֖ת",
+          "occurrence": 1
+        },
+        {
+          "word": "קְצִ֥יר",
+          "occurrence": 1
+        },
+        {
+          "word": "שְׂעֹרִֽים",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "at the beginning of the barley harvest",
+      "occurrence": 1
+    }
+  }
+]

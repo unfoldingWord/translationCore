@@ -1,0 +1,37 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Grasping and shaking the right hand was a symbol of fellowship. Alternate translation: \"welcomed ... as fellow workers\" or \"welcomed ... with honor\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "δεξιὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔδωκαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κοινωνίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "gave ... the right hand of fellowship",
+      "occurrence": 1
+    }
+  }
+]

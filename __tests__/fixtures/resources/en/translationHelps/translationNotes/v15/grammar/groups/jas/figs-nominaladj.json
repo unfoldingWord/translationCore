@@ -1,0 +1,96 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to poor people in general. Alternate translation: \"poor people\" (See: [[rc://en/ta/man/translate/figs-nominaladj ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πτωχοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the poor ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to rich people in general. Alternate translation: \"rich people\" (See: [[rc://en/ta/man/translate/figs-nominaladj ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλούσιοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the rich ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to proud people in general. Alternate translation: \"proud people\" (See: [[rc://en/ta/man/translate/figs-nominaladj ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": "ὑπερηφάνοις",
+      "glQuote": "the proud ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to humble people in general. Alternate translation: \"humble people\" (See: [[rc://en/ta/man/translate/figs-nominaladj ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": "ταπεινοῖς",
+      "glQuote": "the humble ",
+      "occurrence": 1
+    }
+  }
+]

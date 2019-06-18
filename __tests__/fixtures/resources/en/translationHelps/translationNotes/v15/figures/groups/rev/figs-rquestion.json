@@ -1,0 +1,414 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated as a command: \"The one who is worthy to do this should come to break the seals and open the scroll!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄξιος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνοῖξαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "βιβλίον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "λῦσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖδας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Who is worthy to open the scroll and break its seals?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This implies that God had decided that a certain number of people should be killed by their enemies. This can be translated in an active form. Alternate translation: \"until people had killed the full number of their fellow servants ... sisters whom God had decided people would kill, just as people had killed their fellow servants ... sisters\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῶσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "σύνδουλοι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀδελφοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 3
+        },
+        {
+          "word": "μέλλοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκτέννεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 5
+        },
+        {
+          "word": "αὐτοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "until the full number of their fellow servants and their brothers was reached who were to be killed, just as they had been killed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question shows how amazed they were about the beast. Alternate translation: \"No one is as powerful as the beast!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅμοιος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 4
+        },
+        {
+          "word": "θηρίῳ",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "Who is like the beast?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question shows how much the people feared the power of the beast. Alternate translation: \"No one could ever fight against the beast and win!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 2
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "πολεμῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Who can fight against it?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question is used to show their amazement at how great and glorious the Lord is. It can be expressed as an exclamation. Alternate translation: \"Lord, everyone will fear you and glorify your name!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "φοβηθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δοξάσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "μόνος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅσιος",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Who will not fear you, Lord, and glorify your name that alone is holy?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The angel used this question to gently scold John. Alternate translation: \"You should not be astonished!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθαύμασας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Why are you astonished?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This question shows the people the importance of the city of Babylon. Alternate translation: \"No other city is like the great city, Babylon!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁμοία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλει",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "μεγάλῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What city is like the great city?",
+      "occurrence": 1
+    }
+  }
+]

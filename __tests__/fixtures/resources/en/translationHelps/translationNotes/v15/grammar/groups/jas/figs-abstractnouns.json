@@ -1,0 +1,770 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The term \"dispersion\" normally referred to the Jews who were scattered in other countries, away from their homeland Israel. This abstract noun can be expressed with a phrase with the verb \"scattered.\" Alternate translation: \"who are scattered around the world\" or \"who live in other countries\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "διασπορᾷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the dispersion ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The expressions \"the testing,\" \"your faith,\" and \"endurance\" are nouns that stand for actions. God does the testing, that is, he finds out how much the believers trust and obey him. Believers (\"you\") believe in him and endure suffering. Alternate translation: \"when you suffer hardships, God is finding out how much you trust him. As a result, you will become able to endure even more hardships\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "δοκίμιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": "κατεργάζεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπομονήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the testing of your faith produces endurance ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The can be restated to remove the abstract nouns \"faith\" and \"works.\" Alternate translation: \"if someone says he believes in God but he does not do what God commands\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχειν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργα",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if someone says he has faith, but he has no works ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James is describing how someone may argue against his teaching and how he would respond. This can be restated to remove the abstract nouns \"faith\" and \"works.\" Alternate translation: \"'It is acceptable that you believe God and that I do what God commands.' Prove to me that you can believe God and not do what he commands, and I will prove to you that I believe God by doing what he commands\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχεις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "κἀγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχω",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖξόν",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 2
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "κἀγώ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "δείξω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔργων",
+          "occurrence": 2
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 3
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "\"You have faith, and I have works.\" Show me your faith without works, and I will show you my faith by my works ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be restated to remove the abstract nouns \"faith\" and \"works.\" Alternate translation: \"that if you do not do what God commands, then it is useless for you to say that you believe in God\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστις",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀργή",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that faith without works is useless ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The nouns \"blessing\" and \"cursing\" can be translated with a verbal phrase. Alternate translation: \"With the same mouth, a person blesses people and curses people\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξέρχεται",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐλογία",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατάρα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Out of the same mouth come blessing and cursing ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be restated to remove the abstract nouns \"humility\" and \"wisdom.\" Alternate translation: \"That person should live a good life by doing the kind of deeds that come from being humble and wise\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "δειξάτω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καλῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναστροφῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "πραΰτητι",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφίας",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let that person show a good life by his works in the humility of wisdom ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"truth\" can be stated as \"true.\" Alternate translation: \"do not boast that you are wise, because that is not true\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατακαυχᾶσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ψεύδεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "do not boast and lie against the truth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"wisdom\" can be stated as \"wise.\" - Alternate translation: \"Whoever acts like this is not wise according to what God in heaven teaches us. Instead this person is earthly, unspiritual, and demonic\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὕτη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνωθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "κατερχομένη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίγειος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ψυχική",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "δαιμονιώδης",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This is not the wisdom that comes down from above. Instead, it is earthly, unspiritual, demonic ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be restated to remove the abstract nouns \"jealousy,\" \"ambition,\" and \"confusion.\" Alternate translation: \"For when people are jealous and selfish, this causes them to act in disorderly and evil ways\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῆλος",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐριθεία",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαταστασία",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "φαῦλον",
+          "occurrence": 1
+        },
+        {
+          "word": "πρᾶγμα",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For where there are jealousy and ambition, there is confusion and every evil practice ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"from above\" is metonym that represents \"heaven\" which represents God himself. The abstract noun \"wisdom\" can be stated as \"wise.\" Alternate translation: \"But when a person is wise according to what God in heaven teaches, he acts in ways that are first pure\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνωθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφία",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγνή",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But the wisdom from above is first pure ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"peace\" can be stated as \"peacefully.\" Alternate translation: \"cause people to live peacefully\" or \"help people not to be angry with each other\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ποιοῦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "make peace ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James states that these people will suffer terribly in the future and writes as if their sufferings were objects that were coming toward them. The abstract noun \"miseries\" can be translated as a verb. Alternate translation: \"because you will suffer terribly in the future\" (See: [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταλαιπωρίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπερχομέναις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "because of the miseries coming on you ",
+      "occurrence": 1
+    }
+  }
+]

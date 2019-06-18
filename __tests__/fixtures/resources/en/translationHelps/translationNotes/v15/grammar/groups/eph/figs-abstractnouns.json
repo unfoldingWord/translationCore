@@ -1,0 +1,50 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract nouns \"discipline\" and \"instruction\" can be expressed as verbs. Alternate translation: \"teach them to become adults by making sure that they know and do what the Lord wants them to do\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἐκτρέφετε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "παιδείᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "νουθεσίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "raise them in the discipline and instruction of the Lord",
+      "occurrence": 1
+    }
+  }
+]

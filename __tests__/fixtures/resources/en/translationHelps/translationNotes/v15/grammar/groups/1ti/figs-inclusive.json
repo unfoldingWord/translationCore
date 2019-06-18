@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"us\" refers to the entire Christian community, including Timothy. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "λοιδορίας",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to slander us",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,143 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"sister\" means she was a believer, and not a relative. Alternate translation: \"Apphia our fellow believer\" or \"Apphia our spiritual sister\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἀπφίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Apphia our sister",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man in the church with Philemon. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀρχίππῳ",
+      "glQuote": "Archippus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The name \"Onesimus\" means \"profitable\" or \"useful.\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ὀνήσιμον",
+      "glQuote": "Onesimus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a fellow believer and prisoner with Paul. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἐπαφρᾶς",
+      "glQuote": "Epaphras",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of men. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Μᾶρκος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀρίσταρχος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Δημᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "Λουκᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Mark ... Aristarchus ... Demas ... Luke",
+      "occurrence": 1
+    }
+  }
+]

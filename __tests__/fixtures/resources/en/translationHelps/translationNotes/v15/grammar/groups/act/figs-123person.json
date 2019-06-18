@@ -1,0 +1,231 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Messiah, Jesus, refers to himself with the words \"your Holy One.\" Alternate translation: \"neither will you allow me, your Holy One, to see decay\" (See: [[rc://en/ta/man/translate/figs-123person ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "δώσεις",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὅσιόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "διαφθοράν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "neither will you allow your Holy One to see decay ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If God is the speaker, he is referring to himself in the third person. Alternate translation: \"What I, God, have cleansed\" (See: [[rc://en/ta/man/translate/figs-123person ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ἃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκαθάρισεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What God has cleansed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God is speaking about himself in the third person. Alternate translation: \"may seek me, the Lord\" (See: [[rc://en/ta/man/translate/figs-123person ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ἐκζητήσωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "may seek the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a formal introduction to the letter. The chief captain begins by referring to himself. You can translate it in the first person. The words \"am writing\" are understood. Alternate translation: \"I, Claudius Lysias, am writing to you, the most excellent Governor Felix. Greetings to you\" (See: [[rc://en/ta/man/translate/figs-123person]] and [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "Κλαύδιος",
+          "occurrence": 1
+        },
+        {
+          "word": "Λυσίας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρατίστῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡγεμόνι",
+          "occurrence": 1
+        },
+        {
+          "word": "Φήλικι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "χαίρειν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Claudius Lysias to the most excellent Governor Felix, greetings ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is still speaking to King Agrippa, but he is referring to him in the third person. Alternate translation: \"For you ... to you ... from you\" (See: [[rc://en/ta/man/translate/figs-123person ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλεύς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the king ... to him ... from him ",
+      "occurrence": 1
+    }
+  }
+]

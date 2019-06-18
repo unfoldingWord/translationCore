@@ -1,0 +1,33 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can add the words \"because we are\" to make clear the logical connection between this statement and the next statement. Alternate translation: \"because we are receiving a kingdom\" or \"because God is making us members of his kingdom\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": [
+        {
+          "word": "βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "παραλαμβάνοντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "receiving a kingdom",
+      "occurrence": 1
+    }
+  }
+]

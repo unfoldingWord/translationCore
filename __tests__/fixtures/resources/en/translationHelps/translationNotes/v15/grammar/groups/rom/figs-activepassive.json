@@ -1,0 +1,3566 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God called me to be an apostle and chose me to tell people about the gospel\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κλητὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπόστολος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀφωρισμένος",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐαγγέλιον",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "called to be an apostle and set apart for the gospel of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"he\" refers to Jesus Christ. You can translate this in an active form. Alternate translation: \"God declared him with power to be the Son of God\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁρισθέντος",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he was declared with power to be the Son of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God has given Paul the gift of being an apostle. You can translate this in an active form. Alternate translation: \"God caused me to be an apostle. This is a special privilege\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐλάβομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστολὴν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we have received grace and apostleship ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"I am writing this letter to all of you in Rome whom God loves and has chosen to become his people\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πᾶσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ῥώμῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπητοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "κλητοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This letter is to all who are in Rome, the beloved of God, who are called to be holy people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"May God give you grace and peace\" or \"May God bless you and give you inner peace\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "χάρις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "May grace be to you, and peace ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"I mean that I want us to encourage each other by sharing our experiences of faith in Jesus\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "δέ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "συνπαρακληθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀλλήλοις",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "That is, I long to be mutually encouraged among you, through each other's faith, yours and mine ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"something has always prevented me\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκωλύθην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄχρι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῦρο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but I was hindered until now ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about the gospel message as if it were an object that God could physically show to people. You can translate this in an active form. Alternate translation: \"God has told us that it is by faith from beginning to end that people become righteous\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "δικαιοσύνη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀποκαλύπτεται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God's righteousness is revealed from faith to faith ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"as someone has written in the Scriptures\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as it has been written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"For God shows how angry he is\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀποκαλύπτεται",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀργὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the wrath of God is revealed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"they can know about God because of what they can plainly see\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "γνωστὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "φανερόν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that which is known about God is visible to them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated in active form. Alternate translation: \"because of the things that God has made\" or \"because people have seen the things that God has made\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιήμασιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the things that have been made ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"began to think foolish things\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐματαιώθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "διαλογισμοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "became foolish in their thoughts ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"They have in them a strong desire for\" or \"They strongly desire to do deeds of\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "πεπληρωμένους",
+      "glQuote": "They have been filled with ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"Many are constantly envying other people ... Many constantly desire to murder people ... to cause arguments and quarrels among people ... to deceive others ... to speak hatefully about others\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μεστοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "φθόνου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "φόνου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ἔριδος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "δόλου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 7
+        },
+        {
+          "word": "κακοηθείας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They are full of envy, murder, strife, deceit, and evil intentions ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"whom God will accept\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "δικαιωθήσονται",
+      "glQuote": "who will be justified ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"because people have taught you what is right from the law\" or \"because you have learned from the law\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κατηχούμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "because you have been instructed from the law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"many Gentiles blaspheme the name of God\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "βλασφημεῖται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνεσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the name of God is blasphemed among the Gentiles ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"The Scriptures themselves agree with what I am saying\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "As it has been written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"This is as the prophets have written in the Scriptures\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This is as it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God has made known a way to be right with him without obeying the law\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνη",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεφανέρωται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "apart from the law the righteousness of God has been made known ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God considered Abraham as a righteous person\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐλογίσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it was counted to him as righteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated in active form. Alternate translation: \"no one counts what the employer pays him as a gift from the employer\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "μισθὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "λογίζεται",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what he is paid is not counted as a gift ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"but as what his employer owes him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀφείλημα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but as what is owed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God considers that person's faith as righteousness\" or \"God considers that person righteous because of his faith\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "λογίζεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his faith is counted as righteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God considered the faith of Abraham as righteousness\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐλογίσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀβραὰμ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστις",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Faith was counted to Abraham as righteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"This means that God will consider them righteous\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "λογισθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This means that righteousness will be counted for them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"just as God said to Abraham\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰρημένον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "according to what he had been told ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"he became stronger in his faith\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐνεδυναμώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "πίστει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he was strengthened in faith ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"Therefore God counted Abraham's belief as righteousness\" or \"Therefore God considered Abraham righteous because Abraham believed him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "διὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλογίσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Therefore this was also counted to him as righteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"that God counted righteousness to him\" or \"God considered him righteous\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλογίσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that it was counted for him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"It was also for our benefit, because God will consider us righteous also if we believe\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "μέλλει",
+          "occurrence": 1
+        },
+        {
+          "word": "λογίζεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύουσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "also for us, for whom it will be counted, we who believe",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"whom God gave over to enemies for our trespasses and whom God brought back to life so he could make us right with him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "παρεδόθη",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παραπτώματα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠγέρθη",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαίωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "who was delivered up for our trespasses and was raised for our justification ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The death of the Son of the God has provided eternal forgiveness and made us friends with God, for all who believe in Jesus. You can translate this in an active form. Alternate translation: \"God allowed us to have a peaceful relationship with him because his son died for us\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κατηλλάγημεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "θανάτου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Υἱοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we were reconciled to God through the death of his Son ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"now that God has made us his friends again\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "καταλλαγέντες",
+      "glQuote": "after having been reconciled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"many people sinned\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἁμαρτωλοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατεστάθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the many were made sinners ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will make many people right with him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "δίκαιοι",
+          "occurrence": 1
+        },
+        {
+          "word": "κατασταθήσονται",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "πολλοί",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "will the many be made righteous ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"might die\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "καταργηθῇ",
+      "glQuote": "might be destroyed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"sin should no longer enslave us\" or \"we should no longer be slaves to sin\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μηκέτι",
+          "occurrence": 1
+        },
+        {
+          "word": "δουλεύειν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we should no longer be enslaved to sin ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise up is an idiom for causing someone who has died to become alive again. You can translate this in an active form. Alternate translation: \"We know since God brought Christ back to life after he died\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰδότες",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγερθεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We know that since Christ has been raised from the dead ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"pattern\" refers to the way of living that leads to righteousness. The believers change their old way of living to match this new way of living that Christian leaders teach to them. You can translate this in an active form. Alternate translation: \"the teaching that Christian leaders gave you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "παρεδόθητε",
+          "occurrence": 1
+        },
+        {
+          "word": "τύπον",
+          "occurrence": 1
+        },
+        {
+          "word": "διδαχῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the pattern of teaching that you were given ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"Christ has freed you from sin\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐλευθερωθέντες",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You have been made free from sin ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"But now that you have become free from sin and have become God's slaves\" or \"But now that God has freed you from sin and made you his slaves\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "νυνὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δέ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλευθερωθέντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "δουλωθέντες",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But now that you have been made free from sin and are enslaved to God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will consider her an adulteress\" or \"people will call her an adulteress\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μοιχαλὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "χρηματίσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "she will be called an adulteress ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"you also died to the law when through Christ you died on the cross\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθανατώθητε",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σώματος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you were also made dead to the law through the body of Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God has released us from the law\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κατηργήθημεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we have been released from the law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the law. You can translate this in an active form. Alternate translation: \"to the law which held us\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατειχόμεθα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to that by which we were held ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"we might fulfill what the law requires\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαίωμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the requirements of the law might be fulfilled in us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"For all the people whom the Spirit of God leads\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅσοι",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄγονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For as many as are led by the Spirit of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God will honor Christian believers when he honors Christ. You can translate this in an active form. Alternate translation: \"that God may glorify us along with him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "συνδοξασθῶμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that we may also be glorified with him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"I cannot compare the sufferings of this present time with\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "Λογίζομαι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄξια",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παθήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "καιροῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I consider that ... are not worthy to be compared with ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will reveal\" or \"God will make known\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ἀποκαλυφθῆναι",
+      "glQuote": "will be revealed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"for the time when God will reveal his children\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκάλυψιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the revealing of the sons of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"For God caused what he had created to be unable to achieve what he intended\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ματαιότητι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "κτίσις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπετάγη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the creation was subjected to futility ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will save creation\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "αὐτὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "κτίσις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλευθερωθήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the creation itself will be delivered ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"For God saved us because we hoped in him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπίδι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσώθημεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For in this certain hope we were saved ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"for those whom God chose\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κλητοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for those who are called ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God planned from before the beginning of creation to grow those who believe in Jesus, the Son of God, into persons who are like Jesus. You can translate this in an active form. Alternate translation: \"that he would change them to be like his Son\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "συμμόρφους",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰκόνος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to be conformed to the image of his Son ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"I personally would be willing to let God curse me and, keep me apart from Christ forever if that would help my fellow Israelites, my own people group, to believe in Christ\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ηὐχόμην",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνάθεμα",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶναι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "συγγενῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For I could wish that I myself would be cursed and set apart from Christ for the sake of my brothers, those of my own race according to the flesh ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form to express that God will give a son to Sarah. Alternate translation: \"I will give Sarah a son\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σάρρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a son will be given to Sarah ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"that people might proclaim my name\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅπως",
+          "occurrence": 2
+        },
+        {
+          "word": "διαγγελῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "so that my name might be proclaimed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"her\" refers to Hosea's wife, Gomer, who represents the nation of Israel. You can translate this in an active form. Alternate translation: \"I will choose her whom I did not love to be one whom I love\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠγαπημένην",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἠγαπημένην",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "her beloved who was not beloved ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses the word \"saved\" in a spiritual sense. If God saves a person, it means that through believing in Jesus' death on the cross, God has forgiven him and rescued him from being punished for his sin. You can translate this in an active form. Alternate translation: \"God will save\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "σωθήσεται",
+      "glQuote": "will be saved ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will save you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "σωθήσῃ",
+      "glQuote": "you will be saved ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is equivalent to: \"Everyone who does not believe will be shamed.\" The negative is used here for emphasis. You can translate this in an active form. Alternate translation: \"God will honor everyone who believes in him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "καταισχυνθήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Everyone who believes on him will not be put to shame ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Prophets often speak of things in the future as if they have already happened. This emphasizes that the prophecy will certainly come true. You can translate this in an active form. Alternate translation: \"Even though the Gentile people will not look for me, they will find me\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εὑρέθην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητοῦσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I was found by those who did not seek me ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"Thus God will save all Israel\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        },
+        {
+          "word": "σωθήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Thus all Israel will be saved ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"just as the scriptures record\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "just as it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"Do not let the world tell you what to do and think\" or 2) \"Do not allow yourself to act and do what the world does.\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνσχηματίζεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰῶνι",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not be conformed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"but let God change the way you think and behave\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μεταμορφοῦσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνακαινώσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "νοός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but be transformed by the renewal of your mind ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"You must love people sincerely and truly\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγάπη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνυπόκριτος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let love be without hypocrisy ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"show affection\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "φιλόστοργοι",
+      "glQuote": "be affectionate ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"For someone has written\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"And the people who are in authority are there because God put them there\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "τεταγμέναι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσίν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The authorities that exist have been appointed by God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will judge those who oppose government authority\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀνθεστηκότες",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίμα",
+          "occurrence": 1
+        },
+        {
+          "word": "λήμψονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who oppose it will receive judgment on themselves ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"For someone has written in the Scriptures: 'As\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγώ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For it is written, \"As I",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"people will approve of him\" or \"people will respect him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "δόκιμος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώποις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "approved by people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will say that the person does wrong if he is not sure if it is right to eat a certain food, but he eats it anyway\" or \"The person who is not sure if it is right to eat a certain food, but then eats it anyway will have a troubled conscience\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακρινόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "φάγῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "κατακέκριται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He who doubts is condemned if he eats ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"For in times past, the prophets wrote everything in the Scriptures to teach us\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅσα",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "προεγράφη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμετέραν",
+          "occurrence": 1
+        },
+        {
+          "word": "διδασκαλίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγράφη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For whatever was previously written was written for our instruction ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"as someone has written in the Scriptures\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "As it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of grace as if it were a physical gift that God had given him. God had appointed Paul and apostle even though he had persecuted believers before he decided to follow Jesus. You can translate this in an active form. Alternate translation: \"the grace that God gave me\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "δοθεῖσάν",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the grace given me by God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated in active form: Alternative translation: Alternate translation: \"These are things that Christ has accomplished through what I have said and done\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "λόγῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "These are things done by word and action ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul refers to what Isaiah wrote in the scriptures. You can translate this in an active form and make the meaning explicit. Alternate translation: \"What is happening is like what Isaiah wrote in the scriptures\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is as it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"they also hindered me\" or \"people also hindered me\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνεκοπτόμην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I was also hindered ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God may rescue me from those who are disobedient\" or \"God may keep those who are disobedient from harming me\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ῥυσθῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπειθούντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I may be rescued from those who are disobedient ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"The apostles know them very well\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οἵτινές",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίσημοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστόλοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They are prominent among the apostles ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"whom the Lord has chosen\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλεκτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "chosen in the Lord ",
+      "occurrence": 1
+    }
+  }
+]

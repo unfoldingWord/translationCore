@@ -1,0 +1,201 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"from God\" are understood in the second part of the sentence. This can also be stated in positive form. Alternate translation: \"whoever does not do what is righteous is not from God; whoever does not love his brother is also not from God\" or \"those who do what is righteous are from God, and those who love their brothers are from God\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγαπῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Whoever does not do what is righteous is not from God, neither is the one who does not love his brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If two negative statements in a row are confusing, this can be translated differently. Alternate translation: \"the one who hates his brother, whom he has seen, cannot love God, whom he has not seen\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀδελφὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑώρακεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 4
+        },
+        {
+          "word": "Θεὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑώρακεν",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 7
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπᾶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the one who does not love his brother, whom he has seen, cannot love God, whom he has not seen",
+      "occurrence": 1
+    }
+  }
+]

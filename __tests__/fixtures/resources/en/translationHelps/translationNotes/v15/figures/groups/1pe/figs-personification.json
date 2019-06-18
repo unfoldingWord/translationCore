@@ -1,0 +1,86 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"patience\" is a metonym for God himself. Peter writes of God's patience as if it is a person. Alternate translation: \"when God was waiting patiently\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ὅτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεξεδέχετο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μακροθυμία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when the patience of God was waiting",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter describes \"love\" as if it were a person who places a cover over the sins of others. Possible meanings are 1) \"for a person who loves will not try to find out if another person has sinned\" or 2) \"for a person who loves will forgive the sins of other people, even if those sins are many\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγάπη",
+          "occurrence": 1
+        },
+        {
+          "word": "καλύψει",
+          "occurrence": 1
+        },
+        {
+          "word": "πλῆθος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτιῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for love covers a multitude of sins",
+      "occurrence": 1
+    }
+  }
+]

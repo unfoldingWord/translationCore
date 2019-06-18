@@ -1,0 +1,82 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase gives information about how Moses and Elijah looked. Some languages would translate it as a separate clause. Alternate translation: \"and they appeared in glorious splendor\" or \"and they were shining brightly\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "οἳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθέντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who appeared in glory",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase identifies the Sadducees as being the group of Jews that say that no one would rise from the dead. It does not imply that some Sadducees believed that there is a resurrection and some did not. (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "λέγοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνάστασιν",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ones who say that there is no resurrection",
+      "occurrence": 1
+    }
+  }
+]
