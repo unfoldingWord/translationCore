@@ -1,0 +1,460 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"eighth day\" refers to the time after the birth of the baby, counted from the first day, which was the day he was born. Alternate translation: \"on the eighth day of the baby's life\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 59
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀγδόῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "on the eighth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"three days after he dies\" or \"on the third day after his death\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "on the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the third day after his death. However, the disciples did not yet understand this, so it is best not to add this explanation when translating this verse. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "τρίτῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "on the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"The first servant\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the first",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"The second servant\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεύτερος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The second",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"even a third servant\" or \"yet another servant.\" The word \"yet\" hints at the fact that the landowner should not have had to send the second servant, but he went beyond that and sent a third servant. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": "τρίτον",
+      "glQuote": "a third",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"brother number one\" or \"the oldest\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the first",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"brother number two\" or \"the oldest brother who was still alive\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεύτερος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the second",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Brother number three\" or \"The oldest brother who was still alive\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Pilate said to the crowd again, for the third time\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then he said to them a third time",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Before dawn on Sunday\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "μιᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "σαββάτων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄρθρου",
+          "occurrence": 1
+        },
+        {
+          "word": "βαθέως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now at early dawn on the first day of the week",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews counted any portion of a day as a day. Therefore, the day Jesus was raised was the \"third day\" because it followed the day of his burial and the Sabbath day. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "on the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews counted any portion of a day as a day. Therefore, the day Jesus was raised was the \"third day\" because it followed the day of his burial and the Sabbath day. See how you translated this in [Luke 24:7](../24/07.md). (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τρίτην",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews counted any portion of a day as a day. Therefore, the day Jesus was raised was the \"third day\" because it followed the day of his burial and the Sabbath day. See how you translated this in [Luke 24:7](../24/07.md). (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third day",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This \"we\" does not include Jesus. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "ἐπροφητεύσαμεν",
+      "glQuote": "did we ... prophesy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is exclusive, meaning the demons only. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "ἡμᾶς",
+      "glQuote": "us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is not clear whether \"us\" refers only to Peter, James, and John, or if it refers to everyone there, including Jesus, Elijah, and Moses. If you can translate so that both options are possible, do so. (See: [[rc://en/ta/man/translate/figs-exclusive]] and [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "καλόν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὧδε",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it is good for us to be here",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"we\" refers to the speakers but not the hearers and so is exclusive. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "ἡμεῖς",
+      "glQuote": "we",
+      "occurrence": 1
+    }
+  }
+]

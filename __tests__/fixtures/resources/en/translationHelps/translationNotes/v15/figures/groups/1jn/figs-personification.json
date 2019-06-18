@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Eternal life\" is something God gives believers after they die, but it is also the power God gives believers in this life to help them to stop sinning and to do what please him. Here eternal life is spoken of as if it were a person that could live in someone. Alternate translation: \"a murderer does not have the power of spiritual life\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρωποκτόνος",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰώνιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "μένουσαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no murderer has eternal life residing in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"love\" is described as a person with the power to remove fear. God's love is perfect. Alternate translation: \"But when our love is complete, we are no longer afraid\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "τελεία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγάπη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξω",
+          "occurrence": 1
+        },
+        {
+          "word": "βάλλει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "φόβον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Instead, perfect love throws out fear",
+      "occurrence": 1
+    }
+  }
+]

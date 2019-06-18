@@ -1,0 +1,74 @@
+[
+  {
+    "id": "figs-apostrophe",
+    "name": "Apostrophe"
+  },
+  {
+    "id": "figs-doublenegatives",
+    "name": "Double Negatives"
+  },
+  {
+    "id": "figs-ellipsis",
+    "name": "Ellipsis"
+  },
+  {
+    "id": "figs-euphemism",
+    "name": "Euphemism"
+  },
+  {
+    "id": "figs-hendiadys",
+    "name": "Hendiadys"
+  },
+  {
+    "id": "figs-hyperbole",
+    "name": "Hyperbole and Generalization"
+  },
+  {
+    "id": "figs-idiom",
+    "name": "Idiom"
+  },
+  {
+    "id": "figs-irony",
+    "name": "Irony"
+  },
+  {
+    "id": "figs-litotes",
+    "name": "Litotes"
+  },
+  {
+    "id": "figs-merism",
+    "name": "Merism"
+  },
+  {
+    "id": "figs-metaphor",
+    "name": "Metaphor"
+  },
+  {
+    "id": "figs-metonymy",
+    "name": "Metonymy"
+  },
+  {
+    "id": "figs-parallelism",
+    "name": "Parallelism"
+  },
+  {
+    "id": "figs-personification",
+    "name": "Personification"
+  },
+  {
+    "id": "figs-rquestion",
+    "name": "Rhetorical Question"
+  },
+  {
+    "id": "figs-synecdoche",
+    "name": "Synecdoche"
+  },
+  {
+    "id": "figs-doublet",
+    "name": "Doublet"
+  },
+  {
+    "id": "figs-simile",
+    "name": "Simile"
+  }
+]

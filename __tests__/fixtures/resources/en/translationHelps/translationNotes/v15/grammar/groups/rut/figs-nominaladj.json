@@ -1,0 +1,42 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Naomi's husband and sons were the \"dead.\" This can be stated differently to remove the nominal adjective \"the dead.\" Alternate translation: \"the people who have already died\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "וְ",
+          "occurrence": 1
+        },
+        {
+          "word": "אֶת",
+          "occurrence": 2
+        },
+        {
+          "word": "־",
+          "occurrence": 3
+        },
+        {
+          "word": "הַ",
+          "occurrence": 2
+        },
+        {
+          "word": "מֵּתִ֑ים",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and to the dead",
+      "occurrence": 1
+    }
+  }
+]

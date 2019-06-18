@@ -1,0 +1,160 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"we\" refers to the author and includes his audience. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we must",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"we\" refers to both the writer and the readers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γεγόναμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For we have become",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"We can understand even more clearly.\" Here \"we\" refers to the author and his audience. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "περισσότερον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτι",
+          "occurrence": 1
+        },
+        {
+          "word": "κατάδηλόν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What we say is clearer yet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author is including the readers here, so the word \"we\" is inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἔχομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχιερέα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We have a high priest",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"us\" refers to the author and the readers. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ποιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "working in us",
+      "occurrence": 1
+    }
+  }
+]

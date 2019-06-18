@@ -1,0 +1,53 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some languages might prefer the verb \"go\" here. Alternate translation: \"I will go in to his home\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": [
+        {
+          "word": "εἰσελεύσομαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I will come into him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He approached the throne. Some languages would use the verb \"come.\" Alternate translation: \"He came\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": "ἦλθεν",
+      "glQuote": "He went",
+      "occurrence": 1
+    }
+  }
+]

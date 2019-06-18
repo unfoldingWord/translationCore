@@ -1,0 +1,2250 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This represents God speaking. Sometimes people avoid referring directly to God because they respect him. Alternate translation: \"God spoke from the heavens\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "φωνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A voice came out of the heavens",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"city\" is a metonym for the people who lived in the city. Here the word \"whole\" is probably a generalization to emphasize that most people from the city gathered. Alternate translation: \"Many people from that city gathered outside the door\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπισυνηγμένη",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "θύραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The whole city gathered together at the door",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"their hearts\" is a metonym for the people's thoughts. Alternate translation: \"were thinking to themselves\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διαλογιζόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "reasoned in their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"hearts\" is a metonym for their inner thoughts and desires. Alternate translation: \"this inside yourselves\" or \"these things\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "these things in your hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to physical life and is a metonym for a person. Alternate translation: \"someone from dying\" or \"someone's life\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ψυχὴν",
+      "glQuote": "a life",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"kingdom\" is a metonym for the people who live in the kingdom. Alternate translation: \"If the people who live in a kingdom are divided against each other\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μερισθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If a kingdom is divided against itself",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym for the people who live in a house. Alternate translation: \"family\" or \"household\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "οἰκία",
+      "glQuote": "house",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is emphasizing that what he has just said is important and may take some effort to understand and put into practice. The phrase \"has ears\" here is a metonym for the willingness to understand and obey. Alternate translation: \"Whoever is willing to listen, listen\" or \"Whoever is willing to understand, let him understand and obey\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούειν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκουέτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Whoever has ears to hear, let him hear",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"word\" represents God's message. Sowing the message represents teaching it. Alternate translation: \"the one who teaches people God's message\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is emphasizing that what he has just said is important and may take some effort to understand and put into practice. The phrase \"ears to hear\" here is a metonym for the willingness to understand and obey. See how you translated a similar phrase in [Mark 4:9](../04/09.md). Alternate translation: \"If anyone is willing to listen, listen\" or \"If anyone is willing to understand, let him understand and obey\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούειν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκουέτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If anyone has ears to hear, let him hear",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the sickle\" is a metonym that stands for the farmer or the people whom the farmer sends out to harvest the grain. Alternate translation: \"he immediately goes into the field with a sickle to harvest the grain\" or \"he immediately sends people with sickles into the field to harvest the grain\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εὐθὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστέλλει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "δρέπανον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he immediately sends in the sickle",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"remain\" represents daily going back to that house to eat and sleep there. Alternate translation: \"eat and sleep in that house until you leave that place\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μένετε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξέλθητε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖθεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "remain until you go away from there",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Herod uses the word \"I\" to refer to himself. The word \"I\" is a metonym for Herod's soldiers. Alternate translation: \"whom I commanded my soldiers to behead\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεκεφάλισα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whom I beheaded",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Herodias is the subject of this phrase and \"she\" is a metonym as she wants someone else to execute John. Alternate translation: \"she wanted someone to kill him, but she could not have him killed\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἤθελεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκτεῖναι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠδύνατο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "wanted to kill him, but she could not",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the phrase \"the loaves\" refers to when Jesus multiplied the loaves of bread. Alternate translation: \"what it meant when Jesus multiplied the loaves of bread\" or \"what it meant when Jesus caused the few loaves to become many\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρτοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about the loaves",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"lips\" is a metonym for speaking. Alternate translation: \"by what they say\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "χείλεσίν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with their lips",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" refers to a person's thoughts or emotions. This is a way of saying the people are not truly devoted to God. Alternate translation: \"but they do not really love me\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "καρδία",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πόρρω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέχει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but their heart is far from me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's inner being or mind. Here Jesus means that food does not affect a person's character. Alternate translation: \"it cannot go into his inner being\" or \"it cannot go into his mind\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσπορεύεται",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it does not go into his heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's inner being or mind. Alternate translation: \"out of the inner being, come evil thoughts\" or \"out of the mind, come evil thoughts\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "διαλογισμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "κακοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκπορεύονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "out of the heart, proceed evil thoughts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These refer to people. Alternate translation: \"deaf people ... mute people\" or \"people who cannot hear ... people who cannot speak\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "κωφοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀλάλους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the deaf ... the mute",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They wanted a sign that would prove that Jesus' power and authority were from God. Possible meanings are 1) The word \"heaven\" is a metonym for God. Alternate translation: \"a sign from God\" or 2) the word \"heaven\" refers to the sky. Alternate translation: \"a sign from the sky\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "σημεῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a sign from heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" is a metonym for a person's mind. The phrase \"hearts become so dull\" is a metaphor for not being able or willing to understand something. Jesus uses a question to scold the disciples. This can be written as a statement. Alternate translation: \"Your thinking has become so dull!\" or \"You are so slow to understand what I mean!\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πεπωρωμένην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχετε",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "Have your hearts become hardened?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the 5,000 people Jesus fed. Alternate translation: \"the 5,000 people\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "πεντακισχιλίους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the five thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the 4,000 people Jesus fed. Alternate translation: \"the 4,000 people\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "τετρακισχιλίους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the four thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"carry his cross and follow me.\" The cross represents suffering and death. Taking up the cross represents being willing to suffer and die. Alternate translation: \"must obey me even to the point of suffering and dying\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀράτω",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "σταυρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀκολουθείτω",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "take up his cross, and follow me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The kingdom of God coming represents God showing himself as king. Alternate translation: \"God show himself with great power as king\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐληλυθυῖαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the kingdom of God come with power",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"a voice came out\" is a metonym for someone speaking. It can also be stated clearly who spoke. Alternate translation: \"Then someone spoke from the cloud\" or \"Then God spoke from the cloud\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 2
+        },
+        {
+          "word": "φωνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "νεφέλης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and a voice came out of the cloud",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"risen from among the dead.\" This speaks of becoming alive again. The phrase \"the dead\" refers to \"dead people\" and is a metonym for death. Alternate translation: \"risen from death\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναστῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "had risen from the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"to rise from among the dead.\" This speaks of becoming alive again. The phrase \"the dead\" refers to \"dead people\" and is a metonym for death. Alternate translation: \"rising from death\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναστῆναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "had risen from the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hands\" is a metonym for control. Alternate translation: \"into the control of men\" or \"so that men will be able to control him\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "into the hands of men",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is associated with Jesus' authority and power. Alternate translation: \"by the authority of your name\" or \"by the power of your name\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in your name",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hand\" is a metonym for desiring to do something sinful that you would do with your hand. Alternate translation: \"If you want to do something sinful with one of your hands\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "σκανδαλίσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χείρ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If your hand causes you to stumble",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"foot\" is a metonym for desiring to do something sinful that you would do with your feet, such as going to a place you should not go to. Alternate translation: \"If you want to do something sinful with one of your feet\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πούς",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "σκανδαλίζῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If your foot causes you to stumble",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"eye\" is a metonym for either 1) desiring to sin by looking at something. Alternate translation: \"If you want to do something sinful by looking at something, tear your eye out\" or 2) Desiring to sin because of what you have looked at. Alternate translation: \"If you want to do something sinful because of what you look at, tear your eye out\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "σκανδαλίζῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔκβαλε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If your eye causes you to stumble, tear it out",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" is a metonym for a person's inner being or mind. The phrase \"hard hearts\" is a metaphor for \"stubbornness.\" Alternate translation: \"your stubbornness\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σκληροκαρδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your hardness of heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"it\" refers to the things he sells and is a metonym for the money he receives when he sells them. Alternate translation: \"give the money to the poor\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "πτωχοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "give it to the poor",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"when you are glorified.\" The phrase \"in your glory\" refers to when Jesus is glorified and rules over his kingdom. Alternate translation: \"when you rule in your kingdom\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "in your glory",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym for the Lord's authority. Alternate translation: \"the authority of the Lord\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the name of the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here David's descendant who will rule is referred to as David himself. Alternate translation: \"of the greatest descendant of our father David\" or \"that David's greatest descendant will rule\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυείδ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "of our father David",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's mind or inner being. Alternate translation: \"if he truly believes in his heart\" or \"if he does not doubt but believes\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακριθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "does not doubt in his heart but believes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heaven\" refers to God. Alternate translation: \"from God\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heaven\" refers to God. See how you translated this in [Mark 11:30](../11/30.md). Alternate translation: \"From God\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "From heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is teaching that his people must respect the government by paying taxes. This figure of speech can be clarified by changing Caesar to Roman government. Alternate translation: \"Give to the Roman government the things that belong to the Roman government\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "Καίσαρος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπόδοτε",
+          "occurrence": 1
+        },
+        {
+          "word": "Καίσαρι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Give to Caesar the things that are Caesar's",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" and \"soul\" are metonyms for a person's inner being. These four phrases are used together to mean \"completely\" or \"earnestly.\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅλης",
+          "occurrence": 2
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "ψυχῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 3
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅλης",
+          "occurrence": 3
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 3
+        },
+        {
+          "word": "διανοίας",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 4
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 4
+        },
+        {
+          "word": "ὅλης",
+          "occurrence": 4
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 4
+        },
+        {
+          "word": "ἰσχύος",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 5
+        }
+      ],
+      "glQuote": "with all your heart, with all your soul, with all your mind, and with all your strength",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for person's thoughts, feelings, or inner being. These three phrases are used together to mean \"completely\" or \"earnestly.\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅλης",
+          "occurrence": 2
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "συνέσεως",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅλης",
+          "occurrence": 3
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 3
+        },
+        {
+          "word": "ἰσχύος",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with all the heart ... all the understanding ... all the strength",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"claiming my authority\" or 2) \"claiming that God sent them.\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in my name",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses the metonym \"my name\" to refer to himself. Alternate translation: \"because of me\" or \"because you believe in me\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "because of my name",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"he\" refers to God and is a metonym for his angels, as they are the ones who will gather the elect. Alternate translation: \"they will gather\" or \"his angels will gather\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐπισυνάξει",
+      "glQuote": "he will gather together",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"Passover\" refers to the Passover meal. Alternate translation: \"eat the Passover meal\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "φάγῃς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πάσχα",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "eat the Passover",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks of the suffering that he must endure as if it were a cup. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "παρένεγκε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποτήριον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Remove this cup from me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These refer to two different aspects of Peter. \"The spirit\" is his inmost desires. \"The flesh\" is his human ability and strength. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σὰρξ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The spirit ... the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They were not the ones who would execute Jesus; rather, they would order someone else to do it. Alternate translation: \"they might have Jesus executed\" or \"they might have someone execute Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 55
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "θανατῶσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to put him to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"power\" is a metonnymm that represents God. To sit at the \"right hand of God\" is a symbolic action of receiving great honor and authority from God. Alternate translation: \"he sits in the place of honor beside the all-powerful God\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 62
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "δεξιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καθήμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he sits at the right hand of power",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "They commanded for Jesus to be bound, but it would have been the guards who actually bound him and led him away. Alternate translation: \"they commanded for Jesus to be bound and then he was led away\" or \"they commanded the guards to bind Jesus and then they led him away\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "δήσαντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ἀπήνεγκαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bound Jesus and led him away",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to make explicit that Joseph probably had help from other people when he took Jesus' body down from the cross, prepared it for the tomb, and closed the tomb. Alternate translation: \"He and others took him down ... Then they rolled a stone\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "καθελὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "προσεκύλισεν",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "took him down from the cross ... Then he rolled a stone",
+      "occurrence": 1
+    }
+  }
+]

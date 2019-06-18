@@ -1,0 +1,121 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To be \"shaken\" is an idiom for being afraid. Alternate translation: \"no one would be frightened away from trusting in Christ\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "μηδένα",
+          "occurrence": 1
+        },
+        {
+          "word": "σαίνεσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no one would be shaken",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul was describing his own emotions by using an idiom. Alternate translation: \"I could not longer wait patiently\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "κἀγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "μηκέτι",
+          "occurrence": 1
+        },
+        {
+          "word": "στέγων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I could no longer stand it",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that expresses living a satisfied life. Alternate translation: \"we are very encouraged\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ζῶμεν",
+      "glQuote": "we live",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To \"stand firm\" is an idiom meaning to continue being faithful. Alternate translation: \"if you continue to trust in the Lord\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "στήκετε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if you stand firm in the Lord",
+      "occurrence": 1
+    }
+  }
+]

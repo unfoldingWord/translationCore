@@ -1,0 +1,1508 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that Paul did not say both that he would visit and that he would not visit at the same time. The words \"yes\" and \"no\" are repeated for emphasis. Alternate translation: \"I do not plan things ... so that I say 'Yes, I will certainly visit' and 'No, I will definitely not visit' at the same time!\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἃ",
+          "occurrence": 1
+        },
+        {
+          "word": "βουλεύομαι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        },
+        {
+          "word": "βουλεύομαι",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾖ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ναὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ναὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 3
+        },
+        {
+          "word": "οὒ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "οὔ",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 4
+        }
+      ],
+      "glQuote": "Do I plan things ... so that I say \"Yes, yes\" and \"No, no\" at the same time?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus says \"Yes\" concerning the promises of God, which means that he guarantees that they are true. Alternate translation: \"For the Son of God ... does not say 'Yes' and 'No' concerning God's promises. Instead, he always says 'Yes.'\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστός",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ναὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "\"",
+          "occurrence": 3
+        },
+        {
+          "word": "οὒ",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 4
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 5
+        },
+        {
+          "word": "ναὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 6
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγονεν",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the Son of God ... is not \"Yes\" and \"No.\" Instead, he is always \"Yes.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that Jesus guarantees all of God's promises. Alternate translation: \"all the promises of God are guaranteed in Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐπαγγελίαι",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ναί",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "all the promises of God are \"Yes\" in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to another letter that Paul had written to the Corinthian Christians that no longer exists. Alternate translation: \"I wrote as I did in my previous letter\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔγραψα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I wrote this same thing",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"you are obedient to God in everything\" or 2) \"you are obedient in everything that I have taught you\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπήκοοί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you are obedient in everything",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"anything\" refers to anything pertaining to Paul's apostolic ministry. Alternate translation: \"to claim that anything we have done in ministry comes from our own efforts\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "λογίσασθαί",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "to consider anything as coming from us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the ministry of death.\" This refers to the Old Testament law that God gave through Moses. Alternate translation: \"the ministry that causes death because it is based on the law\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "θανάτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ministry that produced death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the ministry of the Spirit.\" This refers to the new covenant, of which Paul is a minister. Alternate translation: \"the ministry that gives life because it is based on the Spirit\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ministry of the Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the ministry of condemnation.\" This refers to the Old Testament law. Alternate translation: \"the ministry that condemns people because it is based on the law\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "κατακρίσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ministry of condemnation",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the ministry of righteousness.\" This refers to the new covenant, of which Paul is a minister. Alternate translation: \"the ministry that makes people righteous because it is based on the Spirit\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "δικαιοσύνης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ministry of righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The refers to the glory that shined on Moses' face. Alternate translation: \"the glory on Moses' face as it faded away completely\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "τέλος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καταργουμένου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the end of that which was fading away",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase explains how Paul and his coworkers \"have this ministry.\" It is a gift that God has given to them through his mercy. Alternate translation: \"because God has shown us mercy\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠλεήθημεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and just as we have received mercy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to their physical bodies decaying and dying. Alternate translation: \"our physical bodies are getting weak and dying\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": "διαφθείρεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "outwardly we are wasting away",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to their inward, spiritual lives getting stronger. Alternate translation: \"our spiritual beings are being strengthened day by day\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 4,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔσω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνακαινοῦται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "inwardly we are being renewed day by day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"we persuade people of the truth of the gospel\" or 2) \"we persuade people that we are legitimate apostles.\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀνθρώπους",
+          "occurrence": 1
+        },
+        {
+          "word": "πείθομεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we persuade people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"the righteousness of God\" refers to the righteousness that God requires and which comes from God. Alternate translation: \"so that we might have God's righteousness in us through Christ\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "γενώμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνη",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that we might become the righteousness of God in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is implying that he and Timothy are working with God. Alternate translation: \"Working together with God\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "συνεργοῦντες",
+      "glQuote": "Working together",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"For God says.\" This introduces a quotation from the prophet Isaiah. Alternate translation: \"For God says in scripture\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For he says",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings for \"outside\" are 1) \"outside of our bodies\" or 2) \"outside of the church.\" The word \"inside\" refers to their inward emotions. Alternate translation: \"by conflicts with other people and by fears within ourselves\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔξωθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "μάχαι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἔσωθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "φόβοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by conflicts on the outside and fears on the inside",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul received comfort from knowing that the Corinthians had comforted Titus. Alternate translation: \"by learning about the comfort that Titus had received from you\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "παρακλήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾗ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρεκλήθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by the comfort that Titus had received from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This kind of sorrow leads to death instead of salvation because it does not produce repentance. Alternate translation: \"Worldly sorrow, however, leads to spiritual death\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        },
+        {
+          "word": "λύπη",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "θάνατον",
+          "occurrence": 1
+        },
+        {
+          "word": "κατεργάζεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But the sorrow of the world produces death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is referring to providing money to the believers in Jerusalem. Alternate translation: \"this ministry of providing for the believers in Jerusalem\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονίας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this ministry to the saints",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is referring to the collection of money from the Corinthians for the believers in Jerusalem. Alternate translation: \"who had encouraged your giving in the first place\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "προενήρξατο",
+      "glQuote": "he had already begun this task",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Titus was to help the Corinthians to complete the collection of money. Alternate translation: \"to encourage you to finish collecting and giving your generous gift\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπιτελέσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he would complete among you this act of grace",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is encouraging the Corinthians to give generously by comparing them with the generosity of the Macedonian churches. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑτέρων",
+          "occurrence": 1
+        },
+        {
+          "word": "σπουδῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δοκιμάζων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to test ... through the diligence of others",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to their collecting money to give to the believers in Jerusalem. Alternate translation: \"With regard to the collection\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In this matter",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to collecting money for the believers in Jerusalem. Alternate translation: \"For this task of collecting money\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "γὰρ",
+      "glQuote": "For this",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is referring to his asking Titus to return to Corinth and complete the collection. Alternate translation: \"For he not only agreed to our request that he help you with the collection\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "παράκλησιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδέξατο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For he not only accepted our appeal",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the collection of money to give to the believers in Jerusalem. The full meaning of this statement can be made explicit. Alternate translation: \"the ministry for the believers in Jerusalem\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονίας",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ministry that is for the saints",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word this refers to the Corinthian's generosity. Alternate translation: \"Because of your generosity, those who receive the gifts we bring them will thank God\" or \"and when we give your gifts to those who need them, they will give thanks to God\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἥτις",
+          "occurrence": 1
+        },
+        {
+          "word": "κατεργάζεται",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐχαριστίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "which produces thanksgiving to God through us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"service\" refers to Paul and his companions bringing the contribution to the believers in Jerusalem. Alternate translation: \"For our carrying out this service for the believers in Jerusalem\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 9,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "λειτουργίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the ministry of this service",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of this can be made explicit. Alternate translation: \"I could serve you at no cost\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ministry to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I have never in any way been a financial burden to you.\" Paul speaks of someone for whom one has to spend money as if they were heavy items that people have to carry. The full meaning of this can be made explicit. Alternate translation: \"I have done all I can to make sure you do not have to spend money so that I can be with you\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "παντὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀβαρῆ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐτήρησα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In everything I have kept myself from being a burden to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of this statement can be made explicit. Alternate translation: \"and in danger from people who claimed to be brothers in Christ, but who betrayed us\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κινδύνοις",
+          "occurrence": 8
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 4
+        },
+        {
+          "word": "ψευδαδέλφοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in danger from false brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full meaning of this statement can be made explicit. Alternate translation: \"What I want is that you love and accept me\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "but you",
+      "occurrence": 1
+    }
+  }
+]

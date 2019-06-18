@@ -1,0 +1,197 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"sincere\" and \"without offense\" mean basically the same thing. Paul combines them to emphasize moral purity. Alternate translation: \"completely blameless\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "εἰλικρινεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπρόσκοποι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sincere and blameless",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"expectation\" and the phrase \"certain hope\" mean basically the same thing. Paul uses them together to emphasize how strong his expectation is. Alternate translation: \"I eagerly and confidently hope\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκαραδοκίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπίδα",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is my eager expectation and certain hope",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses the words \"fear\" and \"trembling\" together to show the attitude of reverence that people should have for God. Alternate translation: \"trembling with fear\" or \"with deep reverence\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "φόβου",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρόμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with fear and trembling",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"blameless\" and \"pure\" are very similar in meaning and are used together to strenghten the idea. Alternate translation: \"completely innocent\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἄμεμπτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκέραιοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "blameless and pure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"world\" refers to the people of the world. The words \"crooked\" and \"depraved\" are used together to emphasize that the people are very sinful. Alternate translation: \"in the world, among people who are very sinful\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "μέσον",
+          "occurrence": 1
+        },
+        {
+          "word": "γενεᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "σκολιᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "διεστραμμένης",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the world, in the middle of a crooked and depraved generation",
+      "occurrence": 1
+    }
+  }
+]

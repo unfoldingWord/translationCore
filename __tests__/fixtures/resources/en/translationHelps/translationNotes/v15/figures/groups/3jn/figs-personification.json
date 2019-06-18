@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the truth itself speaks well of him.\" Here \"truth\" is described as a person speaking. Alternate translation: \"everyone who knows the truth knows he is a good person\" (See: [[rc://en/ta/man/translate/figs-personification]] and [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ὑπὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by the truth itself",
+      "occurrence": 1
+    }
+  }
+]

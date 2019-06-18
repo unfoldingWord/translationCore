@@ -1,0 +1,176 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This tells why so many people were crowding around Jesus that he thought they might crush him. Alternate translation: \"For, because Jesus had healed many people, everyone ... to touch him\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": [
+        {
+          "word": "πολλοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθεράπευσεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥστε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅψωνται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅσοι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶχον",
+          "occurrence": 1
+        },
+        {
+          "word": "μάστιγας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For he healed many, so that everyone ... to touch him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two clauses can be linked differently to show more clearly why Herod feared John. Alternate translation: \"for Herod feared John because he knew\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἡρῴδης",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφοβεῖτο",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωάννην",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰδὼς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for Herod feared John; he knew",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"So I tell you\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Therefore I say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus has finished telling the parable and is now asking the people what they think will happen next. (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": "οὖν",
+      "glQuote": "Therefore",
+      "occurrence": 1
+    }
+  }
+]

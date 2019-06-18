@@ -1,0 +1,86 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"the world\" consists of both supernatural (\"angels\") and natural (\"human beings\") or 2) the list consists of three items: \"to the world, to angels, and to human beings.\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγγέλοις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρώποις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to the world—to angels, and to human beings",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) this is a merism for all homosexual activity or 2) Paul is naming two different activities. (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 6,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "μαλακοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "οὔτε",
+          "occurrence": 5
+        },
+        {
+          "word": "ἀρσενοκοῖται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "male prostitutes, those who practice homosexuality",
+      "occurrence": 1
+    }
+  }
+]

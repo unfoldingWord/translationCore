@@ -1,0 +1,61 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"turned away\" is an idiom that means they have stopped doing what God has commanded. (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ὧν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐξετράπησαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "have turned away from these things",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings for this idiom are 1) \"with good judgment,\" 2) \"with modesty,\" or 3) \"with self-control.\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σωφροσύνης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with soundness of mind",
+      "occurrence": 1
+    }
+  }
+]

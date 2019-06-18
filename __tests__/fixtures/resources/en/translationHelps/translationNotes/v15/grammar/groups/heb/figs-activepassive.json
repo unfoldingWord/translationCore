@@ -1,0 +1,3362 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"you will change them\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ἀλλαγήσονται",
+      "glQuote": "they will be changed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. The abstract noun \"salvation\" can be translated with a verbal phrase. Alternate translation: \"The Lord himself first announced the message about how God will save us and then those who heard the message confirmed it to us\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἥτις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "λαβοῦσα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλεῖσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκουσάντων",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐβεβαιώθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This is salvation that was first announced by the Lord and confirmed to us by those who heard it",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"whom God made\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ἠλαττωμένον",
+      "glQuote": "who was made",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"those whom he makes holy\" or \"those whom he makes pure from sin\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγιαζόμενοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who are sanctified",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"Satan tempted him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "πειρασθείς",
+      "glQuote": "was tempted",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"whom Satan is tempting\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "πειραζομένοις",
+      "glQuote": "who are tempted",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God has considered Jesus\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἠξίωται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus has been considered",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"every house has someone who built it\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἶκος",
+          "occurrence": 1
+        },
+        {
+          "word": "κατασκευάζεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπό",
+          "occurrence": 1
+        },
+        {
+          "word": "τινος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "every house is built by someone",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"Jesus would say in the future\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "λαληθησομένων",
+      "glQuote": "were to be spoken of in the future",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the deceitfulness of sin will not harden any of you\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκληρυνθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπάτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no one among you will be hardened by the deceitfulness of sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the writer wrote\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "λέγεσθαι",
+      "glQuote": "it has been said",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"For we heard the good news just as they did\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐηγγελισμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καθάπερ",
+          "occurrence": 1
+        },
+        {
+          "word": "κἀκεῖνοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For we were told the good news just as they were",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"he finished creating\" or \"he finished his works of creation\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργων",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γενηθέντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his works were finished",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The peace and security provided by God are spoken of as if they were rest that he can give, and as if they were a place to which people could go. This can be stated in active form. Alternate translation: \"God still allows some people to enter his place of rest\" or \"God still allows some people to experience his blessings of rest\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀπολείπεται",
+          "occurrence": 1
+        },
+        {
+          "word": "τινὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσελθεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it still remains that some will enter his rest",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"there is still a Sabbath rest that God has reserved for his people\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀπολείπεται",
+          "occurrence": 1
+        },
+        {
+          "word": "σαββατισμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "λαῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "'",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "there is still a Sabbath rest reserved for God's people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"Nothing that God has created can hide from him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "κτίσις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφανὴς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνώπιον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Nothing created is hidden before God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"who has endured temptation in every way that we have\" or \"whom the devil has tempted in every way that he tempts us\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πεπειρασμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "καθ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁμοιότητ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who has in all ways been tempted as we are",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"whom God chooses from among the people\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        },
+        {
+          "word": "λαμβανόμενος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "chosen from among people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God appoints\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "καθίσταται",
+      "glQuote": "is appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"those ... whom others have deceived\" or \"those ... who believe what is false\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πλανωμένοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those ... who have been deceived",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God also requires him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ὀφείλει",
+      "glQuote": "he also is required",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God called him, just as he called Aaron\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καλούμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καθώσπερ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀαρών",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he is called by God, just as Aaron was",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God heard him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "εἰσακουσθεὶς",
+      "glQuote": "he was heard",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God made him perfect\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "τελειωθεὶς",
+      "glQuote": "He was made perfect",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God designated him\" or \"God appointed him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "προσαγορευθεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He was designated by God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"what God promised him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαγγελίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what was promised",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that God has placed before us\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "προκειμένης",
+      "glQuote": "set before us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the more important person blesses the less important person\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαττον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρείττονος",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐλογεῖται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the lesser person is blessed by the greater person",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"not be after the manner of Aaron\" or \"who is not a priest like Aaron\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "τάξιν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀαρὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγεσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not be considered to be after the manner of Aaron",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"For when God changed the priesthood, he also had to change the law\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μετατιθεμένης",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερωσύνης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνάγκης",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "μετάθεσις",
+          "occurrence": 1
+        },
+        {
+          "word": "γίνεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For when the priesthood is changed, the law must also be changed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"about whom I am speaking\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "λέγεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about whom these things are said",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God has introduced a better hope\" or \"God has given us reason for a more confident hope (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐπεισαγωγὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κρείττονος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπίδος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a better hope is introduced",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"who has completely obeyed God and become mature\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "τετελειωμένον",
+      "glQuote": "who has been made perfect",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"For God appoints every priest\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχιερεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καθίσταται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For every high priest is appointed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"It is just as God warned Moses when Moses was\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "κεχρημάτισται",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "μέλλων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is just as Moses was warned by God when he was",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that I showed you\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "δειχθέντα",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that was shown to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"covenant. It was this covenant that God made based on better promises\" or \"covenant. God promised better things when he made this covenant\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "διαθήκης",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἥτις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρείττοσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαγγελίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "νενομοθέτηται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "covenant, which is based on better promises",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A tabernacle was constructed and made ready for use. This idea can be stated in active form. Alternate translation: \"the Israelites prepared a tabernacle\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "σκηνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κατεσκευάσθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a tabernacle was prepared",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"After the priests prepared these things\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τούτων",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "κατεσκευασμένων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "After these things were prepared",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that the priests now offer\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "προσφέρονται",
+      "glQuote": "that are now being offered",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that humans hands did not make\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειροποιήτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that was not made by human hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"those whom God has chosen to be his children\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "κεκλημένοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who are called",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active and positive form. Alternate translation: \"So God established even the first covenant with blood\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρώτη",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "αἵματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνκεκαίνισται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "So not even the first covenant was established without blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the priests used in their work\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "λειτουργίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "used in the service",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the priests should use these animal sacrifices to cleanse what are copies of things that are in heaven\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑποδείγματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτοις",
+          "occurrence": 1
+        },
+        {
+          "word": "καθαρίζεσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the copies of the things in heaven should be cleansed with these animal sacrifices",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "That is, better than the sacrifices used to cleanse the earthly copies. This can be stated in active form. Alternate translation: \"as for the heavenly things themselves, God had to cleanse them with much better sacrifices\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "αὐτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπουράνια",
+          "occurrence": 1
+        },
+        {
+          "word": "κρείττοσι",
+          "occurrence": 1
+        },
+        {
+          "word": "θυσίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the heavenly things themselves had to be cleansed with much better sacrifices",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"Christ offered himself once\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅπαξ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσενεχθεὶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Christ was offered once",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that priests offer\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "αἵτινες",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "προσφέρονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that are offered",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God has sanctified us\" or \"God has dedicated us to himself\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἡγιασμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσμὲν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we have been sanctified",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"those whom God is sanctifying\" or \"those whom God has dedicated to himself\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγιαζομένους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who are being sanctified",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"as if had he made our hearts clean with his blood\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ῥεραντισμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "having our hearts sprinkled clean",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"as if he had washed our bodies in pure water\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "λελουμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σῶμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὕδατι",
+          "occurrence": 1
+        },
+        {
+          "word": "καθαρῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "having our bodies washed with pure water",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the blood by which God sanctified him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡγιάσθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the blood by which he was sanctified",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"People ridiculed you by insulting and persecuting you in public\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὀνειδισμοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "θλίψεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "θεατριζόμενοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You were exposed to public ridicule by insults and persecution",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that we still have not seen\" or \"that still have not happened\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πραγμάτων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλεγχος",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "βλεπομένων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "certain of things that are not seen",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God approved of our ancestors because they had faith\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐμαρτυρήθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρεσβύτεροι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the ancestors were approved",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God created the universe by commanding it to exist\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κατηρτίσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰῶνας",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the universe was created by God's command",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God declared him to be righteous\" or \"God declared that Abel was righteous\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐμαρτυρήθη",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶναι",
+          "occurrence": 1
+        },
+        {
+          "word": "δίκαιος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he was attested to be righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"It was by faith that Enoch did not die because God took him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πίστει",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἑνὼχ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετετέθη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "θάνατον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It was by faith that Enoch was taken up so that he did not see death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"before God took him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πρὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "μεταθέσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "before he was taken up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Possible meanings are 1) \"God said that Enoch had pleased him\" or 2) \"people said that Enoch pleased God.\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μεμαρτύρηται",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐηρεστηκέναι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it was testified that he had pleased God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form and in other terms. Alternate translation: \"because God told him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "χρηματισθεὶς",
+      "glQuote": "having been given a divine message",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"about things no one had ever seen before\" or \"about events that had not happened yet\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μηδέπω",
+          "occurrence": 1
+        },
+        {
+          "word": "βλεπομένων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about things not yet seen",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"when God called him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "καλούμενος",
+      "glQuote": "when he was called",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be expressed in active and positive form. Alternate translation: \"God is happy to have them call him their God\" or \"God is proud to have them say that he is their God\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-litotes]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαισχύνεται",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπικαλεῖσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God is not ashamed to be called their God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"when God tested him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "πειραζόμενος",
+      "glQuote": "when he was tested",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"to whom God said\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλαλήθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to whom it had been said",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"named\" means assigned or designated. This sentence can be stated in active form. Alternate translation: \"that I will designate your descendants\" (See: [[rc://en/ta/man/translate/figs-activepassive (See- figs-metonymy)]] and ",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κληθήσεταί",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "σπέρμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your descendants will be named",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"Moses' parents hid him for three months after he was born\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "γεννηθεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκρύβη",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίμηνον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρων",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Moses, when he was born, was hidden for three months by his parents",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"refused to allow people to call him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἠρνήσατο",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγεσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "refused to be called",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the water swallowed up the Egyptians\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "κατεπόθησαν",
+      "glQuote": "they were swallowed up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the Israelites had marched around them for seven days\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κυκλωθέντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑπτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they had been circled around for seven days",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"received healing from God\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐδυναμώθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσθενείας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "were healed of illnesses",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that their enemies would have released them from prison under certain conditions. This can be stated in active form. Alternate translation: \"Others accepted torture rather than release from prison\" or \"Others allowed their enemies to torture them rather than doing what their enemies required of them in order to release them\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἄλλοι",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐτυμπανίσθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσδεξάμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολύτρωσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Others were tortured, not accepting release",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These can be stated in active form. Alternate translation: \"People mocked and whipped others\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἕτεροι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐμπαιγμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μαστίγων",
+          "occurrence": 1
+        },
+        {
+          "word": "πεῖραν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαβον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Others had testing in mocking and whippings",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These can be stated in active form. Alternate translation: \"People mocked and whipped others ... People threw stones at others. People sawed others in two. People killed others with the sword\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐλιθάσθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπρίσθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπειράσθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "φόνῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "μαχαίρης",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέθανον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They were stoned. They were sawn in two. They were killed with the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God honored all these because of their faith, but they did not themselves receive what God had promised\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὗτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτυρηθέντες",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκομίσαντο",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαγγελίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Although all these people were approved by God because of their faith, they did not receive the promise",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in positive and active form. Alternate translation: \"in order that God would perfect us and them together\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "τελειωθῶσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that without us, they would not be made perfect",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"he corrects you\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὑπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλεγχόμενος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you are corrected by him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"his father, Isaac, refused to bless him\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ἀπεδοκιμάσθη",
+      "glQuote": "he was rejected",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that believers in Christ have not come to a physical mountain like Mount Sinai that a person can touch or see. This can be stated in active form. Alternate translation: \"that a person can touch\" or \"that people can perceive with their senses\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "προσεληλύθατε",
+      "glQuote": "that can be touched",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"what God commanded\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "διαστελλόμενον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what was commanded",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"you must stone it\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "λιθοβοληθήσεται",
+      "glQuote": "it must be stoned",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"whose names are written in heaven.\" This can be stated in active form. Alternate translation: \"whose names God has written in heaven\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀπογεγραμμένων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "registered in heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"whom God has made perfect\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "τετελειωμένων",
+      "glQuote": "who have been made perfect",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that God has created\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "πεποιημένων",
+      "glQuote": "that have been created",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the things that do not shake\" or \"the things that cannot shake\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "σαλευόμενα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the things that cannot be shaken",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that does not shake\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "σαλευόμενα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that cannot be shaken",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"as if you were tied up along with them\" or \"as if you were in prison with them\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "συνδεδεμένοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as if you were bound with them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"whom others are mistreating\" or \"who are suffering\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "κακουχουμένων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who are mistreated",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase encourages believers to think about other people's suffering as they would think about their own suffering. Alternate translation: \"as if you were the one suffering\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "σώματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as if you also were them in the body",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"Men and women who are married to each other must respect each other\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τίμιος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "γάμος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let marriage be respected by everyone",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"the high priest brings into the holy place the blood of the animals that the priests killed for sins\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὧν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἰσφέρεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῴων",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίας",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅγια",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχιερέως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the blood of the animals killed for sins is brought by the high priest into the holy place",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"while the priests burn the animals' bodies\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τούτων",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "σώματα",
+          "occurrence": 1
+        },
+        {
+          "word": "κατακαίεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "while their bodies are burned",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"that God will quickly remove the things that stop my coming to you\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "τάχειον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκατασταθῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that I will be returned to you sooner",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"is no longer in prison\" (See: [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ἀπολελυμένον",
+      "glQuote": "has been set free",
+      "occurrence": 1
+    }
+  }
+]

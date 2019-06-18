@@ -1,0 +1,42 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This begins a summary statement. English marks this by the word \"so.\" Determine how your language marks concluding or summary statements and do the same. (See: [[rc://en/ta/man/translate/writing-endofstory]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "quote": [
+        {
+          "word": "וַ",
+          "occurrence": 1
+        },
+        {
+          "word": "תָּ֣שָׁב",
+          "occurrence": 1
+        },
+        {
+          "word": "נָעֳמִ֗י",
+          "occurrence": 1
+        },
+        {
+          "word": "וְ",
+          "occurrence": 1
+        },
+        {
+          "word": "ר֨וּת",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "So Naomi returned, with Ruth",
+      "occurrence": 1
+    }
+  }
+]

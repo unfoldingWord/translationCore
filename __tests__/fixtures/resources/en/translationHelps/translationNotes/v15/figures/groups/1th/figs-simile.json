@@ -1,0 +1,182 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Just as a mother gently comforts her children, so Paul, Silvanus, and Timothy spoke gently to the Thessalonian believers. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "τροφὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "θάλπῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as a mother comforting her own children",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Just as one does not know which night a thief may come, we do not know when the day of the Lord will come. Alternate translation: \"unexpectedly\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "κλέπτης",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "νυκτὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like a thief in the night",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Just as a pregnant woman's birth pains come suddenly and do not stop until the birth is complete, the destruction will come, and people will not escape. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὥσπερ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὠδὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "γαστρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐχούσῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like birth pains in a pregnant woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The day when the Lord comes should not be a surprise to believers. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "κλέπτας",
+          "occurrence": 1
+        },
+        {
+          "word": "καταλάβῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that the day would overtake you like a thief",
+      "occurrence": 1
+    }
+  }
+]

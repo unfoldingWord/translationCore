@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means all people, whether they are still alive or have died. Alternate translation: \"every person\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "ζῶντας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the living and the dead",
+      "occurrence": 1
+    }
+  }
+]

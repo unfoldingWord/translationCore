@@ -1,0 +1,93 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I teach the Gentiles the message of faith and truth.\" Here, Paul may be using \"faith\" and truth\" to express one idea. Alternate translation: \"I teach the Gentiles about the true faith\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": [
+        {
+          "word": "διδάσκαλος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθνῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "πίστει",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀληθείᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am a teacher of the Gentiles in faith and truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word of God\" and \"prayer\" are used together to express one idea. The prayer is in agreement with the truth that God has revealed. Alternate translation: \"it is dedicated for God's use by praying in agreement with his word\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": [
+        {
+          "word": "ἁγιάζεται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγου",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐντεύξεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it is sanctified by the word of God and prayer",
+      "occurrence": 1
+    }
+  }
+]

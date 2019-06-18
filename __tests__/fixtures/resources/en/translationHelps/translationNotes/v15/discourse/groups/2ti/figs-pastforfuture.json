@@ -1,0 +1,54 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about this event as if it has already happened. It can be stated as a future event. Alternate translation: \"but also he will give it to those who are eagerly waiting for him to return\" (See: [[rc://en/ta/man/translate/figs-pastforfuture]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pastforfuture",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠγαπηκόσι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιφάνειαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but also to all those who have loved his appearing",
+      "occurrence": 1
+    }
+  }
+]

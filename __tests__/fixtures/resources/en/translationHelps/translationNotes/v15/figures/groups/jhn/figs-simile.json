@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is a simile. The \"Spirit\" comes down just like a dove lands on a person. (See: [[rc://en/ta/man/translate/figs-simile ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "περιστερὰν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like a dove ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This figure of speech is called a simile. Some people will \"lift up\" Jesus just as Moses \"lifted up\" the bronze serpent in the wilderness. (See: [[rc://en/ta/man/translate/figs-simile ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὕψωσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄφιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρήμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑψωθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up ",
+      "occurrence": 1
+    }
+  }
+]

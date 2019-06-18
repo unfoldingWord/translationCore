@@ -1,0 +1,189 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks here of Archippus as if they were both soldiers in an army. He means that Archippus works hard, as Paul himself works hard, to spread the gospel. Alternate translation: \"our fellow spiritual warrior\" or \"who also fights the spiritual battle with us\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνστρατιώτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our fellow soldier",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"my son Onesimus.\" Paul speaks of the way he is friends with Onesimus as if it were the way a father and his son love each other. Onesimus was not Paul's actual son, but he received spiritual life when Paul taught him about Jesus, and Paul loved him. Alternate translation: \"my spiritual son Onesimus\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ὀνήσιμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my child Onesimus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"fathered\" is a metaphor that means Paul converted Onesimus to Christ. Alternate translation: \"who became my spiritual son when I taught him about Christ and he received new life while I was in my chains\" or \"who became like a son to me while I was in my chains\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγέννησα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "δεσμοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whom I have fathered in my chains",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"both as a man.\" Paul is referring to Onesimus' being a trustworthy servant. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in both the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"refresh\" is a metaphor for comfort or encourage. Here \"heart\" is a metonym for a person's feelings, thoughts, or inner being. How Paul wanted Philemon refresh his heart can be made explicit. Alternate translation: \"encourage me in Christ\" or \"comfort me in Christ\" or \"refresh my heart in Christ by accepting Onesimus kindly\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀνάπαυσόν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπλάγχνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "refresh my heart in Christ",
+      "occurrence": 1
+    }
+  }
+]

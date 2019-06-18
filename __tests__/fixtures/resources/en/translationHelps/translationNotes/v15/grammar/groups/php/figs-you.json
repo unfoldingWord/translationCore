@@ -1,0 +1,89 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a command to the Philippian believers. If your language has a plural command form, use it here. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πτυρόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "μηδενὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not be frightened in any respect",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" refers to the \"true fellow worker\" and is singular. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ναὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρωτῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σέ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "γνήσιε",
+          "occurrence": 1
+        },
+        {
+          "word": "σύνζυγε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Yes, I ask you, my true companion",
+      "occurrence": 1
+    }
+  }
+]

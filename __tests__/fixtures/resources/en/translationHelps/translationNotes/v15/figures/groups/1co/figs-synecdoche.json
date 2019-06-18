@@ -1,0 +1,82 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is emphasizing that the gift of prophecy is greater than the gift of speaking in tongues. Alternate translation: \"The one who prophesies has a greater gift\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "μείζων",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "προφητεύων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now the one who prophesies is greater",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"be able to agree\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐρεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀμήν",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "say \"Amen”",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded so that the ideas in the abstract noun \"persecution\" are expressed with the verb \"persecute.\" Because the sentence is so long and complicated, \"will receive\" can be repeated. Alternate translation: \"and even though people persecute them, in the world to come, they will receive eternal life\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "διωγμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 8
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 6
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "αἰῶνι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐρχομένῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 9
+        },
+        {
+          "word": "ζωὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰώνιον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with persecutions, and in the age to come, eternal life",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The noun \"greetings\" can be expressed with the verb \"greet.\" These greetings showed that the people respected the scribes. Alternate translation: \"to be greeted respectfully in the marketplaces\" or \"people to greet them respectfully in the marketplaces\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἀσπασμοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγοραῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "greetings in the marketplaces",
+      "occurrence": 1
+    }
+  }
+]

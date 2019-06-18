@@ -1,0 +1,58 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is communicating one idea through two words. Alternate translation: \"wise words\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a word of wisdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is communicating one idea through two words. Alternate translation: \"words that show knowldge\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": [
+        {
+          "word": "λόγος",
+          "occurrence": 2
+        },
+        {
+          "word": "γνώσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a word of knowledge",
+      "occurrence": 1
+    }
+  }
+]

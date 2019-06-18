@@ -1,0 +1,153 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate with \"because\" to show how these two statements relate. Alternate translation: \"Watch out for people because they will\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": [
+        {
+          "word": "προσέχετε",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "παραδώσουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Watch out for people! For they will deliver you up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can add \"because\" to clarify why people should fear God. Alternate translation: \"fear God because he is able\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": [
+        {
+          "word": "φοβεῖσθε",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμενον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fear him who is able",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This statement explains why the Queen of the South will condemn the people of Jesus' generation. Alternate translation: \"For she came\" (See: [[rc://en/ta/man/translate/writing-connectingwords]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-connectingwords",
+      "quote": [
+        {
+          "word": "ἦλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "περάτων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκοῦσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Σολομῶνος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "She came from the ends of the earth to hear the wisdom of Solomon",
+      "occurrence": 1
+    }
+  }
+]

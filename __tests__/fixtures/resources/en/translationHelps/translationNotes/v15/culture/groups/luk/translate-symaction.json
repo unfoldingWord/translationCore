@@ -1,0 +1,642 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"knelt down before Jesus\" or 2) \"bowed down at Jesus' feet\" or 3) \"lay down on the ground at Jesus' feet.\" Peter did not fall accidentally. He did this as a sign of humility and respect for Jesus. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "προσέπεσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "γόνασιν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fell down at the knees of Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"lay down on the ground before Jesus.\" He did not fall accidentally. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "προσέπεσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fell down before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"bowed down at Jesus feet\" or 2) \"lay down on the ground at Jesus feet.\" Jairus did not fall accidentally. He did this as a sign of humility and respect for Jesus. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "πεσὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Falling at the feet of Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To \"shake off the dust from your feet\" was an expression of strong rejection in that culture. It showed they did not want even the dust of that town to remain on them. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κονιορτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποδῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποτινάσσετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτύριον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "shake off the dust from your feet as a testimony against them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a symbolic action to show that they reject the people of the city. Alternate translation: \"Just as you rejected us, we thoroughly reject you. We even reject the dust from your town that clings to our feet\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κονιορτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "κολληθέντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλεως",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπομασσόμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Even the dust from your town that clings to our feet we wipe off against you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These actions are symbolic acts, indicating great regret and sadness. Alternate translation: \"crying and grinding of teeth because of their great regret\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κλαυθμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "βρυγμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀδόντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "crying and the grinding of teeth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"he knelt down and put his face close to Jesus' feet.\" He did this to honor Jesus. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔπεσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He fell on his face at the feet of Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a physical expression of great sorrow, and shows this man's repentance and humility. Alternate translation: \"hit his breast to show his sorrow\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "ἔτυπτε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "στῆθος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "was beating his breast",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"people spread their cloaks.\" This is a sign of giving honor to someone. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "ὑπεστρώννυον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱμάτια",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they were spreading their cloaks",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To sit at the \"right hand of God\" is a symbolic action of receiving great honor and authority from God. Alternate translation: \"Sit in the place of honor beside me\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "κάθου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεξιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Sit at my right hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To sit at the \"right hand of God\" is a symbolic action of receiving great honor and authority from God. Alternate translation: \"seated in the place of honor beside the power of God\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 69
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "καθήμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεξιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμεως",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "seated at the right hand of the power of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a symbol of sorrow and regret. Alternate translation: \"hitting their own chests to show that they were sorrowful\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "τύπτοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "στήθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "beating their breasts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"bowed low to the ground.\" This action expresses their humility and submission to the men. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "κλινουσῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπα",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bowed down their faces to the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was the action that priests performed when they blessed the people. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "ἐπάρας",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "lifting up his hands",
+      "occurrence": 1
+    }
+  }
+]

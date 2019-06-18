@@ -1,0 +1,70 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"call on the Lord\" is an idiom that means to trust and worship the Lord. Alternate translation: \"those who worship the Lord\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπικαλουμένων",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "those who call on the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of people strongly wanting to hear something as if their ears itched and could only be satisfied if teachers taught them what they wanted to hear. Alternate translation: \"who say only what they want so much to hear\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "κνηθόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκοήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who say what their itching ears want to hear",
+      "occurrence": 1
+    }
+  }
+]

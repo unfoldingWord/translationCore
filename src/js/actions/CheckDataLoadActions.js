@@ -1,13 +1,9 @@
-/**
- * @module Actions/CheckDataLoad
- */
-
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import isEqual from 'deep-equal';
 // helpers
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import isEqual from "deep-equal";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -62,6 +58,7 @@ export function loadCheckData(loadPath, contextId) {
       return path.extname(file) === '.json';
     });
     let sorted = files.sort().reverse(); // sort the files to put latest first
+    const isQuoteArray = Array.isArray(contextId.quote);
 
     for (let i = 0, len = sorted.length; i < len; i++) {
       const file = sorted[i];
@@ -71,7 +68,7 @@ export function loadCheckData(loadPath, contextId) {
         let _checkDataObject = fs.readJsonSync(readPath);
         if(_checkDataObject &&
           _checkDataObject.contextId.groupId === contextId.groupId &&
-          isEqual(_checkDataObject.contextId.quote, contextId.quote) && // this can be string or array
+          (isQuoteArray ? isEqual(_checkDataObject.contextId.quote, contextId.quote) : (_checkDataObject.contextId.quote === contextId.quote)) &&
           _checkDataObject.contextId.occurrence === contextId.occurrence) {
           checkDataObject = _checkDataObject; // return the first match since it is the latest modified one
           break;
@@ -193,17 +190,28 @@ export function loadReminders() {
  */
 export function loadSelections() {
   return (dispatch, getState) => {
-    let state = getState();
-    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
-    let selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+    const state = getState();
+    const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
+    const selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+
     if (selectionsObject) {
+      const {
+        selections,
+        modifiedTimestamp,
+        nothingToSelect,
+        userName,
+        gatewayLanguageCode,
+        gatewayLanguageQuote
+      } = selectionsObject;
+
       dispatch({
         type: consts.CHANGE_SELECTIONS,
-        modifiedTimestamp: selectionsObject.modifiedTimestamp,
-        selections: selectionsObject.selections,
-        userName: selectionsObject.userName,
-        gatewayLanguageCode: selectionsObject.gatewayLanguageCode,
-        gatewayLanguageQuote: selectionsObject.gatewayLanguageQuote
+        selections: selections,
+        nothingToSelect: nothingToSelect,
+        userName: userName,
+        modifiedTimestamp: modifiedTimestamp,
+        gatewayLanguageCode: gatewayLanguageCode,
+        gatewayLanguageQuote: gatewayLanguageQuote
       });
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.

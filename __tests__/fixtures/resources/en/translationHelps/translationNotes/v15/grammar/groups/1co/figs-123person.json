@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking of himself as if he were speaking about other people. Alternate translation: \"we are required to be\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὧδε",
+          "occurrence": 1
+        },
+        {
+          "word": "λοιπὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητεῖται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκονόμοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what is required of stewards",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of love as if it were a person. \"Follow after love\" or \"Work hard to love people\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "διώκετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγάπην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Pursue love",
+      "occurrence": 1
+    }
+  }
+]

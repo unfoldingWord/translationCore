@@ -1,0 +1,150 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"letter\" means letters of the alphabet and refers to words that people write down. The phrase alludes to the Old Testament law. Alternate translation: \"a covenant not based on commands that men have written\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "καινῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "διαθήκης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γράμματος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a new covenant, not of the letter",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"bodies\" refers to the whole person. Alternate translation: \"we had no rest\" or \"we were very tired\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οὐδεμίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσχηκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὰρξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "our flesh had no rest",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heart\" refers to the emotions. This means that God caused Titus to love them. Alternate translation: \"who made Titus care for you as much as I do\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "διδόντι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σπουδὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "Τίτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who put into Titus' heart the same earnest care that I have for you",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The bronze would be refined first and then polished. Alternate translation: \"like bronze that has been purified in a hot furnace and polished\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "quote": [
+        {
+          "word": "ὅμοιοι",
+          "occurrence": 1
+        },
+        {
+          "word": "χαλκολιβάνῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "καμίνῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεπυρωμένης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like polished bronze, like bronze that had been refined in a furnace",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The person would need to break the seals in order to open the scroll. Alternate translation: \"Who is worthy to break the seals and open the scroll?\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄξιος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνοῖξαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "βιβλίον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "λῦσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "σφραγῖδας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Who is worthy to open the scroll and break its seals?",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"convenient\" is understood. Alternate translation: \"when it is not convenient\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "ἀκαίρως",
+      "glQuote": "when it is not",
+      "occurrence": 1
+    }
+  }
+]

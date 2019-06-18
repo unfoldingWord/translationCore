@@ -1,0 +1,42 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jude is the brother of James. Alternate translation: \"I am Jude, a servant of\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἰούδας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δοῦλος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jude, a servant of",
+      "occurrence": 1
+    }
+  }
+]

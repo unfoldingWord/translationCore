@@ -1,0 +1,449 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Elizabeth's pregnancy was proof that God was able to do anything—even enable Mary to become pregnant without her sleeping with a man. The double negatives in this statement can be stated with positive terms. Alternate translation: \"God can do anything\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδυνατήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥῆμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "nothing will be impossible for God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The double negative can be replaced. Alternate translation: \"near the house\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μακρὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέχοντος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When he was not far from the house",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This double negative means \"continues to believe in me despite\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκανδαλισθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not take offense at me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This double negative can be written as a positive statement. Alternate translation: \"everything that is hidden will be made known\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "κρυπτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "φανερὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "γενήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "nothing is hidden that will not be made known",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This double negative can be written as a positive statement. Alternate translation: \"and everything that is secret will be made known and will come into the light\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπόκρυφον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 3
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "γνωσθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "φανερὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔλθῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "nor is anything secret that will not be known and come into the light",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This could be stated with positive verbs. Alternate translation: \"If anyone wants to be my disciple, he must carry his own cross and follow me\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "ὅστις",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "βαστάζει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "σταυρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔρχεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀπίσω",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶναί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        },
+        {
+          "word": "μαθητής",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Whoever does not carry his own cross and come after me cannot be my disciple",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated with positive verbs. Alternate translation: \"only those of you who give up all that you have can be my disciples\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποτάσσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπάρχουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶναί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητής",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "every one of you who does not give up all that he has cannot be my disciple",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the sentence that begins with the words \"there is no one who has left ... kingdom of God\" (verse 28). This could be stated in positive form. \"everyone who has left ... kingdom of God will receive\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐχὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολάβῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who will not receive",
+      "occurrence": 1
+    }
+  }
+]

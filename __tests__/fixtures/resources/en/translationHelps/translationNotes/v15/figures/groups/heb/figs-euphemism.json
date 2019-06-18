@@ -1,0 +1,81 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a polite way of referring to when a person dies. Alternate translation: \"until we die\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "μέχρι",
+          "occurrence": 1
+        },
+        {
+          "word": "τέλους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to the end",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"his end\" is a polite way of referring to death. Alternate translation: \"when he was about to die\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "τελευτῶν",
+      "glQuote": "when his end was near",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the act of sexual union as if it were only the bed of a married couple. Alternate translation: \"Let husbands and wives honor their marriage relationship to one another and not sleep with other people\" (See: [[rc://en/ta/man/translate/figs-euphemism]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "κοίτη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀμίαντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let the marriage bed be pure",
+      "occurrence": 1
+    }
+  }
+]

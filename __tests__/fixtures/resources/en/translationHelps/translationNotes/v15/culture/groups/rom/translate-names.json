@@ -1,0 +1,624 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Hosea was a prophet. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὡσηὲ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Hosea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a roman province west of Rome that Paul desired to visit. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Σπανίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Spain",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a woman's name. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Φοίβην",
+      "glQuote": "Phoebe",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a seaport city in Greece. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κενχρεαῖς",
+      "glQuote": "Cenchrea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Priscilla was the wife of Aquila. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Πρίσκαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀκύλαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Priscilla and Aquila ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἐπαίνετον",
+      "glQuote": "Epaenetus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a woman's name. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Μαρίαν",
+      "glQuote": "Mary",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a man's name. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀνδρόνικον",
+      "glQuote": "Andronicus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This could be either 1) Junia, a woman's name, or, much less likely, 2) Junias, a man's name. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἰουνίαν",
+      "glQuote": "Junias",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a man's name. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀμπλιᾶτον",
+      "glQuote": "Ampliatus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are the names of men. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Οὐρβανὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Στάχυν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Urbanus ... Stachys ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are the names of men. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἀπελλῆν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἀριστοβούλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Apelles ... Aristobulus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are the names of men. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἡρῳδίωνα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ναρκίσσου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Herodion ... Narcissus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are women's names. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Τρύφαιναν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Τρυφῶσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Περσίδα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Tryphaena ... Tryphosa ... Persis ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a man's name. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ῥοῦφον",
+      "glQuote": "Rufus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are men's names. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἀσύγκριτον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Φλέγοντα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἑρμῆν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "Πατροβᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Ἑρμᾶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Asyncritus ... Phlegon ... Hermes ... Patrobas ... Hermas ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are men's names. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Φιλόλογον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Νηρέα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ὀλυμπᾶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Philologus ... Nereus ... Olympas ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The name of a woman. Julia was probably the wife of Philologus. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἰουλίαν",
+      "glQuote": "Julia",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are men's names. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Λούκιος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰάσων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "Σωσίπατρος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Lucius, Jason, and Sosipater ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Tertius is the man who wrote down what Paul spoke. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Τέρτιος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "γράψας",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιστολὴν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Tertius, who write this epistle ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are men's names. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Γάϊος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἔραστος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Κούαρτος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Gaius ... Erastus ... Quartus ",
+      "occurrence": 1
+    }
+  }
+]

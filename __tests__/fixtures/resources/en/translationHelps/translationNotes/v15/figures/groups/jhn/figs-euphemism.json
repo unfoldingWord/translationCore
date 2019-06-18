@@ -1,0 +1,178 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To lay down something means to give up control of it. It is a mild way to refer to dying. Alternate translation: \"dies\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τίθησιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "lays down his life ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a mild way for Jesus to say that he will die to protect his sheep. Alternate translation: \"I die for the sheep\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχήν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τίθημι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "προβάτων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I lay down my life for the sheep ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a mild way for Jesus to say he will die and then will become alive again. Alternate translation: \"I allow myself to die in order that I may bring myself back to life\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "τίθημι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχήν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "πάλιν",
+          "occurrence": 1
+        },
+        {
+          "word": "λάβω",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I lay down my life so that I may take it again ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a milder way of asking, \"Where have you buried him?\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "ποῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τεθείκατε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Where have you laid him ",
+      "occurrence": 1
+    }
+  }
+]

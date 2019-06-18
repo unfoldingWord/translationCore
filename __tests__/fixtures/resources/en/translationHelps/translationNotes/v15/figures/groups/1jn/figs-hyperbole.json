@@ -1,0 +1,54 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"everything\" is a generalization. Alternate translation: \"because his anointing teaches you everything that you need to know\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "χρῖσμα",
+          "occurrence": 2
+        },
+        {
+          "word": "διδάσκει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 2
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as his anointing teaches you everything",
+      "occurrence": 1
+    }
+  }
+]

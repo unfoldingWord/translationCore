@@ -1,0 +1,126 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Now\" introduces Simon's mother-in-law to the story and gives background information about her. (See: [[rc://en/ta/man/translate/writing-participants]] and [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "πενθερὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σίμωνος",
+          "occurrence": 1
+        },
+        {
+          "word": "κατέκειτο",
+          "occurrence": 1
+        },
+        {
+          "word": "πυρέσσουσα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now Simon's mother-in-law was lying sick with a fever",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Now\" indicates that this woman is being introduced to the story. Consider how new people are introduced into a story in your language. (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "γυνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖσα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now a woman was there",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"came there\" refers to Joseph coming to Pilate, which is also described after the background information is given, but his coming is referenced before for emphasis and to help introduce him to the story. There may be a different way to do this in your language. Alternate translation: \"Joseph of Arimathea was a respected\" (See: [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-participants",
+      "quote": [
+        {
+          "word": "ἐλθὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωσὴφ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁριμαθαίας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐσχήμων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": " Joseph of Arimathea, a respected ... came",
+      "occurrence": 1
+    }
+  }
+]

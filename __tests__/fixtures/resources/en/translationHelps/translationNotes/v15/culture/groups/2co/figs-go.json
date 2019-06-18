@@ -1,0 +1,50 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "From Paul's perspective, the brothers are going. Alternate translation: \"the brothers to go to you\" (See: [[rc://en/ta/man/translate/figs-go]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-go",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "προέλθωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the brothers they they would come to you",
+      "occurrence": 1
+    }
+  }
+]

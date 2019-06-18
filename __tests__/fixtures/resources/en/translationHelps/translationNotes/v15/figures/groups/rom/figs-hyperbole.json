@@ -1,0 +1,345 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"every\" and \"liar\" are exaggerations here to add emphasis that God alone is always true to his promises. Alternate translation: \"even if every man were a liar\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": "ψεύστης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "even though every man is a liar ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"I do not do\" are an exaggeration to emphasize that Paul does not do what he wants to do as often as he would like or that he does what he does not want to do too often. Alternate translation: \"I do not always do what I want to do\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 2
+        },
+        {
+          "word": "θέλω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "πράσσω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        }
+      ],
+      "glQuote": "what I want to do, this I do not do ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"I do,\" which implies that he always does what he hates to do, are an exaggeration to emphasize that Paul does what he does not want to do too often. Alternate translation: \"the things that I know are not good are the things that I sometimes do\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 3
+        },
+        {
+          "word": "μισῶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 2
+        },
+        {
+          "word": "ποιῶ",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "what I hate, this I do ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"hated\" is an exaggeration. God loved Jacob much more than he loved Esau. He did not literally hate Esau. (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰακὼβ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠγάπησα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἠσαῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμίσησα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jacob I loved, but Esau I hated ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"wherever there are people\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "πάσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "γῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in all the earth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul exaggerates here to emphasize his point. Alternate translation: \"fill you with great joy and peace\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "πληρώσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "πάσης",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "May fill you with all joy and peace ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul exaggerates here to emphasize his point. Alternate translation: \"filled with sufficient knowledge to follow God\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "πεπληρωμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "πάσης",
+          "occurrence": 1
+        },
+        {
+          "word": "γνώσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "filled with all knowledge ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul speaks in a general manner concerning the churches of Christ. Alternate translation: \"The believers in all the churches in this area send their greetings to you\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἀσπάζονται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκκλησίαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "All the churches of Christ greet you ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here this means fellow Christians, including both men and women, since all believers in Christ are members of one spiritual family, with God as their heavenly Father. Alternate translation: \"brothers and sisters\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": "ἀδελφοί",
+      "glQuote": "brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is not specifying males here. Alternate translation: \"whatever a person plants\" or \"whatever someone plants\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "σπείρῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whatever a man plants",
+      "occurrence": 1
+    }
+  }
+]

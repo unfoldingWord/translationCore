@@ -1,0 +1,96 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "the priests and Levites, not John (See: [[rc://en/ta/man/translate/figs-exclusive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "δῶμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we may give ... us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "When Jesus said \"we,\" he was not including Nicodemus. (See: [[rc://en/ta/man/translate/figs-exclusive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "λαλοῦμεν",
+      "glQuote": "we speak ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The pronoun \"we\" is exclusive. The Jewish leaders are speaking only of themselves. Alternate translation: \"but we are following Moses\" (See: [[rc://en/ta/man/translate/figs-exclusive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσέως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσμὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but we are disciples of Moses ",
+      "occurrence": 1
+    }
+  }
+]

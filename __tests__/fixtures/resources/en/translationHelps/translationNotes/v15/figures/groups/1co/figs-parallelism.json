@@ -1,0 +1,354 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul repeats many of the same words in two sentences that mean almost the same thing to emphasize the difference between God's way of doing things and how people think God should do them. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐξελέξατο",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεός",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφούς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐξελέξατο",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεός",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἰσχυρά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God chose ... wise. God chose ... strong",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul expresses two ways how God has put his apostles on display for the world to see. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστόλους",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀπέδειξεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God has put us apostles on display",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing and are used together for emphasis. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑτερογλώσσοις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "χείλεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑτέρων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "By men of strange tongues and by the lips of strangers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul says basically the same thing twice for emphasis. Alternate translation: \"he would realize that he is guilty of sin because he hears what you are saying\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐλέγχεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀνακρίνεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "he would be convicted by all and examined by all",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the two sentences mean the same thing. Alternate translation: \"human beings who will surely die cannot inherit the permanent kingdom of God\" or 2) the second sentence finishes the thought begun by the first. Alternate translation: \"weak human beings cannot inherit the kingdom of God. Neither do those who will certainly die inherit a kingdom that will last forever\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "σὰρξ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κληρονομῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "φθορὰ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφθαρσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "κληρονομεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "flesh and blood cannot inherit the kingdom of God. Neither does what is perishable inherit what is imperishable",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is describing what he wants the Corinthians to do as if he was giving four commands to soldiers in war. These four commands mean almost the same thing and are used for emphasis. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 16,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "γρηγορεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "στήκετε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνδρίζεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "κραταιοῦσθε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Stay alert; stand firm in the faith; act like men; be strong",
+      "occurrence": 1
+    }
+  }
+]

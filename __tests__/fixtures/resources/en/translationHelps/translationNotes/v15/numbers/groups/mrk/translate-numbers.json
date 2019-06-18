@@ -1,0 +1,291 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 days\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "forty days",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"30 ... 60 ... 100.\" These may be written as numerals. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τριάκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἑξήκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἑκατόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "thirty ... sixty ... a hundred",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"about 2,000 pigs\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "δισχίλιοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about two thousand pigs",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"for 12 years\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for twelve years",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"she was 12 years old\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "she was twelve years of age",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"2 by 2\" or \"in pairs\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "δύο",
+          "occurrence": 1
+        },
+        {
+          "word": "δύο",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "two by two",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the number of people in each of the groups. Alternate translation: \"about fifty people in some groups and about a hundred people in other groups\" (See: [[rc://en/ta/man/translate/translate-numbers]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "πρασιαὶ",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "πεντήκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "groups of hundreds and fifties",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"12 baskets\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": "κοφίνων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "twelve baskets",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"5,000 men\" (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "πεντακισχίλιοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνδρες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "five thousand men",
+      "occurrence": 1
+    }
+  }
+]

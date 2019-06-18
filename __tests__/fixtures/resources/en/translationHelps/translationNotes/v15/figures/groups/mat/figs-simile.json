@@ -1,0 +1,1083 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) this is simply a statement that the Spirit was in the form of a dove or 2) this is a simile that compares the Spirit coming down upon Jesus gently, the way a dove would. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "καταβαῖνον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡσεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "περιστερὰν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "coming down like a dove",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus compares those who obey his words to a person who builds his house where nothing can harm it. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁμοιωθήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνδρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "φρονίμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅστις",
+          "occurrence": 2
+        },
+        {
+          "word": "ᾠκοδόμησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "πέτραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "will be like a wise man who built his house upon a rock",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus continues the simile from the previous verse. He compares those who do not obey his words to foolish house-builders. Only a fool would build a house on a sandy place where rain, floods, and wind can sweep the sand away. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁμοιωθήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνδρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μωρῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅστις",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾠκοδόμησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄμμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "will be like a foolish man who built his house upon the sand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This simile means they did not have a leader to take care of them. Alternate translation: \"The people did not have a leader\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡσεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόβατα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιμένα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like sheep without a shepherd",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sheep are defenseless animals that wolves often attack. Jesus is stating that people may harm the disciples. Alternate translation: \"as sheep among people who are like dangerous wolves\" or \"as sheep among people who act the way dangerous animals act\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόβατα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "μέσῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "λύκων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as sheep in the midst of wolves",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus is telling the disciples they must be cautious and harmless among the people. If comparing the disciples to serpents or doves is confusing, it might be better not to state the similes. Alternate translation: \"act with understanding and caution, as well as with innocence and virtue\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "γίνεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "φρόνιμοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄφεις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκέραιοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 3
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "περιστεραί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "be wise as the serpents and harmless as the doves",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The translation should not equate the kingdom of heaven to a man, but rather the kingdom of heaven is like the situation described in the parable. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡμοιώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Οὐρανῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρώπῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The kingdom of heaven is like a man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The kingdom is not like the yeast, but the spread of the kingdom is like the spreading of the yeast. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁμοία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Οὐρανῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζύμῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The kingdom of heaven is like yeast",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "If this simile is not understandable in your language, you can use: \"be as easy to see as the sun.\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἐκλάμψουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἥλιος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "shine like the sun",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information is that the man was looking for valuable pearls that he could buy. (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁμοία",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀνθρώπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμπόρῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζητοῦντι",
+          "occurrence": 1
+        },
+        {
+          "word": "καλοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "μαργαρίτας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like a man who is a merchant looking for valuable pearls",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The kingdom is not like the net, but the kingdom draws all kinds of people like a net catches all kinds of fish. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁμοία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Οὐρανῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "σαγήνῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the kingdom of heaven is like a net",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are similes that emphasize how bright Jesus' appearance became. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἔλαμψεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἥλιος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱμάτια",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "λευκὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "φῶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "His face shone like the sun, and his garments became as brilliant as the light",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus compares the size of a mustard seed to the amount of faith needed to do a miracle. A mustard seed is very small, but it grows into a large plant. Jesus means it only takes a small amount of faith to do a great miracle. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχητε",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "κόκκον",
+          "occurrence": 1
+        },
+        {
+          "word": "σινάπεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if you have faith even as small as a grain of mustard seed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a simile to teach the disciples that they should not be concerned with who is most important. They should be concerned with becoming humble like a child. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "γένησθε",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παιδία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "become like little children",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"belongs to those who are like children.\" This is a simile that means those who are humble like children will enter God's kingdom. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοιούτων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "Οὐρανῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "is to such ones",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a simile that means the scribes and Pharisees may appear to be pure on the outside, but they are wicked on the inside. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "παρομοιάζετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τάφοις",
+          "occurrence": 1
+        },
+        {
+          "word": "κεκονιαμένοις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀκαθαρσίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you are like whitewashed tombs ... unclean",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a simile that emphasizes Jesus' love for the people and how he wanted to take care of them. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "τρόπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄρνις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπισυνάγει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "νοσσία",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πτέρυγα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "just as a hen gathers her chicks under her wings",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that the Son of Man will come very quickly and will be easy to see. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὥσπερ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀστραπὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξέρχεται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "παρουσία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as the lightning shines out ... so will be the coming",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a simile to describe how he will separate the people. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὥσπερ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιμὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφορίζει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "πρόβατα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρίφων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as a shepherd separates the sheep from the goats",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a simile that emphasizes how bright in appearance the angel was. Alternate translation: \"was bright like lightning\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀστραπὴ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "was like lightning",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a simile that emphasizes how bright and white the angel's clothes were. The verb \"was\" from the previous phrase can be repeated. Alternate translation: \"his clothing was very white, like snow\" (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔνδυμα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "λευκὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "χιών",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his clothing as white as snow",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a simile that means the soldiers fell down and did not move. Alternate translation: \"fell to the ground and lay there like dead men\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 28,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἐγενήθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκροί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "became like dead men",
+      "occurrence": 1
+    }
+  }
+]

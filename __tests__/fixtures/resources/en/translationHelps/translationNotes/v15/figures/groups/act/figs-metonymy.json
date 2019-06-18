@@ -1,0 +1,6809 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a reference to the Holy Spirit. Alternate translation: \"the Holy Spirit, whom the Father promised to send\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαγγελίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the promise of the Father ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"mouth\" refers to the words that David wrote. Alternate translation: \"through the words of David\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by the mouth of David ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hearts\" refers to the thoughts and motives. Alternate translation: \"You, Lord, know the thoughts and motives of everyone\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καρδιογνῶστα",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You, Lord, know the hearts of all people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter was referring to what he was saying. Alternate translation: \"listen carefully to what I am saying\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐνωτίσασθε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήματά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "pay attention to my words ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hand\" refers to the actions of the lawless men. Alternate translation: \"through the actions of lawless men\" or \"by what lawless men did\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνόμων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by the hand of lawless men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"face\" refers to the presence of God. Alternate translation: \"very glad when I see you\" or \"very glad when I am in your presence\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πληρώσεις",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐφροσύνης",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will fill me with gladness in your presence",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"God would set one of David's descendants upon David's throne.\" Alternate translation: \"God would appoint one of David's descendants to be king in David's place\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 2
+        },
+        {
+          "word": "καρποῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀσφύος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καθίσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "θρόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "he would set one of the fruit of his body upon his throne ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"In the name of\" here is a metonym for \"by the authority of\" Alternate translation: \"by the authority of Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the name of Jesus Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"them\" refers to the profit that they made from selling their property and possessions. Alternate translation: \"distributed the proceeds to all\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διεμέριζον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "distributed them to all ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's emotions. Alternate translation: \"joyfully and humbly\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγαλλιάσει",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφελότητι",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with glad and humble hearts ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words refer to money. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀργύριον",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "χρυσίον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Silver and gold ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" refers to power and authority. Alternate translation: \"With the authority of Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In the name of Jesus Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"mouth\" refers to the words that the prophets spoke and wrote down. Alternate translation: \"the words of all the prophets\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "προφητῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the mouth of all the prophets ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"presence of the Lord\" is a metonym for the Lord himself. Alternate translation: \"from the Lord\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the presence of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"mouth\" refers to the words that the prophets spoke and wrote down. Alternate translation: \"the words of his holy prophets\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίων",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "προφητῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the mouth of his holy prophets ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" refers to authority. Alternate translation: \"by whose authority\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "ποίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in what name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" refers to power and authority. Alternate translation: \"by the power of Jesus Christ of Nazareth\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ναζωραίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the name of Jesus Christ of Nazareth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"name ... given among men\" refers to the person of Jesus. Alternate translation: \"no other person under heaven, who is given among men, by whom\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἕτερον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δεδομένον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρώποις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no other name ... given among men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" refers to the person of Jesus. Alternate translation: \"not to speak anymore to anyone about this person, Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μηκέτι",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "μηδενὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not to speak anymore to anyone in this name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the phrase \"in the sight of God\" refers to God's opinion. Alternate translation: \"Whether God thinks it is right\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δίκαιόν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνώπιον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Whether it is right in the sight of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"mouth\" refers to the words that David spoke or wrote down. Alternate translation: \"by the words of your servant, our father David\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        },
+        {
+          "word": "παιδός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "through the mouth of your servant, our father David ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean that they joined their armies together to fight a battle. Alternate translation: \"set their armies together ... gathered their troops together\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "παρέστησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "συνήχθησαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "set themselves together ... gathered together ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hand\" is used to mean God's power. Additionally, the phrase \"your hand and your desire decided\" shows God's power and plan. Alternate translation: \"to do all that you had decided because you are powerful and did all that you planned\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ποιῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χείρ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "βουλὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": "προώρισεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to do all that your hand and your plan had decided ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"word\" here is a metonym for God's message. The abstract noun \"boldness\" can be translated as an adverb. Alternate translation: \"speak your message boldly\" or \"be bold when we speak your message\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παρρησίας",
+          "occurrence": 1
+        },
+        {
+          "word": "πάσης",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "speak your word with all boldness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hand\" refers to God's power. This is a request for God to show how powerful he is. Alternate translation: \"while you show your power by healing people\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρά",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκτείνειν",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἴασιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Stretch out your hand to heal ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" refers to power and authority. Alternate translation: \"through the power of your holy servant Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁγίου",
+          "occurrence": 1
+        },
+        {
+          "word": "παιδός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "through the name of your holy servant Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heart\" refers to the thoughts and the word \"soul\" refers to the emotions. Together they refer to the total person. Alternate translation: \"thought the same way and wanted the same things\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 4,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδία",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "μία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "were of one heart and soul ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"heart\" is a metonym for the will and emotions. The phrase \"Satan filled your heart\" is a metaphor. Possible meanings of the metaphor are 1) \"Satan completely controlled you\" or 2) \"Satan convinced you\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπλήρωσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Σατανᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Satan filled your heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"words\" here is a metonym for the message that the apostles had already proclaimed. Possible meanings are 1) \"all this message of eternal life\" or 2) \"the whole message of this new way of living\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all the words of this life ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" refers to the person of Jesus. See how you translated this in [Acts 4:17](../04/17.md). Alternate translation: \"not to speak anymore about this person, Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in this name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"blood\" is a metonym for death, and to bring someone's blood on people is a metaphor for saying that they are guilty of that person's death. Alternate translation: \"desire to make us responsible for this man's death\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "βούλεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαγαγεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "desire to bring this man's blood upon us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Peter uses the word \"tree\" to refer to the cross which was made out of wood. Alternate translation: \"by hanging him on a cross\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κρεμάσαντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ξύλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by hanging him on a tree ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Israel\" refers to the Jewish people. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The council members would have ordered the temple guards to do these things. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "προσκαλεσάμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστόλους",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "δείραντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they called the apostles in and beat them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" refers to the authority of Jesus. See how you translated a similar phrase in [Acts 4:18](../04/18.md). Alternate translation: \"to speak anymore in the authority of Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "λαλεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to speak in the name of Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the Name\" refers to Jesus. Alternate translation: \"for Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀνόματος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the Name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a phrase meaning to serve food to the people. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διακονεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τραπέζαις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "serve tables ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"nation\" refers to the people in it. Alternate translation: \"I will judge the people of the nation\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κρινῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγώ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I will judge the nation ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the people of Egypt. Alternate translation: \"over all the people of Egypt\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "Αἴγυπτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "over Egypt ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to all his possessions. Alternate translation: \"everything he owned\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὅλον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶκον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "all his household ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Egypt\" refers to the people of Egypt. Alternate translation: \"the people of Egypt\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "Αἴγυπτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "over Egypt ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Joseph\" refers to the reputation of Joseph. Alternate translation: \"who did not know that Joseph had helped Egypt\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾔδει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωσήφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "who did not know about Joseph ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for \"mind.\" The phrase \"it came into his heart\" is an idiom that means to decide something. Alternate translation: \"it came into his mind\" or \"he decided\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀνέβη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it came into his heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hand\" refers to the actions of Moses. Alternate translation: \"was rescuing them through what Moses was doing\" or \"was using the actions of Moses to rescue them\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δίδωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "σωτηρίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by his hand was rescuing them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The hand is a metonym for the action performed by the person. In this case, the angel had commanded Moses to return to Egypt. Stephen speaks as if the angel had a physical hand. You may need to make explicit what action the angel did. Alternate translation: \"by the action of the angel\" or \"by having the angel ... bush command him to return to Egypt\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "σὺν",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγγέλου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθέντος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "βάτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by the hand of the angel ... bush ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"a message that endures\" or 2) \"words that give life.\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "λόγια",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῶντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "living words ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" is a metonym for people's thoughts. To do something in the heart means to desire do to something. Alternate translation: \"they desired to turn back\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐστράφησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in their hearts they turned back ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the whole nation of Israel. Alternate translation: \"all you Israelites\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οἶκος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραήλ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "house of Israel ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the face of our fathers\" refers to the presence of their ancestors. Possible meanings are 1) \"As our ancestors watched, God took the land from the nations and drove them out\" or 2) \"When our ancestors came, God took the land from the nations and drove them out\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατασχέσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθνῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "πατέρων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "God took the land ... before the face of our fathers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the people who lived in the land before Israel. Alternate translation: \"the people who previously lived here\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐθνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the nations ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews regarded uncircumcised people as disobedient to God. Stephen uses \"hearts and ears\" to represent to the Jewish leaders who acted the way Gentiles act when they do not obey or listen to God. Alternate translation: \"you refuse to obey and hear\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀπερίτμητοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὠσίν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "uncircumcised in heart and ears ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym for \"the message.\" You may need to make explicit that the message was about Jesus. Alternate translation: \"the message about Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The title \"Christ\" refers to Jesus, the Messiah. Alternate translation: \"told them that Jesus is the Messiah\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκήρυσσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "proclaimed to them the Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"that city\" refers to the people who were rejoicing. Alternate translation: \"So the people of the city were rejoicing\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείνῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "So there was much joy in that city ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" represents authority, and being baptized into his name represents being baptized in order to be under his authority. Alternate translation: \"they had only been baptized to become disciples of the Lord Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "βεβαπτισμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπῆρχον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they had only been baptized into the name of the Lord Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's thoughts or motives. Alternate translation: \"you are not right in your heart\" or \"the motives of your mind are not right\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδία",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐθεῖα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your heart is not right ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's thoughts. Alternate translation: \"for what you intended to do\" or \"for what you were thinking of doing\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίνοια",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "for the intention of your heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Word\" here is a metonym for \"message.\" Peter and John explained the message about Jesus to the Samaritans. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "λαλήσαντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "spoken the word of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the Old Testament book Isaiah. Alternate translation: \"reading from the book of the prophet Isaiah\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀνεγίνωσκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήτην",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἠσαΐαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "reading the prophet Isaiah ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Philip understood that this meant he was to stay close to the person riding in the chariot. Alternate translation: \"accompany the man in this chariot\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κολλήθητι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἅρματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "stay close to this chariot ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the Old Testament book Isaiah. Alternate translation: \"reading from the book of the prophet Isaiah\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀναγινώσκοντος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἠσαΐαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήτην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "reading Isaiah the prophet ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Isaiah's writings in the Old Testament. Alternate translation: \"in the writings of Isaiah\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this scripture ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the people in the synagogues. Alternate translation: \"for the people in the synagogues\" or \"for the leaders in the synagogues\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "συναγωγάς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the synagogues ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your name\" refers to Jesus. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπικαλουμένους",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "calls upon your name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"chosen instrument\" refers to something that is set apart for service. Alternate translation: \"I have chosen him to serve me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "σκεῦος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλογῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστίν",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he is a chosen instrument of mine ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an expression for identifying or speaking out for Jesus. Alternate translation: \"in order that he might speak about me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βαστάσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to carry my name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an expression meaning \"for telling people about me.\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the cause of my name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" refers to Jesus. Alternate translation: \"the name of Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a way of saying he preached or taught the gospel message of Jesus Christ without fear. Alternate translation: \"had openly preached the message about Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπαρρησιάσατο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "had spoken boldly in the name of Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) this simply refers to the Lord Jesus and tells who Paul spoke about. Alternate translation: \"about the Lord Jesus\" or 2) \"name\" is a metonym for authority. Alternate translation: \"under the authority of the Lord Jesus\" or \"with the authority that the Lord Jesus gave him\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the name of the Lord Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"his name\" refers to the actions of Jesus. His name means God who saves. Alternate translation: \"through what Jesus has done for them\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "through his name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"in the name of Jesus Christ\" expresses that the reason for their baptism was that they believed in Jesus. Alternate translation: \"be baptized as believers in Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βαπτισθῆναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "be baptized in the name of Jesus Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This expression refers to the fact that the Gentiles believed the gospel message about Jesus. Alternate translation: \"believed the message of God about Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐδέξαντο",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "had received the word of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a reference to some of the Jews who believed that every believer must be circumcised. Alternate translation: \"some Jewish believers in Jerusalem who wanted all followers of Christ to be circumcized\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "περιτομῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they who belonged to the circumcision group ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"uncircumcised men\" refers to Gentiles. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἄνδρας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκροβυστίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "uncircumcised men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Apparently the animals in the sheet were animals which the Jewish law in the Old Testament forbade the Jews to eat. This can be said in a positive way. Alternate translation: \"I have eaten only meat from holy and clean animals\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-doublenegatives ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κοινὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκάθαρτον",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδέποτε",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσῆλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόμα",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "nothing unholy or unclean has ever entered into my mouth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the animals in the sheet. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἃ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκαθάρισεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "κοίνου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What God has declared clean, do not call unclean ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to all the people in the household. Alternate translation: \"everyone who lives in your house\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶκός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all your household ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God's hand signifies his powerful help. Alternate translation: \"God was powerfully enabling those believers to preach effectively\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "χεὶρ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The hand of the Lord was with them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"ears\" refers to the believers' hearing about the event. Alternate translation: \"the believers in the church\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκκλησίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "ears of the church ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"heart\" refers to a person's will and desire. Alternate translation: \"with all their will\" or \"with complete commitment\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "προθέσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with all their heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"added\" means they came to believe the same thing as the others. Alternate translation: \"many more people also believed in the Lord\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "προσετέθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱκανὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "many people were added to the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) Herod himself killed James or 2) Herod ordered someone to kill James. Alternate translation: \"Herod gave the order and they killed James\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀνεῖλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰάκωβον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He killed James ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the hand of Herod\" refers to \"Herod's hold\" or \"Herod's plans.\" Alternate translation: \"brought me from the harm Herod had planned for me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐξείλατό",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἡρῴδου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "delivered me out of the hand of Herod ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is saying the man is acting like the devil. Alternate translation: \"You are like the devil\" or \"You act like the devil\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "υἱὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "διαβόλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You son of the devil ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hand' represents the power of God and \"upon you\" implies punishment. Alternate translation: \"The Lord will punish you\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "χεὶρ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σέ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the hand of the Lord is upon you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to God's mighty power. Alternate translation: \"with great power\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "βραχίονος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑψηλοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with an uplifted arm ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the people of Israel. Alternate translation: \"gave to the people of Israel\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἤγαγεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "brought to Israel ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"sayings\" represents the message of the prophets. Alternate translation: \"the writings of the prophets\" or \"the message of the prophets\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "προφητῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sayings of the prophets ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"see decay\" is a metonym for \"decay.\" Alternate translation: \"You will not allow the body of your Holy One to rot\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "δώσεις",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὅσιόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "διαφθοράν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You will not allow your Holy One to see decay ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"experienced decay\" is a metonym for \"his body decayed.\" Alternate translation: \"his body rotted\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἶδεν",
+          "occurrence": 1
+        },
+        {
+          "word": "διαφθοράν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "experienced decay ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"experienced no decay\" is a way to say \"his body did not decay.\" Alternate translation: \"did not rot\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶδεν",
+          "occurrence": 1
+        },
+        {
+          "word": "διαφθοράν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "experienced no decay ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"words\" refers to the message that Paul had spoken. Alternate translation: \"this same message\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "these same words ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"city\" represents the people in the city. This phrase is used to show the great response to the Lord's word. Alternate translation: \"almost all the people of the city\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "σχεδὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "almost the whole city ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" refers to the message about Jesus that they had believed. Alternate translation: \"praised God for the message about the Lord Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐδόξαζον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "praised the word of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" refers to the message about Jesus. This can be stated in active form. Alternate translation: \"Those who believed spread the word of the Lord through the whole region\" or \"Those who believed went everywhere in the region and told others about the message of Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 49
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διεφέρετο",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "χώρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The word of the Lord was spread out through the whole region ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"city\"refers to the people in the city. Alternate translation: \"most of the people of the city were divided\" or \"most of the people of the city did not agree with each other\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐσχίσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλῆθος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the majority of the city was divided ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you hearts\" refers to the people. Alternate translation: \"giving you enough to eat and things about which to be happy\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐμπιπλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τροφῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐφροσύνης",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "filling your hearts with food and gladness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Word\" here is a metonym for \"message of God.\" Alternate translation: \"(See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλήσαντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέργῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When they had spoken the word in Perga ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"church\" stands for the people that were a part of the church. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "προπεμφθέντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκκλησίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "being sent by the church ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for a message. Alternate translation: \"the message about Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐαγγελίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word of the gospel ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" refers to the \"minds\" or \"inner beings.\" Alternate translation: \"who knows the people's minds\" or \"who knows what people think\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδιογνώστης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who knows the heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"for God's name.\" Here \"name\" refers to God. Alternate translation: \"for himself\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for his name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"words\" stands for a message. Alternate translation: \"What the prophets said agrees\" or \"The prophets agree\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "συμφωνοῦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγοι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "προφητῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The words of the prophets agree ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"tent\" stands for David's family. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "σκηνὴν",
+      "glQuote": "tent",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"my name\" stands for God. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Moses\" represents the law of Moses. This can be stated in active form. Alternate translation: \"The law of Moses has been proclaimed\" or \"Jews have taught the law of Moses\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "κηρύσσοντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Moses has been proclaimed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" refers to Moses, whose name here represents his law. Alternate translation: \"and the law is read\" or \"and they read the law\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἀναγινωσκόμενος",
+      "glQuote": "and he is read ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" refers to the whole person. Alternate translation: \"because they believe in our Lord Jesus Christ\" or \"because they serve our Lord Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the name of our Lord Jesus Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for a message. Alternate translation: \"the message about the Lord\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for the message. Alternate translation: \"the message about the Lord\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for \"message.\" Alternate translation: \"the message about Christ\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" stands for a person's mind. Also, the author speaks about the \"heart\" or \"mind\" as if it were a box that a person could open so it is ready for someone to fill it. (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἧς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "διήνοιξεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "opened her heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"house\" represents the people who live in her house. Alternate translation: \"the members of her household\" or \"her family and household servants\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶκος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "her house ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" stands for speaking with the authority or as the representative of Jesus Christ. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the name of Jesus Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"lights\" stands for something that makes light. Alternate translation: \"for torches\" or \"for lamps\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "φῶτα",
+      "glQuote": "for lights ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"house\" stands for the people who live in the house. Alternate translation: \"all the members of your household\" or \"your family\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶκός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your house ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for a message. Alternate translation: \"They told him the message about the Lord Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐλάλησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They spoke the word of the Lord to him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for \"message\" or \"command.\" Alternate translation: \"sent a message to the guards\" or \"sent a command to the guards\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀπέστειλαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥαβδούχους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sent word to the guards ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"They\" refers to the magistrates who commanded their soldiers to beat them. Alternate translation: \"The magistrates ordered their soldiers to beat us in public\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "δείραντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δημοσίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They have publicly beaten us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the city\" stands for the people in the city. Alternate translation: \"caused the people of the city to be in an uproar\" or \"caused the people of the city to riot\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐθορύβουν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "set the city in an uproar ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" refers to a teaching. Alternate translation: \"listened to the teaching\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐδέξαντο",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "received the word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"Areopagus\" was the place where the leaders met. Alternate translation: \"to the leaders that met on the Areopagus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἄρειον",
+          "occurrence": 1
+        },
+        {
+          "word": "Πάγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to the Areopagus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"deity\" refers to God's nature or attributes. Alternate translation: \"that God\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "θεῖον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "qualities of deity ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"world\" refers to the people. Alternate translation: \"he will judge all people\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 17,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μέλλει",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνειν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκουμένην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he will judge the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"blood\" stands for the guilt of their actions. Here \"heads\" refers to the whole person. Paul tells the Jews they are solely responsible for the judgment they will face for their stubbornness if they refuse to repent. Alternate translation: \"You alone bear the responsibility for your punishment for sin\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κεφαλὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "May your blood be upon your own heads ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"house\" refers to the people who lived together. Alternate translation: \"the people who lived with him in his house\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὅλῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "οἴκῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "all those who lived in his house ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jews took Paul by force to bring Paul before the court. Here \"judgment seat\" refers to the place where Gallio sat when he made legal decisions in court. Alternate translation: \"took him so that the governor could judge him at the judgment seat\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἤγαγον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "βῆμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "brought him before the judgment seat ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Gallio dismissed them from the judgment seat.\" Here \"judgment seat\" refers to the place where Gallio sits to make legal decisions in court. Alternate translation: \"Gallio made them leave his presence in the court\" or \"Gallio made them leave the court\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀπήλασεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βήματος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Gallio made them leave the judgment seat ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"church\" refers to the believers in Jerusalem. Alternate translation: \"greeted the members of the church of Jerusalem\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀσπασάμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκκλησίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "greeted the Jerusalem church ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" refers to Jesus' power and authority. Alternate translation: \"as believers in the Lord Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the name of the Lord Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"kingdom\" stands for God's rule as king. Alternate translation: \"about God's rule as king\" or \"about how God would show himself as king\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείας",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about the kingdom of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for a message. Alternate translation: \"the message about the Lord\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" refers to Jesus' power and authority. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the name of the Lord Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This stands for the power and authority of Jesus. Alternate translation: \"by the authority of Jesus\" or \"by the power of Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "By the Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This stands for the power and authority of Jesus. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"city\" refers to the people. The city is spoken of as if it were a container. And, \"confusion\" is spoken of as if it were the contents that filled the container. Alternate translation: \"Then people all over the city became upset and started shouting\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπλήσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλις",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "συγχύσεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The whole city was filled with confusion ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"tears\" stands for feeling sad and crying. Alternate translation: \"I crying as I served the Lord\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "δακρύων",
+      "glQuote": "with tears ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"chains\" refers to Paul's being arrested and put in prison. Alternate translation: \"people will put me in prison and cause me to suffer\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "δεσμὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "θλίψεις",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "μένουσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "chains and sufferings await me ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"kingdom\" stands for God's rule as king. Alternate translation: \"to whom I preached the message about God's reign as king\" or \"to whom I preached about how God will show himself as king\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "διῆλθον",
+          "occurrence": 1
+        },
+        {
+          "word": "κηρύσσων",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλείαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "among whom I went about proclaiming the kingdom ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"blood\" stands for a person's death, which, in this case, is not physical death but spiritual death when God declares a person guilty of sin. Paul had told them God's truth. Alternate translation: \"I am not responsible for anyone whom God judges guilty of sin because they did not trust in Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "καθαρός",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἵματος",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am innocent of the blood of any man ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"blood\" stands for Christ's death. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "αἵματος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἰδίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his own blood ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"tears\" refers to Paul's crying because of the strong emotion of concern he felt while he was warning the people. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δακρύων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with tears ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for a message. Alternate translation: \"I ask God to take care of you and that he will help you to keep believing the message I spoke to you about his grace\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "παρατίθεμαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "λόγῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I entrust you to God and to the word of his grace ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"words\" refers to what Jesus has said. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "λόγων",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the words of the Lord Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"a ship crossing over\" stands for the crew that would sail the ship. Alternate translation: \"When we found a ship with a crew sailing over to Phoenicia\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὑρόντες",
+          "occurrence": 1
+        },
+        {
+          "word": "πλοῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "διαπερῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Φοινίκην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When we found a ship crossing over to Phoenicia ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"ship\" stands for the crew that was sailing the ship. Alternate translation: \"the crew would unload the cargo from the ship\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκεῖσε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλοῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποφορτιζόμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "γόμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "where the ship was to unload its cargo ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"hands\" here represents control. Alternate translation: \"into the legal custody of the Gentiles\" or \"to the Gentiles\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐθνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "into the hands of the Gentiles ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" refers to the person of Jesus. Alternate translation: \"for the sake of the Lord Jesus\" or \"because I believe in the Lord Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the name of the Lord Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Moses\" stands for the law of Moses. Alternate translation: \"to stop obeying the laws that Moses gave us\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀποστασίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσέως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to abandon Moses ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"news\" refers to the messenger who went to speak the news. Alternate translation: \"someone gave news to the chief captain of the guard\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀνέβη",
+          "occurrence": 1
+        },
+        {
+          "word": "φάσις",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "χιλιάρχῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "σπείρης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "news came up to the chief captain of the guard ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"feet\" stands for the place where a student would sit while learning from a teacher. Alternate translation: \"by Gamaliel\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "Γαμαλιήλ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "at the feet of Gamaliel ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"this Way\" represents the people who belonged to the group called \"the Way.\" Alternate translation: \"I persecuted the people who belonged to this Way\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὁδὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδίωξα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I persecuted this Way ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"blood\" stands for Stephen's life. To spill blood means to kill. This can be stated in active form. Alternate translation: \"they killed Stephen who testified about you\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐξεχύννετο",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        },
+        {
+          "word": "Στεφάνου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μάρτυρός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the blood of Stephen your witness was spilled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possibly the \"chief officer\" stands for the chief officers' soldiers. Alternate translation: \"So the chief captain ordered his soldiers to untie Paul's bonds\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἔλυσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "So he untied his bonds ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"nation\" refers to the people of the Jewish nation. Alternate translation: \"a judge for the people of the Jewish nation\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κριτὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνει",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a judge to this nation ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"conscience\" refers to a person's inner morality that chooses between right and wrong. Alternate translation: \"to be blameless\" or \"to always do what is right\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἀπρόσκοπον",
+          "occurrence": 1
+        },
+        {
+          "word": "συνείδησιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχειν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to have a clear conscience before God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"judgment seat\" refers to Festus' ruling as judge over Paul's trial. Alternate translation: \"sat upon the seat where he acted as judge\" or \"he sat down as judge\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "καθίσας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βήματος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sat in the judgment seat ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"judgment seat\" refers to Caesar's authority to judge Paul. This can be stated in active form. Alternate translation: \"I ask to go before Caesar, so he can judge me\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βήματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Καίσαρος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑστώς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνεσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I stand before the judgment seat of Caesar where I must be judged ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"judgment seat\" refers to Festus ruling over Paul's trial as judge. Alternate translation: \"I sat upon the seat to act as judge\" or \"I sat down as judge\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "καθίσας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βήματος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I sat in the judgment seat ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"our twelve tribes\" stands for the people in those tribes. Alternate translation: \"This is also what our fellow Jews in the twelve tribes were waiting for\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἣν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "δωδεκάφυλον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐλπίζει",
+          "occurrence": 1
+        },
+        {
+          "word": "καταντῆσαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For this is the promise that our twelve tribes sought to receive ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"name\" here stands for the teaching about the person. Alternate translation: \"to stop people from teaching about Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐναντία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "against the name of Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"voice\" stands for the person speaking. Alternate translation: \"I heard someone speaking to me who said\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἤκουσα",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὴν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "λέγουσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρός",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I heard a voice speaking to me that said ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to what the person in the vision told Paul. Alternate translation: \"what the person from heaven told me in the vision\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀπτασίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the heavenly vision ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"prison chains\" stands for being a prisoner. Alternate translation: \"but, of course, I do no want you to be a prisoner like I am\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "παρεκτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δεσμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but without these prison chains ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"ship ... which was about to sail\" stands for the crew that will sail the ship. Alternate translation: \"We boarded a ship ... which a crew was about to sail\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπιβάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πλοίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μέλλοντι",
+          "occurrence": 1
+        },
+        {
+          "word": "πλεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We boarded a ship ... which was about to sail ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"stand before Caesar\" refers to Paul's going to court and letting Caesar judge him. Alternate translation: \"You must stand before Caesar so he can judge you\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "Καίσαρί",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "παραστῆναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You must stand before Caesar ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hands\" stands for power or control. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "Ῥωμαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "into the hands of the Romans ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Israel\" stands for the people. Alternate translation: \"the people of Israel\" or \"the Jews\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσραὴλ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"bound with this chain\" stands for being a prisoner. Alternate translation: \"that I am a prisoner\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἅλυσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτην",
+          "occurrence": 2
+        },
+        {
+          "word": "περίκειμαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that I am bound with this chain ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"kingdom of God\" stands for God's rule as king. Alternate translation: \"told them about God's rule as king\" or \"told them how God would show himself as king\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διαμαρτυρόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "testified about the kingdom of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the prophets\" refers to what they wrote. Alternate translation: \"from what the prophets wrote\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "προφητῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the prophets ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" stands for a message or statement. Alternate translation: \"after Paul had said one more thing\" or \"after Paul had made this statement\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰπόντος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Παύλου",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥῆμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἓν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "after Paul had spoken this one word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" stands for the mind. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνῶσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "understand with their heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"kingdom of God\" refers to God's rule as king. Alternate translation: \"He was preaching about God's rule as king\" or \"He was preaching about how God will show himself as king\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "κηρύσσων",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He was proclaiming the kingdom of God ",
+      "occurrence": 1
+    }
+  }
+]

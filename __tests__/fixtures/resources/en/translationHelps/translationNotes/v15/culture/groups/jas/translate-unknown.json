@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an animal that crawls on the ground. (See: [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "ἑρπετῶν",
+      "glQuote": "reptile",
+      "occurrence": 1
+    }
+  }
+]

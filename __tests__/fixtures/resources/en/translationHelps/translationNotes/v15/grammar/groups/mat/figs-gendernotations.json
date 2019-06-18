@@ -1,0 +1,113 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" means any person in general. Alternate translation: \"Those who love ... are not worthy\" or \"If you love ... you are not worthy\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "φιλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 2
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄξιος",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "He who loves ... is not worthy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"He\" refers to anyone in general. Alternate translation: \"Whoever\" or \"Anyone who\" or \"The one who\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεχόμενος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He who welcomes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"brothers\" refers to anyone, male or female, who obeys the King. Alternate translation: \"my brothers and sisters here\" or \"these who are like my brothers and sisters\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "τούτων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "these brothers of mine",
+      "occurrence": 1
+    }
+  }
+]

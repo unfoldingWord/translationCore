@@ -1,0 +1,1088 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This name means \"friend of God.\" It may describe this man's character or it may have been his actual name. Most translations have it as a name. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Θεόφιλε",
+      "glQuote": "Theophilus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"King Augustus\" or \"Emperor Augustus.\" Augustus was the first emperor of the Roman Empire. (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/writing-participants]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Καίσαρος",
+          "occurrence": 1
+        },
+        {
+          "word": "Αὐγούστου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Caesar Augustus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Quirinius was appointed to be the governor of Syria. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κυρηνίου",
+      "glQuote": "Quirinius",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a man's name. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Φανουήλ",
+      "glQuote": "Phanuel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are the names of men. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Φιλίππου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Λυσανίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Philip ... Lysanias",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of territories. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 4
+        },
+        {
+          "word": "Ἰτουραίας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Τραχωνίτιδος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 5
+        },
+        {
+          "word": "Ἀβειληνῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Ituraea and Trachonitis ... Abilene",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This continues the list that begins with the words \"He was the son ... of Joseph, the son of Heli\" in verse 24. Consider how people normally list ancestors in your language. You should use the same wording throughout the whole list. Possible formats are 1) \"He was the son ... of Joseph, the son of Heli, who was the son of Matthat, who was the son of Levi, the son of Melchi, the son of Jannai, the son of Joseph\" or 2) \"He was the son ... of Joseph. Joseph was the son of Heli. Heli was the son of Matthat. Matthat was the son of Levi. Levi was the son of Melchi. Melchi was the son of Jannai. Jannai was the son of Joseph\" or 3) \"His father ... was Joseph. Joseph's father was Heli. Heli's father was Matthat. Matthat's father was Levi. Levi's father was Melchi. Melchi's father was Jannai. Jannai's father was Joseph\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαθθὰτ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Λευεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "Μελχεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 4
+        },
+        {
+          "word": "Ἰανναὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 5
+        },
+        {
+          "word": "Ἰωσὴφ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Matthat, the son of Levi, the son of Melchi, the son of Jannai, the son of Joseph",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ματταθίου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀμὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ναγγαὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Mattathias, the son of Amos ... Naggai",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μάαθ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰωδὰ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Maath ... Joda",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that begins in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωανὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Νηρεὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Joanan ... Neri",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μελχεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἢρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Melchi ... Er",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Λευεὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Joshua ... Levi",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Συμεὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἐλιακεὶμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Simeon ... Eliakim",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μελεὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Melea ... David",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰεσσαὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ναασσὼν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Jesse ... Nahshon",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀμιναδὰβ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰούδα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Amminadab ... Judah",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰακὼβ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ναχὼρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Jacob ... Nahor",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σεροὺχ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Σαλὰ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Serug ... Shelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Καϊνὰμ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Λάμεχ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Cainan ... Lamech",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαθουσαλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Καϊνὰμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Methuselah ... Cainan",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a continuation of the list of Jesus' ancestors that began in [Luke 3:23](./23.md). Use the same format as you used in the previous verses. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἐνὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἀδὰμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Enos ... Adam",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A Syrian is a person from the country of Syria. The people of Syria were Gentiles, not Jews. Alternate translation: \"the Gentile Naaman from Syria\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ναιμὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σύρος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Naaman the Syrian",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ναΐν",
+      "glQuote": "Nain",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "One of the \"certain women.\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Μαρία",
+      "glQuote": "Mary",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Two of the \"certain women\" (verse 2). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἰωάννα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Σουσάννα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Joanna ... Susanna",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Joanna was Chuza's wife, and Chuza was Herod's manager. \"Joanna, the wife of Herod's manager, Chuza\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἰωάννα",
+          "occurrence": 1
+        },
+        {
+          "word": "γυνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χουζᾶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιτρόπου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἡρῴδου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Joanna, the wife of Chuza, Herod's manager",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Gerasenes were people from the city called Gerasa. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χώραν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Γερασηνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the region of the Gerasenes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βηθσαϊδά",
+      "glQuote": "Bethsaida",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of an area in Jerusalem. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σιλωὰμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Siloam",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Bethphage was (and still is) a village on the Mount of Olives, which is across the Kidron Valley from Jerusalem. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βηθφαγὴ",
+      "glQuote": "Bethphage",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"a man named Simon, from the city of Cyrene\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σίμωνά",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τινα",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρηναῖον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a certain Simon of Cyrene",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Judean town\" means it was located in Judea. Alternate translation: \"the town called Arimathea, which is in Judea\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁριμαθαίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He was from Arimathea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a town. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἐμμαοῦς",
+      "glQuote": "Emmaus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κλεοπᾶς",
+      "glQuote": "Cleopas",
+      "occurrence": 1
+    }
+  }
+]

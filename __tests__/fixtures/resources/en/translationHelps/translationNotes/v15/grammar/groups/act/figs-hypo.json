@@ -1,0 +1,181 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Pharisees are rebuking the Sadducees by affirming that spirits and angels do exist and can speak to people. Alternate translation: \"Maybe a spirit or an angel has spoken with him!\" (See: [[rc://en/ta/man/translate/figs-hypo ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλάλησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄγγελος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What if a spirit or an angel has spoken to him? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is stating a hypothetical situation. If he were guilty, he would accept the punishment, but he knows that he is not guilty. (See: [[rc://en/ta/man/translate/figs-hypo ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδικῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄξιον",
+          "occurrence": 1
+        },
+        {
+          "word": "θανάτου",
+          "occurrence": 1
+        },
+        {
+          "word": "πέπραχά",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "παραιτοῦμαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποθανεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδέν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὧν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "κατηγοροῦσίν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐδείς",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρίσασθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Though if I have done wrong ... no one may hand me over to them ",
+      "occurrence": 1
+    }
+  }
+]

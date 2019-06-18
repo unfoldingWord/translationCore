@@ -458,7 +458,7 @@ function calculateProgress(groupsData) {
     groupData.forEach(check => {
       totalChecks += 1;
       // checks are considered completed if selections
-      completedChecks += (check.selections) ? 1 : 0;
+      completedChecks += (check.selections || check.nothingToSelect) ? 1 : 0;
     });
   });
   // calculate percentage by dividing total by completed

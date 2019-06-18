@@ -42,8 +42,10 @@ export const getToggledGroupData = (state, action, key) => {
       case "selections":
         if (action.selections.length > 0) {
           groupObject[key] = action.selections; // we save the selections for quick invalidation checking
+          groupObject['nothingToSelect'] = !!action.nothingToSelect;
         } else {
           groupObject[key] = null;
+          groupObject['nothingToSelect'] = !!action.nothingToSelect;
         }
         break;
       default:

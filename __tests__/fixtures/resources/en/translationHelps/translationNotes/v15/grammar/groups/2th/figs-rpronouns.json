@@ -1,0 +1,119 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"ourselves\" is used to emphasize Paul's boasting. (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we ourselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"himself\" gives additional emphasis to the phrase \"Lord Jesus Christ.\" (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Lord Jesus Christ himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"himself\" emphasizes that the Lord will personally give peace to believers. (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Lord of peace himself",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is exaggerating about the act of circumcision to insult the false teachers. The false teachers said God will only save a person who is circumcised, who cuts off the foreskin. This action was required by the law of Moses for all male Israelites. (See: [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κατατομήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "mutilate",
+      "occurrence": 1
+    }
+  }
+]

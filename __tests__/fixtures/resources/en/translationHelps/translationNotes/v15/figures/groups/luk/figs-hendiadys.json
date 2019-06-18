@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These can be combined into one phrase. Alternate translation: \"words of wisdom\" or \"wise words\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": [
+        {
+          "word": "στόμα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "speech and wisdom",
+      "occurrence": 1
+    }
+  }
+]

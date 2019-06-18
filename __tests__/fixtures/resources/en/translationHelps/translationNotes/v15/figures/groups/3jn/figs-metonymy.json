@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the name\" refers to Jesus. Alternate translation: \"for they have gone out to tell people about Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξῆλθον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "because it was for the sake of the name that they went out",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,133 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This marks the beginning of another parable. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": "οὐδεὶς",
+      "glQuote": "No one",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus answers the man's question by telling a parable. Alternate translation: \"As an answer to the man's question, Jesus told him this story\" (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "ὑπολαβὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In reply, Jesus saidSo Jesus answered and said",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus tells another parable about how servants should be faithful while they wait for their master to return. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "πιστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκονόμος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "φρόνιμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the faithful and wise manager",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus begins telling a parable. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But Jesus said to him",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"glory\" describes the word \"kingdom.\" Alternate translation: \"into his own glorious kingdom\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "δόξαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "into his own kingdom and glory",
+      "occurrence": 1
+    }
+  }
+]

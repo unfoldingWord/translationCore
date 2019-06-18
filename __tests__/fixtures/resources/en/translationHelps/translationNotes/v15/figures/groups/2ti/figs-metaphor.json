@@ -1,0 +1,2361 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of \"life\" as if it were an object inside of Jesus. This refers to the life people receive as a result of belonging to Christ Jesus. Alternate translation: \"of the life that we receive as a result of belonging to Christ Jesus\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "of life that is in Christ Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"dear child\" or \"child whom I love. Here \"child\" is a term of great love and approval. It is also likely that Paul introduced Christ to Timothy, and so this is why Paul considered him like his own child. Alternate translation: \"who is like my beloved child\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀγαπητῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "beloved child",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of his conscience as if it could be physically clean. A person with a \"clean conscience\" does not feel guilty because he has always tried to do what was right. Alternate translation: \"knowing I have tried my hardest to do what is right\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "καθαρᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνειδήσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with a clean conscience",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of himself as if he were a container that someone could fill. Also, this can be stated in active form. Alternate translation: \"I may be joyful\" or \"I may have complete joy\" or \"I may rejoice\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "χαρᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I may be filled with joy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking of their faith as if it were something that was alive and lived in them. Paul means they have the same sort of faith. This can be stated as a new sentence. Alternate translation: \"faith. Lois, your grandmother, and then Eunice, your mother, had this genuine faith in God, and now I am confident that you have this same genuine faith as well\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἥτις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνῴκησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "μάμμῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Λωΐδι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "μητρί",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Εὐνίκῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "πέπεισμαι",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "σοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "faith, which lived first in your grandmother Lois and your mother Eunice, and I am convinced that it lives in you also",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about Timothy's need to start using his gift again as if he were restarting a fire. Alternate translation: \"to start using again the gift\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀναζωπυρεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάρισμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to rekindle the gift",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of suffering as if it were an object that could be shared or distributed among people. Alternate translation: \"suffer with me for the gospel\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "συνκακοπάθησον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐαγγελίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "share in suffering for the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of salvation as if it were an object that could uncovered and shown to people. This can be stated in active form. Alternate translation: \"God has shown how he will save us by sending our Savior Christ Jesus\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "φανερωθεῖσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιφανείας",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σωτῆρος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God's salvation has been revealed by the appearing of our Savior Christ Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of death as if it were an independent process instead of the event of people dying. Alternate translation: \"who destroyed death\" or \"who made it possible for people not to remain dead forever\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "καταργήσαντος",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "θάνατον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who put an end to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of teaching about eternal life as if it were an object that could be brought from darkness into light so that people could see it. Alternate translation: \"taught what life that never ends is by preaching the gospel\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "φωτίσαντος",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ζωὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀφθαρσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐαγγελίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "brought life that never ends to light through the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is using a metaphor of a person leaving something with another person who is supposed to protect it until he gives it back to the first person. Possible meanings are 1) Paul is trusting Jesus to help him remain faithful, or 2) Paul is trusting that Jesus will ensure that people continue spreading the gospel message. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "παραθήκην",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλάξαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to keep that which I have entrusted to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metaphor that means they stopped helping Paul. They abandoned Paul because the authorities had thrown him into prison. Alternate translation: \"have stopped helping me\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀπεστράφησάν",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "turned away from me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of mercy as if it were an object that could be found. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "εὑρεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλεος",
+          "occurrence": 1
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to find mercy from him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"child\" is a term of great love and approval. It is also likely that Timothy was converted to Christ by Paul, and so this is why Paul considered him like his own child. Alternate translation: \"who is like my child\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τέκνον",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my child",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about the motivation and determination that God's grace allows believers to have. Alternate translation: \"let God use the grace he gave you through your relationship to Christ Jesus to make you strong\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐνδυναμοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "be strengthened in the grace that is in Christ Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of his instructions to Timothy as if they were objects that Timothy could give to other people and trust them to use correctly. Alternate translation: \"commit them\" or \"teach them\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "παράθου",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώποις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "entrust them to faithful people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of this distraction as if it were a net that tripped people up as they were walking. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἐμπλέκεται",
+      "glQuote": "while entangled",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the third metaphor Paul gives Timothy about working. The reader should understand that Christ's servants need to work hard. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κοπιῶντα",
+          "occurrence": 1
+        },
+        {
+          "word": "γεωργὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρπῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μεταλαμβάνειν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is necessary that the hardworking farmer receive his share of the crops first",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metaphor that means Jesus descended from David. Alternate translation: \"who is a descendant of David\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "σπέρματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυείδ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from David's seed",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"bound\" speaks of what happens to a prisoner, and the phrase is a metaphor that means no one can stop God's message. This can be translated in active form. Alternate translation: \"no one can put the word of God in prison\" or \"no one can stop the word of God\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δέδεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the word of God is not bound",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of salvation as if it were an object that could be physically grasped. Alternate translation: \"will receive salvation from Christ Jesus\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "σωτηρίας",
+          "occurrence": 1
+        },
+        {
+          "word": "τύχωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "may obtain the salvation that is in Christ Jesus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of God's awareness of Paul as if he is in God's physical presence. This implies that God will be Timothy's witness. Alternate translation: \"in God's presence\" or \"with God as your witness\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐνώπιον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "before God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul presents the idea of Timothy correctly explaining God's word as if he were a skilled workman. Alternate translation: \"like a workman\" or \"like a worker\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἐργάτην",
+      "glQuote": "a worker",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of this kind of talk as if it were something that could physically move to another location, and he speaks of godlessness as if it were that new location. Alternate translation: \"which causes people to become more and more ungodly\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλεῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "προκόψουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσεβείας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "which leads to more and more godlessness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"gone astray from the truth\" is a metaphor for no longer believing or teaching what is true. Alternate translation: \"who have started saying things that are not true\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οἵτινες",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλήθειαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠστόχησαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who have gone astray from the truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"God's truth is like a firm foundation\" or 2) \"God has established his people like a building on a firm foundation\" or 3) \"God's faithfulness is like a firm foundation.\" In any case, Paul speaks of this idea as if it were a building's foundation laid in the ground. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "στερεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "θεμέλιος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕστηκεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the firm foundation of God stands",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of unrighteousness as if it were a place from which one could leave. Alternate translation: \"stop being evil\" or \"stop doing wrong things\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀποστήτω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδικίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "depart from unrighteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"containers\" is a general word for bowls, plates, and pots, which people put food or drink into or on. If your language does not have a general word, use the word for \"bowls\" or \"pots.\" Paul is using this as a metaphor to describe different types of people. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "σκεύη",
+          "occurrence": 1
+        },
+        {
+          "word": "χρυσᾶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀργυρᾶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ξύλινα",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὀστράκινα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "containers of gold and silver ... containers of wood and clay",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"separates himself from dishonorable people\" or 2) \"makes himself pure.\" In any case, Paul speaks of this process as if it were a person washing himself. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐκκαθάρῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "cleans himself from dishonorable use",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about this person as if he were an honorable container. Alternate translation: \"he is like the container that is useful for special occasions\" or \"he is like the container that is useful for activities good people do in public\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "σκεῦος",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τιμήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he is an honorable container",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He is not set apart physically or in the sense of location, but instead to fulfill a purpose. Some versions translate this \"sanctified,\" but the text signals the essential idea of being set apart. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἡγιασμένον",
+      "glQuote": "He is set apart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about youthful lusts as if they are a dangerous person or animal that Timothy should run away from. Alternate translation: \"Completely avoid youthful lusts\" or \"Absolutely refuse to do the wrong things that young people strongly desire to do\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεωτερικὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιθυμίας",
+          "occurrence": 1
+        },
+        {
+          "word": "φεῦγε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Flee youthful lusts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Pursue\" means the opposite of \"Flee.\" Paul speaks of righteousness as if it is an object that Timothy should run towards because it will do him good. Alternate translation: \"Try your best to obtain righteousness\" or \"Seek after righteousness\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "δίωκε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Pursue righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"clean\" is a metaphor for something pure or sincere. And, \"heart\" here is a metonym for \"thoughts\" or \"emotions.\" Alternate translation: \"with a sincere mind\" or \"with sincerity\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "καθαρᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "out of a clean heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of ignorant questions as if they were women giving birth to children. Alternate translation: \"they cause arguments\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "γεννῶσι",
+          "occurrence": 1
+        },
+        {
+          "word": "μάχας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they give birth to arguments",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of repentance as if it were an object that God could give people. Alternate translation: \"God may give them the opportunity to repent\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "μήποτε",
+          "occurrence": 1
+        },
+        {
+          "word": "δώῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "μετάνοιαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God may perhaps give them repentance",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of sinners learning to think correctly about God as if they were drunk people becoming sober again. Alternate translation: \"They may think correctly again\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἀνανήψωσιν",
+      "glQuote": "They may become sober again",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the devil's ability to convince Christians to sin as if it were a trap. Alternate translation: \"stop doing what the devil wants\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "διαβόλου",
+          "occurrence": 1
+        },
+        {
+          "word": "παγίδος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "leave the devil's trap",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Convincing Christians to sin is spoken of as if the devil had physically captured them and made them his slaves. This can be stated in active form. Alternate translation: \"after he has deceived them into obeying his will\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐζωγρημένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείνου",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλημα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "after they have been captured by him for his will",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of godliness, the habit of honoring God, as if it were a physical object that had a shape and had physical power. Alternate translation: \"They will appear to honor God, but they way they act will show that they do not really believe in God's power\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἔχοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "μόρφωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐσεβείας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναμιν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠρνημένοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They will have a shape of godliness, but they will deny its power",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Turn away\" here is a metaphor for avoiding someone. Alternate translation: \"Avoid these people\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τούτους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποτρέπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Turn away from these people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the attraction of sin as if sin were heaped up on the backs of these women. Possible meanings are 1) \"who sin often\" or 2) \"who feel terrible guilt because they continue to sin.\" The idea is that these men can easily influence these women because the women are unable to stop sinning. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "σεσωρευμένα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίαις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who are heaped up with sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about these various desires as if they could lead another person away. This can be stated in active form. Alternate translation: \"they desire to sin in various ways rather than obey Christ\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀγόμενα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιθυμίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "ποικίλαις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "are led away by various desires",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of those who argue against someone as if they were standing against them. Alternate translation: \"opposed\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἀντέστησαν",
+      "glQuote": "stood against",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses an expression about physical movement to mean that the false teachers will not have much success among the believers. Alternate translation: \"they will not have much success\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "προκόψουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλεῖον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they will not advance very far",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of giving close attention to these things as if one were physically following them as they moved. Alternate translation: \"you have observed my teaching\" or \"you have payed close attention to my teaching\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "παρηκολούθησάς",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "διδασκαλίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you have followed my teaching",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of God having stopped him from suffering these hardships and dangers as if God had carried him out of a physical location. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρρύσατο",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Out of them all, the Lord rescued me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here, to lead someone astray is a metaphor for persuading someone to believe something that is not true. Alternate translation: \"deceiving themselves and others\" or \"believing lies and teaching lies\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πλανῶντες",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πλανώμενοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "leading others and themselves astray",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of biblical instruction as if it were a place that Timothy could stay in. Alternate translation: \"do not forget what you learned\" or \"continue doing what you have learned\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "μένε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔμαθες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "remain in the things that you have learned",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of people obtaining many teachers as if it were putting them into a heap or pile. Alternate translation: \"they will listen to many teachers who assure them that there is nothing wrong with their sinful desires\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδίας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιθυμίας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπισωρεύσουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "διδασκάλους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they will heap up for themselves teachers according to their own desires",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about people no longer paying attention as if they were physically turning away so they cannot hear. Alternate translation: \"They will no longer pay attention to the truth\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκοὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστρέψουσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They will turn their hearing away from the truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks about people starting to pay attention to myths as if they were physically turning towards them to listen. Alternate translation: \"they will pay attention to teachings that are not true\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "μύθους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκτραπήσονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they will turn aside to myths",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul wants his readers to think correctly about everything, and he speaks about them as if he wanted them to be sober, that is, not drunk with wine. Alternate translation: \"think clearly\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "νῆφε",
+      "glQuote": "be sober-minded",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of his readiness to die as if he were a cup of wine ready to be poured out as a sacrifice to God. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἤδη",
+          "occurrence": 1
+        },
+        {
+          "word": "σπένδομαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am already being poured out",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of his hard work as if he had been an athlete competing for a prize. Alternate translation: \"I have done my best\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καλὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγῶνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠγώνισμαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have competed in the good contest",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of his life of service to God as if he had been running a race on foot. Alternate translation: \"I have completed what I needed to do\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "δρόμον",
+          "occurrence": 1
+        },
+        {
+          "word": "τετέλεκα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have finished the race",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of his trust in Christ and his obedience to God as if they were a valuable object that he kept in his possession. Possible meanings are 1) \"I have been faithful in doing my ministry\" or 2) \"I have kept the teachings about what we believe from any error\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τετήρηκα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have kept the faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) the crown is the prize that God gives to people who have lived the right way or 2) the crown is a metaphor for righteousness. Just as the judge of a race gives a crown to the winner, when Paul finishes his life, God will declare that Paul is righteous. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνης",
+          "occurrence": 1
+        },
+        {
+          "word": "στέφανος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "crown of righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of doing evil deeds as if they were put on display. Alternate translation: \"did many evil things to me\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "πολλά",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "κακὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνεδείξατο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "displayed many evil deeds against me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of punishment as if it were payment. Alternate translation: \"The Lord will punish him for what he has done\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀποδώσει",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Κύριος",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Lord will repay him according to his deeds",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking as if the Lord had physically stood with him. Alternate translation: \"the Lord helped me\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Κύριός",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "παρέστη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Lord stood by me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking about danger as if he had been threatened by a lion. This danger could have been physical, spiritual, or both. Alternate translation: \"I was rescued from great danger\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐρύσθην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "στόματος",
+          "occurrence": 1
+        },
+        {
+          "word": "λέοντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I was rescued out of the lion's mouth",
+      "occurrence": 1
+    }
+  }
+]

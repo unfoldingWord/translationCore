@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The mustard tree is described as causing its branches to grow large. Alternate translation: \"with large branches\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ποιεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "κλάδους",
+          "occurrence": 1
+        },
+        {
+          "word": "μεγάλους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it forms large branches",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the moon is spoken of as if it were alive and able to give something to someone else. Alternate translation: \"the moon will not shine\" or \"the moon will be dark\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "σελήνη",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δώσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "φέγγος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the moon will not give its light",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the fig tree is spoken of as if it were alive and able to willingly cause its leaves to grow. Alternate translation: \"its leaves begin to sprout\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἐκφύῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "φύλλα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "puts out its leaves",
+      "occurrence": 1
+    }
+  }
+]

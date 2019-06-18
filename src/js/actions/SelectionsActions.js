@@ -2,19 +2,18 @@ import types from './ActionTypes';
 import isEqual from 'deep-equal';
 import path from 'path-extra';
 import fs from 'fs-extra';
+import usfm from 'usfm-js';
 import {checkSelectionOccurrences} from 'selections';
+import {batchActions} from 'redux-batched-actions';
 // actions
 import * as AlertActions from './AlertActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
-import {batchActions} from "redux-batched-actions";
 // helpers
 import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import * as saveMethods from "../localStorage/saveMethods";
-import usfm from "usfm-js";
-
+import * as saveMethods from '../localStorage/saveMethods';
 /**
  * This method adds a selection array to the selections reducer.
  * @param {Array} selections - An array of selections.
@@ -22,11 +21,12 @@ import usfm from "usfm-js";
  * @param {Boolean} invalidated - if true then selection if flagged as invalidated, otherwise it is not flagged as invalidated
  * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
+ * @param {Boolean} nothingToSelect - nothing to select checkbox.
  * @return {Object} - An action object, consisting of a timestamp, action type,
  *                    a selection array, and a username.
  */
 export const changeSelections = (selections, userName, invalidated = false, contextId = null,
-                                 batchGroupData = null) => {
+                                 batchGroupData = null, nothingToSelect = false) => {
   return ((dispatch, getState) => {
     let state = getState();
     if (getSelectedToolName(state) === 'translationWords' || getSelectedToolName(state) === 'translationNotes') {
@@ -44,6 +44,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
           gatewayLanguageCode,
           gatewayLanguageQuote,
           selections,
+          nothingToSelect,
           userName
         });
         dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
@@ -55,7 +56,8 @@ export const changeSelections = (selections, userName, invalidated = false, cont
       actionsBatch.push({
         type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId,
-        selections
+        selections,
+        nothingToSelect
       });
       actionsBatch.push({
         type: types.SET_INVALIDATION_IN_GROUPDATA,
@@ -158,7 +160,7 @@ function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapte
         }
       }
     }
-    const userName = getUsername(state);
+    const username = getUsername(state);
     const modifiedTimestamp = generateTimestamp();
     const keys = Object.keys(latestContext);
     for (let j = 0, l = keys.length; j < l; j++) {
@@ -170,7 +172,7 @@ function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapte
         const newInvalidation = {
           contextId: selectionsData.contextId,
           invalidated: true,
-          userName,
+          username,
           modifiedTimestamp: modifiedTimestamp,
           gatewayLanguageCode: selectionsData.gatewayLanguageCode,
           gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
@@ -377,4 +379,3 @@ export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
   }
   return selectionsArray.join(" ");
 };
-

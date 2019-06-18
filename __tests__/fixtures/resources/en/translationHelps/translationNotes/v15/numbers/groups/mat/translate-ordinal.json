@@ -1,0 +1,379 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is first in order, not in rank. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": "πρῶτος",
+      "glQuote": "first",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Third\" is the ordinal form of \"three.\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Third\" is the ordinal form of \"three.\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 17,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The third hour is around nine in the morning. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τρίτην",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third hour",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The sixth hour is around noon. The ninth hour is around three in the afternoon. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕκτην",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνάτην",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about the sixth hour and again the ninth hour",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is about five in the afternoon. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑνδεκάτην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the eleventh hour",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Third\" is the ordinal form of \"three.\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τρτῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτῃίτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"The oldest\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρῶτος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The first",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the next oldest ... the next oldest ... the youngest\" or \"his oldest younger brother ... that brother's oldest younger brother ... the youngest\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεύτερος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "τρίτος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑπτά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the second ... the third ... the seventh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The first time is described in [Matthew 26:39](./39.md). (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "δευτέρου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a second time",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The first time is described in [Matthew 26:39](./39.md). (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a third time",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "(See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 64
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτης",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third day",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,319 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of cities in the region of western Asia that today is modern Turkey. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σμύρναν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Πέργαμον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Θυάτειρα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Σάρδεις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Φιλαδέλφιαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Λαοδίκιαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Smyrna ... Pergamum ... Thyatira ... Sardis ... Philadelphia ... Laodicea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "people who followed the teachings of a man named Nicolaus (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Νικολαϊτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Nicolaitans",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city in a part of western Asia that today is modern Turkey. See how you translated this in [Revelation 1:11](../01/11.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Σμύρνῃ",
+      "glQuote": "Smyrna",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city in a part of western Asia that today is modern Turkey. See how you translated this in [Revelation 1:11](../01/11.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Περγάμῳ",
+      "glQuote": "Pergamum",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀντιπᾶς",
+      "glQuote": "Antipas",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a king. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαλὰκ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Balak",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was the name for a group of people who followed the teachings of a man named Nicolaus. See how you translated this in [Revelation 2:6](../02/06.md) (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Νικολαϊτῶν",
+      "glQuote": "Nicolaitans",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city in a part of western Asia that today is modern Turkey. See how you translated this in [Revelation 1:11](../01/11.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Θυατείροις",
+      "glQuote": "Thyatira",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city in the western part of Asia that today is modern Turkey. See how you translated this in [Revelation 1:11](../01/11.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Σάρδεσιν",
+      "glQuote": "Sardis",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city in the western part of Asia that today is modern Turkey. See how you translated this in [Revelation 1:11](../01/11.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Φιλαδελφίᾳ",
+      "glQuote": "Philadelphia",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city in the western part of Asia that today is modern Turkey. See how you translated this in [Revelation 1:11](../01/11.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Λαοδικίᾳ",
+      "glQuote": "Laodicea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both names mean \"Destroyer.\" (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/translate-transliterate]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἀβαδδών",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἀπολλύων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Abaddon ... Apollyon",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a place. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἁρμαγεδών",
+      "glQuote": "Armageddon",
+      "occurrence": 1
+    }
+  }
+]

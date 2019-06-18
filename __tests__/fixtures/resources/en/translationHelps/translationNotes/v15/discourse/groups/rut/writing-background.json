@@ -1,0 +1,88 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase introduces new information before the story continues. Your language may have a way to introduce new information. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "וּֽ",
+          "occurrence": 1
+        },
+        {
+          "word": "לְ",
+          "occurrence": 1
+        },
+        {
+          "word": "נָעֳמִ֞י",
+          "occurrence": 1
+        },
+        {
+          "word": "מידע",
+          "occurrence": 1
+        },
+        {
+          "word": "לְ",
+          "occurrence": 2
+        },
+        {
+          "word": "אִישָׁ֗",
+          "occurrence": 1
+        },
+        {
+          "word": "הּ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now Naomi had a relative of her husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer of the book explains of the custom of exchange during the time of Ruth. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "וְ⁠זֹאת֩",
+      "glQuote": "Now this was the custom",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"in earlier times.\" This implies that the customs had changed from when the story took place until the book was written. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "לְ⁠פָנִ֨ים",
+      "glQuote": "in former times",
+      "occurrence": 1
+    }
+  }
+]

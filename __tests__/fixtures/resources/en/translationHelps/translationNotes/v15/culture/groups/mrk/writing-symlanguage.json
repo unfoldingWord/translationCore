@@ -1,0 +1,90 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Take this bread. It is my body.\" Though most understand this to mean that the bread is a symbol of Jesus' body and that it is not actual flesh, it is best to translate this statement literally. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "quote": [
+        {
+          "word": "λάβετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "τοῦτό",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σῶμά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Take this. This is my body",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"This wine is my blood.\" Though most understand this to mean that the wine is a symbol of Jesus' blood and that it is not actual blood, it is best to translate this statement literally. (See: [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-symlanguage",
+      "quote": [
+        {
+          "word": "τοῦτό",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This is my blood",
+      "occurrence": 1
+    }
+  }
+]

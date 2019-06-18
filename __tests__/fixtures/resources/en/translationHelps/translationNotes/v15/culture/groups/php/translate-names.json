@@ -1,0 +1,96 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man sent by the Philippian church to minister to Paul in prison. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἐπαφρόδιτον",
+      "glQuote": "Epaphroditus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are women who were believers and helped Paul in the church at Philippi. Alternate translation: \"I beg Euodia, and I beg Syntyche\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Εὐοδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "παρακαλῶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Συντύχην",
+          "occurrence": 1
+        },
+        {
+          "word": "παρακαλῶ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "I am pleading with Euodia, and I am pleading with Syntyche",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Clement was a man who was a believer and worker in the church at Philippi. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Κλήμεντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "along with Clement",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Face to face\" here is an idiom, meaning to speak in their presence. Alternate translation: \"speak in your presence\" or \"speak to you in person\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "2jn",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "στόμα",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "στόμα",
+          "occurrence": 2
+        },
+        {
+          "word": "λαλῆσαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "speak face to face",
+      "occurrence": 1
+    }
+  }
+]

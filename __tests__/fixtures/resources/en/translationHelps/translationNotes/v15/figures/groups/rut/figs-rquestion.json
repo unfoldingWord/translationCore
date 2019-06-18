@@ -1,0 +1,389 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a rhetorical question. Alternate translation: \"It does not make sense for you to go with me.\" or \"You should not go with me.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "לָ֥",
+          "occurrence": 1
+        },
+        {
+          "word": "מָּה",
+          "occurrence": 1
+        },
+        {
+          "word": "תֵלַ֖כְנָה",
+          "occurrence": 1
+        },
+        {
+          "word": "עִמִּ֑",
+          "occurrence": 1
+        },
+        {
+          "word": "י",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Why will you go with me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Naomi uses this question to say she cannot have other sons for them to marry. Alternate translation: \"Obviously it is not possible for me to have any more sons who could become your husbands.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "הַֽ",
+          "occurrence": 1
+        },
+        {
+          "word": "עֽוֹד",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 1
+        },
+        {
+          "word": "לִ֤",
+          "occurrence": 1
+        },
+        {
+          "word": "י",
+          "occurrence": 3
+        },
+        {
+          "word": "בָנִים֙",
+          "occurrence": 1
+        },
+        {
+          "word": "בְּֽ",
+          "occurrence": 1
+        },
+        {
+          "word": "מֵעַ֔",
+          "occurrence": 1
+        },
+        {
+          "word": "י",
+          "occurrence": 4
+        },
+        {
+          "word": "וְ",
+          "occurrence": 1
+        },
+        {
+          "word": "הָי֥וּ",
+          "occurrence": 1
+        },
+        {
+          "word": "לָ",
+          "occurrence": 1
+        },
+        {
+          "word": "כֶ֖ם",
+          "occurrence": 1
+        },
+        {
+          "word": "לַ",
+          "occurrence": 1
+        },
+        {
+          "word": "אֲנָשִֽׁים",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are there still sons in my womb, that they may become your husbands?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are rhetorical questions, which do not expect an answer. Alternate translation: \"you would not wait until they were grown up so that you could marry them. You would choose to marry a husband now.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "occurrence": 1
+        },
+        {
+          "word": "יִגְדָּ֔לוּ",
+          "occurrence": 1
+        },
+        {
+          "word": "הֲ",
+          "occurrence": 2
+        },
+        {
+          "word": "לָהֵן֙",
+          "occurrence": 1
+        },
+        {
+          "word": "תֵּֽעָגֵ֔נָה",
+          "occurrence": 1
+        },
+        {
+          "word": "לְ",
+          "occurrence": 1
+        },
+        {
+          "word": "בִלְתִּ֖י",
+          "occurrence": 1
+        },
+        {
+          "word": "הֱי֣וֹת",
+          "occurrence": 1
+        },
+        {
+          "word": "לְ",
+          "occurrence": 2
+        },
+        {
+          "word": "אִ֑ישׁ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "would you therefore wait until they were grown? Would you keep yourselves from having a husband?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be reworded as a command. Alternate translation: \"Listen to me, my daughter\" or \"Note well what I am telling you, my daughter\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "הֲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ל֧וֹא",
+          "occurrence": 1
+        },
+        {
+          "word": "שָׁמַ֣עַתְּ",
+          "occurrence": 1
+        },
+        {
+          "word": "בִּתִּ֗",
+          "occurrence": 1
+        },
+        {
+          "word": "י",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Will you not listen to me, my daughter?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Boaz used this question to emphasize what he had already done to help Ruth. Alternate translation: \"I have given the men strict instructions ... you.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "הֲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ל֥וֹא",
+          "occurrence": 1
+        },
+        {
+          "word": "צִוִּ֛יתִי",
+          "occurrence": 1
+        },
+        {
+          "word": "אֶת",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 2
+        },
+        {
+          "word": "הַ",
+          "occurrence": 1
+        },
+        {
+          "word": "נְּעָרִ֖ים",
+          "occurrence": 1
+        },
+        {
+          "word": "לְ",
+          "occurrence": 1
+        },
+        {
+          "word": "בִלְתִּ֣י",
+          "occurrence": 1
+        },
+        {
+          "word": "נָגְעֵ֑",
+          "occurrence": 1
+        },
+        {
+          "word": "ךְ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Have I not instructed the young men not to touch you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Naomi uses this question to tell Ruth what she planned to do. Alternate translation: \"I must look for a place for you to rest ... for you.\" or \"I must find a husband to care for you ... for you.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "הֲ",
+          "occurrence": 1
+        },
+        {
+          "word": "לֹ֧א",
+          "occurrence": 1
+        },
+        {
+          "word": "אֲבַקֶּשׁ",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 1
+        },
+        {
+          "word": "לָ֛",
+          "occurrence": 1
+        },
+        {
+          "word": "ךְ",
+          "occurrence": 1
+        },
+        {
+          "word": "מָנ֖וֹחַ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "־",
+          "occurrence": 2
+        },
+        {
+          "word": "לָֽ",
+          "occurrence": 1
+        },
+        {
+          "word": "ךְ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "should I not seek rest for you ... with you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Naomi probably used this question to remind Ruth of something she had already told her. Alternate translation: \"he is our relative.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "הֲ",
+          "occurrence": 1
+        },
+        {
+          "word": "לֹ֥א",
+          "occurrence": 1
+        },
+        {
+          "word": "בֹ֨עַז֙",
+          "occurrence": 1
+        },
+        {
+          "word": "מֹֽדַעְתָּ֔",
+          "occurrence": 1
+        },
+        {
+          "word": "נוּ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "is he not our kinsman?",
+      "occurrence": 1
+    }
+  }
+]

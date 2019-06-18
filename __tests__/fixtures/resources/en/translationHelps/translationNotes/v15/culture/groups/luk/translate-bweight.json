@@ -1,0 +1,146 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A mina was 600 grams, probably of silver. Each mina was equal to 100 days' wages, what people would be paid for about four months' work, so ten minas would have been about three years' wages. Alternate translation: \"ten valuable coins\" or \"a large amount of money\" (See: [[rc://en/ta/man/translate/translate-bweight]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "quote": [
+        {
+          "word": "δέκα",
+          "occurrence": 2
+        },
+        {
+          "word": "μνᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "ten minas",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A mina was 600 grams, probably of silver. Each mina was equal to 100 days' wages, what people would be paid for about four months' work. See how you translated this in [Luke 19:13](../19/13.md). (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "μνᾶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "mina",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A mina was 600 grams, probably of silver. Each mina was equal to 100 days' wages, what people would be paid for about four months' work. See how you translated this in [Luke 19:13](../19/13.md). (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "μνᾶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "mina",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A mina was 600 grams, probably of silver. Each mina was equal to 100 days' wages, what people would be paid for about four months' work. See how you translated this in [Luke 19:13](../19/13.md). (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "μνᾶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "mina",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A mina was 600 grams, probably of silver. Each mina was equal to 100 days' wages, what people would be paid for about four months' work. See how you translated this in [Luke 19:13](../19/13.md). (See: [[rc://en/ta/man/translate/translate-bweight]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μνᾶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the mina",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,125 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to people who are still living and people who have died. Alternate translation: \"the people who are alive and the people who are dead\" (See: [[rc://en/ta/man/translate/figs-nominaladj ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "ζώντων",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the living and the dead ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to sick people. Alternate translation: \"sick people\" or \"those who were sick\" (See: [[rc://en/ta/man/translate/figs-nominaladj ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσθενοῦντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the sick ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can state this nominal adjective as an adjective. Alternate translation: \"weak persons\" or \"those who are weak\" (See: [[rc://en/ta/man/translate/figs-nominaladj ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσθενούντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the weak ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These nominal adjectives refer to righteous people and wicked people. AT \"righteous people and wicked people\" or \"those who have done what is right and those who have done what is evil\" (See: [[rc://en/ta/man/translate/figs-nominaladj ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "δικαίων",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀδίκων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the righteous and the wicked ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,258 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing. James uses them to emphasize that anything good that a person has comes from God. (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "πᾶσα",
+          "occurrence": 1
+        },
+        {
+          "word": "δόσις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαθὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δώρημα",
+          "occurrence": 1
+        },
+        {
+          "word": "τέλειον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Every good gift and every perfect gift ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the expressions \"sinful filth\" and \"evil\" share similar meanings. James uses them to emphasize how bad sin is. Alternate translation: \"stop doing every kind of sinful behavior\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἀποθέμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥυπαρίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "περισσείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "κακίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "take off all sinful filth and abundant amounts of evil ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James speaks of religion, the way one worships God, as if it could be physically pure and unspoiled. These are traditional ways for Jews to say that something is acceptable to God. Alternate translation: \"Completely acceptable\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "καθαρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀμίαντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "pure and unspoiled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract nouns \"quarrels\" and \"disputes\" mean basically the same thing and can be translated with verbs. Alternate translation: \"Why do you quarrel and dispute among yourselves?\" or \"Why do you fight among yourselves?\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-abstractnouns ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "πόθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλεμοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόθεν",
+          "occurrence": 2
+        },
+        {
+          "word": "μάχαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Where do quarrels and disputes among you come from? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"fight\" and \"quarrel\" mean basically the same thing. James uses them to emphasize how much the people argue among themselves. Alternate translation: \"You constantly fight\" (See: [[rc://en/ta/man/translate/figs-doublet ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "μάχεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "πολεμεῖτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You fight and quarrel ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These three words have similar meanings. James uses them together to emphasize that the people should be truly sorry for not obeying God. (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-exclamations ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ταλαιπωρήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πενθήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "κλαύσατε",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Grieve, mourn, and cry ",
+      "occurrence": 1
+    }
+  }
+]

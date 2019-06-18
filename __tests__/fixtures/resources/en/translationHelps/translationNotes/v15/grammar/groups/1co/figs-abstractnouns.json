@@ -1,0 +1,244 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"wisdom\" can be stated as the adjective, \"wise.\" Alternate translation: \"speak wise words\" or \"speak a wise message\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "σοφίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "λαλοῦμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "speak wisdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to give growth means to cause growth. The abstract noun \"growth\" can be translated with a verbal phrase. Alternate translation: \"it is God who causes you to grow\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "αὐξάνων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "Θεός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but God is the one who causes the growth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"loss\" can be expressed with the verb \"lose.\" Alternate translation: \"he will lose his reward\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": "ζημιωθήσεται",
+      "glQuote": "he will suffer loss",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"love\" can be expressed as a verb. Alternate translation: \"but when we love people, we build them up\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγάπη",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκοδομεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but love builds up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These abstract nouns can be expressed in phrases with verbs. Alternate translation: \"we must trust the Lord, be confident that he will do what he has promised, and love him and others\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 13,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "πίστις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπίς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγάπη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "faith, hope, and love",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"death\" can be expressed with the verb \"die.\" Alternate translation. \"people die because of what one man did\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "θάνατος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "death came by a man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"resurrection\" can be expressed with the verb \"raise.\" Alternate translation: \"people are raised from the dead because of another man\" or \"people will become alive again because of what one man did\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 2
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρώπου",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνάστασις",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by a man also came the resurrection of the dead",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,311 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied information can be stated explicitly. Alternate translation: \"a different doctrine from what we teach\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἑτεροδιδασκαλεῖν",
+      "glQuote": "a different doctrine",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It can be made explicit that this was the testimony that God wants to save all people. Alternate translation: \"as the proof at the right time that God wants to save all people\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτύριον",
+          "occurrence": 1
+        },
+        {
+          "word": "καιροῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδίοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as the testimony at the right time",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The implied meaning may be stated explicitly. Alternate translation: \"a good reputation among other believers\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "βαθμὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καλὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a good standing",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that they will forbid believers to marry. Alternate translation: \"forbid believers to marry\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κωλυόντων",
+          "occurrence": 1
+        },
+        {
+          "word": "γαμεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "forbid to marry",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that they will forbid only certain foods. Alternate translation: \"they will require believers to abstain from certain foods\" or \"they will not allow people to eat certain foods\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπέχεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "βρωμάτων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to receive foods",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Paul means Timothy should not drink only water. He is telling Timothy to use wine as medicine. The water in that area often caused sickness. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μηκέτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑδροπότει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You should no longer drink water",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Paul is speaking about believers. Alternate translation: \"Let all who are believers\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅσοι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσὶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let all who are",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"in the presence of God, who causes all things to live.\" It is implied that Paul as asking God to be his witness. Alternate translation: \"with God, who causes all things to live, as my witness\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ζῳοποιοῦντος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who gives life to all things",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"in the presence of Christ Jesus, who spoke ... Pilate.\" It is implied that Paul is asking Jesus to be his witness. Alternate translation: \"with Christ Jesus, who spoke ... Pilate, as my witness\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "μαρτυρήσαντος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ποντίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Πειλάτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "before Christ Jesus, who made ... Pilate",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that God will reveal Jesus. Alternate translation: \"God will reveal Jesus\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "δείξει",
+      "glQuote": "God will reveal Christ's appearing",
+      "occurrence": 1
+    }
+  }
+]

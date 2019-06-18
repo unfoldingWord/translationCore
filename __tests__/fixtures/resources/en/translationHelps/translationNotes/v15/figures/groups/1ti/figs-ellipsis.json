@@ -1,0 +1,105 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be stated clearly. Alternate translation: \"And I also want you to command them not to pay attention\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "μηδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσέχειν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Neither should they pay attention",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be stated clearly. Alternate translation: \"and then God formed Eve\" or \"then God created Eve\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "εἶτα",
+          "occurrence": 1
+        },
+        {
+          "word": "Εὕα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "then Eve",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The understood information can be stated clearly. Alternate translation: \"but he is especially the Savior of those people who believe\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "μάλιστα",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but especially of believers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can state clearly the understood information. Alternate translation: \"exhort younger women\" or \"encourage younger women\" (See: [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": "νεωτέρας",
+      "glQuote": "younger women",
+      "occurrence": 1
+    }
+  }
+]

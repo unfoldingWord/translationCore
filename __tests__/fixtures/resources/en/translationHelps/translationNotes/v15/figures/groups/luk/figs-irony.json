@@ -1,0 +1,202 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"wise\" and \"understanding\" are nominal adjectives that refer to people with these qualities. Because God had concealed truth from them, these people were not actually wise and understanding, even though they thought they were. Alternate translation: \"from people who think they are wise and have understanding\" (See: [[rc://en/ta/man/translate/figs-irony]] and [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "σοφῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "συνετῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the wise and understanding",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Jewish leaders claimed to serve God. And yet their ancestors killed many of God's prophets in Jerusalem, and Jesus knew that they would kill him there too. Alternate translation: \"it is in Jerusalem that the Jewish leaders kill God's messengers\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνδέχεται",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήτην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολέσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξω",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰερουσαλήμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it is not acceptable to kill a prophet away from Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The guards did not believe that Jesus was a prophet. Rather, they believed that a real prophet would know who hit him even if he could not see. They called Jesus a prophet, but they were teasing him and showing him why they did not think that he was a prophet. Alternate translation: \"Prove that you are a prophet. Tell us who hit you!\" or \"Hey prophet, who hit you?\" (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 64
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "προφήτευσον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "παίσας",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Prophesy! Who is the one who hit you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Luke records the ironic words of the rulers. The only way Jesus could save others was by dying instead of saving himself. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "ἄλλους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσωσεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "σωσάτω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He saved others. Let him save himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The criminal did not really think that Jesus could rescue them from the cross. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "σῶσον",
+          "occurrence": 1
+        },
+        {
+          "word": "σεαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Save yourself and us",
+      "occurrence": 1
+    }
+  }
+]

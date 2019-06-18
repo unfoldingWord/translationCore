@@ -1,0 +1,449 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a parable to describe the people who were alive at that time. He compares them to a group of children who are trying to get the other children to play with them. However, no matter way they do, the other children will not join them. Jesus means that it does not matter if God sends someone like John the Baptist, who lives in the desert and fasts, or someone like Jesus, who celebrates with sinners and does not fast. The people, most specifically the Pharisees and religious leaders, still remain stubborn and refuse to accept God's truth. (See: [[rc://en/ta/man/translate/figs-parables]] and [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "λέγουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκόψασθε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and say ... and you did not weep",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a parable to continue his response to the Pharisees. Jesus means he can drive out demons because he is more powerful than Satan. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναταί",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσελθεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "οἰκίαν",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "διαρπάσει",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how can anyone enter into the house ... he will steal his belongings from his house",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus tells a parable to warn the people of the danger of not believing him. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "τότε",
+          "occurrence": 1
+        },
+        {
+          "word": "πορεύεται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "γενεᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "πονηρᾷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then it goes ... with this evil generation also",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks another parable. He compares scribes, who know very well the scriptures that Moses and the prophets wrote, and who also now accept Jesus' teachings, to a house owner who uses both old and new treasures. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "ὅμοιός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκοδεσπότῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅστις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκβάλλει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "θησαυροῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καινὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "παλαιά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "is like a man who is the owner of a house, who draws out old and new things from his treasure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the parable that begins with the words \"If anyone\" in verse 12. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "γένηται",
+          "occurrence": 1
+        },
+        {
+          "word": "εὑρεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτό",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεπλανημένοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If he finds it ... that did not go astray",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This introduces a parable. See how you translated a similar parable introduction in [Matthew 13:24](../13/24.md). (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "ὡμοιώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Οὐρανῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the kingdom of heaven is similar",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the beginning of a parable. See how you translated the introduction to the parable in [Matthew 13:24](../13/24.md). (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "ὁμοία",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Οὐρανῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the kingdom of heaven is like",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus uses a parable of a master and servants to illustrate that his disciples should be prepared for his return. (See: [[rc://en/ta/man/translate/figs-parables]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parables",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾔδει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκοδεσπότης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "διορυχθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that if the master of the house ... his house to be broken into",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"we worked during the night and during the day.\" Here \"night\" and \"day\" are a merism and they mean \"all the time.\" Alternate translation: \"we worked all the time\" (See: [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-merism",
+      "quote": [
+        {
+          "word": "νυκτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐργαζόμενοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we worked night and day",
+      "occurrence": 1
+    }
+  }
+]

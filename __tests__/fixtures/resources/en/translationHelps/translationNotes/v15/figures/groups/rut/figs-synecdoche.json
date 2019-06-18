@@ -1,0 +1,102 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Boaz is referred to by his heart. It does not imply Boaz was overly drunk. Alternate translation: \"he was satisfied\" or \"he was in a good mood\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "וַ",
+          "occurrence": 3
+        },
+        {
+          "word": "יִּיטַ֣ב",
+          "occurrence": 1
+        },
+        {
+          "word": "לִבּ֔",
+          "occurrence": 1
+        },
+        {
+          "word": "וֹ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his heart was merry",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hand\" represents Naomi, who owns the field. Alternate translation: \"from Naomi\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "מִ",
+          "occurrence": 1
+        },
+        {
+          "word": "יַּ֣ד",
+          "occurrence": 1
+        },
+        {
+          "word": "נָעֳמִ֑י",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the hand of Naomi",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The hand of Naomi represents Naomi. She was responsible for the money exchange. Alternate translation: \"from Naomi\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "מִ",
+          "occurrence": 1
+        },
+        {
+          "word": "יַּ֖ד",
+          "occurrence": 1
+        },
+        {
+          "word": "נָעֳמִֽי",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the hand of Naomi",
+      "occurrence": 1
+    }
+  }
+]

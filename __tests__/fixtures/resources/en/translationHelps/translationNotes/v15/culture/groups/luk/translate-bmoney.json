@@ -1,0 +1,105 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"500 days' wages.\" \"Denarii\" is the plural of \"denarius.\" A \"denarius\" was a silver coin. (See: [[rc://en/ta/man/translate/translate-bmoney]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": [
+        {
+          "word": "δηνάρια",
+          "occurrence": 1
+        },
+        {
+          "word": "πεντακόσια",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "five hundred denarii",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"two day's wages.\" \"Denarii\" is the plural of \"denarius.\" (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": [
+        {
+          "word": "δύο",
+          "occurrence": 1
+        },
+        {
+          "word": "δηνάρια",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "two denarii",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a Roman silver coin worth a day's wages. (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": "δηνάριον",
+      "glQuote": "a denarius",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"two small coins\" or \"two tiny copper coins.\" These were the least valuable of the coins people used then. Alternate translation: \"two pennies\" or \"two small coins of little value\" (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": [
+        {
+          "word": "λεπτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "two mites",
+      "occurrence": 1
+    }
+  }
+]

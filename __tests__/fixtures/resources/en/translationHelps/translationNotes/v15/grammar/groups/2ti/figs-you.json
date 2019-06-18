@@ -1,0 +1,86 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I pray that the Lord makes your spirit strong.\" Here \"you\" is singular and refers to Timothy. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριος",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πνεύματός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "May the Lord be with your spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"I pray that the Lord shows his grace to all of you there.\" Here \"you\" is plural and refers to all the believers there with Timothy. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 4,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάρις",
+          "occurrence": 1
+        },
+        {
+          "word": "μεθ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "May grace be with you",
+      "occurrence": 1
+    }
+  }
+]

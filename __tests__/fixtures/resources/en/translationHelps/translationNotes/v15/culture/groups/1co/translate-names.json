@@ -1,0 +1,207 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This indicates that both Paul and the Corinthians knew Sosthenes. Alternate translation: \"Sosthenes the brother you and I know\" (See: [[rc://en/ta/man/translate/translate-names]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σωσθένης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Sosthenes our brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He was a synagogue ruler who became a Christian. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κρίσπον",
+      "glQuote": "Crispus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He traveled with the Apostle Paul. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Γάϊον",
+      "glQuote": "Gaius",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the family members and slaves in the house where Stephanas, a man, was the head. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Στεφανᾶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶκον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the household of Stephanas",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Stephanas was one of the first believers in the church at Corinth. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "Στεφανᾶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the household of Stephanas",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a province in Greece. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀχαΐας",
+      "glQuote": "Achaia",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are men's names. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 16,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Στεφανᾶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Φορτουνάτου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀχαϊκοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Stephanas, and Fortunatus, and Achaicus",
+      "occurrence": 1
+    }
+  }
+]

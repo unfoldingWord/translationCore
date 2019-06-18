@@ -1,0 +1,195 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) \"touch a woman\" is a euphemism for having sexual relations. Alternate translation: \"not to have sexual relations with his wife for a while\" or 2) \"touch a woman\" is a metonym for marry. Alternate translation: \"not to marry\" (See: [[rc://en/ta/man/translate/figs-euphemism]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "γυναικὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἅπτεσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not to touch a woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both husbands and wives are obligated to regularly sleep with their spouses. (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "ὀφειλὴν",
+      "glQuote": "sexual rights",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"deprive\" means to keep from someone something that the other person has the right to receive. \"Do not refuse to have marital relations with your spouse\" (See: [[rc://en/ta/man/translate/figs-euphemism]] and [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποστερεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλήλους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not deprive each other",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is quoting the Jewish scriptures. His readers would have understood from this one word that the people were worshiping an idol by singing and dancing and engaging in sexual activities, not simply enjoying innocent fun. (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "παίζειν",
+      "glQuote": "to play",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Sleep\" here is a euphemism for death. Alternate translation: \"and some of you have died\" (See: [[rc://en/ta/man/translate/figs-euphemism.]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "κοιμῶνται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱκανοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and many of you have fallen asleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This probably refers to the private parts of the body, which people keep covered. (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀσχήμονα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our unpresentable members",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Sleep\" here is a common euphemism for death. Alternate translation: \"some have died\" (See: [[rc://en/ta/man/translate/figs-euphemism]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "τινὲς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐκοιμήθησαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "some have fallen asleep",
+      "occurrence": 1
+    }
+  }
+]

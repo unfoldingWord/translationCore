@@ -1,0 +1,108 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hands\" refers to the whole person. Alternate translation: \"humans\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "χειροποιήτου",
+      "glQuote": "human hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"with hands\" means \"by humans.\" This can be stated in active form. Alternate translation: \"the most holy place, which humans made, and which\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "χειροποίητα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἅγια",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the most holy place made with hands, which",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"lips\" represents people who speak. Alternate translation: \"the lips of those who acknowledge his name\" or \"those who acknowledge his name\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "χειλέων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁμολογούντων",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁμολογούντων",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "lips that acknowledge his name",
+      "occurrence": 1
+    }
+  }
+]

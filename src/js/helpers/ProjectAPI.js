@@ -97,7 +97,6 @@ export default class ProjectAPI {
         const groupName = path.basename(dataPath, ".json");
         try {
           let groupData = fs.readJsonSync(dataPath);
-
           // check & fix corrupted selections value for each group data item.
           groupData = groupData.map(groupDataItem => {
             if (groupDataItem.selections === true) {// if selections is true then find selections array.
@@ -301,7 +300,8 @@ export default class ProjectAPI {
               fs.removeSync(contextIdPath);
             }
           } catch (e) {
-            console.log('Could not reset current context id');
+            console.error('Could not reset current context id');
+            console.error(e);
           }
         }
         const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));

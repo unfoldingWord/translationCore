@@ -1,0 +1,381 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Now\" marks a break in the main story line, as this sentence gives us background information about the woman. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "γυνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἑλληνίς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Συροφοινίκισσα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "γένει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now the woman was a Greek, a Syrophoenician by descent",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main story line. Here the author tells background information about the disciples forgetting to bring bread. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "καὶ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This parenthetical sentence tells background information about Peter, James, and John. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾔδει",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκριθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔκφοβοι",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐγένοντο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For he did not know what to say, for they were terrified",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main story line as the author shifts to telling background information about Pilate's tradition of releasing a prisoner at feasts and about Barabbas. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information about why Jesus was handed over to Pilate. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἐγίνωσκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "φθόνον",
+          "occurrence": 1
+        },
+        {
+          "word": "παραδεδώκεισαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχιερεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For he knew that the chief priests had handed Jesus over to him because of envy",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information about the man whom the soldiers forced to carry Jesus' cross. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγγαρεύουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "παράγοντά",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀλεξάνδρου",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ῥούφου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A certain man, ... Rufus), and",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"When Jesus was in Galilee these women followed him ... with him to Jerusalem.\" This is background information about the women who watched the crucifixion from a distance. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "αἳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "Γαλιλαίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠκολούθουν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 3
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἱεροσόλυμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When he was in Galilee they followed him ... with him to Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information about Joseph. (See: [[rc://en/ta/man/translate/writing-background]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "εὐσχήμων",
+          "occurrence": 1
+        },
+        {
+          "word": "βουλευτής",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a respected member of the council ... for the kingdom of God",
+      "occurrence": 1
+    }
+  }
+]

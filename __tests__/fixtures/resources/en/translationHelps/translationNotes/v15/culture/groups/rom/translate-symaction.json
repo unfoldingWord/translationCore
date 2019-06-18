@@ -1,0 +1,54 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To be at the \"right hand of God\" is a symbolic action of receiving great honor and authority from God. Alternate translation: \"who is at the place of honor beside God\" (See: [[rc://en/ta/man/translate/translate-symaction ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "ὅς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "δεξιᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who is at the right hand of God ",
+      "occurrence": 1
+    }
+  }
+]

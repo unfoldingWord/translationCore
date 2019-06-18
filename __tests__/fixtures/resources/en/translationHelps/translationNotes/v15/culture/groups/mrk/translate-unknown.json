@@ -1,0 +1,65 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a jar made from alabaster. Alabaster was a very expensive yellow-white stone. Alternate translation: \"beautiful white stone jar\" (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "ἀλάβαστρον",
+      "glQuote": "an alabaster jar",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"that contained expensive, fragrant perfume called nard.\" Nard was a very expensive, sweet-smelling oil used to make perfume. (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "ἀλάβαστρον",
+          "occurrence": 1
+        },
+        {
+          "word": "μύρου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "νάρδου",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστικῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πολυτελοῦς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "of very costly anointing-oil, which was pure nard",
+      "occurrence": 1
+    }
+  }
+]

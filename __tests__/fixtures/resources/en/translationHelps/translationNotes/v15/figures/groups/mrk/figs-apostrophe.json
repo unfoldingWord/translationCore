@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks to the fig tree and curses it. He speaks to it so that his disciples hear him. (See: [[rc://en/ta/man/translate/figs-apostrophe]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": [
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῇ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "μηκέτι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰῶνα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μηδεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "καρπὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "φάγοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "spoke to it, \"No one will ever eat fruit from you again",
+      "occurrence": 1
+    }
+  }
+]

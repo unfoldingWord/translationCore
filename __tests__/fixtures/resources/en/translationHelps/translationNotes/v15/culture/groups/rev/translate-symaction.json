@@ -1,0 +1,176 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a sign of submission, not worship. Alternate translation: \"bow down in submission\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": "προσκυνήσουσιν",
+      "glQuote": "bow down",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "When people want someone to welcome them into their home, they knock on the door. Alternate translation: \"I want you to let me come inside\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": "κρούω",
+      "glQuote": "am knocking",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These crowns looked like wreaths of olive branches or laurel leaves, hammered out in gold. The elders were respectfully placing the crowns on the ground, showing that they were submitting to God's authority to rule. Alternate translation: \"they lay their crowns before the throne to show that they were submitting to him\" (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "βαλοῦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "στεφάνους",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνώπιον",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "θρόνου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "They lay their crowns before the throne",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He did this to show that he was swearing by God. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "ἦρεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "δεξιὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "raised his right hand to heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This action shows how happy the people were. (See: [[rc://en/ta/man/translate/translate-symaction]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-symaction",
+      "quote": [
+        {
+          "word": "δῶρα",
+          "occurrence": 1
+        },
+        {
+          "word": "πέμψουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλήλοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "even send gifts to one another",
+      "occurrence": 1
+    }
+  }
+]

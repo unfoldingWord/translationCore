@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"how you are to speak or what you are to say.\" The two ideas may be combined: \"what you are to say\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλήσητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how or what you will speak",
+      "occurrence": 1
+    }
+  }
+]

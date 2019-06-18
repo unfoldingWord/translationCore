@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"called 'a strong wind from the northeast.'\" The word for \"the northeaster\" in the original language is \"Euroclydon.\" You can transliterate this word for your language. (See: [[rc://en/ta/man/translate/translate-transliterate ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-transliterate",
+      "quote": [
+        {
+          "word": "καλούμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "Εὐρακύλων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "called the northeaster ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This nominal adjective can be translated as a noun phrase. Alternate translation: \"righteous people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": "δικαίους",
+      "glQuote": "the righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to dead people in general. Alternate translation: \"the dead people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 60
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκροὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to sick people in general. Alternate translation: \"the sick people\" (See: [[rc://en/ta/man/translate/figs-nominaladj]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-nominaladj",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀσθενεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the sick",
+      "occurrence": 1
+    }
+  }
+]

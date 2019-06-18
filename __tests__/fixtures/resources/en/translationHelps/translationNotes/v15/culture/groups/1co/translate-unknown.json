@@ -1,0 +1,49 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a large, thin, round metal plate that is hit with a padded stick to make a loud sound (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "χαλκὸς",
+      "glQuote": "gong",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "two thin, round metal plates that are hit together to make a loud sound (See: [[rc://en/ta/man/translate/translate-unknown]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": [
+        {
+          "word": "κύμβαλον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλαλάζον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a clanging cymbal",
+      "occurrence": 1
+    }
+  }
+]

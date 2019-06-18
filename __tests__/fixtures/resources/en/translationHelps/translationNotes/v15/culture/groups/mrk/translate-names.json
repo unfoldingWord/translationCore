@@ -1,0 +1,631 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Alpheus was Levi's father. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Λευεὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁλφαίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Levi son of Alphaeus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus called them this because they were like thunder. Alternate translation: \"the name Boanerges, which means men who are like thunder\" or \"the name Boanerges, which means thunder men\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ὀνόματα",
+          "occurrence": 1
+        },
+        {
+          "word": "Βοανηργές",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "βροντῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the name Boanerges, that is, sons of thunder",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Θαδδαῖον",
+      "glQuote": "Thaddaeus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This name refers to the people who live in Gerasa. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Γερασηνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Gerasenes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a region that means Ten Cities. It is located to the southeast of the Sea of Galilee. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "Δεκαπόλει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Decapolis",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a man. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἰάειρος",
+      "glQuote": "Jairus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the wife of his brother Philip.\" Herod's brother Philip is not the same Philip who was an evangelist in the book of Acts or the Philip who was one of Jesus' twelve disciples. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γυναῖκα",
+          "occurrence": 1
+        },
+        {
+          "word": "Φιλίππου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his brother Philip's wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a town on the northern shore of the Sea of Galilee. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βηθσαϊδάν",
+      "glQuote": "Bethsaida",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of the region to the northwest of the Sea of Galilee. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 53
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Γεννησαρὲτ",
+      "glQuote": "Gennesaret",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of the woman's nationality. She was born in the Phoenician region in Syria. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Συροφοινίκισσα",
+      "glQuote": "Syrophoenician",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a region that means Ten Cities. It is located to the southeast of the Sea of Galilee. See how you translated this in [Mark 5:20](../05/20.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δεκαπόλεως",
+      "glQuote": "Decapolis",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a place on the northwestern shore of the Sea of Galilee. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δαλμανουθά",
+      "glQuote": "Dalmanutha",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a town on the northern shore of the Sea of Galilee. See how you translated the name of this town in [Mark 6:45](../06/45.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βηθσαϊδάν",
+      "glQuote": "Bethsaida",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"a blind beggar named Bartimaeus, the son of Timaeus.\" Bartimaeus is the name of a man. Timaeus is his father's name. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Τιμαίου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Βαρτιμαῖος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "τυφλὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "προσαίτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the son of Timaeus, Bartimaeus, a blind beggar",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a village. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βηθφαγὴ",
+      "glQuote": "Bethphage",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This man previously had leprosy but was no longer ill. This is a different man than Simon Peter and Simon the Zealot. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σίμωνος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "λεπροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Simon the leper",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of men. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σίμωνα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Ἀλεξάνδρου",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ῥούφου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Simon ... Alexander ... Rufus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a place. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κυρηναῖον",
+      "glQuote": "Cyrene",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Skull Place\" or \"Place of the Skull.\" This the name of a place. It does not mean that there are lots of skulls there. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Κρανίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Τόπος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Place of a Skull",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This Joses was not that same person as the younger brother of Jesus. See how you translated the same name in [Mark 6:3](../06/03.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἰωσῆ",
+      "glQuote": "Joses",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Salome is the name of a woman. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Σαλώμη",
+      "glQuote": "Salome",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Joseph from Arimathea.\" Joseph is the name of a man, and Arimathea is the name of the place his is from. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἰωσὴφ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁριμαθαίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Joseph of Arimathea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This Joses was not that same person as the younger brother of Jesus. See how you translated the same name in [Mark 6:3](../06/03.md). (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἰωσῆτος",
+      "glQuote": "Joses",
+      "occurrence": 1
+    }
+  }
+]

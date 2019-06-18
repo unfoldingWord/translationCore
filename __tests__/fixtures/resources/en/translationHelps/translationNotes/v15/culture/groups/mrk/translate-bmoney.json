@@ -1,0 +1,105 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"200 denarii.\" The singular form of the word \"denarii\" is \"denarius.\" A denarius was a Roman silver coin worth one day's wages. (See: [[rc://en/ta/man/translate/translate-bmoney]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": [
+        {
+          "word": "δηναρίων",
+          "occurrence": 1
+        },
+        {
+          "word": "διακοσίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "two hundred denarii",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This coin was worth a day's wages. (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": "δηνάριον",
+      "glQuote": "a denarius",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"two small copper coins.\" These were the least valuable coins available. (See: [[rc://en/ta/man/translate/translate-bmoney]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": [
+        {
+          "word": "λεπτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "two mites",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"300 denarii.\" Denarii are Roman silver coins. (See: [[rc://en/ta/man/translate/translate-bmoney]] and [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bmoney",
+      "quote": [
+        {
+          "word": "δηναρίων",
+          "occurrence": 1
+        },
+        {
+          "word": "τριακοσίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "three hundred denarii",
+      "occurrence": 1
+    }
+  }
+]

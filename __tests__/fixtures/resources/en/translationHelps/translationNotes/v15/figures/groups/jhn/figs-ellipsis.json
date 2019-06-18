@@ -1,0 +1,334 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ellipsis for \"the twelve disciples,\" a specific group of twelve men who followed Jesus for his entire ministry. Alternate translation: \"the twelve disciples\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 67
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the twelve ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ellipsis. You may wish to include the information that does not appear. Alternate translation: \"Search carefully and read what is written in the Scriptures\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ἐραύνησον",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἴδε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Search and see ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ellipsis. You may translate it by including the implied words. Alternate translation: \"the son is a member of the family forever\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "μένει",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "αἰῶνα",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "the son remains forever ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ellipsis. The word \"people\" is implied by the context. Alternate translation: \"would be gathered into one people\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "συναγάγῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "would be gathered together into one ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Philip and Andrew tell Jesus about the Greeks' request to see him. You can translate this by adding the implied words. Alternate translation: \"they told Jesus what the Greeks had said\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "λέγουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they told Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"lifted up\" means crucified. You may translate this in a way that includes the implied words \"on a cross.\" Alternate translation: \"The Son of Man must be lifted up on a cross\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑψωθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Son of Man must be lifted up ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"Judas took\" are understood from the context. Alternate translation: \"Then after Judas took the bread\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ψωμίον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then after the bread ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ellipsis. You can add the implied words. Alternate translation: \"No! Do not release this man! Release Barabbas instead\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαραββᾶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Not this man, but Barabbas ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an ellipsis. You can translate this, adding the implied words. Alternate translation: \"they also nailed two other criminals to their crosses\" (See: [[rc://en/ta/man/translate/figs-ellipsis ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄλλους",
+          "occurrence": 1
+        },
+        {
+          "word": "δύο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with him two other men ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"God, who is the Father, and.\" This is an important title for God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples Paul could be referring to God here as 1) the Father of Christ, or 2) the Father of believers.]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God the Father and",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your\" is plural and refers to the people of Israel. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρες",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" is singular and refers to God. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠθέλησας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you did not desire",
+      "occurrence": 1
+    }
+  }
+]

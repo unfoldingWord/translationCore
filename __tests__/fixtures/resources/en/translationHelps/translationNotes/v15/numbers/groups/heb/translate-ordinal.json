@@ -1,0 +1,127 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the ordinal number for \"seven.\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑβδόμης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the seventh day",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"first\" and \"second\" are ordinal numbers. Alternate translation: \"old covenant ... new covenant\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρώτη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείνη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δευτέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "first covenant ... second covenant",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the ordinal word for number two. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 9,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": "δεύτερον",
+      "glQuote": "second",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"first\" and \"second\" are ordinal numbers. Alternate translation: \"old practice ... the new practice\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "δεύτερον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "first practice ... the second practice",
+      "occurrence": 1
+    }
+  }
+]

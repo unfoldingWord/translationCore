@@ -1,0 +1,42 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Many early texts do not include these words. (See: [[rc://en/ta/man/translate/translate-textvariants]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-textvariants",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολελυμένην",
+          "occurrence": 1
+        },
+        {
+          "word": "γαμήσας",
+          "occurrence": 1
+        },
+        {
+          "word": "μοιχᾶται",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "and the man who marries a woman who is divorced commits adultery",
+      "occurrence": 1
+    }
+  }
+]
