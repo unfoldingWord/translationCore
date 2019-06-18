@@ -7,6 +7,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
+import isEqual from "deep-equal";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -70,7 +71,7 @@ export function loadCheckData(loadPath, contextId) {
         let _checkDataObject = fs.readJsonSync(readPath);
         if(_checkDataObject &&
           _checkDataObject.contextId.groupId === contextId.groupId &&
-          _checkDataObject.contextId.quote === contextId.quote &&
+          isEqual(_checkDataObject.contextId.quote, contextId.quote) && // this can be string or array
           _checkDataObject.contextId.occurrence === contextId.occurrence) {
           checkDataObject = _checkDataObject; // return the first match since it is the latest modified one
           break;
