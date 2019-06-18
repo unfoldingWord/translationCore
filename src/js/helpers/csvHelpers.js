@@ -6,6 +6,7 @@ import csv from 'csv';
 // helpers
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 import ResourceAPI from "./ResourceAPI";
+import * as localizationHelpers from './localizationHelpers';
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");
 const tHelpsPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
@@ -50,7 +51,11 @@ function loadToolIndices(toolName, isTest) {
         const indexPath = path.join(versionPath, category, "index.json");
         if (fs.existsSync(indexPath)) {
           try {
-            index = index.concat(fs.readJsonSync(indexPath));
+            const items = fs.readJsonSync(indexPath);
+            items.forEach(item => {
+              item.category = category; // adds the category as a field since this is being flattened from the directory
+              index.push(item);
+            });
           } catch (e) {
             console.error(`Failed to read the category index at ${indexPath}`, e);
           }
@@ -70,27 +75,32 @@ function loadToolIndices(toolName, isTest) {
  * @param {object} contextId - to be merged in
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
- * @param {boolean} isTest - for unit tests purposes
+ * @param {function} translate - the translation function
+ * @param {boolean} isTest - for testing purposes
  * @return {object}
  */
-export function combineData(data, contextId, username, timestamp, isTest) {
-  const flatContextId = flattenContextId(contextId, isTest);
+export function combineData(data, contextId, username, timestamp, translate, isTest = false) {
+  const flatContextId = flattenContextId(contextId, translate, isTest);
   const userTimestamp = userTimestampObject(username, timestamp);
   return Object.assign({}, data, flatContextId, userTimestamp);
 }
 /**
  * @description - flattens the context id for csv usage
  * @param {object} contextId - contextID object that needs to go onto the csv row
+ * @param {function} translate - translation function
  * @param {boolean} isTest - for unit tests purposes
  * @return {object}
  */
-export const flattenContextId = (contextId, isTest) => {
+export const flattenContextId = (contextId, translate, isTest = false) => {
   return {
     tool: contextId.tool,
+    type: groupCategoryTranslated(contextId, translate, isTest),
     groupId: contextId.groupId,
     groupName: groupName(contextId, isTest),
     occurrence: contextId.occurrence,
     quote: flattenQuote(contextId.quote),
+    glQuote: contextId.glQuote,
+    occurrenceNote: contextId.occurrenceNote,
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
     verse: contextId.reference.verse
@@ -111,7 +121,7 @@ export const flattenQuote = quote => {
 
 /**
  * @description - Returns the corresponding group name i.e. Metaphor
- * given the group id such as figs_metaphor
+ * when given the group id of figs-metaphor
  * @param {Object} contextId - context id to get toolName and groupName
  * @param {boolean} isTest - for unit tests purposes
  * @return {string}
@@ -147,6 +157,57 @@ export const groupName = (contextId, isTest) => {
     groupName = groupId;
   }
   return groupName;
+};
+
+/**
+ * @description - Returns the corresponding group parent category, i.e. figures
+ * when given the group id of figs-metaphor
+ * @param {Object} contextId - context id to get toolName and groupName
+ * @param {boolean} isTest - for unit tests purposes
+ * @return {string}
+ */
+export const groupCategory = (contextId, isTest = false) => {
+  cacheIndicies(isTest);
+
+  let indexArray;
+  let {tool, groupId} = contextId;
+  switch (tool) {
+    case 'translationNotes':
+      indexArray = tNIndex;
+      break;
+    case 'translationWords':
+      indexArray = tWIndex;
+      break;
+    default:
+      indexArray = undefined;
+    // do something later with other resources
+  }
+  let indexObject = {};
+  if (indexArray) {
+    indexArray.forEach(group => {
+      indexObject[group.id] = group.category;
+    });
+    if (!indexObject[groupId]) {
+      console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
+    } else {
+      return indexObject[groupId];
+    }
+  }
+};
+
+/**
+ * @description - Returns the human readable (translated) string of the group category
+ * @param {Object} contextId - context id to get toolName and groupName
+ * @param {function} translate - translation function
+ * @param {boolean} isTest - for unit tests purposes
+ * @return {string}
+ */
+export const groupCategoryTranslated = (contextId, translate, isTest = false) => {
+  const category = groupCategory(contextId, isTest);
+  if (category) {
+    // We return the translation, unless that tool_card_categories.<category> doesn't exist, then just return category
+    return localizationHelpers.getTranslation(translate, 'tool_card_categories.' + category, category);
+  }
 };
 
 /**

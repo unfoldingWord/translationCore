@@ -135,7 +135,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveVerseEditsToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
-      return csvExportActions.saveVerseEditsToCSV(checksPerformedPath)
+      const translate = key => key;
+      return csvExportActions.saveVerseEditsToCSV(checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
@@ -150,7 +151,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveVerseEditsToCSV(bogusFilesInCheckDataPath)
+      const translate = key => key;
+      return csvExportActions.saveVerseEditsToCSV(bogusFilesInCheckDataPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
@@ -167,7 +169,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveCommentsToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
-      return csvExportActions.saveCommentsToCSV(checksPerformedPath)
+      const translate = key => key;
+      return csvExportActions.saveCommentsToCSV(checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
@@ -182,7 +185,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveCommentsToCSV(bogusFilesInCheckDataPath)
+      const translate = key => key;
+      return csvExportActions.saveCommentsToCSV(bogusFilesInCheckDataPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
@@ -199,7 +203,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveSelectionsToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
-      return csvExportActions.saveSelectionsToCSV(checksPerformedPath)
+      const translate = key => key;
+      return csvExportActions.saveSelectionsToCSV(checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
@@ -207,7 +212,7 @@ describe('csv export actions', () => {
 
           // verify that gatewayLanguageQuote might exist if test files were created correctly
           let csvData = fs.readFileSync(filePath, 'utf8' );
-          expect(csvData).toContain('1,adoption,eph'); // quote is between instance and bookid in csv data
+          expect(csvData).toContain('1,adoption,,,eph'); // quote is between instance and bookid in csv data
           expect(fs.existsSync(filePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         })
@@ -218,7 +223,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveSelectionsToCSV(bogusFilesInCheckDataPath)
+      const translate = key => key;
+      return csvExportActions.saveSelectionsToCSV(bogusFilesInCheckDataPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
@@ -235,7 +241,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveRemindersToCSV', () => {
     test('should resolve true', () => {
-      return csvExportActions.saveRemindersToCSV(checksPerformedPath)
+      const translate = key => key;
+      return csvExportActions.saveRemindersToCSV(checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
@@ -250,7 +257,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveRemindersToCSV(bogusFilesInCheckDataPath)
+      const translate = key => key;
+      return csvExportActions.saveRemindersToCSV(bogusFilesInCheckDataPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);

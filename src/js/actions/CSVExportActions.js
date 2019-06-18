@@ -18,9 +18,6 @@ import * as ProjectImportStepperActions from '../actions/ProjectImportStepperAct
 import * as csvHelpers from '../helpers/csvHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as groupsIndexHelpers from '../helpers/groupsIndexHelpers';
-import ProjectAPI from "../helpers/ProjectAPI";
-import {groupName} from "../helpers/csvHelpers";
-import {flattenQuote} from "../helpers/csvHelpers";
 
 /**
  * @description - Wrapper function to handle exporting to CSV
@@ -152,10 +149,10 @@ export const saveAllCSVData = (projectPath, translate) => {
       iterablePromises.push(p);
     });
     Promise.all(iterablePromises)
-      .then(() => saveVerseEditsToCSV(projectPath))
-      .then(() => saveRemindersToCSV(projectPath))
-      .then(() => saveCommentsToCSV(projectPath))
-      .then(() => saveSelectionsToCSV(projectPath))
+      .then(() => saveVerseEditsToCSV(projectPath, translate))
+      .then(() => saveRemindersToCSV(projectPath, translate))
+      .then(() => saveCommentsToCSV(projectPath, translate))
+      .then(() => saveSelectionsToCSV(projectPath, translate))
       .then(resolve)
       .catch(reject);
   });
@@ -221,24 +218,12 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => {
     let dataArray = [];
     try {
       const groupIds = Object.keys(obj);
-      const project = new ProjectAPI(projectPath);
       groupIds.forEach(groupId => {
-        const category = translate('tool_card_categories.' + project.getParentCategory(toolName, groupId));
         obj[groupId].forEach(groupData => {
           const contextId = groupData.contextId;
           const data = {
             priority: (groupData.priority?groupData.priority:1),
-            tool: contextId.tool,
-            type: category,
-            groupId: contextId.groupId,
-            groupName: groupName(contextId),
-            occurrence: contextId.occurrence,
-            quote: flattenQuote(contextId.quote),
-            glQuote: contextId.glQuote,
-            occurrenceNote: contextId.occurrenceNote,
-            bookId: contextId.reference.bookId,
-            chapter: contextId.reference.chapter,
-            verse: contextId.reference.verse
+            ...csvHelpers.flattenContextId(contextId, translate),
           };
           // remove fields only relevant to tN
           if (toolName != 'translationNotes') {
@@ -268,8 +253,9 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => {
 /**
  * Creates csv from object and saves it.
  * @param {String} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveVerseEditsToCSV = (projectPath) => {
+export const saveVerseEditsToCSV = (projectPath, translate) => {
   return new Promise((resolve, reject) => {
     loadProjectDataByType(projectPath, 'verseEdits')
       .then((array) => {
@@ -291,7 +277,7 @@ export const saveVerseEditsToCSV = (projectPath) => {
             data.contextId.occurrence = 'N/A';
             data.contextId.quote = 'N/A';
           }
-          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp, translate);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
@@ -305,8 +291,9 @@ export const saveVerseEditsToCSV = (projectPath) => {
 /**
  * Creates csv from object and saves it.
  * @param {String} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveCommentsToCSV = (projectPath) => {
+export const saveCommentsToCSV = (projectPath, translate) => {
   return new Promise((resolve) => {
     loadProjectDataByType(projectPath, 'comments')
       .then((array) => {
@@ -323,7 +310,7 @@ export const saveCommentsToCSV = (projectPath) => {
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };
-          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp, translate);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'Comments.csv');
@@ -335,8 +322,9 @@ export const saveCommentsToCSV = (projectPath) => {
 /**
  * Creates csv from object and saves it.
  * @param {String} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveSelectionsToCSV = (projectPath) => {
+export const saveSelectionsToCSV = (projectPath, translate) => {
   return new Promise((resolve, reject) => {
     loadProjectDataByType(projectPath, 'selections')
       .then((array) => {
@@ -350,7 +338,7 @@ export const saveSelectionsToCSV = (projectPath) => {
               'gateway Language Code': data.gatewayLanguageCode || 'en',
               'gateway Language Quote': data.gatewayLanguageQuote
             };
-            const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+            const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp, translate);
             objectArray.push(newObject);
           });
         });
@@ -366,8 +354,9 @@ export const saveSelectionsToCSV = (projectPath) => {
 /**
  * Creates csv from object and saves it.
  * @param {String} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveRemindersToCSV = (projectPath) => {
+export const saveRemindersToCSV = (projectPath, translate) => {
   return new Promise((resolve, reject) => {
     loadProjectDataByType(projectPath, 'reminders')
       .then((array) => {
@@ -381,7 +370,7 @@ export const saveRemindersToCSV = (projectPath) => {
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };
-          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp, translate);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'Reminders.csv');
