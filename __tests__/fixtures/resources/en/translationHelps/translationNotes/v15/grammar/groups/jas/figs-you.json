@@ -1,0 +1,127 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James is speaking to his whole audience. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠτιμάσατε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But you have ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" refers to the Jewish believers. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "τελεῖτε",
+      "glQuote": "you fulfill ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"you\" means \"each one of you.\" Although James was writing to many Jewish believers, in this case, he used the singular form as if he was writing to each person individually. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μοιχεύεις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "φονεύεις",
+          "occurrence": 1
+        },
+        {
+          "word": "δέ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "γέγονας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If you ... but if you ... you have ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here this pronoun is plural and refers to James' audience. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὑμῶν",
+      "glQuote": "you",
+      "occurrence": 1
+    }
+  }
+]

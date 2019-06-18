@@ -1,0 +1,120 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus refers to himself as the \"Son of Man.\" Alternate translation: \"that I am the Son of Man and I have authority\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that the Son of Man has authority",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since Jesus is speaking directly to his audience, you may prefer to use the second person here. Alternate translation: \"If you are willing to listen, listen\" or \"If you are willing to understand, then understand and obey\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχει",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀκουέτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Whoever has ... let him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since Jesus is speaking directly to his audience, you may prefer to use the second person here. See how you translated a similar phrase in [Mark 4:9](../04/09.md). Alternate translation: \"If you are willing to listen, listen\" or \"If you are willing to understand, then understand and obey\" (See: [[rc://en/ta/man/translate/figs-123person]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-123person",
+      "quote": [
+        {
+          "word": "εἴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀκουέτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If anyone ... let him hear",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A cubit is a measure of a little less than half a meter. (See: [[rc://en/ta/man/translate/translate-bdistance]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 6,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "quote": [
+        {
+          "word": "πῆχυν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕνα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "one cubit",
+      "occurrence": 1
+    }
+  }
+]

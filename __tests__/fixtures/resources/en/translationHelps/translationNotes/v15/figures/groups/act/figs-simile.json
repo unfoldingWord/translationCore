@@ -1,0 +1,77 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These might not be actual tongues or fire, but something that looked like them. Possible meanings are 1) tongues that looked like they were made of fire or 2) small flames of fire that looked like tongues. When fire burns in a small space, such as on a lamp, the flame can be shaped like a tongue. (See: [[rc://en/ta/man/translate/figs-simile ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὤφθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γλῶσσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡσεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πυρός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "There appeared to them tongues like fire ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase compares his face to that of an angel but does not say specifically what they have in common. (See: [[rc://en/ta/man/translate/figs-simile ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡσεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγγέλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "was like the face of an angel ",
+      "occurrence": 1
+    }
+  }
+]

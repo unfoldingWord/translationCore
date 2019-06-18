@@ -1,0 +1,258 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a place name. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κανὰ",
+      "glQuote": "Cana",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word means \"springs,\" as of water. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Αἰνὼν",
+      "glQuote": "Aenon",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a village or town next to the Jordan River (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σαλείμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Salim",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a place name (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βηθζαθά",
+      "glQuote": "Bethesda",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a male name that means \"twin.\" (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δίδυμος",
+      "glQuote": "Didymus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to another disciple whose name was Judas, not to the disciple who was from the village of Kerioth who betrayed Jesus. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἰούδας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰσκαριώτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Judas (not Iscariot) ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a valley in Jerusalem separating the Temple Mount from the Mount of Olives (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Κεδρὼν",
+      "glQuote": "Kidron Valley ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Malchus is a male servant of the high priest. (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Μάλχος",
+      "glQuote": "Malchus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Arimathea was a small town. Alternate translation: \"Joseph from the town of Arimathea\" (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ἰωσὴφ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁριμαθαίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Joseph of Arimathea ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a male name that means \"twin.\" See how this name is translated in [John 11:15](../11/15.md). (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δίδυμος",
+      "glQuote": "Didymus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a male name that means \"twin.\" See how this name is translated in [John 11:15](../11/15.md). (See: [[rc://en/ta/man/translate/translate-names ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δίδυμος",
+      "glQuote": "Didymus",
+      "occurrence": 1
+    }
+  }
+]

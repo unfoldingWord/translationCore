@@ -1,0 +1,361 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the land of Israel. Alternate translation: \"in the land of Israel\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "בָּ​אָ֑רֶץ",
+      "glQuote": "in the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"while Naomi was living in Moab she heard.\" It is implied that the news came from Israel. Alternate translation: \"she heard from Israel while in the region of Moab\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "שָֽׁמְעָה֙",
+          "occurrence": 1
+        },
+        {
+          "word": "בִּ",
+          "occurrence": 1
+        },
+        {
+          "word": "שְׂדֵ֣ה",
+          "occurrence": 1
+        },
+        {
+          "word": "מוֹאָ֔ב",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "she had heard in the country of Moab",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reason a husband would be important can be stated clearly. Alternate translation: \"too old to marry again and bear more children\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "זָקַ֖נְתִּי",
+          "occurrence": 1
+        },
+        {
+          "word": "מִ",
+          "occurrence": 1
+        },
+        {
+          "word": "הְי֣וֹת",
+          "occurrence": 1
+        },
+        {
+          "word": "לְ",
+          "occurrence": 1
+        },
+        {
+          "word": "אִ֑ישׁ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am too old to have a husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Ruth clung to her.\" Alternate translation: \"Ruth refused to leave her\" or \"Ruth would not leave her\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "וְ",
+          "occurrence": 1
+        },
+        {
+          "word": "ר֖וּת",
+          "occurrence": 1
+        },
+        {
+          "word": "דָּ֥בְקָה",
+          "occurrence": 1
+        },
+        {
+          "word": "בָּֽ",
+          "occurrence": 1
+        },
+        {
+          "word": "הּ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "but Ruth held on to her",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Ruth is referring to Naomi's people, the Israelites. Alternate translation: \"I will consider the people of your country as being my own people\" or \"I will consider your relatives as my own relatives\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "עַמֵּ֣",
+          "occurrence": 1
+        },
+        {
+          "word": "ךְ",
+          "occurrence": 3
+        },
+        {
+          "word": "עַמִּ֔",
+          "occurrence": 1
+        },
+        {
+          "word": "י",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "your people will be my people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that Ruth carried the grain home. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "וַ",
+          "occurrence": 1
+        },
+        {
+          "word": "תִּשָּׂא֙",
+          "occurrence": 1
+        },
+        {
+          "word": "וַ",
+          "occurrence": 2
+        },
+        {
+          "word": "תָּב֣וֹא",
+          "occurrence": 1
+        },
+        {
+          "word": "הָ",
+          "occurrence": 1
+        },
+        {
+          "word": "עִ֔יר",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "She lifted it up and went into the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The translation can make explicit that she was working in the fields with these female workers. Alternate translation: \"female workers you have been with in the fields\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "הָיִ֖ית",
+          "occurrence": 1
+        },
+        {
+          "word": "אֶת",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 1
+        },
+        {
+          "word": "נַעֲרוֹתָ֑י",
+          "occurrence": 1
+        },
+        {
+          "word": "ו",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "young female workers you were with",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Boaz is referring to the expectation that the closest male relative of Ruth's dead husband would marry her and help carry on his family name. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "אִם",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 1
+        },
+        {
+          "word": "יִגְאָלֵ֥",
+          "occurrence": 1
+        },
+        {
+          "word": "ךְ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if he will redeem you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "What Ruth meant by this question can be made more clear. Alternate translation: \"What happened, my daughter?\" or \"How did Boaz act toward you?\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "מִי",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 2
+        },
+        {
+          "word": "אַ֣תְּ",
+          "occurrence": 1
+        },
+        {
+          "word": "בִּתִּ֑",
+          "occurrence": 1
+        },
+        {
+          "word": "י",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How did it go, my daughter?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"father of King David.\" Though \"king\" is not stated, it was clear to the original audience that David was King David. (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "אֲבִ֥י",
+          "occurrence": 1
+        },
+        {
+          "word": "דָוִֽד",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the father of David",
+      "occurrence": 1
+    }
+  }
+]

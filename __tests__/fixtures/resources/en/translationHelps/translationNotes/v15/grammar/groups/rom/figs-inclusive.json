@@ -1,0 +1,603 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the pronoun \"we\" may include Christian believers and also Jews who are not Christians. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "οἴδαμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But we know ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This pronoun refers to Paul, other believers, and the readers. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "καταργοῦμεν",
+      "glQuote": "we uphold",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"us\" refers to Paul and includes all Jewish and non-Jewish believers in Christ. Abraham is the physical ancestor of the Jewish people, but he is also the spiritual father of those who have faith. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "πατὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "father of us all ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"us\" refers to Paul and includes all believers in Christ. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All occurrences of \"we\" and \"our\" refer to all believers and should be inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we ... our ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words refer to all believers and should be inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "καυχώμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        }
+      ],
+      "glQuote": "we ... our ... We ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words refer to all believers and should be inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our ... us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"we\" here refers to all believers and so should be inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "ἡμῶν",
+      "glQuote": "we",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All occurrences of \"us\" and \"we\" refer to all believers and should be inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "us ... we ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All occurrences of \"we\" refer to all believers and should be inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "ὄντες",
+      "glQuote": "we were ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul includes himself, his readers, and all believers. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The pronoun \"we\" refers to Paul, his readers, and other people. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "ἐροῦμεν",
+      "glQuote": "we say ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This pronoun refers to Paul and the believers. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "κατηργήθημεν",
+      "glQuote": "we have been released",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"we\" refers to the one who wrote this part of Scripture, but not his audience, who was God. The phrase \"all day long\" is an exaggeration to emphasize how much danger they are in. Paul uses this part of Scripture to show that all who belong to God should expect difficult times. This can be translated in an active form. Alternate translation: \"our enemies continually seek to kill us\" (See: [[rc://en/ta/man/translate/figs-inclusive]] and [[rc://en/ta/man/translate/figs-hyperbole]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "θανατούμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλην",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we are killed all day long ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul refers to Isaac as \"our father\" because Isaac was the ancestor of Paul and of the Jewish believers in Rome. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our father ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"us\" here refers to Paul and fellow believers. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "also for us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"us\" and \"we\" refer to Isaiah and those to whom he spoke. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγενήθημεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "us ... we ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul includes his readers and other believers with himself. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "περιπατήσωμεν",
+      "glQuote": "Let us walk",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is including his readers, so this is inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "οὐδεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "none of us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Paul, his readers, and other believers. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "ἡμεῖς",
+      "glQuote": "we",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul includes his readers and other believers. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἡμετέραν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔχωμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our ... we have",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"our\" refers to Paul and all believers. Alternate translation: \"our sister in Christ\" (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "our sister ",
+      "occurrence": 1
+    }
+  }
+]

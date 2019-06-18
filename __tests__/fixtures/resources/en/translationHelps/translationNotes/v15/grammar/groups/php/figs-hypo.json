@@ -1,0 +1,109 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Although if I wanted to.\" Paul is introducing a hypothetical situation that could not possibly exist. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": "καίπερ",
+      "glQuote": "Even so",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a hypothetical situation that Paul does not believe is possible. Paul says if it were possible that God would save people based on what they did, then God would certainly have saved him. Alternate translation: \"No one can do enough things to please God, but if anyone could do enough things to please God, I could do more good things and please God more than anyone\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχων",
+          "occurrence": 1
+        },
+        {
+          "word": "πεποίθησιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκί",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        },
+        {
+          "word": "δοκεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄλλος",
+          "occurrence": 1
+        },
+        {
+          "word": "πεποιθέναι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "σαρκί",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 2
+        },
+        {
+          "word": "μᾶλλον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I myself could have confidence in the flesh. If anyone thinks he has confidence in the flesh, I could have even more",
+      "occurrence": 1
+    }
+  }
+]

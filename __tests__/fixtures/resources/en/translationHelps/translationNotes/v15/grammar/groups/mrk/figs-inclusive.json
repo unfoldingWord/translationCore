@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"we\" includes the disciples and Jesus. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "ἀπολλύμεθα",
+      "glQuote": "we are perishing",
+      "occurrence": 1
+    }
+  }
+]

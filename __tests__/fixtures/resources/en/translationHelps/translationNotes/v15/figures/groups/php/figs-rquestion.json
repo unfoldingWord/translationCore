@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses this question to tell how he feels about the situation he wrote about in [Philippians 15-17](./15.md). Possible meanings are 1) this is an idiom that means \"It does not matter.\" or 2) the words \"shall I think about this\" are understood as part of the question. Alternate translation: \"What then shall I think about this?\" or \"This is what I think about it\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What then?",
+      "occurrence": 1
+    }
+  }
+]

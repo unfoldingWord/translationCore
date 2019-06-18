@@ -1,0 +1,109 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These sayings are idioms that mean people should first listen intently, and then consider carefully what they say. Here \"slow to speak\" does not mean speaking slowly. (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἔστω",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πᾶς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 2
+        },
+        {
+          "word": "ταχὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 4
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀκοῦσαι",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "βραδὺς",
+          "occurrence": 3
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 5
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 4
+        },
+        {
+          "word": "λαλῆσαι",
+          "occurrence": 2
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let every man be quick to hear, slow to speak ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "James speaks of spending time as if it were money. \"stay there for a year\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ποιήσομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνιαυτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "spend a year there ",
+      "occurrence": 1
+    }
+  }
+]

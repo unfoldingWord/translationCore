@@ -1,0 +1,686 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the pronoun \"you\" is singular. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "εἶ",
+      "glQuote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"you\" is singular and refers to Abraham. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "τέθεικά",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have made you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"your\" is singular and refers to God. Alternate translation: \"For you\" (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕνεκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "σοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For your benefit ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "singular (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "σε",
+      "glQuote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is talking to the critics of his teaching as though he were only talking to one person. You may need to use the plural here. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἐρεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You will say then to me ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses was addressing the people as if he were speaking to only one person. Here \"heart\" is a metonym for a person's mind or inner being. Alternate translation: \"Do not say to yourself\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴπῃς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not say in your heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that Moses wrote down what God said. \"I\" refers to God, and \"you\" refers to the Israelites. Alternate translation: \"First Moses says that God will provoke you ... God will stir you up\" (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-quotations ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "πρῶτος",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "παραζηλώσω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "παροργιῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 2
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "First Moses says, \"I will provoke you ... I will stir you up ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the nation of Israel. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὑμᾶς",
+      "glQuote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The pronoun \"you,\" and the phrase \"a wild olive branch,\" refer to the Gentile people who have accepted salvation through Jesus. (See: [[rc://en/ta/man/translate/figs-you]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγριέλαιος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὢν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if you, a wild olive branch ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Gentile believers, and is plural. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὑμεῖς",
+      "glQuote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "All forms of \"you\" and \"your\" are addressed as to one person. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐχθρός",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ψώμιζε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πότιζε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 2
+        },
+        {
+          "word": ";",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σωρεύσεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your enemy ... feed him ... give him a drink ... if you do this, you will heap ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These verbs are addressed as to one person and so are singular. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "νικῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κακοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "νίκα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κακόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not be overcome by evil, but overcome evil ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is addressing the believers here, so this is plural. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "τελεῖτε",
+      "glQuote": "you pay ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is addressing the believers here, so this is plural. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ἀπόδοτε",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Pay to everyone ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This verb is plural and applies to all the Roman Christians. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": "ὀφείλετε",
+      "glQuote": "Owe",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The form of \"you\" here is singular. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you, who judges",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By using these questions, Paul is demonstrating how he might need to scold individuals among his readers. Alternate translation: \"it is wrong for you to judge your brother, and it is wrong for you to despise your brother!\" or \"stop judging and despising your brother!\" (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνεις",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 2
+        },
+        {
+          "word": "τί",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐξουθενεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀδελφόν",
+          "occurrence": 2
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "why do you judge your brother? And you, why do you despise your brother? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "singular. Because Paul is addressing the believers, you may have to translate this using plural. (See: [[rc://en/ta/man/translate/figs-you ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "σεαυτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you ... yourself ",
+      "occurrence": 1
+    }
+  }
+]

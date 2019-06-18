@@ -1,0 +1,159 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase refers to Judas' death and likely to his judgment after death. Alternate translation: \"to go where he belongs\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "πορευθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "τόπον",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 3
+        },
+        {
+          "word": "ἴδιον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to go to his own place ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"breathed his last\" means \"breathed his final breath\" and is a polite way of saying that he died. Ananias fell down because he died; he did not die because he fell down. Alternate translation: \"died and fell to the ground\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "πεσὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξέψυξεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fell down and breathed his last ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"breathed his last\" means \"breathed her final breath\" and is a polite way of saying \"she died.\" See how you translated a similar phrase in [Acts 5:5](../05/05.md). (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "ἐξέψυξεν",
+      "glQuote": "breathed her last ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to fall asleep is a euphemism for dying. Alternate translation: \"died\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 60
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "ἐκοιμήθη",
+      "glQuote": "fell asleep ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was a polite way to refer to death. Alternate translation: \"he died\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": "ἐκοιμήθη",
+      "glQuote": "he fell asleep ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The crowd is using somewhat milder and less exact language to ask for Paul's death. Alternate translation: \"Put him to death\" or \"Kill him\" (See: [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-euphemism",
+      "quote": [
+        {
+          "word": "αἶρε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Away with him ",
+      "occurrence": 1
+    }
+  }
+]

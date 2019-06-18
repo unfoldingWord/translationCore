@@ -1,0 +1,78 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a concluding statement for this part of the story. \"Word of God\" here is a synecdoche for the entire scriptures. Alternate translation: \"Paul lived there ... teaching the scriptures among them\" (See: [[rc://en/ta/man/translate/writing-endofstory]] and [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 18,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-endofstory",
+      "quote": [
+        {
+          "word": "ἐκάθισεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐνιαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μῆνας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἓξ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάσκων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Paul lived there ... teaching the word of God among them ",
+      "occurrence": 1
+    }
+  }
+]

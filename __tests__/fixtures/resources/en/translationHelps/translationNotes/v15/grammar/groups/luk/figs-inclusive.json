@@ -1,0 +1,89 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "No one knows for sure who Theophilus was. If he was a Christian, the word \"us\" here would include him and so be inclusive, and if not, it would be exclusive. (See: [[rc://en/ta/man/translate/figs-inclusive]] and [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "among us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since the shepherds were speaking to one another, languages that have inclusive forms for \"we\" and \"us\" should use the inclusive form here. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "διέλθωμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let us go ... to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus was including Peter and John when he said \"we.\" Peter and John would be part of the group of the disciples that would eat the meal. (See: [[rc://en/ta/man/translate/figs-inclusive]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "φάγωμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that we may eat it",
+      "occurrence": 1
+    }
+  }
+]

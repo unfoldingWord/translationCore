@@ -1,0 +1,3892 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"In him was life\" is a metonym for causing everything to live. And, \"light\" here is a metaphor for \"truth.\" Alternate translation: \"He is the one who caused everything to live. And he revealed to people what is true about God\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "φῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In him was life, and the life was the light of men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"world\" is a metonym that stands for all the people who live in the world. Alternate translation: \"the people did not know who he really was\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔγνω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world did not know him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"name\" is a metonym that stands for Jesus' identity and everything about him. Alternate translation: \"believed in him\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πιστεύουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "believed in his name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John is saying that Isaiah's prophecy is about himself. The word \"voice\" here refers to the person who is crying out in the wilderness. Alternate translation: \"I am the one calling out in the wilderness\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "βοῶντος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρήμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am a voice, crying in the wilderness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"world\" is a metonym and refers to all the people in the world. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "κόσμου",
+      "glQuote": "world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"time\" is a metonym that represents the right occasion for Jesus to show that he is the Messiah by working miracles. Alternate translation: \"It is not yet the right time for me to perform a mighty act\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὔπω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἥκει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥρα",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "My time has not yet come ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym that represents the person of Jesus. Alternate translation: \"believed in him\" or \"trusted in him\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπίστευσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "believed in his name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"world\" is a metonym that refers to everyone in the world. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἠγάπησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God so loved the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heaven\" is used as a metonym to refer to God. This can be stated in an active form. Alternate translation: \"God has given it to him\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ᾖ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεδομένον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it has been given to him from heaven ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John means that Jesus is greater than he is since Jesus is from heaven, and John was born on the earth. Alternate translation: \"He who is born in this world is like everyone else who lives in the world and he speaks about what happens in this world\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὢν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 3
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 3
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 3
+        },
+        {
+          "word": "λαλεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He who is from the earth is from the earth and speaks about the earth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" is a metonym that stands for the message that Jesus proclaimed. Alternate translation: \"his message\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"world\" is a metonym for all the believers throughout the world. Alternate translation: \"all the believers in the world\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "κόσμου",
+      "glQuote": "world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" is a metonym that refers to the message that Jesus spoke. Alternate translation: \"believed the message\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπίστευσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "believed the word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" is a metonym that represents the message of Jesus. Alternate translation: \"anyone who hears my message\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he who hears my word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" is a metonym that symbolizes God's power and authority. Alternate translation: \"I have come with my Father's authority\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in my Father's name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"name\" is a metonym that represents authority. Alternate translation: \"If another should come in his own authority\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄλλος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλθῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἰδίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If another should come in his own name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Moses\" here is a metonym here that stands for the law itself. Alternate translation: \"Moses accuses you in the Law, the very Law in which you have put your hopes\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατηγορῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠλπίκατε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The one who accuses you is Moses, in whom you have put your hope ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"world\" is a metonym for all of the people in the world who trust in Jesus. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the world\" is a metonym that represents the lives of all the people in the world. Alternate translation: \"that will give life to all the people in the world\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for the life of the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) Jesus' words in [John 6:32-58](./32.md) or 2) everything Jesus teaches. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 63
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ῥήματα",
+      "glQuote": "words",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the world\" is a metonym for all of the people in the world. Alternate translation: \"all people\" or \"everyone\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"time\" is a metonym. Jesus is implying that it is not the right time for him to bring his ministry to a close. Alternate translation: \"It is not the right time for me to end my work\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "καιρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὔπω",
+          "occurrence": 1
+        },
+        {
+          "word": "πάρεστιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "My time has not yet come ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"world\" is a metonym for the people who live in the world. Alternate translation: \"All the people in the world cannot hate you\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "μισεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The world cannot hate you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"hour\" is a metonym that represents the right time for Jesus to be arrested, according to God's plan. Alternate translation: \"it was not the right time to arrest him\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὔπω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐληλύθει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥρα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his hour had not yet come ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This \"word\" is a metonym which stands for the meaning of the message that Jesus had shared, which the Jewish leaders had failed to understand. Alternate translation: \"What is he talking about when he said\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What is this word that he said ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the stomach represents the inside of a person, specifically the non-physical part of a person. Alternate translation: \"from inside of him\" or \"from his heart\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "κοιλίας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from his stomach ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym for the people. Alternate translation: \"the people of the world\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"hour\" is a metonym for the time for Jesus to die. Alternate translation: \"it was not yet the right time for Jesus to die\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὔπω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐληλύθει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥρα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his hour had not yet come ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"world\" is a metonym for the people who live in the world. Alternate translation: \"these things I say to all the people\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "these things I say to the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"house\" is a metonym for \"family.\" Alternate translation: \"as a permanent member of a family\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the house ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" is a metonym for the \"teachings\" or \"message\" of Jesus, which the Jewish leaders do not accept. Alternate translation: \"you do not accept my teachings\" or \"you do not allow my message to change your life\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my word has no place in you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"words\" is a metonym for the \"teachings\" of Jesus. Alternate translation: \"It is because you will not accept my teachings. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "δύνασθε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούειν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is because you cannot hear my words ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"words\" is a metonym for the \"message\" of God. Alternate translation: \"the message of God\" or \"the truth that comes from God\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 47
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ῥήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "the words of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" is a metonym for the \"teachings\" of Jesus. Alternate translation: \"obeys my teachings\" or \"does what I say\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τηρήσῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "keeps my word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" is a metonym for what God says. Alternate translation: \"I obey what he says to do\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 55
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τηρῶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "keep his word ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym for what Jesus would accomplish during his life. Alternate translation: \"what I would do during my life\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 56
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my day ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"world\" is a metonym for the people who live in the world. Alternate translation: \"living among the people of this world\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"world\" is a metonym for \"the people who live in the world.\" Alternate translation: \"came to live among the people of this world\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦλθον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "came into this world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym for the power of God. Here \"Father\" is an important title for God. Jesus performed miracles through his Father's power and authority. Alternate translation: \"through my Father's power\" or \"with my Father's power\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/guidelines-sonofgodprinciples ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the name of my Father ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hand\" is a metonym that represents the protective care of Jesus. Alternate translation: \"no one will steal them away from me\" or \"they will remain secure forever in my care\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁρπάσει",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αὐτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no one will snatch them out of my hand ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"hand\" is a metonym that refers to God's possession and protective care. Alternate translation: \"No one can steal them from my Father\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the hand of the Father ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"hand\" is a metonym that represents the custody or possession of the Jewish leaders. Alternate translation: \"got away from them again\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐξῆλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "χειρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "went away out of their hand ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" is a metonym for the person's authority and power. Alternate translation: \"comes as the representative of the Lord\" or \"comes in the power of the Lord\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρχόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "comes in the name of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Daughter of Zion\" here is a metonym that refers to the people of Jerusalem. Alternate translation: \"you people of Jerusalem\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "θυγάτηρ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σιών",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "daughter of Zion ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the world\" is a metonym that represents (in exaggeration) all of the people in the world. You may need to make explicit that the hearers would have understood that the Pharisees were speaking only of the people in Judea. (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"this hour\" is a metonym that represents when Jesus would suffer and die on the cross. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this hour ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" is a metonym that refers to God. Alternate translation: \"make your glory known\" or \"reveal your glory\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "δόξασόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "glorify your name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This represents God speaking. Sometimes people avoid referring directly to God because they respect him. Alternate translation: \"God spoke from the heavens\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-euphemism ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἦλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "φωνὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a voice came from heaven ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"this world\" is a metonym that refers to all the people in the world. Alternate translation: \"Now is the time for God to judge all of the people\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίσις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now is the judgment of this world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym that refers to the Lord's ability to rescue with power. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "βραχίων",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the arm of the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hearts\" is a metonym for a person's mind. The phrase \"hardened their hearts\" is a metaphor for making someone become stubborn. Also, to \"understand with their hearts\" means to \"truly understand.\" Alternate translation: \"he has made them stubborn ... truly understand\" (See: [[rc://en/ta/man/translate/figs-metonymy]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐπώρωσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "νοήσωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he has hardened their hearts ... understand with their hearts ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the world\" is a metonym that represents all of the people in the world. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"his hands\" is a metonym for power and authority. Alternate translation: \"had given him complete power and authority over everything\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "δέδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "had given everything over into his hands ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's inner being. Alternate translation: \"Stop being so anxious and worried\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταρασσέσθω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not let your heart be troubled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym that represents the authority of Jesus. Alternate translation: \"Whatever you ask, using my authority\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὅ",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰτήσητε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Whatever you ask in my name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym that represents the authority of Jesus. Alternate translation: \"If you ask me anything as one of my followers, I will do it\" or \"Whatever you ask of me, I will do it because you belong to me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐάν",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰτήσητέ",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιήσω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If you ask me anything in my name, I will do it ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"world\" is a metonym that refers to the people who oppose God. Alternate translation: \"The unbelieving people in this world will never welcome him\" or \"Those who oppose God will not accept him\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        },
+        {
+          "word": "λαβεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The world cannot receive him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"world\" is a metonym that represents the people who do not belong to God. Alternate translation: \"the unbelievers\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"world\" is a metonym that represents the people who oppose God. Alternate translation: \"not to those who do not belong to God\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐχὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not to the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"world\" is a metonym that represents those people who do not love God. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "κόσμος",
+      "glQuote": "world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's inner being. Alternate translation: \"So stop being anxious, and do not be afraid\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταρασσέσθω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδία",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "μηδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "δειλιάτω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not let your heart be troubled, and do not be afraid ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"world\" is a metonym for the people who do not belong to God. Alternate translation: \"in order that the ones who do not belong to God may know\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "γνῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in order that the world will know ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym that represents the authority of Jesus. Alternate translation: \"Because you belong to me, whatever you ask of the Father, he will give it to you\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὅ",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰτήσητε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατέρα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "δῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whatever you ask of the Father in my name, he will give it to you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "the people who do not belong to God and are opposed to him (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "the people who do not belong to God and are opposed to him (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"word\" is a metonym for the message of Jesus. Alternate translation: \"Remember the message that I spoke to you\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "μνημονεύετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγου",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Remember the word that I said to you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"because of my name\" is a metonym that represents Jesus. People will make his followers suffer because they belong to him. Alternate translation: \"because you belong to me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "because of my name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"beginning\" is a metonym that means the first days of Jesus' ministry. Alternate translation: \"from the very first days when I began teaching the people and doing miracles\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἀρχῆς",
+      "glQuote": "the beginning ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hour\" is a metonym that refers to the time when people will persecute Jesus' followers. Alternate translation: \"when they cause you to suffer\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλθῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥρα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when their hour comes ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym that refers to the first days of Jesus' ministry. Alternate translation: \"when you first started following me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the beginning ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's inner being. Alternate translation: \"you are now very sad\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "λύπη",
+          "occurrence": 1
+        },
+        {
+          "word": "πεπλήρωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "sadness has filled your heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym that refers to the people in the world.(See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "κόσμον",
+      "glQuote": "world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"world\" is a metonym for the people who oppose God. Alternate translation: \"but the people who oppose God will be glad\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but the world will be glad ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"heart\" is a metonym for a person's inner being. Alternate translation: \"you will be very happy\" or \"you will be very joyful\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "χαρήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your heart will be glad ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" is a metonym that refers to the person and authority of Jesus. Alternate translation: \"if you ask anything of the Father, he will give it to you because you belong to me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἄν",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰτήσητε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατέρα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "δώσει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if you ask anything of the Father in my name, he will give it to you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym that refers to the person and authority of Jesus. The Father will honor the requests of the believers because of their relationship with Jesus. Alternate translation: \"because you are my followers\" or \"on my authority\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in my name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym for the person and authority of Jesus. Alternate translation: \"you will ask because you belong to me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰτήσεσθε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will ask in my name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"world\" is a metonym that refers to the people who live in the world. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "κόσμον",
+      "glQuote": "world",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the world\" refers to the troubles and persecution that believers will endure from those who oppose God. Alternate translation: \"I have conquered the troubles of this world\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "νενίκηκα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have conquered the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"hour\" is a metonym that refers to the time for Jesus to suffer and die. Alternate translation: \"it is time for me to suffer and die\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐλήλυθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὥρα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the hour has come ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"work\" is a metonym that refers to Jesus' entire earthly ministry. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "δέδωκάς",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιήσω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the work that you have given me to do ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym that refers to the person of God. Alternate translation: \"I taught them who you really are and what you are like\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐφανέρωσά",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I revealed your name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"world\" is a metonym that refers to the people of the world that oppose God. This means that God has separated the believers spiritually from the people who do not believe in him. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "from the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"world\" is a metonym that refers to the people who oppose God. Alternate translation: \"I am not praying for those who do not belong to you\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρωτῶ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "I do not pray for the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a metonym that refers to being on earth and being among the people who oppose God. Alternate translation: \"among the people who do not belong to you\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"name\" is a metonym for God's power and authority. Alternate translation: \"keep them safe by your power and authority, which you have given me\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τήρησον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "δέδωκάς",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "keep them in your name that you have given me ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"name\" is a metonym that refers to the power and protection of God. Alternate translation: \"I kept them with your protection\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐτήρουν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματί",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I kept them in your name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These words are a metonym for the people who live in the world. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the \"world\" is a metonym that refers to the people who oppose God. Alternate translation: \"The people who oppose you have hated my followers because they do not belong to those who do not believe, just as I do not belong to them\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰμὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "the world ... because they are not of the world ... I am not of the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In this passage, \"the world\" is a metonym for the people who oppose God. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here into \"the world\" is a metonym that means to the people who live in the world. Alternate translation: \"to the people of the world\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "into the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"the world\" is a metonym that refers to the people who do not yet know God. Alternate translation: \"the people who do not know God\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the world\" is a metonym that refers to the people who do not know God. Alternate translation: \"that all the people will know\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 2
+        },
+        {
+          "word": "γινώσκῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that the world will know ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"world\" is a metonym for the people who do not belong to God. Alternate translation: \"those who do not belong to you do not know what you are like\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔγνω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the world did not know you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"name\" refers to God. Alternate translation: \"I have revealed to them what you are like\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἐγνώρισα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄνομά",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I made your name known to them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"world\" is a metonym for the people who oppose Jesus. Possible meanings are 1) \"My kingdom is not part of this world\" or 2) \"I do not need this world's permission to rule as their king\" or \"It is not from this world that I have authority to be king.\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "My kingdom is not of this world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"power\" is a metonym that refers to the ability to do something or to cause something to happen. (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": "ἐξουσίαν",
+      "glQuote": "power",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"life\" is a metonym that means Jesus gives life. Alternate translation: \"you may have life because of Jesus\" (See: [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "ζωὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνόματι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "life in his name ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,301 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a direct quote. Alternate translation: \"He ordered them strictly, 'No one should know about this!' Then\" or \"He ordered them strictly, 'Do not tell anyone about what I have done!' Then\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "διεστείλατο",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μηδεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "γνοῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "He strictly ordered them that no one should know about this. He also",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated as a direct quote. Alternate translation: \"And he told them, 'Give her something to eat.'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 5,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δοθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "φαγεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He also told them to give her something to eat",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be written as a direct quote. \"Jesus commanded the crowd, 'Sit down on the ground'\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "παραγγέλλει",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναπεσεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he commanded the crowd to recline on the ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Sadducees are quoting what Moses had written in the law. Moses' quote can be expressed as an indirect quote. Alternate translation: \"Moses wrote for us that if a man's brother dies\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "Μωϋσῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔγραψεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐάν",
+          "occurrence": 1
+        },
+        {
+          "word": "τινος",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποθάνῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Moses wrote for us, 'If a man's brother dies",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be written as an indirect quote. Translate this so that it is a polite request. Alternate translation: \"Our Teacher would like to know where the guest room is where he may eat the Passover with his disciples.\" (See: [[rc://en/ta/man/translate/figs-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotations",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάσκαλος",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ποῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατάλυμά",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        },
+        {
+          "word": "φάγω",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "The Teacher says, \"Where is my guest room ... with my disciples?\"",
+      "occurrence": 1
+    }
+  }
+]

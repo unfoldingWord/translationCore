@@ -1,0 +1,347 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John exaggerates to emphasize that only a few people believe Jesus. Alternate translation: \"very few people believe him\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτυρίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐδεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "λαμβάνει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no one accepts his testimony ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Samaritan woman exaggerates to show that she is impressed by how much Jesus knows about her. Alternate translation: \"Come see a man who knows very much about me, even though I have never met him before\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "δεῦτε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἴδετε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπέ",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐποίησα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Come, see a man who told me everything that I have ever done ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration. The woman was impressed by how much Jesus knew about her. Alternate translation: \"He told me many things about my life\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "εἶπέν",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐποίησα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He told me everything that I have done ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration that Caiaphas uses to insult his hearers. Alternate translation: \"You do not understand what is happening\" or \"You speak as though you know nothing\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 49
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἴδατε",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδέν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You know nothing ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Pharisees use this exaggeration to express their shock that so many people have come out to meet Jesus. Alternate translation: \"It looks like everyone is becoming his disciple\" (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἴδε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀπίσω",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπῆλθεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "see, the world has gone after him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may need to make explicit that this exaggeration refers only to those people who see how the disciples love each other. (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": "πάντες",
+      "glQuote": "everyone",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"all the Jews\" is an exaggeration that emphasizes that Jesus spoke where anyone who wanted to hear him could hear him. (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": "συνέρχονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "where all the Jews come together ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John exaggerates to emphasize that Jesus did many more miracles than what people could write about in many books. (See: [[rc://en/ta/man/translate/figs-hyperbole ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "οὐδ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρήσειν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "βιβλία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "even the world itself could not contain the books ",
+      "occurrence": 1
+    }
+  }
+]

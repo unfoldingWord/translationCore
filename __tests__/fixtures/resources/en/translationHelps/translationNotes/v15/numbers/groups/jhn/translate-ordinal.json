@@ -1,0 +1,57 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this ordinal term \"third\" as \"time number 3.\" (See: [[rc://en/ta/man/translate/translate-ordinal ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": "τρίτον",
+      "glQuote": "the third time ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The pronoun \"he\" refers to Jesus. Here \"a third time\" means \"time number 3.\" Alternate translation: \"Jesus said to him a third time\" (See: [[rc://en/ta/man/translate/translate-ordinal ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He said to him a third time ",
+      "occurrence": 1
+    }
+  }
+]

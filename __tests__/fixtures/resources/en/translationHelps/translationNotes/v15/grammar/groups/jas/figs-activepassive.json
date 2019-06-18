@@ -1,0 +1,577 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God has promised to those who love him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐπηγγείλατο",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπῶσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "has been promised to those who love God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God is trying to make me do something evil\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πειράζομαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am tempted by God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"No one can make God desire to do evil\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπείραστός",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "κακῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God is not tempted by evil ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"God will bless this man as he obeys the law\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὗτος",
+          "occurrence": 1
+        },
+        {
+          "word": "μακάριος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this man will be blessed in his actions ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"who know that God will judge them by means of the law of freedom\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλευθερίας",
+          "occurrence": 1
+        },
+        {
+          "word": "μέλλοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνεσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who will be judged by means of the law of freedom ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"This fulfilled the scripture\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐπληρώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφὴ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The scripture was fulfilled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"actions and faith are what justify a person, and not only faith.\" James speaks of works as if they were objects to obtain. (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργων",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοῦται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": "μόνον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it is by works that a man is justified, and not only by faith ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"strong winds push them, they\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνέμων",
+          "occurrence": 1
+        },
+        {
+          "word": "σκληρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλαυνόμενα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "are driven by strong winds, ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"itself\" refers to the tongue. Also, here \"hell\" refers to the powers of evil or to the devil. This can be stated in active form. Alternate translation: \"life because the devil uses it for evil\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "γενέσεως",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "φλογιζομένη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 3
+        },
+        {
+          "word": "Γεέννης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "life. It is itself set on fire by hell ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"every kind\" is a general statement referring to all or many kinds of wild animals. This can be stated in active form. Alternate translation: \"People have learned to control many kinds of wild animals, birds, reptiles, and sea creatures\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πᾶσα",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "φύσις",
+          "occurrence": 1
+        },
+        {
+          "word": "θηρίων",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πετεινῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑρπετῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐναλίων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "δαμάζεται",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "δεδάμασται",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "φύσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρωπίνῃ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For every kind of ... mankind ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"whom God made in his likeness\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "καθ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁμοίωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "γεγονότας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who have been made in God's likeness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in the active. Alternate translation: \"Christ will not judge you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "κριθῆτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will be not judged ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"so that God may heal you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅπως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰαθῆτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that you may be healed ",
+      "occurrence": 1
+    }
+  }
+]

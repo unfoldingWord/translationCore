@@ -1,0 +1,42 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some languages would put \"The Lord God says\" at the beginning or the end of the whole sentence. (See: [[rc://en/ta/man/translate/writing-quotations]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-quotations",
+      "quote": [
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "says the Lord God",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an expression that means talking with other people. Alternate translation: \"ask people to help me understand the message\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "προσανεθέμην",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἵματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "consult with flesh and blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"were found to be\" are an idiom that emphasizes that \"we are\" certainly sinners. Alternate translation: \"we see that we also certainly are sinners\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "εὑρέθημεν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτωλοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we too, were found to be sinners",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"carry out someone's desires\" is an idiom meaning \"do what someone desires.\" Alternate translation: \"You will not do what your sinful nature desires\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἐπιθυμίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τελέσητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you will not carry out the desires of the sinful nature",
+      "occurrence": 1
+    }
+  }
+]

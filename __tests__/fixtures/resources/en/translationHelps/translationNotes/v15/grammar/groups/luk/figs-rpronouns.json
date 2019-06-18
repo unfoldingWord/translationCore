@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"himself\" focuses on Jesus and the surprise of Jesus actually appearing to them. Most of them had not seen him after his resurrection. (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": "αὐτὸς",
+      "glQuote": "Jesus himself",
+      "occurrence": 1
+    }
+  }
+]

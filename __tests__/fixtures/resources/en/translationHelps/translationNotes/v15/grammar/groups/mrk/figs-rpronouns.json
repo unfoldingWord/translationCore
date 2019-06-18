@@ -1,0 +1,150 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"himself\" is a reflexive pronoun that refers back to Satan, and it is also a metonym for his evil spirits. Alternate translation: \"If Satan and his evil spirits were fighting one another\" or \"If Satan and his evil spirits have risen up against each other and are divided\" (See: [[rc://en/ta/man/translate/figs-rpronouns]] and [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σατανᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνέστη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμερίσθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If Satan has risen up against himself and is divided",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"herself\" is a reflexive pronoun used to emphasize that it was significant that it was Herodias' own daughter who danced at the dinner. (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἡρῳδιάδος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Herodias herself",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author uses the reflexive pronoun \"themselves\" here to emphasize that they were alone and that only Jesus, Peter, James, and John went up the mountain. (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "κατ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "μόνους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "alone by themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word \"himself\" refers to David and is used to place emphasis on him and what he said. Alternate translation: \"It was David who\" (See: [[rc://en/ta/man/translate/figs-rpronouns]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "David himself",
+      "occurrence": 1
+    }
+  }
+]

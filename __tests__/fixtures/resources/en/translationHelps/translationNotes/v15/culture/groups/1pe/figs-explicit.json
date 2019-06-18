@@ -1,0 +1,201 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God is the one who chose the stone. Alternate translation: \"a most important cornerstone, which I have chosen\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "λίθον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκρογωνιαῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλεκτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔντιμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a cornerstone, chosen and valuable",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases share similar meanings. Together they emphasize that people will take offense at this \"stone,\" which refers to Jesus. Alternate translation: \"a stone or a rock over which people will stumble\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "λίθος",
+          "occurrence": 1
+        },
+        {
+          "word": "προσκόμματος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "πέτρα",
+          "occurrence": 1
+        },
+        {
+          "word": "σκανδάλου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A stone of stumbling and a rock that makes them fall",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"on the day when he comes.\" This refers to the day when God will judge all people. Alternate translation: \"when he comes to judge everyone\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπισκοπῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "on the day of his coming",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"this\" refers to the ways husbands should treat their wives. Alternate translation: \"Live with your wives in this way\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do this",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can clarify the object of blessing. Alternate translation: \"continue to bless those who do evil to you or insult you\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "εὐλογοῦντες",
+      "glQuote": "continue to bless",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to special spiritual abilities that God gives to believers. Alternate translation: \"Because each one of you has received a special spiritual ability as a gift from God\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἕκαστος",
+          "occurrence": 1
+        },
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαβεν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάρισμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "As each one of you has received a gift",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,5 +1,6 @@
 import fs from "fs-extra";
 import path from "path-extra";
+import isEqual from 'deep-equal';
 import { getTranslation } from "./localizationHelpers";
 import ResourceAPI from "./ResourceAPI";
 
@@ -103,9 +104,11 @@ export function isCheckUnique(checkData, loadedChecks) {
   const checkContextId = checkData.contextId;
   if (checkContextId) {
     for (const check of loadedChecks) {
-      if (check.contextId && check.contextId.groupId === checkContextId.groupId
-        && check.contextId.quote === checkContextId.quote
-        && check.contextId.occurrence === checkContextId.occurrence) {
+      const quoteCondition = Array.isArray(check.contextId.quote) ?
+          isEqual(check.contextId.quote, checkContextId.quote) : check.contextId.quote === checkContextId.quote;
+
+      if (check.contextId && check.contextId.groupId === checkContextId.groupId &&
+          quoteCondition && check.contextId.occurrence === checkContextId.occurrence) {
           return false;
       }
     }

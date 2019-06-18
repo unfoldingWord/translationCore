@@ -1,0 +1,1330 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"flesh\" represents \"a person\" or \"a human being.\" Alternate translation: \"became human\" or \"became a human being\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "σὰρξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "became flesh ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Jews\" here represents the \"Jewish leaders.\" Alternate translation: \"the Jewish leaders sent ... to him from Jerusalem\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἀπέστειλαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἱεροσολύμων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews sent ... to him from Jerusalem ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the Jews\" is a synecdoche which represent the \"Jewish leaders.\" Alternate translation: \"the Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"he\" here represents \"Jesus and his disciples.\" Alternate translation: \"Jesus and his disciples gave it\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "διέδωκεν",
+      "glQuote": "he gave it ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the Jews\" is a synecdoche for \"the Jewish leaders.\" Alternate translation: \"the Jewish leaders were making plans to kill him\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐζήτουν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποκτεῖναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews were seeking to kill him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"Jews\"is a synecdoche for \"the Jewish leaders.\" The word \"him\" refers to Jesus. Alternate translation: \"The Jewish leaders were looking for Jesus\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐζήτουν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Jews were looking for him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Jews\" is a synecdoche for the leaders of the Jews who opposed Jesus. Alternate translation: \"the Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"Jews\" is a synecdoche that represents the leaders of the Jews who opposed Jesus. Alternate translation: \"The Jewish leaders said among themselves\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "εἶπον",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Jews therefore said among themselves ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for \"the Jewish leaders.\" Alternate translation: \"The Jewish leaders said\" or \"The Jewish authorities said\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἔλεγον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Jews said ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"Jews\" is a synecdoche that represents the \"Jewish leaders\" who opposed Jesus. Alternate translation: \"The Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a metonym for the \"Jewish leaders\" who opposed Jesus. Alternate translation: \"Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 52
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "Ἰουδαῖοι",
+      "glQuote": "Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the \"Jews\" is a synecdoche for the \"Jewish leaders\" who opposed Jesus. Alternate translation: \"The Jewish leaders said to him\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 57
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "εἶπον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Jews said to him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jesus\" is a synecdoche for Jesus and the disciples. Alternate translation: \"as Jesus and his disciples passed by\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "παράγων",
+      "glQuote": "as Jesus passed by ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the \"Jewish leaders\" who opposed Jesus. Alternate translation: Now the Jewish leaders still did not believe. (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίστευσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now the Jews still did not believe ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the \"Jewish leaders\" who opposed Jesus. Alternate translation: \"they were afraid of what the Jewish leaders might do to them\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐφοβοῦντο",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they were afraid of the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. Alternate translation: \"Then the Jewish leaders surrounded him\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐκύκλωσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then the Jews surrounded him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. Alternate translation: \"Then the Jewish leaders started picking up stones again\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐβάστασαν",
+          "occurrence": 1
+        },
+        {
+          "word": "πάλιν",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθους",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then the Jews took up stones ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Jews\" is a synecdoche that represents the Jewish leaders who opposed Jesus. Alternate translation: \"The Jewish opponents replied\" or \"The Jewish leaders answered him\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἀπεκρίθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Jews answered him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a synecdoche for the Jewish leaders who opposed Jesus. Alternate translation: \"the Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a synecdoche for the Roman army. Alternate translation: \"the Roman army will come\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐλεύσονται",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ῥωμαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Romans will come ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"nation\" is a synecdoche and refers to the people of the nation of Israel. (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἀποθνῄσκειν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔθνους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "die for the nation ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the Jewish leaders and \"walk openly\" is a metaphor for \"live where everyone could see him.\" Alternate translation: \"live where all the Jews could see him\" or \"walk openly among the Jewish leaders who opposed him\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 54
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "παρρησίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "περιεπάτει",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "walk openly among the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. Alternate translation: \"as I said to the Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as I said to the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. Alternate translation: \"the Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus and arrested him. Alternate translation: \"The Jewish leaders said to him\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "εἶπον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Jews said to him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche that refers to the Jewish leaders who opposed Jesus. (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"world\" is a synecdoche that refers to the people who live in the world. (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐλήλυθα",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 3
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have come into the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"voice\" is a synecdoche that refers to words Jesus says. Alternate translation: \"the things I say\" or \"me\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "φωνῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my voice ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche that refers to the Jewish leaders who opposed Jesus. (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Pilate himself did not whip Jesus. Here \"Pilate\" is a synecdoche for the soldiers that Pilate ordered to whip Jesus. Alternate translation: \"Then Pilate ordered his soldiers to whip Jesus\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τότε",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαβεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πειλᾶτος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμαστίγωσεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then Pilate took Jesus and whipped him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. Alternate translation: \"The Jewish leaders answered Pilate\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἀπεκρίθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Jews answered him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche that refers to the Jewish leaders that opposed Jesus. In the original, the form of \"cried out\" indicates that they cried out or shouted repeatedly. Alternate translation: \"but the Jewish leaders kept shouting\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκραύγασαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but the Jews cried out ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" refers to Pilate and is a synecdoche for \"Pilate ordered the soldiers.\" Alternate translation: \"he ordered the soldiers to bring Jesus out\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἤγαγεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξω",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he brought Jesus out ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche that refers to the Jewish leaders who opposed Jesus. Alternate translation: \"Pilate said to the Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Pilate said to the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"I\" is a synecdoche that refers to Pilate's soldiers who will actually perform the crucifixion. Alternate translation: \"Do you really want me to tell my soldiers to nail your king to a cross?\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "βασιλέα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "σταυρώσω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Should I crucify your King? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Pilate\" is a synecdoche for the person who wrote on the sign. Here \"on the cross\" refers to Jesus' cross. Alternate translation: \"Pilate also commanded someone to write on a sign and to attach it to Jesus' cross\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἔγραψεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τίτλον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πειλᾶτος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔθηκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σταυροῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Pilate also wrote a sign and put it on the cross ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. Alternate translation: \"the Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. Alternate translation: \"for fear of the Jewish leaders\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "φόβον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for fear of the Jews ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,5384 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Your language may have a particular way of introducing the author of a letter. You may also need to tell in this same verse who the people are to whom Paul wrote the letter ([Romans 1:7](./07.md)). Alternate translation: \"I, Paul, wrote this letter\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "Παῦλος",
+      "glQuote": "Paul",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"flesh\" refers to the physical body. Alternate translation: \"who is a descendant of David according to the physical nature\" or \"who was born into the family of David\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "γενομένου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπέρματος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δαυεὶδ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρκα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who was a descendant of David according to the flesh ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul wants to strengthen the Roman Christians spiritually. Alternate translation: \"some gift that will help you to grow spiritually\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "χάρισμα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πνευματικὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "στηριχθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "some spiritual gift, in order to strengthen you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"believes\" means that one puts his trust in Christ. Alternate translation: \"it is through the gospel that God powerfully saves those who put their trust in Christ\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δύναμις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "σωτηρίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "παντὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύοντι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it is the power of God for salvation for everyone who believes ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"righteous\" refers to those who trust in God. Alternate translation: \"It is people who trust in God that he considers right with him, and they will live forever\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δίκαιος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 2
+        },
+        {
+          "word": "ζήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "The righteous will live by faith ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"truth\" refers to true information about God. Alternate translation: \"hide the true information about God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλήθειαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κατεχόντων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "hold back the truth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"enlightened them\" means God has shown them the truth about him. Alternate translation: \"Because God has shown everyone what he is like\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐφανέρωσεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For God has enlightened them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"creation\" refers to what God created. Alternate translation: \"They worshiped things that God created\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐσεβάσθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐλάτρευσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "κτίσει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who worshiped and served the creation ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"a depraved mind\" means a mind that thinks only about immoral things. Alternate translation: \"God allowed their minds, which they had filled with worthless and immoral thoughts, to completely control them\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "παρέδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδόκιμον",
+          "occurrence": 1
+        },
+        {
+          "word": "νοῦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he gave them up to a depraved mind ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"practice\" refers to continually or habitually doing things that are evil. Alternate translation: \"and that those who keep on doing wicked things\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοιαῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "πράσσοντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that those who practice such things ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the verb \"do\" refers to continuing to do things that are evil. Alternate translation: \"who keep on doing evil things\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "πράσσουσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who do them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"therefore\" marks a new section of the letter. It also makes a concluding statement based on what Paul has said in [Romans 1:1-32](../01/01.md). Alternate translation: \"Since God will punish those who continually sin, he will certainly not excuse your sins\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "διὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναπολόγητος",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Therefore you are without excuse ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses the word \"person\" here to scold anyone who might think he can act like God and judge others. Alternate translation: \"You are just a human being, yet you judge others and say they deserve God's punishment\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπε",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you person, you who judge ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul repeats \"without the law\" to emphasize that it does not matter if people do not know the law of Moses. If they sin, God will judge them. Alternate translation: \"without knowing the law of Moses will certainly still die spiritually\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀνόμως",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀνόμως",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολοῦνται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "without the law will also perish without the law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God will judge sinful people according to his law. You can translate this in an active form. Alternate translation: \"and who do know the law of Moses, God will judge them according to that law\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "κριθήσονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with respect to the law will be judged by the law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the law\" refers to the law of Moses. Alternate translation: \"it is not those who only hear the law of Moses\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκροαταὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it is not the hearers of the law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the law\" refers to the law of Moses.\" Alternate translation: \"they do not actually have the laws that God gave to Moses\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "νόμον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔχοντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they do not have the law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The knowledge of the truth that is in the law comes from God. Alternate translation: \"because you are sure you understand the truth that God has given in the law\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἔχοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μόρφωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γνώσεως",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀληθείας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and that you have in the law the form of knowledge and of the truth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul presents ideas that people might have after they hear what he wrote in chapter 2. He does this in order to respond to them in verse 2. Alternate translation: \"Some people might say, 'Then what advantage does the Jew have? And what is the benefit of circumcision?'\" or \"Some people might say, 'If that is true, then the Jews do not have any advantage, and there is no benefit in being circumcised.'\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-rquestion ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "περισσὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὠφέλια",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "περιτομῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then what advantage does the Jew have? And what is the benefit of circumcision? ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul now responds to the concerns brought up in verse 1. Here \"It\" refers to being a member of the Jewish people. Alternate translation: \"But there is great advantage to being a Jew\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πολὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "τρόπον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is great in every way ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"revelation\" refers to God's words and promises. You can translate this in an active form. Alternate translation: \"God gave his words that contain his promises to the Jews\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπιστεύθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγια",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they were entrusted with revelation from God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God will always be true and will keep his promises. Alternate translation: \"God always does what he has promised\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "γινέσθω",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθής",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "let God be found to be true ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "There is no one who understands what is right. Alternate translation: \"No one really understands what is right\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "There is no one who understands ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the phrase \"seeks after God\" means to have a relationship with God. Alternate translation: \"No one sincerely tries to have a right relationship with God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκζητῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "There is no one who seeks after God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Since no one does what is good, they are useless to God. Alternate translation: \"Everyone has become useless to God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἅμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠχρεώθησαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They together have become useless ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"righteousness\" means being right with God. Alternate translation: \"being right with God through trusting Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δικαιοσύνη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the righteousness of God through faith in Jesus Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul implies that God accepts all people in the same way. Alternate translation: \"There is no difference at all between the Jews and the Gentiles\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "διαστολή",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For there is no distinction ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"justified\" refers to being made right with God. You can translate this in an active form. Alternate translation: \"God makes them right with himself as a free gift, because Christ Jesus sets them free\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δικαιούμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "δωρεὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπολυτρώσεως",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they are freely justified by his grace through the redemption that is in Christ Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"righteousness of the faith\" means that God considered him to be righteous. Alternate translation: \"a visible sign that God considered him righteous because he had believed in God before he was circumcised\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "σφραγῖδα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκροβυστίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a seal of the righteousness of the faith that he had already possessed when he was in uncircumcision ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"live by the law\" refers to obeying the law. Alternate translation: \"if those who obey the law are the ones who will inherit the earth\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "κληρονόμοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if those who live by the law are to be the heirs ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Where it is written can be made explicit. You can also translate this in an active form. Alternate translation: \"as someone has written in the Scriptures\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"of him whom he trusted\" refers to God. Alternate translation: \"Abraham was in the presence of God whom he trusted, who gives life to those who have died\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κατέναντι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίστευσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῳοποιοῦντος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκροὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the presence of God whom he trusted, who gives life to the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This idiom means that Abraham trusted God even though it did not seem that he could have a son. Alternate translation: \"Even though it seemed impossible for him to have descendants, he believe God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὃς",
+          "occurrence": 1
+        },
+        {
+          "word": "παρ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπίδα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐλπίδι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίστευσεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In hope he believed against hope ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The full promise God gave to Abraham can be made explicit. Alternate translation: \"You will have more descendants than you can count\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔσται",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "σπέρμα",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "So will your descendants be ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"justified\" means that God puts us in a right relationship with himself. You can translate this in an active form. Alternate translation: \"How much more will God do for us now that he has made us right with himself because of the death of Jesus on the cross\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πολλῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "μᾶλλον",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιωθέντες",
+          "occurrence": 1
+        },
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἵματι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Much more, then, now that we are justified by his blood ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that the people sinned before God gave the law. Alternate translation: \"People in the world sinned before God gave his law to Moses\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἄχρι",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόσμῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For until the law, sin was in the world ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that God did not charge the people with sinning before he gave the law. Alternate translation: \"but God recorded no sin against the law before he gave the law\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἁμαρτία",
+          "occurrence": 2
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλλογεῖται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄντος",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "but there is no accounting for sin when there is no law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"one\" refers to Adam. Alternate translation: \"For if by one man's sin, many died\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑνὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "παραπτώματι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέθανον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For if by the trespass of one the many died ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"grace\" refers to God's free gift that he made available to everyone through Jesus Christ. Alternate translation: \"even more through the man Jesus Christ, who died for us all, did God kindly offer us this gift of everlasting life, although we do not deserve it\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πολλῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "μᾶλλον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάρις",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "δωρεὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἑνὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπερίσσευσεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how much more did the grace of God and the gift by the grace of the one man, Jesus Christ, abound for the many ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the gift\" refers to God's freely erasing the record of our sins. Alternate translation: \"The gift is not like the result of Adam's sin\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑνὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτήσαντος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "δώρημα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the gift is not like the outcome of that one man's sin ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul gives two reasons why \"the gift is not like the result of Adam's sin.\" The \"judgment of condemnation\" implies that we all deserve God's punishment for our sins. Alternate translation: \"Because on the one hand, God declared that all people deserve to be punished because of the sin of one man, but on the other hand\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑνὸς",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "κατάκριμα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάρισμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "παραπτωμάτων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "δικαίωμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The judgment followed one trespass and brought condemnation, but the gift ... justification ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to how God makes us right with him even when we do not deserve it. Alternate translation: \"God's kind gift to put us right with himself\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "χάρισμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "παραπτωμάτων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "δικαίωμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the gift followed many trespasses and brought justification ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"condemnation\" refers to God's punishment. Alternate translation: \"all people deserve God's punishment for sin\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπους",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "κατάκριμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "condemnation came to all people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"justification\" refers to God's ability to make people right with him. Alternate translation: \"God's offer to make all people right with him\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 3
+        },
+        {
+          "word": "πάντας",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρώπους",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δικαίωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "justification and life for all people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"grace\" refers to God's undeserved blessings. Alternate translation: \"God continued to act even more kindly toward them, in a way that they did not deserve\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὑπερεπερίσσευσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "χάρις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "grace abounded even more ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"righteous\" refers to God's ability to make people right with him. You can translate this in an active form. Alternate translation: \"When God declares a person right with him, that person is no longer controlled by sin\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποθανὼν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "δεδικαίωται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίας",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He who has died is declared righteous with respect to sin ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"died\" refers to the fact that believers are no longer controlled by sin. (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀπεθάνομεν",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we have died with Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"now living\" refers to the believer's new spiritual life. Alternate translation: \"But offer yourselves to God, because he has given you new spiritual life\" or \"But offer yourselves to God, as those who had died and are now alive\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παραστήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὡσεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῶντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But present yourselves to God, as those who have been brought from death to life ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To be \"under law\" means to be subject to its limitations and weaknesses. You can make the full meaning explicit in your translation. Alternate translation: \"For you are no longer bound to the law of Moses, which could not give you the power to stop sinning\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστε",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For you are not under law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To be \"under grace\" means that God's free gift provides the power to keep from sinning. You can make the full meaning explicit in your translation. Alternate translation: \"but you are bound to God's grace, which does give you the power to stop sinning\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but under grace ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the law of Moses. Alternate translation: \"the law of Moses\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "γράμματος",
+      "glQuote": "the letter ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"condemnation\" refers to punishing people. Alternate translation: \"God will not condemn and punish those who are joined to Christ Jesus\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐδὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρα",
+          "occurrence": 1
+        },
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "κατάκριμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "There is therefore now no condemnation for those who are in Christ Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to God's Spirit. Alternate translation: \"God's Spirit in Christ Jesus\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "νόμος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the law of the Spirit of life in Christ Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "How Christ lives in a person could be made explicit. Alternate translation: \"If Christ lives in you through the Holy Spirit\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If Christ is in you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"our adoption\" means when we become full members of God's family, as adopted children. The word \"redemption\" means when God saves us. Alternate translation: \"waiting for when we are fully members of God's family and he saves our bodies from decay and death\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "υἱοθεσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεκδεχόμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀπολύτρωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "σώματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "waiting for our adoption, the redemption of our body ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"brothers\" refers to all believers, both male and female. Alternate translation: \"among many brothers and sisters who belong to the family of God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "among many brothers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"justified\" is in the past tense to emphasize that this will certainly happen. Alternate translation: \"these he also put right with himself\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τούτους",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐδικαίωσεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "these he also justified ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"glorified\" is in the past tense to emphasize that this will certainly happen. Alternate translation: \"these he will also glorify\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τούτους",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "ἐδόξασεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "these he also glorified ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit the kind of love that Jesus showed. Alternate translation: \"because of Jesus, who loved us so much he was willing to die for us\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπήσαντος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "through the one who loved us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"glory\" refers to life in heaven with God. Alternate translation: \"whom he prepared ahead of time in order that they might live with him\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἃ",
+          "occurrence": 1
+        },
+        {
+          "word": "προητοίμασεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "which he had previously prepared for glory ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" refers to God. Alternate translation: \"As God says also in the book that Hosea wrote\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ὡσηὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "As he says also in Hosea ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God killed all of the people of Sodom and Gomorrah because of their sin. Alternate translation: \"we all would have been destroyed like the people of Sodom and Gomorrah\" or \"God would have destroyed all of us, like he destroyed the cities of Sodom and Gommorah\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "Σόδομα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγενήθημεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "Γόμορρα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὡμοιώθημεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we would be like Sodom, and we would have become like Gomorrah ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"by faith\" refers to placing one's trust in Christ. You can make this explicit in your translation. Alternate translation: \"because God made them right with him when they trusted in Christ\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 3
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the righteousness by faith ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that the Israelites could not please God by trying to keep the law. You can make this explicit in your translation. Alternate translation: \"were not able to please God by keeping the law because they could not keep it\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔφθασεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "did not arrive at it ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to things that people do to try to please God. You can make this explicit in your translation. Alternate translation: \"by trying to do things that would please God\" or \"by keeping the Law\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "by works ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can indicate that Isaiah wrote this. You can also translate it in an active form. Alternate translation: \"as Isaiah the prophet wrote\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as it has been written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"righteousness refers to the way God puts people right with himself. You can make this explicit in the translation. Alternate translation: \"For they do not know how God puts people right with himself\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀγνοοῦντες",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For they do not know of God's righteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"believes\" means \"trusts.\" Alternate translation: \"in order that he may make everyone who trusts in him right before God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        },
+        {
+          "word": "παντὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύοντι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for righteousness for everyone who believes ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In order to be made right with God through the law, a person would have to keep the law perfectly, which is not possible. Alternate translation: \"The person who perfectly obeys the law will live because the law will make him right before God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιήσας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ζήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The man who does the righteousness of the law will live by this righteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul implies that God will treat all people the same. You can make this explicit in your translation. Alternate translation: \"In this way, God treats the Jews and the non-Jews the same\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "διαστολὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίου",
+          "occurrence": 1
+        },
+        {
+          "word": "τε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἕλληνος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For there is no difference between Jew and Greek ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he is rich\" means that God blesses richly. You can make this explicit in your translation. Alternate translation: \"he richly blesses all who trust in him\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πλουτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντας",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπικαλουμένους",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he is rich to all who call upon him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"without understanding\" means that the people do not know God. Alternate translation: \"By a nation with people who do not know me or my commands\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπ",
+          "occurrence": 2
+        },
+        {
+          "word": "’",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔθνει",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀσυνέτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "By means of a nation without understanding ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul continues to explain how God's mercy works. Alternate translation: \"But since God's mercy works by grace\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But if it is by grace ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God will save those who believe. Alternate translation: \"Perhaps some will believe and God will save them\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "σώσω",
+          "occurrence": 1
+        },
+        {
+          "word": "τινὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Perhaps I will save some of them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul does not want the Gentile believers to think they are wiser than the Jewish unbelievers. Alternate translation: \"so that you will not think you are wiser than you are\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦτε",
+          "occurrence": 1
+        },
+        {
+          "word": "παρ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "φρόνιμοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in order that you will not be wise in your own thinking ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit why Paul mentions the gospel. Alternate translation: \"Because the Jews rejected the gospel\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐαγγέλιον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "As far as the gospel is concerned ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit whose enemies they are, and how this was for the Gentiles' sake. Alternate translation: \"they are God's enemies for your sake\" or \"God has treated them as enemies in order that you also might hear the gospel\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐχθροὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they are enemies for your sake ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit why Paul mentions election. Alternate translation: \"because God has elected the Jews\" or \"because God has chosen the Jews\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "κατὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλογὴν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as far as election is concerned ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit who loves the Jews and why Paul mentions their forefathers. You can also translate this in an active form. Alternate translation: \"God still loves them because of what he promised to do for their ancestors\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀγαπητοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they are beloved because of their forefathers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here mercy means God's undeserved blessings. Alternate translation: \"because the Jews have rejected Jesus, you have received blessings that you did not deserve\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἠλεήθητε",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπειθείᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you have received mercy because of their disobedience ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This expresses Paul's desire for all people to honor God. You can make this explicit in your translation. Alternate translation: \"May all people honor him forever\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξα",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰῶνας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "To him be the glory forever ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"brothers\" refers to fellow believers, both male and female. Alternate translation: \"Fellow believers, because of the great mercy that God has given you I very much want you\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "παρακαλῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκτιρμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I urge you therefore, brothers, by the mercies of God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"grace\" refers to God's choosing Paul to be an apostle and leader of the church. You can make this explicit in your translation. You can also translate this in an active form. Alternate translation: \"because God freely chose me to be an apostle\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριτος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "δοθείσης",
+          "occurrence": 1
+        },
+        {
+          "word": "μοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "because of the grace that was given to me ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul implies here that believers have different abilities that correspond to their faith in God. Alternate translation: \"since God has given each of you different abilities because of your trust in him\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἑκάστῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμέρισεν",
+          "occurrence": 1
+        },
+        {
+          "word": "μέτρον",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "just as God has given out to each one a certain amount of faith ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"giving\" refers to giving money and other things to people. You can make this meaning explicit in your translation. Alternate translation: \"If one has the gift of giving money or other goods to people in need\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "μεταδιδοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "giving ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make the full meaning explicit. You can also translate this in an active form. Alternate translation: \"Let each person be sure what he is doing is to honor the Lord\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἕκαστος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "νοῒ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πληροφορείσθω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let each person be convinced in his own mind ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"observes\" refers to worshiping. Alternate translation: \"The person who worships on a certain day does it to honor the Lord\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "φρονῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "φρονεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He who observes the day, observes it for the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"lives for himself\" means to live only to please oneself. Alternate translation: \"None of us should live merely to please ourselves\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐδεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑαυτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For none of us lives for himself ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means one's death affects other people. Alternate translation: \"none of us should think that when we die, it affects only us\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐδεὶς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑαυτῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀποθνῄσκει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "none dies for himself ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase is used to start an oath or solemn promise. Alternate translation: \"You can be certain that this is true\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ζῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγώ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "As I live ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul implies here that a person should stay away from anything that he thinks is unclean. You can make this explicit in your translation. Alternate translation: \"But if a person thinks something is unclean, then for that person it is unclean and he should stay away from it\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "λογιζομένῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "κοινὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "εἶναι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκείνῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "κοινόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Only for him who considers anything to be unclean, for him it is unclean ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul argues that God set up his kingdom so he could give us a right relationship with himself, and to provide peace and joy. Alternate translation: \"For God did not set up his kingdom so that he could rule over what we eat and drink. He set up his kingdom so we could have a right relationship with him, and so he could give us peace and joy\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γάρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλεία",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "βρῶσις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόσις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δικαιοσύνη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰρήνη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "χαρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἁγίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For the kingdom of God is not about food and drink, but about righteousness, peace, and joy in the Holy Spirit ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"build up one another\" refers to helping each other grow in faith. Alternate translation: \"let us seek to live peacefully together and help one another grow stronger in faith\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνης",
+          "occurrence": 1
+        },
+        {
+          "word": "διώκωμεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "οἰκοδομῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 3
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλήλους",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "let us pursue the things of peace and the things that build up one another ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can make explicit the full meaning of this sentence. Alternate translation: \"Do not undo what God has done for a fellow believer just because you want to eat a certain kind of food\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕνεκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "βρώματος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "κατάλυε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργον",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not destroy the work of God because of food ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here anything that \"causes him to stumble\" means it causes a weaker brother to do something that is against his conscience. Alternate translation: \"but it would be a sin for someone to eat food, which another brother thinks is wrong to eat, if by eating this causes the weaker brother to do something that is against his conscience\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "κακὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "προσκόμματος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσθίοντι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but it is evil for that person who eats and causes him to stumble ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Anything that is \"not from faith\" is something that God does not want you to do. You can make explicit the full meaning here. Alternate translation: \"God will say that he is wrong because he is eating something he believes God does not want him to eat\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "because it is not from faith ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Anything that is \"not from faith\" is something that God does not want you to do. You can make explicit the full meaning here. Alternate translation: \"you are sinning if you do something that you do not believe God wants you to do\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἁμαρτία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστίν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whatever is not from faith is sin ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"strong\" refers to the people who are strong in their faith. They believe that God allows them to eat any kind of food. Alternate translation: \"we who are strong in faith\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνατοὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we who are strong ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the weak\" refers to the people who are weak in their faith. They believe that God does not allow them to eat some kinds of food. Alternate translation: \"those who are weak in faith\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδυνάτων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "of the weak ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "By this, Paul means to strengthen someone's faith. Alternate translation: \"to strengthen his faith\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκοδομήν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in order to build him up ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul refers to a scripture where Christ (the Messiah) speaks to God. You can translate this in an active form. Alternate translation: \"the Messiah said to God in the scriptures\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it was just as it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"have confidence\" means that the believers will know that God will fulfill his promises. You can make explicit the full meaning in your translation. Alternate translation: \"In this way the scriptures will encourage us to expect that God will do for us everything that he has promised\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπομονῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "παρακλήσεως",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐλπίδα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχωμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in order that through patience and through encouragement of the scriptures we would have certain hope ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"the fathers\" refers to the ancestors of the Jewish people. You can translate this in active form. Alternate translation: \"the promises that God gave to the ancestors of the Jews\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπαγγελίας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the promises given to the fathers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to God's people. You can make this explicit in your translation. Alternate translation: \"with the people of God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "λαοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with his people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"him\" refers to the descendant of Jesse, the Messiah. Those who are not Jews will also trust him to fulfill his promises. Alternate translation: \"The people who are not Jews can trust him to do what he has promised\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπιοῦσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in him the Gentiles will have hope ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is quite sure that the believers in Rome are honoring each other in their behavior. Alternate translation: \"I myself am completely sure that you yourselves have acted toward others in a completely good way\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "πέπεισμαι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀδελφοί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I myself am also convinced about you, my brothers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"exhort\" means to teach. Alternate translation: \"also able to teach each other\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "δυνάμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀλλήλους",
+          "occurrence": 1
+        },
+        {
+          "word": "νουθετεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "able to also exhort one another ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul only wants to preach to people who have never heard of Christ. Alternate translation: \"Because of this, I want to preach the good news in places where people have never heard of Christ\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "φιλοτιμούμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐαγγελίζεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ὠνομάσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "In this way, my desire has been to proclaim the gospel, but not where Christ is known by name ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul implies that there are no more places in these areas where people live who have not heard about Christ. Alternate translation: \"there are no more places in these regions where people have not heard about Christ\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μηκέτι",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "κλίμασι",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I no longer have any place in these regions ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul implies that he wants the Roman believers to provide some financial assistance to him for his journey to Spain. Alternate translation: \"that you will help me on my journey\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "προπεμφθῆναι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and to be helped by you along my journey there",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase means that Christ will bless Paul and the Roman believers. Alternate translation: \"And I know that when I visit you, Christ will abundantly bless us\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οἶδα",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐρχόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρώματι",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐλογίας",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐλεύσομαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I know that when I come to you I will come in the fullness of the blessing of Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul expresses his desire that the believers in Jerusalem will gladly accept the money from the believers in Macedonia and Achaia. Alternate translation: \"pray that the believers in Jerusalem will be glad to receive the money that I am bringing them\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακονία",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰερουσαλὴμ",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐπρόσδεκτος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁγίοις",
+          "occurrence": 1
+        },
+        {
+          "word": "γένηται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and that my service for Jerusalem may be acceptable to the believers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"God of peace\" means the God who causes believers to have inner peace. Alternate translation: \"I pray that God who causes all of us to have inner peace\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνης",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "May the God of peace be with",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul encourages the Roman believers to welcome Phoebe as a fellow believer. Alternate translation: \"welcome her because we all belong to the Lord\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "αὐτὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "προσδέξησθε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you may receive her in the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul's \"fellow workers\" are people who also tell others about Jesus. Alternate translation: \"who work with me to tell people about Christ Jesus\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "συνεργούς",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my fellow workers in Christ Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to those who trust in Jesus. Alternate translation: \"who are believers\" or \"who belong to the Lord\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "ὄντας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who are in the Lord ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to those who argue and cause others to stop trusting in Jesus. Alternate translation: \"who are causing believers to argue with one another and to stop having faith in God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "διχοστασίας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκάνδαλα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ποιοῦντας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who are causing the divisions and obstacles ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"through Jesus Christ\" refers to what Jesus did. To give \"glory\" means to praise God. Alternate translation: \"Because of what Jesus Christ has done for us, we will praise forever the one who alone is God and who alone is wise. Amen\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μόνῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξα",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰῶνας",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μήν",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "To the only wise God ... be glory forever. Amen ",
+      "occurrence": 1
+    }
+  }
+]

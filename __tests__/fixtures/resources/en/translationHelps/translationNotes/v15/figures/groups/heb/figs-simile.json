@@ -1,0 +1,312 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author speaks of the heavens and earth as if they were a piece of clothing that will get old and eventually become useless. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 1,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱμάτιον",
+          "occurrence": 1
+        },
+        {
+          "word": "παλαιωθήσονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "wear out like a piece of clothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author speaks of the heavens and earth as if they were a robe or another kind of outer garment. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡσεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "περιβόλαιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑλίξεις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "roll them up like a cloak",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author speaks of the heavens and earth as if they were clothing that could be exchanged for other clothing. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱμάτιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλαγήσονται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they will be changed like a piece of clothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This simile means Abraham had very many descendants. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἐγεννήθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄστρα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλήθει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄμμος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "παρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖλος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "θαλάσσης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀναρίθμητος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "descendants as many as the stars in the sky and as countless as sand by the seashore",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Moses is spoken of as if he saw God, who is invisible. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀόρατον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκαρτέρησεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he endured as if he were seeing the one who is invisible",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This compares God disciplining his people to a father disciplining his sons. You can state clearly the understood information. Alternate translation: \"God deals with you the same way a father deals with his sons\" (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-ellipsis]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "προσφέρεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God deals with you as with sons",
+      "occurrence": 1
+    }
+  }
+]

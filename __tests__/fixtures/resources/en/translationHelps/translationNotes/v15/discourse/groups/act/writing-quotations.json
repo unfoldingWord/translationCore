@@ -1,0 +1,177 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Some version translate this as an indirect quote, \"saying that we must enter into the kingdom of God through many sufferings.\" The word \"we\" here includes Luke and the readers. (See: [[rc://en/ta/man/translate/writing-quotations]] and [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-quotations",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "θλίψεων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσελθεῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "saying, \"We must enter into the kingdom of God through many sufferings.\" ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"he said\" can be moved to the beginning of the sentence. Alternate translation: \"Then he said, 'Therefore, those who are able to go to Caesarea should go there with us\" (See: [[rc://en/ta/man/translate/writing-quotations ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-quotations",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "φησίν",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "δυνατοὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "συνκαταβάντες",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "\"Therefore, those who can,\" he said, \"should go there with us ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"Festus said\" can be moved to the beginning of the sentence. Alternate translation: \"Festus said, 'I will arrange for you to listen to Paul tomorrow.'\" (See: [[rc://en/ta/man/translate/writing-quotations ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-quotations",
+      "quote": [
+        {
+          "word": "αὔριον",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 4
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "φησίν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "\"",
+          "occurrence": 5
+        },
+        {
+          "word": "ἀκούσῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "\"Tomorrow,\" Festus said, \"you will hear him.\" ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" refers to anyone in general that teaches what is not correct. To make this clear, you can translate \"he\" as \"they\" as in the UST. (See: [[rc://en/ta/man/translate/figs-genericnoun]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-genericnoun",
+      "quote": [
+        {
+          "word": "τετύφωται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "νοσῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he is proud ... He has an unhealthy interest",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,297 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Free\" here is an idiom which means the ability to live without constantly thinking about.\" Alternate translation: \"without needing to worry\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": "ἀμερίμνους",
+      "glQuote": "free from worries",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Fall on his face\" here is an idiom, meaning to bow down. Alternate translation: \"He would bow down and worship God\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "πεσὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "προσκυνήσει",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he would fall on his face and worship God",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom by which Paul may mean that he became a Christian much later than the other apostles. Or perhaps he means that, unlike the other apostles, he did not witness Jesus' three-year-long ministry. Alternate translation: \"someone who missed the experiences of the others\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκτρώματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a child born at the wrong time",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Kings who won wars would put their feet on the necks of those whom they had defeated. Alternate translation: \"until God has completely destroyed all of Christ's enemies\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἄχρι",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "θῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντας",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐχθροὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 2
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "until he has put all his enemies under his feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Kings who won wars would put their feet on the necks of those whom they had defeated. See how \"put ... under his feet\" is translated in [1 Corinthians 15:25](../15/25.md). Alternate translation: \"God has completely destroyed all of Christ's enemies\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὑπέταξεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he has put everything under his feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer speaks of a person's body being buried as if it were a seed that is planted in the ground. And he speaks of a person's body being raised from the dead as if it were a plant growing from the seed. The passive verbs can be stated in active form. Alternate translation: \"What goes into the ground ... what comes out of the ground\" or \"What people bury ... what God raises\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "σπείρεται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγείρεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What is sown ... what is raised",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer speaks of a person's body being buried as if it were a seed that is planted in the ground. And he speaks of a person's body being raised from the dead as if it were a plant growing from the seed. The passive verbs can be stated in active form. Alternate translation: \"It goes into the ground ... it comes out of the ground\" or \"People bury it ... God raises it\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 43
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "σπείρεται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγείρεται",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "It is sown ... it is raised",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer speaks of a person's body being buried as if it were a seed that is planted in the ground. And he speaks of a person's body being raised from the dead as if it were a plant growing from the seed. The passive verbs can be stated in active form. Alternate translation: \"It goes into the ground ... it comes out of the ground\" or \"People bury it ... God raises it\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "σπείρεται",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐγείρεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is sown ... it is raised",
+      "occurrence": 1
+    }
+  }
+]

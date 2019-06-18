@@ -1,0 +1,190 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "with their new husbands, not someone else's husband. This refers to both a physical house that belongs to the husband, and to the protection from shame by being married. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "בֵּ֣ית",
+          "occurrence": 1
+        },
+        {
+          "word": "אִישָׁ֑",
+          "occurrence": 1
+        },
+        {
+          "word": "הּ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the house of her husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"hand\" refers to Yahweh's power or influence. Alternate translation: \"Yahweh has caused terrible things to happen to me\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "יָצְאָ֥ה",
+          "occurrence": 1
+        },
+        {
+          "word": "בִ֖",
+          "occurrence": 1
+        },
+        {
+          "word": "י",
+          "occurrence": 3
+        },
+        {
+          "word": "יַד",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 4
+        },
+        {
+          "word": "יְהוָֽה",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the hand of Yahweh has gone out against me",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The \"town\" refer to the people who live there. Alternate translation: \"everyone in the town\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "כָּל",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 2
+        },
+        {
+          "word": "הָ",
+          "occurrence": 1
+        },
+        {
+          "word": "עִיר֙",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the entire town",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The eyes represent watching something or paying attention to something. Alternate translation: \"Watch only the field\" or \"Pay attention only to the field\" (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "עֵינַ֜יִ",
+          "occurrence": 1
+        },
+        {
+          "word": "ךְ",
+          "occurrence": 1
+        },
+        {
+          "word": "בַּ",
+          "occurrence": 1
+        },
+        {
+          "word": "שָּׂדֶ֤ה",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Keep your eyes on the field",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Boaz is referring to Ruth coming to dwell with Naomi in a village and community, a country, and religion she did not know. (See: [[rc://en/ta/man/translate/figs-metonymy]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metonymy",
+      "quote": [
+        {
+          "word": "וַ",
+          "occurrence": 4
+        },
+        {
+          "word": "תֵּ֣לְכִ֔י",
+          "occurrence": 1
+        },
+        {
+          "word": "אֶל",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 3
+        },
+        {
+          "word": "עַ֕ם",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "have come to a people",
+      "occurrence": 1
+    }
+  }
+]

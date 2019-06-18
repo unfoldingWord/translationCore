@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "When Orpah and Ruth said \"we,\" they were referring to themselves and not Naomi. So languages that have inclusive and exclusive \"we\" would use the exclusive form here. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "נָשׁ֖וּב",
+      "glQuote": "we will return",
+      "occurrence": 1
+    }
+  }
+]

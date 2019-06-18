@@ -1,0 +1,337 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"this letter is from\" is implied. Alternate translation: \"This letter is from James, a servant of God and of the Lord Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "Ἰάκωβος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "δοῦλος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "James, a servant of God and of the Lord Jesus Christ ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "What a person is saved from can be made explicit. Alternate translation: \"save you from God's judgment\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "σῶσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "save your souls ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is implied that though he may see that he needs to do something, such as wash his face or fix his hair, he walks away and forgets to do it. This what a person who does not obey God's word is like. Alternate translation: \"then goes away and immediately forgets to do what he saw he needed to do\" (See: [[rc://en/ta/man/translate/figs-explicit]] and [[rc://en/ta/man/translate/figs-simile ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπελήλυθεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐθέως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπελάθετο",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁποῖος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "then goes away and immediately forgets what he was like ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The relationship between the law and freedom can be expressed clearly. Here \"freedom\" probably refers to freedom from sin. Alternate translation: \"the perfect law that gives freedom\" or \"the perfect law that makes those who follow it free\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "νόμον",
+          "occurrence": 1
+        },
+        {
+          "word": "τέλειον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλευθερίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the perfect law of freedom ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"forcibly take you to court to accuse you in front of judges\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "ἕλκουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "κριτήρια",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "drag you to court ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The thing that fills them is food. This can be stated explicitly. Alternate translation: \"be filled with food\" or \"have enough to eat\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "χορτάζεσθε",
+      "glQuote": "be filled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This passage speaks of stricter judgment that will come from God on those who teach others about him. Alternate translation: \"God will judge us who teach more severely because we know his word better than some people whom we have taught\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μεῖζον",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίμα",
+          "occurrence": 1
+        },
+        {
+          "word": "λημψόμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we who teach will be judged more strictly ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "How this phrase relates to the previous verse can be made explicit: \"But, even though our spirits may desire what we cannot have, God gives us even more grace, if we will humble ourselves\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "μείζονα",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "δίδωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "χάριν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But God gives more grace ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) James is giving a strong warning to wealthy believers or 2) James is talking about wealthy unbelievers. Alternate translation: \"you who are rich and say you honor God\" (See: [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλούσιοι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you who are rich ",
+      "occurrence": 1
+    }
+  }
+]

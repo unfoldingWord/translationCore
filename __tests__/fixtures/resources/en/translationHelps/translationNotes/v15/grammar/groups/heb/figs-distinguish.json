@@ -1,0 +1,46 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The author says this because not all of Levi's sons became priests. Alternate translation: \"The descendants of Levi who became priests\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Λευεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἱερατείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "λαμβάνοντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The sons of Levi who receive the priesthood",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,432 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase reminds us that idols are not alive and do not deserve to be worshiped. But the people did not stop worshiping them. Alternate translation: \"even though idols cannot see, hear, or walk\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 7
+        },
+        {
+          "word": "ξύλινα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 9
+        },
+        {
+          "word": "ἃ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὔτε",
+          "occurrence": 1
+        },
+        {
+          "word": "βλέπειν",
+          "occurrence": 1
+        },
+        {
+          "word": "δύνανται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 10
+        },
+        {
+          "word": "οὔτε",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκούειν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 11
+        },
+        {
+          "word": "οὔτε",
+          "occurrence": 3
+        },
+        {
+          "word": "περιπατεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "things that cannot see, hear, or walk",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These phrases can be stated as sentences. Alternate translation: \"you, Lord God, the ruler over all. You are the one who is, and you are the one who was\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "Κύριε",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεός",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Παντοκράτωρ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὢν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 4
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you, Lord God Almighty, the one who is and who was",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The information about the serpent can be given in a separate sentence after the statement that it was thrown down to the earth. Alternate translation: \"dragon was thrown down to earth, and his angels were thrown down with him. He is the old serpent who deceives the world and is called the devil or Satan\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "δράκων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὄφις",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 4
+        },
+        {
+          "word": "ἀρχαῖος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καλούμενος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "Διάβολος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 6
+        },
+        {
+          "word": "Σατανᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 7
+        },
+        {
+          "word": "πλανῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκουμένην",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλην",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐβλήθη",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "γῆν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄγγελοι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐβλήθησαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "dragon—that old serpent called the devil or Satan, who deceives the whole world—was thrown down to the earth, and his angels were thrown down with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase reminds readers of something they already know about God. It helps to explain why the people were blaspheming God. Alternate translation: \"God because he has the power over these plagues\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔχοντος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "πληγὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God, who has the power over these plagues",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The wine represents sexual immorality. Alternate translation: \"The people of the earth became drunk by drinking her wine, that is, they were sexually immoral\" (See: [[rc://en/ta/man/translate/figs-distinguish]] and [[rc://en/ta/man/translate/writing-symlanguage]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "ἐμεθύσθησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "κατοικοῦντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἴνου",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "πορνείας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is with the wine of her sexual immorality that the earth's inhabitants became drunk",
+      "occurrence": 1
+    }
+  }
+]

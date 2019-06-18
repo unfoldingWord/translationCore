@@ -1,0 +1,49 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to all believers including women. Alternate translation: \"my fellow believers\" (See: [[rc://en/ta/man/translate/figs-gendernotations ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "ἀδελφοί",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "my brothers ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here this word probably refers to both men and women. Alternate translation: \"fellow believers\" (See: [[rc://en/ta/man/translate/figs-gendernotations ]])",
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": "ἀδελφοί",
+      "glQuote": "brothers",
+      "occurrence": 1
+    }
+  }
+]

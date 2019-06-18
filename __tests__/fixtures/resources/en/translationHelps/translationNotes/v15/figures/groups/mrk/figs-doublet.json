@@ -1,0 +1,198 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases are similar and used to emphasize what Jesus wanted the wind and the sea to do. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "σιώπα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "πεφίμωσο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Silence! Be still!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"Listen\" and \"understand\" are related. Jesus uses them together to emphasize that his hearers should pay close attention to what he is saying. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἀκούσατέ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "σύνετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Listen to me, all of you, and understand",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two terms have a common meaning and are repeated here for emphasis. They can be combined. Alternate translation: \"Keep watch\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ὁρᾶτε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "βλέπετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Keep watch and be on guard",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"those whom he chose\" means the same thing as \"the elect.\" Together, they emphasize that God chose these people. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκλεκτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὓς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξελέξατο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the elect whom he chose",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Both \"know\" and \"understand\" have the same meaning here. The meaning is repeated to add emphasis to what Peter is saying. Alternate translation: \"I really do not understand what you are talking about\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 68
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "οὔτε",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶδα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὔτε",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπίσταμαι",
+          "occurrence": 1
+        },
+        {
+          "word": "σὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγεις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I neither know nor understand what you are saying",
+      "occurrence": 1
+    }
+  }
+]

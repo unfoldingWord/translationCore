@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Notice who he is. Alternate translation: \"publicly identify that person\" (See: [[rc://en/ta/man/translate/figs-idiom]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τοῦτον",
+          "occurrence": 1
+        },
+        {
+          "word": "σημειοῦσθε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "take note of him",
+      "occurrence": 1
+    }
+  }
+]

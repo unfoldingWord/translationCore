@@ -1,0 +1,188 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is speaking in general terms. Alternate translation: \"made you rich with all kinds of spiritual blessings\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "παντὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπλουτίσθητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in everything you have been made rich",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "When Paul said that he \"decided to know nothing\" he exaggerated to emphasize that he decided focus on and teach about nothing other than Jesus Christ. Alternate translation: \"I decided to teach nothing ... except Jesus Christ\" or \"I decided not to teach anything ... except Jesus Christ\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ἔκρινά",
+          "occurrence": 1
+        },
+        {
+          "word": "τι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰδέναι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I decided to know nothing ... except Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exaggeration of the number of people guiding them, to emphasize the importance of the one spiritual father. Alternate translation: \"very many guardians\" or \"a large crowd of guardians\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "μυρίους",
+          "occurrence": 1
+        },
+        {
+          "word": "παιδαγωγοὺς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "ten thousand guardians",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) Paul is exaggerating for the sake of effect and does not believe that people speak the language that angels use or 2) Paul thinks that some who speak in tongues actually speak the language that angels use. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "γλώσσαις",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγγέλων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the tongues of ... angels",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This exaggeration means he was in danger of dying. He knew that some people wanted to kill him because they did not like what he was teaching. Alternate translation: \"Every day I am in danger of dying\" or \"Every day I risk my life!\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "καθ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποθνῄσκω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I die every day!",
+      "occurrence": 1
+    }
+  }
+]

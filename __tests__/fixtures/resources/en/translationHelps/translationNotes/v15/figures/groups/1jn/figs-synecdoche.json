@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"flesh\" represents the human body. Alternate translation: \"has come as a human being\" or \"has come in a physical body\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "σαρκὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐληλυθότα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "has come in the flesh",
+      "occurrence": 1
+    }
+  }
+]

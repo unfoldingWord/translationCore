@@ -1,0 +1,345 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a quotation within a quotation. The inner quotation can be stated as an indirect quotation. Alternate translation: \"'The Holy Spirit says that this will be how the Jews in Jerusalem will tie up ... of the Gentiles.' (See: [[rc://en/ta/man/translate/figs-quotesinquotes]] and [[rc://en/ta/man/translate/figs-quotations ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "quote": [
+        {
+          "word": "τάδε",
+          "occurrence": 1
+        },
+        {
+          "word": "λέγει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνδρα",
+          "occurrence": 1
+        },
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζώνη",
+          "occurrence": 1
+        },
+        {
+          "word": "αὕτη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 6
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "δήσουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰερουσαλὴμ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαῖοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 7
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "παραδώσουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐθνῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Thus says the Holy Spirit, 'So shall the Jews in Jerusalem tie up ... of the Gentiles.' ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence contains quotations within quotations. (See: [[rc://en/ta/man/translate/figs-quotesinquotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "quote": [
+        {
+          "word": "καλῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἅγιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλάλησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἠσαΐου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "προφήτου",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Holy Spirit spoke well through Isaiah the prophet to your fathers. ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the end of the sentence that begins with the words \"The Holy Spirit spoke\" in verse 25 and that contains quotations within quotations. You can translate one of the inner quotations as an indirect quotation, or you can translate two of the inner quotations as indirect quotations. \"The Holy Spirit spoke well through Isaiah the prophet to your forefathers when the Spirit told Isaiah to go tell them that they will hear but will not understand and they will see but they will not perceive\" (See: [[rc://en/ta/man/translate/figs-quotesinquotes ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-quotesinquotes",
+      "quote": [
+        {
+          "word": "λέγων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πορεύθητι",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λαὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "εἰπόν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκοῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούσετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνῆτε",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "βλέποντες",
+          "occurrence": 1
+        },
+        {
+          "word": "βλέψετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἴδητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He said, 'Go to this people and say, \"By hearing you will hear, but not understand; and seeing you will see, but will not perceive ",
+      "occurrence": 1
+    }
+  }
+]

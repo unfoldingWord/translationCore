@@ -1,0 +1,110 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The fraction \"A third\" can be explained in translation. Alternate translation: \"It was like the sea was divided into three parts, and one of those parts became blood\" (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "quote": [
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "θαλάσσης",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A third of the sea became blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"One third of the people.\" See how you translated \"A third\" in [Revelation 8:7](../08/07.md). (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτον",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνθρώπων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A third of the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"one third.\" See how you translated this in [Revelation 8:7](../08/07.md). (See: [[rc://en/ta/man/translate/translate-fraction]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-fraction",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a third",
+      "occurrence": 1
+    }
+  }
+]

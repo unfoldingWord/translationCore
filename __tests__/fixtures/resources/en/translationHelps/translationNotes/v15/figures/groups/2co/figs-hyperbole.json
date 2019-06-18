@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul exaggerates to show his need of clothing. Alternate translation: \"without enough clothing to keep me warm\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "2co",
+        "chapter": 11,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": "γυμνότητι",
+      "glQuote": "nakedness",
+      "occurrence": 1
+    }
+  }
+]

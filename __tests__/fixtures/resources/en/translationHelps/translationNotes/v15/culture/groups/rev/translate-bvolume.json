@@ -1,0 +1,45 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "a \"choenix\" was a specific measure that was about one liter. The plural of \"choenix\" is \"choenices.\" Alternate translation: \"one liter of wheat ... three liters of barley\" or \"one bowl of wheat ... three bowls of barley\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "quote": [
+        {
+          "word": "χοῖνιξ",
+          "occurrence": 1
+        },
+        {
+          "word": "σίτου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τρεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "χοίνικες",
+          "occurrence": 1
+        },
+        {
+          "word": "κριθῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A choenix of wheat ... three choenices of barley",
+      "occurrence": 1
+    }
+  }
+]

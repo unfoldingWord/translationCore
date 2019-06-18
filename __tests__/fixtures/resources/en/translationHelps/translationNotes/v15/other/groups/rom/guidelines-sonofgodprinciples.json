@@ -1,0 +1,195 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"Father\" is an important title for God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God our Father ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "Υἱοῦ",
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Υἱοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "Υἱὸν",
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": "Υἱοῦ",
+      "glQuote": "Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God the Father sent the Son of God, Jesus Christ, to the cross as the holy, infinite sacrifice necessary to satisfy God's infinite, holy nature against the sin of humanity. Here \"Son\" is an important title for Jesus, the Son of God. (See: [[rc://en/ta/man/translate/guidelines-sonofgodprinciples ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "guidelines-sonofgodprinciples",
+      "quote": [
+        {
+          "word": "ὅς",
+          "occurrence": 1
+        },
+        {
+          "word": "γε",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰδίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφείσατο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He who did not spare his own Son ",
+      "occurrence": 1
+    }
+  }
+]

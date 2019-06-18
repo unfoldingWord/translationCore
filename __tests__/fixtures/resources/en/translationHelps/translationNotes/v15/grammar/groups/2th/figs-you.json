@@ -1,0 +1,33 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"you\" refers to all the Thessalonian believers. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀδελφοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you, brothers",
+      "occurrence": 1
+    }
+  }
+]

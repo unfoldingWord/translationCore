@@ -1,0 +1,58 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul states a double negative to mean the opposite. Alternate translation: \"But I wanted to keep him with me only if you approved\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "σῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γνώμης",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠθέλησα",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιῆσαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But I did not want to do anything without your consent",
+      "occurrence": 1
+    }
+  }
+]

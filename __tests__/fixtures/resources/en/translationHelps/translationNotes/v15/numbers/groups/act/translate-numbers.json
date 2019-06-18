@@ -1,0 +1,472 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"one hundred and twenty people\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴκοσι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "120 people ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"400 years\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        },
+        {
+          "word": "τετρακόσια",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "four hundred years ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"12 men\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἄνδρες",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "twelve men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"50,000\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "μυριάδας",
+          "occurrence": 1
+        },
+        {
+          "word": "πέντε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fifty thousand ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"the 4,000 terrorists\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τετρακισχιλίους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνδρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the four thousand men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 men\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "forty men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"40 men\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἄνδρες",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "forty men ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"2 of the centurions\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "δύο",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑκατονταρχῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "two of the centurions ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"70 horsemen\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἱππεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑβδομήκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "seventy horsemen ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"200 soldiers that are armed with spears\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "δεξιολάβους",
+          "occurrence": 1
+        },
+        {
+          "word": "διακοσίους",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "two hundred spearmen ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"12 days since\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἡμέραι",
+          "occurrence": 1
+        },
+        {
+          "word": "δώδεκα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἧς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "twelve days since ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"found 20 fathoms.\" A \"fathom\" is a unit of measurement for measuring the depth of water. One fathom is about two meters. Alternate translation: \"found 40 meters\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "εὗρον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀργυιὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴκοσι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "found twenty fathoms ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"found 15 fathoms.\" A \"fathom\" is a unit of measurement for measuring the depth of water. One fathom is about two meters. Alternate translation: \"found 30 meters\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "εὗρον",
+          "occurrence": 2
+        },
+        {
+          "word": "ὀργυιὰς",
+          "occurrence": 2
+        },
+        {
+          "word": "δεκαπέντε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "found fifteen fathoms ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"We were two hundred and seventy-six people in the ship.\" This is background information. (See: [[rc://en/ta/man/translate/translate-numbers]] and [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἤμεθα",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχαὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "πλοίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "διακόσιαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑβδομήκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕξ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We were 276 people in the ship ",
+      "occurrence": 1
+    }
+  }
+]

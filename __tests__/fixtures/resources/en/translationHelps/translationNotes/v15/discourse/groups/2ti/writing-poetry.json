@@ -1,0 +1,96 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is most likely the beginning of a song or poem that Paul is quoting. If your language has a way of indicating that this is poetry, you could use it here. If not, you could translate this as regular prose rather than poetry. (See: [[rc://en/ta/man/translate/writing-poetry]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-poetry",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "συναπεθάνομεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνζήσομε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If we have died with him, we will also live with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is most likely the end of a song or poem that Paul is quoting. If your language has a way of indicating that this is poetry you could use it here. If not, you could translate this as regular prose rather than poetry. (See: [[rc://en/ta/man/translate/writing-poetry]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 2,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-poetry",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπιστοῦμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀρνήσασθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἑαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύναται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if we are unfaithful ... he cannot deny himself",
+      "occurrence": 1
+    }
+  }
+]

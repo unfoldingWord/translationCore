@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "With the word \"endless\" Paul uses exaggeration to emphasize that the genealogies are very long. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "γενεαλογίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεράντοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "endless genealogies",
+      "occurrence": 1
+    }
+  }
+]

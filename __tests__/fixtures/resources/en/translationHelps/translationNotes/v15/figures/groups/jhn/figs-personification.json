@@ -1,0 +1,254 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In the source language, wind and Spirit are the same word. The speaker here refers to the wind as if it were a person. Alternate translation: \"The Holy Spirit is like a wind that blows wherever it wants\" (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "πνεῖ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The wind blows wherever it wishes ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Jesus says that the miracles \"testify\" or \"tell the people\" about him. Alternate translation: \"What I do shows the people that God has sent me\" (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "αὐτὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔργα",
+          "occurrence": 2
+        },
+        {
+          "word": "ἃ",
+          "occurrence": 2
+        },
+        {
+          "word": "ποιῶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "μαρτυρεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the very works that I do, testify about me ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The scriptures are referred to as if they were actually speaking as a person speaks. Alternate translation: \"The prophets wrote in the scriptures\" (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Have the scriptures not said ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Nicodemus speaks of the law as if it were a person. If this is not natural in your language, you may translate it with a personal subject. Alternate translation: \"Do we judge a man\" or \"we do not judge a man\" (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 51
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κρίνει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωπο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Does our law judge a man ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is personification. Jesus speaks of \"the truth\" as if it were a person. Alternate translation: \"if you obey the truth, God will set you free\" (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλήθεια",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλευθερώσει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the truth will set you free ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "His miracles offer proof about him like a person who testifies would offer proof in a court of law. Alternate translation: \"offer proof concerning me\" (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "μαρτυρεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "these testify concerning me ",
+      "occurrence": 1
+    }
+  }
+]
