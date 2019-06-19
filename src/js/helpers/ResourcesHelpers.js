@@ -60,7 +60,7 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
         }
       }
       if (!matchFound) {
-        console.warn("copyGroupDataToProject() - match not found for migration: " + JSON.stringify(data.contextId));
+        console.warn("updateCheckingResourceData() - resource not found for migration: " + JSON.stringify(data.contextId));
       }
     }
   }
@@ -93,7 +93,7 @@ function updateResourcesForFile(filePath, toolName, resourcesPath, bookId, isCon
       }
     }
   } catch (e) {
-    console.error("copyGroupDataToProject() - migration error for: " + filePath, e);
+    console.error("updateResourcesForFile() - migration error for: " + filePath, e);
   }
 }
 
@@ -102,7 +102,7 @@ function updateResourcesForFile(filePath, toolName, resourcesPath, bookId, isCon
  * @param {String} projectDir - path to project
  * @param {String} toolName
  */
-function migrateOldCheckingResourceData(projectDir, toolName) {
+export function migrateOldCheckingResourceData(projectDir, toolName) {
   const checksPath = path.join(projectDir, '.apps/translationCore/checkData');
   const resourcesPath = path.join(projectDir, '.apps/translationCore/index', toolName);
   const checks = getFoldersInResourceFolder(checksPath);

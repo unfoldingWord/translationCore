@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of people doing good work as if they were trees bearing good fruit. This double negative means they should be fruitful or productive. Alternate translation: \"needs; in this way they will be fruitful\" or \"needs, and so they will do good works\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": "εἰς τὰς ἀναγκαίας χρείας, ἵνα μὴ ὦσιν ἄκαρποι",
+      "glQuote": "needs, and so not be unfruitful",
+      "occurrence": 1
+    }
+  }
+]
