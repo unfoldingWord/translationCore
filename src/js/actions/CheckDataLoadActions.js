@@ -66,7 +66,7 @@ export function loadCheckData(loadPath, contextId) {
       try {
         let readPath = path.join(loadPath, file);
         let _checkDataObject = fs.readJsonSync(readPath);
-        if(_checkDataObject &&
+        if(_checkDataObject && _checkDataObject.contextId &&
           _checkDataObject.contextId.groupId === contextId.groupId &&
           (isQuoteArray ? isEqual(_checkDataObject.contextId.quote, contextId.quote) : (_checkDataObject.contextId.quote === contextId.quote)) &&
           _checkDataObject.contextId.occurrence === contextId.occurrence) {
