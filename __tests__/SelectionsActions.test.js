@@ -7,6 +7,7 @@ import {generateTimestamp} from "../src/js/helpers";
 import * as SelectionsActions from '../src/js/actions/SelectionsActions';
 import * as saveMethods from "../src/js/localStorage/saveMethods";
 import * as selections from 'selections';
+import _ from "lodash";
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -368,14 +369,16 @@ describe('SelectionsActions.validateSelections', () => {
       const targetVerse = "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
       const projectPath = path.join(PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath, 'wordAlignment');
+      const contextId = _.cloneDeep(initialState.contextIdReducer.contextId);
+      contextId.tool = 'translationWords';
       const newSelection = {
         ...selectionsReducer,
-        contextId: initialState.contextIdReducer.contextId
+        contextId
       };
       const selectionsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'selections',
-                                        newSelection.contextId.reference.bookId,
-                                        newSelection.contextId.reference.chapter.toString(),
-                                        newSelection.contextId.reference.verse.toString());
+                                        contextId.reference.bookId,
+                                        contextId.reference.chapter.toString(),
+                                        contextId.reference.verse.toString());
       fs.ensureDirSync(selectionsPath);
       fs.outputJSONSync(path.join(selectionsPath, newSelection.modifiedTimestamp.replace(/[:"]/g, '_')) + ".json", newSelection);
       const store = mockStore(initialState);

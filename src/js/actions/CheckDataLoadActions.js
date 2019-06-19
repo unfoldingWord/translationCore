@@ -58,6 +58,7 @@ export function loadCheckData(loadPath, contextId) {
       return path.extname(file) === '.json';
     });
     let sorted = files.sort().reverse(); // sort the files to put latest first
+    const isQuoteArray = Array.isArray(contextId.quote);
 
     for (let i = 0, len = sorted.length; i < len; i++) {
       const file = sorted[i];
@@ -65,12 +66,10 @@ export function loadCheckData(loadPath, contextId) {
       try {
         let readPath = path.join(loadPath, file);
         let _checkDataObject = fs.readJsonSync(readPath);
-        const quoteCondition = Array.isArray(_checkDataObject.contextId.quote) ?
-          isEqual(_checkDataObject.contextId.quote, contextId.quote) : _checkDataObject.contextId.quote === contextId.quote;
-
-        if(_checkDataObject &&
+        if(_checkDataObject && _checkDataObject.contextId &&
           _checkDataObject.contextId.groupId === contextId.groupId &&
-          quoteCondition && _checkDataObject.contextId.occurrence === contextId.occurrence) {
+          (isQuoteArray ? isEqual(_checkDataObject.contextId.quote, contextId.quote) : (_checkDataObject.contextId.quote === contextId.quote)) &&
+          _checkDataObject.contextId.occurrence === contextId.occurrence) {
           checkDataObject = _checkDataObject; // return the first match since it is the latest modified one
           break;
         }

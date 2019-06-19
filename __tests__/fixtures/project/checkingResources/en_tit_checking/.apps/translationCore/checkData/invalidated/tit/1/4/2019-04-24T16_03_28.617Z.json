@@ -1,0 +1,25 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 4
+    },
+    "tool": "translationWords",
+    "groupId": "godthefather",
+    "quote": "Θεοῦ Πατρὸς",
+    "strong": [
+      "G23160",
+      "G39620"
+    ],
+    "occurrence": 1
+  },
+  "invalidated": false,
+  "userName": "tc01",
+  "modifiedTimestamp": "2019-04-24T16:03:28.617Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "God the Father",
+  "invalidatedChecksTotal": null,
+  "verseEditsTotal": null,
+  "invalidatedAlignmentsTotal": null
+}

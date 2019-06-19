@@ -3,9 +3,10 @@ import fs from "fs-extra";
 import path from "path-extra";
 import ospath from "ospath";
 import AdmZip from "adm-zip";
+import isEqual from "deep-equal";
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
-import { getValidGatewayBiblesForTool } from "./gatewayLanguageHelpers";
+import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from "./SettingsHelpers";
 import {
   getContext,
@@ -32,6 +33,106 @@ export const TC_VERSION = "tc_version";
 export const SOURCE_CONTENT_UPDATER_MANIFEST = "source-content-updater-manifest.json";
 
 /**
+ * update old resource data
+ * @param {String} resourcesPath - base path to find resource index
+ * @param {String} bookId
+ * @param {Object} data - resource data to update
+ * @return {boolean} true if resource data was modified
+ */
+function updateCheckingResourceData(resourcesPath, bookId, data) {
+  let dataModified = false;
+  const resourcePath = path.join(resourcesPath, bookId, data.contextId.groupId + ".json");
+  if (fs.existsSync(resourcePath)) {
+    const resourceData = fs.readJsonSync(resourcePath);
+    if (resourceData) {
+      let matchFound = false;
+      for (let resource of resourceData) {
+        if (data.contextId.groupId === resource.contextId.groupId &&
+          isEqual(data.contextId.reference, resource.contextId.reference) &&
+          data.contextId.occurrence === resource.contextId.occurrence) {
+          matchFound = true;
+          // for now, all we have to update is the quote
+          if (!isEqual(data.contextId.quote, resource.contextId.quote)) {
+            data.contextId.quote = resource.contextId.quote;
+            dataModified = true;
+            break;
+          }
+        }
+      }
+      if (!matchFound) {
+        console.warn("updateCheckingResourceData() - resource not found for migration: " + JSON.stringify(data.contextId));
+      }
+    }
+  }
+  return dataModified;
+}
+
+/**
+ * update the resources for this file
+ * @param {String} filePath - path of file to update
+ * @param {String} toolName
+ * @param {String} resourcesPath - path to find resources
+ * @param {String} bookId
+ * @param {Boolean} isContext - if true, then data is expected to be a contextId, otherwise it contains a contextId
+ */
+function updateResourcesForFile(filePath, toolName, resourcesPath, bookId, isContext = false) {
+  try {
+    let data = fs.readJsonSync(filePath);
+    if (isContext) {
+      data = {contextId: data};
+    }
+    if (data.contextId) {
+      if (data.contextId.groupId && (data.contextId.tool === toolName)) {
+        let dataModified = updateCheckingResourceData(resourcesPath, bookId, data);
+        if (dataModified) {
+          if (isContext) {
+            data = data.contextId;
+          }
+          fs.outputJsonSync(filePath, data);
+        }
+      }
+    }
+  } catch (e) {
+    console.error("updateResourcesForFile() - migration error for: " + filePath, e);
+  }
+}
+
+/**
+ * iterate through checking data to make sure it is up to date
+ * @param {String} projectDir - path to project
+ * @param {String} toolName
+ */
+export function migrateOldCheckingResourceData(projectDir, toolName) {
+  const checksPath = path.join(projectDir, '.apps/translationCore/checkData');
+  const resourcesPath = path.join(projectDir, '.apps/translationCore/index', toolName);
+  const checks = getFoldersInResourceFolder(checksPath);
+  for (let check of checks) {
+    console.log(`copyGroupDataToProject() - migrating ${check} to new format`);
+    const checkPath = path.join(checksPath, check);
+    const books = getFoldersInResourceFolder(checkPath);
+    for (let book of books) {
+      const bookPath = path.join(checkPath, book);
+      const chapters = getFoldersInResourceFolder(bookPath);
+      for (let chapter of chapters) {
+        const chapterPath = path.join(bookPath, chapter);
+        const verses = getFoldersInResourceFolder(chapterPath);
+        for (let verse of verses) {
+          const versePath = path.join(chapterPath, verse);
+          const files = getFilesInResourcePath(versePath, ".json");
+          for (let file of files) {
+            const filePath = path.join(versePath, file);
+            updateResourcesForFile(filePath, toolName, resourcesPath, book);
+          }
+        }
+      }
+      const contextIdPath = path.join(resourcesPath, book,'currentContextId/contextId.json'); // migrate current contextId
+      updateResourcesForFile(contextIdPath, toolName, resourcesPath, book, true);
+    }
+  }
+  console.log("copyGroupDataToProject() - migration done");
+}
+
+/**
  * Copies all of a tool's group data from the global resources into a project.
  * This is boiler plate to keep a separation of concerns between the global resources and projects.
  * NOTE: this is designed to work on any gateway language, however it should only be with original languages.
@@ -47,7 +148,8 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   if (helpDir) {
     project.resetCategoryGroupIds(toolName);
-    if (project.hasNewGroupsData(toolName)) {
+    const groupDataUpdated = project.hasNewGroupsData(toolName);
+    if (groupDataUpdated) {
       project.resetLoadedCategories(toolName);
     }
     const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
@@ -74,6 +176,9 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
       }
     }
     project.removeStaleCategoriesFromCurrent(toolName);
+    if (groupDataUpdated) {
+      migrateOldCheckingResourceData(projectDir, toolName);
+    }
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
