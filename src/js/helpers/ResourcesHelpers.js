@@ -55,6 +55,7 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
           if (!isEqual(data.contextId.quote, resource.contextId.quote)) {
             data.contextId.quote = resource.contextId.quote;
             dataModified = true;
+            break;
           }
         }
       }
@@ -64,6 +65,36 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
     }
   }
   return dataModified;
+}
+
+/**
+ * update the resources for this file
+ * @param {String} filePath - path of file to update
+ * @param {String} toolName
+ * @param {String} resourcesPath - path to find resources
+ * @param {String} bookId
+ * @param {Boolean} isContext - if true, then data is expected to be a contextId, otherwise it contains a contextId
+ */
+function updateResourcesForFile(filePath, toolName, resourcesPath, bookId, isContext = false) {
+  try {
+    let data = fs.readJsonSync(filePath);
+    if (isContext) {
+      data = {contextId: data};
+    }
+    if (data.contextId) {
+      if (data.contextId.groupId && (data.contextId.tool === toolName)) {
+        let dataModified = updateCheckingResourceData(resourcesPath, bookId, data);
+        if (dataModified) {
+          if (isContext) {
+            data = data.contextId;
+          }
+          fs.outputJsonSync(filePath, data);
+        }
+      }
+    }
+  } catch (e) {
+    console.error("copyGroupDataToProject() - migration error for: " + filePath, e);
+  }
 }
 
 /**
@@ -90,22 +121,12 @@ function migrateOldCheckingResourceData(projectDir, toolName) {
           const files = getFilesInResourcePath(versePath, ".json");
           for (let file of files) {
             const filePath = path.join(versePath, file);
-            try {
-              const data = fs.readJsonSync(filePath);
-              if (data.contextId) {
-                if (data.contextId.groupId && (data.contextId.tool === toolName)) {
-                  let dataModified = updateCheckingResourceData(resourcesPath, book, data);
-                  if (dataModified) {
-                    fs.outputJsonSync(filePath, data);
-                  }
-                }
-              }
-            } catch (e) {
-              console.error("copyGroupDataToProject() - migration error for: " + filePath, e);
-            }
+            updateResourcesForFile(filePath, toolName, resourcesPath, book);
           }
         }
       }
+      const contextIdPath = path.join(resourcesPath, book,'currentContextId/contextId.json'); // migrate current contextId
+      updateResourcesForFile(contextIdPath, toolName, resourcesPath, book, true);
     }
   }
   console.log("copyGroupDataToProject() - migration done");
