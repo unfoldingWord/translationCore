@@ -107,6 +107,11 @@ function isDirectory(path) {
   return fs.lstatSync(path).isDirectory();
 }
 
+function toLinuxPath(filePath) {
+  const newPath = filePath.split(path.sep).join(path.posix.sep);
+  return newPath;
+}
+
 /**
  * recursive directory compare
  * @param {String} srcFolder
@@ -125,11 +130,11 @@ function compareFolders(srcFolder, destFolder, differences = [], count = 0) {
     const destPath = path.join(destFolder, file);
     const destDir = isDirectory(destPath);
     if (!fs.existsSync(destPath)) {
-      differences.push(destPath + " - missing");
+      differences.push(toLinuxPath(destPath) + " - missing");
       continue;
     }
     if (sourceDir !== destDir) {
-      differences.push(destPath + " - is not " + (sourceDir ? "folder" : "file"));
+      differences.push(toLinuxPath(destPath) + " - is not " + (sourceDir ? "folder" : "file"));
       continue;
     }
     if (sourceDir) {
@@ -141,7 +146,7 @@ function compareFolders(srcFolder, destFolder, differences = [], count = 0) {
       const srcData = fs.readFileSync(sourcePath);
       const destData = fs.readFileSync(destPath);
       if (!isEqual(srcData, destData)) {
-        differences.push(destPath + " - is changed");
+        differences.push(toLinuxPath(destPath) + " - is changed");
         continue;
       }
     }
@@ -149,7 +154,7 @@ function compareFolders(srcFolder, destFolder, differences = [], count = 0) {
   for (let file of destFiles) {
     if(!sourceFiles.includes(file)) {
       const destPath = path.join(destFolder, file);
-      differences.push(destPath + " - extra file");
+      differences.push(toLinuxPath(destPath) + " - extra file");
     }
   }
   return {count, differences};
