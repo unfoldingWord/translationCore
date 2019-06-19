@@ -160,11 +160,14 @@ class ToolCardBoxes extends React.Component {
         {
           Object.keys(availableCategories).map((parentCategory, index) => {
             const subcategories = availableCategories[parentCategory];
+            // use other_terms as parentCategory for the othet category for translationWords tool
             parentCategory = parentCategory === 'other' && toolName == 'translationWords' ?
               'other_terms' : parentCategory;
-            return subcategories.length > 0 &&
-              tNotesCategories[parentCategory] || toolName === 'translationWords' ?
-              (
+            const hasAllNeededData = !!lookupNames[parentCategory] && subcategories.length > 0 &&
+              (tNotesCategories[parentCategory] || toolName === 'translationWords');
+
+            if (hasAllNeededData) {
+              return (
                 <div style={{display: 'flex', flexWrap: 'wrap', margin: '0 0 5 0', width: '100%'}} key={index}>
                   <div style={{display: 'flex', width: '92%'}}>
                     <div style={{width: '38px'}} >
@@ -216,7 +219,10 @@ class ToolCardBoxes extends React.Component {
                     ) : null}
                   </React.Fragment>
                 </div>
-              ) : null;
+              );
+            } else {
+              return null;
+            }
           })
         }
       </div>
