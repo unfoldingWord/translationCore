@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"evil\" and \"envy\" are similar words for sin. Alternate translation: \"We were always doing evil things and wanting what others have\" (See: [[rc://en/ta/man/translate/figs-hendiadys]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hendiadys",
+      "quote": "ἐν κακίᾳ καὶ φθόνῳ διάγοντες",
+      "glQuote": "We lived in evil and envy",
+      "occurrence": 1
+    }
+  }
+]

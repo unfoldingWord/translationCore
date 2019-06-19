@@ -1,0 +1,474 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of God's message as if it were an object that could be visibly shown to people. Alternate translation: \"He caused me to understand his message\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἐφανέρωσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he revealed his word",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Though Titus was not Paul's biological son, they share a common faith in Christ. Thus, in Christ, Paul considers Titus as his own son. Alternate translation: \"you are like a son to me\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "γνησίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a true son",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the church as if it were God's household and the overseer as if he were a servant in charge of managing the household. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκονόμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God's household manager",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of devotion to the Christian faith as if it were grasping the faith with one's hands. Alternate translation: \"be devoted to\" or \"know well\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἀντεχόμενον",
+      "glQuote": "hold tightly to",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase describes the rebellious people mentioned in the previous phrase. Here \"empty\" is a metaphor for useless, and \"empty talkers\" are people who say useless or foolish things. Alternate translation: \"people who say useless things and deceive others\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ματαιολόγοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "φρεναπάται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "empty talkers and deceivers",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This metaphor compares the Cretans to dangerous wild animals. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "κακὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "θηρία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "evil beasts",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the truth as if it were an object that one could turn away from or avoid. Alternate translation: \"reject the truth\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "ἀποστρεφομένων",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλήθειαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "turn away from the truth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of sinners as if they were physically dirty. Alternate translation: \"if people are morally defiled and do not believe, they cannot do anything pure\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μεμιαμμένοις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπίστοις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "καθαρόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to those who are corrupt and unbelieving, nothing is pure",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A person who cannot control themselves and drinks too much wine is spoken of as if the person were a slave to the wine. This can be stated in active form. Alternate translation: \"and not drinking too much wine\" or \"and not addicted to wine\" (See: [[rc://en/ta/man/translate/figs-metaphor]] and [[rc://en/ta/man/translate/figs-activepassive]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οἴνῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "δεδουλωμένας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "or being slaves to much wine",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of Jesus as if he were setting slaves free from their evil master. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "λυτρώσηται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πάσης",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνομίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to redeem us from all lawlessness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is probably speaking of God's forgiveness for sinners as if he were physically washing them. He is also speaking of sinners who become responsive to God as if they had been born again. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "λουτροῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "παλινγενεσίας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "washing of new birth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "It is common for New Testament writers to speak of the Holy Spirit as a liquid that God can pour out in large amounts. Alternate translation: \"whom God gave to us generously\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "οὗ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξέχεεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐφ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "πλουσίως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "whom God richly poured on us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The people to whom God has made promises are spoken of as if they were to inherit property and wealth from a family member. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": [
+        {
+          "word": "κληρονόμοι",
+          "occurrence": 1
+        },
+        {
+          "word": "γενηθῶμεν",
+          "occurrence": 1
+        },
+        {
+          "word": "κατ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλπίδα",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "αἰωνίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "we might become heirs with the certain hope of eternal life",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of someone who makes errors as if he were leaving the path on which he had been walking. (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-metaphor",
+      "quote": "ἐξέστραπται",
+      "glQuote": "has turned from the right way",
+      "occurrence": 1
+    }
+  }
+]
