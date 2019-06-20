@@ -13,12 +13,12 @@ describe('ProjectImportFilesystemActions', () => {
   afterAll(() => {
     fs.__resetMockFS();
   });
-  test('deleteProjectFromImportsFolder: should remove the imports folder', async () => {
+  test('deleteProjectFromImportsFolder: should remove the imports folder', () => {
     const pathLocation = path.join(IMPORTS_PATH, 'PROJECT_NAME');
     fs.__resetMockFS();
     fs.ensureDirSync(pathLocation);
     expect(fs.statSync(pathLocation).exists).toBeTruthy();
-    await ProjectImportFilesystemHelpers.deleteImportsFolder();
+    ProjectImportFilesystemHelpers.deleteImportsFolder();
     expect(fs.statSync(pathLocation).exists).toBeFalsy();
   });
 });
