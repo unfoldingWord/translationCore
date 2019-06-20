@@ -26,10 +26,11 @@ import * as saveMethods from '../localStorage/saveMethods';
  *                    a selection array, and a username.
  */
 export const changeSelections = (selections, userName, invalidated = false, contextId = null,
-                                 batchGroupData = null, nothingToSelect = false) => {
+  batchGroupData = null, nothingToSelect = false) => {
   return ((dispatch, getState) => {
     let state = getState();
-    if (getSelectedToolName(state) === 'translationWords' || getSelectedToolName(state) === 'translationNotes') {
+    const validTools = ['translationWords', 'translationNotes'];
+    if (validTools.includes(getSelectedToolName(state)) || validTools.includes(contextId.tool)) {
       const currentContextId = state.contextIdReducer.contextId;
       contextId = contextId || currentContextId; // use current if contextId is not passed
       const {
@@ -52,7 +53,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
         saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
       }
 
-      const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
+      const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
       actionsBatch.push({
         type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId,
@@ -88,7 +89,7 @@ export const showSelectionsInvalidatedWarning = (callback = null) => {
  * @return {Function}
  */
 export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignmentsInvalidated,
-                                        callback = null) => {
+  callback = null) => {
   return (dispatch, getState) => {
     let message = null;
     if (showSelectionInvalidated && showAlignmentsInvalidated) {
@@ -139,7 +140,7 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
  * @param {Boolean} selectionInvalidated
  * @return {Boolean} - updated value for selectionInvalidated
  */
-function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated) {
+function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch) {
   const currentTool = getSelectedToolName(state);
   const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
   if (fs.existsSync(selectionsPath)) {
@@ -155,7 +156,8 @@ function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapte
       const contextId = selectionsData.contextId;
       if (contextId) {
         if (currentTool !== contextId.tool) {
-          const key = contextId.groupId + ":" + contextId.occurrence + ":" + contextId.quote;
+          const contextIdQuote = Array.isArray(contextId.quote) ? contextId.quote.map(({word}) => word).join(' ') : contextId.quote;
+          const key = contextId.groupId + ":" + contextId.occurrence + ":" + contextIdQuote;
           latestContext[key] = selectionsData;
         }
       }
@@ -181,7 +183,7 @@ function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapte
         const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
         fs.ensureDirSync(invalidatedCheckPath);
         fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), newInvalidation);
-
+        dispatch(changeSelections([], username, true, newInvalidation.contextId));
         selectionInvalidated = true;
       }
     }
@@ -201,17 +203,17 @@ function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapte
  * @return {Object} - dispatches the changeSelections action.
  */
 export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber,
-                                   showInvalidation = true, results = {}, batchGroupData = null) => {
+  showInvalidation = true, results = {}, batchGroupData = null) => {
   return (dispatch, getState) => {
     const state = getState();
     contextId = contextId || state.contextIdReducer.contextId;
-    const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
-    const { chapter, verse } = contextId.reference;
+    const {projectSaveLocation, manifest: {project}} = state.projectDetailsReducer;
+    const {chapter, verse} = contextId.reference;
     chapterNumber = chapterNumber || chapter;
     verseNumber = verseNumber || verse;
     const bibleId = project.id;
     let selectionInvalidated = false;
-    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
 
     if (getSelectedToolName(state) !== 'wordAlignment') {
       const username = getUsername(state);
@@ -230,9 +232,9 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       const results_ = {selectionsChanged: selectionInvalidated};
       dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false, actionsBatch));
       selectionInvalidated = selectionInvalidated || results_.selectionsChanged; // if new selections invalidated
-      selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, [getSelectedToolName(state)]);
+      selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch);
     } else { // wordAlignment tool
-      selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated);
+      selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch);
     }
     if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
       dispatch(batchActions(actionsBatch));
@@ -255,7 +257,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
  * @return {Function}
  */
 export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent = false, contextId = null,
-                                              warnOnError = false, batchGroupData = null) => {
+  warnOnError = false, batchGroupData = null) => {
   return (dispatch, getState) => {
     const state = getState();
     const username = getUsername(state);
@@ -264,7 +266,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
     let filtered = null;
     results.selectionsChanged = false;
-    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
 
     const groupsDataKeys = Object.keys(groupsDataForVerse);
     for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
@@ -282,7 +284,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
             if (selections.length !== validSelections.length) {
               results.selectionsChanged = true;
               dispatch(changeSelections([], username, true,
-                                        checkingOccurrence.contextId, actionsBatch)); // clear selection
+                checkingOccurrence.contextId, actionsBatch)); // clear selection
             }
           }
         }
