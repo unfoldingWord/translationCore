@@ -1,9 +1,10 @@
 import consts from "../../actions/ActionTypes";
 import path from "path-extra";
 import ospath from "ospath";
+import fs from "fs-extra";
 // actions
 import * as ProjectValidationActions from "./ProjectValidationActions";
-import {deleteProjectFromImportsFolder} from "../../helpers/Import/ProjectImportFilesystemHelpers";
+import { deleteProjectFromImportsFolder, deleteImportsFolder } from "../../helpers/Import/ProjectImportFilesystemHelpers";
 import * as AlertModalActions from "../../actions/AlertModalActions";
 import * as OnlineModeConfirmActions
   from "../../actions/OnlineModeConfirmActions";
@@ -28,11 +29,8 @@ import {
   getUsername
 } from "../../selectors";
 import * as FileConversionHelpers from "../../helpers/FileConversionHelpers";
-import * as ProjectFilesystemHelpers
-  from "../../helpers/Import/ProjectImportFilesystemHelpers";
 import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import migrateProject from "../../helpers/ProjectMigration";
-import fs from "fs-extra";
 import Repo from "../../helpers/Repo";
 import {
   isProjectSupported,
@@ -57,7 +55,7 @@ export const onlineImport = () => {
         let importProjectPath = '';
         let link = '';
         try {
-          ProjectFilesystemHelpers.deleteImportsFolder();
+          await deleteImportsFolder();
           // Must allow online action before starting actions that access the internet
           link = getState().importOnlineReducer.importLink.trim();
           console.log("onlineImport() - link=" + link);

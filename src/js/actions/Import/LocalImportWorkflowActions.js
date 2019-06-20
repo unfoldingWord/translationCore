@@ -48,8 +48,8 @@ export const localImport = () => {
     console.log("localImport() - importing project: " + sourceProjectPath);
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
 
-    deleteImportsFolder();
     try {
+      await deleteImportsFolder();
       // convert file to tC acceptable project format
       console.log("localImport() - converting project");
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);

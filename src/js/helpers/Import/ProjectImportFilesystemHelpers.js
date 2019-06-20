@@ -107,10 +107,18 @@ export function getProjectsByType(tLId, bookId, resourceId) {
  */
 export const deleteImportsFolder = () => {
   console.log("deleteImportsFolder()");
-  if (fs.existsSync(IMPORTS_PATH)) {
-    fs.renameSync(IMPORTS_PATH, TEMP_DIR);
-    fs.removeSync(TEMP_DIR);
-  }
+  return new Promise((resolve, reject) => {
+    try {
+      if (fs.existsSync(IMPORTS_PATH)) {
+        fs.renameSync(IMPORTS_PATH, TEMP_DIR);
+        fs.removeSync(TEMP_DIR);
+      }
+      resolve();
+    } catch (error) {
+      console.error(error);
+      reject(error);
+    }
+  });
 };
 
 /**
