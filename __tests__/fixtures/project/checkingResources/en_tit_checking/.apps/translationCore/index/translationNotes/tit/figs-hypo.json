@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This presents an imaginary situation where someone opposes Titus and then becomes ashamed for having done so. Alternate translation: \"so that if anyone opposes you, he may be ashamed\" or \"so that if people oppose you, they may be ashamed\" (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": "ἵνα ὁ ἐξ ἐναντίας ἐντραπῇ",
+      "glQuote": "so that anyone who opposes you may be ashamed",
+      "occurrence": 1
+    }
+  }
+]

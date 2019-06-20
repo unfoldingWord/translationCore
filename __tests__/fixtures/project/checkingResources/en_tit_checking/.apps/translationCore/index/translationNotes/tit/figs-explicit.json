@@ -1,0 +1,97 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This means that he has only one wife, that is, he does not have any other wives or concubines. It may also imply that he does not commit adultery and that he has not divorced a previous wife. Alternate translation: \"a man who has only one woman\" or \"a man who is faithful to his wife\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "μιᾶς γυναικὸς ἀνήρ",
+      "glQuote": "the husband of one wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul implies what is in contrast. Alternate translation: \"But you, Titus, in contrast with the false teachers, be sure to say those things that fit\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "σὺ δὲ λάλει ἃ πρέπει",
+      "glQuote": "But you, speak what fits",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to Jesus dying willingly. Alternate translation: \"gave himself to die for us\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἔδωκεν ἑαυτὸν ὑπὲρ ἡμῶν",
+      "glQuote": "gave himself for us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This statement can be made explicit. Alternate translation: \"Correct with all authority those people who do not do these things\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "ἔλεγχε μετὰ πάσης ἐπιταγῆς",
+      "glQuote": "give correction with all authority",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This statement can be made explicit. Alternate translation: \"refuse to listen to your words\" or \"refuse to respect you\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-explicit",
+      "quote": "σου περιφρονείτω",
+      "glQuote": "disregard you",
+      "occurrence": 1
+    }
+  }
+]
