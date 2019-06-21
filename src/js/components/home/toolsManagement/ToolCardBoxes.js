@@ -136,12 +136,6 @@ class ToolCardBoxes extends React.Component {
     } = this.props;
     const lookupNames = flattenNotesCategories();
 
-    if (toolName === 'translationWords') {
-      console.log('====================================');
-      console.log('selectedCategories', selectedCategories);
-      console.log('====================================');
-    }
-
     return (
       <div style={{margin: '0 2% 0 6%'}}>
         {

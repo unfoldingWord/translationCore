@@ -408,7 +408,7 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
       fs.removeSync(contentZipPath);
     }
   } else {
-    console.log(`${contentZipPath}, Path Does not exist`);
+    console.warn(`${contentZipPath}, Path Does not exist`);
   }
 };
 
@@ -611,7 +611,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
             }
           });
         } else {
-          console.log("Directory not found, " + biblesPath);
+          console.warn("Directory not found, " + biblesPath);
         }
       });
     } catch (err) {
@@ -654,7 +654,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
       }
     }
   } else {
-    console.log("No Scripture Pane Configuration");
+    console.warn("No Scripture Pane Configuration");
   }
   addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
   const gatewayLangId = getToolGatewayLanguage(state, toolName);
