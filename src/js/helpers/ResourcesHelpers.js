@@ -107,28 +107,30 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
   if (fs.existsSync(checksPath)) {
     const resourcesPath = path.join(projectDir, '.apps/translationCore/index', toolName);
     const checks = getFoldersInResourceFolder(checksPath);
-    for (let check of checks) {
-      console.log(`copyGroupDataToProject() - migrating ${check} to new format`);
-      const checkPath = path.join(checksPath, check);
-      const books = getFoldersInResourceFolder(checkPath);
-      for (let book of books) {
-        const bookPath = path.join(checkPath, book);
-        const chapters = getFoldersInResourceFolder(bookPath);
-        for (let chapter of chapters) {
-          const chapterPath = path.join(bookPath, chapter);
-          const verses = getFoldersInResourceFolder(chapterPath);
-          for (let verse of verses) {
-            const versePath = path.join(chapterPath, verse);
-            const files = getFilesInResourcePath(versePath, ".json");
-            for (let file of files) {
-              const filePath = path.join(versePath, file);
-              updateResourcesForFile(filePath, toolName, resourcesPath, book);
+    if (checks) {
+      for (let check of checks) {
+        console.log(`copyGroupDataToProject() - migrating ${check} to new format`);
+        const checkPath = path.join(checksPath, check);
+        const books = getFoldersInResourceFolder(checkPath);
+        for (let book of books) {
+          const bookPath = path.join(checkPath, book);
+          const chapters = getFoldersInResourceFolder(bookPath);
+          for (let chapter of chapters) {
+            const chapterPath = path.join(bookPath, chapter);
+            const verses = getFoldersInResourceFolder(chapterPath);
+            for (let verse of verses) {
+              const versePath = path.join(chapterPath, verse);
+              const files = getFilesInResourcePath(versePath, ".json");
+              for (let file of files) {
+                const filePath = path.join(versePath, file);
+                updateResourcesForFile(filePath, toolName, resourcesPath, book);
+              }
             }
           }
-        }
-        const contextIdPath = path.join(resourcesPath, book,'currentContextId/contextId.json'); // migrate current contextId
-        if (fs.existsSync(contextIdPath)) {
-          updateResourcesForFile(contextIdPath, toolName, resourcesPath, book, true);
+          const contextIdPath = path.join(resourcesPath, book, 'currentContextId/contextId.json'); // migrate current contextId
+          if (fs.existsSync(contextIdPath)) {
+            updateResourcesForFile(contextIdPath, toolName, resourcesPath, book, true);
+          }
         }
       }
     }
