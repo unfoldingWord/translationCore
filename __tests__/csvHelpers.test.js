@@ -57,8 +57,9 @@ describe('csvHelpers.flattenContextId', () => {
       groupId: "apostle",
       groupName: "apostle, apostleship",
       quote: "apostle, apostles, apostleship",
-      glQuote: undefined,
-      occurrenceNote: undefined,
+      gatewayLanguageCode: "N/A",
+      gatewayLanguageQuote: "N/A",
+      occurrenceNote: "N/A",
       occurrence: 1
     };
     const translate = key => key.split('.')[1];
@@ -126,8 +127,9 @@ describe('csvHelpers.combineData', () => {
       groupId: "apostle",
       groupName: "apostle, apostleship",
       quote: "apostle, apostles, apostleship",
-      glQuote: undefined,
-      occurrenceNote: undefined,
+      gatewayLanguageCode: "N/A",
+      gatewayLanguageQuote: "N/A",
+      occurrenceNote: "N/A",
       occurrence: 1,
       username: 'klappy'
       // date: '08/22/2017',
