@@ -1,17 +1,17 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import usfmjs from 'usfm-js';
+import wordaligner, {VerseObjectUtils} from 'word-aligner';
 //helpers
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
-import wordaligner, {VerseObjectUtils} from 'word-aligner';
 import ResourceAPI from "./ResourceAPI";
 import * as BibleHelpers from "./bibleHelpers";
-const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
-
+// constants
+import { STATIC_RESOURCES_PATH } from '../common/constants';
 /**
  * Helper method to retrieve the greek chapter object according to specified book/chapter
  *

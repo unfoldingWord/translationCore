@@ -2,7 +2,6 @@ import React from 'react';
 import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories} from "../selectors";
@@ -18,8 +17,7 @@ import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
 import Repo from '../helpers/Repo.js';
 import ProjectAPI from "../helpers/ProjectAPI";
 // constants
-const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+import { PROJECTS_PATH, PROJECT_INDEX_FOLDER_PATH } from '../common/constants';
 
 /**
  * @description Gets the check categories from the filesystem for the project and
@@ -38,6 +36,11 @@ export const loadCurrentCheckCategories = (toolName, projectSaveLocation, curren
       .forEach((parentCategory) => {
         availableCheckCategories.push(...availableCheckCategoriesObject[parentCategory]);
       });
+  // TODO: OJO THIS IS A MESSSSS. Subcategories are being set as if they are categories and no category is being set
+
+
+
+      console.log('loadCurrentCheckCategories availableCheckCategories', availableCheckCategories);
     let subCategories = project.getSelectedCategories(toolName);
     subCategories = subCategories.filter((category) => availableCheckCategories.includes(category));
     dispatch(setCategories(subCategories, toolName));
@@ -130,7 +133,7 @@ export function getProjectProgressForTools(toolName, results=null) {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
-    const pathToCheckDataFiles = path.join(projectSaveLocation, INDEX_FOLDER_PATH, toolName, bookId);
+    const pathToCheckDataFiles = path.join(projectSaveLocation, PROJECT_INDEX_FOLDER_PATH, toolName, bookId);
     if (toolName === 'wordAlignment') {
       const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);

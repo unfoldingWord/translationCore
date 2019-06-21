@@ -23,6 +23,7 @@ import migrateProject from '../../helpers/ProjectMigration';
 import { openProject } from "../MyProjects/ProjectLoadingActions";
 import { delay } from '../../common/utils';
 // constants
+import { IMPORTS_PATH } from '../../common/constants';
 export const ALERT_MESSAGE = (
   <div>
     No file was selected. Please click on the
@@ -32,10 +33,9 @@ export const ALERT_MESSAGE = (
     button again and select the project you want to load.
   </div>
 );
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 /**
- * @description Action that dispatches other actions to wrap up local importing
+ * Action that dispatches other actions to wrap up local importing
  */
 export const localImport = () => {
   return async (dispatch, getState) => {

@@ -2,24 +2,23 @@
 jest.mock('fs-extra');
 jest.mock('../src/js/helpers/ProjectAPI');
 jest.mock('../');
-import fs from 'fs-extra';
-import path from 'path-extra';
-import ospath from 'ospath';
-import types from '../src/js/actions/ActionTypes';
-import * as actions from '../src/js/actions/ProjectDetailsActions';
-import thunk from 'redux-thunk';
-import configureMockStore from 'redux-mock-store';
-import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
 jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
   getAvailableCategories: jest.fn(() => ({'names':['John']}))
 }));
-
+import fs from 'fs-extra';
+import path from 'path-extra';
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
+// actions
+import types from '../src/js/actions/ActionTypes';
+import * as actions from '../src/js/actions/ProjectDetailsActions';
+// helpers
+import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
+// constants
+import { PROJECTS_PATH, RESOURCE_PATH } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-
-const PROJECTS_PATH = path.join('user', 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 it('setSaveLocation() creates an action to update contributors', () => {
   const store = mockStore({});

@@ -5,13 +5,12 @@ jest.mock('fs-extra');
 jest.mock('adm-zip');
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 // helpers
 import * as ZipFileConversionHelpers from '../src/js/helpers/FileConversionHelpers/ZipFileConversionHelpers';
+// constants
+import { IMPORTS_PATH, TEMP_IMPORT_PATH } from '../src/js/common/constants';
 
 describe('ZipFileConversionHelpers.convertToProjectFormat', () => {
-  const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-  const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');
   const projectName = 'id_tit_text_ulb';
 
   beforeEach(() => {

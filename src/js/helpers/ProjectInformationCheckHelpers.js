@@ -1,11 +1,11 @@
 import path from 'path-extra';
-import ospath from 'ospath';
+// helpers
 import * as LangHelpers from "./LanguageHelpers";
 import * as ProjectImportFilesystemHelpers from "./Import/ProjectImportFilesystemHelpers";
 import {getIsOverwritePermitted} from "../selectors";
 import * as bibleHelpers from './bibleHelpers';
-
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+// constants
+import { PROJECTS_PATH } from '../common/constants';
 
 /**
  * Checks if the project manifest includes required project details.

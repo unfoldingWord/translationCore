@@ -3,24 +3,14 @@
 jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 // helpers
 import * as ProjectImportFilesystemHelpers from '../src/js/helpers/Import/ProjectImportFilesystemHelpers';
-
 // constants
+import { PROJECTS_PATH, IMPORTS_PATH } from '../src/js/common/constants';
 const projectName   = 'aa_tit_text_ulb';
-const IMPORTS_PATH  = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const fromPath      = path.join(IMPORTS_PATH, projectName);
 const toPath        = path.join(PROJECTS_PATH, projectName);
-/* test
-const reimportRejectMsg = {
-  "data": {
-    "project_path": projectName
-  },
-  "message": "projects.project_exists"
-};
-*/
+
 const reimportCompoundMsg = "projects.project_exists projects.reimporting_not_supported";
 const noProjectInImportsFolderRejectMsg = {
   "data": {

@@ -1,18 +1,17 @@
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 import usfmjs from 'usfm-js';
+import _ from "lodash";
+import wordaligner from 'word-aligner';
 // helpers
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
-import wordaligner from 'word-aligner';
 import * as BibleHelpers from "../bibleHelpers";
 // actions
 import * as ResourcesActions from "../../actions/ResourcesActions";
-import _ from "lodash";
 // constants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+import { IMPORTS_PATH } from '../../common/constants';
 
 export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
   return new Promise (async(resolve, reject) => {

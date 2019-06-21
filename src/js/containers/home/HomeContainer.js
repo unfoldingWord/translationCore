@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// info
-import packagefile from '../../../../package.json';
-// components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// components
 import WelcomeSplash from '../../components/home/WelcomeSplash';
 import LicenseModal from '../../components/home/license/LicenseModal';
 import AppVersion from '../../components/home/AppVersion';
@@ -23,9 +21,8 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
-
-export const APP_VERSION = packagefile.version;
-export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
+// constants
+import { APP_VERSION } from '../../common/constants';
 
 // TRICKY: because this component is heavily coupled with callbacks to set content
 // we need to connect locale state change events.

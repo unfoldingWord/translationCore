@@ -1,14 +1,16 @@
-import fs from "../__mocks__/fs-extra";
+jest.mock('fs-extra');
+import fs from "fs-extra";
 import path from "path";
-import {TC_VERSION, USER_RESOURCES_PATH, STATIC_RESOURCES_PATH} from "../src/js/helpers/ResourcesHelpers";
-import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
 import updateResourcesHelpers from '../scripts/resources/updateResourcesHelpers';
-import ospath from "ospath";
-
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+import {
+  APP_VERSION,
+  TC_VERSION,
+  USER_RESOURCES_PATH,
+  RESOURCE_PATH,
+  STATIC_RESOURCES_PATH,
+} from '../src/js/common/constants';
 
 describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
-
   beforeEach(() => {
     fs.__resetMockFS();
   });

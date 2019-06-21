@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import path from 'path-extra';
-import ospath from 'ospath';
 import fs from "fs-extra";
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
@@ -8,11 +7,10 @@ import configureMockStore from 'redux-mock-store';
 import * as USFMExportActions from '../src/js/actions/USFMExportActions';
 import * as UsfmHelpers from "../src/js/helpers/usfmHelpers";
 import * as Selectors from "../src/js/selectors";
-
+// constants
+import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'Development', 'Electron', 'translationCore', 'tcResources');
 
 jest.mock('../src/js/helpers/ProjectMigration', () => jest.fn());
 jest.mock('../src/js/helpers/exportHelpers', () => ({
@@ -112,7 +110,7 @@ describe('USFMExportActions', () => {
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
     const resourcePath = path.join(__dirname, 'fixtures/resources');
     copyFiles = ['en/bibles/ult'];
-    fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+    fs.__loadFilesIntoMockFs(copyFiles, resourcePath, USER_RESOURCES_PATH);
   });
   afterEach(() => {
     // reset mock filesystem data

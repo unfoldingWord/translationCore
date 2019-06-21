@@ -7,6 +7,11 @@ import { generateTimestamp } from '../src/js/helpers';
 import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
 import {delay} from "../src/js/common/utils";
+// constants
+import { CHECK_DATA_PATH } from '../src/js/common/constants';
+const CURRENT_PROJECT_PATH = path.join(__dirname, 'fixtures', 'project', 'en_tit');
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 jest.mock('redux-batched-actions', () => ({
   batchActions: (actionsBatch) => {
@@ -20,12 +25,6 @@ jest.mock('redux-batched-actions', () => ({
   }
 }));
 
-// constants
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
-const CHECK_DATA_PATH = path.join(__dirname, 'fixtures', 'checkData');
-const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'project', 'en_tit');
-
 describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
   let saveOtherContextSpy = null;
 
@@ -34,7 +33,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
       'saveSelectionsForOtherContext');
     fs.__resetMockFS();
     fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
-    fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
+    fs.__loadDirIntoMockFs(CURRENT_PROJECT_PATH, CURRENT_PROJECT_PATH);
   });
 
   afterEach(() => {
@@ -56,7 +55,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
             id: bookId
           }
         },
-        projectSaveLocation: PROJECTS_PATH
+        projectSaveLocation: CURRENT_PROJECT_PATH
       }
     };
     const store = mockStore(initStore);
@@ -85,13 +84,13 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
             id: bookId
           }
         },
-        projectSaveLocation: PROJECTS_PATH
+        projectSaveLocation: CURRENT_PROJECT_PATH
       }
     };
     const store = mockStore(initStore);
     // add verse edit
     const verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:4","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":1,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":4},"tool":"wordAlignment","groupId":"chapter_1"}};
-    const verseEditPath = path.join(PROJECTS_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "4");
+    const verseEditPath = path.join(CURRENT_PROJECT_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "4");
     fs.ensureDirSync(verseEditPath);
     const fileName = generateTimestamp() + ".json";
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
@@ -120,20 +119,20 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
             id: bookId
           }
         },
-        projectSaveLocation: PROJECTS_PATH
+        projectSaveLocation: CURRENT_PROJECT_PATH
       }
     };
     const store = mockStore(initStore);
     // add verse edit
     let verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:4","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":1,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":4},"tool":"wordAlignment","groupId":"chapter_1"}};
-    let verseEditPath = path.join(PROJECTS_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "4");
+    let verseEditPath = path.join(CURRENT_PROJECT_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "4");
     fs.ensureDirSync(verseEditPath);
     let fileName = generateTimestamp() + ".json";
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
 
     // add 2nd verse edit
     verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:7","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":7,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":7},"tool":"wordAlignment","groupId":"chapter_1"}};
-    verseEditPath = path.join(PROJECTS_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "7");
+    verseEditPath = path.join(CURRENT_PROJECT_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "7");
     fs.ensureDirSync(verseEditPath);
     fileName = generateTimestamp() + ".json";
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
@@ -170,7 +169,7 @@ describe('GroupsDataActions.validateBookSelections', () => {
       'saveSelectionsForOtherContext');
     fs.__resetMockFS();
     fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
-    fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
+    fs.__loadDirIntoMockFs(CURRENT_PROJECT_PATH, CURRENT_PROJECT_PATH);
   });
 
   afterEach(() => {
@@ -302,12 +301,12 @@ function removeSpy (spy) {
 
 function initiMockStore (bookId, selectionsReducer, chapter = null, verse = null, targetVerse = null) {
   const checkPath = path.join(CHECK_DATA_PATH, 'en_tit');
-  const projectPath = path.join(PROJECTS_PATH, 'tit');
+  const projectPath = path.join(CURRENT_PROJECT_PATH, 'tit');
   const initialState = getInitialStateData(bookId, checkPath, projectPath);
   initialState.selectionsReducer = selectionsReducer;
   initialState.projectDetailsReducer = {
     ...initialState.projectDetailsReducer,
-    projectSaveLocation: PROJECTS_PATH,
+    projectSaveLocation: CURRENT_PROJECT_PATH,
     manifest: {project: {id: bookId}}
   };
 

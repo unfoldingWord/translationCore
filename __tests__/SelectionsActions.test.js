@@ -2,13 +2,14 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
 import fs from "fs-extra";
+import * as selections from 'selections';
+import _ from "lodash";
 // actions
 import {generateTimestamp} from "../src/js/helpers";
 import * as SelectionsActions from '../src/js/actions/SelectionsActions';
 import * as saveMethods from "../src/js/localStorage/saveMethods";
-import * as selections from 'selections';
-import _ from "lodash";
 // constants
+import { PROJECTS_PATH } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -33,7 +34,6 @@ jest.mock('redux-batched-actions', () => ({
   }
 }));
 
-const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 
 fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
 
