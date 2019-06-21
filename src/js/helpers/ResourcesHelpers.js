@@ -77,18 +77,20 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
  */
 function updateResourcesForFile(filePath, toolName, resourcesPath, bookId, isContext = false) {
   try {
-    let data = fs.readJsonSync(filePath);
-    if (isContext) {
-      data = {contextId: data};
-    }
-    if (data.contextId) {
-      if (data.contextId.groupId && (data.contextId.tool === toolName)) {
-        let dataModified = updateCheckingResourceData(resourcesPath, bookId, data);
-        if (dataModified) {
-          if (isContext) {
-            data = data.contextId;
+    if (fs.existsSync(filePath)) {
+      let data = fs.readJsonSync(filePath);
+      if (isContext) {
+        data = {contextId: data};
+      }
+      if (data.contextId) {
+        if (data.contextId.groupId && (data.contextId.tool === toolName)) {
+          let dataModified = updateCheckingResourceData(resourcesPath, bookId, data);
+          if (dataModified) {
+            if (isContext) {
+              data = data.contextId;
+            }
+            fs.outputJsonSync(filePath, data);
           }
-          fs.outputJsonSync(filePath, data);
         }
       }
     }
