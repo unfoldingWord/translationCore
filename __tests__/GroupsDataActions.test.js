@@ -8,7 +8,7 @@ import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
 import {delay} from "../src/js/common/utils";
 // constants
-import { CHECK_DATA_PATH } from '../src/js/common/constants';
+const FIXTURES_CHECKDATA_PATH = path.join(__dirname, 'fixtures', 'checkData');
 const CURRENT_PROJECT_PATH = path.join(__dirname, 'fixtures', 'project', 'en_tit');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -32,7 +32,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     saveOtherContextSpy = jest.spyOn(saveMethods,
       'saveSelectionsForOtherContext');
     fs.__resetMockFS();
-    fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
+    fs.__loadDirIntoMockFs(FIXTURES_CHECKDATA_PATH, FIXTURES_CHECKDATA_PATH);
     fs.__loadDirIntoMockFs(CURRENT_PROJECT_PATH, CURRENT_PROJECT_PATH);
   });
 
@@ -43,7 +43,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
   it('should succeed without external verse edits', async () => {
     // given
     const bookId = 'tit';
-    const groupsDataReducer = fs.readJsonSync(path.join(CHECK_DATA_PATH, 'en_tit', 'groupsDataReducer.json'));
+    const groupsDataReducer = fs.readJsonSync(path.join(FIXTURES_CHECKDATA_PATH, 'en_tit', 'groupsDataReducer.json'));
     const initStore = {
       groupsDataReducer,
       toolsReducer: {
@@ -72,7 +72,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
   it('should succeed with external verse edits', async () => {
     // given
     const bookId = 'tit';
-    const groupsDataReducer = fs.readJsonSync(path.join(CHECK_DATA_PATH, 'en_tit', 'groupsDataReducer.json'));
+    const groupsDataReducer = fs.readJsonSync(path.join(FIXTURES_CHECKDATA_PATH, 'en_tit', 'groupsDataReducer.json'));
     const initStore = {
       groupsDataReducer,
       toolsReducer: {
@@ -107,7 +107,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
   it('should succeed with multiple external verse edits', async () => {
     // given
     const bookId = 'tit';
-    const groupsDataReducer = fs.readJsonSync(path.join(CHECK_DATA_PATH, 'en_tit', 'groupsDataReducer.json'));
+    const groupsDataReducer = fs.readJsonSync(path.join(FIXTURES_CHECKDATA_PATH, 'en_tit', 'groupsDataReducer.json'));
     const initStore = {
       groupsDataReducer,
       toolsReducer: {
@@ -168,7 +168,7 @@ describe('GroupsDataActions.validateBookSelections', () => {
     saveOtherContextSpy = jest.spyOn(saveMethods,
       'saveSelectionsForOtherContext');
     fs.__resetMockFS();
-    fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
+    fs.__loadDirIntoMockFs(FIXTURES_CHECKDATA_PATH, FIXTURES_CHECKDATA_PATH);
     fs.__loadDirIntoMockFs(CURRENT_PROJECT_PATH, CURRENT_PROJECT_PATH);
   });
 
@@ -300,7 +300,7 @@ function removeSpy (spy) {
 }
 
 function initiMockStore (bookId, selectionsReducer, chapter = null, verse = null, targetVerse = null) {
-  const checkPath = path.join(CHECK_DATA_PATH, 'en_tit');
+  const checkPath = path.join(FIXTURES_CHECKDATA_PATH, 'en_tit');
   const projectPath = path.join(CURRENT_PROJECT_PATH, 'tit');
   const initialState = getInitialStateData(bookId, checkPath, projectPath);
   initialState.selectionsReducer = selectionsReducer;

@@ -6,7 +6,6 @@ import {
   APP_VERSION,
   TC_VERSION,
   USER_RESOURCES_PATH,
-  RESOURCE_PATH,
   STATIC_RESOURCES_PATH,
 } from '../src/js/common/constants';
 
@@ -59,8 +58,8 @@ function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = A
   if (bundledDate) {
     fs.outputJsonSync(bundledResourcesManifestPath, {modified: bundledDate});
   }
-  const resourcesManifestPath = path.join(RESOURCE_PATH, "source-content-updater-manifest.json");
-  fs.ensureDirSync(RESOURCE_PATH);
+  const resourcesManifestPath = path.join(USER_RESOURCES_PATH, "source-content-updater-manifest.json");
+  fs.ensureDirSync(USER_RESOURCES_PATH);
   if (userDate) {
     const manifest = {modified: userDate};
     if (typeof appVersion === 'string') {
