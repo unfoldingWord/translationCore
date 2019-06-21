@@ -1,14 +1,17 @@
+jest.mock('fs-extra');
+
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
 import fs from "fs-extra";
+import * as selections from 'selections';
+import _ from "lodash";
 // actions
 import {generateTimestamp} from "../src/js/helpers";
 import * as SelectionsActions from '../src/js/actions/SelectionsActions';
 import * as saveMethods from "../src/js/localStorage/saveMethods";
-import * as selections from 'selections';
-import _ from "lodash";
 // constants
+const FIXTURE_PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -33,9 +36,8 @@ jest.mock('redux-batched-actions', () => ({
   }
 }));
 
-const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 
-fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
+fs.__loadDirIntoMockFs(FIXTURE_PROJECTS_PATH, FIXTURE_PROJECTS_PATH);
 
 describe('SelectionsActions.validateAllSelectionsForVerse', () => {
   const bookId = 'tit';
@@ -55,7 +57,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
   it('No selection changes', () => {
     // given
     const targetVerse =  "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
     const store = initStoreData(projectPath, bookId);
     const results = {
       selectionsChanged: false
@@ -73,7 +75,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
   it('apostle selection edited', () => {
     // given
     const targetVerse =  "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
     const store = initStoreData(projectPath, bookId);
     const results = {
       selectionsChanged: false
@@ -91,7 +93,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
   it('all selections edited', () => {
     // given
     const targetVerse =  "";
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
     const store = initStoreData(projectPath, bookId);
     const results = {
       selectionsChanged: false
@@ -140,7 +142,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('No selection changes', () => {
       // given
       const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
@@ -160,7 +162,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('No previous selection changes', () => {
       // given
       const targetVerse = "A verse";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.contextIdReducer.contextId.reference.verse = 15;
       initialState.contextIdReducer.contextId.groupId = 'believe';
@@ -179,7 +181,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('apostle selection edited', () => {
       // given
       const targetVerse = "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
@@ -199,7 +201,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('god selection edited in different context', () => {
       // given
       const targetVerse = "Paul, a servant of Go and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
@@ -219,7 +221,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('"servant of God" selection with footnote not edited', () => {
       // given
       const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
@@ -239,7 +241,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('"servant of God" selection with footnote and edited', () => {
       // given
       const targetVerse = "Paul, a servan of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
@@ -259,7 +261,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('all selections edited', () => {
       // given
       const targetVerse = "";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
@@ -279,7 +281,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('all selections edited current context', () => {
       // given
       const targetVerse = "";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
@@ -300,7 +302,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('all selections edited from different verse context', () => {
       // given
       const targetVerse = "";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
@@ -322,7 +324,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('all selections edited from different verse context - no warning', () => {
       // given
       const targetVerse = "";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
@@ -347,7 +349,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('No selection changes', () => {
       // given
       const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath, 'wordAlignment');
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
@@ -367,7 +369,7 @@ describe('SelectionsActions.validateSelections', () => {
     it('apostle selection edited', () => {
       // given
       const targetVerse = "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-      const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+      const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath, 'wordAlignment');
       const contextId = _.cloneDeep(initialState.contextIdReducer.contextId);
       contextId.tool = 'translationWords';
@@ -427,7 +429,7 @@ describe('SelectionsActions.changeSelections', () => {
 
   it('Set selection change', () => {
     // given
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
@@ -442,7 +444,7 @@ describe('SelectionsActions.changeSelections', () => {
 
   it('Set selection change on different contextId', () => {
     // given
-    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
     const contextId = {
       reference: {
         bookId: bookId,

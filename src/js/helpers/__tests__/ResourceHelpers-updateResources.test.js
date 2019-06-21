@@ -1,12 +1,13 @@
 import path from 'path';
 import fs from "fs-extra";
+import isEqual from "deep-equal";
+// helpers
 import {
   getFilesInResourcePath,
   migrateOldCheckingResourceData
 } from "../ResourcesHelpers";
-import isEqual from "deep-equal";
-
-const PROJECTS_PATH = path.join('user', 'translationCore', 'projects');
+// constants
+import { PROJECTS_PATH } from '../../common/constants';
 
 describe("migrate resources", () => {
   const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'checkingResources');

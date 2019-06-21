@@ -3,11 +3,7 @@ import path from "path-extra";
 import isEqual from 'deep-equal';
 import { getTranslation } from "./localizationHelpers";
 import ResourceAPI from "./ResourceAPI";
-
-export const STATIC_RESOURCES_PATH = path.join(__dirname,
-  "../../../tcResources");
-
-// TODO: groupsIndexHelpers.js should be combined with this file or vice versa.
+import { STATIC_RESOURCES_PATH } from '../common/constants';
 
 /**
  * TODO: should this use the user's resources in the home dir instead of the static resources?

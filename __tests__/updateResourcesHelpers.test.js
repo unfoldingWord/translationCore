@@ -1,14 +1,15 @@
-import fs from "../__mocks__/fs-extra";
+jest.mock('fs-extra');
+import fs from "fs-extra";
 import path from "path";
-import {TC_VERSION, USER_RESOURCES_PATH, STATIC_RESOURCES_PATH} from "../src/js/helpers/ResourcesHelpers";
-import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
 import updateResourcesHelpers from '../scripts/resources/updateResourcesHelpers';
-import ospath from "ospath";
-
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+import {
+  APP_VERSION,
+  TC_VERSION,
+  USER_RESOURCES_PATH,
+  STATIC_RESOURCES_PATH,
+} from '../src/js/common/constants';
 
 describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
-
   beforeEach(() => {
     fs.__resetMockFS();
   });
@@ -57,8 +58,8 @@ function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = A
   if (bundledDate) {
     fs.outputJsonSync(bundledResourcesManifestPath, {modified: bundledDate});
   }
-  const resourcesManifestPath = path.join(RESOURCE_PATH, "source-content-updater-manifest.json");
-  fs.ensureDirSync(RESOURCE_PATH);
+  const resourcesManifestPath = path.join(USER_RESOURCES_PATH, "source-content-updater-manifest.json");
+  fs.ensureDirSync(USER_RESOURCES_PATH);
   if (userDate) {
     const manifest = {modified: userDate};
     if (typeof appVersion === 'string') {

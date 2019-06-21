@@ -1,18 +1,3 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import path from 'path-extra';
-import fs from "fs-extra";
-import ospath from 'ospath';
-// actions
-import * as MissingVersesActions from "../src/js/actions/MissingVersesActions";
-// helpers
-import * as MissingVersesHelpers from "../src/js/helpers/ProjectValidation/MissingVersesHelpers";
-// constants
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
-const importProjectName = 'gal_hsl';
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources');
 jest.mock('fs-extra');
 jest.mock('../src/js/actions/ProjectImportStepperActions', () => ({
   removeProjectValidationStep: () => {
@@ -22,14 +7,26 @@ jest.mock('../src/js/actions/ProjectImportStepperActions', () => ({
     return ((dispatch, getState) => {});
   }
 }));
-
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import path from 'path-extra';
+import fs from "fs-extra";
+// actions
+import * as MissingVersesActions from "../src/js/actions/MissingVersesActions";
+// helpers
+import * as MissingVersesHelpers from "../src/js/helpers/ProjectValidation/MissingVersesHelpers";
+// constants
+import { USER_RESOURCES_PATH, IMPORTS_PATH } from '../src/js/common/constants';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+const importProjectName = 'gal_hsl';
 
 describe('MissingVersesActions.onlineImport()', () => {
   let ch4_json, ch5_json, manifest_json, initialState;
   const bookName = 'gal';
   const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
   const importBookPath = path.join(importProjectPath, bookName);
-  const bibleIndexLocation = path.join(USER_RESOURCES_DIR, 'en', 'bibles', 'ult', 'v11', 'index.json');
+  const bibleIndexLocation = path.join(USER_RESOURCES_PATH, 'en', 'bibles', 'ult', 'v11', 'index.json');
   const index_json = require('./fixtures/resources/en/bibles/ult/v11/index.json');
 
   beforeEach(() => {

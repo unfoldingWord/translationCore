@@ -1,29 +1,23 @@
 /* eslint-env jest */
-
-// ResourcesHelpers tests with mocking
-
-import ResourceAPI from "../src/js/helpers/ResourceAPI";
+jest.mock('fs-extra');
+jest.mock('adm-zip');
 import path from 'path';
-import ospath from "ospath";
 import fs from "fs-extra";
 import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import _ from "lodash";
 // helpers
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
-import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
-import {TC_VERSION} from "../src/js/helpers/ResourcesHelpers";
-import {USER_RESOURCES_PATH} from "../src/js/helpers/ResourcesHelpers";
-
-jest.mock('fs-extra');
-jest.mock('adm-zip');
-
 // constants
+import {
+  APP_VERSION,
+  TC_VERSION,
+  USER_RESOURCES_PATH,
+  PROJECTS_PATH,
+  STATIC_RESOURCES_PATH,
+} from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-const STATIC_RESOURCES_PATH = ResourcesHelpers.STATIC_RESOURCES_PATH;
 
 describe('ResourcesHelpers.getResourcesNeededByTool', () => {
   it('getResourcesNeededByTool() should work', () => {
@@ -78,7 +72,7 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
   beforeAll(() => {
     fs.__resetMockFS();
     loadMockFsWithProjectAndResources();
-    fs.ensureDirSync(path.join(RESOURCE_PATH, 'en'));
+    fs.ensureDirSync(path.join(USER_RESOURCES_PATH, 'en'));
   });
 
   it('getAvailableScripturePaneSelections() should work', () => {
@@ -435,8 +429,8 @@ describe('ResourcesHelpers.copySourceContentUpdaterManifest()', () => {
 
 describe('ResourcesHelpers.extractZippedResourceContent', () => {
   it('works as expected', () => {
-    const EN_ULB_PATH = path.join(RESOURCE_PATH, 'en', 'ult');
-    const versionPath = path.join(RESOURCE_PATH, 'en', 'ult', 'v11');
+    const EN_ULB_PATH = path.join(USER_RESOURCES_PATH, 'en', 'ult');
+    const versionPath = path.join(USER_RESOURCES_PATH, 'en', 'ult', 'v11');
     const zippedBooks = path.join(EN_ULB_PATH, 'v11', 'books.zip');
     const isBible = true;
 
@@ -472,7 +466,7 @@ function loadMockFsWithProjectAndResources() {
   fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
 
   const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-  const resourcesPath = RESOURCE_PATH;
+  const resourcesPath = USER_RESOURCES_PATH;
   const copyResourceFiles = [
     'en/bibles/ult',
     'en/bibles/ust',
@@ -497,8 +491,8 @@ function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = A
   if (bundledDate) {
     fs.outputJsonSync(bundledResourcesManifestPath, {modified: bundledDate});
   }
-  const resourcesManifestPath = path.join(RESOURCE_PATH, "source-content-updater-manifest.json");
-  fs.ensureDirSync(RESOURCE_PATH);
+  const resourcesManifestPath = path.join(USER_RESOURCES_PATH, "source-content-updater-manifest.json");
+  fs.ensureDirSync(USER_RESOURCES_PATH);
   if (userDate) {
     const manifest = {modified: userDate};
     if (typeof appVersion === 'string') {

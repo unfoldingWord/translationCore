@@ -4,9 +4,12 @@ import path from 'path-extra';
 import _ from "lodash";
 import migrateSaveChangesInOldProjects from '../src/js/helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import Repo from '../src/js/helpers/Repo';
-import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
-import {tc_EDIT_VERSION_KEY} from "../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import {getPreviousVersion} from "./ProjectStructureValidationHelpers.test";
+// constants
+import {
+  APP_VERSION,
+  tc_EDIT_VERSION_KEY
+} from '../src/js/common/constants';
 
 // mock Repo
 const mockSave = jest.fn();

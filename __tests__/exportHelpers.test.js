@@ -1,11 +1,10 @@
 /* eslint-env jest */
-//helpers
-import * as exportHelpers from '../src/js/helpers/exportHelpers';
-import * as manifestHelpers from '../src/js/helpers/manifestHelpers';
 import path from 'path-extra';
-import ospath from "ospath";
 import fs from "fs-extra";
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+// helpers
+import * as exportHelpers from '../src/js/helpers/exportHelpers';
+// constants
+import { PROJECTS_PATH } from '../src/js/common/constants';
 
 describe('exportHelpers.getUsfmExportName', () => {
   it('should get the name of a titus project according to the standard', () => {

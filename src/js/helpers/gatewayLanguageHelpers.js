@@ -7,7 +7,8 @@ import * as ResourcesHelpers from "./ResourcesHelpers";
 import * as BibleHelpers from "./bibleHelpers";
 import {getSelectedToolName, getToolGatewayLanguage} from "../selectors";
 import ResourceAPI from "./ResourceAPI";
-
+// constants
+import { USER_RESOURCES_PATH } from '../common/constants';
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
 /**
@@ -205,7 +206,7 @@ function getValidResourcePath(langPath, subpath) {
 export function getOlBookPath(bookId) {
   const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(bookId);
   const originalSubPath = `${languageId}/bibles/${bibleId}`;
-  const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
+  const origPath = getValidResourcePath(USER_RESOURCES_PATH, originalSubPath);
   return origPath;
 }
 
@@ -333,7 +334,7 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
  * @return {Array} valid bibles that can be used for Gateway language
  */
 export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, biblesLoaded = {}) {
-  const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, langCode);
+  const languagePath = path.join(USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
   let bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
   bibles = bibles.filter(bibleId => {
@@ -355,7 +356,7 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
 
           if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
             const olBook = BibleHelpers.getOrigLangforBook(bookId);
-            const olPath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, olBook.languageId);
+            const olPath = path.join(USER_RESOURCES_PATH, olBook.languageId);
             isBibleValidSource = isBibleValidSource && hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId);
           }
 

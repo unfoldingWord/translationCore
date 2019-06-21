@@ -1,19 +1,16 @@
+jest.mock('fs-extra');
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-
-jest.mock('fs-extra');
-
 import fs from 'fs-extra';
 import path from 'path-extra';
+// actions
 import {recoverFailedOnlineImport} from '../OnlineImportWorkflowActions';
-import ospath from "ospath";
-
-
+// helpers
+import { IMPORTS_PATH } from '../../../common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const importProjectName = 'es-419_tit_text_ulb';
 const STANDARD_PROJECT = 'https://git.door43.org/royalsix/' + importProjectName + '.git';
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const projectSaveLocation = IMPORTS_PATH;
 
 // let mock_cloneManifest = null;
