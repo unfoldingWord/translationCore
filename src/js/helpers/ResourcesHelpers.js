@@ -77,20 +77,18 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
  */
 function updateResourcesForFile(filePath, toolName, resourcesPath, bookId, isContext = false) {
   try {
-    if (fs.existsSync(filePath)) {
-      let data = fs.readJsonSync(filePath);
-      if (isContext) {
-        data = {contextId: data};
-      }
-      if (data.contextId) {
-        if (data.contextId.groupId && (data.contextId.tool === toolName)) {
-          let dataModified = updateCheckingResourceData(resourcesPath, bookId, data);
-          if (dataModified) {
-            if (isContext) {
-              data = data.contextId;
-            }
-            fs.outputJsonSync(filePath, data);
+    let data = fs.readJsonSync(filePath);
+    if (isContext) {
+      data = {contextId: data};
+    }
+    if (data.contextId) {
+      if (data.contextId.groupId && (data.contextId.tool === toolName)) {
+        let dataModified = updateCheckingResourceData(resourcesPath, bookId, data);
+        if (dataModified) {
+          if (isContext) {
+            data = data.contextId;
           }
+          fs.outputJsonSync(filePath, data);
         }
       }
     }
@@ -129,7 +127,9 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
           }
         }
         const contextIdPath = path.join(resourcesPath, book,'currentContextId/contextId.json'); // migrate current contextId
-        updateResourcesForFile(contextIdPath, toolName, resourcesPath, book, true);
+        if (fs.existsSync(contextIdPath)) {
+          updateResourcesForFile(contextIdPath, toolName, resourcesPath, book, true);
+        }
       }
     }
     console.log("copyGroupDataToProject() - migration done");
