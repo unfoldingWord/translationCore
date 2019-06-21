@@ -1,6 +1,5 @@
 import React from 'react';
 import path from 'path-extra';
-import ospath from 'ospath';
 import {ipcRenderer} from 'electron';
 import consts from '../ActionTypes';
 // actions
