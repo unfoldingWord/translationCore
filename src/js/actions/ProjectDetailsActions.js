@@ -36,11 +36,6 @@ export const loadCurrentCheckCategories = (toolName, projectSaveLocation, curren
       .forEach((parentCategory) => {
         availableCheckCategories.push(...availableCheckCategoriesObject[parentCategory]);
       });
-  // TODO: OJO THIS IS A MESSSSS. Subcategories are being set as if they are categories and no category is being set
-
-
-
-      console.log('loadCurrentCheckCategories availableCheckCategories', availableCheckCategories);
     let subCategories = project.getSelectedCategories(toolName);
     subCategories = subCategories.filter((category) => availableCheckCategories.includes(category));
     dispatch(setCategories(subCategories, toolName));
