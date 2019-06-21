@@ -359,8 +359,8 @@ export const saveSelectionsToCSV = (projectPath, translate) => {
             const nothingToSelect = !!data.nothingToSelect;
             const _data = {
               text: '',
-              'occurrence': '',
-              'occurrences': '',
+              occurrence: '',
+              occurrences: '',
               'No selection needed': nothingToSelect.toString(),
             };
             const contextId = data.contextId;
