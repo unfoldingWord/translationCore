@@ -1,6 +1,13 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import {generateTimestamp} from './index';
+import usfm from "usfm-js";
+import {checkSelectionOccurrences} from 'selections';
+import isEqual from 'deep-equal';
+import * as AlertModalActions from '../actions/AlertModalActions';
+import {getTranslate, getToolsByKey} from '../selectors';
+import {loadProjectGroupData} from './ResourcesHelpers';
+const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
 /**
  * @description Copies existing project checks from the old project path to the new project path
@@ -8,7 +15,7 @@ import {generateTimestamp} from './index';
  * @param {String} newProjectPath
  * @param {function} translate
  */
-export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, userName) => {
+export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, userName, dispatch) => {
   // if project path doesn't exist, it must have been deleted after tC was started. We throw an error and tell them to import the project again
   if (fs.existsSync(oldProjectPath) && fs.existsSync(newProjectPath)) {
     let oldAppsPath = path.join(oldProjectPath, '.apps');
@@ -40,7 +47,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
     if (! fs.existsSync(newGitPath) && fs.existsSync(oldGitPath)) {
       fs.copySync(oldGitPath, newGitPath);
     }
-    createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName);
+    dispatch(createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName));
   }
 };
 
@@ -87,33 +94,107 @@ export const getProjectName = (projectPath) => {
 };
 
 export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => {
-  const bookId = getBookId(newProjectPath);
-  const oldBiblePath = path.join(oldProjectPath, bookId);
-  const newBiblePath = path.join(newProjectPath, bookId);
-  if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
-    return;
-  const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
-  chapterFiles.forEach(filename => {
-    try {
-      const chapter = parseInt(path.basename(filename));
-      const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
-      const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
-      Object.keys(newChapterVerses).forEach(verse => {
-        let verseBefore = oldChapterVerses[verse];
-        let verseAfter = newChapterVerses[verse];
-        verse = parseInt(verse);
-        if (verseBefore != verseAfter) {
-          //An external edit happened
-          createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName, generateTimestamp());
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  });
+  return (dispatch, getState) => {
+    const bookId = getBookId(newProjectPath);
+    const oldBiblePath = path.join(oldProjectPath, bookId);
+    const newBiblePath = path.join(newProjectPath, bookId);
+    if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
+      return;
+    const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
+    chapterFiles.forEach(filename => {
+      try {
+        const chapter = parseInt(path.basename(filename));
+        const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
+        const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
+        Object.keys(newChapterVerses).forEach(verse => {
+          let verseBefore = oldChapterVerses[verse];
+          let verseAfter = newChapterVerses[verse];
+          verse = parseInt(verse);
+          if (verseBefore != verseAfter) {
+            //An external edit happened
+            createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName);
+            const tools = getToolsByKey(getState());
+            for (var toolName in tools) {
+              dispatch(validateSelectionsForTool(newProjectPath, chapter, verse, bookId, verseAfter, userName, toolName));
+            }
+          }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  };
 };
 
-export const createExternalVerseEdit = (projectPath, verseBefore, verseAfter, bookId, chapter, verse, userName, modifiedTimestamp) => {
+export function validateSelectionsForTool(projectSaveLocation, chapter, verse, bookId, targetVerse, userName, toolName) {
+  return (dispatch, getState) => {
+    const contextId = {
+      reference: {
+        bookId,
+        chapter: parseInt(chapter),
+        verse: parseInt(verse)
+      }
+    };
+    const groupsData = loadProjectGroupData(toolName, projectSaveLocation);
+    const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId, name);
+    let filtered = null;
+    let selectionsChanged = false;
+    for (let groupItemKey of Object.keys(groupsDataForVerse)) {
+      const groupItem = groupsDataForVerse[groupItemKey];
+      for (let checkingOccurrence of groupItem) {
+        const selections = checkingOccurrence.selections;
+        if (!sameContext(contextId, checkingOccurrence.contextId)) {
+          if (selections && selections.length) {
+            if (!filtered) {  // for performance, we filter the verse only once and only if there is a selection
+              filtered = usfm.removeMarker(targetVerse); // remove USFM markers
+            }
+            const validSelections = checkSelectionOccurrences(filtered, selections);
+            if (selections.length !== validSelections.length) {
+              const selectionsObject = getSelectionsFromChapterAndVerseCombo(
+                bookId,
+                chapter,
+                verse,
+                projectSaveLocation,
+                checkingOccurrence.contextId.quote
+              );
+              //If selections are changed, they need to be clearded
+              selectionsChanged = true;
+              const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bookId, chapter.toString(), verse.toString());
+              const invalidatedPayload = {
+                ...selectionsObject,
+                invalidated: true,
+                selections: [],
+                userName
+              };
+              writeCheckData(invalidatedPayload, invalidatedCheckPath);
+
+              const selectionsCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bookId, chapter.toString(), verse.toString());
+              const selectionsPayload = {
+                ...selectionsObject,
+                selections: [],
+                userName
+              };
+              writeCheckData(selectionsPayload, selectionsCheckPath);
+            }
+          }
+        }
+      }
+    }
+    if (selectionsChanged) {
+      const translate = getTranslate(getState());
+      dispatch(AlertModalActions.openOptionDialog(translate('selections_invalidated')));
+    }
+  };
+}
+
+function writeCheckData(payload = {}, checkPath) {
+  const modifiedTimestamp = generateTimestamp();
+  const newFilename = modifiedTimestamp + '.json';
+  payload.modifiedTimestamp = modifiedTimestamp;
+  fs.outputJSONSync(path.join(checkPath, newFilename.replace(/[:"]/g, '_')), payload);
+}
+
+export const createExternalVerseEdit = (projectPath, verseBefore, verseAfter, bookId, chapter, verse, userName) => {
   const verseEdit = {
     verseBefore,
     verseAfter,
@@ -122,7 +203,6 @@ export const createExternalVerseEdit = (projectPath, verseBefore, verseAfter, bo
     activeBook: 'N/A',
     activeChapter: 'N/A',
     activeVerse: 'N/A',
-    modifiedTimestamp: modifiedTimestamp,
     gatewayLanguageCode: 'N/A',
     gatewayLanguageQuote: 'N/A',
     contextId: {
@@ -135,7 +215,113 @@ export const createExternalVerseEdit = (projectPath, verseBefore, verseAfter, bo
       groupId: 'N/A'
     },
   };
-  const newFilename = modifiedTimestamp + '.json';
   const verseEditsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
-  fs.outputJsonSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
+  writeCheckData(verseEdit, verseEditsPath);
 };
+
+/**
+* @description gets the group data for the current verse from groupsDataReducer
+* @param {Object} groupsData
+* @param {Object} contextId
+* @return {object} group data object.
+*/
+export function getGroupDataForVerse(groupsData, contextId) {
+  const filteredGroupData = {};
+  for (let groupItemKey of Object.keys(groupsData)) {
+    const groupItem = groupsData[groupItemKey];
+    if (groupItem) {
+      for (let check of groupItem) {
+        try {
+          if (isEqual(check.contextId.reference, contextId.reference)) {
+            if (!filteredGroupData[groupItemKey]) {
+              filteredGroupData[groupItemKey] = [];
+            }
+            filteredGroupData[groupItemKey].push(check);
+          }
+        } catch (e) {
+          console.warn(`Corrupt check found in group "${groupItemKey}"`, check);
+        }
+      }
+    }
+  }
+  return filteredGroupData;
+}
+
+/**
+ * returns true if contextIds are a match for reference and group
+ * @param {Object} contextId1
+ * @param {Object} contextId2
+ * @return {boolean}
+ */
+export function sameContext(contextId1, contextId2) {
+  if (!!contextId1 && !!contextId2) {
+    return isEqual(contextId1.reference, contextId2.reference) &&
+      (contextId1.groupId === contextId2.groupId);
+  }
+  return false;
+}
+
+export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, projectSaveLocation, quote = "") {
+  let selectionsObject = {};
+  const contextId = {
+    reference: {
+      bookId,
+      chapter,
+      verse
+    }
+  };
+  const selectionsPath = generateLoadPath(projectSaveLocation, contextId, 'selections');
+
+  if (fs.existsSync(selectionsPath)) {
+    let files = fs.readdirSync(selectionsPath);
+    files = files.filter(file => { // filter the filenames to only use .json
+      return path.extname(file) === '.json';
+    });
+    let sorted = files.sort().reverse(); // sort the files to use latest
+    if (quote) {
+      sorted = sorted.filter((filename) => {
+        const currentSelectionsObject = fs.readJsonSync(path.join(selectionsPath, filename));
+        return JSON.stringify(currentSelectionsObject.contextId.quote) === JSON.stringify(quote);
+      });
+    }
+    const filename = sorted[0];
+    selectionsObject = fs.readJsonSync(path.join(selectionsPath, filename));
+  }
+  return selectionsObject;
+}
+
+
+/**
+ * Generates the output directory.
+ * @param {Object} state - store state object.
+ * @param {String} checkDataName - checkDate folder name where data will be saved.
+ *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
+ * @return {String} save path
+ */
+export function generateLoadPath(projectSaveLocation, contextId, checkDataName) {
+  /**
+  * @description output directory
+  *  /translationCore/ar_eph_text_ulb/.apps/translationCore/checkData/comments/eph/1/3
+  * @example PROJECT_SAVE_LOCATION - /translationCore/ar_eph_text_ulb
+  * @example CHECKDATA_DIRECTORY - /.apps/translationCore/checkData
+  * @example bookAbbreviation - /eph
+  * @example checkDataName - /comments
+  * @example chapter - /1
+  * @example verse - /3
+  */
+  const PROJECT_SAVE_LOCATION = projectSaveLocation;
+  if (PROJECT_SAVE_LOCATION) {
+    let bookAbbreviation = contextId.reference.bookId;
+    let chapter = contextId.reference.chapter.toString();
+    let verse = contextId.reference.verse.toString();
+    let loadPath = path.join(
+      PROJECT_SAVE_LOCATION,
+      CHECKDATA_DIRECTORY,
+      checkDataName,
+      bookAbbreviation,
+      chapter,
+      verse
+    );
+    return loadPath;
+  }
+}
