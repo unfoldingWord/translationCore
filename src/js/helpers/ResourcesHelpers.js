@@ -27,7 +27,6 @@ import {
   TC_VERSION,
   SOURCE_CONTENT_UPDATER_MANIFEST,
   USER_RESOURCES_PATH,
-  testResourcesPath,
   toolCardCategories,
   STATIC_RESOURCES_PATH,
 } from '../common/constants';
@@ -677,10 +676,9 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
   return resources;
 }
 
-export function getGLQuote(languageId, groupId, toolName, isTest) {
+export function getGLQuote(languageId, groupId, toolName) {
   try {
-    const rootPath = isTest ? testResourcesPath : USER_RESOURCES_PATH;
-    const GLQuotePathWithoutVersion = path.join(rootPath, languageId, "translationHelps", toolName);
+    const GLQuotePathWithoutVersion = path.join(USER_RESOURCES_PATH, languageId, "translationHelps", toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(GLQuotePathWithoutVersion);
     const GLQuotePathIndex = path.join(versionDirectory, "kt", "index.json");
     const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);

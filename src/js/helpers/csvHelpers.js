@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from "ospath";
 import csv from 'csv';
 // helpers
 import * as groupsIndexHelpers from './groupsIndexHelpers';
@@ -10,41 +9,30 @@ import * as localizationHelpers from './localizationHelpers';
 import * as ResourcesActions from "../actions/ResourcesActions";
 import * as gatewayLanguageHelpers from "./gatewayLanguageHelpers";
 // constants
-export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");
-const tHelpsPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
-export const TestThelpsPath = path.join('__tests__', 'fixtures', 'resources', 'en', 'translationHelps');
+import {THELPS_RESOURCES_PATH} from "../common/constants";
+
 let tWIndex = [];
 let tNIndex = [];
-let cachedForTest = false;
 
  /**
   * To prevent these files from being read in for every groupName lookup, read them in once.
-  * @param {boolean} isTest - for unit tests purposes
   */
-function cacheIndicies(isTest) {
-  // skip loading if indicies have already been loaded
-   // unless previously for a test or this is a test, then we want to reload
-  if(! cachedForTest && tWIndex.length > 0 && tNIndex.length > 0) {
-    return;
-  }
+function cacheIndicies() {
   // load tW indices
-  tWIndex = loadToolIndices('translationWords', isTest);
+  tWIndex = loadToolIndices('translationWords');
   // load tN indices
-  tNIndex = loadToolIndices('translationNotes', isTest);
-  cachedForTest = isTest;
+  tNIndex = loadToolIndices('translationNotes');
 }
 
 /**
  * Loops through a tool's category subdirs to make a flattened list of the indexes with id and name
  * @param {string} toolName - the name of the tool in the same case as its resource directory
- * @param {boolean} isTest - for unit test purposes
  * @return {array}
  */
-function loadToolIndices(toolName, isTest) {
+function loadToolIndices(toolName) {
   let index = [];
   try {
-    const thPath = isTest ? TestThelpsPath : tHelpsPath;
-    const toolPath = path.join(thPath, toolName);
+    const toolPath = path.join(THELPS_RESOURCES_PATH, toolName);
     let versionPath = ResourceAPI.getLatestVersion(toolPath) || toolPath;
     if (fs.pathExistsSync(versionPath)) {
       const isDirectory = (item) => fs.lstatSync(path.join(versionPath, item)).isDirectory();
@@ -77,11 +65,10 @@ function loadToolIndices(toolName, isTest) {
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
  * @param {function} translate - the translation function
- * @param {boolean} isTest - for testing purposes
  * @return {object}
  */
-export function combineData(data, contextId, username, timestamp, translate, isTest = false) {
-  const flatContextId = flattenContextId(contextId, translate, isTest);
+export function combineData(data, contextId, username, timestamp, translate) {
+  const flatContextId = flattenContextId(contextId, translate);
   const userTimestamp = userTimestampObject(username, timestamp);
   return Object.assign({}, data, flatContextId, userTimestamp);
 }
@@ -89,19 +76,18 @@ export function combineData(data, contextId, username, timestamp, translate, isT
  * @description - flattens the context id for csv usage
  * @param {object} contextId - contextID object that needs to go onto the csv row
  * @param {function} translate - translation function
- * @param {boolean} isTest - for unit tests purposes
  * @return {object}
  */
-export const flattenContextId = (contextId, translate, isTest = false) => {
+export const flattenContextId = (contextId, translate) => {
   // tN has gatewayLanguageQuotes, but tW doesn't so we need to get it from the English ULT for now
   if (contextId.tool === 'translationWords' && ! contextId.glQuote) {
     contextId = getGLQuote(contextId);
   }
   return {
     tool: contextId.tool,
-    type: groupCategoryTranslated(contextId, translate, isTest),
+    type: groupCategoryTranslated(contextId, translate),
     groupId: contextId.groupId,
-    groupName: groupName(contextId, isTest),
+    groupName: groupName(contextId),
     occurrence: contextId.occurrence,
     quote: flattenQuote(contextId.quote),
     gatewayLanguageCode: contextId.glCode || 'N/A',
@@ -149,11 +135,10 @@ export const flattenQuote = quote => {
  * @description - Returns the corresponding group name i.e. Metaphor
  * when given the group id of figs-metaphor
  * @param {Object} contextId - context id to get toolName and groupName
- * @param {boolean} isTest - for unit tests purposes
  * @return {string}
  */
-export const groupName = (contextId, isTest) => {
-  cacheIndicies(isTest);
+export const groupName = (contextId) => {
+  cacheIndicies();
 
   let indexArray;
   let {tool, groupId} = contextId;
@@ -189,13 +174,13 @@ export const groupName = (contextId, isTest) => {
  * @description - Returns the corresponding group parent category, i.e. figures
  * when given the group id of figs-metaphor
  * @param {Object} contextId - context id to get toolName and groupName
- * @param {boolean} isTest - for unit tests purposes
  * @return {string}
  */
-export const groupCategory = (contextId, isTest = false) => {
-  cacheIndicies(isTest);
+export const groupCategory = (contextId) => {
+  cacheIndicies();
 
-  let indexArray;
+  let indexArray
+  ;
   let {tool, groupId} = contextId;
   switch (tool) {
     case 'translationNotes':
@@ -225,11 +210,10 @@ export const groupCategory = (contextId, isTest = false) => {
  * @description - Returns the human readable (translated) string of the group category
  * @param {Object} contextId - context id to get toolName and groupName
  * @param {function} translate - translation function
- * @param {boolean} isTest - for unit tests purposes
  * @return {string}
  */
-export const groupCategoryTranslated = (contextId, translate, isTest = false) => {
-  const category = groupCategory(contextId, isTest);
+export const groupCategoryTranslated = (contextId, translate) => {
+  const category = groupCategory(contextId);
   if (category) {
     // We return the translation, unless that tool_card_categories.<category> doesn't exist, then just return category
     return localizationHelpers.getTranslation(translate, 'tool_card_categories.' + category, category);

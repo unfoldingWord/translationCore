@@ -1,10 +1,10 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
-jest.unmock('fs-extra');
-//helpers
-import * as csvHelpers from '../src/js/helpers/csvHelpers';
 import fs from 'fs-extra';
 import path from 'path-extra';
+//helpers
+import * as csvHelpers from '../src/js/helpers/csvHelpers';
+import {USER_RESOURCES_PATH} from "../src/js/common/constants";
 
 const checksPerformedPath = path.join(__dirname, 'fixtures/project/csv/checks_performed/fr_eph_text_ulb');
 
@@ -43,8 +43,15 @@ const autographaContextId = {
   tool: "Autographa",
   groupId: "1"
 };
+const fixturesDir = path.join(__dirname, 'fixtures');
+const resourcesDir = path.join(fixturesDir, 'resources');
+const projectDir = path.join(fixturesDir, 'project');
 
-const isTest = true;
+beforeAll(() => {
+  fs.__resetMockFS();
+  fs.__loadDirIntoMockFs(resourcesDir, USER_RESOURCES_PATH);
+  fs.__loadDirIntoMockFs(projectDir, projectDir);
+});
 
 describe('csvHelpers.flattenContextId', () => {
   test('should return a groupName for tW', () => {
@@ -63,7 +70,7 @@ describe('csvHelpers.flattenContextId', () => {
       occurrence: 1
     };
     const translate = key => key.split('.')[1];
-    const flatContextId = csvHelpers.flattenContextId(tWContextId, translate, isTest);
+    const flatContextId = csvHelpers.flattenContextId(tWContextId, translate);
     expect(flatContextId).toEqual(_flatContextId);
   });
 });
@@ -100,22 +107,22 @@ describe('csvHelpers.flattenQuote', () => {
 
 describe('csvHelpers.groupName', () => {
   test('should return a groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWContextId, isTest);
+    const groupName = csvHelpers.groupName(tWContextId);
     expect(groupName).toEqual('apostle, apostleship');
   });
 
   test('should return an `other` groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWotherContextId, isTest);
+    const groupName = csvHelpers.groupName(tWotherContextId);
     expect(groupName).toEqual('confidence, confident');
   });
 
   test('should return a groupName for tN', () => {
-    const groupName = csvHelpers.groupName(tNContextId, isTest);
+    const groupName = csvHelpers.groupName(tNContextId);
     expect(groupName).toEqual('Metaphor');
   });
 
   test('should return a groupId as groupName for Autographa', () => {
-    const groupName = csvHelpers.groupName(autographaContextId, isTest);
+    const groupName = csvHelpers.groupName(autographaContextId);
     expect(groupName).toEqual('1');
   });
 });
@@ -142,7 +149,7 @@ describe('csvHelpers.combineData', () => {
     };
     const data = {enabled: true};
     const translate = key => key.split('.')[1];
-    const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z', translate, isTest);
+    const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z', translate);
     // Due to timezone issues this is a pain to test.
     _combinedData.date = combinedData.date;
     _combinedData.time = combinedData.time;

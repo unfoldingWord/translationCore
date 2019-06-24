@@ -12,7 +12,7 @@ import * as ProjectImportStepperActions
 import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 // helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
-import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
+import {USER_RESOURCES_PATH} from '../src/js/common/constants';
 
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
@@ -39,8 +39,6 @@ const testOutputPath = path.join(__dirname, 'output');
 
 const fixtures = path.join(__dirname, 'fixtures');
 const project = path.join(fixtures, 'project');
-const resourcesDir = path.join(__dirname,
-  '../tcResources/en/translationHelps');
 const outDir = path.join(testOutputPath, '1');
 
 beforeAll(() =>
@@ -48,8 +46,7 @@ beforeAll(() =>
   fs.__resetMockFS();
   fs.ensureDirSync(outDir);
   fs.__loadDirIntoMockFs(project, project);
-  fs.__loadDirIntoMockFs(resourcesDir, resourcesDir);
-  fs.__loadDirIntoMockFs(path.join(fixtures, 'resources'), ResourcesHelpers.USER_RESOURCES_PATH);
+  fs.__loadDirIntoMockFs(path.join(fixtures, 'resources'), USER_RESOURCES_PATH);
 });
 
 describe('csv export actions', () => {
