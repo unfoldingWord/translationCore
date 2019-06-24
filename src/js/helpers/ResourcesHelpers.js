@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import fs from "fs-extra";
 import path from "path-extra";
-import ospath from "ospath";
 import AdmZip from "adm-zip";
 import isEqual from "deep-equal";
+import _ from "lodash";
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
 import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
@@ -13,7 +13,6 @@ import {
   getToolGatewayLanguage,
   getBibles
 } from "../selectors";
-import _ from "lodash";
 import ProjectAPI from "./ProjectAPI";
 import ResourceAPI from "./ResourceAPI";
 import {
@@ -21,16 +20,17 @@ import {
   generateChapterGroupIndex
 } from "./groupDataHelpers";
 import * as Bible from "../common/BooksOfTheBible";
-import {APP_VERSION} from "../containers/home/HomeContainer";
 import {generateTimestamp} from "./TimestampGenerator";
 // constants
-export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
-  "resources");
-export const STATIC_RESOURCES_PATH = path.join(__dirname,
-  "../../../tcResources");
-const testResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-export const TC_VERSION = "tc_version";
-export const SOURCE_CONTENT_UPDATER_MANIFEST = "source-content-updater-manifest.json";
+import {
+  APP_VERSION,
+  TC_VERSION,
+  SOURCE_CONTENT_UPDATER_MANIFEST,
+  USER_RESOURCES_PATH,
+  testResourcesPath,
+  toolCardCategories,
+  STATIC_RESOURCES_PATH,
+} from '../common/constants';
 
 /**
  * update old resource data
@@ -104,32 +104,38 @@ function updateResourcesForFile(filePath, toolName, resourcesPath, bookId, isCon
  */
 export function migrateOldCheckingResourceData(projectDir, toolName) {
   const checksPath = path.join(projectDir, '.apps/translationCore/checkData');
-  const resourcesPath = path.join(projectDir, '.apps/translationCore/index', toolName);
-  const checks = getFoldersInResourceFolder(checksPath);
-  for (let check of checks) {
-    console.log(`copyGroupDataToProject() - migrating ${check} to new format`);
-    const checkPath = path.join(checksPath, check);
-    const books = getFoldersInResourceFolder(checkPath);
-    for (let book of books) {
-      const bookPath = path.join(checkPath, book);
-      const chapters = getFoldersInResourceFolder(bookPath);
-      for (let chapter of chapters) {
-        const chapterPath = path.join(bookPath, chapter);
-        const verses = getFoldersInResourceFolder(chapterPath);
-        for (let verse of verses) {
-          const versePath = path.join(chapterPath, verse);
-          const files = getFilesInResourcePath(versePath, ".json");
-          for (let file of files) {
-            const filePath = path.join(versePath, file);
-            updateResourcesForFile(filePath, toolName, resourcesPath, book);
+  if (fs.existsSync(checksPath)) {
+    const resourcesPath = path.join(projectDir, '.apps/translationCore/index', toolName);
+    const checks = getFoldersInResourceFolder(checksPath);
+    if (checks) {
+      for (let check of checks) {
+        console.log(`copyGroupDataToProject() - migrating ${check} to new format`);
+        const checkPath = path.join(checksPath, check);
+        const books = getFoldersInResourceFolder(checkPath);
+        for (let book of books) {
+          const bookPath = path.join(checkPath, book);
+          const chapters = getFoldersInResourceFolder(bookPath);
+          for (let chapter of chapters) {
+            const chapterPath = path.join(bookPath, chapter);
+            const verses = getFoldersInResourceFolder(chapterPath);
+            for (let verse of verses) {
+              const versePath = path.join(chapterPath, verse);
+              const files = getFilesInResourcePath(versePath, ".json");
+              for (let file of files) {
+                const filePath = path.join(versePath, file);
+                updateResourcesForFile(filePath, toolName, resourcesPath, book);
+              }
+            }
+          }
+          const contextIdPath = path.join(resourcesPath, book, 'currentContextId/contextId.json'); // migrate current contextId
+          if (fs.existsSync(contextIdPath)) {
+            updateResourcesForFile(contextIdPath, toolName, resourcesPath, book, true);
           }
         }
       }
-      const contextIdPath = path.join(resourcesPath, book,'currentContextId/contextId.json'); // migrate current contextId
-      updateResourcesForFile(contextIdPath, toolName, resourcesPath, book, true);
     }
+    console.log("copyGroupDataToProject() - migration done");
   }
-  console.log("copyGroupDataToProject() - migration done");
 }
 
 /**
@@ -224,26 +230,29 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
       throw new Error(`Missing translationHelp categories for ${toolName}`);
     }
     for (let category of categories) {
-      const subCategories = [];
-      // TRICKY: some helps do not have groups nested under categories
-      const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
-      const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
-      let groupsDir = resourceCategoryDir;
-      if (!fs.pathExistsSync(resourceCategoryDir)) {
-        groupsDir = altResourceCategoryDir;
-      }
-      // copy un-loaded category group data into project
-      if (fs.pathExistsSync(groupsDir)) {
-        const files = fs.readdirSync(groupsDir);
-        for (const f of files) {
-          if (path.extname(f).toLowerCase() === ".json") {
-            subCategories.push(path.basename(f.toLowerCase(), ".json"));
+      if (Object.keys(toolCardCategories).includes(category)) {
+        const subCategories = [];
+        // TRICKY: some helps do not have groups nested under categories
+        const resourceCategoryDir = path.join(helpDir, category, 'groups', project.getBookId());
+        const altResourceCategoryDir = path.join(helpDir, 'groups', project.getBookId());
+        let groupsDir = resourceCategoryDir;
+        if (!fs.pathExistsSync(resourceCategoryDir)) {
+          groupsDir = altResourceCategoryDir;
+        }
+        // copy un-loaded category group data into project
+        if (fs.pathExistsSync(groupsDir)) {
+          const files = fs.readdirSync(groupsDir);
+          for (const f of files) {
+            if (path.extname(f).toLowerCase() === ".json") {
+              subCategories.push(path.basename(f.toLowerCase(), ".json"));
+            }
           }
         }
+        categoriesObj[category] = subCategories;
       }
-      categoriesObj[category] = subCategories;
     }
   }
+
   return categoriesObj;
 }
 
@@ -403,7 +412,7 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
       fs.removeSync(contentZipPath);
     }
   } else {
-    console.log(`${contentZipPath}, Path Does not exist`);
+    console.warn(`${contentZipPath}, Path Does not exist`);
   }
 };
 
@@ -606,7 +615,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
             }
           });
         } else {
-          console.log("Directory not found, " + biblesPath);
+          console.warn("Directory not found, " + biblesPath);
         }
       });
     } catch (err) {
@@ -649,7 +658,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
       }
     }
   } else {
-    console.log("No Scripture Pane Configuration");
+    console.warn("No Scripture Pane Configuration");
   }
   addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
   const gatewayLangId = getToolGatewayLanguage(state, toolName);
@@ -698,9 +707,8 @@ export function getAllLanguageIdsFromResourceFolder(user) {
  */
 export function getFoldersInResourceFolder(resourcePath) {
   try {
-    let folders = fs.readdirSync(resourcePath).
-      filter(
-        folder => fs.lstatSync(path.join(resourcePath, folder)).isDirectory()); // filter out anything not a folder
+    const folders = fs.readdirSync(resourcePath).filter(folder =>
+      fs.lstatSync(path.join(resourcePath, folder)).isDirectory()); // filter out anything not a folder
     return folders;
   } catch (error) {
     console.error(error);

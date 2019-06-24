@@ -1,6 +1,5 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "../actions/AlertModalActions";
 import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
@@ -15,8 +14,8 @@ import * as BooksOfTheBible from "../common/BooksOfTheBible";
 import * as BibleHelpers from "./bibleHelpers";
 import ResourceAPI from "./ResourceAPI";
 import {getFoldersInResourceFolder} from "./ResourcesHelpers";
-export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+// constants
+import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../common/constants';
 
 /**
  * function to make the change in the array based on the passed params

@@ -1,12 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+// helpers
 import * as ProjectOverwriteHelpers from '../src/js/helpers/ProjectOverwriteHelpers';
-
+// constants
+import { PROJECTS_PATH, IMPORTS_PATH } from '../src/js/common/constants';
 const BOOK_ID = 'tit';
-const PROJECT_NAME = 'en_ulb_'+BOOK_ID+'_text';
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const PROJECT_NAME = 'en_ulb_' + BOOK_ID + '_text';
 const PROJECT_PATH = path.join(PROJECTS_PATH, PROJECT_NAME);
 const IMPORT_PATH = path.join(IMPORTS_PATH, PROJECT_NAME);
 

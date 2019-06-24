@@ -2,7 +2,6 @@ import React from 'react';
 import consts from '../ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 //actions
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
@@ -21,11 +20,10 @@ import {
 } from "../ProjectInformationCheckActions";
 import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // constants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+import { PROJECTS_PATH, IMPORTS_PATH } from '../../common/constants';
 
 /**
- * @description Action that call helpers to handle business
+ * Action that call helpers to handle business
  * logic for validations
  * @param {String} projectPath - Full path to the project root folder
  */

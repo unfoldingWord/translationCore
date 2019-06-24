@@ -1,15 +1,15 @@
 import path from "path-extra";
-import ospath from "ospath";
 import fs from "fs-extra";
 import {generateTimestamp} from "./TimestampGenerator";
 // actions
 import {loadCheckData} from '../actions/CheckDataLoadActions';
-import {SOURCE_CONTENT_UPDATER_MANIFEST} from '../helpers/ResourcesHelpers';
 // constants
-export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore",
-  "resources");
-const PROJECT_TC_DIR = path.join('.apps', 'translationCore');
-const CHECKDATA_DIRECTORY = path.join(PROJECT_TC_DIR, 'checkData');
+import {
+  USER_RESOURCES_PATH,
+  PROJECT_DOT_APPS_PATH,
+  PROJECT_CHECKDATA_DIRECTORY,
+  SOURCE_CONTENT_UPDATER_MANIFEST,
+} from '../common/constants';
 
 const toolCategoryMapping = {};
 
@@ -24,7 +24,7 @@ export default class ProjectAPI {
    */
   constructor(projectDir) {
     this._projectPath = projectDir;
-    this._dataPath = path.join(projectDir, PROJECT_TC_DIR);
+    this._dataPath = path.join(projectDir, PROJECT_DOT_APPS_PATH);
     this._manifest = null;
 
     this.writeDataFile = this.writeDataFile.bind(this);
@@ -106,7 +106,7 @@ export default class ProjectAPI {
               const {bookId, chapter, verse} = groupDataItem.contextId.reference;
               const loadPath = path.join(
                 this._projectPath,
-                CHECKDATA_DIRECTORY,
+                PROJECT_CHECKDATA_DIRECTORY,
                 'selections',
                 bookId,
                 chapter.toString(),
@@ -472,6 +472,10 @@ export default class ProjectAPI {
           });
           return objectWithParentCategories;
         } else {
+          // fix for toolcard bug produced in 1.1.4 where only one subcategory was saved for tw
+          if (data.current.length === 1 && toolName === 'translationWords') {
+            return [];
+          }
           return data.current;
         }
       } catch (e) {

@@ -2,10 +2,10 @@ jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from "path-extra";
 import ProjectAPI from "../ProjectAPI";
-import {APP_VERSION} from "../../containers/home/HomeContainer";
+// constants
+import { APP_VERSION } from '../../common/constants';
 
 describe('ProjectAPI', () => {
-
   beforeEach(() => {
     jest.resetAllMocks();
   });

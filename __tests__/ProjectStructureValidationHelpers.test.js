@@ -1,13 +1,17 @@
 import fs from 'fs-extra';
 import path from "path-extra";
-import ospath from "ospath";
 import _ from "lodash";
 import semver from "semver";
+// helpers
 import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
-import packagefile from '../package.json';
-import {tc_MIN_VERSION_ERROR} from "../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers";
-
+import {
+  APP_VERSION,
+  tc_MIN_VERSION_ERROR,
+  tc_EDIT_VERSION_KEY,
+  tc_MIN_COMPATIBLE_VERSION_KEY,
+  PROJECTS_PATH,
+} from '../src/js/common/constants';
 // projects
 const obs_project_1 = path.join(__dirname, 'fixtures/project/projectVerification/obs_project_1');
 const obs_project_2 = path.join(__dirname, 'fixtures/project/projectVerification/obs_project_2');
@@ -20,9 +24,6 @@ const nobooks_project = path.join(__dirname, 'fixtures/project/projectVerificati
 const en_ta_project = path.join(__dirname, 'fixtures/project/projectVerification/en_ta');
 const en_tw_project = path.join(__dirname, 'fixtures/project/projectVerification/en_tw');
 const en_tn_project = path.join(__dirname, 'fixtures/project/projectVerification/en_tn');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
-const APP_VERSION = packagefile.version;
 
 describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
   const projectName = "en_tit";
@@ -388,14 +389,14 @@ function makeProject_version(projectPath, editVersion, minVersion) {
   const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
   manifest.tc_version = 5;
   if (minVersion !== null) {
-    manifest[ProjectStructureValidationHelpers.tc_MIN_COMPATIBLE_VERSION_KEY] = minVersion;
+    manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = minVersion;
   } else {
-    delete manifest[ProjectStructureValidationHelpers.tc_MIN_COMPATIBLE_VERSION_KEY];
+    delete manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
   }
   if (editVersion !== null) {
-    manifest[ProjectStructureValidationHelpers.tc_EDIT_VERSION_KEY] = editVersion;
+    manifest[tc_EDIT_VERSION_KEY] = editVersion;
   } else {
-    delete manifest[ProjectStructureValidationHelpers.tc_EDIT_VERSION_KEY];
+    delete manifest[tc_EDIT_VERSION_KEY];
   }
   manifestUtils.saveProjectManifest(projectPath, manifest);
 }

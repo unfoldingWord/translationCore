@@ -1,14 +1,13 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 //helpers
 import * as manifestHelpers from '../manifestHelpers';
 // constants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+import { PROJECTS_PATH, IMPORTS_PATH } from '../../common/constants';
 const TEMP_DIR = IMPORTS_PATH + "-old";
+
 /**
- * @description Import Helpers for moving projects to `~/translationCore/imports` while importing
+ * Import Helpers for moving projects to `~/translationCore/imports` while importing
  * and to `~/translationCore/projects` after migrations and validation.
  * @param {String} projectName
  * @param translate
@@ -107,10 +106,18 @@ export function getProjectsByType(tLId, bookId, resourceId) {
  */
 export const deleteImportsFolder = () => {
   console.log("deleteImportsFolder()");
-  if (fs.existsSync(IMPORTS_PATH)) {
-    fs.renameSync(IMPORTS_PATH, TEMP_DIR);
-    fs.removeSync(TEMP_DIR);
-  }
+  return new Promise((resolve, reject) => {
+    try {
+      if (fs.existsSync(IMPORTS_PATH)) {
+        fs.renameSync(IMPORTS_PATH, TEMP_DIR);
+        fs.removeSync(TEMP_DIR);
+      }
+      resolve();
+    } catch (err) {
+      console.error(err);
+      reject(err);
+    }
+  });
 };
 
 /**

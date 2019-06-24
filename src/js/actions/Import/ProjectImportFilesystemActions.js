@@ -1,15 +1,14 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
-import { getTranslate } from '../../selectors';
 // helpers
 import * as ProjectImportFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
+import { getTranslate } from '../../selectors';
 import {delay} from "../../common/utils";
 // actions
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as AlertModalActions from '../AlertModalActions';
 // constants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+import { IMPORTS_PATH } from '../../common/constants';
 
 /**
  * @description Moves a project from imports folder to projects folder

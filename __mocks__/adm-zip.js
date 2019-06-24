@@ -1,9 +1,8 @@
 'use strict';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 // constant
-const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');
+import { TEMP_IMPORT_PATH } from '../src/js/common/constants';
 
 class AdmZip {
   constructor(sourcePath) {

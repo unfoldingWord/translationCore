@@ -1,17 +1,14 @@
-import * as UsfmHelpers from "../src/js/helpers/usfmHelpers";
-
 jest.mock('fs-extra');
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
-// helpers
-import * as UsfmFileConversionHelpers from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
 import usfm from "usfm-js";
+// helpers
+import * as UsfmHelpers from "../src/js/helpers/usfmHelpers";
+import * as UsfmFileConversionHelpers from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
 import {getUsfmForVerseContent} from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
 // constants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+import { USER_RESOURCES_PATH, IMPORTS_PATH } from '../src/js/common/constants';
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
 const usfmFilePath = path.join('path', 'to', 'project', 'eph.usfm');
 const invalidUsfmRejectionMessage = (
@@ -235,7 +232,7 @@ describe('UsfmFileConversionHelpers', () => {
         }
       };
       const copyFiles = ['el-x-koine/bibles/ugnt/v0.2/act'];
-      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
       const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'act');
       const testDataPath = path.join('__tests__', 'fixtures', 'project', 'alignmentUsfmImport', 'acts_1_milestone.usfm');
       const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
@@ -282,10 +279,9 @@ describe('UsfmFileConversionHelpers', () => {
       const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'tit');
       const testDataPath = path.join('__tests__', 'fixtures', 'project', 'alignmentUsfmImport', '57-TIT.usfm');
       const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
-      const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
       const resourcePath = path.join(__dirname, 'fixtures/resources');
       const copyFiles = ['el-x-koine/bibles/ugnt'];
-      fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+      fs.__loadFilesIntoMockFs(copyFiles, resourcePath, USER_RESOURCES_PATH);
       const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
       //when
@@ -325,10 +321,9 @@ describe('UsfmFileConversionHelpers', () => {
       const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'tit');
       const testDataPath = path.join('__tests__', 'fixtures', 'project', 'alignmentUsfmImport', '57-TIT.partial.usfm');
       const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
-      const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
       const resourcePath = path.join(__dirname, 'fixtures/resources');
       const copyFiles = ['el-x-koine/bibles/ugnt'];
-      fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+      fs.__loadFilesIntoMockFs(copyFiles, resourcePath, USER_RESOURCES_PATH);
       const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
       //when

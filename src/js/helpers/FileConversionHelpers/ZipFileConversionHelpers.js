@@ -1,13 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 import AdmZip from 'adm-zip';
 // contstants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');
+import { IMPORTS_PATH, TEMP_IMPORT_PATH } from '../../common/constants';
 
 /**
- * @description unzips a `*.tStudio` or a `*.tCore` file to atemporary
+ * unzips a `*.tStudio` or a `*.tCore` file to atemporary
  * folder path in tC imports folder and then moves it into tC imports folder.
  * @param sourceProjectPath
  * @param selectedProjectFilename

@@ -1,18 +1,16 @@
-import consts from "../../actions/ActionTypes";
 import path from "path-extra";
-import ospath from "ospath";
+import fs from "fs-extra";
 // actions
+import consts from "../../actions/ActionTypes";
 import * as ProjectValidationActions from "./ProjectValidationActions";
-import {deleteProjectFromImportsFolder} from "../../helpers/Import/ProjectImportFilesystemHelpers";
+import {deleteImportsFolder, deleteProjectFromImportsFolder} from "../../helpers/Import/ProjectImportFilesystemHelpers";
 import * as AlertModalActions from "../../actions/AlertModalActions";
-import * as OnlineModeConfirmActions
-  from "../../actions/OnlineModeConfirmActions";
+import * as OnlineModeConfirmActions from "../../actions/OnlineModeConfirmActions";
 import * as ProjectImportStepperActions from "../ProjectImportStepperActions";
 import * as MyProjectsActions from "../MyProjects/MyProjectsActions";
 import * as ProjectLoadingActions from "../MyProjects/ProjectLoadingActions";
 import * as ProjectDetailsActions from "../ProjectDetailsActions";
-import * as ProjectInformationCheckActions
-  from "../ProjectInformationCheckActions";
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 import * as ProjectImportFilesystemActions from "./ProjectImportFilesystemActions";
 // helpers
 import * as TargetLanguageHelpers from "../../helpers/TargetLanguageHelpers";
@@ -28,26 +26,18 @@ import {
   getUsername
 } from "../../selectors";
 import * as FileConversionHelpers from "../../helpers/FileConversionHelpers";
-import * as ProjectFilesystemHelpers
-  from "../../helpers/Import/ProjectImportFilesystemHelpers";
 import * as ProjectDetailsHelpers from "../../helpers/ProjectDetailsHelpers";
 import migrateProject from "../../helpers/ProjectMigration";
-import fs from "fs-extra";
 import Repo from "../../helpers/Repo";
-import {
-  isProjectSupported,
-  tc_MIN_VERSION_ERROR
-} from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
+import { isProjectSupported } from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import { openProject } from "../MyProjects/ProjectLoadingActions";
 import {showInvalidVersionError} from "../MyProjects/ProjectLoadingActions";
 import {delay} from '../../common/utils';
-
-//consts
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-
+//constants
+import { tc_MIN_VERSION_ERROR, IMPORTS_PATH } from '../../common/constants';
 
 /**
- * @description Action that dispatches other actions to wrap up online importing
+ * Action that dispatches other actions to wrap up online importing
  */
 export const onlineImport = () => {
   return (dispatch, getState) => {
@@ -57,7 +47,7 @@ export const onlineImport = () => {
         let importProjectPath = '';
         let link = '';
         try {
-          ProjectFilesystemHelpers.deleteImportsFolder();
+          await deleteImportsFolder();
           // Must allow online action before starting actions that access the internet
           link = getState().importOnlineReducer.importLink.trim();
           console.log("onlineImport() - link=" + link);
