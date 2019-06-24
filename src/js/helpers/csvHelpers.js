@@ -139,6 +139,8 @@ export const getGLQuote = (contextId) => {
 export const flattenQuote = quote => {
   if (Array.isArray(quote)) {
     quote = quote.map(item => item.word).join(" ");
+    // remove space before any punctuation that is used in Greek except `...` and `…`
+    quote = quote.replace(/\s+(?!\.\.\.)(?!…)([.,;'’`?!"]+)/g, '$1');
   }
   return quote;
 };
@@ -283,7 +285,7 @@ export function getToolFolderNames(projectPath) {
   let toolsPath = path.join(_dataPath, 'index');
   if (fs.existsSync(toolsPath)) {
     let toolNames = fs.readdirSync(toolsPath)
-    .filter(file => { return fs.lstatSync(path.join(toolsPath, file)).isDirectory() });
+    .filter(file => fs.lstatSync(path.join(toolsPath, file)).isDirectory());
     return toolNames;
     // TODO: check to see if it is a directory and only return those
   } else {

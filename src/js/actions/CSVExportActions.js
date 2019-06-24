@@ -147,11 +147,14 @@ export const saveAllCSVData = (projectPath, translate) => {
     }
     let iterablePromises = [];
     toolNames.forEach((toolName) => {
-      const p = new Promise((_resolve) => {
-        return saveToolDataToCSV(toolName, projectPath, translate)
-          .then(_resolve);
-      });
-      iterablePromises.push(p);
+      // Generate CheckInformation.csv for all tools EXCEPT wordAlignment
+      if (toolName !== 'wordAlignment') {
+        const p = new Promise((_resolve) => {
+          return saveToolDataToCSV(toolName, projectPath, translate)
+            .then(_resolve);
+        });
+        iterablePromises.push(p);
+      }
     });
     Promise.all(iterablePromises)
       .then(() => saveVerseEditsToCSV(projectPath, translate))
