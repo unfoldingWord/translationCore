@@ -1,8 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
 import ospath from 'ospath';
 import * as ProjectOverwriteHelpers from '../src/js/helpers/ProjectOverwriteHelpers';
-
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 const BOOK_ID = 'tit';
 const PROJECT_NAME = 'en_ulb_'+BOOK_ID+'_text';
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -23,13 +26,14 @@ describe('ProjectOverwriteHelpers.mergeOldProjectToNewProject() tests', () => {
   });
 
   it('mergeOldProjectToNewProject() test usfm2 import preserves all checks and alignments', () => {
+    const mockDispatch = jest.fn(() => {});
     // given
     const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
     const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm2', PROJECT_NAME);
     fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
     fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
     // when
-    ProjectOverwriteHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
+    ProjectOverwriteHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate, mockDispatch);
     // then
     const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
     const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
@@ -46,16 +50,18 @@ describe('ProjectOverwriteHelpers.mergeOldProjectToNewProject() tests', () => {
         });
       });
     });
+    expect(mockDispatch).toHaveBeenCalled();
   });
 
   it('mergeOldProjectToNewProject() test usfm3 import preserves all checks', () => {
     // given
+    const mockDispatch = jest.fn(() => {});
     const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
     const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm3', PROJECT_NAME);
     fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
     fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
     // when
-    ProjectOverwriteHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
+    ProjectOverwriteHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate, mockDispatch);
     // then
     const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
     const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
@@ -72,6 +78,7 @@ describe('ProjectOverwriteHelpers.mergeOldProjectToNewProject() tests', () => {
         });
       });
     });
+    expect(mockDispatch).toHaveBeenCalled();
   });
 });
 
@@ -86,7 +93,8 @@ describe('ProjectOverwriteHelpers.createVerseEditsForAllChangedVerses() tests', 
     const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm2', PROJECT_NAME);
     fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
     fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
-    ProjectOverwriteHelpers.createVerseEditsForAllChangedVerses(PROJECT_PATH, IMPORT_PATH);
+    const store = mockStore({});
+    store.dispatch(ProjectOverwriteHelpers.createVerseEditsForAllChangedVerses(PROJECT_PATH, IMPORT_PATH));
     const expectedVerseEditsCount = 1;
     const expectedVerseBefore = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,";
     const expectedVerseAfter = "Paul, a slave of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,";
