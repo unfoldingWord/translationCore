@@ -4,7 +4,7 @@ import {generateTimestamp} from './index';
 import usfm from "usfm-js";
 import {checkSelectionOccurrences} from 'selections';
 import isEqual from 'deep-equal';
-import * as AlertModalActions from '../actions/AlertModalActions';
+import * as AlertActions from '../actions/AlertActions';
 import {getTranslate, getToolsByKey} from '../selectors';
 import {loadProjectGroupData} from './ResourcesHelpers';
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
@@ -182,7 +182,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
     }
     if (selectionsChanged) {
       const translate = getTranslate(getState());
-      dispatch(AlertModalActions.openOptionDialog(translate('selections_invalidated')));
+      dispatch(AlertActions.openIgnorableAlert('selections_reset', translate('tools.selections_invalidated')));
     }
   };
 }
