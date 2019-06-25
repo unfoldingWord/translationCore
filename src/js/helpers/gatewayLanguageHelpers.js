@@ -441,11 +441,6 @@ export function getAlignedGLText(currentProjectToolsSelectedGL, contextId, bible
     const alignedText = getAlignedTextFromBible(contextId, bible);
     if (alignedText) {
       return alignedText;
-    if (bible && bible[contextId.reference.chapter] && bible[contextId.reference.chapter][contextId.reference.verse] && bible[contextId.reference.chapter][contextId.reference.verse].verseObjects) {
-      const verseObjects = bible[contextId.reference.chapter][contextId.reference.verse].verseObjects;
-      const alignedText = getAlignedText(verseObjects, contextId.quote, contextId.occurrence);
-      if (alignedText)
-        return alignedText;
     }
   }
   return contextId.quote;
