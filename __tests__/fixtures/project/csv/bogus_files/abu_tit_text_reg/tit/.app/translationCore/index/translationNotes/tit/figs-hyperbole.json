@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Cretans lie all the time.\" This is an exaggeration that means many Cretans lie a lot. (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "Κρῆτες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀεὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ψεῦσται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Cretans are always liars",
+      "occurrence": 1
+    }
+  }
+]

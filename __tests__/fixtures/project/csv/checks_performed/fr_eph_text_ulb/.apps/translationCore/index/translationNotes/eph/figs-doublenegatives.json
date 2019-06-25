@@ -1,0 +1,77 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Unwise people do not guard themselves against sin. Wise people, however, can identify sin and flee from it. Alternate translation: \"Therefore you must be careful to live as a wise person rather than a foolish person\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]] and [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "βλέπετε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀκριβῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "περιπατεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄσοφοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "σοφοί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Look carefully how you live—not as unwise but as wise",
+      "occurrence": 1
+    }
+  }
+]

@@ -140,6 +140,7 @@ const migrateChapterToVerseObjects = chapterData => {
  * @param bibleId
  * @param bookId
  * @param languageId
+ * @return {object}
  */
 export const loadBookResource = (bibleId, bookId, languageId) => {
   try {
@@ -149,7 +150,7 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
         return folder !== '.DS_Store';
       }); // ex. v9
       const versionNumber = versionNumbers[versionNumbers.length - 1];
-      const bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleId, versionNumber);
+      const bibleVersionPath = path.join(bibleFolderPath, versionNumber);
       const bookPath = path.join(bibleVersionPath, bookId);
       const cacheKey = 'book:' + bookPath;
 

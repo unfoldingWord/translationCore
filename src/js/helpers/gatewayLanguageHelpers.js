@@ -510,15 +510,28 @@ export function getAlignedGLText(currentProjectToolsSelectedGL, contextId, bible
   const sortedBibleIds = Object.keys(bibles[selectedGL]).sort(bibleIdSort);
   for (let i = 0; i < sortedBibleIds.length; ++i) {
     const bible = bibles[selectedGL][sortedBibleIds[i]];
-    if (bible && bible[contextId.reference.chapter] && bible[contextId.reference.chapter][contextId.reference.verse] && bible[contextId.reference.chapter][contextId.reference.verse].verseObjects) {
-      const verseObjects = bible[contextId.reference.chapter][contextId.reference.verse].verseObjects;
-      const wordsToMatch = getQuoteAsArray(contextId);
-      const alignedText = getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
-      if (alignedText)
-        return alignedText;
+    const alignedText = getAlignedTextFromBible(contextId, bible);
+    if (alignedText) {
+      return alignedText;
     }
   }
   return contextId.quote;
+}
+
+/**
+ * gets the aligned GL text from the given bible
+ * @param {object} contextId
+ * @param {object} bible
+ * @returns {string}
+ */
+export function getAlignedTextFromBible(contextId, bible) {
+  if (bible && contextId && contextId.reference &&
+    bible[contextId.reference.chapter] && bible[contextId.reference.chapter][contextId.reference.verse] &&
+    bible[contextId.reference.chapter][contextId.reference.verse].verseObjects) {
+    const verseObjects = bible[contextId.reference.chapter][contextId.reference.verse].verseObjects;
+    const wordsToMatch = getQuoteAsArray(contextId);
+    return getAlignedText(verseObjects, wordsToMatch, contextId.occurrence);
+  }
 }
 
 /**

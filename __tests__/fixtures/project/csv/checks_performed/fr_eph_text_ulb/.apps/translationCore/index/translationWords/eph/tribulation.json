@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "tribulation",
+      "quote": "θλίψεσίν",
+      "strong": [
+        "G23470"
+      ],
+      "occurrence": 1
+    }
+  }
+]
