@@ -3,7 +3,6 @@
 // ResourcesHelpers tests without mocking
 
 import path from 'path';
-jest.unmock('fs-extra');
 // helpers
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 import {
@@ -11,6 +10,22 @@ import {
   generateChapterGroupIndex
 } from "../src/js/helpers/groupDataHelpers";
 import ResourceAPI from "../src/js/helpers/ResourceAPI";
+import fs from "fs-extra";
+import {
+  USER_RESOURCES_PATH,
+  STATIC_RESOURCES_PATH
+} from "../src/js/common/constants";
+
+const resourcesDir = path.join(__dirname, 'fixtures', 'resources');
+const latestVersionTestDir = path.join('__tests__', 'fixtures', 'latestVersionTest');
+
+beforeAll(() => {
+  fs.__resetMockFS();
+  fs.__loadDirIntoMockFs(resourcesDir, USER_RESOURCES_PATH);
+  fs.__loadDirIntoMockFs(STATIC_RESOURCES_PATH, STATIC_RESOURCES_PATH);
+  fs.__loadDirIntoMockFs(resourcesDir, resourcesDir);
+  fs.__loadDirIntoMockFs(latestVersionTestDir, latestVersionTestDir);
+});
 
 describe('ResourcesHelpers.chapterGroupsIndex', () => {
   it('should return groupsIndex array for chapters 1-150', function () {
@@ -48,6 +63,7 @@ describe('ResourcesHelpers.chapterGroupsData', () => {
 
 describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
   it('Test multiple fixture resource directories that latest version is returned', () => {
+    const resourcesDir = path.join(__dirname, 'fixtures/resources');
     const resourcePathsExpectedVersions = {
       [path.join('en', 'bibles', 'ust')]: 'v10',
       [path.join('en', 'bibles', 'ult')]: 'v12.1',
@@ -55,16 +71,15 @@ describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
     };
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
-        let resourcePath = path.join(__dirname, 'fixtures/resources', property);
+        let resourcePath = path.join(resourcesDir, property);
         let versionPath = ResourceAPI.getLatestVersion(resourcePath);
         expect(versionPath).toEqual(path.join(resourcePath, resourcePathsExpectedVersions[property]));
       }
     }
   });
   it('Test getLatestVersionInPath with a directory multiple subdirectories and files', () => {
-    const testPath = path.join('__tests__', 'fixtures', 'latestVersionTest');
-    const versionPath = ResourceAPI.getLatestVersion(testPath);
-    const expectedResult = path.join(testPath, 'v100.2a');
+    const versionPath = ResourceAPI.getLatestVersion(latestVersionTestDir);
+    const expectedResult = path.join(latestVersionTestDir, 'v100.2a');
     expect(versionPath).toEqual(expectedResult);
   });
 
@@ -146,7 +161,7 @@ describe('ResourcesHelpers getGLQuote() tests', () => {
   const englishExpectedData = [
     {
       "id": "abomination",
-      "name": "abomination, abominations, abominable"
+      "name": "abomination, abominable"
     },
     {
       "id": "adoption",
@@ -154,32 +169,31 @@ describe('ResourcesHelpers getGLQuote() tests', () => {
     },
     {
       "id": "adultery",
-      "name": "adultery, adulterous, adulterer, adulteress, adulterers, adulteresses"
+      "name": "adultery, adulterous, adulterer, adulteress"
     },
     {
       "id": "almighty",
       "name": "Almighty"
     }
   ];
-  const isTest = true;
 
   it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
     const currentGLLanguageID = 'en';
     for (var groupIndexObject of englishExpectedData) {
-      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName, isTest)).toBe(groupIndexObject.name);
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(groupIndexObject.name);
     }
   });
   it('Test getGLQuote() properly returns the hi gateway language quote for the groupId', () => {
     const currentGLLanguageID = 'hi';
     for (var groupIndexObject of hindiExpectedData) {
-      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName, isTest)).toBe(groupIndexObject.name);
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(groupIndexObject.name);
     }
   });
 
   it('Test getGLQuote() doesnt returns the gateway language quote for a non-existent language', () => {
     const currentGLLanguageID = 'languagewedonthaveyet';
     for (var groupIndexObject of hindiExpectedData) {
-      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName, isTest)).toBe(null);
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(null);
     }
   });
 });

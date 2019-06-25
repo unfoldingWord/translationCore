@@ -1,13 +1,10 @@
 jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
-
 // actions
 import * as ProjectImportFilesystemHelpers from '../src/js/helpers/Import/ProjectImportFilesystemHelpers';
-
 // constants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+import { IMPORTS_PATH } from '../src/js/common/constants';
 
 describe('ProjectImportFilesystemActions', () => {
   afterAll(() => {

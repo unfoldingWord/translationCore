@@ -1,104 +1,144 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from "ospath";
 import csv from 'csv';
 // helpers
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 import ResourceAPI from "./ResourceAPI";
+import * as localizationHelpers from './localizationHelpers';
+import * as ResourcesActions from "../actions/ResourcesActions";
+import * as gatewayLanguageHelpers from "./gatewayLanguageHelpers";
 // constants
-export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");
-const tHelpsPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
-const testThelpsPath = path.join('__tests__', 'fixtures', 'resources', 'en', 'translationHelps');
+import {THELPS_EN_RESOURCES_PATH} from "../common/constants";
+
 let tWIndex = [];
 let tNIndex = [];
 
  /**
   * To prevent these files from being read in for every groupName lookup, read them in once.
-  * @param {string} isTest - for unit tests purposes
-  * @return {undefined}
   */
-function cacheIndicies(isTest) {
-  // skip loading if indicies have already been loaded
-  if(tWIndex.length > 0 || tNIndex.length > 0) {
-    return;
+function cacheIndicies() {
+  // load tW indices
+  tWIndex = loadToolIndices('translationWords');
+  // load tN indices
+  tNIndex = loadToolIndices('translationNotes');
+}
+
+/**
+ * Loops through a tool's category subdirs to make a flattened list of the indexes with id and name
+ * @param {string} toolName - the name of the tool in the same case as its resource directory
+ * @return {array}
+ */
+function loadToolIndices(toolName) {
+  let index = [];
+  try {
+    const toolPath = path.join(THELPS_EN_RESOURCES_PATH, toolName);
+    let versionPath = ResourceAPI.getLatestVersion(toolPath) || toolPath;
+    if (fs.pathExistsSync(versionPath)) {
+      const isDirectory = (item) => fs.lstatSync(path.join(versionPath, item)).isDirectory();
+      const categories = fs.readdirSync(versionPath).filter(isDirectory);
+      categories.forEach(category => {
+        const indexPath = path.join(versionPath, category, "index.json");
+        if (fs.existsSync(indexPath)) {
+          try {
+            const items = fs.readJsonSync(indexPath);
+            items.forEach(item => {
+              item.category = category; // adds the category as a field since this is being flattened from the directory
+              index.push(item);
+            });
+          } catch (e) {
+            console.error(`Failed to read the category index at ${indexPath}`, e);
+          }
+        }
+      });
+    }
+  } catch (e) {
+    console.error(`Failed to read tool category directories for ${toolName}`, e);
   }
-
-  // load tW index
-  const thPath = isTest ? testThelpsPath : tHelpsPath;
-  const tWpath = path.join(thPath, 'translationWords');
-  let tWversionPath = ResourceAPI.getLatestVersion(tWpath) || tWpath;
-  const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
-  const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
-  const tWotherIndexPath = path.join(tWversionPath, 'other', 'index.json');
-  let tWktIndex = [];
-  if (fs.existsSync(tWktIndexPath))
-    tWktIndex = fs.readJsonSync(tWktIndexPath);
-  let tWotherIndex = [];
-  if (fs.existsSync(tWotherIndexPath))
-    tWotherIndex = fs.readJsonSync(tWotherIndexPath);
-  let tWnamesIndex = [];
-  if (fs.existsSync(tWnamesIndexPath))
-    tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
-  tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
-
-  // load tN index
-  const tNpath = path.join(thPath, 'translationNotes');
-  const tNversionPath = ResourceAPI.getLatestVersion(tNpath) || tNpath;
-  const categories = fs.readdirSync(tNversionPath)
-    .filter(file => { return fs.lstatSync(path.join(tNversionPath, file)).isDirectory() });
-  categories.forEach(category => {
-    const tNIndexPath = path.join(tNversionPath, category, 'index.json');
-    const categoryIndex = fs.readJsonSync(tNIndexPath);
-    tNIndex = [...tNIndex, ...categoryIndex];
-  });
+  return index;
 }
 
 /**
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
  * @param {object} contextId - to be merged in
- * @param {object} indexObject - to be used to get groupName
- * @param {array} indexObject - Array of index.json with {id, name} keys
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
- * @param {boolean} - This is a temporary flag to hide bad data
+ * @param {function} translate - the translation function
  * @return {object}
  */
-export function combineData(data, contextId, username, timestamp) {
-  const flatContextId = flattenContextId(contextId);
+export function combineData(data, contextId, username, timestamp, translate) {
+  const flatContextId = flattenContextId(contextId, translate);
   const userTimestamp = userTimestampObject(username, timestamp);
-  const combinedData = Object.assign({}, data, flatContextId, userTimestamp);
-  return combinedData;
+  return Object.assign({}, data, flatContextId, userTimestamp);
 }
 /**
  * @description - flattens the context id for csv usage
  * @param {object} contextId - contextID object that needs to go onto the csv row
- * @param {string} isTest - for unit tests purposes
+ * @param {function} translate - translation function
  * @return {object}
  */
-export const flattenContextId = (contextId, isTest) => {
-  const flatContextId = {
+export const flattenContextId = (contextId, translate) => {
+  // tN has gatewayLanguageQuotes, but tW doesn't so we need to get it from the English ULT for now
+  if (contextId.tool === 'translationWords' && ! contextId.glQuote) {
+    contextId = getGLQuote(contextId);
+  }
+  return {
     tool: contextId.tool,
+    type: groupCategoryTranslated(contextId, translate),
     groupId: contextId.groupId,
-    groupName: groupName(contextId, isTest),
+    groupName: groupName(contextId),
     occurrence: contextId.occurrence,
-    quote: contextId.quote,
+    quote: flattenQuote(contextId.quote),
+    gatewayLanguageCode: contextId.glCode || 'N/A',
+    gatewayLanguageQuote: contextId.glQuote || 'N/A',
+    occurrenceNote: contextId.occurrenceNote || 'N/A',
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
     verse: contextId.reference.verse
   };
-  return flatContextId;
+};
+
+/**
+ * Gets the GL Quote information to add to the contextId
+ * @param {object} contextId
+ * @return {object}
+ */
+export const getGLQuote = (contextId) => {
+  const glCode = 'en'; // TODO: Have user choose a GL when exporting CSV and pass that in?
+  const glBibleId = 'ult'; // TODO: Get all Bibles for the GL given by user to find proper GL Quote
+  const bookId = contextId.reference.bookId;
+  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, glCode); // this is cached in the called function
+  const glQuote = gatewayLanguageHelpers.getAlignedTextFromBible(contextId, bible);
+  if (glQuote) {
+    contextId.glCode = glCode;
+    contextId.glQuote = glQuote;
+  }
+  return contextId;
+};
+
+/**
+ * Flattens a quote which may be an array of words
+ * @param {*} quote
+ * @returns {string}
+ */
+export const flattenQuote = quote => {
+  if (Array.isArray(quote)) {
+    quote = quote.map(item => item.word).join(" ");
+    // remove space before any punctuation that is used in Greek except `...` and `…`
+    quote = quote.replace(/\s+(?!\.\.\.)(?!…)([.,;'’`?!"]+)/g, '$1');
+  }
+  return quote;
 };
 
 /**
  * @description - Returns the corresponding group name i.e. Metaphor
- * given the group id such as figs_metaphor
+ * when given the group id of figs-metaphor
  * @param {Object} contextId - context id to get toolName and groupName
- * @param {string} isTest - for unit tests purposes
+ * @return {string}
  */
-export const groupName = (contextId, isTest) => {
-  cacheIndicies(isTest);
+export const groupName = (contextId) => {
+  cacheIndicies();
 
   let indexArray;
   let {tool, groupId} = contextId;
@@ -128,6 +168,56 @@ export const groupName = (contextId, isTest) => {
     groupName = groupId;
   }
   return groupName;
+};
+
+/**
+ * @description - Returns the corresponding group parent category, i.e. figures
+ * when given the group id of figs-metaphor
+ * @param {Object} contextId - context id to get toolName and groupName
+ * @return {string}
+ */
+export const groupCategory = (contextId) => {
+  cacheIndicies();
+
+  let indexArray
+  ;
+  let {tool, groupId} = contextId;
+  switch (tool) {
+    case 'translationNotes':
+      indexArray = tNIndex;
+      break;
+    case 'translationWords':
+      indexArray = tWIndex;
+      break;
+    default:
+      indexArray = undefined;
+    // do something later with other resources
+  }
+  let indexObject = {};
+  if (indexArray) {
+    indexArray.forEach(group => {
+      indexObject[group.id] = group.category;
+    });
+    if (!indexObject[groupId]) {
+      console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
+    } else {
+      return indexObject[groupId];
+    }
+  }
+};
+
+/**
+ * @description - Returns the human readable (translated) string of the group category
+ * @param {Object} contextId - context id to get toolName and groupName
+ * @param {function} translate - translation function
+ * @return {string}
+ */
+export const groupCategoryTranslated = (contextId, translate) => {
+  const category = groupCategory(contextId);
+  if (category) {
+    // We return the translation, unless that tool_card_categories.<category> doesn't exist, then just return category
+    return localizationHelpers.getTranslation(translate, 'tool_card_categories.' + category, category);
+  }
 };
 
 /**
@@ -179,7 +269,7 @@ export function getToolFolderNames(projectPath) {
   let toolsPath = path.join(_dataPath, 'index');
   if (fs.existsSync(toolsPath)) {
     let toolNames = fs.readdirSync(toolsPath)
-    .filter(file => { return fs.lstatSync(path.join(toolsPath, file)).isDirectory() });
+    .filter(file => fs.lstatSync(path.join(toolsPath, file)).isDirectory());
     return toolNames;
     // TODO: check to see if it is a directory and only return those
   } else {

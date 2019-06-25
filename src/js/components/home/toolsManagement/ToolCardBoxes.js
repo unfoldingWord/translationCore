@@ -8,6 +8,7 @@ import {tNotesCategories} from "tsv-groupdata-parser";
 import * as ResourcesActions from "../../../actions/ResourcesActions";
 import {parseArticleAbstract} from "../../../helpers/ToolCardHelpers";
 import Hint from "../../Hint";
+import { toolCardCategories } from '../../../common/constants';
 
 const styles = {
   root: {
@@ -18,26 +19,6 @@ const styles = {
     padding: '0px',
   },
   checked: {},
-};
-
-/**
-*  Checkboxnames are derived first by what is in Gateway language resource
-*  translation notes FileFolder. This is mapped to the array in
-*  projectDetailsReducer which determines the order of folders that exist.
-*  Finally it is mapped to this object to deterime category names to show the
-*  user
-*/
-const toolCardCategories = {
-  'kt': 'Key Terms',
-  'names': 'Names',
-  'other_terms': 'Other Terms',
-
-  'culture': 'Culture',
-  'figures': 'Figures of Speech',
-  'numbers': 'Numbers',
-  'discourse': 'Discourse',
-  'grammar': 'Grammar',
-  'other': 'Other'
 };
 
 /**
@@ -66,24 +47,24 @@ function flattenNotesCategories() {
  * @param {*} toolName
  * @param {*} onChecked
  */
-function localCheckBox(classes, selectedCategories, id, toolName, onChecked, availableCategoriesForParent = []) {
-  const isParent = !!availableCategoriesForParent.length;
-  const currentCategoriesSelected = availableCategoriesForParent.filter((subcategory) => selectedCategories.includes(subcategory));
-  const allChildrenSelected = isEqual(availableCategoriesForParent, currentCategoriesSelected);
+function localCheckBox(classes, selectedCategories, id, toolName, onChecked, availableSubcategories = []) {
+  const isParent = !!availableSubcategories.length;
+  const currentCategoriesSelected = availableSubcategories.filter((subcategory) => selectedCategories.includes(subcategory));
+  const allChildrenSelected = isEqual(availableSubcategories, currentCategoriesSelected);
   const allChildrenUnselected = currentCategoriesSelected.length === 0;
   const showIndeterminate = !allChildrenUnselected && currentCategoriesSelected.length > 0 && !allChildrenSelected;
 
   return (
     <Checkbox
       checked={selectedCategories.includes(id) || (isParent && allChildrenSelected)}
-      indeterminate={isParent && showIndeterminate}
+      indeterminate={isParent && showIndeterminate && toolName !== 'translationWords'}
       classes={{
         root: classes.root,
         checked: classes.checked,
       }}
       onChange={(e) => {
         if (isParent) {
-          onChecked(availableCategoriesForParent, e.target.checked, toolName);
+          onChecked(availableSubcategories, e.target.checked, toolName);
         } else {
           onChecked(id, e.target.checked, toolName);
         }

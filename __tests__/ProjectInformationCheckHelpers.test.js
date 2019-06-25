@@ -1,12 +1,10 @@
 'use strict';
-
-// actions
-import * as ProjectInformationCheckHelpers from '../src/js/helpers/ProjectInformationCheckHelpers';
 import fs from 'fs-extra';
 import path from "path-extra";
-import ospath from "ospath";
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+// actions
+import * as ProjectInformationCheckHelpers from '../src/js/helpers/ProjectInformationCheckHelpers';
+// constants
+import { PROJECTS_PATH, IMPORTS_PATH } from '../src/js/common/constants';
 
 describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
   const currentProjectName = "fr_ult_eph_book";

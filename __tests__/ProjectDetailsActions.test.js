@@ -2,24 +2,23 @@
 jest.mock('fs-extra');
 jest.mock('../src/js/helpers/ProjectAPI');
 jest.mock('../');
-import fs from 'fs-extra';
-import path from 'path-extra';
-import ospath from 'ospath';
-import types from '../src/js/actions/ActionTypes';
-import * as actions from '../src/js/actions/ProjectDetailsActions';
-import thunk from 'redux-thunk';
-import configureMockStore from 'redux-mock-store';
-import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
 jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
   getAvailableCategories: jest.fn(() => ({'names':['John']}))
 }));
-
+import fs from 'fs-extra';
+import path from 'path-extra';
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
+// actions
+import types from '../src/js/actions/ActionTypes';
+import * as actions from '../src/js/actions/ProjectDetailsActions';
+// helpers
+import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
+// constants
+import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-
-const PROJECTS_PATH = path.join('user', 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 it('setSaveLocation() creates an action to update contributors', () => {
   const store = mockStore({});
@@ -401,7 +400,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
     const copyFiles = [project_name];
     fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-    const resourcesPath = RESOURCE_PATH;
+    const resourcesPath = USER_RESOURCES_PATH;
     const copyResourceFiles = ['el-x-koine'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
@@ -447,7 +446,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'translationWords');
       const copyFiles = [project_name];
       fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
-      const resourcesPath = RESOURCE_PATH;
+      const resourcesPath = USER_RESOURCES_PATH;
       const copyResourceFiles = ['el-x-koine', 'en'];
       fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
     });
@@ -476,7 +475,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       expect(store.getActions()).toMatchObject(expectedActions);
     });
     test('should not load check categories that are not present in the resources', () => {
-      const namesResourcePath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationWords');
+      const namesResourcePath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords');
       fs.removeSync(namesResourcePath);
       const expectedActions =  [{"selectedCategories": [], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
       const initialState = {

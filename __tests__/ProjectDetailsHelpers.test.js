@@ -1,11 +1,14 @@
 /* eslint-env jest */
+jest.mock('../src/js/helpers/Repo');
+jest.mock('material-ui/Checkbox');
 import path from 'path-extra';
-import ospath from 'ospath';
 import fs from 'fs-extra';
 import configureMockStore from "redux-mock-store";
 import thunk from 'redux-thunk';
 //helpers
 import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers';
+// constants
+import { USER_RESOURCES_PATH, PROJECT_INDEX_FOLDER_PATH, IMPORTS_PATH } from '../src/js/common/constants';
 
 // Mock store set up
 const middlewares = [thunk];
@@ -15,16 +18,12 @@ const mockStore = configureMockStore(middlewares);
 const alignmentToolProject = path.join(__dirname, 'fixtures/project/wordAlignment/normal_project');
 const emptyAlignmentToolProject = path.join(__dirname, 'fixtures/project/wordAlignment/empty_project');
 const translationWordsProject = path.join(__dirname, 'fixtures/project/translationWords/normal_project');
-const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-
-jest.mock('../src/js/helpers/Repo');
-jest.mock('material-ui/Checkbox');
 
 let mock_repoExists = false;
 let mock_repoError = false;
 let mock_renameRepoCallCount = 0;
 let mock_createNewRepoCallCount = 0;
+
 jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
   ...require.requireActual('../src/js/helpers/GogsApiHelpers'),
   changeGitToPointToNewRepo: () => {
@@ -68,6 +67,7 @@ jest.mock('../src/js/actions/OnlineModeConfirmActions', () => ({
 }));
 
 jest.mock('../src/js/actions/ProjectInformationCheckActions', () => ({
+
   openOnlyProjectDetailsScreen: (projectSaveLocation) => (dispatch) => {
     dispatch({type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen'});
   }
@@ -116,7 +116,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-    const resourcesPath = RESOURCE_PATH;
+    const resourcesPath = USER_RESOURCES_PATH;
     const copyResourceFiles = ['el-x-koine/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
@@ -191,7 +191,7 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-    const resourcesPath = RESOURCE_PATH;
+    const resourcesPath = USER_RESOURCES_PATH;
     const copyResourceFiles = ['el-x-koine'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
@@ -200,7 +200,7 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
     let toolName = 'translationWords';
     let bookId = 'tit';
     let userSelectedCategories = ["apostle", "authority", "clean"];
-    const pathToCheckDataFiles = path.join(translationWordsProject, INDEX_FOLDER_PATH, toolName, bookId);
+    const pathToCheckDataFiles = path.join(translationWordsProject, PROJECT_INDEX_FOLDER_PATH, toolName, bookId);
     expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, userSelectedCategories, bookId)).toBe(0.25);
   });
 });
@@ -217,7 +217,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-    const resourcesPath = RESOURCE_PATH;
+    const resourcesPath = USER_RESOURCES_PATH;
     const copyResourceFiles = ['el-x-koine/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
@@ -734,7 +734,6 @@ describe('ProjectDetailsHelpers.getInitialBibleDataFolderName', () => {
   const bookId = "php";
   const projectFilename = "en_php";
   const initialBibleDataFolderName = "php";
-  const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
   const projectPath = path.join (IMPORTS_PATH, projectFilename);
   const projectBibleDataPath = path.join (projectPath, initialBibleDataFolderName);
   const manifest_ = {
@@ -784,7 +783,6 @@ describe('ProjectDetailsHelpers.fixBibleDataFolderName', () => {
   const bookId = "php";
   const projectFilename = "en_php";
   const initialBibleDataFolderName = "php";
-  const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
   const projectPath = path.join (IMPORTS_PATH, projectFilename);
   const projectBibleDataPath = path.join (projectPath, initialBibleDataFolderName);
   const manifest_ = {

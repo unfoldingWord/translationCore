@@ -1,14 +1,13 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 //helpers
 import * as manifestHelpers from '../manifestHelpers';
 // constants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+import { PROJECTS_PATH, IMPORTS_PATH } from '../../common/constants';
 const TEMP_DIR = IMPORTS_PATH + "-old";
+
 /**
- * @description Import Helpers for moving projects to `~/translationCore/imports` while importing
+ * Import Helpers for moving projects to `~/translationCore/imports` while importing
  * and to `~/translationCore/projects` after migrations and validation.
  * @param {String} projectName
  * @param translate

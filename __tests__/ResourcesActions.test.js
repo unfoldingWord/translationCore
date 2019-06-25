@@ -1,15 +1,13 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
-import ospath from 'ospath';
 import fs from "fs-extra";
 // actions
 import * as ResourcesActions from '../src/js/actions/ResourcesActions';
 // constants
+import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 describe('ResourcesActions', () => {
   beforeEach(() => {
@@ -28,7 +26,7 @@ describe('ResourcesActions', () => {
     const expectedResources = ['ult', 'ust'];
 
     loadMockFsWithProjectAndResources();
-    fs.copySync(path.join(RESOURCE_PATH, "el-x-koine/bibles/ugnt"), path.join(RESOURCE_PATH, "hi/bibles/uhb"));
+    fs.copySync(path.join(USER_RESOURCES_PATH, "el-x-koine/bibles/ugnt"), path.join(USER_RESOURCES_PATH, "hi/bibles/uhb"));
 
     const ugnt = require("./fixtures/project/en_gal/bibleData.json");
 
@@ -90,7 +88,7 @@ describe('ResourcesActions', () => {
   it('findArticleFilePath for abel in en', () => {
     loadMockFsWithProjectAndResources();
     const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abel', 'en');
-    const expectedPath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationWords', 'v8', 'names', 'articles', 'abel.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords', 'v10', 'names', 'articles', 'abel.md');
     expect(filePath).toEqual(expectedPath);
   });
 
@@ -103,21 +101,21 @@ describe('ResourcesActions', () => {
   it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
     loadMockFsWithProjectAndResources();
     const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abomination', 'hi');
-    const expectedPath = path.join(RESOURCE_PATH, 'hi', 'translationHelps', 'translationWords', 'v8.1', 'kt', 'articles', 'abomination.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'hi', 'translationHelps', 'translationWords', 'v8.1', 'kt', 'articles', 'abomination.md');
     expect(filePath).toEqual(expectedPath);
   });
 
   it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
     loadMockFsWithProjectAndResources();
     const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abraham', 'hi');
-    const expectedPath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationWords', 'v8', 'names', 'articles', 'abraham.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords', 'v10', 'names', 'articles', 'abraham.md');
     expect(filePath).toEqual(expectedPath);
   });
 
   it('findArticleFilePath for tA translate-names which is not in Hindi so should return English', () => {
     loadMockFsWithProjectAndResources();
     const filePath = ResourcesActions.findArticleFilePath('translationAcademy', 'translate-names', 'hi');
-    const expectedPath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationAcademy', 'v9', 'translate', 'translate-names.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationAcademy', 'v9', 'translate', 'translate-names.md');
     expect(filePath).toEqual(expectedPath);
   });
 
@@ -180,8 +178,6 @@ describe('ResourcesActions', () => {
 
     const projectPath = path.join(PROJECTS_PATH, "en_gal");
     loadMockFsWithProjectAndResources();
-
-    const ugnt = require("./fixtures/project/en_gal/bibleData.json");
 
     const store = mockStore({
       actions: {},
@@ -288,7 +284,7 @@ function loadMockFsWithProjectAndResources() {
   fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
 
   const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-  const resourcesPath = RESOURCE_PATH;
+  const resourcesPath = USER_RESOURCES_PATH;
   const copyResourceFiles = [
     'en/bibles/ult',
     'en/bibles/ust',

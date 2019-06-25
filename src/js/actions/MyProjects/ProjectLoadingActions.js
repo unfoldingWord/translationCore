@@ -1,6 +1,5 @@
 import consts from '../ActionTypes';
 import path from 'path-extra';
-import ospath from 'ospath';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
@@ -33,12 +32,7 @@ import {
   getTranslate,
   getUsername
 } from "../../selectors";
-import {
-  isProjectSupported,
-  tc_MIN_COMPATIBLE_VERSION_KEY,
-  tc_EDIT_VERSION_KEY,
-  tc_MIN_VERSION_ERROR
-} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
   loadSourceBookTranslations,
   loadTargetLanguageBook
@@ -52,10 +46,15 @@ import {
 import * as BibleHelpers from "../../helpers/bibleHelpers";
 import {delay} from '../../common/utils';
 import * as Bible from "../../common/BooksOfTheBible";
-import {APP_VERSION, MIN_COMPATIBLE_VERSION} from "../../containers/home/HomeContainer";
-
 // constants
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+import {
+  APP_VERSION,
+  MIN_COMPATIBLE_VERSION,
+  PROJECTS_PATH,
+  tc_MIN_COMPATIBLE_VERSION_KEY,
+  tc_EDIT_VERSION_KEY,
+  tc_MIN_VERSION_ERROR,
+} from '../../common/constants';
 
 /**
  * show Invalid Version Error

@@ -2,10 +2,10 @@ jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from "path-extra";
 import ProjectAPI from "../ProjectAPI";
-import {APP_VERSION} from "../../containers/home/HomeContainer";
+// constants
+import { APP_VERSION } from '../../common/constants';
 
 describe('ProjectAPI', () => {
-
   beforeEach(() => {
     jest.resetAllMocks();
   });
@@ -410,6 +410,29 @@ describe('ProjectAPI', () => {
 
       // then
       expect(results).toEqual(expectHasNewGroupsData);
+    });
+  });
+
+  describe('getParentCategory()', () => {
+    it('parent category exists for groupId', () => {
+      const p = new ProjectAPI('/root');
+      p.getAllCategoryMapping = jest.fn(() => {
+        return {'name1': ['groupId1', 'groupId2']};
+      });
+      const expectedParentCategory = "name1";
+      const parentCategory = p.getParentCategory('tool', 'groupId2');
+      expect(parentCategory).toEqual(expectedParentCategory);
+      jest.resetAllMocks();
+    });
+
+    it('parent category does not exist for groupId', () => {
+      const p = new ProjectAPI('/root');
+      p.getAllCategoryMapping = jest.fn(() => {
+        return {'name1': ['groupId1', 'groupId2']};
+      });
+      const parentCategory = p.getParentCategory('tool', 'groupId3');
+      expect(parentCategory).toBeUndefined();
+      jest.resetAllMocks();
     });
   });
 });

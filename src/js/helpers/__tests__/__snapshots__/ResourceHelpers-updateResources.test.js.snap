@@ -2,16 +2,16 @@
 
 exports[`migrate resources migrate tN resources - resource changes 1`] = `
 Array [
-  "user/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/invalidated/tit/2/2/2019-04-24T16_01_01.823Z.json - is changed",
-  "user/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/selections/tit/2/2/2019-04-24T16_01_01.823Z.json - is changed",
-  "user/translationCore/projects/en_tit_checking/.apps/translationCore/index/translationNotes/tit/currentContextId/contextId.json - is changed",
+  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/invalidated/tit/2/2/2019-04-24T16_01_01.823Z.json - is changed",
+  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/selections/tit/2/2/2019-04-24T16_01_01.823Z.json - is changed",
+  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/index/translationNotes/tit/currentContextId/contextId.json - is changed",
 ]
 `;
 
 exports[`migrate resources migrate tW resources - resource changes 1`] = `
 Array [
-  "user/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/invalidated/tit/1/4/2019-04-24T16_03_28.617Z.json - is changed",
-  "user/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/selections/tit/1/4/2019-04-24T16_03_28.617Z.json - is changed",
-  "user/translationCore/projects/en_tit_checking/.apps/translationCore/index/translationWords/tit/currentContextId/contextId.json - is changed",
+  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/invalidated/tit/1/4/2019-04-24T16_03_28.617Z.json - is changed",
+  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/selections/tit/1/4/2019-04-24T16_03_28.617Z.json - is changed",
+  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/index/translationWords/tit/currentContextId/contextId.json - is changed",
 ]
 `;

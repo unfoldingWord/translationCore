@@ -1,15 +1,11 @@
 /* eslint-disable no-console */
-
-/***
- * migration that makes sure that all changes in old projects are saved to git.  This is called before any migrations
- *  are made to project.
+/**
+ * migration that makes sure that all changes in old projects are saved to git. This is called before any migrations are made to project.
  */
-
 import * as manifestUtils from "./manifestUtils";
-import packagefile from '../../../../package';
 import Repo from "../Repo";
-
-export const tc_EDIT_VERSION_KEY = "tc_edit_version";
+// constants
+import { APP_VERSION, tc_EDIT_VERSION_KEY } from '../../common/constants';
 
 /**
  * @description - function that conditionally runs the migration if needed
@@ -33,8 +29,8 @@ const shouldRun = (projectPath) => {
   const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
   if (manifest) {
     const manifestVersion = manifest[tc_EDIT_VERSION_KEY] || "";
-    if (manifestVersion !== packagefile.version) {
-      console.log(`migrateOldProjects.shouldRun(${projectPath}) - saved project version of '${manifestVersion}' does not match APP version '${packagefile.version}', will save changes in git`);
+    if (manifestVersion !== APP_VERSION) {
+      console.log(`migrateOldProjects.shouldRun(${projectPath}) - saved project version of '${manifestVersion}' does not match APP version '${APP_VERSION}', will save changes in git`);
       return true;
     }
   }

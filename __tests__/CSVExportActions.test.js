@@ -12,6 +12,7 @@ import * as ProjectImportStepperActions
 import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 // helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
+import {USER_RESOURCES_PATH} from '../src/js/common/constants';
 
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
@@ -36,26 +37,26 @@ const projectOpenedAutographa = path.join(__dirname,
   'fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
 const testOutputPath = path.join(__dirname, 'output');
 
-const fixtures = path.join(__dirname, 'fixtures/project');
-const resourcesDir = path.join(__dirname,
-  '../tcResources/en/translationHelps');
+const fixtures = path.join(__dirname, 'fixtures');
+const project = path.join(fixtures, 'project');
 const outDir = path.join(testOutputPath, '1');
 
 beforeAll(() =>
 {
   fs.__resetMockFS();
   fs.ensureDirSync(outDir);
-  fs.__loadDirIntoMockFs(fixtures, fixtures);
-  fs.__loadDirIntoMockFs(resourcesDir, resourcesDir);
+  fs.__loadDirIntoMockFs(project, project);
+  fs.__loadDirIntoMockFs(path.join(fixtures, 'resources'), USER_RESOURCES_PATH);
 });
 
 describe('csv export actions', () => {
 
-  describe('csvExportActions.saveToolDataToCSV', () => {
+  describe('csvExportActions.saveToolDataToCSV for translationWords', () => {
 
     test('should resolve true for checksPerformedPath', () => {
+      const translate = (key) => key;
       return csvExportActions.saveToolDataToCSV('translationWords',
-        checksPerformedPath)
+        checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
@@ -64,16 +65,20 @@ describe('csv export actions', () => {
           console.log(err);
           expect(err).toEqual('');
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
-          const filePath = path.join(dataPath, 'output',
+          const tWFilePath = path.join(dataPath, 'output',
             'translationWords_CheckData.csv');
-          expect(fs.existsSync(filePath)).toEqual(true);
+          expect(fs.existsSync(tWFilePath)).toEqual(true);
+          const tNFilePath = path.join(dataPath, 'output',
+            'translationNotes_CheckData.csv');
+          expect(fs.existsSync(tNFilePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         });
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
+      const translate = (key) => key;
       return csvExportActions.saveToolDataToCSV('translationWords',
-        bogusFilesInCheckDataPath)
+        bogusFilesInCheckDataPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath('translationWords',
@@ -87,9 +92,48 @@ describe('csv export actions', () => {
     });
   });
 
+  describe('csvExportActions.saveToolDataToCSV for translationNotes', () => {
+
+    test('should resolve true for checksPerformedPath', () => {
+      const translate = (key) => key;
+      return csvExportActions.saveToolDataToCSV('translationNotes',
+        checksPerformedPath, translate)
+        .then((value) => {
+          expect(value).toEqual(true);
+          csvHelpers.cleanupTmpPath(checksPerformedPath);
+        })
+        .catch(err => {
+          console.log(err);
+          expect(err).toEqual('');
+          const dataPath = csvHelpers.dataPath(checksPerformedPath);
+          const tNFilePath = path.join(dataPath, 'output',
+            'translationNotes_CheckData.csv');
+          expect(fs.existsSync(tNFilePath)).toEqual(true);
+          csvHelpers.cleanupTmpPath(checksPerformedPath);
+        });
+    });
+
+    test('should resolve true for bogusFilesInCheckDataPath', () => {
+      const translate = (key) => key;
+      return csvExportActions.saveToolDataToCSV('translationNotes',
+        bogusFilesInCheckDataPath, translate)
+        .then((resolve) => {
+          expect(resolve).toEqual(true);
+          csvHelpers.cleanupTmpPath('translationNotes',
+            bogusFilesInCheckDataPath);
+        })
+        .catch(err => {
+          console.log(err);
+          expect(err).toEqual('');
+          csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+        });
+    });
+  });
+
   describe('csvExportActions.saveVerseEditsToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
-      return csvExportActions.saveVerseEditsToCSV(checksPerformedPath)
+      const translate = key => key;
+      return csvExportActions.saveVerseEditsToCSV(checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
@@ -104,7 +148,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveVerseEditsToCSV(bogusFilesInCheckDataPath)
+      const translate = key => key;
+      return csvExportActions.saveVerseEditsToCSV(bogusFilesInCheckDataPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
@@ -121,7 +166,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveCommentsToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
-      return csvExportActions.saveCommentsToCSV(checksPerformedPath)
+      const translate = key => key;
+      return csvExportActions.saveCommentsToCSV(checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
@@ -136,7 +182,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveCommentsToCSV(bogusFilesInCheckDataPath)
+      const translate = key => key;
+      return csvExportActions.saveCommentsToCSV(bogusFilesInCheckDataPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
@@ -153,7 +200,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveSelectionsToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
-      return csvExportActions.saveSelectionsToCSV(checksPerformedPath)
+      const translate = key => key;
+      return csvExportActions.saveSelectionsToCSV(checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
@@ -161,7 +209,7 @@ describe('csv export actions', () => {
 
           // verify that gatewayLanguageQuote might exist if test files were created correctly
           let csvData = fs.readFileSync(filePath, 'utf8' );
-          expect(csvData).toContain('1,adoption,eph'); // quote is between instance and bookid in csv data 
+          expect(csvData).toContain(',adoption,N/A,N/A,N/A,eph'); // quote is between instance and bookid in csv data
           expect(fs.existsSync(filePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         })
@@ -172,7 +220,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveSelectionsToCSV(bogusFilesInCheckDataPath)
+      const translate = key => key;
+      return csvExportActions.saveSelectionsToCSV(bogusFilesInCheckDataPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
@@ -189,7 +238,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveRemindersToCSV', () => {
     test('should resolve true', () => {
-      return csvExportActions.saveRemindersToCSV(checksPerformedPath)
+      const translate = key => key;
+      return csvExportActions.saveRemindersToCSV(checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(checksPerformedPath);
@@ -204,7 +254,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveRemindersToCSV(bogusFilesInCheckDataPath)
+      const translate = key => key;
+      return csvExportActions.saveRemindersToCSV(bogusFilesInCheckDataPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
           const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
@@ -221,7 +272,8 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.saveAllCSVData', () => {
     test('should resolve true for checksPerformedPath', () => {
-      return csvExportActions.saveAllCSVData(checksPerformedPath)
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(checksPerformedPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
@@ -233,7 +285,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for noChecksPerformedPath', () => {
-      return csvExportActions.saveAllCSVData(noChecksPerformedPath)
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(noChecksPerformedPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath(noChecksPerformedPath);
@@ -245,7 +298,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
-      return csvExportActions.saveAllCSVData(bogusFilesInCheckDataPath)
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(bogusFilesInCheckDataPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
@@ -257,7 +311,8 @@ describe('csv export actions', () => {
     });
 
     test('should resolve true for projectOpenedAutographa', () => {
-      return csvExportActions.saveAllCSVData(projectOpenedAutographa)
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(projectOpenedAutographa, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
           csvHelpers.cleanupTmpPath(projectOpenedAutographa);
@@ -276,8 +331,8 @@ describe('csv export actions', () => {
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
       try {
-        const resolve = await csvExportActions.exportToCSVZip(
-          checksPerformedPath, zipPath);
+        const translate = (key) => key;
+        const resolve = await csvExportActions.exportToCSVZip(checksPerformedPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -293,8 +348,8 @@ describe('csv export actions', () => {
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
       try {
-        const resolve = await csvExportActions.exportToCSVZip(
-          noChecksPerformedPath, zipPath);
+        const translate = (key) => key;
+        const resolve = await csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -310,8 +365,8 @@ describe('csv export actions', () => {
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
       try {
-        const resolve = await csvExportActions.exportToCSVZip(
-          bogusFilesInCheckDataPath, zipPath);
+        const translate = (key) => key;
+        const resolve = await csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath, translate);
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }

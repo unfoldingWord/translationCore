@@ -1,18 +1,14 @@
+jest.unmock("../Repo");
+jest.mock("../GitApi");
 import Repo from "../Repo";
 import path from "path-extra";
 import fs from "fs-extra";
-import ospath from "ospath";
-
-jest.unmock("../Repo");
-jest.mock("../GitApi");
-
+// helpers
 import GitApi from '../GitApi';
-
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
+// constants
+import { PROJECTS_PATH } from '../../common/constants';
 
 describe("Repo", () => {
-
   beforeEach(() => {
     fs.__resetMockFS();
     fs.ensureDirSync(PROJECTS_PATH);

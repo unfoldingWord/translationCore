@@ -1,20 +1,20 @@
+jest.mock('fs-extra');
 import configureMockStore from 'redux-mock-store';
 import fs from 'fs-extra';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
-import ospath from 'ospath';
 import * as ProjectLoadingActions from "../MyProjects/ProjectLoadingActions";
 import * as manifestUtils from "../../helpers/ProjectMigration/manifestUtils";
+// constants
 import {
+  APP_VERSION,
+  MIN_COMPATIBLE_VERSION,
   tc_EDIT_VERSION_KEY,
-  tc_MIN_COMPATIBLE_VERSION_KEY
-} from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
-import {APP_VERSION, MIN_COMPATIBLE_VERSION} from "../../containers/home/HomeContainer";
+  tc_MIN_COMPATIBLE_VERSION_KEY,
+  PROJECTS_PATH
+} from '../../common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
-jest.mock('fs-extra');
 
 jest.mock('../../selectors', () => ({
   ...require.requireActual('../../selectors/'),

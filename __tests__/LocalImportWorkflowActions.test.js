@@ -2,12 +2,13 @@ import configureMockStore from 'redux-mock-store';
 import fs from 'fs-extra';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
-import ospath from 'ospath';
+// actions
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
+// constants
+import { IMPORTS_PATH } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const importProjectName = 'project';
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
 
 jest.mock('fs-extra');

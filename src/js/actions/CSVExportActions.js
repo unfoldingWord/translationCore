@@ -14,6 +14,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
+import * as ResourcesActions from '../actions/ResourcesActions';
 // helpers
 import * as csvHelpers from '../helpers/csvHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -23,7 +24,7 @@ import * as groupsIndexHelpers from '../helpers/groupsIndexHelpers';
  * @description - Wrapper function to handle exporting to CSV
  * @param {string} projectPath - Path to current project
  */
-export function exportToCSV(projectPath) {
+export const exportToCSV = (projectPath) => {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
@@ -57,7 +58,7 @@ export function exportToCSV(projectPath) {
       let message = translate('projects.exporting_file_alert', {file_name: projectName});
       dispatch(AlertModalActions.openAlertDialog(message, true));
       // export the csv and zip it
-      exportToCSVZip(projectPath, filePath)
+      exportToCSVZip(projectPath, filePath, translate)
         .then(() => {
           message = translate('projects.exported_alert', {project_name: projectName, file_path:filePath});
           dispatch(AlertModalActions.openAlertDialog(message, false));
@@ -68,7 +69,8 @@ export function exportToCSV(projectPath) {
         });
     }, 200);
   });
-}
+};
+
 /**
  * @description - Get the default path for the OS
  * @param {string} csvSaveLocation - Path to CSV location
@@ -91,15 +93,17 @@ export const getDefaultPath = (csvSaveLocation, projectName) => {
   }
   return defaultPath;
 };
+
 /**
  * @description - Chain of saving csv data then zipping it up and saving
  * @param {string} projectPath - Path to current project
  * @param {string} filePath - Path to save the zip file
+ * @param {function} translate
  */
-export const exportToCSVZip = (projectPath, filePath) => {
+export const exportToCSVZip = (projectPath, filePath, translate) => {
   return new Promise((resolve, reject) => {
     Promise.resolve(true)
-      .then(() => saveAllCSVData(projectPath))
+      .then(() => saveAllCSVData(projectPath, translate))
       .then(() => zipCSVData(projectPath, filePath))
       .then(() => {
         csvHelpers.cleanupTmpPath(projectPath);
@@ -128,42 +132,50 @@ export const zipCSVData = (projectPath, filePath) => {
     });
   });
 };
+
 /**
  * @description - Chain of saving all csv data
  * @param {string} projectPath - Path to current project
+ * @param {function} translate - translation function
  */
-export const saveAllCSVData = (projectPath) => {
+export const saveAllCSVData = (projectPath, translate) => {
   return new Promise((resolve, reject) => {
+    ResourcesActions.loadBiblesByLanguageId('en');
     const toolNames = csvHelpers.getToolFolderNames(projectPath);
     if (!toolNames || !toolNames.length) {
       throw 'No tools have loaded for this project.';
     }
     let iterablePromises = [];
     toolNames.forEach((toolName) => {
-      const p = new Promise((_resolve) => {
-        return saveToolDataToCSV(toolName, projectPath)
-          .then(_resolve);
-      });
-      iterablePromises.push(p);
+      // Generate CheckInformation.csv for all tools EXCEPT wordAlignment
+      if (toolName !== 'wordAlignment') {
+        const p = new Promise((_resolve) => {
+          return saveToolDataToCSV(toolName, projectPath, translate)
+            .then(_resolve);
+        });
+        iterablePromises.push(p);
+      }
     });
     Promise.all(iterablePromises)
-      .then(() => saveVerseEditsToCSV(projectPath))
-      .then(() => saveRemindersToCSV(projectPath))
-      .then(() => saveCommentsToCSV(projectPath))
-      .then(() => saveSelectionsToCSV(projectPath))
+      .then(() => saveVerseEditsToCSV(projectPath, translate))
+      .then(() => saveRemindersToCSV(projectPath, translate))
+      .then(() => saveCommentsToCSV(projectPath, translate))
+      .then(() => saveSelectionsToCSV(projectPath, translate))
       .then(resolve)
       .catch(reject);
   });
 };
+
 /**
  * @ description - Saves teh Tool data to csv
  * @param {string} toolName - current tool name
  * @param {string} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveToolDataToCSV = (toolName, projectPath) => {
+export const saveToolDataToCSV = (toolName, projectPath, translate) => {
   return new Promise((resolve, reject) => {
     loadGroupsData(toolName, projectPath)
-      .then((object) => saveGroupsToCSV(object, toolName, projectPath))
+      .then((object) => saveGroupsToCSV(object, toolName, projectPath, translate))
       .then(() => {
         resolve(true);
       })
@@ -179,7 +191,7 @@ export const saveToolDataToCSV = (toolName, projectPath) => {
  * @param {string} toolName - name of the tool being saved i.e. translationNotes
  * @param {string} projectPath - path of the project
  */
-export function loadGroupsData(toolName, projectPath) {
+export const loadGroupsData = (toolName, projectPath) => {
   return new Promise((resolve) => {
     const dataPath = csvHelpers.dataPath(projectPath);
     const projectId = csvHelpers.getProjectId(projectPath);
@@ -202,32 +214,35 @@ export function loadGroupsData(toolName, projectPath) {
       resolve(true);
     }
   });
-}
+};
+
 /**
  * @description - Creates csv from object and saves it.
  * @param {object} obj - object to save to the filesystem
- * @param {string} projectPath - path of the project
  * @param {string} toolName - name of the tool being saved i.e. translationNotes
+ * @param {string} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveGroupsToCSV = (obj, toolName, projectPath) => {
+export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => {
   return new Promise((resolve, reject) => {
-    let objectArray = [];
+    let dataArray = [];
     try {
-      const groupNames = Object.keys(obj);
-      groupNames.forEach(groupName => {
-        obj[groupName].forEach(groupData => {
-          const object = groupData;
-          const data = {priority: object.priority};
-          const flatContextId = csvHelpers.flattenContextId(object.contextId);
-          const newObject = Object.assign({}, data, flatContextId);
-          objectArray.push(newObject);
+      const groupIds = Object.keys(obj);
+      groupIds.forEach(groupId => {
+        obj[groupId].forEach(groupData => {
+          const contextId = groupData.contextId;
+          const data = {
+            priority: (groupData.priority?groupData.priority:1),
+            ...csvHelpers.flattenContextId(contextId, translate),
+          };
+          dataArray.push(data);
         });
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', toolName +
         '_CheckInformation.csv');
 
-      csvHelpers.generateCSVFile(objectArray, filePath)
+      csvHelpers.generateCSVFile(dataArray, filePath)
         .then(() => {
           return resolve(true);
         })
@@ -240,11 +255,13 @@ export const saveGroupsToCSV = (obj, toolName, projectPath) => {
     }
   });
 };
+
 /**
  * Creates csv from object and saves it.
  * @param {String} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveVerseEditsToCSV = (projectPath) => {
+export const saveVerseEditsToCSV = (projectPath, translate) => {
   return new Promise((resolve, reject) => {
     loadProjectDataByType(projectPath, 'verseEdits')
       .then((array) => {
@@ -256,17 +273,20 @@ export const saveVerseEditsToCSV = (projectPath) => {
             activeBook: data.activeBook,
             activeChapter: data.activeChapter,
             activeVerse: data.activeVerse,
-            'gateway Language Code': data.gatewayLanguageCode || 'en',
-            'gateway Language Quote': data.gatewayLanguageQuote
           };
-          if (data.contextId.tool === 'wordAlignment' || data.contextId.tool === '[External edit]') {
-            _data["gateway Language Quote"] = 'N/A';
-            data.contextId.groupId = 'N/A';
-            data.contextId.reference.groupId = 'N/A';
-            data.contextId.occurrence = 'N/A';
-            data.contextId.quote = 'N/A';
+          const contextId = data.contextId;
+          if (contextId.tool === 'wordAlignment' || contextId.tool === '[External edit]') {
+            contextId.glCode = 'N/A';
+            contextId.glQuote = 'N/A';
+            contextId.groupId = 'N/A';
+            contextId.reference.groupId = 'N/A';
+            contextId.occurrence = 'N/A';
+            contextId.quote = 'N/A';
+          } else {
+            contextId.glCode = data.gatewayLanguageCode;
+            contextId.glQuote = data.gatewayLanguageQuote;
           }
-          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+          return csvHelpers.combineData(_data, contextId, data.userName, data.modifiedTimestamp, translate);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
@@ -277,11 +297,13 @@ export const saveVerseEditsToCSV = (projectPath) => {
       .catch(reject);
   });
 };
+
 /**
  * Creates csv from object and saves it.
  * @param {String} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveCommentsToCSV = (projectPath) => {
+export const saveCommentsToCSV = (projectPath, translate) => {
   return new Promise((resolve) => {
     loadProjectDataByType(projectPath, 'comments')
       .then((array) => {
@@ -295,10 +317,11 @@ export const saveCommentsToCSV = (projectPath) => {
             activeBook: data.activeBook,
             activeChapter: data.activeChapter,
             activeVerse: data.activeVerse,
-            'gateway Language Code': data.gatewayLanguageCode || 'en',
-            'gateway Language Quote': gatewayLanguageQuote
           };
-          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+          const contextId = data.contextId;
+          contextId.glCode = data.gatewayLanguageCode;
+          contextId.glQuote = gatewayLanguageQuote;
+          return csvHelpers.combineData(_data, contextId, data.userName, data.modifiedTimestamp, translate);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'Comments.csv');
@@ -307,11 +330,13 @@ export const saveCommentsToCSV = (projectPath) => {
       });
   });
 };
+
 /**
  * Creates csv from object and saves it.
  * @param {String} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveSelectionsToCSV = (projectPath) => {
+export const saveSelectionsToCSV = (projectPath, translate) => {
   return new Promise((resolve, reject) => {
     loadProjectDataByType(projectPath, 'selections')
       .then((array) => {
@@ -322,13 +347,14 @@ export const saveSelectionsToCSV = (projectPath) => {
             data.selections.forEach(selection => {
               const _data = {
                 text: selection.text,
-                'selection/occurrence': selection.occurrence,
-                'selection/occurrences': selection.occurrences,
+                occurrence: selection.occurrence,
+                occurrences: selection.occurrences,
                 'No selection needed': '',
-                'gateway Language Code': data.gatewayLanguageCode || 'en',
-                'gateway Language Quote': data.gatewayLanguageQuote
               };
-              const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+              const contextId = data.contextId;
+              contextId.glCode = data.gatewayLanguageCode;
+              contextId.glQuote = data.gatewayLanguageQuote;
+              const newObject = csvHelpers.combineData(_data, contextId, data.userName, data.modifiedTimestamp, translate);
               objectArray.push(newObject);
             });
           } else if (data.nothingToSelect) {
@@ -336,13 +362,14 @@ export const saveSelectionsToCSV = (projectPath) => {
             const nothingToSelect = !!data.nothingToSelect;
             const _data = {
               text: '',
-              'selection/occurrence': '',
-              'selection/occurrences': '',
+              occurrence: '',
+              occurrences: '',
               'No selection needed': nothingToSelect.toString(),
-              'gateway Language Code': data.gatewayLanguageCode || 'en',
-              'gateway Language Quote': data.gatewayLanguageQuote
             };
-            const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+            const contextId = data.contextId;
+            contextId.glCode = data.gatewayLanguageCode;
+            contextId.glQuote = data.gatewayLanguageQuote;
+            const newObject = csvHelpers.combineData(_data, contextId, data.userName, data.modifiedTimestamp, translate);
             objectArray.push(newObject);
           }
         });
@@ -355,11 +382,13 @@ export const saveSelectionsToCSV = (projectPath) => {
       .catch(reject);
   });
 };
+
 /**
  * Creates csv from object and saves it.
  * @param {String} projectPath - path of the project
+ * @param {function} translate - translation function
  */
-export const saveRemindersToCSV = (projectPath) => {
+export const saveRemindersToCSV = (projectPath, translate) => {
   return new Promise((resolve, reject) => {
     loadProjectDataByType(projectPath, 'reminders')
       .then((array) => {
@@ -370,10 +399,11 @@ export const saveRemindersToCSV = (projectPath) => {
           const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           const _data = {
             enabled: data.enabled,
-            'gateway Language Code': data.gatewayLanguageCode || 'en',
-            'gateway Language Quote': gatewayLanguageQuote
           };
-          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+          const contextId = data.contextId;
+          contextId.glCode = data.gatewayLanguageCode;
+          contextId.glQuote = gatewayLanguageQuote;
+          return csvHelpers.combineData(_data, contextId, data.userName, data.modifiedTimestamp, translate);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'Reminders.csv');
@@ -385,7 +415,13 @@ export const saveRemindersToCSV = (projectPath) => {
   });
 };
 
-export function loadProjectDataByType(projectPath, type) {
+/**
+ * Loads project data by type
+ * @param {string} projectPath
+ * @param {string} type
+ * @returns {Promise<any>}
+ */
+export const loadProjectDataByType = (projectPath, type) => {
   return new Promise((resolve, reject) => {
     let checkDataArray = [];
     const dataPath = csvHelpers.dataPath(projectPath);
@@ -421,4 +457,4 @@ export function loadProjectDataByType(projectPath, type) {
     }
     resolve(checkDataArray);
   });
-}
+};

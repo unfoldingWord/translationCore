@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "God desires us to imitate or follow him since we are his children. Alternate translation: \"as dearly loved children imitate their fathers\" or \"because you are his children and he loves you dearly\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "τέκνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαπητά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as dearly loved children",
+      "occurrence": 1
+    }
+  }
+]
