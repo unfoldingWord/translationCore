@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "reverence",
+      "quote": "ἱεροπρεπεῖς",
+      "strong": [
+        "G24120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

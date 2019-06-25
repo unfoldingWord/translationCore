@@ -1,0 +1,54 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul knows that the Ephesians have heard and been taught. (See: [[rc://en/ta/man/translate/figs-irony]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-irony",
+      "quote": [
+        {
+          "word": "εἴ",
+          "occurrence": 1
+        },
+        {
+          "word": "γε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠκούσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδιδάχθητε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I assume that you have heard ... and that you were taught",
+      "occurrence": 1
+    }
+  }
+]

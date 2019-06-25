@@ -88,7 +88,7 @@ describe('ResourcesActions', () => {
   it('findArticleFilePath for abel in en', () => {
     loadMockFsWithProjectAndResources();
     const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abel', 'en');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords', 'v8', 'names', 'articles', 'abel.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords', 'v10', 'names', 'articles', 'abel.md');
     expect(filePath).toEqual(expectedPath);
   });
 
@@ -108,7 +108,7 @@ describe('ResourcesActions', () => {
   it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
     loadMockFsWithProjectAndResources();
     const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abraham', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords', 'v8', 'names', 'articles', 'abraham.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords', 'v10', 'names', 'articles', 'abraham.md');
     expect(filePath).toEqual(expectedPath);
   });
 
@@ -178,8 +178,6 @@ describe('ResourcesActions', () => {
 
     const projectPath = path.join(PROJECTS_PATH, "en_gal");
     loadMockFsWithProjectAndResources();
-
-    const ugnt = require("./fixtures/project/en_gal/bibleData.json");
 
     const store = mockStore({
       actions: {},

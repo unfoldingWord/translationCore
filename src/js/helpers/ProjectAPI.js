@@ -11,6 +11,8 @@ import {
   SOURCE_CONTENT_UPDATER_MANIFEST,
 } from '../common/constants';
 
+const toolCategoryMapping = {};
+
 /**
  * Provides an interface with which tools can interact with a project.
  */
@@ -48,6 +50,7 @@ export default class ProjectAPI {
     this.getGroupData = this.getGroupData.bind(this);
     this.setCategoryGroupIds = this.setCategoryGroupIds.bind(this);
     this.getAllCategoryMapping = this.getAllCategoryMapping.bind(this);
+    this.getParentCategory = this.getParentCategory.bind(this);
   }
 
   /**
@@ -399,24 +402,47 @@ export default class ProjectAPI {
     return [];
   }
 
-  getAllCategoryMapping(toolName) {
-    const parentCategoriesObject = {};
-    const indexPath = path.join(this.getCategoriesDir(toolName),
-      ".categoryIndex");
-    if (fs.pathExistsSync(indexPath)) {
-      try {
-        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
-        parentCategories.forEach((category) => {
-          const subCategoryPath = path.join(this.getCategoriesDir(toolName),
-            ".categoryIndex", `${category}.json`);
-          const arrayOfSubCategories = fs.readJsonSync(subCategoryPath);
-          parentCategoriesObject[category] = arrayOfSubCategories;
-        });
-      } catch (e) {
-        console.error(`Failed to read the category index at ${indexPath}`, e);
+  /**
+   * Returns a tool's parent category of a given subcategory (groupId) for reverse lookup
+   * @param toolName
+   * @param groupId
+   * @returns {string}
+   */
+  getParentCategory(toolName, groupId) {
+    const parentCategoryMapping = this.getAllCategoryMapping(toolName);
+    for (let parentCategoryName in parentCategoryMapping) {
+      if (parentCategoryMapping[parentCategoryName].includes(groupId)) {
+        return parentCategoryName;
       }
     }
-    return parentCategoriesObject;
+  }
+
+  /**
+   * Gets the category mapping for a tool in the project's .categoryIndex's directory
+   * This gets cached in toolCategoryMapping by toolName
+   * Keyed by toolName & parent category, value is an array of the subcategories
+   * @param toolName
+   * @returns {object}
+   */
+  getAllCategoryMapping(toolName) {
+    if (toolCategoryMapping[toolName] == undefined) {
+      toolCategoryMapping[toolName] = {};
+      const indexPath = path.join(this.getCategoriesDir(toolName), ".categoryIndex");
+      if (fs.pathExistsSync(indexPath)) {
+        try {
+          const parentCategoryFiles = fs.readdirSync(indexPath);
+          parentCategoryFiles.forEach((parentCategoryFile) => {
+            const parentCategoryPath = path.join(indexPath, parentCategoryFile);
+            const parentCategory = path.parse(parentCategoryFile).name;
+            toolCategoryMapping[toolName][parentCategory] = fs.readJsonSync(parentCategoryPath);
+          });
+        } catch (e) {
+          console.error(`Failed to read the category index at ${indexPath}`, e);
+        }
+      }
+    }
+
+    return toolCategoryMapping[toolName];
   }
 
   /**
@@ -437,7 +463,7 @@ export default class ProjectAPI {
             const parentCategoryMapping = this.getAllCategoryMapping(toolName);
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
               if (parentCategoryMapping[categoryName].includes(subCategory)) {
-                //Sub categorie name is contained in this parent
+                // Subcategory name is contained in this parent
                 if (!objectWithParentCategories[categoryName])
                   objectWithParentCategories[categoryName] = [];
                 objectWithParentCategories[categoryName].push(subCategory);
