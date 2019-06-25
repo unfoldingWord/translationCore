@@ -7,7 +7,7 @@ export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
 
 export const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");
-export const THELPS_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
+export const THELPS_EN_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
 export const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 export const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');

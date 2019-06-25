@@ -9,7 +9,7 @@ import * as localizationHelpers from './localizationHelpers';
 import * as ResourcesActions from "../actions/ResourcesActions";
 import * as gatewayLanguageHelpers from "./gatewayLanguageHelpers";
 // constants
-import {THELPS_RESOURCES_PATH} from "../common/constants";
+import {THELPS_EN_RESOURCES_PATH} from "../common/constants";
 
 let tWIndex = [];
 let tNIndex = [];
@@ -32,7 +32,7 @@ function cacheIndicies() {
 function loadToolIndices(toolName) {
   let index = [];
   try {
-    const toolPath = path.join(THELPS_RESOURCES_PATH, toolName);
+    const toolPath = path.join(THELPS_EN_RESOURCES_PATH, toolName);
     let versionPath = ResourceAPI.getLatestVersion(toolPath) || toolPath;
     if (fs.pathExistsSync(versionPath)) {
       const isDirectory = (item) => fs.lstatSync(path.join(versionPath, item)).isDirectory();
