@@ -73,8 +73,20 @@ body {
     src: url(../fonts/NotoSans-BoldItalic.ttf);
 }
 
+/*
+special font for Hebrew
+ */
+@font-face {
+  font-family: Ezra;
+  src: url(../fonts/SILEOTSR.ttf);
+  font-weight: normal;
+}
+
+/*
+use Ezra for Hebrew characters and then Noto Sans for other characters
+ */
 * {
-  font-family: Noto Sans;
+  font-family: Ezra, Noto Sans;
 }
 
 /*

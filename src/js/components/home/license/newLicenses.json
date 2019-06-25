@@ -126,5 +126,9 @@
   "xregexp":{
     "licenses": "MIT",
     "repository": "https://github.com/slevithan/xregexp"
+  },
+  "SIL Ezra Font": {
+    "licenses" : "SIL Open Font License",
+    "repository": "https://scripts.sil.org/OFL/"
   }
 }
