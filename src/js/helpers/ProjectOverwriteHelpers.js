@@ -5,9 +5,10 @@ import usfm from "usfm-js";
 import {checkSelectionOccurrences} from 'selections';
 import isEqual from 'deep-equal';
 import * as AlertActions from '../actions/AlertActions';
+import {sameContext} from '../actions/SelectionActions';
+import {generateLoadPath} from '../actions/CheckDataLoadActions';
 import {getTranslate, getToolsByKey} from '../selectors';
 import {loadProjectGroupData} from './ResourcesHelpers';
-const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
 /**
  * @description Copies existing project checks from the old project path to the new project path
@@ -247,20 +248,6 @@ export function getGroupDataForVerse(groupsData, contextId) {
   return filteredGroupData;
 }
 
-/**
- * returns true if contextIds are a match for reference and group
- * @param {Object} contextId1
- * @param {Object} contextId2
- * @return {boolean}
- */
-export function sameContext(contextId1, contextId2) {
-  if (!!contextId1 && !!contextId2) {
-    return isEqual(contextId1.reference, contextId2.reference) &&
-      (contextId1.groupId === contextId2.groupId);
-  }
-  return false;
-}
-
 export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, projectSaveLocation, quote = "") {
   let selectionsObject = {};
   const contextId = {
@@ -288,40 +275,4 @@ export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, pr
     selectionsObject = fs.readJsonSync(path.join(selectionsPath, filename));
   }
   return selectionsObject;
-}
-
-
-/**
- * Generates the output directory.
- * @param {Object} state - store state object.
- * @param {String} checkDataName - checkDate folder name where data will be saved.
- *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
- * @return {String} save path
- */
-export function generateLoadPath(projectSaveLocation, contextId, checkDataName) {
-  /**
-  * @description output directory
-  *  /translationCore/ar_eph_text_ulb/.apps/translationCore/checkData/comments/eph/1/3
-  * @example PROJECT_SAVE_LOCATION - /translationCore/ar_eph_text_ulb
-  * @example CHECKDATA_DIRECTORY - /.apps/translationCore/checkData
-  * @example bookAbbreviation - /eph
-  * @example checkDataName - /comments
-  * @example chapter - /1
-  * @example verse - /3
-  */
-  const PROJECT_SAVE_LOCATION = projectSaveLocation;
-  if (PROJECT_SAVE_LOCATION) {
-    let bookAbbreviation = contextId.reference.bookId;
-    let chapter = contextId.reference.chapter.toString();
-    let verse = contextId.reference.verse.toString();
-    let loadPath = path.join(
-      PROJECT_SAVE_LOCATION,
-      CHECKDATA_DIRECTORY,
-      checkDataName,
-      bookAbbreviation,
-      chapter,
-      verse
-    );
-    return loadPath;
-  }
 }
