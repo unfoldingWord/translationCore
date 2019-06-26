@@ -182,7 +182,7 @@
     "tc-source-content-updater": "0.5.3",
     "tc-strings": "0.1.7",
     "tc-tool": "2.1.0",
-    "tc-ui-toolkit": "github:translationCoreApps/tc-ui-toolkit#feature-mcleanb-6089",
+    "tc-ui-toolkit": "0.14.15",
     "truncate-utf8-bytes": "1.0.2",
     "tsv-groupdata-parser": "0.9.3",
     "usfm-js": "2.0.1",
