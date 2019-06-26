@@ -80,6 +80,7 @@ special font for Hebrew
   font-family: Ezra;
   src: url(../fonts/SILEOTSR.ttf);
   font-weight: normal;
+  unicode-range: U+0590-05FF;
 }
 
 /*
