@@ -5,7 +5,7 @@ import usfm from "usfm-js";
 import {checkSelectionOccurrences} from 'selections';
 import isEqual from 'deep-equal';
 import * as AlertActions from '../actions/AlertActions';
-import {sameContext} from '../actions/SelectionActions';
+import {sameContext} from '../actions/SelectionsActions';
 import {generateLoadPath} from '../actions/CheckDataLoadActions';
 import {getTranslate, getToolsByKey} from '../selectors';
 import {loadProjectGroupData} from './ResourcesHelpers';
