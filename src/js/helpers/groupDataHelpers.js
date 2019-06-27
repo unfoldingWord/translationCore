@@ -108,6 +108,7 @@ export function isCheckUnique(checkData, loadedChecks) {
           return false;
       }
     }
+    return true;
   }
-  return true;
+  throw new Error("Invalid check data, missing contextId");
 }
