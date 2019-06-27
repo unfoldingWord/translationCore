@@ -10,6 +10,7 @@ import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
 import {copyGroupDataToProject, updateSourceContentUpdaterManifest} from '../helpers/ResourcesHelpers';
 import {getOrigLangforBook} from '../helpers/bibleHelpers';
 import * as Bible from "../common/BooksOfTheBible";
+import { delay } from '../common/utils';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
@@ -116,11 +117,14 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
         })
         .catch((err) => {
           console.error(err);
-          dispatch(openAlertDialog(translate('updates.source_content_updates_unsuccessful_download')));
           dispatch(
             failedAlertAndRetry(
               () => dispatch(closeAlertDialog()),
-              () => downloadSourceContentUpdates(languageIdListToDownload),
+              async () => {
+                // Added delay to handle Socket timeouts caused by Door43 catalog's request throttling.
+                await delay(500);
+                downloadSourceContentUpdates(languageIdListToDownload);
+              },
               'updates.source_content_updates_unsuccessful_download'
             )
           );
