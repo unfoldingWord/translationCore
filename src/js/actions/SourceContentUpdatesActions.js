@@ -21,13 +21,13 @@ export const resetSourceContentUpdatesReducer = () => ({
   type: consts.RESET_LIST_OF_SOURCE_CONTENT_TO_UPDATE
 });
 
-const failedGettingLatestResourcesAndRetry = (closeSourceContentDialog) => {
+const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertMessage) => {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     dispatch(
       openOptionDialog(
-        translate('updates.failed_checking_for_source_content_updates'),
-        () => dispatch(getListOfSourceContentToUpdate(closeSourceContentDialog)),
+        translate(failAlertMessage),
+        () => dispatch(retryCallback()),
         translate('buttons.retry'),
         translate('buttons.cancel_button'),
         null,
@@ -68,7 +68,13 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
         })
         .catch((err) => {
           console.error(err, 'Local Resource List:', localResourceList);
-          dispatch(failedGettingLatestResourcesAndRetry(closeSourceContentDialog));
+          dispatch(
+            failedAlertAndRetry(
+              closeSourceContentDialog,
+              () => getListOfSourceContentToUpdate(closeSourceContentDialog),
+              'updates.failed_checking_for_source_content_updates'
+            )
+          );
         });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
@@ -96,14 +102,14 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
         .then(async () => {
           updateSourceContentUpdaterManifest();
 
-          // if tool currently opened then load new bible resources
+          // if tool is opened then load new bible resources
           if (toolName) {
             const projectSaveLocation = getProjectSaveLocation(getState());
             const bookId = getProjectBookId(getState());
             const olForBook = getOrigLangforBook(bookId);
             let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
             await dispatch(loadBookTranslations(contextId.reference.bookId));
-            //Tool is open so we need to update existing group data
+            // Tool is opened so we need to update existing group data
             copyGroupDataToProject(helpDir, toolName, projectSaveLocation);
           }
           dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
@@ -111,6 +117,13 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
         .catch((err) => {
           console.error(err);
           dispatch(openAlertDialog(translate('updates.source_content_updates_unsuccessful_download')));
+          dispatch(
+            failedAlertAndRetry(
+              () => dispatch(closeAlertDialog()),
+              () => downloadSourceContentUpdates(languageIdListToDownload),
+              'updates.source_content_updates_unsuccessful_download'
+            )
+          );
         });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
