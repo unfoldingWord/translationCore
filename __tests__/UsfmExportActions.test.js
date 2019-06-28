@@ -391,10 +391,10 @@ describe('USFMExportActions.exportToUSFM', () => {
     { "type": "CLOSE_ALERT_DIALOG" },
     { "bool": true, "type": "SHOW_DIMMED_SCREEN" },
     { "alertMessage": "projects.exporting_file_alert", "loading": true, "type": "OPEN_ALERT_DIALOG" },
-    { "bool": false, "type": "SHOW_DIMMED_SCREEN" },
     { "type": "CLOSE_ALERT_DIALOG" },
     { "type": "SET_USFM_SAVE_LOCATION", "usfmSaveLocation": "/" },
-    { "alertMessage": "projects.exported_alert", "loading": false, "type": "OPEN_ALERT_DIALOG" }];
+    { "alertMessage": "projects.exported_alert", "loading": false, "type": "OPEN_ALERT_DIALOG" },
+    { "bool": false, "type": "SHOW_DIMMED_SCREEN" }];
     const projectSaveLocation = path.join(PROJECTS_PATH, projectName);
     const usfmExportType = 'usfm3';
     const initialState = {
