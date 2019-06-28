@@ -214,6 +214,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     closeLoading: coreApi.closeLoading,
     showIgnorableAlert: coreApi.showIgnorableAlert,
     appLanguage: code,
+    // TODO: add list of projects for tool to access
 
     // project data
     sourceBook,
