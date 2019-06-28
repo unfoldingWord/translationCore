@@ -374,7 +374,8 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
             if (result === confirmText) {
               dispatch(AlertModalActions.closeAlertDialog());
               const oldProjectPath = path.join(PROJECTS_PATH, projectName);
-              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()));
+              console.log('handleOverwriteWarning() - doing overwrite/merge');
+              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()), dispatch);
               fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
               fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
               dispatch(setSaveLocation(oldProjectPath));
