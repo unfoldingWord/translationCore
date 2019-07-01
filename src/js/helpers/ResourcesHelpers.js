@@ -21,6 +21,7 @@ import {
 } from "./groupDataHelpers";
 import * as Bible from "../common/BooksOfTheBible";
 import {generateTimestamp} from "./TimestampGenerator";
+import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
 // constants
 import {
   APP_VERSION,
@@ -144,8 +145,9 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
  * @param {string} gatewayLanguage - the gateway language code
  * @param {string} toolName - the name of the tool for which helps will be copied
  * @param {string} projectDir - path to the project directory
+ * @param {function} dispatch - dispatch function
  */
-export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
+export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
   if (toolName === "translationNotes")
@@ -156,6 +158,11 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir) {
     const groupDataUpdated = project.hasNewGroupsData(toolName);
     if (groupDataUpdated) {
       project.resetLoadedCategories(toolName);
+      if (toolName === "translationNotes") {
+        const tHelpsManifest = fs.readJsonSync(path.join(helpDir, 'manifest.json'));
+        const { relation } = tHelpsManifest.dublin_core || {};
+        dispatch(addObjectPropertyToManifest('tsv_relation', relation));
+      }
     }
     const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
     const categoryKeys = Object.keys(categories);
