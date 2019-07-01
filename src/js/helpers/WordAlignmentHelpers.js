@@ -196,8 +196,11 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       for (let verseNumber in chapterAlignmentJSON) {
         if (!parseInt(verseNumber)) continue; // only import integer based verses
         const verseAlignments = chapterAlignmentJSON[verseNumber];
-        const verseString = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(
-                                targetLanguageChapterJSON[verseNumber]);
+        const targetVerse = targetLanguageChapterJSON[verseNumber];
+        if (targetVerse === undefined) {
+          continue; // skip if no target verse
+        }
+        const verseString = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(targetVerse);
         let verseObjects;
         try {
           verseObjects = wordaligner.merge(

@@ -23,9 +23,11 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       exportHelpers.makeSureUsfm3InHeader(projectSaveLocation, manifest);
       /** Convert alignments from the filesystem under the project alignments folder */
       console.log("getUsfm3ExportFile: Saving Alignments to USFM");
-      let usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
-        wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
-      ).catch(async (e) => {
+      let usfm = null;
+      try {
+        usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
+          wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id);
+      } catch (e) {
         if (e && e.error && e.error.type === 'InvalidatedAlignments') {
           //error in converting alignment need to prompt user to fix
           const {chapter, verse} = e;
@@ -38,15 +40,21 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
             if (!output) dispatch(USFMExportActions.displayLoadingUSFMAlert(manifest));
           }
           if (res === 'Export') {
+            console.log("getUsfm3ExportFile: Resetting Alignments");
             //The user chose to continue and reset the alignments
             await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
-            const exported_usfm = await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
-            resolve(exported_usfm);
+            usfm = await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
           } else {
-            reject();
+            console.error("getUsfm3ExportFile: Conversion Failed - invalid alignments", e);
+            reject(e);
+            return;
           }
-        } else console.error(e);
-      });
+        } else {
+          console.error("getUsfm3ExportFile() - Error converting alignment data to USFM", e);
+          reject(e);
+          return;
+        }
+      }
 
       if (output) { /** output indicates that it is a silent upload */
         //Write converted usfm to specified location
