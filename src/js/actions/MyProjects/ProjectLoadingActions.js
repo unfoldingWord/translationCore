@@ -297,10 +297,18 @@ export function closeProject() {
     const toolApi = getSelectedToolApi(state);
     const supportingToolApis = getSupportingToolApis(state);
     for (const key of Object.keys(supportingToolApis)) {
-      supportingToolApis[key].triggerWillDisconnect();
+      try {
+        supportingToolApis[key].triggerWillDisconnect();
+      } catch (e) {
+        console.warn(`Failed to disconnect from ${key}`, e);
+      }
     }
     if (toolApi) {
-      toolApi.triggerWillDisconnect();
+      try {
+        toolApi.triggerWillDisconnect();
+      } catch (e) {
+        console.warn(`Failed to disconnect from the current tool`, e);
+      }
     }
 
     /**
