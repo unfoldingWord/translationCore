@@ -13,6 +13,7 @@ import * as WordAlignmentActions from './WordAlignmentActions';
 import {setSetting} from '../actions/SettingsActions';
 import migrateProject from '../helpers/ProjectMigration';
 //helpers
+import {delay} from "../common/utils";
 import * as exportHelpers from '../helpers/exportHelpers';
 import {getTranslate, getUsername} from '../selectors';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
@@ -43,34 +44,35 @@ export function exportToUSFM(projectPath) {
         let usfmExportFile;
         console.log("exportToUSFM() - loading USFM");
         dispatch(displayLoadingUSFMAlert(manifest));
-        setTimeout(async () => {
-          if (exportType === 'usfm2') {
-            console.log("exportToUSFM() - getting USFM2");
-            usfmExportFile = getUsfm2ExportFile(projectPath);
-          } else if (exportType === 'usfm3') {
-            console.log("exportToUSFM() - getting USFM3");
-            /** Exporting to usfm3 also checking for invalidated alignments */
-            usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
-          }
-          dispatch(AlertModalActions.closeAlertDialog());
-          /** Last place the user saved usfm */
-          const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
-          /** File path from electron file chooser */
-          console.log("exportToUSFM() - getting output file path");
-          const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
-          /** Getting new project name to save in case the user changed the save file name */
-          projectName = path.parse(filePath).base.replace('.usfm', '');
-          /** Saving the location for future exports */
-          dispatch(storeUSFMSaveLocation(filePath, projectName));
-          console.log("exportToUSFM() - writing usfm to: " + filePath);
-          fs.writeFileSync(filePath, usfmExportFile);
-          dispatch(displayUSFMExportFinishedDialog(projectName));
-          console.log("exportToUSFM() - USFM export finished");
-          resolve();
-        }, 200);
+        await delay(300);
+        if (exportType === 'usfm2') {
+          console.log("exportToUSFM() - getting USFM2");
+          usfmExportFile = getUsfm2ExportFile(projectPath);
+        } else if (exportType === 'usfm3') {
+          console.log("exportToUSFM() - getting USFM3");
+          /** Exporting to usfm3 also checking for invalidated alignments */
+          usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
+        }
+        dispatch(AlertModalActions.closeAlertDialog());
+        /** Last place the user saved usfm */
+        const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
+        /** File path from electron file chooser */
+        console.log("exportToUSFM() - getting output file path");
+        const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
+        /** Getting new project name to save in case the user changed the save file name */
+        projectName = path.parse(filePath).base.replace('.usfm', '');
+        /** Saving the location for future exports */
+        dispatch(storeUSFMSaveLocation(filePath, projectName));
+        console.log("exportToUSFM() - writing usfm to: " + filePath);
+        fs.writeFileSync(filePath, usfmExportFile);
+        dispatch(displayUSFMExportFinishedDialog(projectName));
+        console.log("exportToUSFM() - USFM export finished");
+        resolve();
       } catch (err) {
         console.log("exportToUSFM() - ERROR:", err);
-        if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+        const translate = getTranslate(getState());
+        const message = translate("projects.export_failed_error", {error: err.message || err});
+        dispatch(AlertModalActions.openAlertDialog(message, false));
         reject(err);
       }
       dispatch(BodyUIActions.dimScreen(false));
