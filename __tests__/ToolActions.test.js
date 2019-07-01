@@ -1,6 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from '../src/js/actions/ToolActions';
+import { NT_ORIG_LANG_BIBLE, NT_ORIG_LANG } from '../src/js/common/BooksOfTheBible';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -53,6 +54,26 @@ describe('Tool Actions.openTool', () => {
       projectSaveLocation: 'Users/me/test_project_reg',
       currentProjectToolsSelectedGL: {
         [toolName]: 'en'
+      },
+      manifest: {
+        tsv_relation: [
+          "en/ult",
+          "el-x-koine/ugnt?v=0.8",
+          "hbo/uhb?v=2.1.7"
+        ]
+      }
+    },
+    resourcesReducer: {
+      bibles: {
+        originalLanguage: {
+          [NT_ORIG_LANG_BIBLE]: {
+            manifest: {
+              language_id: NT_ORIG_LANG,
+              resource_id: NT_ORIG_LANG_BIBLE,
+              dublin_core: { version: 0.8 },
+            }
+          }
+        }
       }
     }
   });
