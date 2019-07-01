@@ -3,29 +3,31 @@ import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Card, CardHeader} from 'material-ui';
 import {Glyphicon} from 'react-bootstrap';
+import { connect } from "react-redux";
+import _ from "lodash";
 // helpers
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import {getTranslation} from '../../../helpers/localizationHelpers';
+import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
 // components
 import ToolCardBoxes from './ToolCardBoxes';
 import Hint from '../../Hint';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
-import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
+// selectors
 import {
   getProjectBookId,
   getSetting,
   getToolGatewayLanguage
 } from "../../../selectors";
-import { connect } from "react-redux";
-import _ from "lodash";
 
 class ToolCard extends Component {
   constructor(props) {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleMissingResource = this.handleMissingResource.bind(this);
     this.loadProgress = _.debounce(this.loadProgress.bind(this), 200);
     this.state = {
       showDescription: false,
@@ -104,6 +106,10 @@ class ToolCard extends Component {
     onSelect(tool.name);
   }
 
+  handleMissingResource() {
+    this.props.onMissingResource();
+  }
+
   render() {
     const {
       tool,
@@ -116,13 +122,14 @@ class ToolCard extends Component {
         closePopover
       },
       selectedCategories,
-      availableCategories
+      availableCategories,
+      isOLBookVersionMissing,
     } = this.props;
     const {progress, selectedGL} = this.state;
-
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
     let showCheckBoxes = false;
+
     switch (tool.name) {
       case 'wordAlignment':
         desc_key = 'tools.alignment_description';
@@ -210,7 +217,7 @@ class ToolCard extends Component {
               <button
                 disabled={launchDisableMessage ? true : false}
                 className='btn-prime'
-                onClick={this.handleSelect}
+                onClick={isOLBookVersionMissing ? this.handleMissingResource : this.handleSelect}
                 style={{width: '90px', margin: '10px'}}
               >
                 {translate('buttons.launch_button')}
@@ -229,7 +236,6 @@ ToolCard.propTypes = {
   bookId: PropTypes.string.isRequired,
   tool: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired,
-
   actions: PropTypes.shape({
     getProjectProgressForTools: PropTypes.func.isRequired,
     setProjectToolGL: PropTypes.func.isRequired,
@@ -237,6 +243,8 @@ ToolCard.propTypes = {
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
+  isOLBookVersionMissing: PropTypes.bool.isRequired,
+  onMissingResource: PropTypes.func.isRequired,
 };
 
 ToolCard.contextTypes = {

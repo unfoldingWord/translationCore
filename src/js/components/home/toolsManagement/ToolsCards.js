@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import fs from 'fs-extra';
+import path from 'path-extra';
+import { Card, CardText } from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import ToolCard from './ToolCard';
-import { Card, CardText } from 'material-ui';
+// helpers
+import {getTsvOLVersion} from '../../../helpers/originalLanguageResourcesHelpers';
 import {getAvailableCategories} from '../../../helpers/ResourcesHelpers';
+// constants
+import { USER_RESOURCES_PATH } from '../../../common/constants';
 
 /**
  * Renders a list of tools.
@@ -33,7 +39,9 @@ const ToolsCards = ({
   manifest,
   invalidatedReducer,
   toolsCategories,
-  currentProjectToolsSelectedGL
+  originalLanguageBookManifest,
+  currentProjectToolsSelectedGL,
+  onMissingResource,
 }) => {
   if (!tools || tools.length === 0) {
     return (
@@ -67,6 +75,23 @@ const ToolsCards = ({
         {
           tools.map((tool, i) => {
             const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation);
+            let isOLBookVersionMissing = false;
+            let missingOLResource = {};
+            if (tool.name === 'translationNotes') {
+              const {
+                language_id: languageId,
+                resource_id: resourceId
+              } = originalLanguageBookManifest;
+              const { tsv_relation } = manifest;
+              const tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
+              const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, 'v' + tsvOLVersion);
+              isOLBookVersionMissing = !fs.existsSync(neededOLPath);
+              missingOLResource = {
+                languageId,
+                resourceId,
+                version: tsvOLVersion,
+              };
+            }
 
             return (
               <ToolCard
@@ -86,8 +111,9 @@ const ToolsCards = ({
                   folderName: tool.path,
                   name: tool.name
                 }}
+                isOLBookVersionMissing={isOLBookVersionMissing}
+                onMissingResource={() => onMissingResource(missingOLResource)}
                 invalidatedReducer={invalidatedReducer}
-                manifest={manifest}
               />
             );
           })
@@ -108,6 +134,8 @@ ToolsCards.propTypes = {
   manifest: PropTypes.object.isRequired,
   invalidatedReducer: PropTypes.object.isRequired,
   toolsCategories: PropTypes.object.isRequired,
+  originalLanguageBookManifest: PropTypes.object.isRequired,
+  onMissingResource: PropTypes.func.isRequired,
 };
 
 export default ToolsCards;

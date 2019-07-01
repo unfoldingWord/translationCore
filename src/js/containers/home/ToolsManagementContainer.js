@@ -1,17 +1,23 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+// components
 import ToolsCards from "../../components/home/toolsManagement/ToolsCards";
-import HomeContainerContentWrapper
-  from "../../components/home/HomeContainerContentWrapper";
-import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
+import HomeContainerContentWrapper from "../../components/home/HomeContainerContentWrapper";
 import {
-  getTools, getIsUserLoggedIn, getProjectSaveLocation, getProjectBookId,
-  getToolGatewayLanguage
+  getTools,
+  getIsUserLoggedIn,
+  getProjectSaveLocation,
+  getProjectBookId,
+  getToolGatewayLanguage,
+  getSourceBookManifest,
 } from "../../selectors";
+// actions
 import { openTool } from "../../actions/ToolActions";
 import { openAlertDialog } from "../../actions/AlertModalActions";
 import * as PopoverActions from "../../actions/PopoverActions";
+import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
+import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -57,7 +63,9 @@ class ToolsManagementContainer extends Component {
         },
         invalidatedReducer
       },
-      translate
+      translate,
+      originalLanguageBookManifest,
+      onMissingResource,
     } = this.props;
 
     const instructions = (
@@ -82,9 +90,9 @@ class ToolsManagementContainer extends Component {
             translate={translate}
             bookName={name}
             loggedInUser={loggedInUser}
-            actions={{
-              ...this.props.actions
-            }}
+            actions={{ ...this.props.actions }}
+            onMissingResource={onMissingResource}
+            originalLanguageBookManifest={originalLanguageBookManifest}
             currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
@@ -99,6 +107,7 @@ const mapStateToProps = (state) => {
   return {
     isUserLoggedIn: getIsUserLoggedIn(state),
     tools: getTools(state),
+    originalLanguageBookManifest: getSourceBookManifest(state),
     reducers: {
       homeScreenReducer: state.homeScreenReducer,
       projectDetailsReducer: state.projectDetailsReducer,
@@ -112,6 +121,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     openTool: name => dispatch(openTool(name)),
     openAlertDialog: message => dispatch(openAlertDialog(message)),
+    onMissingResource: (resourceDetails) => dispatch(promptUserAboutMissingResource(resourceDetails)),
     actions: {
       loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
         dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
@@ -144,7 +154,9 @@ ToolsManagementContainer.propTypes = {
     }).isRequired
   }).isRequired,
   actions: PropTypes.object.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  originalLanguageBookManifest: PropTypes.object.isRequired,
+  onMissingResource: PropTypes.func.isRequired,
 };
 
 export default connect(

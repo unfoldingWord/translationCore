@@ -129,3 +129,66 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
     }
   });
 };
+
+/**
+ * Downloads a given resource from the door43 catalog via
+ * the tc-source-content-updater.
+ * @param {object} resourceDetails - Details about the resource.
+ * { languageId: 'en', resourceId: 'ult', version: 0.8 }
+ * @param {string} resourceDetails.languageId The language Id of the resource.
+ * @param {string} resourceDetails.resourceId The resource Id of the resource.
+ * @param {number} resourceDetails.version The version of the resource.
+ */
+export const downloadMissingResource = (resourceDetails) => {
+  return (async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+
+    if (navigator.onLine) {
+      dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
+      await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH)
+        .then(async () => {
+          updateSourceContentUpdaterManifest();
+          const successMessage = `${translate('updates.source_content_updates_successful_download')} ${translate('tools.click_the_launch_button')}`;
+          dispatch(openAlertDialog(successMessage));
+        })
+        .catch((err) => {
+          console.error(err);
+          dispatch(
+            failedAlertAndRetry(
+              () => dispatch(closeAlertDialog()),
+              () => downloadMissingResource(resourceDetails),
+              'updates.source_content_updates_unsuccessful_download'
+            )
+          );
+        });
+    } else {
+      dispatch(openAlertDialog(translate('no_internet')));
+    }
+  });
+};
+
+/**
+ * Prompts the user about a missing resource needed by the tool.
+ * @param {object} resourceDetails - Details about the resource.
+ * { languageId: 'en', resourceId: 'ult', version: 0.8 }
+ * @param {string} resourceDetails.languageId The language Id of the resource.
+ * @param {string} resourceDetails.resourceId The resource Id of the resource.
+ * @param {number} resourceDetails.version The version of the resource.
+ */
+export const promptUserAboutMissingResource = (resourceDetails) => {
+  return (async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const { resourceId } = resourceDetails;
+
+    dispatch(
+      openOptionDialog(
+        translate('tools.resource_missing_for_tool', { resourceId: resourceId.toUpperCase() }),
+        () => dispatch(downloadMissingResource(resourceDetails)),
+        translate('updates.download'),
+        translate('buttons.cancel_button'),
+        null,
+        () => dispatch(closeAlertDialog()),
+      ),
+    );
+  });
+};
