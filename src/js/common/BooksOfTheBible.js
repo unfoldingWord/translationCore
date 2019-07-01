@@ -1,3 +1,8 @@
+export const NT_ORIG_LANG = 'el-x-koine';
+export const NT_ORIG_LANG_BIBLE = 'ugnt';
+export const OT_ORIG_LANG = 'hbo';
+export const OT_ORIG_LANG_BIBLE = 'uhb';
+
 /**
  * Nested version of the books of the bible object.
  */
@@ -153,10 +158,5 @@ export function getAllBibleBooks(translate=k=>k) {
   });
   return bibleBooks;
 }
-
-export const NT_ORIG_LANG = 'el-x-koine';
-export const NT_ORIG_LANG_BIBLE = 'ugnt';
-export const OT_ORIG_LANG = 'hbo';
-export const OT_ORIG_LANG_BIBLE = 'uhb';
 
 export default BIBLE_BOOKS;
