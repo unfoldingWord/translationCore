@@ -500,3 +500,11 @@ export const getGroupsData = (state) =>
 
 export const getBibles = (state) =>
   fromResourcesReducer.getBibles(state.resourcesReducer);
+
+/**
+ * Returns the manifest for the source language book.
+ * @param state
+ * @returns {object}
+ */
+export const getSourceBookManifest = state =>
+  fromResourcesReducer.getSourceBookManifest(state.resourcesReducer);
