@@ -28,8 +28,8 @@ const bookCache = new SimpleCache();
  */
 export function addNewBible(languageId, bibleId, bibleData) {
   return ((dispatch) => {
-    if (languageId.toLowerCase() === Bible.NT_ORIG_LANG || languageId.toLowerCase() === Bible.OT_ORIG_LANG) {
-      languageId = 'originalLanguage';
+    if (BibleHelpers.isOriginalLanguageBbible(languageId, bibleId)) {
+      languageId = 'originalLanguage'; // TRICKY: the original language can have many bibles, but only one we can use as reference
     }
     dispatch({
       type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
@@ -378,8 +378,8 @@ export const loadSourceBookTranslations = (bookId, toolName) => async (dispatch,
   const bibles = getBibles(getState());
   // Filter out bible resources that are already in the resources reducer
   const filteredResources = resources.filter(resource => {
-    const isOriginalLanguage = resource.languageId === Bible.OT_ORIG_LANG || resource.languageId === Bible.NT_ORIG_LANG;
-    const languageId = isOriginalLanguage ? 'originalLanguage' : resource.languageId;
+    const isOriginalLanguage = BibleHelpers.isOriginalLanguageBbible(resource.languageId, resource.bibleId);
+    const languageId = isOriginalLanguage ? 'originalLanguage' : resource.languageId; // TRICKY: the original language can have many bibles, but only one we can use as reference
     const biblesForLanguage = bibles[languageId];
     return !(biblesForLanguage && biblesForLanguage[resource.bibleId]);
   });

@@ -601,8 +601,8 @@ export function getAvailableScripturePaneSelections(resourceList) {
                   path.join(bibleLatestVersion, bookId, "1.json"));
                 if (manifestExists && bookExists) {
                   let languageId_ = languageId;
-                  if ((languageId.toLowerCase() === Bible.NT_ORIG_LANG) || (languageId.toLowerCase() === Bible.OT_ORIG_LANG)) {
-                    languageId_ = 'originalLanguage';
+                  if (BibleHelpers.isOriginalLanguageBbible(languageId, bibleId)) {
+                    languageId_ = 'originalLanguage'; // TRICKY: the original language can have many bibles, but only one we can use as reference
                   }
                   const manifest = fs.readJsonSync(pathToBibleManifestFile);
                   if (Object.keys(manifest).length) {
