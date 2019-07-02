@@ -21,13 +21,13 @@ export const resetSourceContentUpdatesReducer = () => ({
   type: consts.RESET_LIST_OF_SOURCE_CONTENT_TO_UPDATE
 });
 
-const failedGettingLatestResourcesAndRetry = (closeSourceContentDialog) => {
+const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertMessage) => {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     dispatch(
       openOptionDialog(
-        translate('updates.failed_checking_for_source_content_updates'),
-        () => dispatch(getListOfSourceContentToUpdate(closeSourceContentDialog)),
+        translate(failAlertMessage),
+        () => dispatch(retryCallback()),
         translate('buttons.retry'),
         translate('buttons.cancel_button'),
         null,
@@ -68,7 +68,13 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
         })
         .catch((err) => {
           console.error(err, 'Local Resource List:', localResourceList);
-          dispatch(failedGettingLatestResourcesAndRetry(closeSourceContentDialog));
+          dispatch(
+            failedAlertAndRetry(
+              closeSourceContentDialog,
+              () => getListOfSourceContentToUpdate(closeSourceContentDialog),
+              'updates.failed_checking_for_source_content_updates'
+            )
+          );
         });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
@@ -96,24 +102,93 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
         .then(async () => {
           updateSourceContentUpdaterManifest();
 
-          // if tool currently opened then load new bible resources
+          // if tool is opened then load new bible resources
           if (toolName) {
             const projectSaveLocation = getProjectSaveLocation(getState());
             const bookId = getProjectBookId(getState());
             const olForBook = getOrigLangforBook(bookId);
             let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
             await dispatch(loadBookTranslations(contextId.reference.bookId));
-            //Tool is open so we need to update existing group data
+            // Tool is opened so we need to update existing group data
             copyGroupDataToProject(helpDir, toolName, projectSaveLocation);
           }
           dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         })
         .catch((err) => {
           console.error(err);
-          dispatch(openAlertDialog(translate('updates.source_content_updates_unsuccessful_download')));
+          dispatch(
+            failedAlertAndRetry(
+              () => dispatch(closeAlertDialog()),
+              () => downloadSourceContentUpdates(languageIdListToDownload),
+              'updates.source_content_updates_unsuccessful_download'
+            )
+          );
         });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
     }
+  });
+};
+
+/**
+ * Downloads a given resource from the door43 catalog via
+ * the tc-source-content-updater.
+ * @param {object} resourceDetails - Details about the resource.
+ * { languageId: 'en', resourceId: 'ult', version: 0.8 }
+ * @param {string} resourceDetails.languageId The language Id of the resource.
+ * @param {string} resourceDetails.resourceId The resource Id of the resource.
+ * @param {number} resourceDetails.version The version of the resource.
+ */
+export const downloadMissingResource = (resourceDetails) => {
+  return (async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+
+    if (navigator.onLine) {
+      dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
+      await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH)
+        .then(async () => {
+          updateSourceContentUpdaterManifest();
+          const successMessage = `${translate('updates.source_content_updates_successful_download')} ${translate('tools.click_the_launch_button')}`;
+          dispatch(openAlertDialog(successMessage));
+        })
+        .catch((err) => {
+          console.error(err);
+          dispatch(
+            failedAlertAndRetry(
+              () => dispatch(closeAlertDialog()),
+              () => downloadMissingResource(resourceDetails),
+              'updates.source_content_updates_unsuccessful_download'
+            )
+          );
+        });
+    } else {
+      dispatch(openAlertDialog(translate('no_internet')));
+    }
+  });
+};
+
+/**
+ * Prompts the user about a missing resource needed by the tool.
+ * @param {object} resourceDetails - Details about the resource.
+ * { languageId: 'en', resourceId: 'ult', version: 0.8 }
+ * @param {string} resourceDetails.languageId The language Id of the resource.
+ * @param {string} resourceDetails.resourceId The resource Id of the resource.
+ * @param {number} resourceDetails.version The version of the resource.
+ */
+export const promptUserAboutMissingResource = (resourceDetails) => {
+  return (async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const { resourceId } = resourceDetails;
+
+    dispatch(
+      openOptionDialog(
+        translate('tools.resource_missing_for_tool', { resourceId: resourceId.toUpperCase() }),
+        () => dispatch(downloadMissingResource(resourceDetails)),
+        translate('updates.download'),
+        translate('buttons.cancel_button'),
+        null,
+        () => dispatch(closeAlertDialog()),
+      ),
+    );
   });
 };

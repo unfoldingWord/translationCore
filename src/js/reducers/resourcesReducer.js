@@ -104,7 +104,7 @@ export const getTargetBook = state => {
 /**
  * Returns the source language book
  * @param state
- * @returns {*}
+ * @returns {object}
  */
 export const getSourceBook = state => {
   return state.bibles.originalLanguage && (state.bibles.originalLanguage[Bible.NT_ORIG_LANG_BIBLE] ||
@@ -145,4 +145,14 @@ export const getOriginalChapter = (state, chapter) => {
  */
 export const getBibles = state => {
   return state.bibles;
+};
+
+/**
+ * Returns the manifest for the source language book.
+ * @param state
+ * @returns {object}
+ */
+export const getSourceBookManifest = state => {
+  const sourceBible = getSourceBook(state);
+  return sourceBible.manifest;
 };

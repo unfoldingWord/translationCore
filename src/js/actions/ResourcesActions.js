@@ -140,16 +140,17 @@ const migrateChapterToVerseObjects = chapterData => {
  * @param bibleId
  * @param bookId
  * @param languageId
+ * @param version
  * @return {object}
  */
-export const loadBookResource = (bibleId, bookId, languageId) => {
+export const loadBookResource = (bibleId, bookId, languageId, version = null) => {
   try {
     const bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleId); // ex. user/NAME/translationCore/resources/en/bibles/ult
     if (fs.existsSync(bibleFolderPath)) {
       const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => {
         return folder !== '.DS_Store';
       }); // ex. v9
-      const versionNumber = versionNumbers[versionNumbers.length - 1];
+      const versionNumber = version || versionNumbers[versionNumbers.length - 1];
       const bibleVersionPath = path.join(bibleFolderPath, versionNumber);
       const bookPath = path.join(bibleVersionPath, bookId);
       const cacheKey = 'book:' + bookPath;
@@ -194,10 +195,11 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
  * @param bibleId
  * @param bookId
  * @param languageId
+ * @param version
  * @return {Function}
  */
-export const loadBibleBook = (bibleId, bookId, languageId) => (dispatch) => {
-  const bibleData = loadBookResource(bibleId, bookId, languageId);
+export const loadBibleBook = (bibleId, bookId, languageId, version = null) => (dispatch) => {
+  const bibleData = loadBookResource(bibleId, bookId, languageId, version);
   if (bibleData) {
     dispatch(addNewBible(languageId, bibleId, bibleData));
   }
