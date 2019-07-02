@@ -141,7 +141,7 @@ export const openProject = (name, skipValidation=false) => {
         console.log("openProject() - copy group data");
         const olForBook = BibleHelpers.getOrigLangforBook(bookId);
         let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
-        copyGroupDataToProject(helpDir, t.name, validProjectDir);
+        copyGroupDataToProject(helpDir, t.name, validProjectDir, dispatch);
 
         // select default categories
         const language = getToolGatewayLanguage(getState(), t.name);
