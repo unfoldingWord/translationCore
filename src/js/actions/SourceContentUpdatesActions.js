@@ -148,7 +148,7 @@ export const downloadMissingResource = (resourceDetails) => {
       await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH)
         .then(async () => {
           updateSourceContentUpdaterManifest();
-          const successMessage = `${translate('updates.source_content_updates_successful_download')} ${translate('tools.click_the_launch_button')}`;
+          const successMessage = translate('updates.source_content_updates_successful_download');
           dispatch(openAlertDialog(successMessage));
         })
         .catch((err) => {
