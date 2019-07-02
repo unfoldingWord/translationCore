@@ -30,7 +30,7 @@ import {
   getToolGatewayLanguage,
   getTools,
   getTranslate,
-  getUsername
+  getUsername, getProjects
 } from "../../selectors";
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -214,7 +214,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     closeLoading: coreApi.closeLoading,
     showIgnorableAlert: coreApi.showIgnorableAlert,
     appLanguage: code,
-    // TODO: add list of projects for tool to access
+    projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
 
     // project data
     sourceBook,
