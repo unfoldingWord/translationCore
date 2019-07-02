@@ -8,6 +8,7 @@ import ResourceAPI from "./ResourceAPI";
 import * as localizationHelpers from './localizationHelpers';
 import * as ResourcesActions from "../actions/ResourcesActions";
 import * as gatewayLanguageHelpers from "./gatewayLanguageHelpers";
+import {getQuoteAsString} from 'checking-tool-wrapper';
 // constants
 import {THELPS_EN_RESOURCES_PATH} from "../common/constants";
 
@@ -89,7 +90,7 @@ export const flattenContextId = (contextId, translate) => {
     groupId: contextId.groupId,
     groupName: groupName(contextId),
     occurrence: contextId.occurrence,
-    quote: flattenQuote(contextId.quote),
+    quote: getQuoteAsString(contextId.quote),
     gatewayLanguageCode: contextId.glCode || 'N/A',
     gatewayLanguageQuote: contextId.glQuote || 'N/A',
     occurrenceNote: contextId.occurrenceNote || 'N/A',
@@ -115,20 +116,6 @@ export const getGLQuote = (contextId) => {
     contextId.glQuote = glQuote;
   }
   return contextId;
-};
-
-/**
- * Flattens a quote which may be an array of words
- * @param {*} quote
- * @returns {string}
- */
-export const flattenQuote = quote => {
-  if (Array.isArray(quote)) {
-    quote = quote.map(item => item.word).join(" ");
-    // remove space before any punctuation that is used in Greek except `...` and `…`
-    quote = quote.replace(/\s+(?!\.\.\.)(?!…)([.,;'’`?!"]+)/g, '$1');
-  }
-  return quote;
 };
 
 /**
