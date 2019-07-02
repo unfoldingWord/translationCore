@@ -316,6 +316,8 @@
     }
   },
   "tools": {
+    "click_the_launch_button": "Now you can click the Launch button to open the tool.",
+    "resource_missing_for_tool": "The current project and tool selected require an older version of the ${resourceId}. Please click the Download button to download the version of the ${resourceId} that is required by this project and tool combination.",
     "no_checks_selected": "É preciso selecionar uma categoria para abrir esta ferramenta",
     "book_not_supported": "Livro não suportado",
     "select_tool_from_list": "Selecione uma ferramenta e uma Língua Ponte a partir da lista.",
