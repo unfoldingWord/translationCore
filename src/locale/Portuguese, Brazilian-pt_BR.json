@@ -317,7 +317,7 @@
   },
   "tools": {
     "click_the_launch_button": "Agora você pode clicar no botão Iniciar para abrir a ferramenta.",
-    "resource_missing_for_tool": "The current project and tool selected require an older version of the ${resourceId}. Please click the Download button to download the version of the ${resourceId} that is required by this project and tool combination.",
+    "resource_missing_for_tool": "O projeto atual e a ferramenta selecionada requerem uma versão mais antiga do ${resourceId}. Por favor, clique no botão Download para baixar a versão do ${resourceId} que é requerida para esta combinação de projeto e ferramenta.",
     "no_checks_selected": "É preciso selecionar uma categoria para abrir esta ferramenta",
     "book_not_supported": "Livro não suportado",
     "select_tool_from_list": "Selecione uma ferramenta e uma Língua Ponte a partir da lista.",
