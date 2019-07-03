@@ -316,6 +316,7 @@
     }
   },
   "tools": {
+    "resource_missing_for_tool": "The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.",
     "no_checks_selected": "Вы должны выбрать категорию, чтобы запустить этот инструмент",
     "book_not_supported": "Книга не поддерживается",
     "select_tool_from_list": "Выберите инструмент и базовый язык из списка.",
