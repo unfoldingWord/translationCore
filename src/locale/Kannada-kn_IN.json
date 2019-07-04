@@ -64,7 +64,7 @@
   "include_app_logs": "ಅಪ್ಲಿಕೇಷನ್ ದಾಖಲೆಗಳು ಸೇರ್ಪಡಿಸು ${Include application logs}",
   "alignment_prompt": "ಒಂದಾಣಿಕೆ ದತ್ತಾಂಶಗಳನ್ನು ನಿಮ್ಮ ವಿಷಯದ ಜೊತೆಯಲ್ಲಿ ರಫ್ತುಗೊಳಿಸಲು ನಿಮಗೆ ಇಷ್ಟವೇ? ${Would you like to export the alignment data with your text?}",
   "include_alignment_check": "ಒಂದಾಣಿಕೆ ದತ್ತಾಂಶಗಳನ್ನು ಸೇರ್ಪಡಿಸು ${Include alignment data}",
-  "loading_verse_edits": "Loading Verse Edits",
+  "loading_verse_edits": "ತಿದ್ದುಪಡಿಸಿದ ವಚನವು ಲೋಡ್ ಆಗುತ್ತಿದೆ ${Loading Verse Edits}",
   "updates": {
     "check_for_newer_app": "Check for software updates",
     "check_for_content_updates": "Check for content updates",
