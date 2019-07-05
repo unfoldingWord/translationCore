@@ -9,6 +9,7 @@ import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // Components
 import GlDropDownList from '../src/js/components/home/toolsManagement/GlDropDownList';
+import { WORD_ALIGNMENT } from '../src/js/common/constants';
 
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
@@ -31,7 +32,7 @@ describe('Test Gateway Language Drop Down List',() => {
     const props = {
       currentGLSelection: 1,
       selectionChange: () => {},
-      toolName: 'wordAlignment',
+      toolName: WORD_ALIGNMENT,
       translate: key => key
     };
     const renderedValue = renderer.create(

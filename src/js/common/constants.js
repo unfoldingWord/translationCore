@@ -5,9 +5,15 @@ import packagefile from '../../../package.json';
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
 
+export const TRANSLATION_WORDS = 'translationWords';
+export const TRANSLATION_NOTES = 'translationNotes';
+export const TRANSLATION_ACADEMY = 'translationAcademy';
+export const TRANSLATION_HELPS = 'translationHelps';
+export const WORD_ALIGNMENT = 'wordAlignment';
+
 export const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");
-export const THELPS_EN_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps');
+export const THELPS_EN_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS);
 export const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 export const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');

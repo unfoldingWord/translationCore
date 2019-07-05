@@ -9,7 +9,7 @@ import * as localizationHelpers from './localizationHelpers';
 import * as ResourcesActions from "../actions/ResourcesActions";
 import * as gatewayLanguageHelpers from "./gatewayLanguageHelpers";
 // constants
-import {THELPS_EN_RESOURCES_PATH} from "../common/constants";
+import {THELPS_EN_RESOURCES_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES} from "../common/constants";
 
 let tWIndex = [];
 let tNIndex = [];
@@ -19,9 +19,9 @@ let tNIndex = [];
   */
 function cacheIndicies() {
   // load tW indices
-  tWIndex = loadToolIndices('translationWords');
+  tWIndex = loadToolIndices(TRANSLATION_WORDS);
   // load tN indices
-  tNIndex = loadToolIndices('translationNotes');
+  tNIndex = loadToolIndices(TRANSLATION_NOTES);
 }
 
 /**
@@ -80,7 +80,7 @@ export function combineData(data, contextId, username, timestamp, translate) {
  */
 export const flattenContextId = (contextId, translate) => {
   // tN has gatewayLanguageQuotes, but tW doesn't so we need to get it from the English ULT for now
-  if (contextId.tool === 'translationWords' && ! contextId.glQuote) {
+  if (contextId.tool === TRANSLATION_WORDS && ! contextId.glQuote) {
     contextId = getGLQuote(contextId);
   }
   return {
@@ -143,10 +143,10 @@ export const groupName = (contextId) => {
   let indexArray;
   let {tool, groupId} = contextId;
   switch (tool) {
-    case 'translationNotes':
+    case TRANSLATION_NOTES:
       indexArray = tNIndex;
       break;
-    case 'translationWords':
+    case TRANSLATION_WORDS:
       indexArray = tWIndex;
       break;
     default:
@@ -183,10 +183,10 @@ export const groupCategory = (contextId) => {
   ;
   let {tool, groupId} = contextId;
   switch (tool) {
-    case 'translationNotes':
+    case TRANSLATION_NOTES:
       indexArray = tNIndex;
       break;
-    case 'translationWords':
+    case TRANSLATION_WORDS:
       indexArray = tWIndex;
       break;
     default:

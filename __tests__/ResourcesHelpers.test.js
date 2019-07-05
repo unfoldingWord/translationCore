@@ -13,7 +13,8 @@ import ResourceAPI from "../src/js/helpers/ResourceAPI";
 import fs from "fs-extra";
 import {
   USER_RESOURCES_PATH,
-  STATIC_RESOURCES_PATH
+  STATIC_RESOURCES_PATH,
+  TRANSLATION_WORDS
 } from "../src/js/common/constants";
 
 const resourcesDir = path.join(__dirname, 'fixtures', 'resources');
@@ -139,7 +140,7 @@ describe('ResourcesHelpers sortVersions() tests', () => {
 });
 
 describe('ResourcesHelpers getGLQuote() tests', () => {
-  const toolName = 'translationWords';
+  const toolName = TRANSLATION_WORDS;
   const hindiExpectedData = [
     {
       "id": "good",

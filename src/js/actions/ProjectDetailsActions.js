@@ -17,7 +17,11 @@ import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
 import Repo from '../helpers/Repo.js';
 import ProjectAPI from "../helpers/ProjectAPI";
 // constants
-import { PROJECTS_PATH, PROJECT_INDEX_FOLDER_PATH } from '../common/constants';
+import {
+  PROJECTS_PATH,
+  PROJECT_INDEX_FOLDER_PATH,
+  WORD_ALIGNMENT
+} from '../common/constants';
 
 /**
  * @description Gets the check categories from the filesystem for the project and
@@ -129,7 +133,7 @@ export function getProjectProgressForTools(toolName, results=null) {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
     const pathToCheckDataFiles = path.join(projectSaveLocation, PROJECT_INDEX_FOLDER_PATH, toolName, bookId);
-    if (toolName === 'wordAlignment') {
+    if (toolName === WORD_ALIGNMENT) {
       const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     } else {

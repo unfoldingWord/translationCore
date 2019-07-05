@@ -5,6 +5,7 @@ import * as actions from '../src/js/actions/RemindersActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+import { TRANSLATION_WORDS } from '../src/js/common/constants';
 
 jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
   getGatewayLanguageCodeAndQuote: () => {
@@ -31,7 +32,7 @@ describe('RemindersActions.toggleReminder', () => {
         }
       },
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       groupsIndexReducer: {
         groupsIndex: [

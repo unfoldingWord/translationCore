@@ -8,7 +8,7 @@ import {tNotesCategories} from "tsv-groupdata-parser";
 import * as ResourcesActions from "../../../actions/ResourcesActions";
 import {parseArticleAbstract} from "../../../helpers/ToolCardHelpers";
 import Hint from "../../Hint";
-import { toolCardCategories } from '../../../common/constants';
+import { toolCardCategories, TRANSLATION_WORDS, TRANSLATION_ACADEMY } from '../../../common/constants';
 
 const styles = {
   root: {
@@ -57,7 +57,7 @@ function localCheckBox(classes, selectedCategories, id, toolName, onChecked, ava
   return (
     <Checkbox
       checked={selectedCategories.includes(id) || (isParent && allChildrenSelected)}
-      indeterminate={isParent && showIndeterminate && toolName !== 'translationWords'}
+      indeterminate={isParent && showIndeterminate && toolName !== TRANSLATION_WORDS}
       classes={{
         root: classes.root,
         checked: classes.checked,
@@ -98,7 +98,7 @@ class ToolCardBoxes extends React.Component {
 
       for(var group in category ) {
         fullText = ResourcesActions.loadArticleData(
-          'translationAcademy',
+          TRANSLATION_ACADEMY,
           category[group],
           this.props.selectedGL
         );
@@ -142,10 +142,10 @@ class ToolCardBoxes extends React.Component {
           Object.keys(availableCategories).map((parentCategory, index) => {
             const subcategories = availableCategories[parentCategory];
             // use other_terms as parentCategory for the othet category for translationWords tool
-            parentCategory = parentCategory === 'other' && toolName == 'translationWords' ?
+            parentCategory = parentCategory === 'other' && toolName === TRANSLATION_WORDS ?
               'other_terms' : parentCategory;
             const hasAllNeededData = !!lookupNames[parentCategory] && subcategories.length > 0 &&
-              (tNotesCategories[parentCategory] || toolName === 'translationWords');
+              (tNotesCategories[parentCategory] || toolName === TRANSLATION_WORDS);
 
             if (hasAllNeededData) {
               return (
@@ -159,7 +159,7 @@ class ToolCardBoxes extends React.Component {
                     </div>
                   </div>
                   <React.Fragment>
-                    {toolName !== 'translationWords' ? (
+                    {toolName !== TRANSLATION_WORDS ? (
                       <div style={{alignSelf: 'flex-end'}}>
                         <Glyphicon // ^ or v
                           style={{

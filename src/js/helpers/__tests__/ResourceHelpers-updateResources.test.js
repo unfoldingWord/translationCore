@@ -7,7 +7,7 @@ import {
   migrateOldCheckingResourceData
 } from "../ResourcesHelpers";
 // constants
-import { PROJECTS_PATH } from '../../common/constants';
+import { PROJECTS_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../common/constants';
 
 describe("migrate resources", () => {
   const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'checkingResources');
@@ -21,7 +21,7 @@ describe("migrate resources", () => {
     // given
     const expectedChangedFiles = 0;
     const projectName = 'en_tit_checking';
-    const toolName = 'translationNotes';
+    const toolName = TRANSLATION_NOTES;
     fs.__loadFilesIntoMockFs([projectName], projectSourcePath, PROJECTS_PATH);
     const projectDir = path.join(PROJECTS_PATH, projectName);
     const imagePath = path.join(PROJECTS_PATH, projectName + ".image");
@@ -40,7 +40,7 @@ describe("migrate resources", () => {
     // given
     const expectedChangedFiles = 3;
     const projectName = 'en_tit_checking';
-    const toolName = 'translationNotes';
+    const toolName = TRANSLATION_NOTES;
     fs.__loadFilesIntoMockFs([projectName], projectSourcePath, PROJECTS_PATH);
     const projectDir = path.join(PROJECTS_PATH, projectName);
     const toolsFolder = '.apps/translationCore';
@@ -69,7 +69,7 @@ describe("migrate resources", () => {
     // given
     const expectedChangedFiles = 3;
     const projectName = 'en_tit_checking';
-    const toolName = 'translationWords';
+    const toolName = TRANSLATION_WORDS;
     fs.__loadFilesIntoMockFs([projectName], projectSourcePath, PROJECTS_PATH);
     const projectDir = path.join(PROJECTS_PATH, projectName);
     const toolsFolder = '.apps/translationCore';

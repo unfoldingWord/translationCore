@@ -5,21 +5,28 @@ import path from "path-extra";
 import ospath from "ospath";
 import _ from "lodash";
 import SimpleCache from "../helpers/SimpleCache";
-import { getContext, getSelectedToolName, getProjectBookId, getBibles } from "../selectors";
+import {getBibles, getContext, getProjectBookId, getSelectedToolName} from "../selectors";
 // actions
 import * as SettingsActions from "./SettingsActions";
 // helpers
 import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
 import * as SettingsHelpers from "../helpers/SettingsHelpers";
-import { DEFAULT_GATEWAY_LANGUAGE } from "../helpers/gatewayLanguageHelpers";
+import {DEFAULT_GATEWAY_LANGUAGE} from "../helpers/gatewayLanguageHelpers";
 import * as BibleHelpers from "../helpers/bibleHelpers";
 import ResourceAPI from "../helpers/ResourceAPI";
 import * as Bible from '../common/BooksOfTheBible';
+import {
+  ORIGINAL_LANGUAGE,
+  TARGET_BIBLE,
+  TARGET_LANGUAGE,
+  TRANSLATION_WORDS,
+  TRANSLATION_ACADEMY,
+  TRANSLATION_HELPS
+} from '../common/constants';
 
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 const bookCache = new SimpleCache();
-import { ORIGINAL_LANGUAGE, TARGET_LANGUAGE, TARGET_BIBLE } from '../common/constants';
 
 /**
  * Adds a bible to the resources reducer.
@@ -313,9 +320,6 @@ export function loadTargetLanguageBook() {
     const bookId = projectDetailsReducer.manifest.project.id;
     const projectPath = projectDetailsReducer.projectSaveLocation;
     const bookPath = path.join(projectPath, bookId);
-    const resourceId = TARGET_LANGUAGE;
-    const bibleId = TARGET_BIBLE;
-
     if (fs.existsSync(bookPath)) {
       const bookData = {};
       const files = fs.readdirSync(bookPath);
@@ -347,7 +351,7 @@ export function loadTargetLanguageBook() {
         }
       }
 
-      dispatch(addNewBible(resourceId, bibleId, bookData));
+      dispatch(addNewBible(TARGET_LANGUAGE, TARGET_BIBLE, bookData));
     } else {
       console.warn(`Target book was not found at ${bookPath}`);
     }
@@ -454,11 +458,11 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   }
   let categories = [];
   if (! category ){
-    if (resourceType === 'translationWords') {
+    if (resourceType === TRANSLATION_WORDS) {
       categories = ['kt', 'names', 'other'];
-    } else if (resourceType === 'translationNotes' || resourceType === 'translationAcademy') {
+    } else if (resourceType === TRANSLATION_WORDS || resourceType === TRANSLATION_ACADEMY) {
       categories = ['translate', 'checking', 'process', 'intro'];
-      resourceType = 'translationAcademy';
+      resourceType = TRANSLATION_ACADEMY;
     } else {
       categories = ['content'];
     }
@@ -468,11 +472,11 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   const articleFile = articleId + '.md';
   for(let i = 0, len = languageDirs.length; i < len; ++i) {
     let languageDir = languageDirs[i];
-    let typePath = path.join(USER_RESOURCES_PATH, languageDir, 'translationHelps', resourceType);
+    let typePath = path.join(USER_RESOURCES_PATH, languageDir, TRANSLATION_HELPS, resourceType);
     let versionPath = ResourceAPI.getLatestVersion(typePath) || typePath;
     for(let j = 0, jLen = categories.length; j < jLen; ++j) {
       let categoryDir = categories[j];
-      if (resourceType === 'translationWords') {
+      if (resourceType === TRANSLATION_WORDS) {
         categoryDir = path.join(categoryDir, 'articles');
       }
       let articleFilePath = path.join(versionPath, categoryDir, articleFile);

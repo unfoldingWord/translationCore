@@ -12,6 +12,7 @@ const FIXTURES_CHECKDATA_PATH = path.join(__dirname, 'fixtures', 'checkData');
 const CURRENT_PROJECT_PATH = path.join(__dirname, 'fixtures', 'project', 'en_tit');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+import { WORD_ALIGNMENT, TRANSLATION_WORDS } from '../src/js/common/constants';
 
 jest.mock('redux-batched-actions', () => ({
   batchActions: (actionsBatch) => {
@@ -47,7 +48,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     const initStore = {
       groupsDataReducer,
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       projectDetailsReducer: {
         manifest: {
@@ -76,7 +77,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     const initStore = {
       groupsDataReducer,
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       projectDetailsReducer: {
         manifest: {
@@ -89,7 +90,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     };
     const store = mockStore(initStore);
     // add verse edit
-    const verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:4","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":1,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":4},"tool":"wordAlignment","groupId":"chapter_1"}};
+    const verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:4","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":1,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":4},"tool":WORD_ALIGNMENT,"groupId":"chapter_1"}};
     const verseEditPath = path.join(CURRENT_PROJECT_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "4");
     fs.ensureDirSync(verseEditPath);
     const fileName = generateTimestamp() + ".json";
@@ -111,7 +112,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     const initStore = {
       groupsDataReducer,
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       projectDetailsReducer: {
         manifest: {
@@ -124,14 +125,14 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     };
     const store = mockStore(initStore);
     // add verse edit
-    let verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:4","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":1,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":4},"tool":"wordAlignment","groupId":"chapter_1"}};
+    let verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:4","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":1,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":4},"tool":WORD_ALIGNMENT,"groupId":"chapter_1"}};
     let verseEditPath = path.join(CURRENT_PROJECT_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "4");
     fs.ensureDirSync(verseEditPath);
     let fileName = generateTimestamp() + ".json";
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
 
     // add 2nd verse edit
-    verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:7","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":7,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":7},"tool":"wordAlignment","groupId":"chapter_1"}};
+    verseEdit = {"verseBefore":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p","verseAfter":"To Titus, a true son in our common faith. Grace and peace from God the Father and Christ Jesus our savior.\n\\p Edit 1:7","tags":["other"],"userName":"photonomad1","activeBook":"tit","activeChapter":1,"activeVerse":7,"modifiedTimestamp":"2019-05-16T12:11:45.970Z","gatewayLanguageCode":"en","gatewayLanguageQuote":"","contextId":{"reference":{"bookId":"tit","chapter":1,"verse":7},"tool":WORD_ALIGNMENT,"groupId":"chapter_1"}};
     verseEditPath = path.join(CURRENT_PROJECT_PATH, ".apps/translationCore/checkData", "verseEdits", bookId, "1", "7");
     fs.ensureDirSync(verseEditPath);
     fileName = generateTimestamp() + ".json";
@@ -265,7 +266,7 @@ function getInitialStateData (bookId, checkPath, projectPath) {
     },
     resourcesReducer: {bibles: {targetLanguage: {targetBible}}},
     toolsReducer: {
-      selectedTool: 'translationWords'
+      selectedTool: TRANSLATION_WORDS
     },
     loginReducer: {
       loggedInUser: false,
@@ -283,7 +284,7 @@ function getInitialStateData (bookId, checkPath, projectPath) {
       currentProjectToolsSelectedGL: {
         translationWords: 'en'
       },
-      currentToolName: 'translationWords'
+      currentToolName: TRANSLATION_WORDS
     },
     contextIdReducer: {
       contextId

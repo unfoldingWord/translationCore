@@ -2,6 +2,7 @@ import consts from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from '../src/js/actions/CommentsActions';
+import { TRANSLATION_WORDS } from '../src/js/common/constants';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -35,7 +36,7 @@ describe('CommentsActions.addComment', () => {
         }
       },
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       groupsIndexReducer: {
         groupsIndex: [

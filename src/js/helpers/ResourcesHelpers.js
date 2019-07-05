@@ -32,7 +32,10 @@ import {
   STATIC_RESOURCES_PATH,
   ORIGINAL_LANGUAGE,
   TARGET_LANGUAGE,
-  TARGET_BIBLE
+  TARGET_BIBLE,
+  TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
+  TRANSLATION_HELPS
 } from '../common/constants';
 
 /**
@@ -153,7 +156,7 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
 export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
-  if (toolName === "translationNotes")
+  if (toolName === TRANSLATION_NOTES)
     gatewayLanguage = "en";
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   if (helpDir) {
@@ -161,7 +164,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
     const groupDataUpdated = project.hasNewGroupsData(toolName);
     if (groupDataUpdated) {
       project.resetLoadedCategories(toolName);
-      if (toolName === "translationNotes") {
+      if (toolName === TRANSLATION_NOTES) {
         const tHelpsManifest = fs.readJsonSync(path.join(helpDir, 'manifest.json'));
         const { relation } = tHelpsManifest.dublin_core || {};
         dispatch(addObjectPropertyToManifest('tsv_relation', relation));
@@ -221,7 +224,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
   const categoriesObj = {};
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
-  if (toolName === 'translationWords'){
+  if (toolName === TRANSLATION_WORDS){
     const manifest = project.getManifest();
     const bookId = manifest && manifest.project && manifest.project.id;
     const {languageId} = BibleHelpers.getOrigLangforBook(bookId);
@@ -688,7 +691,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
 
 export function getGLQuote(languageId, groupId, toolName) {
   try {
-    const GLQuotePathWithoutVersion = path.join(USER_RESOURCES_PATH, languageId, "translationHelps", toolName);
+    const GLQuotePathWithoutVersion = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS, toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(GLQuotePathWithoutVersion);
     const GLQuotePathIndex = path.join(versionDirectory, "kt", "index.json");
     const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);

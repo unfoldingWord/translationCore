@@ -12,7 +12,7 @@ import * as ProjectImportStepperActions
 import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 // helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
-import {USER_RESOURCES_PATH} from '../src/js/common/constants';
+import {USER_RESOURCES_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES} from '../src/js/common/constants';
 
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
@@ -55,7 +55,7 @@ describe('csv export actions', () => {
 
     test('should resolve true for checksPerformedPath', () => {
       const translate = (key) => key;
-      return csvExportActions.saveToolDataToCSV('translationWords',
+      return csvExportActions.saveToolDataToCSV(TRANSLATION_WORDS,
         checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
@@ -77,11 +77,11 @@ describe('csv export actions', () => {
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
       const translate = (key) => key;
-      return csvExportActions.saveToolDataToCSV('translationWords',
+      return csvExportActions.saveToolDataToCSV(TRANSLATION_WORDS,
         bogusFilesInCheckDataPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
-          csvHelpers.cleanupTmpPath('translationWords',
+          csvHelpers.cleanupTmpPath(TRANSLATION_WORDS,
             bogusFilesInCheckDataPath);
         })
         .catch(err => {
@@ -96,7 +96,7 @@ describe('csv export actions', () => {
 
     test('should resolve true for checksPerformedPath', () => {
       const translate = (key) => key;
-      return csvExportActions.saveToolDataToCSV('translationNotes',
+      return csvExportActions.saveToolDataToCSV(TRANSLATION_NOTES,
         checksPerformedPath, translate)
         .then((value) => {
           expect(value).toEqual(true);
@@ -115,11 +115,11 @@ describe('csv export actions', () => {
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
       const translate = (key) => key;
-      return csvExportActions.saveToolDataToCSV('translationNotes',
+      return csvExportActions.saveToolDataToCSV(TRANSLATION_NOTES,
         bogusFilesInCheckDataPath, translate)
         .then((resolve) => {
           expect(resolve).toEqual(true);
-          csvHelpers.cleanupTmpPath('translationNotes',
+          csvHelpers.cleanupTmpPath(TRANSLATION_NOTES,
             bogusFilesInCheckDataPath);
         })
         .catch(err => {

@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 import * as Version from './VersionUtils';
+import { TRANSLATION_WORDS } from '../../common/constants';
 
 export const MIGRATE_MANIFEST_VERSION = 4;
 
@@ -57,7 +58,7 @@ export const updateAlignments = function (projectPath) {
       }
     }
   }
-  const projectTWordsDataPath = path.join(projectPath, '.apps', 'translationCore', 'index', 'translationWords');
+  const projectTWordsDataPath = path.join(projectPath, '.apps', 'translationCore', 'index', TRANSLATION_WORDS);
   if (fs.existsSync(projectTWordsDataPath)) {
     const tWordsFolders = fs.readdirSync(projectTWordsDataPath).filter(folder => {
       return (fs.statSync(path.join(projectTWordsDataPath, folder)).isDirectory() && (folder !== ".DS_Store"));

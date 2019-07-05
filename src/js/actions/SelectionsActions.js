@@ -14,6 +14,8 @@ import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from '../localStorage/saveMethods';
+import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
+
 /**
  * This method adds a selection array to the selections reducer.
  * @param {Array} selections - An array of selections.
@@ -29,7 +31,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
   batchGroupData = null, nothingToSelect = false) => {
   return ((dispatch, getState) => {
     let state = getState();
-    const validTools = ['translationWords', 'translationNotes'];
+    const validTools = [TRANSLATION_WORDS, TRANSLATION_NOTES];
     if (validTools.includes(getSelectedToolName(state)) || validTools.includes(contextId.tool)) {
       const currentContextId = state.contextIdReducer.contextId;
       contextId = contextId || currentContextId; // use current if contextId is not passed
@@ -215,7 +217,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     let selectionInvalidated = false;
     const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
 
-    if (getSelectedToolName(state) !== 'wordAlignment') {
+    if (getSelectedToolName(state) !== WORD_ALIGNMENT) {
       const username = getUsername(state);
       // for this groupId, find every check for this chapter/verse
       const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);

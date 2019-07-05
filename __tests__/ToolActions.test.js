@@ -2,6 +2,8 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from '../src/js/actions/ToolActions';
 import { NT_ORIG_LANG_BIBLE, NT_ORIG_LANG } from '../src/js/common/BooksOfTheBible';
+import { TRANSLATION_NOTES } from '../src/js/common/constants';
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -48,7 +50,7 @@ jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
 }));
 
 describe('Tool Actions.openTool', () => {
-  const toolName = 'translationNotes';
+  const toolName = TRANSLATION_NOTES;
   const store = mockStore({
     projectDetailsReducer: {
       projectSaveLocation: 'Users/me/test_project_reg',
@@ -84,7 +86,7 @@ describe('Tool Actions.openTool', () => {
       {"type": "CLEAR_PREVIOUS_GROUPS_DATA"},
       {"type": "CLEAR_PREVIOUS_GROUPS_INDEX"},
       {"type": "CLEAR_CONTEXT_ID"},
-      {"name": "translationNotes", "type": "OPEN_TOOL"},
+      {"name": TRANSLATION_NOTES, "type": "OPEN_TOOL"},
       {"allGroupsData": {"figs-abstractnouns": [{"comments": false, "contextId": {"glQuote": "gl_uote", "groupId": "figs-abstractnouns", "occurrence": 1, "occurrenceNote": "note", "quote": "quote", "reference": {"bookId": "tit", "chapter": 2, "verse": 2}}, "reminders": false, "selections": false, "verseEdits": false}]}, "type": "LOAD_GROUPS_DATA_FROM_FS"},
       {"groupsIndex": [{"id": "figs-abstractnouns", "name": "Abstract Nouns"}], "type": "LOAD_GROUPS_INDEX"},
       {"type": 'VERIFY_GROUPS_DATA'},
