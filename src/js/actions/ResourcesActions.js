@@ -255,7 +255,7 @@ function removeBibleFromList(resources, bibleId, languageId) {
  * @return {Array} array of resource in scripture panel
  */
 export const updateOrigLangPaneSettings = (bookId) => (dispatch, getState) => {
-  const {bibleId} = BibleHelpers.getOrigLangforBook(bookId);
+  const {bibleId: origLangBibleId} = BibleHelpers.getOrigLangforBook(bookId);
   const newCurrentPaneSettings = SettingsHelpers.getCurrentPaneSetting(getState());
   let changed = false;
   if (Array.isArray(newCurrentPaneSettings)) {
@@ -263,13 +263,13 @@ export const updateOrigLangPaneSettings = (bookId) => (dispatch, getState) => {
     for (let setting of newCurrentPaneSettings) {
       let languageId = setting.languageId;
       if (languageId === ORIGINAL_LANGUAGE) {
-        if (setting.bibleId !== bibleId) { // if need to check if bibles are valid in case previous selected project was in the other testament
-          // TRICKY: we only want to change the bibleId in the case that UGNT is in SP when we selected an OT book, or when UBH
-          //          is in SP and we selected a NT book.  There may be other original language books loaded and we don't
+        if (setting.bibleId !== origLangBibleId) { // if need to check if bibles are valid in case previous selected project was in the other testament
+          // TRICKY: we only want to change the bibleId in the case that UGNT is in settings when we selected an OT book, or when UHB
+          //          is in settings and we selected a NT book.  There may be other original language books loaded and we don't
           //          want to mess with them.
-          if (setting.bibleId === otherTestamentBible) { // if the original bible is from the opposite testament, we need to fix
+          if (setting.bibleId === otherTestamentBible) { // if the original language bible is from the opposite testament, we need to fix
             changed = true;
-            setting.bibleId = bibleId; // set original bible ID for current testament
+            setting.bibleId = origLangBibleId; // set original bible ID for current testament
           }
         }
       }
