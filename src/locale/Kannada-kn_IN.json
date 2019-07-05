@@ -95,7 +95,7 @@
     "no_d43_account": "ನಿಮಗೆ ${ಬಾಗಿಲು43} ಖಾತೆ ಇಲ್ಲದಿದ್ದರೆ, ನೀವು ಒಂದನ್ನು ಸೃಷ್ಟಿಸಬಹುದು. ${If you do not have a ${door43} account, you may create one.}",
     "may_create_d43_account": "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸೃಷ್ಟಿಸಲು ಈಗ ನಿಮಗೆ ಇಷ್ಟವಿಲ್ಲದಿದ್ದರೆ, ಅತಿಥಿಯಾಗಿ ನೀವು ಮುಂದುವರೆಯಬಹುದು. ${If you do not want to create an account at this time, you may continue as a guest.}",
     "d43_information": "${ಬಾಗಿಲು43} ಸಮಾಚಾರ ${${door43} Information}",
-    "d43_info_1": "${door43} is a free, online, revision-controlled content management system for open-licensed biblical material.<br/> It provides free, remote storage and collaboration services for creators and translators of biblical content.",
+    "d43_info_1": "${ಬಾಗಿಲು43} ಎನ್ನುವದು ಉಚಿತ, ಅಂತರ್ಜಾಲ, ಬಹಿರಂಗವಾಗಿ ಅನುಮತಿ ಪಡೆದ ಸತ್ಯವೇದಾನುಸಾರವಾದ ಸಾಧನೆಗಳಿಗೋಸ್ಕರ ಪರಿಷ್ಕರಣೆ-ನಿಯಂತ್ರಿತ ವಿಷಯ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ. <ಬಿಆರ್/> ಇದು ಸತ್ಯವೇದಾನುಸಾರವಾದ ವಿಷಯಗಳನ್ನು ರಚಿಸುವವರಿಗೆ ಮತ್ತು ಅನುವಾದ ಮಾಡುವವರಿಗೆ ದೂರಸ್ಥ ಸಂಗ್ರಹಣೆ ಮತ್ತು ಸಹಯೋಗ ಸೇವೆಗಳನ್ನು ಉಚಿತವಾಗಿ ಕೊಡುತ್ತದೆ. ${${door43} is a free, online, revision-controlled content management system for open-licensed biblical material.<br/> It provides free, remote storage and collaboration services for creators and translators of biblical content.}",
     "username_error": "ಬಳಕೆದಾರರ ಹೆಸರು ಸರಿಯಲ್ಲ ${Incorrect Username}",
     "password_error": "ಸಂಕೇತಪದ ಸರಿಯಲ್ಲ ${Incorrect Password}",
     "guest_information": "ಅತಿಥಿ ಸಮಾಚಾರ ${Guest Information}",
