@@ -48,9 +48,18 @@ export function isValidBibleBook(bookId) {
  * @param {String} bookId
  * @return {boolean}
  */
-export function isOriginalLanguageBbible(languageId, bookId) {
+export function isOriginalLanguageBible(languageId, bookId) {
   return ((languageId.toLowerCase() === Bible.NT_ORIG_LANG && bookId.toLowerCase() === Bible.NT_ORIG_LANG_BIBLE) ||
     (languageId.toLowerCase() === Bible.OT_ORIG_LANG && bookId.toLowerCase() === Bible.OT_ORIG_LANG_BIBLE));
+}
+
+/**
+ * returns true if this bookId and languageId match the original language bible
+ * @param {String} languageId
+ * @return {boolean}
+ */
+export function isOriginalLanguage(languageId) {
+  return (languageId.toLowerCase() === Bible.NT_ORIG_LANG || languageId.toLowerCase() === Bible.OT_ORIG_LANG);
 }
 
 /**

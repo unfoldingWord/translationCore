@@ -11,7 +11,7 @@ import * as BibleHelpers from "../bibleHelpers";
 // actions
 import * as ResourcesActions from "../../actions/ResourcesActions";
 // constants
-import { IMPORTS_PATH } from '../../common/constants';
+import { IMPORTS_PATH, TARGET_LANGUAGE } from '../../common/constants';
 
 export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
   return new Promise (async(resolve, reject) => {
@@ -204,7 +204,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
         language_name: manifest.target_language.name || "",
         direction: manifest.target_language.direction || "",
         subject: "Bible",
-        resource_id: "targetLanguage",
+        resource_id: TARGET_LANGUAGE,
         resource_title: "",
         description: "Target Language"
       };

@@ -23,6 +23,10 @@ export const tc_EDIT_VERSION_KEY = "tc_edit_version"; // do not change this stri
 export const tc_MIN_COMPATIBLE_VERSION_KEY = "tc_min_compatible_version"; // do not change this string as it will break compatibility with other versions
 export const tc_MIN_VERSION_ERROR = "TC_MIN_VERSION_ERROR";
 
+export const ORIGINAL_LANGUAGE = "originalLanguage";
+export const TARGET_LANGUAGE = "targetLanguage";
+export const TARGET_BIBLE = "targetBible";
+
 export const toolCardCategories = {
   'kt': 'Key Terms',
   'names': 'Names',

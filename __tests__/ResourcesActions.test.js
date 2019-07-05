@@ -5,7 +5,13 @@ import fs from "fs-extra";
 // actions
 import * as ResourcesActions from '../src/js/actions/ResourcesActions';
 // constants
-import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../src/js/common/constants';
+import {
+  PROJECTS_PATH,
+  USER_RESOURCES_PATH,
+  ORIGINAL_LANGUAGE,
+  TARGET_LANGUAGE,
+  TARGET_BIBLE
+} from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -57,11 +63,11 @@ describe('ResourcesActions', () => {
           ScripturePane: {
             currentPaneSettings: [
               {
-                bibleId: "targetBible",
-                languageId: "targetLanguage"
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
               }, {
                 bibleId: "ugnt",
-                languageId: "originalLanguage"
+                languageId: ORIGINAL_LANGUAGE
               }, {
                 bibleId: "ust",
                 languageId: "en"
@@ -174,7 +180,7 @@ describe('ResourcesActions', () => {
       "tw": "rc://*/tw/dict/bible/names/paul"
     };
 
-    const expectedResources = ['en', 'originalLanguage', 'targetLanguage'];
+    const expectedResources = ['en', ORIGINAL_LANGUAGE, TARGET_LANGUAGE];
 
     const projectPath = path.join(PROJECTS_PATH, "en_gal");
     loadMockFsWithProjectAndResources();
@@ -243,7 +249,7 @@ describe('ResourcesActions', () => {
     }
 
     // make sure UGNT loaded and has expected format
-    let ugntAction = getAction(actions, "ADD_NEW_BIBLE_TO_RESOURCES", 'languageId', 'originalLanguage', 'bibleId', 'ugnt');
+    let ugntAction = getAction(actions, "ADD_NEW_BIBLE_TO_RESOURCES", 'languageId', ORIGINAL_LANGUAGE, 'bibleId', 'ugnt');
     expect(ugntAction).not.toBeNull();
     let firstChapter = ugntAction.bibleData[1];
     let firstVerse = firstChapter[1];

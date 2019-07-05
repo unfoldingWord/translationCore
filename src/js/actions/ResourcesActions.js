@@ -19,6 +19,7 @@ import * as Bible from '../common/BooksOfTheBible';
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 const bookCache = new SimpleCache();
+import { ORIGINAL_LANGUAGE, TARGET_LANGUAGE, TARGET_BIBLE } from '../common/constants';
 
 /**
  * Adds a bible to the resources reducer.
@@ -28,8 +29,8 @@ const bookCache = new SimpleCache();
  */
 export function addNewBible(languageId, bibleId, bibleData) {
   return ((dispatch) => {
-    if (BibleHelpers.isOriginalLanguageBbible(languageId, bibleId)) {
-      languageId = 'originalLanguage'; // TRICKY: the original language can have many bibles, but only one we can use as reference
+    if (BibleHelpers.isOriginalLanguage(languageId)) {
+      languageId = ORIGINAL_LANGUAGE;
     }
     dispatch({
       type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
@@ -246,17 +247,23 @@ function removeBibleFromList(resources, bibleId, languageId) {
  * @param {String} bookId
  * @return {Array} array of resource in scripture panel
  */
-export const updateOlPaneSettings = (bookId) => (dispatch, getState) => {
+export const updateOrigLangPaneSettings = (bookId) => (dispatch, getState) => {
   const {bibleId} = BibleHelpers.getOrigLangforBook(bookId);
   const newCurrentPaneSettings = SettingsHelpers.getCurrentPaneSetting(getState());
   let changed = false;
   if (Array.isArray(newCurrentPaneSettings)) {
+    const otherTestamentBible = BibleHelpers.isNewTestament(bookId) ? Bible.OT_ORIG_LANG_BIBLE : Bible.NT_ORIG_LANG_BIBLE;
     for (let setting of newCurrentPaneSettings) {
       let languageId = setting.languageId;
-      if (languageId === "originalLanguage") {
-        if (setting.bibleId !== bibleId) { // if we have switched testaments
-          changed = true;
-          setting.bibleId = bibleId;
+      if (languageId === ORIGINAL_LANGUAGE) {
+        if (setting.bibleId !== bibleId) { // if need to check if bibles are valid in case previous selected project was in the other testament
+          // TRICKY: we only want to change the bibleId in the case that UGNT is in SP when we selected an OT book, or when UBH
+          //          is in SP and we selected a NT book.  There may be other original language books loaded and we don't
+          //          want to mess with them.
+          if (setting.bibleId === otherTestamentBible) { // if the original bible is from the opposite testament, we need to fix
+            changed = true;
+            setting.bibleId = bibleId; // set original bible ID for current testament
+          }
         }
       }
     }
@@ -275,14 +282,14 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
   const { bibles } = state.resourcesReducer;
   const contextId = getContext(state);
   const bookId = contextId && contextId.reference.bookId;
-  dispatch(updateOlPaneSettings(bookId));
+  dispatch(updateOrigLangPaneSettings(bookId));
   const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId, toolName);
   // remove bibles from resources list that are already loaded into resources reducer
   if (bookId && bibles && Array.isArray(resources)) {
     for (let languageId of Object.keys(bibles)) {
       if (bibles[languageId]) {
         for (let bibleId of Object.keys(bibles[languageId])) {
-          const lang = (languageId === "originalLanguage") ?
+          const lang = (languageId === ORIGINAL_LANGUAGE) ?
             BibleHelpers.isOldTestament(bookId) ? Bible.OT_ORIG_LANG : Bible.NT_ORIG_LANG : languageId;
           removeBibleFromList(resources, bibleId, lang);
         }
@@ -291,7 +298,7 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
   }
   // load resources not in resources reducer
   if (Array.isArray(resources)) {
-    removeBibleFromList(resources, "targetBible", "targetLanguage");
+    removeBibleFromList(resources, TARGET_BIBLE, TARGET_LANGUAGE);
     resources.forEach(paneSetting => dispatch(loadBibleBook(paneSetting.bibleId, bookId, paneSetting.languageId)));
   }
 };
@@ -306,8 +313,8 @@ export function loadTargetLanguageBook() {
     const bookId = projectDetailsReducer.manifest.project.id;
     const projectPath = projectDetailsReducer.projectSaveLocation;
     const bookPath = path.join(projectPath, bookId);
-    const resourceId = "targetLanguage";
-    const bibleId = "targetBible";
+    const resourceId = TARGET_LANGUAGE;
+    const bibleId = TARGET_BIBLE;
 
     if (fs.existsSync(bookPath)) {
       const bookData = {};
@@ -372,14 +379,14 @@ export const loadBookTranslations = (bookId, toolName=null) => async (dispatch, 
  * @returns {Function}
  */
 export const loadSourceBookTranslations = (bookId, toolName) => async (dispatch, getState) => {
-  dispatch(updateOlPaneSettings(bookId));
+  dispatch(updateOrigLangPaneSettings(bookId));
 
   const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);
   const bibles = getBibles(getState());
   // Filter out bible resources that are already in the resources reducer
   const filteredResources = resources.filter(resource => {
-    const isOriginalLanguage = BibleHelpers.isOriginalLanguageBbible(resource.languageId, resource.bibleId);
-    const languageId = isOriginalLanguage ? 'originalLanguage' : resource.languageId; // TRICKY: the original language can have many bibles, but only one we can use as reference
+    const isOriginalLanguage = BibleHelpers.isOriginalLanguageBible(resource.languageId, resource.bibleId);
+    const languageId = isOriginalLanguage ? ORIGINAL_LANGUAGE : resource.languageId; // TRICKY: the original language can have many bibles, but only one we can use as reference
     const biblesForLanguage = bibles[languageId];
     return !(biblesForLanguage && biblesForLanguage[resource.bibleId]);
   });

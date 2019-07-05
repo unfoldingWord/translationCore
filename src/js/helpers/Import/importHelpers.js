@@ -6,6 +6,7 @@ import path from "path-extra";
 
 // constants
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
+import { TARGET_LANGUAGE } from '../../common/constants';
 
 /**
  * @description saves a target language bible data into the filesystem as json and divided into chapters,
@@ -60,7 +61,7 @@ function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
   bibleManifest.language_name = projectManifest.target_language.name;
   bibleManifest.direction = projectManifest.target_language.direction;
   bibleManifest.subject = "Bible";
-  bibleManifest.resource_id = "targetLanguage";
+  bibleManifest.resource_id = TARGET_LANGUAGE;
   bibleManifest.resource_title = "";
   bibleManifest.description = "Target Language";
   // savings target language bible manifest file in project target language bible path.

@@ -30,6 +30,9 @@ import {
   USER_RESOURCES_PATH,
   toolCardCategories,
   STATIC_RESOURCES_PATH,
+  ORIGINAL_LANGUAGE,
+  TARGET_LANGUAGE,
+  TARGET_BIBLE
 } from '../common/constants';
 
 /**
@@ -573,12 +576,12 @@ export function getAvailableScripturePaneSelections(resourceList) {
       const languagesIds = getLanguageIdsFromResourceFolder(bookId);
 
       // add target Bible if in resource reducer
-      if (bibles && bibles["targetLanguage"] && bibles["targetLanguage"]["targetBible"]) {
+      if (bibles && bibles[TARGET_LANGUAGE] && bibles[TARGET_LANGUAGE][TARGET_BIBLE]) {
         const resource = {
           bookId,
-          bibleId: "targetBible",
-          languageId: "targetLanguage",
-          manifest: bibles["targetLanguage"]["targetBible"].manifest
+          bibleId: TARGET_BIBLE,
+          languageId: TARGET_LANGUAGE,
+          manifest: bibles[TARGET_LANGUAGE][TARGET_BIBLE].manifest
         };
         resourceList.push(resource);
       }
@@ -601,8 +604,8 @@ export function getAvailableScripturePaneSelections(resourceList) {
                   path.join(bibleLatestVersion, bookId, "1.json"));
                 if (manifestExists && bookExists) {
                   let languageId_ = languageId;
-                  if (BibleHelpers.isOriginalLanguageBbible(languageId, bibleId)) {
-                    languageId_ = 'originalLanguage'; // TRICKY: the original language can have many bibles, but only one we can use as reference
+                  if (BibleHelpers.isOriginalLanguage(languageId)) {
+                    languageId_ = ORIGINAL_LANGUAGE;
                   }
                   const manifest = fs.readJsonSync(pathToBibleManifestFile);
                   if (Object.keys(manifest).length) {
@@ -651,10 +654,10 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
     for (let setting of currentPaneSettings) {
       let languageId = setting.languageId;
       switch (languageId) {
-        case "targetLanguage":
+        case TARGET_LANGUAGE:
           break;
 
-        case "originalLanguage":
+        case ORIGINAL_LANGUAGE:
           addResource(resources, olLanguageID, setting.bibleId);
           break; // skip invalid language codes
 
