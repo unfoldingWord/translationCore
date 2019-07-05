@@ -33,7 +33,8 @@ import {
   getSourceBook,
   getSupportingToolApis,
   getTargetBook,
-  getUsername
+  getUsername,
+  getProjects
 } from "../selectors";
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
 import ProjectAPI from "../helpers/ProjectAPI";
@@ -90,8 +91,10 @@ class ToolContainer extends Component {
       sourceChapter,
       selectedToolName,
       projectApi,
-      coreApi
+      coreApi,
+      projects
     } = nextProps;
+
     return {
       // project api
       project: projectApi,
@@ -115,7 +118,7 @@ class ToolContainer extends Component {
       showIgnorableAlert: coreApi.showIgnorableAlert,
       closeAlert: coreApi.closeAlert,
       appLanguage: code,
-
+      projects,
 
       // menu location
       contextId,
@@ -198,6 +201,7 @@ class ToolContainer extends Component {
 }
 
 ToolContainer.propTypes = {
+  projects: PropTypes.array.isRequired,
   toolApi: PropTypes.any,
   supportingToolApis: PropTypes.object.isRequired,
   Tool: PropTypes.any,
@@ -224,6 +228,7 @@ ToolContainer.contextTypes = {
 const mapStateToProps = state => {
   const projectPath = getProjectSaveLocation(state);
   return {
+    projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
     projectApi: new ProjectAPI(projectPath),
     selectedToolName: getSelectedToolName(state),
     Tool: getSelectedToolContainer(state),
