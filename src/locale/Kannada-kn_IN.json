@@ -70,7 +70,7 @@
     "check_for_content_updates": "ವಿಷಯದ ಕುರಿತಾದ ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ ${Check for content updates}",
     "update_gateway_language_content": "ಮಾಹಿತಿ ದ್ವಾರ ಭಾಷಾ ವಿಷಯದ ಕುರಿತಾಗಿ ನವೀಕರಿಸಿ ${Update Gateway Language Content}",
     "checking_for_source_content_updates": "ಮೂಲ ವಿಷಯ ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸುತ್ತಿದೆ... ${Checking for source content updates...}",
-    "failed_checking_for_source_content_updates": "Unable to finish checking for source content updates.",
+    "failed_checking_for_source_content_updates": "ಮೂಲ ವಿಷಯ ನವೀಕರಣಗಳನ್ನು ಪರಿಶೀಲಿಸಲು ಆಗುತ್ತಿಲ್ಲ ${Unable to finish checking for source content updates.}",
     "downloading_source_content_updates": "Downloading source content updates...",
     "source_content_updates_successful_download": "Source content updates downloaded successfully!",
     "source_content_updates_unsuccessful_download": "Failed to download source content updates.",
