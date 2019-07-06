@@ -367,7 +367,7 @@
     "verse_edit": "Verse edit",
     "comments": "Comments",
     "menu": "Menu",
-    "no_gl_available": "None available",
+    "no_gl_available": "ಯಾವುದು ಲಭ್ಯವಿಲ್ಲ ${None available}",
     "invalid_checks": "Invalidated checks",
     "invalid_verse_alignments": "Verses with invalidated alignments.",
     "invalidation_checking": "Checking if this edit conflicts with saved selections and alignments...",
