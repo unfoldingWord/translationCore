@@ -360,7 +360,7 @@
     "alignments_reset": "ಪ್ರಸ್ತುತ ವಚನಕ್ಕೆ ಮಾಡಿದ ಬದಲಾವಣೆಗಳು ನಿಮ್ಮ ಪಂಕ್ತಿಕರಣವನ್ನು ಮಾರ್ಪಡಿಸುತ್ತದೆ.\nಪ್ರಸ್ತುತ ವಚನದ ಪಂಕ್ತಿಕರಣ ಮರುಹೊಂದಿಸಲಾಗಿದೆ. ${There have been changes to the current verse which interfere with your alignments.\nThe alignments for the current verse have been reset.}",
     "chapter": "ಅಧ್ಯಾಯ ${Chapter}",
     "no_results": "ಫಲಿತಾಂಶಗಳು ಇಲ್ಲ ${No results}",
-    "invalidated": "Invalidated",
+    "invalidated": "ಅಮಾನ್ಯಗೊಳಿಸು ${Invalidated}",
     "bookmarks": "Bookmarks",
     "selected": "Selected",
     "no_selection": "No selection",
