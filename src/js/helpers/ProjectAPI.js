@@ -11,6 +11,7 @@ import {
   SOURCE_CONTENT_UPDATER_MANIFEST,
   TRANSLATION_WORDS
 } from '../common/constants';
+import { getOrigLangforBook } from "./bibleHelpers";
 
 const toolCategoryMapping = {};
 
@@ -200,6 +201,34 @@ export default class ProjectAPI {
     } else {
       return manifest.project.name;
     }
+  }
+
+  /**
+   * Returns the resource id of the project.
+   * For example: 'ust' or 'udt'
+   * @returns {string}
+   */
+  getResourceId() {
+    const manifest = this.getManifest();
+    return manifest.resource.id;
+  }
+
+  /**
+   * Returns the target language of the project
+   * @returns {string}
+   */
+  getLanguageId() {
+    const manifest = this.getManifest();
+    return manifest.target_language.id;
+  }
+
+  /**
+   * Returns the id of the original language
+   * @returns {string}
+   */
+  getOriginalLanguageId() {
+    const bookId = this.getBookId();
+    return getOrigLangforBook(bookId).languageId;
   }
 
   /**

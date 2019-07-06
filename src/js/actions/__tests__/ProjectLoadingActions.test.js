@@ -78,7 +78,6 @@ jest.mock('../../selectors', () => ({
   })
 }));
 
-// TODO: this was skipped in the develop branch by using `describe.only('loadProject'`, need to talk to Jay why this was disabled
 describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
@@ -135,6 +134,9 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
       },
       projectValidationReducer: {
         projectValidationStepsArray: [ ]
+      },
+      myProjectsReducer: {
+        projects: []
       }
     };
   });
