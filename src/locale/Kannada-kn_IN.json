@@ -187,8 +187,8 @@
     "fatal_errors": "ಎಚ್ಚರಿಕೆ! ಈ ಯೋಜನೆಯು ತಪ್ಪುಗಳನ್ನು ಒಳಗೊಂಡಿದೆ ಮತ್ತು ಅದು ಲೋಡ್ ಆಗುವುದಿಲ್ಲ. ${Warning! This project has fatal errors and cannot be loaded.",
     "loading_error": "ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ನಾವು ಲೋಡ್ ಮಾಡುತ್ತಿರುವಾಗ ನಾವು ಸಮಸ್ಯೆಯನ್ನು ಎದುರ್ಗೊಂಡಿದ್ದೇವೆ. ದಯವಿಟ್ಟು ಸಹಾಯಕ್ಕಾಗಿ (${ಈಮೆಯಿಲ್}) ಸಹಾಯ ಕೇಂದ್ರವನ್ನು ಸಂಪರ್ಕಿಸಿ. ${We have encountered a problem while loading your project. Please contact Help Desk (${email}) for assistance.",
     "uploading_error": "ತಪ್ಪನ್ನು ಮೇಲಕ್ಕೆ ಏರಿಸಲಾಗುತ್ತಿದೆ: \"${ತಪ್ಪು}\" ${Error uploading: \"${error}\".",
-    "uploading_unknown_error": "Error uploading. Unknown error.",
-    "saving_error": "Error saving project: \"${error}\".",
+    "uploading_unknown_error": "ತಪ್ಪು ಏರಿಸಲಾಗುತ್ತಿದೆ. ಗೊತ್ತಿಲ್ಲದ ತಪ್ಪು. ${Error uploading. Unknown error.",
+    "saving_error": "ತಪ್ಪನ್ನು ಉಳಿಸುವ ಯೋಜನೆ: \"${ತಪ್ಪು}\" ${Error saving project: \"${error}\".",
     "project_exists": "The project you selected (${project_path}) already exists.",
     "reimporting_not_supported": "Reimporting existing projects is not currently supported.",
     "project_does_not_exist": "The folder for the project you selected, (${project_path}), does not exists.",
@@ -241,7 +241,7 @@
       "invalid_characters": "Only basic Latin Letters supported"
     },
     "conflicting_project": "A project with this identifier already exists for this language and book",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "newer_project": "ಟ್ರಾನ್ಸ್ಲೇಷನ್ ಕೋರ್ ಹೊಸ ಆವೃತ್ತಿಯಲ್ಲಿ ಈ ಯೋಜನೆಯನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಹೊಸ ಆವೃತ್ತಿಯನ್ನು ಪಡೆದು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ. ${This project was created in a newer version of translationCore. Please update to the latest version and try again.}"
   },
   "book_list": {
     "ot": {
@@ -317,7 +317,7 @@
   },
   "tools": {
     "resource_missing_for_tool": "The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.",
-    "no_checks_selected": "You must select a category to launch this tool",
+    "no_checks_selected": "ಈ ಉಪಕರಣವನ್ನು ಉಪಯೋಗಿಸಲು ಯಾವುದಾದರು ವರ್ಗವನ್ನು ನೀವು ಆಯ್ಕೆ ಮಾಡಿಕೊಳ್ಳಬೇಕು ${You must select a category to launch this tool}",
     "book_not_supported": "Book not supported",
     "select_tool_from_list": "Select a tool and a gateway language from the list.",
     "tools": "Tools",
