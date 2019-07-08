@@ -9,7 +9,7 @@ import {
   removeOldThelps
 } from "../ResourcesHelpers";
 // constants
-import { PROJECTS_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../common/constants';
+import { PROJECTS_PATH, USER_RESOURCES_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../common/constants';
 
 describe("migrate tCore resources", () => {
   beforeEach(() => {

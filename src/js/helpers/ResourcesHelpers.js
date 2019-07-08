@@ -816,12 +816,12 @@ const checkForNewLexicons = (languageId) => {
 /**
  * this removes old translation helps folders since they may not be compatible with new tCore version.
  */
-// TODO: Maybe in future we can add a compatibility check, but for now this will be safe
+// TODO: Maybe in future we can add a compatibility check so we don't have to remove all, but for now this will be safe
 export function removeOldThelps() {
   const tcResourcesLanguages = getFilteredSubFolders(USER_RESOURCES_PATH);
   for (let languageId of tcResourcesLanguages) {
     if (languageId) {
-      const helpsFolder = path.join(USER_RESOURCES_PATH, languageId, "translationHelps");
+      const helpsFolder = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS);
       if (fs.existsSync(helpsFolder)) {
         console.log(
           `%c    removeOldThelps() - removing: ${helpsFolder}`,

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`migrate tCore resources test with no user resources 1`] = `
+Array [
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ult",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ust",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationNotes",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationWords",
+  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb",
+  "<HOME_DIR>/translationCore/resources/hi/translationHelps/translationWords",
+]
+`;
+
+exports[`migrate tCore resources test with old resources - should delete 1`] = `
+Array [
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ult",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ust",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationNotes",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationWords",
+  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb",
+  "<HOME_DIR>/translationCore/resources/hi/translationHelps/translationWords",
+]
+`;
+
+exports[`migrate tCore resources test with t4t - should not delete 1`] = `
+Array [
+  "<HOME_DIR>/translationCore/resources/en/bibles/t4t",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ult",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ust",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationNotes",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationWords",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords",
+  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb",
+  "<HOME_DIR>/translationCore/resources/hi/translationHelps/translationWords",
+]
+`;
