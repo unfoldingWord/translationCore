@@ -7,10 +7,16 @@ import TextField from 'material-ui/TextField';
 import _ from 'lodash';
 import Checkbox from 'material-ui/Checkbox';
 
-const  styles = {
+const styles = {
   label: {
     color: 'var(--text-color-dark)'
-  }
+  },
+  underlineStyle: {
+    borderColor: 'var(--accent-color-dark)',
+  },
+  checkboxIconStyle: {
+    fill: 'var(--accent-color-dark)'
+  },
 };
 
 /**
@@ -213,6 +219,7 @@ class FeedbackDialog extends React.Component {
                    style={{
                      width: '100%'
                    }}
+                   underlineFocusStyle={styles.underlineStyle}
                    onChange={this._handleFeedbackChange}/>
         <TextField floatingLabelText={translate('email_address_optional')}
                    floatingLabelStyle={styles.label}
@@ -224,13 +231,15 @@ class FeedbackDialog extends React.Component {
                    value={email}
                    style={{
                      width: '100%'
-                   }}/>
+                   }}
+                   underlineFocusStyle={styles.underlineStyle}/>
         <Checkbox label={translate('include_app_logs')}
                   checked={includeLogs}
                   style={{
                     marginTop: '15px'
                   }}
-                  onCheck={this._handleLogsChecked}/>
+                  onCheck={this._handleLogsChecked}
+                  iconStyle={styles.checkboxIconStyle}/>
       </BaseDialog>
     );
   }
