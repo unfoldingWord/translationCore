@@ -182,7 +182,7 @@
     "tc-source-content-updater": "0.6.0",
     "tc-strings": "0.1.7",
     "tc-tool": "2.1.0",
-    "tc-ui-toolkit": "0.14.20",
+    "tc-ui-toolkit": "^0.14.21",
     "truncate-utf8-bytes": "1.0.2",
     "tsv-groupdata-parser": "0.9.5",
     "usfm-js": "2.0.1",
