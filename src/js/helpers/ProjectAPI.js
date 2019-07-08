@@ -9,6 +9,7 @@ import {
   PROJECT_DOT_APPS_PATH,
   PROJECT_CHECKDATA_DIRECTORY,
   SOURCE_CONTENT_UPDATER_MANIFEST,
+  TRANSLATION_WORDS
 } from '../common/constants';
 import { getOrigLangforBook } from "./bibleHelpers";
 
@@ -502,7 +503,7 @@ export default class ProjectAPI {
           return objectWithParentCategories;
         } else {
           // fix for toolcard bug produced in 1.1.4 where only one subcategory was saved for tw
-          if (data.current.length === 1 && toolName === 'translationWords') {
+          if (data.current.length === 1 && toolName === TRANSLATION_WORDS) {
             return [];
           }
           return data.current;

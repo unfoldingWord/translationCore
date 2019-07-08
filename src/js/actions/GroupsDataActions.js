@@ -11,6 +11,7 @@ import { readLatestChecks } from "../helpers/groupDataHelpers";
 import {ensureCheckVerseEditsInGroupData} from "./VerseEditActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
+import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
 
 /**
  * @description This action adds a groupId as a property to the
@@ -52,7 +53,7 @@ export function verifyGroupDataMatchesWithFs() {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
       });
-      const isCheckTool =  (toolName === 'translationWords' || toolName === 'translationNotes');
+      const isCheckTool =  (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES);
       for( let i = 0, lenF = folders.length; i < lenF; i++) {
         const folderName = folders[i];
         const isCheckVerseEdit = isCheckTool && (folderName === "verseEdits");

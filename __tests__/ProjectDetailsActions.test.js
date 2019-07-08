@@ -16,7 +16,13 @@ import * as actions from '../src/js/actions/ProjectDetailsActions';
 // helpers
 import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
 // constants
-import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../src/js/common/constants';
+import {
+  PROJECTS_PATH,
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT,
+  TRANSLATION_WORDS,
+  TRANSLATION_HELPS
+} from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -68,9 +74,9 @@ describe('getProjectProgressForTools() should create an action to get the projec
   it('should give progress for word alignment', () => {
     const store = mockStore(initialState);
     const expectedActions = [
-      {"progress": 0, "toolName": "wordAlignment", "type": "SET_PROJECT_PROGRESS_FOR_TOOL"}
+      {"progress": 0, "toolName": WORD_ALIGNMENT, "type": "SET_PROJECT_PROGRESS_FOR_TOOL"}
     ];
-    store.dispatch(actions.getProjectProgressForTools('wordAlignment'));
+    store.dispatch(actions.getProjectProgressForTools(WORD_ALIGNMENT));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
   });
@@ -102,9 +108,9 @@ describe('setProjectToolGL() should create an action to get the project GL for t
   it('should set GL for word alignment', () => {
     const store = mockStore(initialState);
     const expectedActions = [
-      {selectedGL:"hi", toolName:"wordAlignment", type:"SET_GL_FOR_TOOL"}
+      {selectedGL:"hi", toolName: WORD_ALIGNMENT, type:"SET_GL_FOR_TOOL"}
     ];
-    store.dispatch(actions.setProjectToolGL('wordAlignment', 'hi'));
+    store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
   });
@@ -396,7 +402,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
   beforeAll(()=>{
     // Make resource
     fs.__resetMockFS();
-    const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'translationWords');
+    const projectSourcePath = path.join('__tests__', 'fixtures', 'project', TRANSLATION_WORDS);
     const copyFiles = [project_name];
     fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
@@ -422,28 +428,28 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
     };
     const expectedActions = [{
       type: 'SET_CHECK_CATEGORIES',
-      toolName: 'translationWords',
+      toolName: TRANSLATION_WORDS,
       selectedCategories: ["apostle", "authority", "clean"]
     },
     {
       type: 'SET_PROJECT_PROGRESS_FOR_TOOL',
-      toolName: 'translationWords',
+      toolName: TRANSLATION_WORDS,
       progress: 0.25
     }];
     const store = mockStore(initialState);
-    store.dispatch(actions.updateCheckSelection(["apostle", "authority", "clean"], true, 'translationWords'));
+    store.dispatch(actions.updateCheckSelection(["apostle", "authority", "clean"], true, TRANSLATION_WORDS));
     expect(store.getActions()).toMatchObject(expectedActions);
   });
 
   describe('ProjectDetailsActions.loadCurrentCheckCategories', () => {
     const project_name = 'normal_project';
-    const toolName = 'translationWords';
+    const toolName = TRANSLATION_WORDS;
     const projectSaveLocation = path.join(PROJECTS_PATH, project_name);
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     beforeAll(()=>{
       // Make resource
       fs.__resetMockFS();
-      const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'translationWords');
+      const projectSourcePath = path.join('__tests__', 'fixtures', 'project', TRANSLATION_WORDS);
       const copyFiles = [project_name];
       fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
       const resourcesPath = USER_RESOURCES_PATH;
@@ -455,7 +461,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       fs.__resetMockFS();
     });
     test('should load all the check categories from the project', () => {
-      const expectedActions = [{"selectedCategories": ["John"], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions = [{"selectedCategories": ["John"], "toolName": TRANSLATION_WORDS, "type": "SET_CHECK_CATEGORIES"}];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),
@@ -475,9 +481,9 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       expect(store.getActions()).toMatchObject(expectedActions);
     });
     test('should not load check categories that are not present in the resources', () => {
-      const namesResourcePath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords');
+      const namesResourcePath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS);
       fs.removeSync(namesResourcePath);
-      const expectedActions =  [{"selectedCategories": [], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions =  [{"selectedCategories": [], "toolName": TRANSLATION_WORDS, "type": "SET_CHECK_CATEGORIES"}];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),

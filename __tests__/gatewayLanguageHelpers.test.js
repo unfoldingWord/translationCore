@@ -7,11 +7,11 @@ import ResourceAPI from "../src/js/helpers/ResourceAPI";
 import * as gatewayLanguageHelpers from "../src/js/helpers/gatewayLanguageHelpers";
 import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 // constants
-import { USER_RESOURCES_PATH } from '../src/js/common/constants';
+import { USER_RESOURCES_PATH, WORD_ALIGNMENT, TRANSLATION_WORDS } from '../src/js/common/constants';
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
 
 describe('Test getGatewayLanguageList() for TW',()=>{
-  const toolName = 'translationWords';
+  const toolName = TRANSLATION_WORDS;
 
   describe('general tests',()=> {
     beforeEach(() => {
@@ -157,7 +157,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
 });
 
 describe('Test getGatewayLanguageList() for WA',()=>{
-  const toolName = 'wordAlignment';
+  const toolName = WORD_ALIGNMENT;
 
   describe('general tests',()=> {
     beforeEach(() => {
@@ -660,7 +660,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     // given
     const currentProjectToolsSelectedGL = {
       translationWords: 'en',
-      currentToolName: 'translationWords'
+      currentToolName: TRANSLATION_WORDS
     };
     const contextId = {
       groupId: 'blameless',
@@ -672,7 +672,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
         verse: 6
       },
       strong: ['G04100'],
-      tool: 'translationWords'
+      tool: TRANSLATION_WORDS
     };
     const bibles = {
       en: {
@@ -686,7 +686,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
         'ulb': []
       }
     };
-    const currentToolName = 'translationWords';
+    const currentToolName = TRANSLATION_WORDS;
     const expectedAlignedGLText = 'without blame';
 
       // when
@@ -700,7 +700,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     // given
     const currentProjectToolsSelectedGL = {
       translationWords: 'en',
-      currentToolName: 'translationWords'
+      currentToolName: TRANSLATION_WORDS
     };
     const contextId = {
       groupId: 'blameless',
@@ -712,7 +712,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
         verse: 6
       },
       strong: ['G04100'],
-      tool: 'translationWords'
+      tool: TRANSLATION_WORDS
     };
     const bibles = {
       en: {
@@ -725,7 +725,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
         }
       }
     };
-    const currentToolName = 'translationWords';
+    const currentToolName = TRANSLATION_WORDS;
     const expectedAlignedGLText = 'without blame';
 
       // when
@@ -1213,7 +1213,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     ];
     const currentProjectToolsSelectedGL = {
       translationWords: 'en',
-      currentToolName: 'translationWords'
+      currentToolName: TRANSLATION_WORDS
     };
     const contextId = {
       "reference": {
@@ -1221,7 +1221,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
         "chapter": 22,
         "verse": 30
       },
-      "tool": "translationWords",
+      "tool": TRANSLATION_WORDS,
       "groupId": "12tribesofisrael",
       "quote": [
         {
@@ -1265,7 +1265,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
         }
       }
     };
-    const currentToolName = 'translationWords';
+    const currentToolName = TRANSLATION_WORDS;
     const expectedAlignedGLText = 'judging … twelve tribes of Israel';
 
     // when

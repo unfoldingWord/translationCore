@@ -2,7 +2,7 @@ import ospath from "ospath";
 import path from "path-extra";
 import fs from "fs-extra";
 import semver from "semver";
-
+import { TRANSLATION_HELPS } from '../common/constants';
 /**
  * Provides an interface by which you can interact with the resources in the user's home directory.
  */
@@ -39,7 +39,7 @@ class ResourceAPI {
    * @returns {string[]}
    */
   getTranslationHelps(gatewayLanguage) {
-    const dir = path.join(this._resourcesDir, gatewayLanguage, "translationHelps");
+    const dir = path.join(this._resourcesDir, gatewayLanguage, TRANSLATION_HELPS);
     return fs.readdirSync(dir);
   }
 
@@ -50,7 +50,7 @@ class ResourceAPI {
    * @returns {string|null} the file path or null if no directory was found
    */
   getLatestTranslationHelp(gatewayLanguage, helpName) {
-    const helpDir = path.join(this._resourcesDir, gatewayLanguage, "translationHelps", helpName);
+    const helpDir = path.join(this._resourcesDir, gatewayLanguage, TRANSLATION_HELPS, helpName);
     return ResourceAPI.getLatestVersion(helpDir);
   }
 

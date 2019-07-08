@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
-import {USER_RESOURCES_PATH} from "../src/js/common/constants";
+import {USER_RESOURCES_PATH, WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from "../src/js/common/constants";
 
 const checksPerformedPath = path.join(__dirname, 'fixtures/project/csv/checks_performed/fr_eph_text_ulb');
 
@@ -14,7 +14,7 @@ const tWContextId = {
     chapter: 1,
     verse: 1
   },
-  tool: "translationWords",
+  tool: TRANSLATION_WORDS,
   groupId: "apostle",
   quote: "apostle, apostles, apostleship",
   occurrence: 1
@@ -25,7 +25,7 @@ const tWotherContextId = {
     chapter: 1,
     verse: 1
   },
-  tool: "translationWords",
+  tool: TRANSLATION_WORDS,
   groupId: "confidence",
   quote: "confidence, confident",
   occurrence: 1
@@ -33,7 +33,7 @@ const tWotherContextId = {
 const tNContextId = {
   information: undefined,
   reference: { bookId: "tit", chapter: 1, verse: 3 },
-  tool: "translationNotes",
+  tool: TRANSLATION_NOTES,
   groupId: "figs-metaphor",
   quote: "he revealed his word",
   occurrence: 1
@@ -59,7 +59,7 @@ describe('csvHelpers.flattenContextId', () => {
       bookId: "tit",
       chapter: 1,
       verse: 1,
-      tool: "translationWords",
+      tool: TRANSLATION_WORDS,
       type: "kt",
       groupId: "apostle",
       groupName: "apostle, apostleship",
@@ -104,7 +104,7 @@ describe('csvHelpers.combineData', () => {
       bookId: "tit",
       chapter: 1,
       verse: 1,
-      tool: "translationWords",
+      tool: TRANSLATION_WORDS,
       type: "kt",
       groupId: "apostle",
       groupName: "apostle, apostleship",
@@ -130,7 +130,7 @@ describe('csvHelpers.combineData', () => {
 describe('csvHelpers.getToolFolderNames', () => {
   test('should return tool folders', () => {
     const toolNames = csvHelpers.getToolFolderNames(checksPerformedPath);
-    const _toolNames = [ 'translationNotes', 'translationWords', 'wordAlignment' ];
+    const _toolNames = [ TRANSLATION_NOTES, TRANSLATION_WORDS, WORD_ALIGNMENT ];
     expect(toolNames).toEqual(_toolNames);
   });
 });

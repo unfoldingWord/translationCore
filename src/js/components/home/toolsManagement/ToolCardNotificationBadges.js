@@ -4,6 +4,7 @@ import { Badge } from 'react-bootstrap';
 import Tooltip from '../../Tooltip';
 import InvalidatedIcon from '../../svgIcons/InvalidatedIcon';
 import _ from "lodash";
+import { WORD_ALIGNMENT } from '../../../common/constants';
 
 const makeStyles = errorCount => {
   return {
@@ -111,7 +112,7 @@ export default class ToolCardNotificationBadges extends Component {
     const {errorCount, countEnabled} = this.state;
 
     let message = '';
-    if(tool.name === "wordAlignment") {
+    if(tool.name === WORD_ALIGNMENT) {
       message = translate('tools.invalid_verse_alignments');
     } else {
       message = translate('tools.invalid_checks');

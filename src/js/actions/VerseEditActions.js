@@ -16,6 +16,7 @@ import {
   getTranslate,
   getUsername
 } from '../selectors';
+import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -185,7 +186,7 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
     const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     const state = getState();
     const toolName = getSelectedToolName(state);
-    if (toolName === 'translationWords' || toolName === 'translationNotes') {
+    if (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES) {
       getCheckVerseEditsInGroupData(state, contextIdWithVerseEdit, actionsBatch);
     }
     await delay(500);
@@ -228,7 +229,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
-    if (getSelectedToolName(getState()) === 'wordAlignment') {
+    if (getSelectedToolName(getState()) === WORD_ALIGNMENT) {
       // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
       dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
       // in group data reducer set verse edit flag for the verse edited
@@ -245,9 +246,9 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     // trigger validation on the specific verse.
     const newState = getState();
     const apis = getSupportingToolApis(newState);
-    if ('wordAlignment' in apis && apis['wordAlignment'] !== null) {
+    if (WORD_ALIGNMENT in apis && apis[WORD_ALIGNMENT] !== null) {
       // for other tools
-      showAlignmentsInvalidated = !apis['wordAlignment'].trigger('validateVerse',
+      showAlignmentsInvalidated = !apis[WORD_ALIGNMENT].trigger('validateVerse',
                                                                   chapterWithVerseEdit, verseWithVerseEdit, true);
     } else {
       // for wA
