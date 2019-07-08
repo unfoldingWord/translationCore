@@ -130,10 +130,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                 AlertModalActions.openAlertDialog(
                   <div>
                     <span>
-                      <span style={{ fontWeight: "bold" }}>{user.username +
-                      ", "}</span>
-                      {translate("projects.upload_successful_alert",
-                        { username: user.username })}&nbsp;
+                      {translate("projects.upload_successful_alert", {username: user.username})}&nbsp;
                       <a style={{ cursor: "pointer" }} onClick={() => {
                         dispatch(
                           OnlineModeConfirmActions.confirmOnlineAction(() => {

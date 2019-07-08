@@ -30,7 +30,7 @@ import {
   getToolGatewayLanguage,
   getTools,
   getTranslate,
-  getUsername
+  getUsername, getProjects
 } from "../../selectors";
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -214,6 +214,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     closeLoading: coreApi.closeLoading,
     showIgnorableAlert: coreApi.showIgnorableAlert,
     appLanguage: code,
+    projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
 
     // project data
     sourceBook,
@@ -296,10 +297,18 @@ export function closeProject() {
     const toolApi = getSelectedToolApi(state);
     const supportingToolApis = getSupportingToolApis(state);
     for (const key of Object.keys(supportingToolApis)) {
-      supportingToolApis[key].triggerWillDisconnect();
+      try {
+        supportingToolApis[key].triggerWillDisconnect();
+      } catch (e) {
+        console.warn(`Failed to disconnect from ${key}`, e);
+      }
     }
     if (toolApi) {
-      toolApi.triggerWillDisconnect();
+      try {
+        toolApi.triggerWillDisconnect();
+      } catch (e) {
+        console.warn(`Failed to disconnect from the current tool`, e);
+      }
     }
 
     /**
