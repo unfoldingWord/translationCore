@@ -29,7 +29,7 @@ describe("migrate tCore resources", () => {
   });
 });
 
-describe("migrate resources", () => {
+describe("migrate project resources", () => {
   const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'checkingResources');
   const expectedFileCount = 246;
 
