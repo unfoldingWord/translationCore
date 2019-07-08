@@ -795,7 +795,7 @@ function copyMissingSubfolders(source, destination, languageId) {
       fs.copySync(sourcePath, destinationPath);
       console.log(
         `%c Copied ${languageId} lexicon from static lexicons to user resources path.`,
-        'color: #00539C'
+        'color: #0D355A'
       );
     }
   });
