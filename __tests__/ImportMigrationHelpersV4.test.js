@@ -8,6 +8,7 @@ import * as MigrateToVersion4 from "../src/js/helpers/ProjectMigration/migrateTo
 import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
 jest.mock('fs-extra');
 import migrateToVersion3 from "../src/js/helpers/ProjectMigration/migrateToVersion3";
+import { TRANSLATION_WORDS } from '../src/js/common/constants';
 
 const manifest = {
   "project": {"id": "mat", "name": ""},
@@ -92,8 +93,8 @@ describe('migrateToVersion4', () => {
     fs.outputFileSync(path.join(projectAlignmentDataPath, 'alignmentData','ignoreMe'), ''); // this file should be ignored
     fs.ensureDirSync(path.join(projectAlignmentDataPath, 'alignmentData',".DS_Store")); // this folder should be ignored
     const chapter1_alignment_path = path.join(projectAlignmentDataPath, 'alignmentData', book_id, '1.json');
-    const disciplineWords = path.join(projectAlignmentDataPath, 'index', 'translationWords', book_id, 'discipline.json');
-    const believeWords = path.join(projectAlignmentDataPath, 'index', 'translationWords', book_id, 'believe.json');
+    const disciplineWords = path.join(projectAlignmentDataPath, 'index', TRANSLATION_WORDS, book_id, 'discipline.json');
+    const believeWords = path.join(projectAlignmentDataPath, 'index', TRANSLATION_WORDS, book_id, 'believe.json');
 
     Version.setVersionInManifest(projectPath, 2);
     migrateToVersion3(projectPath); // setup migration 3 data

@@ -8,7 +8,13 @@ import thunk from 'redux-thunk';
 //helpers
 import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers';
 // constants
-import { USER_RESOURCES_PATH, PROJECT_INDEX_FOLDER_PATH, IMPORTS_PATH } from '../src/js/common/constants';
+import {
+  USER_RESOURCES_PATH,
+  PROJECT_INDEX_FOLDER_PATH,
+  IMPORTS_PATH,
+  WORD_ALIGNMENT,
+  TRANSLATION_WORDS
+} from '../src/js/common/constants';
 
 // Mock store set up
 const middlewares = [thunk];
@@ -112,7 +118,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
     fs.__setMockFS({}); // initialize to empty
     const sourcePath = path.join(__dirname, 'fixtures/project');
     const destinationPath = path.join(__dirname, 'fixtures/project');
-    const copyFiles = ['wordAlignment', 'translationWords'];
+    const copyFiles = [WORD_ALIGNMENT, TRANSLATION_WORDS];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
@@ -187,7 +193,7 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
     fs.__setMockFS({}); // initialize to empty
     const sourcePath = path.join(__dirname, 'fixtures/project');
     const destinationPath = path.join(__dirname, 'fixtures/project');
-    const copyFiles = ['wordAlignment', 'translationWords'];
+    const copyFiles = [WORD_ALIGNMENT, TRANSLATION_WORDS];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
@@ -197,7 +203,7 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
   });
 
   test('should get the progress for a non alignment tool', () => {
-    let toolName = 'translationWords';
+    let toolName = TRANSLATION_WORDS;
     let bookId = 'tit';
     let userSelectedCategories = ["apostle", "authority", "clean"];
     const pathToCheckDataFiles = path.join(translationWordsProject, PROJECT_INDEX_FOLDER_PATH, toolName, bookId);
@@ -213,7 +219,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
     fs.__setMockFS({}); // initialize to empty
     const sourcePath = path.join(__dirname, 'fixtures/project');
     const destinationPath = path.join(__dirname, 'fixtures/project');
-    const copyFiles = ['wordAlignment', 'translationWords'];
+    const copyFiles = [WORD_ALIGNMENT, TRANSLATION_WORDS];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');

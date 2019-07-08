@@ -4,6 +4,7 @@ import { loadBibleBook } from './ResourcesActions';
 import { getSourceBookManifest, getProjectBookId, getProjectManifest } from "../selectors";
 // helpers
 import { getTsvOLVersion } from '../helpers/originalLanguageResourcesHelpers';
+import { TRANSLATION_NOTES } from '../common/constants';
 
 /**
  * Loads the latest or an older version of the original
@@ -24,7 +25,7 @@ export const loadOlderOriginalLanguageResource = (toolName) => (dispatch, getDat
   const bookId = getProjectBookId(getData());
 
   // if version of current original language resource if not the one needed by the tn groupdata
-  if (tsvOLVersion && (tsvOLVersion !== version) && toolName === 'translationNotes') {
+  if (tsvOLVersion && (tsvOLVersion !== version) && toolName === TRANSLATION_NOTES) {
     // load original language resource that matches version number for tn groupdata
     dispatch(loadBibleBook(resourceId, bookId, languageId, 'v' + tsvOLVersion));
   } else {

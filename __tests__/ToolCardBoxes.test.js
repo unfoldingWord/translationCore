@@ -3,12 +3,13 @@ import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ToolCardBoxes from '../src/js/components/home/toolsManagement/ToolCardBoxes';
-import {tNotesCategories} from "tsv-groupdata-parser";
+import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../src/js/common/constants';
+
 jest.mock('material-ui/Checkbox');
 
 test('translationWords should have three boxes unchecked', () => {
   const props = {
-    toolName: 'translationWords',
+    toolName: TRANSLATION_WORDS,
     selectedCategories: [],
     onChecked: jest.fn(() => {}),
     availableCategories: {},
@@ -67,7 +68,7 @@ test('translationNotes should have 4 boxes checked', () => {
     'figs-abstractnouns'
   ]
   const props = {
-    toolName: 'translationNotes',
+    toolName: TRANSLATION_NOTES,
     selectedCategories,
     availableCategories,
     checks: ['figs-gendernotations', 'figs-pronouns', 'figs-irony'],

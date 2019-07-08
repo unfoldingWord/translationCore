@@ -1,10 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 // helpers
 import ResourceAPI from "./ResourceAPI";
 // constants
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+import {USER_RESOURCES_PATH, TRANSLATION_HELPS} from '../common/constants';
 
 const cleanReaddirSync = (path) => {
   let cleanDirectories = [];
@@ -29,7 +28,7 @@ export const getLocalResourceList = () => {
     for (let i = 0; i < resourceLanguages.length; i++) {
       const languageId = resourceLanguages[i];
       const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
-      const tHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
+      const tHelpsPath = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS);
       const bibleIds = cleanReaddirSync(biblesPath);
       const tHelpsResources = cleanReaddirSync(tHelpsPath);
 

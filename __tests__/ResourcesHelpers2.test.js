@@ -15,6 +15,9 @@ import {
   USER_RESOURCES_PATH,
   PROJECTS_PATH,
   STATIC_RESOURCES_PATH,
+  ORIGINAL_LANGUAGE,
+  TARGET_LANGUAGE,
+  TARGET_BIBLE
 } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -41,11 +44,11 @@ describe('ResourcesHelpers.getResourcesNeededByTool', () => {
           ScripturePane: {
             currentPaneSettings: [
               {
-                bibleId: "targetBible",
-                languageId: "targetLanguage"
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
               }, {
                 bibleId: "ugnt",
-                languageId: "originalLanguage"
+                languageId: ORIGINAL_LANGUAGE
               }, {
                 bibleId: "ust",
                 languageId: "en"
@@ -102,11 +105,11 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
           ScripturePane: {
             currentPaneSettings: [
               {
-                bibleId: "targetBible",
-                languageId: "targetLanguage"
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
               }, {
                 bibleId: "ugnt",
-                languageId: "originalLanguage"
+                languageId: ORIGINAL_LANGUAGE
               }, {
                 bibleId: "ust",
                 languageId: "en"
@@ -157,11 +160,11 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
           ScripturePane: {
             currentPaneSettings: [
               {
-                bibleId: "targetBible",
-                languageId: "targetLanguage"
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
               }, {
                 bibleId: "uhb",
-                languageId: "originalLanguage"
+                languageId: ORIGINAL_LANGUAGE
               }, {
                 bibleId: "ust",
                 languageId: "en"
@@ -207,11 +210,11 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
           ScripturePane: {
             currentPaneSettings: [
               {
-                bibleId: "targetBible",
-                languageId: "targetLanguage"
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
               }, {
                 bibleId: "ugnt",
-                languageId: "originalLanguage"
+                languageId: ORIGINAL_LANGUAGE
               }, {
                 bibleId: "ust",
                 languageId: "en"

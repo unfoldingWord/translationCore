@@ -15,7 +15,12 @@ import * as BibleHelpers from "./bibleHelpers";
 import ResourceAPI from "./ResourceAPI";
 import {getFoldersInResourceFolder} from "./ResourcesHelpers";
 // constants
-import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../common/constants';
+import {
+  PROJECTS_PATH,
+  USER_RESOURCES_PATH,
+  TRANSLATION_WORDS,
+  TRANSLATION_HELPS
+} from '../common/constants';
 
 /**
  * function to make the change in the array based on the passed params
@@ -385,13 +390,13 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     const projectGroupsData = getJsonFilesInPath(pathToProjectGroupsDataFiles);
     let availableCheckCategories = [];
     let languageId = 'en';
-    if (toolName === 'translationWords'){
+    if (toolName === TRANSLATION_WORDS){
       const {languageId: origLang} = BibleHelpers.getOrigLangforBook(bookAbbreviation);
       languageId = origLang;
     }
 
     //Note: translationWords only uses checks that are also available in the greek (OL)
-    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', toolName);
+    const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS, toolName);
     const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) || toolResourcePath;
     const parentCategories = getFoldersInResourceFolder(versionPath);
     parentCategories.forEach((category) => {

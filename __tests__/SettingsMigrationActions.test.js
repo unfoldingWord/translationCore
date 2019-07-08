@@ -6,6 +6,7 @@ import * as SettingsMigrationActions from '../src/js/actions/SettingsMigrationAc
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+import { ORIGINAL_LANGUAGE, TARGET_LANGUAGE, TARGET_BIBLE } from '../src/js/common/constants';
 
 describe('SettingsMigrationActions.migrateCurrentPaneSettings1', () => {
   test('Migrates old scripture pane settings to use ult string identifier instead of ulb-en string identifier', () => {
@@ -76,12 +77,12 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings3', () => {
             bibleId: 'ulb'
           },
           {
-            languageId: 'originalLanguage',
+            languageId: ORIGINAL_LANGUAGE,
             bibleId: 'ugnt'
           },
           {
-            languageId: 'targetLanguage',
-            bibleId: 'targetBible'
+            languageId: TARGET_LANGUAGE,
+            bibleId: TARGET_BIBLE
           }
         ]
       }
@@ -90,7 +91,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings3', () => {
       settingsReducer: {
         toolsSettings: {
           'ScripturePane': {
-            currentPaneSettings: ['ulb', 'ugnt', 'targetLanguage']
+            currentPaneSettings: ['ulb', 'ugnt', TARGET_LANGUAGE]
           }
         }
       }
@@ -120,8 +121,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
           bibleId: 'ulb'
         },
         {
-          languageId: 'targetLanguage',
-          bibleId: 'targetBible'
+          languageId: TARGET_LANGUAGE,
+          bibleId: TARGET_BIBLE
         }
       ]
     }
@@ -141,8 +142,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
                 bibleId: 'ulb'
               },
               {
-                languageId: 'targetLanguage',
-                bibleId: 'targetBible'
+                languageId: TARGET_LANGUAGE,
+                bibleId: TARGET_BIBLE
               }
             ]
           }
@@ -172,8 +173,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
                 bibleId: 'ult'
               },
               {
-                languageId: 'targetLanguage',
-                bibleId: 'targetBible'
+                languageId: TARGET_LANGUAGE,
+                bibleId: TARGET_BIBLE
               }
             ]
           }
@@ -204,8 +205,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             bibleId: 'udt'
           },
           {
-            languageId: 'targetLanguage',
-            bibleId: 'targetBible'
+            languageId: TARGET_LANGUAGE,
+            bibleId: TARGET_BIBLE
           }
         ]
       }
@@ -224,8 +225,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
                 bibleId: 'udb'
               },
               {
-                languageId: 'targetLanguage',
-                bibleId: 'targetBible'
+                languageId: TARGET_LANGUAGE,
+                bibleId: TARGET_BIBLE
               }
             ]
           }
@@ -256,8 +257,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             bibleId: 'ulb'
           },
           {
-            languageId: 'targetLanguage',
-            bibleId: 'targetBible'
+            languageId: TARGET_LANGUAGE,
+            bibleId: TARGET_BIBLE
           }
         ]
       }
@@ -276,8 +277,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
                 bibleId: 'ulb'
               },
               {
-                languageId: 'targetLanguage',
-                bibleId: 'targetBible'
+                languageId: TARGET_LANGUAGE,
+                bibleId: TARGET_BIBLE
               }
             ]
           }
@@ -308,8 +309,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             bibleId: 'ulb'
           },
           {
-            languageId: 'targetLanguage',
-            bibleId: 'targetBible'
+            languageId: TARGET_LANGUAGE,
+            bibleId: TARGET_BIBLE
           }
         ]
       }
@@ -328,8 +329,8 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
                 bibleId: 'ult'
               },
               {
-                languageId: 'targetLanguage',
-                bibleId: 'targetBible'
+                languageId: TARGET_LANGUAGE,
+                bibleId: TARGET_BIBLE
               }
             ]
           }

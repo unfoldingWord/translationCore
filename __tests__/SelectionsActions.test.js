@@ -14,6 +14,7 @@ import * as saveMethods from "../src/js/localStorage/saveMethods";
 const FIXTURE_PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+import { WORD_ALIGNMENT, TRANSLATION_WORDS } from '../src/js/common/constants';
 
 jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
   getGatewayLanguageCodeAndQuote: () => {
@@ -350,7 +351,7 @@ describe('SelectionsActions.validateSelections', () => {
       // given
       const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
-      const initialState = getInitialStateData(bookId, projectPath, 'wordAlignment');
+      const initialState = getInitialStateData(bookId, projectPath, WORD_ALIGNMENT);
       initialState.selectionsReducer = selectionsReducer;
       const store = mockStore(initialState);
       const results = {};
@@ -370,9 +371,9 @@ describe('SelectionsActions.validateSelections', () => {
       // given
       const targetVerse = "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
-      const initialState = getInitialStateData(bookId, projectPath, 'wordAlignment');
+      const initialState = getInitialStateData(bookId, projectPath, WORD_ALIGNMENT);
       const contextId = _.cloneDeep(initialState.contextIdReducer.contextId);
-      contextId.tool = 'translationWords';
+      contextId.tool = TRANSLATION_WORDS;
       const newSelection = {
         ...selectionsReducer,
         contextId
@@ -480,7 +481,7 @@ function cleanOutDates(actions) {
   return cleanedActions;
 }
 
-function getInitialStateData(bookId, projectPath, tool = 'translationWords') {
+function getInitialStateData(bookId, projectPath, tool = TRANSLATION_WORDS) {
   const contextId = {
     reference: {
       bookId: bookId,

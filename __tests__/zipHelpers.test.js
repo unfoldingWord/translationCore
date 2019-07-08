@@ -13,7 +13,7 @@ import fs from "fs-extra";
 // helpers
 import * as zipHelpers from '../scripts/resources/zipHelpers';
 // constants
-import { USER_RESOURCES_PATH } from '../src/js/common/constants';
+import { USER_RESOURCES_PATH, TRANSLATION_HELPS } from '../src/js/common/constants';
 const mockAddLocalFolder = jest.fn();
 const mockWriteZip = jest.fn();
 
@@ -77,7 +77,7 @@ describe('zipHelpers.zipResourcesContent', () => {
     const languageId = "el-x-koine";
     const version = "v0.5";
     const contentType = "translationWords";
-    const resourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', contentType, version);
+    const resourcePath = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS, contentType, version);
     fs.ensureDirSync(resourcePath);
     fs.outputJsonSync(path.join(resourcePath, "index.json"), jsonStuff);
     fs.outputJsonSync(path.join(resourcePath, "manifest.json"), jsonStuff);
@@ -97,7 +97,7 @@ describe('zipHelpers.zipResourcesContent', () => {
     const languageId = "el-x-koine";
     const version = "v0.5";
     const contentType = "translationWords";
-    const resourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', contentType, version);
+    const resourcePath = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS, contentType, version);
     fs.ensureDirSync(resourcePath);
     fs.outputJsonSync(path.join(resourcePath, "contents.zip"), jsonStuff);
 
