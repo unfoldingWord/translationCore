@@ -384,6 +384,10 @@ export const areResourcesNewer = () => {
   const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
     SOURCE_CONTENT_UPDATER_MANIFEST);
   if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
+    console.log(
+      `%c areResourcesNewer() - no source content manifest: ${userSourceContentUpdaterManifestPath}`,
+      'color: #00539C'
+    );
     return true;
   }
 
@@ -400,10 +404,18 @@ export const areResourcesNewer = () => {
 
   const tCoreVersion = userManifest && userManifest[TC_VERSION];
   if (tCoreVersion !== APP_VERSION) { // TRICKY: for safety we refresh on any difference of version dates in case resources not compatible with newer or older version of tCore
+    console.log(
+      `%c areResourcesNewer() - tCore version changed from ${tCoreVersion} to ${APP_VERSION}, updating all`,
+      'color: #00539C'
+    );
     return true;
   }
 
   const newer = bundledModified > userModified;
+   console.log(
+    `%c areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ", newer - updating all" : ""),
+    'color: #00539C'
+  );
   return newer;
 };
 
@@ -777,7 +789,7 @@ function copyMissingSubfolders(source, destination, languageId) {
       fs.copySync(sourcePath, destinationPath);
       console.log(
         `%c Copied ${languageId} lexicon from static lexicons to user resources path.`,
-        'color: #0D355A'
+        'color: #00539C'
       );
     }
   });
@@ -794,6 +806,22 @@ const checkForNewLexicons = (languageId) => {
     copyMissingSubfolders(tcResourcesLexiconPath, userResourcesLexiconPath, languageId);
   }
 };
+
+/**
+ * this removes old translation helps folders since they may not be compatible with new tCore version.
+ */
+// TODO: Maybe in future we can add a compatibility check, but for now this will be safe
+export function removeOldThelps() {
+  const tcResourcesLanguages = getFilteredSubFolders(USER_RESOURCES_PATH);
+  tcResourcesLanguages.forEach((languageId) => {
+    const helpsFolder = path.join(USER_RESOURCES_PATH, languageId);
+    console.log(
+      `%c    removeOldThelps() - removing: ${helpsFolder}`,
+      'color: #00aced'
+    );
+    fs.removeSync(helpsFolder);
+  });
+}
 
 /**
  * restores missing resources by language and bible and lexicon
