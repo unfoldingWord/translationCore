@@ -5,6 +5,12 @@ import { Checkbox } from 'material-ui';
 import { withLocale } from '../../containers/Locale';
 import { connect } from 'react-redux';
 
+const styles = {
+  checkboxIconStyle: {
+    fill: 'var(--accent-color-dark)'
+  },
+};
+
 const OnlineDialog = ({translate, checked, onChecked}) => {
   return (
     <MuiThemeProvider>
@@ -15,13 +21,13 @@ const OnlineDialog = ({translate, checked, onChecked}) => {
         <div style={{display: 'flex'}}>
           <Checkbox
             style={{width: '0px', marginRight: -10}}
-            iconStyle={{fill: 'black'}}
             checked={checked}
             labelStyle={{
               color: 'var(--reverse-color)',
               opacity: '0.7',
               fontWeight: '500'
             }}
+            iconStyle={styles.checkboxIconStyle}
             onCheck={(e) => {
               onChecked(e.target.checked);
             }}
