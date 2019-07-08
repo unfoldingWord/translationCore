@@ -813,14 +813,18 @@ const checkForNewLexicons = (languageId) => {
 // TODO: Maybe in future we can add a compatibility check, but for now this will be safe
 export function removeOldThelps() {
   const tcResourcesLanguages = getFilteredSubFolders(USER_RESOURCES_PATH);
-  tcResourcesLanguages.forEach((languageId) => {
-    const helpsFolder = path.join(USER_RESOURCES_PATH, languageId);
-    console.log(
-      `%c    removeOldThelps() - removing: ${helpsFolder}`,
-      'color: #00aced'
-    );
-    fs.removeSync(helpsFolder);
-  });
+  for (let languageId of tcResourcesLanguages) {
+    if (languageId) {
+      const helpsFolder = path.join(USER_RESOURCES_PATH, languageId, "translationHelps");
+      if (fs.existsSync(helpsFolder)) {
+        console.log(
+          `%c    removeOldThelps() - removing: ${helpsFolder}`,
+          'color: #00aced'
+        );
+        fs.removeSync(helpsFolder);
+      }
+    }
+  }
 }
 
 /**

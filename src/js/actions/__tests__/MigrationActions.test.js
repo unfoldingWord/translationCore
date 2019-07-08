@@ -2,30 +2,42 @@ import path from 'path';
 import fs from "fs-extra";
 import isEqual from "deep-equal";
 // helpers
-import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../../common/constants';
-import {
-  getFilesInResourcePath,
-  getFoldersInResourceFolder,
-  migrateOldCheckingResourceData,
-  removeOldThelps
-} from "../ResourcesHelpers";
+import * as MigrationActions from "../MigrationActions";
+// constants
+import { PROJECTS_PATH, USER_RESOURCES_PATH, STATIC_RESOURCES_PATH } from '../../common/constants';
+
+// constants
+const mockConsole = console;
+jest.mock('../../helpers/ResourcesHelpers', () => ({
+  ...require.requireActual('../../helpers/ResourcesHelpers'),
+  extractZippedResourceContent: (resourceDestinationPath, isBible) => {
+    mockConsole.log(`mock extractZippedResourceContent: resourceDestinationPath=${resourceDestinationPath} isBible=${isBible}`);
+  }
+}));
 
 describe("migrate tCore resources", () => {
+  const projectSourcePath = path.join('__tests__', 'fixtures', 'resources');
   beforeEach(() => {
     fs.__resetMockFS();
-    fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(USER_RESOURCES_PATH, ".."));
+    // simulate static resources path
+    fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(STATIC_RESOURCES_PATH, ".."));
+    fs.moveSync(path.join(STATIC_RESOURCES_PATH, "../resources"), STATIC_RESOURCES_PATH);
+    // fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(USER_RESOURCES_PATH, ".."));
   });
 
-  it("remove old helps with default resources", () => {
+  it("test with no user resources", () => {
     // given
+    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
     // when
-    removeOldThelps();
+    migrateResourcesFolder();
 
     // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
+    const results = compareFolders(imagePath, projectDir);
+    expect(results.count).toEqual(expectedFileCount);
+    expect(results.differences.length).toEqual(expectedChangedFiles);
   });
+
 });
 
 describe("migrate project resources", () => {
@@ -130,24 +142,6 @@ function isDirectory(path) {
 function toLinuxPath(filePath) {
   const newPath = filePath.split(path.sep).join(path.posix.sep);
   return newPath;
-}
-
-function getResourceFolders() {
-  const paths = [];
-  const languages = getFoldersInResourceFolder(USER_RESOURCES_PATH);
-  for (let language of languages) {
-    const resourceTypesPath = path.join(USER_RESOURCES_PATH, language);
-    const resourceTypes = getFoldersInResourceFolder(resourceTypesPath);
-    for (let resourceTYpe of resourceTypes) {
-      const resourcesPath = path.join(resourceTypesPath, resourceTYpe);
-      const resources = getFoldersInResourceFolder(resourcesPath);
-      for (let resource of resources) {
-        const resourcePath = toLinuxPath(path.join(resourcesPath, resource));
-        paths.push(resourcePath);
-      }
-    }
-  }
-  return paths;
 }
 
 /**
