@@ -21,6 +21,8 @@ import {
   getSetting,
   getToolGatewayLanguage
 } from "../../../selectors";
+// consts
+import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../../common/constants';
 
 class ToolCard extends Component {
   constructor(props) {
@@ -79,7 +81,7 @@ class ToolCard extends Component {
   }
 
   getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories) {
-    const toolsWithCategories = ['translationWords' , 'translationNotes'];
+    const toolsWithCategories = [TRANSLATION_WORDS , TRANSLATION_NOTES];
     let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
     if (!launchDisableMessage) { // if no errors, make sure we have original language
       const olBookPath = hasValidOL(id);
@@ -131,16 +133,16 @@ class ToolCard extends Component {
     let showCheckBoxes = false;
 
     switch (tool.name) {
-      case 'wordAlignment':
+      case WORD_ALIGNMENT:
         desc_key = 'tools.alignment_description';
         break;
 
-      case 'translationWords':
+      case TRANSLATION_WORDS:
         showCheckBoxes = true;
         desc_key = 'tools.tw_part1_description';
         break;
 
-      case 'translationNotes':
+      case TRANSLATION_NOTES:
         showCheckBoxes = true;
         break;
 

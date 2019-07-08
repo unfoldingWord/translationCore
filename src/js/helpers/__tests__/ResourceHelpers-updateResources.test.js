@@ -2,13 +2,14 @@ import path from 'path';
 import fs from "fs-extra";
 import isEqual from "deep-equal";
 // helpers
-import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../../common/constants';
 import {
   getFilesInResourcePath,
   getFoldersInResourceFolder,
   migrateOldCheckingResourceData,
   removeOldThelps
 } from "../ResourcesHelpers";
+// constants
+import { PROJECTS_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../common/constants';
 
 describe("migrate tCore resources", () => {
   beforeEach(() => {
@@ -28,7 +29,7 @@ describe("migrate tCore resources", () => {
   });
 });
 
-describe("migrate project resources", () => {
+describe("migrate resources", () => {
   const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'checkingResources');
   const expectedFileCount = 246;
 
@@ -40,7 +41,7 @@ describe("migrate project resources", () => {
     // given
     const expectedChangedFiles = 0;
     const projectName = 'en_tit_checking';
-    const toolName = 'translationNotes';
+    const toolName = TRANSLATION_NOTES;
     fs.__loadFilesIntoMockFs([projectName], projectSourcePath, PROJECTS_PATH);
     const projectDir = path.join(PROJECTS_PATH, projectName);
     const imagePath = path.join(PROJECTS_PATH, projectName + ".image");
@@ -59,7 +60,7 @@ describe("migrate project resources", () => {
     // given
     const expectedChangedFiles = 3;
     const projectName = 'en_tit_checking';
-    const toolName = 'translationNotes';
+    const toolName = TRANSLATION_NOTES;
     fs.__loadFilesIntoMockFs([projectName], projectSourcePath, PROJECTS_PATH);
     const projectDir = path.join(PROJECTS_PATH, projectName);
     const toolsFolder = '.apps/translationCore';
@@ -88,7 +89,7 @@ describe("migrate project resources", () => {
     // given
     const expectedChangedFiles = 3;
     const projectName = 'en_tit_checking';
-    const toolName = 'translationWords';
+    const toolName = TRANSLATION_WORDS;
     fs.__loadFilesIntoMockFs([projectName], projectSourcePath, PROJECTS_PATH);
     const projectDir = path.join(PROJECTS_PATH, projectName);
     const toolsFolder = '.apps/translationCore';

@@ -9,7 +9,14 @@ import * as BibleHelpers from "./bibleHelpers";
 import {getSelectedToolName, getToolGatewayLanguage} from "../selectors";
 import ResourceAPI from "./ResourceAPI";
 // constants
-import { USER_RESOURCES_PATH } from '../common/constants';
+import {
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT,
+  TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
+  TRANSLATION_ACADEMY,
+  TRANSLATION_HELPS
+} from '../common/constants';
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
 /**
@@ -55,34 +62,34 @@ export function getGlRequirementsForTool(toolName) {
   };
 
   switch (toolName) {
-    case 'wordAlignment':
+    case WORD_ALIGNMENT:
       requirements.gl.minimumCheckingLevel = 3;
       break;
 
-    case 'translationWords':
+    case TRANSLATION_WORDS:
       requirements.gl.alignedBookRequired = true;
       requirements.gl.minimumCheckingLevel = 3;
       requirements.gl.helpsChecks = [
         {
-          path: path.join('translationHelps', 'translationWords'),
+          path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS),
           subpath: 'articles',
           minimumCheckingLevel: 2
         }
       ];
       requirements.ol.helpsChecks = [
         {
-          path: path.join('translationHelps', 'translationWords'),
+          path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS),
           subpath: path.join('groups', '${bookID}')
         }
       ];
       break;
-    case 'translationNotes':
+    case TRANSLATION_NOTES:
       requirements.gl.helpsChecks = [
         {
-          path: path.join('translationHelps', 'translationAcademy')
+          path: path.join(TRANSLATION_HELPS, TRANSLATION_ACADEMY)
         },
         {
-          path: path.join('translationHelps', 'translationNotes')
+          path: path.join(TRANSLATION_HELPS, TRANSLATION_NOTES)
         }
       ];
       break;
@@ -102,7 +109,7 @@ export function getGlRequirementsForTool(toolName) {
  */
 export function getGatewayLanguageList(bookId = null, toolName = null) {
   const glRequirements = getGlRequirementsForTool(toolName);
-  const forceLanguageId = (toolName === 'wordAlignment') ? 'en' : null;
+  const forceLanguageId = (toolName === WORD_ALIGNMENT) ? 'en' : null;
   const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, glRequirements, forceLanguageId);
   const supportedLanguageCodes = Object.keys(languageBookData);
   const supportedLanguages = supportedLanguageCodes.map(code => {

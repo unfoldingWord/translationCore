@@ -6,6 +6,7 @@ import fs from 'fs-extra';
 import migrateToVersion3 from "../src/js/helpers/ProjectMigration/migrateToVersion3";
 import * as MigrateToVersion3 from "../src/js/helpers/ProjectMigration/migrateToVersion3";
 import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
+import { TRANSLATION_WORDS } from '../src/js/common/constants';
 jest.mock('fs-extra');
 
 const manifest = {
@@ -90,8 +91,8 @@ describe('migrateToVersion3', () => {
     fs.outputFileSync(path.join(projectAlignmentDataPath, 'alignmentData','ignoreMe'), ''); // this file should be ignored
     fs.ensureDirSync(path.join(projectAlignmentDataPath, 'alignmentData',".DS_Store")); // this folder should be ignored
     const chapter1_alignment_path = path.join(projectAlignmentDataPath, 'alignmentData', book_id, '1.json');
-    const disciplineWords = path.join(projectAlignmentDataPath, 'index', 'translationWords', book_id, 'discipline.json');
-    const believeWords = path.join(projectAlignmentDataPath, 'index', 'translationWords', book_id, 'believe.json');
+    const disciplineWords = path.join(projectAlignmentDataPath, 'index', TRANSLATION_WORDS, book_id, 'discipline.json');
+    const believeWords = path.join(projectAlignmentDataPath, 'index', TRANSLATION_WORDS, book_id, 'believe.json');
 
     // make sure test data set up correctly
     expect(isStringInData(chapter1_alignment_path, match)).toBeTruthy();

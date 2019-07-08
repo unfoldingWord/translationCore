@@ -5,7 +5,18 @@ import fs from "fs-extra";
 // actions
 import * as ResourcesActions from '../src/js/actions/ResourcesActions';
 // constants
-import { PROJECTS_PATH, USER_RESOURCES_PATH } from '../src/js/common/constants';
+import {
+  PROJECTS_PATH,
+  USER_RESOURCES_PATH,
+  ORIGINAL_LANGUAGE,
+  TARGET_LANGUAGE,
+  TARGET_BIBLE,
+  WORD_ALIGNMENT,
+  TRANSLATION_WORDS,
+  TRANSLATION_ACADEMY,
+  TRANSLATION_HELPS
+} from '../src/js/common/constants';
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -33,7 +44,7 @@ describe('ResourcesActions', () => {
     const store = mockStore({
       actions: {},
       toolsReducer: {
-        selectedTool: 'wordAlignment'
+        selectedTool: WORD_ALIGNMENT
       },
       resourcesReducer: {
         bibles: {
@@ -57,11 +68,11 @@ describe('ResourcesActions', () => {
           ScripturePane: {
             currentPaneSettings: [
               {
-                bibleId: "targetBible",
-                languageId: "targetLanguage"
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
               }, {
                 bibleId: "ugnt",
-                languageId: "originalLanguage"
+                languageId: ORIGINAL_LANGUAGE
               }, {
                 bibleId: "ust",
                 languageId: "en"
@@ -87,41 +98,41 @@ describe('ResourcesActions', () => {
 
   it('findArticleFilePath for abel in en', () => {
     loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abel', 'en');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords', 'v10', 'names', 'articles', 'abel.md');
+    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'abel', 'en');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10', 'names', 'articles', 'abel.md');
     expect(filePath).toEqual(expectedPath);
   });
 
   it('findArticleFilePath for a non-existing file', () => {
     loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'does-not-exist', 'en');
+    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'does-not-exist', 'en');
     expect(filePath).toBeNull();
   });
 
   it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
     loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abomination', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'hi', 'translationHelps', 'translationWords', 'v8.1', 'kt', 'articles', 'abomination.md');
+    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'abomination', 'hi');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'hi', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v8.1', 'kt', 'articles', 'abomination.md');
     expect(filePath).toEqual(expectedPath);
   });
 
   it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
     loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abraham', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationWords', 'v10', 'names', 'articles', 'abraham.md');
+    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'abraham', 'hi');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10', 'names', 'articles', 'abraham.md');
     expect(filePath).toEqual(expectedPath);
   });
 
   it('findArticleFilePath for tA translate-names which is not in Hindi so should return English', () => {
     loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath('translationAcademy', 'translate-names', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', 'translationHelps', 'translationAcademy', 'v9', 'translate', 'translate-names.md');
+    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_ACADEMY, 'translate-names', 'hi');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_ACADEMY, 'v9', 'translate', 'translate-names.md');
     expect(filePath).toEqual(expectedPath);
   });
 
   it('findArticleFilePath for tW abraham but giving a wrong category should return null', () => {
     loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abraham', 'en', 'kt');
+    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'abraham', 'en', 'kt');
     expect(filePath).toBeNull();
   });
 
@@ -129,7 +140,7 @@ describe('ResourcesActions', () => {
     loadMockFsWithProjectAndResources();
     const articleId = 'abraham';
     const category = 'names';
-    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en', category);
+    const content = ResourcesActions.loadArticleData(TRANSLATION_WORDS, articleId, 'en', category);
     const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
     expect(content).toBeTruthy();
     expect(content).not.toEqual(notExpectedContent);
@@ -139,7 +150,7 @@ describe('ResourcesActions', () => {
     loadMockFsWithProjectAndResources();
     const articleId = 'abraham';
     const category = 'kt';
-    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en', category);
+    const content = ResourcesActions.loadArticleData(TRANSLATION_WORDS, articleId, 'en', category);
     const expectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
     expect(content).toEqual(expectedContent);
   });
@@ -147,7 +158,7 @@ describe('ResourcesActions', () => {
   it('loadResourceArticle for tW abraham with no category', () => {
     loadMockFsWithProjectAndResources();
     const articleId = 'abraham';
-    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en');
+    const content = ResourcesActions.loadArticleData(TRANSLATION_WORDS, articleId, 'en');
     const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
     expect(content).toBeTruthy();
     expect(content).not.toEqual(notExpectedContent);
@@ -156,7 +167,7 @@ describe('ResourcesActions', () => {
   it('loadResourceArticle for tA translate-names with no category and hindi should still find (English) content', () => {
     loadMockFsWithProjectAndResources();
     const articleId = 'translate-names';
-    const content = ResourcesActions.loadArticleData('translationAcademy', articleId, 'hi');
+    const content = ResourcesActions.loadArticleData(TRANSLATION_ACADEMY, articleId, 'hi');
     const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
     expect(content).toBeTruthy();
     expect(content).not.toEqual(notExpectedContent);
@@ -174,7 +185,7 @@ describe('ResourcesActions', () => {
       "tw": "rc://*/tw/dict/bible/names/paul"
     };
 
-    const expectedResources = ['en', 'originalLanguage', 'targetLanguage'];
+    const expectedResources = ['en', ORIGINAL_LANGUAGE, TARGET_LANGUAGE];
 
     const projectPath = path.join(PROJECTS_PATH, "en_gal");
     loadMockFsWithProjectAndResources();
@@ -187,7 +198,7 @@ describe('ResourcesActions', () => {
         }
       },
       toolsReducer: {
-        selectedTool: 'wordAlignment'
+        selectedTool: WORD_ALIGNMENT
       },
       projectDetailsReducer: {
         manifest: {
@@ -243,7 +254,7 @@ describe('ResourcesActions', () => {
     }
 
     // make sure UGNT loaded and has expected format
-    let ugntAction = getAction(actions, "ADD_NEW_BIBLE_TO_RESOURCES", 'languageId', 'originalLanguage', 'bibleId', 'ugnt');
+    let ugntAction = getAction(actions, "ADD_NEW_BIBLE_TO_RESOURCES", 'languageId', ORIGINAL_LANGUAGE, 'bibleId', 'ugnt');
     expect(ugntAction).not.toBeNull();
     let firstChapter = ugntAction.bibleData[1];
     let firstVerse = firstChapter[1];

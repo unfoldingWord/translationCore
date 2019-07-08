@@ -1,6 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as InvalidatedActions from '../src/js/actions/InvalidatedActions';
+import { TRANSLATION_WORDS } from '../src/js/common/constants';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -24,7 +25,7 @@ describe('InvalidatedActions.set', () => {
         }
       },
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       groupsIndexReducer: {
         groupsIndex: [
@@ -58,7 +59,7 @@ describe('InvalidatedActions.set', () => {
         }
       },
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       groupsIndexReducer: {
         groupsIndex: [
@@ -94,7 +95,7 @@ describe('InvalidatedActions.setInvalidated', () => {
         }
       },
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       groupsIndexReducer: {
         groupsIndex: [
@@ -128,7 +129,7 @@ describe('InvalidatedActions.setInvalidated', () => {
         }
       },
       toolsReducer: {
-        selectedTool: 'translationWords'
+        selectedTool: TRANSLATION_WORDS
       },
       groupsIndexReducer: {
         groupsIndex: [

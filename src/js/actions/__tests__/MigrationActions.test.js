@@ -16,7 +16,6 @@ jest.mock('../../helpers/ResourcesHelpers', () => ({
 }));
 
 describe("migrate tCore resources", () => {
-  const projectSourcePath = path.join('__tests__', 'fixtures', 'resources');
   beforeEach(() => {
     fs.__resetMockFS();
     // simulate static resources path

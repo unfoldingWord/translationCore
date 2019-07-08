@@ -19,6 +19,7 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 import * as csvHelpers from '../helpers/csvHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as groupsIndexHelpers from '../helpers/groupsIndexHelpers';
+import { WORD_ALIGNMENT } from '../common/constants';
 
 /**
  * @description - Wrapper function to handle exporting to CSV
@@ -148,7 +149,7 @@ export const saveAllCSVData = (projectPath, translate) => {
     let iterablePromises = [];
     toolNames.forEach((toolName) => {
       // Generate CheckInformation.csv for all tools EXCEPT wordAlignment
-      if (toolName !== 'wordAlignment') {
+      if (toolName !== WORD_ALIGNMENT) {
         const p = new Promise((_resolve) => {
           return saveToolDataToCSV(toolName, projectPath, translate)
             .then(_resolve);
@@ -275,7 +276,7 @@ export const saveVerseEditsToCSV = (projectPath, translate) => {
             activeVerse: data.activeVerse,
           };
           const contextId = data.contextId;
-          if (contextId.tool === 'wordAlignment' || contextId.tool === '[External edit]') {
+          if (contextId.tool === WORD_ALIGNMENT || contextId.tool === '[External edit]') {
             contextId.glCode = 'N/A';
             contextId.glQuote = 'N/A';
             contextId.groupId = 'N/A';

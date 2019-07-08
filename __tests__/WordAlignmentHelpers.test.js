@@ -4,7 +4,7 @@ import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
 //consts
-const RESOURCES = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects');
+import { WORD_ALIGNMENT } from '../src/js/common/constants';
 jest.mock('fs-extra');
 
 describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
@@ -292,7 +292,7 @@ describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
 
 
 describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
-  const sourcePath = path.join('__tests__', 'fixtures', 'project', 'wordAlignment');
+  const sourcePath = path.join('__tests__', 'fixtures', 'project', WORD_ALIGNMENT);
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
@@ -307,7 +307,7 @@ describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
     const sourceProject = 'normal_project';
     let copyFiles = [sourceProject];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, sourcePath);
-    const wordAlignmentDataPath = path.join('__tests__', 'fixtures', 'project', 'wordAlignment', 'normal_project', '.apps', 'translationCore', 'alignmentData', 'tit');
+    const wordAlignmentDataPath = path.join('__tests__', 'fixtures', 'project', WORD_ALIGNMENT, 'normal_project', '.apps', 'translationCore', 'alignmentData', 'tit');
     const chapters = ['1.json', '2.json', '3.json'];
     let progress = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
     expect(progress).toBeTruthy();

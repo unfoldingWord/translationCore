@@ -3,6 +3,8 @@ import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
 import ResourceAPI from "./ResourceAPI";
+import { TRANSLATION_HELPS } from '../common/constants';
+
 /**
  * Finds the group object for a given group id in the groupsIndex array.
  * @param {Array} groupsIndex
@@ -31,7 +33,7 @@ export function getGroupFromGroupsIndex(groupsIndex, groupIdToFind) {
  */
 export function getGroupsIndex(gatewayLanguageId, toolName) {
   try {
-    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguageId, 'translationHelps', toolName);
+    const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguageId, TRANSLATION_HELPS, toolName);
     const versionDirectory = ResourceAPI.getLatestVersion(toolResourceDirectory) || toolResourceDirectory;
     const dataDirectory = path.join(versionDirectory, 'kt');
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');

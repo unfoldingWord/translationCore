@@ -10,7 +10,7 @@ import ToolCard from './ToolCard';
 import {getTsvOLVersion} from '../../../helpers/originalLanguageResourcesHelpers';
 import {getAvailableCategories} from '../../../helpers/ResourcesHelpers';
 // constants
-import { USER_RESOURCES_PATH } from '../../../common/constants';
+import { USER_RESOURCES_PATH, TRANSLATION_NOTES } from '../../../common/constants';
 
 /**
  * Renders a list of tools.
@@ -77,7 +77,7 @@ const ToolsCards = ({
             const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation);
             let isOLBookVersionMissing = false;
             let missingOLResource = {};
-            if (tool.name === 'translationNotes') {
+            if (tool.name === TRANSLATION_NOTES) {
               const {
                 language_id: languageId,
                 resource_id: resourceId

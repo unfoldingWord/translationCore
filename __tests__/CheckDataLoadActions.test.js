@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import fs from 'fs-extra';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+import { TRANSLATION_WORDS } from '../src/js/common/constants';
 
 jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
   getGatewayLanguageCodeAndQuote: () => {
@@ -21,7 +22,7 @@ jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
 import * as CheckDataLoadActions from '../src/js/actions/CheckDataLoadActions';
 const projectSaveLocation = path.join(__dirname, 'fixtures/project/checkDataProject');
 const toolsReducer = {
-  selectedTool: 'translationWords'
+  selectedTool: TRANSLATION_WORDS
 };
 const groupsIndexReducer = {
   groupsIndex: [
