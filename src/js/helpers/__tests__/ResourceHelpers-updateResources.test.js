@@ -4,12 +4,32 @@ import isEqual from "deep-equal";
 // helpers
 import {
   getFilesInResourcePath,
-  migrateOldCheckingResourceData
+  getFoldersInResourceFolder,
+  migrateOldCheckingResourceData,
+  removeOldThelps
 } from "../ResourcesHelpers";
 // constants
-import { PROJECTS_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../common/constants';
+import { PROJECTS_PATH, USER_RESOURCES_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../common/constants';
 
-describe("migrate resources", () => {
+describe("migrate tCore resources", () => {
+  beforeEach(() => {
+    fs.__resetMockFS();
+    fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(USER_RESOURCES_PATH, ".."));
+  });
+
+  it("remove old helps with default resources", () => {
+    // given
+
+    // when
+    removeOldThelps();
+
+    // then
+    const folders = getResourceFolders();
+    expect(folders).toMatchSnapshot();
+  });
+});
+
+describe("migrate project resources", () => {
   const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'checkingResources');
   const expectedFileCount = 246;
 
@@ -111,6 +131,24 @@ function isDirectory(path) {
 function toLinuxPath(filePath) {
   const newPath = filePath.split(path.sep).join(path.posix.sep);
   return newPath;
+}
+
+function getResourceFolders() {
+  const paths = [];
+  const languages = getFoldersInResourceFolder(USER_RESOURCES_PATH);
+  for (let language of languages) {
+    const resourceTypesPath = path.join(USER_RESOURCES_PATH, language);
+    const resourceTypes = getFoldersInResourceFolder(resourceTypesPath);
+    for (let resourceTYpe of resourceTypes) {
+      const resourcesPath = path.join(resourceTypesPath, resourceTYpe);
+      const resources = getFoldersInResourceFolder(resourcesPath);
+      for (let resource of resources) {
+        const resourcePath = toLinuxPath(path.join(resourcesPath, resource));
+        paths.push(resourcePath);
+      }
+    }
+  }
+  return paths;
 }
 
 /**

@@ -1,14 +1,10 @@
-import fs from 'fs-extra';
-import path from 'path-extra';
-import ospath from 'ospath';
 // helpers
 import {
   copySourceContentUpdaterManifest,
   getMissingResources,
-  areResourcesNewer
+  areResourcesNewer,
+  removeOldThelps
 } from '../helpers/ResourcesHelpers';
-// constants
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
 /**
  * Run migrations on the user tc resources folder. If it is determined the resources folder was
@@ -20,7 +16,7 @@ export function migrateResourcesFolder() {
     console.log("migrateResourcesFolder");
     if (areResourcesNewer()) {
       console.log("migrateResourcesFolder: copying newer resources");
-      fs.removeSync(USER_RESOURCES_PATH);
+      removeOldThelps();
       getMissingResources();
       copySourceContentUpdaterManifest();// Add source-content-updater-manifest.json
     } else {
