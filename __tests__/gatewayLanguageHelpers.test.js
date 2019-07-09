@@ -7,7 +7,13 @@ import ResourceAPI from "../src/js/helpers/ResourceAPI";
 import * as gatewayLanguageHelpers from "../src/js/helpers/gatewayLanguageHelpers";
 import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 // constants
-import { USER_RESOURCES_PATH, WORD_ALIGNMENT, TRANSLATION_WORDS } from '../src/js/common/constants';
+import {
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT,
+  TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
+  TRANSLATION_ACADEMY
+} from '../src/js/common/constants';
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
 
 describe('Test getGatewayLanguageList() for TW',()=>{
@@ -60,7 +66,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
       // fake the book of joel
       fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
       fakeHelpsBookByCopying('hbo', 'tit', 'jol');
-        // fake a hindi bible
+      // fake a hindi bible
       fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1', 'hi/bibles/irv/v12.1');
       fs.outputJsonSync(path.join(USER_RESOURCES_PATH, 'hi/bibles/irv/v12.1/jol/1.json'), {}); // remove alignments
 
@@ -69,7 +75,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
       expect(languages.length).toEqual(1);
     });
 
-    test('should return nothing for Joel without hbo helps', () => {
+    test('should return nothing for Joel without hbo tWords', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
 
@@ -123,6 +129,127 @@ describe('Test getGatewayLanguageList() for TW',()=>{
       setCheckingLevel(path.join(ugntVersionPath, 'manifest.json'), 1);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
+      expect(languages.length).toEqual(0);
+    });
+  });
+
+  describe('original language tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
+    test('should return an empty list for Genesis (OT, no ULT)', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
+
+      const languages = gatewayLanguageHelpers.getGatewayLanguageList('gen');
+      expect(languages.length).toEqual(0);
+    });
+
+    test('should return an empty list for Luke (NT, no ULT)', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
+
+      const languages = gatewayLanguageHelpers.getGatewayLanguageList('luk', toolName);
+      expect(languages.length).toEqual(0);
+    });
+  });
+});
+
+describe('Test getGatewayLanguageList() for TN',()=>{
+  const toolName = TRANSLATION_NOTES;
+
+  describe('general tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
+    test('should return English & Hindi for Titus', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps', 'el-x-koine'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
+
+      // fake a hindi bible
+      fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult', 'hi/bibles/ulb');
+      fakeResourceByCopying(USER_RESOURCES_PATH, 'en/translationHelps', 'hi/translationHelps');
+
+      const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
+      expect(languages[0].name).toEqual('English');
+      expect(languages[1].lc).toEqual('hi');
+      expect(languages.length).toEqual(2);
+    });
+
+    test('should return English for Joel', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps', 'hbo/bibles/uhb', 'el-x-koine'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
+      fakeHelpsByCopying('el-x-koine', 'hbo');
+
+      // fake the book of Joel
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'hbo/translationHelps/translationWords/v8/kt/groups'), 'tit', 'jol');
+
+      const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol', toolName);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
+    });
+
+    test('should return English for Joel with unaligned hi', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps', 'hbo/bibles/uhb', 'el-x-koine'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
+      fakeHelpsByCopying('el-x-koine', 'hbo');
+
+      // fake the book of joel
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
+      fakeHelpsBookByCopying('hbo', 'tit', 'jol');
+      // fake a hindi bible
+      fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1', 'hi/bibles/irv/v12.1');
+      fs.outputJsonSync(path.join(USER_RESOURCES_PATH, 'hi/bibles/irv/v12.1/jol/1.json'), {}); // remove alignments
+
+      const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol', toolName);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
+    });
+
+    test('should return nothing for Joel without en TA', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps', 'hbo/bibles/uhb'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
+      fs.removeSync(path.join(USER_RESOURCES_PATH, 'en/translationHelps', TRANSLATION_ACADEMY));
+
+      // fake the book of joel
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
+      fakeHelpsBookByCopying('hbo', 'tit', 'jol');
+      // fake a hindi bible
+      fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1', 'hi/bibles/irv/v12.1');
+      fs.outputJsonSync(path.join(USER_RESOURCES_PATH, 'hi/bibles/irv/v12.1/jol/1.json'), {}); // remove alignments
+
+      const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol', toolName);
+      expect(languages.length).toEqual(0);
+    });
+
+    test('should return nothing for Joel without en TN', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps', 'hbo/bibles/uhb'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
+      fs.removeSync(path.join(USER_RESOURCES_PATH, 'en/translationHelps', TRANSLATION_NOTES));
+
+      // fake the book of joel
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
+      fakeHelpsBookByCopying('hbo', 'tit', 'jol');
+      // fake a hindi bible
+      fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1', 'hi/bibles/irv/v12.1');
+      fs.outputJsonSync(path.join(USER_RESOURCES_PATH, 'hi/bibles/irv/v12.1/jol/1.json'), {}); // remove alignments
+
+      const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol', toolName);
       expect(languages.length).toEqual(0);
     });
   });
