@@ -48,7 +48,7 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
  *           ol: {alignedBookRequired: Boolean, minimumCheckingLevel: Number, helpsChecks: Array.<Object>}}}
  */
 export function getGlRequirementsForTool(toolName) {
-  const requirements = {
+  const requirements = { // init to default values
     gl: {
       alignedBookRequired: false,
       minimumCheckingLevel: 3,
@@ -84,6 +84,7 @@ export function getGlRequirementsForTool(toolName) {
       ];
       break;
     case TRANSLATION_NOTES:
+      requirements.gl.alignedBookRequired = true;
       requirements.gl.helpsChecks = [
         {
           path: path.join(TRANSLATION_HELPS, TRANSLATION_ACADEMY)
