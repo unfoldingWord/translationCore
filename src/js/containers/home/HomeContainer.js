@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import _ from "lodash";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import WelcomeSplash from '../../components/home/WelcomeSplash';
@@ -21,12 +22,35 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
+import { openTool } from "../../actions/ToolActions";
 // constants
 import { APP_VERSION } from '../../common/constants';
 
 // TRICKY: because this component is heavily coupled with callbacks to set content
 // we need to connect locale state change events.
 class HomeContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedCategoriesChanged: false
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    const {
+      toolsReducer: { selectedTool },
+      projectDetailsReducer: { toolsCategories }
+    } = this.props.reducers;
+    const {
+      projectDetailsReducer: {
+        toolsCategories: prevToolsCategories
+      }
+    } = prevProps.reducers;
+
+    if(!_.isEqual(prevToolsCategories[selectedTool], toolsCategories[selectedTool])) {
+      this.setState({ selectedCategoriesChanged: true });
+    }
+  }
 
   render() {
     let {
@@ -41,7 +65,12 @@ class HomeContainer extends Component {
 
     switch (stepIndex) {
       case 0:
-        displayContainer = <Overview {...this.props}/>;
+        displayContainer = (
+          <Overview
+            {...this.props}
+            selectedCategoriesChanged={this.state.selectedCategoriesChanged}
+          />
+        );
         break;
       case 1:
         displayContainer = <UsersManagementContainer {...this.props}/>;
@@ -107,6 +136,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
+      openTool: name => dispatch(openTool(name)),
       toggleWelcomeSplash: () => {
         dispatch(BodyUIActions.toggleWelcomeSplash());
       },
@@ -122,8 +152,8 @@ const mapDispatchToProps = (dispatch) => {
       goToStep: (stepNumber) => {
         dispatch(BodyUIActions.goToStep(stepNumber));
       },
-      toggleHomeView: () => {
-        dispatch(BodyUIActions.toggleHomeView());
+      toggleHomeView: (value) => {
+        dispatch(BodyUIActions.toggleHomeView(value));
       },
       openLicenseModal: () => {
         dispatch(BodyUIActions.openLicenseModal());

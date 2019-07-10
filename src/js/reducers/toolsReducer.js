@@ -116,7 +116,7 @@ export const getSelectedToolName = (state) => {
   if (state && state.selectedTool) {
     return state.selectedTool;
   } else {
-    return undefined;
+    return false;
   }
 };
 
