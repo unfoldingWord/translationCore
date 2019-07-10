@@ -173,7 +173,7 @@ describe("selectors", () => {
       const state = {
         selectedTool: null
       };
-      const expectedResult = undefined;
+      const expectedResult = false;
       const result = fromToolsReducer.getSelectedToolName(state);
       expect(result).toEqual(expectedResult);
     });
