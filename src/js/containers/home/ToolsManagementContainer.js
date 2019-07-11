@@ -18,6 +18,7 @@ import { openAlertDialog } from "../../actions/AlertModalActions";
 import * as PopoverActions from "../../actions/PopoverActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
+import * as BodyUIActions from '../../actions/BodyUIActions';
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -66,6 +67,7 @@ class ToolsManagementContainer extends Component {
       translate,
       originalLanguageBookManifest,
       onMissingResource,
+      toggleHomeView,
     } = this.props;
 
     const instructions = (
@@ -90,6 +92,7 @@ class ToolsManagementContainer extends Component {
             translate={translate}
             bookName={name}
             loggedInUser={loggedInUser}
+            toggleHomeView={toggleHomeView}
             actions={{ ...this.props.actions }}
             onMissingResource={onMissingResource}
             originalLanguageBookManifest={originalLanguageBookManifest}
@@ -122,6 +125,7 @@ const mapDispatchToProps = (dispatch) => {
     openTool: name => dispatch(openTool(name)),
     openAlertDialog: message => dispatch(openAlertDialog(message)),
     onMissingResource: (resourceDetails) => dispatch(promptUserAboutMissingResource(resourceDetails)),
+    toggleHomeView: (value) => dispatch(BodyUIActions.toggleHomeView(value)),
     actions: {
       loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
         dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
@@ -157,6 +161,7 @@ ToolsManagementContainer.propTypes = {
   translate: PropTypes.func.isRequired,
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
+  toggleHomeView: PropTypes.func.isRequired,
 };
 
 export default connect(
