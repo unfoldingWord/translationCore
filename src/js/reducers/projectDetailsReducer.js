@@ -1,7 +1,6 @@
 import consts from '../actions/ActionTypes';
 import path from 'path-extra';
 
-// TBD ToolsCategories need to go, they are dynamic
 const initialState = {
   projectSaveLocation: '',
   manifest: {

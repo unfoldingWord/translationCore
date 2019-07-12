@@ -9,7 +9,6 @@ import { connect } from "react-redux";
 import { getSelectedToolTitle } from "../../../selectors";
 
 class OverviewContainer extends Component {
-
   constructor(props) {
     super(props);
     this.launchButton = this.launchButton.bind(this);
@@ -20,13 +19,19 @@ class OverviewContainer extends Component {
   * @param {bool} disabled - disable the button
   * @return {component} - component returned
   */
-  launchButton(disabled) {
-    const {toggleHomeView} = this.props.actions;
-    const {translate} = this.props;
+  launchButton(disabled, toolTitle) {
+    const { toggleHomeView, openTool } = this.props.actions;
+    const {
+      translate,
+      selectedCategoriesChanged,
+    } = this.props;
+    const onClick = () =>
+      selectedCategoriesChanged ? openTool(toolTitle) : toggleHomeView(false);
+
     return (
       <button className='btn-prime'
               disabled={disabled}
-              onClick={() => toggleHomeView()}>
+              onClick={onClick}>
         {translate('buttons.launch_button')}
       </button>
     );
@@ -37,7 +42,6 @@ class OverviewContainer extends Component {
     const {store} = this.context;
     const toolTitle = getSelectedToolTitle(store.getState());
     const launchButtonDisabled = !toolTitle;
-
     const instructions = (
       <div>
         <p>{translate('welcome_to_tc', { 'app': translate('_.app_name')})}
@@ -52,6 +56,7 @@ class OverviewContainer extends Component {
         </ol>
       </div>
     );
+
     return (
       <HomeContainerContentWrapper instructions={instructions}
                                    translate={translate}>
@@ -60,7 +65,7 @@ class OverviewContainer extends Component {
           <ProjectCard {...this.props} />
           <ToolCard {...this.props} />
           <div style={{ textAlign: 'center' }}>
-            {this.launchButton(launchButtonDisabled)}
+            {this.launchButton(launchButtonDisabled, toolTitle)}
           </div>
         </div>
       </HomeContainerContentWrapper>
@@ -71,8 +76,10 @@ class OverviewContainer extends Component {
 OverviewContainer.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
+  selectedCategoriesChanged: PropTypes.bool.isRequired,
   translate: PropTypes.func
 };
+
 OverviewContainer.contextTypes = {
   store: PropTypes.any
 };

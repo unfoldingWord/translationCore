@@ -19,7 +19,8 @@ import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {
   getProjectBookId,
   getSetting,
-  getToolGatewayLanguage
+  getToolGatewayLanguage,
+  getSelectedToolName,
 } from "../../../selectors";
 // consts
 import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../../common/constants';
@@ -29,11 +30,12 @@ class ToolCard extends Component {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-    this.handleMissingResource = this.handleMissingResource.bind(this);
+    this.onLaunchClick = this.onLaunchClick.bind(this);
     this.loadProgress = _.debounce(this.loadProgress.bind(this), 200);
     this.state = {
       showDescription: false,
-      progress: 0
+      progress: 0,
+      selectedCategoriesChanged: false,
     };
   }
 
@@ -59,6 +61,7 @@ class ToolCard extends Component {
 
   componentDidUpdate(prevProps) {
     if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
+      this.setState({ selectedCategoriesChanged: true });
       this.loadProgress();
     }
   }
@@ -108,8 +111,25 @@ class ToolCard extends Component {
     onSelect(tool.name);
   }
 
-  handleMissingResource() {
-    this.props.onMissingResource();
+  onLaunchClick() {
+    const {
+      isOLBookVersionMissing,
+      toggleHomeView,
+      selectedToolName,
+      tool: { name: newSelectedToolName },
+    } = this.props;
+    const { selectedCategoriesChanged } = this.state;
+
+    if (isOLBookVersionMissing) {
+      // Show dialog with option to download missing resource
+      this.props.onMissingResource();
+    } else if (selectedToolName && !selectedCategoriesChanged && (selectedToolName === newSelectedToolName)) {
+      // Show tool (Without loading tool data)
+      toggleHomeView(false);
+    } else {
+      // Load tool data then show tool
+      this.handleSelect();
+    }
   }
 
   render() {
@@ -125,7 +145,6 @@ class ToolCard extends Component {
       },
       selectedCategories,
       availableCategories,
-      isOLBookVersionMissing,
     } = this.props;
     const {progress, selectedGL} = this.state;
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
@@ -219,7 +238,7 @@ class ToolCard extends Component {
               <button
                 disabled={launchDisableMessage ? true : false}
                 className='btn-prime'
-                onClick={isOLBookVersionMissing ? this.handleMissingResource : this.handleSelect}
+                onClick={this.onLaunchClick}
                 style={{width: '90px', margin: '10px'}}
               >
                 {translate('buttons.launch_button')}
@@ -247,6 +266,11 @@ ToolCard.propTypes = {
   availableCategories: PropTypes.object.isRequired,
   isOLBookVersionMissing: PropTypes.bool.isRequired,
   onMissingResource: PropTypes.func.isRequired,
+  selectedToolName: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool
+  ]),
+  toggleHomeView: PropTypes.func.isRequired,
 };
 
 ToolCard.contextTypes = {
@@ -255,7 +279,8 @@ ToolCard.contextTypes = {
 
 const mapStateToProps = (state) => ({
   bookId: getProjectBookId(state),
-  developerMode: getSetting(state, 'developerMode')
+  developerMode: getSetting(state, 'developerMode'),
+  selectedToolName: getSelectedToolName(state),
 });
 
 export default connect(mapStateToProps)(ToolCard);

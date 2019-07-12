@@ -42,6 +42,7 @@ const ToolsCards = ({
   originalLanguageBookManifest,
   currentProjectToolsSelectedGL,
   onMissingResource,
+  toggleHomeView,
 }) => {
   if (!tools || tools.length === 0) {
     return (
@@ -95,12 +96,13 @@ const ToolsCards = ({
 
             return (
               <ToolCard
+                key={i}
                 tool={tool}
                 onSelect={onSelectTool}
+                toggleHomeView={toggleHomeView}
                 availableCategories={availableCategories}
                 selectedCategories={toolsCategories[tool.name] || []}
                 translate={translate}
-                key={i}
                 actions={actions}
                 loggedInUser={loggedInUser}
                 metadata={{
@@ -136,6 +138,7 @@ ToolsCards.propTypes = {
   toolsCategories: PropTypes.object.isRequired,
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
+  toggleHomeView: PropTypes.func.isRequired,
 };
 
 export default ToolsCards;
