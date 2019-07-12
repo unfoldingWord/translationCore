@@ -30,7 +30,7 @@ function createMainWindow () {
     title: 'translationCore',
     autoHideMenuBar: true,
     minWidth: 1200,
-    minHeight: 650,
+    minHeight: 689,
     center: true,
     useContentSize: true,
     show: false,
