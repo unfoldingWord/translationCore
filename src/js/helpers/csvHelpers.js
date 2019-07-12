@@ -89,7 +89,7 @@ export const flattenContextId = (contextId, glCode, translate) => {
     occurrence: contextId.occurrence,
     quote: getQuoteAsString(contextId.quote),
     gatewayLanguageCode: glCode,
-    gatewayLanguageQuote: getGLQuote(contextId, glCode) || contextId.glQuote || "N/A",
+    gatewayLanguageQuote: getGLQuoteFromAlignedBible(contextId, glCode) || contextId.glQuote || 'N/A',
     occurrenceNote: contextId.occurrenceNote || 'N/A',
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
@@ -103,8 +103,8 @@ export const flattenContextId = (contextId, glCode, translate) => {
  * @param {string} glCode - language code which to get the quote from the aligned Bible
  * @return {object}
  */
-export const getGLQuote = (contextId, glCode) => {
-  const glBibleId = 'ult'; // TODO: Get all Bibles for the langCode to find proper GL Quote
+export const getGLQuoteFromAlignedBible = (contextId, glCode) => {
+  const glBibleId = 'ult'; // TODO: Dynamically get all Bibles for the glCode to find GL Quote from aligned Bible
   const bookId = contextId.reference.bookId;
   const bible = ResourcesActions.loadBookResource(glBibleId, bookId, glCode); // this is cached in the called function
   return gatewayLanguageHelpers.getAlignedTextFromBible(contextId, bible);
