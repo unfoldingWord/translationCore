@@ -4,6 +4,7 @@ import path from "path-extra";
 import AdmZip from "adm-zip";
 import isEqual from "deep-equal";
 import _ from "lodash";
+import {getOtherTnsOLVersions} from 'tc-source-content-updater';
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
 import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
