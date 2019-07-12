@@ -25,163 +25,206 @@ describe("migrate tCore resources", () => {
     fs.__loadFilesIntoMockFs(['source-content-updater-manifest.json'], STATIC_RESOURCES_PATH, STATIC_RESOURCES_PATH);
   });
 
-  it("test with no user resources", () => {
-    // given
-    const oldHelpsExpected = false;
-    const oldBibleExpected = false;
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+  describe('Test without grc resource migration', () => {
 
-    // when
-    migrateResourcesFolder();
-    // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
-    verifyResources(oldHelpsExpected, oldBibleExpected);
+    it("test with no user resources", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = false;
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it("test with t4t - should not delete", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = true;
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it("test with old en_ult - should delete old version", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = false;
+      fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
+      const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest[TC_VERSION] = APP_VERSION; // add app version to resource
+      fs.outputJsonSync(manifestPath, manifest);
+      const ultPath = path.join(STATIC_RESOURCES_PATH, "en/bibles/ult");
+      const currentVersion = getFoldersInResourceFolder(ultPath)[0];
+      fs.moveSync(path.join(ultPath, currentVersion), path.join(ultPath, "v0.0.1"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it("test with t4t, old tHelps resources and up to date resources - should not delete anything", () => {
+      // given
+      const oldHelpsExpected = true;
+      const oldBibleExpected = true;
+      fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
+      const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest[TC_VERSION] = APP_VERSION; // add app version to resource
+      fs.outputJsonSync(manifestPath, manifest);
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it("test with t4t, old tHelps resources, up to date resources and different app version - should remove old helps and keep old bibles", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = true;
+      fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
+      const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest[TC_VERSION] = "x.x.x"; // add different version to resource
+      fs.outputJsonSync(manifestPath, manifest);
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it("test with t4t, old tHelps resources and not up to date resources - should remove old helps and keep old bibles", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = true;
+      fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
+      const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest[TC_VERSION] = APP_VERSION; // add app version to resource
+      manifest.modified = "2014" + manifest.modified.substr(4);
+      fs.outputJsonSync(manifestPath, manifest);
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it("test with t4t, old tHelps resources and up to date resources - should not delete anything", () => {
+      // given
+      const oldHelpsExpected = true;
+      const oldBibleExpected = true;
+      fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
+      const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest[TC_VERSION] = APP_VERSION; // add app version to resource
+      manifest.modified = "9999" + manifest.modified.substr(4);
+      fs.outputJsonSync(manifestPath, manifest);
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it("test with old tHelps resources - should delete", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = false;
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
   });
 
-  it("test with t4t - should not delete", () => {
-    // given
-    const oldHelpsExpected = false;
-    const oldBibleExpected = true;
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+  describe('Test grc resource migration', () => {
+    it("test with xx in grc/bible - should migrate to el-x-koine", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = true;
+      const bibleId = 'xx';
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "el-x-koine/bibles/ugnt"), path.join(USER_RESOURCES_PATH, "grc/bibles", bibleId));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
-    // when
-    migrateResourcesFolder();
+      // when
+      migrateResourcesFolder();
 
-    // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
-    verifyResources(oldHelpsExpected, oldBibleExpected);
-  });
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected, "el-x-koine/bibles/" + bibleId);
+      expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
+    });
 
-  it("test with old en_ult - should delete old version", () => {
-    // given
-    const oldHelpsExpected = false;
-    const oldBibleExpected = false;
-    fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
-    const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
-    const manifest = fs.readJsonSync(manifestPath);
-    manifest[TC_VERSION] = APP_VERSION; // add app version to resource
-    fs.outputJsonSync(manifestPath, manifest);
-    const ultPath = path.join(STATIC_RESOURCES_PATH, "en/bibles/ult");
-    const currentVersion = getFoldersInResourceFolder(ultPath)[0];
-    fs.moveSync(path.join(ultPath, currentVersion), path.join(ultPath, "v0.0.1"));
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+    it("test with older version of xx in grc/bible - should not move", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = true;
+      const bibleId = 'xx';
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "el-x-koine/bibles/ugnt"), path.join(USER_RESOURCES_PATH, "el-x-koine/bibles", bibleId));
+      fs.copySync(path.join(USER_RESOURCES_PATH, "el-x-koine/bibles", bibleId, "v0.2"), path.join(USER_RESOURCES_PATH, "grc/bibles", bibleId, "v0.1"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
-    // when
-    migrateResourcesFolder();
+      // when
+      migrateResourcesFolder();
 
-    // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
-    verifyResources(oldHelpsExpected, oldBibleExpected);
-  });
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected, "el-x-koine/bibles/" + bibleId);
+      expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
+    });
 
-  it("test with t4t, old tHelps resources and up to date resources - should not delete anything", () => {
-    // given
-    const oldHelpsExpected = true;
-    const oldBibleExpected = true;
-    fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
-    const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
-    const manifest = fs.readJsonSync(manifestPath);
-    manifest[TC_VERSION] = APP_VERSION; // add app version to resource
-    fs.outputJsonSync(manifestPath, manifest);
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
-
-    // when
-    migrateResourcesFolder();
-
-    // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
-    verifyResources(oldHelpsExpected, oldBibleExpected);
-  });
-
-  it("test with t4t, old tHelps resources, up to date resources and different app version - should remove old helps and keep old bibles", () => {
-    // given
-    const oldHelpsExpected = false;
-    const oldBibleExpected = true;
-    fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
-    const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
-    const manifest = fs.readJsonSync(manifestPath);
-    manifest[TC_VERSION] = "x.x.x"; // add different version to resource
-    fs.outputJsonSync(manifestPath, manifest);
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
-
-    // when
-    migrateResourcesFolder();
-
-    // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
-    verifyResources(oldHelpsExpected, oldBibleExpected);
-  });
-
-  it("test with t4t, old tHelps resources and not up to date resources - should remove old helps and keep old bibles", () => {
-    // given
-    const oldHelpsExpected = false;
-    const oldBibleExpected = true;
-    fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
-    const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
-    const manifest = fs.readJsonSync(manifestPath);
-    manifest[TC_VERSION] = APP_VERSION; // add app version to resource
-    manifest.modified = "2014" + manifest.modified.substr(4);
-    fs.outputJsonSync(manifestPath, manifest);
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
-
-    // when
-    migrateResourcesFolder();
-
-    // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
-    verifyResources(oldHelpsExpected, oldBibleExpected);
-  });
-
-  it("test with t4t, old tHelps resources and up to date resources - should not delete anything", () => {
-    // given
-    const oldHelpsExpected = true;
-    const oldBibleExpected = true;
-    fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
-    const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
-    const manifest = fs.readJsonSync(manifestPath);
-    manifest[TC_VERSION] = APP_VERSION; // add app version to resource
-    manifest.modified = "9999" + manifest.modified.substr(4);
-    fs.outputJsonSync(manifestPath, manifest);
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult"), path.join(USER_RESOURCES_PATH, "en/bibles/t4t"));
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
-
-    // when
-    migrateResourcesFolder();
-
-    // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
-    verifyResources(oldHelpsExpected, oldBibleExpected);
-  });
-
-  it("test with old tHelps resources - should delete", () => {
-    // given
-    const oldHelpsExpected = false;
-    const oldBibleExpected = false;
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "hi/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "x-test/translationHelps/translationWords"));
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
-
-    // when
-    migrateResourcesFolder();
-
-    // then
-    const folders = getResourceFolders();
-    expect(folders).toMatchSnapshot();
-    verifyResources(oldHelpsExpected, oldBibleExpected);
   });
 });
 
@@ -213,9 +256,9 @@ function verifyResourceExpected(resource, expected) {
   }
 }
 
-function verifyResources(oldHelpsExpected, oldBibleExpected) {
+function verifyResources(oldHelpsExpected, oldBibleExpected, bibleId = 'en/bibles/t4t') {
   verifyResourceExpected("x-test/translationHelps/translationWords", oldHelpsExpected);
-  verifyResourceExpected("en/bibles/t4t", oldBibleExpected);
+  verifyResourceExpected(bibleId, oldBibleExpected);
 }
 
 function getResourceFolders() {

@@ -834,9 +834,47 @@ export function removeOldThelps() {
 }
 
 /**
+ * move bibles from old grc resource folder
+ */
+export function moveResourcesFromOldGrcFolder() {
+  const oldGreekResourcesPath = path.join(USER_RESOURCES_PATH, 'grc');
+  try {
+    if (fs.existsSync(oldGreekResourcesPath)) {
+      const oldGrcBiblesPath = path.join(USER_RESOURCES_PATH, 'grc/bibles');
+      const newGrcBiblesPath = path.join(USER_RESOURCES_PATH, Bible.NT_ORIG_LANG, 'bibles');
+      const oldOrigLangBibles = getFilteredSubFolders(oldGrcBiblesPath);
+      for (let bible of oldOrigLangBibles) {
+        if (bible !== Bible.NT_ORIG_LANG_BIBLE) {
+          const latestVersionOld = ResourceAPI.getLatestVersion(path.join(oldGrcBiblesPath, bible));
+          if (latestVersionOld) {
+            let newerResource = true;
+            const newGrcBiblePath = path.join(newGrcBiblesPath, bible);
+            const latestVersionNew = ResourceAPI.getLatestVersion(newGrcBiblePath);
+            if (latestVersionNew) {
+              newerResource = ResourceAPI.compareVersions(path.basename(latestVersionOld), path.basename(latestVersionNew)) > 0;
+            }
+            if (newerResource) {
+              if (fs.existsSync(newGrcBiblePath)) {
+                fs.removeSync(newGrcBiblePath);
+              }
+              fs.moveSync(path.join(latestVersionOld), path.join(newGrcBiblePath, path.basename(latestVersionOld)));
+            }
+          }
+        }
+      }
+      fs.removeSync(oldGreekResourcesPath);
+    }
+  } catch (e) {
+    console.error("moveResourcesFromOldGrcFolder() - Error occurred migrating old bible resources from " +
+      oldGreekResourcesPath, e);
+  }
+}
+
+/**
  * restores missing resources by language and bible and lexicon
  */
 export function getMissingResources() {
+  moveResourcesFromOldGrcFolder();
   const tcResourcesLanguages = getFilteredSubFolders(STATIC_RESOURCES_PATH);
 
   tcResourcesLanguages.forEach((languageId) => {
