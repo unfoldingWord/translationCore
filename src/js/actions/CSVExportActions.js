@@ -234,7 +234,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => {
           const contextId = groupData.contextId;
           const data = {
             priority: (groupData.priority?groupData.priority:1),
-            ...csvHelpers.flattenContextId(contextId, translate),
+            ...csvHelpers.flattenContextId(contextId, 'en', translate),
           };
           dataArray.push(data);
         });
