@@ -8,7 +8,8 @@ import {USER_RESOURCES_PATH, WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTE
 
 const checksPerformedPath = path.join(__dirname, 'fixtures/project/csv/checks_performed/fr_eph_text_ulb');
 
-const tWContextId = {
+// A tW contextId with a simple quote
+const tWKTApostleContextId = {
   reference: {
     bookId: "tit",
     chapter: 1,
@@ -16,33 +17,108 @@ const tWContextId = {
   },
   tool: TRANSLATION_WORDS,
   groupId: "apostle",
-  quote: "apostle, apostles, apostleship",
+  quote: "ἀπόστολος",
+  strong: [
+    "G06520"
+  ],
   occurrence: 1
 };
-const tWotherContextId = {
+
+// A tW contextId with a complex quote
+const tWKTJesusContextId = {
   reference: {
     bookId: "tit",
     chapter: 1,
     verse: 1
   },
   tool: TRANSLATION_WORDS,
-  groupId: "confidence",
-  quote: "confidence, confident",
+  groupId: "jesus",
+  quote: [
+    {
+      word: "Ἰησοῦ",
+      occurrence: 1
+    },
+    {
+      word: "Χριστοῦ",
+      occurrence: 1
+    }
+  ],
+  strong: [
+    "G24240",
+    "G55470"
+  ],
   occurrence: 1
 };
-const tNContextId = {
-  information: undefined,
-  reference: { bookId: "tit", chapter: 1, verse: 3 },
+
+// A tW contextId with a term of type "other"
+const tWOtherCourageContextId = {
+  reference: {
+    bookId: "tit",
+    chapter: 1,
+    verse: 9
+  },
+  tool: TRANSLATION_WORDS,
+  groupId: "courage",
+  quote: "παρακαλεῖν",
+  occurrence: 1
+};
+
+// A tN contextId with a complex quote
+const tNMetaphorRevealContextId = {
+  reference: {
+    bookId: "tit",
+    chapter: 1,
+    verse: 3
+  },
   tool: TRANSLATION_NOTES,
   groupId: "figs-metaphor",
-  quote: "he revealed his word",
+  quote: [
+    {
+      word: "ἐφανέρωσεν",
+      occurrence: 1
+    },
+    {
+      word: "…"
+    },
+    {
+      word: "τὸν",
+      occurrence: 1
+    },
+    {
+      word: "λόγον",
+      occurrence: 1
+    },
+    {
+      word: "αὐτοῦ",
+      occurrence: 1
+    }
+  ],
+  glQuote: "he revealed his word",
+  occurrenceNote: "Paul speaks of God's message as if it were an object that could be visibly shown to people. Alternate translation: \"He caused me to understand his message\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
   occurrence: 1
 };
+
+// A tN contextId with a simple quote but incorrect glQuote
+const tNMetaphorHoldContextId = {
+  reference: {
+    bookId: "tit",
+    chapter: 1,
+    verse: 9
+  },
+  tool: TRANSLATION_NOTES,
+  groupId: "figs-metaphor",
+  quote: "ἀντεχόμενον",
+  glQuote: "hold tightly to", // this is the incorrect gl quote from the TSV, should be "He should hold tightly"
+  occurrenceNote: "Paul speaks of devotion to the Christian faith as if it were grasping the faith with one's hands. Alternate translation: \"be devoted to\" or \"know well\" (See: [[rc://en/ta/man/translate/figs-metaphor]])",
+  occurrence: 1
+};
+
 const autographaContextId = {
   reference: { bookId: "tit", chapter: 1, verse: "1" },
   tool: "Autographa",
   groupId: "1"
 };
+
 const fixturesDir = path.join(__dirname, 'fixtures');
 const resourcesDir = path.join(fixturesDir, 'resources');
 const projectDir = path.join(fixturesDir, 'project');
@@ -54,40 +130,131 @@ beforeAll(() => {
 });
 
 describe('csvHelpers.flattenContextId', () => {
-  test('should return a groupName for tW', () => {
+  test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tW kt apostle term', () => {
+    const contextId = tWKTApostleContextId;
+    const glCode = "en";
     const _flatContextId = {
-      bookId: "tit",
-      chapter: 1,
-      verse: 1,
-      tool: TRANSLATION_WORDS,
+      bookId: contextId.reference.bookId,
+      chapter: contextId.reference.chapter,
+      verse: contextId.reference.verse,
+      tool: contextId.tool,
       type: "kt",
-      groupId: "apostle",
+      groupId: contextId.groupId,
       groupName: "apostle, apostleship",
-      quote: "apostle, apostles, apostleship",
-      gatewayLanguageCode: "N/A",
-      gatewayLanguageQuote: "N/A",
+      quote: contextId.quote,
+      gatewayLanguageCode: glCode,
+      gatewayLanguageQuote: "an apostle",
       occurrenceNote: "N/A",
-      occurrence: 1
+      occurrence: contextId.occurrence
     };
     const translate = key => key.split('.')[1];
-    const flatContextId = csvHelpers.flattenContextId(tWContextId, translate);
+    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
     expect(flatContextId).toEqual(_flatContextId);
+  });
+
+  test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tW kt jesus term', () => {
+    const contextId = tWKTJesusContextId;
+    const glCode = "en";
+    const _flatContextId = {
+      bookId: contextId.reference.bookId,
+      chapter: contextId.reference.chapter,
+      verse: contextId.reference.verse,
+      tool: contextId.tool,
+      type: "kt",
+      groupId: contextId.groupId,
+      groupName: "Jesus, Jesus Christ, Christ Jesus",
+      quote: "Ἰησοῦ Χριστοῦ",
+      gatewayLanguageCode: glCode,
+      gatewayLanguageQuote: "of Jesus Christ",
+      occurrenceNote: "N/A",
+      occurrence: contextId.occurrence
+    };
+    const translate = key => key.split('.')[1];
+    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    expect(flatContextId).toEqual(_flatContextId);
+  });
+
+  test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tW other courange term', () => {
+    const contextId = tWOtherCourageContextId;
+    const glCode = "en";
+    const _flatContextId = {
+      bookId: contextId.reference.bookId,
+      chapter: contextId.reference.chapter,
+      verse: contextId.reference.verse,
+      tool: contextId.tool,
+      type: "other",
+      groupId: contextId.groupId,
+      groupName: "courage, courageous, encourage, encouragement, discourage, discouragement, bravest",
+      quote: contextId.quote,
+      gatewayLanguageCode: glCode,
+      gatewayLanguageQuote: "to encourage",
+      occurrenceNote: "N/A",
+      occurrence: contextId.occurrence
+    };
+    const translate = key => key.split('.')[1];
+    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    expect(flatContextId).toEqual(_flatContextId);
+  });
+
+  test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tN reveal metaphor', () => {
+    const contextId = tNMetaphorRevealContextId;
+    const glCode = "en";
+    const _flatContextId = {
+      bookId: contextId.reference.bookId,
+      chapter: contextId.reference.chapter,
+      verse: contextId.reference.verse,
+      tool: contextId.tool,
+      type: "figures",
+      groupId: contextId.groupId,
+      groupName: "Metaphor",
+      quote: "ἐφανέρωσεν … τὸν λόγον αὐτοῦ",
+      gatewayLanguageCode: glCode,
+      gatewayLanguageQuote: "he revealed his word",
+      occurrenceNote: contextId.occurrenceNote,
+      occurrence: contextId.occurrence
+    };
+    const translate = key => key.split('.')[1];
+    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    expect(flatContextId).toEqual(_flatContextId);
+  });
+
+  test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tN hold metaphor', () => {
+    const contextId = tNMetaphorHoldContextId;
+    const glCode = "en";
+    const _flatContextId = {
+      bookId: contextId.reference.bookId,
+      chapter: contextId.reference.chapter,
+      verse: contextId.reference.verse,
+      tool: contextId.tool,
+      type: "figures",
+      groupId: contextId.groupId,
+      groupName: "Metaphor",
+      quote: contextId.quote,
+      gatewayLanguageCode: glCode,
+      gatewayLanguageQuote: "He should hold tightly", // corrected GL quote
+      occurrenceNote: contextId.occurrenceNote,
+      occurrence: contextId.occurrence
+    };
+    const translate = key => key.split('.')[1];
+    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    expect(flatContextId).toEqual(_flatContextId);
+    expect(flatContextId.gatewayLanguageQuote).not.toEqual(contextId.glQuote);
   });
 });
 
 describe('csvHelpers.groupName', () => {
   test('should return a groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWContextId);
+    const groupName = csvHelpers.groupName(tWKTApostleContextId);
     expect(groupName).toEqual('apostle, apostleship');
   });
 
   test('should return an `other` groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWotherContextId);
-    expect(groupName).toEqual('confidence, confident');
+    const groupName = csvHelpers.groupName(tWOtherCourageContextId);
+    expect(groupName).toEqual('courage, courageous, encourage, encouragement, discourage, discouragement, bravest');
   });
 
   test('should return a groupName for tN', () => {
-    const groupName = csvHelpers.groupName(tNContextId);
+    const groupName = csvHelpers.groupName(tNMetaphorRevealContextId);
     expect(groupName).toEqual('Metaphor');
   });
 
@@ -99,18 +266,19 @@ describe('csvHelpers.groupName', () => {
 
 describe('csvHelpers.combineData', () => {
   test('should return the right response for combinedData', () => {
+    const contextId = tWKTApostleContextId;
     const _combinedData = {
       enabled: true,
-      bookId: "tit",
-      chapter: 1,
-      verse: 1,
+      bookId: contextId.reference.bookId,
+      chapter: contextId.reference.chapter,
+      verse: contextId.reference.verse,
       tool: TRANSLATION_WORDS,
       type: "kt",
-      groupId: "apostle",
+      groupId: contextId.groupId,
       groupName: "apostle, apostleship",
-      quote: "apostle, apostles, apostleship",
-      gatewayLanguageCode: "N/A",
-      gatewayLanguageQuote: "N/A",
+      quote: contextId.quote,
+      gatewayLanguageCode: "en",
+      gatewayLanguageQuote: "an apostle",
       occurrenceNote: "N/A",
       occurrence: 1,
       username: 'klappy'
@@ -119,7 +287,7 @@ describe('csvHelpers.combineData', () => {
     };
     const data = {enabled: true};
     const translate = key => key.split('.')[1];
-    const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z', translate);
+    const combinedData = csvHelpers.combineData(data, contextId, 'klappy', '2017-08-23T02:33:45.377Z', translate);
     // Due to timezone issues this is a pain to test.
     _combinedData.date = combinedData.date;
     _combinedData.time = combinedData.time;

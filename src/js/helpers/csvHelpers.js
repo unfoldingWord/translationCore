@@ -69,21 +69,18 @@ function loadToolIndices(toolName) {
  * @return {object}
  */
 export function combineData(data, contextId, username, timestamp, translate) {
-  const flatContextId = flattenContextId(contextId, translate);
+  const flatContextId = flattenContextId(contextId, 'en', translate);
   const userTimestamp = userTimestampObject(username, timestamp);
   return Object.assign({}, data, flatContextId, userTimestamp);
 }
 /**
  * @description - flattens the context id for csv usage
  * @param {object} contextId - contextID object that needs to go onto the csv row
+ * @param {string} glCode - language code to get the GL Quote
  * @param {function} translate - translation function
  * @return {object}
  */
-export const flattenContextId = (contextId, translate) => {
-  // tN has gatewayLanguageQuotes, but tW doesn't so we need to get it from the English ULT for now
-  if (contextId.tool === TRANSLATION_WORDS && ! contextId.glQuote) {
-    contextId = getGLQuote(contextId);
-  }
+export const flattenContextId = (contextId, glCode, translate) => {
   return {
     tool: contextId.tool,
     type: groupCategoryTranslated(contextId, translate),
@@ -91,8 +88,8 @@ export const flattenContextId = (contextId, translate) => {
     groupName: groupName(contextId),
     occurrence: contextId.occurrence,
     quote: getQuoteAsString(contextId.quote),
-    gatewayLanguageCode: contextId.glCode || 'N/A',
-    gatewayLanguageQuote: contextId.glQuote || 'N/A',
+    gatewayLanguageCode: glCode,
+    gatewayLanguageQuote: getGLQuoteFromAlignedBible(contextId, glCode) || contextId.glQuote || 'N/A',
     occurrenceNote: contextId.occurrenceNote || 'N/A',
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
@@ -103,19 +100,14 @@ export const flattenContextId = (contextId, translate) => {
 /**
  * Gets the GL Quote information to add to the contextId
  * @param {object} contextId
+ * @param {string} glCode - language code which to get the quote from the aligned Bible
  * @return {object}
  */
-export const getGLQuote = (contextId) => {
-  const glCode = 'en'; // TODO: Have user choose a GL when exporting CSV and pass that in?
-  const glBibleId = 'ult'; // TODO: Get all Bibles for the GL given by user to find proper GL Quote
+export const getGLQuoteFromAlignedBible = (contextId, glCode) => {
+  const glBibleId = 'ult'; // TODO: Dynamically get all Bibles for the glCode to find GL Quote from aligned Bible
   const bookId = contextId.reference.bookId;
   const bible = ResourcesActions.loadBookResource(glBibleId, bookId, glCode); // this is cached in the called function
-  const glQuote = gatewayLanguageHelpers.getAlignedTextFromBible(contextId, bible);
-  if (glQuote) {
-    contextId.glCode = glCode;
-    contextId.glQuote = glQuote;
-  }
-  return contextId;
+  return gatewayLanguageHelpers.getAlignedTextFromBible(contextId, bible);
 };
 
 /**
