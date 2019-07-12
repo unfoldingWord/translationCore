@@ -244,17 +244,17 @@ describe('csvHelpers.flattenContextId', () => {
 
 describe('csvHelpers.groupName', () => {
   test('should return a groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWContextId);
+    const groupName = csvHelpers.groupName(tWKTApostleContextId);
     expect(groupName).toEqual('apostle, apostleship');
   });
 
   test('should return an `other` groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWotherContextId);
-    expect(groupName).toEqual('confidence, confident');
+    const groupName = csvHelpers.groupName(tWOtherCourageContextId);
+    expect(groupName).toEqual('courage, courageous, encourage, encouragement, discourage, discouragement, bravest');
   });
 
   test('should return a groupName for tN', () => {
-    const groupName = csvHelpers.groupName(tNContextId);
+    const groupName = csvHelpers.groupName(tNMetaphorRevealContextId);
     expect(groupName).toEqual('Metaphor');
   });
 
@@ -266,18 +266,19 @@ describe('csvHelpers.groupName', () => {
 
 describe('csvHelpers.combineData', () => {
   test('should return the right response for combinedData', () => {
+    const contextId = tWKTApostleContextId;
     const _combinedData = {
       enabled: true,
-      bookId: "tit",
-      chapter: 1,
-      verse: 1,
+      bookId: contextId.reference.bookId,
+      chapter: contextId.reference.chapter,
+      verse: contextId.reference.verse,
       tool: TRANSLATION_WORDS,
       type: "kt",
-      groupId: "apostle",
+      groupId: contextId.groupId,
       groupName: "apostle, apostleship",
-      quote: "apostle, apostles, apostleship",
-      gatewayLanguageCode: "N/A",
-      gatewayLanguageQuote: "N/A",
+      quote: contextId.quote,
+      gatewayLanguageCode: "en",
+      gatewayLanguageQuote: "an apostle",
       occurrenceNote: "N/A",
       occurrence: 1,
       username: 'klappy'
@@ -286,7 +287,7 @@ describe('csvHelpers.combineData', () => {
     };
     const data = {enabled: true};
     const translate = key => key.split('.')[1];
-    const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z', translate);
+    const combinedData = csvHelpers.combineData(data, contextId, 'klappy', '2017-08-23T02:33:45.377Z', translate);
     // Due to timezone issues this is a pain to test.
     _combinedData.date = combinedData.date;
     _combinedData.time = combinedData.time;

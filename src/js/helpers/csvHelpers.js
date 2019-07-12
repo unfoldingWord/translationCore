@@ -89,7 +89,7 @@ export const flattenContextId = (contextId, glCode, translate) => {
     occurrence: contextId.occurrence,
     quote: getQuoteAsString(contextId.quote),
     gatewayLanguageCode: glCode,
-    gatewayLanguageQuote: getGLQuote(contextId, glCode),
+    gatewayLanguageQuote: getGLQuote(contextId, glCode) || contextId.glQuote || "N/A",
     occurrenceNote: contextId.occurrenceNote || 'N/A',
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
