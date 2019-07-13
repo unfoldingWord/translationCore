@@ -225,6 +225,26 @@ describe("migrate tCore resources", () => {
       expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
     });
 
+    it("test with older version of ugnt in grc/bible - should be removed", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = true;
+      const bibleId = 'ugnt';
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "el-x-koine/bibles", bibleId, "v0.2"), path.join(USER_RESOURCES_PATH, "grc/bibles", bibleId, "v0.1"));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected, "el-x-koine/bibles/" + bibleId);
+      expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
+    });
+
+    //?? // TODO add test for upgrading original language
+
   });
 });
 
