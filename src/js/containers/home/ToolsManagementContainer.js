@@ -72,9 +72,19 @@ class ToolsManagementContainer extends Component {
 
     const instructions = (
       <div>
-        <p>{translate("tools.select_tool_from_list")}</p>
-        <p>{translate("projects.books_available",
-          { app: translate("_.app_name") })}</p>
+        <p>
+          {translate("tools.select_tool_from_list")}
+        </p>
+        <p style={{ textAlign: 'justify' }}>
+          {translate("projects.supports_any_book", { app: translate("_.app_name") })}
+          {translate(
+            "projects.tools_required_resources",
+            {
+              actions: translate("actions"),
+              check_for_content_updates: translate("updates.check_for_content_updates"),
+            }
+          )}
+        </p>
       </div>
     );
     return (
