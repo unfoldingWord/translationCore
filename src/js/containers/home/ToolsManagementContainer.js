@@ -72,11 +72,11 @@ class ToolsManagementContainer extends Component {
 
     const instructions = (
       <div>
-        <p>
+        <p style={{ textAlign: 'justify' }}>
           {translate("tools.select_tool_from_list")}
         </p>
         <p style={{ textAlign: 'justify' }}>
-          {translate("projects.supports_any_book", { app: translate("_.app_name") })}
+          {translate("projects.supports_any_book", { app: translate("_.app_name") })}&nbsp;
           {translate(
             "projects.tools_required_resources",
             {
