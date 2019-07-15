@@ -20,6 +20,7 @@ import {
   TARGET_BIBLE,
   TARGET_LANGUAGE,
   TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
   TRANSLATION_ACADEMY,
   TRANSLATION_HELPS
 } from '../common/constants';
@@ -460,7 +461,7 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   if (! category ){
     if (resourceType === TRANSLATION_WORDS) {
       categories = ['kt', 'names', 'other'];
-    } else if (resourceType === TRANSLATION_WORDS || resourceType === TRANSLATION_ACADEMY) {
+    } else if (resourceType === TRANSLATION_NOTES || resourceType === TRANSLATION_ACADEMY) {
       categories = ['translate', 'checking', 'process', 'intro'];
       resourceType = TRANSLATION_ACADEMY;
     } else {
