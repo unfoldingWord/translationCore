@@ -150,6 +150,8 @@
     "import_online_project": "ಆನ್.ಲೈನ್ ಯೋಜನೆಯನ್ನು ಇಳಿಸಿಕೊಳ್ಳಿರಿ ${Import Online Project",
     "searching_alert": "ಪರಿಶೋಧಿಸುತ್ತಿದೆ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ ${Searching, please wait...",
     "books_available": "ಈ ${app} ಆವೃತಿಯಲ್ಲಿ ಅನುವಾದ ಪದಗಳ ಉಪಕರಣವು ಹೊಸ ಒಡಂಬಡಿಕೆಯ ಯೋಜನೆಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ ಮತ್ತು ಪದ ಜೋಡಣೆ ಉಪಕರಣವು ಇಡೀ ಸತ್ಯವೇದದಿಂದ ಬರುವ ಎಲ್ಲಾ ಯೋಜನೆಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ. ${In this version of ${app}, the translationWords tool supports projects from the New Testament and the Word Alignment tool supports projects from the whole Bible.",
+    "supports_any_book": "${app} supports projects for any book of the Bible.",
+    "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
     "enter_url": "ಯುಆರ್.ಎಲ್ ಹಾಕಿರಿ ${Enter URL",
     "or": "ಅಥವಾ ${Or",
     "language_code": "ಭಾಷೆಯ ಸಂಕೇತ ${Language Code",
