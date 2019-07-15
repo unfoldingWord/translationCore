@@ -150,6 +150,8 @@
     "import_online_project": "Importar um Projeto Online",
     "searching_alert": "Pesquisando, por favor aguarde...",
     "books_available": "Nesta versão do aplicativo, a ferramenta do translationWords suporta projetos do Novo Testamento e a ferramenta do Word Alignment suporta projetos de toda a Bíblia.",
+    "supports_any_book": "${app} supports projects for any book of the Bible.",
+    "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
     "enter_url": "Digite a URL",
     "or": "Ou",
     "language_code": "Código do Idioma",
