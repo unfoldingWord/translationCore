@@ -243,7 +243,9 @@ describe("migrate tCore resources", () => {
       expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
     });
 
-    //?? // TODO add test for upgrading original language
+    ??
+    // TODO add test for upgrading original language
+    //  need to add a TN that requires v0.1
 
   });
 });

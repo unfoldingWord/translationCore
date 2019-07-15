@@ -819,6 +819,7 @@ const checkForNewLexicons = (languageId) => {
  */
 // TODO: Maybe in future we can add a compatibility check so we don't have to remove all, but for now this will be safe
 export function removeOldThelps() {
+  const removedResources = {};
   const tcResourcesLanguages = getFilteredSubFolders(USER_RESOURCES_PATH);
   for (let languageId of tcResourcesLanguages) {
     if (languageId) {
@@ -828,10 +829,13 @@ export function removeOldThelps() {
           `%c    removeOldThelps() - removing: ${helpsFolder}`,
           'color: #00aced'
         );
+        const removedFolders = getFilteredSubFolders(helpsFolder);
+        removedResources[languageId] = {removedFolders, helpsFolder};
         fs.removeSync(helpsFolder);
       }
     }
   }
+  return removedResources;
 }
 
 /**
