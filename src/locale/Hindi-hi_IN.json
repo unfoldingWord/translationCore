@@ -150,6 +150,8 @@
     "import_online_project": "ऑनलाइन परियोजना आयात करें",
     "searching_alert": "खोज रहे हैं, कृपया प्रतीक्षा करें ...",
     "books_available": "के इस संस्करण में ${app}, translationWords उपकरण का समर्थन करता है परियोजनाओं से नए करार शब्द और संरेखण उपकरण का समर्थन करता है परियोजनाओं से पूरे बाइबल है ।",
+    "supports_any_book": "${app} supports projects for any book of the Bible.",
+    "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
     "enter_url": "यू आर एल दर्ज करो",
     "or": "या",
     "language_code": "भाषा कोड",
