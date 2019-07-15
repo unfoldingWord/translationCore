@@ -24,12 +24,10 @@ const ProjectInstructions = ({translate}) => (
         </FloatingActionButton>
       </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <p style={{ margin: 0 }}>{translate('projects.to_export_project')} </p>
-        <div
-          style={{ margin: "2px 5px 5px 5px", zIndex: "999", height:35, width:35, display:'flex' }}
-        >
-          <Glyphicon glyph="option-vertical" style={{ fontSize: "large", color:'black', margin:'auto' }} />
-        </div>
+        <p style={{ margin: 0 }}>
+          {translate('projects.to_export_project')}
+          <Glyphicon glyph="option-vertical" style={{ fontSize: "large", color:'black', margin:'0px 5px' }} />
+        </p>
       </div>
       <p>{translate('projects.supported_projects', {tstudio: translate('_.translation_studio')})}</p>
     </div>
