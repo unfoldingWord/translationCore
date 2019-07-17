@@ -60,6 +60,9 @@ describe('getProjectProgressForTools() should create an action to get the projec
     },
     settingsReducer: {
       currentSettings: { }
+    },
+    resourcesReducer: {
+      bibles: {}
     }
   };
   fs.__setMockFS({
@@ -188,6 +191,9 @@ it('setLanguageDetails() creates an action to set the language details',  () => 
       languageDirection: 'rtl',
       languageId: 'en',
       languageName: 'English'
+    },
+    resourcesReducer: {
+      bibles: {}
     }
   });
   const expectedActions = [{
@@ -255,6 +261,9 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
     },
     localImportReducer: {
       selectedProjectFilename: 'SELECTED_PROJECT_NAME'
+    },
+    resourcesReducer: {
+      bibles: {}
     }
   };
 

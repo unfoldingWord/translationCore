@@ -1087,7 +1087,7 @@ Array [
     "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
-    "alertMessage": "Cannot read property 'bibles' of undefined",
+    "alertMessage": "Cannot read property 'projects' of undefined",
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -1428,7 +1428,7 @@ Array [
     "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
-    "alertMessage": "Cannot read property 'bibles' of undefined",
+    "alertMessage": "Cannot read property 'projects' of undefined",
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },

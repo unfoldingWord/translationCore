@@ -82,18 +82,30 @@ describe('Tool Actions.openTool', () => {
   it('should open a tool', () => {
     const expectedActions = [
       {"type": "SHOW_MODAL_CONTAINER", "val": false},
-      {"type": "START_LOADING"},
-      {"type": "CLEAR_PREVIOUS_GROUPS_DATA"},
-      {"type": "CLEAR_PREVIOUS_GROUPS_INDEX"},
-      {"type": "CLEAR_CONTEXT_ID"},
-      {"name": TRANSLATION_NOTES, "type": "OPEN_TOOL"},
+      {"type": "OPEN_ALERT_DIALOG", alertMessage: "tools.loading_tool_data", loading: true },
+      {
+        "type": "BATCHING_REDUCER.BATCH",
+        "meta": { "batch": true },
+        "payload": [
+          {"type": "CLEAR_PREVIOUS_GROUPS_DATA"},
+          {"type": "CLEAR_PREVIOUS_GROUPS_INDEX"},
+          {"type": "CLEAR_CONTEXT_ID"},
+          {"name": TRANSLATION_NOTES, "type": "OPEN_TOOL"},
+        ]
+      },
       {"allGroupsData": {"figs-abstractnouns": [{"comments": false, "contextId": {"glQuote": "gl_uote", "groupId": "figs-abstractnouns", "occurrence": 1, "occurrenceNote": "note", "quote": "quote", "reference": {"bookId": "tit", "chapter": 2, "verse": 2}}, "reminders": false, "selections": false, "verseEdits": false}]}, "type": "LOAD_GROUPS_DATA_FROM_FS"},
       {"groupsIndex": [{"id": "figs-abstractnouns", "name": "Abstract Nouns"}], "type": "LOAD_GROUPS_INDEX"},
       {"type": 'VERIFY_GROUPS_DATA'},
       {"type": 'LOAD_CURRENT_CONTEXT_ID'},
       {"type": 'VERIFY_GROUPS_DATA'},
-      {"show": false, "type": 'TOGGLE_LOADER_MODAL'},
-      {"boolean": false, "type": "TOGGLE_HOME_VIEW"}
+      {
+        "type": "BATCHING_REDUCER.BATCH",
+        "meta": { "batch": true },
+        "payload": [
+          {"type": 'CLOSE_ALERT_DIALOG' },
+          {"boolean": false, "type": "TOGGLE_HOME_VIEW"}
+        ]
+      },
     ];
     return store.dispatch(actions.openTool(toolName)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
