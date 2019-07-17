@@ -150,7 +150,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["other", "category"], timestamp: manifest.modified});
+        {"current": [], "loaded": ["other", "category"], timestamp: manifest.modified}, { "spaces": 2 });
     });
 
     it('removes loaded', () => {
@@ -164,7 +164,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["other"], timestamp: manifest.modified});
+        {"current": [], "loaded": ["other"], timestamp: manifest.modified}, { "spaces": 2 });
     });
 
     it('rebuilds missing file', () => {
@@ -178,7 +178,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).not.toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["category"], timestamp: manifest.modified});
+        {"current": [], "loaded": ["category"], timestamp: manifest.modified}, { "spaces": 2 });
     });
 
     it('rebuilds corrupt file', () => {
@@ -196,7 +196,7 @@ describe('ProjectAPI', () => {
       expect(console.warn).toBeCalled();
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": [], "loaded": ["category"], timestamp: manifest.modified});
+        {"current": [], "loaded": ["category"], timestamp: manifest.modified}, { "spaces": 2 });
     });
   });
 
@@ -262,7 +262,8 @@ describe('ProjectAPI', () => {
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": ["category"], "loaded": []}
+        {"current": ["category"], "loaded": []},
+        { "spaces": 2 }
       );
       expect(console.warn).not.toBeCalled();
     });
@@ -277,7 +278,8 @@ describe('ProjectAPI', () => {
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": ["category"], "loaded": [], timestamp: expect.any(String)}
+        {"current": ["category"], "loaded": [], timestamp: expect.any(String)},
+        { "spaces": 2 }
       );
       expect(console.warn).not.toBeCalled();
     });
@@ -293,7 +295,8 @@ describe('ProjectAPI', () => {
       p.setSelectedCategories('tool', ["category"]);
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, "root", ".apps", "translationCore", "index", "tool", "book", ".categories"),
-        {"current": ["category"], "loaded": [], timestamp: expect.any(String)}
+        {"current": ["category"], "loaded": [], timestamp: expect.any(String)},
+        { "spaces": 2 }
       );
       expect(console.warn).toBeCalled();
     });
