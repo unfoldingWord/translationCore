@@ -55,7 +55,6 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
     // filter duplicate translators items
     newManifest.translators = newManifest.translators.filter(translator => !oldManifest.translators.includes(translator));
     const mergedManifest = {
-      "mergedManifest": "hello",
       ...oldManifest,
       ...newManifest,
       checkers: [...oldManifest.checkers, ...newManifest.checkers],
