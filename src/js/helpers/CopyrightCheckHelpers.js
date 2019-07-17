@@ -40,7 +40,7 @@ export function assignLicenseToOnlineImportedProject(projectPath) {
         if (!manifest.license) {
           manifest.license = 'CC BY-SA 4.0';
           const savePath = path.join(projectPath, 'manifest.json');
-          fs.outputJsonSync(savePath, manifest);
+          fs.outputJsonSync(savePath, manifest, { spaces: 2 });
           // Save LICENSE.md in project folder.
           await saveProjectLicense('CC BY-SA 4.0', projectPath);
         }

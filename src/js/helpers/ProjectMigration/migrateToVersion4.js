@@ -92,7 +92,7 @@ export const fix_tWords = function (filePath) {
       }
     }
     if (modified) {
-      fs.outputJsonSync(filePath, items);
+      fs.outputJsonSync(filePath, items, { spaces: 2 });
     }
   } catch (e) {
     console.warn("Error opening chapter alignment '" + filePath + "': " + e.toString());
@@ -127,7 +127,7 @@ export const fixProjectAlignmentTopWords = function (filePath) {
       }
     }
     if (modified) {
-      fs.outputJsonSync(filePath, chapter_alignments);
+      fs.outputJsonSync(filePath, chapter_alignments, { spaces: 2 });
     }
   } catch (e) {
     console.warn("Error opening chapter alignment '" + filePath + "': " + e.toString());

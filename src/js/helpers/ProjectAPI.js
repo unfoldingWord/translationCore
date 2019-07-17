@@ -254,7 +254,7 @@ export default class ProjectAPI {
     fs.outputJsonSync(categoriesPath, {
       current: [],
       loaded: []
-    });
+    }, { spaces: 2 });
 
     return false;
   }
@@ -297,7 +297,7 @@ export default class ProjectAPI {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
         rawData.loaded = [];
-        fs.outputJsonSync(categoriesPath, rawData);
+        fs.outputJsonSync(categoriesPath, rawData, { spaces: 2 });
       } catch (e) {
         console.warn(
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
@@ -323,7 +323,7 @@ export default class ProjectAPI {
             rawData.current.splice(index, 1);
           }
         });
-        fs.outputJsonSync(categoriesPath, rawData);
+        fs.outputJsonSync(categoriesPath, rawData, { spaces: 2 });
         const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
         if (fs.existsSync(contextIdPath)) {
           try {
@@ -386,7 +386,7 @@ export default class ProjectAPI {
     const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
     const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
     data.timestamp = lastTimeDataDownloaded;
-    fs.outputJsonSync(categoriesPath, data);
+    fs.outputJsonSync(categoriesPath, data, { spaces: 2 });
   }
 
   /**
@@ -410,7 +410,7 @@ export default class ProjectAPI {
   setCategoryGroupIds(toolName, category, groups) {
     const indexPath = path.join(this.getCategoriesDir(toolName),
       ".categoryIndex", `${category}.json`);
-    fs.outputJsonSync(indexPath, groups);
+    fs.outputJsonSync(indexPath, groups, { spaces: 2 });
   }
 
   /**
@@ -565,7 +565,7 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
-    fs.outputJsonSync(categoriesPath, data);
+    fs.outputJsonSync(categoriesPath, data, { spaces: 2 });
   }
 
   /**

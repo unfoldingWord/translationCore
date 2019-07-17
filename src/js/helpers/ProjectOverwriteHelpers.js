@@ -6,6 +6,7 @@ import {checkSelectionOccurrences} from 'selections';
 import isEqual from 'deep-equal';
 import * as AlertActions from '../actions/AlertActions';
 import {generateLoadPath} from '../actions/CheckDataLoadActions';
+import {setProjectManifest} from '../actions/ProjectDetailsActions';
 import {getTranslate, getToolsByKey} from '../selectors';
 import {loadProjectGroupData} from './ResourcesHelpers';
 
@@ -44,6 +45,25 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
         }
       }
     }
+    // merge manifest files
+    const oldManifestPath = path.join(oldProjectPath, 'manifest.json');
+    const newManifestPath = path.join(newProjectPath, 'manifest.json');
+    const oldManifest = fs.readJsonSync(oldManifestPath);
+    const newManifest = fs.readJsonSync(newManifestPath);
+    // filter duplicate checkers items
+    newManifest.checkers = newManifest.checkers.filter(checker => !oldManifest.checkers.includes(checker));
+    // filter duplicate translators items
+    newManifest.translators = newManifest.translators.filter(translator => !oldManifest.translators.includes(translator));
+    const mergedManifest = {
+      "mergedManifest": "hello",
+      ...oldManifest,
+      ...newManifest,
+      checkers: [...oldManifest.checkers, ...newManifest.checkers],
+      translators: [...oldManifest.translators, ...newManifest.translators]
+    };
+    // save mergedManifest in newManifestPath
+    dispatch(setProjectManifest(mergedManifest));
+
     // Copy the .git history of the old project into the new if it doesn't have it
     const oldGitPath = path.join(oldProjectPath, '.git');
     const newGitPath = path.join(newProjectPath, '.git');

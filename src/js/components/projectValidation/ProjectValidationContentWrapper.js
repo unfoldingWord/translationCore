@@ -33,7 +33,10 @@ const ProjectValidationContentWrapper = ({instructions, translate, children}) =>
 
 ProjectValidationContentWrapper.propTypes = {
   instructions: PropTypes.element.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.array
+  ]).isRequired,
   translate: PropTypes.func.isRequired
 };
 
