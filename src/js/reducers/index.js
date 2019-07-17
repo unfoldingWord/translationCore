@@ -7,7 +7,6 @@ import recentProjectsReducer from './recentProjectsReducer';
 import importOnlineReducer from './importOnlineReducer';
 import groupMenuReducer from './groupMenuReducer';
 import settingsReducer from './settingsReducer';
-import loaderReducer from './loaderReducer';
 import popoverReducer from './popoverReducer';
 import resourcesReducer from './resourcesReducer';
 import projectDetailsReducer from './projectDetailsReducer';
@@ -46,7 +45,6 @@ const rootReducers = combineReducers({
   recentProjectsReducer,
   importOnlineReducer,
   groupMenuReducer,
-  loaderReducer,
   popoverReducer,
   resourcesReducer,
   projectDetailsReducer,
