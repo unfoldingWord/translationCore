@@ -245,7 +245,6 @@ const mapStateToProps = state => {
     username: getUsername(state),
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
-    loaderReducer: state.loaderReducer,
     resourcesReducer: state.resourcesReducer,
     commentsReducer: state.commentsReducer,
     remindersReducer: state.remindersReducer,
