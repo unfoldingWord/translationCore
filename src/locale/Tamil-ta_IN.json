@@ -318,6 +318,7 @@
     }
   },
   "tools": {
+    "loading_tool_data": "Loading tool data.",
     "resource_missing_for_tool": "The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.",
     "no_checks_selected": "You must select a category to launch this tool",
     "book_not_supported": "Book not supported",
