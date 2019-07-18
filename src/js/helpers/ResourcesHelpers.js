@@ -153,7 +153,7 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
  * @param {string} projectDir - path to the project directory
  * @param {function} dispatch - dispatch function
  */
-export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch = () => {}) {
+export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
   if (toolName === TRANSLATION_NOTES)
