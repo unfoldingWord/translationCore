@@ -54,7 +54,7 @@ const migrateToVersion6 = (projectPath) => {
         findResourceIdAndNickname(manifest);
         if ((manifest.resource.id !== originalResourceId) ||
             (manifest.resource.name !== originalNickname)) { // if new setting found
-          fs.outputJsonSync(manifestPath, manifest);
+          fs.outputJsonSync(manifestPath, manifest, { spaces: 2 });
         }
       }
     } else {

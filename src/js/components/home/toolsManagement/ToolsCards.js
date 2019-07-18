@@ -86,7 +86,7 @@ const ToolsCards = ({
               const { tsv_relation } = manifest;
               const tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
               const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, 'v' + tsvOLVersion);
-              if (neededOLPath) isOLBookVersionMissing = !fs.existsSync(neededOLPath);
+              if (neededOLPath) isOLBookVersionMissing = tsvOLVersion && !fs.existsSync(neededOLPath);
               missingOLResource = {
                 languageId,
                 resourceId,
@@ -113,7 +113,7 @@ const ToolsCards = ({
                   folderName: tool.path,
                   name: tool.name
                 }}
-                isOLBookVersionMissing={isOLBookVersionMissing}
+                isOLBookVersionMissing={!!isOLBookVersionMissing}
                 onMissingResource={() => onMissingResource(missingOLResource)}
                 invalidatedReducer={invalidatedReducer}
               />

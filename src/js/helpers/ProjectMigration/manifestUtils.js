@@ -91,7 +91,7 @@ export function setUpManifest(projectSaveLocation, link, oldManifest) {
     }
 
     manifest = generateManifest(link, oldManifest || {});
-    fs.outputJsonSync(manifestLocation, manifest);
+    fs.outputJsonSync(manifestLocation, manifest, { spaces: 2 });
   } catch (err) {
     console.log(err);
     console.error(err);
@@ -192,7 +192,7 @@ export const saveProjectManifest = (projectPath, manifest) => {
   if (manifest) {
     const validManifestPath = getManifestPath(projectPath);
     if (validManifestPath) {
-      fs.outputJsonSync(validManifestPath, manifest);
+      fs.outputJsonSync(validManifestPath, manifest, { spaces: 2 });
     }
   }
 };

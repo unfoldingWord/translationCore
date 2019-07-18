@@ -51,7 +51,7 @@ export function finalize() {
         for (let missingVerse of missingVerses[chapterNum]) {
           chapterJSONObject[missingVerse.toString()] = "";
         }
-        fs.outputJsonSync(chapterPath, chapterJSONObject);
+        fs.outputJsonSync(chapterPath, chapterJSONObject, { spaces: 2 });
       }
     }
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(MISSING_VERSES_NAMESPACE));
