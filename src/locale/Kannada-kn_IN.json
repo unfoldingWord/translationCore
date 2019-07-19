@@ -150,8 +150,8 @@
     "import_online_project": "ಆನ್.ಲೈನ್ ಯೋಜನೆಯನ್ನು ಇಳಿಸಿಕೊಳ್ಳಿರಿ ${Import Online Project",
     "searching_alert": "ಪರಿಶೋಧಿಸುತ್ತಿದೆ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ ${Searching, please wait...",
     "books_available": "ಈ ${app} ಆವೃತಿಯಲ್ಲಿ ಅನುವಾದ ಪದಗಳ ಉಪಕರಣವು ಹೊಸ ಒಡಂಬಡಿಕೆಯ ಯೋಜನೆಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ ಮತ್ತು ಪದ ಜೋಡಣೆ ಉಪಕರಣವು ಇಡೀ ಸತ್ಯವೇದದಿಂದ ಬರುವ ಎಲ್ಲಾ ಯೋಜನೆಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ. ${In this version of ${app}, the translationWords tool supports projects from the New Testament and the Word Alignment tool supports projects from the whole Bible.",
-    "supports_any_book": "${app} supports projects for any book of the Bible.",
-    "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
+    "supports_any_book": "ಪರಿಶುದ್ಧ ಗ್ರಂಥದ ಯಾವುದೇ ಪುಸ್ತಕದ ಯೋಜನೆಗಳನ್ನು ಈ ${app} ಬೆಂಬಲಿಸುತ್ತದೆ. ${app} supports projects for any book of the Bible.",
+    "tools_required_resources": "ಆದರೆ, ನಿಮ್ಮ ಸಿಸ್ಟಮನಲ್ಲಿ ಆಯ್ಕೆ ಮಾಡಿರುವ ಭಾಷೆಯಲ್ಲಿ ಅಗತ್ಯವಾದ ಸಂಪನ್ಮೂಲಗಳು ಇದ್ದಲ್ಲಿ ಟ್ರಾ ನ್ಸ್ಲೇಷನ್ ವರ್ಡ್ಸ್ ಅಥವಾ ಟ್ರಾನ್ಸ್ಲೇಷನ್ ನೋಟ್ಸ್ ನಲ್ಲಿ ಮಾತ್ರವೇ ಈ ಯೋಜನೆ ತೆರೆಯಲ್ಪಡುತ್ತದೆ. ಇತ್ತೀಚಿನ ಅವ್ರುಥಿಯನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಲು \"${actions} / ${check_for_content_updates} ಅನ್ನು ಒತ್ತಿ. However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
     "enter_url": "ಯುಆರ್.ಎಲ್ ಹಾಕಿರಿ ${Enter URL",
     "or": "ಅಥವಾ ${Or",
     "language_code": "ಭಾಷೆಯ ಸಂಕೇತ ${Language Code",
@@ -318,7 +318,7 @@
     }
   },
   "tools": {
-    "loading_tool_data": "Loading tool data.",
+    "loading_tool_data": "ಉಪಕರಣ ಮಾಹಿತಿ ಲೋಡ್ ಆಗುತ್ತಿದೆ. Loading tool data.",
     "resource_missing_for_tool": "ಪ್ರಸ್ತುತ ಉಪಕರಣ ಯು.ಕಿ.ಏನ್.ಟಿಯ ಬೇರೆ ಆವೃತ್ತಿಯ ಅವಶ್ಯಕತೆ ಇದೆ. ಈ ಸಂಪನ್ಮೂಲವನ್ನು ಹಿಂಪಡೆಯಲು ಡೌನ್ಲೋಡನ್ನು ಒತ್ತಿರಿ. ${The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.}",
     "no_checks_selected": "ಈ ಉಪಕರಣವನ್ನು ಉಪಯೋಗಿಸಲು ಯಾವುದಾದರು ವರ್ಗವನ್ನು ನೀವು ಆಯ್ಕೆ ಮಾಡಿಕೊಳ್ಳಬೇಕು ${You must select a category to launch this tool}",
     "book_not_supported": "ಪುಸ್ತಕವು ಬೆಂಬಲಿಸುತ್ತಿಲ್ಲ ${Book not supported}",
