@@ -56,7 +56,7 @@ export const generateManifestForUsfm = async (parsedUsfm, sourceProjectPath, sel
     try {
       const manifest = manifestHelpers.generateManifestForUsfmProject(parsedUsfm);
       const manifestPath = path.join(IMPORTS_PATH, selectedProjectFilename, 'manifest.json');
-      fs.outputJsonSync(manifestPath, manifest);
+      fs.outputJsonSync(manifestPath, manifest, { spaces: 2 });
       resolve(manifest);
     } catch (error) {
       console.log(error);
@@ -176,15 +176,15 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
         });
         const filename = parseInt(chapter, 10) + '.json';
         const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, filename);
-        fs.outputJsonSync(projectBibleDataPath, bibleChapter);
+        fs.outputJsonSync(projectBibleDataPath, bibleChapter, { spaces: 2 });
 
         if (alignmentData) {
           const alignmentDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, '.apps', 'translationCore', 'alignmentData', bibleDataFolderName, filename);
-          fs.outputJsonSync(alignmentDataPath, chapterAlignments);
+          fs.outputJsonSync(alignmentDataPath, chapterAlignments, { spaces: 2 });
         }
       });
       const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, 'headers.json');
-      fs.outputJsonSync(projectBibleDataPath, parsedUsfm.headers);
+      fs.outputJsonSync(projectBibleDataPath, parsedUsfm.headers, { spaces: 2 });
       if (!verseFound) {
         reject(
           <div>
@@ -209,7 +209,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
         description: "Target Language"
       };
       const projectBibleDataManifestPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, "manifest.json");
-      fs.outputJsonSync(projectBibleDataManifestPath, targetLanguageManifest);
+      fs.outputJsonSync(projectBibleDataManifestPath, targetLanguageManifest, { spaces: 2 });
       resolve();
     } catch (error) {
       console.log(error);

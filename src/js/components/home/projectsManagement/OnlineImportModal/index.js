@@ -81,7 +81,7 @@ export default class OnlineImportModal extends Component {
           </CardHeader><br />
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px 20px 0px" }}>
             <p>
-              {translate('projects.books_available', {app: translate('_.app_name')})}
+              {translate('projects.supports_any_book', {app: translate('_.app_name')})}
             </p>
           </div>
           <URLInput

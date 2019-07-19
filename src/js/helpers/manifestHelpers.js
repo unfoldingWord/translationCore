@@ -71,7 +71,7 @@ export function setUpManifest(projectSaveLocation, oldManifest) {
     } else {
       manifest = template;
     }
-    fs.outputJsonSync(manifestLocation, manifest);
+    fs.outputJsonSync(manifestLocation, manifest, { spaces: 2 });
   } catch (err) {
     console.error(err);
   }

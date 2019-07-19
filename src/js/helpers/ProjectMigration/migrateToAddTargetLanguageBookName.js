@@ -41,7 +41,7 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
 
           manifest.target_language['book'] = { name: targetBookName };
         }
-        fs.outputJsonSync(manifestPath, manifest);
+        fs.outputJsonSync(manifestPath, manifest, { spaces: 2 });
         resolve(manifest); // This is for unit test.
       } else {
         throw new Error("Manifest not found.");

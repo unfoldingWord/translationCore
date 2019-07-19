@@ -95,7 +95,7 @@ function updateResourcesForFile(filePath, toolName, resourcesPath, bookId, isCon
           if (isContext) {
             data = data.contextId;
           }
-          fs.outputJsonSync(filePath, data);
+          fs.outputJsonSync(filePath, data, { spaces: 2 });
         }
       }
     }
@@ -364,7 +364,7 @@ export const updateSourceContentUpdaterManifest = (dateStr = null) => {
   const destinationPath = path.join(USER_RESOURCES_PATH,
       SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
-    fs.outputJsonSync(destinationPath, manifest);
+    fs.outputJsonSync(destinationPath, manifest, { spaces: 2 });
 };
 
 /**
@@ -379,7 +379,7 @@ export const copySourceContentUpdaterManifest = () => {
     const destinationPath = path.join(USER_RESOURCES_PATH,
       SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
-    fs.outputJsonSync(destinationPath, bundledManifest);
+    fs.outputJsonSync(destinationPath, bundledManifest, { spaces: 2 });
   }
 };
 

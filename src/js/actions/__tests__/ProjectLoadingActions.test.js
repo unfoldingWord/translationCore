@@ -195,6 +195,9 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
         manifest,
         currentProjectToolsProgress: {},
         projectType: null
+      },
+      resourcesReducer: {
+        bibles: {}
       }
     };
     const store = mockStore(initialState);
@@ -217,6 +220,9 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
         manifest,
         currentProjectToolsProgress: {},
         projectType: null
+      },
+      resourcesReducer: {
+        bibles: {}
       }
     };
     const store = mockStore(initialState);
@@ -239,6 +245,9 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
         manifest,
         currentProjectToolsProgress: {},
         projectType: null
+      },
+      resourcesReducer: {
+        bibles: {}
       }
     };
     const store = mockStore(initialState);
@@ -261,6 +270,9 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
         manifest,
         currentProjectToolsProgress: {},
         projectType: null
+      },
+      resourcesReducer: {
+        bibles: {}
       }
     };
     const store = mockStore(initialState);
@@ -329,6 +341,9 @@ describe('loadProject', () => {
       },
       projectValidationReducer: {
         projectValidationStepsArray: [ ]
+      },
+      resourcesReducer: {
+        bibles: {}
       }
     };
   });

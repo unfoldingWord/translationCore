@@ -21,7 +21,7 @@ const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
  */
 export const saveSettings = state => {
   try {
-    fs.outputJsonSync(SETTINGS_DIRECTORY, state.settingsReducer);
+    fs.outputJsonSync(SETTINGS_DIRECTORY, state.settingsReducer, { spaces: 2 });
   } catch (err) {
     console.warn(err);
   }
@@ -44,7 +44,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
       const saveDir = path.parse(savePath).dir;
       const existingPayload = CheckDataLoadActions.loadCheckData(saveDir, payload.contextId);
       if (!fs.existsSync(savePath) && !isEqual(existingPayload, payload)) {
-        fs.outputJsonSync(savePath, payload, err => {console.log(err)});
+        fs.outputJsonSync(savePath, payload, { spaces: 2 });
       }
     } else {
       // no savepath
@@ -68,7 +68,7 @@ export const saveTargetLanguage = state => {
         const savePath = path.join(PROJECT_SAVE_LOCATION, bookAbbr, fileName);
         const chapterData = currentTargetLanguageChapters[chapter];
         try {
-          fs.outputJsonSync(savePath, chapterData);
+          fs.outputJsonSync(savePath, chapterData, { spaces: 2 });
         } catch (err) {
           console.warn(err);
         }
@@ -179,7 +179,7 @@ export const saveVerseEdit = state => {
       `${fileName}.json`
     );
     if(!fs.existsSync(savePath)) {
-      fs.outputJsonSync(savePath, verseEditPayload, err => {console.log(err)});
+      fs.outputJsonSync(savePath, verseEditPayload, { spaces: 2 });
     }
   } catch (err) {
     console.warn(err);
@@ -239,7 +239,7 @@ export const saveGroupsData = (state, prevState) => {
         if (groupsData[groupID] && !isEqual(groupsData[groupID], oldGroupsData[groupID])) {
           const fileName = groupID + ".json";
           const savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, toolName, bookAbbreviation, fileName);
-          fs.outputJsonSync(savePath, groupsData[groupID]);
+          fs.outputJsonSync(savePath, groupsData[groupID], { spaces: 2 });
         }
       }
     } else {
@@ -266,7 +266,7 @@ export function saveProjectManifest(state) {
   if (projectSaveLocation && manifest && Object.keys(manifest).length > 0) {
     const fileName = 'manifest.json';
     const savePath = path.join(projectSaveLocation, fileName);
-    fs.outputJsonSync(savePath, manifest);
+    fs.outputJsonSync(savePath, manifest, { spaces: 2 });
   }
 }
 

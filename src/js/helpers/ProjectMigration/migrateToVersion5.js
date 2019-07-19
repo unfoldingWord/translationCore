@@ -86,7 +86,7 @@ export const fixProjectOccurrencesTopWords = function (filePath) {
       }
     }
     if (broken) {
-      fs.outputJsonSync(filePath, chapter_alignments);
+      fs.outputJsonSync(filePath, chapter_alignments, { spaces: 2 });
     }
   } catch (e) {
     console.warn("Error opening chapter alignment '" + filePath + "': " + e.toString());

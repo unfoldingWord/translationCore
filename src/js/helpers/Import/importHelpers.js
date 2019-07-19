@@ -24,7 +24,7 @@ export function saveTargetBible(projectPath, manifest, bookData, headers) {
     if (!parseInt(chapter)) continue; // only import integer based data, there are other files
     let fileName = chapter + '.json';
     const targetBiblePath = path.join(projectPath, bookAbbreviation);
-    fs.outputJsonSync(path.join(targetBiblePath, fileName), bookData[chapter]);
+    fs.outputJsonSync(path.join(targetBiblePath, fileName), bookData[chapter], { spaces: 2 });
   }
   saveHeaders(targetBiblePath, headers);
   // generating and saving manifest file for target language bible.
@@ -45,7 +45,7 @@ function saveHeaders (targetBiblePath, headers) {
       headers = json.headers;
     }
     if (headers) {
-      fs.outputJsonSync(path.join(targetBiblePath, 'headers.json'), headers);
+      fs.outputJsonSync(path.join(targetBiblePath, 'headers.json'), headers, { spaces: 2 });
     }
   }
 }
@@ -66,7 +66,7 @@ function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
   bibleManifest.description = "Target Language";
   // savings target language bible manifest file in project target language bible path.
   let fileName = "manifest.json";
-  fs.outputJsonSync(path.join(targetBiblePath, fileName), bibleManifest);
+  fs.outputJsonSync(path.join(targetBiblePath, fileName), bibleManifest, { spaces: 2 });
 }
 
 /**

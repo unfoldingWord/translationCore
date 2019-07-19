@@ -12,7 +12,6 @@ import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
 import KonamiContainer from '../containers/KonamiContainer';
 import StatusBarContainer from '../containers/StatusBarContainer';
 import BodyContainer from '../containers/home/BodyContainer';
-import LoaderContainer from '../containers/LoaderContainer';
 import PopoverContainer from '../containers/PopoverContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 import ProjectValidationContainer from '../containers/projectValidation/ProjectValidationContainer';
@@ -69,7 +68,6 @@ class Main extends Component {
     const {isLocaleLoaded} = this.props;
     if(isLocaleLoaded) {
       const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
-      const LocalizedLoader = withLocale(LoaderContainer);
       return (
         <MuiThemeProvider>
           <div className="fill-height">
@@ -79,7 +77,6 @@ class Main extends Component {
             <AlertDialogContainer/>
             <KonamiContainer/>
             <PopoverContainer/>
-            <LocalizedLoader/>
             <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
               <Row style={{margin: 0}}>
                 <LocalizedStatusBarContainer/>
