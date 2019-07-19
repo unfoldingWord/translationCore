@@ -965,13 +965,12 @@ export function getMissingResources() {
   });
 }
 
-
 function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType) {
   fs.copySync(staticResourcePath, userResourcePath);
   console.log(
     `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
     'color: #00aced'
   );
-  // extract zippped contents
+  // extract zipped contents
   extractZippedResourceContent(userResourcePath, resourceType === "bibles");
 }
