@@ -110,7 +110,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
             let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
             await dispatch(loadBookTranslations(contextId.reference.bookId));
             // Tool is opened so we need to update existing group data
-            copyGroupDataToProject(helpDir, toolName, projectSaveLocation);
+            copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch);
           }
           dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         })
