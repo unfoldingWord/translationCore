@@ -1,6 +1,6 @@
 {
-  "welcome_to_tc": "Welcome to ${app}!",
-  "get_started": "Get Started!",
+  "welcome_to_tc": "${app} मध्ये स्वागत!",
+  "get_started": "सुरु करा!",
   "version": "Version ${version}",
   "instructions": "Instructions",
   "access_internet": "Access Internet",
