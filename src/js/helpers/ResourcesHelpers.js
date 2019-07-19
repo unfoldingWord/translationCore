@@ -885,11 +885,39 @@ export function moveResourcesFromOldGrcFolder() {
 }
 
 /**
+ * find out which Original Language Bible versions are needed by installed tNs.  Only keep the needed versions.
+ *    The other versions are deleted.
+ * @param languageId
+ * @param resourceId
+ * @param resourcePath
+ * @return {boolean} - returns true if all old resources can be deleted
+ */
+export function preserveNeededOrigLangVersions(languageId, resourceId, resourcePath) {
+  let deleteOldResources = true; // by default we do not keep old versions of resources
+  if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
+    const requiredVersions = getOtherTnsOLVersions(resourceId);
+    console.log("preserveNeededOrigLangVersions: requiredVersions", requiredVersions);
+    // see if we need to keep old versions of original language
+    if (requiredVersions && requiredVersions.length) {
+      deleteOldResources = false;
+      const versions = ResourceAPI.listVersions(resourcePath);
+      console.log("preserveNeededOrigLangVersions: versions", versions);
+      for (let version of versions) {
+        if (!requiredVersions.includes(version)) {
+          console.log("removing", version);
+          fs.removeSync(path.join(resourcePath, version));
+        }
+      }
+    }
+  }
+  return deleteOldResources;
+}
+
+/**
  * restores missing resources by language and bible and lexicon
  */
 export function getMissingResources() {
   const tcResourcesLanguages = getFilteredSubFolders(STATIC_RESOURCES_PATH);
-
   tcResourcesLanguages.forEach((languageId) => {
     console.log(`%c Checking for missing ${languageId} resources`, 'color: #00539C');
     const staticLanguageResource = path.join(STATIC_RESOURCES_PATH, languageId);
@@ -900,18 +928,19 @@ export function getMissingResources() {
       const resourceTypePath = path.join(staticLanguageResource, resourceType);
       const resourceIds = getFilteredSubFolders(resourceTypePath);
       resourceIds.forEach(resourceId => {// resourceId: udb, ult, ugl, translationWords, translationNotes
-        const userBibleResource = path.join(userLanguageResource, resourceType, resourceId);
-        const staticBibleResource = path.join(staticLanguageResource, resourceType, resourceId);
+        const userResourcePath = path.join(userLanguageResource, resourceType, resourceId);
+        const staticResourcePath = path.join(staticLanguageResource, resourceType, resourceId);
 
         if (resourceType === 'lexicons') {
           // check for lexicons packaged with tc executable.
           checkForNewLexicons(languageId);
-          extractZippedResourceContent(userBibleResource, resourceType === "bibles");
-        } else if (!fs.existsSync(userBibleResource)) {// if resource isn't found in user resources folder.
-          copyAndExtractResource(staticBibleResource, userBibleResource, languageId, resourceId, resourceType);
-        } else {// compare resources manifest modified time
-          const userResourceVersionPath = ResourceAPI.getLatestVersion(userBibleResource);
-          const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticBibleResource);
+          extractZippedResourceContent(userResourcePath, resourceType === "bibles");
+        } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
+          copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+        } else { // compare resources manifest modified time
+          const userResourceVersionPath = ResourceAPI.getLatestVersion(userResourcePath);
+          const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
+          let isOldResource = false;
           const filename = 'manifest.json';
           const userResourceManifestPath = path.join(userResourceVersionPath, filename);
           const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
@@ -919,21 +948,16 @@ export function getMissingResources() {
           if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
             const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
             const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
-            const isOldResource = userModifiedTime < staticModifiedTime;
-            let deleteOldResource = true; // by default we do not keep old versions of resources
-
-            if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-              const requiredVersions = getOtherTnsOLVersions(resourceId);
-              // see if we need to keep old version of original language
-              deleteOldResource = !requiredVersions || !requiredVersions.includes(resourceId);
+            isOldResource = !userModifiedTime || (userModifiedTime < staticModifiedTime);
+          } else if(!fs.existsSync(userResourceManifestPath)) {
+            isOldResource = true;
+          }
+          const deleteOldResources = preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath);
+          if (isOldResource) {
+            if (deleteOldResources) {
+              fs.removeSync(userResourcePath);
             }
-
-            if (isOldResource) {
-              if (deleteOldResource) {
-                fs.removeSync(userBibleResource);
-              }
-              copyAndExtractResource(staticBibleResource, userBibleResource, languageId, resourceId, resourceType);
-            }
+            copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
           }
         }
       });
