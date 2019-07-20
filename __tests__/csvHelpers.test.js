@@ -244,22 +244,22 @@ describe('csvHelpers.flattenContextId', () => {
 
 describe('csvHelpers.groupName', () => {
   test('should return a groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWKTApostleContextId);
+    const groupName = csvHelpers.groupName(tWKTApostleContextId, 'en');
     expect(groupName).toEqual('apostle, apostleship');
   });
 
   test('should return an `other` groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWOtherCourageContextId);
+    const groupName = csvHelpers.groupName(tWOtherCourageContextId, 'en');
     expect(groupName).toEqual('courage, courageous, encourage, encouragement, discourage, discouragement, bravest');
   });
 
   test('should return a groupName for tN', () => {
-    const groupName = csvHelpers.groupName(tNMetaphorRevealContextId);
+    const groupName = csvHelpers.groupName(tNMetaphorRevealContextId, 'en');
     expect(groupName).toEqual('Metaphor');
   });
 
   test('should return a groupId as groupName for Autographa', () => {
-    const groupName = csvHelpers.groupName(autographaContextId);
+    const groupName = csvHelpers.groupName(autographaContextId, 'en');
     expect(groupName).toEqual('1');
   });
 });
