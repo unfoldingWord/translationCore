@@ -167,7 +167,7 @@
     "exported_alert": "${project_name} విఅజయవంతంగా ${file_path} కు ఎగుమతి అయ్యింది.",
     "must_be_logged_in_alert": "ప్రాజెక్టులు ఎగుమతి చెయ్యడానికి ఒక ${door43} ఖాతాను మీరు కలిగియుండాలి. దయచేసి వెలుపలికి రండి, తరువాత ఒక ${door43} వినియోగదారుని ఖాతాతో తిరిగి రండి..",
     "uploading_alert": "${project_name} ${door43}కు ఎగుమతి అవుతుంది, దయచేసి ఎదురుచూడండి....",
-    "upload_successful_alert": "${username}, your project was successfully uploaded.",
+    "upload_successful_alert": "${username}, మీ ప్రాజెక్ట్ విజయవంతంగా ఎగుమతి అయ్యింది",
     "upload_modified_error": "${project_name} cannot be uploaded because there have been changes to the translation of that project on your ${door43} account.",
     "merge_export_error": "This project has merge conflicts and cannot be exported. Select the project to resolve the merge conflicts, then try again.",
     "exporting_file_alert": "Exporting ${file_name}. Please wait...",
