@@ -16,27 +16,31 @@ import {
   TRANSLATION_HELPS
 } from "../common/constants";
 
-const toolsWithGroupIndices = [TRANSLATION_NOTES, TRANSLATION_WORDS];
 const cachedGroupIndices = {};
+const toolsWithGroupIndices = [TRANSLATION_NOTES, TRANSLATION_WORDS];
 
  /**
-  * To prevent these files from being read in for every groupName lookup, read them in once.
-  * @param langCode - language to load the indices
+  * Gets the group index for a given langCode and toolName with all its category indices flattened into one index.
+  * To prevent these files from being read in for every groupName lookup, read them in once and cache them in
+  * cachedGroupIndices.
+  * @param {string} langCode - language to load the indices
+  * @param {string} toolName - toolName to get the indices
   */
-function cacheIndices(langCode) {
-  toolsWithGroupIndices.forEach((toolName) => {
-    // load the indices for the given tool & language if not already loaded
-    if (! cachedGroupIndices[langCode] || !cachedGroupIndices[langCode][toolName])
-      loadToolIndices(langCode, toolName);
-  });
+function getToolGroupIndex(langCode, toolName) {
+   if (! cachedGroupIndices[langCode])
+     cachedGroupIndices[langCode] = {};
+  // load the indices for the given language & tool if not already loaded
+  if (!cachedGroupIndices[langCode][toolName] && toolsWithGroupIndices.indexOf(toolName) >= 0)
+    cachedGroupIndices[langCode][toolName] = loadToolGroupIndex(langCode, toolName);
+  return cachedGroupIndices[langCode][toolName];
 }
 
 /**
- * Loops through a tool's category subdirs to make a flattened list of the indexes with id and name
+ * Loops through a tool's category subdirs to make a flattened list of the indices with id and name and caches it
  * @param {string} langCode - language to load the indices
  * @param {string} toolName - the name of the tool in the same case as its resource directory
  */
-function loadToolIndices(langCode, toolName) {
+function loadToolGroupIndex(langCode, toolName) {
   let index = [];
   try {
     const toolPath = path.join(USER_RESOURCES_PATH, langCode, TRANSLATION_HELPS, toolName);
@@ -62,9 +66,7 @@ function loadToolIndices(langCode, toolName) {
   } catch (e) {
     console.error(`Failed to read tool category directories for ${toolName}`, e);
   }
-  if (! cachedGroupIndices[langCode])
-    cachedGroupIndices[langCode] = {};
-  cachedGroupIndices[langCode][toolName] = index;
+  return index;
 }
 
 /**
@@ -136,13 +138,12 @@ export const getGLQuoteFromAlignedBible = (contextId, langCode) => {
  * @return {string}
  */
 export const groupName = (contextId, langCode) => {
-  cacheIndices(langCode);
   const {tool, groupId} = contextId;
-  const indexArray = cachedGroupIndices[langCode][tool];
+  const groupIndex = getToolGroupIndex(langCode, tool);
   const indexObject = {};
   let groupName;
-  if (indexArray) {
-    indexArray.forEach(group => {
+  if (groupIndex) {
+    groupIndex.forEach(group => {
       indexObject[group.id] = group.name;
     });
     groupName = indexObject[groupId];
@@ -164,12 +165,11 @@ export const groupName = (contextId, langCode) => {
  * @return {string}
  */
 export const groupCategory = (contextId, langCode) => {
-  cacheIndices(langCode);
   const {tool, groupId} = contextId;
-  const indexArray = cachedGroupIndices[langCode][tool];
+  const groupIndex = getToolGroupIndex(langCode, tool);
   const indexObject = {};
-  if (indexArray) {
-    indexArray.forEach(group => {
+  if (groupIndex) {
+    groupIndex.forEach(group => {
       indexObject[group.id] = group.category;
     });
     if (!indexObject[groupId]) {
