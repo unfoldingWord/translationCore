@@ -236,19 +236,19 @@
     "conflict_reference": "ఇది అధ్యాయం కోసం విలీన విభేదం ${chapter}, verse ${verse}.",
     "missing_verses_instructions": "మీ ప్రాజెక్టు నుండి కొన్ని వచనాలు తప్పిపోతున్నాయి",
     "only_nt_supported": "ఈ ప్రచురణ ${app} కొత్తనిబంధన ప్రాజెక్టులకు మాత్రమే మద్దతు ఇస్తుంది",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
+    "old_project_unsupported": "ఈ ప్రాజెక్టు నాడు పాత ప్రచురణ ${app} నుండి సమాచారం ఉంది, ఇది ఈ ప్రచురణలో సహకారం పొందలేదు. ఈ ప్రాజెక్టును తెరవడానికి సహాయం కోసం లేదా తిరిగి తనిఖీ చెయ్యడం ఆరంభించడానికి దయచేసి help@door43.org ని సంప్రదించండి.",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
-      "field_invalid_length": "Must be 3-4 letters long",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "info": "(3 లేదా 4 అక్షరాల గుర్తింపు <br />code, e.g. KJV, NIV, etc.)",
+      "field_invalid_length": "3-4 అక్షరాల పొడవు ఉండాలి",
+      "invalid_characters": "కేవలం ప్రాథమిక లాటిన్ అక్షరాలు మద్దతు ఇస్తుంది"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "conflicting_project": "ఈ గుర్తించేదానితో ఒక ప్రాజెక్టు ఈ భాష, పుస్తకం కోసం ఇంతకుముందే ఉనికిలో ఉంది.",
+    "newer_project": "నూతన అనువాదం కేంద్రం ప్రచురణలో ఈ ప్రాజెక్టు తయారు చెయ్యబడింది, దయచేసి ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి, మరల ప్రయత్నించండి"
   },
   "book_list": {
     "ot": {
-      "gen": "Genesis (${book_id})",
-      "exo": "Exodus (${book_id})",
+      "gen": "ఆదికాండం (${book_id})",
+      "exo": "నిర్గన =కాండం (${book_id})",
       "lev": "Leviticus (${book_id})",
       "num": "Numbers (${book_id})",
       "deu": "Deuteronomy (${book_id})",
