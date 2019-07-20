@@ -201,7 +201,7 @@
     "current_project": "ప్రాజెక్టు: ${project}",
     "renamed_project": "మీ స్థానిక ప్రాజెక్టుకు పేరు ఇవ్వబడింది <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "మీ ప్రాజెక్టుకు తిరిగి పేరు ఇవ్వబడింది d<br/><b>${project}</b><br/> ఈ ప్రాజెక్టుకు ప్రస్తుతం ఉన్న Door43 సురక్షిత స్థానం విషయం ఏమి చెయ్యాలని కోరుతున్నావు?",
-    "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_success": "ప్రాజెక్టుకున్న Door43 ముఖ్య స్థానం విజయవంతంగా నవీకరణ జరిగింది, d.<br/>${project}",
     "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
   },
