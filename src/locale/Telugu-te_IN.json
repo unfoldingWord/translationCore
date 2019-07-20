@@ -172,7 +172,7 @@
     "merge_export_error": "ఈ ప్రాజెక్టుకు విలీన విభేదాలు ఉన్నాయి, ఎగుమతి కాబడదు, విలీన సంఘర్షణలు పరిష్కరించే పాజెక్టును ఎంపిక చెయ్యండి, మరల ప్రయత్నించండి.",
     "exporting_file_alert": "${file_name} ఎగుమతి అవుతుంది. దయచేసి ఎదురు చూడండి...",
     "project_already_exists": "మీరు ఎంపిక చేసిన ప్రాజెక్టు (${project_name}) ఇంతకు ముందే ఉంది",
-    "project_overwrite_no_alignment_message": "Select \"${over_write}\" if you would like to overwrite the text of your existing project with this import. All check data will be retained, except where the text has been changed. In this case, the check will be invalidated and have to be redone.",
+    "project_overwrite_no_alignment_message": "ఈ దిగుమతితో ఇంతకుముందే ఉన్న ప్రాజెక్టు పాఠం మీద మరల రాయాలని మీరు కోరినట్లయితే  \"${over_write}\"ను ఎంపిక చెయ్యండి. మార్పులు చెయ్యవలసిన భాగం తప్పించి , పరిశీలించబడిన పాఠం నిలిచిపోతుంది. ఈ సందర్భంలో తనిఖీని రుజువు చెయ్యము, దానిని మరల మార్పులు చేస్తాం.",
     "project_overwrite_has_alignment_message": "The project being imported will overwrite your existing alignment data if there are conflicts.",
     "no_obs_error": "${app} does not support checking for ${obs}. It will not be loaded.",
     "no_tn_error": "${app} does not support checking for ${tn}. It will not be loaded.",
