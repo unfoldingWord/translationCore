@@ -333,7 +333,7 @@
     "tw_part1_description": "బైబిలులో ముఖ్య పదాల అర్థాన్ని సమగ్రంగా తనిఖీ చెయ్యడానికి పరికరం ప్రయోజనకరం. దీనిలో స్పష్టమైన, సంక్షిప్తమైన నిర్వచనాలు, అనువాదం కోసం సూచనలు ఉంటాయి.",
     "gateway_language": "గేట్ వే భాష",
     "word_alignment": "పద అమరిక",
-    "alignment_description": "A tool to align the translation with the original biblical languages in order to show how the translation communicates the meaning represented in the original. This data can be useful in creating other resources such as concordances and interlinear Bibles in the target language.",
+    "alignment_description": "మొదటి దానిలో ఉన్న అర్థాన్ని ఆ అనువాదం ఏవిధంగా తెలియపరుస్తుందో చూపించడానికి అనువాదాన్ని ఆదిమ బైబిలు భాషలతోసమలేఖనం చెయ్యడానికి పరికరంను వినియోగించాలి. ఈ సమాచారం పదకోశాలు, అంతర్లీన వచన బైబిళ్ళు, ఇతర వనరులను తయారు చెయ్యడంలో  ఉపయోగకరంగా ఉంటుంది.",
     "please_select_gl": "Please select the Gateway Language from which you would like to check your translation.",
     "lemma": "Lemma",
     "morphology": "Morphology",
