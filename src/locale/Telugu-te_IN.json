@@ -406,7 +406,7 @@
     "save_button": "భద్రపరచండి",
     "search_button": "వెదకండి",
     "select_button": "ఎంపిక చెయ్యండి",
-    "to_project_button": "ప్రాజెక్టుకు కొనసాగండి",
+    "to_project_button": "ప్రాజెక్టును కొనసాగించండి",
     "tool_button": "పరికరం",
     "submit_button": "సమర్పించండి",
     "overwrite": "తిరిగి రాయండి",
@@ -495,10 +495,10 @@
     "figs-exclusive": "\nప్రత్యేకమైన, కలుపుకొని \"మేము\"",
     "figs-genericnoun": "సాధారణ నామవాచక పదాలు",
     "figs-inclusive": "కలుపుకొని ఉన్న \"మేము\"",
-    "figs-nominaladj": "Nominal Adjectives",
-    "figs-possession": "Possession",
-    "figs-rpronouns": "Reflexive Pronouns",
-    "figs-we": "Forms of We",
-    "figs-they": "Forms of They"
+    "figs-nominaladj": "నామమాత్ర విశేషణాలు",
+    "figs-possession": "స్వాధీనం",
+    "figs-rpronouns": "ఆత్మార్ధక సర్వనామాలు",
+    "figs-we": "'మేము' రూపాలు",
+    "figs-they": "'వారు' రూపాలు"
   }
 }
