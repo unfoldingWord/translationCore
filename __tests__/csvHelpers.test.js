@@ -132,7 +132,7 @@ beforeAll(() => {
 describe('csvHelpers.flattenContextId', () => {
   test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tW kt apostle term', () => {
     const contextId = tWKTApostleContextId;
-    const glCode = "en";
+    const gatewayLanguageCode = "en";
     const _flatContextId = {
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
@@ -142,19 +142,19 @@ describe('csvHelpers.flattenContextId', () => {
       groupId: contextId.groupId,
       groupName: "apostle, apostleship",
       quote: contextId.quote,
-      gatewayLanguageCode: glCode,
+      gatewayLanguageCode: gatewayLanguageCode,
       gatewayLanguageQuote: "an apostle",
       occurrenceNote: "N/A",
       occurrence: contextId.occurrence
     };
     const translate = key => key.split('.')[1];
-    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    const flatContextId = csvHelpers.flattenContextId(contextId, gatewayLanguageCode, '', translate);
     expect(flatContextId).toEqual(_flatContextId);
   });
 
   test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tW kt jesus term', () => {
     const contextId = tWKTJesusContextId;
-    const glCode = "en";
+    const gatewayLanguageCode = "en";
     const _flatContextId = {
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
@@ -164,19 +164,19 @@ describe('csvHelpers.flattenContextId', () => {
       groupId: contextId.groupId,
       groupName: "Jesus, Jesus Christ, Christ Jesus",
       quote: "Ἰησοῦ Χριστοῦ",
-      gatewayLanguageCode: glCode,
+      gatewayLanguageCode: gatewayLanguageCode,
       gatewayLanguageQuote: "of Jesus Christ",
       occurrenceNote: "N/A",
       occurrence: contextId.occurrence
     };
     const translate = key => key.split('.')[1];
-    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    const flatContextId = csvHelpers.flattenContextId(contextId, gatewayLanguageCode, '', translate);
     expect(flatContextId).toEqual(_flatContextId);
   });
 
   test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tW other courange term', () => {
     const contextId = tWOtherCourageContextId;
-    const glCode = "en";
+    const gatewayLanguageCode = "en";
     const _flatContextId = {
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
@@ -186,19 +186,19 @@ describe('csvHelpers.flattenContextId', () => {
       groupId: contextId.groupId,
       groupName: "courage, courageous, encourage, encouragement, discourage, discouragement, bravest",
       quote: contextId.quote,
-      gatewayLanguageCode: glCode,
+      gatewayLanguageCode: gatewayLanguageCode,
       gatewayLanguageQuote: "to encourage",
       occurrenceNote: "N/A",
       occurrence: contextId.occurrence
     };
     const translate = key => key.split('.')[1];
-    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    const flatContextId = csvHelpers.flattenContextId(contextId, gatewayLanguageCode, '', translate);
     expect(flatContextId).toEqual(_flatContextId);
   });
 
   test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tN reveal metaphor', () => {
     const contextId = tNMetaphorRevealContextId;
-    const glCode = "en";
+    const gatewayLanguageCode = "en";
     const _flatContextId = {
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
@@ -208,19 +208,19 @@ describe('csvHelpers.flattenContextId', () => {
       groupId: contextId.groupId,
       groupName: "Metaphor",
       quote: "ἐφανέρωσεν … τὸν λόγον αὐτοῦ",
-      gatewayLanguageCode: glCode,
+      gatewayLanguageCode: gatewayLanguageCode,
       gatewayLanguageQuote: "he revealed his word",
       occurrenceNote: contextId.occurrenceNote,
       occurrence: contextId.occurrence
     };
     const translate = key => key.split('.')[1];
-    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    const flatContextId = csvHelpers.flattenContextId(contextId, gatewayLanguageCode, '', translate);
     expect(flatContextId).toEqual(_flatContextId);
   });
 
   test('should get a flattened contextId with a type, groupName & gatewayLanguageQuote for tN hold metaphor', () => {
     const contextId = tNMetaphorHoldContextId;
-    const glCode = "en";
+    const gatewayLanguageCode = "en";
     const _flatContextId = {
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
@@ -230,13 +230,13 @@ describe('csvHelpers.flattenContextId', () => {
       groupId: contextId.groupId,
       groupName: "Metaphor",
       quote: contextId.quote,
-      gatewayLanguageCode: glCode,
+      gatewayLanguageCode: gatewayLanguageCode,
       gatewayLanguageQuote: "He should hold tightly", // corrected GL quote
       occurrenceNote: contextId.occurrenceNote,
       occurrence: contextId.occurrence
     };
     const translate = key => key.split('.')[1];
-    const flatContextId = csvHelpers.flattenContextId(contextId, glCode, translate);
+    const flatContextId = csvHelpers.flattenContextId(contextId, gatewayLanguageCode, '', translate);
     expect(flatContextId).toEqual(_flatContextId);
     expect(flatContextId.gatewayLanguageQuote).not.toEqual(contextId.glQuote);
   });
@@ -244,22 +244,22 @@ describe('csvHelpers.flattenContextId', () => {
 
 describe('csvHelpers.groupName', () => {
   test('should return a groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWKTApostleContextId);
+    const groupName = csvHelpers.groupName(tWKTApostleContextId, 'en');
     expect(groupName).toEqual('apostle, apostleship');
   });
 
   test('should return an `other` groupName for tW', () => {
-    const groupName = csvHelpers.groupName(tWOtherCourageContextId);
+    const groupName = csvHelpers.groupName(tWOtherCourageContextId, 'en');
     expect(groupName).toEqual('courage, courageous, encourage, encouragement, discourage, discouragement, bravest');
   });
 
   test('should return a groupName for tN', () => {
-    const groupName = csvHelpers.groupName(tNMetaphorRevealContextId);
+    const groupName = csvHelpers.groupName(tNMetaphorRevealContextId, 'en');
     expect(groupName).toEqual('Metaphor');
   });
 
   test('should return a groupId as groupName for Autographa', () => {
-    const groupName = csvHelpers.groupName(autographaContextId);
+    const groupName = csvHelpers.groupName(autographaContextId, 'en');
     expect(groupName).toEqual('1');
   });
 });
@@ -287,7 +287,7 @@ describe('csvHelpers.combineData', () => {
     };
     const data = {enabled: true};
     const translate = key => key.split('.')[1];
-    const combinedData = csvHelpers.combineData(data, contextId, 'klappy', '2017-08-23T02:33:45.377Z', translate);
+    const combinedData = csvHelpers.combineData(data, contextId, '', '', 'klappy', '2017-08-23T02:33:45.377Z', translate);
     // Due to timezone issues this is a pain to test.
     _combinedData.date = combinedData.date;
     _combinedData.time = combinedData.time;
