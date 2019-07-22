@@ -82,10 +82,10 @@ export const openTool = (name) => (dispatch, getData) => {
       const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
       dispatch(loadGroupsIndex(groupIndex));
 
-      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+      await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
       dispatch(loadCurrentContextId());
       //TRICKY: need to verify groups data before and after the contextId has been loaded
-      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+      await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
       // wait for filesystem calls to finish
       await delay(150);
       dispatch(batchActions([
