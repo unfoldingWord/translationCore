@@ -861,9 +861,12 @@ export function moveResourcesFromOldGrcFolder() {
             }
             if (newerResource) {
               if (fs.existsSync(newGrcBiblePath)) {
+                console.log("moveResourcesFromOldGrcFolder() - removing old bible at " + newGrcBiblePath);
                 fs.removeSync(newGrcBiblePath);
               }
-              fs.moveSync(path.join(latestVersionOld), path.join(newGrcBiblePath, path.basename(latestVersionOld)));
+              const newVersionPath = path.join(newGrcBiblePath, path.basename(latestVersionOld));
+              console.log("moveResourcesFromOldGrcFolder() - moving over bible to " + newVersionPath);
+              fs.moveSync(path.join(latestVersionOld), newVersionPath);
             }
           }
         } else { // if original language bible, copy over any missing versions from old path to new
@@ -871,6 +874,7 @@ export function moveResourcesFromOldGrcFolder() {
           for (const version of versions) {
             const newVersionPath = path.join(newGrcBiblesPath, bible, version);
             if (!fs.existsSync(newVersionPath)) {
+              console.log("moveResourcesFromOldGrcFolder() - copying over bible to " + newVersionPath);
               fs.moveSync(path.join(oldBiblePath, version), newVersionPath);
             }
           }
@@ -904,8 +908,9 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
       console.log("preserveNeededOrigLangVersions: versions", versions);
       for (let version of versions) {
         if (!requiredVersions.includes(version)) {
-          console.log("removing", version);
-          fs.removeSync(path.join(resourcePath, version));
+          const oldPath = path.join(resourcePath, version);
+          console.log("preserveNeededOrigLangVersions: removing", oldPath);
+          fs.removeSync(oldPath);
         }
       }
     }
@@ -918,16 +923,16 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
  */
 export function getMissingResources() {
   const tcResourcesLanguages = getFilteredSubFolders(STATIC_RESOURCES_PATH);
-  tcResourcesLanguages.forEach((languageId) => {
+  for( const languageId of tcResourcesLanguages) {
     console.log(`%c Checking for missing ${languageId} resources`, 'color: #00539C');
     const staticLanguageResource = path.join(STATIC_RESOURCES_PATH, languageId);
     const userLanguageResource = path.join(USER_RESOURCES_PATH, languageId);
     const resourceTypes = getFilteredSubFolders(staticLanguageResource);
 
-    resourceTypes.forEach(resourceType => {// resourceType: bibles, lexicons or translationHelps
+    for( const resourceType of resourceTypes) {// resourceType: bibles, lexicons or translationHelps
       const resourceTypePath = path.join(staticLanguageResource, resourceType);
       const resourceIds = getFilteredSubFolders(resourceTypePath);
-      resourceIds.forEach(resourceId => {// resourceId: udb, ult, ugl, translationWords, translationNotes
+      for( const resourceId of resourceIds) {// resourceId: udb, ult, ugl, translationWords, translationNotes
         const userResourcePath = path.join(userLanguageResource, resourceType, resourceId);
         const staticResourcePath = path.join(staticLanguageResource, resourceType, resourceId);
 
@@ -960,9 +965,9 @@ export function getMissingResources() {
             copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
           }
         }
-      });
-    });
-  });
+      }
+    }
+  }
 }
 
 function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType) {
