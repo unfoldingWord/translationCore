@@ -226,11 +226,12 @@ export const loadBiblesByLanguageId = (languageId) => {
     const bibles = getBibles(getState());
     // check if the languae id is already included in the bibles object.
     const isIncluded = Object.keys(bibles).includes(languageId);
-
-    if (!isIncluded && fs.existsSync(bibleFolderPath) && bookId) {
+    if (fs.existsSync(bibleFolderPath) && bookId) {
       const bibleIds = fs.readdirSync(bibleFolderPath).filter(file => file !== ".DS_Store");
       bibleIds.forEach(bibleId => {
-        dispatch(loadBibleBook(bibleId, bookId, languageId));
+        if (!isIncluded || !bibles[languageId][bibleId]) { //TRICKY: just because we have the language loaded does not mean we have all the bibles loaded
+          dispatch(loadBibleBook(bibleId, bookId, languageId));
+        }
       });
     }
   };
