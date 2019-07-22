@@ -7,14 +7,6 @@ import {getFoldersInResourceFolder} from "../../helpers/ResourcesHelpers";
 import {APP_VERSION, STATIC_RESOURCES_PATH, TC_VERSION, USER_RESOURCES_PATH} from '../../common/constants';
 
 // mocks
-const mockConsole = console;
-jest.mock('../../helpers/ResourcesHelpers', () => ({
-  ...require.requireActual('../../helpers/ResourcesHelpers'),
-  extractZippedResourceContent: (resourceDestinationPath, isBible) => {
-    mockConsole.log(`mock extractZippedResourceContent: resourceDestinationPath=${resourceDestinationPath} isBible=${isBible}`);
-  }
-}));
-
 let mockOtherTnsOlversions = [];
 jest.mock('tc-source-content-updater', () => ({
   ...require.requireActual('tc-source-content-updater'),
