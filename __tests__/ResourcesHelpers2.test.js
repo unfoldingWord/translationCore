@@ -7,7 +7,17 @@ import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import _ from "lodash";
 // helpers
-import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
+import {
+  loadArticleData,
+  findArticleFilePath,
+  getResourcesNeededByTool,
+  areResourcesNewer,
+  getAvailableScripturePaneSelections,
+  updateSourceContentUpdaterManifest,
+  copySourceContentUpdaterManifest,
+  extractZippedResourceContent,
+} from '../src/js/helpers/ResourcesHelpers';
+
 // constants
 import {
   APP_VERSION,
@@ -17,13 +27,17 @@ import {
   STATIC_RESOURCES_PATH,
   ORIGINAL_LANGUAGE,
   TARGET_LANGUAGE,
-  TARGET_BIBLE
+  TARGET_BIBLE,
+  TRANSLATION_WORDS,
+  TRANSLATION_ACADEMY,
+  TRANSLATION_HELPS
 } from '../src/js/common/constants';
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('ResourcesHelpers.getResourcesNeededByTool', () => {
-  it('getResourcesNeededByTool() should work', () => {
+describe('getResourcesNeededByTool()', () => {
+  it('should work', () => {
     const bookId = 'gal';
     const store = {
       resourcesReducer: {
@@ -64,21 +78,21 @@ describe('ResourcesHelpers.getResourcesNeededByTool', () => {
     loadMockFsWithProjectAndResources();
 
     // when
-    const resourceList = ResourcesHelpers.getResourcesNeededByTool(store, bookId);
+    const resourceList = getResourcesNeededByTool(store, bookId);
 
     // then
     expect(resourceList).toMatchSnapshot();
   });
 });
 
-describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
+describe('getAvailableScripturePaneSelections', () => {
   beforeAll(() => {
     fs.__resetMockFS();
     loadMockFsWithProjectAndResources();
     fs.ensureDirSync(path.join(USER_RESOURCES_PATH, 'en'));
   });
 
-  it('getAvailableScripturePaneSelections() should work', () => {
+  it('should work', () => {
     const bookId = 'gal';
     const store =  mockStore({
       resourcesReducer: {
@@ -125,17 +139,15 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
     const resourceList = [];
 
     // when
-    store.dispatch(
-      ResourcesHelpers.getAvailableScripturePaneSelections(resourceList)
-    );
+    store.dispatch(getAvailableScripturePaneSelections(resourceList));
 
     // then
     expect(cleanupResources(resourceList)).toMatchSnapshot();
   });
 
-  it('getAvailableScripturePaneSelections() should work OT', () => {
+  it('should work OT', () => {
     const bookId = 'jol';
-    const store =  mockStore({
+    const store = mockStore({
       resourcesReducer: {
         bibles: {
           targetLanguage: {
@@ -181,9 +193,7 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
     const resourceList = [];
 
     // when
-    store.dispatch(
-      ResourcesHelpers.getAvailableScripturePaneSelections(resourceList)
-    );
+    store.dispatch(getAvailableScripturePaneSelections(resourceList));
 
     // then
     expect(cleanupResources(resourceList)).toMatchSnapshot();
@@ -230,16 +240,14 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
     const resourceList = [];
 
     // when
-    store.dispatch(
-      ResourcesHelpers.getAvailableScripturePaneSelections(resourceList)
-    );
+    store.dispatch(getAvailableScripturePaneSelections(resourceList));
 
     // then
     expect(cleanupResources(resourceList)).toMatchSnapshot();
   });
 });
 
-describe('ResourcesHelpers.areResourcesNewer()', () => {
+describe('areResourcesNewer()', () => {
   beforeEach(() => {
     fs.__resetMockFS();
   });
@@ -252,7 +260,7 @@ describe('ResourcesHelpers.areResourcesNewer()', () => {
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
     // when
-    const results = ResourcesHelpers.areResourcesNewer();
+    const results = areResourcesNewer();
 
     // then
     expect(results).toEqual(expectedNewer);
@@ -266,7 +274,7 @@ describe('ResourcesHelpers.areResourcesNewer()', () => {
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
     // when
-    const results = ResourcesHelpers.areResourcesNewer();
+    const results = areResourcesNewer();
 
     // then
     expect(results).toEqual(expectedNewer);
@@ -280,7 +288,7 @@ describe('ResourcesHelpers.areResourcesNewer()', () => {
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
     // when
-    const results = ResourcesHelpers.areResourcesNewer();
+    const results = areResourcesNewer();
 
     // then
     expect(results).toEqual(expectedNewer);
@@ -294,7 +302,7 @@ describe('ResourcesHelpers.areResourcesNewer()', () => {
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
     // when
-    const results = ResourcesHelpers.areResourcesNewer();
+    const results = areResourcesNewer();
 
     // then
     expect(results).toEqual(expectedNewer);
@@ -308,7 +316,7 @@ describe('ResourcesHelpers.areResourcesNewer()', () => {
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
     // when
-    const results = ResourcesHelpers.areResourcesNewer();
+    const results = areResourcesNewer();
 
     // then
     expect(results).toEqual(expectedNewer);
@@ -323,7 +331,7 @@ describe('ResourcesHelpers.areResourcesNewer()', () => {
     loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion);
 
     // when
-    const results = ResourcesHelpers.areResourcesNewer();
+    const results = areResourcesNewer();
 
     // then
     expect(results).toEqual(expectedNewer);
@@ -338,14 +346,14 @@ describe('ResourcesHelpers.areResourcesNewer()', () => {
     loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion);
 
     // when
-    const results = ResourcesHelpers.areResourcesNewer();
+    const results = areResourcesNewer();
 
     // then
     expect(results).toEqual(expectedNewer);
   });
 });
 
-describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
+describe('updateSourceContentUpdaterManifest()', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
@@ -359,7 +367,7 @@ describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
     expect(fs.existsSync(manifestPath)).not.toBeTruthy();
 
     // when
-    ResourcesHelpers.updateSourceContentUpdaterManifest(dateStr);
+    updateSourceContentUpdaterManifest(dateStr);
 
     // then
     const manifest = fs.readJSONSync(manifestPath);
@@ -377,7 +385,7 @@ describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
     expect(fs.existsSync(manifestPath)).toBeTruthy();
 
     // when
-    ResourcesHelpers.updateSourceContentUpdaterManifest(dateStr);
+    updateSourceContentUpdaterManifest(dateStr);
 
     // then
     const manifest = fs.readJSONSync(manifestPath);
@@ -395,7 +403,7 @@ describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
     expect(fs.existsSync(manifestPath)).toBeTruthy();
 
     // when
-    ResourcesHelpers.updateSourceContentUpdaterManifest(dateStr);
+    updateSourceContentUpdaterManifest(dateStr);
 
     // then
     const manifest = fs.readJSONSync(manifestPath);
@@ -404,7 +412,7 @@ describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
   });
 });
 
-describe('ResourcesHelpers.copySourceContentUpdaterManifest()', () => {
+describe('copySourceContentUpdaterManifest()', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
@@ -419,7 +427,7 @@ describe('ResourcesHelpers.copySourceContentUpdaterManifest()', () => {
     expect(fs.existsSync(staticManifestPath)).toBeTruthy();
 
     // when
-    ResourcesHelpers.copySourceContentUpdaterManifest(dateStr);
+    copySourceContentUpdaterManifest(dateStr);
 
     // then
     const manifestPath = path.join(USER_RESOURCES_PATH,
@@ -430,7 +438,7 @@ describe('ResourcesHelpers.copySourceContentUpdaterManifest()', () => {
   });
 });
 
-describe('ResourcesHelpers.extractZippedResourceContent', () => {
+describe('extractZippedResourceContent', () => {
   it('works as expected', () => {
     const EN_ULB_PATH = path.join(USER_RESOURCES_PATH, 'en', 'ult');
     const versionPath = path.join(USER_RESOURCES_PATH, 'en', 'ult', 'v11');
@@ -443,8 +451,90 @@ describe('ResourcesHelpers.extractZippedResourceContent', () => {
       [zippedBooks]: []
     });
 
-    ResourcesHelpers.extractZippedResourceContent(EN_ULB_PATH, isBible);
+    extractZippedResourceContent(EN_ULB_PATH, isBible);
     expect(fs.existsSync(zippedBooks)).toBeFalsy();
+  });
+});
+
+describe('findArticleFilePath()', () => {
+  it('findArticleFilePath for abel in en', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = findArticleFilePath(TRANSLATION_WORDS, 'abel', 'en');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10', 'names', 'articles', 'abel.md');
+    expect(filePath).toEqual(expectedPath);
+  });
+
+  it('findArticleFilePath for a non-existing file', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = findArticleFilePath(TRANSLATION_WORDS, 'does-not-exist', 'en');
+    expect(filePath).toBeNull();
+  });
+
+  it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = findArticleFilePath(TRANSLATION_WORDS, 'abomination', 'hi');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'hi', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v8.1', 'kt', 'articles', 'abomination.md');
+    expect(filePath).toEqual(expectedPath);
+  });
+
+  it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = findArticleFilePath(TRANSLATION_WORDS, 'abraham', 'hi');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10', 'names', 'articles', 'abraham.md');
+    expect(filePath).toEqual(expectedPath);
+  });
+
+  it('findArticleFilePath for tA translate-names which is not in Hindi so should return English', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = findArticleFilePath(TRANSLATION_ACADEMY, 'translate-names', 'hi');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_ACADEMY, 'v9', 'translate', 'translate-names.md');
+    expect(filePath).toEqual(expectedPath);
+  });
+
+  it('findArticleFilePath for tW abraham but giving a wrong category should return null', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = findArticleFilePath(TRANSLATION_WORDS, 'abraham', 'en', 'kt');
+    expect(filePath).toBeNull();
+  });
+});
+
+
+describe('loadArticleData()', () => {
+  it('loadArticleData for tW abraham giving correct category', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'abraham';
+    const category = 'names';
+    const content = loadArticleData(TRANSLATION_WORDS, articleId, 'en', category);
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
+  });
+
+  it('loadArticeData for tW abraham but giving a wrong category should return not found message', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'abraham';
+    const category = 'kt';
+    const content = loadArticleData(TRANSLATION_WORDS, articleId, 'en', category);
+    const expectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toEqual(expectedContent);
+  });
+
+  it('loadArticleData for tW abraham with no category', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'abraham';
+    const content = loadArticleData(TRANSLATION_WORDS, articleId, 'en');
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
+  });
+
+  it('loadArticleData for tA translate-names with no category and hindi should still find (English) content', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'translate-names';
+    const content = loadArticleData(TRANSLATION_ACADEMY, articleId, 'hi');
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
   });
 });
 
@@ -481,13 +571,6 @@ function loadMockFsWithProjectAndResources() {
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
 }
 
-function loadMockFsWithlexicons() {
-  const sourceResourcesPath = STATIC_RESOURCES_PATH;
-  const resourcesPath = STATIC_RESOURCES_PATH;
-  const copyResourceFiles = ['en/lexicons'];
-  fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
-}
-
 function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = APP_VERSION) {
   const bundledResourcesManifestPath = path.join(STATIC_RESOURCES_PATH, "source-content-updater-manifest.json");
   fs.ensureDirSync(STATIC_RESOURCES_PATH);
@@ -502,13 +585,5 @@ function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = A
       manifest[TC_VERSION] = appVersion; // add app version to resource
     }
     fs.outputJsonSync(resourcesManifestPath, manifest);
-  }
-}
-
-function verifyLexicons(expectedLexicons, lexiconResourcePath) {
-  for (let lexicon of expectedLexicons) {
-    const folderPath = path.join(lexiconResourcePath, lexicon);
-    const folderExists = fs.lstatSync(folderPath).isDirectory();
-    expect(folderExists).toBeTruthy();
   }
 }
