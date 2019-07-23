@@ -22,6 +22,7 @@ import {
 import * as Bible from "../common/BooksOfTheBible";
 import {generateTimestamp} from "./TimestampGenerator";
 import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
+import {DEFAULT_GATEWAY_LANGUAGE} from "./gatewayLanguageHelpers";
 // constants
 import {
   APP_VERSION,
@@ -35,7 +36,8 @@ import {
   TARGET_BIBLE,
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS,
+  TRANSLATION_ACADEMY,
 } from '../common/constants';
 
 /**
@@ -182,7 +184,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       }
       for (let j = 0, l2 = categories[category].length; j < l2; j++) {
         const subCategory = categories[category][j];
-        const dataPath = path.join(groupsDir, subCategory + '.json');
+        const dataPath = path.join(groupsDir, subCategory.id + '.json');
         project.importCategoryGroupData(toolName, dataPath);
       }
       // TRICKY: gives the tool an index of which groups belong to which category
@@ -251,12 +253,22 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
         if (!fs.pathExistsSync(resourceCategoryDir)) {
           groupsDir = altResourceCategoryDir;
         }
-        // copy un-loaded category group data into project
+        let groupIndex;
+        const groupIndexPath = path.join(helpDir, category, 'index.json');
+        if (fs.existsSync(groupIndexPath)) {
+          groupIndex = fs.readJsonSync(groupIndexPath);
+        }
+        // copy not loaded category group data into project
         if (fs.pathExistsSync(groupsDir)) {
           const files = fs.readdirSync(groupsDir);
           for (const f of files) {
             if (path.extname(f).toLowerCase() === ".json") {
-              subCategories.push(path.basename(f.toLowerCase(), ".json"));
+              const id = path.basename(f.toLowerCase(), ".json");
+              let subCategory = { id };
+              if (groupIndex) {
+                subCategory = groupIndex.find(group => group.id === id);
+              }
+              subCategories.push(subCategory);
             }
           }
         }
@@ -286,8 +298,8 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
       return fs.lstatSync(path.join(helpDir, file)).isDirectory();
     });
     for (let i = 0, l = parentCategories.length; i < l; i++) {
-      const subCategory = parentCategories[i];
-      categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
+      const categoryId = parentCategories[i];
+      categories = categories.concat(project.getCategoryGroupIds(toolName, categoryId));
     }
     if (categories.length > 0) {
       project.setSelectedCategories(toolName, categories);
@@ -327,13 +339,19 @@ export function loadProjectGroupIndex(
     // load indices
     const indices = [];
     const categories = project.getSelectedCategories(toolName, true);
+    console.log('loadProjectGroupIndex()');
+    console.log('categories', categories);
     for (const categoryName in categories) {
+      console.log('categoryName', categoryName);
       const categoryIndex = path.join(helpDir, categoryName, "index.json");
       if (fs.lstatSync(categoryIndex).isFile()) {
         try {
           const selectedSubcategories = categories[categoryName];
+          console.log('selectedSubcategories', selectedSubcategories);
           // For categories with subcategories need to filter out not selected items.
-          const categoryIndices = fs.readJsonSync(categoryIndex).filter(item => selectedSubcategories.includes(item.id));
+          const categoryIndices = fs.readJsonSync(categoryIndex)
+              .filter(item => selectedSubcategories.includes(item.id));
+          console.log('categoryIndices', categoryIndices);
           indices.push.apply(indices, categoryIndices);
         } catch (e) {
           console.error(`Failed to read group index from ${categoryIndex}`, e);
@@ -890,3 +908,69 @@ function copyAndExtractResource(staticResourcePath, userResourcePath, languageId
   // extract zippped contents
   extractZippedResourceContent(userResourcePath, resourceType === "bibles");
 }
+
+/**
+ * Get the content of an article from disk
+ * @param {String} resourceType
+ * @param {String} articleId
+ * @param {String} languageId
+ * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
+ * @returns {String} - the content of the article
+ */
+export const loadArticleData = (resourceType, articleId, languageId, category='') => {
+  let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
+  if (articleFilePath) {
+    articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
+  }
+  return articleData;
+};
+
+/**
+ * Finds the article file within a resoure type's path, looking at both the given language and default language in all possible category dirs
+ * @param {String} resourceType - e.g. translationWords, translationNotes
+ * @param {String} articleId
+ * @param {String} languageId - languageId will be first checked, and then we'll try the default GL
+ * @param {String} category - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
+ * @returns {String} - the path to the file, null if doesn't exist
+ * Note: resourceType is coming from a tool name
+ */
+export const findArticleFilePath = (resourceType, articleId, languageId, category='') => {
+  const languageDirs = [];
+  if (languageId) {
+    languageDirs.push(languageId);
+  }
+  if (languageId !== DEFAULT_GATEWAY_LANGUAGE) {
+    languageDirs.push(DEFAULT_GATEWAY_LANGUAGE);
+  }
+  let categories = [];
+  if (! category ){
+    if (resourceType === TRANSLATION_WORDS) {
+      categories = ['kt', 'names', 'other'];
+    } else if (resourceType === TRANSLATION_NOTES || resourceType === TRANSLATION_ACADEMY) {
+      categories = ['translate', 'checking', 'process', 'intro'];
+      resourceType = TRANSLATION_ACADEMY;
+    } else {
+      categories = ['content'];
+    }
+  } else {
+    categories.push(category);
+  }
+  const articleFile = articleId + '.md';
+  for(let i = 0, len = languageDirs.length; i < len; ++i) {
+    let languageDir = languageDirs[i];
+    let typePath = path.join(USER_RESOURCES_PATH, languageDir, TRANSLATION_HELPS, resourceType);
+    let versionPath = ResourceAPI.getLatestVersion(typePath) || typePath;
+    for(let j = 0, jLen = categories.length; j < jLen; ++j) {
+      let categoryDir = categories[j];
+      if (resourceType === TRANSLATION_WORDS) {
+        categoryDir = path.join(categoryDir, 'articles');
+      }
+      let articleFilePath = path.join(versionPath, categoryDir, articleFile);
+      if (fs.existsSync(articleFilePath)) {
+        return articleFilePath;
+      }
+    }
+  }
+  return null;
+};
