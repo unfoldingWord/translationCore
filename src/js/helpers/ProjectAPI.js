@@ -447,8 +447,6 @@ export default class ProjectAPI {
 
   /**
    * Gets the category mapping for a tool in the project's .categoryIndex's directory
-   * This gets cached in toolCategoryMapping by toolName
-   * Keyed by toolName & parent category, value is an array of the subcategories
    * @param {string} toolName
    * @returns {object}
    */
