@@ -39,7 +39,7 @@ import {
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
 import ProjectAPI from "../helpers/ProjectAPI";
 import CoreAPI from "../helpers/CoreAPI";
-import { promptForInvalidQuoteFeedback } from "../helpers/FeedbackHelpers";
+import { promptForInvalidCheckFeedback } from "../helpers/FeedbackHelpers";
 
 class ToolContainer extends Component {
 
@@ -353,8 +353,8 @@ const mapDispatchToProps = (dispatch) => {
       makeSureBiblesLoadedForTool: () => {
         dispatch(ResourcesActions.makeSureBiblesLoadedForTool());
       },
-      onInvalidQuote: (contextId, selectedGL) => {
-        dispatch(promptForInvalidQuoteFeedback(contextId, selectedGL));
+      onInvalidCheck: (contextId, selectedGL, cb) => {
+        dispatch(promptForInvalidCheckFeedback(contextId, selectedGL, cb));
       },
       // TODO: these are not actions and should be inserted directly into the tool
       getWordListForVerse: VerseObjectUtils.getWordListForVerse,

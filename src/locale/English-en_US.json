@@ -417,7 +417,8 @@
     "do_not_rename": "Do Not Rename",
     "contact_helpdesk": "Contact Helpdesk",
     "retry": "Retry",
-    "update": "Update to latest version"
+    "update": "Update to latest version",
+    "ignore_button": "Ignore"
   },
   "tool_card_categories": {
     "kt": "Key Terms",
