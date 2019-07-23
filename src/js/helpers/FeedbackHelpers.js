@@ -2,6 +2,31 @@ import os from "os";
 import appPackage from "../../../package";
 import axios from "axios";
 import stringify from 'json-stringify-safe';
+import {openIgnorableAlert} from "../actions/AlertActions";
+import {getTranslate} from "../selectors";
+import {getQuoteAsString} from "checking-tool-wrapper";
+
+export const promptForInvalidQuoteFeedback = (contextId, selectedGL) => (dispatch, getState) => {
+  const translate = getTranslate(getState());
+  const rawdata = stringifySafe({selectedGL, contextId});
+  const quoteString = getQuoteAsString(contextId.quote);
+  const reference = `${contextId.reference.bookId} ${contextId.reference.chapter}:${contextId.reference.verse}`;
+  const data = `<br><br>Reference: ${reference}<br>Gateway Language: ${selectedGL}<br>Quote: ${quoteString}<br>Occurrence: ${contextId.occurrence}<br><br>`;
+  const message = translate("tools.invalid_check", { report: data});
+  console.log("onInvalidQuote: " + message);
+  // TODO:
+  // dispatch(onInvalidQuote(contextId, selectedGL));
+  dispatch(openIgnorableAlert("invalidQuote", message, {
+    confirmText: translate("buttons.submit_button"),
+    cancelText: translate("buttons.cancel_button"),
+    onConfirm: () => {
+      console.log("Confirm");
+    },
+    onCancel: () => {
+      console.log("onCancel");
+    }
+  }));
+};
 
 /**
  * Submits a new support ticket.
