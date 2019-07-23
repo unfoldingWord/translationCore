@@ -229,7 +229,7 @@ export const loadBiblesByLanguageId = (languageId) => {
     if (fs.existsSync(bibleFolderPath) && bookId) {
       const bibleIds = fs.readdirSync(bibleFolderPath).filter(file => file !== ".DS_Store");
       bibleIds.forEach(bibleId => {
-        if (!isIncluded || !bibles[languageId][bibleId]) { //TRICKY: just because we have the language loaded does not mean we have all the bibles loaded
+        if (!isIncluded || !bibles[languageId][bibleId]) { //TRICKY: just because we have a bible in the language loaded does not mean we have all the bibles loaded
           dispatch(loadBibleBook(bibleId, bookId, languageId));
         }
       });
