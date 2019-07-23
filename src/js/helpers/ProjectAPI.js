@@ -354,16 +354,15 @@ export default class ProjectAPI {
   /**
    * Marks a category as having been loaded into the project.
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
-   * @param {string} category - the category that has been copied into the project
+   * @param {string} subCategory - the subcategory that has been copied into the project
    * @param {boolean} [loaded=true] - indicates if the category is loaded
    * @returns {boolean}
    */
-  setCategoryLoaded(toolName, category, loaded = true) {
-    const categoriesPath = path.join(this.getCategoriesDir(toolName),
-      ".categories");
+  setCategoryLoaded(toolName, subCategory, loaded = true) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName), '.categories');
     let data = {
       current: [],
-      loaded: loaded ? [category] : []
+      loaded: loaded ? [subCategory] : []
     };
 
     if (fs.pathExistsSync(categoriesPath)) {
@@ -371,11 +370,11 @@ export default class ProjectAPI {
         let rawData = fs.readJsonSync(categoriesPath);
         // TRICKY: assert data structure before overwriting default to not propagate errors.
         if (loaded) {
-          if (!rawData.loaded.includes(category))
-            rawData.loaded.push(category);
+          if (!rawData.loaded.includes(subCategory))
+            rawData.loaded.push(subCategory);
         } else {
-          //Removing the loaded category from list
-          rawData.loaded = rawData.loaded.filter(c => c !== category);
+          //Removing the loaded subCategory from list
+          rawData.loaded = rawData.loaded.filter(c => c !== subCategory);
         }
         data = rawData;
       } catch (e) {
@@ -416,12 +415,12 @@ export default class ProjectAPI {
   /**
    * Returns an array of groups ids for the given category
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
-   * @param {string} category - the name of the category
+   * @param {string} categoryId - the id of the category
    * @returns {string[]} - an array of group ids that belong to the category
    */
-  getCategoryGroupIds(toolName, category) {
+  getCategoryGroupIds(toolName, categoryId) {
     const indexPath = path.join(this.getCategoriesDir(toolName),
-      ".categoryIndex", `${category}.json`);
+      ".categoryIndex", `${categoryId}.json`);
     if (fs.pathExistsSync(indexPath)) {
       try {
         return fs.readJsonSync(indexPath);
@@ -489,14 +488,14 @@ export default class ProjectAPI {
         if (withParent) {
           let objectWithParentCategories = {};
           const subCategories = data.current;
-          subCategories.forEach((subCategory) => {
+          subCategories.forEach((subcategory) => {
             const parentCategoryMapping = this.getAllCategoryMapping(toolName);
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
-              if (parentCategoryMapping[categoryName].includes(subCategory)) {
+              if (parentCategoryMapping[categoryName].includes(subcategory)) {
                 // Subcategory name is contained in this parent
                 if (!objectWithParentCategories[categoryName])
                   objectWithParentCategories[categoryName] = [];
-                objectWithParentCategories[categoryName].push(subCategory);
+                objectWithParentCategories[categoryName].push(subcategory);
               }
             });
           });
