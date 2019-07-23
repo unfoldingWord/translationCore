@@ -12,22 +12,6 @@ import {getAvailableCategories} from '../../../helpers/ResourcesHelpers';
 // constants
 import { USER_RESOURCES_PATH, TRANSLATION_NOTES } from '../../../common/constants';
 
-/**
- * Renders a list of tools.
- * TODO: rename this to ToolsList and make it a self contained container with supporting components
- * @param tools
- * @param actions
- * @param translate
- * @param bookName
- * @param loggedInUser
- * @param projectSaveLocation
- * @param currentProjectToolsProgress
- * @param manifest
- * @param invalidatedReducer
- * @param toolsCategories
- * @returns {*}
- * @constructor
- */
 const ToolsCards = ({
   tools,
   actions,
