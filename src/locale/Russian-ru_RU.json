@@ -162,7 +162,7 @@
     "importing_project_alert": "Импорт ${project_url}. Пожалуйста, подождите...",
     "cancel_import_alert": "Отмена прервёт процесс импорта, и проект необходимо будет повторно импортировать, прежде чем его можно будет использовать.",
     "project_already_identified": "Этот проект был определен как проект ${originalBook}. Вы уверены, что хотите изменить его на проект ${suggestedBook}?",
-    "loading_project_alert": "Загружаются данные вашего проекта.",
+    "loading_project_alert": "Loading project data.",
     "preparing_project_alert": "Preparing your project data.",
     "exported_alert": "${project_name} успешно экспортирован в ${file_path}.",
     "must_be_logged_in_alert": "Вы должны войти в систему с помощью учетной записи ${door43} для загрузки проектов. Пожалуйста, выйдите из системы и затем войдите в учетную запись ${door43}.",
