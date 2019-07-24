@@ -353,8 +353,8 @@ const mapDispatchToProps = (dispatch) => {
       makeSureBiblesLoadedForTool: () => {
         dispatch(ResourcesActions.makeSureBiblesLoadedForTool());
       },
-      onInvalidCheck: (contextId, selectedGL, cb) => {
-        dispatch(promptForInvalidCheckFeedback(contextId, selectedGL, cb));
+      onInvalidCheck: (contextId, selectedGL, moveToNext) => {
+        dispatch(promptForInvalidCheckFeedback(contextId, selectedGL, moveToNext));
       },
       // TODO: these are not actions and should be inserted directly into the tool
       getWordListForVerse: VerseObjectUtils.getWordListForVerse,
