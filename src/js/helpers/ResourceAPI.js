@@ -81,19 +81,29 @@ class ResourceAPI {
           file.match(/^v\d/i);
       });
       return versionedDirs.sort((a, b) => {
-        const cleanA = semver.coerce(a);
-        const cleanB = semver.coerce(b);
-
-        if(semver.gt(cleanA, cleanB)) {
-          return -1;
-        } else if(semver.lt(cleanA, cleanB)) {
-          return 1;
-        } else {
-          return 0;
-        }
+        return -this.compareVersions(a, b); // do inverted sort
       });
     }
     return [];
+  }
+
+  /**
+   * compares version numbers, if a > b returns 1; if a < b return -1; else are equal and return 0
+   * @param a
+   * @param b
+   * @return {number}
+   */
+  static compareVersions(a, b) {
+    const cleanA = semver.coerce(a);
+    const cleanB = semver.coerce(b);
+
+    if (semver.gt(cleanA, cleanB)) {
+      return 1;
+    } else if (semver.lt(cleanA, cleanB)) {
+      return -1;
+    } else {
+      return 0;
+    }
   }
 }
 

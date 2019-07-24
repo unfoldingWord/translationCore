@@ -13,8 +13,6 @@ import {
 } from '../common/constants';
 import { getOrigLangforBook } from "./bibleHelpers";
 
-const toolCategoryMapping = {};
-
 /**
  * Provides an interface with which tools can interact with a project.
  */
@@ -449,48 +447,42 @@ export default class ProjectAPI {
 
   /**
    * Gets the category mapping for a tool in the project's .categoryIndex's directory
-   * This gets cached in toolCategoryMapping by toolName
-   * Keyed by toolName & parent category, value is an array of the subcategories
-   * @param toolName
+   * @param {string} toolName
    * @returns {object}
    */
   getAllCategoryMapping(toolName) {
-    if (toolCategoryMapping[toolName] == undefined) {
-      toolCategoryMapping[toolName] = {};
-      const indexPath = path.join(this.getCategoriesDir(toolName), ".categoryIndex");
-      if (fs.pathExistsSync(indexPath)) {
-        try {
-          const parentCategoryFiles = fs.readdirSync(indexPath);
-          parentCategoryFiles.forEach((parentCategoryFile) => {
-            const parentCategoryPath = path.join(indexPath, parentCategoryFile);
-            const parentCategory = path.parse(parentCategoryFile).name;
-            toolCategoryMapping[toolName][parentCategory] = fs.readJsonSync(parentCategoryPath);
-          });
-        } catch (e) {
-          console.error(`Failed to read the category index at ${indexPath}`, e);
-        }
+    const parentCategoriesObject = {};
+    const indexPath = path.join(this.getCategoriesDir(toolName), ".categoryIndex");
+    if (fs.pathExistsSync(indexPath)) {
+      try {
+        const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
+        parentCategories.forEach((category) => {
+          const subCategoryPath = path.join(this.getCategoriesDir(toolName), ".categoryIndex", `${category}.json`);
+          parentCategoriesObject[category] = fs.readJsonSync(subCategoryPath);
+        });
+      } catch (e) {
+        console.error(`Failed to read the category index at ${indexPath}`, e);
       }
     }
-
-    return toolCategoryMapping[toolName];
+    return parentCategoriesObject;
   }
 
   /**
    * Returns an array of categories that have been selected for the given tool.
-   * @param toolName - The tool name. This is synonymous with translationHelp name
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name
+   * @param {boolean} withParent
    * @return {string[]} an array of category names
    */
   getSelectedCategories(toolName, withParent = false) {
-    const categoriesPath = path.join(this.getCategoriesDir(toolName),
-      ".categories");
+    const categoriesPath = path.join(this.getCategoriesDir(toolName), ".categories");
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         const data = fs.readJsonSync(categoriesPath);
         if (withParent) {
           let objectWithParentCategories = {};
           const subCategories = data.current;
+          const parentCategoryMapping = this.getAllCategoryMapping(toolName);
           subCategories.forEach((subCategory) => {
-            const parentCategoryMapping = this.getAllCategoryMapping(toolName);
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
               if (parentCategoryMapping[categoryName].includes(subCategory)) {
                 // Subcategory name is contained in this parent
