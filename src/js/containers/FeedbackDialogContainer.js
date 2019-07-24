@@ -66,9 +66,11 @@ class FeedbackDialogContainer extends React.Component {
     if (errorFeedbackMessage) {
       message = (message || "") + "\n\n------------\n" + errorFeedbackMessage;
     }
+    console.log("FeedbackDialogContainer._submitFeedback() - sending: ", {email, username, message});
     if (errorFeedbackExtraDetails) {
       message = (message || "") + "\n\n------------\n" + errorFeedbackExtraDetails;
     }
+    console.log("FeedbackDialogContainer._submitFeedback() - sending: ", {email, username, message});
     if (includeLogs) {
       const logData = getCurrentLog(LOG_FILES_PATH);
       if (logData) {
@@ -83,14 +85,16 @@ class FeedbackDialogContainer extends React.Component {
       email,
       state: (includeLogs ? log : undefined)
     }).then(() => {
+      console.error('FeedbackDialogContainer._submitFeedback() - Submitted');
       this.setState({
         submitSuccess: true
       });
     }).catch(error => {
       if(error.message === 'Network Error') {
+        console.error('FeedbackDialogContainer._submitFeedback() - Network Error', error);
         openAlertDialog(translate('no_internet'));
       } else {
-        console.error('Failed to submit feedback', error);
+        console.error('FeedbackDialogContainer._submitFeedback() - Failed to submit feedback', error);
         this.setState({
           submitError: true,
           feedback: payload
