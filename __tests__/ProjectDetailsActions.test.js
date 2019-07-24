@@ -406,7 +406,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
   });
 });
 
-describe('ProjectDetailsActions.updateCheckSelection', () => {
+describe('ProjectDetailsActions.updateCategorySelection', () => {
   const project_name = 'normal_project';
   beforeAll(()=>{
     // Make resource
@@ -446,7 +446,7 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       progress: 0.25
     }];
     const store = mockStore(initialState);
-    store.dispatch(actions.updateCheckSelection(["apostle", "authority", "clean"], true, TRANSLATION_WORDS));
+    store.dispatch(actions.updateCategorySelection(["apostle", "authority", "clean"], true, TRANSLATION_WORDS));
     expect(store.getActions()).toMatchObject(expectedActions);
   });
 
