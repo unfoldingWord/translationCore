@@ -346,19 +346,14 @@ export function loadProjectGroupIndex(
     // load indices
     const indices = [];
     const categories = project.getSelectedCategories(toolName, true);
-    console.log('loadProjectGroupIndex()');
-    console.log('categories', categories);
     for (const categoryName in categories) {
-      console.log('categoryName', categoryName);
       const categoryIndex = path.join(helpDir, categoryName, "index.json");
       if (fs.lstatSync(categoryIndex).isFile()) {
         try {
           const selectedSubcategories = categories[categoryName];
-          console.log('selectedSubcategories', selectedSubcategories);
           // For categories with subcategories need to filter out not selected items.
           const categoryIndices = fs.readJsonSync(categoryIndex)
               .filter(item => selectedSubcategories.includes(item.id));
-          console.log('categoryIndices', categoryIndices);
           indices.push.apply(indices, categoryIndices);
         } catch (e) {
           console.error(`Failed to read group index from ${categoryIndex}`, e);
