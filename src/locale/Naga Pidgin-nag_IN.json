@@ -150,7 +150,7 @@
     "import_online_project": "Online kaam aamdani kuribi",
     "searching_alert": "Morom pora rukhibi, bisari asge... ",
     "books_available": "Itu ${aap} anubaad te, translationWordstools khan Nautun Niom laga kaam khan ke samarthan kure aru kotha milai dia laga oshtro khan Purana Niom laga kaam khan ke sampurna Bible hisabte samarthan kure.",
-    "supports_any_book": "${app} supports projects for any book of the Bible.",
+    "supports_any_book": "Bible laga jikunu pustak laga kaam te ${app} sahayata kure.",
     "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
     "enter_url": "Enter URL",
     "or": "Or",
