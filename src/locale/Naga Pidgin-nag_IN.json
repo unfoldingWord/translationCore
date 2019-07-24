@@ -157,7 +157,7 @@
     "language_code": "Bhasa laga code",
     "language_name": "Bhasa laga naam",
     "book": "Pustak",
-    "no_search_results": "No project matching your search criteria was found.",
+    "no_search_results": "Aapni bisara shreni kunbi kaam logote mila paa nai",
     "importing_local_alert": "Importing local project...",
     "importing_project_alert": "Importing ${project_url}. Please wait...",
     "cancel_import_alert": "Canceling now will abort the import process and the project will need to be re-imported before it can be used.",
