@@ -3,37 +3,47 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import csv from 'csv';
 // helpers
-import * as groupsIndexHelpers from './groupsIndexHelpers';
 import ResourceAPI from "./ResourceAPI";
 import * as localizationHelpers from './localizationHelpers';
 import * as ResourcesActions from "../actions/ResourcesActions";
 import * as gatewayLanguageHelpers from "./gatewayLanguageHelpers";
 import {getQuoteAsString} from 'checking-tool-wrapper';
 // constants
-import {THELPS_EN_RESOURCES_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES} from "../common/constants";
+import {
+  TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
+  USER_RESOURCES_PATH,
+  TRANSLATION_HELPS
+} from "../common/constants";
 
-let tWIndex = [];
-let tNIndex = [];
+const cachedGroupIndices = {};
+const toolsWithGroupIndices = [TRANSLATION_NOTES, TRANSLATION_WORDS];
 
  /**
-  * To prevent these files from being read in for every groupName lookup, read them in once.
+  * Gets the group index for a given langCode and toolName with all its category indices flattened into one index.
+  * To prevent these files from being read in for every groupName lookup, read them in once and cache them in
+  * cachedGroupIndices.
+  * @param {string} langCode - language to load the indices
+  * @param {string} toolName - toolName to get the indices
   */
-function cacheIndicies() {
-  // load tW indices
-  tWIndex = loadToolIndices(TRANSLATION_WORDS);
-  // load tN indices
-  tNIndex = loadToolIndices(TRANSLATION_NOTES);
+function getToolGroupIndex(langCode, toolName) {
+   if (! cachedGroupIndices[langCode])
+     cachedGroupIndices[langCode] = {};
+  // load the indices for the given language & tool if not already loaded
+  if (!cachedGroupIndices[langCode][toolName] && toolsWithGroupIndices.indexOf(toolName) >= 0)
+    cachedGroupIndices[langCode][toolName] = loadToolGroupIndex(langCode, toolName);
+  return cachedGroupIndices[langCode][toolName];
 }
 
 /**
- * Loops through a tool's category subdirs to make a flattened list of the indexes with id and name
+ * Loops through a tool's category subdirs to make a flattened list of the indices with id and name and caches it
+ * @param {string} langCode - language to load the indices
  * @param {string} toolName - the name of the tool in the same case as its resource directory
- * @return {array}
  */
-function loadToolIndices(toolName) {
+function loadToolGroupIndex(langCode, toolName) {
   let index = [];
   try {
-    const toolPath = path.join(THELPS_EN_RESOURCES_PATH, toolName);
+    const toolPath = path.join(USER_RESOURCES_PATH, langCode, TRANSLATION_HELPS, toolName);
     let versionPath = ResourceAPI.getLatestVersion(toolPath) || toolPath;
     if (fs.pathExistsSync(versionPath)) {
       const isDirectory = (item) => fs.lstatSync(path.join(versionPath, item)).isDirectory();
@@ -63,34 +73,44 @@ function loadToolIndices(toolName) {
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
  * @param {object} contextId - to be merged in
+ * @param {string} gatewayLanguageCode
+ * @param {string} gatewayLanguageQuote
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
  * @param {function} translate - the translation function
  * @return {object}
  */
-export function combineData(data, contextId, username, timestamp, translate) {
-  const flatContextId = flattenContextId(contextId, 'en', translate);
+export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguageQuote, username, timestamp, translate) {
+  const flatContextId = flattenContextId(contextId, gatewayLanguageCode, gatewayLanguageQuote, translate);
   const userTimestamp = userTimestampObject(username, timestamp);
   return Object.assign({}, data, flatContextId, userTimestamp);
 }
+
 /**
  * @description - flattens the context id for csv usage
  * @param {object} contextId - contextID object that needs to go onto the csv row
- * @param {string} glCode - language code to get the GL Quote
+ * @param {string} gatewayLanguageCode - language code, if empty, will use 'en' and find the GL Quote by it
+ * @param {string} gatewayLanguageQuote - language quote, can be empty
  * @param {function} translate - translation function
  * @return {object}
  */
-export const flattenContextId = (contextId, glCode, translate) => {
+export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguageQuote, translate) => {
+  // if GL code not given, use 'en'
+  gatewayLanguageCode = gatewayLanguageCode || 'en';
+  // if GL quote not given, get it from the aligned 'ult' Bible of that language, otherwise 'N/A'
+  gatewayLanguageQuote = gatewayLanguageQuote || getGLQuoteFromAlignedBible(contextId, gatewayLanguageCode) || 'N/A';
+  // if no occurrenceNote in contextId, 'N/A'
+  const occurrenceNote = contextId.occurrenceNote || 'N/A';
   return {
     tool: contextId.tool,
-    type: groupCategoryTranslated(contextId, translate),
+    type: groupCategoryTranslated(contextId, gatewayLanguageCode, translate),
     groupId: contextId.groupId,
-    groupName: groupName(contextId),
+    groupName: groupName(contextId, gatewayLanguageCode),
     occurrence: contextId.occurrence,
     quote: getQuoteAsString(contextId.quote),
-    gatewayLanguageCode: glCode,
-    gatewayLanguageQuote: getGLQuoteFromAlignedBible(contextId, glCode) || contextId.glQuote || 'N/A',
-    occurrenceNote: contextId.occurrenceNote || 'N/A',
+    gatewayLanguageCode: gatewayLanguageCode,
+    gatewayLanguageQuote: gatewayLanguageQuote,
+    occurrenceNote: occurrenceNote,
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
     verse: contextId.reference.verse
@@ -100,13 +120,13 @@ export const flattenContextId = (contextId, glCode, translate) => {
 /**
  * Gets the GL Quote information to add to the contextId
  * @param {object} contextId
- * @param {string} glCode - language code which to get the quote from the aligned Bible
+ * @param {string} langCode - language code which to get the quote from the aligned Bible
  * @return {object}
  */
-export const getGLQuoteFromAlignedBible = (contextId, glCode) => {
+export const getGLQuoteFromAlignedBible = (contextId, langCode) => {
   const glBibleId = 'ult'; // TODO: Dynamically get all Bibles for the glCode to find GL Quote from aligned Bible
   const bookId = contextId.reference.bookId;
-  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, glCode); // this is cached in the called function
+  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, langCode); // this is cached in the called function
   return gatewayLanguageHelpers.getAlignedTextFromBible(contextId, bible);
 };
 
@@ -114,28 +134,16 @@ export const getGLQuoteFromAlignedBible = (contextId, glCode) => {
  * @description - Returns the corresponding group name i.e. Metaphor
  * when given the group id of figs-metaphor
  * @param {Object} contextId - context id to get toolName and groupName
+ * @param {string} langCode - language to get the groupName
  * @return {string}
  */
-export const groupName = (contextId) => {
-  cacheIndicies();
-
-  let indexArray;
-  let {tool, groupId} = contextId;
-  switch (tool) {
-    case TRANSLATION_NOTES:
-      indexArray = tNIndex;
-      break;
-    case TRANSLATION_WORDS:
-      indexArray = tWIndex;
-      break;
-    default:
-      indexArray = undefined;
-      // do something later with other resources
-  }
-  let indexObject = {};
+export const groupName = (contextId, langCode) => {
+  const {tool, groupId} = contextId;
+  const groupIndex = getToolGroupIndex(langCode, tool);
+  const indexObject = {};
   let groupName;
-  if (indexArray) {
-    indexArray.forEach(group => {
+  if (groupIndex) {
+    groupIndex.forEach(group => {
       indexObject[group.id] = group.name;
     });
     groupName = indexObject[groupId];
@@ -153,28 +161,15 @@ export const groupName = (contextId) => {
  * @description - Returns the corresponding group parent category, i.e. figures
  * when given the group id of figs-metaphor
  * @param {Object} contextId - context id to get toolName and groupName
+ * @param {string} langCode - language to get the groupCategory
  * @return {string}
  */
-export const groupCategory = (contextId) => {
-  cacheIndicies();
-
-  let indexArray
-  ;
-  let {tool, groupId} = contextId;
-  switch (tool) {
-    case TRANSLATION_NOTES:
-      indexArray = tNIndex;
-      break;
-    case TRANSLATION_WORDS:
-      indexArray = tWIndex;
-      break;
-    default:
-      indexArray = undefined;
-    // do something later with other resources
-  }
-  let indexObject = {};
-  if (indexArray) {
-    indexArray.forEach(group => {
+export const groupCategory = (contextId, langCode) => {
+  const {tool, groupId} = contextId;
+  const groupIndex = getToolGroupIndex(langCode, tool);
+  const indexObject = {};
+  if (groupIndex) {
+    groupIndex.forEach(group => {
       indexObject[group.id] = group.category;
     });
     if (!indexObject[groupId]) {
@@ -188,11 +183,12 @@ export const groupCategory = (contextId) => {
 /**
  * @description - Returns the human readable (translated) string of the group category
  * @param {Object} contextId - context id to get toolName and groupName
+ * @param {string} langCode - language of the groupCategory
  * @param {function} translate - translation function
  * @return {string}
  */
-export const groupCategoryTranslated = (contextId, translate) => {
-  const category = groupCategory(contextId);
+export const groupCategoryTranslated = (contextId, langCode, translate) => {
+  const category = groupCategory(contextId, langCode);
   if (category) {
     // We return the translation, unless that tool_card_categories.<category> doesn't exist, then just return category
     return localizationHelpers.getTranslation(translate, 'tool_card_categories.' + category, category);
@@ -211,6 +207,7 @@ export const userTimestampObject = (username, timestamp) => {
     time: timeFromTimestamp(timestamp)
   };
 };
+
 /**
  * @description - turns a timestamp into date
  * @param {timestamp} timestamp to be converted into date
@@ -222,6 +219,7 @@ export const dateFromTimestamp = (timestamp) => {
     const date = [pad(dateObj.getMonth() + 1), pad(dateObj.getDate()), dateObj.getFullYear()].join("/");
     return date;
 };
+
 /**
  * @description - turns a timestamp into time
  * @param {timestamp} timestamp to be converted into time
@@ -232,6 +230,7 @@ export const timeFromTimestamp = (timestamp) => {
   const time = new Date(datetime).toString().split(" ")[4];
   return time;
 };
+
 /**
  * @description - Pad numbers to make them sortable and human readable
  * @param {int} number
@@ -239,6 +238,7 @@ export const timeFromTimestamp = (timestamp) => {
 const pad = (number) => {
   return number < 10 ? 0 + `${number}` : number;
 };
+
 /**
  * @description - Gets the tool folder names
  * @param {string} projectPath
@@ -255,12 +255,15 @@ export function getToolFolderNames(projectPath) {
     console.warn('Could not find index path for tool information');
   }
 }
+
 export const dataPath = (projectPath) => {
   return path.join(projectPath, '.apps', 'translationCore');
 };
+
 export const tmpPath = (projectPath) => {
   return path.join(dataPath(projectPath), 'output');
 };
+
 /**
  * @description - cleanup the temporary csv files
  * @param {string} tmpPath - Path to cleanup
@@ -271,6 +274,7 @@ export const cleanupTmpPath = (projectPath) => {
     fs.removeSync(path.join(_tmpPath));
   }
 };
+
 /**
  * @description - get the project id from the manifest in the projectPath
  * @param {string} projectPath - Path to current project
@@ -285,6 +289,7 @@ export const getProjectId = (projectPath) => {
   }
   throw 'Cannot read project manifest: ', manifestPath;
 };
+
 /**
  * @description - Generates a CSVString from an array of objects
  * @param {Array} objectArray - array of objects to convert to csv
@@ -312,6 +317,7 @@ export const generateCSVString = (objectArray, callback) => {
     callback(null, data);
   }
 };
+
 /**
  * @description - Generates a CSV and writes to File from an array of objects
  * @param {Array} objectArray - array of objects to convert to csv
@@ -337,21 +343,3 @@ export const generateCSVFile = (objectArray, filePath) => {
     });
   });
 };
-
-/**
- * loads the groups index array using the toolname
- * from objectData
- * @param {Object} objectData
- */
-export function getGroupsIndexForCsvExport(objectData) {
-  try {
-    let groupsIndex = [];
-    if (objectData && objectData.contextId && objectData.contextId.tool && objectData.contextId.groupId) {
-      const toolName = objectData.contextId.tool;
-      groupsIndex = groupsIndexHelpers.getGroupsIndex('en', toolName);
-    }
-  return groupsIndex;
-  } catch (error) {
-    console.error(error);
-  }
-}
