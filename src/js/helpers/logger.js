@@ -2,6 +2,36 @@ import fs from "fs-extra";
 import path from "path-extra";
 
 /**
+ * get the log file for current date
+ * @param logDir
+ * @return {*}
+ */
+export function getLogFilePathForCurrentDate(logDir = "") {
+  const logPath = path.join(logDir, new Date().toDateString() + ".log");
+  return logPath;
+}
+
+/**
+ * read the contents of current error log if found
+ * @param logDir
+ * @return {string}
+ */
+export function getCurrentLog(logDir = "") {
+  let logData = "";
+  const logPath = getLogFilePathForCurrentDate(logDir);
+  if (fs.existsSync(logPath)) {
+    try {
+      logData = fs.readFileSync(logPath).toString();
+    } catch (e) {
+      console.error("FeedbackDialogContainer._submitFeedback() could not read log file: " + logPath);
+    }
+  } else {
+    console.error("FeedbackDialogContainer._submitFeedback() log file does not exist: " + logPath);
+  }
+  return logData;
+}
+
+/**
  * Injects file logging into the default console logger.
  * console logging will continue to function as normal.
  * @param {string} [logDir=''] - directory where logs will be stored
@@ -9,8 +39,7 @@ import path from "path-extra";
  */
 export function injectFileLogging(logDir = "", appVersion="") {
   fs.ensureDirSync(logDir);
-
-  const logPath = path.join(logDir, new Date().toDateString() + ".log");
+  const logPath = getLogFilePathForCurrentDate(logDir);
   const levels = [
     "error",
     "warn",

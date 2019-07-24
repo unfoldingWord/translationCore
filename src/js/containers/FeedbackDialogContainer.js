@@ -1,3 +1,4 @@
+import fs from "fs-extra";
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
@@ -12,9 +13,11 @@ import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import {submitFeedback} from '../helpers/FeedbackHelpers';
+import {getCurrentLog} from '../helpers/logger';
 import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
 import {openAlertDialog} from '../actions/AlertModalActions';
 import {feedbackDialogClosing} from "../actions/HomeScreenActions";
+import {LOG_FILES_PATH} from "../common/constants";
 
 /**
  * Renders a dialog to submit user feedback.
@@ -58,16 +61,20 @@ class FeedbackDialogContainer extends React.Component {
    */
   _submitFeedback(payload) {
     const {category, email, includeLogs} = payload;
-    const {log, openAlertDialog, translate, username, errorFeedbackMessage} = this.props;
+    const {log, openAlertDialog, translate, username, errorFeedbackMessage, errorFeedbackExtraDetails} = this.props;
 
-
-    // const {category,  email, includeLogs} = payload;
     let {message} = payload;
-    // const {log, openAlertDialog, translate} = this.props;
-    // let {errorFeedbackMessage} = this.props;
     if (errorFeedbackMessage) {
-      const extraDetails = (this.props.errorFeedbackExtraDetails || "");
-      message = (message || "") + "\n\n------------\n" + errorFeedbackMessage +  "\n\n" + extraDetails;
+      message = (message || "") + "\n\n------------\n" + errorFeedbackMessage;
+    }
+    if (errorFeedbackExtraDetails) {
+      message = (message || "") + "\n\n------------\n" + errorFeedbackExtraDetails;
+    }
+    if (includeLogs) {
+      const logData = getCurrentLog(LOG_FILES_PATH);
+      if (logData) {
+        message = (message || "") + "\n\n------------\n" + logData;
+      }
     }
 
     submitFeedback({
