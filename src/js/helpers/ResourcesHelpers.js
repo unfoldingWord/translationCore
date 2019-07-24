@@ -184,7 +184,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       }
       for (let j = 0, l2 = categories[category].length; j < l2; j++) {
         const subCategory = categories[category][j];
-        const dataPath = path.join(groupsDir, subCategory.id + '.json');
+        const dataPath = path.join(groupsDir, subCategory + '.json');
         project.importCategoryGroupData(toolName, dataPath);
       }
       // TRICKY: gives the tool an index of which groups belong to which category
@@ -221,8 +221,10 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
  * @param {String} gatewayLanguage
  * @param {String} toolName
  * @param {String} projectDir
+ * @param {object} options = { withCategoryName: true } will return an
+ * array of objects instead, which include the category id & name.
  */
-export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir) {
+export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir, options = {}) {
   const categoriesObj = {};
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
@@ -255,7 +257,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
         }
         let groupIndex;
         const groupIndexPath = path.join(helpDir, category, 'index.json');
-        if (fs.existsSync(groupIndexPath)) {
+        if (options.withCategoryName && fs.existsSync(groupIndexPath)) {
           groupIndex = fs.readJsonSync(groupIndexPath);
         }
         // copy not loaded category group data into project
@@ -264,10 +266,15 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
           for (const f of files) {
             if (path.extname(f).toLowerCase() === ".json") {
               const id = path.basename(f.toLowerCase(), ".json");
-              let subCategory = { id };
-              if (groupIndex) {
-                subCategory = groupIndex.find(group => group.id === id);
+              let subCategory = id;
+              // Use an object that includes id & name instead of just a string
+              if (options.withCategoryName) {
+                subCategory = { id };
+                if (groupIndex) {
+                  subCategory = groupIndex.find(group => group.id === id);
+                }
               }
+
               subCategories.push(subCategory);
             }
           }
@@ -598,6 +605,7 @@ export function addResource(resources, languageId, bibleId) {
  * populates resourceList with resources that can be used in scripture pane
  * @param {Array} resourceList - array to be populated with resources
  * @return {Function}
+ * //TODO: This is not an action. Please clean up to take in the state as an argument.
  */
 export function getAvailableScripturePaneSelections(resourceList) {
   return ((dispatch, getState) => {
