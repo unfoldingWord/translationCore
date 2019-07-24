@@ -26,6 +26,18 @@ export function setErrorFeedbackDetails(details) {
 }
 
 /**
+ * the category for error feedback dialog submission
+ * @param {string} details
+ * @return {{type: string, val: *}}
+ */
+export function setErrorFeedbackCategory(details) {
+  return {
+    type: consts.ERROR_FEEDBACK_CATEGORY,
+    val: details
+  };
+}
+
+/**
  * set callback function for when feedback closes
  * @param {function} callback
  * @return {{type: string, val: *}}

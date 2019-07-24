@@ -70,15 +70,14 @@ class AppMenu extends React.Component {
    *
    * @private
    * @param {string} dialog
-   * @param {string} content - optional content to add
    * @return {function()}
    */
-  openDialog(dialog, content = null) {
+  openDialog(dialog) {
     return () => {
       this.setState({
         dialog: {
           ...this.state.dialog,
-          [dialog]: content || true
+          [dialog]: true
         }
       });
     };

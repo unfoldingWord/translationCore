@@ -6,6 +6,8 @@ import {openAlert} from "../actions/AlertActions";
 import {getTranslate} from "../selectors";
 import {getQuoteAsString} from "checking-tool-wrapper";
 import {changeToNextContextId} from "../actions/ContextIdActions";
+import * as HomeScreenActions from "../actions/HomeScreenActions";
+import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 
 /**
  *
@@ -18,8 +20,9 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext)
   const translate = getTranslate(getState());
   const quoteString = getQuoteAsString(contextId.quote);
   const reference = `${contextId.reference.bookId} ${contextId.reference.chapter}:${contextId.reference.verse}`;
-  const data = `<br><br>Tool: "${contextId.tool}"<br>GroupId: "${contextId.groupId}"<br>Reference: "${reference}"<br>Gateway Language: "${selectedGL}"<br>Quote: "${quoteString}"<br>Occurrence: "${contextId.occurrence}"<br><br>`;
-  const message = translate("tools.invalid_check_found", { report: data});
+  const data = `\n\nTool: "${contextId.tool}"\nGroupId: "${contextId.groupId}"\nReference: "${reference}"\nGateway Language: "${selectedGL}"\nQuote: "${quoteString}"\nOccurrence: "${contextId.occurrence}"\n\n`;
+  const report = data.replace(/\n/g,"<br>"); // use html line formatting
+  const message = translate("tools.invalid_check_found", { report });
   console.log("promptForInvalidCheckFeedback(): " + message);
   const onSelection = () => {
     if (moveToNext) {
@@ -32,6 +35,8 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext)
     cancelText: translate("buttons.ignore_button"),
     onConfirm: () => {
       console.log("promptForInvalidCheckFeedback(): User clicked submit feedback");
+      dispatch(HomeScreenActions.setErrorFeedbackCategory(FeedbackDialog.CONTENT_AND_RESOURCES_FEEDBACK_KEY));
+      dispatch(HomeScreenActions.setErrorFeedbackMessage('There is a problem with the content of this check:' + data)); // put up feedback dialog
       onSelection();
     },
     onCancel: () => {

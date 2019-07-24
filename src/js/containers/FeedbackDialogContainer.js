@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import { getUserEmail, getUsername, getErrorFeedbackMessage, getErrorFeedbackExtraDetails } from '../selectors/index';
+import {
+  getUserEmail,
+  getUsername,
+  getErrorFeedbackMessage,
+  getErrorFeedbackExtraDetails,
+  getErrorFeedbackCategory
+} from '../selectors/index';
 import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
@@ -60,7 +66,7 @@ class FeedbackDialogContainer extends React.Component {
     // const {log, openAlertDialog, translate} = this.props;
     // let {errorFeedbackMessage} = this.props;
     if (errorFeedbackMessage) {
-      const extraDetails = (this.props.getErrorFeedbackExtraDetails() || "");
+      const extraDetails = (this.props.errorFeedbackExtraDetails || "");
       message = (message || "") + "\n\n------------\n" + errorFeedbackMessage +  "\n\n" + extraDetails;
     }
 
@@ -105,9 +111,9 @@ class FeedbackDialogContainer extends React.Component {
   }
 
   render () {
-    const {open, translate, errorFeedbackMessage} = this.props;
+    const {open, translate, errorFeedbackMessage, errorFeedbackCategory} = this.props;
     const {feedback, submitError, submitSuccess} = this.state;
-    const {includeLogs, email, category} = feedback;
+    let {includeLogs, email, category} = feedback;
     let {message} = feedback;
     const show = !!(open || errorFeedbackMessage); // get value as boolean
 
@@ -122,6 +128,9 @@ class FeedbackDialogContainer extends React.Component {
                             open={show}
                             onClose={this._handleClose}/>;
     } else {
+      // default to values in reducer
+      message = message || errorFeedbackMessage;
+      category = category || errorFeedbackCategory;
       return <FeedbackDialog onClose={this._handleClose}
                              open={show}
                              translate={translate}
@@ -144,6 +153,8 @@ FeedbackDialogContainer.propTypes = {
   confirmOnlineAction: PropTypes.func,
   openAlertDialog: PropTypes.func,
   errorFeedbackMessage: PropTypes.string,
+  errorFeedbackExtraDetails: PropTypes.string,
+  errorFeedbackCategory: PropTypes.string,
   feedbackDialogClosing: PropTypes.func,
   getErrorFeedbackExtraDetails: PropTypes.func
 };
@@ -168,14 +179,15 @@ const mapStateToProps = (state) => ({
     },
     resourcesReducer: '[truncated]'
   },
-  errorFeedbackMessage: getErrorFeedbackMessage(state)
+  errorFeedbackMessage: getErrorFeedbackMessage(state),
+  errorFeedbackExtraDetails: getErrorFeedbackExtraDetails(state),
+  errorFeedbackCategory: getErrorFeedbackCategory(state)
 });
 
 const mapDispatchToProps = {
   confirmOnlineAction,
   openAlertDialog,
-  feedbackDialogClosing,
-  getErrorFeedbackExtraDetails
+  feedbackDialogClosing
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedbackDialogContainer);

@@ -7,6 +7,10 @@ import TextField from 'material-ui/TextField';
 import _ from 'lodash';
 import Checkbox from 'material-ui/Checkbox';
 
+export const GENERAL_FEEDBACK_KEY = 'General Feedback';
+export const CONTENT_AND_RESOURCES_FEEDBACK_KEY = 'Content and Resources Feedback';
+export const BUG_REPORT_FEEDBACK_KEY = 'Bug Report';
+
 const styles = {
   label: {
     color: 'var(--text-color-dark)'
@@ -102,15 +106,15 @@ class FeedbackDialog extends React.Component {
     // TRICKY: the values are locale keys
     this.categories = [
       {
-        key: 'General Feedback',
+        key: GENERAL_FEEDBACK_KEY,
         value: 'general_feedback'
       },
       {
-        key: 'Content and Resources Feedback',
+        key: CONTENT_AND_RESOURCES_FEEDBACK_KEY,
         value: 'content_resources_feedback'
       },
       {
-        key: 'Bug Report',
+        key: BUG_REPORT_FEEDBACK_KEY,
         value: 'bug_report'
       }
     ];

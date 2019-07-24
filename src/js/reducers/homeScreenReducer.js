@@ -12,6 +12,7 @@ const initialState = {
   dimmedScreen: false,
   errorFeedbackMessage: '',
   errorFeedbackDetails: '',
+  errorFeedbackCategory: '',
   feedbackCloseCallback: null
 };
 
@@ -80,6 +81,11 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         errorFeedbackDetails: action.val
       };
+    case types.ERROR_FEEDBACK_CATEGORY:
+      return {
+        ...state,
+        errorFeedbackCategory: action.val
+      };
     case types.FEEDBACK_CALLBACK_ON_CLOSE:
       return {
         ...state,
@@ -109,12 +115,20 @@ export const getErrorFeedbackMessage = (state) =>
   state.errorFeedbackMessage;
 
 /**
- * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * gets the error extra details to attach to feedback dialog
  * @param {object} state
  * @return {String}
  */
 export const getErrorFeedbackExtraDetails = (state) =>
   state.errorFeedbackDetails;
+
+/**
+ * gets the error feedback category to use for feedback dialog
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackCategory = (state) =>
+  state.errorFeedbackCategory;
 
 /**
  * gets the function to call when feedback dialog closes
