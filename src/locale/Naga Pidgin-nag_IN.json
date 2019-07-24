@@ -199,9 +199,9 @@
     "resource_id": "Anubad porisayak",
     "nickname": "Project laga upanaam",
     "current_project": "Project: ${project}",
-    "renamed_project": "Your local project has been named<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
-    "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
+    "renamed_project": "Aapni laga sthaniya project tu <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b> naam rakha hoise.",
+    "dcs_rename_project": "Aapni laga project tu nautun naam <br/> <b>${project}</b><br/> rakha hoise. Itu project te Door43 laga thakia bhandar tu aapni ki kuribole itcha kure?",
+    "dcs_rename_success": "Door43 bhandar tu project karne sampurna unnati hoise. <br/>${project}",
     "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
   },
