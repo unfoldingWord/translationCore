@@ -162,7 +162,7 @@
     "importing_project_alert": "ಇಳಿಸಿಕೊಳ್ಳುವಿಕೆ ${project_url}. ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ.... ${Importing ${project_url}. Please wait...}",
     "cancel_import_alert": "ಈಗ ರದ್ದುಪಡಿಸುವದರಿಂದ ಇಳಿಸುಕೊಳ್ಳುವ ಪದ್ಧತಿ ಕೆಟ್ಟುಹೋಗುತ್ತದೆ ಮತ್ತು ಅದನ್ನು ಉಪಯೋಗಿಸುವುದಕ್ಕೆ ಮುಂಚಿತವಾಗಿ ಆ ಯೋಜನೆಯನ್ನು ತಿರುಗಿ ಇಳಿಸಿಕೊಳ್ಳಬೇಕಾದ ಅಗತ್ಯತೆಯುಂಟು. ${Canceling now will abort the import process and the project will need to be re-imported before it can be used.}",
     "project_already_identified": "ಈ ಯೋಜನೆಯು ${originalBook} ಯೋಜನೆಯಾಗಿ ಗುರಿತಿಸಲ್ಪಟ್ಟಿದೆ. ${suggestedBook} ಯೋಜನೆಯನ್ನಾಗಿ ಮಾರ್ಪಡಿಸುವುದಕ್ಕೆ ನೀವು ನಿಶ್ಚಯತೆಯಿಂದ ಇದ್ದೀರೋ? ${This project has been identified as a ${originalBook} project. Are you sure you want to change it to a ${suggestedBook} project?}",
-    "loading_project_alert": "ನಿಮ್ಮ ಯೋಜನೆಯ ಮಾಹಿತಿಯನ್ನು ಏರಿಸಲಾಗುತ್ತಿದೆ ಅಥವಾ ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ ${Loading your project data.}",
+    "loading_project_alert": "Loading project data.",
     "preparing_project_alert": "ನಿಮ್ಮ ಯೋಜನೆಯ ಮಾಹಿತಿಯನ್ನು ಸಿದ್ಧಮಾಡಲಾಗುತ್ತಿದೆ. ${Preparing your project data.}",
     "exported_alert": "{${project_name} ಯಶಸ್ವಿಯಾಗಿ ${file_path} ಕ್ಕೆ ಏರಿಸಲಾಗಿದೆ ಅಥವಾ ಕಳುಹಿಸಲಾಗಿದೆ. ${${project_name} has been successfully exported to ${file_path}.}",
     "must_be_logged_in_alert": "ಯೋಜನೆಗಳನ್ನು ಮೇಲಕ್ಕೆ ಏರಿಸುವುದಕ್ಕೆ ಅಥವಾ ಅಪ್.ಲೋಡ್ ಮಾಡುವುದಕ್ಕೆ ${door43} ಖಾತೆಯಿಂದ ನೀವು ಒಳನಡೆಯ ಮೂಲಕ ಹೋಗಲೇ ಬೇಕಾಗಿರುತ್ತದೆ. ದಯವಿಟ್ಟು ಹೊರನಡೆ ಮಾಡಿರಿ ಮತ್ತು ${door43} ಬಳಕೆದಾರರ ಖಾತೆಯಿಂದ ತಿರುಗಿ ಒಳನಡೆ ಮೂಲಕ ಪ್ರವೇಶಿಸಿರಿ. ${You must be logged in with a ${door43} account to upload projects. Please log out and then back in with a ${door43} user account.}",
