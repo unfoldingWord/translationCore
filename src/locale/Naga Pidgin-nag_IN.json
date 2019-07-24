@@ -202,11 +202,11 @@
     "renamed_project": "Aapni laga sthaniya project tu <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b> naam rakha hoise.",
     "dcs_rename_project": "Aapni laga project tu nautun naam <br/> <b>${project}</b><br/> rakha hoise. Itu project te Door43 laga thakia bhandar tu aapni ki kuribole itcha kure?",
     "dcs_rename_success": "Door43 bhandar tu project karne sampurna unnati hoise. <br/>${project}",
-    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
+    "dcs_rename_failed": "Door43 bhandar ke nautun naam diya huwa nai.<br/><br> aapni arubi Door43 bhandar laga nautun naam dibole itcha kore nohoile nautun naam nadikena ene chari dibo?",
+    "dcs_rename_conflict": "Nautun naam diya tu asafal hoise. Kilemane itu naam logote aage pora bhandar ashe. <br/><br/> tu aapni laga project Door43 te upload kuribole paribo, aapni laga sthaniya project nohoile Door43 laga naamtu bodli kuribo lagibo."
   },
   "project_validation": {
-    "language_mismatch": "Language Name not valid for Code",
+    "language_mismatch": "Code karne bhasha laga naam namile",
     "creative_commons": "Creative Commons",
     "attention": "Attention",
     "select_copyright": "Please select the copyright status for this project.",
