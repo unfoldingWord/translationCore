@@ -56,7 +56,9 @@ export const loadCurrentCheckCategories = (toolName, projectSaveLocation, curren
 export const updateCategorySelection = (toolName, isChecked, subcategories) => {
   return (dispatch, getState) => {
     const state = getState();
-    const previousSelectedSubcategories = getToolCategories(state, toolName);
+    let previousSelectedSubcategories = getToolCategories(state, toolName);
+    // filter out duplicate items from previousSelectedSubcategories
+    previousSelectedSubcategories = previousSelectedSubcategories.filter(subcat => !subcategories.includes(subcat));
     const selectedSubcategories = isChecked ? [...subcategories, ...previousSelectedSubcategories] :
       previousSelectedSubcategories.filter(subcategory => !subcategories.includes(subcategory));
     const project = new ProjectAPI(getProjectSaveLocation(state));
