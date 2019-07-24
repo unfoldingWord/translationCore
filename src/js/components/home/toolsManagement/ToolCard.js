@@ -139,9 +139,10 @@ class ToolCard extends Component {
       translate,
       developerMode,
       actions: {
-        updateCheckSelection,
         showPopover,
-        closePopover
+        closePopover,
+        updateCategorySelection,
+        updateSubcategorySelection,
       },
       selectedCategories,
       availableCategories,
@@ -189,18 +190,22 @@ class ToolCard extends Component {
             <ToolCardNotificationBadges tool={tool} translate={translate} selectedCategories={selectedCategories} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes
-            key={selectedGL}
-            toolName={tool.name}
-            selectedCategories={selectedCategories}
-            availableCategories={availableCategories}
-            onChecked={updateCheckSelection}
-            bookId={bookId}
-            translate={translate}
-            selectedGL={selectedGL}
-            showPopover={showPopover}
-            closePopover={closePopover}
-          />}
+          {
+            showCheckBoxes &&
+            <ToolCardBoxes
+              key={selectedGL}
+              toolName={tool.name}
+              selectedCategories={selectedCategories}
+              availableCategories={availableCategories}
+              onCategoryChecked={updateCategorySelection}
+              onSubcategoryChecked={updateSubcategorySelection}
+              bookId={bookId}
+              translate={translate}
+              selectedGL={selectedGL}
+              showPopover={showPopover}
+              closePopover={closePopover}
+            />
+          }
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -260,7 +265,8 @@ ToolCard.propTypes = {
   actions: PropTypes.shape({
     getProjectProgressForTools: PropTypes.func.isRequired,
     setProjectToolGL: PropTypes.func.isRequired,
-    updateCheckSelection: PropTypes.func.isRequired
+    updateSubcategorySelection: PropTypes.func.isRequired,
+    updateCategorySelection: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,

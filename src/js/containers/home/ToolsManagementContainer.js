@@ -38,10 +38,6 @@ class ToolsManagementContainer extends Component {
     }
   }
 
-  /**
-   *
-   * @param toolName
-   */
   handleSelectTool(toolName) {
     const {isUserLoggedIn, openTool, translate, openAlertDialog} = this.props;
     if(isUserLoggedIn) {
@@ -146,8 +142,11 @@ const mapDispatchToProps = (dispatch) => {
       setProjectToolGL: (toolName, selectedGL) => {
         dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
       },
-      updateCheckSelection: (id, value, toolName) => {
-        dispatch(ProjectDetailsActions.updateCheckSelection(id, value, toolName));
+      updateCategorySelection: (toolName, isChecked, subcategories) => {
+        dispatch(ProjectDetailsActions.updateCategorySelection(toolName, isChecked, subcategories));
+      },
+      updateSubcategorySelection: (subcategory, toolName, isChecked) => {
+        dispatch(ProjectDetailsActions.updateSubcategorySelection(subcategory, toolName, isChecked));
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));

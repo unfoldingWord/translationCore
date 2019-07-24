@@ -59,7 +59,7 @@ const ToolsCards = ({
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
           tools.map((tool, i) => {
-            const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation);
+            const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation, { withCategoryName: true });
             let isOLBookVersionMissing = false;
             let missingOLResource = {};
             if (tool.name === TRANSLATION_NOTES) {
