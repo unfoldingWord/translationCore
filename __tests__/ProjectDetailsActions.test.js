@@ -438,7 +438,7 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
     const expectedActions = [{
       type: 'SET_CHECK_CATEGORIES',
       toolName: TRANSLATION_WORDS,
-      selectedCategories: ["apostle", "authority", "clean"]
+      selectedSubcategories: ["apostle", "authority", "clean"]
     },
     {
       type: 'SET_PROJECT_PROGRESS_FOR_TOOL',
@@ -446,7 +446,7 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
       progress: 0.25
     }];
     const store = mockStore(initialState);
-    store.dispatch(actions.updateCategorySelection(["apostle", "authority", "clean"], true, TRANSLATION_WORDS));
+    store.dispatch(actions.updateCategorySelection(TRANSLATION_WORDS, true, ["apostle", "authority", "clean"]));
     expect(store.getActions()).toMatchObject(expectedActions);
   });
 
@@ -470,7 +470,7 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
       fs.__resetMockFS();
     });
     test('should load all the check categories from the project', () => {
-      const expectedActions = [{"selectedCategories": ["John"], "toolName": TRANSLATION_WORDS, "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions = [{"selectedSubcategories": ["John"], "toolName": TRANSLATION_WORDS, "type": "SET_CHECK_CATEGORIES"}];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),
@@ -492,7 +492,7 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
     test('should not load check categories that are not present in the resources', () => {
       const namesResourcePath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS);
       fs.removeSync(namesResourcePath);
-      const expectedActions =  [{"selectedCategories": [], "toolName": TRANSLATION_WORDS, "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions =  [{"selectedSubcategories": [], "toolName": TRANSLATION_WORDS, "type": "SET_CHECK_CATEGORIES"}];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),
