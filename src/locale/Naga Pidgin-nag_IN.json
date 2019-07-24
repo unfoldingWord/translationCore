@@ -162,7 +162,7 @@
     "importing_project_alert": "${project_url} aamdani hoi ashe. Morom pora rukhibi...",
     "cancel_import_alert": "Etya halte rukhaise koile aamdani huwa gati tu bondo hoi jabo aru itu kaamtu bebohar kuribole agete arubi wapash aamdani kuribole lagibo.",
     "project_already_identified": "Itu kaam tu ${originalbook} kaam hisabte sinakto hoise. Hosa pora aapni itu ekta ${suggestedbook} te bodni kuribole itcha ashe?",
-    "loading_project_alert": "Aapni laga kaam laga data load hoi ashe.",
+    "loading_project_alert": "Loading project data.",
     "preparing_project_alert": "Aapni laga kaam laga data prastuti hoi ashe.",
     "exported_alert": "${project_name} tu ${file_path} te niryat kura tu safal hoise.",
     "must_be_logged_in_alert": "Kaam upload kuribole karne aapni ji hoilebi ekta ${door43} account logote log in kuribo lagibo. Morom pora log out kuria pichete ${door43} upoyogkorta laga account logote wapash login kuribi.",
