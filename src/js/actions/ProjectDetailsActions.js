@@ -47,36 +47,56 @@ export const loadCurrentCheckCategories = (toolName, projectSaveLocation, curren
 };
 
 /**
- * @description sets the categories to be used in the project.
- * Note: This preference is persisted in on a project basis
- * @param {String} id - The category to be toggled e.i. "kt"
- * @param {Boolean} value - The value of the category to be updated to
- * @param {String} toolName - The tool that has been toggled on. This
- * is used to update the tool progress with the the updated selected
- * categories
+ * Sets the categories to be loaded for the tool (parent category only).
+ * Note: The categories selections are persisted on a project basis.
+ * @param {String} toolName - The tool name.
+ * @param {Boolean} isChecked - Is the category checkbox checked or uncheked.
+ * @param {array} subcategories - Array of subcategories.
  */
-export const updateCheckSelection = (id, value, toolName) => {
+export const updateCategorySelection = (toolName, isChecked, subcategories) => {
   return (dispatch, getState) => {
     const state = getState();
-    const previousSelectedCategories = getToolCategories(state, toolName);
-    let selectedCategories = previousSelectedCategories;
-    if (Array.isArray(id)) {
-      id.forEach((_id) => {
-        selectedCategories = ProjectDetailsHelpers.updateArray(selectedCategories, _id, value);
-      });
-    } else {
-      selectedCategories = ProjectDetailsHelpers.updateArray(previousSelectedCategories, id, value);
-    }
-    dispatch(setCategories(selectedCategories, toolName));
-    dispatch(getProjectProgressForTools(toolName));
+    const previousSelectedSubcategories = getToolCategories(state, toolName);
+    const selectedSubcategories = isChecked ? [...subcategories, ...previousSelectedSubcategories] :
+      previousSelectedSubcategories.filter(subcategory => !subcategories.includes(subcategory));
     const project = new ProjectAPI(getProjectSaveLocation(state));
-    project.setSelectedCategories(toolName, selectedCategories);
+    project.setSelectedCategories(toolName, selectedSubcategories);
+    dispatch(setCategories(selectedSubcategories, toolName));
+    dispatch(getProjectProgressForTools(toolName));
   };
 };
 
-export const setCategories = (selectedCategories, toolName) => ({
+/**
+ * Sets the subcategories to be loaded for the tool.
+ * @param {object} subcategory - subcategory object with id & name fields.
+ * e.g. { id: 'figs-apostrophe', name: 'Apostrophe' }
+ * @param {string} toolName - The tool name.
+ * @param {bool} isChecked - Is the subcategory checkbox checked or uncheked.
+ */
+export const updateSubcategorySelection = (subcategory, toolName, isChecked) => {
+  return (dispatch, getState) => {
+    let selectedSubcategories = [];
+    const state = getState();
+    const previousSelectedSubcategories = getToolCategories(state, toolName);
+    if (isChecked) {
+      const isAlreadyIncluded = previousSelectedSubcategories.includes(subcategory.id);
+      if (!isAlreadyIncluded) {
+        selectedSubcategories = [...previousSelectedSubcategories];
+        selectedSubcategories.push(subcategory.id);
+      }
+    } else {
+      selectedSubcategories = previousSelectedSubcategories.filter(prevSubcategory => prevSubcategory !== subcategory.id);
+    }
+    const project = new ProjectAPI(getProjectSaveLocation(state));
+    project.setSelectedCategories(toolName, selectedSubcategories);
+    dispatch(setCategories(selectedSubcategories, toolName));
+    dispatch(getProjectProgressForTools(toolName));
+  };
+};
+
+export const setCategories = (selectedSubcategories, toolName) => ({
   type: consts.SET_CHECK_CATEGORIES,
-  selectedCategories,
+  selectedSubcategories,
   toolName
 });
 
