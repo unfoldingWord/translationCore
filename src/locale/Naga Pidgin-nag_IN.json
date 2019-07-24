@@ -66,7 +66,7 @@
   "include_alignment_check": "Milai diya data bi antarbhuk kuribi ",
   "loading_verse_edits": "Sampadon kura verse load hoi ashe",
   "updates": {
-    "check_for_newer_app": "Check for software updates",
+    "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Check for content updates",
     "update_gateway_language_content": "Update Gateway Language Content",
     "checking_for_source_content_updates": "Checking for source content updates...",
@@ -119,13 +119,13 @@
     "terms_and_conditions": "Terms and Conditions",
     "by_continuing": "By continuing, you affirm that you have read and understand the terms and conditions and agree to: ",
     "not_infringe": "Only add content that does not infringe on someone else's copyright.",
-    "not_conflict": "Only add content that does not conflict with the Statement of Faith.",
-    "statement_of_faith": "Statement of Faith.",
-    "release_contributions": "Release your contributions to the content under a Creative Commons Attribution-ShareAlike 4.0 International License.",
-    "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International License."
+    "not_conflict": "Bisash laga mantabya logote sangharsh nohobole khali milab laga talika.",
+    "statement_of_faith": "Bisash laga Mantabya.",
+    "release_contributions": "Aapni laga jugdaan khan tu 'a Creative Commons Attribution-ShareAlike 4.0 International Licence' te hali dibi.",
+    "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International Licence."
   },
   "projects": {
-    "zip_files": "Zip Files",
+    "zip_files": "Zip File khan",
     "error_setting_up_project": "Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (${email}) for assistance.",
     "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
     "no_project": "No project was selected",
