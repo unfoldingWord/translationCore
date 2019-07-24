@@ -162,7 +162,7 @@
     "importing_project_alert": "Importando ${project_url}. Por favor espere...",
     "cancel_import_alert": "Cancelar ahora abortará el proceso de importación y será necesario volver a importar el proyecto antes de poder utilizarlo.",
     "project_already_identified": "Este proyecto ha sido identificado como un proyecto ${originalBook}. ¿Estás seguro de que quieres cambiarlo a un proyecto ${suggestedBook}?",
-    "loading_project_alert": "Cargando los datos de su proyecto.",
+    "loading_project_alert": "Loading project data.",
     "preparing_project_alert": "Preparing your project data.",
     "exported_alert": "${project_name} ha sido exportado con éxito a ${file_path}.",
     "must_be_logged_in_alert": "Debes iniciar sesión con una cuenta ${door43} para cargar proyectos. Por favor, cierre la sesión y vuelva a iniciar con una cuenta de usuario de ${door43}",
