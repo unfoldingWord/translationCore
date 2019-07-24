@@ -3,7 +3,7 @@ import {
   copySourceContentUpdaterManifest,
   getMissingResources,
   areResourcesNewer,
-  removeOldThelps
+  removeOldThelps, moveResourcesFromOldGrcFolder
 } from '../helpers/ResourcesHelpers';
 
 /**
@@ -16,7 +16,12 @@ export function migrateResourcesFolder() {
     console.log("migrateResourcesFolder");
     if (areResourcesNewer()) {
       console.log("migrateResourcesFolder: copying newer resources");
-      removeOldThelps();
+      moveResourcesFromOldGrcFolder();
+      const removedResources = removeOldThelps();
+      // TODO: this will be used in later issue to prompt user
+      if (Object.keys(removedResources).length) {
+        console.log("Removed resources: ", JSON.stringify(removedResources));
+      }
       getMissingResources();
       copySourceContentUpdaterManifest();// Add source-content-updater-manifest.json
     } else {
