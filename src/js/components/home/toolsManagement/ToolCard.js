@@ -36,6 +36,7 @@ class ToolCard extends Component {
       showDescription: false,
       progress: 0,
       selectedCategoriesChanged: false,
+      glSelectedChanged: false,
     };
   }
 
@@ -60,6 +61,8 @@ class ToolCard extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    const glSelectedChanged = prevProps.currentSelectedGL !== this.props.currentSelectedGL;
+    if (glSelectedChanged) this.setState({ glSelectedChanged });
     if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
       this.setState({ selectedCategoriesChanged: true });
       this.loadProgress();
@@ -118,12 +121,12 @@ class ToolCard extends Component {
       selectedToolName,
       tool: { name: newSelectedToolName },
     } = this.props;
-    const { selectedCategoriesChanged } = this.state;
+    const { selectedCategoriesChanged, glSelectedChanged } = this.state;
 
     if (isOLBookVersionMissing) {
       // Show dialog with option to download missing resource
       this.props.onMissingResource();
-    } else if (selectedToolName && !selectedCategoriesChanged && (selectedToolName === newSelectedToolName)) {
+    } else if (selectedToolName && !glSelectedChanged && !selectedCategoriesChanged && (selectedToolName === newSelectedToolName)) {
       // Show tool (Without loading tool data)
       toggleHomeView(false);
     } else {
@@ -271,6 +274,7 @@ ToolCard.propTypes = {
     PropTypes.bool
   ]),
   toggleHomeView: PropTypes.func.isRequired,
+  currentSelectedGL: PropTypes.string.isRequired,
 };
 
 ToolCard.contextTypes = {

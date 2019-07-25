@@ -78,7 +78,7 @@ class ToolCard extends Component {
   }
 
   render() {
-    const {translate} = this.props;
+    const {translate, currentSelectedGL} = this.props;
     const emptyMessage = translate('select_tool');
     const emptyButtonLabel = translate('buttons.tool_button');
     const emptyButtonOnClick = () => { this.props.actions.goToStep(3) };
@@ -90,6 +90,7 @@ class ToolCard extends Component {
         emptyButtonLabel={emptyButtonLabel}
         emptyButtonOnClick={emptyButtonOnClick}
         disabled={this.disabled()}
+        currentSelectedGL={currentSelectedGL}
       />
     );
   }
@@ -98,7 +99,8 @@ class ToolCard extends Component {
 ToolCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
-  translate: PropTypes.func
+  translate: PropTypes.func,
+  currentSelectedGL: PropTypes.string.isRequired,
 };
 ToolCard.contextTypes = {
   store: PropTypes.any

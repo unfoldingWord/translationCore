@@ -24,9 +24,13 @@ class OverviewContainer extends Component {
     const {
       translate,
       selectedCategoriesChanged,
+      glSelectedChanged,
     } = this.props;
-    const onClick = () =>
-      selectedCategoriesChanged ? openTool(toolTitle) : toggleHomeView(false);
+    const onClick = () => {
+      return selectedCategoriesChanged || glSelectedChanged ?
+        openTool(toolTitle) : toggleHomeView(false);
+    };
+
 
     return (
       <button className='btn-prime'
@@ -77,7 +81,8 @@ OverviewContainer.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   selectedCategoriesChanged: PropTypes.bool.isRequired,
-  translate: PropTypes.func
+  translate: PropTypes.func,
+  glSelectedChanged: PropTypes.string.isRequired,
 };
 
 OverviewContainer.contextTypes = {
