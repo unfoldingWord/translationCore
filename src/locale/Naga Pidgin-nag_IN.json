@@ -318,10 +318,10 @@
     }
   },
   "tools": {
-    "loading_tool_data": "Loading tool data.",
-    "resource_missing_for_tool": "The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.",
-    "no_checks_selected": "You must select a category to launch this tool",
-    "book_not_supported": "Book not supported",
+    "loading_tool_data": "Data load hoi ashe.",
+    "resource_missing_for_tool": "Etya laga oshtro karne UGNT dusra anubaad lage. Itu sampad tu bachabole karne morom pora Download te click kuribi.",
+    "no_checks_selected": "Itu oshtro tu cholabole karne aapni jeneka hoilebi ekta shreni chunibole lage",
+    "book_not_supported": "Sahayata neahuwa pustak",
     "select_tool_from_list": "Select a tool and a gateway language from the list.",
     "tools": "Tools",
     "no_tools": "No ${app} default tools found.",
