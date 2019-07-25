@@ -371,9 +371,9 @@
     "comments": "Mantabya",
     "menu": "Menu",
     "no_gl_available": "Uplabda nathaka",
-    "invalid_checks": "Invalidated checks",
-    "invalid_verse_alignments": "Verses with invalidated alignments.",
-    "invalidation_checking": "Checking if this edit conflicts with saved selections and alignments...",
+    "invalid_checks": "Inkaar kura check khan",
+    "invalid_verse_alignments": "Thik thak namila verse khan.",
+    "invalidation_checking": "Bachaikena rakha milaikena rakha khan logote itu sudhar tu sangharsa kure na nakure check kuri ashe...",
     "alignments_reset_wa_tool": "Changes have been detected in your project which have invalidated some of your alignments.\nThese verses display an icon of a broken chain next to the reference in the side menu.",
     "invalid_verse_alignments_and_selections": "Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu."
   },
