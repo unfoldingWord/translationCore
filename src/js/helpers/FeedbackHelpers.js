@@ -59,20 +59,6 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext)
  * @return {AxiosPromise}
  */
 export const submitFeedback = ({ category, message, name, email, state }) => {
-  const osInfo = {
-    arch: os.arch(),
-    cpus: os.cpus(),
-    memory: os.totalmem(),
-    type: os.type(),
-    networkInterfaces: os.networkInterfaces(),
-    loadavg: os.loadavg(),
-    eol: os.EOL,
-    userInfo: os.userInfo(),
-    homedir: os.homedir(),
-    platform: os.platform(),
-    release: os.release()
-  };
-
   let fromContact = {
     email: process.env.TC_HELP_DESK_EMAIL,
     name: 'Help Desk'
@@ -93,6 +79,19 @@ export const submitFeedback = ({ category, message, name, email, state }) => {
   }
   if (state) {
     const stateString = stringifySafe(state, "[error loading state]");
+    const osInfo = {
+      arch: os.arch(),
+      cpus: os.cpus(),
+      memory: os.totalmem(),
+      type: os.type(),
+      networkInterfaces: os.networkInterfaces(),
+      loadavg: os.loadavg(),
+      eol: os.EOL,
+      userInfo: os.userInfo(),
+      homedir: os.homedir(),
+      platform: os.platform(),
+      release: os.release()
+    };
     const osString = stringifySafe(osInfo,
       "[error loading system information]");
     fullMessage += `\n\nSystem Information:\n${osString}\n\nApp State:\n${stateString}`;

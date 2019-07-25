@@ -14,11 +14,12 @@ import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import {submitFeedback} from '../helpers/FeedbackHelpers';
 import {getCurrentLog} from '../helpers/logger';
 import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
-import {openAlertDialog} from '../actions/AlertModalActions';
+import {openAlertDialog, closeAlertDialog} from '../actions/AlertModalActions';
 import {feedbackDialogClosing} from "../actions/HomeScreenActions";
 import {LOG_FILES_PATH} from "../common/constants";
+import {delay} from "../common/utils";
 
-const MAX_LOG_SIZE = 1; // maximum amount of log data to attach to message
+const MAX_LOG_SIZE = 100000; // maximum amount of log data to attach to message
 
 /**
  * Renders a dialog to submit user feedback.
@@ -62,49 +63,55 @@ class FeedbackDialogContainer extends React.Component {
    */
   _submitFeedback(payload) {
     const {category, email, includeLogs} = payload;
-    const {log, openAlertDialog, translate, username, errorFeedbackMessage, errorFeedbackExtraDetails} = this.props;
+    const {openAlertDialog, translate, username, errorFeedbackMessage,
+      errorFeedbackExtraDetails, closeAlertDialog} = this.props;
 
     let {message} = payload;
+    message = message ? message.trim() : "";
+    let logData = "";
+    if (includeLogs) {
+      logData = getCurrentLog(LOG_FILES_PATH).trim().substr(-MAX_LOG_SIZE); // trim and truncate
+    }
+    let extraData = "";
     if (errorFeedbackMessage) {
-      message = (message || "") + "\n\n------------\nError Feedback Message:\n" + errorFeedbackMessage;
+      extraData += "\n\n*********\nError Feedback Message:\n" + errorFeedbackMessage;
     }
     if (errorFeedbackExtraDetails) {
-      message = (message || "") + "\n\nExtra Details:\n" + errorFeedbackExtraDetails;
+      extraData += "\n\n*********\nExtra Details:\n" + errorFeedbackExtraDetails;
     }
-    console.log("FeedbackDialogContainer._submitFeedback() - sending: ", {email, username, message});
-    if (includeLogs) {
-      let logData = getCurrentLog(LOG_FILES_PATH);
-      if (logData.length > MAX_LOG_SIZE) {
-        logData = logData.substr(logData.length - MAX_LOG_SIZE);
-      }
-      if (logData) {
-        message = (message || "") + "\n\nLog:\n" + logData;
-      }
+    extraData = extraData.trim();
+    if (extraData) {
+      message += "\n\n------------\n" + extraData + "\n";
     }
-    // console.log("FeedbackDialogContainer._submitFeedback() - sending: ", {email, username, message});
+    console.log("FeedbackDialogContainer._submitFeedback() - sending: ", {email, username, message, extraData});
 
-    submitFeedback({
-      category,
-      message,
-      name: username,
-      email,
-      state: (includeLogs ? log : undefined)
-    }).then(() => {
-      console.log('FeedbackDialogContainer._submitFeedback() - Submitted');
-      this.setState({
-        submitSuccess: true
-      });
-    }).catch(error => {
-      if(error.message === 'Network Error') {
-        console.error('FeedbackDialogContainer._submitFeedback() - Network Error', error);
-        openAlertDialog(translate('no_internet'));
-      } else {
-        console.error('FeedbackDialogContainer._submitFeedback() - Failed to submit feedback', error);
+    openAlertDialog(translate("sending_feedback"), true);
+    delay(1000).then(() => {
+      submitFeedback({
+        category,
+        message,
+        name: username,
+        email,
+        state: (includeLogs ? {logData} : undefined)
+      }).then(() => {
+        console.log('FeedbackDialogContainer._submitFeedback() - Submitted');
+        closeAlertDialog();
         this.setState({
-          submitError: true,
-          feedback: payload
+          submitSuccess: true
         });
-      }
+      }).catch(error => {
+        closeAlertDialog();
+        if (error.message === 'Network Error') {
+          console.error('FeedbackDialogContainer._submitFeedback() - Network Error', error);
+          openAlertDialog(translate('no_internet'));
+        } else {
+          console.error('FeedbackDialogContainer._submitFeedback() - Failed to submit feedback', error);
+          this.setState({
+            submitError: true,
+            feedback: payload
+          });
+        }
+      });
     });
   }
 
@@ -143,7 +150,7 @@ class FeedbackDialogContainer extends React.Component {
                             open={show}
                             onClose={this._handleClose}/>;
     } else {
-      // default to values in reducer
+      // if previous state data not feedback, use values in reducer
       message = message || errorFeedbackMessage;
       category = category || errorFeedbackCategory;
       return <FeedbackDialog onClose={this._handleClose}
@@ -159,7 +166,6 @@ class FeedbackDialogContainer extends React.Component {
 }
 
 FeedbackDialogContainer.propTypes = {
-  log: PropTypes.object,
   email: PropTypes.string,
   username: PropTypes.string,
   translate: PropTypes.func.isRequired,
@@ -167,33 +173,16 @@ FeedbackDialogContainer.propTypes = {
   open: PropTypes.bool.isRequired,
   confirmOnlineAction: PropTypes.func,
   openAlertDialog: PropTypes.func,
+  closeAlertDialog: PropTypes.func,
   errorFeedbackMessage: PropTypes.string,
   errorFeedbackExtraDetails: PropTypes.string,
   errorFeedbackCategory: PropTypes.string,
-  feedbackDialogClosing: PropTypes.func,
-  getErrorFeedbackExtraDetails: PropTypes.func
+  feedbackDialogClosing: PropTypes.func
 };
 
 const mapStateToProps = (state) => ({
   email: getUserEmail(state),
   username: getUsername(state),
-  log: {
-    ...state,
-    locale: '[truncated]',
-    groupsDataReducer: '[truncated]',
-    groupsIndexReducer: '[truncated]',
-    toolsReducer: {
-      ...state.toolsReducer,
-      toolsMetadata: '[truncated]',
-      apis: '[truncated]',
-      currentToolViews: '[truncated]'
-    },
-    projectDetailsReducer: {
-      ...state.projectDetailsReducer,
-      manifest: '[truncated]'
-    },
-    resourcesReducer: '[truncated]'
-  },
   errorFeedbackMessage: getErrorFeedbackMessage(state),
   errorFeedbackExtraDetails: getErrorFeedbackExtraDetails(state),
   errorFeedbackCategory: getErrorFeedbackCategory(state)
@@ -202,6 +191,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   confirmOnlineAction,
   openAlertDialog,
+  closeAlertDialog,
   feedbackDialogClosing
 };
 
