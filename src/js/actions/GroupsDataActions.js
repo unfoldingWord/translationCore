@@ -34,7 +34,7 @@ export const addGroupData = (groupId, groupsData) => {
  */
 export function verifyGroupDataMatchesWithFs() {
   console.log("verifyGroupDataMatchesWithFs()");
-  return ((dispatch, getState) => {
+  return (async (dispatch, getState) => {
     const state = getState();
     const toolName = getSelectedToolName(state);
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
@@ -101,7 +101,7 @@ export function verifyGroupDataMatchesWithFs() {
         }
       }
       if (Object.keys(checkVerseEdits).length) {
-        dispatch(ensureCheckVerseEditsInGroupData(checkVerseEdits));
+        await dispatch(ensureCheckVerseEditsInGroupData(checkVerseEdits));
       }
       // run the batch of queue actions
       if (actionsBatch.length) {
