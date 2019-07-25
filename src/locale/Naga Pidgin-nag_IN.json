@@ -64,7 +64,7 @@
   "include_app_logs": "Application logs bi milabi",
   "alignment_prompt": "Aapni laga lekha logote milai diya laga data pathabole itcha ashe naki?",
   "include_alignment_check": "Milai diya data bi antarbhuk kuribi ",
-  "loading_verse_edits": "Sampadon kura verse load hoi ashe",
+  "loading_verse_edits": "verse sudhar load hoi ashe",
   "updates": {
     "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Talika unnati karne check kuribi",
