@@ -12,9 +12,6 @@ import {
   TARGET_LANGUAGE,
   TARGET_BIBLE,
   WORD_ALIGNMENT,
-  TRANSLATION_WORDS,
-  TRANSLATION_ACADEMY,
-  TRANSLATION_HELPS
 } from '../src/js/common/constants';
 
 const middlewares = [thunk];
@@ -96,82 +93,7 @@ describe('ResourcesActions', () => {
     validateExpectedResources(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "bibleId", expectedResources);
   });
 
-  it('findArticleFilePath for abel in en', () => {
-    loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'abel', 'en');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10', 'names', 'articles', 'abel.md');
-    expect(filePath).toEqual(expectedPath);
-  });
 
-  it('findArticleFilePath for a non-existing file', () => {
-    loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'does-not-exist', 'en');
-    expect(filePath).toBeNull();
-  });
-
-  it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
-    loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'abomination', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'hi', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v8.1', 'kt', 'articles', 'abomination.md');
-    expect(filePath).toEqual(expectedPath);
-  });
-
-  it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
-    loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'abraham', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10', 'names', 'articles', 'abraham.md');
-    expect(filePath).toEqual(expectedPath);
-  });
-
-  it('findArticleFilePath for tA translate-names which is not in Hindi so should return English', () => {
-    loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_ACADEMY, 'translate-names', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_ACADEMY, 'v9', 'translate', 'translate-names.md');
-    expect(filePath).toEqual(expectedPath);
-  });
-
-  it('findArticleFilePath for tW abraham but giving a wrong category should return null', () => {
-    loadMockFsWithProjectAndResources();
-    const filePath = ResourcesActions.findArticleFilePath(TRANSLATION_WORDS, 'abraham', 'en', 'kt');
-    expect(filePath).toBeNull();
-  });
-
-  it('loadResourceArticle for tW abraham giving correct category', () => {
-    loadMockFsWithProjectAndResources();
-    const articleId = 'abraham';
-    const category = 'names';
-    const content = ResourcesActions.loadArticleData(TRANSLATION_WORDS, articleId, 'en', category);
-    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-    expect(content).toBeTruthy();
-    expect(content).not.toEqual(notExpectedContent);
-  });
-
-  it('loadArticeData for tW abraham but giving a wrong category should return not found message', () => {
-    loadMockFsWithProjectAndResources();
-    const articleId = 'abraham';
-    const category = 'kt';
-    const content = ResourcesActions.loadArticleData(TRANSLATION_WORDS, articleId, 'en', category);
-    const expectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-    expect(content).toEqual(expectedContent);
-  });
-
-  it('loadResourceArticle for tW abraham with no category', () => {
-    loadMockFsWithProjectAndResources();
-    const articleId = 'abraham';
-    const content = ResourcesActions.loadArticleData(TRANSLATION_WORDS, articleId, 'en');
-    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-    expect(content).toBeTruthy();
-    expect(content).not.toEqual(notExpectedContent);
-  });
-
-  it('loadResourceArticle for tA translate-names with no category and hindi should still find (English) content', () => {
-    loadMockFsWithProjectAndResources();
-    const articleId = 'translate-names';
-    const content = ResourcesActions.loadArticleData(TRANSLATION_ACADEMY, articleId, 'hi');
-    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-    expect(content).toBeTruthy();
-    expect(content).not.toEqual(notExpectedContent);
-  });
 
   it('loads a book resource', () => {
     const bookId = 'gal';
