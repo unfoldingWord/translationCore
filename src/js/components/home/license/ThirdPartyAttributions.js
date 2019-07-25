@@ -1,6 +1,6 @@
 import React from "react";
 import attributionData from "./attributionData.json";
-import {getAttributions} from "../../../helpers/LicensesHelpers"
+import {getAttributions} from "../../../helpers/LicensesHelpers";
 
 class ThirdPartyAttributions extends React.Component {
   render() {
