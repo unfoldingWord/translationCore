@@ -32,34 +32,45 @@ class HomeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCategoriesChanged: false
+      selectedCategoriesChanged: false,
+      glSelectedChanged: false,
     };
   }
 
   componentDidUpdate(prevProps) {
     const {
       toolsReducer: { selectedTool },
-      projectDetailsReducer: { toolsCategories }
+      projectDetailsReducer: {
+        toolsCategories,
+        currentProjectToolsSelectedGL,
+      },
     } = this.props.reducers;
     const {
       projectDetailsReducer: {
-        toolsCategories: prevToolsCategories
+        toolsCategories: prevToolsCategories,
+        currentProjectToolsSelectedGL: prevCurrentProjectToolsSelectedGL
       }
     } = prevProps.reducers;
 
+    const currentSelectedGL = currentProjectToolsSelectedGL[selectedTool];
+    const prevCurrentSelectedGL = prevCurrentProjectToolsSelectedGL[selectedTool];
+    const glSelectedChanged = prevCurrentSelectedGL !== currentSelectedGL;
+    if (glSelectedChanged) this.setState({ glSelectedChanged });
     if(!_.isEqual(prevToolsCategories[selectedTool], toolsCategories[selectedTool])) {
       this.setState({ selectedCategoriesChanged: true });
     }
   }
 
   render() {
-    let {
-      stepper: {
-        stepIndex
+    const {
+      homeScreenReducer: {
+        stepper: {
+          stepIndex
+        },
+        showWelcomeSplash,
+        showLicenseModal,
       },
-      showWelcomeSplash,
-      showLicenseModal
-    } = this.props.reducers.homeScreenReducer;
+    } = this.props.reducers;
 
     let displayContainer = <div />;
 
@@ -69,6 +80,7 @@ class HomeContainer extends Component {
           <Overview
             {...this.props}
             selectedCategoriesChanged={this.state.selectedCategoriesChanged}
+            glSelectedChanged={this.state.glSelectedChanged}
           />
         );
         break;

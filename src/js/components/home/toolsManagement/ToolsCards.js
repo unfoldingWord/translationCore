@@ -97,6 +97,7 @@ const ToolsCards = ({
                   folderName: tool.path,
                   name: tool.name
                 }}
+                currentSelectedGL={currentProjectToolsSelectedGL[tool.name] || ''}
                 isOLBookVersionMissing={!!isOLBookVersionMissing}
                 onMissingResource={() => onMissingResource(missingOLResource)}
                 invalidatedReducer={invalidatedReducer}
@@ -123,6 +124,7 @@ ToolsCards.propTypes = {
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
+  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
 };
 
 export default ToolsCards;
