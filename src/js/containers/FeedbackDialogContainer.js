@@ -18,6 +18,8 @@ import {openAlertDialog} from '../actions/AlertModalActions';
 import {feedbackDialogClosing} from "../actions/HomeScreenActions";
 import {LOG_FILES_PATH} from "../common/constants";
 
+const MAX_LOG_SIZE = 1; // maximum amount of log data to attach to message
+
 /**
  * Renders a dialog to submit user feedback.
  *
@@ -64,19 +66,22 @@ class FeedbackDialogContainer extends React.Component {
 
     let {message} = payload;
     if (errorFeedbackMessage) {
-      message = (message || "") + "\n\n------------\n" + errorFeedbackMessage;
+      message = (message || "") + "\n\n------------\nError Feedback Message:\n" + errorFeedbackMessage;
     }
-    console.log("FeedbackDialogContainer._submitFeedback() - sending: ", {email, username, message});
     if (errorFeedbackExtraDetails) {
-      message = (message || "") + "\n\n------------\n" + errorFeedbackExtraDetails;
+      message = (message || "") + "\n\nExtra Details:\n" + errorFeedbackExtraDetails;
     }
     console.log("FeedbackDialogContainer._submitFeedback() - sending: ", {email, username, message});
     if (includeLogs) {
-      const logData = getCurrentLog(LOG_FILES_PATH);
+      let logData = getCurrentLog(LOG_FILES_PATH);
+      if (logData.length > MAX_LOG_SIZE) {
+        logData = logData.substr(logData.length - MAX_LOG_SIZE);
+      }
       if (logData) {
-        message = (message || "") + "\n\n------------\n" + logData;
+        message = (message || "") + "\n\nLog:\n" + logData;
       }
     }
+    // console.log("FeedbackDialogContainer._submitFeedback() - sending: ", {email, username, message});
 
     submitFeedback({
       category,
@@ -85,7 +90,7 @@ class FeedbackDialogContainer extends React.Component {
       email,
       state: (includeLogs ? log : undefined)
     }).then(() => {
-      console.error('FeedbackDialogContainer._submitFeedback() - Submitted');
+      console.log('FeedbackDialogContainer._submitFeedback() - Submitted');
       this.setState({
         submitSuccess: true
       });
