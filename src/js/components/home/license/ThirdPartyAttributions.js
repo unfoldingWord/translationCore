@@ -1,5 +1,6 @@
 import React from "react";
 import attributionData from "./attributionData.json";
+import {getAttributions} from "../../../helpers/LicensesHelpers"
 
 class ThirdPartyAttributions extends React.Component {
   render() {
@@ -12,21 +13,5 @@ class ThirdPartyAttributions extends React.Component {
     );
   }
 }
-
-const getAttributions = (attributionMap) => {
-  let attributions = [];
-  for(let name in attributionMap) {
-    attributions.push(
-      <div key={name} style={{paddingTop: "10px", textAlignment: "center"}}>
-        <p>
-          <a href={attributionMap[name].repository}>{name}</a><br/>
-          {attributionMap[name].license}
-        </p>
-        <hr style={{width: "50%"}}/>
-      </div>
-    );
-  }
-  return attributions;
-};
 
 module.exports = ThirdPartyAttributions;

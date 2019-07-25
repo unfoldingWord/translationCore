@@ -5,16 +5,16 @@ const path = require('path-extra');
 // package.json's dependencies list, or if a package's info needs correction. These packages will also appear first
 // in the package list of the generated attributions JSON file. It needs to be keyed by the packages's name, and have
 // 'reference' (URL to the package), and 'license' as the license type. 'version' is optional.
-export const staticPackages = {
+const staticPackages = {
   'electron': {
-    'reference': 'https://github.com/electron/electron',
+    'repository': 'https://github.com/electron/electron',
     'license': 'MIT',
     'version': '3.0.11'
   }
 };
 
 // All font attributions are static and thus need to be listed here.
-export const staticFonts = {
+const staticFonts = {
   'Noto Sans': {
     'license' : 'SIL Open Font License',
     'repository': 'https://github.com/googlefonts/noto-fonts'
@@ -29,7 +29,7 @@ export const staticFonts = {
 // packageRename are when we are using an older version of a package or a forked version
 // The key is the package name as it appears in packages.json's dependencies list, and the attributes
 // are what we want name and the repository URL to be.
-export const packageRename = {
+const packageRename = {
   '@neutrinog/electron-dl': {
     name: 'electron-dl',
     repository: 'https://github.com/sindresorhus/electron-dl'
@@ -42,7 +42,7 @@ export const packageRename = {
 
 // These are packages we don't want to attribute such as our own code bases, or redundant packages such as extra
 // material-ui packages.
-export const ignorePackages = [
+const ignorePackages = [
   '@material-ui/icons',
   'checking-tool-wrapper',
   'gogs-client',
@@ -95,9 +95,9 @@ const generateAttributionData = (baseDir, outputFile) => {
 
     // We do not give self attributions so ignore repos in the ignorePackages list or those
     // with translationCoreApps or unfoldingWord-dev as their owner
-    if (ignorePackages.indexOf(pkg) < 0 && ! attributionData['packages'][name] &&
-      ! repository.toLowerCase().includes('translationcoreapps') &&
-      ! repository.toLowerCase().includes('unfoldingword-dev')) {
+    if (ignorePackages.indexOf(pkg) < 0 && !attributionData['packages'][name] &&
+      !repository.toLowerCase().includes('translationcoreapps') &&
+      !repository.toLowerCase().includes('unfoldingword-dev')) {
       attributionData['packages'][name] = {
         'license': license,
         'repository': repository,
@@ -113,7 +113,7 @@ const generateAttributionData = (baseDir, outputFile) => {
 
 // Since a package's repository URL can have many forms, this function properly converts them to http(s) URLs and cleans
 // them up.
-function getProperHTTPURL(pkg, repoUrl) {
+const getProperHTTPURL = (pkg, repoUrl) => {
   if (!repoUrl) {
     // No URL so we expect to find it in the npmjs.com package database
     return 'https://npmjs.com/package/' + pkg;
@@ -146,4 +146,13 @@ function getProperHTTPURL(pkg, repoUrl) {
     repoUrl = repoUrl.replace(/\.git$/, '');
   }
   return repoUrl;
-}
+};
+
+
+module.exports = {
+  staticPackages,
+  staticFonts,
+  packageRename,
+  ignorePackages,
+  generateAttributionData
+};

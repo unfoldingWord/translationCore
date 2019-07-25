@@ -1,9 +1,9 @@
 {
-  "_comment1": "WARNING: Do NOT modify this file by hand. Add any special packages or fonts to `[tC root]/scripts/attributions/generateAttributionsData.js` and run `npm run update-attributions`.",
-  "_comment2": "If any auto-generated data is wrong, simply copy the package's entry below into generateAttributionData.js's staticPackages map with the same key and change what needs to be modified.",
+  "_comment1": "WARNING: Do NOT modify this file by hand. Add any special packages or fonts to `[tC root]/scripts/attributions/attributionHelpers.js` and run `npm run update-attributions`.",
+  "_comment2": "If any auto-generated data is wrong, simply copy the package's entry below into attributionHelpers.js's staticPackages map with the same key and change what needs to be modified.",
   "packages": {
     "electron": {
-      "reference": "https://github.com/electron/electron",
+      "repository": "https://github.com/electron/electron",
       "license": "MIT",
       "version": "3.0.11"
     },
