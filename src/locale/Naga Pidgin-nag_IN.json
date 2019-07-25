@@ -238,11 +238,11 @@
     "only_nt_supported": "Itu ${app} anubad tu khali Nautun Niom laga project khan ke sahayata kure.",
     "old_project_unsupported": "Itu project te purana anubad ${app} laga data khan ashe junke itu pradarshan tu sahayata nakure. Itu project tu khulibole modot pabo karne nautun pora suru koribo karne nohole check kuribole karne, morom pora help@door43.org. te samparka kuribi.",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
-      "field_invalid_length": "Must be 3-4 letters long",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "info": "(3 nohole 4 chinaki <br/>code, E.G. KJV, NIV, etc.)",
+      "field_invalid_length": "Jeneka hoilebi 3-4 aksar hobo lage",
+      "invalid_characters": "Khali Latin laga moulik aksar khan he sahayata hoi"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
+    "conflicting_project": "Itu bhasa aru pustak karne aage pora ekjon parisayak laga ekta project thaki ashe.",
     "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
   },
   "book_list": {
