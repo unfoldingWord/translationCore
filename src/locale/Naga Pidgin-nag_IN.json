@@ -243,7 +243,7 @@
       "invalid_characters": "Khali Latin laga moulik aksar khan he sahayata hoi"
     },
     "conflicting_project": "Itu bhasa aru pustak karne aage pora ekjon parisayak laga ekta project thaki ashe.",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "newer_project": "Itu project tu translationCore laga sabse nautun anubad te bana hoise. Morom pora sobse nautun anubad tu unnati koribi aru wapash koshis koribi."
   },
   "book_list": {
     "ot": {
@@ -271,7 +271,7 @@
       "sng": "Song of Solomon (${book_id})",
       "isa": "Isaiah (${book_id})",
       "jer": "Jeremiah (${book_id})",
-      "lam": "Lamentations (${book_id})",
+      "lam": "Lamentation (${book_id})",
       "ezk": "Ezekiel (${book_id})",
       "dan": "Daniel (${book_id})",
       "hos": "Hosea (${book_id})",
