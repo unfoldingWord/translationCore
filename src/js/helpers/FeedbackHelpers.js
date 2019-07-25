@@ -118,7 +118,6 @@ export const submitFeedback = ({ category, message, name, email, state }) => {
       "from": fromContact,
       "reply_to": fromContact,
       "content": [
-        { type: "text/plain", value: fullMessage },
         { type: "text/html", value: fullMessage.replace(/\n/g, "<br>") }
       ]
     }

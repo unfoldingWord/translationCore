@@ -100,16 +100,17 @@ class FeedbackDialogContainer extends React.Component {
           submitSuccess: true
         });
       }).catch(error => {
+        this.setState({
+          submitError: true,
+          feedback: payload
+        });
         closeAlertDialog();
         if (error.message === 'Network Error') {
           console.error('FeedbackDialogContainer._submitFeedback() - Network Error', error);
           openAlertDialog(translate('no_internet'));
         } else {
+          openAlertDialog(translate('sending_feedback_failed'));
           console.error('FeedbackDialogContainer._submitFeedback() - Failed to submit feedback', error);
-          this.setState({
-            submitError: true,
-            feedback: payload
-          });
         }
       });
     });

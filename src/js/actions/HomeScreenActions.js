@@ -53,6 +53,8 @@ export function feedbackDialogClosing() {
   return ((dispatch, getState) => {
     let callback = getFeedbackCloseCallback(getState());
     dispatch(setErrorFeedbackMessage('')); // clear message that caused the popup
+    dispatch(setErrorFeedbackCategory(null)); // clear category
+    dispatch(setErrorFeedbackDetails("")); // clear error details
     dispatch(setFeedbackCloseCallback(null)); // remove callback function
     new Promise(() => {
       if (callback) {

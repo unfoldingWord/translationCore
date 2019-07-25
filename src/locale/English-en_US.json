@@ -66,6 +66,7 @@
   "include_alignment_check": "Include alignment data",
   "loading_verse_edits": "Loading Verse Edits",
   "sending_feedback": "Sending Feedback",
+  "sending_feedback_failed": "Failed to Send Feedback",
   "updates": {
     "check_for_newer_app": "Check for software updates",
     "check_for_content_updates": "Check for content updates",
