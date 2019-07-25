@@ -235,7 +235,7 @@
     "merge_conflict": "Milawati gorbor ${conflict_number}",
     "conflict_reference": "Itu ekta chapter ${chapter}, verse ${verse} laga milawati gorbor ashe.",
     "missing_verses_instructions": "Kunba verse khan appni laga project te haraikena ashe.",
-    "only_nt_supported": "This version of ${app} only supports New Testament projects.",
+    "only_nt_supported": "Itu ${app} anubad tu khali Nautun Niom laga project khan ke sahayata kure.",
     "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
     "resource_id": {
       "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
