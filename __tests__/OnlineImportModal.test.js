@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
+import {shallow} from 'enzyme'
 import OnlineImportModal from '../src/js/components/home/projectsManagement/OnlineImportModal';
 
 describe('OnlineImportModal component renders correctly', () => {
@@ -70,14 +70,14 @@ describe('OnlineImportModal component renders correctly', () => {
       searchReposByQuery: () => jest.fn()
     };
 
-    const tree = renderer.create(
+    const modal = shallow(
       <OnlineImportModal
         translate={key => key}
         importOnlineReducer={importOnlineReducer}
         homeScreenReducer={homeScreenReducer}
         loginReducer={loginReducer}
         actions={actions} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    ).dive();
+    expect(modal).toMatchSnapshot();
   });
 });
