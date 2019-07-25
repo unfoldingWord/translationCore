@@ -150,6 +150,8 @@
     "import_online_project": "Импорт проекта из интернета",
     "searching_alert": "Подождите, идёт поиск...",
     "books_available": "Эта версия ${app}, инструмент переводСлов поддерживает проекты Нового Завета, а инструмент Совпадение Слов поддерживает проекты всей Библии.",
+    "supports_any_book": "${app} supports projects for any book of the Bible.",
+    "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
     "enter_url": "Введите URL",
     "or": "или",
     "language_code": "Код языка",
@@ -316,6 +318,7 @@
     }
   },
   "tools": {
+    "loading_tool_data": "Loading tool data.",
     "resource_missing_for_tool": "The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.",
     "no_checks_selected": "Вы должны выбрать категорию, чтобы запустить этот инструмент",
     "book_not_supported": "Книга не поддерживается",
