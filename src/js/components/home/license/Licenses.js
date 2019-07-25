@@ -1,7 +1,6 @@
 import React from 'react';
 import ThirdPartyAttributions from './ThirdPartyAttributions.js';
 import PropTypes from 'prop-types';
-import LicenseModal from './LicenseModal';
 
 const Licenses = ({translate}) => {
   return(
