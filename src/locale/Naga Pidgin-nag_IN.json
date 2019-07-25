@@ -236,7 +236,7 @@
     "conflict_reference": "Itu ekta chapter ${chapter}, verse ${verse} laga milawati gorbor ashe.",
     "missing_verses_instructions": "Kunba verse khan appni laga project te haraikena ashe.",
     "only_nt_supported": "Itu ${app} anubad tu khali Nautun Niom laga project khan ke sahayata kure.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
+    "old_project_unsupported": "Itu project te purana anubad ${app} laga data khan ashe junke itu pradarshan tu sahayata nakure. Itu project tu khulibole modot pabo karne nautun pora suru koribo karne nohole check kuribole karne, morom pora help@door43.org. te samparka kuribi.",
     "resource_id": {
       "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
       "field_invalid_length": "Must be 3-4 letters long",
