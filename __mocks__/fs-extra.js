@@ -104,7 +104,8 @@ function readJsonSync(filePath) {
 }
 
 function existsSync(path) {
-  return mockFS[path] !== '' ? !!mockFS[path] : true;
+  const exists = mockFS[path] !== '' ? !!mockFS[path] : true;
+  return exists;
 }
 
 function exists(path) {
