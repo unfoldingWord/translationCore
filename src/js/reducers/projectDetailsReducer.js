@@ -20,7 +20,7 @@ const projectDetailsReducer = (state = initialState, action) => {
         ...state,
         toolsCategories: {
           ...state.toolsCategories,
-          [action.toolName]: action.selectedCategories
+          [action.toolName]: action.selectedSubcategories
         }
       };
     case consts.SET_SAVE_PATH_LOCATION:

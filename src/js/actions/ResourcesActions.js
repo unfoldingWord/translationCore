@@ -11,18 +11,12 @@ import * as SettingsActions from "./SettingsActions";
 // helpers
 import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
 import * as SettingsHelpers from "../helpers/SettingsHelpers";
-import {DEFAULT_GATEWAY_LANGUAGE} from "../helpers/gatewayLanguageHelpers";
 import * as BibleHelpers from "../helpers/bibleHelpers";
-import ResourceAPI from "../helpers/ResourceAPI";
 import * as Bible from '../common/BooksOfTheBible';
 import {
   ORIGINAL_LANGUAGE,
   TARGET_BIBLE,
   TARGET_LANGUAGE,
-  TRANSLATION_WORDS,
-  TRANSLATION_NOTES,
-  TRANSLATION_ACADEMY,
-  TRANSLATION_HELPS
 } from '../common/constants';
 
 // constants
@@ -226,11 +220,12 @@ export const loadBiblesByLanguageId = (languageId) => {
     const bibles = getBibles(getState());
     // check if the languae id is already included in the bibles object.
     const isIncluded = Object.keys(bibles).includes(languageId);
-
-    if (!isIncluded && fs.existsSync(bibleFolderPath) && bookId) {
+    if (fs.existsSync(bibleFolderPath) && bookId) {
       const bibleIds = fs.readdirSync(bibleFolderPath).filter(file => file !== ".DS_Store");
       bibleIds.forEach(bibleId => {
-        dispatch(loadBibleBook(bibleId, bookId, languageId));
+        if (!isIncluded || !bibles[languageId][bibleId]) { //TRICKY: just because we have a bible in the language loaded does not mean we have all the bibles loaded
+          dispatch(loadBibleBook(bibleId, bookId, languageId));
+        }
       });
     }
   };
@@ -411,7 +406,7 @@ export const loadSourceBookTranslations = (bookId, toolName) => async (dispatch,
  */
 export const loadResourceArticle = (resourceType, articleId, languageId, category='') => {
   return ((dispatch) => {
-    const articleData = loadArticleData(resourceType, articleId, languageId, category);
+    const articleData = ResourcesHelpers.loadArticleData(resourceType, articleId, languageId, category);
     // populate reducer with markdown data
     dispatch({
       type: consts.ADD_TRANSLATIONHELPS_ARTICLE,
@@ -421,72 +416,6 @@ export const loadResourceArticle = (resourceType, articleId, languageId, categor
       articleData
     });
   });
-};
-
-/**
- * Get the content of an article from disk
- * @param {String} resourceType
- * @param {String} articleId
- * @param {String} languageId
- * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
- * @returns {String} - the content of the article
- */
-export const loadArticleData = (resourceType, articleId, languageId, category='') => {
-  let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
-  if (articleFilePath) {
-    articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
-  }
-  return articleData;
-};
-
-/**
- * Finds the article file within a resoure type's path, looking at both the given language and default language in all possible category dirs
- * @param {String} resourceType - e.g. translationWords, translationNotes
- * @param {String} articleId
- * @param {String} languageId - languageId will be first checked, and then we'll try the default GL
- * @param {String} category - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
- * @returns {String} - the path to the file, null if doesn't exist
- * Note: resourceType is coming from a tool name
- */
-export const findArticleFilePath = (resourceType, articleId, languageId, category='') => {
-  const languageDirs = [];
-  if (languageId) {
-    languageDirs.push(languageId);
-  }
-  if (languageId !== DEFAULT_GATEWAY_LANGUAGE) {
-    languageDirs.push(DEFAULT_GATEWAY_LANGUAGE);
-  }
-  let categories = [];
-  if (! category ){
-    if (resourceType === TRANSLATION_WORDS) {
-      categories = ['kt', 'names', 'other'];
-    } else if (resourceType === TRANSLATION_NOTES || resourceType === TRANSLATION_ACADEMY) {
-      categories = ['translate', 'checking', 'process', 'intro'];
-      resourceType = TRANSLATION_ACADEMY;
-    } else {
-      categories = ['content'];
-    }
-  } else {
-    categories.push(category);
-  }
-  const articleFile = articleId + '.md';
-  for(let i = 0, len = languageDirs.length; i < len; ++i) {
-    let languageDir = languageDirs[i];
-    let typePath = path.join(USER_RESOURCES_PATH, languageDir, TRANSLATION_HELPS, resourceType);
-    let versionPath = ResourceAPI.getLatestVersion(typePath) || typePath;
-    for(let j = 0, jLen = categories.length; j < jLen; ++j) {
-      let categoryDir = categories[j];
-      if (resourceType === TRANSLATION_WORDS) {
-        categoryDir = path.join(categoryDir, 'articles');
-      }
-      let articleFilePath = path.join(versionPath, categoryDir, articleFile);
-      if (fs.existsSync(articleFilePath)) {
-        return articleFilePath;
-      }
-    }
-  }
-  return null;
 };
 
 /**

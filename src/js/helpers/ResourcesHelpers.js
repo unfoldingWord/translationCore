@@ -4,6 +4,7 @@ import path from "path-extra";
 import AdmZip from "adm-zip";
 import isEqual from "deep-equal";
 import _ from "lodash";
+import {getOtherTnsOLVersions} from 'tc-source-content-updater';
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
 import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
@@ -22,6 +23,7 @@ import {
 import * as Bible from "../common/BooksOfTheBible";
 import {generateTimestamp} from "./TimestampGenerator";
 import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
+import {DEFAULT_GATEWAY_LANGUAGE} from "./gatewayLanguageHelpers";
 // constants
 import {
   APP_VERSION,
@@ -35,7 +37,8 @@ import {
   TARGET_BIBLE,
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS,
+  TRANSLATION_ACADEMY,
 } from '../common/constants';
 
 /**
@@ -219,8 +222,10 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
  * @param {String} gatewayLanguage
  * @param {String} toolName
  * @param {String} projectDir
+ * @param {object} options = { withCategoryName: true } will return an
+ * array of objects instead, which include the category id & name.
  */
-export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir) {
+export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir, options = {}) {
   const categoriesObj = {};
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
@@ -251,12 +256,27 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
         if (!fs.pathExistsSync(resourceCategoryDir)) {
           groupsDir = altResourceCategoryDir;
         }
-        // copy un-loaded category group data into project
+        let groupIndex;
+        const groupIndexPath = path.join(helpDir, category, 'index.json');
+        if (options.withCategoryName && fs.existsSync(groupIndexPath)) {
+          groupIndex = fs.readJsonSync(groupIndexPath);
+        }
+        // copy not loaded category group data into project
         if (fs.pathExistsSync(groupsDir)) {
           const files = fs.readdirSync(groupsDir);
           for (const f of files) {
             if (path.extname(f).toLowerCase() === ".json") {
-              subCategories.push(path.basename(f.toLowerCase(), ".json"));
+              const id = path.basename(f.toLowerCase(), ".json");
+              let subCategory = id;
+              // Use an object that includes id & name instead of just a string
+              if (options.withCategoryName) {
+                subCategory = { id };
+                if (groupIndex) {
+                  subCategory = groupIndex.find(group => group.id === id);
+                }
+              }
+
+              subCategories.push(subCategory);
             }
           }
         }
@@ -286,8 +306,8 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
       return fs.lstatSync(path.join(helpDir, file)).isDirectory();
     });
     for (let i = 0, l = parentCategories.length; i < l; i++) {
-      const subCategory = parentCategories[i];
-      categories = categories.concat(project.getCategoryGroupIds(toolName, subCategory));
+      const categoryId = parentCategories[i];
+      categories = categories.concat(project.getCategoryGroupIds(toolName, categoryId));
     }
     if (categories.length > 0) {
       project.setSelectedCategories(toolName, categories);
@@ -333,7 +353,8 @@ export function loadProjectGroupIndex(
         try {
           const selectedSubcategories = categories[categoryName];
           // For categories with subcategories need to filter out not selected items.
-          const categoryIndices = fs.readJsonSync(categoryIndex).filter(item => selectedSubcategories.includes(item.id));
+          const categoryIndices = fs.readJsonSync(categoryIndex)
+              .filter(item => selectedSubcategories.includes(item.id));
           indices.push.apply(indices, categoryIndices);
         } catch (e) {
           console.error(`Failed to read group index from ${categoryIndex}`, e);
@@ -580,6 +601,7 @@ export function addResource(resources, languageId, bibleId) {
  * populates resourceList with resources that can be used in scripture pane
  * @param {Array} resourceList - array to be populated with resources
  * @return {Function}
+ * //TODO: This is not an action. Please clean up to take in the state as an argument.
  */
 export function getAvailableScripturePaneSelections(resourceList) {
   return ((dispatch, getState) => {
@@ -818,6 +840,7 @@ const checkForNewLexicons = (languageId) => {
  */
 // TODO: Maybe in future we can add a compatibility check so we don't have to remove all, but for now this will be safe
 export function removeOldThelps() {
+  const removedResources = {};
   const tcResourcesLanguages = getFilteredSubFolders(USER_RESOURCES_PATH);
   for (let languageId of tcResourcesLanguages) {
     if (languageId) {
@@ -827,10 +850,93 @@ export function removeOldThelps() {
           `%c    removeOldThelps() - removing: ${helpsFolder}`,
           'color: #00aced'
         );
+        const removedFolders = getFilteredSubFolders(helpsFolder);
+        removedResources[languageId] = {removedFolders, helpsFolder};
         fs.removeSync(helpsFolder);
       }
     }
   }
+  return removedResources;
+}
+
+/**
+ * move bibles from old grc resource folder
+ */
+export function moveResourcesFromOldGrcFolder() {
+  const oldGreekResourcesPath = path.join(USER_RESOURCES_PATH, 'grc');
+  try {
+    if (fs.existsSync(oldGreekResourcesPath)) {
+      const oldGrcBiblesPath = path.join(USER_RESOURCES_PATH, 'grc/bibles');
+      const newGrcBiblesPath = path.join(USER_RESOURCES_PATH, Bible.NT_ORIG_LANG, 'bibles');
+      const oldOrigLangBibles = getFilteredSubFolders(oldGrcBiblesPath);
+      for (const bible of oldOrigLangBibles) {
+        const oldBiblePath = path.join(oldGrcBiblesPath, bible);
+        if (bible !== Bible.NT_ORIG_LANG_BIBLE) {
+          const latestVersionOld = ResourceAPI.getLatestVersion(oldBiblePath);
+          if (latestVersionOld) {
+            let newerResource = true;
+            const newGrcBiblePath = path.join(newGrcBiblesPath, bible);
+            const latestVersionNew = ResourceAPI.getLatestVersion(newGrcBiblePath);
+            if (latestVersionNew) {
+              newerResource = ResourceAPI.compareVersions(path.basename(latestVersionOld), path.basename(latestVersionNew)) > 0;
+            }
+            if (newerResource) {
+              if (fs.existsSync(newGrcBiblePath)) {
+                console.log("moveResourcesFromOldGrcFolder() - removing old bible at " + newGrcBiblePath);
+                fs.removeSync(newGrcBiblePath);
+              }
+              const newVersionPath = path.join(newGrcBiblePath, path.basename(latestVersionOld));
+              console.log("moveResourcesFromOldGrcFolder() - moving over bible to " + newVersionPath);
+              fs.moveSync(path.join(latestVersionOld), newVersionPath);
+            }
+          }
+        } else { // if original language bible, copy over any missing versions from old path to new
+          const versions = getFilteredSubFolders(oldBiblePath);
+          for (const version of versions) {
+            const newVersionPath = path.join(newGrcBiblesPath, bible, version);
+            if (!fs.existsSync(newVersionPath)) {
+              console.log("moveResourcesFromOldGrcFolder() - copying over bible to " + newVersionPath);
+              fs.moveSync(path.join(oldBiblePath, version), newVersionPath);
+            }
+          }
+        }
+      }
+      fs.removeSync(oldGreekResourcesPath);
+    }
+  } catch (e) {
+    console.error("moveResourcesFromOldGrcFolder() - Error occurred migrating old bible resources from " +
+      oldGreekResourcesPath, e);
+  }
+}
+
+/**
+ * find out which Original Language Bible versions are needed by installed tNs.  Only keep the needed versions.
+ *    The other versions are deleted.
+ * @param languageId
+ * @param resourceId
+ * @param resourcePath
+ * @return {boolean} - returns true if all old resources can be deleted
+ */
+export function preserveNeededOrigLangVersions(languageId, resourceId, resourcePath) {
+  let deleteOldResources = true; // by default we do not keep old versions of resources
+  if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
+    const requiredVersions = getOtherTnsOLVersions(resourceId);
+    console.log("preserveNeededOrigLangVersions: requiredVersions", requiredVersions);
+    // see if we need to keep old versions of original language
+    if (requiredVersions && requiredVersions.length) {
+      deleteOldResources = false;
+      const versions = ResourceAPI.listVersions(resourcePath);
+      console.log("preserveNeededOrigLangVersions: versions", versions);
+      for (let version of versions) {
+        if (!requiredVersions.includes(version)) {
+          const oldPath = path.join(resourcePath, version);
+          console.log("preserveNeededOrigLangVersions: removing", oldPath);
+          fs.removeSync(oldPath);
+        }
+      }
+    }
+  }
+  return deleteOldResources;
 }
 
 /**
@@ -838,29 +944,29 @@ export function removeOldThelps() {
  */
 export function getMissingResources() {
   const tcResourcesLanguages = getFilteredSubFolders(STATIC_RESOURCES_PATH);
-
-  tcResourcesLanguages.forEach((languageId) => {
+  for( const languageId of tcResourcesLanguages) {
     console.log(`%c Checking for missing ${languageId} resources`, 'color: #00539C');
-    const STATIC_RESOURCES = path.join(STATIC_RESOURCES_PATH, languageId);
-    const USER_RESOURCES = path.join(USER_RESOURCES_PATH, languageId);
-    const resourceTypes = getFilteredSubFolders(STATIC_RESOURCES);
+    const staticLanguageResource = path.join(STATIC_RESOURCES_PATH, languageId);
+    const userLanguageResource = path.join(USER_RESOURCES_PATH, languageId);
+    const resourceTypes = getFilteredSubFolders(staticLanguageResource);
 
-    resourceTypes.forEach(resourceType => {// resourceType: bibles, lexicons or translationHelps
-      const resourceTypePath = path.join(STATIC_RESOURCES, resourceType);
+    for( const resourceType of resourceTypes) {// resourceType: bibles, lexicons or translationHelps
+      const resourceTypePath = path.join(staticLanguageResource, resourceType);
       const resourceIds = getFilteredSubFolders(resourceTypePath);
-      resourceIds.forEach(resourceId => {// resourceId: udb, ult, ugl, translationWords, translationNotes
-        const USER_RESOURCE_PATH = path.join(USER_RESOURCES, resourceType, resourceId);
-        const STATIC_RESOURCE_PATH = path.join(STATIC_RESOURCES, resourceType, resourceId);
+      for( const resourceId of resourceIds) {// resourceId: udb, ult, ugl, translationWords, translationNotes
+        const userResourcePath = path.join(userLanguageResource, resourceType, resourceId);
+        const staticResourcePath = path.join(staticLanguageResource, resourceType, resourceId);
 
         if (resourceType === 'lexicons') {
           // check for lexicons packaged with tc executable.
           checkForNewLexicons(languageId);
-          extractZippedResourceContent(USER_RESOURCE_PATH, resourceType === "bibles");
-        } else if (!fs.existsSync(USER_RESOURCE_PATH)) {// if resource isnt found in user resources folder.
-          copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
-        } else {// compare resources manifest modified time
-          const userResourceVersionPath = ResourceAPI.getLatestVersion(USER_RESOURCE_PATH);
-          const staticResourceVersionPath = ResourceAPI.getLatestVersion(STATIC_RESOURCE_PATH);
+          extractZippedResourceContent(userResourcePath, resourceType === "bibles");
+        } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
+          copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+        } else { // compare resources manifest modified time
+          const userResourceVersionPath = ResourceAPI.getLatestVersion(userResourcePath);
+          const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
+          let isOldResource = false;
           const filename = 'manifest.json';
           const userResourceManifestPath = path.join(userResourceVersionPath, filename);
           const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
@@ -868,18 +974,22 @@ export function getMissingResources() {
           if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
             const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
             const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
-            const isOldResource = userModifiedTime < staticModifiedTime;
-            if (isOldResource) {
-              fs.removeSync(USER_RESOURCE_PATH);
-              copyAndExtractResource(STATIC_RESOURCE_PATH, USER_RESOURCE_PATH, languageId, resourceId, resourceType);
+            isOldResource = !userModifiedTime || (userModifiedTime < staticModifiedTime);
+          } else if(!fs.existsSync(userResourceManifestPath)) {
+            isOldResource = true;
+          }
+          const deleteOldResources = preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath);
+          if (isOldResource) {
+            if (deleteOldResources) {
+              fs.removeSync(userResourcePath);
             }
+            copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
           }
         }
-      });
-    });
-  });
+      }
+    }
+  }
 }
-
 
 function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType) {
   fs.copySync(staticResourcePath, userResourcePath);
@@ -887,6 +997,72 @@ function copyAndExtractResource(staticResourcePath, userResourcePath, languageId
     `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
     'color: #00aced'
   );
-  // extract zippped contents
+  // extract zipped contents
   extractZippedResourceContent(userResourcePath, resourceType === "bibles");
 }
+
+/**
+ * Get the content of an article from disk
+ * @param {String} resourceType
+ * @param {String} articleId
+ * @param {String} languageId
+ * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
+ * @returns {String} - the content of the article
+ */
+export const loadArticleData = (resourceType, articleId, languageId, category='') => {
+  let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
+  if (articleFilePath) {
+    articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
+  }
+  return articleData;
+};
+
+/**
+ * Finds the article file within a resoure type's path, looking at both the given language and default language in all possible category dirs
+ * @param {String} resourceType - e.g. translationWords, translationNotes
+ * @param {String} articleId
+ * @param {String} languageId - languageId will be first checked, and then we'll try the default GL
+ * @param {String} category - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
+ * @returns {String} - the path to the file, null if doesn't exist
+ * Note: resourceType is coming from a tool name
+ */
+export const findArticleFilePath = (resourceType, articleId, languageId, category='') => {
+  const languageDirs = [];
+  if (languageId) {
+    languageDirs.push(languageId);
+  }
+  if (languageId !== DEFAULT_GATEWAY_LANGUAGE) {
+    languageDirs.push(DEFAULT_GATEWAY_LANGUAGE);
+  }
+  let categories = [];
+  if (! category ){
+    if (resourceType === TRANSLATION_WORDS) {
+      categories = ['kt', 'names', 'other'];
+    } else if (resourceType === TRANSLATION_NOTES || resourceType === TRANSLATION_ACADEMY) {
+      categories = ['translate', 'checking', 'process', 'intro'];
+      resourceType = TRANSLATION_ACADEMY;
+    } else {
+      categories = ['content'];
+    }
+  } else {
+    categories.push(category);
+  }
+  const articleFile = articleId + '.md';
+  for(let i = 0, len = languageDirs.length; i < len; ++i) {
+    let languageDir = languageDirs[i];
+    let typePath = path.join(USER_RESOURCES_PATH, languageDir, TRANSLATION_HELPS, resourceType);
+    let versionPath = ResourceAPI.getLatestVersion(typePath) || typePath;
+    for(let j = 0, jLen = categories.length; j < jLen; ++j) {
+      let categoryDir = categories[j];
+      if (resourceType === TRANSLATION_WORDS) {
+        categoryDir = path.join(categoryDir, 'articles');
+      }
+      let articleFilePath = path.join(versionPath, categoryDir, articleFile);
+      if (fs.existsSync(articleFilePath)) {
+        return articleFilePath;
+      }
+    }
+  }
+  return null;
+};
