@@ -70,7 +70,8 @@ class FeedbackDialogContainer extends React.Component {
     message = message ? message.trim() : "";
     let logData = "";
     if (includeLogs) {
-      logData = getCurrentLog(LOG_FILES_PATH).trim().substr(-MAX_LOG_SIZE); // trim and truncate
+      // trim, truncate, and to html
+      logData = getCurrentLog(LOG_FILES_PATH).trim().substr(-MAX_LOG_SIZE).replace(/\n/g, "<br>");
     }
     let extraData = "";
     if (errorFeedbackMessage) {
