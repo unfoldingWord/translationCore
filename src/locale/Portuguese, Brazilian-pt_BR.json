@@ -150,6 +150,8 @@
     "import_online_project": "Importar um Projeto Online",
     "searching_alert": "Pesquisando, por favor aguarde...",
     "books_available": "Nesta versão do aplicativo, a ferramenta do translationWords suporta projetos do Novo Testamento e a ferramenta do Word Alignment suporta projetos de toda a Bíblia.",
+    "supports_any_book": "${app} suporta projetos para qualquer livro da Bíblia.",
+    "tools_required_resources": "No entanto, o projeto somente abrirá em translationWords ou translationNotes se os recursos necessários para a Língua de Entrada selecionada estiverem em seu sistema. Clique em \"${actions} / ${check_for_content_updates}\" para baixar a mais recente.",
     "enter_url": "Digite a URL",
     "or": "Ou",
     "language_code": "Código do Idioma",
@@ -160,7 +162,7 @@
     "importing_project_alert": "Importando ${project_url}. Favor aguardar...",
     "cancel_import_alert": "Cancelar agora abortará a importação. Será preciso importar novamente o projeto para usá-lo.",
     "project_already_identified": "Este projeto foi identificado como um projeto ${originalBook}. Deseja mesmo alterá-lo para um projeto ${suggestedBook}?",
-    "loading_project_alert": "Carregando dados do seu projeto.",
+    "loading_project_alert": "Carregando dados do projeto.",
     "preparing_project_alert": "Preparando os dados do seu projeto.",
     "exported_alert": "${project_name} foi exportado com sucesso para ${file_path}.",
     "must_be_logged_in_alert": "Para fazer o upload de projetos, é preciso estar logado com uma conta ${door43}. Por favor, saia e entre usando uma conta com usuário ${door43}.",
@@ -316,6 +318,7 @@
     }
   },
   "tools": {
+    "loading_tool_data": "Carregando dados da ferramenta.",
     "resource_missing_for_tool": "A ferramenta atual requer um versão diferente da UGNT. Por favor, clique em Download para recuperar este recurso.",
     "no_checks_selected": "É preciso selecionar uma categoria para abrir esta ferramenta",
     "book_not_supported": "Livro não suportado",
