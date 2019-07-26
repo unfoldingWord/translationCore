@@ -183,12 +183,21 @@ export const getErrorFeedbackMessage = (state) => {
 };
 
 /**
- * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * gets additional error details to provide feedback dialog submission
  * @param {object} state
  * @return {String}
  */
 export const getErrorFeedbackExtraDetails = (state) => {
   return fromHomeScreenReducer.getErrorFeedbackExtraDetails(state.homeScreenReducer);
+};
+
+/**
+ * gets the category for error feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackCategory = (state) => {
+  return fromHomeScreenReducer.getErrorFeedbackCategory(state.homeScreenReducer);
 };
 
 /**

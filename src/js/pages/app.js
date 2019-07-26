@@ -25,9 +25,11 @@ import {loadTools} from "../actions/ToolActions";
 import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
 import { injectFileLogging } from "../helpers/logger";
+//consts
+import { LOG_FILES_PATH } from "../common/constants";
 
 const version = `v${packageJson.version} (${process.env.BUILD})`;
-injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
+injectFileLogging(LOG_FILES_PATH, version);
 
 class Main extends Component {
 
