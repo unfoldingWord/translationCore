@@ -56,7 +56,7 @@ const LicenseModal = ({
         >
           {headerContent}
         </CardHeader><br />
-        <Licenses />
+        <Licenses translate={translate} />
       </Dialog>
     </MuiThemeProvider>
   );
