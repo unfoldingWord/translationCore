@@ -4,7 +4,13 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories} from "../selectors";
+import {
+  getTranslate,
+  getUsername,
+  getProjectSaveLocation,
+  getToolCategories,
+  getToolGatewayLanguage
+} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ResourcesActions from './ResourcesActions';
 // helpers
@@ -20,16 +26,17 @@ import ProjectAPI from "../helpers/ProjectAPI";
 import {
   PROJECTS_PATH,
   PROJECT_INDEX_FOLDER_PATH,
-  WORD_ALIGNMENT
+  WORD_ALIGNMENT,
+  TRANSLATION_NOTES
 } from '../common/constants';
 
 /**
  * @description Gets the check categories from the filesystem for the project and
  * sets them in the reducer
  * @param {String} toolName - The name of the tool to load check categories from
- * @param {String} bookName - The id abbreviation of the book name to load from
  * @param {String} projectSaveLocation - The project location to load from
- * i.e. ~/translationCore/projects/en_tit_reg
+ *                      i.e. ~/translationCore/projects/en_tit_reg
+ * @param {String} currentGatewayLanguage
  */
 export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en') => {
   return (dispatch) => {
@@ -119,12 +126,20 @@ export const resetProjectDetail = () => {
 };
 
 export function setProjectToolGL(toolName, selectedGL) {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
+    if (toolName === TRANSLATION_NOTES) {
+      // TRICKY: tN check data is tied to GL, so when that changes we need to reload
+      const gatewayLanguage = getToolGatewayLanguage(getState(), toolName);
+      if (selectedGL !== gatewayLanguage) {
+        const projectDir = getProjectSaveLocation(getState());
+        ResourcesHelpers.copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true);
+      }
+    }
 
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
