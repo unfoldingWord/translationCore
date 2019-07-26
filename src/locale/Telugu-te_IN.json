@@ -69,6 +69,8 @@
   "find_out_more": "Find out more about translationCore at:",
   "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
+  "sending_feedback": "Sending Feedback",
+  "sending_feedback_failed": "Failed to Send Feedback",
   "updates": {
     "check_for_newer_app": "మీ సాఫ్ట్ వేర్ నవీకరణలు సరిచూడండి",
     "check_for_content_updates": "సమాచార నవీకరణల తనిఖీ",
@@ -379,7 +381,8 @@
     "invalid_verse_alignments": "క్రమబద్దీకరణ చెయ్యని అమరికల వచనాలు",
     "invalidation_checking": "ఈ సవరణ భద్రపరచిన ఎంపికలు, అమరికలతో విభేదిస్తున్నట్లయితే తనిఖీ చేస్తుంది",
     "alignments_reset_wa_tool": "మీ ప్రాజెక్టులో మార్పులు కనుగొనబడ్డాయి, ఇవి మీ అమరికలలో కొన్నింటినీ చెల్లుబాటు చెయ్యలేదు, ఈ వచనాలు ఒక చిహ్నాన్ని కనుపరుస్తున్నాయి, ప్రక్కన ఉన్న సమాచారంలోని సూచన వైపు తెగిపోయిన గొలుసు గుర్తు.",
-    "invalid_verse_alignments_and_selections": "మీ ప్రాజెక్టులో మార్పులు కనుగొనబడ్డాయి, ఇవి మీ అమరికలలో కొన్నింటినీ చెల్లుబాటు చెయ్యలేదు, ఈ వచనాలు ఒక చిహ్నాన్ని కనుపరుస్తున్నాయి, ప్రక్కన ఉన్న సమాచారంలోని సూచన వైపు తెగిపోయిన గొలుసు గుర్తు."
+    "invalid_verse_alignments_and_selections": "మీ ప్రాజెక్టులో మార్పులు కనుగొనబడ్డాయి, ఇవి మీ అమరికలలో కొన్నింటినీ చెల్లుబాటు చెయ్యలేదు, ఈ వచనాలు ఒక చిహ్నాన్ని కనుపరుస్తున్నాయి, ప్రక్కన ఉన్న సమాచారంలోని సూచన వైపు తెగిపోయిన గొలుసు గుర్తు.",
+    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
   "buttons": {
     "back_button": "వెనక్కు వెళ్ళండి",
@@ -420,7 +423,9 @@
     "do_not_rename": "తిరిగి పేరు పెట్టండి",
     "contact_helpdesk": "హెల్ప్ డెస్క్ ను సంప్రదించండి",
     "retry": "తిరిగి ప్రయత్నించండి",
-    "update": "ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి"
+    "update": "ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి",
+    "ignore_button": "Ignore",
+    "feedback_button": "Send Feedback"
   },
   "tool_card_categories": {
     "kt": "కీలక పదాలు",
