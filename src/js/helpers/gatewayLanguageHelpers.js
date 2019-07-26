@@ -90,7 +90,8 @@ export function getGlRequirementsForTool(toolName) {
           path: path.join(TRANSLATION_HELPS, TRANSLATION_ACADEMY)
         },
         {
-          path: path.join(TRANSLATION_HELPS, TRANSLATION_NOTES)
+          path: path.join(TRANSLATION_HELPS, TRANSLATION_NOTES),
+          subpath: path.join('groups', '${bookID}')
         }
       ];
       break;
@@ -290,7 +291,11 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
             const subFolderPath = path.join(latestVersionPath, subFolder);
             if (isDirectory(subFolderPath)) {
               let checkPath, subpath = helpsCheck.subpath || '';
-              checkPath = path.join(subFolderPath, subpath.replace('${bookID}', bookID));
+              const searchValue = '${bookID}';
+              if (!bookID && subpath.includes(searchValue)) {
+                return true;
+              }
+              checkPath = path.join(subFolderPath, subpath.replace(searchValue, bookID));
               if (isDirectory(checkPath)) {
                 const validFile = fs.readdirSync(checkPath).find(file => {
                   const ext = path.parse(file).ext;
