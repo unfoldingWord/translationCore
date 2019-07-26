@@ -69,6 +69,8 @@
   "find_out_more": "Find out more about translationCore at:",
   "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
+  "sending_feedback": "Sending Feedback",
+  "sending_feedback_failed": "Failed to Send Feedback",
   "updates": {
     "check_for_newer_app": "Revisa si hay actualizaciones de software",
     "check_for_content_updates": "Revisa si hay actualizaciones de contenido",
@@ -379,7 +381,8 @@
     "invalid_verse_alignments": "Versículos con alineaciones invalidadas.",
     "invalidation_checking": "Comprobando sí esta edición entra en conflicto con selecciones y alineaciones guardadas...",
     "alignments_reset_wa_tool": "Se han detectado cambios en su proyecto que han invalidado algunas de sus alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral.",
-    "invalid_verse_alignments_and_selections": "Se han detectado unos cambios en su proyecto que han invalidado algunas de sus selecciones y algunas alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral."
+    "invalid_verse_alignments_and_selections": "Se han detectado unos cambios en su proyecto que han invalidado algunas de sus selecciones y algunas alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral.",
+    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
   "buttons": {
     "back_button": "Volver",
@@ -420,7 +423,9 @@
     "do_not_rename": "No Cambie el Nombre",
     "contact_helpdesk": "Póngase en contacto con el Helpdesk",
     "retry": "Intente de nuevo",
-    "update": "Update to latest version"
+    "update": "Update to latest version",
+    "ignore_button": "Ignore",
+    "feedback_button": "Send Feedback"
   },
   "tool_card_categories": {
     "kt": "Términos Claves",
