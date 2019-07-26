@@ -69,6 +69,8 @@
   "find_out_more": "Find out more about translationCore at:",
   "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
+  "sending_feedback": "Sending Feedback",
+  "sending_feedback_failed": "Failed to Send Feedback",
   "updates": {
     "check_for_newer_app": "ತಂತ್ರಾಂಶ ನವಿಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ ${Check for software updates}",
     "check_for_content_updates": "ವಿಷಯದ ಕುರಿತಾದ ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ ${Check for content updates}",
@@ -379,7 +381,8 @@
     "invalid_verse_alignments": "ಬೆಲೆಯಿಲ್ಲದ ಸಾಲು ಹೊಂದಿಕೆಯ ವಚನಗಳು ${Verses with invalidated alignments.}",
     "invalidation_checking": "ಈ ತಿದ್ದುಪಡಿ ಉಳಿಸಿದ ಆಯ್ಕೆಗಳು ಮತ್ತು ಸಾಲು ಹೊಂದಿಕೆಯೊಂದಿಗೆ ಒಪ್ಪುವುದಿಲ್ಲವೇನೋ ಎಂದು ಪರಿಶೀಲಿಸುತ್ತಿದೆ... ${Checking if this edit conflicts with saved selections and alignments...}",
     "alignments_reset_wa_tool": "ಕೆಲವೊಂದು ನಿಮ್ಮ ಜೋಡಣೆಗಳಿಂದ ಉಪಯೋಗವಿಲ್ಲದ ಕೆಲವೊಂದು ತಿದ್ದುಪಡಿಗಳು ನಿಮ್ಮ ಯೋಜನೆಯಲ್ಲಿ ಕಾಣಿಸಿಕೊಂಡಿವೆ. ಈ ವಚನಗಳು ಪಕ್ಕದ ಪರಿವಿಡಿಯಲ್ಲಿರುವ ಅನುಬಂಧಕ್ಕೆ ಸಂಬಂಧಪಟ್ಟು ಮುರಿದ ಸರಪಳಿಯ ಸಂಕೇತವನ್ನು ತೋರಿಸುತ್ತವೆ. ${Changes have been detected in your project which have invalidated some of your alignments. These verses display an icon of a broken chain next to the reference in the side menu.",
-    "invalid_verse_alignments_and_selections": "ಉಪಯೋಗವಿಲ್ಲದ ಕೆಲವೊಂದು ಆಯ್ಕೆಗಳ ಮತ್ತು ಕೆಲವೊಂದು ಜೋಡಣೆಗಳ ತಿದ್ದುಪಡಿಗಳು ನಿಮ್ಮ ಯೋಜನೆಯಲ್ಲಿ ಕಂಡುಬಂದಿವೆ. ಈ ವಚನಗಳು ಪಕ್ಕದ ಪರಿವಿಡಿಯಲ್ಲಿರುವ ಅನುಬಂಧಕ್ಕೆ ಸಂಬಂಧಪಟ್ಟು ಮುರಿದ ಸರಪಳಿಯ ಸಂಕೇತವನ್ನು ತೋರಿಸುತ್ತವೆ. ${Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu."
+    "invalid_verse_alignments_and_selections": "ಉಪಯೋಗವಿಲ್ಲದ ಕೆಲವೊಂದು ಆಯ್ಕೆಗಳ ಮತ್ತು ಕೆಲವೊಂದು ಜೋಡಣೆಗಳ ತಿದ್ದುಪಡಿಗಳು ನಿಮ್ಮ ಯೋಜನೆಯಲ್ಲಿ ಕಂಡುಬಂದಿವೆ. ಈ ವಚನಗಳು ಪಕ್ಕದ ಪರಿವಿಡಿಯಲ್ಲಿರುವ ಅನುಬಂಧಕ್ಕೆ ಸಂಬಂಧಪಟ್ಟು ಮುರಿದ ಸರಪಳಿಯ ಸಂಕೇತವನ್ನು ತೋರಿಸುತ್ತವೆ. ${Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu.",
+    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
   "buttons": {
     "back_button": "ಹಿಂದಕ್ಕೆ ಹೋಗು ${Go Back}",
@@ -420,7 +423,9 @@
     "do_not_rename": "ಹೆಸರು ಬದಲಾಯಿಸಬೇಡಿ ${Do Not Rename}",
     "contact_helpdesk": "ಸಹಾಯ ಕೇಂದ್ರವನ್ನು ಸಂಪರ್ಕಿಸು ${Contact Helpdesk}",
     "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ${Retry}",
-    "update": "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಗೆ ನವೀಕರಿಸಿ ${Update to latest version}"
+    "update": "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಗೆ ನವೀಕರಿಸಿ ${Update to latest version}",
+    "ignore_button": "Ignore",
+    "feedback_button": "Send Feedback"
   },
   "tool_card_categories": {
     "kt": "ಪ್ರಮುಖ ಪದಗಳು ${Key Terms}",
