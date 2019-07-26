@@ -30,7 +30,7 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext)
       dispatch(changeToNextContextId());
     }
   };
-  // TODO:
+
   dispatch(openAlert("invalidQuote", message, {
     confirmText: translate("buttons.feedback_button"),
     cancelText: translate("buttons.ignore_button"),
