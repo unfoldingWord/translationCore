@@ -69,6 +69,8 @@
   "find_out_more": "Find out more about translationCore at:",
   "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
+  "sending_feedback": "Sending Feedback",
+  "sending_feedback_failed": "Failed to Send Feedback",
   "updates": {
     "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Talika unnati karne check kuribi",
@@ -379,7 +381,8 @@
     "invalid_verse_alignments": "Thik thak namila verse khan.",
     "invalidation_checking": "Bachaikena rakha milaikena rakha khan logote itu sudhar tu sangharsa kure na nakure check kuri ashe...",
     "alignments_reset_wa_tool": "Changes have been detected in your project which have invalidated some of your alignments.\nThese verses display an icon of a broken chain next to the reference in the side menu.",
-    "invalid_verse_alignments_and_selections": "Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu."
+    "invalid_verse_alignments_and_selections": "Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu.",
+    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
   "buttons": {
     "back_button": "Go Back",
@@ -420,7 +423,9 @@
     "do_not_rename": "Nautun naam nidibi",
     "contact_helpdesk": "Helpdesk te samparka kuribi",
     "retry": "Arubi koshis kuribi",
-    "update": "Adhunik anubaad te napare"
+    "update": "Adhunik anubaad te napare",
+    "ignore_button": "Ignore",
+    "feedback_button": "Send Feedback"
   },
   "tool_card_categories": {
     "kt": "Asol sabda khan",
