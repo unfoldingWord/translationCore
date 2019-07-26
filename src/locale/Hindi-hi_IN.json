@@ -29,6 +29,7 @@
   "home": "होम",
   "required": "आवश्यक",
   "required_field": "इसकी आवश्यकता है",
+  "license": "License",
   "licenses": "लाइसेंस",
   "user": "उपयोगकर्ता",
   "project": "परियोजना",
@@ -65,6 +66,9 @@
   "alignment_prompt": "क्या आप अपने पाठ के साथ संरेखण डेटा निर्यात करना चाहते हैं?",
   "include_alignment_check": "संरेखण डेटा शामिल करें",
   "loading_verse_edits": "आयत का संपादन लोड हो रहा है",
+  "find_out_more": "Find out more about translationCore at:",
+  "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
+  "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
   "updates": {
     "check_for_newer_app": "सॉफ्टवेयर अपडेट की जांच करें",
     "check_for_content_updates": "सामग्री अद्यतनों के लिए जाँच करें",
