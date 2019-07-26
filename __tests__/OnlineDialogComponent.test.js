@@ -10,7 +10,7 @@ import OnlineDialog from '../src/js/components/dialogComponents/OnlineDialog';
 jest.mock('material-ui/Checkbox');
 
 // Tests for OnlineDialog React Component
-describe('OnlineDialog Componenet', () => {
+describe('OnlineDialog Component', () => {
   test('Should render a component that matches snapshot', () => {
     const props = {
       translate: key => key,

@@ -36,6 +36,7 @@ class ToolCard extends Component {
       showDescription: false,
       progress: 0,
       selectedCategoriesChanged: false,
+      glSelectedChanged: false,
     };
   }
 
@@ -60,6 +61,8 @@ class ToolCard extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    const glSelectedChanged = prevProps.currentSelectedGL !== this.props.currentSelectedGL;
+    if (glSelectedChanged) this.setState({ glSelectedChanged });
     if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
       this.setState({ selectedCategoriesChanged: true });
       this.loadProgress();
@@ -118,12 +121,12 @@ class ToolCard extends Component {
       selectedToolName,
       tool: { name: newSelectedToolName },
     } = this.props;
-    const { selectedCategoriesChanged } = this.state;
+    const { selectedCategoriesChanged, glSelectedChanged } = this.state;
 
     if (isOLBookVersionMissing) {
       // Show dialog with option to download missing resource
       this.props.onMissingResource();
-    } else if (selectedToolName && !selectedCategoriesChanged && (selectedToolName === newSelectedToolName)) {
+    } else if (selectedToolName && !glSelectedChanged && !selectedCategoriesChanged && (selectedToolName === newSelectedToolName)) {
       // Show tool (Without loading tool data)
       toggleHomeView(false);
     } else {
@@ -139,9 +142,10 @@ class ToolCard extends Component {
       translate,
       developerMode,
       actions: {
-        updateCheckSelection,
         showPopover,
-        closePopover
+        closePopover,
+        updateCategorySelection,
+        updateSubcategorySelection,
       },
       selectedCategories,
       availableCategories,
@@ -189,18 +193,22 @@ class ToolCard extends Component {
             <ToolCardNotificationBadges tool={tool} translate={translate} selectedCategories={selectedCategories} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
-          {showCheckBoxes && <ToolCardBoxes
-            key={selectedGL}
-            toolName={tool.name}
-            selectedCategories={selectedCategories}
-            availableCategories={availableCategories}
-            onChecked={updateCheckSelection}
-            bookId={bookId}
-            translate={translate}
-            selectedGL={selectedGL}
-            showPopover={showPopover}
-            closePopover={closePopover}
-          />}
+          {
+            showCheckBoxes &&
+            <ToolCardBoxes
+              key={selectedGL}
+              toolName={tool.name}
+              selectedCategories={selectedCategories}
+              availableCategories={availableCategories}
+              onCategoryChecked={updateCategorySelection}
+              onSubcategoryChecked={updateSubcategorySelection}
+              bookId={bookId}
+              translate={translate}
+              selectedGL={selectedGL}
+              showPopover={showPopover}
+              closePopover={closePopover}
+            />
+          }
           {this.state.showDescription ?
             (<div>
               <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
@@ -260,7 +268,8 @@ ToolCard.propTypes = {
   actions: PropTypes.shape({
     getProjectProgressForTools: PropTypes.func.isRequired,
     setProjectToolGL: PropTypes.func.isRequired,
-    updateCheckSelection: PropTypes.func.isRequired
+    updateSubcategorySelection: PropTypes.func.isRequired,
+    updateCategorySelection: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
@@ -271,6 +280,7 @@ ToolCard.propTypes = {
     PropTypes.bool
   ]),
   toggleHomeView: PropTypes.func.isRequired,
+  currentSelectedGL: PropTypes.string.isRequired,
 };
 
 ToolCard.contextTypes = {

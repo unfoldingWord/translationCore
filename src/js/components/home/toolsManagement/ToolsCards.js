@@ -12,22 +12,6 @@ import {getAvailableCategories} from '../../../helpers/ResourcesHelpers';
 // constants
 import { USER_RESOURCES_PATH, TRANSLATION_NOTES } from '../../../common/constants';
 
-/**
- * Renders a list of tools.
- * TODO: rename this to ToolsList and make it a self contained container with supporting components
- * @param tools
- * @param actions
- * @param translate
- * @param bookName
- * @param loggedInUser
- * @param projectSaveLocation
- * @param currentProjectToolsProgress
- * @param manifest
- * @param invalidatedReducer
- * @param toolsCategories
- * @returns {*}
- * @constructor
- */
 const ToolsCards = ({
   tools,
   actions,
@@ -75,7 +59,7 @@ const ToolsCards = ({
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
           tools.map((tool, i) => {
-            const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation);
+            const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation, { withCategoryName: true });
             let isOLBookVersionMissing = false;
             let missingOLResource = {};
             if (tool.name === TRANSLATION_NOTES) {
@@ -113,6 +97,7 @@ const ToolsCards = ({
                   folderName: tool.path,
                   name: tool.name
                 }}
+                currentSelectedGL={currentProjectToolsSelectedGL[tool.name] || ''}
                 isOLBookVersionMissing={!!isOLBookVersionMissing}
                 onMissingResource={() => onMissingResource(missingOLResource)}
                 invalidatedReducer={invalidatedReducer}
@@ -139,6 +124,7 @@ ToolsCards.propTypes = {
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
+  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
 };
 
 export default ToolsCards;

@@ -88,7 +88,7 @@ function firstContextId(state) {
       let groupId = groupsIndex[i].id;
       let data = groupsData[groupId];
       if (!!data && !!data[0]) contextId = data[0].contextId;
-      valid = (contextId?true:false);
+      valid = (contextId ? true : false);
       i++;
     }
     return contextId;

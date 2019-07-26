@@ -1,0 +1,362 @@
+{
+  "_comment1": "WARNING: Do NOT modify this file by hand. Add any special packages or fonts to `[tC root]/scripts/attributions/attributionHelpers.js` and run `npm run update-attributions`.",
+  "_comment2": "If any auto-generated data is wrong, simply copy the package's entry below into attributionHelpers.js's staticPackages map with the same key and change what needs to be modified.",
+  "packages": {
+    "electron": {
+      "repository": "https://github.com/electron/electron",
+      "license": "MIT",
+      "version": "3.0.11"
+    },
+    "material-ui": {
+      "license": "MIT",
+      "repository": "https://github.com/mui-org/material-ui",
+      "version": "3.8.3"
+    },
+    "electron-dl": {
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/electron-dl",
+      "version": "1.11.1"
+    },
+    "adm-zip": {
+      "license": "MIT",
+      "repository": "https://github.com/cthackers/adm-zip",
+      "version": "0.4.13"
+    },
+    "agentkeepalive": {
+      "license": "MIT",
+      "repository": "https://github.com/node-modules/agentkeepalive",
+      "version": "4.0.0"
+    },
+    "archiver": {
+      "license": "MIT",
+      "repository": "https://github.com/archiverjs/node-archiver",
+      "version": "3.0.0"
+    },
+    "axios": {
+      "license": "MIT",
+      "repository": "https://github.com/axios/axios",
+      "version": "0.18.0"
+    },
+    "babel-plugin-jest-hoist": {
+      "license": "MIT",
+      "repository": "https://github.com/facebook/jest",
+      "version": "21.2.0"
+    },
+    "babel-plugin-transform-async-to-generator": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-async-to-generator",
+      "version": "6.24.1"
+    },
+    "babel-plugin-transform-class-properties": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-class-properties",
+      "version": "6.24.1"
+    },
+    "babel-plugin-transform-decorators-legacy": {
+      "license": "MIT",
+      "repository": "https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy",
+      "version": "1.3.4"
+    },
+    "babel-plugin-transform-object-rest-spread": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread",
+      "version": "6.26.0"
+    },
+    "babel-plugin-transform-runtime": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-runtime",
+      "version": "6.23.0"
+    },
+    "babel-polyfill": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-polyfill",
+      "version": "6.26.0"
+    },
+    "babel-preset-env": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel-preset-env",
+      "version": "1.7.0"
+    },
+    "babel-preset-es2015": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-preset-es2015",
+      "version": "6.24.1"
+    },
+    "babel-preset-react": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-preset-react",
+      "version": "6.24.1"
+    },
+    "crypto-js": {
+      "license": "MIT",
+      "repository": "http://github.com/brix/crypto-js",
+      "version": "3.1.8"
+    },
+    "csv": {
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/adaltas/node-csv",
+      "version": "1.2.1"
+    },
+    "deep-equal": {
+      "license": "MIT",
+      "repository": "http://github.com/substack/node-deep-equal",
+      "version": "1.0.1"
+    },
+    "dotenv": {
+      "license": "BSD-2-Clause",
+      "repository": "https://github.com/motdotla/dotenv",
+      "version": "6.2.0"
+    },
+    "electron-compile": {
+      "license": "MIT",
+      "repository": "https://github.com/paulcbetts/electron-compile",
+      "version": "6.4.4"
+    },
+    "electron-prebuilt-compile": {
+      "license": "MIT",
+      "repository": "https://github.com/paulcbetts/electron-prebuilt-compile",
+      "version": "4.0.0"
+    },
+    "enzyme-to-json": {
+      "license": "MIT",
+      "repository": "https://github.com/adriantoine/enzyme-to-json",
+      "version": "3.3.5"
+    },
+    "follow-redirects": {
+      "license": "MIT",
+      "repository": "https://github.com/olalonde/follow-redirects",
+      "version": "1.2.5"
+    },
+    "fs-extra": {
+      "license": "MIT",
+      "repository": "https://github.com/jprichardson/node-fs-extra",
+      "version": "4.0.3"
+    },
+    "json-stringify-safe": {
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/json-stringify-safe",
+      "version": "5.0.1"
+    },
+    "konami-code-js": {
+      "license": "GPL-3.0",
+      "repository": "https://github.com/Haeresis/konami-code-js",
+      "version": "0.8.0"
+    },
+    "lodash": {
+      "license": "MIT",
+      "repository": "https://github.com/lodash/lodash",
+      "version": "4.17.11"
+    },
+    "memoize-one": {
+      "license": "MIT",
+      "repository": "https://github.com/alexreardon/memoize-one",
+      "version": "5.0.0"
+    },
+    "mkdirp": {
+      "license": "MIT",
+      "repository": "https://github.com/substack/node-mkdirp",
+      "version": "0.5.1"
+    },
+    "moment": {
+      "license": "MIT",
+      "repository": "https://github.com/moment/moment",
+      "version": "2.24.0"
+    },
+    "open": {
+      "license": "MIT",
+      "repository": "https://github.com/pwnall/node-open",
+      "version": "0.0.5"
+    },
+    "opn": {
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/opn",
+      "version": "5.1.0"
+    },
+    "os-locale": {
+      "license": "MIT",
+      "repository": "https://github.com/sindresorhus/os-locale",
+      "version": "3.0.1"
+    },
+    "ospath": {
+      "license": "MIT",
+      "repository": "https://github.com/jprichardson/ospath",
+      "version": "1.2.2"
+    },
+    "path-extra": {
+      "license": "MIT",
+      "repository": "https://github.com/jprichardson/node-path-extra",
+      "version": "3.0.0"
+    },
+    "prop-types": {
+      "license": "MIT",
+      "repository": "https://github.com/facebook/prop-types",
+      "version": "15.7.2"
+    },
+    "react": {
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "version": "16.8.6"
+    },
+    "react-bootstrap": {
+      "license": "MIT",
+      "repository": "https://github.com/react-bootstrap/react-bootstrap",
+      "version": "0.32.4"
+    },
+    "react-container-dimensions": {
+      "license": "MIT",
+      "repository": "https://github.com/okonet/react-container-dimensions",
+      "version": "1.3.3"
+    },
+    "react-dnd": {
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/react-dnd/react-dnd",
+      "version": "2.5.4"
+    },
+    "react-dnd-html5-backend": {
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/react-dnd/react-dnd",
+      "version": "2.5.4"
+    },
+    "react-dom": {
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "version": "16.8.6"
+    },
+    "react-localize-redux": {
+      "license": "MIT",
+      "repository": "https://github.com/ryandrewjohnson/react-localize-redux",
+      "version": "2.15.1"
+    },
+    "react-redux": {
+      "license": "MIT",
+      "repository": "https://github.com/github:reduxjs/react-redux",
+      "version": "5.1.1"
+    },
+    "react-remarkable": {
+      "license": "MIT",
+      "repository": "https://github.com/acdlite/react-remarkable",
+      "version": "1.1.3"
+    },
+    "react-select": {
+      "license": "MIT",
+      "repository": "https://github.com/JedWatson/react-select",
+      "version": "1.2.0"
+    },
+    "react-spotlight-clickable": {
+      "license": "MIT",
+      "repository": "https://github.com/mannycolon/react-spotlight-clickable",
+      "version": "1.0.5"
+    },
+    "react-toggle": {
+      "license": "MIT",
+      "repository": "https://github.com/aaronshaf/react-toggle",
+      "version": "4.0.2"
+    },
+    "react-tooltip": {
+      "license": "MIT",
+      "repository": "https://github.com/wwayne/react-tooltip",
+      "version": "3.6.0"
+    },
+    "reactable": {
+      "license": "MIT",
+      "repository": "https://github.com/glittershark/reactable",
+      "version": "0.14.1"
+    },
+    "readdir-enhanced": {
+      "license": "MIT",
+      "repository": "https://github.com/JS-DevTools/readdir-enhanced",
+      "version": "2.2.4"
+    },
+    "redux": {
+      "license": "MIT",
+      "repository": "https://github.com/reactjs/redux",
+      "version": "3.7.2"
+    },
+    "redux-batched-actions": {
+      "license": "MIT",
+      "repository": "https://github.com/tshelburne/redux-batched-actions",
+      "version": "0.4.1"
+    },
+    "redux-logger": {
+      "license": "MIT",
+      "repository": "https://github.com/theaqua/redux-logger",
+      "version": "3.0.6"
+    },
+    "redux-promise": {
+      "license": "MIT",
+      "repository": "https://github.com/redux-utilities/redux-promise",
+      "version": "0.6.0"
+    },
+    "redux-subscriptions": {
+      "license": "ISC",
+      "repository": "https://npmjs.com/package/redux-subscriptions",
+      "version": "0.2.0"
+    },
+    "redux-thunk": {
+      "license": "MIT",
+      "repository": "https://github.com/gaearon/redux-thunk",
+      "version": "2.2.0"
+    },
+    "reselect": {
+      "license": "MIT",
+      "repository": "https://github.com/reactjs/reselect",
+      "version": "3.0.1"
+    },
+    "rimraf": {
+      "license": "ISC",
+      "repository": "https://github.com/isaacs/rimraf",
+      "version": "2.6.2"
+    },
+    "semver": {
+      "license": "ISC",
+      "repository": "https://github.com/npm/node-semver",
+      "version": "5.5.0"
+    },
+    "simple-git": {
+      "license": "MIT",
+      "repository": "https://github.com/steveukx/git-js",
+      "version": "1.43.0"
+    },
+    "sudo-prompt": {
+      "license": "MIT",
+      "repository": "https://github.com/jorangreef/sudo-prompt",
+      "version": "6.2.1"
+    },
+    "truncate-utf8-bytes": {
+      "license": "WTFPL",
+      "repository": "https://github.com/parshap/truncate-utf8-bytes",
+      "version": "1.0.2"
+    },
+    "uuid": {
+      "license": "MIT",
+      "repository": "https://github.com/kelektiv/node-uuid",
+      "version": "3.2.1"
+    },
+    "xregexp": {
+      "license": "MIT",
+      "repository": "https://github.com/slevithan/xregexp",
+      "version": "3.2.0"
+    },
+    "yamljs": {
+      "license": "MIT",
+      "repository": "https://github.com/jeremyfa/yaml.js",
+      "version": "0.3.0"
+    },
+    "zip-folder": {
+      "license": "Apache 2",
+      "repository": "https://github.com/sole/node-zip-folder",
+      "version": "1.0.0"
+    }
+  },
+  "fonts": {
+    "Noto Sans": {
+      "license": "SIL Open Font License",
+      "repository": "https://github.com/googlefonts/noto-fonts"
+    },
+    "SIL Ezra Font": {
+      "license": "SIL Open Font License",
+      "repository": "http://software.sil.org/ezra",
+      "version": "2.51"
+    }
+  }
+}

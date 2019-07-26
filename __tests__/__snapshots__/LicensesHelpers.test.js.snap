@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LicensesHelpers function tests Tests LicensesHelpers.getAttributions 1`] = `"<div style=\\"padding-top:10px;text-alignment:center\\"><p><a href=\\"https://github.com/package/a\\">packageA</a><br/>CC BY SA 4.0</p><hr style=\\"width:50%\\"/></div>"`;
+
+exports[`LicensesHelpers function tests Tests LicensesHelpers.getAttributions 2`] = `"<div style=\\"padding-top:10px;text-alignment:center\\"><p><a href=\\"https://github.com/package/b\\">packageB</a><br/>MIT</p><hr style=\\"width:50%\\"/></div>"`;
+
+exports[`LicensesHelpers function tests Tests LicensesHelpers.getAttributions 3`] = `"<div style=\\"padding-top:10px;text-alignment:center\\"><p><a href=\\"https://github.com/package/c\\">packageC</a><br/>SIL Font License</p><hr style=\\"width:50%\\"/></div>"`;
