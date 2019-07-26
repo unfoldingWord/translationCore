@@ -19,7 +19,7 @@ import {feedbackDialogClosing} from "../actions/HomeScreenActions";
 import {LOG_FILES_PATH} from "../common/constants";
 import {delay} from "../common/utils";
 
-const MAX_LOG_SIZE = 100000; // maximum amount of log data to attach to message
+const MAX_LOG_SIZE = 25000000; // maximum amount of log data to attach to message
 
 /**
  * Renders a dialog to submit user feedback.
@@ -71,7 +71,7 @@ class FeedbackDialogContainer extends React.Component {
     let logData = "";
     if (includeLogs) {
       // trim, truncate, and to html
-      logData = getCurrentLog(LOG_FILES_PATH).trim().substr(-MAX_LOG_SIZE).replace(/\n/g, "<br>");
+      logData = getCurrentLog(LOG_FILES_PATH).trim().substr(-MAX_LOG_SIZE);
     }
     let extraData = "";
     if (errorFeedbackMessage) {

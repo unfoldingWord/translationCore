@@ -1,7 +1,8 @@
 import os from "os";
 import appPackage from "../../../package";
-import axios from "axios";
+import sgMail from '@sendgrid/mail';
 import stringify from 'json-stringify-safe';
+import AdmZip from "adm-zip";
 import {openAlert} from "../actions/AlertActions";
 import {getTranslate} from "../selectors";
 import {getQuoteAsString} from "checking-tool-wrapper";
@@ -77,8 +78,27 @@ export const submitFeedback = ({ category, message, name, email, state }) => {
   if(email) {
     fullMessage += `\n\nEmail: ${email}`;
   }
+
+  sgMail.setApiKey(process.env.TC_HELP_DESK_TOKEN);
+  const msg = {
+    to: [
+          {
+            email: process.env.TC_HELP_DESK_EMAIL,
+            name: "Help Desk"
+          }
+        ],
+    from: fromContact,
+    subject: `tC: ${category}`,
+    text: fullMessage,
+    html: fullMessage.replace(/\n/g, "<br>"),
+  };
+
   if (state) {
-    const stateString = stringifySafe(state, "[error loading state]");
+    msg.attachments = [];
+    const zip = new AdmZip();
+    let buff = Buffer.from(state.logData || "");
+    zip.addFile("log.txt", buff, "application logs");
+
     const osInfo = {
       arch: os.arch(),
       cpus: os.cpus(),
@@ -94,40 +114,20 @@ export const submitFeedback = ({ category, message, name, email, state }) => {
     };
     const osString = stringifySafe(osInfo,
       "[error loading system information]");
-    fullMessage += `\n\nSystem Information:\n${osString}\n\nApp State:\n${stateString}`;
+    buff = Buffer.from(osString);
+    zip.addFile("os_info.json", buff, "application logs");
+    const zippedBuffer = zip.toBuffer();
+    msg.attachments.push(
+      {
+        content: zippedBuffer.toString('base64'),
+        filename: 'log.zip',
+        type: 'application/zip',
+        disposition: 'attachment',
+        contentId: 'Logs'
+      });
+    // fullMessage += `\n\nSystem Information:\n${osString}\n\nApp State:\n${stateString}`;
   }
-
-  const request = {
-    method: "POST",
-    url: "https://api.sendgrid.com/v3/mail/send",
-    headers: {
-      Authorization: `Bearer ${process.env.TC_HELP_DESK_TOKEN}`
-    },
-    data: {
-      "personalizations": [
-        {
-          "to": [
-            {
-              email: process.env.TC_HELP_DESK_EMAIL,
-              name: "Help Desk"
-            }
-          ],
-          subject: `tC: ${category}`
-        }
-      ],
-      "from": fromContact,
-      "reply_to": fromContact,
-      "content": [
-        { type: "text/html", value: fullMessage.replace(/\n/g, "<br>") }
-      ]
-    }
-  };
-  //
-  // if (name) {
-  //   request.data.user_name = name;
-  // }
-
-  return axios(request);
+  return sgMail.send(msg);
 };
 
 /**

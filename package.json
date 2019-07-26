@@ -113,6 +113,7 @@
     "@material-ui/core": "3.8.3",
     "@material-ui/icons": "3.0.2",
     "@neutrinog/electron-dl": "1.11.1",
+    "@sendgrid/mail": "6.4.0",
     "adm-zip": "^0.4.11",
     "agentkeepalive": "4.0.0",
     "archiver": "3.0.0",
