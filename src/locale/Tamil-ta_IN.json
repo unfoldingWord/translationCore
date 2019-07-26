@@ -29,6 +29,7 @@
   "home": "முகப்பு",
   "required": "தேவை",
   "required_field": "இந்தப் விவரம் கண்டிப்பாக தேவை",
+  "license": "License",
   "licenses": "உரிமங்கள்",
   "user": "பயனர்",
   "project": "திட்டம்",
@@ -65,6 +66,9 @@
   "alignment_prompt": "Would you like to export the alignment data with your text?",
   "include_alignment_check": "Include alignment data",
   "loading_verse_edits": "Loading Verse Edits",
+  "find_out_more": "Find out more about translationCore at:",
+  "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
+  "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
   "updates": {
     "check_for_newer_app": "Check for software updates",
     "check_for_content_updates": "Check for content updates",
