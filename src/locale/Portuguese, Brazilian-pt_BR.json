@@ -29,7 +29,7 @@
   "home": "Página Inicial",
   "required": "Obrigatório",
   "required_field": "Este campo é obrigatório",
-  "license": "License",
+  "license": "Licença",
   "licenses": "Licenças",
   "user": "Usuário",
   "project": "Projeto",
@@ -66,9 +66,11 @@
   "alignment_prompt": "Gostaria de exportar os dados de alinhamento com o seu texto?",
   "include_alignment_check": "Incluir dados de alinhamento",
   "loading_verse_edits": "Carregando Edições de Versículos",
-  "find_out_more": "Find out more about translationCore at:",
-  "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
-  "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
+  "find_out_more": "Saiba mais sobre translationCore em:",
+  "based_on_earlier_work": "Com base em um trabalho anterior de Wycliffe Associados lançado sob o ISC",
+  "third_party_attributions": "Código de terceiros Adicionais Avisos de direitos Autorais e os Termos de Licença",
+  "sending_feedback": "Sending Feedback",
+  "sending_feedback_failed": "Failed to Send Feedback",
   "updates": {
     "check_for_newer_app": "Verifique se há atualizações de software",
     "check_for_content_updates": "Verificar atualizações de conteúdo",
@@ -379,7 +381,8 @@
     "invalid_verse_alignments": "Versículos com alinhamentos invalidados.",
     "invalidation_checking": "Verificando se esta edição apresenta conflitos com seleções e alinhamentos salvos...",
     "alignments_reset_wa_tool": "Alterações foram detectadas em seu projeto que invalidaram alguns de seus alinhamentos. Esses versículos apresentam um ícone de corrente quebrada ao lado da referência no menu lateral.",
-    "invalid_verse_alignments_and_selections": "Alterações foram detectadas em seu projeto que invalidaram algumas de suas seleções e alinhamentos. Esses versículos apresentam um ícone de corrente quebrada ao lado da referência no menu lateral."
+    "invalid_verse_alignments_and_selections": "Alterações foram detectadas em seu projeto que invalidaram algumas de suas seleções e alinhamentos. Esses versículos apresentam um ícone de corrente quebrada ao lado da referência no menu lateral.",
+    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
   "buttons": {
     "back_button": "Voltar",
@@ -420,7 +423,9 @@
     "do_not_rename": "Não Renomear",
     "contact_helpdesk": "Contatar Suporte",
     "retry": "Tentar novamente",
-    "update": "Atualize para a versão mais recente"
+    "update": "Atualize para a versão mais recente",
+    "ignore_button": "Ignore",
+    "feedback_button": "Send Feedback"
   },
   "tool_card_categories": {
     "kt": "Termos-Chave",
