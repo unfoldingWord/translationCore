@@ -129,39 +129,14 @@ export const resetProjectDetail = () => {
 };
 
 export function setProjectToolGL(toolName, selectedGL) {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
     if (toolName === TRANSLATION_NOTES) {
-      // TRICKY: tN check data is tied to GL, so when that changes we need to reload
-      const gatewayLanguage = getToolGatewayLanguage(getState(), toolName);
-      if (selectedGL !== gatewayLanguage) {
-        const projectDir = getProjectSaveLocation(getState());
-        ResourcesHelpers.copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true);
-        const projectApi = new ProjectAPI(projectDir);
-        // need to update occurrenceNote in current contextId
-        let contextId = getContext(getState());
-        let groupId = contextId && contextId.groupId;
-        if (!groupId) {
-          dispatch(loadCurrentContextId());
-          contextId = getContext(getState());
-          groupId = contextId && contextId.groupId;
-        }
-        if (groupId) {
-          const groupData = projectApi.getGroupData(toolName, groupId);
-          for (let resource of groupData) {
-            if (isEqual(contextId.reference, resource.contextId.reference) &&
-              contextId.occurrence === resource.contextId.occurrence) {
-              contextId.occurrenceNote = resource.contextId.occurrenceNote;
-              dispatch(changeCurrentContextId(contextId));
-              break;
-            }
-          }
-        }
-      }
+      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
     }
 
     dispatch({

@@ -5,6 +5,9 @@ import AdmZip from "adm-zip";
 import isEqual from "deep-equal";
 import _ from "lodash";
 import {getOtherTnsOLVersions} from 'tc-source-content-updater';
+// actions
+import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
+import {changeCurrentContextId} from "../actions/ContextIdActions";
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
 import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
@@ -12,7 +15,9 @@ import * as SettingsHelpers from "./SettingsHelpers";
 import {
   getContext,
   getToolGatewayLanguage,
-  getBibles
+  getBibles,
+  getProjectSaveLocation,
+  getProjectBookId
 } from "../selectors";
 import ProjectAPI from "./ProjectAPI";
 import ResourceAPI from "./ResourceAPI";
@@ -22,8 +27,8 @@ import {
 } from "./groupDataHelpers";
 import * as Bible from "../common/BooksOfTheBible";
 import {generateTimestamp} from "./TimestampGenerator";
-import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
 import {DEFAULT_GATEWAY_LANGUAGE} from "./gatewayLanguageHelpers";
+import {getContextIdPathFromIndex} from "./contextIdHelpers";
 // constants
 import {
   APP_VERSION,
@@ -312,6 +317,43 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
       project.setSelectedCategories(toolName, categories);
     }
   }
+}
+
+/**
+ * make sure that the group index data and contextId are up to date on GL change.  Currently only tN depends on GL
+ * @param {string} toolName
+ * @param {string} selectedGL
+ */
+export function updateGroupIndexForGl(toolName, selectedGL) {
+  return ((dispatch, getState) => {
+    const state = getState();
+    const projectDir = getProjectSaveLocation(state);
+    copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true);
+    const projectApi = new ProjectAPI(projectDir);
+    let contextId = getContext(state);
+    let groupId = contextId && contextId.groupId;
+    const bookId = getProjectBookId(state);
+    if (!groupId && bookId) { // if current contextId is not set, load from file
+      const loadPath = getContextIdPathFromIndex(projectDir, toolName, bookId);
+      contextId = fs.readJsonSync(loadPath);
+      groupId = contextId && contextId.groupId;
+    }
+    if (groupId) {
+      // need to update occurrenceNote in current contextId from checks
+      const groupData = projectApi.getGroupData(toolName, groupId);
+      for (let resource of groupData) {
+        // find check that matches current contextId
+        if (isEqual(contextId.reference, resource.contextId.reference) &&
+              contextId.occurrence === resource.contextId.occurrence) {
+
+          // if we found match, then update occurrenceNote
+          contextId.occurrenceNote = resource.contextId.occurrenceNote;
+          dispatch(changeCurrentContextId(contextId));
+          break;
+        }
+      }
+    }
+  });
 }
 
 /**
