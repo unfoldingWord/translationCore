@@ -2,6 +2,7 @@ import React from 'react';
 import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
+import isEqual from "deep-equal";
 // actions
 import * as AlertModalActions from "./AlertModalActions";
 import {
@@ -9,6 +10,7 @@ import {
   getUsername,
   getProjectSaveLocation,
   getToolCategories,
+  getContext,
   getToolGatewayLanguage
 } from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
@@ -29,6 +31,7 @@ import {
   WORD_ALIGNMENT,
   TRANSLATION_NOTES
 } from '../common/constants';
+import {changeCurrentContextId, loadCurrentContextId} from "./ContextIdActions";
 
 /**
  * @description Gets the check categories from the filesystem for the project and
@@ -138,6 +141,26 @@ export function setProjectToolGL(toolName, selectedGL) {
       if (selectedGL !== gatewayLanguage) {
         const projectDir = getProjectSaveLocation(getState());
         ResourcesHelpers.copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true);
+        const projectApi = new ProjectAPI(projectDir);
+        // need to update occurrenceNote in current contextId
+        let contextId = getContext(getState());
+        let groupId = contextId && contextId.groupId;
+        if (!groupId) {
+          dispatch(loadCurrentContextId());
+          contextId = getContext(getState());
+          groupId = contextId && contextId.groupId;
+        }
+        if (groupId) {
+          const groupData = projectApi.getGroupData(toolName, groupId);
+          for (let resource of groupData) {
+            if (isEqual(contextId.reference, resource.contextId.reference) &&
+              contextId.occurrence === resource.contextId.occurrence) {
+              contextId.occurrenceNote = resource.contextId.occurrenceNote;
+              dispatch(changeCurrentContextId(contextId));
+              break;
+            }
+          }
+        }
       }
     }
 

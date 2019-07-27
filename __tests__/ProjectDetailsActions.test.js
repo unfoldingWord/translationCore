@@ -21,7 +21,7 @@ import {
   USER_RESOURCES_PATH,
   WORD_ALIGNMENT,
   TRANSLATION_WORDS,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS, TRANSLATION_NOTES
 } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -114,6 +114,22 @@ describe('setProjectToolGL() should create an action to get the project GL for t
       {selectedGL:"hi", toolName: WORD_ALIGNMENT, type:"SET_GL_FOR_TOOL"}
     ];
     store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
+    const receivedActions = store.getActions();
+    expect(receivedActions).toEqual(expectedActions);
+  });
+
+  it('should set GL for translationNotes', () => {
+    const initialState = {
+      projectDetailsReducer: {},
+      resourcesReducer: {
+        bibles: {}
+      }
+    };
+    const store = mockStore(initialState);
+    const expectedActions = [
+      {selectedGL:"hi", toolName: TRANSLATION_NOTES, type:"SET_GL_FOR_TOOL"}
+    ];
+    store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
   });
