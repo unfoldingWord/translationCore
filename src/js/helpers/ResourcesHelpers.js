@@ -975,14 +975,33 @@ export function getMissingResources() {
             const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
             const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
             isOldResource = !userModifiedTime || (userModifiedTime < staticModifiedTime);
+            if (isOldResource) {
+              console.log("getMissingResources() - userModifiedTime: " + userModifiedTime);
+              console.log("getMissingResources() - staticModifiedTime: " + staticModifiedTime);
+            }
           } else if(!fs.existsSync(userResourceManifestPath)) {
-            isOldResource = true;
+            if (fs.existsSync(staticResourceManifestPath)) {
+              console.log("getMissingResources() - missing user manifest: " + userResourceManifestPath);
+              console.log("getMissingResources() - but found static manifest: " + staticResourceManifestPath);
+              isOldResource = true;
+            } else { // if no manifest.json, fall back to checking versions
+              const userVersion = path.basename(userResourceVersionPath);
+              const staticVersion = path.basename(staticResourceVersionPath);
+              isOldResource = ResourceAPI.compareVersions(userVersion, staticVersion) < 0;
+              if (isOldResource) {
+                console.log("getMissingResources() - userVersion: " + userVersion);
+                console.log("getMissingResources() - staticVersion: " + staticVersion);
+              }
+            }
           }
           const deleteOldResources = preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath);
           if (isOldResource) {
+            console.log(`getMissingResources() - checking ${languageId} ${resourceId} - old resource found`);
             if (deleteOldResources) {
+              console.log("getMissingResources() - deleting old resources folder: " + userResourcePath);
               fs.removeSync(userResourcePath);
             }
+            console.log("getMissingResources() - unzipping static resources");
             copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
           }
         }
