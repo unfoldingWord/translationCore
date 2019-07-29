@@ -25,8 +25,20 @@ export const validateContextIdQuote = (state, contextId, bibleId) => {
 };
 
 /**
+ * find path in index for current contextId
+ * @param {String} projectSaveLocation
+ * @param {String} toolName
+ * @param {String} bookId
+ * @return {*}
+ */
+export const getContextIdPathFromIndex = (projectSaveLocation, toolName, bookId) => {
+  return path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", "contextId.json");
+};
+
+/**
  * Writes the context id to the disk.
  * @param {object} state - store state object.
+ * @param {object} contextId
  */
 export const saveContextId = (state, contextId) => {
   try {
@@ -34,8 +46,7 @@ export const saveContextId = (state, contextId) => {
     let toolName = contextId ? contextId.tool : undefined;
     let bookId = contextId ? contextId.reference.bookId : undefined;
     if (projectSaveLocation && toolName && bookId) {
-      let fileName = "contextId.json";
-      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName);
+      let savePath = getContextIdPathFromIndex(projectSaveLocation, toolName, bookId);
       fs.outputJsonSync(savePath, contextId, { spaces: 2 });
     } else {
       // saveCurrentContextId: missing required data

@@ -4,7 +4,12 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories} from "../selectors";
+import {
+  getTranslate,
+  getUsername,
+  getProjectSaveLocation,
+  getToolCategories
+} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ResourcesActions from './ResourcesActions';
 // helpers
@@ -20,16 +25,17 @@ import ProjectAPI from "../helpers/ProjectAPI";
 import {
   PROJECTS_PATH,
   PROJECT_INDEX_FOLDER_PATH,
-  WORD_ALIGNMENT
+  WORD_ALIGNMENT,
+  TRANSLATION_NOTES
 } from '../common/constants';
 
 /**
  * @description Gets the check categories from the filesystem for the project and
  * sets them in the reducer
  * @param {String} toolName - The name of the tool to load check categories from
- * @param {String} bookName - The id abbreviation of the book name to load from
  * @param {String} projectSaveLocation - The project location to load from
- * i.e. ~/translationCore/projects/en_tit_reg
+ *                      i.e. ~/translationCore/projects/en_tit_reg
+ * @param {String} currentGatewayLanguage
  */
 export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en') => {
   return (dispatch) => {
@@ -125,6 +131,9 @@ export function setProjectToolGL(toolName, selectedGL) {
     }
 
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
+    if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
+      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
+    }
 
     dispatch({
       type: consts.SET_GL_FOR_TOOL,

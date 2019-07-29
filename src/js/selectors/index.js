@@ -417,7 +417,7 @@ export const getSelectedTargetChapter = (state) => {
 };
 
 /**
- * Returns the target language book
+ * Returns the target language bible
  * @param state
  * @return {*}
  */
@@ -425,7 +425,7 @@ export const getTargetBook = state =>
   fromResourcesReducer.getTargetBook(state.resourcesReducer);
 
 /**
- * Returns the source language book
+ * Returns the source language bible
  * @param state
  * @return {*}
  */

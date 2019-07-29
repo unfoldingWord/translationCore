@@ -5,6 +5,9 @@ import AdmZip from "adm-zip";
 import isEqual from "deep-equal";
 import _ from "lodash";
 import {getOtherTnsOLVersions} from 'tc-source-content-updater';
+// actions
+import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
+import {changeCurrentContextId} from "../actions/ContextIdActions";
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
 import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
@@ -12,7 +15,9 @@ import * as SettingsHelpers from "./SettingsHelpers";
 import {
   getContext,
   getToolGatewayLanguage,
-  getBibles
+  getBibles,
+  getProjectSaveLocation,
+  getProjectBookId
 } from "../selectors";
 import ProjectAPI from "./ProjectAPI";
 import ResourceAPI from "./ResourceAPI";
@@ -22,8 +27,8 @@ import {
 } from "./groupDataHelpers";
 import * as Bible from "../common/BooksOfTheBible";
 import {generateTimestamp} from "./TimestampGenerator";
-import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
 import {DEFAULT_GATEWAY_LANGUAGE} from "./gatewayLanguageHelpers";
+import {getContextIdPathFromIndex} from "./contextIdHelpers";
 // constants
 import {
   APP_VERSION,
@@ -150,21 +155,20 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
 /**
  * Copies all of a tool's group data from the global resources into a project.
  * This is boiler plate to keep a separation of concerns between the global resources and projects.
- * NOTE: this is designed to work on any gateway language, however it should only be with original languages.
+ * NOTE: this is designed to work on any gateway language, however it should only be with original languages for tW.
  * @param {string} gatewayLanguage - the gateway language code
  * @param {string} toolName - the name of the tool for which helps will be copied
  * @param {string} projectDir - path to the project directory
  * @param {function} dispatch - dispatch function
+ * @param {boolean} glChange - defaults to false, set to true if the GL has changed
  */
-export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch) {
+export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch, glChange = false) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
-  if (toolName === TRANSLATION_NOTES)
-    gatewayLanguage = "en";
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
   if (helpDir) {
     project.resetCategoryGroupIds(toolName);
-    const groupDataUpdated = project.hasNewGroupsData(toolName);
+    const groupDataUpdated = glChange || project.hasNewGroupsData(toolName);
     if (groupDataUpdated) {
       project.resetLoadedCategories(toolName);
       if (toolName === TRANSLATION_NOTES) {
@@ -313,6 +317,46 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
       project.setSelectedCategories(toolName, categories);
     }
   }
+}
+
+/**
+ * make sure that the group index data and contextId are up to date on GL change.  Currently only tN depends on GL
+ * @param {string} toolName
+ * @param {string} selectedGL
+ */
+export function updateGroupIndexForGl(toolName, selectedGL) {
+  return ((dispatch, getState) => {
+    const state = getState();
+    const projectDir = getProjectSaveLocation(state);
+    copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
+    const projectApi = new ProjectAPI(projectDir);
+    // get current contextId
+    let contextId = getContext(state);
+    let groupId = contextId && contextId.groupId;
+    const bookId = getProjectBookId(state);
+    if (!groupId && bookId) { // if current contextId is not set, load from file
+      const loadPath = getContextIdPathFromIndex(projectDir, toolName, bookId);
+      if (fs.existsSync(loadPath)) {
+        contextId = fs.readJsonSync(loadPath);
+        groupId = contextId && contextId.groupId;
+      }
+    }
+    if (groupId) {
+      // need to update occurrenceNote in current contextId from checks
+      const groupData = projectApi.getGroupData(toolName, groupId);
+      for (let check of groupData) {
+        // find check that matches current contextId
+        if (isEqual(contextId.reference, check.contextId.reference) &&
+              contextId.occurrence === check.contextId.occurrence) {
+
+          // if we found match, then update occurrenceNote in current context
+          contextId.occurrenceNote = check.contextId.occurrenceNote;
+          dispatch(changeCurrentContextId(contextId));
+          break;
+        }
+      }
+    }
+  });
 }
 
 /**
