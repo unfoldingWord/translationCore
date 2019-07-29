@@ -66,11 +66,11 @@
   "alignment_prompt": "అమరిక సమాచారాన్ని మీ భాగంతో వెలుపలికి పంపాలని కోరుతున్నారా?",
   "include_alignment_check": "అమరిక సమాచారాన్ని జతచెయ్యండి",
   "loading_verse_edits": "వచన సవరణలు నమోదుఅవుతున్నాయి",
-  "find_out_more": "Find out more about translationCore at:",
-  "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
-  "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
-  "sending_feedback": "Sending Feedback",
-  "sending_feedback_failed": "Failed to Send Feedback",
+  "find_out_more": "ముఖ్య అనువాదంకోసం కనుగొనడానికి చూడండి:",
+  "based_on_earlier_work": "ఐ ఎస్ సి క్రింద విక్లిఫ్ విక్లిఫ్ అసోసియేట్స్ ద్వారా విడుదల అయిన పూర్వపు పని మీద ఆధారపడింది. ",
+  "third_party_attributions": "మూడవ వ్యక్తి సూచన అదనపు ముద్రణాహక్కు గమనికలు, అనుమతి షరతులు",
+  "sending_feedback": "సమాచారాన్ని తిరిగి పంపించండి",
+  "sending_feedback_failed": "సమాచారాన్ని పంపించడంలో వైఫల్యం",
   "updates": {
     "check_for_newer_app": "మీ సాఫ్ట్ వేర్ నవీకరణలు సరిచూడండి",
     "check_for_content_updates": "సమాచార నవీకరణల తనిఖీ",
@@ -168,8 +168,8 @@
     "importing_project_alert": "${project_url} దిగుమతి అవుతుంది. దయచేసి ఎదురు చూడండి...",
     "cancel_import_alert": "ఇప్పుడు రద్దు చెయ్యడం దిగుమతి విధానాన్ని నిలిపివేస్తుంది, ప్రాజెక్టును వినియోగించడానికి ముందు దానిని తిరిగి దిగుమతి చెయ్యవలసి యుంది.",
     "project_already_identified": "ఈ ప్రాజెక్ట్ ఒక ${originalBook} ప్రాజెక్టుగా గుర్తించబడింది. ఒక ${suggestedBook} ప్రాజెక్టుగా మార్పుచెయ్యాలని మీరు కోరుతున్నారా?",
-    "loading_project_alert": "Loading project data.",
-    "preparing_project_alert": "Preparing project data.",
+    "loading_project_alert": "దిగుమతి అవుతున్న ప్రాజెక్టు సమాచారం",
+    "preparing_project_alert": "సిద్ధపరుస్తున్న ప్రాజెక్టు సమాచారం",
     "exported_alert": "${project_name} విజయవంతంగా ${file_path} కు ఎగుమతి అయ్యింది.",
     "must_be_logged_in_alert": "ప్రాజెక్టులు ఎగుమతి చెయ్యడానికి ఒక ${door43} ఖాతాను మీరు కలిగియుండాలి. దయచేసి వెలుపలికి రండి, తరువాత ఒక ${door43} వినియోగదారుని ఖాతాతో తిరిగి రండి..",
     "uploading_alert": "${project_name} ${door43}కు ఎగుమతి అవుతుంది, దయచేసి ఎదురుచూడండి....",
@@ -424,8 +424,8 @@
     "contact_helpdesk": "హెల్ప్ డెస్క్ ను సంప్రదించండి",
     "retry": "తిరిగి ప్రయత్నించండి",
     "update": "ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి",
-    "ignore_button": "Ignore",
-    "feedback_button": "Send Feedback"
+    "ignore_button": "లక్ష్యం చెయ్యకండి",
+    "feedback_button": "సమాచారాన్ని పంపించండి"
   },
   "tool_card_categories": {
     "kt": "కీలక పదాలు",
