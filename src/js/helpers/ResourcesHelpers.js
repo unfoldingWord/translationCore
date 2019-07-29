@@ -336,8 +336,10 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
     const bookId = getProjectBookId(state);
     if (!groupId && bookId) { // if current contextId is not set, load from file
       const loadPath = getContextIdPathFromIndex(projectDir, toolName, bookId);
-      contextId = fs.readJsonSync(loadPath);
-      groupId = contextId && contextId.groupId;
+      if (fs.existsSync(loadPath)) {
+        contextId = fs.readJsonSync(loadPath);
+        groupId = contextId && contextId.groupId;
+      }
     }
     if (groupId) {
       // need to update occurrenceNote in current contextId from checks
