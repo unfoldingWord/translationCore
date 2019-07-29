@@ -563,6 +563,7 @@ describe('updateGroupIndexForGl()', () => {
   };
   const projectName = 'en_gal';
   const projectPath = path.join(PROJECTS_PATH, projectName);
+  const tnIndexPath = path.join(projectPath, '.apps', 'translationCore', 'index', TRANSLATION_NOTES, bookId);
 
   beforeEach(() => {
     // reset mock filesystem data
@@ -627,6 +628,7 @@ describe('updateGroupIndexForGl()', () => {
 
     // then
     expect(store.getActions()).toMatchSnapshot();
+    expect(fs.existsSync(path.join(tnIndexPath, contextId.groupId + '.json'))).toBeTruthy(); // should have copied resources
   });
 
   it('should succeed without contextId in reducer', () => {
@@ -681,6 +683,7 @@ describe('updateGroupIndexForGl()', () => {
 
     // then
     expect(store.getActions()).toMatchSnapshot();
+    expect(fs.existsSync(path.join(tnIndexPath, contextId.groupId + '.json'))).toBeTruthy(); // should have copied resources
   });
 });
 
