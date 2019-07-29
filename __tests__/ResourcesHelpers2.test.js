@@ -7,30 +7,32 @@ import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import _ from "lodash";
 // helpers
+import {getContextIdPathFromIndex} from "../src/js/helpers/contextIdHelpers";
 import {
-  loadArticleData,
-  findArticleFilePath,
-  getResourcesNeededByTool,
   areResourcesNewer,
-  getAvailableScripturePaneSelections,
-  updateSourceContentUpdaterManifest,
   copySourceContentUpdaterManifest,
   extractZippedResourceContent,
+  findArticleFilePath,
+  getAvailableScripturePaneSelections,
+  getResourcesNeededByTool,
+  loadArticleData,
+  updateSourceContentUpdaterManifest,
+  updateGroupIndexForGl
 } from '../src/js/helpers/ResourcesHelpers';
-
 // constants
 import {
   APP_VERSION,
-  TC_VERSION,
-  USER_RESOURCES_PATH,
+  ORIGINAL_LANGUAGE,
   PROJECTS_PATH,
   STATIC_RESOURCES_PATH,
-  ORIGINAL_LANGUAGE,
-  TARGET_LANGUAGE,
   TARGET_BIBLE,
-  TRANSLATION_WORDS,
+  TARGET_LANGUAGE,
+  TC_VERSION,
   TRANSLATION_ACADEMY,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS,
+  TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
+  USER_RESOURCES_PATH
 } from '../src/js/common/constants';
 
 const middlewares = [thunk];
@@ -535,6 +537,153 @@ describe('loadArticleData()', () => {
     const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
     expect(content).toBeTruthy();
     expect(content).not.toEqual(notExpectedContent);
+  });
+});
+
+describe('updateGroupIndexForGl()', () => {
+  const bookId = 'gal';
+  const manifest_ = {
+    "generator":{"name":"tc-desktop","build":""},
+    "target_language":{"id":"en","name":"English","direction":"ltr"},
+    "ts_project":{"id":bookId,"name":"Galatians"},
+    "project":{"id":bookId,"name":"Galatians"},
+    "type":{"id":"text","name":"Text"},
+    "time_created":"2018-01-31T19:19:27.914Z",
+    "tcInitialized":true,
+    "tc_version":1,
+    "license":"CC BY-SA 4.0"};
+  const contextId = {
+    groupId: "figs-explicit",
+    occurrence: 1,
+    reference: {
+      bookId: bookId,
+      "chapter": 3,
+      "verse": 5
+    }
+  };
+  const projectName = 'en_gal';
+  const projectPath = path.join(PROJECTS_PATH, projectName);
+  const tnIndexPath = path.join(projectPath, '.apps', 'translationCore', 'index', TRANSLATION_NOTES, bookId);
+
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    loadMockFsWithProjectAndResources();
+    const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
+    const copyResourceFiles = ['en/translationHelps/translationNotes'];
+    fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, USER_RESOURCES_PATH);
+    const sourcePath = path.join('__tests__/fixtures/project');
+    let copyFiles = [projectName];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+    fs.__loadFilesIntoMockFs(['source-content-updater-manifest.json'], STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
+  });
+
+  it('should succeed with current contextId in reducer', () => {
+    // given
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {
+          targetLanguage: {
+            targetBible: {
+              manifest: {}
+            }
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
+              }, {
+                bibleId: "ugnt",
+                languageId: ORIGINAL_LANGUAGE
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      },
+      projectDetailsReducer: {
+        manifest: manifest_,
+        projectSaveLocation: projectPath
+      },
+    });
+    const toolName = TRANSLATION_NOTES;
+
+    // when
+    store.dispatch(updateGroupIndexForGl(toolName, 'en'));
+
+    // then
+    expect(store.getActions()).toMatchSnapshot();
+    expect(fs.existsSync(path.join(tnIndexPath, contextId.groupId + '.json'))).toBeTruthy(); // should have copied resources
+  });
+
+  it('should succeed without contextId in reducer', () => {
+    // given
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {
+          targetLanguage: {
+            targetBible: {
+              manifest: {}
+            }
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: {}
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
+              }, {
+                bibleId: "ugnt",
+                languageId: ORIGINAL_LANGUAGE
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      },
+      projectDetailsReducer: {
+        manifest: manifest_,
+        projectSaveLocation: projectPath
+      },
+    });
+    const toolName = TRANSLATION_NOTES;
+    const loadPath = getContextIdPathFromIndex(projectPath, toolName, bookId);
+    fs.outputJsonSync(loadPath, contextId);
+
+    // when
+    store.dispatch(updateGroupIndexForGl(toolName, 'en'));
+
+    // then
+    expect(store.getActions()).toMatchSnapshot();
+    expect(fs.existsSync(path.join(tnIndexPath, contextId.groupId + '.json'))).toBeTruthy(); // should have copied resources
   });
 });
 

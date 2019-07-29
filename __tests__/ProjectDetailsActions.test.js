@@ -4,7 +4,10 @@ jest.mock('../src/js/helpers/ProjectAPI');
 jest.mock('../');
 jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
-  getAvailableCategories: jest.fn(() => ({'names': ['John']}))
+  getAvailableCategories: jest.fn(() => ({'names': ['John']})),
+  updateGroupIndexForGl: jest.fn(() => {
+    return jest.fn(() => 'mock');
+  })
 }));
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
@@ -25,13 +28,14 @@ import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
 // helpers
 import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
+import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 // constants
 import {
   PROJECTS_PATH,
   USER_RESOURCES_PATH,
   WORD_ALIGNMENT,
   TRANSLATION_WORDS,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS, TRANSLATION_NOTES
 } from '../src/js/common/constants';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -113,9 +117,14 @@ describe('setProjectToolGL() should create an action to get the project GL for t
     }
   };
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should fail if no toolName is given', () => {
     const store = mockStore(initialState);
-    return expect(store.dispatch(actions.setProjectToolGL())).rejects.toEqual('Expected "toolName" to be a string but received undefined instead');
+    expect(store.dispatch(actions.setProjectToolGL())).rejects.toEqual('Expected "toolName" to be a string but received undefined instead');
+    expect(ResourcesHelpers.updateGroupIndexForGl).not.toHaveBeenCalled();
   });
 
   it('should set GL for word alignment', () => {
@@ -126,6 +135,24 @@ describe('setProjectToolGL() should create an action to get the project GL for t
     store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
+    expect(ResourcesHelpers.updateGroupIndexForGl).not.toHaveBeenCalled();
+  });
+
+  it('should set GL for translationNotes', () => {
+    const initialState = {
+      projectDetailsReducer: {},
+      resourcesReducer: {
+        bibles: {}
+      }
+    };
+    const store = mockStore(initialState);
+    const expectedActions = [
+      {selectedGL:"hi", toolName: TRANSLATION_NOTES, type:"SET_GL_FOR_TOOL"}
+    ];
+    store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
+    const receivedActions = store.getActions();
+    expect(receivedActions).toEqual(expectedActions);
+    expect(ResourcesHelpers.updateGroupIndexForGl).toHaveBeenCalled();
   });
 });
 

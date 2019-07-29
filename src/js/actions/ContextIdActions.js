@@ -4,12 +4,11 @@
 
 import consts from './ActionTypes';
 import fs from 'fs-extra';
-import path from 'path-extra';
 // helpers
 import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpers/navigationHelpers';
 // actions
 import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
-import { saveContextId } from '../helpers/contextIdHelpers';
+import {getContextIdPathFromIndex, saveContextId} from '../helpers/contextIdHelpers';
 import {
   getSelectedToolName,
   getGroupsIndex,
@@ -18,9 +17,6 @@ import {
   getToolsByKey
 } from "../selectors";
 import Repo from "../helpers/Repo";
-
-// constant declaration
-const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
 /**
  * TODO: tool data should eventually move into the respective tools.
@@ -156,12 +152,11 @@ export function loadCurrentContextId() {
     let { groupsIndex } = state.groupsIndexReducer;
     const toolName = getSelectedToolName(state);
     let bookId = manifest.project.id ? manifest.project.id : undefined;
-    let fileName = "contextId.json";
 
     if (projectSaveLocation && toolName && bookId) {
       let contextId = {};
       try {
-        let loadPath = path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", fileName);
+        let loadPath = getContextIdPathFromIndex(projectSaveLocation, toolName, bookId);
         if (fs.existsSync(loadPath)) {
           contextId = fs.readJsonSync(loadPath);
           const contextIdExistInGroups = groupsIndex.filter(({id}) => id === contextId.groupId).length > 0;

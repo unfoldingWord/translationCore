@@ -54,6 +54,7 @@ import {
   tc_MIN_COMPATIBLE_VERSION_KEY,
   tc_EDIT_VERSION_KEY,
   tc_MIN_VERSION_ERROR,
+  TRANSLATION_WORDS
 } from '../../common/constants';
 
 /**
@@ -135,17 +136,20 @@ export const openProject = (name, skipValidation=false) => {
         // load source book translations
         console.log(`openProject() - loading source book ${bookId} into ${t.name}`);
         await dispatch(loadSourceBookTranslations(bookId, t.name));
+        const gatewayLanguage = getToolGatewayLanguage(getState(), t.name);
 
         // copy group data
-        // TRICKY: group data must be tied to the original language.
+        // TRICKY: group data must be tied to the original language for tW and GL for tN
         console.log("openProject() - copy group data");
-        const olForBook = BibleHelpers.getOrigLangforBook(bookId);
-        let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
-        copyGroupDataToProject(helpDir, t.name, validProjectDir, dispatch);
+        let copyLang = gatewayLanguage;
+        if (t.name === TRANSLATION_WORDS) { // for tW we use OrigLang
+          const olForBook = BibleHelpers.getOrigLangforBook(bookId);
+          copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+        }
+        copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch);
 
         // select default categories
-        const language = getToolGatewayLanguage(getState(), t.name);
-        setDefaultProjectCategories(language, t.name, validProjectDir);
+        setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);
 
         // connect tool api
         console.log("openProject() - connect tool api");

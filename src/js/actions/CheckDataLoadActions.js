@@ -43,7 +43,7 @@ export function generateLoadPath(projectDetailsReducer, contextIdReducer, checkD
 }
 
 /**
- * @description loads checkdata beased on given.
+ * @description loads checkdata based on given contextId.
  * @param {String} loadPath - load path.
  * @param {object} contextId - groupData unique context Id.
  * @return {object} returns the object loaded from the file system.
