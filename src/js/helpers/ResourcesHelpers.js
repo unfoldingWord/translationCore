@@ -328,8 +328,9 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
   return ((dispatch, getState) => {
     const state = getState();
     const projectDir = getProjectSaveLocation(state);
-    copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true);
+    copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
     const projectApi = new ProjectAPI(projectDir);
+    // get current contextId
     let contextId = getContext(state);
     let groupId = contextId && contextId.groupId;
     const bookId = getProjectBookId(state);
@@ -341,13 +342,13 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
     if (groupId) {
       // need to update occurrenceNote in current contextId from checks
       const groupData = projectApi.getGroupData(toolName, groupId);
-      for (let resource of groupData) {
+      for (let check of groupData) {
         // find check that matches current contextId
-        if (isEqual(contextId.reference, resource.contextId.reference) &&
-              contextId.occurrence === resource.contextId.occurrence) {
+        if (isEqual(contextId.reference, check.contextId.reference) &&
+              contextId.occurrence === check.contextId.occurrence) {
 
-          // if we found match, then update occurrenceNote
-          contextId.occurrenceNote = resource.contextId.occurrenceNote;
+          // if we found match, then update occurrenceNote in current context
+          contextId.occurrenceNote = check.contextId.occurrenceNote;
           dispatch(changeCurrentContextId(contextId));
           break;
         }

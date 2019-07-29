@@ -4,7 +4,10 @@ jest.mock('../src/js/helpers/ProjectAPI');
 jest.mock('../');
 jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
-  getAvailableCategories: jest.fn(() => ({'names':['John']}))
+  getAvailableCategories: jest.fn(() => ({'names':['John']})),
+  updateGroupIndexForGl: jest.fn(() => {
+    return jest.fn(() => 'mock');
+  })
 }));
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -15,6 +18,7 @@ import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
 // helpers
 import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
+import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 // constants
 import {
   PROJECTS_PATH,
@@ -103,9 +107,14 @@ describe('setProjectToolGL() should create an action to get the project GL for t
     }
   };
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should fail if no toolName is given', () => {
     const store = mockStore(initialState);
-    return expect(store.dispatch(actions.setProjectToolGL())).rejects.toEqual('Expected "toolName" to be a string but received undefined instead');
+    expect(store.dispatch(actions.setProjectToolGL())).rejects.toEqual('Expected "toolName" to be a string but received undefined instead');
+    expect(ResourcesHelpers.updateGroupIndexForGl).not.toHaveBeenCalled();
   });
 
   it('should set GL for word alignment', () => {
@@ -116,6 +125,7 @@ describe('setProjectToolGL() should create an action to get the project GL for t
     store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
+    expect(ResourcesHelpers.updateGroupIndexForGl).not.toHaveBeenCalled();
   });
 
   it('should set GL for translationNotes', () => {
@@ -132,6 +142,7 @@ describe('setProjectToolGL() should create an action to get the project GL for t
     store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
+    expect(ResourcesHelpers.updateGroupIndexForGl).toHaveBeenCalled();
   });
 });
 
