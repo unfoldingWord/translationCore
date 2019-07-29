@@ -131,7 +131,7 @@ export function setProjectToolGL(toolName, selectedGL) {
     }
 
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
-    if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang
+    if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
       dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
     }
 
