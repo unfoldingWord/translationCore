@@ -67,10 +67,10 @@
   "include_alignment_check": "संरेखण डेटा शामिल करें",
   "loading_verse_edits": "आयत का संपादन लोड हो रहा है",
   "find_out_more": "TranslationCore के बारे में अधिक जाने:",
-  "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
-  "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
-  "sending_feedback": "Sending Feedback",
-  "sending_feedback_failed": "Failed to Send Feedback",
+  "based_on_earlier_work": "Wycliffe Associates के द्वारा पहले किए गए काम के आधार पर जारी ISC",
+  "third_party_attributions": "तीसरे पक्ष के कोड अतिरिक्त कॉपीराइट नोटिस और लायसेंस की शर्तें",
+  "sending_feedback": "प्रतिक्रिया भेजना",
+  "sending_feedback_failed": "प्रतिक्रिया भेजने में विफल",
   "updates": {
     "check_for_newer_app": "सॉफ्टवेयर अपडेट की जांच करें",
     "check_for_content_updates": "सामग्री अद्यतनों के लिए जाँच करें",
@@ -382,7 +382,7 @@
     "invalidation_checking": "जाँच करें कि क्या यह सहेजे गए चयन और संरेखण के साथ मतभेद को संपादित करता है...",
     "alignments_reset_wa_tool": "आपके प्रोजेक्ट में परिवर्तन का पता चला है जिसने आपके कुछ संरेखण को अमान्य कर दिया है।\nये आयतों साइड मेनू में संदर्भ के साथ में एक टूटी हुई ज़ंजीर का एक आइकन प्रदर्शित करते हैं।",
     "invalid_verse_alignments_and_selections": "आपके प्रोजेक्ट में परिवर्तन का पता चला है जिसने कुछ चयन और कुछ संरेखण को अमान्य कर दिया है।\nये आयतों साइड मेनू में संदर्भ के साथ में एक टूटी हुई ज़ंजीर का एक आइकन प्रदर्शित करते हैं।",
-    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
+    "invalid_check_found": "इस जाँच की सामग्री में कुछ समस्कया है: ${report} क्या आप इस समस्या की रिपोर्ट करना चाहते हैं कि इसे ठीक किया जा सकें?"
   },
   "buttons": {
     "back_button": "वापस जाओ",
@@ -424,8 +424,8 @@
     "contact_helpdesk": "हेल्पडेस्क से संपर्क करें",
     "retry": "पुन: प्रयास करें",
     "update": "नवीनतम संस्करण में अपडेट करें",
-    "ignore_button": "Ignore",
-    "feedback_button": "Send Feedback"
+    "ignore_button": "उपेक्षा करें",
+    "feedback_button": "प्रतिक्रिया भेजें"
   },
   "tool_card_categories": {
     "kt": "मुख्य शब्दों",
