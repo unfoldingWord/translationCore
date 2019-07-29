@@ -12,7 +12,8 @@ import {
   WORD_ALIGNMENT,
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
-  TRANSLATION_ACADEMY
+  TRANSLATION_ACADEMY,
+  TRANSLATION_HELPS
 } from '../src/js/common/constants';
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
 
@@ -190,14 +191,33 @@ describe('Test getGatewayLanguageList() for TN',()=>{
       expect(languages.length).toEqual(2);
     });
 
+    test('should return English for Romans without Hindi tn for book', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps', 'el-x-koine'];
+      fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
+      fakeHelpsBookByCopying('en', 'tit', 'rom', TRANSLATION_NOTES);
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1'), 'tit', 'rom');
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt/v0.2'), 'tit', 'rom');
+
+      // fake a hindi bible
+      fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult', 'hi/bibles/ulb');
+      fakeResourceByCopying(USER_RESOURCES_PATH, 'en/translationHelps', 'hi/translationHelps');
+      removeBookFromGroups(path.join(USER_RESOURCES_PATH, 'hi/translationHelps/translationNotes/v15'), 'rom'); // remove romans support
+
+      const languages = gatewayLanguageHelpers.getGatewayLanguageList('rom', toolName);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
+    });
+
     test('should return English for Joel', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps', 'hbo/bibles/uhb', 'el-x-koine'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
       fakeHelpsByCopying('el-x-koine', 'hbo');
+      fakeHelpsByCopying('en', 'hi', TRANSLATION_NOTES);
 
       // fake the book of Joel
       fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
       fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'hbo/translationHelps/translationWords/v8/kt/groups'), 'tit', 'jol');
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/translationHelps/translationNotes/v15/culture/groups'), 'tit', 'jol');
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol', toolName);
       expect(languages[0].name).toEqual('English');
@@ -208,9 +228,11 @@ describe('Test getGatewayLanguageList() for TN',()=>{
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps', 'hbo/bibles/uhb', 'el-x-koine'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
       fakeHelpsByCopying('el-x-koine', 'hbo');
+      fakeHelpsByCopying('en', 'hi', TRANSLATION_NOTES);
 
       // fake the book of joel
       fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1'), 'tit', 'jol');
+      fakeResourceByCopying(path.join(USER_RESOURCES_PATH, 'en/translationHelps/translationNotes/v15/culture/groups'), 'tit', 'jol');
       fakeHelpsBookByCopying('hbo', 'tit', 'jol');
       // fake a hindi bible
       fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1', 'hi/bibles/irv/v12.1');
@@ -1422,9 +1444,9 @@ describe('checkAreayHelpers.bibleIdSort', () => {
 // helper functions
 //
 
-function fakeHelpsByCopying(srcLang, destLang) {
+function fakeHelpsByCopying(srcLang, destLang, helpsDir = TRANSLATION_WORDS) {
   // add dummy resources
-  fs.copySync(path.join(USER_RESOURCES_PATH, srcLang, 'translationHelps/translationWords'), path.join(USER_RESOURCES_PATH, destLang, 'translationHelps/translationWords'));
+  fs.copySync(path.join(USER_RESOURCES_PATH, srcLang, TRANSLATION_HELPS, helpsDir), path.join(USER_RESOURCES_PATH, destLang, TRANSLATION_HELPS, helpsDir));
 }
 
 function fakeHelpsBookByCopying(lang, srcBook, destBook) {
@@ -1439,6 +1461,16 @@ function fakeHelpsBookByCopying(lang, srcBook, destBook) {
       if (fs.lstatSync(srcBookPath).isDirectory()) {
         fs.copySync(srcBookPath, path.join(srcPath, destBook));
       }
+    }
+  }
+}
+
+function removeBookFromGroups(helpsPath, bookId) {
+  const subFolders = ResourcesHelpers.getFoldersInResourceFolder(helpsPath);
+  for (const file of subFolders) {
+    const bookPath = path.join(helpsPath, file, "groups", bookId);
+    if (fs.existsSync(bookPath)) {
+      fs.removeSync(bookPath);
     }
   }
 }

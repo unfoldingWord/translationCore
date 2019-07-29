@@ -10,12 +10,12 @@ import {getSelectedToolName, getToolGatewayLanguage} from "../selectors";
 import ResourceAPI from "./ResourceAPI";
 // constants
 import {
-  USER_RESOURCES_PATH,
-  WORD_ALIGNMENT,
-  TRANSLATION_WORDS,
-  TRANSLATION_NOTES,
   TRANSLATION_ACADEMY,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS,
+  TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT
 } from '../common/constants';
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
@@ -291,11 +291,7 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
             const subFolderPath = path.join(latestVersionPath, subFolder);
             if (isDirectory(subFolderPath)) {
               let checkPath, subpath = helpsCheck.subpath || '';
-              const searchValue = '${bookID}';
-              if (!bookID && subpath.includes(searchValue)) {
-                return true;
-              }
-              checkPath = path.join(subFolderPath, subpath.replace(searchValue, bookID));
+              checkPath = path.join(subFolderPath, subpath.replace('${bookID}', bookID));
               if (isDirectory(checkPath)) {
                 const validFile = fs.readdirSync(checkPath).find(file => {
                   const ext = path.parse(file).ext;
@@ -362,7 +358,7 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
     let isBibleValidSource = false;
     let biblePath = getValidResourcePath(biblesPath, bible);
     if (biblePath) {
-      isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath);
+      isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId);
       if (isBibleValidSource) {
         if (bookId) { // if filtering by book
           const isValidOrig = hasValidOL(bookId, glRequirements.ol.minimumCheckingLevel); // make sure we have an OL for the book
