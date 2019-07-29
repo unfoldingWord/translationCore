@@ -4,7 +4,7 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 // actions
 import * as AlertModalActions from "./AlertModalActions";
-import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories} from "../selectors";
+import {getTranslate, getUsername, getProjectSaveLocation, getToolCategories, getToolsByKey} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ResourcesActions from './ResourcesActions';
 // helpers
@@ -156,8 +156,10 @@ export function getProjectProgressForTools(toolName, results=null) {
     }
     const pathToCheckDataFiles = path.join(projectSaveLocation, PROJECT_INDEX_FOLDER_PATH, toolName, bookId);
     if (toolName === WORD_ALIGNMENT) {
-      const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
-      progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
+      const toolApi = getToolsByKey(getState());
+      const currentToolApi = toolApi[toolName].api;
+      //TODO: add progress fetch code to checking-tool-wrapper
+      progress = currentToolApi.trigger('getProgress');
     } else {
       progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
     }

@@ -46,6 +46,7 @@ class ToolCard extends Component {
 
     setTimeout(() => {
       const results = {};
+      debugger;
       actions.getProjectProgressForTools(tool.name, results);
       const toolProgress = results.progress;
       if(progress !== toolProgress) {
