@@ -2,16 +2,13 @@ import React from 'react';
 import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import isEqual from "deep-equal";
 // actions
 import * as AlertModalActions from "./AlertModalActions";
 import {
   getTranslate,
   getUsername,
   getProjectSaveLocation,
-  getToolCategories,
-  getContext,
-  getToolGatewayLanguage
+  getToolCategories
 } from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ResourcesActions from './ResourcesActions';
@@ -31,7 +28,6 @@ import {
   WORD_ALIGNMENT,
   TRANSLATION_NOTES
 } from '../common/constants';
-import {changeCurrentContextId, loadCurrentContextId} from "./ContextIdActions";
 
 /**
  * @description Gets the check categories from the filesystem for the project and
