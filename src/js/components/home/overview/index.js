@@ -82,7 +82,7 @@ OverviewContainer.propTypes = {
   actions: PropTypes.object.isRequired,
   selectedCategoriesChanged: PropTypes.bool.isRequired,
   translate: PropTypes.func,
-  glSelectedChanged: PropTypes.string.isRequired,
+  glSelectedChanged: PropTypes.bool.isRequired,
 };
 
 OverviewContainer.contextTypes = {

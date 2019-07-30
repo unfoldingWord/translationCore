@@ -387,6 +387,42 @@ export default class ProjectAPI {
   }
 
   /**
+   * Modifies the current field of the .categories file in project index path.
+   * @param {string} toolName - The tool name. This is synonymous with translationHelp name.
+   * @param {object} availableCategories - List of categories and subcategories.
+   */
+  setCurrentCategories(toolName, availableCategories) {
+    const categoriesPath = path.join(this.getCategoriesDir(toolName), '.categories');
+    try {
+      if (fs.existsSync(categoriesPath)) {
+        const rawData = fs.readJsonSync(categoriesPath);
+        const categoryKeys = Object.keys(availableCategories);
+        // In some older projects the category was saved in the .categories file instead of the subcategories.
+        let newCurrent = rawData.current.map(currentItem => {
+          if (categoryKeys.includes(currentItem)) {
+            return availableCategories[currentItem];
+          } else {
+            return currentItem;
+          }
+        });
+        // flatten the array
+        newCurrent = [].concat.apply([], newCurrent);
+        // Remove duplicate items
+        newCurrent = newCurrent.filter((item, index) => newCurrent.indexOf(item) === index);
+        const data = { ...rawData, current: newCurrent };
+        const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
+        const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
+        data.timestamp = lastTimeDataDownloaded;
+        // save new .categories file in project index path
+        fs.outputJsonSync(categoriesPath, data, { spaces: 2 });
+      }
+    } catch (e) {
+      console.error(`Failed to set current categories at ${categoriesPath}.`);
+      console.error(e);
+    }
+  }
+
+  /**
    * Removes category index from project, and creates empty directory
    * Useful for getting rid of stale data after a resource update
    * @param {string} toolName - The tool name. This is synonymous with translationHelp name
