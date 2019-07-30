@@ -380,7 +380,7 @@
     "invalid_checks": "Inkaar kura check khan",
     "invalid_verse_alignments": "Thik thak namila verse khan.",
     "invalidation_checking": "Bachaikena rakha milaikena rakha khan logote itu sudhar tu sangharsa kure na nakure check kuri ashe...",
-    "alignments_reset_wa_tool": "Changes have been detected in your project which have invalidated some of your alignments.\nThese verses display an icon of a broken chain next to the reference in the side menu.",
+    "alignments_reset_wa_tool": "Aapni laga project te badlawa kuri diya hoise aru itu khanke aapni laga sangrekhan te milai diya hoise. Itu verse khan sandarbha laga kinarte ekta bhangiya sikol laga icon te dikhai dibo.",
     "invalid_verse_alignments_and_selections": "Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu.",
     "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
