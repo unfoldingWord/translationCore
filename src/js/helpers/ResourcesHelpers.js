@@ -178,6 +178,9 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       }
     }
     const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+    // In some older projects the category was saved in the .categories file instead of the subcategories.
+    project.setCurrentCategories(toolName, categories);
+
     const categoryKeys = Object.keys(categories);
     for (let i = 0, l = categoryKeys.length; i < l; i++) {
       const category = categoryKeys[i];
