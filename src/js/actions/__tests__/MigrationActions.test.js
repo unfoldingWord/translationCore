@@ -191,6 +191,47 @@ describe("migrate tCore resources", () => {
       expect(folders).toMatchSnapshot();
       verifyResources(oldHelpsExpected, oldBibleExpected);
     });
+
+    it("test with current el-x-koine tHelps resources - should not delete", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = false;
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "el-x-koine/translationHelps/translationWords"), path.join(USER_RESOURCES_PATH, "el-x-koine/translationHelps/translationWords"));
+      const manifestPath = path.join(STATIC_RESOURCES_PATH, 'source-content-updater-manifest.json');
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest[TC_VERSION] = APP_VERSION; // add app version to resource
+      fs.outputJsonSync(path.join(USER_RESOURCES_PATH,  'source-content-updater-manifest.json'), manifest);
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it("test with old el-x-koine tHelps resources (no manifest.json) - should update", () => {
+      // given
+      const oldHelpsExpected = false;
+      const oldBibleExpected = false;
+      fs.removeSync(path.join(STATIC_RESOURCES_PATH, "el-x-koine/translationHelps/translationWords/v8/manifest.json"));
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, "el-x-koine/translationHelps/translationWords/v8"), path.join(USER_RESOURCES_PATH, "el-x-koine/translationHelps/translationWords/v7"));
+      const manifestPath = path.join(STATIC_RESOURCES_PATH, 'source-content-updater-manifest.json');
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest[TC_VERSION] = APP_VERSION; // add app version to resource
+      fs.outputJsonSync(path.join(USER_RESOURCES_PATH,  'source-content-updater-manifest.json'), manifest);
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
   });
 
   describe('Test grc resource migration', () => {

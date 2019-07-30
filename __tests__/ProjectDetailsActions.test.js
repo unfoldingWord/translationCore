@@ -4,10 +4,20 @@ jest.mock('../src/js/helpers/ProjectAPI');
 jest.mock('../');
 jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
-  getAvailableCategories: jest.fn(() => ({'names':['John']})),
+  getAvailableCategories: jest.fn(() => ({'names': ['John']})),
   updateGroupIndexForGl: jest.fn(() => {
     return jest.fn(() => 'mock');
   })
+}));
+jest.mock('../src/js/selectors', () => ({
+  ...require.requireActual('../src/js/selectors'),
+  getToolsByKey: jest.fn(() => ({
+    'wordAlignment': {
+      api: {
+        trigger: (funcName) => funcName === 'getProgress' ? 0 : null
+      }
+    }
+  }))
 }));
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -60,10 +70,10 @@ describe('getProjectProgressForTools() should create an action to get the projec
           id: ''
         }
       },
-      toolsCategories:{}
+      toolsCategories: {}
     },
     settingsReducer: {
-      currentSettings: { }
+      currentSettings: {}
     },
     resourcesReducer: {
       bibles: {}
@@ -120,7 +130,7 @@ describe('setProjectToolGL() should create an action to get the project GL for t
   it('should set GL for word alignment', () => {
     const store = mockStore(initialState);
     const expectedActions = [
-      {selectedGL:"hi", toolName: WORD_ALIGNMENT, type:"SET_GL_FOR_TOOL"}
+      {selectedGL: "hi", toolName: WORD_ALIGNMENT, type: "SET_GL_FOR_TOOL"}
     ];
     store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
     const receivedActions = store.getActions();
@@ -149,9 +159,9 @@ describe('setProjectToolGL() should create an action to get the project GL for t
 it('setProjectManifest() creates an action to set the project manifest', () => {
   const expectedAction = {
     type: types.STORE_MANIFEST,
-    manifest: { hello: 'world' }
+    manifest: {hello: 'world'}
   };
-  expect(actions.setProjectManifest({ hello: 'world' }))
+  expect(actions.setProjectManifest({hello: 'world'}))
     .toEqual(expectedAction);
 });
 
@@ -159,9 +169,9 @@ it('addObjectPropertyToManifest() creates an action to add an object property to
   const expectedAction = {
     type: types.ADD_MANIFEST_PROPERTY,
     propertyName: 'key',
-    value: { hello: 'world' }
+    value: {hello: 'world'}
   };
-  expect(actions.addObjectPropertyToManifest('key', { hello: 'world' }))
+  expect(actions.addObjectPropertyToManifest('key', {hello: 'world'}))
     .toEqual(expectedAction);
 });
 
@@ -176,7 +186,7 @@ it('setProjectBookIdAndBookName() creates an action to set the project book id a
     bookId: 'gen',
     bookName: 'Genesis'
   }];
-  store.dispatch(actions.setProjectBookIdAndBookName()).then(()=>{
+  store.dispatch(actions.setProjectBookIdAndBookName()).then(() => {
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
   });
@@ -212,7 +222,7 @@ it('setProjectNickname() creates an action to set the nickname', () => {
   expect(receivedActions).toEqual(expectedActions);
 });
 
-it('setLanguageDetails() creates an action to set the language details',  () => {
+it('setLanguageDetails() creates an action to set the language details', () => {
   const store = mockStore({
     projectInformationCheckReducer: {
       languageDirection: 'rtl',
@@ -435,7 +445,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
 
 describe('ProjectDetailsActions.updateCategorySelection', () => {
   const project_name = 'normal_project';
-  beforeAll(()=>{
+  beforeAll(() => {
     // Make resource
     fs.__resetMockFS();
     const projectSourcePath = path.join('__tests__', 'fixtures', 'project', TRANSLATION_WORDS);
@@ -482,7 +492,7 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
     const toolName = TRANSLATION_WORDS;
     const projectSaveLocation = path.join(PROJECTS_PATH, project_name);
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-    beforeAll(()=>{
+    beforeAll(() => {
       // Make resource
       fs.__resetMockFS();
       const projectSourcePath = path.join('__tests__', 'fixtures', 'project', TRANSLATION_WORDS);
@@ -519,7 +529,7 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
     test('should not load check categories that are not present in the resources', () => {
       const namesResourcePath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS);
       fs.removeSync(namesResourcePath);
-      const expectedActions =  [{"selectedSubcategories": [], "toolName": TRANSLATION_WORDS, "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions = [{"selectedSubcategories": [], "toolName": TRANSLATION_WORDS, "type": "SET_CHECK_CATEGORIES"}];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),

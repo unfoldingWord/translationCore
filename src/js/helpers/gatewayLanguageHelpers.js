@@ -10,12 +10,12 @@ import {getSelectedToolName, getToolGatewayLanguage} from "../selectors";
 import ResourceAPI from "./ResourceAPI";
 // constants
 import {
-  USER_RESOURCES_PATH,
-  WORD_ALIGNMENT,
-  TRANSLATION_WORDS,
-  TRANSLATION_NOTES,
   TRANSLATION_ACADEMY,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS,
+  TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT
 } from '../common/constants';
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
@@ -90,7 +90,8 @@ export function getGlRequirementsForTool(toolName) {
           path: path.join(TRANSLATION_HELPS, TRANSLATION_ACADEMY)
         },
         {
-          path: path.join(TRANSLATION_HELPS, TRANSLATION_NOTES)
+          path: path.join(TRANSLATION_HELPS, TRANSLATION_NOTES),
+          subpath: path.join('groups', '${bookID}')
         }
       ];
       break;
@@ -357,7 +358,7 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
     let isBibleValidSource = false;
     let biblePath = getValidResourcePath(biblesPath, bible);
     if (biblePath) {
-      isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath);
+      isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId);
       if (isBibleValidSource) {
         if (bookId) { // if filtering by book
           const isValidOrig = hasValidOL(bookId, glRequirements.ol.minimumCheckingLevel); // make sure we have an OL for the book
