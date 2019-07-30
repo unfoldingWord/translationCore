@@ -32,7 +32,7 @@ import {
   TRANSLATION_HELPS,
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
-  USER_RESOURCES_PATH
+  USER_RESOURCES_PATH, WORD_ALIGNMENT
 } from '../src/js/common/constants';
 
 const middlewares = [thunk];
@@ -578,8 +578,11 @@ describe('updateGroupIndexForGl()', () => {
     fs.__loadFilesIntoMockFs(['source-content-updater-manifest.json'], STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
   });
 
-  it('should succeed with current contextId in reducer', () => {
+  it('should succeed with current tool contextId in reducer', () => {
     // given
+    const toolName = TRANSLATION_NOTES;
+    const contextId_ = _.cloneDeep(contextId);
+    contextId_.tool = toolName;
     const store =  mockStore({
       resourcesReducer: {
         bibles: {
@@ -593,7 +596,7 @@ describe('updateGroupIndexForGl()', () => {
         lexicons: {}
       },
       contextIdReducer: {
-        contextId
+        contextId: contextId_
       },
       settingsReducer: {
         toolsSettings: {
@@ -621,8 +624,63 @@ describe('updateGroupIndexForGl()', () => {
         projectSaveLocation: projectPath
       },
     });
-    const toolName = TRANSLATION_NOTES;
 
+    // when
+    store.dispatch(updateGroupIndexForGl(toolName, 'en'));
+
+    // then
+    expect(store.getActions()).toMatchSnapshot();
+    expect(fs.existsSync(path.join(tnIndexPath, contextId.groupId + '.json'))).toBeTruthy(); // should have copied resources
+  });
+
+  it('should succeed with different tools contextId in reducer', () => {
+    // given
+    const toolName = TRANSLATION_NOTES;
+    const contextId_ = _.cloneDeep(contextId);
+    contextId_.tool = WORD_ALIGNMENT;
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {
+          targetLanguage: {
+            targetBible: {
+              manifest: {}
+            }
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: contextId_
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
+              }, {
+                bibleId: "ugnt",
+                languageId: ORIGINAL_LANGUAGE
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      },
+      projectDetailsReducer: {
+        manifest: manifest_,
+        projectSaveLocation: projectPath
+      },
+    });
+    const loadPath = getContextIdPathFromIndex(projectPath, toolName, bookId);
+    fs.outputJsonSync(loadPath, contextId);
     // when
     store.dispatch(updateGroupIndexForGl(toolName, 'en'));
 
