@@ -578,61 +578,11 @@ describe('updateGroupIndexForGl()', () => {
     fs.__loadFilesIntoMockFs(['source-content-updater-manifest.json'], STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
   });
 
-  it('should succeed with current contextId in reducer', () => {
+  it('should succeed', () => {
     // given
-    const store =  mockStore({
-      resourcesReducer: {
-        bibles: {
-          targetLanguage: {
-            targetBible: {
-              manifest: {}
-            }
-          }
-        },
-        translationHelps: {},
-        lexicons: {}
-      },
-      contextIdReducer: {
-        contextId
-      },
-      settingsReducer: {
-        toolsSettings: {
-          ScripturePane: {
-            currentPaneSettings: [
-              {
-                bibleId: TARGET_BIBLE,
-                languageId: TARGET_LANGUAGE
-              }, {
-                bibleId: "ugnt",
-                languageId: ORIGINAL_LANGUAGE
-              }, {
-                bibleId: "ust",
-                languageId: "en"
-              }, {
-                bibleId: "ult",
-                languageId: "en"
-              }
-            ]
-          }
-        }
-      },
-      projectDetailsReducer: {
-        manifest: manifest_,
-        projectSaveLocation: projectPath
-      },
-    });
     const toolName = TRANSLATION_NOTES;
-
-    // when
-    store.dispatch(updateGroupIndexForGl(toolName, 'en'));
-
-    // then
-    expect(store.getActions()).toMatchSnapshot();
-    expect(fs.existsSync(path.join(tnIndexPath, contextId.groupId + '.json'))).toBeTruthy(); // should have copied resources
-  });
-
-  it('should succeed without contextId in reducer', () => {
-    // given
+    const contextId_ = _.cloneDeep(contextId);
+    contextId_.tool = toolName;
     const store =  mockStore({
       resourcesReducer: {
         bibles: {
@@ -674,15 +624,15 @@ describe('updateGroupIndexForGl()', () => {
         projectSaveLocation: projectPath
       },
     });
-    const toolName = TRANSLATION_NOTES;
     const loadPath = getContextIdPathFromIndex(projectPath, toolName, bookId);
-    fs.outputJsonSync(loadPath, contextId);
+    fs.outputJsonSync(loadPath, contextId_);
 
     // when
     store.dispatch(updateGroupIndexForGl(toolName, 'en'));
 
     // then
-    expect(store.getActions()).toMatchSnapshot();
+    const storedContextId = fs.readJsonSync(loadPath);
+    expect(storedContextId).toMatchSnapshot();
     expect(fs.existsSync(path.join(tnIndexPath, contextId.groupId + '.json'))).toBeTruthy(); // should have copied resources
   });
 });
