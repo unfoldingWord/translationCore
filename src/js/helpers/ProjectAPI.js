@@ -404,10 +404,11 @@ export default class ProjectAPI {
           } else {
             return currentItem;
           }
-        }).flat();
+        });
+        // flatten the array
+        newCurrent = [].concat.apply([], newCurrent);
         // Remove duplicate items
-        newCurrent = newCurrent.filter((item, index) =>
-          newCurrent.indexOf(item) === index);
+        newCurrent = newCurrent.filter((item, index) => newCurrent.indexOf(item) === index);
         const data = { ...rawData, current: newCurrent };
         const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
         const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
@@ -416,7 +417,7 @@ export default class ProjectAPI {
         fs.outputJsonSync(categoriesPath, data, { spaces: 2 });
       }
     } catch (e) {
-      console.error(`Failed to set current Categories at ${categoriesPath}.`);
+      console.error(`Failed to set current categories at ${categoriesPath}.`);
       console.error(e);
     }
   }
