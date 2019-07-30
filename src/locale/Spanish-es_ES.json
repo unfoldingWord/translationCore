@@ -29,6 +29,7 @@
   "home": "Inicio",
   "required": "Obligatorio",
   "required_field": "Este campo es obligatorio",
+  "license": "License",
   "licenses": "Licencias",
   "user": "Usuario",
   "project": "Proyecto",
@@ -65,6 +66,11 @@
   "alignment_prompt": "Te gustaría exportar los datos de alineamiento con el texto?",
   "include_alignment_check": "Incluir datos de alineación",
   "loading_verse_edits": "Loading Verse Edits",
+  "find_out_more": "Find out more about translationCore at:",
+  "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
+  "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
+  "sending_feedback": "Sending Feedback",
+  "sending_feedback_failed": "Failed to Send Feedback",
   "updates": {
     "check_for_newer_app": "Revisa si hay actualizaciones de software",
     "check_for_content_updates": "Revisa si hay actualizaciones de contenido",
@@ -150,6 +156,8 @@
     "import_online_project": "Importar un Proyecto Online",
     "searching_alert": "Buscando. Por favor espere...",
     "books_available": "En esta versión de ${app}, el translationWords es una herramienta de apoyo a proyectos en el Nuevo Testamento y la Word Alignment es una herramienta de apoya a proyectos de toda la Biblia.",
+    "supports_any_book": "${app} supports projects for any book of the Bible.",
+    "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
     "enter_url": "Escriba la URL",
     "or": "O",
     "language_code": "Código De Idioma",
@@ -316,6 +324,7 @@
     }
   },
   "tools": {
+    "loading_tool_data": "Loading tool data.",
     "resource_missing_for_tool": "The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.",
     "no_checks_selected": "Debes seleccionar una categoría para el lanzamiento de esta herramienta",
     "book_not_supported": "El libro no se admite",
@@ -372,7 +381,8 @@
     "invalid_verse_alignments": "Versículos con alineaciones invalidadas.",
     "invalidation_checking": "Comprobando sí esta edición entra en conflicto con selecciones y alineaciones guardadas...",
     "alignments_reset_wa_tool": "Se han detectado cambios en su proyecto que han invalidado algunas de sus alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral.",
-    "invalid_verse_alignments_and_selections": "Se han detectado unos cambios en su proyecto que han invalidado algunas de sus selecciones y algunas alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral."
+    "invalid_verse_alignments_and_selections": "Se han detectado unos cambios en su proyecto que han invalidado algunas de sus selecciones y algunas alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral.",
+    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
   "buttons": {
     "back_button": "Volver",
@@ -413,7 +423,9 @@
     "do_not_rename": "No Cambie el Nombre",
     "contact_helpdesk": "Póngase en contacto con el Helpdesk",
     "retry": "Intente de nuevo",
-    "update": "Update to latest version"
+    "update": "Update to latest version",
+    "ignore_button": "Ignore",
+    "feedback_button": "Send Feedback"
   },
   "tool_card_categories": {
     "kt": "Términos Claves",
