@@ -328,33 +328,40 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
   return ((dispatch, getState) => {
     const state = getState();
     const projectDir = getProjectSaveLocation(state);
-    copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
-    const projectApi = new ProjectAPI(projectDir);
-    // get current contextId
-    let contextId = getContext(state);
-    let groupId = contextId && contextId.groupId;
-    const bookId = getProjectBookId(state);
-    if (!groupId && bookId) { // if current contextId is not set, load from file
-      const loadPath = getContextIdPathFromIndex(projectDir, toolName, bookId);
-      if (fs.existsSync(loadPath)) {
-        contextId = fs.readJsonSync(loadPath);
+    try {
+      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
+      const projectApi = new ProjectAPI(projectDir);
+      let groupId = null;
+      // get current contextId
+      let contextId = getContext(state);
+      if (contextId && contextId.tool && (contextId.tool === toolName)) { // if current context is for this tool
         groupId = contextId && contextId.groupId;
       }
-    }
-    if (groupId) {
-      // need to update occurrenceNote in current contextId from checks
-      const groupData = projectApi.getGroupData(toolName, groupId);
-      for (let check of groupData) {
-        // find check that matches current contextId
-        if (isEqual(contextId.reference, check.contextId.reference) &&
-              contextId.occurrence === check.contextId.occurrence) {
-
-          // if we found match, then update occurrenceNote in current context
-          contextId.occurrenceNote = check.contextId.occurrenceNote;
-          dispatch(changeCurrentContextId(contextId));
-          break;
+      const bookId = getProjectBookId(state);
+      if (!groupId && bookId) { // if current contextId for tool is not in reducer, load from file
+        const loadPath = getContextIdPathFromIndex(projectDir, toolName, bookId);
+        if (fs.existsSync(loadPath)) {
+          contextId = fs.readJsonSync(loadPath);
+          groupId = contextId && contextId.groupId;
         }
       }
+      if (groupId) {
+        // need to update occurrenceNote in current contextId from checks
+        const groupData = projectApi.getGroupData(toolName, groupId);
+        for (let check of groupData) {
+          // find check that matches current contextId
+          if (isEqual(contextId.reference, check.contextId.reference) &&
+            contextId.occurrence === check.contextId.occurrence) {
+
+            // if we found match, then update occurrenceNote in current context
+            contextId.occurrenceNote = check.contextId.occurrenceNote;
+            dispatch(changeCurrentContextId(contextId));
+            break;
+          }
+        }
+      }
+    } catch(e) {
+      console.error(`updateGroupIndexForGl(${toolName} - error updating current context`, e);
     }
   });
 }

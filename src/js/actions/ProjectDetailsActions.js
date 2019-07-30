@@ -165,13 +165,18 @@ export function getProjectProgressForTools(toolName, results=null) {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
     const pathToCheckDataFiles = path.join(projectSaveLocation, PROJECT_INDEX_FOLDER_PATH, toolName, bookId);
-    if (toolName === WORD_ALIGNMENT) {
-      const toolApi = getToolsByKey(getState());
-      const currentToolApi = toolApi[toolName].api;
-      //TODO: add progress fetch code to checking-tool-wrapper
-      progress = currentToolApi.trigger('getProgress');
-    } else {
-      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
+    try {
+      if (toolName === WORD_ALIGNMENT) {
+        const toolApi = getToolsByKey(getState());
+        const currentToolApi = toolApi[toolName].api;
+        //TODO: add progress fetch code to checking-tool-wrapper
+        progress = currentToolApi.trigger('getProgress');
+      } else {
+         progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
+      }
+    } catch(e) {
+      console.error(`getProjectProgressForTools(${toolName} - error getting progress`, e);
+      progress = 0;
     }
 
     if (results) {
