@@ -7,7 +7,6 @@ import _ from "lodash";
 import {getOtherTnsOLVersions} from 'tc-source-content-updater';
 // actions
 import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
-import {changeCurrentContextId} from "../actions/ContextIdActions";
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
 import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
@@ -332,20 +331,16 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
       copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
       const projectApi = new ProjectAPI(projectDir);
       let groupId = null;
-      // get current contextId
-      let contextId = getContext(state);
-      if (contextId && contextId.tool && (contextId.tool === toolName)) { // if current context is for this tool
-        groupId = contextId && contextId.groupId;
-      }
+      let contextId = null;
       const bookId = getProjectBookId(state);
-      if (!groupId && bookId) { // if current contextId for tool is not in reducer, load from file
+      if (bookId) {
         const loadPath = getContextIdPathFromIndex(projectDir, toolName, bookId);
         if (fs.existsSync(loadPath)) {
           contextId = fs.readJsonSync(loadPath);
           groupId = contextId && contextId.groupId;
         }
       }
-      if (groupId) {
+      if (contextId && groupId) {
         // need to update occurrenceNote in current contextId from checks
         const groupData = projectApi.getGroupData(toolName, groupId);
         for (let check of groupData) {
@@ -353,9 +348,10 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
           if (isEqual(contextId.reference, check.contextId.reference) &&
             contextId.occurrence === check.contextId.occurrence) {
 
-            // if we found match, then update occurrenceNote in current context
+            // if we found match, then update occurrenceNote in current contextId for tool
             contextId.occurrenceNote = check.contextId.occurrenceNote;
-            dispatch(changeCurrentContextId(contextId));
+            const loadPath = getContextIdPathFromIndex(projectDir, toolName, bookId);
+            fs.outputJsonSync(loadPath, contextId);
             break;
           }
         }
