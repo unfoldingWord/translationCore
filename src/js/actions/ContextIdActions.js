@@ -49,22 +49,25 @@ export const changeCurrentContextId = contextId => {
       for (var toolName in apis) {
         apis[toolName].api.trigger('validateVerse', chapter, verse, null, getGroupsData(state));
       }
-    }
-    // commit project changes
-    const projectDir = getProjectSaveLocation(getState());
-    try {
+      // commit project changes
+      const projectDir = getProjectSaveLocation(getState());
       try {
-        console.log("changeCurrentContextId() - setting new contextId to: " + JSON.stringify(contextId));
-      } catch(e) { console.log("changeCurrentContextId() - setting new contextId") }
-      const repo = await Repo.open(projectDir, getState().loginReducer.userdata);
-      const {reference: {bookId, chapter, verse}} = contextId;
-      const refStr = `${bookId} ${chapter}:${verse}`;
-      const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
-      if (!saveStarted) {
-        console.log(`Saving already running, skipping save after ${refStr}`);
+        try {
+          console.log("changeCurrentContextId() - setting new contextId to: " + JSON.stringify(contextId));
+        } catch(e) { console.log("changeCurrentContextId() - setting new contextId") }
+        const repo = await Repo.open(projectDir, getState().loginReducer.userdata);
+        let refStr = "unknown";
+        if (contextId) {
+          const {reference: {bookId, chapter, verse}} = contextId;
+          refStr = `${bookId} ${chapter}:${verse}`;
+        }
+        const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
+        if (!saveStarted) {
+          console.log(`Saving already running, skipping save after ${refStr}`);
+        }
+      } catch(e) {
+        console.error(`Failed to auto save`, contextId, e);
       }
-    } catch(e) {
-      console.error(`Failed to auto save`, contextId, e);
     }
   };
 };
