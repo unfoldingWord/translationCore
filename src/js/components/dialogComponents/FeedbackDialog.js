@@ -205,6 +205,7 @@ class FeedbackDialog extends React.Component {
                   secondaryLabel={translate('buttons.cancel_button')}
                   onClose={this._handleClose}
                   title={translate('user_feedback_comments')}
+                  bodyStyle={{overflowY: 'auto'}}
                   open={open}>
         <CategoryPicker categories={categories}
                         onChange={this._handleCategoryChange}
