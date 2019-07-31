@@ -241,7 +241,7 @@
     "merge_conflict": "विरोधाभास विलीन करा ${विरोधाभास_क्रमांक}",
     "conflict_reference": "हे अध्याय ${अध्याय${chapter}, वचनासाठी ${वचन} विलीनीकरण आहे.",
     "missing_verses_instructions": "तुमच्या प्रकल्पातून काही वचने गहाळ आहेत.",
-    "only_nt_supported": "This version of ${app} only supports New Testament projects.",
+    "only_nt_supported": "$ {अॅप } ची ही आवृत्ती केवळ नवीन करार प्रकल्पांना समर्थन देते.",
     "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
     "resource_id": {
       "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
