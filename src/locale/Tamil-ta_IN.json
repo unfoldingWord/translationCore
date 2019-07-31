@@ -248,14 +248,14 @@
       "field_invalid_length": "3-4 எழுத்துக்கள் நீளமாக இருக்க வேண்டும்\n",
       "invalid_characters": "அடிப்படை லத்தீன் கடிதங்கள் மட்டுமே ஆதரிக்கப்படுகின்றன"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "conflicting_project": "இந்த அடையாளங்காட்டியுடன் ஒரு திட்டம் இந்த மொழி மற்றும் புத்தகத்திற்கு ஏற்கனவே உள்ளது\n",
+    "newer_project": "இந்த திட்டம் மொழிபெயர்ப்பு கோரின் புதிய பதிப்பில் உருவாக்கப்பட்டது. சமீபத்திய பதிப்பிற்கு புதுப்பித்து மீண்டும் முயற்சிக்கவும்.\n"
   },
   "book_list": {
     "ot": {
-      "gen": "Genesis (${book_id})",
-      "exo": "Exodus (${book_id})",
-      "lev": "Leviticus (${book_id})",
+      "gen": "ஆதியாகமம் (${book_id})",
+      "exo": "யாத்திராகமம் (${book_id})",
+      "lev": "லேவியராகமம் (${book_id})",
       "num": "Numbers (${book_id})",
       "deu": "Deuteronomy (${book_id})",
       "jos": "Joshua (${book_id})",
