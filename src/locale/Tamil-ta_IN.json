@@ -205,7 +205,7 @@
     "resource_id": " அடையாளங்காட்டிமொழிபெயர்ப்பு\n",
     "nickname": "திட்ட புனைப்பெயர்",
     "current_project": "திட்டம்: ${project}",
-    "renamed_project": "Your local project has been named<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
+    "renamed_project": "உங்கள் உள்ளூர் திட்டத்திற்கு பெயரிடப்பட்டுள்ளது\n<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
     "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
     "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
