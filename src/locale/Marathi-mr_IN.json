@@ -207,7 +207,7 @@
     "current_project": "Project: ${project}",
     "renamed_project": "आपल्या स्थानिक प्रकल्पाला <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b> हे नाव देण्यात आले आहे",
     "dcs_rename_project": "आपल्या प्रोजेक्टचे नाव बदलण्यात आले आहे. <br/> <b> $ {प्रोजेक्ट} </ b> <br/> तुम्ही या प्रकल्पाच्या विद्यमान दरवाजा 43 भंडाराचे काय करू इच्छिता?",
-    "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_success": "प्रकल्पासाठी दरवाजा 43 भांडार यशस्वीरित्या अद्यतनित केली. <br/> ${project}",
     "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
   },
