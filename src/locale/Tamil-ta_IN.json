@@ -423,15 +423,15 @@
     "do_not_rename": "மறுபெயரிட வேண்டாம்\n",
     "contact_helpdesk": "ஹெல்ப் டெஸ்கைத் தொடர்பு கொள்ளுங்கள்\n",
     "retry": "மீண்டும் முயற்சிக்கவும்",
-    "update": "Update to latest version",
-    "ignore_button": "Ignore",
-    "feedback_button": "Send Feedback"
+    "update": "சமீபத்திய பதிப்பிற்கு புதுப்பிக்கவும்\n",
+    "ignore_button": "புறக்கணி",
+    "feedback_button": "கருத்தினை அனுப்பவும்\n"
   },
   "tool_card_categories": {
-    "kt": "Key Terms",
-    "names": "Names",
-    "other_terms": "Other Terms",
-    "other": "Other",
+    "kt": "முக்கிய விதிமுறைகள்\n",
+    "names": "பெயர்கள்",
+    "other_terms": "பிற விதிமுறைகள்\n\n",
+    "other": "பிற",
     "translate-manuscripts": "Original Manuscripts",
     "guidelines-sonofgodprinciples": "Translating Son and Father",
     "translate-textvariants": "Textual Variants",
