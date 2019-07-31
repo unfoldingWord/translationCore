@@ -209,15 +209,15 @@
     "dcs_rename_project": "आपल्या प्रोजेक्टचे नाव बदलण्यात आले आहे. <br/> <b> $ {प्रोजेक्ट} </ b> <br/> तुम्ही या प्रकल्पाच्या विद्यमान दरवाजा 43 भंडाराचे काय करू इच्छिता?",
     "dcs_rename_success": "प्रकल्पासाठी दरवाजा 43 भांडार यशस्वीरित्या अद्यतनित केली. <br/> ${project}",
     "dcs_rename_failed": "दरवाजा 43 भंडाराचे नाव बदलले नाही. <br/> <br/> तुम्ही दरवाजा 43 भंडाराचे नाव बदलण्याचा पुन्हा प्रयत्न करू इच्छिता की नाव न घेता सुरू ठेऊ इच्छिता का?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
+    "dcs_rename_conflict": "पुनर्नामित करणे अयशस्वी झाले कारण या नावाचे भांडार आधीपासून विद्यमान आहे. <br/> <br/> आपला प्रकल्प दरवाजा 43 वर अपलोड करण्यात सक्षम होण्यासाठी तुम्हाला एकतर तुमच्या स्थानिक प्रकल्पाचे नाव बदलणे किंवा तुमच्या दरवाजा 43 प्रकल्पाचे नाव बदलणे आवश्यक आहे."
   },
   "project_validation": {
-    "language_mismatch": "Language Name not valid for Code",
-    "creative_commons": "Creative Commons",
-    "attention": "Attention",
-    "select_copyright": "Please select the copyright status for this project.",
-    "cc0": "CC0 / Public Domain",
-    "cc_by": "Creative Commons Attribution (CC BY)",
+    "language_mismatch": "भाषेचे नाव सांकेतिक लिपीसाठी वैध नाही",
+    "creative_commons": "सर्जनशील सामान्य दर्जाचे",
+    "attention": "लक्ष द्या",
+    "select_copyright": "कृपया या प्रकल्पासाठी प्रतिलिप्याधिकार स्थिती निवडा.",
+    "cc0": "CC0 / सार्वजनिक कार्यक्षेत्र",
+    "cc_by": "सर्जनशील सामान्य दर्जाचे अधिकार (CC BY)",
     "cc_by_sa": "Creative Commons Attribution-ShareAlike (CC BY-SA)",
     "none_of_above": "None of the Above",
     "cc_license_link": "license",
