@@ -244,9 +244,9 @@
     "only_nt_supported": "இந்த பதிப்பு${app}புதிய ஏற்பாட்டு திட்டங்களை மட்டுமே ஆதரிக்கிறது",
     "old_project_unsupported": "இந்த திட்டத்தில் பழைய பதிப்பிலிருந்து தரவு உள்ளது\n${app} இந்த வெளியீட்டில் இது ஆதரிக்கப்படவில்லை. இந்த திட்டத்தைத் திறக்க அல்லது சரிபார்ப்பை மறுதொடக்கம் செய்ய, தயவுசெய்து help@door43.org ஐ தொடர்பு கொள்ளவும்.\n",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
-      "field_invalid_length": "Must be 3-4 letters long",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "info": "(3 அல்லது 4 எழுத்து அடையாளம்\n<br />குறியீடு, குறியீடு, e.g. KJV, NIV. போன்றவை.)",
+      "field_invalid_length": "3-4 எழுத்துக்கள் நீளமாக இருக்க வேண்டும்\n",
+      "invalid_characters": "அடிப்படை லத்தீன் கடிதங்கள் மட்டுமே ஆதரிக்கப்படுகின்றன"
     },
     "conflicting_project": "A project with this identifier already exists for this language and book",
     "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
