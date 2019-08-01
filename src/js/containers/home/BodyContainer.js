@@ -36,6 +36,8 @@ class BodyContainer extends Component {
   }
 
   componentDidCatch(error, info) {
+    // Toggling home view to not show app menu
+    this.props.toggleHomeView(true);
     this.setState({ error });
     console.error(error);
     console.info(info);
