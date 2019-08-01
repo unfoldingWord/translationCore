@@ -245,21 +245,21 @@
     "old_project_unsupported": "या प्रकल्पात $ {अॅप} जुन्या आवृत्तीमधील डेटा आहे जो या प्रदर्शनामध्ये समर्थित नाही. हा प्रकल्प उघडण्यासाठी किंवा तपासणी पुन्हा सुरू करण्यासाठी मदतीसाठी कृपया help@door43.org वर संपर्क साधा.",
     "resource_id": {
       "info": "(3 किंवा 4 अक्षरे ओळख <br /> सांकेतिक शब्दकोश, उदा. केजेव्ही, एनआयव्ही, इ.)",
-      "field_invalid_length": "Must be 3-4 letters long",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "field_invalid_length": "3-4 अक्षरे लांब असणे आवश्यक आहे",
+      "invalid_characters": "केवळ मूलभूत लॅटिन अक्षरे समर्थीत आहेत"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "conflicting_project": "या अभिज्ञापकासह एक प्रकल्प आधीपासून या भाषा आणि पुस्तकासाठी विद्यमान आहे",
+    "newer_project": "हा प्रकल्प ट्रान्सलेशन कोअरच्या नवीन आवृत्तीत तयार केला होता. कृपया नवीनतम आवृत्तीवर अद्यतनित करा आणि पुन्हा प्रयत्न करा."
   },
   "book_list": {
     "ot": {
-      "gen": "Genesis (${book_id})",
-      "exo": "Exodus (${book_id})",
-      "lev": "Leviticus (${book_id})",
-      "num": "Numbers (${book_id})",
-      "deu": "Deuteronomy (${book_id})",
-      "jos": "Joshua (${book_id})",
-      "jdg": "Judges (${book_id})",
+      "gen": "उत्पत्ती (${book_id})",
+      "exo": "निर्गम (${book_id})",
+      "lev": "लेवीय (${book_id})",
+      "num": "गणना (${book_id})",
+      "deu": "अनुवाद (${book_id})",
+      "jos": "यहोशवा (${book_id})",
+      "jdg": "शास्ते(${book_id})",
       "rut": "Ruth (${book_id})",
       "1sa": "1 Samuel (${book_id})",
       "2sa": "2 Samuel (${book_id})",
