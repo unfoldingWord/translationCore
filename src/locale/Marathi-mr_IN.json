@@ -326,7 +326,7 @@
   "tools": {
     "loading_tool_data": "साधन डेटा लोड करीत आहे.",
     "resource_missing_for_tool": "सध्याच्या साधनाला यूजीएनटीची भिन्न आवृत्ती आवश्यक आहे. कृपया हे स्रोत पुनर्प्राप्त करण्यासाठी डाउनलोड क्लिक करा.",
-    "no_checks_selected": "You must select a category to launch this tool",
+    "no_checks_selected": "हे साधन लाँच करण्यासाठी आपण एक श्रेणी निवडणे आवश्यक आहे",
     "book_not_supported": "Book not supported",
     "select_tool_from_list": "Select a tool and a gateway language from the list.",
     "tools": "Tools",
