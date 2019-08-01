@@ -34,15 +34,17 @@ const GlDropDownList = ({
     selectedGL = invalidCode;
     disabled = true;
   }
+
   return (
     <SelectField
-      floatingLabelText={translate('tools.gateway_language')}
-      floatingLabelStyle={{ color: '#000000' }}
-      value={selectedGL}
-      onChange={ (event, index, value) => selectionChange(value) }
-      maxHeight={150}
       id='glddl'
+      maxHeight={150}
+      value={selectedGL}
       disabled={disabled}
+      floatingLabelStyle={{ color: '#000000' }}
+      floatingLabelText={translate('tools.gateway_language')}
+      underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+      onChange={(event, index, value) => selectionChange(value)}
     >
       {GLs}
     </SelectField>
