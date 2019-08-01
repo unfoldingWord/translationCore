@@ -251,7 +251,7 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
         Object {
           "borderBottomStyle": "solid",
           "borderBottomWidth": 2,
-          "borderColor": "#00bcd4",
+          "borderColor": "var(--accent-color-dark)",
           "borderLeft": "none",
           "borderRight": "none",
           "borderTop": "none",
