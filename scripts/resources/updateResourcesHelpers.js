@@ -52,7 +52,7 @@ const getLocalResourceList = resourcesPath => {
     for (let i = 0; i < resourceLanguages.length; i++) {
       const languageId = resourceLanguages[i];
       const biblesPath = path.join(resourcesPath, languageId, 'bibles');
-      const tHelpsPath = path.join(resourcesPath, languageId, TRANSLATION_HELPS);
+      const tHelpsPath = path.join(resourcesPath, languageId, 'translationHelps');
       const bibleIds = cleanReaddirSync(biblesPath);
       const tHelpsResources = cleanReaddirSync(tHelpsPath);
 
