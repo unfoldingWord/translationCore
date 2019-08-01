@@ -91,6 +91,11 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         feedbackCloseCallback: action.val
       };
+    case types.RESET_HOME_SCREEN:
+        return {
+          ...initialState,
+          showWelcomeSplash: false
+        };
     default:
       return state;
   }

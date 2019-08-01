@@ -139,9 +139,9 @@ AppMenu.propTypes = {
   translate: PropTypes.func.isRequired,
   variant: PropTypes.string
 };
+
 AppMenu.defaultProps = {
   variant: 'primary'
 };
-
 
 export default AppMenu;
