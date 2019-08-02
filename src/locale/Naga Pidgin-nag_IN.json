@@ -1,13 +1,13 @@
 {
   "welcome_to_tc": "${app} te Swagat ase",
-  "get_started": "Suru kori jabi",
+  "get_started": "Suru koribi!",
   "version": "Anubad ${version}",
   "instructions": "Nirdesh",
   "access_internet": "Internet te punchibo",
-  "to_get_started": "Morom pora: suru kuri jabo karne",
+  "to_get_started": "Morom pora: suru kuri jabo karne:",
   "log_in": "Log in",
-  "save_changes": "Bodli huakhan bachabole",
-  "success": "Safal hoise",
+  "save_changes": "Bodli huakhan bachabi",
+  "success": "Safal",
   "supported_file_types": "Support kura file khan",
   "select_project": "Ekta kamke bachi lobi",
   "select_tool": "Kamte lagia ekta ostro lobi",
@@ -505,9 +505,9 @@
     "figs-genericnoun": "Samanya sanghya baiko khan",
     "figs-inclusive": "Sammilit \"Amikhan\"",
     "figs-nominaladj": "Naamdhari biseson",
-    "figs-possession": "Possession",
-    "figs-rpronouns": "Reflexive Pronouns",
-    "figs-we": "Forms of We",
-    "figs-they": "Forms of They"
+    "figs-possession": "Adhikar",
+    "figs-rpronouns": "Nija sarbanam",
+    "figs-we": "Aamikhan laga kisim",
+    "figs-they": "Taikhan laga kisim"
   }
 }
