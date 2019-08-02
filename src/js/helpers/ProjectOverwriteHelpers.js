@@ -118,37 +118,35 @@ export const getProjectName = (projectPath) => {
 
 export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => {
   return (dispatch, getState) => {
-    setTimeout(() => {
-      const bookId = getBookId(newProjectPath);
-      const oldBiblePath = path.join(oldProjectPath, bookId);
-      const newBiblePath = path.join(newProjectPath, bookId);
-      if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
-        return;
-      const tools = getToolsByKey(getState());
-      const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) === '.json' && parseInt(path.basename(filename)));
-      chapterFiles.forEach(filename => {
-        try {
-          const chapter = parseInt(path.basename(filename));
-          const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
-          const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
-          Object.keys(newChapterVerses).forEach(verse => {
-            let verseBefore = oldChapterVerses[verse];
-            let verseAfter = newChapterVerses[verse];
-            verse = parseInt(verse);
-            if (verseBefore !== verseAfter) {
-              //An external edit happened
-              console.log(`createVerseEditsForAllChangedVerses() - verse edit detected for ${chapter}:${verse}`);
-              createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName);
-              for (var toolName in tools) {
-                dispatch(validateSelectionsForTool(newProjectPath, chapter, verse, bookId, verseAfter, userName, toolName));
-              }
+    const bookId = getBookId(newProjectPath);
+    const oldBiblePath = path.join(oldProjectPath, bookId);
+    const newBiblePath = path.join(newProjectPath, bookId);
+    if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
+      return;
+    const tools = getToolsByKey(getState());
+    const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) === '.json' && parseInt(path.basename(filename)));
+    chapterFiles.forEach(filename => {
+      try {
+        const chapter = parseInt(path.basename(filename));
+        const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
+        const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
+        Object.keys(newChapterVerses).forEach(verse => {
+          let verseBefore = oldChapterVerses[verse];
+          let verseAfter = newChapterVerses[verse];
+          verse = parseInt(verse);
+          if (verseBefore !== verseAfter) {
+            //An external edit happened
+            console.log(`createVerseEditsForAllChangedVerses() - verse edit detected for ${chapter}:${verse}`);
+            createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName);
+            for (var toolName in tools) {
+              dispatch(validateSelectionsForTool(newProjectPath, chapter, verse, bookId, verseAfter, userName, toolName));
             }
-          });
-        } catch (error) {
-          console.log(error);
-        }
-      });
-    }, 100);
+          }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    });
   };
 };
 
