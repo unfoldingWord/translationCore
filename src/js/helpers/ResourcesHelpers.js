@@ -180,6 +180,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
     // In some older projects the category was saved in the .categories file instead of the subcategories.
     project.setCurrentCategories(toolName, categories);
 
+    const groupsDataLoaded = project.getLoadedCategories(toolName);
     const categoryKeys = Object.keys(categories);
     for (let i = 0, l = categoryKeys.length; i < l; i++) {
       const category = categoryKeys[i];
@@ -192,7 +193,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       for (let j = 0, l2 = categories[category].length; j < l2; j++) {
         const subCategory = categories[category][j];
         const dataPath = path.join(groupsDir, subCategory + '.json');
-        project.importCategoryGroupData(toolName, dataPath);
+        project.importCategoryGroupData(toolName, dataPath, groupsDataLoaded);
       }
       // TRICKY: gives the tool an index of which groups belong to which category
       project.setCategoryGroupIds(toolName, category, categories[category]);

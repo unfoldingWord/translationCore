@@ -148,13 +148,13 @@ export default class ProjectAPI {
    * Group data that already exists will not be overwritten.
    * @param {string} toolName - the name of the tool that the categories belong to
    * @param {string} dataPath - the path to the group data file
+   * @param {Array} groupsDataLoaded - groups that are already loaded
    * @returns {boolean} true if the group data was imported. false if already imported.
    */
-  importCategoryGroupData(toolName, dataPath) {
+  importCategoryGroupData(toolName, dataPath, groupsDataLoaded) {
     const destDir = this.getCategoriesDir(toolName);
     const groupName = path.basename(dataPath);
     const destFile = path.join(destDir, groupName);
-    const groupsDataLoaded = this.getLoadedCategories(toolName);
     const subCategory = path.parse(dataPath).name;
     if (!groupsDataLoaded.includes(subCategory)) {
       fs.copySync(dataPath, destFile);
