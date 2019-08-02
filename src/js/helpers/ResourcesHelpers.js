@@ -26,7 +26,7 @@ import {
 } from "./groupDataHelpers";
 import * as Bible from "../common/BooksOfTheBible";
 import {generateTimestamp} from "./TimestampGenerator";
-import {DEFAULT_GATEWAY_LANGUAGE} from "./gatewayLanguageHelpers";
+import {DEFAULT_GATEWAY_LANGUAGE} from "../common/constants";
 import {getContextIdPathFromIndex} from "./contextIdHelpers";
 // constants
 import {

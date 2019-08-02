@@ -4,7 +4,6 @@
  */
 require("babel-polyfill"); // required for async/await
 const fs = require('fs-extra');
-const path = require('path-extra');
 const sourceContentUpdater = require('tc-source-content-updater').default;
 const updateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;

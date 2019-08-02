@@ -15,9 +15,8 @@ import {
   TRANSLATION_NOTES,
   TRANSLATION_WORDS,
   USER_RESOURCES_PATH,
-  WORD_ALIGNMENT
+  WORD_ALIGNMENT,
 } from '../common/constants';
-export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
 /**
  *

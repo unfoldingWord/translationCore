@@ -35,12 +35,15 @@ const styles = {
  */
 const CategoryPicker = ({selectedCategory, label, categories, onChange}) => {
   return (
-    <SelectField floatingLabelText={label}
-                 id="feedback-category"
-                 floatingLabelStyle={styles.label}
-                 value={selectedCategory}
-                 autoWidth={true}
-                 onChange={(e, key, payload) => onChange(payload)}>
+    <SelectField
+      id="feedback-category"
+      autoWidth={true}
+      value={selectedCategory}
+      floatingLabelText={label}
+      floatingLabelStyle={styles.label}
+      onChange={(e, key, payload) => onChange(payload)}
+      underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+    >
       {categories.map((category, index) => {
         return <MenuItem key={index}  primaryText={category.value} value={category.key}/>;
       })}

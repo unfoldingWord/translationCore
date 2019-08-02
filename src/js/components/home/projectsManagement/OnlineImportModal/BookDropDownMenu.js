@@ -12,11 +12,13 @@ const BookDropdownMenu = ({
   return (
     <div>
       <SelectField
-        floatingLabelText={translate('projects.book')}
         value={bookIdValue}
         onChange={(event, index, value) => {
           updateBookIdValue(value);
         }}
+        floatingLabelText={translate('projects.book')}
+        floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500" }}
+        underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
       >
       <MenuItem value={""} primaryText={""} />
       {
