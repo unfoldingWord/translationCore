@@ -2,8 +2,10 @@ import React from 'react';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
-import { getGatewayLanguageList, DEFAULT_GATEWAY_LANGUAGE } from '../../../helpers/gatewayLanguageHelpers';
-import {getLanguageTranslation} from "../../../helpers/localizationHelpers";
+// helpers
+import { DEFAULT_GATEWAY_LANGUAGE } from '../../../common/constants';
+import { getGatewayLanguageList } from '../../../helpers/gatewayLanguageHelpers';
+import { getLanguageTranslation } from "../../../helpers/localizationHelpers";
 
 /**
  * With the `maxHeight` property set, the Select Field will be scrollable
@@ -19,6 +21,7 @@ const GlDropDownList = ({
   const GLs = [];
   let disabled = false;
   const gatewayLanguageList = getGatewayLanguageList(bookID, toolName);
+
   if (gatewayLanguageList && gatewayLanguageList.length) {
     gatewayLanguageList.forEach(item => {
       const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
@@ -34,15 +37,17 @@ const GlDropDownList = ({
     selectedGL = invalidCode;
     disabled = true;
   }
+
   return (
     <SelectField
-      floatingLabelText={translate('tools.gateway_language')}
-      floatingLabelStyle={{ color: '#000000' }}
-      value={selectedGL}
-      onChange={ (event, index, value) => selectionChange(value) }
-      maxHeight={150}
       id='glddl'
+      maxHeight={150}
+      value={selectedGL}
       disabled={disabled}
+      floatingLabelStyle={{ color: '#000000' }}
+      floatingLabelText={translate('tools.gateway_language')}
+      underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+      onChange={(event, index, value) => selectionChange(value)}
     >
       {GLs}
     </SelectField>
