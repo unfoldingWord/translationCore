@@ -66,7 +66,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
     // Copy the .git history of the old project into the new if it doesn't have it
     const oldGitPath = path.join(oldProjectPath, '.git');
     const newGitPath = path.join(newProjectPath, '.git');
-    if (! fs.existsSync(newGitPath) && fs.existsSync(oldGitPath)) {
+    if (!fs.existsSync(newGitPath) && fs.existsSync(oldGitPath)) {
       fs.copySync(oldGitPath, newGitPath);
     }
     dispatch(createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName));
@@ -87,10 +87,10 @@ export const copyAlignmentData = (fromDir, toDir) => {
     if (toFileIndex >= 0) {
       toFileJson = fs.readJsonSync(path.join(toDir, toFiles[toFileIndex]));
     }
-    Object.keys(fromFileJson).forEach(function (verseNum) {
-      if(!toFileJson[verseNum] || !toFileJson[verseNum].alignments) {
+    Object.keys(fromFileJson).forEach(function(verseNum) {
+      if (!toFileJson[verseNum] || !toFileJson[verseNum].alignments) {
         toFileJson[verseNum] = fromFileJson[verseNum];
-      }  else {
+      } else {
         const alignments = fromFileJson[verseNum].alignments;
         let hasAlignments = false;
         alignments.forEach(alignment => {
@@ -118,35 +118,37 @@ export const getProjectName = (projectPath) => {
 
 export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => {
   return (dispatch, getState) => {
-    const bookId = getBookId(newProjectPath);
-    const oldBiblePath = path.join(oldProjectPath, bookId);
-    const newBiblePath = path.join(newProjectPath, bookId);
-    if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
-      return;
-    const tools = getToolsByKey(getState());
-    const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) === '.json' && parseInt(path.basename(filename)));
-    chapterFiles.forEach(filename => {
-      try {
-        const chapter = parseInt(path.basename(filename));
-        const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
-        const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
-        Object.keys(newChapterVerses).forEach(verse => {
-          let verseBefore = oldChapterVerses[verse];
-          let verseAfter = newChapterVerses[verse];
-          verse = parseInt(verse);
-          if (verseBefore !== verseAfter) {
-            //An external edit happened
-            console.log(`createVerseEditsForAllChangedVerses() - verse edit detected for ${chapter}:${verse}`);
-            createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName);
-            for (var toolName in tools) {
-              dispatch(validateSelectionsForTool(newProjectPath, chapter, verse, bookId, verseAfter, userName, toolName));
+    setTimeout(() => {
+      const bookId = getBookId(newProjectPath);
+      const oldBiblePath = path.join(oldProjectPath, bookId);
+      const newBiblePath = path.join(newProjectPath, bookId);
+      if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
+        return;
+      const tools = getToolsByKey(getState());
+      const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) === '.json' && parseInt(path.basename(filename)));
+      chapterFiles.forEach(filename => {
+        try {
+          const chapter = parseInt(path.basename(filename));
+          const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
+          const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
+          Object.keys(newChapterVerses).forEach(verse => {
+            let verseBefore = oldChapterVerses[verse];
+            let verseAfter = newChapterVerses[verse];
+            verse = parseInt(verse);
+            if (verseBefore !== verseAfter) {
+              //An external edit happened
+              console.log(`createVerseEditsForAllChangedVerses() - verse edit detected for ${chapter}:${verse}`);
+              createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName);
+              for (var toolName in tools) {
+                dispatch(validateSelectionsForTool(newProjectPath, chapter, verse, bookId, verseAfter, userName, toolName));
+              }
             }
-          }
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    });
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      });
+    }, 100);
   };
 };
 
@@ -160,7 +162,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
       }
     };
     const groupsData = loadProjectGroupData(toolName, projectSaveLocation);
-    const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId, name);
+    const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId);
     let filtered = null;
     let selectionsChanged = false;
     for (let groupItemKey of Object.keys(groupsDataForVerse)) {
