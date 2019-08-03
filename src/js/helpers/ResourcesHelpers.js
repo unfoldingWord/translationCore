@@ -6,7 +6,7 @@ import isEqual from "deep-equal";
 import _ from "lodash";
 import {getOtherTnsOLVersions} from 'tc-source-content-updater';
 // actions
-import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
+import {addObjectPropertyToManifest, loadCurrentCheckCategories} from '../actions/ProjectDetailsActions';
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
 import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
@@ -122,7 +122,7 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
     const checks = getFoldersInResourceFolder(checksPath);
     if (checks) {
       for (let check of checks) {
-        console.log(`copyGroupDataToProject() - migrating ${check} to new format`);
+        console.log(`migrateOldCheckingResourceData() - migrating ${check} to new format`);
         const checkPath = path.join(checksPath, check);
         const books = getFoldersInResourceFolder(checkPath);
         for (let book of books) {
@@ -147,7 +147,7 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
         }
       }
     }
-    console.log("copyGroupDataToProject() - migration done");
+    console.log("migrateOldCheckingResourceData() - migration done");
   }
 }
 
@@ -341,6 +341,7 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
  */
 export function updateGroupIndexForGl(toolName, selectedGL) {
   return ((dispatch, getState) => {
+    console.log(`updateGroupIndexForGl(${toolName}, ${selectedGL})`);
     const state = getState();
     const projectDir = getProjectSaveLocation(state);
     try {
@@ -350,9 +351,11 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
         const categories = fs.readJsonSync(categoriesPath);
         if(categories && categories.languageId === selectedGL)
         {
+          console.log("updateGroupIndexForGl() - language unchanged, skipping");
           return; // we don't need to do anything since language hasn't changed
         }
       }
+      console.log("updateGroupIndexForGl() - calling copyGroupDataToProject() to get latest from tN helps");
       copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
       let groupId = null;
       let contextId = null;
@@ -364,6 +367,7 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
           groupId = contextId && contextId.groupId;
         }
       }
+      console.log("updateGroupIndexForGl() - updating saved contextId() for new GL");
       if (contextId && groupId) {
         // need to update occurrenceNote in current contextId from checks
         const groupData = projectApi.getGroupData(toolName, groupId);
@@ -380,6 +384,8 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
           }
         }
       }
+      console.log("updateGroupIndexForGl() - calling loadCurrentCheckCategories()");
+      dispatch(loadCurrentCheckCategories(toolName, projectDir, selectedGL));
     } catch(e) {
       console.error(`updateGroupIndexForGl(${toolName} - error updating current context`, e);
     }
