@@ -6,6 +6,7 @@ import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
+import {getSelectedToolName} from "../selectors";
 import {readLatestChecks} from "../helpers/groupDataHelpers";
 import {ensureCheckVerseEditsInGroupData} from "./VerseEditActions";
 import {findGroupDataItem} from "../helpers/getToggledGroupData";
