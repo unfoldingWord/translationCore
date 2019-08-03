@@ -82,13 +82,18 @@ describe('ProjectAPI', () => {
     });
 
     it('skips importing existing group data', () => {
+      // given
       const p = new ProjectAPI('/root');
-
       fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
       fs.pathExistsSync.mockReturnValueOnce(true); // file already exists
       fs.readJsonSync.mockReturnValueOnce({loaded: ["group"]});
+      const toolName = 'tool';
+      const groupsDataLoaded = p.getLoadedCategories(toolName);
 
-      p.importCategoryGroupData('tool', 'src/path/group.json');
+      // when
+      p.importCategoryGroupData(toolName, 'src/path/group.json', groupsDataLoaded);
+
+      // then
       expect(fs.copySync).not.toBeCalled();
     });
   });
