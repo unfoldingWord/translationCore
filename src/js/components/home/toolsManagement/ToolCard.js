@@ -83,6 +83,7 @@ class ToolCard extends Component {
     if (selectedGL && selectedGL.trim()) {
       this.props.actions.setProjectToolGL(this.props.tool.name, selectedGL);
       this.setState({selectedGL});
+      this.loadProgress();
     }
   }
 
