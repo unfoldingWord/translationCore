@@ -203,17 +203,16 @@ export default class ProjectAPI {
    * @param {string} toolName - the name of the tool that the categories belong to
    * @param {string} dataPath - the path to the group data file
    * @param {Array} groupsDataLoaded - groups that are already loaded
-   * @param {boolean} preserveOriginalData - if true then don't overwrite exiting data (like selections, comments...)
    * @returns {boolean} true if the group data was imported. false if already imported.
    */
-  importCategoryGroupData(toolName, dataPath, groupsDataLoaded, preserveOriginalData) {
+  importCategoryGroupData(toolName, dataPath, groupsDataLoaded) {
     const destDir = this.getCategoriesDir(toolName);
     const groupName = path.basename(dataPath);
     const destFile = path.join(destDir, groupName);
     const subCategory = path.parse(dataPath).name;
     if (!groupsDataLoaded.includes(subCategory)) {
       let copied = false;
-      if (preserveOriginalData && fs.existsSync(destFile)) {
+      if (fs.existsSync(destFile)) {
         copied = this.updateCategoryGroupData(dataPath, destFile);
       }
       if (!copied) {

@@ -194,7 +194,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       for (let j = 0, l2 = categories[category].length; j < l2; j++) {
         const subCategory = categories[category][j];
         const dataPath = path.join(groupsDir, subCategory + '.json');
-        project.importCategoryGroupData(toolName, dataPath, groupsDataLoaded, isTN);
+        project.importCategoryGroupData(toolName, dataPath, groupsDataLoaded);
       }
       // TRICKY: gives the tool an index of which groups belong to which category
       project.setCategoryGroupIds(toolName, category, categories[category]);

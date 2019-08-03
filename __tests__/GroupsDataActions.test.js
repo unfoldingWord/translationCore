@@ -6,7 +6,6 @@ import path from 'path-extra';
 import { generateTimestamp } from '../src/js/helpers';
 import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
-import {delay} from "../src/js/common/utils";
 // constants
 const FIXTURES_CHECKDATA_PATH = path.join(__dirname, 'fixtures', 'checkData');
 const CURRENT_PROJECT_PATH = path.join(__dirname, 'fixtures', 'project', 'en_tit');
@@ -96,8 +95,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
 
     // when
-    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(initStore.toolsReducer.selectedTool));
-    await delay(1000);
+    await store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(initStore.toolsReducer.selectedTool));
 
     // then
     const actions = store.getActions();
@@ -138,8 +136,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
 
     // when
-    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(initStore.toolsReducer.selectedTool));
-    await delay(1000);
+    await store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(initStore.toolsReducer.selectedTool));
 
     // then
     const actions = store.getActions();
