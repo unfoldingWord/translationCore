@@ -168,9 +168,10 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
   if (helpDir) {
     project.resetCategoryGroupIds(toolName);
     const groupDataUpdated = glChange || project.hasNewGroupsData(toolName);
+    const isTN = toolName === TRANSLATION_NOTES;
     if (groupDataUpdated) {
       project.resetLoadedCategories(toolName);
-      if (toolName === TRANSLATION_NOTES) {
+      if (isTN) {
         const tHelpsManifest = fs.readJsonSync(path.join(helpDir, 'manifest.json'));
         const { relation } = tHelpsManifest.dublin_core || {};
         dispatch(addObjectPropertyToManifest('tsv_relation', relation));
@@ -193,7 +194,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       for (let j = 0, l2 = categories[category].length; j < l2; j++) {
         const subCategory = categories[category][j];
         const dataPath = path.join(groupsDir, subCategory + '.json');
-        project.importCategoryGroupData(toolName, dataPath, groupsDataLoaded);
+        project.importCategoryGroupData(toolName, dataPath, groupsDataLoaded, isTN);
       }
       // TRICKY: gives the tool an index of which groups belong to which category
       project.setCategoryGroupIds(toolName, category, categories[category]);
@@ -332,8 +333,16 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
     const state = getState();
     const projectDir = getProjectSaveLocation(state);
     try {
-      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
       const projectApi = new ProjectAPI(projectDir);
+      const categoriesPath = projectApi.getCategoriesPath(toolName);
+      if (fs.existsSync(categoriesPath)) {
+        const categories = fs.readJsonSync(categoriesPath);
+        if(categories && categories.languageId === selectedGL)
+        {
+          return; // we don't need to do anything since language hasn't changed
+        }
+      }
+      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
       let groupId = null;
       let contextId = null;
       const bookId = getProjectBookId(state);
@@ -358,6 +367,15 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
             fs.outputJsonSync(loadPath, contextId);
             break;
           }
+        }
+      }
+      if (fs.existsSync(categoriesPath)) {
+        // update languageId in categories
+        const categories = fs.readJsonSync(categoriesPath);
+        if(categories)
+        {
+          categories.languageId = selectedGL;
+          fs.outputJsonSync(categoriesPath, categories);
         }
       }
     } catch(e) {

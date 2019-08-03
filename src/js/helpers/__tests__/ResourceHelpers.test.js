@@ -35,8 +35,8 @@ describe("copy group data", () => {
     fs.readdirSync.mockReturnValueOnce(["apostle.json", "authority.json"]);
     copyGroupDataToProject("lang", "tool", "project/");
     const groupPath =  path.join("", "help", "dir", "names", "groups", "tit");
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "authority.json"));
-    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "apostle.json"));
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "authority.json"), 'mockCategories', false);
+    expect(mockImportCategoryGroupData).toBeCalledWith("tool", path.join(groupPath, "apostle.json"), 'mockCategories', false);
     expect(mockImportCategoryGroupData.mock.calls.length).toBe(2);
     expect(mockSetCategoryLoaded).toBeCalledWith("tool", "authority");
     expect(mockSetCategoryLoaded).toBeCalledWith("tool", "apostle");

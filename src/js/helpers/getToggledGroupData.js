@@ -1,17 +1,33 @@
 import isEqual from 'deep-equal';
+
+/**
+ * search groupData to find matching contextId
+ * @param {object} contextId
+ * @param {Array} groupData
+ * @return {number}
+ */
+export const findGroupDataItem = (contextId, groupData) => {
+  let index = -1;
+  for (let i = 0, l = groupData.length; i < l; i++) {
+    if (isEqual(groupData[i].contextId, contextId)) {
+      index = i;
+      break;
+    }
+  }
+  return index;
+};
+
 /**
  * @description returns the toggled group data based on the key string name passed in.
  * @param {object} state - app store state.
- * @param {object} action - action objcet being dipatch by the action method.
+ * @param {object} action - action object being dispatch by the action method.
  * @param {string} key - object key. ex. "comments", "reminders", "selections" or "verseEdits".
  * @return {object} returns the group data object which the key boolean toggled.
  */
 export const getToggledGroupData = (state, action, key) => {
   let groupData = state.groupsData[action.contextId.groupId];
   if (groupData == undefined) return groupData;
-  const index = groupData.findIndex(groupObject => {
-    return isEqual(groupObject.contextId, action.contextId);
-  });
+  const index = findGroupDataItem(action.contextId, groupData);
   const oldGroupObject = (index >= 0) ? groupData[index] : null;
   if (oldGroupObject) {
     groupData = [...groupData]; // create new array from old one (shallow copy)

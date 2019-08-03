@@ -62,8 +62,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     const store = mockStore(initStore);
 
     // when
-    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-    await delay(1000);
+    await store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(initStore.toolsReducer.selectedTool));
 
     // then
     const actions = store.getActions();
@@ -97,7 +96,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
 
     // when
-    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(initStore.toolsReducer.selectedTool));
     await delay(1000);
 
     // then
@@ -139,7 +138,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
 
     // when
-    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+    store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(initStore.toolsReducer.selectedTool));
     await delay(1000);
 
     // then

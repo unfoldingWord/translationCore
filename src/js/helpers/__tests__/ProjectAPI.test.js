@@ -66,12 +66,18 @@ describe('ProjectAPI', () => {
       jest.resetAllMocks();
     });
     it('imports new group data', () => {
+      // given
       const p = new ProjectAPI('/root');
-
       fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
       fs.pathExistsSync.mockReturnValueOnce(false);
+      const toolName = 'tool';
+      const groupId = 'src/path';
+      const groupsDataLoaded = p.getLoadedCategories(toolName);
 
-      p.importCategoryGroupData('tool', 'src/path');
+      // when
+      p.importCategoryGroupData(toolName, groupId, groupsDataLoaded);
+
+      // then
       expect(fs.copySync.mock.calls.length).toBe(1);
     });
 

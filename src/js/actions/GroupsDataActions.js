@@ -1,17 +1,17 @@
 /**
  * @module Actions/GroupsData
  */
-import { batchActions } from 'redux-batched-actions';
+import {batchActions} from 'redux-batched-actions';
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
-import { getSelectedToolName } from "../selectors";
-import { readLatestChecks } from "../helpers/groupDataHelpers";
+import {readLatestChecks} from "../helpers/groupDataHelpers";
 import {ensureCheckVerseEditsInGroupData} from "./VerseEditActions";
+import {findGroupDataItem} from "../helpers/getToggledGroupData";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
-import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
+import {TRANSLATION_WORDS, TRANSLATION_NOTES} from '../common/constants';
 
 /**
  * @description This action adds a groupId as a property to the
@@ -75,26 +75,38 @@ export function verifyGroupDataMatchesWithFs() {
             let latestObjects = readLatestChecks(filePath);
             for( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
               const object = latestObjects[l];
-              if (isCheckVerseEdit) {
-                // special handling for check external verse edits, save edit verse
-                const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
-                if (chapter) {
-                  const verse = object.contextId.reference.verse;
-                  if (verse) {
-                    const verseKey = chapter + ":" + verse; // save by chapter:verse to remove duplicates
-                    if (!checkVerseEdits[verseKey]) {
-                      const reference = {
-                        bookId: object.contextId.reference.bookId,
-                        chapter,
-                        verse
-                      };
-                      checkVerseEdits[verseKey] = {reference};
+              // TRICKY: make sure item is in reducer before trying to set.  In case of tN different GLs
+              //  may have different checks
+              const groupData = state.groupsDataReducer.groupsData[object.contextId.groupId];
+              if (groupData ) {
+                const index = findGroupDataItem(object.contextId, groupData);
+                const oldGroupItem = (index >= 0) ? groupData[index] : null;
+                if (oldGroupItem) {
+                  if (isCheckVerseEdit) {
+                    // special handling for check external verse edits, save edit verse
+                    const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
+                    if (chapter) {
+                      const verse = object.contextId.reference.verse;
+                      if (verse) {
+                        const verseKey = chapter + ":" + verse; // save by chapter:verse to remove duplicates
+                        if (!checkVerseEdits[verseKey]) {
+                          const reference = {
+                            bookId: object.contextId.reference.bookId,
+                            chapter,
+                            verse
+                          };
+                          checkVerseEdits[verseKey] = {reference};
+                        }
+                      }
+                    }
+                  } else if ( object.contextId.tool === toolName) {
+                    // only toggle if values are different
+                    if (oldGroupItem[folderName] !== object[folderName]) {
+                      let action = toggleGroupDataItems(folderName, object);
+                      if (action) actionsBatch.push(action);
                     }
                   }
                 }
-              } else if ( object.contextId.tool === toolName) {
-                let action = toggleGroupDataItems(folderName, object);
-                if (action) actionsBatch.push(action);
               }
             }
           }
