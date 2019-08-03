@@ -1,22 +1,4 @@
 import isEqual from 'deep-equal';
-
-/**
- * search groupData to find matching contextId
- * @param {object} contextId
- * @param {Array} groupData
- * @return {number}
- */
-export const findGroupDataItem = (contextId, groupData) => {
-  let index = -1;
-  for (let i = 0, l = groupData.length; i < l; i++) {
-    if (isEqual(groupData[i].contextId, contextId)) {
-      index = i;
-      break;
-    }
-  }
-  return index;
-};
-
 /**
  * @description returns the toggled group data based on the key string name passed in.
  * @param {object} state - app store state.
@@ -27,7 +9,13 @@ export const findGroupDataItem = (contextId, groupData) => {
 export const getToggledGroupData = (state, action, key) => {
   let groupData = state.groupsData[action.contextId.groupId];
   if (groupData == undefined) return groupData;
-  const index = findGroupDataItem(action.contextId, groupData);
+  let index = -1;
+  for (let i = 0, l = groupData.length; i < l; i++) {
+    if (isEqual(groupData[i].contextId, action.contextId)) {
+      index = i;
+      break;
+    }
+  }
   const oldGroupObject = (index >= 0) ? groupData[index] : null;
   if (oldGroupObject) {
     groupData = [...groupData]; // create new array from old one (shallow copy)

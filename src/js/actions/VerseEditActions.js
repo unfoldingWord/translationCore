@@ -151,7 +151,7 @@ export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
         dispatch(AlertModalActions.openAlertDialog(translate("loading_verse_edits"), true));
         await delay(400);
         console.log("ensureCheckVerseEditsInGroupData() - edited verses=" + versesEdited.length);
-        dispatch(doActionBatching(actionBatch));
+        dispatch(batchActions(actionBatch));
         console.log("ensureCheckVerseEditsInGroupData() - total checks changed=" + groupEditsCount);
         console.log("ensureCheckVerseEditsInGroupData() - batch finished, groupId's edited=" + groupIds.length);
         dispatch(AlertModalActions.closeAlertDialog());

@@ -205,6 +205,17 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       }
     }
     project.removeStaleCategoriesFromCurrent(toolName);
+    if (isTN) {
+      const categoriesPath = project.getCategoriesPath(toolName);
+      if (fs.existsSync(categoriesPath)) {
+        // update languageId in categories
+        const categories = fs.readJsonSync(categoriesPath);
+        if (categories) {
+          categories.languageId = gatewayLanguage;
+          fs.outputJsonSync(categoriesPath, categories);
+        }
+      }
+    }
     if (groupDataUpdated) {
       migrateOldCheckingResourceData(projectDir, toolName);
     }
@@ -367,15 +378,6 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
             fs.outputJsonSync(loadPath, contextId);
             break;
           }
-        }
-      }
-      if (fs.existsSync(categoriesPath)) {
-        // update languageId in categories
-        const categories = fs.readJsonSync(categoriesPath);
-        if(categories)
-        {
-          categories.languageId = selectedGL;
-          fs.outputJsonSync(categoriesPath, categories);
         }
       }
     } catch(e) {
