@@ -1,10 +1,10 @@
 import React from 'react';
-import types from './ActionTypes';
 import usfm from 'usfm-js';
 import fs from 'fs-extra';
 import path from 'path-extra';
-//helpers
-import * as LoadHelpers from '../helpers/LoadHelpers';
+import types from './ActionTypes';
+//components
+import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 //actions
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
@@ -13,12 +13,11 @@ import * as WordAlignmentActions from './WordAlignmentActions';
 import {setSetting} from '../actions/SettingsActions';
 import migrateProject from '../helpers/ProjectMigration';
 //helpers
+import * as LoadHelpers from '../helpers/LoadHelpers';
 import {delay} from "../common/utils";
 import * as exportHelpers from '../helpers/exportHelpers';
 import {getTranslate, getUsername} from '../selectors';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-//components
-import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 import { generateTargetBibleFromTstudioProjectPath } from "../helpers/TargetLanguageHelpers";
 
 /**
@@ -70,6 +69,7 @@ export function exportToUSFM(projectPath) {
         resolve();
       } catch (err) {
         console.log("exportToUSFM() - ERROR:", err);
+        dispatch(BodyUIActions.dimScreen(false));
         const translate = getTranslate(getState());
         const message = translate("projects.export_failed_error", {error: err.message || err});
         dispatch(AlertModalActions.openAlertDialog(message, false));
@@ -142,6 +142,7 @@ export function getExportType(projectPath) {
               const {usfmExportType} = getState().settingsReducer.currentSettings;
               resolve(usfmExportType);
             } else {
+              dispatch(AlertModalActions.closeAlertDialog());
               //used to cancel the entire process
               reject();
             }
