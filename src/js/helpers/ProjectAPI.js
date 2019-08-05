@@ -152,7 +152,7 @@ export default class ProjectAPI {
    * @param {Object} contextId2
    * @return {boolean}
    */
-  isMatchingContextId(contextId1, contextId2) {
+  isMatchingCheckInstance(contextId1, contextId2) {
     return (isEqual(contextId1.reference, contextId2.reference) ||
       (contextId1.occurrence === contextId2.occurrence));
   }
@@ -172,9 +172,9 @@ export default class ProjectAPI {
       for (let i = 0, l = newData.length; i < l; i++) {
         const newObject = newData[i];
         let index = -1;
-        if ((i >= currentDataLen) || !this.isMatchingContextId(currentData[i].contextId, newObject.contextId)) {
+        if ((i >= currentDataLen) || !this.isMatchingCheckInstance(currentData[i].contextId, newObject.contextId)) {
           for (let j = 0; j < currentDataLen; j++) { // since lists are not identical, do search for match
-            if (this.isMatchingContextId(currentData[j].contextId, newObject.contextId)) {
+            if (this.isMatchingCheckInstance(currentData[j].contextId, newObject.contextId)) {
               index = j;
               break;
             }
