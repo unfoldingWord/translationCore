@@ -22,8 +22,8 @@ import {delay} from '../common/utils';
  * @param {string} ext - The extension to export the file with
  */
 export function getFilePath(projectName, lastSaveLocation, ext) {
-  return new Promise((resolve, reject) => {
-    delay(200);
+  return new Promise(async(resolve, reject) => {
+    await delay(200);
     // Path where to save the usfm file
     let defaultPath;
     if (lastSaveLocation) {
