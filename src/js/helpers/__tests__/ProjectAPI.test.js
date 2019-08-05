@@ -2,10 +2,9 @@
 jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from "path-extra";
-import _ from "lodash";
 import ProjectAPI from "../ProjectAPI";
 // constants
-import {APP_VERSION, PROJECTS_PATH, TRANSLATION_NOTES, USER_RESOURCES_PATH} from '../../common/constants';
+import {APP_VERSION} from '../../common/constants';
 
 describe('ProjectAPI', () => {
   beforeEach(() => {
