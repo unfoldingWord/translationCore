@@ -689,7 +689,7 @@ describe('updateGroupIndexForGl()', () => {
     const groupIdTnUserDataPath = path.join(tnHelpsPath, 'culture/groups', bookId, contextId.groupId + '.json');
     const groupIdData = fs.readJsonSync(groupIdTnUserDataPath);
     const groupItemNumber = 4;
-    const {preExistingGroupData, oldNote} = mockExistingData(groupIdData, groupItemNumber, groupIdDataPath);
+    const {preExistingGroupData, oldNote} = mockExistingGroupData(groupIdData, groupItemNumber, groupIdDataPath);
 
     // when
     store.dispatch(updateGroupIndexForGl(toolName, 'en'));
@@ -770,7 +770,7 @@ function verifyArraysMatchExceptItem(resultsArray, expectedArray, exceptItem) {
   expect (compArray1).toEqual(compArray2);
 }
 
-function mockExistingData(groupIdData, groupItemNumber, groupIdDataPath) {
+function mockExistingGroupData(groupIdData, groupItemNumber, groupIdDataPath) {
   const preExistingGroupData = _.cloneDeep(groupIdData);
   const preExistingGroupItem = preExistingGroupData[groupItemNumber];
   const oldNote = preExistingGroupItem.contextId.occurrenceNote;
