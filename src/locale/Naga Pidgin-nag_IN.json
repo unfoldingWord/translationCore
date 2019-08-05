@@ -71,6 +71,7 @@
   "third_party_attributions": "Third Party hongjug lekhi adhikar suchna and agya niomkhan",
   "sending_feedback": "Pratikriya pathai ashe",
   "sending_feedback_failed": "Pratikriya pathabole byartha hoise",
+  "critical_error_warning": "Warning: A critical error has occurred!",
   "updates": {
     "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Talika unnati karne check kuribi",
@@ -385,6 +386,7 @@
     "invalid_check_found": "Itu check: ${report} karne olop samasya ashe. Itu samasya tu thik kuribole karne aapni jonai dibole itcha ashe?"
   },
   "buttons": {
+    "return_home_button": "Return Home",
     "back_button": "Wapas jabi",
     "cancel_button": "Cancel",
     "cancel_import_button": "Amdaani cancel kuribi",
