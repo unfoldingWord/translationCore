@@ -71,6 +71,7 @@
   "third_party_attributions": "ಮೂರನೇ ಪಕ್ಷದ ಕೋಡ್ ಹೆಚ್ಚುವರಿ ಕೃತಿಸ್ವಾಮ್ಯ ಪ್ರಕಟಣೆಗಳು ಮತ್ತು ಪರವಾನಗಿ ನಿಯಮಗಳು",
   "sending_feedback": "ಕಳುಹಿಸುವ ಪ್ರತಿಕ್ರಿಯೆ",
   "sending_feedback_failed": "ವಿಫಲವಾಗಿದೆ ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಿ",
+  "critical_error_warning": "Warning: A critical error has occurred!",
   "updates": {
     "check_for_newer_app": "ತಂತ್ರಾಂಶ ನವಿಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ",
     "check_for_content_updates": "ವಿಷಯದ ಕುರಿತಾದ ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ",
@@ -385,6 +386,7 @@
     "invalid_check_found": "There is a problem with ವಿಷಯ ಈ ಪರಿಶೀಲಿಸಿ: ${report} Do you want to ವರದಿ ಈ ಸಮಸ್ಯೆ ಆದ್ದರಿಂದ ಇದು ನಿಗದಿ ಮಾಡಬಹುದು?"
   },
   "buttons": {
+    "return_home_button": "Return Home",
     "back_button": "ಹಿಂದಕ್ಕೆ ಹೋಗು",
     "cancel_button": "ರದ್ದು ಮಾಡು",
     "cancel_import_button": "ಇಳಿಸುಕೊಳ್ಳುವುದನ್ನು ರದ್ದುಗೊಳಿಸು",
