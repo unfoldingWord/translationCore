@@ -147,7 +147,7 @@ export default class ProjectAPI {
   }
 
   /**
-   * returns true if contextIds match
+   * returns true if the contextId's are for the same check instance
    * @param {Object} contextId1
    * @param {Object} contextId2
    * @return {boolean}
