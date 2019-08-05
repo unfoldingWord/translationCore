@@ -19,6 +19,7 @@ import * as PopoverActions from "../../actions/PopoverActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
+import {warnOnInvalidations} from "../../actions/ToolActions";
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -150,6 +151,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
+      },
+      warnOnInvalidations: (toolName) => {
+        dispatch(warnOnInvalidations(toolName));
       }
     }
   };

@@ -22,7 +22,7 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
-import { openTool } from "../../actions/ToolActions";
+import {openTool, warnOnInvalidations} from "../../actions/ToolActions";
 // constants
 import { APP_VERSION } from '../../common/constants';
 
@@ -191,6 +191,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
+      },
+      warnOnInvalidations: (toolName) => {
+        dispatch(warnOnInvalidations(toolName));
       }
     }
   };
