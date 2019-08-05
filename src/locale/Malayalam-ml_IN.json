@@ -71,6 +71,7 @@
   "third_party_attributions": "മൂന്നാം കക്ഷി കോഡ് അധിക പകർപ്പവകാശ അറിയിപ്പുകളും ലൈസൻസ് നിബന്ധനകളും",
   "sending_feedback": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നു",
   "sending_feedback_failed": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നതിൽ പരാജയപ്പെട്ടു",
+  "critical_error_warning": "Warning: A critical error has occurred!",
   "updates": {
     "check_for_newer_app": "സോഫ്റ്റ്വെയർ അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
     "check_for_content_updates": "ഉള്ളടക്ക അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
@@ -385,6 +386,7 @@
     "invalid_check_found": "ഈ പരിശോധനയ്‌ക്കുള്ള ഉള്ളടക്കത്തിൽ ഒരു പ്രശ്‌നമുണ്ട്: \n: ${report} ഇത് പരിഹരിക്കാൻ നിങ്ങൾക്ക് ഈ പ്രശ്‌നം റിപ്പോർട്ടുചെയ്യാൻ താൽപ്പര്യമുണ്ടോ?"
   },
   "buttons": {
+    "return_home_button": "Return Home",
     "back_button": "മടങ്ങിപ്പോവുക",
     "cancel_button": "റദ്ദ്ചെയ്യുക",
     "cancel_import_button": "ഇറക്കുമതി റദ്ദാക്കുക\n",
