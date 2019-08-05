@@ -564,6 +564,7 @@ describe('updateGroupIndexForGl()', () => {
   const projectName = 'en_gal';
   const projectPath = path.join(PROJECTS_PATH, projectName);
   const tnIndexPath = path.join(projectPath, '.apps', 'translationCore', 'index', TRANSLATION_NOTES, bookId);
+  const tnHelpsPath = path.join(USER_RESOURCES_PATH, 'en/translationHelps/translationNotes/v15');
 
   beforeEach(() => {
     // reset mock filesystem data
@@ -635,6 +636,74 @@ describe('updateGroupIndexForGl()', () => {
     expect(storedContextId).toMatchSnapshot();
     expect(fs.existsSync(path.join(tnIndexPath, contextId.groupId + '.json'))).toBeTruthy(); // should have copied resources
   });
+
+  it('should succeed and not overwrite existing data', () => {
+    // given
+    const toolName = TRANSLATION_NOTES;
+    const contextId_ = _.cloneDeep(contextId);
+    contextId_.tool = toolName;
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {
+          targetLanguage: {
+            targetBible: {
+              manifest: {}
+            }
+          }
+        },
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: {}
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: TARGET_BIBLE,
+                languageId: TARGET_LANGUAGE
+              }, {
+                bibleId: "ugnt",
+                languageId: ORIGINAL_LANGUAGE
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      },
+      projectDetailsReducer: {
+        manifest: manifest_,
+        projectSaveLocation: projectPath
+      },
+    });
+    const loadPath = getContextIdPathFromIndex(projectPath, toolName, bookId);
+    fs.outputJsonSync(loadPath, contextId_);
+    const groupIdDataPath = path.join(tnIndexPath, contextId.groupId + '.json');
+    const groupIdTnUserDataPath = path.join(tnHelpsPath, 'culture/groups', bookId, contextId.groupId + '.json');
+    const groupIdData = fs.readJsonSync(groupIdTnUserDataPath);
+    const groupItemNumber = 4;
+    const {preExistingGroupData, oldNote} = mockExistingData(groupIdData, groupItemNumber, groupIdDataPath);
+
+    // when
+    store.dispatch(updateGroupIndexForGl(toolName, 'en'));
+
+    // then
+    const storedContextId = fs.readJsonSync(loadPath);
+    expect(storedContextId).toMatchSnapshot();
+    expect(fs.existsSync(groupIdDataPath)).toBeTruthy(); // should have copied resources
+    const finalGroupData = fs.readJsonSync(groupIdDataPath);
+    verifyArraysMatchExceptItem(finalGroupData, preExistingGroupData, groupItemNumber);
+    const shouldMatch = _.cloneDeep(preExistingGroupData[groupItemNumber]);
+    shouldMatch.contextId.occurrenceNote = oldNote;
+    expect(finalGroupData[groupItemNumber]).toEqual(shouldMatch); // data should be preserved but contextId is updated
+  });
 });
 
 //
@@ -685,4 +754,29 @@ function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = A
     }
     fs.outputJsonSync(resourcesManifestPath, manifest);
   }
+}
+
+/**
+ * match all items in array except for item at exceptItem
+ * @param {Array} resultsArray
+ * @param {Array} expectedArray
+ * @param {Number} exceptItem
+ */
+function verifyArraysMatchExceptItem(resultsArray, expectedArray, exceptItem) {
+  const compArray1 = _.cloneDeep(resultsArray);
+  compArray1[exceptItem] = {};
+  const compArray2 = _.cloneDeep(expectedArray);
+  compArray2[exceptItem] = {};
+  expect (compArray1).toEqual(compArray2);
+}
+
+function mockExistingData(groupIdData, groupItemNumber, groupIdDataPath) {
+  const preExistingGroupData = _.cloneDeep(groupIdData);
+  const preExistingGroupItem = preExistingGroupData[groupItemNumber];
+  const oldNote = preExistingGroupItem.contextId.occurrenceNote;
+  preExistingGroupItem.contextId.occurrenceNote = 'old Note';
+  preExistingGroupItem.invalidated = true;
+  preExistingGroupItem.selections = ["by hearing with faith"];
+  fs.outputJsonSync(groupIdDataPath, preExistingGroupData);
+  return {preExistingGroupData, oldNote};
 }

@@ -99,3 +99,17 @@ Object {
   "tool": "translationNotes",
 }
 `;
+
+exports[`updateGroupIndexForGl() should succeed and not overwrite existing data 1`] = `
+Object {
+  "groupId": "figs-explicit",
+  "occurrence": 1,
+  "occurrenceNote": "Your language may require that what the people heard and whom they trusted be stated explicitly. Alternate translation: \\"because you heard the message and had faith in Jesus\\" or \\"because you listened to the message and trusted in Jesus\\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+  "reference": Object {
+    "bookId": "gal",
+    "chapter": 3,
+    "verse": 5,
+  },
+  "tool": "translationNotes",
+}
+`;
