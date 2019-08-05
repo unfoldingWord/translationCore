@@ -142,7 +142,6 @@ export function getExportType(projectPath) {
               const {usfmExportType} = getState().settingsReducer.currentSettings;
               resolve(usfmExportType);
             } else {
-              dispatch(AlertModalActions.closeAlertDialog());
               //used to cancel the entire process
               reject();
             }
