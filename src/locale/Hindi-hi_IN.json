@@ -71,6 +71,7 @@
   "third_party_attributions": "तीसरे पक्ष के कोड अतिरिक्त कॉपीराइट नोटिस और लायसेंस की शर्तें",
   "sending_feedback": "प्रतिक्रिया भेजना",
   "sending_feedback_failed": "प्रतिक्रिया भेजने में विफल",
+  "critical_error_warning": "Warning: A critical error has occurred!",
   "updates": {
     "check_for_newer_app": "सॉफ्टवेयर अपडेट की जांच करें",
     "check_for_content_updates": "सामग्री अद्यतनों के लिए जाँच करें",
@@ -385,6 +386,7 @@
     "invalid_check_found": "इस जाँच की सामग्री में कुछ समस्कया है: ${report} क्या आप इस समस्या की रिपोर्ट करना चाहते हैं कि इसे ठीक किया जा सकें?"
   },
   "buttons": {
+    "return_home_button": "Return Home",
     "back_button": "वापस जाओ",
     "cancel_button": "रद्द करना",
     "cancel_import_button": "आयात रद्द करें",
