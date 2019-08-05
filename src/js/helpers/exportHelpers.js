@@ -2,15 +2,16 @@ import ospath from 'ospath';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import { ipcRenderer } from 'electron';
-//consts
+// constants
 const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
 const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
 import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
-//helpers
+// helpers
 import * as manifestHelpers from './manifestHelpers';
 import * as bibleHelpers from './bibleHelpers';
 import * as LoadHelpers from "./LoadHelpers";
 import * as FileConversionHelpers from "./FileConversionHelpers";
+import {delay} from '../common/utils';
 
 /**
  * Prompts the user to enter a location/name to save the usfm project.
@@ -21,26 +22,21 @@ import * as FileConversionHelpers from "./FileConversionHelpers";
  * @param {string} ext - The extension to export the file with
  */
 export function getFilePath(projectName, lastSaveLocation, ext) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      /**Path to save the usfm file @type {string}*/
-      let defaultPath;
-      if (lastSaveLocation) {
-        /**trys default save location first then trys different OS's */
-        defaultPath = path.join(lastSaveLocation, projectName + `.${ext}`);
-      }
-      else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
-        defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + `.${ext}`);
-      } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
-        defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + `.${ext}`);
-      }
-      else {
-        defaultPath = path.join(ospath.home(), projectName + `.${ext}`);
-      }
-      const filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As' } });
-      if (filePath) resolve(filePath);
-      else reject();
-    }, 200);
+  return new Promise(async(resolve, reject) => {
+    await delay(200);
+    // Path where to save the usfm file
+    let defaultPath;
+    if (lastSaveLocation) {
+      defaultPath = path.join(lastSaveLocation, projectName + `.${ext}`);
+    } else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
+      defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + `.${ext}`);
+    } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
+      defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + `.${ext}`);
+    } else {
+      defaultPath = path.join(ospath.home(), projectName + `.${ext}`);
+    }
+    const filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As' } });
+    filePath ? resolve(filePath) : reject();
   });
 }
 
