@@ -71,6 +71,7 @@
   "third_party_attributions": "మూడవ వ్యక్తి సూచన అదనపు ముద్రణాహక్కు గమనికలు, అనుమతి షరతులు",
   "sending_feedback": "సమాచారాన్ని తిరిగి పంపించండి",
   "sending_feedback_failed": "సమాచారాన్ని పంపించడంలో వైఫల్యం",
+  "critical_error_warning": "Warning: A critical error has occurred!",
   "updates": {
     "check_for_newer_app": "మీ సాఫ్ట్ వేర్ నవీకరణలు సరిచూడండి",
     "check_for_content_updates": "సమాచార నవీకరణల తనిఖీ",
@@ -385,6 +386,7 @@
     "invalid_check_found": "ఈ తనిఖీ కోసం సారాంశంలో ఒక సమస్య ఉంది:: ${report} ఈ సమస్య పరిష్కరించబడేలా దీనిని తెలియపరచాలని కోరుతున్నావా?"
   },
   "buttons": {
+    "return_home_button": "Return Home",
     "back_button": "వెనక్కు వెళ్ళండి",
     "cancel_button": "రద్దు చెయ్యండి",
     "cancel_import_button": "దిగుమతి చెయ్యడం రద్దు చెయ్యండి",
