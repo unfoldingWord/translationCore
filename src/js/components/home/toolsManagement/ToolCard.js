@@ -13,7 +13,7 @@ import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLangua
 import ToolCardBoxes from './ToolCardBoxes';
 import Hint from '../../Hint';
 import ToolCardProgress from './ToolCardProgress';
-import GlDropDownList from './GlDropDownList.js';
+import GlDropDownList from './GlDropDownList';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 // selectors
 import {

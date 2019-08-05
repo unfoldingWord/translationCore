@@ -26,8 +26,6 @@ import { openTool } from "../../actions/ToolActions";
 // constants
 import { APP_VERSION } from '../../common/constants';
 
-// TRICKY: because this component is heavily coupled with callbacks to set content
-// we need to connect locale state change events.
 class HomeContainer extends Component {
   constructor(props) {
     super(props);

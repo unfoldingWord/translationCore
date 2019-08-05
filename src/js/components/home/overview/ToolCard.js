@@ -1,7 +1,7 @@
-// external
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 // components
 import TemplateCard from '../TemplateCard';
 import ToolCardProgress from '../toolsManagement/ToolCardProgress';
@@ -10,17 +10,14 @@ import {
   getSelectedToolName,
   getProjectToolProgress
 } from "../../../selectors";
-import { connect } from "react-redux";
 
 class ToolCard extends Component {
-
   constructor(props) {
     super(props);
     this.content = this.content.bind(this);
   }
 
   componentWillMount() {
-    // TODO: this should be in a container
     const {store} = this.context;
     const selectedToolName = getSelectedToolName(store.getState());
     if(selectedToolName) {
@@ -28,11 +25,6 @@ class ToolCard extends Component {
     }
   }
 
-  /**
-  * @description generates the heading for the component
-  * @param {function} callback - action for link
-  * @return {component} - component returned
-  */
   heading(callback) {
     const {translate} = this.props;
     const link = this.content() ? <a onClick={callback}>{translate('change_tool')}</a> : <a/>;
@@ -41,10 +33,6 @@ class ToolCard extends Component {
     );
   }
 
-  /**
-  * @description generates the content for the component, conditionally empty
-  * @return {component} - component returned
-  */
   content() {
     const {store} = this.context;
     const state = store.getState();
@@ -68,10 +56,6 @@ class ToolCard extends Component {
     return content;
   }
 
-  /**
-  * @description determines if fallback should be disabled
-  * @return {bool} - return true/false
-  */
   disabled() {
     const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     return !projectSaveLocation;

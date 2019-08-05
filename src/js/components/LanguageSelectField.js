@@ -16,10 +16,10 @@ import { getLanguageTranslation } from '../helpers/localizationHelpers';
 const LanguageSelectField = ({selectedLanguageCode, languages, onChange, translate}) => (
   <SelectField
     value={selectedLanguageCode}
-    style={{
-      textAlign: 'left'
-    }}
-    onChange={(e, key, payload) => onChange(payload)}>
+    style={{ textAlign: 'left' }}
+    onChange={(e, key, payload) => onChange(payload)}
+    underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+  >
     {languages.map((language, key) => {
       const languageLocalized = getLanguageTranslation(translate, language.name, language.code);
       return <MenuItem key={key}
