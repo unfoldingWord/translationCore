@@ -386,7 +386,6 @@
     "invalid_check_found": "या तपासणीसाठी सामग्रीमध्ये एक समस्या आहे: ${report} आपण या समस्येचा अहवाल देऊ इच्छित आहात जेणेकरून त्याचे निराकरण केले जाऊ शकते?"
   },
   "buttons": {
-    "return_home_button": "Return Home",
     "back_button": "मागे जा",
     "cancel_button": "रद्द करा",
     "cancel_import_button": "सुचित करणे रद्द करा",
