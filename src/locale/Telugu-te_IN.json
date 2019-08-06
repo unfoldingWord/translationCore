@@ -386,7 +386,6 @@
     "invalid_check_found": "ఈ తనిఖీ కోసం సారాంశంలో ఒక సమస్య ఉంది:: ${report} ఈ సమస్య పరిష్కరించబడేలా దీనిని తెలియపరచాలని కోరుతున్నావా?"
   },
   "buttons": {
-    "return_home_button": "Return Home",
     "back_button": "వెనక్కు వెళ్ళండి",
     "cancel_button": "రద్దు చెయ్యండి",
     "cancel_import_button": "దిగుమతి చెయ్యడం రద్దు చెయ్యండి",
