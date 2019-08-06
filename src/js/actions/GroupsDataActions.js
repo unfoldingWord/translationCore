@@ -1,17 +1,18 @@
 /**
  * @module Actions/GroupsData
  */
-import { batchActions } from 'redux-batched-actions';
+import {batchActions} from 'redux-batched-actions';
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
-import { getSelectedToolName } from "../selectors";
-import { readLatestChecks } from "../helpers/groupDataHelpers";
+import {getSelectedToolName} from "../selectors";
+import {readLatestChecks} from "../helpers/groupDataHelpers";
 import {ensureCheckVerseEditsInGroupData} from "./VerseEditActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
-import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
+import {TRANSLATION_WORDS, TRANSLATION_NOTES} from '../common/constants';
+import isEqual from "deep-equal";
 
 /**
  * @description This action adds a groupId as a property to the
@@ -26,6 +27,24 @@ export const addGroupData = (groupId, groupsData) => {
     groupId,
     groupsData
   };
+};
+
+/**
+ * searches groupData for a match for contextId (groupData must be for same groupId)
+ * @param {Object} contextId
+ * @param {Array} groupData for same groupId as contextId
+ * @return {number} - returns index of match or -1
+ */
+export const findGroupDataItem = (contextId, groupData) => {
+  let index = -1;
+  for (let i = 0, l = groupData.length; i < l; i++) {
+    if (isEqual(groupData[i].contextId.reference, contextId.reference) &&
+          groupData[i].contextId.occurrence === contextId.occurrence) {
+      index = i;
+      break;
+    }
+  }
+  return index;
 };
 
 /**
@@ -93,8 +112,22 @@ export function verifyGroupDataMatchesWithFs() {
                   }
                 }
               } else if ( object.contextId.tool === toolName) {
-                let action = toggleGroupDataItems(folderName, object);
-                if (action) actionsBatch.push(action);
+                // TRICKY: make sure item is in reducer before trying to set.  In case of tN different GLs
+                //  may have different checks
+                const currentGroupData = state.groupsDataReducer.groupsData[object.contextId.groupId];
+                if (currentGroupData ) {
+                  const index = findGroupDataItem(object.contextId, currentGroupData);
+                  const oldGroupObject = (index >= 0) ? currentGroupData[index] : null;
+                  if (oldGroupObject) {
+                    // only toggle if values are different (folderName contains type such as 'selections`)
+                    const objectValue = object[folderName] || false;
+                    const oldValue = oldGroupObject[folderName] || false;
+                    if (!isEqual(oldValue, objectValue)) {
+                      let action = toggleGroupDataItems(folderName, object);
+                      if (action) actionsBatch.push(action);
+                    }
+                  }
+                }
               }
             }
           }
