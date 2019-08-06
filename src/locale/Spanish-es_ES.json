@@ -386,7 +386,6 @@
     "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
   "buttons": {
-    "return_home_button": "Return Home",
     "back_button": "Volver",
     "cancel_button": "Cancelar",
     "cancel_import_button": "Cancelar Importación",
