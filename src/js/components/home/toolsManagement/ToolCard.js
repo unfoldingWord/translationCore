@@ -120,16 +120,18 @@ class ToolCard extends Component {
       isOLBookVersionMissing,
       toggleHomeView,
       selectedToolName,
-      tool: { name: newSelectedToolName },
+      tool,
+      actions: {warnOnInvalidations}
     } = this.props;
     const { selectedCategoriesChanged, glSelectedChanged } = this.state;
-
+    const newSelectedToolName = tool.name;
     if (isOLBookVersionMissing) {
       // Show dialog with option to download missing resource
       this.props.onMissingResource();
     } else if (selectedToolName && !glSelectedChanged && !selectedCategoriesChanged && (selectedToolName === newSelectedToolName)) {
       // Show tool (Without loading tool data)
       toggleHomeView(false);
+      warnOnInvalidations(newSelectedToolName);
     } else {
       // Load tool data then show tool
       this.handleSelect();
@@ -271,6 +273,7 @@ ToolCard.propTypes = {
     setProjectToolGL: PropTypes.func.isRequired,
     updateSubcategorySelection: PropTypes.func.isRequired,
     updateCategorySelection: PropTypes.func.isRequired,
+    warnOnInvalidations: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
