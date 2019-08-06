@@ -386,7 +386,6 @@
     "invalid_check_found": "ഈ പരിശോധനയ്‌ക്കുള്ള ഉള്ളടക്കത്തിൽ ഒരു പ്രശ്‌നമുണ്ട്: \n: ${report} ഇത് പരിഹരിക്കാൻ നിങ്ങൾക്ക് ഈ പ്രശ്‌നം റിപ്പോർട്ടുചെയ്യാൻ താൽപ്പര്യമുണ്ടോ?"
   },
   "buttons": {
-    "return_home_button": "Return Home",
     "back_button": "മടങ്ങിപ്പോവുക",
     "cancel_button": "റദ്ദ്ചെയ്യുക",
     "cancel_import_button": "ഇറക്കുമതി റദ്ദാക്കുക\n",
