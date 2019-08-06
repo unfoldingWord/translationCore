@@ -51,12 +51,12 @@ function CriticalError({ translate, returnHome }) {
           {translate('buttons.feedback_button')}
         </button>
         <button
-          key={'return_home_button' + 1}
-          label={translate('buttons.return_home_button')}
+          key={'go_to_project_button' + 1}
+          label={translate('buttons.go_to_project_button')}
           className="btn-prime"
           onClick={returnHome}
         >
-          {translate('buttons.return_home_button')}
+          {translate('buttons.go_to_project_button')}
         </button>
       </div>
       <FeedbackDialogContainer
