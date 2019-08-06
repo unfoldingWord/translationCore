@@ -386,7 +386,6 @@
     "invalid_check_found": "इस जाँच की सामग्री में कुछ समस्कया है: ${report} क्या आप इस समस्या की रिपोर्ट करना चाहते हैं कि इसे ठीक किया जा सकें?"
   },
   "buttons": {
-    "return_home_button": "Return Home",
     "back_button": "वापस जाओ",
     "cancel_button": "रद्द करना",
     "cancel_import_button": "आयात रद्द करें",
