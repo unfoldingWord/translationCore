@@ -1,10 +1,10 @@
 import React from 'react';
-import types from './ActionTypes';
 import usfm from 'usfm-js';
 import fs from 'fs-extra';
 import path from 'path-extra';
-//helpers
-import * as LoadHelpers from '../helpers/LoadHelpers';
+import types from './ActionTypes';
+//components
+import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 //actions
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
@@ -13,12 +13,11 @@ import * as WordAlignmentActions from './WordAlignmentActions';
 import {setSetting} from '../actions/SettingsActions';
 import migrateProject from '../helpers/ProjectMigration';
 //helpers
+import * as LoadHelpers from '../helpers/LoadHelpers';
 import {delay} from "../common/utils";
 import * as exportHelpers from '../helpers/exportHelpers';
 import {getTranslate, getUsername} from '../selectors';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-//components
-import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 import { generateTargetBibleFromTstudioProjectPath } from "../helpers/TargetLanguageHelpers";
 
 /**
@@ -28,7 +27,7 @@ import { generateTargetBibleFromTstudioProjectPath } from "../helpers/TargetLang
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
-      /** Check project for merge conflicts */
+      // Check project for merge conflicts
       console.log("exportToUSFM(" + projectPath + ")");
       const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
       let projectName = exportHelpers.getUsfmExportName(manifest);
@@ -36,7 +35,7 @@ export function exportToUSFM(projectPath) {
         console.log("exportToUSFM() - checking for merge conflict");
         await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
         console.log("exportToUSFM() - prompting for export options");
-        /** Will be 'usfm2' if no alignments else takes users choice */
+        // Will be 'usfm2' if no alignments else takes users choice
         const exportType = await dispatch(getExportType(projectPath));
         //Running migrations before exporting to attempt to fix any invalid alignments/usfm
         await migrateProject(projectPath, null, getUsername(getState()));
@@ -50,18 +49,18 @@ export function exportToUSFM(projectPath) {
           usfmExportFile = getUsfm2ExportFile(projectPath);
         } else if (exportType === 'usfm3') {
           console.log("exportToUSFM() - getting USFM3");
-          /** Exporting to usfm3 also checking for invalidated alignments */
+          // Exporting to usfm3 also checking for invalidated alignments
           usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
         }
         dispatch(AlertModalActions.closeAlertDialog());
-        /** Last place the user saved usfm */
+        // Last place the user saved usfm
         const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
-        /** File path from electron file chooser */
+        // File path from electron file chooser
         console.log("exportToUSFM() - getting output file path");
         const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
-        /** Getting new project name to save in case the user changed the save file name */
+        // Getting new project name to save in case the user changed the save file name
         projectName = path.parse(filePath).base.replace('.usfm', '');
-        /** Saving the location for future exports */
+        // Saving the location for future exports
         dispatch(storeUSFMSaveLocation(filePath, projectName));
         console.log("exportToUSFM() - writing usfm to: " + filePath);
         fs.writeFileSync(filePath, usfmExportFile);
@@ -70,6 +69,7 @@ export function exportToUSFM(projectPath) {
         resolve();
       } catch (err) {
         console.log("exportToUSFM() - ERROR:", err);
+        dispatch(BodyUIActions.dimScreen(false));
         const translate = getTranslate(getState());
         const message = translate("projects.export_failed_error", {error: err.message || err});
         dispatch(AlertModalActions.openAlertDialog(message, false));
