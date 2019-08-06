@@ -386,7 +386,6 @@
     "invalid_check_found": "இந்த சோதனைகளுக்கான உள்ளடக்கத்தில் சிக்கல் உள்ளது: ${report} இந்த சிக்கலை நீங்கள் சரிசெய்ய விரும்புகிறீர்களா?"
   },
   "buttons": {
-    "return_home_button": "Return Home",
     "back_button": "திரும்பிச் செல்லுங்கள்\n",
     "cancel_button": "ரத்துசெய்",
     "cancel_import_button": " இறக்குமதி ரத்துசெய்க",
