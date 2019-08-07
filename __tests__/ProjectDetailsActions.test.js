@@ -514,11 +514,11 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
           manifest: {
             project: {
               id: 'tit'
+            },
+            toolsSelectedGLs: {
+              translationWords: 'en'
             }
           },
-          currentProjectToolsSelectedGL: {
-            translationWords: 'en'
-          }
         }
       };
       mockGetSelectedCategories.mockReturnValueOnce(["John"]);
@@ -536,11 +536,11 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
           manifest: {
             project: {
               id: 'tit'
+            },
+            toolsSelectedGLs: {
+              translationWords: 'en'
             }
           },
-          currentProjectToolsSelectedGL: {
-            translationWords: 'en'
-          }
         }
       };
       mockGetSelectedCategories.mockReturnValueOnce(["names"]);

@@ -513,12 +513,12 @@ function getInitialStateData(bookId, projectPath, tool = TRANSLATION_WORDS) {
       manifest: {
         project: {
           id: bookId
+        },
+        toolsSelectedGLs: {
+          translationWords: 'en'
         }
       },
       projectSaveLocation: path.resolve(projectPath),
-      currentProjectToolsSelectedGL: {
-        translationWords: 'en'
-      }
     },
     contextIdReducer: {
       contextId

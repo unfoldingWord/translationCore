@@ -54,15 +54,15 @@ describe('Tool Actions.openTool', () => {
   const store = mockStore({
     projectDetailsReducer: {
       projectSaveLocation: 'Users/me/test_project_reg',
-      currentProjectToolsSelectedGL: {
-        [toolName]: 'en'
-      },
       manifest: {
         tsv_relation: [
           "en/ult",
           "el-x-koine/ugnt?v=0.8",
           "hbo/uhb?v=2.1.7"
-        ]
+        ],
+        toolsSelectedGLs: {
+          [toolName]: 'en'
+        },
       }
     },
     resourcesReducer: {

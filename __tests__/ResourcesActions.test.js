@@ -126,10 +126,12 @@ describe('ResourcesActions', () => {
         manifest: {
           project: {
             id: bookId
+          },
+          toolsSelectedGLs: {
+            translationWords: 'en'
           }
         },
         projectSaveLocation: path.resolve(projectPath),
-        currentProjectToolsSelectedGL: {}
       },
       resourcesReducer: {
         bibles: {

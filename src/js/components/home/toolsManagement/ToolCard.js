@@ -19,7 +19,6 @@ import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {
   getProjectBookId,
   getSetting,
-  getToolGatewayLanguage,
   getSelectedToolName,
 } from "../../../selectors";
 // consts
@@ -37,7 +36,27 @@ class ToolCard extends Component {
       progress: 0,
       selectedCategoriesChanged: false,
       glSelectedChanged: false,
+      selectedGL: ''
     };
+  }
+
+  componentWillMount() {
+    const selectedGL = this.props.glSelected;
+    this.selectionChange(selectedGL);
+    this.setState({ selectedGL });
+  }
+
+  componentDidMount() {
+    this.loadProgress();
+  }
+
+  componentDidUpdate(prevProps) {
+    const glSelectedChanged = prevProps.glSelected !== this.props.glSelected;
+    if (glSelectedChanged) this.setState({ glSelectedChanged });
+    if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
+      this.setState({ selectedCategoriesChanged: true });
+      this.loadProgress();
+    }
   }
 
   loadProgress() {
@@ -54,29 +73,6 @@ class ToolCard extends Component {
         });
       }
     }, 0);
-  }
-
-  componentDidMount() {
-    this.loadProgress();
-  }
-
-  componentDidUpdate(prevProps) {
-    const glSelectedChanged = prevProps.currentSelectedGL !== this.props.currentSelectedGL;
-    if (glSelectedChanged) this.setState({ glSelectedChanged });
-    if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
-      this.setState({ selectedCategoriesChanged: true });
-      this.loadProgress();
-    }
-  }
-
-  componentWillMount() {
-    const {store} = this.context;
-    const name = this.props.tool.name;
-    const gatewayLanguage = getToolGatewayLanguage(store.getState(), name);
-    this.selectionChange(gatewayLanguage);
-    this.setState({
-      selectedGL: gatewayLanguage
-    });
   }
 
   selectionChange(selectedGL) {
@@ -284,7 +280,7 @@ ToolCard.propTypes = {
     PropTypes.bool
   ]),
   toggleHomeView: PropTypes.func.isRequired,
-  currentSelectedGL: PropTypes.string.isRequired,
+  glSelected: PropTypes.string.isRequired,
 };
 
 ToolCard.contextTypes = {
