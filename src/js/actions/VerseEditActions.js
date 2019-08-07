@@ -227,7 +227,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     var t4 = performance.now();
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
     var t5 = performance.now();
-    //console.log("Call to updateTargetVerse took " + (t5 - t4) + " milliseconds.");
+    console.log("Call to updateTargetVerse took " + (t5 - t4) + " milliseconds.");
 
     if (getSelectedToolName(getState()) === WORD_ALIGNMENT) {
       // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
@@ -259,7 +259,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
       }
     }
     var t7 = performance.now();
-    //console.log("Call to validateVerse took " + (t7 - t6) + " milliseconds.");
+    console.log("Call to validateVerse took " + (t7 - t6) + " milliseconds.");
     dispatch(AlertModalActions.closeAlertDialog());
     if (showSelectionInvalidated || showAlignmentsInvalidated) {
       await delay(250);
@@ -270,7 +270,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     await dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
                                            currentCheckContextId, actionsBatch));
     var t9 = performance.now();
-    //console.log("Call to doBackgroundVerseEditsUpdates took " + (t9 - t8) + " milliseconds.");
+    console.log("Call to doBackgroundVerseEditsUpdates took " + (t9 - t8) + " milliseconds.");
   };
 };
 
@@ -292,7 +292,6 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     const {
       contextIdReducer
     } = getState();
-    debugger;
     var t_main_start = performance.now();
     const {contextId: currentCheckContextId} = contextIdReducer;
     const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
@@ -317,7 +316,7 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
       false, selectionsValidationResults, actionsBatch));
     var t1 = performance.now();
-    //console.log("Call to validateSelections took " + (t1 - t0) + " milliseconds.");
+    console.log("Call to validateSelections took " + (t1 - t0) + " milliseconds.");
     // create verse edit record to write to file system
     const modifiedTimestamp = generateTimestamp();
     const verseEdit = {
