@@ -412,7 +412,7 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
           </div>
         );
       }
-      let hasRunOnce = false;
+      let hasRunOnce = false; // to prevent multiple click responses
       dispatch(
         AlertModalActions.openOptionDialog(overwriteMessage,
           (result) => {
