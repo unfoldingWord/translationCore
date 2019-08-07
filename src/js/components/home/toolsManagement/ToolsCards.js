@@ -16,9 +16,17 @@ import {isEqual} from 'lodash';
 class ToolsCards extends React.Component {
   shouldComponentUpdate(nextProps) {
     const {
-      tools, bookName, loggedInUser, projectSaveLocation, currentProjectToolsSelectedGL,
-      manifest, invalidatedReducer, toolsCategories, originalLanguageBookManifest
+      tools,
+      bookName,
+      loggedInUser,
+      projectSaveLocation,
+      manifest,
+      invalidatedReducer,
+      toolsCategories,
+      originalLanguageBookManifest
     } = this.props;
+    const {toolsSelectedGLs} = manifest;
+
     if (!isEqual(nextProps.bookName, bookName)) {
       return true;
     }
@@ -43,7 +51,7 @@ class ToolsCards extends React.Component {
     if (!isEqual(nextProps.originalLanguageBookManifest, originalLanguageBookManifest)) {
       return true;
     }
-    if (!isEqual(nextProps.currentProjectToolsSelectedGL, currentProjectToolsSelectedGL)) {
+    if (!isEqual(nextProps.manifest.toolsSelectedGLs, toolsSelectedGLs)) {
       return true;
     }
     else return false;
@@ -162,7 +170,6 @@ ToolsCards.propTypes = {
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired
 };
 
 export default ToolsCards;
