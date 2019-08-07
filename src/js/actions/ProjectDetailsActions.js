@@ -19,6 +19,7 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 import * as ResourcesHelpers from "../helpers/ResourcesHelpers";
+import {delay} from "../common/utils";
 //reducers
 import Repo from '../helpers/Repo.js';
 import ProjectAPI from "../helpers/ProjectAPI";
@@ -411,18 +412,24 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
           </div>
         );
       }
+      let hasRunOnce = false; // to prevent multiple click responses
       dispatch(
         AlertModalActions.openOptionDialog(overwriteMessage,
           (result) => {
             if (result === confirmText) {
               dispatch(AlertModalActions.closeAlertDialog());
-              const oldProjectPath = path.join(PROJECTS_PATH, projectName);
-              console.log('handleOverwriteWarning() - doing overwrite/merge');
-              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()), dispatch);
-              fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
-              fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
-              dispatch(setSaveLocation(oldProjectPath));
-              resolve(true);
+              if (!hasRunOnce) {
+                hasRunOnce = true;
+                delay(500).then(() => { // wait for UI to update and alert to close
+                  const oldProjectPath = path.join(PROJECTS_PATH, projectName);
+                  console.log('handleOverwriteWarning() - doing overwrite/merge');
+                  ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()), dispatch);
+                  fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+                  fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
+                  dispatch(setSaveLocation(oldProjectPath));
+                });
+                resolve(true);
+              }
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
               resolve(false);

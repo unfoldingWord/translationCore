@@ -104,6 +104,7 @@ export const openProject = (name, skipValidation=false) => {
     console.log("openProject() projectDir=" + projectDir);
 
     try {
+      dispatch({ type: consts.START_PROJECT_LOADING});
       dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
       dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
       dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
@@ -160,8 +161,10 @@ export const openProject = (name, skipValidation=false) => {
 
       await dispatch(displayTools());
       dispatch(updateProjectVersion());
+      dispatch({ type: consts.END_PROJECT_LOADING});
       console.log("openProject() - project opened");
     } catch (e) {
+      dispatch({ type: consts.END_PROJECT_LOADING});
       // TODO: clean this up
       if (e.type !== 'div') console.warn("openProject() error", e);
       let message = e.stack ? e.message : e; // if crash dump, need to clean up message so it doesn't crash alert

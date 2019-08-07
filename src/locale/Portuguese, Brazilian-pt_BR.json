@@ -71,7 +71,7 @@
   "third_party_attributions": "Código de terceiros Adicionais Avisos de direitos Autorais e os Termos de Licença",
   "sending_feedback": "Enviando comentário",
   "sending_feedback_failed": "Falha ao enviar comentário",
-  "critical_error_warning": "Warning: A critical error has occurred!",
+  "critical_error_warning": "Aviso: Ocorreu um erro crítico!",
   "updates": {
     "check_for_newer_app": "Verifique se há atualizações de software",
     "check_for_content_updates": "Verificar atualizações de conteúdo",
@@ -339,6 +339,7 @@
     "description": "Descrição",
     "tw_part1_description": "Uma ferramenta para verificação extensiva do significado de termos-chave na Bíblia, que emprega definições claras e concisas e inclui sugestões de tradução.",
     "gateway_language": "LÍNGUA PORTÃO",
+    "select_gateway_language": "Selecione o Idioma Portal",
     "word_alignment": "Alinhamento de Palavras",
     "alignment_description": "Uma ferramenta que alinha uma tradução com as línguas bíblicas originais para demonstrar como a tradução comunica o significado original. Esta informação pode ser útil na criação de outros recursos na língua-alvo, como concordâncias e Bíblias interlineares.",
     "please_select_gl": "Por favor, selecione a Língua Ponte que você deseja para verificar sua tradução.",
@@ -383,7 +384,7 @@
     "invalidation_checking": "Verificando se esta edição apresenta conflitos com seleções e alinhamentos salvos...",
     "alignments_reset_wa_tool": "Alterações foram detectadas em seu projeto que invalidaram alguns de seus alinhamentos. Esses versículos apresentam um ícone de corrente quebrada ao lado da referência no menu lateral.",
     "invalid_verse_alignments_and_selections": "Alterações foram detectadas em seu projeto que invalidaram algumas de suas seleções e alinhamentos. Esses versículos apresentam um ícone de corrente quebrada ao lado da referência no menu lateral.",
-    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
+    "invalid_check_found": "Há um problema com o conteúdo para esta verificação: ${report} Você deseja reportar esse problema a fim de que ele possa ser corrigido?"
   },
   "buttons": {
     "back_button": "Voltar",
