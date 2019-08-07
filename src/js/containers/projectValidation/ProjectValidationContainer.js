@@ -30,7 +30,7 @@ class ProjectValidationContainer extends Component {
     }
     if (loadingProject === true) {
       return false;
-    }  else return true;
+    } else return true;
   }
   render() {
     let { stepIndex } = this.props.reducers.projectValidationReducer.stepper;
