@@ -339,6 +339,7 @@
     "description": "Description",
     "tw_part1_description": "A tool to comprehensively check the meaning of key terms in the Bible using a set of clear, concise definitions and including suggestions for translation.",
     "gateway_language": "Gateway Language",
+    "select_gateway_language": "Select Gateway Language",
     "word_alignment": "Word Alignment",
     "alignment_description": "A tool to align the translation with the original biblical languages in order to show how the translation communicates the meaning represented in the original. This data can be useful in creating other resources such as concordances and interlinear Bibles in the target language.",
     "please_select_gl": "Please select the Gateway Language from which you would like to check your translation.",
