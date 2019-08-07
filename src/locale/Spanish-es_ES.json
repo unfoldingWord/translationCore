@@ -339,6 +339,7 @@
     "description": "Descripción",
     "tw_part1_description": "Una herramienta para verificar exhaustivamente el significado de los términos clave en la Biblia usando un conjunto de definiciones claras y concisas, incluyendo sugerencias para la traducción.",
     "gateway_language": "Idioma de entrada",
+    "select_gateway_language": "Select Gateway Language",
     "word_alignment": "Alineación de palabra",
     "alignment_description": "Una herramienta para alinear la traducción con los idiomas bíblicos originales en orden para mostrar cómo la traducción comunica el significado representado en el original. Estos datos pueden ser útiles para crear otros recursos tales como concordancias y Biblias interlineales en el idioma de destino.",
     "please_select_gl": "Por favor seleccione el idioma de entrada del cual le gustaría verificar su traducción.",
