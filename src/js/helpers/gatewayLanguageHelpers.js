@@ -16,6 +16,7 @@ import {
   TRANSLATION_WORDS,
   USER_RESOURCES_PATH,
   WORD_ALIGNMENT,
+  LEXICONS,
 } from '../common/constants';
 
 /**
@@ -64,6 +65,11 @@ export function getGlRequirementsForTool(toolName) {
   switch (toolName) {
     case WORD_ALIGNMENT:
       requirements.gl.minimumCheckingLevel = 3;
+      requirements.gl.helpsChecks = [
+        {
+          path: path.join(LEXICONS),
+        }
+      ];
       break;
 
     case TRANSLATION_WORDS:

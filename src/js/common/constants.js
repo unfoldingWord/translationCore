@@ -10,6 +10,7 @@ export const TRANSLATION_NOTES = 'translationNotes';
 export const TRANSLATION_ACADEMY = 'translationAcademy';
 export const TRANSLATION_HELPS = 'translationHelps';
 export const WORD_ALIGNMENT = 'wordAlignment';
+export const LEXICONS = 'lexicons';
 
 export const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 export const USER_RESOURCES_PATH = path.join(ospath.home(), "translationCore", "resources");

@@ -36,14 +36,22 @@ class ToolCard extends Component {
       progress: 0,
       selectedCategoriesChanged: false,
       glSelectedChanged: false,
-      selectedGL: ''
+      selectedGL: '',
+      gatewayLanguageList: null
     };
   }
 
   componentWillMount() {
-    const selectedGL = this.props.glSelected;
+    let {
+      tool,
+      bookId,
+      glSelected: selectedGL
+    } = this.props;
+    const gatewayLanguageList = getGatewayLanguageList(bookId, tool.name);
+    // if there is only one gateway Language then select it as the GL for the tool card.
+    if (gatewayLanguageList.length === 1) selectedGL = gatewayLanguageList[0].code;
     this.selectionChange(selectedGL);
-    this.setState({ selectedGL });
+    this.setState({ selectedGL, gatewayLanguageList });
   }
 
   componentDidMount() {
@@ -93,7 +101,7 @@ class ToolCard extends Component {
       }
     }
     if (!launchDisableMessage && !developerMode) { // if no errors and not developer mode , make sure we have a gateway language
-      const gatewayLanguageList = getGatewayLanguageList(id, name);
+      const {gatewayLanguageList} = this.state;
       launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
     }
     if (!launchDisableMessage && (toolsWithCategories.includes(name) && selectedCategories.length === 0)) {
@@ -149,7 +157,7 @@ class ToolCard extends Component {
       selectedCategories,
       availableCategories,
     } = this.props;
-    const {progress, selectedGL} = this.state;
+    const {progress, selectedGL, gatewayLanguageList} = this.state;
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
     let showCheckBoxes = false;
@@ -233,8 +241,7 @@ class ToolCard extends Component {
               translate={translate}
               selectedGL={this.state.selectedGL}
               selectionChange={this.selectionChange}
-              bookID={bookId}
-              toolName={tool.name}
+              gatewayLanguageList={gatewayLanguageList}
             />
             <Hint
               position={'left'}
