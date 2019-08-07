@@ -32,7 +32,6 @@ class ProjectsManagementContainer extends Component {
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
     if (loadingProject === true) {
-      console.log('Prevented ProjectsManagementContainer loading re-render');
       return false;
     } else return true;
   }

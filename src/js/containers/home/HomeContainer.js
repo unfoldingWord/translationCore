@@ -37,7 +37,6 @@ class HomeContainer extends Component {
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
     if (loadingProject === true) {
-      console.log('Prevented project loading re-render');
       return false;
     } else return true;
   }

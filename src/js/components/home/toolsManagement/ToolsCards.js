@@ -19,39 +19,30 @@ class ToolsCards extends React.Component {
       manifest, invalidatedReducer, toolsCategories, originalLanguageBookManifest
     } = this.props;
     if (!isEqual(nextProps.bookName, bookName)) {
-      console.log('Updating because bookName is different');
       return true;
     } 
     if (!isEqual(nextProps.tools, tools)) {
-      console.log('Updating because tools is different');
       return true;
     }
     if (!isEqual(nextProps.loggedInUser, loggedInUser)) {
-      console.log('Updating because loggedInUser is different');
       return true;
     } 
     if (!isEqual(nextProps.projectSaveLocation, projectSaveLocation)) {
-      console.log('Updating because projectSaveLocation is different');
       return true;
     } 
     if (!isEqual(nextProps.manifest, manifest)) {
-      console.log('Updating because manifest is different');
       return true;
     } 
     if (!isEqual(nextProps.invalidatedReducer, invalidatedReducer)) {
-      console.log('Updating because invalidatedReducer is different');
       return true;
     } 
     if (!isEqual(nextProps.toolsCategories, toolsCategories)) {
-            console.log('Updating because toolsCategories is different');
       return true;
     } 
     if (!isEqual(nextProps.originalLanguageBookManifest, originalLanguageBookManifest)) {
-      console.log('Updating because originalLanguageBookManifest is different');
       return true;
     } 
     if (!isEqual(nextProps.currentProjectToolsSelectedGL, currentProjectToolsSelectedGL)) {
-      console.log('Updating because currentProjectToolsSelectedGL is different');
       return true;
     } 
     else return false;

@@ -25,7 +25,6 @@ class ProjectValidationContainer extends Component {
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
     if (loadingProject === true) {
-      console.log('Prevented ProjectValidationContainer loading re-render');
       return false;
     } else return true;
   }
@@ -196,11 +195,12 @@ ProjectValidationContainer.propTypes = {
       stepper: PropTypes.shape({
         stepIndex: PropTypes.number.isRequired
       }),
-      showProjectValidationStepper:PropTypes.bool.isRequired
+      showProjectValidationStepper:PropTypes.bool.isRequired,
     }),
     mergeConflictReducer: PropTypes.object.isRequired,
     missingVersesReducer: PropTypes.object.isRequired,
-    settingsReducer: PropTypes.object.isRequired
+    settingsReducer: PropTypes.object.isRequired,
+    homeScreenReducer: PropTypes.object.isRequired
   })
 };
 

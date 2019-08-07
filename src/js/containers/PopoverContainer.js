@@ -10,7 +10,6 @@ class PopoverContainer extends React.Component {
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
     if (loadingProject === true) {
-      console.log('Prevented PopoverContainer loading re-render');
       return false;
     } else return true;
   }
@@ -38,7 +37,8 @@ class PopoverContainer extends React.Component {
 }
 
 PopoverContainer.propTypes = {
-  onClosePopover: PropTypes.func.isRequired
+  onClosePopover: PropTypes.func.isRequired,
+  reducers: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {

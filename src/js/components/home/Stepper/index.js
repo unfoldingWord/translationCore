@@ -49,7 +49,6 @@ class HomeStepper extends Component {
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
     if (loadingProject === true) {
-      console.log('Prevented HomeStepper loading re-render');
       return false;
     } else return true;
   }
@@ -151,7 +150,8 @@ HomeStepper.propTypes = {
   goToStep: PropTypes.func,
   translate: PropTypes.func.isRequired,
   projectNickname: PropTypes.string,
-  toolName: PropTypes.string
+  toolName: PropTypes.string,
+  reducers: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeStepper);

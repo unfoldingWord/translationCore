@@ -29,7 +29,6 @@ class ToolsManagementContainer extends Component {
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
     if (loadingProject === true) {
-      console.log('Prevented ToolsManagementContainer loading re-render');
       return false;
     } else return true;
   }

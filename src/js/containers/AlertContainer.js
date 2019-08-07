@@ -15,14 +15,6 @@ class AlertPortal extends React.PureComponent {
     this.el = document.createElement('div');
   }
 
-  shouldComponentUpdate(nextProps) {
-    const {loadingProject} = nextProps.reducers.homeScreenReducer;
-    if (loadingProject === true) {
-      console.log('Prevented AlertPortal loading re-render');
-      return false;
-    } else return true;
-  }
-
   componentDidMount () {
     document.body.appendChild(this.el);
   }
@@ -51,6 +43,13 @@ class Alerts extends React.Component {
     this.handleOnIgnore = this.handleOnIgnore.bind(this);
     this.handleOnCancel = this.handleOnCancel.bind(this);
     this.handleOnConfirm = this.handleOnConfirm.bind(this);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      return false;
+    } else return true;
   }
 
   /**
@@ -126,7 +125,8 @@ class Alerts extends React.Component {
 Alerts.propTypes = {
   alerts: PropTypes.array,
   closeAlert: PropTypes.func.isRequired,
-  ignoreAlert: PropTypes.func.isRequired
+  ignoreAlert: PropTypes.func.isRequired,
+  reducers: PropTypes.object.isRequired
 };
 Alerts.defaultProps = {
   alerts: []

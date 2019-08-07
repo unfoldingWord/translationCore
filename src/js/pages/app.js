@@ -31,17 +31,11 @@ import { LOG_FILES_PATH } from "../common/constants";
 const version = `v${packageJson.version} (${process.env.BUILD})`;
 injectFileLogging(LOG_FILES_PATH, version);
 
-// if (process.env.NODE_ENV !== 'production') {
-//   const {whyDidYouUpdate} = require('why-did-you-update');
-//   whyDidYouUpdate(React);
-// }
-
 class Main extends Component {
 
     shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
     if (loadingProject === true) {
-      console.log('Prevented app.js loading re-render');
       return false;
     } else return true;
   }
