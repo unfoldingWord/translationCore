@@ -33,7 +33,7 @@ const GlDropDownList = ({
     selectedGL = invalidCode;
     disabled = true;
   }
-  const floatingLabelText = translate(selectedGL ? 'tools.gateway_language' : 'tools.select_gateway_language');
+  const floatingLabelText = selectedGL ? translate('tools.gateway_language') : translate('tools.select_gateway_language');
 
   return (
     <SelectField
