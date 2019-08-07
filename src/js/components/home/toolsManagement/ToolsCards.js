@@ -24,7 +24,6 @@ const ToolsCards = ({
   invalidatedReducer,
   toolsCategories,
   originalLanguageBookManifest,
-  currentProjectToolsSelectedGL,
   onMissingResource,
   toggleHomeView,
 }) => {
@@ -59,7 +58,8 @@ const ToolsCards = ({
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
           tools.map((tool, i) => {
-            const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation, { withCategoryName: true });
+            const glSelected = manifest.toolsSelectedGLs[tool.name];
+            const availableCategories = getAvailableCategories(glSelected, tool.name, projectSaveLocation, { withCategoryName: true });
             let isOLBookVersionMissing = false;
             let missingOLResource = {};
             if (tool.name === TRANSLATION_NOTES) {
@@ -97,10 +97,10 @@ const ToolsCards = ({
                   folderName: tool.path,
                   name: tool.name
                 }}
-                currentSelectedGL={currentProjectToolsSelectedGL[tool.name] || ''}
                 isOLBookVersionMissing={!!isOLBookVersionMissing}
                 onMissingResource={() => onMissingResource(missingOLResource)}
                 invalidatedReducer={invalidatedReducer}
+                glSelected={glSelected || ''}
               />
             );
           })
@@ -124,7 +124,6 @@ ToolsCards.propTypes = {
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
 };
 
 export default ToolsCards;

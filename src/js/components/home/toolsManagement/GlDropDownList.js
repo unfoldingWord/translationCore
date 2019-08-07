@@ -3,7 +3,6 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
 // helpers
-import { DEFAULT_GATEWAY_LANGUAGE } from '../../../common/constants';
 import { getGatewayLanguageList } from '../../../helpers/gatewayLanguageHelpers';
 import { getLanguageTranslation } from "../../../helpers/localizationHelpers";
 
@@ -28,15 +27,13 @@ const GlDropDownList = ({
       const primaryText = <span style={{height: '18px'}}>{languageLocalized}</span>;
       GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText}/>);
     });
-    if (!selectedGL) {
-      selectedGL = DEFAULT_GATEWAY_LANGUAGE;
-    }
   } else { // no valid languages
     const invalidCode = '  ';
     GLs.push(<MenuItem value={invalidCode} key={invalidCode} primaryText={translate('tools.no_gl_available')}/>);
     selectedGL = invalidCode;
     disabled = true;
   }
+  const floatingLabelText = translate(selectedGL ? 'tools.gateway_language' : 'tools.select_gateway_language');
 
   return (
     <SelectField
@@ -45,7 +42,7 @@ const GlDropDownList = ({
       value={selectedGL}
       disabled={disabled}
       floatingLabelStyle={{ color: '#000000' }}
-      floatingLabelText={translate('tools.gateway_language')}
+      floatingLabelText={floatingLabelText}
       underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
       onChange={(event, index, value) => selectionChange(value)}
     >

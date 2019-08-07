@@ -54,7 +54,6 @@ class ToolsManagementContainer extends Component {
       reducers: {
         loginReducer: { loggedInUser },
         projectDetailsReducer: {
-          currentProjectToolsSelectedGL,
           manifest,
           projectSaveLocation,
           toolsCategories
@@ -103,7 +102,6 @@ class ToolsManagementContainer extends Component {
             actions={{ ...this.props.actions }}
             onMissingResource={onMissingResource}
             originalLanguageBookManifest={originalLanguageBookManifest}
-            currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
           />

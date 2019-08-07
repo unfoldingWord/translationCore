@@ -31,9 +31,11 @@ describe('CommentsActions.addComment', () => {
     }];
     const store = mockStore({
       projectDetailsReducer: {
-        currentProjectToolsSelectedGL: {
-          translationWords: 'en'
-        }
+        manifest: {
+          toolsSelectedGLs: {
+            translationWords: 'en'
+          }
+        },
       },
       toolsReducer: {
         selectedTool: TRANSLATION_WORDS

@@ -27,8 +27,10 @@ describe('RemindersActions.toggleReminder', () => {
     }];
     const store = mockStore({
       projectDetailsReducer: {
-        currentProjectToolsSelectedGL: {
-          translationWords: 'en'
+        manifest: {
+          toolsSelectedGLs: {
+            translationWords: 'en'
+          }
         }
       },
       toolsReducer: {

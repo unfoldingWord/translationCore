@@ -40,19 +40,23 @@ class HomeContainer extends Component {
       toolsReducer: { selectedTool },
       projectDetailsReducer: {
         toolsCategories,
-        currentProjectToolsSelectedGL,
+        manifest: {
+          toolsSelectedGLs = {}
+        },
       },
     } = this.props.reducers;
     const {
       projectDetailsReducer: {
         toolsCategories: prevToolsCategories,
-        currentProjectToolsSelectedGL: prevCurrentProjectToolsSelectedGL
+        manifest: {
+          toolsSelectedGLs: prevToolsSelectedGLs = {}
+        },
       }
     } = prevProps.reducers;
 
-    const currentSelectedGL = currentProjectToolsSelectedGL[selectedTool];
-    const prevCurrentSelectedGL = prevCurrentProjectToolsSelectedGL[selectedTool];
-    const glSelectedChanged = prevCurrentSelectedGL !== currentSelectedGL;
+    const currentSelectedGL = toolsSelectedGLs[selectedTool];
+    const prevCurrentSelectedGL = prevToolsSelectedGLs[selectedTool];
+    const glSelectedChanged = currentSelectedGL && prevCurrentSelectedGL !== currentSelectedGL;
     if (glSelectedChanged) this.setState({ glSelectedChanged });
     if(!_.isEqual(prevToolsCategories[selectedTool], toolsCategories[selectedTool])) {
       this.setState({ selectedCategoriesChanged: true });

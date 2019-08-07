@@ -274,12 +274,12 @@ function getInitialStateData (bookId, checkPath, projectPath) {
       manifest: {
         project: {
           id: bookId
+        },
+        toolsSelectedGLs: {
+          translationWords: 'en'
         }
       },
       projectSaveLocation: path.resolve(checkPath),
-      currentProjectToolsSelectedGL: {
-        translationWords: 'en'
-      },
       currentToolName: TRANSLATION_WORDS
     },
     contextIdReducer: {
@@ -304,7 +304,10 @@ function initiMockStore (bookId, selectionsReducer, chapter = null, verse = null
   initialState.projectDetailsReducer = {
     ...initialState.projectDetailsReducer,
     projectSaveLocation: CURRENT_PROJECT_PATH,
-    manifest: {project: {id: bookId}}
+    manifest: {
+      ...initialState.projectDetailsReducer.manifest,
+      project: {id: bookId}
+    }
   };
 
   if (typeof targetVerse === 'string') {
