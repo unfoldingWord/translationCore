@@ -34,6 +34,13 @@ class HomeContainer extends Component {
       glSelectedChanged: false,
     };
   }
+  shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      console.log('Prevented project loading re-render');
+      return false;
+    } else return true;
+  }
 
   componentDidUpdate(prevProps) {
     const {
@@ -200,7 +207,7 @@ HomeContainer.propTypes = {
   actions: PropTypes.object.isRequired,
   reducers: PropTypes.object.isRequired,
   currentLanguage: PropTypes.object.isRequired,
-  translate: PropTypes.func
+  translate: PropTypes.func,
 };
 
 export default connect(

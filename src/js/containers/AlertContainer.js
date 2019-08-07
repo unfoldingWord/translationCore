@@ -15,6 +15,14 @@ class AlertPortal extends React.PureComponent {
     this.el = document.createElement('div');
   }
 
+  shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      console.log('Prevented AlertPortal loading re-render');
+      return false;
+    } else return true;
+  }
+
   componentDidMount () {
     document.body.appendChild(this.el);
   }
@@ -126,7 +134,10 @@ Alerts.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    alerts: getAlerts(state)
+    alerts: getAlerts(state),
+    reducers: {
+      homeScreenReducer: state.homeScreenReducer
+    },
   };
 };
 const mapDispatchToProps = {

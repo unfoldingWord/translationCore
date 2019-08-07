@@ -30,7 +30,10 @@ const mapStateToProps = (state) => {
     stepIndex: getHomeScreenStep(state),
     activeSteps: getActiveHomeScreenSteps(state),
     projectNickname: getProjectNickname(state),
-    toolName: getSelectedToolTitle(state)
+    toolName: getSelectedToolTitle(state),
+    reducers: {
+      homeScreenReducer: state.homeScreenReducer
+    },
   };
 };
 
@@ -42,6 +45,14 @@ const mapDispatchToProps = {
  * The home stepper
  */
 class HomeStepper extends Component {
+
+  shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      console.log('Prevented HomeStepper loading re-render');
+      return false;
+    } else return true;
+  }
 
   componentDidMount () {
     const {stepIndex, goToStep} = this.props;

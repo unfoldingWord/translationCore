@@ -31,7 +31,20 @@ import { LOG_FILES_PATH } from "../common/constants";
 const version = `v${packageJson.version} (${process.env.BUILD})`;
 injectFileLogging(LOG_FILES_PATH, version);
 
+// if (process.env.NODE_ENV !== 'production') {
+//   const {whyDidYouUpdate} = require('why-did-you-update');
+//   whyDidYouUpdate(React);
+// }
+
 class Main extends Component {
+
+    shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      console.log('Prevented app.js loading re-render');
+      return false;
+    } else return true;
+  }
 
   componentWillMount() {
     const {
@@ -103,11 +116,15 @@ Main.propTypes = {
   getAnchorTags: PropTypes.func.isRequired,
   isLocaleLoaded: PropTypes.bool,
   appLanguage: PropTypes.any,
-  loadTools: PropTypes.func.isRequired
+  loadTools: PropTypes.func.isRequired,
+  reducers: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => {
   return {
+    reducers: {
+      homeScreenReducer: state.homeScreenReducer
+    },
     isLocaleLoaded: getLocaleLoaded(state),
     appLanguage: getSetting(state, APP_LOCALE_SETTING)
   };

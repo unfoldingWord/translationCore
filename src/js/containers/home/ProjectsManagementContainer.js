@@ -29,6 +29,14 @@ class ProjectsManagementContainer extends Component {
     this.handleProjectSelected = this.handleProjectSelected.bind(this);
   }
 
+  shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      console.log('Prevented ProjectsManagementContainer loading re-render');
+      return false;
+    } else return true;
+  }
+
   componentWillMount () {
     this.props.actions.getMyProjects();
   }

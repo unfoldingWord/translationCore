@@ -35,6 +35,14 @@ class BodyContainer extends Component {
     this.returnHome = this.returnHome.bind(this);
   }
 
+  shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      console.log('Prevented BodyContainer loading re-render');
+      return false;
+    } else return true;
+  }
+
   componentDidCatch(error, info) {
     // Toggling home view to not show app menu
     this.props.toggleHomeView(true);
