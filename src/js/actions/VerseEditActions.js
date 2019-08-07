@@ -103,7 +103,7 @@ export const getCheckVerseEditsInGroupData = (state, contextId, editedChecks) =>
  * populates batch and optimizes by combining multiple edits for a groupID
  * @param {Object} editedChecks - gets loaded with verse edits indexed by groupId
  * @param {Array} actionBatch - will be populated with verse edit actions
- * @return {{groupIds: [], groupEditsCount: Number}}
+ * @return {{groupIds: Array, groupEditsCount: Number}}
  */
 export const editChecksToBatch = (editedChecks, actionBatch) => {
   const groupIds = Object.keys(editedChecks);
