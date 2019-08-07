@@ -54,15 +54,15 @@ describe('Tool Actions.openTool', () => {
   const store = mockStore({
     projectDetailsReducer: {
       projectSaveLocation: 'Users/me/test_project_reg',
-      currentProjectToolsSelectedGL: {
-        [toolName]: 'en'
-      },
       manifest: {
         tsv_relation: [
           "en/ult",
           "el-x-koine/ugnt?v=0.8",
           "hbo/uhb?v=2.1.7"
-        ]
+        ],
+        toolsSelectedGLs: {
+          [toolName]: 'en'
+        },
       }
     },
     resourcesReducer: {
@@ -95,7 +95,6 @@ describe('Tool Actions.openTool', () => {
       },
       {"allGroupsData": {"figs-abstractnouns": [{"comments": false, "contextId": {"glQuote": "gl_uote", "groupId": "figs-abstractnouns", "occurrence": 1, "occurrenceNote": "note", "quote": "quote", "reference": {"bookId": "tit", "chapter": 2, "verse": 2}}, "reminders": false, "selections": false, "verseEdits": false}]}, "type": "LOAD_GROUPS_DATA_FROM_FS"},
       {"groupsIndex": [{"id": "figs-abstractnouns", "name": "Abstract Nouns"}], "type": "LOAD_GROUPS_INDEX"},
-      {"type": 'VERIFY_GROUPS_DATA'},
       {"type": 'LOAD_CURRENT_CONTEXT_ID'},
       {"type": 'VERIFY_GROUPS_DATA'},
       {

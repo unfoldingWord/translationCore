@@ -4,6 +4,7 @@ import {
   getToolGatewayLanguage,
   getTranslate,
   getProjectSaveLocation,
+  getToolCategories
 } from "../selectors";
 // actions
 import * as ModalActions from "./ModalActions";
@@ -17,6 +18,9 @@ import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesAc
 import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
 import { loadToolsInDir } from "../helpers/toolHelper";
 import {delay} from "../common/utils";
+import {getToolsByKey} from "../selectors";
+import {showInvalidatedWarnings} from "./SelectionsActions";
+import {WORD_ALIGNMENT} from "../common/constants";
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -82,9 +86,8 @@ export const openTool = (name) => (dispatch, getData) => {
       const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
       dispatch(loadGroupsIndex(groupIndex));
 
-      await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
       dispatch(loadCurrentContextId());
-      //TRICKY: need to verify groups data before and after the contextId has been loaded
+      //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
       await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
       // wait for filesystem calls to finish
       await delay(150);
@@ -92,6 +95,7 @@ export const openTool = (name) => (dispatch, getData) => {
         closeAlertDialog(),
         BodyUIActions.toggleHomeView(false)
       ]));
+      dispatch(warnOnInvalidations(name));
     } catch (e) {
       console.warn("openTool()", e);
       dispatch(openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')})));
@@ -99,4 +103,26 @@ export const openTool = (name) => (dispatch, getData) => {
     }
     resolve();
   });
+};
+
+/**
+ * check for invalidations in tool and show appropriate warning for tool
+ * @param toolName
+ * @return {Function}
+ */
+export const warnOnInvalidations = (toolName) => (dispatch, getData) => {
+  try {
+    const apis = getToolsByKey(getData());
+    if (apis[toolName]) {
+      const selectedCategories = getToolCategories(getData(), toolName);
+      const numInvalidChecks = apis[toolName].api.trigger('getInvalidChecks', selectedCategories);
+      if (numInvalidChecks) {
+        console.log(`warnOnInvalidations(${toolName}) - numInvalidChecks: ${numInvalidChecks}`);
+        const showAlignmentsInvalidated = toolName === WORD_ALIGNMENT;
+        dispatch(showInvalidatedWarnings(!showAlignmentsInvalidated, showAlignmentsInvalidated));
+      }
+    }
+  } catch (e) {
+    console.warn("warnOnInvalidations() - error getting invalid checks", e);
+  }
 };

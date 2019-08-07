@@ -19,7 +19,6 @@ import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 import {
   getProjectBookId,
   getSetting,
-  getToolGatewayLanguage,
   getSelectedToolName,
 } from "../../../selectors";
 // consts
@@ -37,7 +36,27 @@ class ToolCard extends Component {
       progress: 0,
       selectedCategoriesChanged: false,
       glSelectedChanged: false,
+      selectedGL: ''
     };
+  }
+
+  componentWillMount() {
+    const selectedGL = this.props.glSelected;
+    this.selectionChange(selectedGL);
+    this.setState({ selectedGL });
+  }
+
+  componentDidMount() {
+    this.loadProgress();
+  }
+
+  componentDidUpdate(prevProps) {
+    const glSelectedChanged = prevProps.glSelected !== this.props.glSelected;
+    if (glSelectedChanged) this.setState({ glSelectedChanged });
+    if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
+      this.setState({ selectedCategoriesChanged: true });
+      this.loadProgress();
+    }
   }
 
   loadProgress() {
@@ -56,33 +75,11 @@ class ToolCard extends Component {
     }, 0);
   }
 
-  componentDidMount() {
-    this.loadProgress();
-  }
-
-  componentDidUpdate(prevProps) {
-    const glSelectedChanged = prevProps.currentSelectedGL !== this.props.currentSelectedGL;
-    if (glSelectedChanged) this.setState({ glSelectedChanged });
-    if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
-      this.setState({ selectedCategoriesChanged: true });
-      this.loadProgress();
-    }
-  }
-
-  componentWillMount() {
-    const {store} = this.context;
-    const name = this.props.tool.name;
-    const gatewayLanguage = getToolGatewayLanguage(store.getState(), name);
-    this.selectionChange(gatewayLanguage);
-    this.setState({
-      selectedGL: gatewayLanguage
-    });
-  }
-
   selectionChange(selectedGL) {
     if (selectedGL && selectedGL.trim()) {
       this.props.actions.setProjectToolGL(this.props.tool.name, selectedGL);
       this.setState({selectedGL});
+      this.loadProgress();
     }
   }
 
@@ -119,16 +116,18 @@ class ToolCard extends Component {
       isOLBookVersionMissing,
       toggleHomeView,
       selectedToolName,
-      tool: { name: newSelectedToolName },
+      tool,
+      actions: {warnOnInvalidations}
     } = this.props;
     const { selectedCategoriesChanged, glSelectedChanged } = this.state;
-
+    const newSelectedToolName = tool.name;
     if (isOLBookVersionMissing) {
       // Show dialog with option to download missing resource
       this.props.onMissingResource();
     } else if (selectedToolName && !glSelectedChanged && !selectedCategoriesChanged && (selectedToolName === newSelectedToolName)) {
       // Show tool (Without loading tool data)
       toggleHomeView(false);
+      warnOnInvalidations(newSelectedToolName);
     } else {
       // Load tool data then show tool
       this.handleSelect();
@@ -270,6 +269,7 @@ ToolCard.propTypes = {
     setProjectToolGL: PropTypes.func.isRequired,
     updateSubcategorySelection: PropTypes.func.isRequired,
     updateCategorySelection: PropTypes.func.isRequired,
+    warnOnInvalidations: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
@@ -280,7 +280,7 @@ ToolCard.propTypes = {
     PropTypes.bool
   ]),
   toggleHomeView: PropTypes.func.isRequired,
-  currentSelectedGL: PropTypes.string.isRequired,
+  glSelected: PropTypes.string.isRequired,
 };
 
 ToolCard.contextTypes = {

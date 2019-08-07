@@ -5,10 +5,10 @@ const initialState = {
   projectSaveLocation: '',
   manifest: {
     project: {},
-    resource: {}
+    resource: {},
+    toolsSelectedGLs: {}
   },
   currentProjectToolsProgress: {},
-  currentProjectToolsSelectedGL: {},
   projectType: null,
   toolsCategories: {}
 };
@@ -31,7 +31,10 @@ const projectDetailsReducer = (state = initialState, action) => {
     case consts.STORE_MANIFEST:
       return {
         ...state,
-        manifest: action.manifest
+        manifest: {
+          ...state.manifest,
+          ...action.manifest
+        }
       };
     case consts.SET_PROJECT_PROGRESS_FOR_TOOL:
       return {
@@ -44,9 +47,12 @@ const projectDetailsReducer = (state = initialState, action) => {
     case consts.SET_GL_FOR_TOOL:
       return {
         ...state,
-        currentProjectToolsSelectedGL: {
-          ...state.currentProjectToolsSelectedGL,
-          [action.toolName]: action.selectedGL
+        manifest: {
+          ...state.manifest,
+          toolsSelectedGLs: {
+            ...state.manifest.toolsSelectedGLs,
+            [action.toolName]: action.selectedGL
+          }
         }
       };
     case consts.ADD_MANIFEST_PROPERTY:
@@ -142,7 +148,7 @@ export default projectDetailsReducer;
  */
 export const getToolGatewayLanguage = (state, toolName) => {
   if(state) {
-    const languages = state.currentProjectToolsSelectedGL;
+    const languages = state.manifest.toolsSelectedGLs;
     if(languages.hasOwnProperty(toolName) && languages[toolName]) {
       return languages[toolName];
     }
@@ -230,5 +236,5 @@ export const getToolCategories = (state, toolName) => {
   }
 };
 
-export const getCurrentProjectToolsSelectedGL = (state) =>
-  state.currentProjectToolsSelectedGL;
+export const getToolsSelectedGLs = (state) =>
+  state.toolsSelectedGLs;

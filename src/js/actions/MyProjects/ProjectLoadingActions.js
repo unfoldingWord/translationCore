@@ -19,7 +19,7 @@ import { changeSelections } from '../SelectionsActions';
 import ResourceAPI from "../../helpers/ResourceAPI";
 
 import {
-  getCurrentProjectToolsSelectedGL,
+  getToolsSelectedGLs,
   getActiveLocaleLanguage,
   getProjectManifest,
   getProjectSaveLocation,
@@ -235,7 +235,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
       }
     },
     username: getUsername(state),
-    currentProjectToolsSelectedGL: getCurrentProjectToolsSelectedGL(state),
+    currentProjectToolsSelectedGL: getToolsSelectedGLs(state),
     actions: {
       changeSelections: (selections, userName) => {
         dispatch(changeSelections(selections, userName));

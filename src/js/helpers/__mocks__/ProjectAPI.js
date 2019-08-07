@@ -11,6 +11,7 @@ export const mockResetCategoryGroupIds = jest.fn();
 export const mockHasNewGroupsData = jest.fn();
 export const mockResetLoadedCategories = jest.fn();
 export const mockRemoveStaleCategoriesFromCurrent = jest.fn();
+export const mockGetLoadedCategories = jest.fn(() => ('mockCategories'));
 
 const mock = jest.fn().mockImplementation(() => {
   return {
@@ -26,7 +27,8 @@ const mock = jest.fn().mockImplementation(() => {
     resetCategoryGroupIds: mockResetCategoryGroupIds,
     hasNewGroupsData: mockHasNewGroupsData,
     resetLoadedCategories: mockResetLoadedCategories,
-    removeStaleCategoriesFromCurrent: mockRemoveStaleCategoriesFromCurrent
+    removeStaleCategoriesFromCurrent: mockRemoveStaleCategoriesFromCurrent,
+    getLoadedCategories: mockGetLoadedCategories
   };
 });
 

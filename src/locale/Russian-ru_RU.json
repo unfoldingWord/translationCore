@@ -71,6 +71,7 @@
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
   "sending_feedback": "Sending Feedback",
   "sending_feedback_failed": "Failed to Send Feedback",
+  "critical_error_warning": "Warning: A critical error has occurred!",
   "updates": {
     "check_for_newer_app": "Проверить обновления программного обеспечения",
     "check_for_content_updates": "Проверить обновления содержимого",
@@ -338,6 +339,7 @@
     "description": "Описание",
     "tw_part1_description": "Инструмент для всесторонней проверки значения ключевых терминов в Библии, с использованием набора четких, кратких определений, включая предложения для перевода.",
     "gateway_language": "Базовый язык",
+    "select_gateway_language": "Select Gateway Language",
     "word_alignment": "Совпадение Слов",
     "alignment_description": "Инструмент для согласования перевода с оригинальными библейскими языками, чтобы показать, как перевод передаёт смысл, представленный в оригинале. Эти данные могут быть полезны для создания других ресурсов, таких как совпадения и подстрочные Библии на целевом языке.",
     "please_select_gl": "Пожалуйста, выберите базовый язык, на основании которого вы хотите проверить ваш перевод.",

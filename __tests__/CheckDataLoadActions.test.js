@@ -51,15 +51,15 @@ const projectDetailsReducer = {
     "project": {
       "id": "tit",
       "name": "Titus"
+    },
+    toolsSelectedGLs: {
+      translationWords: 'en'
     }
   },
   "currentProjectToolsProgress": {
     "wordAlignment": 0,
     "translationWords": 0.21
   },
-  currentProjectToolsSelectedGL: {
-    translationWords: 'en'
-  }
 };
 const contextIdReducer = {
   "contextId": {

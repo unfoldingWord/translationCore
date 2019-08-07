@@ -22,7 +22,7 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
-import { openTool } from "../../actions/ToolActions";
+import {openTool, warnOnInvalidations} from "../../actions/ToolActions";
 // constants
 import { APP_VERSION } from '../../common/constants';
 
@@ -46,19 +46,23 @@ class HomeContainer extends Component {
       toolsReducer: { selectedTool },
       projectDetailsReducer: {
         toolsCategories,
-        currentProjectToolsSelectedGL,
+        manifest: {
+          toolsSelectedGLs = {}
+        },
       },
     } = this.props.reducers;
     const {
       projectDetailsReducer: {
         toolsCategories: prevToolsCategories,
-        currentProjectToolsSelectedGL: prevCurrentProjectToolsSelectedGL
+        manifest: {
+          toolsSelectedGLs: prevToolsSelectedGLs = {}
+        },
       }
     } = prevProps.reducers;
 
-    const currentSelectedGL = currentProjectToolsSelectedGL[selectedTool];
-    const prevCurrentSelectedGL = prevCurrentProjectToolsSelectedGL[selectedTool];
-    const glSelectedChanged = prevCurrentSelectedGL !== currentSelectedGL;
+    const currentSelectedGL = toolsSelectedGLs[selectedTool];
+    const prevCurrentSelectedGL = prevToolsSelectedGLs[selectedTool];
+    const glSelectedChanged = currentSelectedGL && prevCurrentSelectedGL !== currentSelectedGL;
     if (glSelectedChanged) this.setState({ glSelectedChanged });
     if(!_.isEqual(prevToolsCategories[selectedTool], toolsCategories[selectedTool])) {
       this.setState({ selectedCategoriesChanged: true });
@@ -197,6 +201,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
+      },
+      warnOnInvalidations: (toolName) => {
+        dispatch(warnOnInvalidations(toolName));
       }
     }
   };

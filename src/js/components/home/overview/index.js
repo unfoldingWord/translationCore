@@ -15,22 +15,26 @@ class OverviewContainer extends Component {
   }
 
   /**
-  * @description generates the launch button
-  * @param {bool} disabled - disable the button
-  * @return {component} - component returned
-  */
+   * @description generates the launch button
+   * @param {bool} disabled - disable the button
+   * @param {String} toolTitle
+   * @return {component} - component returned
+   */
   launchButton(disabled, toolTitle) {
-    const { toggleHomeView, openTool } = this.props.actions;
+    const { toggleHomeView, openTool, warnOnInvalidations } = this.props.actions;
     const {
       translate,
       selectedCategoriesChanged,
       glSelectedChanged,
     } = this.props;
     const onClick = () => {
-      return selectedCategoriesChanged || glSelectedChanged ?
-        openTool(toolTitle) : toggleHomeView(false);
+      if (selectedCategoriesChanged || glSelectedChanged) {
+        openTool(toolTitle);
+      } else {
+        toggleHomeView(false);
+        warnOnInvalidations(toolTitle);
+      }
     };
-
 
     return (
       <button className='btn-prime'

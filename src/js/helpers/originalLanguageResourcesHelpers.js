@@ -10,8 +10,10 @@ export function getTsvOLVersion(tsvRelations, resourceId) {
     if (tsvRelations) {
       // Get the query string from the tsv_relation array for given resourceId
       const query = tsvRelations.find((query) => query.includes(resourceId));
-      // Get version number from query
-      tsvOLVersion = query.split('?v=')[1];
+      if (query) {
+        // Get version number from query
+        tsvOLVersion = query.split('?v=')[1];
+      }
     }
     return tsvOLVersion;
   } catch (error) {

@@ -71,6 +71,7 @@
   "third_party_attributions": "Third Party hongjug lekhi adhikar suchna and agya niomkhan",
   "sending_feedback": "Pratikriya pathai ashe",
   "sending_feedback_failed": "Pratikriya pathabole byartha hoise",
+  "critical_error_warning": "Chetawni: ekta mahatwapurna golti ulaise!",
   "updates": {
     "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Talika unnati karne check kuribi",
@@ -338,6 +339,7 @@
     "description": "Biwaran",
     "tw_part1_description": "Bible laga asol sabda khan thik thak pora bujikena check kuribole karne ekta safa varnana, anubaad karne prastabo laga oshtro.",
     "gateway_language": "Gateway Language ",
+    "select_gateway_language": "Select Gateway Language",
     "word_alignment": "Kotha milai dia",
     "alignment_description": "Anubaad kuria tu kinika Bible laga asol bhasa laga asol matlab jugajug kure itu dikhabole karne ekta sabda milai dia laga oshtro. Itu data tu dusra sampad bonabole karne modot hobo pare jeneke, target bhasa khante concordance khan bonabole, Bible laga interlinear karne.",
     "please_select_gl": "Aapni anubaad kuribole itcha kuria bhasa chunibole karne morom pora Gateway Language tu chunibi.",

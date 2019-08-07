@@ -807,7 +807,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
 
   test('should return text from ult and NOT the ulb', () => {
     // given
-    const currentProjectToolsSelectedGL = {
+    const toolsSelectedGLs = {
       translationWords: 'en',
       currentToolName: TRANSLATION_WORDS
     };
@@ -839,7 +839,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     const expectedAlignedGLText = 'without blame';
 
       // when
-    const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(currentProjectToolsSelectedGL, contextId, bibles, currentToolName);
+    const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToolName);
 
     // then
     expect(alignedGLText).toEqual(expectedAlignedGLText);
@@ -847,7 +847,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
 
   test('should return text from ulb', () => {
     // given
-    const currentProjectToolsSelectedGL = {
+    const toolsSelectedGLs = {
       translationWords: 'en',
       currentToolName: TRANSLATION_WORDS
     };
@@ -878,7 +878,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     const expectedAlignedGLText = 'without blame';
 
       // when
-    const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(currentProjectToolsSelectedGL, contextId, bibles, currentToolName);
+    const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToolName);
 
     // then
     expect(alignedGLText).toEqual(expectedAlignedGLText);
@@ -1360,7 +1360,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
         "text": " \n"
       }
     ];
-    const currentProjectToolsSelectedGL = {
+    const toolsSelectedGLs = {
       translationWords: 'en',
       currentToolName: TRANSLATION_WORDS
     };
@@ -1418,7 +1418,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     const expectedAlignedGLText = 'judging … twelve tribes of Israel';
 
     // when
-    const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(currentProjectToolsSelectedGL, contextId, bibles, currentToolName);
+    const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToolName);
 
     // then
     expect(alignedGLText).toEqual(expectedAlignedGLText);

@@ -71,9 +71,9 @@ export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
  * batch setting verse edit flags for all tw checks in verse if not set
  * @param {Object} state - current state
  * @param {Object} contextId - of verse edit
- * @param {Object} actionsBatch - gets loaded with verse edits to be batched (indexed by groupId)
+ * @param {Object} editedChecks - gets loaded with verse edits indexed by groupId
  */
-export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) => {
+export const getCheckVerseEditsInGroupData = (state, contextId, editedChecks) => {
   // in group data reducer set verse edit flag for every check of the verse edited
   const matchedGroupData = getGroupDataForVerse(state, contextId);
   const keys = Object.keys(matchedGroupData);
@@ -85,10 +85,10 @@ export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) =>
           const check = groupItem[j];
           if (!check.verseEdits) { // only set if not yet set
             const groupId = check.contextId.groupId;
-            if (!actionsBatch[groupId]) {
-              actionsBatch[groupId] = [];
+            if (!editedChecks[groupId]) {
+              editedChecks[groupId] = [];
             }
-            actionsBatch[groupId].push({
+            editedChecks[groupId].push({
               type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
               contextId: check.contextId
             });
@@ -97,6 +97,35 @@ export const getCheckVerseEditsInGroupData = (state, contextId, actionsBatch) =>
       }
     }
   }
+};
+
+/**
+ * populates batch and optimizes by combining multiple edits for a groupID
+ * @param {Object} editedChecks - gets loaded with verse edits indexed by groupId
+ * @param {Array} actionBatch - will be populated with verse edit actions
+ * @return {{groupIds: [], groupEditsCount: Number}}
+ */
+export const editChecksToBatch = (editedChecks, actionBatch) => {
+  const groupIds = Object.keys(editedChecks);
+  let groupEditsCount = 0;
+  // process by group
+  for (let j = 0, l = groupIds.length; j < l; j++) {
+    const groupId = groupIds[j];
+    const verseEdits = editedChecks[groupId];
+    if (verseEdits.length === 1) { // if only one, then don't need to combine
+      actionBatch.push(verseEdits[0]); // batch the only verse edit
+      groupEditsCount += 1;
+    } else { // combine multiple verse edits into one call
+      const references = verseEdits.map(item => (item.contextId.reference)); // just get all the references to change
+      actionBatch.push({
+        type: types.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
+        groupId,
+        references
+      });
+      groupEditsCount += references.length;
+    }
+  }
+  return {groupIds, groupEditsCount};
 };
 
 /**
@@ -115,37 +144,17 @@ export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
         const contextId = twVerseEdits[versesEdited[i]];
         getCheckVerseEditsInGroupData(state, contextId, editedChecks);
       }
-      const batch = [];
-      if (editedChecks) {
-        const groupIds = Object.keys(editedChecks);
-        let count = 0;
-        // process by group
-        for (let j = 0, l = groupIds.length; j < l; j++) {
-          const groupId = groupIds[j];
-          const verseEdits = editedChecks[groupId];
-          if (verseEdits.length === 1) { // if only one, then don't need to combine
-            batch.push(verseEdits[0]); // batch the only verse edit
-            count += 1;
-          } else { // combine multiple verse edits into one call
-            const references = verseEdits.map(item => (item.contextId.reference)); // just get all the references to change
-            batch.push({
-              type: types.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
-              groupId,
-              references
-            });
-            count += references.length;
-          }
-        }
-        if (batch.length) {
-          const translate = getTranslate(getState());
-          dispatch(AlertModalActions.openAlertDialog(translate("loading_verse_edits"), true));
-          await delay(400);
-          console.log("ensureCheckVerseEditsInGroupData() - edited verses=" + versesEdited.length);
-          dispatch(batchActions(batch));
-          console.log("ensureCheckVerseEditsInGroupData() - total checks changed=" + count);
-          console.log("ensureCheckVerseEditsInGroupData() - batch finished, groupId's edited=" + groupIds.length);
-          dispatch(AlertModalActions.closeAlertDialog());
-        }
+      const actionBatch = [];
+      const {groupIds, groupEditsCount} = editChecksToBatch(editedChecks, actionBatch);
+      if (actionBatch.length) {
+        const translate = getTranslate(getState());
+        dispatch(AlertModalActions.openAlertDialog(translate("loading_verse_edits"), true));
+        await delay(400);
+        console.log("ensureCheckVerseEditsInGroupData() - edited verses=" + versesEdited.length);
+        dispatch(batchActions(actionBatch));
+        console.log("ensureCheckVerseEditsInGroupData() - total checks changed=" + groupEditsCount);
+        console.log("ensureCheckVerseEditsInGroupData() - batch finished, groupId's edited=" + groupIds.length);
+        dispatch(AlertModalActions.closeAlertDialog());
       }
     }
   };
@@ -175,18 +184,26 @@ export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                                               currentCheckContextId, batchGroupData) => {
   return async(dispatch, getState) => {
+    await delay(1000); // wait till before updating
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
     dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
       verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
       verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
+    await delay(200);
 
     const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     const state = getState();
     const toolName = getSelectedToolName(state);
     if (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES) {
-      getCheckVerseEditsInGroupData(state, contextIdWithVerseEdit, actionsBatch);
+      const editedChecks = {};
+      getCheckVerseEditsInGroupData(state, contextIdWithVerseEdit, editedChecks);
+      const {groupEditsCount} = editChecksToBatch(editedChecks, actionsBatch); // optimize edits into batch
+      if (groupEditsCount) {
+        console.log(`doBackgroundVerseEditsUpdates() - ${groupEditsCount} group edits found`);
+      }
     }
+    await delay(500);
     dispatch(batchActions(actionsBatch));
   };
 };
@@ -224,10 +241,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     await delay(500);
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
-    var t4 = performance.now();
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
-    var t5 = performance.now();
-    console.log("Call to updateTargetVerse took " + (t5 - t4) + " milliseconds.");
 
     if (getSelectedToolName(getState()) === WORD_ALIGNMENT) {
       // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
@@ -239,7 +253,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
       });
     }
     let showAlignmentsInvalidated = false;
-    var t6 = performance.now();
+
     // TRICKY: this is a temporary hack to validate verse edits.
     // TODO: This can be removed once the ScripturePane is updated to provide
     // callbacks for editing so that tools can manually perform the edit and
@@ -258,19 +272,14 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
                                                   chapterWithVerseEdit, verseWithVerseEdit, true);
       }
     }
-    var t7 = performance.now();
-    console.log("Call to validateVerse took " + (t7 - t6) + " milliseconds.");
     dispatch(AlertModalActions.closeAlertDialog());
     if (showSelectionInvalidated || showAlignmentsInvalidated) {
       await delay(250);
       dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
       await delay(1000);
     }
-    var t8 = performance.now();
-    await dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
+    dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
                                            currentCheckContextId, actionsBatch));
-    var t9 = performance.now();
-    console.log("Call to doBackgroundVerseEditsUpdates took " + (t9 - t8) + " milliseconds.");
   };
 };
 
@@ -292,7 +301,6 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     const {
       contextIdReducer
     } = getState();
-    var t_main_start = performance.now();
     const {contextId: currentCheckContextId} = contextIdReducer;
     const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
     let {bookId, chapter: currentCheckChapter, verse: currentCheckVerse} = currentCheckContextId.reference;
@@ -312,11 +320,9 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     }
     const selectionsValidationResults = {};
     const actionsBatch = [];
-    var t0 = performance.now();
     dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
       false, selectionsValidationResults, actionsBatch));
-    var t1 = performance.now();
-    console.log("Call to validateSelections took " + (t1 - t0) + " milliseconds.");
+
     // create verse edit record to write to file system
     const modifiedTimestamp = generateTimestamp();
     const verseEdit = {
@@ -332,10 +338,9 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
       gatewayLanguageQuote,
       contextId: contextIdWithVerseEdit
     };
-    await dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId,
-      selectionsValidationResults.selectionsChanged, actionsBatch));
-    var t_main_end = performance.now();
-    console.log("Took " + (t_main_end - t_main_start) + " milliseconds to process verse edit.");
+
+    dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId,
+        selectionsValidationResults.selectionsChanged, actionsBatch));
   };
 };
 

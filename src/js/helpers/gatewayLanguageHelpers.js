@@ -27,8 +27,9 @@ import {
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const toolName = getSelectedToolName(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
+  const {toolsSelectedGLs} = state.projectDetailsReducer.manifest;
   const gatewayLanguageQuote = getAlignedGLText(
-    state.projectDetailsReducer.currentProjectToolsSelectedGL,
+    toolsSelectedGLs,
     contextId || state.contextIdReducer.contextId,
     state.resourcesReducer.bibles,
     toolName
@@ -434,13 +435,13 @@ export function getQuoteAsArray(contextId) {
 
 /**
  * get the selected text from the GL resource for this context
- * @param {*} currentProjectToolsSelectedGL
+ * @param {*} toolsSelectedGLs
  * @param {*} contextId
  * @param {*} bibles - list of resources
  * @param {*} currentToolName - such as translationWords
  */
-export function getAlignedGLText(currentProjectToolsSelectedGL, contextId, bibles, currentToolName) {
-  const selectedGL = currentProjectToolsSelectedGL[currentToolName];
+export function getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToolName) {
+  const selectedGL = toolsSelectedGLs[currentToolName];
   if (!contextId.quote || !bibles || !bibles[selectedGL] || !Object.keys(bibles[selectedGL]).length)
     return contextId.quote;
   const sortedBibleIds = Object.keys(bibles[selectedGL]).sort(bibleIdSort);

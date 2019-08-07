@@ -1,9 +1,10 @@
+/* eslint-env jest */
 jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from "path-extra";
 import ProjectAPI from "../ProjectAPI";
 // constants
-import { APP_VERSION } from '../../common/constants';
+import {APP_VERSION} from '../../common/constants';
 
 describe('ProjectAPI', () => {
   beforeEach(() => {
@@ -58,32 +59,6 @@ describe('ProjectAPI', () => {
       fs.readJsonSync.mockReturnValueOnce({hello: "world2"});
 
       expect(p.getGroupsData('tool')).toEqual({});
-    });
-  });
-
-  describe('import group data', () => {
-    beforeEach(() => {
-      jest.resetAllMocks();
-    });
-    it('imports new group data', () => {
-      const p = new ProjectAPI('/root');
-
-      fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
-      fs.pathExistsSync.mockReturnValueOnce(false);
-
-      p.importCategoryGroupData('tool', 'src/path');
-      expect(fs.copySync.mock.calls.length).toBe(1);
-    });
-
-    it('skips importing existing group data', () => {
-      const p = new ProjectAPI('/root');
-
-      fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
-      fs.pathExistsSync.mockReturnValueOnce(true); // file already exists
-      fs.readJsonSync.mockReturnValueOnce({loaded: ["group"]});
-
-      p.importCategoryGroupData('tool', 'src/path/group.json');
-      expect(fs.copySync).not.toBeCalled();
     });
   });
 

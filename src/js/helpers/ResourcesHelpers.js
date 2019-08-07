@@ -6,7 +6,7 @@ import isEqual from "deep-equal";
 import _ from "lodash";
 import {getOtherTnsOLVersions} from 'tc-source-content-updater';
 // actions
-import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
+import {addObjectPropertyToManifest, loadCurrentCheckCategories} from '../actions/ProjectDetailsActions';
 // helpers
 import * as BibleHelpers from "./bibleHelpers";
 import {getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
@@ -122,7 +122,7 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
     const checks = getFoldersInResourceFolder(checksPath);
     if (checks) {
       for (let check of checks) {
-        console.log(`copyGroupDataToProject() - migrating ${check} to new format`);
+        console.log(`migrateOldCheckingResourceData() - migrating ${check} to new format`);
         const checkPath = path.join(checksPath, check);
         const books = getFoldersInResourceFolder(checkPath);
         for (let book of books) {
@@ -147,7 +147,7 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
         }
       }
     }
-    console.log("copyGroupDataToProject() - migration done");
+    console.log("migrateOldCheckingResourceData() - migration done");
   }
 }
 
@@ -168,9 +168,10 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
   if (helpDir) {
     project.resetCategoryGroupIds(toolName);
     const groupDataUpdated = glChange || project.hasNewGroupsData(toolName);
+    const isTN = toolName === TRANSLATION_NOTES;
     if (groupDataUpdated) {
       project.resetLoadedCategories(toolName);
-      if (toolName === TRANSLATION_NOTES) {
+      if (isTN) {
         const tHelpsManifest = fs.readJsonSync(path.join(helpDir, 'manifest.json'));
         const { relation } = tHelpsManifest.dublin_core || {};
         dispatch(addObjectPropertyToManifest('tsv_relation', relation));
@@ -180,6 +181,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
     // In some older projects the category was saved in the .categories file instead of the subcategories.
     project.setCurrentCategories(toolName, categories);
 
+    const groupsDataLoaded = project.getLoadedCategories(toolName);
     const categoryKeys = Object.keys(categories);
     for (let i = 0, l = categoryKeys.length; i < l; i++) {
       const category = categoryKeys[i];
@@ -192,7 +194,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       for (let j = 0, l2 = categories[category].length; j < l2; j++) {
         const subCategory = categories[category][j];
         const dataPath = path.join(groupsDir, subCategory + '.json');
-        project.importCategoryGroupData(toolName, dataPath);
+        project.importCategoryGroupData(toolName, dataPath, groupsDataLoaded);
       }
       // TRICKY: gives the tool an index of which groups belong to which category
       project.setCategoryGroupIds(toolName, category, categories[category]);
@@ -203,6 +205,17 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       }
     }
     project.removeStaleCategoriesFromCurrent(toolName);
+    if (isTN) {
+      const categoriesPath = project.getCategoriesPath(toolName);
+      if (fs.existsSync(categoriesPath)) {
+        // update languageId in categories
+        const categories = fs.readJsonSync(categoriesPath);
+        if (categories) {
+          categories.languageId = gatewayLanguage;
+          fs.outputJsonSync(categoriesPath, categories);
+        }
+      }
+    }
     if (groupDataUpdated) {
       migrateOldCheckingResourceData(projectDir, toolName);
     }
@@ -328,11 +341,22 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
  */
 export function updateGroupIndexForGl(toolName, selectedGL) {
   return ((dispatch, getState) => {
+    console.log(`updateGroupIndexForGl(${toolName}, ${selectedGL})`);
     const state = getState();
     const projectDir = getProjectSaveLocation(state);
     try {
-      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
       const projectApi = new ProjectAPI(projectDir);
+      const categoriesPath = projectApi.getCategoriesPath(toolName);
+      if (fs.existsSync(categoriesPath)) {
+        const categories = fs.readJsonSync(categoriesPath);
+        if(categories && categories.languageId === selectedGL)
+        {
+          console.log("updateGroupIndexForGl() - language unchanged, skipping");
+          return; // we don't need to do anything since language hasn't changed
+        }
+      }
+      console.log("updateGroupIndexForGl() - calling copyGroupDataToProject() to get latest from tN helps");
+      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
       let groupId = null;
       let contextId = null;
       const bookId = getProjectBookId(state);
@@ -343,6 +367,7 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
           groupId = contextId && contextId.groupId;
         }
       }
+      console.log("updateGroupIndexForGl() - updating saved contextId() for new GL");
       if (contextId && groupId) {
         // need to update occurrenceNote in current contextId from checks
         const groupData = projectApi.getGroupData(toolName, groupId);
@@ -359,6 +384,8 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
           }
         }
       }
+      console.log("updateGroupIndexForGl() - calling loadCurrentCheckCategories()");
+      dispatch(loadCurrentCheckCategories(toolName, projectDir, selectedGL));
     } catch(e) {
       console.error(`updateGroupIndexForGl(${toolName} - error updating current context`, e);
     }

@@ -20,9 +20,11 @@ describe('InvalidatedActions.set', () => {
     const invalidated = true;
     const store = mockStore({
       projectDetailsReducer: {
-        currentProjectToolsSelectedGL: {
-          translationWords: 'en'
-        }
+        manifest: {
+          toolsSelectedGLs: {
+            translationWords: 'en'
+          }
+        },
       },
       toolsReducer: {
         selectedTool: TRANSLATION_WORDS
@@ -54,9 +56,11 @@ describe('InvalidatedActions.set', () => {
     const invalidated = false;
     const store = mockStore({
       projectDetailsReducer: {
-        currentProjectToolsSelectedGL: {
-          translationWords: 'en'
-        }
+        manifest: {
+          toolsSelectedGLs: {
+            translationWords: 'en'
+          }
+        },
       },
       toolsReducer: {
         selectedTool: TRANSLATION_WORDS
@@ -90,9 +94,11 @@ describe('InvalidatedActions.setInvalidated', () => {
     const invalidated = true;
     const store = mockStore({
       projectDetailsReducer: {
-        currentProjectToolsSelectedGL: {
-          translationWords: 'en'
-        }
+        manifest: {
+          toolsSelectedGLs: {
+            translationWords: 'en'
+          }
+        },
       },
       toolsReducer: {
         selectedTool: TRANSLATION_WORDS
@@ -124,9 +130,11 @@ describe('InvalidatedActions.setInvalidated', () => {
     const invalidated = false;
      const store = mockStore({
       projectDetailsReducer: {
-        currentProjectToolsSelectedGL: {
-          translationWords: 'en'
-        }
+        manifest: {
+          toolsSelectedGLs: {
+            translationWords: 'en'
+          }
+        },
       },
       toolsReducer: {
         selectedTool: TRANSLATION_WORDS

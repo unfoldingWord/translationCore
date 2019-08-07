@@ -38,7 +38,7 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext)
       console.log("promptForInvalidCheckFeedback(): User clicked submit feedback");
       dispatch(HomeScreenActions.setErrorFeedbackCategory(FeedbackDialog.CONTENT_AND_RESOURCES_FEEDBACK_KEY));
       dispatch(HomeScreenActions.setErrorFeedbackMessage('There is a problem with the content of this check:' + data)); // put up feedback dialog
-      onSelection();
+      dispatch(HomeScreenActions.setFeedbackCloseCallback(onSelection));
     },
     onCancel: () => {
       console.log("promptForInvalidCheckFeedback(): User clicked ignore");

@@ -15,36 +15,37 @@ import {isEqual} from 'lodash';
 
 class ToolsCards extends React.Component {
   shouldComponentUpdate(nextProps) {
-    const {tools, bookName, loggedInUser, projectSaveLocation, currentProjectToolsSelectedGL,
+    const {
+      tools, bookName, loggedInUser, projectSaveLocation, currentProjectToolsSelectedGL,
       manifest, invalidatedReducer, toolsCategories, originalLanguageBookManifest
     } = this.props;
     if (!isEqual(nextProps.bookName, bookName)) {
       return true;
-    } 
+    }
     if (!isEqual(nextProps.tools, tools)) {
       return true;
     }
     if (!isEqual(nextProps.loggedInUser, loggedInUser)) {
       return true;
-    } 
+    }
     if (!isEqual(nextProps.projectSaveLocation, projectSaveLocation)) {
       return true;
-    } 
+    }
     if (!isEqual(nextProps.manifest, manifest)) {
       return true;
-    } 
+    }
     if (!isEqual(nextProps.invalidatedReducer, invalidatedReducer)) {
       return true;
-    } 
+    }
     if (!isEqual(nextProps.toolsCategories, toolsCategories)) {
       return true;
-    } 
+    }
     if (!isEqual(nextProps.originalLanguageBookManifest, originalLanguageBookManifest)) {
       return true;
-    } 
+    }
     if (!isEqual(nextProps.currentProjectToolsSelectedGL, currentProjectToolsSelectedGL)) {
       return true;
-    } 
+    }
     else return false;
   }
   render() {
@@ -60,7 +61,6 @@ class ToolsCards extends React.Component {
       invalidatedReducer,
       toolsCategories,
       originalLanguageBookManifest,
-      currentProjectToolsSelectedGL,
       onMissingResource,
       toggleHomeView,
     } = this.props;
@@ -95,7 +95,8 @@ class ToolsCards extends React.Component {
         <div style={{height: '100%', overflowY: 'auto', paddingRight: '10px'}}>
           {
             tools.map((tool, i) => {
-              const availableCategories = getAvailableCategories(currentProjectToolsSelectedGL[tool.name], tool.name, projectSaveLocation, {withCategoryName: true});
+              const glSelected = manifest.toolsSelectedGLs[tool.name];
+              const availableCategories = getAvailableCategories(glSelected, tool.name, projectSaveLocation, {withCategoryName: true});
               let isOLBookVersionMissing = false;
               let missingOLResource = {};
               if (tool.name === TRANSLATION_NOTES) {
@@ -133,10 +134,10 @@ class ToolsCards extends React.Component {
                     folderName: tool.path,
                     name: tool.name
                   }}
-                  currentSelectedGL={currentProjectToolsSelectedGL[tool.name] || ''}
                   isOLBookVersionMissing={!!isOLBookVersionMissing}
                   onMissingResource={() => onMissingResource(missingOLResource)}
                   invalidatedReducer={invalidatedReducer}
+                  glSelected={glSelected || ''}
                 />
               );
             })
@@ -161,7 +162,7 @@ ToolsCards.propTypes = {
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
+  currentProjectToolsSelectedGL: PropTypes.object.isRequired
 };
 
 export default ToolsCards;

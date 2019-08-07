@@ -19,6 +19,7 @@ import * as PopoverActions from "../../actions/PopoverActions";
 import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
+import {warnOnInvalidations} from "../../actions/ToolActions";
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -60,7 +61,6 @@ class ToolsManagementContainer extends Component {
       reducers: {
         loginReducer: { loggedInUser },
         projectDetailsReducer: {
-          currentProjectToolsSelectedGL,
           manifest,
           projectSaveLocation,
           toolsCategories
@@ -109,7 +109,6 @@ class ToolsManagementContainer extends Component {
             actions={{ ...this.props.actions }}
             onMissingResource={onMissingResource}
             originalLanguageBookManifest={originalLanguageBookManifest}
-            currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
           />
@@ -157,6 +156,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
+      },
+      warnOnInvalidations: (toolName) => {
+        dispatch(warnOnInvalidations(toolName));
       }
     }
   };
