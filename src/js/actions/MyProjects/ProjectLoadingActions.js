@@ -232,7 +232,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
       }
     },
     username: getUsername(state),
-    currentProjectToolsSelectedGL: getToolsSelectedGLs(state),
+    toolsSelectedGLs: getToolsSelectedGLs(state),
     actions: {
       changeSelections: (selections, userName) => {
         dispatch(changeSelections(selections, userName));
