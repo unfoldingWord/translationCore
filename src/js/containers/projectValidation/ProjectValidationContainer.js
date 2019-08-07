@@ -20,13 +20,19 @@ import MergeConflictsCheck from '../../components/projectValidation/MergeConflic
 import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
 import ProjectValidationNavigation from '../../components/projectValidation/ProjectValidationNavigation';
 import {withLocale} from '../Locale';
+import {isEqual} from 'lodash';
 
 class ProjectValidationContainer extends Component {
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    const { showProjectValidationStepper } = nextProps.reducers.projectValidationReducer;
+    const { showProjectValidationStepper: currentShowProjectValidationStepper } = this.props.reducers.projectValidationReducer;
+    if (!isEqual(showProjectValidationStepper, currentShowProjectValidationStepper)) {
+      return true;
+    }
     if (loadingProject === true) {
       return false;
-    } else return true;
+    }  else return true;
   }
   render() {
     let { stepIndex } = this.props.reducers.projectValidationReducer.stepper;
