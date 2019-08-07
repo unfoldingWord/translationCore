@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import {isEqual} from 'lodash';
 import {Card, CardText} from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
@@ -11,7 +12,6 @@ import {getTsvOLVersion} from '../../../helpers/originalLanguageResourcesHelpers
 import {getAvailableCategories} from '../../../helpers/ResourcesHelpers';
 // constants
 import {USER_RESOURCES_PATH, TRANSLATION_NOTES} from '../../../common/constants';
-import {isEqual} from 'lodash';
 
 class ToolsCards extends React.Component {
   shouldComponentUpdate(nextProps) {
