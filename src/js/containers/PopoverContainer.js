@@ -7,6 +7,12 @@ import Popover from '../components/Popover';
 import { closePopover } from '../actions/PopoverActions';
 
 class PopoverContainer extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      return false;
+    } else return true;
+  }
   componentDidMount() {
     window.addEventListener('keydown', this.onEscapeKeyPressed.bind(this));
   }
@@ -31,12 +37,16 @@ class PopoverContainer extends React.Component {
 }
 
 PopoverContainer.propTypes = {
-  onClosePopover: PropTypes.func.isRequired
+  onClosePopover: PropTypes.func.isRequired,
+  reducers: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
   return {
-    ...state.popoverReducer
+    ...state.popoverReducer,
+    reducers: {
+      homeScreenReducer: state.homeScreenReducer
+    },
   };
 };
 

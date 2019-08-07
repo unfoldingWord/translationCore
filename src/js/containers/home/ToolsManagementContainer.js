@@ -27,6 +27,13 @@ class ToolsManagementContainer extends Component {
     this.handleSelectTool = this.handleSelectTool.bind(this);
   }
 
+  shouldComponentUpdate(nextProps) {
+    const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    if (loadingProject === true) {
+      return false;
+    } else return true;
+  }
+
   componentDidMount() {
     const {tools, reducers} = this.props;
     const projectSaveLocation = getProjectSaveLocation(reducers);
@@ -166,7 +173,8 @@ ToolsManagementContainer.propTypes = {
     projectDetailsReducer: PropTypes.object.isRequired,
     loginReducer: PropTypes.shape({
       loggedInUser: PropTypes.bool
-    }).isRequired
+    }).isRequired,
+    homeScreenReducer: PropTypes.object.isRequired
   }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,

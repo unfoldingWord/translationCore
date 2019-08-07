@@ -3,6 +3,9 @@
 exports[`ProjectLoadingActions.migrateValidateLoadProject should just open project if project name is valid 1`] = `
 Array [
   Object {
+    "type": "START_PROJECT_LOADING",
+  },
+  Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
@@ -254,11 +257,17 @@ Array [
     "type": "ADD_MANIFEST_PROPERTY",
     "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
+  Object {
+    "type": "END_PROJECT_LOADING",
+  },
 ]
 `;
 
 exports[`ProjectLoadingActions.migrateValidateLoadProject should open to details screen if project name is not valid 1`] = `
 Array [
+  Object {
+    "type": "START_PROJECT_LOADING",
+  },
   Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
@@ -663,11 +672,17 @@ Array [
     "type": "ADD_MANIFEST_PROPERTY",
     "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
+  Object {
+    "type": "END_PROJECT_LOADING",
+  },
 ]
 `;
 
 exports[`loadProject displays the details screen of an invalid project name 1`] = `
 Array [
+  Object {
+    "type": "START_PROJECT_LOADING",
+  },
   Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
@@ -1057,6 +1072,9 @@ Array [
     "bibleId": "targetBible",
     "languageId": "targetLanguage",
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
+  },
+  Object {
+    "type": "END_PROJECT_LOADING",
   },
   Object {
     "type": "RESET_PROJECT_DETAIL",
@@ -1162,6 +1180,9 @@ Array [
 exports[`loadProject opens a valid project 1`] = `
 Array [
   Object {
+    "type": "START_PROJECT_LOADING",
+  },
+  Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
@@ -1398,6 +1419,9 @@ Array [
     "bibleId": "targetBible",
     "languageId": "targetLanguage",
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
+  },
+  Object {
+    "type": "END_PROJECT_LOADING",
   },
   Object {
     "type": "RESET_PROJECT_DETAIL",
