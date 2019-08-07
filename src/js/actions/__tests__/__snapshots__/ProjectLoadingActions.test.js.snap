@@ -1174,6 +1174,9 @@ Array [
     ],
     "type": "GET_MY_PROJECTS",
   },
+  Object {
+    "type": "END_PROJECT_LOADING",
+  },
 ]
 `;
 
@@ -1520,6 +1523,9 @@ Array [
       },
     ],
     "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "type": "END_PROJECT_LOADING",
   },
 ]
 `;
