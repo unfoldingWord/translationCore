@@ -24,6 +24,10 @@ import {withLocale} from '../Locale';
 class ProjectValidationContainer extends Component {
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
+    const { showProjectValidationStepper } = nextProps.reducers.projectValidationReducer;
+    if (showProjectValidationStepper === true) {
+      return true;
+    }
     if (loadingProject === true) {
       return false;
     } else return true;
