@@ -1,5 +1,8 @@
 import path from "path-extra";
 import fs from "fs-extra";
+import {getTranslate} from "../selectors";
+import * as alerts from "../reducers/alerts";
+import {WORD_ALIGNMENT} from "../common/constants";
 
 /**
  * Loads all of the tools found in a directory
@@ -68,4 +71,23 @@ export const loadTool = async toolDir => {
   tool.description = meta.description;
   tool.path = toolDir;
   return tool;
+};
+
+/**
+ * determines if invalidation alert is already showing
+ * @param {String} toolName
+ * @param {Object} state
+ * @return {Boolean} - true if invalidation is displaying
+ */
+export const isInvalidationAlertDisplaying = (toolName, state) => {
+  let selectionsInvalidAlert = alerts.findAlert(state, "selections_invalidated");
+  const alignmentsInvalidAlert = alerts.findAlert(state, "alignments_reset");
+  if (alignmentsInvalidAlert) { // could also be combined alert, check message
+    const alignAndSelectionsInvalidMessage = getTranslate(state)('tools.invalid_verse_alignments_and_selections');
+    if (alignmentsInvalidAlert.children === alignAndSelectionsInvalidMessage) {
+      selectionsInvalidAlert = alignmentsInvalidAlert;
+    }
+  }
+  const alertAlreadyDisplayed = toolName === WORD_ALIGNMENT ? alignmentsInvalidAlert : selectionsInvalidAlert;
+  return !!alertAlreadyDisplayed;
 };

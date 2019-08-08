@@ -94,15 +94,19 @@ export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignments
   callback = null) => {
   return (dispatch, getState) => {
     let message = null;
+    let id = null;
     if (showSelectionInvalidated && showAlignmentsInvalidated) {
       message = 'tools.invalid_verse_alignments_and_selections';
+      id = 'alignments_reset';
     } else if (showSelectionInvalidated) {
       message = 'tools.selections_invalidated';
+      id = "selections_invalidated";
     } else { // (showAlignmentsInvalidated)
       message = 'tools.alignments_reset_wa_tool';
+      id = 'alignments_reset';
     }
     const translate = getTranslate(getState());
-    dispatch(AlertActions.openIgnorableAlert('alignments_reset', translate(message), {onConfirm: callback}));
+    dispatch(AlertActions.openIgnorableAlert(id, translate(message), {onConfirm: callback}));
   };
 };
 
