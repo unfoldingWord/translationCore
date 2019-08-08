@@ -319,16 +319,17 @@ describe('Test getGatewayLanguageList() for WA',()=>{
       fs.__resetMockFS();
     });
 
-    test('should return only English since its the only one w/ lexicons', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt', 'en/lexicons'];
+    test('should return all GL resources w/ lexicons', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt', 'en/lexicons', 'hi/lexicons'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
 
       // fake a hindi bible
       fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1', 'hi/bibles/ulb/v12.1');
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
+      console.log('languages', languages);
       expect(languages[0].name).toEqual('English');
-      expect(languages.length).toEqual(1);
+      expect(languages.length).toEqual(2);
     });
 
     test('should return English for Joel', () => {
