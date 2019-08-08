@@ -4,7 +4,6 @@ import {
   getToolGatewayLanguage,
   getTranslate,
   getProjectSaveLocation,
-  getToolCategories
 } from "../selectors";
 // actions
 import * as ModalActions from "./ModalActions";
@@ -16,9 +15,8 @@ import { loadGroupsIndex } from "./GroupsIndexActions";
 import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
 // helpers
 import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
-import { loadToolsInDir, isInvalidationAlertDisplaying } from "../helpers/toolHelper";
+import { loadToolsInDir, isInvalidationAlertDisplaying, getInvalidCountForTool } from "../helpers/toolHelper";
 import {delay} from "../common/utils";
-import {getToolsByKey} from "../selectors";
 import {showInvalidatedWarnings} from "./SelectionsActions";
 import {WORD_ALIGNMENT} from "../common/constants";
 
@@ -113,18 +111,13 @@ export const openTool = (name) => (dispatch, getData) => {
 export const warnOnInvalidations = (toolName) => (dispatch, getState) => {
   try {
     const state = getState();
-    const alertAlreadyDisplayed = isInvalidationAlertDisplaying(toolName, state);
+    const alertAlreadyDisplayed = isInvalidationAlertDisplaying(state, toolName);
     if (!alertAlreadyDisplayed) {
-      const apis = getToolsByKey(state);
-      const toolApi = apis[toolName];
-      if (toolApi) {
-        const selectedCategories = getToolCategories(state, toolName);
-        const numInvalidChecks = toolApi.api.trigger('getInvalidChecks', selectedCategories);
-        if (numInvalidChecks) {
-          console.log(`warnOnInvalidations(${toolName}) - numInvalidChecks: ${numInvalidChecks} - showing alert`);
-          const showAlignmentsInvalidated = toolName === WORD_ALIGNMENT;
-          dispatch(showInvalidatedWarnings(!showAlignmentsInvalidated, showAlignmentsInvalidated));
-        }
+      let numInvalidChecks = getInvalidCountForTool(state, toolName);
+      if (numInvalidChecks) {
+        console.log(`warnOnInvalidations(${toolName}) - numInvalidChecks: ${numInvalidChecks} - showing alert`);
+        const showAlignmentsInvalidated = toolName === WORD_ALIGNMENT;
+        dispatch(showInvalidatedWarnings(!showAlignmentsInvalidated, showAlignmentsInvalidated));
       }
     } else {
       console.log(`warnOnInvalidations(${toolName}) - already showing alert`);

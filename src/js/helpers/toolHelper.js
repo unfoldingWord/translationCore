@@ -1,6 +1,6 @@
 import path from "path-extra";
 import fs from "fs-extra";
-import {getTranslate} from "../selectors";
+import {getToolCategories, getToolsByKey, getTranslate} from "../selectors";
 import * as alerts from "../reducers/alerts";
 import {WORD_ALIGNMENT} from "../common/constants";
 
@@ -79,7 +79,7 @@ export const loadTool = async toolDir => {
  * @param {Object} state
  * @return {Boolean} - true if invalidation is displaying
  */
-export const isInvalidationAlertDisplaying = (toolName, state) => {
+export const isInvalidationAlertDisplaying = (state, toolName) => {
   let selectionsInvalidAlert = alerts.findAlert(state, "selections_invalidated");
   const alignmentsInvalidAlert = alerts.findAlert(state, "alignments_reset");
   if (alignmentsInvalidAlert) { // could also be combined alert, check message
@@ -90,4 +90,20 @@ export const isInvalidationAlertDisplaying = (toolName, state) => {
   }
   const alertAlreadyDisplayed = toolName === WORD_ALIGNMENT ? alignmentsInvalidAlert : selectionsInvalidAlert;
   return !!alertAlreadyDisplayed;
+};
+
+/**
+ * calls tool API to get invalid count for tool
+ * @param {Object} state
+ * @param {String} toolName
+ * @return {number}
+ */
+export const getInvalidCountForTool = (state, toolName) => {
+  let numInvalidChecks = 0;
+  const toolApi = (getToolsByKey(state))[toolName];
+  if (toolApi) {
+    const selectedCategories = getToolCategories(state, toolName);
+    numInvalidChecks = toolApi.api.trigger('getInvalidChecks', selectedCategories);
+  }
+  return numInvalidChecks;
 };
