@@ -290,7 +290,7 @@ Array [
   Object {
     "cancelText": null,
     "confirmText": null,
-    "id": "alignments_reset",
+    "id": "selections_invalidated",
     "ignoreText": null,
     "message": "tools.selections_invalidated",
     "onCancel": null,
@@ -344,7 +344,7 @@ Array [
   Object {
     "cancelText": null,
     "confirmText": null,
-    "id": "alignments_reset",
+    "id": "selections_invalidated",
     "ignoreText": null,
     "message": "tools.selections_invalidated",
     "onCancel": null,
@@ -396,7 +396,7 @@ Array [
   Object {
     "cancelText": null,
     "confirmText": null,
-    "id": "alignments_reset",
+    "id": "selections_invalidated",
     "ignoreText": null,
     "message": "tools.selections_invalidated",
     "onCancel": null,
@@ -490,7 +490,7 @@ Array [
   Object {
     "cancelText": null,
     "confirmText": null,
-    "id": "alignments_reset",
+    "id": "selections_invalidated",
     "ignoreText": null,
     "message": "tools.selections_invalidated",
     "onCancel": null,
@@ -544,7 +544,7 @@ Array [
   Object {
     "cancelText": null,
     "confirmText": null,
-    "id": "alignments_reset",
+    "id": "selections_invalidated",
     "ignoreText": null,
     "message": "tools.selections_invalidated",
     "onCancel": null,
@@ -605,7 +605,7 @@ Array [
   Object {
     "cancelText": null,
     "confirmText": null,
-    "id": "alignments_reset",
+    "id": "selections_invalidated",
     "ignoreText": null,
     "message": "tools.selections_invalidated",
     "onCancel": null,
