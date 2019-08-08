@@ -17,6 +17,8 @@ import {
   USER_RESOURCES_PATH,
   WORD_ALIGNMENT,
   LEXICONS,
+  UGL_LEXICON,
+  UHL_LEXICON,
 } from '../common/constants';
 
 /**
@@ -117,8 +119,7 @@ export function getGlRequirementsForTool(toolName) {
  */
 export function getGatewayLanguageList(bookId = null, toolName = null) {
   const glRequirements = getGlRequirementsForTool(toolName);
-  const forceLanguageId = (toolName === WORD_ALIGNMENT) ? 'en' : null;
-  const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, glRequirements, forceLanguageId);
+  const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, glRequirements, toolName);
   const supportedLanguageCodes = Object.keys(languageBookData);
   const supportedLanguages = supportedLanguageCodes.map(code => {
     let lang = getLanguageByCodeSelection(code);
@@ -320,6 +321,15 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
           const passedCheckingLevel = (checkingLevel >= helpsCheck.minimumCheckingLevel);
           helpValid = helpValid && passedCheckingLevel;
         }
+      } else if (helpsCheck.path.includes('lexicons')) {
+        const lexiconId = BibleHelpers.isNewTestament(bookID) ? UGL_LEXICON : UHL_LEXICON;
+        const lexiconsFolderPath = path.join(languagePath, helpsCheck.path, lexiconId);
+        if (fs.existsSync(lexiconsFolderPath)) {
+          const lexiconLatestVersionPath = ResourceAPI.getLatestVersion(path.join(languagePath, helpsCheck.path, lexiconId));
+          if (fs.existsSync(path.join(lexiconLatestVersionPath, 'content'))) {
+            helpValid = true;
+          }
+        }
       }
       isBibleValidSource = isBibleValidSource && helpValid;
     }
@@ -396,10 +406,10 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
  *
  * @param {String|null} bookId - optionally filter on book
  * @param {Object} glRequirements - helpsPaths - see getGlRequirementsForTool() jsDocs for format
- * @param {String|null} forceLanguageId - if not null, then add this language code
+ * @param {String} toolName - tool name.
  * @return {Object} set of supported languages and their supported bibles
  */
-export function getSupportedGatewayLanguageResourcesList(bookId = null, glRequirements = {}, forceLanguageId = null) {
+export function getSupportedGatewayLanguageResourcesList(bookId = null, glRequirements = {}, toolName) {
   const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder(true) || [];
   const filteredLanguages = {};
   for (let language of allLanguages) {
@@ -412,8 +422,8 @@ export function getSupportedGatewayLanguageResourcesList(bookId = null, glRequir
       };
     }
   }
-  if (forceLanguageId && !Object.keys(filteredLanguages).length) { // TODO: this is a temporary fix to be removed later
-    filteredLanguages[forceLanguageId] = {
+  if (!filteredLanguages['en'] && toolName === WORD_ALIGNMENT && !Object.keys(filteredLanguages).length) { // TODO: this is a temporary fix to be removed later
+    filteredLanguages['en'] = {
       default_literal: 'ult',
       bibles: ['ult']
     };
