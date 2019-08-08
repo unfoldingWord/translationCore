@@ -3,7 +3,6 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
 // helpers
-import { getGatewayLanguageList } from '../../../helpers/gatewayLanguageHelpers';
 import { getLanguageTranslation } from "../../../helpers/localizationHelpers";
 
 /**
@@ -13,13 +12,11 @@ import { getLanguageTranslation } from "../../../helpers/localizationHelpers";
 const GlDropDownList = ({
   selectedGL,
   selectionChange,
-  bookID,
   translate,
-  toolName
+  gatewayLanguageList
 }) => {
   const GLs = [];
   let disabled = false;
-  const gatewayLanguageList = getGatewayLanguageList(bookID, toolName);
 
   if (gatewayLanguageList && gatewayLanguageList.length) {
     gatewayLanguageList.forEach(item => {
@@ -52,11 +49,10 @@ const GlDropDownList = ({
 };
 
 GlDropDownList.propTypes = {
-  selectedGL: PropTypes.string,
-  selectionChange: PropTypes.func.isRequired,
-  bookID: PropTypes.string,
   translate: PropTypes.func.isRequired,
-  toolName: PropTypes.string
+  selectedGL: PropTypes.string.isRequired,
+  selectionChange: PropTypes.func.isRequired,
+  gatewayLanguageList: PropTypes.array.isRequired,
 };
 
 export default GlDropDownList;

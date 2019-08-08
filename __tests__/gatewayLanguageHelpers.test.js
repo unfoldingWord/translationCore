@@ -319,8 +319,8 @@ describe('Test getGatewayLanguageList() for WA',()=>{
       fs.__resetMockFS();
     });
 
-    test('should return English & Hindi for Titus', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
+    test('should return only English since its the only one w/ lexicons', () => {
+      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt', 'en/lexicons'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
 
       // fake a hindi bible
@@ -328,8 +328,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
       expect(languages[0].name).toEqual('English');
-      expect(languages[1].lc).toEqual('hi');
-      expect(languages.length).toEqual(2);
+      expect(languages.length).toEqual(1);
     });
 
     test('should return English for Joel', () => {
