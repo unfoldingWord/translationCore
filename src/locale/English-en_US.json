@@ -67,7 +67,7 @@
   "include_alignment_check": "Include alignment data",
   "loading_verse_edits": "Loading Verse Edits",
   "find_out_more": "Find out more about ${app_name} at:",
-  "based_on_earlier_work": "Based on an earlier work by &{wycliffe_associates} released under the ISC",
+  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
   "sending_feedback": "Sending Feedback",
   "sending_feedback_failed": "Failed to Send Feedback",
