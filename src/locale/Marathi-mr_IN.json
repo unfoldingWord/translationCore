@@ -66,8 +66,8 @@
   "alignment_prompt": "तुम्ही तुमच्या मजकूरासह संरेखन डेटा निर्यात करू इच्छिता?",
   "include_alignment_check": "समावेश संरेखन डेटा",
   "loading_verse_edits": "वचन संपादने लोड करीत आहे",
-  "find_out_more": "येथे ट्रान्सलेशन कोअरबद्दल अधिक शोधा:",
-  "based_on_earlier_work": "आयएससी अंतर्गत जाहीर केलेल्या वायक्लिफ असोसिएट्सच्या पूर्वीच्या कार्यावर आधारित",
+  "find_out_more": "Find out more about ${app} at:",
+  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "तृतीय पक्ष सांकेतिक चिन्हाच्या अतिरिक्त प्रतिलिप्याधिकार सूचना आणि परवान्याच्या अटी",
   "sending_feedback": "अभिप्राय पाठवत आहे",
   "sending_feedback_failed": "अभिप्राय पाठवण्यात अयशस्वी",
@@ -207,10 +207,10 @@
     "nickname": "प्रकल्प टोपणनाव",
     "current_project": "प्रकल्प: ${project}",
     "renamed_project": "आपल्या स्थानिक प्रकल्पाला <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b> हे नाव देण्यात आले आहे",
-    "dcs_rename_project": "आपल्या प्रोजेक्टचे नाव बदलण्यात आले आहे. <br/><b>${project}</b><br/> तुम्ही या प्रकल्पाच्या विद्यमान दरवाजा 43 भंडाराचे काय करू इच्छिता?",
-    "dcs_rename_success": "प्रकल्पासाठी दरवाजा 43 भांडार यशस्वीरित्या अद्यतनित केली. <br/> ${project}",
-    "dcs_rename_failed": "दरवाजा 43 भंडाराचे नाव बदलले नाही. <br/> <br/> तुम्ही दरवाजा 43 भंडाराचे नाव बदलण्याचा पुन्हा प्रयत्न करू इच्छिता की नाव न घेता सुरू ठेऊ इच्छिता का?",
-    "dcs_rename_conflict": "पुनर्नामित करणे अयशस्वी झाले कारण या नावाचे भांडार आधीपासून विद्यमान आहे. <br/> <br/> आपला प्रकल्प दरवाजा 43 वर अपलोड करण्यात सक्षम होण्यासाठी तुम्हाला एकतर तुमच्या स्थानिक प्रकल्पाचे नाव बदलणे किंवा तुमच्या दरवाजा 43 प्रकल्पाचे नाव बदलणे आवश्यक आहे."
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "भाषेचे नाव सांकेतिक लिपीसाठी वैध नाही",
@@ -243,7 +243,7 @@
     "conflict_reference": "हे अध्याय ${chapter}, वचनासाठी ${verse} विलीनीकरण आहे.",
     "missing_verses_instructions": "तुमच्या प्रकल्पातून काही वचने गहाळ आहेत.",
     "only_nt_supported": "${app} ची ही आवृत्ती केवळ नवीन करार प्रकल्पांना समर्थन देते.",
-    "old_project_unsupported": "या प्रकल्पात ${app} जुन्या आवृत्तीमधील डेटा आहे जो या प्रदर्शनामध्ये समर्थित नाही. हा प्रकल्प उघडण्यासाठी किंवा तपासणी पुन्हा सुरू करण्यासाठी मदतीसाठी कृपया help@door43.org वर संपर्क साधा.",
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
     "resource_id": {
       "info": "(3 किंवा 4 अक्षरे ओळख <br /> सांकेतिक शब्दकोश, उदा. केजेव्ही, एनआयव्ही, इ.)",
       "field_invalid_length": "3-4 अक्षरे लांब असणे आवश्यक आहे",
