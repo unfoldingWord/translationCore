@@ -101,7 +101,7 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
     const contactHelpDeskText = translate('buttons.contact_helpdesk');
     const projectName = path.basename(projectSaveLocation);
     dispatch(
-      AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {project:projectName}),
+      AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', { project: projectName, door43: translate('_.door43') }),
         (result) => {
           dispatch(AlertModalActions.closeAlertDialog());
           switch (result) {
@@ -251,7 +251,7 @@ export function handleDcsRenameCollision() {
       const contactHelpDeskText = translate('buttons.contact_helpdesk');
       const projectName = path.basename(projectSaveLocation);
       dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', {project:projectName}),
+        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', { project:projectName, door43: translate('_.door43') }),
           (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
             switch (result) {
