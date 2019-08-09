@@ -14,6 +14,7 @@ export const door43 = 'Door43';
 export const autographa = 'Autographa';
 export const help_desk_email = 'help@door43.org';
 export const translation_helps = 'translationHelps';
+export const wycliffe_associates = 'Wycliffe Associates';
 export const english = 'English (en)';
 export const hindi = 'हिंदी (hi)';
 export const support_dcs_rename_failed = "Door43 rename repo failed.  Could not rename repo ‘${old_repo_name}’ to ‘${new_repo_name}’ for user ‘${user_name}’";
