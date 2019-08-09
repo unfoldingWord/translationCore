@@ -12,20 +12,21 @@
     "description": "Open-licensed exegetical notes that provide historical, cultural, and linguistic information for translators. It provides translators and checkers with pertinent, just-in-time information to help them make the best possible translation decisions.",
     "format": "text/tsv",
     "identifier": "tn",
-    "issued": "2019-02-14",
+    "issued": "2019-07-05",
     "language": {
       "identifier": "hi",
       "title": "हिन्दी, हिंदी",
       "direction": "ltr"
     },
-    "modified": "2019-02-14",
+    "modified": "2019-07-05",
     "publisher": "Door43",
     "relation": [
       "hi/udb",
       "hi/ta",
       "hi/tq",
       "hi/obs",
-      "hi/obs-tn"
+      "hi/obs-tn",
+      "el-x-koine/ugnt?v=0.8"
     ],
     "rights": "CC BY-SA 4.0",
     "source": [
@@ -38,7 +39,7 @@
     "subject": "TSV Translation Notes",
     "title": "translationNotes",
     "type": "help",
-    "version": "13.5"
+    "version": "13.6"
   },
   "checking": {
     "checking_entity": [
@@ -150,5 +151,5 @@
       ]
     }
   ],
-  "catalog_modified_time": "2019-04-24T15:08:57+00:00"
+  "catalog_modified_time": "2019-07-10T14:37:47+00:00"
 }
