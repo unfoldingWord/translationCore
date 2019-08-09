@@ -66,8 +66,8 @@
   "alignment_prompt": "Aapni laga lekha logote milai diya laga data pathabole itcha ashe naki?",
   "include_alignment_check": "Milai diya data bi antarbhuk kuribi ",
   "loading_verse_edits": "verse sudhar load hoi ashe",
-  "find_out_more": "Find out more about ${app} at:",
-  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
+  "find_out_more": "Iyate ${app} laga bisay te bishi bisaribi:",
+  "based_on_earlier_work": "Aage laga ${wycliffe_associates} laga ISC bhitorte pradarshan howa ashe",
   "third_party_attributions": "Third Party hongjug lekhi adhikar suchna and agya niomkhan",
   "sending_feedback": "Pratikriya pathai ashe",
   "sending_feedback_failed": "Pratikriya pathabole byartha hoise",
@@ -207,10 +207,10 @@
     "nickname": "Project laga upanaam",
     "current_project": "Project: ${project}",
     "renamed_project": "Aapni laga sthaniya project tu <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b> naam rakha hoise.",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
-    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
-    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_rename_project": "Aapni laga project tu nautun naam <br/> <b>${project}</b><br/> rakha hoise. Itu project te ${door43} laga thakia bhandar tu aapni ki kuribole itcha kure?",
+    "dcs_rename_success": "${door43} bhandar tu project karne sampurna unnati hoise. <br/>${project}",
+    "dcs_rename_failed": "${door43} bhandar ke nautun naam diya huwa nai.<br/><br> aapni arubi ${door43} bhandar laga nautun naam dibole itcha kore nohoile nautun naam nadikena ene chari dibo?",
+    "dcs_rename_conflict": "Nautun naam diya tu asafal hoise. Kilemane itu naam logote aage pora bhandar ashe. <br/><br/> tu aapni laga project ${door43} te upload kuribole paribo, aapni laga sthaniya project nohoile ${door43} laga naamtu bodli kuribo lagibo."
   },
   "project_validation": {
     "language_mismatch": "Code karne bhasha laga naam namile",
@@ -243,7 +243,7 @@
     "conflict_reference": "Itu ekta chapter ${chapter}, verse ${verse} laga milawati gorbor ashe.",
     "missing_verses_instructions": "Kunba verse khan appni laga project te haraikena ashe.",
     "only_nt_supported": "Itu ${app} anubad tu khali Nautun Niom laga project khan ke sahayata kure.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "Itu project te purana anubad ${app} laga data khan ashe junke itu pradarshan tu sahayata nakure. Itu project tu khulibole modot pabo karne nautun pora suru koribo karne nohole check kuribole karne, morom pora ${help_desk_email}. te samparka kuribi.",
     "resource_id": {
       "info": "(3 nohole 4 chinaki <br/>code, E.G. KJV, NIV, etc.)",
       "field_invalid_length": "Jeneka hoilebi 3-4 aksar hobo lage",
