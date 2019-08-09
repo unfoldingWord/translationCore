@@ -170,7 +170,7 @@
     "cancel_import_alert": "अब रद्द करना आयात की प्रक्रिया को समाप्त कर देगी और परियोजना का उपयोग करने से पहले इसे फिर से आयात करने की आवश्यकता होगी।",
     "project_already_identified": "इस परियोजना को ${originalBook} प्रोजेक्ट के रूप में पहचाना गया है। क्या आप वाकई इसे ${suggestedBook} प्रोजेक्ट में बदलना चाहते हैं?",
     "loading_project_alert": "अपने प्रोजेक्ट डेटा को लोड करना",
-    "preparing_project_alert": "Preparing project data.",
+    "preparing_project_alert": "तैयारी परियोजना डेटा.",
     "exported_alert": "${project_name} सफलतापूर्वक ${file_path} में निर्यात किया गया है",
     "must_be_logged_in_alert": "परियोजनाओं को अपलोड करने के लिए आपको ${door43} खाते के साथ लॉग इन करना होगा। ${door43} उपयोगकर्ता खाते के साथ लॉग आउट करें और फिर वापस लें",
     "uploading_alert": "${project_name} को ${door43}पर अपलोड कर रहा है कृपया प्रतीक्षा करें...",
@@ -208,9 +208,9 @@
     "current_project": "परियोजना: ${project}",
     "renamed_project": "आपकी स्थानीय परियोजना का नाम<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "अपनी परियोजना का नाम दिया गया है<br/><b>${project}</b><br/>क्या आप चाहते हैं के साथ करने के लिए इस परियोजना की मौजूदा ${door43} भंडार?",
-    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
-    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_rename_success": "के ${door43} भंडार के लिए इस परियोजना को सफलतापूर्वक अद्यतन किया जाता है ।<br/>${project}",
+    "dcs_rename_failed": "के ${door43} भंडार नहीं था नाम ।<br/><br/>क्या आप चाहते हैं करने के लिए पुन: प्रयास करें नाम बदलने के ${door43} भंडार या जारी रखने के बिना नाम बदलना?",
+    "dcs_rename_conflict": "नाम बदलने में विफल रहा क्योंकि एक रिपोजिटरी इस नाम के साथ पहले से ही मौजूद है ।<br/><br/>करने के लिए सक्षम होना करने के लिए अपलोड करने के लिए अपनी परियोजना ${door43}, आप की जरूरत करने के लिए का नाम बदलें या तो अपने स्थानीय परियोजना का नाम बदलें या अपने ${door43} परियोजना है ।"
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",
@@ -243,7 +243,7 @@
     "conflict_reference": "यह अध्याय ${chapter}, कविता ${verse} के लिए एक मर्ज संघर्ष है",
     "missing_verses_instructions": "आपकी प्रोजेक्ट से कुछ छंद गायब हैं।",
     "only_nt_supported": "${app} का यह संस्करण केवल न्यू टेस्टामेंट परियोजनाओं का समर्थन करता है",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "इस परियोजना में शामिल से डेटा के एक पुराने संस्करण ${app} समर्थित नहीं है जो इस रिलीज में. मदद के लिए खोलने, इस परियोजना या पुनः आरंभ करने के लिए जाँच, कृपया हमसे संपर्क ${help_desk_email}.",
     "resource_id": {
       "info": "(3 या 4 अक्षर पहचान<br />कोड, जैसे केजेवी, एनआईवी, आदि)",
       "field_invalid_length": "3-4 अक्षर लंबा होना चाहिए",
