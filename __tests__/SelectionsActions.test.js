@@ -15,6 +15,12 @@ const FIXTURE_PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 import { WORD_ALIGNMENT, TRANSLATION_WORDS } from '../src/js/common/constants';
+import {
+  ALERT_SELECTIONS_INVALIDATED_ID,
+  ALERT_SELECTIONS_INVALIDATED_MSG,
+  ALERT_ALIGNMENTS_RESET_ID,
+  ALERT_ALIGNMENTS_RESET_MSG,
+  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG} from "../src/js/actions/SelectionsActions";
 
 jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
   getGatewayLanguageCodeAndQuote: () => {
@@ -467,9 +473,115 @@ describe('SelectionsActions.changeSelections', () => {
   });
 });
 
+describe('SelectionsActions.showInvalidatedWarnings', () => {
+  const bookId = 'tit';
+  const alertsReducer = {
+    props: [],
+    ignored: []
+  };
+
+  it('show selection invalid should succeed', () => {
+    // given
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.alerts = alertsReducer;
+    const store = mockStore(initialState);
+    const showSelectionInvalidated = true;
+    const showAlignmentsInvalidated = false;
+    const expectedAction = {
+      "type": "OPEN_ALERT",
+      "id": ALERT_SELECTIONS_INVALIDATED_ID,
+      "message": ALERT_SELECTIONS_INVALIDATED_MSG
+    };
+
+    // when
+    store.dispatch(SelectionsActions.showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
+
+    // then
+    const actions = store.getActions();
+    expect(actions.length).toEqual(1);
+    verifyAlert(actions[0], expectedAction);
+  });
+
+  it('show selection invalid should succeed', () => {
+    // given
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.alerts = alertsReducer;
+    const store = mockStore(initialState);
+    const showSelectionInvalidated = true;
+    const showAlignmentsInvalidated = false;
+    const expectedAction = {
+      "type": "OPEN_ALERT",
+      "id": ALERT_SELECTIONS_INVALIDATED_ID,
+      "message": ALERT_SELECTIONS_INVALIDATED_MSG
+    };
+
+    // when
+    store.dispatch(SelectionsActions.showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
+
+    // then
+    const actions = store.getActions();
+    expect(actions.length).toEqual(1);
+    verifyAlert(actions[0], expectedAction);
+  });
+
+  it('show alignment invalid should succeed', () => {
+    // given
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.alerts = alertsReducer;
+    const store = mockStore(initialState);
+    const showSelectionInvalidated = false;
+    const showAlignmentsInvalidated = true;
+    const expectedAction = {
+      "type": "OPEN_ALERT",
+      "id": ALERT_ALIGNMENTS_RESET_ID,
+      "message": ALERT_ALIGNMENTS_RESET_MSG
+    };
+
+    // when
+    store.dispatch(SelectionsActions.showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
+
+    // then
+    const actions = store.getActions();
+    expect(actions.length).toEqual(1);
+    verifyAlert(actions[0], expectedAction);
+  });
+
+  it('show selection and alignment invalid should succeed', () => {
+    // given
+    const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.alerts = alertsReducer;
+    const store = mockStore(initialState);
+    const showSelectionInvalidated = true;
+    const showAlignmentsInvalidated = true;
+    const expectedAction = {
+      "type": "OPEN_ALERT",
+      "id": ALERT_ALIGNMENTS_RESET_ID,
+      "message": ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG
+    };
+
+    // when
+    store.dispatch(SelectionsActions.showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
+
+    // then
+    const actions = store.getActions();
+    expect(actions.length).toEqual(1);
+    verifyAlert(actions[0], expectedAction);
+  });
+});
+
 //
 // helpers
 //
+
+function verifyAlert(received, expected) {
+  expect(received.type).toEqual(expected.type);
+  expect(received.id).toEqual(expected.id);
+  expect(received.message).toEqual(expected.message);
+}
 
 function cleanOutDates(actions) {
   const cleanedActions = JSON.parse(JSON.stringify(actions));

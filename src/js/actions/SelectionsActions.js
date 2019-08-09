@@ -15,6 +15,11 @@ import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from '../localStorage/saveMethods';
 import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
+export const ALERT_ALIGNMENTS_RESET_ID = 'alignments_reset';
+export const ALERT_SELECTIONS_INVALIDATED_ID = "selections_invalidated";
+export const ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG = 'tools.invalid_verse_alignments_and_selections';
+export const ALERT_SELECTIONS_INVALIDATED_MSG = 'tools.selections_invalidated';
+export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
 
 /**
  * This method adds a selection array to the selections reducer.
@@ -94,15 +99,19 @@ export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignments
   callback = null) => {
   return (dispatch, getState) => {
     let message = null;
+    let id = null;
     if (showSelectionInvalidated && showAlignmentsInvalidated) {
-      message = 'tools.invalid_verse_alignments_and_selections';
+      message = ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG;
+      id = ALERT_ALIGNMENTS_RESET_ID;
     } else if (showSelectionInvalidated) {
-      message = 'tools.selections_invalidated';
+      message = ALERT_SELECTIONS_INVALIDATED_MSG;
+      id = ALERT_SELECTIONS_INVALIDATED_ID;
     } else { // (showAlignmentsInvalidated)
-      message = 'tools.alignments_reset_wa_tool';
+      message = ALERT_ALIGNMENTS_RESET_MSG;
+      id = ALERT_ALIGNMENTS_RESET_ID;
     }
     const translate = getTranslate(getState());
-    dispatch(AlertActions.openIgnorableAlert('alignments_reset', translate(message), {onConfirm: callback}));
+    dispatch(AlertActions.openIgnorableAlert(id, translate(message), {onConfirm: callback}));
   };
 };
 

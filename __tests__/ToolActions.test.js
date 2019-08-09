@@ -2,10 +2,19 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from '../src/js/actions/ToolActions';
 import { NT_ORIG_LANG_BIBLE, NT_ORIG_LANG } from '../src/js/common/BooksOfTheBible';
-import { TRANSLATION_NOTES } from '../src/js/common/constants';
+import {TRANSLATION_NOTES, TRANSLATION_WORDS, WORD_ALIGNMENT} from '../src/js/common/constants';
+import {
+  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+  ALERT_ALIGNMENTS_RESET_ID,
+  ALERT_ALIGNMENTS_RESET_MSG,
+  ALERT_SELECTIONS_INVALIDATED_ID,
+  ALERT_SELECTIONS_INVALIDATED_MSG
+} from "../src/js/actions/SelectionsActions";
+import _ from "lodash";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+let mockInvalidCount = 0;
 
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
@@ -14,6 +23,10 @@ jest.mock('../src/js/selectors', () => ({
       return code;
     });
   }
+}));
+jest.mock('../src/js/helpers/toolHelper', () => ({
+  ...require.requireActual('../src/js/helpers/toolHelper'),
+  getInvalidCountForTool: () => (mockInvalidCount)
 }));
 jest.mock('../src/js/actions/GroupsDataActions', () => ({
   verifyGroupDataMatchesWithFs: () => ({type: 'VERIFY_GROUPS_DATA'})
@@ -111,3 +124,381 @@ describe('Tool Actions.openTool', () => {
     });
   });
 });
+
+describe('Tool Actions.warnOnInvalidations', () => {
+  const initStore_ = {
+    projectDetailsReducer: {
+      projectSaveLocation: 'Users/me/test_project_reg',
+      manifest: {
+        tsv_relation: [
+          "en/ult",
+          "el-x-koine/ugnt?v=0.8",
+          "hbo/uhb?v=2.1.7"
+        ],
+        toolsSelectedGLs: {
+          [TRANSLATION_NOTES]: 'en',
+          [TRANSLATION_WORDS]: 'en',
+          [WORD_ALIGNMENT]: 'en'
+        },
+      }
+    },
+    resourcesReducer: {
+      bibles: {
+        originalLanguage: {
+          [NT_ORIG_LANG_BIBLE]: {
+            manifest: {
+              language_id: NT_ORIG_LANG,
+              resource_id: NT_ORIG_LANG_BIBLE,
+              dublin_core: {version: 0.8},
+            }
+          }
+        }
+      }
+    },
+    alerts: {
+      props: [],
+      ignored: []
+    }
+  };
+
+  describe('Tool translationNotes', () => {
+    const toolName = TRANSLATION_NOTES;
+
+    it('should show alert with no previous alert', () => {
+      // given
+      const store = mockStore(initStore_);
+      mockInvalidCount = 1;
+      const expectedAction = {
+        "type": "OPEN_ALERT",
+        "id": ALERT_SELECTIONS_INVALIDATED_ID,
+        "message": ALERT_SELECTIONS_INVALIDATED_MSG
+      };
+      const expectedActionsCount = 1;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+      verifyAlert(actions_[0], expectedAction);
+    });
+
+    it('should not show alert with previous alert', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_SELECTIONS_INVALIDATED_ID,
+          "children": ALERT_SELECTIONS_INVALIDATED_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+
+    it('should show alert with previous alert of different type', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_ALIGNMENTS_RESET_ID,
+          "children": ALERT_ALIGNMENTS_RESET_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedAction = {
+        "type": "OPEN_ALERT",
+        "id": ALERT_SELECTIONS_INVALIDATED_ID,
+        "message": ALERT_SELECTIONS_INVALIDATED_MSG
+      };
+      const expectedActionsCount = 1;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+      verifyAlert(actions_[0], expectedAction);
+    });
+
+    it('should not show alert with previous combined alert', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_ALIGNMENTS_RESET_ID,
+          "children": ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+
+    it('should not show alert with no previous alert and no invalidations', () => {
+      // given
+      const store = mockStore(initStore_);
+      mockInvalidCount = 0;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+  });
+
+  describe('Tool translationWords', () => {
+    const toolName = TRANSLATION_WORDS;
+
+    it('should show alert with no previous alert', () => {
+      // given
+      const store = mockStore(initStore_);
+      mockInvalidCount = 1;
+      const expectedAction = {
+        "type": "OPEN_ALERT",
+        "id": ALERT_SELECTIONS_INVALIDATED_ID,
+        "message": ALERT_SELECTIONS_INVALIDATED_MSG
+      };
+      const expectedActionsCount = 1;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+      verifyAlert(actions_[0], expectedAction);
+    });
+
+    it('should not show alert with previous alert', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_SELECTIONS_INVALIDATED_ID,
+          "children": ALERT_SELECTIONS_INVALIDATED_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+
+    it('should show alert with previous alert of different type', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_ALIGNMENTS_RESET_ID,
+          "children": ALERT_ALIGNMENTS_RESET_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedAction = {
+        "type": "OPEN_ALERT",
+        "id": ALERT_SELECTIONS_INVALIDATED_ID,
+        "message": ALERT_SELECTIONS_INVALIDATED_MSG
+      };
+      const expectedActionsCount = 1;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+      verifyAlert(actions_[0], expectedAction);
+    });
+
+    it('should not show alert with previous combined alert', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_ALIGNMENTS_RESET_ID,
+          "children": ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+
+    it('should not show alert with no previous alert and no invalidations', () => {
+      // given
+      const store = mockStore(initStore_);
+      mockInvalidCount = 0;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+  });
+
+  describe('Tool wordAlignment', () => {
+    const toolName = WORD_ALIGNMENT;
+
+    it('should show alert with no previous alert', () => {
+      // given
+      const store = mockStore(initStore_);
+      mockInvalidCount = 1;
+      const expectedAction = {
+        "type": "OPEN_ALERT",
+        "id": ALERT_ALIGNMENTS_RESET_ID,
+        "message": ALERT_ALIGNMENTS_RESET_MSG
+      };
+      const expectedActionsCount = 1;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+      verifyAlert(actions_[0], expectedAction);
+    });
+
+    it('should not show alert with previous alert', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_ALIGNMENTS_RESET_ID,
+          "children": ALERT_ALIGNMENTS_RESET_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+
+    it('should show alert with previous alert of different type', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_SELECTIONS_INVALIDATED_ID,
+          "children": ALERT_SELECTIONS_INVALIDATED_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedAction = {
+        "type": "OPEN_ALERT",
+        "id": ALERT_ALIGNMENTS_RESET_ID,
+        "message": ALERT_ALIGNMENTS_RESET_MSG
+      };
+      const expectedActionsCount = 1;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+      verifyAlert(actions_[0], expectedAction);
+    });
+
+    it('should not show alert with previous combined alert', () => {
+      // given
+      const initStore = _.cloneDeep(initStore_);
+      initStore.alerts.props = [
+        {
+          "type": "OPEN_ALERT",
+          "id": ALERT_ALIGNMENTS_RESET_ID,
+          "children": ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG
+        }
+      ];
+      const store = mockStore(initStore);
+      mockInvalidCount = 1;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+
+    it('should not show alert with no previous alert and no invalidations', () => {
+      // given
+      const store = mockStore(initStore_);
+      mockInvalidCount = 0;
+      const expectedActionsCount = 0;
+
+      // when
+      store.dispatch(actions.warnOnInvalidations(toolName));
+
+      // then
+      const actions_ = store.getActions();
+      expect(actions_.length).toEqual(expectedActionsCount);
+    });
+  });
+
+});
+
+//
+// helpers
+//
+
+function verifyAlert(received, expected) {
+  expect(received.type).toEqual(expected.type);
+  expect(received.id).toEqual(expected.id);
+  expect(received.message).toEqual(expected.message);
+}
