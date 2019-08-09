@@ -165,7 +165,7 @@ export function doDcsRenamePrompting() {
       const createNewText = translate('buttons.create_new_repo');
       const projectName = path.basename(projectSaveLocation);
       dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', {project:projectName}),
+        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', {project:projectName, door43: translate('_.door43')}),
           (result) => {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
