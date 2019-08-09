@@ -66,8 +66,8 @@
   "alignment_prompt": "உங்கள் உரையுடன் சீரமைப்பு தரவை ஏற்றுமதி செய்ய விரும்புகிறீர்களா?\n",
   "include_alignment_check": " சீரமைப்பு தரவு சேர்க்கவும்",
   "loading_verse_edits": "வசன திருத்தங்களை ஏற்றுகிறது\n",
-  "find_out_more": "மொழிபெயர்ப்பைப் பற்றி மேலும் அறிய இங்கே:\n",
-  "based_on_earlier_work": "ஐ.எஸ்.சி.யின் கீழ் வெளியிடப்பட்ட வைக்லிஃப் அசோசியேட்ஸ் முந்தைய படைப்பின் அடிப்படையில்\n",
+  "find_out_more": "Find out more about ${app} at:",
+  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "மூன்றாம் தரப்பு குறியீடு கூடுதல் பதிப்புரிமை அறிவிப்புகள் மற்றும் உரிம விதிமுறைகள்\n",
   "sending_feedback": "கருத்து அனுப்புதல்\n",
   "sending_feedback_failed": "கருத்து அனுப்புவதில் தோல்வி\n",
@@ -207,10 +207,10 @@
     "nickname": "திட்ட புனைப்பெயர்",
     "current_project": "திட்டம்: ${project}",
     "renamed_project": "உங்கள் உள்ளூர் திட்டத்திற்கு பெயரிடப்பட்டுள்ளது\n<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "உங்கள் திட்டத்தின் பெயர் மாற்றப்பட்டுள்ளது\n<br/><b>${project}</b><br/>இந்த திட்டத்தின் தற்போதைய கதவு43 களஞ்சியத்துடன் நீங்கள் என்ன செய்ய விரும்புகிறீர்கள்?\n",
-    "dcs_rename_success": "திட்டத்திற்கான கதவு 43 களஞ்சியம் வெற்றிகரமாக புதுப்பிக்கப்பட்டது.\n<br/>${project}",
-    "dcs_rename_failed": "கதவு 43 களஞ்சியத்தின் பெயர் மாற்றப்படவில்லை.\n<br/><br/>கதவு 43 களஞ்சியத்தை மறுபெயரிடுவதற்கு மீண்டும் முயற்சிக்க விரும்புகிறீர்களா அல்லது மறுபெயரிடாமல் தொடர விரும்புகிறீர்களா?\n",
-    "dcs_rename_conflict": "மறுபெயரிடுதல் தோல்வியுற்றது, ஏனெனில் இந்த பெயருடன் ஒரு களஞ்சியம் ஏற்கனவே உள்ளது.\n<br/><br/>உங்கள் திட்டத்தை Door43 இல் பதிவேற்றுவதற்கு, உங்கள் உள்ளூர் திட்டத்தின் மறுபெயரிட வேண்டும் அல்லது உங்கள் Door43 திட்டத்தின் மறுபெயரிட வேண்டும்.\n"
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "மொழி பெயர் குறியீட்டிற்கு செல்லுபடியாகாது\n",
@@ -243,7 +243,7 @@
     "conflict_reference": "இது அத்தியாயத்திற்கான இணைப்பு மோதல்\n${chapter}, வசனம் ${verse}.",
     "missing_verses_instructions": "உங்கள் திட்டத்தில் சில வசனங்கள் இல்லை.\n",
     "only_nt_supported": "இந்த பதிப்பு${app}புதிய ஏற்பாட்டு திட்டங்களை மட்டுமே ஆதரிக்கிறது",
-    "old_project_unsupported": "இந்த திட்டத்தில் பழைய பதிப்பிலிருந்து தரவு உள்ளது\n${app} இந்த வெளியீட்டில் இது ஆதரிக்கப்படவில்லை. இந்த திட்டத்தைத் திறக்க அல்லது சரிபார்ப்பை மறுதொடக்கம் செய்ய, தயவுசெய்து help@door43.org ஐ தொடர்பு கொள்ளவும்.\n",
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
     "resource_id": {
       "info": "(3 அல்லது 4 எழுத்து அடையாளம்\n<br />குறியீடு, குறியீடு, e.g. KJV, NIV. போன்றவை.)",
       "field_invalid_length": "3-4 எழுத்துக்கள் நீளமாக இருக்க வேண்டும்\n",

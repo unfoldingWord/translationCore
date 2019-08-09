@@ -66,8 +66,8 @@
   "alignment_prompt": "Would you like to export the alignment data with your text?",
   "include_alignment_check": "Include alignment data",
   "loading_verse_edits": "Loading Verse Edits",
-  "find_out_more": "Find out more about translationCore at:",
-  "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
+  "find_out_more": "Find out more about ${app} at:",
+  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
   "sending_feedback": "Sending Feedback",
   "sending_feedback_failed": "Failed to Send Feedback",
@@ -207,10 +207,10 @@
     "nickname": "Project Nickname",
     "current_project": "Project: ${project}",
     "renamed_project": "Your local project has been named<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
-    "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
-    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
@@ -243,7 +243,7 @@
     "conflict_reference": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
     "missing_verses_instructions": "Some verses are missing from your project.",
     "only_nt_supported": "This version of ${app} only supports New Testament projects.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
     "resource_id": {
       "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
       "field_invalid_length": "Must be 3-4 letters long",

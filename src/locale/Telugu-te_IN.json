@@ -66,8 +66,8 @@
   "alignment_prompt": "అమరిక సమాచారాన్ని మీ భాగంతో వెలుపలికి పంపాలని కోరుతున్నారా?",
   "include_alignment_check": "అమరిక సమాచారాన్ని జతచెయ్యండి",
   "loading_verse_edits": "వచన సవరణలు నమోదుఅవుతున్నాయి",
-  "find_out_more": "ముఖ్య అనువాదంకోసం కనుగొనడానికి చూడండి:",
-  "based_on_earlier_work": "ఐ ఎస్ సి క్రింద విక్లిఫ్ విక్లిఫ్ అసోసియేట్స్ ద్వారా విడుదల అయిన పూర్వపు పని మీద ఆధారపడింది. ",
+  "find_out_more": "Find out more about ${app} at:",
+  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "మూడవ వ్యక్తి సూచన అదనపు ముద్రణాహక్కు గమనికలు, అనుమతి షరతులు",
   "sending_feedback": "సమాచారాన్ని తిరిగి పంపించండి",
   "sending_feedback_failed": "సమాచారాన్ని పంపించడంలో వైఫల్యం",
@@ -207,10 +207,10 @@
     "nickname": "ప్రాజెక్టు పేరు",
     "current_project": "ప్రాజెక్టు: ${project}",
     "renamed_project": "మీ స్థానిక ప్రాజెక్టుకు పేరు ఇవ్వబడింది <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "మీ ప్రాజెక్టుకు తిరిగి పేరు ఇవ్వబడింది d<br/><b>${project}</b><br/> ఈ ప్రాజెక్టుకు ప్రస్తుతం ఉన్న Door43 సురక్షిత స్థానం విషయం ఏమి చెయ్యాలని కోరుతున్నావు?",
-    "dcs_rename_success": "ప్రాజెక్టుకున్న Door43 ముఖ్య స్థానం విజయవంతంగా నవీకరణ జరిగింది, d.<br/>${project}",
-    "dcs_rename_failed": "Door43 ముఖ్యస్థానానికి కొత్త పేరుపెట్టబడలేదు .<br/><br/> Door43 ముఖ్యస్థానానికి కొత్త పేరు పెట్టడానికి ప్రయత్నించాలని కోరుతున్నావా లేదా కొత్త పేరు పెట్టకుండానే కొనసాగుతావా?",
-    "dcs_rename_conflict": "కొత్త పేరు పెట్టడం వీలుకాలేదు ఎందుకంటే ఈ పేరుతో ముఖ్యస్థానం ఇంతకుముందే ఉంది. .<br/><br/> మీ ప్రాజెక్టును Door43 కు ఎగుమతి చెయ్యడానికీ, మీ స్థానిక ప్రాజెక్టుకి కొత్త పేరుఇవ్వాలి లేక మీ Door43 ప్రాజెక్టుకు కొత్త పేరు ఇవ్వాలి."
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "గుర్తుకు భాష పేరు సరిపోదు",
@@ -243,7 +243,7 @@
     "conflict_reference": "ఇది అధ్యాయం కోసం విలీన విభేదం ${chapter}, verse ${verse}.",
     "missing_verses_instructions": "మీ ప్రాజెక్టు నుండి కొన్ని వచనాలు తప్పిపోతున్నాయి",
     "only_nt_supported": "ఈ ప్రచురణ ${app} కొత్తనిబంధన ప్రాజెక్టులకు మాత్రమే మద్దతు ఇస్తుంది",
-    "old_project_unsupported": "ఈ ప్రాజెక్టు నాడు పాత ప్రచురణ ${app} నుండి సమాచారం ఉంది, ఇది ఈ ప్రచురణలో సహకారం పొందలేదు. ఈ ప్రాజెక్టును తెరవడానికి సహాయం కోసం లేదా తిరిగి తనిఖీ చెయ్యడం ఆరంభించడానికి దయచేసి help@door43.org ని సంప్రదించండి.",
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
     "resource_id": {
       "info": "(3 లేదా 4 అక్షరాల గుర్తింపు <br />code, e.g. KJV, NIV, etc.)",
       "field_invalid_length": "3-4 అక్షరాల పొడవు ఉండాలి",

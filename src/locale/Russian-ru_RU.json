@@ -66,8 +66,8 @@
   "alignment_prompt": "Вы хотите экспортировать данные выравнивания с вашим текстом?",
   "include_alignment_check": "Включить данные сопоставления",
   "loading_verse_edits": "Loading Verse Edits",
-  "find_out_more": "Find out more about translationCore at:",
-  "based_on_earlier_work": "Based on an earlier work by Wycliffe Associates released under the ISC",
+  "find_out_more": "Find out more about ${app} at:",
+  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
   "sending_feedback": "Sending Feedback",
   "sending_feedback_failed": "Failed to Send Feedback",
@@ -207,10 +207,10 @@
     "nickname": "Название проекта",
     "current_project": "Проект: ${project}",
     "renamed_project": "Ваш локальный проект был назван<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Ваш проект был переименован<br/><b>${project}</b><br/>Что вы хотите сделать с существующим хранилищем Door43?",
-    "dcs_rename_success": "Хранилище Door43 для проекта было успешно обновлено.<br/>${project}",
-    "dcs_rename_failed": "Хранилище Door43 не было переименовано.<br/><br/>Вы хотите повторить попытку переименования хранилища Door43 или продолжить без переименования?",
-    "dcs_rename_conflict": "Переименовать не удалось, потому что хранилище с таким именем уже существует.<br/><br/>Чтобы можно было загрузить ваш проект в Door43, нужно переименовать свой локальный проект или переименовать ваш проект в Door43."
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "Не действительный код для языка",
@@ -243,7 +243,7 @@
     "conflict_reference": "Конфликт слияния глава ${chapter}, стих ${verse}.",
     "missing_verses_instructions": "Некоторые стихи отсутствуют в вашем проекте.",
     "only_nt_supported": "Эта версия ${app} поддерживает только проекты Нового Завета.",
-    "old_project_unsupported": "Этот проект содержит данные из старой версии ${app}, которая здесь не поддерживается. Для помощи в открытии этого проекта или перезапуске проверки, пожалуйста, свяжитесь с help@door43.org.",
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
     "resource_id": {
       "info": "(аббревиатура из 3 или 4 латинских букв<br />, например,  KJV, NIV и т. д.)",
       "field_invalid_length": "Должно быть 3-4 буквы",
