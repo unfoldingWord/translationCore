@@ -71,7 +71,7 @@
   "third_party_attributions": "മൂന്നാം കക്ഷി കോഡ് അധിക പകർപ്പവകാശ അറിയിപ്പുകളും ലൈസൻസ് നിബന്ധനകളും",
   "sending_feedback": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നു",
   "sending_feedback_failed": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നതിൽ പരാജയപ്പെട്ടു",
-  "critical_error_warning": "Warning: A critical error has occurred!",
+  "critical_error_warning": "മുന്നറിയിപ്പ്: ഗുരുതരമായൊരു തെറ്റു് സംഭവിച്ചു!",
   "updates": {
     "check_for_newer_app": "സോഫ്റ്റ്വെയർ അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
     "check_for_content_updates": "ഉള്ളടക്ക അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
@@ -207,10 +207,10 @@
     "nickname": "പദ്ധതി വിളിപ്പേര്",
     "current_project": "പ്രോജക്റ്റ് ${project}",
     "renamed_project": "നിങ്ങളുടെ പ്രാദേശിക പ്രോജക്റ്റിന് പേര് നൽകി<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
-    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
-    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_rename_project": "നിങ്ങളുടെ പ്രോജക്റ്റിന്റെ പേരുമാറ്റി<br/><b>${project}</b><br/>ഈ പ്രോജക്റ്റിന്റെ നിലവിലുള്ള ${door43} ശേഖരത്തിൽ നിങ്ങൾ എന്തുചെയ്യാൻ ആഗ്രഹിക്കുന്നു?",
+    "dcs_rename_success": "പ്രോജക്റ്റിനായുള്ള ${door43} ശേഖരം വിജയകരമായി അപ്‌ഡേറ്റുചെയ്‌തു\n<br/>${project}",
+    "dcs_rename_failed": "${door43} ശേഖരത്തിന്‍റെ പേരുമാറ്റിയില്ല.<br/><br/> ${door43} ശേഖരത്തിന്‍ പേരുമാറ്റുന്നത് വീണ്ടും ശ്രമിക്കണോ അതോ പേരുമാറ്റാതെ തുടരണമോ?",
+    "dcs_rename_conflict": "ഈ പേരിനൊപ്പം ഒരു ശേഖരം ഇതിനകം തന്നെ ഉള്ളതിനാൽ പേരുമാറ്റുന്നത് പരാജയപ്പെട്ടു. <br/> <br/> നിങ്ങളുടെ പ്രോജക്റ്റ് ${door43} ലേക്ക് അപ്‌ലോഡുചെയ്യാൻ, നിങ്ങളുടെ പ്രാദേശിക പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ അല്ലെങ്കിൽ ${door43} പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ ചെയ്യേണ്ടതുണ്ട്."
   },
   "project_validation": {
     "language_mismatch": "ഭാഷയുടെ പേര് കോഡിന് സാധുതയുള്ളതല്ല\n",
@@ -243,7 +243,7 @@
     "conflict_reference": "ഇത് അധ്യായത്തിനായുള്ള ലയന വൈരുദ്ധ്യമാണ്\n ${chapter}, വാക്യം ${verse}.",
     "missing_verses_instructions": "നിങ്ങളുടെ പ്രോജക്റ്റിൽ നിന്ന് ചില വാക്യങ്ങൾ കാണുന്നില്ല.\n",
     "only_nt_supported": " ഈ പതിപ്പ്${app}  പുതിയ നിയമ പ്രോജക്റ്റുകളെ മാത്രമേ പിന്തുണയ്ക്കൂ.\n",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "ഈ പതിപ്പിൽ പിന്തുണയ്‌ക്കാത്ത പഴയ പതിപ്പിൽ നിന്നുള്ള ${app} ഡാറ്റ ഈ പ്രോജക്റ്റിൽ അടങ്ങിയിരിക്കുന്നു. ഈ പ്രോജക്റ്റ് തുറക്കുന്നതിനോ പരിശോധന പുനരാരംഭിക്കുന്നതിനോ ദയവായി ${help_desk_email} നെ ബന്ധപ്പെടുക.",
     "resource_id": {
       "info": "(3 അല്ലെങ്കിൽ 4 അക്ഷര ഐഡന്റിഫിക്കേഷൻ കോഡ്, <br />code, e.g. KJV, NIV, etc.)",
       "field_invalid_length": "3-4 അക്ഷരങ്ങൾ നീളമുള്ളതായിരിക്കണം\n",
