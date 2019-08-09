@@ -66,8 +66,8 @@
   "alignment_prompt": "क्या आप अपने पाठ के साथ संरेखण डेटा निर्यात करना चाहते हैं?",
   "include_alignment_check": "संरेखण डेटा शामिल करें",
   "loading_verse_edits": "आयत का संपादन लोड हो रहा है",
-  "find_out_more": "TranslationCore के बारे में अधिक जाने:",
-  "based_on_earlier_work": "Wycliffe Associates के द्वारा पहले किए गए काम के आधार पर जारी ISC",
+  "find_out_more": "Find out more about ${app} at:",
+  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "तीसरे पक्ष के कोड अतिरिक्त कॉपीराइट नोटिस और लायसेंस की शर्तें",
   "sending_feedback": "प्रतिक्रिया भेजना",
   "sending_feedback_failed": "प्रतिक्रिया भेजने में विफल",
@@ -207,10 +207,10 @@
     "nickname": "परियोजना उपनाम",
     "current_project": "परियोजना: ${project}",
     "renamed_project": "आपकी स्थानीय परियोजना का नाम<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "आपकी परियोजना का नाम बदल दिया गया है<br/><b>${project}</b><br/>आप इस परियोजना के मौजूदा Door43 भंडार के साथ क्या करना चाहेंगे?",
-    "dcs_rename_success": "परियोजना के लिए Door43 भंडार सफलतापूर्वक अद्यतन किया गया था।<br/>${project}",
-    "dcs_rename_failed": "Door43 भंडार का नाम बदल नहीं लिया गया था।<br/><br/>क्या आप Door43 रिपोजिटरी का नाम बदलना चाहते हैं या नाम बदलने के बिना जारी रखना चाहते हैं?",
-    "dcs_rename_conflict": "नाम बदलें विफल रहा क्योंकि इस नाम के साथ एक भंडार पहले से मौजूद है।<br/><br/>अपनी परियोजना को Door43 पर अपलोड करने में सक्षम होने के लिए, आपको या तो अपनी स्थानीय प्रोजेक्ट का नाम बदलने या अपने Door43 प्रोजेक्ट का नाम बदलने की आवश्यकता है।"
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",
@@ -243,7 +243,7 @@
     "conflict_reference": "यह अध्याय ${chapter}, कविता ${verse} के लिए एक मर्ज संघर्ष है",
     "missing_verses_instructions": "आपकी प्रोजेक्ट से कुछ छंद गायब हैं।",
     "only_nt_supported": "${app} का यह संस्करण केवल न्यू टेस्टामेंट परियोजनाओं का समर्थन करता है",
-    "old_project_unsupported": "इस प्रोजैक्ट में ${app} के पुराने संस्करण के डेटा शामिल हैं जो इस रिलीज़ में समर्थित नहीं हैं। इस प्रोजैक्ट को खोलने या जांच को पुनरारंभ करने के लिए कृपया help@door43.org से संपर्क करें।",
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
     "resource_id": {
       "info": "(3 या 4 अक्षर पहचान<br />कोड, जैसे केजेवी, एनआईवी, आदि)",
       "field_invalid_length": "3-4 अक्षर लंबा होना चाहिए",
