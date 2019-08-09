@@ -207,7 +207,7 @@
     "nickname": "Apelido do Projeto",
     "current_project": "Projeto: ${project}",
     "renamed_project": "Seu projeto local recebeu o nome de<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_project": "Seu projeto foi renomeado<br/><b>${project}</b><br/>O que você gostaria de fazer com o repositório ${door43} já existente deste projeto?",
     "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
     "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
