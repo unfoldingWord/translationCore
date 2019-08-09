@@ -208,8 +208,8 @@
     "current_project": "Projeto: ${project}",
     "renamed_project": "Seu projeto local recebeu o nome de<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "Seu projeto foi renomeado<br/><b>${project}</b><br/>O que você gostaria de fazer com o repositório ${door43} já existente deste projeto?",
-    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
-    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_success": "O repositório ${door43} do projeto foi atualizado com sucesso.<br/>${project}",
+    "dcs_rename_failed": "O repositório ${door43} não foi renomeado.<br/><br/>Você deseja tentar renomear novamente o repositório ${door43} ou continuar sem renomear?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
