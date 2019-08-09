@@ -80,3 +80,13 @@ export default alerts;
 export const getAlerts = (state) => {
   return [...state.props];
 };
+
+/**
+ * find alert that matches id
+ * @param {Object} state
+ * @param {String} id of alert to find
+ * @return {*} found alert
+ */
+export const findAlert = (state, id) => {
+  return state.alerts.props.find(item => item.id === id);
+};
