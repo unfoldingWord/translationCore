@@ -207,10 +207,10 @@
     "nickname": "Apodo del Proyecto",
     "current_project": "Proyecto: ${project}",
     "renamed_project": "Su proyecto local ha sido nombrado<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
-    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
-    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_rename_project": "Su proyecto ha sido renombrado<br/><b>${project}</b><br/>¿Qué le gustaría hacer con el repositorio ${door43} del proyecto existente?",
+    "dcs_rename_success": "El repositorio de ${door43} para el proyecto fue actualizado con exito.<br/>${project}",
+    "dcs_rename_failed": "El repositorio ${door43} no fue renombrado.<br/><br/>¿Quieres intentar nuevamente renombrar el repositorio ${door43} o continuar sin renombrar?",
+    "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a ${door43}, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto ${door43}."
   },
   "project_validation": {
     "language_mismatch": "Código no valido para nombre de idioma",
@@ -243,7 +243,7 @@
     "conflict_reference": "Este es un conflicto de unión para el capítulo ${chapter}, versículo ${verse}.",
     "missing_verses_instructions": "Faltan algunos versículos en tu proyecto.",
     "only_nt_supported": "Esta versión de ${app} solo admite proyectos del Nuevo Testamento.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "Este proyecto contiene datos de una versión antigua de ${app} la cual no se admite en esta versión. Para obtener ayuda para abrir este proyecto o para reiniciar la verificación, por favor contáctese con ${help_desk_email}.",
     "resource_id": {
       "info": "(Código de identificación de 3 o 4 letras por ejemplo, NVI, RVR, etc.)",
       "field_invalid_length": "Debe tener 3-4 letras de largo",
