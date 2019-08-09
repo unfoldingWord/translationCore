@@ -66,8 +66,8 @@
   "alignment_prompt": "ಒಂದಾಣಿಕೆ ದತ್ತಾಂಶಗಳನ್ನು ನಿಮ್ಮ ವಿಷಯದ ಜೊತೆಯಲ್ಲಿ ರಫ್ತುಗೊಳಿಸಲು ನಿಮಗೆ ಇಷ್ಟವೇ?",
   "include_alignment_check": "ಒಂದಾಣಿಕೆ ದತ್ತಾಂಶಗಳನ್ನು ಸೇರ್ಪಡಿಸು",
   "loading_verse_edits": "ತಿದ್ದುಪಡಿಸಿದ ವಚನವು ಲೋಡ್ ಆಗುತ್ತಿದೆ",
-  "find_out_more": "ಟ್ರಾನ್ಸ್ಲೇಷನ್ ಕೋರ್ ಕುರಿತಾದದ ಹೆಚ್ಚಿನ ಮಾಹಿತಿಯನ್ನು ಇಲ್ಲಿ ತಿಳಿದುಕೊಳ್ಳಿರಿ:",
-  "based_on_earlier_work": "ಐಎಸ್ಸಿ ಅಧ್ವಾರ್ಯದಲ್ಲಿ ವಿಕ್ಲಿಫ್ ಅಸೋಸಿಯೇಟ್ಸ್ ಬಿಡುಗಡೆ ಮಾಡಿದ ಹಿಂದಿನ ಕೆಲಸದ ಆಧಾರವಾಗಿ",
+  "find_out_more": "Find out more about ${app} at:",
+  "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "ಮೂರನೇ ಪಕ್ಷದ ಕೋಡ್ ಹೆಚ್ಚಿನ ಗ್ರಂಥ ಹಕ್ಕುಗಳ ಸೂಚನೆಗಳು ಮತ್ತು ಅನುಮತಿ ಪತ್ರಿಕೆಗಳ ನಿಯಮಗಳು",
   "sending_feedback": "ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಿ",
   "sending_feedback_failed": "ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಲು ವಿಫಲವಾಗಿದೆ ",
@@ -207,10 +207,10 @@
     "nickname": "ಯೋಜನೆಯ ಮುದ್ದು ಹೆಸರು",
     "current_project": "ಯೋಜನೆ: ${project}",
     "renamed_project": "ನಿಮ್ಮ ಸ್ಥಳೀಯ ಯೋಜನೆಗೆ ಹೆಸರಿಡಲಾಗಿದೆ<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "ನಿಮ್ಮ ಸ್ಥಳೀಯ ಯೋಜನೆಗೆ ಹೆಸರಿಡಲಾಗಿದೆ<br/><b>$${project}</b><br/> ಈ ಯೋಜನೆಯ ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಬಾಗಿಲು43 ಭಂಡಾರದೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಬೇಕೆಂದು ಇಷ್ಟಪಡುತ್ತಿದ್ದೀರಿ?",
-    "dcs_rename_success": "ಯೋಜನೆಗೋಸ್ಕರ ${door43} ಭಂಡಾರವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ. <br/>${project}",
-    "dcs_rename_failed": "${door43} ಭಂಡಾರದ ಹೆಸರನ್ನು ಬದಲಾಯಿಸಲಿಲ್ಲ.<br/><br/>${door43} ಭಂಡಾರಕ್ಕೆ ಹೆಸರನ್ನು ಬದಲಾಯಿಸುತ್ತೀರೋ ಅಥವಾ ಹೆಸರನ್ನು ಬಸಲಾಯಿಸದೇ ಮುಂದಕ್ಕೆ ಸಾಗುತ್ತೀರೋ?",
-    "dcs_rename_conflict": "ಬದಲಾಯಿಸಿದ ಹೆಸರು ವಿಫಲವಾಗಿದೆ ಯಾಕಂದರೆ ಈ ಹೆಸರಿನ ಭಂಡಾರವು ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ.<br/><br/>door43ಕ್ಕೆ ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಏರಿಸಬೇಕೆಂದರೆ ನೀವು ನಿಮ್ಮ ಸ್ಥಳೀಯ ಯೋಜನೆಗೆ ಹೆಸರನ್ನು ಬದಲಾಯಿಸಬೇಕು ಅಥವಾ ನಿಮ್ಮ door43ಯೋಜನೆಗೆ ಹೆಸರನ್ನು ಬದಲಾಯಿಸಬೇಕು."
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "ಸಂಕೇತಕ್ಕೆ ಬಾಷೆಯ ಹೆಸರು ಸರಿಯಾದದ್ದಲ್ಲ",
@@ -243,7 +243,7 @@
     "conflict_reference": "ಅಧ್ಯಾಯಕ್ಕಾಗಿ ${chapter}, ವಚನಕ್ಕಾಗಿ ${verse} ಇದು ಕಾಣಿಸಿಕೊಳ್ಳದೇ ಇರುವ ಸಮಸ್ಯೆ.",
     "missing_verses_instructions": "ನಿಮ್ಮ ಯೋಜನೆಯಿಂದ ಕೆಲವೊಂದು ವಚನಗಳು ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತಿಲ್ಲ.",
     "only_nt_supported": "ಈ ಆವೃತಿಯ ${app} ಕೇವಲ ಹೊಸ ಒಡಂಬಡಿಕೆಯ ಯೋಜನೆಗಳಿಗೆ ಮಾತ್ರ ಬೆಂಬಲ ನೀಡುತ್ತದೆ.",
-    "old_project_unsupported": "ಈ ಬಿಡುಗಡೆಯಲ್ಲಿ ಬೆಂಬಲ ಕೊಡದ ಹಳೇ ${app} ಆವೃತಿಯಿಂದ ಈ ಯೋಜನೆಯು ಮಾಹಿತಿಯನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ. ಈ ಯೋಜನೆಯನ್ನು ಆರಂಭಿಸಲು ಸಹಾಯಕ್ಕಾಗಿ ಅಥವಾ ಪರಿಶೀಲನೆ ಮಾಡುವುದಕ್ಕೆ ತಿರುಗಿ ಆರಂಭಿಸಲು, ದಯವಿಟ್ಟು help@door43.org ವೆಬ್ ಸೈಟನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
     "resource_id": {
       "info": "(3 ಅಥವಾ 4 ಅಕ್ಷರದ ಗುರುತಿಸುವಿಕೆ<br />ಸಂಕೇತ, ಉದಾಹರಣೆಗೆ, KJV, NIV, ಇತ್ಯಾದಿಗಳು.)",
       "field_invalid_length": "3-4 ಅಕ್ಷರಗಳ ಉದ್ದ ಇರಬೇಕು",
