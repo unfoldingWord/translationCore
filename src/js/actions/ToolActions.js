@@ -113,7 +113,7 @@ export const warnOnInvalidations = (toolName) => (dispatch, getState) => {
     const state = getState();
     const alertAlreadyDisplayed = isInvalidationAlertDisplaying(state, toolName);
     if (!alertAlreadyDisplayed) {
-      let numInvalidChecks = getInvalidCountForTool(state, toolName);
+      const numInvalidChecks = getInvalidCountForTool(state, toolName);
       if (numInvalidChecks) {
         console.log(`warnOnInvalidations(${toolName}) - numInvalidChecks: ${numInvalidChecks} - showing alert`);
         const showAlignmentsInvalidated = toolName === WORD_ALIGNMENT;
