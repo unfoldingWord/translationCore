@@ -123,7 +123,10 @@ export function verifyGroupDataMatchesWithFs() {
                     const objectValue = object[folderName] || false;
                     const oldValue = oldGroupObject[folderName] || false;
                     if (!isEqual(oldValue, objectValue)) {
-                      let action = toggleGroupDataItems(folderName, object);
+                      // TRICKY: we are using the oldGroupObject here because it has the exact contextId. Sometimes
+                      //            there are slight differences in the contextIds of the checkData due to build
+                      //            changes (such as quoteString) and toggleGroupDataItems() requires exact match
+                      let action = toggleGroupDataItems(folderName, oldGroupObject);
                       if (action) actionsBatch.push(action);
                     }
                   }
