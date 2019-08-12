@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 const Licenses = ({translate}) => {
   return(
     <div style={{padding: '40px 10px 40px 0px', height: '520px', overflowY: 'auto', marginRight: '-22px', textAlign:'center'}}>
-      <p>{translate('find_out_more')}{' '}<a href="http://unfoldingword.org/tc">{'unfoldingword.org/tc'}</a></p>
+      <p>{translate('find_out_more', { app: translate('_.app_name') })}{' '}<a href="http://unfoldingword.org/tc">{'unfoldingword.org/tc'}</a></p>
       <h3>{translate('license')}</h3>
       <hr style={{width: "30%", marginTop: 0}}/>
       <p>{translate('copyright')}{' (c) 2017-2018 unfoldingWord'}</p>
-      <p>{translate('based_on_earlier_work')}</p>
+      <p>{translate('based_on_earlier_work', { wycliffe_associates: translate('_.wycliffe_associates')})}</p>
       <p><a href='https://opensource.org/licenses/ISC'>{'https://opensource.org/licenses/ISC'}</a></p>
       <p>{'ISC License (ISC)'}</p>
       <p>{'Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.'}</p>

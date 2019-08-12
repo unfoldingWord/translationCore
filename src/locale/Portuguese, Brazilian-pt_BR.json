@@ -66,8 +66,8 @@
   "alignment_prompt": "Gostaria de exportar os dados de alinhamento com o seu texto?",
   "include_alignment_check": "Incluir dados de alinhamento",
   "loading_verse_edits": "Carregando Edições de Versículos",
-  "find_out_more": "Saiba mais sobre translationCore em:",
-  "based_on_earlier_work": "Com base em um trabalho anterior de Wycliffe Associados lançado sob o ISC",
+  "find_out_more": "Sobre o ${app} saiba mais em:",
+  "based_on_earlier_work": "Baseado em um trabalho anterior da ${wycliffe_associates} lançado sob o ISC",
   "third_party_attributions": "Código de terceiros Adicionais Avisos de direitos Autorais e os Termos de Licença",
   "sending_feedback": "Enviando comentário",
   "sending_feedback_failed": "Falha ao enviar comentário",
@@ -207,10 +207,10 @@
     "nickname": "Apelido do Projeto",
     "current_project": "Projeto: ${project}",
     "renamed_project": "Seu projeto local recebeu o nome de<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Seu projeto foi renomeado para<br/><b>${project}</b><br/>. O que você gostaria de fazer com o repositório deste projeto já existente na Door43?",
-    "dcs_rename_success": "O repositório deste Projeto na Door43 foi atualizado com sucesso. Parabéns!<br/>${project}",
-    "dcs_rename_failed": "O repositório deste projeto na Door43 não foi renomeado.<br/><br/>Você quer tentar renomear este repositório na Door43, ou continuar sem renomear?",
-    "dcs_rename_conflict": "Este repositório não foi renomeado por já existir um repositório com este nome.<br/><br/>Para fazer o upload deste projeto para Door43, dê outro nome ao seu projeto local ou renomeie o seu Projeto na Door43."
+    "dcs_rename_project": "Seu projeto foi renomeado<br/><b>${project}</b><br/>O que você gostaria de fazer com o repositório ${door43} já existente deste projeto?",
+    "dcs_rename_success": "O repositório ${door43} do projeto foi atualizado com sucesso.<br/>${project}",
+    "dcs_rename_failed": "O repositório ${door43} não foi renomeado.<br/><br/>Você deseja tentar renomear novamente o repositório ${door43} ou continuar sem renomear?",
+    "dcs_rename_conflict": "Renomeação falhou porque um repositório com este noem já existe.<br/><br/>Para poder atualizar seu projeto para o ${door43}, você precisa ou de renomear seu projeto local ou renomear o seu projeto ${door43}."
   },
   "project_validation": {
     "language_mismatch": "O Nome de Idioma não é válido para esse Código",
@@ -243,7 +243,7 @@
     "conflict_reference": "Este é um conflito de integração no capítulo ${chapter}, e no versículo ${verse}.",
     "missing_verses_instructions": "Faltam alguns versículos no seu projeto.",
     "only_nt_supported": "Esta versão do ${app} suporta apenas projetos do Novo Testamento.",
-    "old_project_unsupported": "Este projeto, infelizmente, contém dados de uma versão antiga do ${app}, que não é suportada na versão atual. Por favor, procure: help@door43.org para saber como abrir este projeto ou reiniciar a verificação.",
+    "old_project_unsupported": "Este projeto contém dados de uma versão antiga do ${app} que não é suportada nesta versão. Para ajuda a abrir este projeto ou reiniciar a verificação, por favor, contate: ${help_desk_email}.",
     "resource_id": {
       "info": "(código de identificação de 3 ou 4 letras<br />por exemplo, NVI, JFA, etc.)",
       "field_invalid_length": "São precisos, no mínimo, 3 ou 4 letras",

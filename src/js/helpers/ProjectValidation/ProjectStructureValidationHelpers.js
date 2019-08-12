@@ -244,7 +244,7 @@ export function isProjectSupported(projectDir, translate) {
     }
     if (!greaterThanVersion_0_8_0 && testForCheckingData(projectDir)) {
       // if old and has some checking data, it cannot be opened
-      reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
+      reject(translate('project_validation.old_project_unsupported', { app: translate('_.app_name'), help_desk_email: translate('_.help_desk_email') }));
       return;
     }
 
