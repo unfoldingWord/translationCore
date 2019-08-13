@@ -68,7 +68,7 @@
   "loading_verse_edits": "Cargando Ediciones de Versículos",
   "find_out_more": "Descubre más acerca de ${app} en:",
   "based_on_earlier_work": "Basado en un trabajo anterior de ${wycliffe_associates} publicado bajo el ISC",
-  "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
+  "third_party_attributions": "Códigos de Terceros Adicionales, Avisos de Derechos de Autor y Términos de Licencia",
   "sending_feedback": "Enviando Comentario",
   "sending_feedback_failed": "Error al Enviar el Comentario",
   "critical_error_warning": "Advertencia: Ha ocurrido un error crítico!",
@@ -157,7 +157,7 @@
     "import_online_project": "Importar un Proyecto Online",
     "searching_alert": "Buscando. Por favor espere...",
     "books_available": "En esta versión de ${app}, el translationWords es una herramienta de apoyo a proyectos en el Nuevo Testamento y la Word Alignment es una herramienta de apoya a proyectos de toda la Biblia.",
-    "supports_any_book": "${app} supports projects for any book of the Bible.",
+    "supports_any_book": "${app} respalda proyectos para cualquier libro de la Biblia.",
     "tools_required_resources": "Sin embargo, el proyecto sólo se abrirá en translationWords o en translationNotes si los recursos necesarios para el Idioma Puente seleccionado están en su sistema. Haga clic en \"${actions} / ${check_for_content_updates}\" para descargar la última.",
     "enter_url": "Escriba la URL",
     "or": "O",
@@ -250,7 +250,7 @@
       "invalid_characters": "Sólo se admiten las letras básicas del Latín"
     },
     "conflicting_project": "Ya existe un proyecto con este identificador para este idioma y libro",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "newer_project": "Este proyecto fue creado en una versión más reciente de translationCore. Por favor, actualice a la última versión e intente de nuevo."
   },
   "book_list": {
     "ot": {
@@ -326,7 +326,7 @@
   },
   "tools": {
     "loading_tool_data": "Cargando datos de la herramienta.",
-    "resource_missing_for_tool": "The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.",
+    "resource_missing_for_tool": "La herramienta actual requiere una versión diferente de UGNT. Por favor, haga clic en Descargar para recuperar este recurso.",
     "no_checks_selected": "Debes seleccionar una categoría para el lanzamiento de esta herramienta",
     "book_not_supported": "El libro no se admite",
     "select_tool_from_list": "Seleccione una herramienta y un idioma de entrada de la lista.",
@@ -384,7 +384,7 @@
     "invalidation_checking": "Comprobando sí esta edición entra en conflicto con selecciones y alineaciones guardadas...",
     "alignments_reset_wa_tool": "Se han detectado cambios en su proyecto que han invalidado algunas de sus alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral.",
     "invalid_verse_alignments_and_selections": "Se han detectado unos cambios en su proyecto que han invalidado algunas de sus selecciones y algunas alineaciones.\nEstos versículos están destacados por un icono de una cadena rota junto a la referencia en el menú lateral.",
-    "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
+    "invalid_check_found": "Hay un problema con el contenido de esta comprobación: ${report} ¿Quieres reportar este problema para que pueda ser resuelto?"
   },
   "buttons": {
     "back_button": "Volver",
@@ -450,22 +450,22 @@
     "figs-simile": "Símil",
     "figs-apostrophe": "Apóstrofe",
     "figs-euphemism": "Eufemismo",
-    "figs-hendiadys": "Hendiadys",
+    "figs-hendiadys": "Hendíadis",
     "figs-hyperbole": "Hipérbole y Generalización",
-    "figs-litotes": "Litotes",
+    "figs-litotes": "Atenuación",
     "figs-merism": "Merismo",
-    "figs-metonymy": "Metonymy",
+    "figs-metonymy": "Metonimia",
     "figs-parallelism": "Paralelismo",
-    "figs-personification": "Personification",
-    "figs-synecdoche": "Synecdoche",
-    "figs-ellipsis": "Ellipsis",
+    "figs-personification": "Personificación",
+    "figs-synecdoche": "Sinécdoque",
+    "figs-ellipsis": "Elipsis",
     "figs-doublenegatives": "Negación Doble",
     "figs-doublet": "Doblete",
     "culture": "Cultura",
-    "figs-explicit": "Assumed Knowledge and Implicit Information",
+    "figs-explicit": "Conocimiento Asumido e Información Implícita",
     "translate-symaction": "Acción Simbólica",
     "writing-symlanguage": "Lenguaje Simbólico",
-    "translate-unknown": "Translate Unknowns",
+    "translate-unknown": "Traducir Incógnitas",
     "translate-bdistance": "Distancia Bíblica",
     "translate-bmoney": "Dinero Bíblico",
     "translate-bvolume": "Volumen Bíblico",
