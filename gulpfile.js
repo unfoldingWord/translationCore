@@ -241,17 +241,17 @@ gulp.task('release-linux-deb', () => {
       return copy(buildPath, optDir);
     }).then(() => {
       const configPath = path.join(optDir, "unfoldingword-translationcore.desktop");
-      const config =fs.readFileSync(configPath, 'utf8');
-      config.replace("Version=1.0", "Version=" + p.version);
+      let config = fs.readFileSync(configPath, 'utf8');
+      config = config.replace("Version=1.0", "Version=" + p.version);
       fs.writeFileSync(configPath, config, 'utf8');
-      console.log("DEB Config:\n" + config + "\n");
+      console.log("\n\nDEB Config:\n" + config + "\n");
       console.log('compiling DEB');
       // compile
       return new Promise((resolve, reject) => {
         const exec = require('child_process').exec;
         const dest = path.normalize(outPath);
         mkdirp.sync(path.dirname(dest));
-        let cmd = `dpkg-deb --build ${tmp} ${dest} --verbose`;
+        let cmd = `dpkg-deb --build ${tmp} ${dest}`;
         exec(cmd, function(err) {
           if (err) {
             reject(err);
