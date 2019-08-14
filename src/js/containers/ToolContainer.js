@@ -76,8 +76,6 @@ class ToolContainer extends Component {
    * @return {*}
    */
   makeToolProps (nextProps = undefined) {
-    const legacyToolsReducer = this.legacyToolsReducer();
-
     if (!nextProps) {
       nextProps = this.props;
     }
