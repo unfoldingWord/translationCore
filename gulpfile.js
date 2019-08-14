@@ -240,8 +240,22 @@ gulp.task('release-linux-deb', () => {
     .then(() => {
       return copy(buildPath, optDir);
     }).then(() => {
-      console.log('compiling');
+      // update desktop file
+      const desktopPath = path.join(optDir, "unfoldingword-translationcore.desktop");
+      let desktop = fs.readFileSync(desktopPath, 'utf8');
+      desktop = desktop.replace("Version=1.0", "Version=" + p.version);
+      fs.writeFileSync(desktopPath, desktop, 'utf8');
+      console.log("\n\nDEB Desktop Config:\n" + desktop + "\n");
+
+      // update control file
+      const controlPath = path.join(tmp, 'DEBIAN/control');
+      let control = fs.readFileSync(controlPath, 'utf8');
+      control = control.replace("Version: 1.0.0", "Version: " + p.version);
+      fs.writeFileSync(controlPath, control, 'utf8');
+      console.log("\n\nDEB control:\n" + control + "\n");
+
       // compile
+      console.log('compiling DEB...');
       return new Promise((resolve, reject) => {
         const exec = require('child_process').exec;
         const dest = path.normalize(outPath);
@@ -251,6 +265,7 @@ gulp.task('release-linux-deb', () => {
           if (err) {
             reject(err);
           } else {
+            console.log('DEB output to: ' + dest);
             resolve();
           }
         });
