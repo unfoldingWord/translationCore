@@ -240,14 +240,14 @@ gulp.task('release-linux-deb', () => {
     .then(() => {
       return copy(buildPath, optDir);
     }).then(() => {
-      // update desktop file
+      // update desktop file with latest version
       const desktopPath = path.join(optDir, "unfoldingword-translationcore.desktop");
       let desktop = fs.readFileSync(desktopPath, 'utf8');
       desktop = desktop.replace("Version=1.0", "Version=" + p.version);
       fs.writeFileSync(desktopPath, desktop, 'utf8');
       console.log("\n\nDEB Desktop Config:\n" + desktop + "\n");
 
-      // update control file
+      // update control file with latest version
       const controlPath = path.join(tmp, 'DEBIAN/control');
       let control = fs.readFileSync(controlPath, 'utf8');
       control = control.replace("Version: 1.0.0", "Version: " + p.version);
