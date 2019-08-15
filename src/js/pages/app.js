@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
 import ospath from 'ospath';
-import { Grid, Row } from 'react-bootstrap';
+import {Grid, Row} from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {withLocalize} from 'react-localize-redux';
 // container
 import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
@@ -19,18 +20,24 @@ import ProjectValidationContainer from '../containers/projectValidation/ProjectV
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
-import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
+import {loadLocalization, APP_LOCALE_SETTING} from '../actions/LocaleActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
 import {loadTools} from "../actions/ToolActions";
 import packageJson from '../../../package.json';
-import { injectFileLogging } from "../helpers/logger";
+import {injectFileLogging} from "../helpers/logger";
 //consts
-import { LOG_FILES_PATH } from "../common/constants";
+import {LOG_FILES_PATH} from "../common/constants";
 
 const version = `v${packageJson.version} (${process.env.BUILD})`;
 injectFileLogging(LOG_FILES_PATH, version);
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    // load app locale
+    const localeDir = path.join(__dirname, '../../locale');
+    props.loadLocalization(localeDir, props.appLanguage, props.initialize, props.addTranslationForLanguage, props.setActiveLanguage);
+  }
 
   shouldComponentUpdate(nextProps) {
     const {loadingProject} = nextProps.reducers.homeScreenReducer;
@@ -40,16 +47,8 @@ class Main extends Component {
   }
 
   componentWillMount() {
-    const {
-      appLanguage,
-      loadLocalization
-    } = this.props;
     const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
-
-    // load app locale
-    const localeDir = path.join(__dirname, '../../locale');
-    loadLocalization(localeDir, appLanguage);
   }
 
   componentDidMount() {
@@ -74,21 +73,21 @@ class Main extends Component {
 
   render() {
     const {isLocaleLoaded} = this.props;
-    if(isLocaleLoaded) {
+    if (isLocaleLoaded) {
       return (
         <MuiThemeProvider>
           <div className="fill-height">
-            <ScreenDimmerContainer/>
-            <ProjectValidationContainer/>
-            <AlertContainer/>
-            <AlertDialogContainer/>
-            <KonamiContainer/>
-            <PopoverContainer/>
-            <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
+            <ScreenDimmerContainer />
+            <ProjectValidationContainer />
+            <AlertContainer />
+            <AlertDialogContainer />
+            <KonamiContainer />
+            <PopoverContainer />
+            <Grid fluid style={{padding: 0, display: 'flex', flexDirection: 'column', height: '100%'}}>
               <Row style={{margin: 0}}>
-                <StatusBarContainer/>
+                <StatusBarContainer />
               </Row>
-              <BodyContainer/>
+              <BodyContainer />
             </Grid>
           </div>
         </MuiThemeProvider>
@@ -103,13 +102,16 @@ class Main extends Component {
 
 Main.propTypes = {
   loadLocalization: PropTypes.func.isRequired,
+  addTranslationForLanguage: PropTypes.func.isRequired,
+  setActiveLanguage: PropTypes.func.isRequired,
   migrateResourcesFolder: PropTypes.func.isRequired,
   migrateToolsSettings: PropTypes.func.isRequired,
   getAnchorTags: PropTypes.func.isRequired,
   isLocaleLoaded: PropTypes.bool,
   appLanguage: PropTypes.any,
   loadTools: PropTypes.func.isRequired,
-  reducers: PropTypes.object.isRequired
+  reducers: PropTypes.object.isRequired,
+  initialize: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -130,7 +132,7 @@ const mapDispatchToProps = {
   loadTools
 };
 
-export default connect(
+export default withLocalize(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Main);
+)(Main));

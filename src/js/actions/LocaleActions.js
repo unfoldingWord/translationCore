@@ -6,13 +6,13 @@
 
 import fs from 'fs-extra';
 import path from 'path';
-import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-localize-redux';
 import osLocale from 'os-locale';
 import _ from 'lodash';
 import types from './ActionTypes';
 import {setSetting} from './SettingsActions';
 import * as nonTranslatable from '../../locale/nonTranslatable';
 export const APP_LOCALE_SETTING = 'appLocale';
+import {renderToStaticMarkup} from 'react-dom/server';
 
 const DEFAULT_LOCALE = 'en_US';
 
@@ -46,7 +46,7 @@ const explodeLocaleName = (fileName) => {
  * @param {list} nonTranslatableStrings a list of non-translatable strings to inject
  * @return {object} the enhanced translation
  */
-const enhanceTranslation = (translation, fileName, nonTranslatableStrings=[]) => {
+const enhanceTranslation = (translation, fileName, nonTranslatableStrings = []) => {
   const {langName, langCode, shortLangCode} = explodeLocaleName(fileName);
   return {
     ...translation,
@@ -64,7 +64,7 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings=[]) =>
  * @param languageCode
  * @return {function(*)}
  */
-export const setLanguage = (languageCode) => {
+export const setLanguage = (languageCode, setActiveLanguage) => {
   return (dispatch) => {
     // save user setting
     dispatch(setSetting(APP_LOCALE_SETTING, languageCode));
@@ -92,22 +92,23 @@ export const setLocaleLoaded = () => ({
  * @param {string} appLanguage the language code that will be enabled by default
  * @return {function(*)}
  */
-export const loadLocalization = (localeDir, appLanguage=null) => {
+export const loadLocalization = (localeDir, appLanguage = null, initialize, addTranslationForLanguage, setActiveLanguage) => {
   return (dispatch) => {
-    if(!fs.existsSync(localeDir)) {
+    debugger;
+    if (!fs.existsSync(localeDir)) {
       return Promise.reject(`Missing locale dir at ${localeDir}`);
     }
     return fs.readdir(localeDir).then((items) => {
       // load locale
       let languages = [];
       let translations = {};
-      if(!items) {
+      if (!items) {
         return Promise.reject(`No localization files found in ${localeDir}`);
       }
-      for(let file of items) {
-        if(!file.endsWith('.json')) {
+      for (let file of items) {
+        if (!file.endsWith('.json')) {
           // don't warn if readme or NonTranslatable.js
-          if(!file.endsWith('.md') && !file.endsWith('.js')) {
+          if (!file.endsWith('.md') && !file.endsWith('.js')) {
             console.warn(`Skipping invalid localization file ${file}`);
           }
           continue;
@@ -122,11 +123,11 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
           translations[langCode] = translation;
 
           // include short language names for wider locale compatibility
-          if(_.indexOf(languages, shortLangCode) === -1) {
+          if (_.indexOf(languages, shortLangCode) === -1) {
             languages.push(shortLangCode);
             translations[shortLangCode] = translation;
           }
-        } catch(e) {
+        } catch (e) {
           console.error(`Failed to load localization ${localeFile}: ${e}`);
         }
       }
@@ -139,29 +140,34 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
           name: translations[code]['_']['language_name']
         };
       });
-      dispatch(initialize(namedLanguages, {
-        defaultLanguage: DEFAULT_LOCALE,
-        missingTranslationCallback: onMissingTranslation
-      }));
-      for(const languageCode in translations) {
-        if(translations.hasOwnProperty(languageCode)) {
-          dispatch(addTranslationForLanguage(translations[languageCode], languageCode));
+      debugger;
+      initialize({
+        languages: namedLanguages,
+        options: {
+          defaultLanguage: DEFAULT_LOCALE,
+          onMissingTranslation,
+          renderToStaticMarkup
+        }
+      });
+      for (const languageCode in translations) {
+        if (translations.hasOwnProperty(languageCode)) {
+          addTranslationForLanguage(translations[languageCode], languageCode);
         }
       }
       return {languages, translations};
     }).then(({languages, translations}) => {
-      if(appLanguage === DEFAULT_LOCALE) return;
+      if (appLanguage === DEFAULT_LOCALE) return;
 
-      if(appLanguage) {
+      if (appLanguage) {
         // set selected locale
         console.log(`Saved locale: ${appLanguage}`);
-        if(!setActiveLanguageSafely(dispatch, appLanguage, languages, translations)) {
+        if (!setActiveLanguageSafely(dispatch, appLanguage, languages, translations, setActiveLanguage)) {
           // fall back to system locale
-          return setSystemLocale(dispatch, languages, translations);
+          return setSystemLocale(dispatch, languages, translations, setActiveLanguage);
         }
       } else {
         // select system language
-        return setSystemLocale(dispatch, languages, translations);
+        return setSystemLocale(dispatch, languages, translations, setActiveLanguage);
       }
     }).then(() => {
       dispatch(setLocaleLoaded());
@@ -178,10 +184,10 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
  * @param translations
  * @return {Promise}
  */
-const setSystemLocale = (dispatch, languages, translations) => {
+const setSystemLocale = (dispatch, languages, translations, setActiveLanguage) => {
   return osLocale().then(locale => {
     console.log(`System Locale: ${locale}`);
-    setActiveLanguageSafely(dispatch, locale, languages, translations);
+    setActiveLanguageSafely(dispatch, locale, languages, translations, setActiveLanguage);
   });
 };
 
@@ -195,7 +201,7 @@ const setSystemLocale = (dispatch, languages, translations) => {
  * @param {object} translations a dictionary of loaded translations
  * @return {bool} returns true of the language was successfully set.
  */
-const setActiveLanguageSafely = (dispatch, locale, languages, translations) => {
+const setActiveLanguageSafely = (dispatch, locale, languages, translations, setActiveLanguage) => {
   const shortLocale = locale.split('_')[0];
   if (_.indexOf(languages, locale) >= 0) {
     // matched locale

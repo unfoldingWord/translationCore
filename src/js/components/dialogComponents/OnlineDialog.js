@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Checkbox } from 'material-ui';
-import { withLocale } from '../../containers/Locale';
+import { Translate } from 'react-localize-redux';
 import { connect } from 'react-redux';
 
 const styles = {
@@ -15,9 +15,7 @@ const OnlineDialog = ({translate, checked, onChecked}) => {
   return (
     <MuiThemeProvider>
       <div>
-        <p style={{fontSize: 15}}>
-          {translate('using_internet')}
-        </p>
+        <Translate id='using_internet' style={{fontSize: 15}} />
         <div style={{display: 'flex'}}>
           <Checkbox
             style={{width: '0px', marginRight: -10}}
@@ -48,4 +46,4 @@ const mapStateToProps = (state) => ({
   checked: state.settingsReducer.onlineMode
 });
 
-export default withLocale(connect(mapStateToProps)(OnlineDialog));
+export default connect(mapStateToProps)(OnlineDialog);
