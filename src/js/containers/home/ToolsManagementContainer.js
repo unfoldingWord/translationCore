@@ -27,13 +27,6 @@ class ToolsManagementContainer extends Component {
     this.handleSelectTool = this.handleSelectTool.bind(this);
   }
 
-  shouldComponentUpdate(nextProps) {
-    const {loadingProject} = nextProps.reducers.homeScreenReducer;
-    if (loadingProject === true) {
-      return false;
-    } else return true;
-  }
-
   componentDidMount() {
     const {tools, reducers} = this.props;
     const projectSaveLocation = getProjectSaveLocation(reducers);
