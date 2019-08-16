@@ -69,6 +69,7 @@ export const changeCurrentContextId = contextId => {
         // commit project changes
         const projectDir = getProjectSaveLocation(state);
         try {
+          await delay(2000);
           console.log("changeCurrentContextId() - saving to repo"); // TODO: remove debug code
           const repo = await Repo.open(projectDir, state.loginReducer.userdata);
           let refStr = "unknown";
@@ -76,7 +77,7 @@ export const changeCurrentContextId = contextId => {
             const {reference: {bookId, chapter, verse}} = contextId;
             refStr = `${bookId} ${chapter}:${verse}`;
           }
-          await delay(100);
+
           const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
           if (!saveStarted) {
             console.log(`changeCurrentContextId() - Saving already running, skipping save after ${refStr}`);
