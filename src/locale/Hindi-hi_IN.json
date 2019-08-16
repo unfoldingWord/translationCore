@@ -255,12 +255,12 @@
   "book_list": {
     "ot": {
       "gen": "उत्पत्ति (${book_id})",
-      "exo": "पलायन (${book_id})",
-      "lev": "लेविटीस (${book_id})",
-      "num": "संख्याएं (${book_id})",
+      "exo": "निर्गमन (${book_id})",
+      "lev": "लैव्यवस्था (${book_id})",
+      "num": "गिनती (${book_id})",
       "deu": "व्यवस्थाविवरण (${book_id})",
       "jos": "यहोशू (${book_id})",
-      "jdg": "न्यायाधीश (${book_id})",
+      "jdg": "न्यायियों (${book_id})",
       "rut": "रूथ (${book_id})",
       "1sa": "1 शमूएल (${book_id})",
       "2sa": "2 शमूएल (${book_id})",
