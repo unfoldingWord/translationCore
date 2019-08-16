@@ -57,14 +57,12 @@ export const changeCurrentContextId = contextId => {
       console.log("changeCurrentContextId() - setting new contextId to: " + getSafeContextString(contextId));
 
       delay(300).then(async () => {
-        console.log("changeCurrentContextId() - background task " ); // TODO: remove debug code
         let state = getState();
         const apis = getToolsByKey(state);
         const {reference: {chapter, verse}} = contextId;
         const groupsData = getGroupsData(state);
         for (const toolName in apis) {
           await delay(100);
-          console.log(`changeCurrentContextId() - validating verse ${toolName}`); // TODO: remove debug code
           apis[toolName].api.trigger('validateVerse', chapter, verse, null, groupsData);
         }
 
@@ -78,6 +76,7 @@ export const changeCurrentContextId = contextId => {
             const {reference: {bookId, chapter, verse}} = contextId;
             refStr = `${bookId} ${chapter}:${verse}`;
           }
+          await delay(100);
           const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
           if (!saveStarted) {
             console.log(`changeCurrentContextId() - Saving already running, skipping save after ${refStr}`);
