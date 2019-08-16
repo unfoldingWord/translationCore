@@ -94,7 +94,6 @@ export const setLocaleLoaded = () => ({
  */
 export const loadLocalization = (localeDir, appLanguage = null, initialize, addTranslationForLanguage, setActiveLanguage) => {
   return (dispatch) => {
-    debugger;
     if (!fs.existsSync(localeDir)) {
       return Promise.reject(`Missing locale dir at ${localeDir}`);
     }
@@ -140,7 +139,6 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
           name: translations[code]['_']['language_name']
         };
       });
-      debugger;
       initialize({
         languages: namedLanguages,
         options: {
