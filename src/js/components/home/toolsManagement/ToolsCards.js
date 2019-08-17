@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import {isEqual} from 'lodash';
 import {Card, CardText} from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
@@ -14,48 +13,6 @@ import {getAvailableCategories} from '../../../helpers/ResourcesHelpers';
 import {USER_RESOURCES_PATH, TRANSLATION_NOTES} from '../../../common/constants';
 
 class ToolsCards extends React.Component {
-  shouldComponentUpdate(nextProps) {
-    const {
-      tools,
-      bookName,
-      loggedInUser,
-      projectSaveLocation,
-      manifest,
-      invalidatedReducer,
-      toolsCategories,
-      originalLanguageBookManifest
-    } = this.props;
-    const {toolsSelectedGLs} = manifest;
-
-    if (!isEqual(nextProps.bookName, bookName)) {
-      return true;
-    }
-    if (!isEqual(nextProps.tools, tools)) {
-      return true;
-    }
-    if (!isEqual(nextProps.loggedInUser, loggedInUser)) {
-      return true;
-    }
-    if (!isEqual(nextProps.projectSaveLocation, projectSaveLocation)) {
-      return true;
-    }
-    if (!isEqual(nextProps.manifest, manifest)) {
-      return true;
-    }
-    if (!isEqual(nextProps.invalidatedReducer, invalidatedReducer)) {
-      return true;
-    }
-    if (!isEqual(nextProps.toolsCategories, toolsCategories)) {
-      return true;
-    }
-    if (!isEqual(nextProps.originalLanguageBookManifest, originalLanguageBookManifest)) {
-      return true;
-    }
-    if (!isEqual(nextProps.manifest.toolsSelectedGLs, toolsSelectedGLs)) {
-      return true;
-    }
-    else return false;
-  }
   render() {
     const {
       tools,
