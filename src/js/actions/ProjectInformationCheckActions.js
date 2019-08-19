@@ -18,6 +18,7 @@ import * as AlertModalActions from './AlertModalActions';
 import {getTranslate} from '../selectors';
 import BooksOfBible from '../../../tcResources/books';
 import { closeProject } from "./MyProjects/ProjectLoadingActions";
+import { batchActions } from 'redux-batched-actions';
 
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
@@ -105,7 +106,7 @@ export function finalize() {
     console.log('ProjectInformationCheckActions.finalize()');
     const translate = getTranslate(getState());
     dispatch(AlertModalActions.openAlertDialog(translate("projects.preparing_project_alert"), true));
-    await delay(200);
+    await delay(100);
 
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
@@ -129,13 +130,43 @@ export function finalize() {
  *   project information reducer.
  */
 function saveCheckingDetailsToProjectInformationReducer() {
-  return (async (dispatch) => {
+  return (async (dispatch, getState) => {
     await dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-    dispatch(ProjectDetailsActions.setProjectResourceId());
-    dispatch(ProjectDetailsActions.setProjectNickname());
-    dispatch(ProjectDetailsActions.setLanguageDetails());
-    dispatch(ProjectDetailsActions.updateContributors());
-    dispatch(ProjectDetailsActions.updateCheckers());
+    const {
+      resourceId,
+      nickname,
+      languageDirection,
+      languageId,
+      languageName,
+      contributors,
+      checkers,
+    } = getState().projectInformationCheckReducer;
+
+    const actions = [
+      {
+        type: consts.SAVE_RESOURCE_ID_IN_MANIFEST,
+        resourceId
+      },
+      {
+        type: consts.SAVE_NICKNAME_IN_MANIFEST,
+        nickname
+      },
+      {
+        type: consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST,
+        languageDirection,
+        languageId,
+        languageName
+      },
+      {
+        type: consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST,
+        translators: contributors
+      },
+      {
+        type: consts.SAVE_CHECKERS_LIST_IN_MANIFEST,
+        checkers
+      },
+    ];
+    dispatch(batchActions(actions));
     dispatch(clearProjectInformationReducer());
   });
 }
