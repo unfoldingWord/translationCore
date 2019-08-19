@@ -30,16 +30,6 @@ function loadCheckData(dispatch) {
   dispatch(loadInvalidated());
 }
 
-function getSafeContextString(contextId) {
-  let contextStr;
-  try {
-    contextStr = JSON.stringify(contextId);
-  } catch (e) {
-    contextStr = "INVALID";
-  }
-  return contextStr;
-}
-
 /**
  * @description this action changes the contextId to the current check.
  * @param {object} contextId - the contextId object.
@@ -53,39 +43,30 @@ export const changeCurrentContextId = contextId => {
     });
     if (contextId) {
       loadCheckData(dispatch);
-      saveContextId(getState(), contextId);
-      console.log("changeCurrentContextId() - setting new contextId to: " + getSafeContextString(contextId));
-
-      delay(300).then(async () => {
-        let state = getState();
-        const apis = getToolsByKey(state);
-        const {reference: {chapter, verse}} = contextId;
-        const groupsData = getGroupsData(state);
-        for (const toolName in apis) {
-          await delay(100);
-          apis[toolName].api.trigger('validateVerse', chapter, verse, null, groupsData);
-        }
-
-        // commit project changes
-        const projectDir = getProjectSaveLocation(state);
+      const state = getState();
+      saveContextId(state, contextId);
+      const {reference: {bookId, chapter, verse}, tool, groupId} = contextId;
+      const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
+      console.log("changeCurrentContextId() - setting new contextId to: ", refStr);
+      const apis = getToolsByKey(state);
+      const groupsData = getGroupsData(state);
+      for (const toolName in apis) {
+        apis[toolName].api.trigger('validateVerse', chapter, verse, null, groupsData);
+      }
+      // commit project changes
+      const projectDir = getProjectSaveLocation(state);
+      delay(2000).then(async () => {
         try {
-          await delay(2000);
-          console.log("changeCurrentContextId() - saving to repo"); // TODO: remove debug code
+          console.log(`changeCurrentContextId() - saving to repo  ${refStr}`); // TODO: remove debug code
           const repo = await Repo.open(projectDir, state.loginReducer.userdata);
-          let refStr = "unknown";
-          if (contextId) {
-            const {reference: {bookId, chapter, verse}} = contextId;
-            refStr = `${bookId} ${chapter}:${verse}`;
-          }
-
           const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
           if (!saveStarted) {
             console.log(`changeCurrentContextId() - Saving already running, skipping save after ${refStr}`);
           } else {
-            console.log(`changeCurrentContextId() - Saving complete`); // TODO: remove debug code
+            console.log(`changeCurrentContextId() - Saving complete  ${refStr}`); // TODO: remove debug code
           }
-        } catch (e) {
-          console.error("changeCurrentContextId() - Failed to auto save", contextId, e);
+        } catch(e) {
+          console.error(`changeCurrentContextId() - Failed to auto save ${refStr}`, e);
         }
       });
     }
