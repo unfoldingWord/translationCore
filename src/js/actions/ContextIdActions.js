@@ -57,13 +57,10 @@ export const changeCurrentContextId = contextId => {
       const projectDir = getProjectSaveLocation(state);
       delay(5000).then(async () => {
         try {
-          console.log(`changeCurrentContextId() - saving to repo  ${refStr}`); // TODO: remove debug code
           const repo = await Repo.open(projectDir, state.loginReducer.userdata);
           const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
           if (!saveStarted) {
             console.log(`changeCurrentContextId() - Saving already running, skipping save after ${refStr}`);
-          } else {
-            console.log(`changeCurrentContextId() - Saving complete  ${refStr}`); // TODO: remove debug code
           }
         } catch(e) {
           console.error(`changeCurrentContextId() - Failed to auto save ${refStr}`, e);
