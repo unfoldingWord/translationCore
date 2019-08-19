@@ -482,6 +482,9 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
  */
 export function saveAndCloseProjectInformationCheckIfValid() {
   return (async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    dispatch(AlertModalActions.openAlertDialog(translate("saving_changes"), true));
+    await delay(50);
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       await dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
@@ -492,6 +495,7 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       dispatch(closeProject());
       dispatch(MyProjectsActions.getMyProjects());
     }
+    dispatch(AlertModalActions.closeAlertDialog());
   });
 }
 
