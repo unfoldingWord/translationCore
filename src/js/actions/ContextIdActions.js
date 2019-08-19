@@ -55,7 +55,7 @@ export const changeCurrentContextId = contextId => {
       }
       // commit project changes
       const projectDir = getProjectSaveLocation(state);
-      delay(2000).then(async () => {
+      delay(5000).then(async () => {
         try {
           console.log(`changeCurrentContextId() - saving to repo  ${refStr}`); // TODO: remove debug code
           const repo = await Repo.open(projectDir, state.loginReducer.userdata);
