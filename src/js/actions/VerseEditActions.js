@@ -184,13 +184,11 @@ export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
                                               currentCheckContextId, batchGroupData) => {
   return async(dispatch, getState) => {
-    await delay(1000); // wait till before updating
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
     dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
       verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
       verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
-    await delay(200);
 
     const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     const state = getState();
@@ -203,7 +201,6 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
         console.log(`doBackgroundVerseEditsUpdates() - ${groupEditsCount} group edits found`);
       }
     }
-    await delay(500);
     dispatch(batchActions(actionsBatch));
   };
 };
@@ -238,7 +235,6 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     const translate = getTranslate(getState());
     const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     dispatch(AlertModalActions.openAlertDialog(translate("tools.invalidation_checking"), true));
-    await delay(500);
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
     dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
@@ -274,9 +270,8 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     }
     dispatch(AlertModalActions.closeAlertDialog());
     if (showSelectionInvalidated || showAlignmentsInvalidated) {
-      await delay(250);
       dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
-      await delay(1000);
+      //TODO: add await here
     }
     dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
                                            currentCheckContextId, actionsBatch));
