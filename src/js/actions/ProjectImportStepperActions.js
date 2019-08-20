@@ -177,7 +177,6 @@ export function cancelProjectValidationStepper() {
     dispatch(MyProjectsActions.getMyProjects());
     const projectName = getState().localImportReducer.selectedProjectFilename;
     deleteProjectFromImportsFolder(projectName);
-    dispatch({ type: consts.END_PROJECT_LOADING});
   });
 }
 
