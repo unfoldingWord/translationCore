@@ -3,9 +3,6 @@
 exports[`ProjectLoadingActions.migrateValidateLoadProject should just open project if project name is valid 1`] = `
 Array [
   Object {
-    "type": "START_PROJECT_LOADING",
-  },
-  Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
@@ -265,17 +262,11 @@ Array [
     "type": "ADD_MANIFEST_PROPERTY",
     "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
-  Object {
-    "type": "END_PROJECT_LOADING",
-  },
 ]
 `;
 
 exports[`ProjectLoadingActions.migrateValidateLoadProject should open to details screen if project name is not valid 1`] = `
 Array [
-  Object {
-    "type": "START_PROJECT_LOADING",
-  },
   Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
@@ -688,17 +679,11 @@ Array [
     "type": "ADD_MANIFEST_PROPERTY",
     "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
-  Object {
-    "type": "END_PROJECT_LOADING",
-  },
 ]
 `;
 
 exports[`loadProject displays the details screen of an invalid project name 1`] = `
 Array [
-  Object {
-    "type": "START_PROJECT_LOADING",
-  },
   Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
@@ -1098,43 +1083,32 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "type": "END_PROJECT_LOADING",
+    "type": "RESET_PROJECT_DETAIL",
   },
   Object {
-    "meta": Object {
-      "batch": true,
-    },
-    "payload": Array [
-      Object {
-        "type": "RESET_PROJECT_DETAIL",
-      },
-      Object {
-        "boolean": true,
-        "type": "TOGGLE_HOME_VIEW",
-      },
-      Object {
-        "type": "RESET_PROJECT_DETAIL",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
-        "type": "CLOSE_TOOL",
-      },
-      Object {
-        "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
-      },
-    ],
-    "type": "BATCHING_REDUCER.BATCH",
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLOSE_TOOL",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
     "alertMessage": "Cannot read property 'projects' of undefined",
@@ -1223,9 +1197,6 @@ Array [
 exports[`loadProject opens a valid project 1`] = `
 Array [
   Object {
-    "type": "START_PROJECT_LOADING",
-  },
-  Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
@@ -1472,43 +1443,32 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "type": "END_PROJECT_LOADING",
+    "type": "RESET_PROJECT_DETAIL",
   },
   Object {
-    "meta": Object {
-      "batch": true,
-    },
-    "payload": Array [
-      Object {
-        "type": "RESET_PROJECT_DETAIL",
-      },
-      Object {
-        "boolean": true,
-        "type": "TOGGLE_HOME_VIEW",
-      },
-      Object {
-        "type": "RESET_PROJECT_DETAIL",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
-        "type": "CLOSE_TOOL",
-      },
-      Object {
-        "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
-      },
-    ],
-    "type": "BATCHING_REDUCER.BATCH",
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLOSE_TOOL",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
     "alertMessage": "Cannot read property 'projects' of undefined",
