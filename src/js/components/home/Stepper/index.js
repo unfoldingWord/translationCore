@@ -30,10 +30,7 @@ const mapStateToProps = (state) => {
     stepIndex: getHomeScreenStep(state),
     activeSteps: getActiveHomeScreenSteps(state),
     projectNickname: getProjectNickname(state),
-    toolName: getSelectedToolTitle(state),
-    reducers: {
-      homeScreenReducer: state.homeScreenReducer
-    },
+    toolName: getSelectedToolTitle(state)
   };
 };
 
@@ -45,13 +42,6 @@ const mapDispatchToProps = {
  * The home stepper
  */
 class HomeStepper extends Component {
-
-  shouldComponentUpdate(nextProps) {
-    const {loadingProject} = nextProps.reducers.homeScreenReducer;
-    if (loadingProject === true) {
-      return false;
-    } else return true;
-  }
 
   componentDidMount () {
     const {stepIndex, goToStep} = this.props;
@@ -150,8 +140,7 @@ HomeStepper.propTypes = {
   goToStep: PropTypes.func,
   translate: PropTypes.func.isRequired,
   projectNickname: PropTypes.string,
-  toolName: PropTypes.string,
-  reducers: PropTypes.object.isRequired
+  toolName: PropTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeStepper);

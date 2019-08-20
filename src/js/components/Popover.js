@@ -14,8 +14,7 @@ class PopoverComponent extends Component {
             className='popover-root'
             style={{ padding: '0.75em', maxWidth: '400px', backgroundColor: "var(--background-color-light)" }}
             open={popoverVisibility}
-            //Making sure element still exits, some instances react will unmount the element
-            anchorEl={positionCoord && positionCoord.getBoundingClientRect ? positionCoord : null}
+            anchorEl={positionCoord}
             anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
             targetOrigin={{ horizontal: 'left', vertical: 'top' }}
             onRequestClose={onClosePopover}

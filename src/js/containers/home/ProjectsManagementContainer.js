@@ -29,13 +29,6 @@ class ProjectsManagementContainer extends Component {
     this.handleProjectSelected = this.handleProjectSelected.bind(this);
   }
 
-  shouldComponentUpdate(nextProps) {
-    const {loadingProject} = nextProps.reducers.homeScreenReducer;
-    if (loadingProject === true) {
-      return false;
-    } else return true;
-  }
-
   componentWillMount () {
     this.props.actions.getMyProjects();
   }
