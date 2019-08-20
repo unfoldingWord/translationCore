@@ -2,7 +2,7 @@ import path from "path-extra";
 import fs from "fs-extra";
 import types from './ActionTypes';
 // actions
-import {getGroupDataForVerse, showInvalidatedWarnings, validateSelections} from "./SelectionsActions";
+import {getGroupDataForVerse, showInvalidatedWarnings, validateSelections, showSelectionsInvalidatedWarning} from "./SelectionsActions";
 import * as AlertModalActions from "./AlertModalActions";
 import {batchActions} from "redux-batched-actions";
 // helpers
@@ -228,12 +228,9 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
  * @param {Array|null} batchGroupData - if present then add group data actions to this array for later batch operation
  * @return {Function}
  */
-export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
-                                                        currentCheckContextId, showSelectionInvalidated,
-                                                        batchGroupData = null) => {
+export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit, showSelectionInvalidated) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
-    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
     dispatch(AlertModalActions.openAlertDialog(translate("tools.invalidation_checking"), true));
     const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
     const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
@@ -271,10 +268,8 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     dispatch(AlertModalActions.closeAlertDialog());
     if (showSelectionInvalidated || showAlignmentsInvalidated) {
       dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
-      //TODO: add await here
-    }
-    dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
-                                           currentCheckContextId, actionsBatch));
+      return true;
+    } else return false;
   };
 };
 
@@ -315,27 +310,31 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
     }
     const selectionsValidationResults = {};
     const actionsBatch = [];
+        // create verse edit record to write to file system
+        const modifiedTimestamp = generateTimestamp();
+        const verseEdit = {
+          verseBefore: before,
+          verseAfter: after,
+          tags,
+          userName: userAlias,
+          activeBook: bookId,
+          activeChapter: currentCheckChapter,
+          activeVerse: currentCheckVerse,
+          modifiedTimestamp: modifiedTimestamp,
+          gatewayLanguageCode,
+          gatewayLanguageQuote,
+          contextId: contextIdWithVerseEdit
+        };
+    dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
+      currentCheckContextId, actionsBatch));
     dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
-      false, selectionsValidationResults, actionsBatch));
-
-    // create verse edit record to write to file system
-    const modifiedTimestamp = generateTimestamp();
-    const verseEdit = {
-      verseBefore: before,
-      verseAfter: after,
-      tags,
-      userName: userAlias,
-      activeBook: bookId,
-      activeChapter: currentCheckChapter,
-      activeVerse: currentCheckVerse,
-      modifiedTimestamp: modifiedTimestamp,
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-      contextId: contextIdWithVerseEdit
-    };
-
-    dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId,
-        selectionsValidationResults.selectionsChanged, actionsBatch));
+      false, selectionsValidationResults));
+    const didShowInvalidationWarning = await dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, selectionsValidationResults.selectionsChanged));
+    if (!didShowInvalidationWarning && selectionsValidationResults.selectionsChanged) {
+      //If here this means we did not shot the invalid alignments/selections warning but we still need to show
+      //selections reset
+      dispatch(showSelectionsInvalidatedWarning());
+    }
   };
 };
 

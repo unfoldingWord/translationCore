@@ -14,7 +14,7 @@ import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from '../localStorage/saveMethods';
-import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
+import {WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES} from '../common/constants';
 export const ALERT_ALIGNMENTS_RESET_ID = 'alignments_reset';
 export const ALERT_SELECTIONS_INVALIDATED_ID = "selections_invalidated";
 export const ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG = 'tools.invalid_verse_alignments_and_selections';
@@ -97,6 +97,7 @@ export const showSelectionsInvalidatedWarning = (callback = null) => {
  */
 export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignmentsInvalidated,
   callback = null) => {
+  debugger;
   return (dispatch, getState) => {
     let message = null;
     let id = null;
@@ -251,6 +252,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       dispatch(batchActions(actionsBatch));
     }
     results.selectionsChanged = selectionInvalidated;
+    debugger;
     if (showInvalidation && selectionInvalidated) {
       dispatch(showSelectionsInvalidatedWarning());
     }
