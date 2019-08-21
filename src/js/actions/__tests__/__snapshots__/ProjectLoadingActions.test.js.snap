@@ -1083,32 +1083,40 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "type": "RESET_PROJECT_DETAIL",
-  },
-  Object {
-    "boolean": true,
-    "type": "TOGGLE_HOME_VIEW",
-  },
-  Object {
-    "type": "RESET_PROJECT_DETAIL",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-  },
-  Object {
-    "type": "CLEAR_CONTEXT_ID",
-  },
-  Object {
-    "type": "CLOSE_TOOL",
-  },
-  Object {
-    "type": "CLEAR_RESOURCES_REDUCER",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
+    "meta": Object {
+      "batch": true,
+    },
+    "payload": Array [
+      Object {
+        "type": "RESET_PROJECT_DETAIL",
+      },
+      Object {
+        "boolean": true,
+        "type": "TOGGLE_HOME_VIEW",
+      },
+      Object {
+        "type": "RESET_PROJECT_DETAIL",
+      },
+      Object {
+        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+      },
+      Object {
+        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+      },
+      Object {
+        "type": "CLEAR_CONTEXT_ID",
+      },
+      Object {
+        "type": "CLOSE_TOOL",
+      },
+      Object {
+        "type": "CLEAR_RESOURCES_REDUCER",
+      },
+      Object {
+        "type": "CLEAR_PREVIOUS_FILTERS",
+      },
+    ],
+    "type": "BATCHING_REDUCER.BATCH",
   },
   Object {
     "alertMessage": "Cannot read property 'projects' of undefined",
@@ -1187,9 +1195,6 @@ Array [
       },
     ],
     "type": "GET_MY_PROJECTS",
-  },
-  Object {
-    "type": "END_PROJECT_LOADING",
   },
 ]
 `;
@@ -1443,32 +1448,40 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "type": "RESET_PROJECT_DETAIL",
-  },
-  Object {
-    "boolean": true,
-    "type": "TOGGLE_HOME_VIEW",
-  },
-  Object {
-    "type": "RESET_PROJECT_DETAIL",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-  },
-  Object {
-    "type": "CLEAR_CONTEXT_ID",
-  },
-  Object {
-    "type": "CLOSE_TOOL",
-  },
-  Object {
-    "type": "CLEAR_RESOURCES_REDUCER",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
+    "meta": Object {
+      "batch": true,
+    },
+    "payload": Array [
+      Object {
+        "type": "RESET_PROJECT_DETAIL",
+      },
+      Object {
+        "boolean": true,
+        "type": "TOGGLE_HOME_VIEW",
+      },
+      Object {
+        "type": "RESET_PROJECT_DETAIL",
+      },
+      Object {
+        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+      },
+      Object {
+        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+      },
+      Object {
+        "type": "CLEAR_CONTEXT_ID",
+      },
+      Object {
+        "type": "CLOSE_TOOL",
+      },
+      Object {
+        "type": "CLEAR_RESOURCES_REDUCER",
+      },
+      Object {
+        "type": "CLEAR_PREVIOUS_FILTERS",
+      },
+    ],
+    "type": "BATCHING_REDUCER.BATCH",
   },
   Object {
     "alertMessage": "Cannot read property 'projects' of undefined",
@@ -1547,9 +1560,6 @@ Array [
       },
     ],
     "type": "GET_MY_PROJECTS",
-  },
-  Object {
-    "type": "END_PROJECT_LOADING",
   },
 ]
 `;
