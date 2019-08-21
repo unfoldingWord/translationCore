@@ -430,8 +430,9 @@ function cleanupActions(actions) {
     for (const action of actions) {
       if (action.projects && Array.isArray(action.projects)) {
         for (const project of action.projects) {
-          if (project.accessTimeAgo) {
-            project.accessTimeAgo = 'now';
+          if (project.lastOpened) {
+            // set last opened to 5 days ago
+            project.lastOpened = new Date(new Date().getTime() - (5 * 24 * 60 * 60 * 1000));
           }
         }
       }

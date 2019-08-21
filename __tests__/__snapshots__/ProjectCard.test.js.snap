@@ -7,10 +7,10 @@ ShallowWrapper {
     onSelect={[Function]}
     projectDetails={
       Object {
-        "accessTimeAgo": "5 days ago",
         "bookAbbr": "1co",
         "bookName": "1 Corinthians",
         "isSelected": false,
+        "lastOpened": null,
         "projectName": "en_1co_ulb",
         "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
         "target_language": Object {
@@ -130,7 +130,7 @@ ShallowWrapper {
                               }
                             />
                              
-                            5 days ago
+                            projects.never_opened
                           </td>
                         </tr>
                       </tbody>
@@ -372,7 +372,7 @@ ShallowWrapper {
                                 }
                               />
                                
-                              5 days ago
+                              projects.never_opened
                             </td>
                           </tr>
                         </tbody>

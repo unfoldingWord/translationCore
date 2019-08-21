@@ -457,3 +457,34 @@ export function updateProjectTargetLanguageBookFolderName() {
     }
   });
 }
+
+/**
+ * @description Sends project settings to the store
+ * @param {object} settings - settings file of a project.
+ * @return {object} action object.
+ */
+export function setProjectSettings(settings) {
+  return {
+    type: consts.STORE_PROJECT_SETTINGS,
+    settings: settings
+  };
+}
+
+/**
+ * @description adds a new key name to the manifest object
+ * @param {String} propertyName - key string name.
+ * ex.
+ * manifest {
+ *  ...,
+ *  [propertyName]: 'value',
+ *  ...
+ * }
+ * @param {*} value - value to be saved in the propertyName
+ */
+export function addObjectPropertyToSettings(propertyName, value) {
+  return {
+    type: consts.ADD_PROJECT_SETTINGS_PROPERTY,
+    propertyName,
+    value
+  };
+}

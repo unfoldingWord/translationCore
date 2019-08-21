@@ -55,6 +55,7 @@ import {
   tc_MIN_COMPATIBLE_VERSION_KEY,
   tc_EDIT_VERSION_KEY,
   tc_MIN_VERSION_ERROR,
+  tc_LAST_OPENED_KEY,
   TRANSLATION_WORDS
 } from '../../common/constants';
 
@@ -90,6 +91,16 @@ export const updateProjectVersion = () => {
       dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_EDIT_VERSION_KEY, APP_VERSION));
       dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_MIN_COMPATIBLE_VERSION_KEY, MIN_COMPATIBLE_VERSION));
     }
+  };
+};
+
+/**
+ * updates the time the project was last opened in the project's settings.json file
+ * @return {Function}
+ */
+export const updateProjectLastOpened = () => {
+  return async (dispatch) => {
+    dispatch(ProjectDetailsActions.addObjectPropertyToSettings(tc_LAST_OPENED_KEY, new Date()));
   };
 };
 
@@ -162,6 +173,7 @@ export const openProject = (name, skipValidation=false) => {
 
       await dispatch(displayTools());
       dispatch(updateProjectVersion());
+      dispatch(updateProjectLastOpened());
       dispatch({ type: consts.END_PROJECT_LOADING});
       console.log("openProject() - project opened");
     } catch (e) {
@@ -345,9 +357,10 @@ export function closeProject() {
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
  */
-export function loadProjectDetails(projectPath, manifest) {
+export function loadProjectDetails(projectPath, manifest, settings) {
   return (dispatch) => {
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
+    dispatch(ProjectDetailsActions.setProjectSettings(settings));
   };
 }

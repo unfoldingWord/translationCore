@@ -15,7 +15,7 @@ describe('Test ProjectCard component',()=>{
       projectDetails: {
         projectName: 'en_1co_ulb',
         projectSaveLocation: '<TEMP_DIR>/en_1co_ulb',
-        accessTimeAgo: '5 days ago',
+        lastOpened: null,
         bookAbbr: '1co',
         bookName: '1 Corinthians',
         target_language: {

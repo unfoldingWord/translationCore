@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
 import moment from 'moment';
-import fs from 'fs-extra';
 import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from '../projectsManagement/ProjectCardMenu';
 import Hint from '../../Hint';
+// constants
+import {tc_LAST_OPENED_KEY} from "../../../common/constants";
 
 class ProjectCard extends Component {
 
@@ -43,20 +44,19 @@ class ProjectCard extends Component {
   /**
   * @description generates the details for the content
   * @param {string} projectSaveLocation - path of the project
-  * @param {string} text - text used for the detail
+  * @param {object} manifest - project's manifest
+  * @param {object} settings - projecdt's settings
   * @return {component} - component returned
   */
-  contentDetails(projectSaveLocation, manifest) {
+  contentDetails(projectSaveLocation, manifest, settings) {
     const {translate} = this.props;
     const projectName = path.basename(projectSaveLocation);
-    const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-    let accessTime;
+
+    let lastOpened = settings[tc_LAST_OPENED_KEY];
     let accessTimeAgo;
-    if (fs.existsSync(projectDataLocation)) {
-      accessTime = fs.statSync(projectDataLocation).atime;
-      accessTimeAgo = moment().to(accessTime);
+    if (lastOpened) {
+      accessTimeAgo = moment().to(lastOpened);
     } else {
-      accessTime = "";
       accessTimeAgo = translate('projects.never_opened');
     }
 
@@ -100,12 +100,12 @@ class ProjectCard extends Component {
     const {translate} = this.props;
     const { projectDetailsReducer } = this.props.reducers;
     const { userdata } = this.props.reducers.loginReducer;
-    const { projectSaveLocation, manifest } = projectDetailsReducer;
+    const { projectSaveLocation, manifest, settings } = projectDetailsReducer;
 
     if (projectSaveLocation && manifest.project && manifest.target_language) {
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
-          {this.contentDetails(projectSaveLocation, manifest)}
+          {this.contentDetails(projectSaveLocation, manifest, settings)}
           <div style={{ marginRight: '-5px' }}>
             <ProjectCardMenu
               user={userdata}

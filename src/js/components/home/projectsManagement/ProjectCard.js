@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
+import moment from 'moment';
+import TranslateIcon from 'material-ui/svg-icons/action/translate';
 // components
 import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from './ProjectCardMenu';
 import Hint from '../../Hint';
-import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import TruncateAcronym from './TruncateAcronym.js';
 
 class ProjectCard extends React.Component {
@@ -31,16 +32,20 @@ class ProjectCard extends React.Component {
     const {
       projectName,
       projectSaveLocation,
-      accessTimeAgo,
+      lastOpened,
       bookAbbr,
       bookName,
       target_language,
       isSelected
     } = this.props.projectDetails;
-    const targetLanguageBookName = target_language.book &&
-    target_language.book.name ?
-      target_language.book.name :
-      null;
+    const targetLanguageBookName = target_language.book && target_language.book.name ? target_language.book.name : null;
+
+    let accessTimeAgo;
+    if (lastOpened) {
+      accessTimeAgo = moment().to(lastOpened);
+    } else {
+      accessTimeAgo = translate('projects.never_opened');
+    }
 
     let cardDetails = [
       {

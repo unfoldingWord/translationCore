@@ -6,6 +6,7 @@
 
 import fs from 'fs-extra';
 import path from 'path';
+import moment from 'moment';
 import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-localize-redux';
 import osLocale from 'os-locale';
 import _ from 'lodash';
@@ -70,6 +71,7 @@ export const setLanguage = (languageCode) => {
     dispatch(setSetting(APP_LOCALE_SETTING, languageCode));
     // enable the locale
     dispatch(setActiveLanguage(languageCode));
+    moment.locale(languageCode); // set locale of moment
   };
 };
 
@@ -200,11 +202,13 @@ const setActiveLanguageSafely = (dispatch, locale, languages, translations) => {
   if (_.indexOf(languages, locale) >= 0) {
     // matched locale
     dispatch(setActiveLanguage(locale));
+    moment.locale(locale); // set locale of moment
   } else if (_.indexOf(languages, shortLocale) >= 0) {
     // equivalent locale
     let equivalentLocale = translations[shortLocale]['_']['locale'];
     console.warn(`Using equivalent locale: ${equivalentLocale}`);
     dispatch(setActiveLanguage(equivalentLocale));
+    moment.locale(equivalentLocale); // set locale of moment
   } else {
     console.error(`No translations found for locale: ${locale}`);
     return false;

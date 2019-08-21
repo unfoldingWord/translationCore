@@ -120,6 +120,12 @@ Array [
     "type": "STORE_MANIFEST",
   },
   Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_SETTINGS",
+  },
+  Object {
     "languageName": "English",
     "type": "SET_LANGUAGE_NAME_IN_PROJECT_INFORMATION_REDUCER",
   },
@@ -266,6 +272,11 @@ Array [
     "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
   Object {
+    "propertyName": "last_opened",
+    "type": "ADD_PROJECT_SETTINGS_PROPERTY",
+    "value": 2019-08-21T19:33:50.471Z,
+  },
+  Object {
     "type": "END_PROJECT_LOADING",
   },
 ]
@@ -391,6 +402,12 @@ Array [
     "type": "STORE_MANIFEST",
   },
   Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_SETTINGS",
+  },
+  Object {
     "languageName": "English",
     "type": "SET_LANGUAGE_NAME_IN_PROJECT_INFORMATION_REDUCER",
   },
@@ -513,6 +530,12 @@ Array [
       },
     },
     "type": "STORE_MANIFEST",
+  },
+  Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_SETTINGS",
   },
   Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
@@ -689,6 +712,11 @@ Array [
     "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
   Object {
+    "propertyName": "last_opened",
+    "type": "ADD_PROJECT_SETTINGS_PROPERTY",
+    "value": 2019-08-21T19:33:49.761Z,
+  },
+  Object {
     "type": "END_PROJECT_LOADING",
   },
 ]
@@ -814,6 +842,12 @@ Array [
     "type": "STORE_MANIFEST",
   },
   Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_SETTINGS",
+  },
+  Object {
     "languageName": "English",
     "type": "SET_LANGUAGE_NAME_IN_PROJECT_INFORMATION_REDUCER",
   },
@@ -936,6 +970,12 @@ Array [
       },
     },
     "type": "STORE_MANIFEST",
+  },
+  Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_SETTINGS",
   },
   Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
@@ -1196,10 +1236,10 @@ Array [
   Object {
     "projects": Array [
       Object {
-        "accessTimeAgo": "now",
         "bookAbbr": "tit",
         "bookName": "Titus",
         "isSelected": true,
+        "lastOpened": null,
         "projectName": "en_tit",
         "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_tit",
         "target_language": Object {
@@ -1340,6 +1380,12 @@ Array [
     "type": "STORE_MANIFEST",
   },
   Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_SETTINGS",
+  },
+  Object {
     "languageName": "English",
     "type": "SET_LANGUAGE_NAME_IN_PROJECT_INFORMATION_REDUCER",
   },
@@ -1570,10 +1616,10 @@ Array [
   Object {
     "projects": Array [
       Object {
-        "accessTimeAgo": "now",
         "bookAbbr": "tit",
         "bookName": "Titus",
         "isSelected": true,
+        "lastOpened": null,
         "projectName": "en_ult_tit_book",
         "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_ult_tit_book",
         "target_language": Object {
