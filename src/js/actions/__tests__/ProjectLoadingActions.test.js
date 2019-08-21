@@ -262,8 +262,8 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
   it('when edit version and minimum are the same, no update', async () => {
     // given
     const expectUpdate = false;
-    manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = APP_VERSION;
-    manifest[tc_EDIT_VERSION_KEY] = MIN_COMPATIBLE_VERSION;
+    manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = MIN_COMPATIBLE_VERSION;
+    manifest[tc_EDIT_VERSION_KEY] = APP_VERSION;
     const initialState = {
       projectDetailsReducer: {
         projectSaveLocation: "DUMMY",
