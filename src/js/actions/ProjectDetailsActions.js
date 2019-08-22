@@ -471,10 +471,10 @@ export function setProjectSettings(settings) {
 }
 
 /**
- * @description adds a new key name to the manifest object
+ * @description adds a new key name to the settings object
  * @param {String} propertyName - key string name.
  * ex.
- * manifest {
+ * settings {
  *  ...,
  *  [propertyName]: 'value',
  *  ...
