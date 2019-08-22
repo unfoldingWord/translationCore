@@ -19,7 +19,7 @@ class ProjectCard extends React.Component {
   }
 
   componentDidMount(){
-    // add interval listener to update last opened time ago ever 60 seconds
+    // add interval listener to update last opened time ago every 60 seconds
     this.interval = setInterval(this.updateLastOpenedTimeAgo.bind(this), 60000);
   }
 
