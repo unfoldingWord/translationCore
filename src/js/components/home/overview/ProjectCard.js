@@ -12,6 +12,41 @@ import Hint from '../../Hint';
 import {tc_LAST_OPENED_KEY} from "../../../common/constants";
 
 class ProjectCard extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      lastOpenedTimeAgo:  this.getLastOpenedTimeAgo()
+    };
+  }
+
+  componentDidMount(){
+    // add interval listener to update last opened time ago ever 60 seconds
+    if (this.state.lastOpenedTimeAgo)
+      this.interval = setInterval(this.updateLastOpenedTimeAgo.bind(this), 60000);
+  }
+
+  componentWillUnmount(){
+    // remove the interval listener
+    if (this.interval)
+      clearInterval(this.interval);
+  }
+
+  getLastOpenedTimeAgo() {
+    if (this.props.reducers.projectDetailsReducer && this.props.reducers.projectDetailsReducer.settings) {
+      const lastOpened = this.props.reducers.projectDetailsReducer.settings[tc_LAST_OPENED_KEY];
+      if (lastOpened) {
+        return moment().to(lastOpened);
+      } else {
+        return this.props.translate('projects.never_opened');
+      }
+    }
+  }
+
+  updateLastOpenedTimeAgo() {
+    this.setState({
+      lastOpenedTimeAgo: this.getLastOpenedTimeAgo()
+    });
+  }
 
   /**
   * @description generates the heading for the component
@@ -48,18 +83,8 @@ class ProjectCard extends Component {
   * @param {object} settings - projecdt's settings
   * @return {component} - component returned
   */
-  contentDetails(projectSaveLocation, manifest, settings) {
-    const {translate} = this.props;
+  contentDetails(projectSaveLocation, manifest) {
     const projectName = path.basename(projectSaveLocation);
-
-    let lastOpened = settings[tc_LAST_OPENED_KEY];
-    let accessTimeAgo;
-    if (lastOpened) {
-      accessTimeAgo = moment().to(lastOpened);
-    } else {
-      accessTimeAgo = translate('projects.never_opened');
-    }
-
     const { target_language, project } = manifest;
     const bookAbbreviation = project.id;
     const bookName = target_language.book && target_language.book.name ?
@@ -82,7 +107,7 @@ class ProjectCard extends Component {
             }}> {projectName} </strong>
           </Hint>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
-            {this.detail('time', accessTimeAgo)}
+            {this.detail('time', this.getLastOpenedTimeAgo())}
             {this.detail('book', bookName + ' (' + bookAbbreviation + ')')}
             {this.detail('globe', target_language.name + ' (' + target_language.id + ')')}
           </div>
@@ -100,12 +125,12 @@ class ProjectCard extends Component {
     const {translate} = this.props;
     const { projectDetailsReducer } = this.props.reducers;
     const { userdata } = this.props.reducers.loginReducer;
-    const { projectSaveLocation, manifest, settings } = projectDetailsReducer;
+    const { projectSaveLocation, manifest } = projectDetailsReducer;
 
     if (projectSaveLocation && manifest.project && manifest.target_language) {
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
-          {this.contentDetails(projectSaveLocation, manifest, settings)}
+          {this.contentDetails(projectSaveLocation, manifest)}
           <div style={{ marginRight: '-5px' }}>
             <ProjectCardMenu
               user={userdata}

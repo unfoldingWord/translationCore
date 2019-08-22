@@ -13,6 +13,33 @@ class ProjectCard extends React.Component {
   constructor (props) {
     super(props);
     this.handleOnSelect = this.handleOnSelect.bind(this);
+    this.state = {
+      lastOpenedTimeAgo:  this.getLastOpenedTimeAgo()
+    };
+  }
+
+  componentDidMount(){
+    // add interval listener to update last opened time ago ever 60 seconds
+    this.interval = setInterval(this.updateLastOpenedTimeAgo.bind(this), 60000);
+  }
+
+  componentWillUnmount(){
+    // remove the interval listener
+    clearInterval(this.interval);
+  }
+
+  getLastOpenedTimeAgo() {
+    if (this.props.projectDetails.lastOpened) {
+      return moment().to(this.props.projectDetails.lastOpened);
+    } else {
+      return this.props.translate('projects.never_opened');
+    }
+  }
+
+  updateLastOpenedTimeAgo() {
+    this.setState({
+      lastOpenedTimeAgo: this.getLastOpenedTimeAgo()
+    });
   }
 
   /**
@@ -32,7 +59,6 @@ class ProjectCard extends React.Component {
     const {
       projectName,
       projectSaveLocation,
-      lastOpened,
       bookAbbr,
       bookName,
       target_language,
@@ -40,17 +66,10 @@ class ProjectCard extends React.Component {
     } = this.props.projectDetails;
     const targetLanguageBookName = target_language.book && target_language.book.name ? target_language.book.name : null;
 
-    let accessTimeAgo;
-    if (lastOpened) {
-      accessTimeAgo = moment().to(lastOpened);
-    } else {
-      accessTimeAgo = translate('projects.never_opened');
-    }
-
     let cardDetails = [
       {
         glyph: 'time',
-        text: accessTimeAgo
+        text: this.getLastOpenedTimeAgo()
       },
       {
         glyph: 'book',
