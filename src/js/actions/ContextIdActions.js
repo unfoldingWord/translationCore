@@ -4,6 +4,7 @@
 
 import consts from './ActionTypes';
 import fs from 'fs-extra';
+import {batchActions} from 'redux-batched-actions';
 // helpers
 import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpers/navigationHelpers';
 // actions
@@ -21,13 +22,15 @@ import {delay} from "../common/utils";
 
 /**
  * TODO: tool data should eventually move into the respective tools.
- * @param dispatch
+ * @param {Array} actionsBatch - array to load with actions for later batching
  */
 function loadCheckData(dispatch) {
-  dispatch(loadComments());
-  dispatch(loadReminders());
-  dispatch(loadSelections());
-  dispatch(loadInvalidated());
+  const actionsBatch = [];
+  actionsBatch.push(loadComments());
+  actionsBatch.push(loadReminders());
+  actionsBatch.push(loadSelections());
+  actionsBatch.push(loadInvalidated());
+  dispatch(batchActions(actionsBatch));
 }
 
 /**
@@ -42,17 +45,22 @@ export const changeCurrentContextId = contextId => {
       contextId
     });
     if (contextId) {
-      loadCheckData(dispatch);
-      const state = getState();
-      saveContextId(state, contextId);
       const {reference: {bookId, chapter, verse}, tool, groupId} = contextId;
       const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
-      console.log("changeCurrentContextId() - setting new contextId to: ", refStr);
+      console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
+      console.log("changeCurrentContextId() - loading Check Data");
+      loadCheckData(dispatch);
+      const state = getState();
+      console.log("changeCurrentContextId() - saveContextId");
+      saveContextId(state, contextId);
       const apis = getToolsByKey(state);
       const groupsData = getGroupsData(state);
       for (const toolName in apis) {
+        console.log(`changeCurrentContextId() - validateVerse(${toolName})`);
         apis[toolName].api.trigger('validateVerse', chapter, verse, null, groupsData);
       }
+      console.log(`changeCurrentContextId() - validation done`);
+
       // commit project changes
       const projectDir = getProjectSaveLocation(state);
       delay(5000).then(async () => {

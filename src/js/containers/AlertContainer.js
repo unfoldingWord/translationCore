@@ -45,13 +45,6 @@ class Alerts extends React.Component {
     this.handleOnConfirm = this.handleOnConfirm.bind(this);
   }
 
-  shouldComponentUpdate(nextProps) {
-    const {loadingProject} = nextProps.reducers.homeScreenReducer;
-    if (loadingProject === true) {
-      return false;
-    } else return true;
-  }
-
   /**
    * Handles confirming.
    * This is required and will always produce a callback even if none is specified on the alert.
@@ -125,8 +118,7 @@ class Alerts extends React.Component {
 Alerts.propTypes = {
   alerts: PropTypes.array,
   closeAlert: PropTypes.func.isRequired,
-  ignoreAlert: PropTypes.func.isRequired,
-  reducers: PropTypes.object.isRequired
+  ignoreAlert: PropTypes.func.isRequired
 };
 Alerts.defaultProps = {
   alerts: []
@@ -134,10 +126,7 @@ Alerts.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    alerts: getAlerts(state),
-    reducers: {
-      homeScreenReducer: state.homeScreenReducer
-    },
+    alerts: getAlerts(state)
   };
 };
 const mapDispatchToProps = {

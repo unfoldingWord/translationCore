@@ -1,5 +1,6 @@
 import consts from '../ActionTypes';
 import path from 'path-extra';
+import {batchActions} from 'redux-batched-actions';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
@@ -104,7 +105,6 @@ export const openProject = (name, skipValidation=false) => {
     console.log("openProject() projectDir=" + projectDir);
 
     try {
-      dispatch({ type: consts.START_PROJECT_LOADING});
       dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
       dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
       dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
@@ -161,10 +161,8 @@ export const openProject = (name, skipValidation=false) => {
 
       await dispatch(displayTools());
       dispatch(updateProjectVersion());
-      dispatch({ type: consts.END_PROJECT_LOADING});
       console.log("openProject() - project opened");
     } catch (e) {
-      dispatch({ type: consts.END_PROJECT_LOADING});
       // TODO: clean this up
       if (e.type !== 'div') console.warn("openProject() error", e);
       let message = e.stack ? e.message : e; // if crash dump, need to clean up message so it doesn't crash alert
@@ -319,19 +317,23 @@ export function closeProject() {
     }
 
     /**
-     * ATTENTION: THE project details reducer must be reset
+     * ATTENTION: The project details reducer must be reset
      * before any other action being called to avoid
      * autosaving messing up with the project data.
      */
-    dispatch({ type: consts.RESET_PROJECT_DETAIL });
-    dispatch(BodyUIActions.toggleHomeView(true));
-    dispatch(ProjectDetailsActions.resetProjectDetail());
-    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
-    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
-    dispatch({ type: consts.CLEAR_CONTEXT_ID });
-    dispatch({ type: consts.CLOSE_TOOL });
-    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
+    const actions = [
+      { type: consts.RESET_PROJECT_DETAIL },
+      BodyUIActions.toggleHomeView(true),
+      ProjectDetailsActions.resetProjectDetail(),
+      { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
+      { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
+      { type: consts.CLEAR_CONTEXT_ID },
+      { type: consts.CLOSE_TOOL },
+      { type: consts.CLEAR_RESOURCES_REDUCER },
+      { type: consts.CLEAR_PREVIOUS_FILTERS},
+    ];
+
+    dispatch(batchActions(actions));
   };
 }
 
