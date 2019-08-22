@@ -22,12 +22,6 @@ import ProjectValidationNavigation from '../../components/projectValidation/Proj
 import {withLocale} from '../Locale';
 
 class ProjectValidationContainer extends Component {
-  shouldComponentUpdate(nextProps) {
-    const {loadingProject} = nextProps.reducers.homeScreenReducer;
-    if (loadingProject === true) {
-      return false;
-    } else return true;
-  }
   render() {
     let { stepIndex } = this.props.reducers.projectValidationReducer.stepper;
     const { showProjectValidationStepper } = this.props.reducers.projectValidationReducer;
@@ -93,8 +87,7 @@ const mapStateToProps = (state) => {
       projectInformationCheckReducer: state.projectInformationCheckReducer,
       mergeConflictReducer: state.mergeConflictReducer,
       missingVersesReducer: state.missingVersesReducer,
-      settingsReducer: state.settingsReducer,
-      homeScreenReducer: state.homeScreenReducer,
+      settingsReducer: state.settingsReducer
     }
   };
 };
@@ -195,12 +188,11 @@ ProjectValidationContainer.propTypes = {
       stepper: PropTypes.shape({
         stepIndex: PropTypes.number.isRequired
       }),
-      showProjectValidationStepper:PropTypes.bool.isRequired,
+      showProjectValidationStepper:PropTypes.bool.isRequired
     }),
     mergeConflictReducer: PropTypes.object.isRequired,
     missingVersesReducer: PropTypes.object.isRequired,
-    settingsReducer: PropTypes.object.isRequired,
-    homeScreenReducer: PropTypes.object.isRequired
+    settingsReducer: PropTypes.object.isRequired
   })
 };
 

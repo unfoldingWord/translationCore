@@ -32,14 +32,6 @@ const version = `v${packageJson.version} (${process.env.BUILD})`;
 injectFileLogging(LOG_FILES_PATH, version);
 
 class Main extends Component {
-
-    shouldComponentUpdate(nextProps) {
-    const {loadingProject} = nextProps.reducers.homeScreenReducer;
-    if (loadingProject === true) {
-      return false;
-    } else return true;
-  }
-
   componentWillMount() {
     const {
       appLanguage,
@@ -110,15 +102,11 @@ Main.propTypes = {
   getAnchorTags: PropTypes.func.isRequired,
   isLocaleLoaded: PropTypes.bool,
   appLanguage: PropTypes.any,
-  loadTools: PropTypes.func.isRequired,
-  reducers: PropTypes.object.isRequired
+  loadTools: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
   return {
-    reducers: {
-      homeScreenReducer: state.homeScreenReducer
-    },
     isLocaleLoaded: getLocaleLoaded(state),
     appLanguage: getSetting(state, APP_LOCALE_SETTING)
   };
