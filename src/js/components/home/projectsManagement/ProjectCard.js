@@ -26,7 +26,8 @@ class ProjectCard extends React.Component {
 
   componentWillUnmount(){
     // remove the interval listener
-    clearInterval(this.interval);
+    if (this.interval)
+      clearInterval(this.interval);
   }
 
   getLastOpenedTimeAgo() {
