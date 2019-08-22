@@ -3,14 +3,50 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
 import moment from 'moment';
-import fs from 'fs-extra';
 import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from '../projectsManagement/ProjectCardMenu';
 import Hint from '../../Hint';
+// constants
+import {tc_LAST_OPENED_KEY} from "../../../common/constants";
 
 class ProjectCard extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      lastOpenedTimeAgo:  this.getLastOpenedTimeAgo()
+    };
+  }
+
+  componentDidMount(){
+    // add interval listener to update last opened time ago every 60 seconds
+    if (this.state.lastOpenedTimeAgo)
+      this.interval = setInterval(this.updateLastOpenedTimeAgo.bind(this), 60000);
+  }
+
+  componentWillUnmount(){
+    // remove the interval listener
+    if (this.interval)
+      clearInterval(this.interval);
+  }
+
+  getLastOpenedTimeAgo() {
+    if (this.props.reducers.projectDetailsReducer && this.props.reducers.projectDetailsReducer.settings) {
+      const lastOpened = this.props.reducers.projectDetailsReducer.settings[tc_LAST_OPENED_KEY];
+      if (lastOpened) {
+        return moment().to(lastOpened);
+      } else {
+        return this.props.translate('projects.never_opened');
+      }
+    }
+  }
+
+  updateLastOpenedTimeAgo() {
+    this.setState({
+      lastOpenedTimeAgo: this.getLastOpenedTimeAgo()
+    });
+  }
 
   /**
   * @description generates the heading for the component
@@ -43,23 +79,12 @@ class ProjectCard extends Component {
   /**
   * @description generates the details for the content
   * @param {string} projectSaveLocation - path of the project
-  * @param {string} text - text used for the detail
+  * @param {object} manifest - project's manifest
+  * @param {object} settings - projecdt's settings
   * @return {component} - component returned
   */
   contentDetails(projectSaveLocation, manifest) {
-    const {translate} = this.props;
     const projectName = path.basename(projectSaveLocation);
-    const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-    let accessTime;
-    let accessTimeAgo;
-    if (fs.existsSync(projectDataLocation)) {
-      accessTime = fs.statSync(projectDataLocation).atime;
-      accessTimeAgo = moment().to(accessTime);
-    } else {
-      accessTime = "";
-      accessTimeAgo = translate('projects.never_opened');
-    }
-
     const { target_language, project } = manifest;
     const bookAbbreviation = project.id;
     const bookName = target_language.book && target_language.book.name ?
@@ -82,7 +107,7 @@ class ProjectCard extends Component {
             }}> {projectName} </strong>
           </Hint>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
-            {this.detail('time', accessTimeAgo)}
+            {this.detail('time', this.getLastOpenedTimeAgo())}
             {this.detail('book', bookName + ' (' + bookAbbreviation + ')')}
             {this.detail('globe', target_language.name + ' (' + target_language.id + ')')}
           </div>

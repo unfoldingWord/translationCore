@@ -10,7 +10,8 @@ import {
   saveInvalidated,
   saveGroupsData,
   saveLocalUserdata,
-  saveProjectManifest
+  saveProjectManifest,
+  saveProjectSettings
 } from './saveMethods';
 import { getSelectedToolName } from "../selectors";
 
@@ -52,6 +53,9 @@ export const saveState = (prevState, newState) => {
     // save manifest only if it is defined.
     if (newState.projectDetailsReducer.projectSaveLocation && newState.projectDetailsReducer.manifest && Object.keys(newState.projectDetailsReducer.manifest).length > 0) {
       saveProjectManifest(newState);
+    }
+    if (newState.projectDetailsReducer.projectSaveLocation && newState.projectDetailsReducer.settings && Object.keys(newState.projectDetailsReducer.settings).length > 0) {
+      saveProjectSettings(newState);
     }
     // only save checkData and targetLanguage reducers if contextId hasn't changed
     if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {

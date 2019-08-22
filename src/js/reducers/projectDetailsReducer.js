@@ -8,6 +8,7 @@ const initialState = {
     resource: {},
     toolsSelectedGLs: {}
   },
+  settings: {},
   currentProjectToolsProgress: {},
   projectType: null,
   toolsCategories: {}
@@ -34,6 +35,14 @@ const projectDetailsReducer = (state = initialState, action) => {
         manifest: {
           ...state.manifest,
           ...action.manifest
+        }
+      };
+    case consts.STORE_PROJECT_SETTINGS:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          ...action.settings
         }
       };
     case consts.SET_PROJECT_PROGRESS_FOR_TOOL:
@@ -133,6 +142,14 @@ const projectDetailsReducer = (state = initialState, action) => {
       };
     case consts.RESET_PROJECT_DETAIL:
       return initialState;
+    case consts.ADD_PROJECT_SETTINGS_PROPERTY:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          [action.propertyName]: action.value
+        }
+      };
     default:
       return state;
   }
@@ -221,6 +238,13 @@ export const getBookId = state => {
  */
 export const getManifest = (state) =>
   state.manifest;
+
+/**
+ * Returns the project settings
+ * @param {object} state the project details slice of the state
+ */
+export const getSettings = (state) =>
+  state.settings;
 
 /**
  * Returns the categories selected for the tool
