@@ -11,8 +11,10 @@ import {
   MIN_COMPATIBLE_VERSION,
   tc_EDIT_VERSION_KEY,
   tc_MIN_COMPATIBLE_VERSION_KEY,
-  PROJECTS_PATH
+  tc_LAST_OPENED_KEY,
+  PROJECTS_PATH,
 } from '../../common/constants';
+import ActionTypes from '../../actions/ActionTypes';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -430,10 +432,14 @@ function cleanupActions(actions) {
     for (const action of actions) {
       if (action.projects && Array.isArray(action.projects)) {
         for (const project of action.projects) {
-          if (project.accessTimeAgo) {
-            project.accessTimeAgo = 'now';
+          if (project.lastOpened) {
+            // set last opened to 5 days ago
+            project.lastOpened = new Date(new Date().getTime() - (5 * 24 * 60 * 60 * 1000));
           }
         }
+      }
+      if (action.type === ActionTypes.ADD_PROJECT_SETTINGS_PROPERTY && action.propertyName === tc_LAST_OPENED_KEY) {
+        action.value = '2019-08-22T17:06:12.493Z';
       }
       if ('pathLocation' in action) {
         action.pathLocation = path.basename(action.pathLocation);

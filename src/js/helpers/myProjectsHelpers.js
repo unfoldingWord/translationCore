@@ -1,11 +1,12 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import moment from 'moment';
 // helpers
 import * as usfmHelpers from './usfmHelpers';
 import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
-// contants
+import {getProjectSettings} from './ProjectSettingsHelpers';
+// constants
+import {tc_LAST_OPENED_KEY} from "../common/constants";
 const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
 const OLD_DEFAULT_SAVE = path.join(ospath.home(), 'translationCore');
 
@@ -59,7 +60,7 @@ export function migrateResourcesFolder() {
   }
 }
 
-export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocation, currentLanguageCode) {
+export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocation) {
   loadProjectsLocation = loadProjectsLocation || DEFAULT_SAVE;
   /**@type {{directoryName: {usfmPath: (false|string)}}} */
   const projectFolders = getProjectDirectories(loadProjectsLocation);
@@ -68,18 +69,15 @@ export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocat
   Object.keys(projectFolders).forEach(folder => {
     const projectName = folder;
     const projectSaveLocation = path.join(loadProjectsLocation, folder);
-    const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-    let accessTime = "", accessTimeAgo = "Never Opened";
-    if (fs.existsSync(projectDataLocation)) {
-      moment.locale(currentLanguageCode || 'en'); // set locale, default to en
-      accessTime = fs.statSync(projectDataLocation).atime;
-      accessTimeAgo = moment().to(accessTime);
-    }
+    let lastOpened;
     let bookAbbr;
     let bookName;
     let target_language = {};
 
     try {
+      const settings = getProjectSettings(projectSaveLocation);
+      lastOpened = settings[tc_LAST_OPENED_KEY];
+
       //Basically checks if the project object is a usfm one
       if (!projectFolders[projectName].usfmPath) {
         const manifestPath = path.join(loadProjectsLocation, folder, 'manifest.json');
@@ -99,11 +97,11 @@ export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocat
       projects.push({
         projectName,
         projectSaveLocation,
-        accessTimeAgo,
+        lastOpened,
         bookAbbr,
         bookName,
         target_language,
-        isSelected
+        isSelected,
       });
     } catch (e) {
       console.warn('invalid project in tC folder...removing');

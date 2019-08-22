@@ -175,6 +175,25 @@ it('addObjectPropertyToManifest() creates an action to add an object property to
     .toEqual(expectedAction);
 });
 
+it('setProjectSettings() creates an action to set a project setting', () => {
+  const settings = {last_opened: new Date()};
+  const expectedAction = {
+    type: types.STORE_PROJECT_SETTINGS,
+    settings: settings
+  };
+  expect(actions.setProjectSettings(settings)).toEqual(expectedAction);
+});
+
+it('addObjectPropertyToSettings() creates an action to add an object property to the settings', () => {
+  const value = {last_opened: new Date()};
+  const expectedAction = {
+    type: types.ADD_PROJECT_SETTINGS_PROPERTY,
+    propertyName: 'key',
+    value: value
+  };
+  expect(actions.addObjectPropertyToSettings('key', value)).toEqual(expectedAction);
+});
+
 it('setProjectBookIdAndBookName() creates an action to set the project book id and name', () => {
   const store = mockStore({
     projectInformationCheckReducer: {
