@@ -10,7 +10,7 @@ ShallowWrapper {
         "bookAbbr": "1co",
         "bookName": "1 Corinthians",
         "isSelected": false,
-        "lastOpened": null,
+        "lastOpened": "2019-08-21T15:35:16.682Z",
         "projectName": "en_1co_ulb",
         "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
         "target_language": Object {
@@ -130,7 +130,7 @@ ShallowWrapper {
                               }
                             />
                              
-                            projects.never_opened
+                            5 days ago
                           </td>
                         </tr>
                       </tbody>
@@ -372,7 +372,7 @@ ShallowWrapper {
                                 }
                               />
                                
-                              projects.never_opened
+                              5 days ago
                             </td>
                           </tr>
                         </tbody>

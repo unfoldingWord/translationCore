@@ -193,7 +193,7 @@ function __correctSeparatorsFromLinux(filePath) {
 /**
  * @description - copies list of files from local file system into mock File system
  * @param {array} copyFiles - array of paths (in linux format) relative to source path
- * @param {string} sourceFolder - source folder fo files to copy (in linux format)
+ * @param {string} sourceFolder - source folder of files to copy (in linux format)
  * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
  */
 function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
@@ -227,7 +227,7 @@ function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
 
 /**
  * @description - recursively copies folder from local file system into mock File system
- * @param {string} sourceFolder - source folder fo files to copy (in linux format)
+ * @param {string} sourceFolder - source folder of files to copy (in linux format)
  * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
  */
 function __loadDirIntoMockFs(sourceFolder, mockDestinationFolder) {

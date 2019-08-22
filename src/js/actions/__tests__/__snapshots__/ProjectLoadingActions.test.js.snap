@@ -123,7 +123,7 @@ Array [
     "settings": Object {
       "last_opened": null,
     },
-    "type": "STORE_SETTINGS",
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "languageName": "English",
@@ -274,7 +274,7 @@ Array [
   Object {
     "propertyName": "last_opened",
     "type": "ADD_PROJECT_SETTINGS_PROPERTY",
-    "value": 2019-08-21T19:33:50.471Z,
+    "value": 2019-08-22T17:06:13.125Z,
   },
   Object {
     "type": "END_PROJECT_LOADING",
@@ -405,7 +405,7 @@ Array [
     "settings": Object {
       "last_opened": null,
     },
-    "type": "STORE_SETTINGS",
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "languageName": "English",
@@ -535,7 +535,7 @@ Array [
     "settings": Object {
       "last_opened": null,
     },
-    "type": "STORE_SETTINGS",
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
@@ -714,7 +714,7 @@ Array [
   Object {
     "propertyName": "last_opened",
     "type": "ADD_PROJECT_SETTINGS_PROPERTY",
-    "value": 2019-08-21T19:33:49.761Z,
+    "value": 2019-08-22T17:06:12.493Z,
   },
   Object {
     "type": "END_PROJECT_LOADING",
@@ -845,7 +845,7 @@ Array [
     "settings": Object {
       "last_opened": null,
     },
-    "type": "STORE_SETTINGS",
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "languageName": "English",
@@ -975,7 +975,7 @@ Array [
     "settings": Object {
       "last_opened": null,
     },
-    "type": "STORE_SETTINGS",
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
@@ -1383,7 +1383,7 @@ Array [
     "settings": Object {
       "last_opened": null,
     },
-    "type": "STORE_SETTINGS",
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "languageName": "English",
