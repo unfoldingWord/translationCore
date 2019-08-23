@@ -13,7 +13,6 @@ import {
   getProjectNickname,
   getUsername
 } from "../selectors";
-import {withLocale} from './Locale';
 
 class StatusBarContainer extends React.Component {
 
@@ -95,7 +94,7 @@ const mapDispatchToProps = {
   toggleHomeView: BodyUIActions.toggleHomeView
 };
 
-export default withLocale(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(StatusBarContainer));
+)(StatusBarContainer);
