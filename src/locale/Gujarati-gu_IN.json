@@ -125,15 +125,15 @@
     "login_error": "લૉગ ઇન કરવાના પ્રયાસ કરતી વખતે ભૂલ થઈ છે.",
     "session_invalid": "તમારું લૉગિન અમાન્ય થઈ ગયું છે. કૃપા કરીને લૉગ આઉટ થઈને ફરીથી લૉગ ઇન કરશો.",
     "terms_and_conditions": "નિયમો અને શરતો",
-    "by_continuing": "By continuing, you affirm that you have read and understand the terms and conditions and agree to: ",
-    "not_infringe": "Only add content that does not infringe on someone else's copyright.",
-    "not_conflict": "Only add content that does not conflict with the Statement of Faith.",
-    "statement_of_faith": "Statement of Faith.",
-    "release_contributions": "Release your contributions to the content under a Creative Commons Attribution-ShareAlike 4.0 International License.",
-    "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International License."
+    "by_continuing": "જારી રાખતા, તમે સમર્થન કરો છો કે તમે નિયમો અને શરતોને વાંચ્યા તથા સમજ્યા છે અને તમે તેથી સહમત છો: ",
+    "not_infringe": "માત્ર એવી સામગ્રી ઉમેરો જે કોઈના કૉપિરાઇટનું ઉલ્લંઘન કરતી ન હોય.",
+    "not_conflict": "માત્ર એવી સામગ્રી ઉમેરો જે વિશ્વાસના નિવેદનનો વિરોધ કરતી ન હોય.",
+    "statement_of_faith": "વિશ્વાસનું નિવેદન.",
+    "release_contributions": "4.0 આંતરરાષ્ટ્રીય લાયસન્સ હેઠળની સામગ્રી માટે તમારા યોગદાનને જારી રાખો.",
+    "cc_by_sa": "ક્રિએટિવ કોમન્સ એટ્રિબ્યુશન-ShareAlike 4.0 આંતરરાષ્ટ્રીય લાયસન્સ."
   },
   "projects": {
-    "zip_files": "Zip Files",
+    "zip_files": "ઝિપ ફાઇલો",
     "error_setting_up_project": "Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (${email}) for assistance.",
     "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
     "no_project": "No project was selected",
