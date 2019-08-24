@@ -251,7 +251,7 @@
       "invalid_characters": "માત્ર લેટીનના મૂળભૂત શબ્દો જ સમર્થિત છે"
     },
     "conflicting_project": "આ ઓળખકર્તા સથે એક પ્રોજેક્ટ પહેલેથી જ આ ભાષા અને પુસ્તક સાથે ઉપલબ્ધ છે",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "newer_project": "આ પ્રોજેક્ટ translationCore ના નવા સંસ્કરણ સાથે બનાવવામાં આવેલ છે. કૃપા કરીને આધુનિક સંસ્કરણ માટે અપડેટ કરો અને ફરી પ્રયાસ કરો."
   },
   "book_list": {
     "ot": {
@@ -335,13 +335,13 @@
     "no_tools": "કોઈપણ ${app} ડિફોલ્ટ સાધનો જોવા મળેલ નથી.",
     "tw_part1": "અનુવાદશબ્દો (ભાગ 1)",
     "see_more": "વધુ જુઓ",
-    "see_more_caps": "See More",
-    "see_less": "See less",
-    "description": "Description",
-    "tw_part1_description": "A tool to comprehensively check the meaning of key terms in the Bible using a set of clear, concise definitions and including suggestions for translation.",
-    "gateway_language": "Gateway Language",
-    "select_gateway_language": "Select Gateway Language",
-    "word_alignment": "Word Alignment",
+    "see_more_caps": "વધુ જુઓ",
+    "see_less": "ઓછું જુઓ",
+    "description": "વર્ણન",
+    "tw_part1_description": "સ્પષ્ટ, સંક્ષિપ્ત વ્યાખ્યા અને અનુવાદ માટે સૂચનોનું સમાવેશ કરતું બાઈબલના ચાવીરૂપ શબ્દોના અર્થ વ્યાપક રીતે ચકાસવા માટેનું એક સાધન.",
+    "gateway_language": "ગેટવે ભાષા",
+    "select_gateway_language": "ગેટવે ભાષા પસંદ કરો",
+    "word_alignment": "શબ્દની ગોઠવણી",
     "alignment_description": "A tool to align the translation with the original biblical languages in order to show how the translation communicates the meaning represented in the original. This data can be useful in creating other resources such as concordances and interlinear Bibles in the target language.",
     "please_select_gl": "Please select the Gateway Language from which you would like to check your translation.",
     "lemma": "Lemma",
