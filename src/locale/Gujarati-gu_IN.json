@@ -382,8 +382,8 @@
     "no_gl_available": "કંઈ ઉપલબ્ધ નથી",
     "invalid_checks": "અમાન્ય ચકાસણી",
     "invalid_verse_alignments": "અમાન્ય ગોઠવણી સાથે કલમો.",
-    "invalidation_checking": "Checking if this edit conflicts with saved selections and alignments...",
-    "alignments_reset_wa_tool": "Changes have been detected in your project which have invalidated some of your alignments.\nThese verses display an icon of a broken chain next to the reference in the side menu.",
+    "invalidation_checking": "આ ઉમેરો સાચવવામાં આવેલ પસંદગી અને ગોઠવણી સાથે તકરાર કરે છે કે નહીં તે તપાસી રહ્યું છે...",
+    "alignments_reset_wa_tool": "તમારા પ્રોજેક્ટમાં ફેરફારો શોધી દેવામાં આવ્યા છે જેણે તમારી કેટલીક ગોઠવણીને અમાન્ય કરી દીધી છે.\nઆ કલમો તૂટેલી સાંકળનું એક ચિહ્ન બાજુના મેનુમાં સંદર્ભની પાસે બતાવે છે.",
     "invalid_verse_alignments_and_selections": "Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu.",
     "invalid_check_found": "આ ચકાસણીના વિષયાર્થ માટે સમસ્યા છે:${report}: શું તમે આ સમસ્યાના સમાચાર આપવા માગો છો કે જેથી તેનું નિવારણ કરી શકાય?"
   },
