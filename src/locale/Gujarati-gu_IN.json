@@ -244,13 +244,13 @@
     "conflict_reference": "આ પાઠ ${chapter}, કલમ ${verse} ને સમાવવાની એક સમસ્યા છે.",
     "missing_verses_instructions": "તમારા પ્રોજેક્ટમાંથી કેટલીક કલમો ગુમ થયેલ છે.",
     "only_nt_supported": "${app} નું આ સંસ્કરણ માત્ર નવા કરારના પ્રોજેક્ટનું જ સમર્થન કરે છે.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "આ પ્રોજેક્ટ ${app} ના જૂના સંસ્કરણની માહિતી ધરાવે છે જે આ પ્રકાશનને સમર્થન કરતું નથી. આ પ્રોજેક્ટને ખોલવા માટે અથવા ફરીથી ચકાસણી કરવા માટે, કૃપા કરીને સહાયતા કેન્દ્ર ${help_desk_email} નો સંપર્ક કરો.",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
-      "field_invalid_length": "Must be 3-4 letters long",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "info": "(3 અથવા 4 શબ્દની ઓળખ<br />કોડ, દા.ત. KJV, NIV વગેરે.)",
+      "field_invalid_length": "3-4 અક્ષર મોટું હોવું જોઈએ",
+      "invalid_characters": "માત્ર લેટીનના મૂળભૂત શબ્દો જ સમર્થિત છે"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
+    "conflicting_project": "આ ઓળખકર્તા સથે એક પ્રોજેક્ટ પહેલેથી જ આ ભાષા અને પુસ્તક સાથે ઉપલબ્ધ છે",
     "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
   },
   "book_list": {
